@@ -1,0 +1,44 @@
+\documentclass{book}
+\input{../preamble/packages}
+\input{../preamble/colors}
+\input{../preamble/commands}
+\input{../preamble/theorems}
+\input{../preamble/glossarydefs}
+
+
+%% BIBTEX
+
+\usepackage{biblatex}
+\addbibresource{bib.bib}
+\title{SeqAn2}
+\author{lsanfilippo }
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+
+\tableofcontents 
+
+\chapter{Sequence Comparison Beyond Edit Distance}
+\input{sections/v1}
+
+\backmatter
+\pagenumbering{roman}
+\chapter{Backmatter}
+
+\addcontentsline{toc}{section}{Definitionen}
+\printglossary[type=defi, title=Definitionen]
+
+\addcontentsline{toc}{section}{Figures}
+\listoffigures
+
+\addcontentsline{toc}{section}{Index}
+\printindex
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+
+\end{document}

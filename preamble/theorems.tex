@@ -11,14 +11,16 @@
     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
 \theoremstyle{mytheoremstyle}
 
-\newtheorem{bsp}{Beispiel}[section]
+\newtheorem{bsp}{Beispiel}[chapter]
+\newtheorem{prob}{Problem}[chapter]
+\newtheorem{theo}{Theorem}[chapter]
 
 %\newtheorem{formel}[defi]{Definition}
 %\newtheorem{gese}{Gesetz}[section]
 
 %% DEFINITION
 
-\newtheorem{defi}{Definition}[section]
+\newtheorem{defi}{Definition}[chapter]
 
 \newcommand{\defin}[1]{
 \begin{lavenderbox}{\textbf{\gls*{#1}}}
@@ -27,4 +29,13 @@
     \glsdesc*{#1}
 \end{defi}
 \end{lavenderbox}
+}
+
+\newcommand{\probl}[2]{
+\begin{cyanbox}{\textbf{#1}}
+\noindent
+\begin{prob}
+   {#2}
+\end{prob}
+\end{cyanbox}
 }

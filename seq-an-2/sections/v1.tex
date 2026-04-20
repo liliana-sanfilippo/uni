@@ -1,0 +1,88 @@
+The \gls{edit distance} (or \gls{alignment distance}) is one of the most fundamental ways of quantifying the dissimilarity of two sequences x and y over a finite alphabet $\sum$. It is based on the cost of an alignment $A = (A_1, A_2, . . . , A_n),$ , defined as the sum of the costs of A’s columns, i.e., 
+\[
+cost(A) = \sum^n_{i=1} cost(A_i),
+\]
+where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$ , in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = – or b_i = –)$. Then we have:
+
+\defin{alignment distance}
+
+\noindent The corresponding computational problem is as follows:
+
+\probl{Alignment Problem}{For two given strings $x, y \in \sum^*$ and a given cost function, find the alignment distance of x and y and one or all optimal alignment(s).\\ \newline From the “Sequence Analysis 1” lecture we know that this problem can be solved in $O(mn)$ time using a simple and elegant dynamic programming algorithm, where $m = |x|$ and $n = |y|$ are the two sequence lengths. \\ \newline However, there are situations in which edit distance and alignments are not the perfect model to compare sequences. In the following two sections we will study two interesting alternatives.}
+
+\txc{Hier das über die Block moves einfügen.}
+
+\section{The q-gram Distance}
+Edit distances emphasize the correct order of the characters in a string. If, however, a large block of a text is moved somewhere else (e.g. two paragraphs of a text are exchanged), the edit distance will be high, although from a certain standpoint, the texts are still quite similar. A more appropriate notion of distance can be defined in several ways. Here we introduce the q-gram distance dq, which is actually a pseudo-metric: There exist strings
+$x \neq y$ with $d_q(x, y) = 0$.
+
+Remember that for $q \in N$, a \gls{q-gram} is a string of length q.
+\txc{Wir reden hier über überlappende q-Gramme!}
+
+\defin{occurrence count}
+\defin{q-gram profile}
+\defin{q-gram distance}
+
+\begin{bsp}
+Consider $\sum = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$. Using lexicographic order (AA, AB, BA, BB) among the q-grams, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ and $p_2(z) = (1, 1, 1, 0)$. Therefore we obtain $d_2(x, y) = 2$ and $d_2(x, z) =0$ (although $x\neq z$). 
+\txc{Hier bsp. tabelle }
+\end{bsp}
+
+\begin{theo}
+The q-gram distance dq is a pseudo-metric.
+\paragraph{Proof.} It fulfills nonnegativity, symmetry and the triangle inequality (exercise). 
+\end{theo}
+
+\subsection{Practical Computation}
+If the q-gram profile of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it makes sense to implement it as an array $p[0 . . . \sum^q - 1]$, where $p[i]$ counts the number of occurrences of the i-th q-gram in some arbitrary but fixed (e. g. lexicographic) order.
+
+\defin{ranking function}
+
+\defin{ranking algorithm} 
+
+\defin{unranking function}
+
+\defin{unranking algorithm}
+
+Of course, we are interested in an efficient (un-)ranking algorithm for the set of all q-grams over $\sum$. A classical one is to first define a ranking function $r_{\sum}$ on the characters (alphabet encoding) and then extend it to a ranking function r on the q-grams by interpreting them as base-$\sigma$ numbers. There are two possibilities to number the positions of a q-gram: From q
+to 1 falling or from 1 to q rising, as shown in the Example 1.2.
+
+\begin{bsp}
+Assume the alphabet $\sum = {A, C, G, T}$ and the alphabet encoding $r_{\sum}(A) = 0$,
+$r_{\sum}(C) = 1, r_{\sum}(G) = 2$, and $r_{\sum}(T)$ = 3. For q = 5, the two different possibilities to rank the
+q-gram z = ATACG are:
+\begin{enumerate}
+    \item Falling ranking 
+    \[
+    r(ATACG) = ...
+    \]
+    \item Rising ranking
+    \[
+    r(ATACG) = ...
+    \]
+\end{enumerate}
+\end{bsp}
+The first numbering of positions in (a) corresponds naturally to the ordering of positional number systems; in the decimal number 23, the first 2 has positional value (weight) $10^1 = 10$ whereas the 3 has the lower weight of $10^0 = 1$. For texts, however, the second numbering in (b) is more natural since we expect lower position numbers on the left side of higher position numbers.
+
+In general, we see that $z \in \sum^q$ has rank
+\[
+(a): r(z) =
+\sum^q_{i=1}
+r_{\sum}
+(z[i]) \cdot \sigma^{q-i}, (b): r(z) =
+\sum^q_{i=1} 
+r_{\sum}
+(z[i]) \cdot \sum^{i-1}.
+\]
+Whichever numbering system we use, we have to do it consistently. \\ \newline
+For each of the two ways to rank a q-gram, there is a corresponding unranking method.
+Both methods work with integer division and remainder. The one for the falling ranking function uses a dynamic divisor and determines the characters of the q-gram based on the integer results, the other one for the rising ranking function uses a fixed divisor and determines the characters based on the remainder
+
+\subsection{Choice of q}
+
+\subsection{Efficiency}
+
+\subsection{Relation to the Edit Distance}
+
+\section{The Maximal Matches Distance}
+\txc{Notiz}
