@@ -10,29 +10,31 @@ Nevertheless, intelligent systems must be able to function effectively using par
 
 \subsubsection*{The problem of data meaninglessness}
 To understand the need for KR, let’s consider a practical scenario:
-A student database.
+\begin{exa}
+    A student database.
 
-A hypothetical database contains the following entries:
+    A hypothetical database contains the following entries:
 
-\begin{table}[H]
-    \begin{tabular}{ccccc}
-        \textbf{Name} & \textbf{Major} & \textbf{CGPA} & \textbf{Research}   & \ldots \\
-        Alice Smith   & CS             & 3.8           & Genomics            & \ldots \\
-        Bob John      & Biology        & 3.8           & Oncology            & \ldots \\
-        Carol Li      & Zoology        & 3.7           & Animal colonisation & \ldots
-    \end{tabular}
-    \label{tab:first-example}
-\end{table}
+    \begin{table}[H]
+        \begin{tabular}{ccccc}
+            \textbf{Name} & \textbf{Major} & \textbf{CGPA} & \textbf{Research}   & \ldots \\
+            Alice Smith   & CS             & 3.8           & Genomics            & \ldots \\
+            Bob John      & Biology        & 3.8           & Oncology            & \ldots \\
+            Carol Li      & Zoology        & 3.7           & Animal colonisation & \ldots
+        \end{tabular}
+        \label{tab:first-example}
+    \end{table}
 
-Without knowledge representation, this data is disjointed.
-The entries exist in isolation across thousands of files.
-A database query system can only perform exact keyword matches:
+    Without knowledge representation, this data is disjointed.
+    The entries exist in isolation across thousands of files.
+    A database query system can only perform exact keyword matches:
 
-\begin{itemize}
-    \item Query 1: ``Show me all AI researchers'' → No results (not explicitly mentioned in the data)
-    \item Query 2: ``Which students could work on this patent?'' → No answer possible
-    \item Query 3: `´What are the emerging trends?'' → No analysis possible
-\end{itemize}
+    \begin{itemize}
+        \item Query 1: ``Show me all AI researchers'' → No results (not explicitly mentioned in the data)
+        \item Query 2: ``Which students could work on this patent?'' → No answer possible
+        \item Query 3: `´What are the emerging trends?'' → No analysis possible
+    \end{itemize}
+\end{exa}
 
 Data is meaningless without context and relationships.
 It does not allow for intelligent reasoning or deeper analysis.
@@ -47,23 +49,24 @@ queryable knowledge using:
     \item Knowledge graphs: Link entities together: Alice → researcher → AI
 \end{itemize}
 
-This allows for:
+This allows for semantic searches, automatic relationship discovery and reasoning across all connection.
 
-\begin{itemize}
-    \item Semantic search
+\begin{exa}
     \begin{itemize}
-        \item ``Find students researching machine learning?''
-        \item ``Show me all AI researchers'': The system can use transitive relationships to find relevant students.
-        \item ``Which students are a good fit for this patent?'': The system can match skills and areas of interest.
+        \item Semantic search
+        \begin{itemize}
+            \item ``Find students researching machine learning?''
+            \item ``Show me all AI researchers'': The system can use transitive relationships to find relevant students.
+            \item ``Which students are a good fit for this patent?'': The system can match skills and areas of interest.
+        \end{itemize}
+        \item Automatic relationship discovery
+        \begin{itemize}
+            \item ``What are emerging research trends?''
+            \item Recognising patterns across all data
+            \item Identifying emerging trends through interconnected information
+        \end{itemize}
     \end{itemize}
-    \item Automatic relationship discovery
-    \begin{itemize}
-        \item ``What are emerging research trends?''
-        \item Recognising patterns across all data
-        \item Identifying emerging trends through interconnected information
-    \end{itemize}
-    \item Reasoning across all connection
-\end{itemize}
+\end{exa}
 
 \begin{table}[H]
     \begin{tabular}{p{5cm}p{5cm}p{5cm}}
