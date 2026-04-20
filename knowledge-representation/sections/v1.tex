@@ -106,13 +106,20 @@ KR enables machines to make informed decisions with fewer rules.
     \item Data flexibility: Modifiable
 \end{itemize}
 
-\begin{exa}
-    \paragraph{Pac-Man ghost AI}
-    
-\end{exa}
-
 \subsection*{Representation Schemes}
 \defin{representation scheme}
+
+\begin{exa}
+    \textbf{Pac-Man ghost AI} has a knowledge-based approach: We code ghost behaviour as explicit rules.
+    \begin{verbatim}
+IF player_nearby THEN chase
+IF frightened THEN flee
+ELSE patrol
+    \end{verbatim}
+    Decisions are transparent, explainable, and modifiable without recomputing.
+\end{exa}
+
+
 
 
 \section{Taxonomy of Representation Schemes}\label{sec:taxonomy-of-representation-schemes}~\cite{folien1}
