@@ -1,0 +1,119 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Präsenzübungsblatt 1; Statistik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\dat}{\textbf{Tut 15.04.2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\small\dat}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+% lisa.strothmann@uni-bielefeld.de
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe a}
+Es ist sinnvoll, da eine Menge mit vier Elementen den Ereignisraum sowohl realistisch als auch einfach beschreibt. \textcolor{Orange}{Und die schreibweise $(i,j)$ erlaubt es die erste und zweite Drehung zu unterscheiden.} \\
+$\omega = (1,2) \in \Omega$ bedeutet im Kontext der Aufgabenstellung, dass zuerst Abschnitt 1 als Ergebnis kam und dann Abschnitt 2. \\
+\textcolor{Blue}{Wie wissen wir, dass das mit Reihenfolge gemeint ist? Ist einfach immer davon auszugehen, wenn man es nicht anders spezifiziert hat? $->$ Die runden Klammern bedeuten ist ein Tupel, also ist da die Reihenfolge wichtig!}
+\section{Aufgabe b}
+Weil das Glücksrad in vier gleichgroße Viertel unterteilt ist und somit nicht ein Teil mehr Landefläche bietet.\textcolor{Orange}{Das Glücksrad ist also fair.}
+
+\section{Aufgabe c}
+
+\begin{equation*}
+   \textcolor{Orange}{\mu: \Omega \rightarrow [0,1],} \quad \mu(\omega) = \frac{1}{\textcolor{Orange}{16}}  \textcolor{Orange}{ = \frac{1}{|\Omega|}} \quad \forall \omega \in \Omega
+\end{equation*}
+
+
+\section{Aufgabe d}
+\[
+\begin{tabular}{ccccccccccccccccc}
+    E & (0,0)& (0,1) & (1,0)  & (1,1) & (2,0) & (0,2) & (2,2) & (3,0) & (0,3) & (3,3) & (1,2) & (2,1) & (1,3) & (3,1) & (2,3) & (3,2) \\
+    k & 0 & 0 & 0 & 1 & 0& 0 & 4 & 0 & 0 & 9 & 2 & 2 & 3 & 3 & 6 & 6  
+\end{tabular}
+\]
+Folgende $k$s führen zu $A_k \neq \emptyset$:
+\begin{align*}
+    A_0 & = \{(0,0), (0,1), (1,0), (2,0), (0,2), (0,3), (3,0)\} \\
+    A_1 & = \{(1,1)\} \\
+    A_2 & = \{(1,2), (2,1)\} \\
+    A_3 & = \{(1,3), (3,1)\} \\
+    A_4 & = \{(2,2)\} \\
+    A_6 & = \{(2,3), (3,2)\} \\
+    A_9 & = \{(3,3)\}
+\end{align*}
+\textcolor{Orange}{
+Weitere eventuell hilfreiche Tabelle wäre: (Alle ks herausfinden)
+\[
+\begin{array}{c|cccc}
+     & 0 & 1 & 2 & 3 \\ \hline
+     0 & 0 & 0 & 0 & 0 \\
+     1 & 0 & 1 & 2 & 3\\
+     2 & 0 & 2 & 4 & 6 \\
+     3 & 0 & 3 & 6 & 9\\
+\end{array}
+\]
+Man sollte $A_k$ allgemein angeben: 
+\[
+A_k = \{(i,j) \in \Omega | i \cdot j 0 k\}
+\]
+}
+\section{Aufgabe e}
+\[
+\begin{array}{c|ccccccccccccc}
+    A_k & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12  \\
+    \mathbb{P}(A_k) & \frac{7}{16} & \frac{1}{16} & \frac{2}{16} & \frac{2}{16} & \frac{1}{16} & 0 & \frac{2}{16} & 0 & 0 & \frac{1}{16} & 0 & 0 & 0 
+\end{array}
+\]
+Probe gemacht, kommt auf $\frac{16}{16} = 1$ raus. 
+
+\end{document}

@@ -1,0 +1,151 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+ 
+\newcommand{\titulo}{Präsenzübungsblatt 8; Statistik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\dat}{\textbf{Tut 03.06.2025}}
+\newcommand{\gre}[1]{\textcolor{green}{#1}}
+\newcommand{\purp}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\yel}[1]{\textcolor{yellow}{#1}}
+\newcommand{\blu}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\p}[0]{\mathbb{P}}
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\small\dat}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+\newcommand{\kl}[1]{\{ #1 \}}
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 6.1}
+Foto, richtig in Abgabe 
+\section{Aufgabe 6.2}
+geg. $(x,y)$ uniform verteilt auf Menge $A$. \textcolor{orange}{d.h. sie haben eine gemeinsame Dichte $f(x,y) = \frac{\mathbb{I}_A(x,y)}{|A|}$}
+\[
+A = \kl{(x,y) \in \mathbb{R}^2 \mid -1 \leq c \leq 0, \quad x \leq y \leq 0} \cup \kl{(x,y) \in \mathbb{R}^2 \mid 0\leq x \leq 1, \quad x \leq y \leq 1}
+\]
+\subsection*{a)} korrekt 
+\subsection{b)} korrekt 
+\subsection{c)}
+Vorzeichenfehler in Fall $0 \leq  x \leq 1$: 
+\begin{align*}
+    F_X(x) &=\gre{ \int_{-1}^0 f_X (a) da} +\purp{ \int_0^x f_X (a) da}\\
+    & = \gre{ \int_{-1}^0 1-a da} + \purp{\int_0^x 1-a da} \\
+    &= \gre{[a -\frac{a^2}{2}]_{\yel{-1}}^\cyan{0}}  +  \purp{[a - \frac{a^2}{2}]^{\blu{x}}_{\red{0}}} \\
+    &= \cyan{0} + \yel{(-1 + \frac{1}{2})} + \blu{x - \frac{x^2}{2}} + \red{0} \\
+    & = \yel{\frac{1}{2}} + \blu{x - \frac{x^2}{2}} \\
+    & = x + \frac{3-x^2}{2}
+\end{align*}
+Flüchtigkeitsfehler in Fall $0 \leq y \leq 1$
+\begin{align*}
+    
+\end{align*}
+\subsection*{d)}
+\subsubsection*{(ii)}
+Verteilungsfunktion. Hier reicht es, wenn man sich nur einen Wert ausucht, weil das $X > 0$ direkt eine ganze Fläche ist. 
+\begin{align*}
+    \p(X > 0, Y \leq 0) & = 0\\ \\
+    \p (X>0) &= 1 - \p(X \leq 0) \\
+    &= 1 - \frac{1}{2} \\
+    &= \frac{1}{2} \\ \\
+    \p(Y \leq 0) &= \frac{1}{2}
+\end{align*}
+\section{Aufgabe 6.3}
+Für Wartezeiten benutzt man eig. immer die Exponentialverteilung. 
+\subsection*{a)}
+Korrekt
+\subsection{b)}
+Wie nannt man diese Eigenschaft? Gedächtnislosigkeit. Die kommt auch bei der geomterischen Verteilung vor.\\
+\[
+\p(X \geq 40 \mid x \geq  20) = \frac{\p(x \geq 40, X \geq 20)}{\p(X\geq 20)} = \frac{\p(X \geq 40)}{\p(X \geq 20)} = \frac{e^{-4}}{e^{-2}} = e^{-2}
+\]
+
+\subsection*{c)}
+$Y \sim Exp(\frac{1}{10})$ Fahrzeit, $\p(X+Y \leq 30)$, $\alpha = \frac{1}{10}$
+\begin{align*}
+     \p(X+Y \leq Z) &= \int_\substack{x+y \leq z \\ x \geq 0, y \geq 0} \underbrace{\alpha e^{-\alpha x } \alpha e^{-\alpha y}}_{gem. Dichte} d (x,y) \\
+     &= \int_0^z  ( \int_0^{z-x} \alpha^2 e^{- \alpha x} e^{- \alpha y} dy) dx \\
+     &= \alpha^2 \int_0^z e^{- \alpha x} [-\frac{1}{\alpha} a^{\alpha}y]^{z-x}_0 dx \\
+     &= - \alpha \int_0^z e^{- \alpha x} (e^{- \alpha z} e^{\alpha x} -1) dx \\
+     &= - \alpha \int_0^z e^{- \alpha z} - e^{- \alpha x} dx \\
+     &= - \alpha [x e^{- \alpha z} + \frac{1}{\alpha} e^{- \alpha x}]^z_0 \\
+     &= - \alpha (z e^{- \alpha z}+ \frac{1}{\alpha} e^{-\alpha z} + \frac{1}{\alpha}) \\
+     &= 1 - e^{-\alpha z} (\alpha z +1)
+\end{align*}
+$ (\alpha z +1)$ oder $ (-\alpha z +1)$? Eher ersteres, nachrechnen
+
+\section{Präsenz}
+\subsection{Aufgabe}
+Reminder: \\
+Erwartungswert: \( \mathbb{E}[X] = \underbrace{\sum_{j \in \mathbb{Z}} j \p(X=j)}_{< \infty}  \) als ''gewichteter Mittelwert''. \\
+Varianz \(Var(X) = \mathbb{E}[(X-\mathbb{E}[X])^2]\) \\
+\textcolor{pink}{Frage: Müssen die $\p$s von $X$ zusammen 1 ergeben? Ja müssen sie.} \\
+\textcolor{brown}{
+Wert für $X=0$ berechnen: \\
+\(\p(X=-1) + \p(X=1) + \p(X=0) + \p(X=2) + \p(X=-2) = 1\) also 
+\[
+\frac{p}{4} + \frac{p}{4} + \p(X=0) + \frac{1}{4} + \frac{1}{4} = 1
+\]
+\[
+\frac{2p}{4} + \p(X=0) + \frac{2}{4}  = 1
+\]
+\[
+\frac{2p + 2}{4} + \p(X=0)  = 1
+\]
+\[
+ \p(X=0)  = 1 - \frac{2p + 2}{4}= \frac{4}{4} - \frac{2p + 2}{4} = \frac{4-2p - 2}{4} = \frac{2-2p}{4} = \frac{1-p}{2}
+\]
+}
+\subsubsection*{a)}
+Foto und so 
+
+\end{document}

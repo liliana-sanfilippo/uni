@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{todonotes}
+\usepackage{tcolorbox}
+\usepackage{xcolor} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newtheorem{test}{Test}[section]
+\newtheorem{bsp}[test]{Beispiel}
+\newtheorem{info}[test]{Zusatzinformation}
+\newtheorem{reg}[test]{Regel}
+\newtheorem{satz}[test]{Satz}
+\newtheorem{lem}[test]{Lemma}
+
+% Definition der tcolorbox für 'lem' (Lemma)
+\tcolorboxenvironment{lem}{
+  colback=white,
+  colframe=black,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  parbox=false, % Keine Parbox (keine Verformung der Box)
+  enhanced
+}
+
+\newtheorem{defi}[test]{Definition}
+% Definition der tcolorbox für 'defi' (Definition)
+\tcolorboxenvironment{defi}{
+  colback=white,
+  colframe=black,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced
+}
+
+% Definition der Randnotizen
+\newcommand{\bluenote}[1]{\todo[bordercolor=blue, backgroundcolor=white, textcolor=blue, size=\small]{\textcolor{blue}{#1}}}
+\newcommand{\orangenote}[1]{\todo[bordercolor=orange, backgroundcolor=white, textcolor=orange, size=\small]{\textcolor{orange}{#1}}}
+
+\begin{document}
+  
+\section{Beispiel mit tcolorbox und Randnotizen außerhalb der Boxen}
+
+% Eine Beispieldefinition
+\begin{defi}
+  Eine \textbf{Definition} ist eine präzise und klare Aussage, die den Begriff beschreibt.
+  % Randnotiz innerhalb der Box, aber außerhalb der Box angezeigt
+  \bluenote{Denke daran, nach der Definition ein Beispiel zu geben!}
+\end{defi}
+
+% Eine Beispielregel mit Randnotizen
+\begin{defi}
+  Eine \textbf{Regel} ist eine vorgeschriebene Handlung oder Bedingung.
+  \orangenote{Überprüfe, ob du alle Bedingungen berücksichtigst.}
+\end{defi}
+
+\end{document}

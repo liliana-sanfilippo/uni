@@ -1,0 +1,135 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Präsenzübungsblatt 3; Statistik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\dat}{\textbf{Tut 29.04.2025}}
+
+\newcommand{\p}[0]{\mathbb{P}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\small\dat}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 1.1}
+\subsubsection{a.}
+Seien $\Omega, A, B$ Mengen mit $A \subseteq \Omega, \quad B \subseteq \Omega$. Sei $(\Omega, \mathbb{P})$ ein W-Raum. 
+\begin{enumerate}
+    \item z.z. $(A \cup B)\backslash (A \cap B) = (A \backslash B) \dot\cup (B \backslash A)$
+    \item Leiten Sie aus 1. eine Formel für $P(A\cup B)$ her 
+    \item z.z. $\mathbb{P}(\Omega \backslash (A \cup B)) \leq 1 - max \{\mathbb{P}(A), \mathbb{P}(B)\}$
+\end{enumerate}
+Tipp: Distributivgesetz für Mengen (mehrfach) und $(x\backslash y) = x \cap y^c$
+\begin{align*}
+    (A \cup B)\backslash (A \cap B) & = (A \cup B)\cap (A \cap B)^c & de Morgan \\
+    & = (A \cup B)\cap (A^c \cup B^c) & Distr. \\
+    & = (A^c \cap B) \cup (A^c \cap A) \cup B^c & Distr. \\
+     & =\textcolor{Orange}{ (A^c \cap (A \cup B)) \cup (B^c \cap (A \cup B))}   \\
+     & = \textcolor{Orange}{(A^c \cap A) \cup (B \cap A^c) \cup (A \cap B^c) \cup (B \cap B^c)} \\
+      & = (A \cap B^c) \textcolor{Orange}{ \cup } (B \cap A^c) \\
+      & = (A \backslash B) \cup (B \backslash A)
+\end{align*}
+\textcolor{Orange}{Disjunktheit gesondert zeigen: 
+\[(B \backslash A) \cap (A \backslash B) = (A \cap B^c) \cup (B \cap A^c) = \emptyset \]}
+\subsubsection{b.}
+\textcolor{Orange}{
+\begin{align*}
+ \underbrace{ \underbrace{  \p((A \cup B) \backslash (A \cap B) )}_{\p(A \cup B) - \p (A \cap B) }}_{da A \cap B \subset A \cup B} & = \underbrace{\p ((A \backslash B)\dot\cup (B \backslash A)}_{\p (A \backslash B) + \p(B \backslash A) }  ) \\
+ \Rightarrow  \p(A\cup B) & = \p(A \backslash B) + \p (B \backslash A) + \p (A \cap B) 
+\end{align*}
+}
+\subsubsection{c.}
+\textcolor{Orange}{
+\begin{array}{rl}
+     & A \subset A \cup B, \quad B \subset A \cup B \\
+    \overset{Monotonie}{\Rightarrow } &  \p(A), \quad \p(B) \leq \p(A \cup B) \\
+    \Rightarrow  & max \{\p(A), \p(B) \leq \p(A \cup B) \} \\ \\
+    \p((A \cup B)^c) & = \p (\Omega  \backslash (A \cup B) ) \\
+    & = 1- \p(A \cup B) \geq 1- max \{\p(A), \p(B)\}
+\end{array}
+}
+\section{Aufgabe 1.2}
+\textcolor{Blue}{Was ist integrierbar, Riemann-integrierbar und Lebeck-integrierbar?}
+\subsubsection{a.}
+\textcolor{Orange}{Definition Dichte. \\
+\begin{array}{rrl}
+    - &  f(x) \geq 0 \quad \forall x \in \mathbb{R} & \text{d.h. } F: \mathbb{R} \rightarrow [0,\infty)  \\
+    - & & \text{Riemann integrierbar} \\
+    &  ODER & \text{integrierbar und stückweise stetig} \\
+    - & \int_{- \infty}^{\infty} f(x) dx = 1 & (Normierungsbedingung) 
+\end{array}}
+\subsubsection{b.}
+\textcolor{Orange}{
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=8cm, angle=90]{images/graph1.jpg}
+    \caption{Darstellung der Funktion: $C$ bedeutet da schneidet man es ab. Gestrichelte Linien bedeutet \textcolor{Blue}{ToDo}}
+    \label{fig:my_label}
+\end{figure}
+Wir können erstmal bis $C$ integrierern \textcolor{Blue}{( weil ToDo)}: 
+\begin{align*}
+    1 & \overset{!}{=} \int_0^C 4x (1-x^2) dx \\
+    & =  \int_0^C 4x - 4x^3 dx \\
+    [\frac{4}{2} x^2 - \frac{4}{4} x^4]_0^C \\
+    & = 2c^2 - c^4 - 0 \\
+    \Rightarrow & c^4 - 2c^2 +1 = 0 & setze \ y = c^2 (\text{in quadratische Gleichung umschreiben})\\ 
+    \Rightarrow & y^2 - 2y + 1 = 0 & p-q-\text{Formel anwenden} \\
+    \Rightarrow & y_{1,2} = 1 \overset{+}{-} \sqrt{1-1} = 1 \\
+    \Rightarrow c^2 = 1 \\
+    \Rightarrow c = \overset{+}{-} 1 \\
+\end{align*}
+}
+\textcolor{Blue}{Was bedeutet $\overset{!}{=}$ hier? }
+
+\end{document}

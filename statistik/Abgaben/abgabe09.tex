@@ -1,0 +1,117 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable} 
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 9; Statistik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\dat}{\textbf{Abgabe 19.06.2025}}
+
+\newcommand{\ma}[1]{\( #1 \)}
+\newcommand{\mab}[1]{\[ #1 \]}
+\newcommand{\kl}[1]{\{ #1 \}}
+\newcommand{\p}[0]{\mathbb{P}}
+\newcommand{\E}[1]{\mathbb{E}[#1]}
+\newcommand{\sumEN}[0]{\sum_{i = 1}^n}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\small\dat}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+
+
+\section*{Aufgabe 2}
+\subsection*{a)}
+\ma{\Omega =\kl{0,1}^n} mit \ma{\omega = 1} bedeutet, dass eine Zahl geworfen wurde. 
+\mab{\omega \in \Omega := (\omega_1, ..., \omega_n)}
+\mab{\p(\omega_i) = \sumEN \frac{1}{2} \forall i \in \mathbb{N}, \quad \p (\omega) =  \p(\omega_i) =  \frac{1}{2^n}}
+\mab{S_n(\omega) = \sumEN \omega_i, \quad S_n \sim \mathcal{B}(n, \frac{1}{2})}
+Annahmen:
+\begin{itemize}
+    \item Jeder Münzwurf ist unabhängig vom vorherigen
+    \item evtl. jeder Wurf ist gleich verteilt
+\end{itemize}
+
+\subsection*{b)}Hi rnochmal gucken, ob das mit dem $<$ und $\leq$ alles so passt
+
+\mab{\p(-\frac{1}{20} < \frac{1}{n} S_n - \frac{1}{2} \leq \frac{1}{20}) \geq \frac{19}{20} 
+\quad \Leftrightarrow \quad 
+\p( |\frac{1}{n} S_n  - \frac{1}{2}| \leq \frac{1}{20}) \geq \frac{19}{20}
+\quad \Leftrightarrow \quad 
+\p(|\frac{S_n}{n} - \E{\frac{S_n}{n}}| \geq \frac{1}{20} ) \leq 1 - \frac{19}{20} }
+
+\mab{
+\p(|\frac{S_n}{n} - \frac{1}{2}| \geq \frac{1}{20} ) \leq \frac{Var(\frac{S_n}{n})}{(\frac{1}{20})^2}
+= \frac{\frac{1}{4n}}{(\frac{1}{20})^2}
+= \frac{\frac{1}{4n}}{400}
+= \frac{100}{n}
+}
+
+\mab{\frac{100}{n} \leq \frac{1}{20} \Rightarrow n \geq 2000}
+
+
+\subsection*{c)}
+\mab{
+\p(-\frac{1}{20} \leq \frac{1}{n} S_n - \frac{1}{2} \leq \frac{1}{20}) 
+=
+\p(-\frac{1}{20} + \frac{1}{2} \leq \frac{1}{n} S_n \leq \frac{1}{20} + \frac{1}{2}) 
+= 
+\p(\frac{9}{20} \leq \frac{1}{n} S_n \leq \frac{11}{20})  
+= 
+\p(\frac{9n}{20} \leq  S_n \leq \frac{11n}{20})
+}
+\mab{\p(\frac{9n}{20} -1  <  S_n \leq \frac{11n}{20})}
+\mab{
+\p(a < \frac{S_n - np}{\sqrt{npq}} \leq b) = \p(\frac{\frac{9n}{20} -1  - np}{\sqrt{npq}} < \frac{S_n - np}{\sqrt{npq}} \leq \frac{\frac{11n}{20} - np}{\sqrt{npq}}) \approx  \Phi(\frac{\frac{11n}{20} - np}{\sqrt{npq}}) - \Phi(\frac{\frac{9n}{20} -1  - np}{\sqrt{npq}}) 
+}
+\mab{ = \Phi(\frac{\frac{11n}{20} - n\frac{1}{2}}{\sqrt{n\frac{1}{2}\frac{1}{2}}}) - \Phi(\frac{\frac{9n}{20} -1  - n\frac{1}{2}}{\sqrt{n\frac{1}{2}\frac{1}{2}}})
+= \Phi(\frac{\frac{11n}{20} - n\frac{1}{2}}{\sqrt{n\frac{1}{2}\frac{1}{2}}}) - \Phi(\frac{\frac{9n}{20} -1  - n\frac{1}{2}}{\sqrt{n\frac{1}{2}\frac{1}{2}}})
+}
+\end{document}

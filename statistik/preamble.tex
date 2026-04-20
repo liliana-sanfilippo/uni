@@ -1,0 +1,342 @@
+
+
+
+
+
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+
+
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+
+
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+
+%\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[symbol]{footmisc}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+% BOXES 
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\tcbset{blue box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=accdarklight,
+    coltitle=white, colbacktitle=accdark,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west) {};
+        
+      }
+    }
+  }
+}
+\newtcolorbox{mybox}[1][]{blue box, #1}
+
+
+
+
+
+% COLORS
+
+\usepackage{xcolor}
+\definecolor{accdark}{HTML}{102542}
+\definecolor{accdarklight}{HTML}{204983}
+\definecolor{acclight}{HTML}{FFCB77}
+\definecolor{bck}{HTML}{fcfffc}
+\definecolor{urgent}{HTML}{A02C3C}
+\definecolor{colorthree}{HTML}{107E7D}
+\definecolor{colorfour}{HTML}{105260}
+\definecolor{myred}{HTML}{af5655}
+\definecolor{mygreen}{HTML}{377771}
+\definecolor{myblue}{HTML}{164254}
+\definecolor{myyellow}{HTML}{D5BF86}
+\definecolor{mygray}{HTML}{8AA1B1}
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{bckdarker}{HTML}{dfeedf}
+\definecolor{urgentlight}{HTML}{CF4F60}
+\definecolor{colortwo}{HTML}{3AB09E}
+\definecolor{codebg}{HTML}{1f1f1f}
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+%%
+\definecolor{grays}{HTML}{4F646F}
+\definecolor{blush}{HTML}{EA638C}
+\definecolor{reds}{HTML}{7D1D3F}
+\definecolor{ash}{HTML}{AEB4A9}
+\definecolor{blues}{HTML}{2C4251}
+\definecolor{purp}{HTML}{850F78}
+\definecolor{orang}{HTML}{F59121}
+\definecolor{yello}{HTML}{fae99e}
+
+% Glossary 
+
+\newglossary*{dinge}{Was ist was?}
+\glsaddkey
+ {formB}
+ {}
+ {\glsentryB}
+ {\GlsentryB}
+ {\glsB}
+ {\GlsB}
+ {\GLSB}
+ \glsaddkey
+ {formF}
+ {}
+ {\glsentryF}
+ {\GlsentryF}
+ {\glsF}
+ {\GlsF}
+ {\GLSF}
+ 
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbole und Begriffe} % create add. symbolslist
+
+\glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
+\glsaddkey{verb}{\glsentrytext{\glslabel}}{\glsentryverb}{\GLsentryverb}{\glsverb}{\Glsverb}{\GLSverb}
+
+
+
+
+
+\newcommand{\charfunc}[1]{\glsentrytext{charfunc} mit $A = #1$, also $\chi_{#1}$}
+
+
+
+\newcommand{\mapsfrom}{\mathrel{\style{display:inline-block; transform:scale(-1,1);}{\mapsto}}}
+\newcommand{\X}{$X$}
+\usepackage{amsthm}
+%\theoremstyle{definition}
+\newtheoremstyle{mytheoremstyle} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {}                   % Body font
+    {}                           % Indent amount
+    {\bfseries}                   % Theorem head font
+    {}                          % Punctuation after theorem head
+    {1.5em}                       % Space after theorem head
+    {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
+
+
+\theoremstyle{mytheoremstyle}
+\newtheorem{test}{Test}[section]
+\newtheorem{bsp}[test]{Beispiel}
+\newtheorem{info}[test]{Zusatzinformation}
+\newtheorem{reg}[test]{Regel}
+\newtheorem{kor}[test]{Korollar}
+\newtheorem{satz}[test]{Satz}
+\tcolorboxenvironment{satz}{
+  colback=white,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{lem}[test]{Lemma}
+\tcolorboxenvironment{lem}{
+  colback=white,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{defi}[test]{Definition}
+\tcolorboxenvironment{defi}{
+  colback=white,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{fr}[test]{Frage}
+\newtheorem{beo}[test]{Beobachtung}
+\tcolorboxenvironment{bsp}{
+  colback=white,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{prinz}[test]{Prinzip}
+\newtheorem{bem}[test]{Bemerkung}
+\tcolorboxenvironment{bem}{
+  colback=gray!10,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{anmerkung}{Anmerkung}[]
+\newtheorem{folg}[test]{Folgerung}
+\newtheorem{erg}[test]{Ergänzung}
+\tcolorboxenvironment{erg}{
+  colback=yellow!5,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{er}[test]{Erinnerung}
+\tcolorboxenvironment{er}{
+  colback=blue!10,
+  colframe=ash,
+  boxrule=0.8pt,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=1mm,
+  right=1mm,
+  enhanced,
+  breakable,
+  parbox=false
+}
+\newtheorem{prob}[test]{Problem}
+\newtheorem{eig}[test]{Eigenschaften}
+\newcommand{\anm}[2]{
+\color{Blue} \noindent
+\begin{anmerkung}  \textit{zu "#1"}  \newline
+#2
+\end{anmerkung} \color{black}
+}
+
+\newcommand{\regel}[2]{
+\begin{reg} \textbf{#1}  \newline
+#2
+\end{reg}
+}
+\newcommand{\prin}[2]{
+\begin{prinz} \textbf{#1}  \newline
+#2
+\end{prinz}
+}
+\newcommand{\rsp}[3]{
+\noindent \textbf{#1} \pageref{rsp:#2}  
+
+\noindent #3 
+
+}
+\newcommand{\txc}[1]{
+\textcolor{Blue}{#1}
+}
+\newcommand{\txo}[1]{
+\textcolor{Orange}{#1}
+}
+
+\newcommand{\p}[0]{\mathbb{P}}
+\newcommand{\za}[1]{\mathbb{Z} / #1 \mathbb{Z}}
+\newcommand{\zat}[0]{\mathbb{Z} / m \mathbb{Z}}
+\newcommand{\zatx}[1]{\mathbb{Z} / #1 \mathbb{Z}[x]}
+\usepackage[onehalfspacing]{setspace} 
+\renewcommand{\thefootnote}{\roman{footnote}}
+\newcommand{\limnin}[0]{\lim_{n \rightarrow \infty}}
+\newcommand{\intab}[0]{\int_a^b}
+\newcommand{\dx}[0]{\,dx}
+\newcommand{\sumEN}[0]{\sum_{i=1}^n}
+
+\newcommand{\explainvkr}[0]{\footnote{$v$: Anzahl der Elemente in der Menge $X$} \footnote{$k$: Anzahl der Elemente pro Block} \footnote{$r$: in wie vielen Blöcken ein Element vorkommen soll}}
+\newcommand{\explainvkrb}[0]{\explainvkr \footnote{$b$: Anzahl der Blöcke im Design}}
+\newcommand{\explaindesign}[0]{\footnote{$\mathcal{B}, \mathcal{C}, ...$: damit sind Designs gemeint}}
+\newcommand{\explainrs}[0]{\footnote{$r_s, r_t, ...$: t bzw. s ist die Größe der Teilmengen von X, die gleich oft in allen $r_t$ Blöcken eines $t$-Designs vorkommen soll}}
+
+\usepackage{todonotes}
+\newcommand{\bluenote}[1]{\todo[inline, inlinewidth=0.9\linewidth, bordercolor=Blue, backgroundcolor=white]{\textcolor{Blue}{#1}}}
+\newcommand{\orangenote}[1]{\todo[inline, inlinewidth=0.9\linewidth, bordercolor=Orange, backgroundcolor=white]{\textcolor{Orange}{#1}} }
+%\ifvmode\leavevmode\fi
+
+\newcommand{\kl}[1]{\{ #1 \}}
+\newcommand{\txt}[1]{\quad \text{#1}}
+\newcommand{\faoio}[0]{ \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum} }
+\newcommand{\oio}[0]{\glsunit{elementarereignis} \in \glsunit{eraum}}
+\newcommand{\wraum}[0]{\glsunit{wraum}}
+\newcommand{\oub}[2]{\txo{
+     \underbrace{
+     \textcolor{black}{#1}
+     }_{#2}
+     }}
+\newcommand{\bub}[2]{\txc{
+\underbrace{
+\textcolor{black}{#1}
+}_{#2}
+}}
+\newcommand{\oob}[2]{\txo{
+\overbrace{
+\textcolor{black}{#1}
+}^{#2}
+}}
+\newcommand{\ma}[1]{\(#1\)}
+\newcommand{\mab}[1]{\[#1\]}
+\newcommand{\E}[1]{\mathbb{E}[#1]}
+\newcommand{\dichte}[0]{\Gls{dichte} \index{Dichte}}
+
+\newglossarystyle{symbunitlong}{%
+\setglossarystyle{long3col}% base this style on the list style
+\renewenvironment{theglossary}{% Change the table type --> 3 columns
+  \begin{longtable}{lp{1\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
+  {\end{longtable}}%
+%
+\renewcommand*{\glossaryheader}{%  Change the table header
+  \bfseries Gegenstand & \bfseries Beschreibung & \bfseries Symbol \\
+  \hline
+  \endhead}
+\renewcommand*{\glossentry}[2]{%  Change the displayed items
+\glstarget{##1}{\glossentryname{##1}} %
+& \glossentrydesc{##1}% Description
+& \glsunit{##1}  \tabularnewline
+}
+}
+
+\newcommand{\pe}[0]{\glsunit{wmaß}}
+\newcommand{\bernoulli}[0]{\Gls{bernoulli} \index{Bernoulli-Experiment}}
+\newcommand{\binomv}[0]{\Gls{binomv} \index{Binomialverteilung}}
+\newcommand{\ele}[0]{\glsunit{elementarereignis}}
+\newcommand{\eraum}[0]{\glsunit{eraum}}
+\newcommand{\zv}[0]{\Gls{zv}}

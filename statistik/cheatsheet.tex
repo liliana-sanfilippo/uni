@@ -1,0 +1,37 @@
+\documentclass[9pt]{article} %210 mm × 297 mm
+\input{preamble}
+\begin{document}
+\tableofcontents
+\newpage
+
+\subsection{Bedingte Wahrscheinlichkeiten}
+\begin{equation}
+    \pe(A = a \mid B = b) = \frac{\pe(A = a, B = b)}{\pe(B= b)}
+\end{equation}
+\subsection{Verteilungen}
+\subsubsection{Verteilungsfunktion berechnen}
+Die Verteilungsfunktion ist generell:
+\begin{equation}
+    F_X(x) = \pe(X \leq x) = \pe_X((-\infty, x]) \quad \forall x \in \mathbb{R}
+\end{equation}
+\subsubsection{Randverteilungen berechnen gegeben $\mu_{X,Y}(x,y)$}
+\begin{equation}
+    \mu_X(x) = \sum^{Anzahl\ x}_{y=0} \mu_{X,Y}(x,y)
+\end{equation}
+Auch: Die Zeilen- bzw. Spaltensummen einer verteilungstabelle. 
+
+\subsection{Unabhängigkeit}
+\subsubsection{Unabhängigkeit von ZV beweisen gegeben $\mu_{X,Y}(x,y)$}
+Zeige, dass
+\begin{equation}
+    \pe(X=x, Y=y) = \pe(X=x) \cdot \pe(Y=y) \quad \forall x,y 
+\end{equation}
+bzw. 
+\begin{equation}
+    \mu_{X,Y}(x,y) = \mu_{X}(x) \cdot \mu_{Y}(y) \quad \forall x,y 
+\end{equation}
+
+
+\subsubsection{Unabhängigkeit widerlegen}
+
+\end{document}

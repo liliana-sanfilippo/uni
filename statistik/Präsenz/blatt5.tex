@@ -1,0 +1,138 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Präsenzübungsblatt 5; Statistik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\dat}{\textbf{Tut 13.05.2025}}
+\newcommand{\p}[0]{\mathbb{P}}
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\small\dat}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 5.1}
+\[
+X(\omega) = 
+\begin{cases}
+0, \quad wenn\  \omega  =B \\
+1, \quad wenn\  \omega  =B\ oder\ \omega = C
+\end{cases}, \quad 
+Y(\omega) = 
+\begin{cases}
+1, \quad wenn\  \omega  =B \\
+0, \quad wenn\  \omega  =B\ oder\ \omega = C
+\end{cases}
+\]
+\subsection*{(a)}
+Man muss benutzen, dass es gleichverteilt ist, also $\mathbb{P}(X=0) = \frac{1}{3}$ 
+\begin{table}[H]
+    \centering
+   \begin{tabular}{c|cc}
+   $\mu_{x,y}$ & X= 0 & X=1 \\
+    Y = 0 & 0 & $\frac{2}{3}$\\
+    Y =1 & $\frac{1}{3}$ & 0
+\end{tabular}
+\end{table}
+\caption{Plausibilitätscheck: Wenn wir alle Zellen summieren, sollte 1 raus kommen }
+\begin{align*}
+    \p(X=0, Y=0) &  = \p(\underbrace{X^{-1} (0)}_{=\{\omega \in \Omega: X \in (\omega) = 0\}} \cap Y ^{-1} (0))   \\
+    & = \p (\{A\} \cap \{B,C\}) \\
+    & = \p(\emptyset) = 0 \\ \\
+    \p(X=1, Y = 0) & = \p (X^{-1}(1) \cap Y^{-1}(0) \\
+    & = \p(\{B,C\} \cap \{B,C\})  \\
+    & = \p(\{B,C\}) \\
+    & = \mu(B) + \mu (C) = \frac{2}{3}
+\end{align*}
+\subsection*{(b)}
+Randverteilung $\mu_X$ = Verteilung von $X$
+\[
+\mu_X : \{0,1\} \rightarrow [0,1]
+\]
+\[
+\Omega \overset{X}{\rightarrow} \{0,1\} \overset{\mu_X}{\rightarrow} [0,1]
+\]
+\begin{align*}
+    \mu_X(0) & = \frac{1}{3} \\
+    & = \p(x=0) \\
+    & = \mu_X(0) = \mu_{X,Y} ((0,0)) + \mu_{X,Y}((0,1)) \\
+    & = 0+\frac{1}{3} \\
+    & =\p (X=0, X=0) + \p (X=0, Y=1) \\
+    & = \sum_{\substack{\omega \in \{0,1\}^2 \\ \omega_1 = 0}}  \mu_{X,Y}(\omega) \\ \\
+\end{align*}
+\begin{align*}
+      \mu_X(1) & = \frac{2}{3} + 0 \\
+    & = \frac{2}{3} \\ \\
+    \mu_X(0) & = \sum_{ \substack{ \omega \in \{A,B,C\}\\ X\omega = 0}}  \mu
+\end{align*}
+\subsection*{(c)}
+Verteilungfunktion von $X$. 
+\[
+F_x: \mathbb{R} \rightarrow [0,1]
+\] 
+\[
+F_x(s) = \{x \leq s \} = \begin{cases}
+0  & , s < 0 \\
+\p(X=0) = \frac{1}{3} & , 0 \leq s < 1 \\
+\p(x\leq1)^*=1& , 1 \leq s
+\end{cases}
+\]
+\[
+* \p(x\leq1) = \p(x=0\ oder\ x =1)
+\]
+
+\section*{Besprechung 3.1}
+b) 
+\[
+
+\]
+\end{document}

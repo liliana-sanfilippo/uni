@@ -1,0 +1,164 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable} 
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 1; Statistik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\dat}{\textbf{Abgabe 18.04.2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO]{\small\dat}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 1.1}
+\subsection{a)}
+\[
+\Omega = \{1, ... , 1000\}
+\]
+Dabei beudetet $\omega = k$, dass das Buch mit der Nummer $k$ herausgezogen wurde. 
+\[
+\mu: \Omega \rightarrow [0,1], \quad \mu(\omega) = \frac{1}{1000} = \frac{1}{|\Omega|} \quad \forall \omega \in \Omega
+\]
+In unserem Modell wird zufällig ein Buch herausgezogen, daher gehen wir von einer Gleichverteilung aus und vernachlässigen reale Faktoren wie Erreichbarkeit der Bücher. Daher kann man $\mu$ so wählen. \\
+Also: 
+\[
+(\Omega, \mu) \quad \text{mit} \quad \Omega = \{1, ... , 1000\} \quad \text{und} \quad \mu: \Omega \rightarrow [0,1], \quad \mu(\omega) = \frac{1}{1000} \quad \forall \omega \in \Omega
+\]
+\subsection{b)}
+\[
+A, B \subset \Omega; \quad A = \{667\}, \quad |A| = 1; \quad B = \{k \in \Omega \mid k \neq 667 \quad \forall k \in \{1, ..., 1000\}\}, \quad |B| = 999
+\]
+\begin{align*}
+    \mathbb{P}(A) & = \mu(667) = \frac{1}{1000} \\
+    \mathbb{P}(B) & = \sum_{\omega \in B} \mu(\omega) = \frac{|B|}{1000} = \frac{999}{1000}
+\end{align*}
+\section{Aufgabe 1.2}
+\subsection{a)}
+\[
+\Omega = \{(a,b,c) \mid a,b,c \in \{0,1,2,3\}\}
+\]
+Dabei beudetet $\omega = (x,y,z)$, dass das Glücksrad zuerst auf dem Bereich $x$, dann auf dem Bereich $y$ und zuletzt auf dem Bereich $z$ gelandet ist.  
+\subsection{b)}
+\[
+\mu: \Omega \rightarrow [0,1], \quad \mu(\omega) = \frac{1}{64} = \frac{1}{|\Omega|} \quad \forall \omega \in \Omega
+\]
+Das Glücksrad hat vier gleich große Flächen und ist somit fair und man kann von einer Gleichverteilung ausgehen. 
+\subsection{c)}
+$A, B, C \subset \Omega$ mit: 
+\begin{align*}
+    A & =   \{(x,y,z) \in \Omega \mid y = 3 \quad \forall x,z \in \{0,1,2,3\}\}\\
+    B &  = \{(x,y,z) \in \Omega \mid max(x,y,z) = 1 \land ((x=y) \neq z \lor (y=z) \neq x \lor (x=z) \neq y) \quad\forall x,y,z \in \{0,1,2,3\}\} \\
+    C & = \{(x,y,z) \in \Omega \mid x < y < z \quad\forall x,y,z \in \{0,1,2,3\}\}\}
+\end{align*}
+\subsection{d)}
+\begin{align*}
+    \mathbb{P}(A) & = \sum_{\omega \in A} \mu(\omega) = \frac{|A|}{64} = \frac{16}{64}\\
+    \mathbb{P}(B) & = \sum_{\omega \in B} \mu(\omega) = \frac{|B|}{64} = \frac{6}{64} \\
+    \mathbb{P}(C) & = \sum_{\omega \in C} \mu(\omega) = \frac{|C|}{64} = \frac{4}{64}
+\end{align*}
+Begründung: 
+\subsubsection{$|A| = 16$}
+Es gibt 4 Möglichkeiten für $x$, nur eine für $y$ und wieder 4 für $z$:
+\[
+4 \cdot 1 \cdot 4 = 16
+\]
+\subsubsection{$|B| = 6$}
+Damit $max(x,y,z) = 1$ muss gelten: $x,y,z \in \{0,1\}$
+\begin{itemize}
+        \item Fall $x = y$: \{(0,0,1),(1,1,0)\}
+        \item Fall $y = z$: \{(1,0,0),(0,1,1)\}
+        \item Fall $x = z$: \{(0,1,0),(1,0,1)\}
+\end{itemize}
+\subsubsection{$|C| = 4$}
+\begin{itemize}
+    \item Fall $x = 1$: $\{(1,2,3)\}$
+    \item Fall $x = 0$: $\{(0,1,2), (0,2,3), (0,1,3)\}$
+\end{itemize}
+
+\section{Aufgabe 1.3}
+\subsection{a)}
+\[
+\Omega = \{\{a,b\} \mid a \neq b \in \{1,..,9\}\}
+\]
+Dabei bedeutet $\omega = \{a,b\}$, dass gleichzeitig die Zahlen $a$ und $b$ gedrückt werden. \\ Unter der Annahme, dass jede Zahl immer die gleiche Chance hat gedrückt zu werden: 
+\[
+\mu: \Omega \rightarrow [0,1], \quad \mu(\omega) = \frac{2}{9 \cdot 8} = \frac{2}{72} = \frac{1}{36}
+\]
+$9 \cdot 8$, da es für die erste Zahl 9 Möglichkeiten gibt und für die zweite nur noch 8, da keine Zahl zweifach gedrückt werden kann. \\
+Die Reihenfolge der Zahlen ist egal, daher ist es auch eine Menge und kein Tupel. 72 ist jedoch die Anzahl der Möglichkeiten, wenn man die Reihenfoge betrachtet und so wird jede 2er-Menge doppelt gezählt. Man muss das ganze also durch zwei teilen, um die Wahrscheinlichkeit für einen 2er-Menge zu bekommen. 
+\subsection{b)}
+\[
+A \subset \Omega = \{\{a,b\} \mid a \neq b \text{ korrekt}\}
+\]
+\subsection{c)}
+\[
+\mathbb{P}(A) = \frac{1}{36}
+\]
+\subsection{d)}
+Man könnte argumentieren, dass das Klemmen oder Fehlen einer Taste die Wahrscheinlichkeiten des richtigen Treffens nicht verändert, da es schlicht um das Treffen der korrekten Kombination geht und nicht darum, ob man die Tür beim ersten Versuch öffnen kann. \\ 
+Realistischer ist es jedoch, dass die 3 nicht Teil des Codes ist, da das Schloss noch in Benutzung ist und die 3 somit nicht relevant zu sein scheint und man sie nicht mehr benutzen kann. Also kann man es als ein Tastenfeld mit 8 Zahlen betrachten und daraus ergibt sich:  
+\[
+\Omega' = \{\{a,b\} \mid a \neq b \in \{1,2,4,5,6,7,8,9\}\}
+\]
+\[
+\mu': \Omega' \rightarrow [0,1], \quad \mu(\omega') = \frac{2}{8 \cdot 7} = \frac{2}{56} = \frac{1}{28}
+\]
+Und 
+\[
+A' \subset \Omega = \{\{a,b\} \mid a \neq b \text{ korrekt}\}
+\]
+\[
+\mathbb{P}(A') = \frac{1}{28}
+\]
+Wäre die 3 aus unerfindlichen Gründen doch Teil des Codes und es wurde einfach aufgegeben die Tür zu benutzen, wäre es natürlich unmöglich die richtige Zahlenkombination beim ersten Versuch oder überhaupt zu treffen. Das ist jedoch unrealistisch, da man das Schloss sonst ausgetauscht hätte.
+\end{document}
