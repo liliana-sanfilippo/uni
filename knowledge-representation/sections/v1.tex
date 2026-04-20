@@ -1,28 +1,133 @@
-\section{History}
+\section{Introduction}\label{sec:introduction}
+
+\subsection*{What is Knowledge Representation?}
+\defin{kr}
+
+The core problem with KR is that the real world with its complexity, ambiguity and dynamism can never be fully represented in a computer-based system.
+Nevertheless, intelligent systems must be able to function effectively using partial, incomplete and sometimes contradictory information.
+
+\subsection*{Why is Knowledge Representation needed?}
+
+\subsubsection*{The problem of data meaninglessness}
+To understand the need for KR, let’s consider a practical scenario:
+A student database.
+
+A hypothetical database contains the following entries:
+
+\begin{table}[H]
+    \begin{tabular}{ccccc}
+        \textbf{Name} & \textbf{Major} & \textbf{CGPA} & \textbf{Research}   & \ldots \\
+        Alice Smith   & CS             & 3.8           & Genomics            & \ldots \\
+        Bob John      & Biology        & 3.8           & Oncology            & \ldots \\
+        Carol Li      & Zoology        & 3.7           & Animal colonisation & \ldots
+    \end{tabular}
+    \label{tab:first-example}
+\end{table}
+
+Without knowledge representation, this data is disjointed.
+The entries exist in isolation across thousands of files.
+A database query system can only perform exact keyword matches:
+
+\begin{itemize}
+    \item Query 1: ``Show me all AI researchers'' → No results (not explicitly mentioned in the data)
+    \item Query 2: ``Which students could work on this patent?'' → No answer possible
+    \item Query 3: `´What are the emerging trends?'' → No analysis possible
+\end{itemize}
+
+Data is meaningless without context and relationships.
+It does not allow for intelligent reasoning or deeper analysis.
+
+\subsection*{What knowledge representation makes possible}
+
+With knowledge representation, we can structure the data and transfer isolated records into interconnected,
+queryable knowledge using:
+\begin{itemize}
+    \item \glspl{ontology}: Explicitly specify which concepts exist (student, researcher, field of research)
+    and how they are categorised.
+    \item Knowledge graphs: Link entities together: Alice → researcher → AI
+\end{itemize}
+
+This allows for:
+
+\begin{itemize}
+    \item Semantic search
+    \begin{itemize}
+        \item ``Find students researching machine learning?''
+        \item ``Show me all AI researchers'': The system can use transitive relationships to find relevant students.
+        \item ``Which students are a good fit for this patent?'': The system can match skills and areas of interest.
+    \end{itemize}
+    \item Automatic relationship discovery
+    \begin{itemize}
+        \item ``What are emerging research trends?''
+        \item Recognising patterns across all data
+        \item Identifying emerging trends through interconnected information
+    \end{itemize}
+    \item Reasoning across all connection
+\end{itemize}
+
+\begin{table}[H]
+    \begin{tabular}{p{5cm}p{5cm}p{5cm}}
+        \Gls{data}      & \Gls{information}                                 & \Gls{knowledge}                   \\
+        Raw, unprocessed facts & Structured and contextualised data & Information combined with experience and
+        reasoning rules \\
+        e.g.\ CGPA: 3.8 & e.g.\ Alice has a CGPA of 3.8 in Computer Science & e.g.\ Alice could work on this AI
+        patent because she has a strong foundation in computer science and is interested in genomics
+    \end{tabular}
+    \caption{Data vs. Information vs. Knowledge }\label{tab:data-information-knowledge}
+\end{table}
+
+KR enables machines to make informed decisions with fewer rules.
+
+\subsection*{KR Perspective}
+
+\subsection*{Representation Schemes}
+
+\subsection*{Challenges in Knowledge Representation}
+
+\paragraph{Traditional ML} systems follow a black-box approach which means the decision-making process is not transparent and the reasoning behind predictions is not accessible.
+
+\begin{itemize}
+    \item Generalisation: Requires continuous retraining with new data
+    \item Explainability: Difficult or impossible to explain decisions
+    \item Data flexibility: Highly dependent on large amounts of training data
+\end{itemize}
+
+\paragraph{Knowledge-Based AI} utilises structured, \gls{explicit knowledge}.
+
+\defin{explicit knowledge}
+
+\begin{itemize}
+    \item Generalization: explicit knowledge transfers to new problems without retraining
+    from scratch (Hogan et al. 2021)
+    \item Explainability: encoded knowledge enables transparent reasoning and human-understandable decisions (Cao et
+    al. 2024)
+    \item Data flexibility: Modifiable
+\end{itemize}
+
+\subsection*{Representation Schemes}
+\defin{representation scheme}
 
 
-\section{Taxonomy o...}
-
-\cite{folien1}
+\section{Taxonomy of Representation Schemes}\label{sec:taxonomy-of-representation-schemes}~\cite{folien1}
 
 
-\section{Distinguish...}
+\section{Distinguishing Features of KR Systems}\label{sec:distinguishing-features-of-kr-systems}
 
 Defis:
 Frame, Inference,
 
-kinds of reasonings
-inference types (23+) David, Shrobe and Szolovist \cite{whatIsKr}
+kinds of reasoning
+inference types (23+) David, Shrobe and Szolovist
 
 Wie man mit Incompleteness umgeht
 
 
-\section{Applications}
+\section{Applications of Knowledge Representation}\label{sec:applications-of-knowledge-representation}
 
 Enterprise Knowledge Management
 
 
-\section{Future Directions}
+\section{Future Directions}\label{sec:future-directions}
 
 Multi-hop reasoning
 Unified framework
@@ -32,7 +137,7 @@ knowledge Aggregation
 def attention weight
 
 
-\section{Course structure}
+\section{Course structure}\label{sec:course-structure}
 
 foundation of KR
 
@@ -44,11 +149,11 @@ grading:
 
 50\% of the exercise points (full portfolio) (Abgabe in 3er Gruppen(?))
 present one exercise in tut
-present one paper in seminar 40-45 min (3er gruppen)
-final report 5-10 pages (50\% marks on final report)
+present one paper in seminar 40--45 min (3er gruppen)
+final report 5-.10 pages (50\% marks on final report)
 
 
 Es wird ein Moodle geben
 
 
-\section{Formalities}
+\section{Formalities}\label{sec:formalities}
