@@ -1,0 +1,41 @@
+\documentclass{book}
+\input{../preamble/packages}
+\input{../preamble/colors}
+\input{../preamble/theorems}
+\input{../preamble/glossarydefs}
+\input{../preamble/commands}
+
+%% BIBTEX
+
+\usepackage{biblatex}
+\addbibresource{bib.bib}
+
+\title{Knowledge Representation}
+\author{lsanfilippo}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\part{Foundation of KR}
+\chapter{Introduction}
+\input{sections/v1}
+
+
+\backmatter
+\pagenumbering{roman}
+\chapter{Backmatter}
+
+\addcontentsline{toc}{section}{Figures}
+\listoffigures
+
+\addcontentsline{toc}{section}{Index}
+\printindex
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+\end{document}

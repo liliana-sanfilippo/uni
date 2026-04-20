@@ -1,0 +1,30 @@
+
+\usepackage{amsthm}
+\newtheoremstyle{mytheoremstyle} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {}                   % Body font
+    {}                           % Indent amount
+    {\bfseries}                   % Theorem head font
+    {}                          % Punctuation after theorem head
+    {1.5em}                       % Space after theorem head
+    {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
+\theoremstyle{mytheoremstyle}
+
+\newtheorem{bsp}{Beispiel}[section]
+
+%\newtheorem{formel}[defi]{Definition}
+%\newtheorem{gese}{Gesetz}[section]
+
+%% DEFINITION
+
+\newtheorem{defi}{Definition}[section]
+
+\newcommand{\defin}[1]{
+\begin{lavenderbox}{\textbf{\gls*{#1}}}
+\noindent
+\begin{defi}
+    \glsdesc*{#1}
+\end{defi}
+\end{lavenderbox}
+}
