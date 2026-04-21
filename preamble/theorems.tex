@@ -18,7 +18,7 @@
 }
 \newtcolorbox{mybox}[1][]{blue box, #1}
 
-\newtheorem{eig}[test]{Eigenschaften}
+\newtheorem{eig}{Eigenschaften}[chapter]
 \newcommand{\anm}[2]{
     \color{Blue} \noindent
     \begin{anmerkung}  \textit{zu "#1"}  \newline
@@ -162,10 +162,10 @@
 
 %% BEOBACHTUNG
 
-\newtheorem{beo}[test]{Beobachtung}
+\newtheorem{beo}{Beobachtung}[chapter]
 
-\newtheorem{prinz}[test]{Prinzip}
-\newtheorem{bem}[test]{Bemerkung}
+\newtheorem{prinz}{Prinzip}[chapter]
+\newtheorem{bem}{Bemerkung}[chapter]
 \tcolorboxenvironment{bem}{
     colback=gray!10,
     colframe=ash,
@@ -179,9 +179,9 @@
     breakable,
     parbox=false
 }
-\newtheorem{anmerkung}{Anmerkung}[]
-\newtheorem{folg}[test]{Folgerung}
-\newtheorem{erg}[test]{Ergänzung}
+\newtheorem{anmerkung}{Anmerkung}[chapter]
+\newtheorem{folg}{Folgerung}[chapter]
+\newtheorem{erg}{Ergänzung}[chapter]
 \tcolorboxenvironment{erg}{
     colback=yellow!5,
     colframe=ash,
@@ -195,7 +195,7 @@
     breakable,
     parbox=false
 }
-\newtheorem{er}[test]{Erinnerung}
+\newtheorem{er}{Erinnerung}[chapter]
 \tcolorboxenvironment{er}{
     colback=blue!10,
     colframe=ash,
