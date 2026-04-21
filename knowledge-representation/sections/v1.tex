@@ -33,7 +33,7 @@ To understand the need for KR, let’s consider a practical scenario:
     \begin{itemize}
         \item Query 1: ``Show me all AI researchers'' → No results (not explicitly mentioned in the data)
         \item Query 2: ``Which students could work on this patent?'' → No answer possible
-        \item Query 3: `´What are the emerging trends?'' → No analysis possible
+        \item Query 3: ``What are the emerging trends?'' → No analysis possible
     \end{itemize}
 }
 
@@ -121,10 +121,33 @@ KR enables machines to make informed decisions with fewer rules.
 }
 
 \subsection*{Challenges in Knowledge Representation}
-Every
+Knowledge representation involves designing formal structures that allow computers to store, interpret, and reason
+about information and every design decision has advantages and caveats.
 
+\paragraph{Choosing the representation} is one of the design challenges.
+\Glspl{semantic network} are intuitive and visually understandable but have limited inference. \Gls{first-order logic} on the other hand is
+expressive, but has computationally costly reasoning.
 
+\paragraph{Desired properties} can conflict.
+Systems should ideally be expressive enough to capture rich real-world knowledge while remaining efficient enough to reason in practical time.
+Tradeoffs are between expressiveness and tractability, and Human readability and machine efficiency.
 
+\paragraph{Application-driven constraints} arise from, different domains requiring different forms of representation.
+E.g.\ In natural language processing (NLP), systems must handle ambiguity and context.
+In medical diagnosis, representations must manage uncertainty, causal relationships, and strict correctness
+requirements.
+In question answering, systems need fast retrieval combined with reasoning over large amounts of structured and unstructured data
+
+\paragraph{The core idea of Knowledge Representation} is not just a data structure.
+It plays multiple roles
+simultaneously and those roles can conflict with each other: 
+\begin{itemize}
+    \item Surrogate for the world: Acts as a substitute for real world objects and relationships
+    \item Ontological commitments: Defines what exists and how things are categorized
+    \item Theory of reasoning: Provides foundation for logical inference and deduction
+    \item Medium for efficient computation: Enables performant computational processing
+    \item Medium of Human expression: Allows humans to express knowledge in understandable ways
+\end{itemize}
 
 \section{Taxonomy of Representation Schemes}\label{sec:taxonomy-of-representation-schemes}~\cite{folien1}
 
