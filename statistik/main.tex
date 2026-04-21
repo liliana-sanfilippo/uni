@@ -41,80 +41,81 @@
 
     \subsubsection*{Begriffe}
     \begin{itemize}
-        \item \Gls{elementarereignis}: \glsunit{elementarereignis}: Möglicher Ausgang eines Zufallsexperiments
+        \item \Gls{elementarereignis}: \glssymbol{elementarereignis}: Möglicher Ausgang eines Zufallsexperiments
         \begin{itemize}
-            \item Würfeln: $\glsunit{elementarereignis} = 3$ (3 gewürfelt)
-            \item Zeitmessung: $\glsunit{elementarereignis} = 100$ (Sec)
+            \item Würfeln: $\glssymbol{elementarereignis} = 3$ (3 gewürfelt)
+            \item Zeitmessung: $\glssymbol{elementarereignis} = 100$ (Sec)
         \end{itemize}
-        \item \Gls{eraum} $\glsunit{eraum}$ : Menge aller Elementarereignisse $\glsunit{eraum}  \neq \emptyset$ \begin{itemize}
-                                                                                                                    \item \textbf{Wuerfeln:}  $\glsunit{eraum}  = \{1,\dots.,6\}$ oder $\glsunit{eraum}  = \{ wuerfelsymbole \}$
-                                                                                                                    \item \textbf{Zeitmessung:} $\glsunit{eraum}  = [0, \infty)$ \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht (oder umgekehrt)}
+        \item \Gls{eraum} $\glssymbol{eraum}$ : Menge aller Elementarereignisse $\glssymbol{eraum}  \neq \emptyset$ \begin{itemize}
+                                                                                                                    \item \textbf{Wuerfeln:}  $\glssymbol{eraum}  = \{1,\dots.,6\}$ oder $\glssymbol{eraum}  = \{ wuerfelsymbole \}$
+                                                                                                                    \item \textbf{Zeitmessung:} $\glssymbol{eraum}  = [0, \infty)$ \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht (oder umgekehrt)}
         \end{itemize}
-        \item Ereignis $A$: Teilmenge des Ereignisraums $A \subseteq \glsunit{eraum}  $($A = \emptyset, A = \glsunit{eraum} )$ aind zulässig) \\
-        Sprechweise: $\glsunit{elementarereignis} \in A$ bedeutet "A ist eingetroffen"
+        \item Ereignis $A$: Teilmenge des Ereignisraums $A \subseteq \glssymbol{eraum}  $(
+        $A = \emptyset, A = \glssymbol{eraum} )$ sind zulässig) \\
+        Sprechweise: $\glssymbol{elementarereignis} \in A$ bedeutet ``A ist eingetroffen''
         \begin{itemize}
-            \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \glsunit{elementarereignis} = 4 \Rightarrow \glsunit{elementarereignis} \in A\] Wir sagen: "gerade Zahl gewürfelt"
-            \item \textbf{Zeitmessung:} $A = [100, 200] \subset \glsunit{eraum}  = [0,\infty)$
+            \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \glssymbol{elementarereignis} = 4 \Rightarrow \glssymbol{elementarereignis} \in A\] Wir sagen: ``gerade Zahl gewürfelt''
+            \item \textbf{Zeitmessung:} $A = [100, 200] \subset \glssymbol{eraum}  = [0,\infty)$
         \end{itemize}
     \end{itemize}
 
     \subsubsection*{Vorgehen beim Modellieren}
-    \bluenote{Beim geeigneten $\glsunit{eraum} $ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann "k", "z" nahmen oder "Kopf", "Zahl". Das sind verschiedenen $\glsunit{eraum} $, aber beide wären passend.}
+    \bluenote{Beim geeigneten $\glssymbol{eraum} $ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann ``k'', ``z'' nahmen oder ``Kopf'', ``Zahl''. Das sind verschiedenen $\glssymbol{eraum} $, aber beide wären passend.}
     \begin{itemize}
-        \item Finden des geeigneten $\glsunit{eraum} $
+        \item Finden des geeigneten $\glssymbol{eraum} $
         \item Ereignisse müssen \gls{ws} zugeordnet bekommen
         \begin{enumerate}
-            \item \textbf{Möglichkeit}: \gls{ws} für $\glsunit{eraum} $ abzählbar
+            \item \textbf{Möglichkeit}: \gls{ws} für $\glssymbol{eraum} $ abzählbar
         \end{enumerate}
     \end{itemize} \vskip 14pt \orangenote{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
     \begin{defi}
         \textbf{Zähldichte / \acrfull{wfk}} \\
-        Sei $\glsunit{eraum}  \neq \emptyset$ eine abzählbare Menge.
+        Sei $\glssymbol{eraum}  \neq \emptyset$ eine abzählbare Menge.
         \begin{itemize}
-            \item[(i)] Eine Abbildung $\glsunit{wfk} : \glsunit{eraum}  \rightarrow [0,1]$ heißt mit \[
-                                                                                                         \underbrace{\sum_{\glsunit{elementarereignis} \in \glsunit{eraum} } \glsunit{wfk} (\glsunit{elementarereignis}) = 1}_{\text{\txo{Normierung}}}
-            \] \underline{Zähldichte / \gls{wfk}} auf $\glsunit{eraum} $. \\
+            \item[(i)] Eine Abbildung $\glssymbol{wfk} : \glssymbol{eraum}  \rightarrow [0,1]$ heißt mit \[
+                                                                                                         \underbrace{\sum_{\glssymbol{elementarereignis} \in \glssymbol{eraum} } \glssymbol{wfk} (\glssymbol{elementarereignis}) = 1}_{\text{\txo{Normierung}}}
+            \] \underline{Zähldichte / \gls{wfk}} auf $\glssymbol{eraum} $. \\
             \bluenote{Die Reihe (Normierung) muss 1 sein und konvergieren.} \bluenote{Wenn man max abzählbar hat, dann sind die Wahrscheinlichkeiten einfach teile der Summe (Normierung) und daher ist das einfach.}
-            \item[(ii)] Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \glsunit{eraum} $ ist bei gegebener \gls{wfk} $\glsunit{wfk}$ definiert durch
-            \[ \pe(A)\coloneqq \sum_{w \in A} \glsunit{wfk}(\glsunit{elementarereignis})\]   \bluenote{Was hat die Potenzmenge von Omega damit zu tun?}
+            \item[(ii)] Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \glssymbol{eraum} $ ist bei gegebener \gls{wfk} $\glssymbol{wfk}$ definiert durch
+            \[ \pe(A)\coloneqq \sum_{w \in A} \glssymbol{wfk}(\glssymbol{elementarereignis})\]   \bluenote{Was hat die Potenzmenge von Omega damit zu tun?}
             \noindent $\pe$ heißt \gls{wmaß} und liegt immer zwischen Null und 1
             \begin{itemize}
                 \item[] \textit{Konvention}: $\pe(\emptyset) = 0$
             \end{itemize}
         \end{itemize}
         \begin{bem}
-            \[0 \leq \pe \leq 1, \quad \forall A \subseteq \glsunit{eraum}  \quad \txo{\underbrace{(\forall A \in \glsunit{potenz}(\glsunit{eraum} )) }_{\glsunit{potenz}(\glsunit{eraum} ) \text{Potenzmenge von } \glsunit{eraum} }} \]
+            \[0 \leq \pe \leq 1, \quad \forall A \subseteq \glssymbol{eraum}  \quad \txo{\underbrace{(\forall A \in \glssymbol{potenz}(\glssymbol{eraum} )) }_{\glssymbol{potenz}(\glssymbol{eraum} ) \text{Potenzmenge von } \glssymbol{eraum} }} \]
             $\pe$ ist eine Abb.
             \[
-                \pe: \glsunit{potenz}(\glsunit{eraum} ) \rightarrow [0,1] \quad  \text{ mit }  \pe(\emptyset) = 0, \quad  \pe(\glsunit{eraum} ) = 1
+                \pe: \glssymbol{potenz}(\glssymbol{eraum} ) \rightarrow [0,1] \quad  \text{ mit }  \pe(\emptyset) = 0, \quad  \pe(\glssymbol{eraum} ) = 1
             \]
         \end{bem}
     \end{defi}
     \begin{defi}
         \textbf{\gls{wraum}} \\
-        $\underbrace{\glsunit{wraum}}_{\txo{(\glsunit{eraum} , \glsunit{wfk})}}$ heißt \underline{\gls{wraum}}.
+        $\underbrace{\glssymbol{wraum}}_{\txo{(\glssymbol{eraum} , \glssymbol{wfk})}}$ heißt \underline{\gls{wraum}}.
         \begin{bem}
-            Für $\glsunit{eraum} $ abzählbar: $\glsunit{wfk}$ legt $\pe$ eindeutig und umgekehrt!
-            \[P(A)=\sum_{\glsunit{elementarereignis} \in A} \glsunit{wfk} (\glsunit{elementarereignis}) \quad \forall A \in \glsunit{potenz}(\glsunit{eraum} )\]
-            \[\glsunit{wfk} (\glsunit{elementarereignis}) = \pe(\underbrace{\{\glsunit{elementarereignis}\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum} \]
+            Für $\glssymbol{eraum} $ abzählbar: $\glssymbol{wfk}$ legt $\pe$ eindeutig und umgekehrt!
+            \[P(A)=\sum_{\glssymbol{elementarereignis} \in A} \glssymbol{wfk} (\glssymbol{elementarereignis}) \quad \forall A \in \glssymbol{potenz}(\glssymbol{eraum} )\]
+            \[\glssymbol{wfk} (\glssymbol{elementarereignis}) = \pe(\underbrace{\{\glssymbol{elementarereignis}\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} \]
         \end{bem}
     \end{defi} %
     \begin{bsp}
         \textbf{Einmal Würfeln} \\
-        $\glsunit{eraum}  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
-        \textcolor{Orchid}{Dabei beudeute $\glsunit{elementarereignis} = k$, dass der Würfel $k$ Augen hat.} \bluenote{In Hausaufgaben zu jedem Omega hinzuschreiben, was es bedeutet! "Dabei beudeute $\glsunit{elementarereignis} = k$, dass \dots"}
-        Wie wählen wir $\glsunit{wfk}$?
+        $\glssymbol{eraum}  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
+        \textcolor{Orchid}{Dabei beudeute $\glssymbol{elementarereignis} = k$, dass der Würfel $k$ Augen hat.} \bluenote{In Hausaufgaben zu jedem Omega hinzuschreiben, was es bedeutet! ``Dabei beudeute $\glssymbol{elementarereignis} = k$, dass \dots''}
+        Wie wählen wir $\glssymbol{wfk}$?
         \begin{itemize}
-            \item[(a)] \textbf{fairer Würfel}: \bluenote{Ein ebener Würfel ist ein "fairer Würfel", weil alle Seiten gleich Wahrscheinlich sind.}
-            \[\glsunit{wfk}(k) = const \  \forall k \in \glsunit{eraum} \]
-            \[\glsunit{wfk} (k) \coloneqq \frac{1}{6} \text{(weil $\sum_{k=1} \glsunit{wfk} (k) \overset{!}{=} 1$ )}\]
-            $\pe(A) = \glsunit{wfk}(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \glsunit{wfk}(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
+            \item[(a)] \textbf{fairer Würfel}: \bluenote{Ein ebener Würfel ist ein ``fairer Würfel'', weil alle Seiten gleich Wahrscheinlich sind.}
+            \[\glssymbol{wfk}(k) = const \  \forall k \in \glssymbol{eraum} \]
+            \[\glssymbol{wfk} (k) \coloneqq \frac{1}{6} \text{(weil $\sum_{k=1} \glssymbol{wfk} (k) \overset{!}{=} 1$ )}\]
+            $\pe(A) = \glssymbol{wfk}(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \glssymbol{wfk}(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
             \item[(b)] \textbf{gezinkter Würfel}: Seien
-            \[\glsunit{wfk}(1) = \frac{1}{2}, \glsunit{wfk}(2) = \glsunit{wfk}(3) = \glsunit{wfk}(4) = \glsunit{wfk}(5) = \frac{1}{12}, \glsunit{wfk}(6)=\frac{1}{6}\]
-            Probe: $\sum_{k=1}^6 \glsunit{wfk}(k) \overset{!}{=} 1$ \bluenote{In der Klausur wenn bei einer Probe ein Fehler herauskommt, gerne hinschreiben man hat gemerkt da ist ein Fehler und wo der gewesen sein muss, besser als nichts hischreiben.}
+            \[\glssymbol{wfk}(1) = \frac{1}{2}, \glssymbol{wfk}(2) = \glssymbol{wfk}(3) = \glssymbol{wfk}(4) = \glssymbol{wfk}(5) = \frac{1}{12}, \glssymbol{wfk}(6)=\frac{1}{6}\]
+            Probe: $\sum_{k=1}^6 \glssymbol{wfk}(k) \overset{!}{=} 1$ \bluenote{In der Klausur wenn bei einer Probe ein Fehler herauskommt, gerne hinschreiben man hat gemerkt da ist ein Fehler und wo der gewesen sein muss, besser als nichts hischreiben.}
         \end{itemize}
     \end{bsp}
-    Wie wählen wir $\glsunit{eraum} $ und $\glsunit{wfk}$ (bzw. $\pe$)?
+    Wie wählen wir $\glssymbol{eraum} $ und $\glssymbol{wfk}$ (bzw. $\pe$)?
     \begin{itemize}
         \item Frage der Erfahrung
         \item wichtiges Thema und Lernziel dieses Semester
@@ -122,14 +123,14 @@
     \begin{bsp}
         \textbf{Zweimal würfeln mit fairem Würfel - Augensumme}
         \begin{enumerate}
-            \item \textbf{Ansatz}: $\glsunit{eraum} _1 = \{1,\dots,6\}^2 = \{(i,j): i,j \in \{1,\dots,6\}\}$  \\
-            \textcolor{Orchid}{ Für $\glsunit{elementarereignis} = (i,j) \in \glsunit{eraum} _1$ bedeutet $i$ die Augenzahl des ersten Würfels und $j$ jene des zweiten Würfels.} \\
-            Aus Symmetriegründen wählen wir $\glsunit{wfk}_1(\glsunit{elementarereignis})$ konstant, also  \[\glsunit{wfk}_1(\glsunit{elementarereignis}) = \frac{1}{|\glsunit{eraum} _1|} = \frac{1}{36} \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum} _1\]
-            \underline{ $A^{(1)}_k \leq \glsunit{eraum} _1$}: Augensumme ist $k$ \\
+            \item \textbf{Ansatz}: $\glssymbol{eraum} _1 = \{1,\dots,6\}^2 = \{(i,j): i,j \in \{1,\dots,6\}\}$  \\
+            \textcolor{Orchid}{ Für $\glssymbol{elementarereignis} = (i,j) \in \glssymbol{eraum} _1$ bedeutet $i$ die Augenzahl des ersten Würfels und $j$ jene des zweiten Würfels.} \\
+            Aus Symmetriegründen wählen wir $\glssymbol{wfk}_1(\glssymbol{elementarereignis})$ konstant, also  \[\glssymbol{wfk}_1(\glssymbol{elementarereignis}) = \frac{1}{|\glssymbol{eraum} _1|} = \frac{1}{36} \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} _1\]
+            \underline{ $A^{(1)}_k \leq \glssymbol{eraum} _1$}: Augensumme ist $k$ \\
             \underline{ Für $k \leq 1$ oder $k \leq 13$:} \[A^{(1)}_k = \emptyset \Rightarrow \pe_1 (A^{(1)}_k) = 0\]
             \underline{Für $k = \{2,,12\}$:}
-            \[\pe_1 (A^{(1)}_2) = \pe_1 (\{(1,1)\}) = \glsunit{wfk}_1((1,1)) = \frac{1}{36}\]
-            \[\pe_1 (A^{(1)}_3) = \pe_1 (\{(1,2), (2,1)\}) = \glsunit{wfk}_1((1,2)) + \glsunit{wfk}_1((2,1)) = \frac{2}{36}\]
+            \[\pe_1 (A^{(1)}_2) = \pe_1 (\{(1,1)\}) = \glssymbol{wfk}_1((1,1)) = \frac{1}{36}\]
+            \[\pe_1 (A^{(1)}_3) = \pe_1 (\{(1,2), (2,1)\}) = \glssymbol{wfk}_1((1,2)) + \glssymbol{wfk}_1((2,1)) = \frac{2}{36}\]
             usw\dots Es wird immer eines mehr \\
             \begin{tabular}{c|ccccccccccccc}
                 $k$                 & 2              & 3              & 4              & 5              & 6              & 7              & 8              & 9              & 10             & 11             & 12             \\
@@ -142,26 +143,26 @@
                 & $\frac{1}{36}$
             \end{tabular} \\
             Probe: \[\sum_{k=2}^{12} mathbb{P}_1 (A^{(1)}_k) = 1\]
-            \item \textbf{Ansatz}: "Wir beachten die Reihenfolge beim Würfeln nicht" \\
-            $\glsunit{eraum} _2 = \{(i,j) \in \glsunit{eraum} _1: i \leq j\}$ \\
-            \textcolor{Orchid}{ Dabei bedeute $\glsunit{elementarereignis} =(i,j)$, dass sowohl i alas auch j gewürfelt wurden. } \\
-            Finde $\glsunit{wfk}_2$! \\
+            \item \textbf{Ansatz}: ``Wir beachten die Reihenfolge beim Würfeln nicht'' \\
+            $\glssymbol{eraum} _2 = \{(i,j) \in \glssymbol{eraum} _1: i \leq j\}$ \\
+            \textcolor{Orchid}{ Dabei bedeute $\glssymbol{elementarereignis} =(i,j)$, dass sowohl i alas auch j gewürfelt wurden. } \\
+            Finde $\glssymbol{wfk}_2$! \\
             \begin{itemize}
                 \item[(1)] \underline{$i \le j$:} $1 \times i$ und $1 \times j$ gewürfelt
-                \[\glsunit{wfk}_2((i,j)) = \glsunit{wfk}_1((i,j)) + \glsunit{wfk}_1((j,i)) = \frac{2}{36}\]
+                \[\glssymbol{wfk}_2((i,j)) = \glssymbol{wfk}_1((i,j)) + \glssymbol{wfk}_1((j,i)) = \frac{2}{36}\]
                 \item[(2)] \underline{$i = j$:} $2 \times i $ gewürfelt
-                \[\glsunit{wfk}_2((i,i)) = \frac{1}{36}\]
+                \[\glssymbol{wfk}_2((i,i)) = \frac{1}{36}\]
             \end{itemize}
             Probe machen!
-            \[A^{(2)}_k = \{(i,j) \in \glsunit{eraum} _2: i+j = k\}\]
+            \[A^{(2)}_k = \{(i,j) \in \glssymbol{eraum} _2: i+j = k\}\]
             Exemplische Ausrechnung:
-            \[\pe_2(A^{(2)}_4) = \glsunit{wfk}_2((1,3)) + \glsunit{wfk}_2((2,2)) = \frac{2}{36} + \frac{1}{36} = \frac{3}{26}\]
-            \item \textbf{Ansatz}: $\glsunit{eraum} _3$ = \{2,3,..,12\} \\
-            Finde $\glsunit{wfk}_3$?
-            $\rightarrow$ Verwende Tabelle aus dem 1. Ansatz, denn $\glsunit{wfk}_3(k) = \pe(A^{(1)}_k)$ :  \\
+            \[\pe_2(A^{(2)}_4) = \glssymbol{wfk}_2((1,3)) + \glssymbol{wfk}_2((2,2)) = \frac{2}{36} + \frac{1}{36} = \frac{3}{26}\]
+            \item \textbf{Ansatz}: $\glssymbol{eraum} _3$ = \{2,3,..,12\} \\
+            Finde $\glssymbol{wfk}_3$?
+            $\rightarrow$ Verwende Tabelle aus dem 1. Ansatz, denn $\glssymbol{wfk}_3(k) = \pe(A^{(1)}_k)$ :  \\
             \begin{tabular}{c|ccccccccccccc}
                 $k$                                          & 2              & 3              & 4              & 5              & 6              & 7              & 8              & 9              & 10             & 11             & 12             \\
-                \textcolor{Aquamarine}{$\glsunit{wfk}_3(k)$} & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$
+                \textcolor{Aquamarine}{$\glssymbol{wfk}_3(k)$} & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$
                 & $\frac{4}{36}$
                 & $\frac{5}{36}$
                 & $\frac{6}{36}$
@@ -176,29 +177,29 @@
     \end{bsp}
     \bluenote{Man hat beim Modellieren immer die Wahl. Und mann muss aufpassen wie man es macht. }
     \begin{bsp}
-        \textbf{Reißzwecke "würfeln" - Symmetrieüberlegungen helfen nicht} \\
-        $\glsunit{eraum}  = \{R, S\}$ (R auf Kopf, S auf Seite) \\
-        Definition: $\glsunit{wfk}(S) > \glsunit{wfk}(R)$ \\
+        \textbf{Reißzwecke ``würfeln'' - Symmetrieüberlegungen helfen nicht} \\
+        $\glssymbol{eraum}  = \{R, S\}$ (R auf Kopf, S auf Seite) \\
+        Definition: $\glssymbol{wfk}(S) > \glssymbol{wfk}(R)$ \\
         10.000 Würfe; 4213 R \\
-        Möchte $\glsunit{wfk}(R) \approx \frac{4213}{10.000} = 0,4213$ (relative Häufigkeit) \\ \textcolor{Orchid}{-> Gesetz der gr. Zahlen  \\ -> Statistik}
+        Möchte $\glssymbol{wfk}(R) \approx \frac{4213}{10.000} = 0,4213$ (relative Häufigkeit) \\ \textcolor{Orchid}{-> Gesetz der gr. Zahlen  \\ -> Statistik}
     \end{bsp}
-    Take-Home message: Wann immer möglich, modelliere so, dass $\glsunit{wfk}(\glsunit{elementarereignis}) = const \forall \glsunit{elementarereignis} \in \glsunit{eraum} $ (erfordert Symmetrieargumente)
+    Take-Home message: Wann immer möglich, modelliere so, dass $\glssymbol{wfk}(\glssymbol{elementarereignis}) = const \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} $ (erfordert Symmetrieargumente)
 
     \begin{defi}
         \textbf{Gleichverteilung} \\
-        Sei $\glsunit{eraum}  \neq \emptyset$ eine endl. Menge, d.h. $0 < \#\glsunit{eraum}  < \infty$. Gilt $\glsunit{wfk}(\glsunit{elementarereignis}) = \glsunit{wfk}(\tilde{\glsunit{elementarereignis}}) \quad  \forall \glsunit{elementarereignis}, \tilde{\glsunit{elementarereignis}} \in \glsunit{eraum} $ d.h. die \gls{wfk} $\glsunit{wfk}$ ist konstant, so heißen die wfkt mu und das zugehörige wmaß P die \underline{Gleichverteilung auf $\glsunit{eraum} $}
+        Sei $\glssymbol{eraum}  \neq \emptyset$ eine endl. Menge, d.h. $0 < \#\glssymbol{eraum}  < \infty$. Gilt $\glssymbol{wfk}(\glssymbol{elementarereignis}) = \glssymbol{wfk}(\tilde{\glssymbol{elementarereignis}}) \quad  \forall \glssymbol{elementarereignis}, \tilde{\glssymbol{elementarereignis}} \in \glssymbol{eraum} $ d.h. die \gls{wfk} $\glssymbol{wfk}$ ist konstant, so heißen die wfkt mu und das zugehörige wmaß P die \underline{Gleichverteilung auf $\glssymbol{eraum} $}
     \end{defi}
     \begin{lem}
-        Sei $\glsunit{wfk}$ die Gleichverteilung auf $\glsunit{eraum} $. Dann gelten:
+        Sei $\glssymbol{wfk}$ die Gleichverteilung auf $\glssymbol{eraum} $. Dann gelten:
         \begin{itemize}
-            \item[(a)] $\glsunit{wfk}(\glsunit{elementarereignis}) = \frac{1}{\#\glsunit{eraum} } \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum} $
-            \item[(b)] $\pe(A) = \frac{\#A}{\#\glsunit{eraum} } \forall A \in \pe(\glsunit{eraum} )$ \txo{($\forall A \subseteq \glsunit{eraum} $)}
+            \item[(a)] $\glssymbol{wfk}(\glssymbol{elementarereignis}) = \frac{1}{\#\glssymbol{eraum} } \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} $
+            \item[(b)] $\pe(A) = \frac{\#A}{\#\glssymbol{eraum} } \forall A \in \pe(\glssymbol{eraum} )$ \txo{($\forall A \subseteq \glssymbol{eraum} $)}
         \end{itemize}
 
         \paragraph{Beweis.}
         \begin{itemize}
-            \item[(a)] \(1 = \sum_{\glsunit{elementarereignis} \in \glsunit{eraum} } \glsunit{wfk}(\glsunit{elementarereignis}) = \) \footnote{Wir dürfen annehmen, dass ein $c \in [0,1]$ existiert mit $\glsunit{wfk}(\glsunit{elementarereignis}) = c \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum} $}$\ c \cdot \# \glsunit{eraum}  \Rightarrow c = \frac{1}{\#\glsunit{eraum} }$
-            \item[(b)] $\pe(A) = \sum_{\glsunit{elementarereignis} \in A } \glsunit{wfk}(\glsunit{elementarereignis}) \overset{(a)}{=} \frac{\#A}{\# \glsunit{eraum} }$ \\
+            \item[(a)] \(1 = \sum_{\glssymbol{elementarereignis} \in \glssymbol{eraum} } \glssymbol{wfk}(\glssymbol{elementarereignis}) = \) \footnote{Wir dürfen annehmen, dass ein $c \in [0,1]$ existiert mit $\glssymbol{wfk}(\glssymbol{elementarereignis}) = c \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} $}$\ c \cdot \# \glssymbol{eraum}  \Rightarrow c = \frac{1}{\#\glssymbol{eraum} }$
+            \item[(b)] $\pe(A) = \sum_{\glssymbol{elementarereignis} \in A } \glssymbol{wfk}(\glssymbol{elementarereignis}) \overset{(a)}{=} \frac{\#A}{\# \glssymbol{eraum} }$ \\
             \txo{$\pe(A)$ ist die Anzahl der günstigen Ausgänge, geteilt durch die Anzahl aller möglichen Ausgänge} \\
 
         \end{itemize}
@@ -209,14 +210,14 @@
     \begin{bsp}
         \textbf{Gleichverteilung}
         \begin{itemize}
-            \item $1 \times $ Werfen einer fairen Münze: $\glsunit{eraum}  = \{K,Z\}, \glsunit{wfk}(\glsunit{elementarereignis}) = \frac{1}{2} \forall \glsunit{elementarereignis} \in \glsunit{eraum} $
+            \item $1 \times $ Werfen einer fairen Münze: $\glssymbol{eraum}  = \{K,Z\}, \glssymbol{wfk}(\glssymbol{elementarereignis}) = \frac{1}{2} \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} $
             \item $1 \times$ Würfeln oder  $2 \times$ Würfeln mit fairem Würfel
         \end{itemize}
     \end{bsp}
     \newpage
 
 
-    \section{Rechnen mit Wahrscheinlichkeiten}
+    \section{Rechnen mit Wahrscheinlichkeiten}\label{sec:rechnen-mit-wahrscheinlichkeiten}
 
     \subsection*{Vorlesung 2 (25.04.2025)}
 
@@ -234,21 +235,22 @@
         \textbf{\gls{wraum}} \\
         Stoppen einer Zeit bis zu einer Stunde in ms.
         \begin{align*}
-            \glsunit{eraum}  & = \{0,1,\dots,360 000\} & \text{(Zeit in ms)} \\
-            \glsunit{wfk}(\glsunit{elementarereignis}) & \coloneqq \frac{1}{\# \glsunit{eraum} } \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum}  & \text{(Gleichverteilung)} \\
-            \pe(A) & = \frac{\# A}{\# \glsunit{eraum} } \\
+            \glssymbol{eraum}  & = \{0,1,\dots,360 000\} & \text{(Zeit in ms)} \\
+            \glssymbol{wfk}(\glssymbol{elementarereignis}) & \coloneqq \frac{1}{\# \glssymbol{eraum} } \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum}  & \text{(Gleichverteilung)} \\
+            \pe(A) & = \frac{\# A}{\# \glssymbol{eraum} } \\
             A & = \{600 000, \dots , 9000 000\} & \text{Zeit liegt zw. 10 und 15 Minuten} \\
             \pe(A) & = \frac{300 001}{3 600 001} \approx \frac{300 000}{3 600 000} = \frac{1}{12}
         \end{align*}
         Wir wollen kontinuierlich modellieren:
         \begin{align*}
-            \tilde {\glsunit{eraum}}  & = [0,60] & \text{(in Minuten)}\\
-            \text{bzw. }  \tilde {\glsunit{eraum}}  & = [0, 360 000]  & \text{(in ms)} \\
+            \tilde {\glssymbol{eraum}}  & = [0,60] & \text{(in Minuten)}\\
+            \text{bzw. }  \tilde {\glssymbol{eraum}}  & = [0, 360 000]  & \text{(in ms)} \\
             \tilde A & = [10,15] \\
             \mathbb{\tilde P} (\tilde A) & \overset{!}{=} \frac{15-10}{60-0} = \frac{5}{60} = \frac{1}{12}
         \end{align*}
-        \bluenote{Was genau ist $\tilde {\glsunit{eraum}} $ ? }
-        Um auch modellieren zu können, dass Intervalle \gls{ws} haben. die nicht \texttt{iwas} von ihrere Länge abgängen, arbeiten wir mit R-Integralen. \texttt{R-Integral?}
+        \bluenote{Was genau ist $\tilde {\glssymbol{eraum}} $ ? }
+        Um auch modellieren zu können, dass Intervalle \gls{ws} haben, die nicht \texttt{iwas} von ihrere Länge
+        abgängen, arbeiten wir mit R-Integralen. \texttt{R-Integral?}
     \end{bsp}
     \begin{defi}
         \textbf{\gls{dichte}} \\
@@ -267,7 +269,8 @@
     \end{defi}
     \begin{defi}
         \textbf{\gls{wraum}} \\
-        Sei eine \gls{dichte} \index{Dichte}$f \geq 0$ gegeben. Wir setzen
+        Sei eine \gls{dichte} \index{Dichte}$f \geq 0$ gegeben.
+        Wir setzen
         \begin{align*}
             \pe([a,b]) & \coloneqq  \int^b_a f(x) dx & \text{für alle } - \infty < a < b < \infty \\
             \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b f(x) dx  \\
@@ -336,18 +339,18 @@
         $I \subseteq \mathbb{N}$ Indexmenge. \\
         Für jedes $i \in I $ sei $A_i$:
         \begin{itemize}
-            \item $A_i \in \mathbb{R}(\glsunit{eraum} )$ für $\glsunit{eraum}  $ abzählbar
-            \item $A_i$ ein Intervall für $\glsunit{eraum}  = \mathbb{R}$ (oder $\glsunit{eraum}  = [0, \infty)$ oder $\glsunit{eraum}  = [a,b]$)
+            \item $A_i \in \mathbb{R}(\glssymbol{eraum} )$ für $\glssymbol{eraum}  $ abzählbar
+            \item $A_i$ ein Intervall für $\glssymbol{eraum}  = \mathbb{R}$ (oder $\glssymbol{eraum}  = [0, \infty)$ oder $\glssymbol{eraum}  = [a,b]$)
         \end{itemize}
         \begin{itemize}
-            \item[(a)] $\underset{i \in I}{\bigcup} A_i = \{\glsunit{elementarereignis} \in \glsunit{eraum}  : \glsunit{elementarereignis} \in A_i \text{ für mind. ein } i \in I \} = \{ \glsunit{elementarereignis} \in \glsunit{eraum}  : \exists j \in I \text{ mit } \glsunit{elementarereignis} \in A_j \}$
-            \item[(b)] $\underset{i \in I}{\bigcap} A_i = \{ \glsunit{elementarereignis} \in \glsunit{eraum}  : \glsunit{elementarereignis} \in A_i \text{ für alle } i \in I\} = \{ \glsunit{elementarereignis} \in \glsunit{eraum}  : \glsunit{elementarereignis} \in A_i \forall j \in I \} $
+            \item[(a)] $\underset{i \in I}{\bigcup} A_i = \{\glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \text{ für mind. ein } i \in I \} = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \exists j \in I \text{ mit } \glssymbol{elementarereignis} \in A_j \}$
+            \item[(b)] $\underset{i \in I}{\bigcap} A_i = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \text{ für alle } i \in I\} = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \forall j \in I \} $
         \end{itemize}
     \end{defi}
 
     \begin{lem}
         \textbf{Rechenregeln für Mengen}
-        Seien $A,B,C \subset \glsunit{eraum} $.
+        Seien $A,B,C \subset \glssymbol{eraum} $.
         \begin{figure}[H]
             \centering
             \begin{subfigure}[t]{0.45\textwidth}
@@ -410,7 +413,7 @@
                 \caption{Distributivgesetz: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ und
                     $ A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$}
                 \label{fig:Distributivgesetz}
-            \end{subfigure}
+            \end{subfigure}\label{fig:figure}
         \end{figure}
         \begin{itemize}
             \item Kommutativitätsgesetz: $A \cup B = B \cup A$ und $A \cap B = B \cap A$
@@ -420,7 +423,7 @@
     \end{lem}
 
     \begin{defi}
-        $A, B, A_1, A_2, \dots \subset \glsunit{eraum} $
+        $A, B, A_1, A_2, \dots \subset \glssymbol{eraum} $
         \begin{itemize}
             \item[(a)] $A$ und $B$ heißen \underline{disjunkt} , wenn $A \cap B = \emptyset$
             \begin{figure}[H]
@@ -504,7 +507,8 @@
                 \label{fig:DisjunkteMengenfamilie}
             \end{figure}
             \item[(c)] $A_1, A_2, \dots $ heißen paarweise disjunkt, wenn $A_i \cap A_j \neq \emptyset \quad \forall i,j $ mit $i \neq j$
-            \item[(d)] Sind $A_1, A_2, \dots $ paarweis disjunkt, so schreiben wir $\underset{i}{\dot\cup} A_i$ für die Vereinigung  $\underset{i}{\cup} A_i$. Wir sprechen von einer \underline{disjunkten Vereinigung}
+            \item[(d)] Sind $A_1, A_2, \dots $ paarweis disjunkt, so schreiben wir $\underset{i}{\dot\cup} A_i$ für die Vereinigung  $\underset{i}{\cup} A_i$.
+            \item Wir sprechen von einer \underline{disjunkten Vereinigung}
         \end{itemize}
         \begin{bem}
             $\ $ \\
@@ -516,24 +520,24 @@
         \texttt{fehlt}
     \end{bsp}
     \begin{satz}
-        Seien $A, B, A_1, A_2, \dots \subset \glsunit{eraum} $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
+        Seien $A, B, A_1, A_2, \dots \subset \glssymbol{eraum} $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
         \begin{itemize}
-            \item[(a)] Additivität: Seien $A_1, A_2, \dots$ paarweise disjunkt. dann gilt:
+            \item[(a)] Additivität: Seien $A_1, A_2, \dots$ paarweise disjunkt, dann gilt:
             \[\pe(\underset{i}{\dot\cup} A_i) = \sum_i \pe(A_i)\]
             Gilt auch für Dichten \index{Dichte}! \\
             \textbf{Beweis.}  \\
             \begin{align*}
-                \pe(\underset{i}{\dot\cup} A_i)&  = \pe(\{\glsunit{elementarereignis} \in \glsunit{eraum} : \exists i \text{ mit } \glsunit{elementarereignis} \in A_i\}) \\
-                & = \sum_i \txo{\underbrace{\textcolor{black}{\sum_{\glsunit{elementarereignis} \in A_i}}}_{\pe(A_i)}} \glsunit{wfk} (\glsunit{elementarereignis}) \\
+                \pe(\underset{i}{\dot\cup} A_i)&  = \pe(\{\glssymbol{elementarereignis} \in \glssymbol{eraum} : \exists i \text{ mit } \glssymbol{elementarereignis} \in A_i\}) \\
+                & = \sum_i \txo{\underbrace{\textcolor{black}{\sum_{\glssymbol{elementarereignis} \in A_i}}}_{\pe(A_i)}} \glssymbol{wfk} (\glssymbol{elementarereignis}) \\
                 & = \sum_i \pe(A_i)
             \end{align*}
             \orangenote{Wir haben die Summe/Reihe umsortiert}
 
             \item[(b)] Komplementärwahrscheinlichkeit
-            \[\pe(A^c) = \pe(\glsunit{eraum}  \backslash A) = 1 - \pe(A)\]
+            \[\pe(A^c) = \pe(\glssymbol{eraum}  \backslash A) = 1 - \pe(A)\]
             \textbf{Beweis.}
             \begin{align*}
-                \glsunit{eraum}  =  A \dot\cup A^c & \overset{(a)}{\Rightarrow} 1 \overset{\txo{Normierung}}{=} \pe(\glsunit{eraum} ) = \pe( A \dot\cup A^c) \overset{(a)}{=}\pe(A) + \pe(A^c) \\
+                \glssymbol{eraum}  =  A \dot\cup A^c & \overset{(a)}{\Rightarrow} 1 \overset{\txo{Normierung}}{=} \pe(\glssymbol{eraum} ) = \pe( A \dot\cup A^c) \overset{(a)}{=}\pe(A) + \pe(A^c) \\
                 & \Rightarrow \pe(A^c) = 1-  \pe(A)
             \end{align*}
             \item[(c)] Monotonie: \[A \subset B \Rightarrow \pe(A) \leq \pe(B)\]
@@ -580,35 +584,35 @@
     \end{satz}
     \begin{satz}
         \textbf{Ein- und Ausschlussprinzip} \\
-        \[A_2,\dots, A_n \subset \glsunit{eraum}  \]
+        \[A_2,\dots, A_n \subset \glssymbol{eraum}  \]
         \[\pe( \bigcup^n_{i=1} A_i ) = \sum^n_{k = 1} (-1)^{k+1} \sum_{a \leq i_1 \leq \dots \leq i_k \leq k} \pe(A_{i_1} \cap \dots \cap A_{i_k}) \]
     \end{satz}
 
     \newpage
 
 
-    \section{Zufallsvariablen und ihre Verteilung}
+    \section{Zufallsvariablen und ihre Verteilung}\label{sec:zufallsvariablen-und-ihre-verteilung}
 
     \subsection*{Vorlesung 4}
     \begin{bsp}
         \textbf{n-faches Werfen einer fairen Münze} \\
         \[
-            \glsunit{eraum} _n = \kl{0,1}^n, \quad \glsunit{wfk}_n (\kl{\glsunit{elementarereignis}}) = (\frac{1}{2})^n \faoio \txt{(Gleichverteilung)}
+            \glssymbol{eraum} _n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = (\frac{1}{2})^n \faoio \txt{(Gleichverteilung)}
         \]
-        $\glsunit{elementarereignis}_i = 1$ bedeute ''Kopf'' \\
+        $\glssymbol{elementarereignis}_i = 1$ bedeute ``Kopf'' \\
         Falls es uns interessiert, wie oft ''Kopf'' fällt:
         \[
-            S_n(\glsunit{elementarereignis}) \coloneqq  \sum^n_{i=1}     \glsunit{elementarereignis}_i \txt{ist Anzahl ''Erfolge'' (Kopf)}
+            S_n(\glssymbol{elementarereignis}) \coloneqq  \sum^n_{i=1}     \glssymbol{elementarereignis}_i \txt{ist Anzahl ''Erfolge'' (Kopf)}
         \]
         \[
-            S_n :\glsunit{eraum} _n \rightarrow \kl{0,1,..,n} \txt{Abbildung!}
+            S_n :\glssymbol{eraum} _n \rightarrow \kl{0,1,..,n} \txt{Abbildung!}
         \]
         Falls der relative Anteil der Erfolge relevant ist:
         \[
-            T_n: \glsunit{eraum} _n \rightarrow [0,1]
+            T_n: \glssymbol{eraum} _n \rightarrow [0,1]
         \]
         \[
-            T_n (\glsunit{elementarereignis}) \coloneqq  \frac{1}{n} S_n (\glsunit{elementarereignis}) = \frac{1}{n} \sum^n_{i=n} \glsunit{elementarereignis}_i \faoio
+            T_n (\glssymbol{elementarereignis}) \coloneqq  \frac{1}{n} S_n (\glssymbol{elementarereignis}) = \frac{1}{n} \sum^n_{i=n} \glssymbol{elementarereignis}_i \faoio
         \]
     \end{bsp}
 
@@ -616,7 +620,7 @@
         \textbf{\gls{zv}} \\
         Für einen \gls{wraum} $\wraum$ und eine Menge $E \neq \emptyset$ nennen wir eine messbare Abbildung
         \[
-            X: \glsunit{eraum}  \rightarrow E
+            X: \glssymbol{eraum}  \rightarrow E
         \]
         eine $E$-wertige \gls{zv}.
         \bluenote{\gls{zv} ist keine Variable: Es ist eine Zuordnungsvorschrift der Stochastik, welche jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zuordnet. Also das Ergebnis eines Zufallsexperiments.}
@@ -625,27 +629,27 @@
         \textbf{Verteilung einer \gls{zv}}\\
         Sei $X$ eine $E$-wertige \gls{zv} auf $\wraum$
         \[
-            \pe_X(B) \coloneqq  \pe(\kl{\oio : X(\glsunit{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(X \in B)}{Kurzschreibweise}
+            \pe_X(B) \coloneqq  \pe(\kl{\oio : X(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(X \in B)}{Kurzschreibweise}
         \]
         Das \gls{wmaß} $\pe_X$ auf $E$ heißt Verteilung von $X$.
         \bluenote{Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also \textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
     \end{defi}
     \begin{lem}
-        Ist $\glsunit{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glsunit{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
+        Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
 
         \paragraph{Beweis.}
         \[
-            \glsunit{wfk}_X (e) = \pe_X(\kl{e}) = \txc{\pe(X \in \kl{e}) = } \pe(X=e) = \sum_{\substack{\oio \\ X(\glsunit{elementarereignis}) = e}} \glsunit{wfk}(e) \geq 0
+            \glssymbol{wfk}_X (e) = \pe_X(\kl{e}) = \txc{\pe(X \in \kl{e}) = } \pe(X=e) = \sum_{\substack{\oio \\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}(e) \geq 0
         \]
-        z.z. Normierung
+        z.z.\ Normierung
         \[
-            \sum_{e \in E} \glsunit{wfk}_X (e) = \sum_{e \in E} \sum_{\substack{\oio :\\ X(\glsunit{elementarereignis}) = e}} \glsunit{wfk} (\glsunit{elementarereignis}) =  \sum_{\substack{\oio \\ e \in E :\\ X(\glsunit{elementarereignis}) = e}} \glsunit{wfk}  (\glsunit{elementarereignis}) = \sum_{\substack{\oio :\\ X(\glsunit{elementarereignis}) = e}} \glsunit{wfk} (\glsunit{elementarereignis}) = \sum_{\oio} \glsunit{wfk} (\glsunit{elementarereignis}) = 1
+            \sum_{e \in E} \glssymbol{wfk}_X (e) = \sum_{e \in E} \sum_{\substack{\oio :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) =  \sum_{\substack{\oio \\ e \in E :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}  (\glssymbol{elementarereignis}) = \sum_{\substack{\oio :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) = \sum_{\oio} \glssymbol{wfk} (\glssymbol{elementarereignis}) = 1
         \]
     \end{lem}
 
     \subsubsection*{Notationen}
     \[
-        \pe(X \in B) = \pe(\kl{\oio: X(\glsunit{elementarereignis}) \in B})
+        \pe(X \in B) = \pe(\kl{\oio: X(\glssymbol{elementarereignis}) \in B})
     \]
     Falls $B$ ein Intervall ist:
     \[
@@ -654,56 +658,58 @@
     \begin{defi}
         Geg.:
         \[
-            X: \glsunit{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
+            X: \glssymbol{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
         \]
-        Dann heißt $E$ der Wertebereich und $X(\glsunit{eraum} )\coloneqq  \kl{X(\glsunit{elementarereignis}): \oio}$ heißt Bildbereich.
+        Dann heißt $E$ der Wertebereich und $X(\glssymbol{eraum} )\coloneqq  \kl{X(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
         \begin{bsp}
             \txo{
                 \[
-                    S_n : \glsunit{eraum} _n \rightarrow \kl{0,\dots,n}
+                    S_n : \glssymbol{eraum} _n \rightarrow \kl{0,\dots,n}
                 \]
                 \[
-                    S_n : \glsunit{eraum} _n \rightarrow \mathbb{N}_0
+                    S_n : \glssymbol{eraum} _n \rightarrow \mathbb{N}_0
                 \]
             }
         \end{bsp}
         \begin{bem}
-            $X(\glsunit{eraum} ) \subset E$ gilt immer.
-            \bluenote{Denn $X(\glsunit{eraum} ) $ ist ein $\oio$ und jedes \glsunit{elementarereignis} ist ein Element aus $E$.}
+            $X(\glssymbol{eraum} ) \subset E$ gilt immer.
+            \bluenote{Denn $X(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
         \end{bem}
         \begin{bem}
-            Gegeben ist ein \gls{wmaß} auf $\tilde {\glsunit{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
+            Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
             \bluenote{Zu jedem Wahrscheinlichkeitsmaß auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
             aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
-            \noindent Sei $(\tilde {\glsunit{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
-            $X: \glsunit{eraum}  \rightarrow \tilde{\glsunit{eraum}} $ definiert durch:
+            \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
+            $X: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
             \begin{align*}
-            {\glsunit{eraum}}
-                & \coloneqq  \tilde{\glsunit{eraum}}  \\
+            {\glssymbol{eraum}}
+                & \coloneqq  \tilde{\glssymbol{eraum}}  \\
                 \pe&\coloneqq  \tilde\pe\\
-                X(\glsunit{elementarereignis}) & = \glsunit{elementarereignis} \txt{Identität} \faoio
+                X(\glssymbol{elementarereignis}) & = \glssymbol{elementarereignis} \txt{Identität} \faoio
             \end{align*}
             \[
-                \pagebreak(X \in B) = \pe(\oub{\kl{\oio: X(\glsunit{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
+                \pagebreak(X \in B) = \pe(\oub{\kl{\oio: X(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
             \]
             $\Rightarrow X$ hat Verteilung $\tilde\pe$
         \end{bem}
     \end{defi}
     \begin{defi}
         \textbf{\dichte einer \gls{zv}} \\
-        Gegeben \dichte \glsunit{dichte} \\
+        Gegeben \dichte \glssymbol{dichte} \\
     \end{defi}
 
     \paragraph{Hier fehlt was}
     \newpage
 
 
-    \section{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}
+    \section{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}\label{sec:unabhangigkeit-und-bernoulli-experimente-index{bernoulli-experiment}}
 
     \subsection*{Vorlesung 5}
     Was bedeutet stochastische Unabhängigkeit?
 
-    \paragraph{Intuition:} Zwei Ereignisse A und B sind unabhängig , wenn die Information des Eintretens des jeweils einen keinen Einfluss darauf hat, als wie wahrscheinlich wir ein Eintreten auch des jeweils anderen einschätzen. (Bspw. mehrmals hintereinander Würfeln)
+    \paragraph{Intuition:} Zwei Ereignisse A und B sind unabhängig, wenn die Information des Eintretens des jeweils
+    einen keinen Einfluss darauf hat, als wie wahrscheinlich wir ein Eintreten auch des jeweils anderen einschätzen (
+    Bspw.\ mehrmals hintereinander Würfeln).
 
     \paragraph{Formal:} Um A und B unabhängig zu nennen, sollten also gelten
     \[
@@ -725,7 +731,7 @@
     \bluenote{
         $\pe(A \cap B)$: WS, dass A und B gleichzeitig eintreten}
     \begin{defi}
-        Zwei Ereignisse $A, B \subseteq \glsunit{eraum} $ heißen unabhängig , wenn $\pe(A \cap B) = \pe(A) \cdot \pe(B)$.
+        Zwei Ereignisse $A, B \subseteq \glssymbol{eraum} $ heißen unabhängig , wenn $\pe(A \cap B) = \pe(A) \cdot \pe(B)$.
     \end{defi}
     \begin{bsp}
 
@@ -755,7 +761,7 @@
     \end{beo}
     \begin{defi}
         Unabhängigkeit von $n$ Ereignissen. \\
-        Die Ereignisse $A_1 , \dots  , A_n \subseteq \glsunit{eraum} $ heißen unabhängig, wenn
+        Die Ereignisse $A_1 , \dots  , A_n \subseteq \glssymbol{eraum} $ heißen unabhängig, wenn
         \[
             \pe(A_{i_1} \cap \dots \cap A_{i_k}) = \pe(A_{i_1}) \cdots \pe(A_{i_k})
         \]
@@ -764,30 +770,32 @@
         \bluenote{Also alle Paare, Tripel, etc. prüfen.}
     \end{defi}
     \begin{bsp}
-        \texttt{siehe Folie 14-15}
+        \texttt{siehe Folie 14--15}
     \end{bsp}
     \begin{bem}
-        Es genügt nicht, paarweise Unabhängigkeit zu prüfen! Sachen können paarweise unabhängig, aber nicht insgesamt unabhängig sein.
+        Es genügt nicht, paarweise Unabhängigkeit zu prüfen!
+        Sachen können paarweise unabhängig, aber nicht insgesamt unabhängig sein.
     \end{bem}
     \begin{bem}
-        Es genügt nicht, $\pe(A_1 \cap \dots  \cap A_n ) = \pe(A_1 ) \cdots \pe(A_n )$ zu prüfen. Es kann insgesamt unabhängig sein, aber nicht paarweise etc. unabhängig.
+        Es genügt nicht, $\pe(A_1 \cap \dots  \cap A_n ) = \pe(A_1 ) \cdots \pe(A_n )$ zu prüfen.
+        Es kann insgesamt unabhängig sein, aber nicht paarweise etc.\ unabhängig.
     \end{bem}
 
     \subsubsection*{Unabhängige Nacheinanderausführung von Zufallsexperimenten}
-    Sollen Zufallsexperimente $(\glsunit{eraum} _1, \pe_1), \dots, (\glsunit{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glsunit{eraum} , \pe)$ mit
+    Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
     \[
-        \glsunit{eraum}  = \glsunit{eraum} _1 \times \dots \times \glsunit{eraum} _n
+        \glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n
     \]
-    und – im Fall, dass wir abzählbare $\glsunit{eraum} _i$ haben –
+    und – im Fall, dass wir abzählbare $\glssymbol{eraum} _i$ haben –
     \[
-        \glsunit{wfk}(\glsunit{elementarereignis}) = \glsunit{wfk}_1(\glsunit{elementarereignis}_1) \cdots \glsunit{wfk}_n(\glsunit{elementarereignis}_n) \forall \glsunit{elementarereignis} = (\glsunit{elementarereignis}_, \dots, \glsunit{elementarereignis}_n) \in \glsunit{eraum}
+        \glssymbol{wfk}(\glssymbol{elementarereignis}) = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdots \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n) \forall \glssymbol{elementarereignis} = (\glssymbol{elementarereignis}_, \dots, \glssymbol{elementarereignis}_n) \in \glssymbol{eraum}
     \]
-    Sind nämlich $A_1 \subseteq \glsunit{eraum} _1 , \dots  , A_n \subseteq \glsunit{eraum} _n$ , so sind bei dieser Wahl
+    Sind nämlich $A_1 \subseteq \glssymbol{eraum} _1 , \dots  , A_n \subseteq \glssymbol{eraum} _n$ , so sind bei dieser Wahl
     \begin{align*}
-        B_1 & = A_1 \times \glsunit{eraum} _2 \times \dots \glsunit{eraum} _n \\
-        B_2 & = \glsunit{eraum} _1 \times A_2 \times \glsunit{eraum} _3 \times \dots \times \glsunit{eraum} _n \\
+        B_1 & = A_1 \times \glssymbol{eraum} _2 \times \dots \glssymbol{eraum} _n \\
+        B_2 & = \glssymbol{eraum} _1 \times A_2 \times \glssymbol{eraum} _3 \times \dots \times \glssymbol{eraum} _n \\
         \vdots & \\
-        B_n & = \glsunit{eraum} _1 \times \dots \times \glsunit{eraum} _{n-1} \times A_n
+        B_n & = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _{n-1} \times A_n
     \end{align*}
     \bluenote{$B_1$ bedeutet: Im ersten Experiment tritt $A_1$ ein, die anderen sind egal. }
     unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \dots  , n}$ verschieden gilt:
@@ -802,56 +810,57 @@
         \texttt{Folie 21}
     \end{bsp}
 
-    \noindent Sind die $\glsunit{eraum} _i$ nicht alle abzählbar, so definieren wir $\pe$ auf $\glsunit{eraum}  = \glsunit{eraum} _1 \times \dots \times \glsunit{eraum} _n$
+    \noindent Sind die $\glssymbol{eraum} _i$ nicht alle abzählbar, so definieren wir $\pe$ auf $\glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n$
     \begin{equation}
         \label{eq:omegainichtabzählbar}
-        \pe(A_1 \times \dots \times A_n) = \pe_1(A_1) \cdot \dots \cdot \pe_n(A_n) \quad \forall A_i \subseteq \glsunit{eraum} _i \forall i
+        \pe(A_1 \times \dots \times A_n) = \pe_1(A_1) \cdot \dots \cdot \pe_n(A_n) \quad \forall A_i \subseteq \glssymbol{eraum} _i \forall i
     \end{equation}
     motiviert durch Formel (\ref{eq:omegaiabzählbar}).
     \begin{bem}
-        Formel (\ref{eq:omegainichtabzählbar}) kann immer als Definition verendet werden. Falls alle $\pe_i$ durch WS $\glsunit{wfk}_i$ gegeben sind, folgt aus Formel (\ref{eq:omegainichtabzählbar}):
+        Formel (\ref{eq:omegainichtabzählbar}) kann immer als Definition verendet werden.
+        Falls alle $\pe_i$ durch WS $\glssymbol{wfk}_i$ gegeben sind, folgt aus Formel (\ref{eq:omegainichtabzählbar}):
         \begin{align*}
-            \glsunit{wfk}((\glsunit{elementarereignis}_1, \dots, \glsunit{elementarereignis}_n)) & = \pe(\kl{(\glsunit{elementarereignis}_1, \dots, \glsunit{elementarereignis}_n)}) \\
-            & = \pe(\kl{\glsunit{elementarereignis}_1} \times \kl{\glsunit{elementarereignis}_2} \times \dots \times \kl{\glsunit{elementarereignis}_n}) \\
-            & \overset{(\ref{eq:omegainichtabzählbar})}{=} \pe_1(\kl{\glsunit{elementarereignis}_1}) \cdot \pe_2(\kl{\glsunit{elementarereignis}_2}) \cdot \dots \cdot \pe_n(\kl{\glsunit{elementarereignis}_n}) \\
-            & = \glsunit{wfk}_1(\glsunit{elementarereignis}_1) \cdot \glsunit{wfk}_2 (\glsunit{elementarereignis}_2) \cdot \dots \cdot \glsunit{wfk}_n(\glsunit{elementarereignis}_n)
+            \glssymbol{wfk}((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) & = \pe(\kl{(\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)}) \\
+            & = \pe(\kl{\glssymbol{elementarereignis}_1} \times \kl{\glssymbol{elementarereignis}_2} \times \dots \times \kl{\glssymbol{elementarereignis}_n}) \\
+            & \overset{(\ref{eq:omegainichtabzählbar})}{=} \pe_1(\kl{\glssymbol{elementarereignis}_1}) \cdot \pe_2(\kl{\glssymbol{elementarereignis}_2}) \cdot \dots \cdot \pe_n(\kl{\glssymbol{elementarereignis}_n}) \\
+            & = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \glssymbol{wfk}_2 (\glssymbol{elementarereignis}_2) \cdot \dots \cdot \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n)
         \end{align*}
     \end{bem}
     \begin{defi}
         \textbf{Einfaches \bernoulli } \\
         \txc{Ein \bernoulli  ist ein Zufallsexperiment mit genau zwei möglichen Ergebnissen: Einem ''Treffer'' oder einer ''Niete''.} \\
-        $\glsunit{eraum} _1 = \kl{0,1}; \glsunit{elementarereignis} = 1$ bedeutet Erfolg, $\glsunit{elementarereignis} = 0$ bedeutet Misserfolg.  \\
-        $\glsunit{wfk}_1(1) = p, \glsunit{wfk}_1(0) = 1-p$ und dabei heißt $p \in [0,1]$ die Erfolgswahrscheinlichkeit.
+        $\glssymbol{eraum} _1 = \kl{0,1}; \glssymbol{elementarereignis} = 1$ bedeutet Erfolg, $\glssymbol{elementarereignis} = 0$ bedeutet Misserfolg.  \\
+        $\glssymbol{wfk}_1(1) = p, \glssymbol{wfk}_1(0) = 1-p$ und dabei heißt $p \in [0,1]$ die Erfolgswahrscheinlichkeit.
     \end{defi}
     \begin{defi}
-        \textbf{\bernoulli  der Länge $n$} \\
+        \textbf{\bernoulli der Länge $n$} \\
         Wiederhole dasselbe einfache \bernoulli  $n$-mal unabhängig.
         \[
-            \glsunit{eraum} _n = \kl{0,1}^n, \glsunit{wfk}_n((\glsunit{elementarereignis}_1, \dots, \glsunit{elementarereignis}_n)) = p^{\oob{^{\sum_{i=1}^n \glsunit{elementarereignis}_i}}{=k}} \cdot (1 - p)^{n - \oob{^{\sum_{i=1}^n \glsunit{elementarereignis}_i}}{=k}}
+            \glssymbol{eraum} _n = \kl{0,1}^n, \glssymbol{wfk}_n((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) = p^{\oob{^{\sum_{i=1}^n \glssymbol{elementarereignis}_i}}{=k}} \cdot (1 - p)^{n - \oob{^{\sum_{i=1}^n \glssymbol{elementarereignis}_i}}{=k}}
         \]
         \txo{\begin{align*}
-                 \glsunit{eraum} _n & = \underbrace{\glsunit{eraum} _1 \times \dots \times \glsunit{eraum} _n}_{n-mal} \\
-                 \glsunit{wfk}_n((\glsunit{elementarereignis}_1, \dots, \glsunit{elementarereignis}_n)) &=  \glsunit{wfk}_1(\glsunit{elementarereignis}_1) \cdot \dots \cdot \glsunit{wfk}_1(\glsunit{elementarereignis}_n)
-                 & \forall \glsunit{elementarereignis} \in \glsunit{eraum} _n \\
-                 &=   p^{\sum_{i=1}^n \cdot \glsunit{elementarereignis}_i} \cdot (1 - p)^{n - \sum_{i=1}^n \glsunit{elementarereignis}_i }
+                 \glssymbol{eraum} _n & = \underbrace{\glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n}_{n-mal} \\
+                 \glssymbol{wfk}_n((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) &=  \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \dots \cdot \glssymbol{wfk}_1(\glssymbol{elementarereignis}_n)
+                 & \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} _n \\
+                 &=   p^{\sum_{i=1}^n \cdot \glssymbol{elementarereignis}_i} \cdot (1 - p)^{n - \sum_{i=1}^n \glssymbol{elementarereignis}_i }
         \end{align*}
         }
     \end{defi}
     \begin{defi}
         \textbf{Binomialverteilung \index{Binomialverteilung}} \\
         Suche WS für genau $k$ Erfolge in \bernoulli  der Länge $n$. \[
-                                                                         A_k = \kl{S_n = k} = \kl{(\glsunit{elementarereignis}_1 , \dots  , \glsunit{elementarereignis}_n ) \in \kl{0, 1}^n : \oub{\sum_{i=1}^n \glsunit{elementarereignis}_i}{S_n(\glsunit{elementarereignis})} = k }
+                                                                         A_k = \kl{S_n = k} = \kl{(\glssymbol{elementarereignis}_1 , \dots  , \glssymbol{elementarereignis}_n ) \in \kl{0, 1}^n : \oub{\sum_{i=1}^n \glssymbol{elementarereignis}_i}{S_n(\glssymbol{elementarereignis})} = k }
         \]
         $\binom{n}{k}$ Möglichkeiten, $k$ Einsen auf die $n$ Stellen zu verteilen.
         \[
-            \Rightarrow \glsunit{binomv}(k) \coloneqq  \pe(A_k) = \binom{n}{k} p^k (1-p)^{n-k} \text{ für alle } k \in \kl{0,\dots,n}
+            \Rightarrow \glssymbol{binomv}(k) \coloneqq  \pe(A_k) = \binom{n}{k} p^k (1-p)^{n-k} \text{ für alle } k \in \kl{0,\dots,n}
         \]
-        $\glsunit{binomv}(k)$ ist eine Wahrscheinlichkeitsfunktion auf $\glsunit{eraum}  = \kl{0,\dots,n}$, denn
+        $\glssymbol{binomv}(k)$ ist eine Wahrscheinlichkeitsfunktion auf $\glssymbol{eraum}  = \kl{0,\dots,n}$, denn
         \[
-            \sum^n_{k=0} \glsunit{binomv}(k)  = \sum^n_{k=0} \pe(A_k) = \pe(\dot\cup^n_{k=0} A_k) = \pe(\kl{0,1}^n)= 1
+            \sum^n_{k=0} \glssymbol{binomv}(k)  = \sum^n_{k=0} \pe(A_k) = \pe(\dot\cup^n_{k=0} A_k) = \pe(\kl{0,1}^n)= 1
         \]
-        \glsunit{binomv} heißt \binomv  mit den Parametern $n$ und $p$. \\ \\
-        Eine \gls{zv} $X$, deren Verteilung $\pe_X$ die $\glsunit{binomv}$-Verteilung ist, heißt \textbf{binomialverteilt mit mit den Parametern $n$ und $p$}.
+        \glssymbol{binomv} heißt \binomv  mit den Parametern $n$ und $p$. \\ \\
+        Eine \gls{zv} $X$, deren Verteilung $\pe_X$ die $\glssymbol{binomv}$-Verteilung ist, heißt \textbf{binomialverteilt mit mit den Parametern $n$ und $p$}.
     \end{defi}
     \begin{bsp}
         Einfaches \bernoulli  \texttt{Siehe Folie 29}
@@ -865,7 +874,7 @@
     \begin{prob}
         Wie wahrscheinlich ist, dass in einem \bernoulli  der Länge n der erste Erfolg im n-ten Versuch eintritt?
         \[
-            A_n = \kl{(0,\dots,0,1)}, \quad \pe(A_n) \ \txo{ = \glsunit{wfk}_n((0,\dots,0,1))} = p(1 - p)^{n-1}
+            A_n = \kl{(0,\dots,0,1)}, \quad \pe(A_n) \ \txo{ = \glssymbol{wfk}_n((0,\dots,0,1))} = p(1 - p)^{n-1}
         \]
     \end{prob}
     \begin{defi}
@@ -887,7 +896,7 @@
     \subsubsection*{\gls{zv} mit abzählbarem Bildbereich}
     \begin{satz}
         \textbf{Satz I.}
-        Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glsunit{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
+        Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
         Dann
         \[
             X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
@@ -900,9 +909,10 @@
     \end{bsp}
     \begin{satz}
         \textbf{Satz II.} (Neuformulierung von Satz I.) \\
-        Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche. Dann
+        Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
+        Dann
         \[
-            X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glsunit{wfk}_{X_1, \dots, X_n} ((X_1, \dots, X_n)) = \prod^n_{i=1} \glsunit{wfk}_{x_i}(x_i)
+            X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((X_1, \dots, X_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
         \]
     \end{satz}
     \begin{kor}
@@ -918,11 +928,11 @@
         \end{bem}
     \end{kor}
     \begin{satz}
-        Summe unabh. Poisson-verteilter \gls{zv} ist wieder Poisson-verteilt. \\
-        Seien $X_1, X_2$ unabh. und Poisson-verteilt mit
+        Summe unabh.\ Poisson-verteilter \gls{zv} ist wieder Poisson-verteilt. \\
+        Seien $X_1, X_2$ unabh.\ und Poisson-verteilt mit
         \begin{align*}
-            \glsunit{wfk}_{x_1}(k) = \pe(X_1 = k) & = \frac{z_1^k}{k!} e^{-z_1} & (z_1 > 0) \forall k \in \mathbb{N}_0 \\
-            \glsunit{wfk}_{x_2}(k) = \pe(X_2 = k) & = \frac{z_2^k}{k!} e^{-z_2} & (z_2 > 0) \forall k \in \mathbb{N}_0
+            \glssymbol{wfk}_{x_1}(k) = \pe(X_1 = k) & = \frac{z_1^k}{k!} e^{-z_1} & (z_1 > 0) \forall k \in \mathbb{N}_0 \\
+            \glssymbol{wfk}_{x_2}(k) = \pe(X_2 = k) & = \frac{z_2^k}{k!} e^{-z_2} & (z_2 > 0) \forall k \in \mathbb{N}_0
         \end{align*}
         Dann gilt: $X_1 + X_2$ ist Poisson-Verteilt mit Parameter $z_1 + z_2$.
 
@@ -997,13 +1007,13 @@
             \item[] $k$ Euro, falls 2 gewürfelt
             \item[] 6 Euro, falls $2, \cdots , 6$ gewürfelt
         \end{itemize}
-        \glsunit{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
+        \glssymbol{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
         Die Auszahlung wird beschrieben durch die \Gls{zv} $Y$ mit
         \[
-            Y(\glsunit{elementarereignis}) = k \cdot \chi_{\kl{1}}(\ele) + 6 \cdot \chi_{\kl{2, \dots, 6}}(\ele) \quad \faoio
+            Y(\glssymbol{elementarereignis}) = k \cdot \chi_{\kl{1}}(\ele) + 6 \cdot \chi_{\kl{2, \dots, 6}}(\ele) \quad \faoio
         \]
         Erwartete Auszahlung als arithmetisches Mittel:
-        \mab{\E{Y} = \sum_{\oio} Y(\ele) \glsunit{wfk}(\ele) = \frac{k+ 5 \cdot 6}{6} = 6 \cdot \frac{5}{6} + k \cdot \frac{1}{6}  = 6 \cdot \pe(Y=6) + k \cdot \pe(Y=k) = \sum_{I\in Y(\glsunit{eraum})} I \cdot \pe(Y=I)}
+        \mab{\E{Y} = \sum_{\oio} Y(\ele) \glssymbol{wfk}(\ele) = \frac{k+ 5 \cdot 6}{6} = 6 \cdot \frac{5}{6} + k \cdot \frac{1}{6}  = 6 \cdot \pe(Y=6) + k \cdot \pe(Y=k) = \sum_{I\in Y(\glssymbol{eraum})} I \cdot \pe(Y=I)}
     \end{bsp}
 
     \begin{defi}
@@ -1011,9 +1021,9 @@
         \mab{\E{X} = \mathbb{E} X = \sum_{x\in X(\eraum)} x \cdot \pe (X=x) }
         insofern die Reihe \glsverb{abskonv}, also \ma{ \sum_{x\in X(\eraum)} |x| \cdot \pe (X=x) < \infty}. \\
         Wir sprechen in diesem Fall von der Existenz des \Gls{ew}s. \\ \newline
-        Der \Gls{ew} einer \zv $X$ mit einer \dichte \glsunit{dichte} ist gegeben durch
-        \mab{\E X = \int_{- \infty}^{\infty} x \glsunit{dichte}(x) \dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glsunit{dichte}(x) \dx }
-        insofern \ma{\int_{- \infty}^{\infty} |x| \glsunit{dichte}(x) \dx < \infty}. \\
+        Der \Gls{ew} einer \zv $X$ mit einer \dichte \glssymbol{dichte} ist gegeben durch
+        \mab{\E X = \int_{- \infty}^{\infty} x \glssymbol{dichte}(x) \dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glssymbol{dichte}(x) \dx }
+        insofern \ma{\int_{- \infty}^{\infty} |x| \glssymbol{dichte}(x) \dx < \infty}. \\
         Wir sprechen in diesem Fall von der Existenz des Erwartungswerts. \\
         \texttt{Hinweis Folie 7}
     \end{defi}
@@ -1048,17 +1058,17 @@
 
         \paragraph{Notationen}
         \mab{x_k^{(n)} \coloneqq  (k - np) / \sqrt{npq} \text{ für } k = 0, \dots, n}
-        \mab{\glsunit{binomv} = \binom{n}{k} p^k q^{n-k}}
+        \mab{\glssymbol{binomv} = \binom{n}{k} p^k q^{n-k}}
         \begin{er}
             Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
-            \mab{\pe(S_n = k) = \glsunit{binomv}(k)}
+            \mab{\pe(S_n = k) = \glssymbol{binomv}(k)}
             \mab{\E{S_n} = np}
             \mab{Var(S_n) = npq}
         \end{er}
         Sei \ma{ L > 0} eine beliebige Konstante. Dann gilt
         \begin{equation}
             \label{eq:lokaleruentralergesetzwertsatz}
-            \oub{\glsunit{binomv}(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
+            \oub{\glssymbol{binomv}(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
         \end{equation}
         Dabei bedeutet $\sim$:
         \mab{f(n) \sim g(n) \Leftrightarrow \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)}  = 1}
@@ -1155,9 +1165,9 @@
         \paragraph{Vereinfachende Annahmen:}
         Alle H¨orer besuchen die Vorlesung mit derselben Wahrscheinlichkeit und alle H¨orer entscheiden sich unabh¨angig voneinander.
 
-        \paragraph{Modell:} $n$-mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$. Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glsunit{binomv}}-verteilt. Man betrachte jeden Anwesenden der n eingeschriebenen H¨orer als ''Erfolg''. \\
-        Also: \mab{\glsunit{eraum}  = \kl{0,1}^n, \quad \glsunit{wfk}(\glsunit{elementarereignis}) = p^{\sumEN \glsunit{elementarereignis}_i} \cdot (1-p)^{n - \sumEN \glsunit{elementarereignis}_i}}
-        \mab{S_n(\glsunit{elementarereignis}_i) = \sumEN \glsunit{elementarereignis}_i}
+        \paragraph{Modell:} $n$-mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$. Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glssymbol{binomv}}-verteilt. Man betrachte jeden Anwesenden der n eingeschriebenen H¨orer als ''Erfolg''. \\
+        Also: \mab{\glssymbol{eraum}  = \kl{0,1}^n, \quad \glssymbol{wfk}(\glssymbol{elementarereignis}) = p^{\sumEN \glssymbol{elementarereignis}_i} \cdot (1-p)^{n - \sumEN \glssymbol{elementarereignis}_i}}
+        \mab{S_n(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i}
         Dass $n$ Leute anwesende sind ist das Ereignis:
         \mab{A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}} = \kl{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor}}
         Für \ma{n = 142} ist das \ma{\lceil \frac{3}{10} \cdot n \rceil = 43} und  \ma{\lfloor \frac{7}{10} \cdot n \rfloor = 99}
