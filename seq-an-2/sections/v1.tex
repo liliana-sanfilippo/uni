@@ -2,7 +2,7 @@ The \gls{edit distance} (or \gls{alignment distance}) is one of the most fundame
 \[
 cost(A) = \sum^n_{i=1} cost(A_i),
 \]
-where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$ , in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = – or b_i = –)$. Then we have:
+where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$ , in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = - or b_i = -)$. Then we have:
 
 \defin{alignment distance}
 
@@ -13,7 +13,11 @@ where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$
 \txc{Hier das über die Block moves einfügen.}
 
 \section{The q-gram Distance}
-Edit distances emphasize the correct order of the characters in a string. If, however, a large block of a text is moved somewhere else (e.g. two paragraphs of a text are exchanged), the edit distance will be high, although from a certain standpoint, the texts are still quite similar. A more appropriate notion of distance can be defined in several ways. Here we introduce the q-gram distance dq, which is actually a pseudo-metric: There exist strings
+Edit distances emphasize the correct order of the characters in a string.
+If, however, a large block of a text is moved somewhere else (e.g.\ two paragraphs of a text are exchanged), the
+edit distance will be high, although from a certain standpoint, the texts are still quite similar.
+A more appropriate notion of distance can be defined in several ways.
+Here we introduce the q-gram distance dq, which is actually a pseudo-metric: There exist strings
 $x \neq y$ with $d_q(x, y) = 0$.
 
 Remember that for $q \in N$, a \gls{q-gram} is a string of length q.
