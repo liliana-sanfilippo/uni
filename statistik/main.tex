@@ -11,7 +11,7 @@
     \newpage
 
 
-    \section{Legende}\label{sec:legende}
+    \chapter{Legende}\label{sec:legende}
     \begin{tabular}{ll}
         Skript                                   & normale schwarze Schrift \\
         Meine Anmerkungen und Notizen            & \txc{Blaue Schrift}      \\
@@ -21,9 +21,9 @@
     \pagebreak
 
 
-    \section{Modellieren zufälliger Ereignisse}\label{sec:modellieren-zufalliger-ereignisse}
+    \chapter{Modellieren zufälliger Ereignisse}\label{sec:modellieren-zufalliger-ereignisse}
 
-    \subsection*{Vorlesung 1 (11.04.2025)}
+    \section{Vorlesung 1 (11.04.2025)}
     \bluenote{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind.}
     \begin{figure}[H]
         \centering
@@ -32,14 +32,14 @@
         \label{fig:model}
     \end{figure}
 
-    \subsubsection*{Lernziele}
+    \section{Lernziele}
     \begin{itemize}
         \item modellieren einfacher Zufallsexperimente
         \item \gls{wraum} kennen und verwenden
         \item \Gls{gleichverteilung} kennen und erkennen
     \end{itemize}
 
-    \subsubsection*{Begriffe}
+    \section{Begriffe}
     \begin{itemize}
         \item \Gls{elementarereignis}: \glssymbol{elementarereignis}: Möglicher Ausgang eines Zufallsexperiments
         \begin{itemize}
@@ -59,7 +59,7 @@
         \end{itemize}
     \end{itemize}
 
-    \subsubsection*{Vorgehen beim Modellieren}
+    \section{Vorgehen beim Modellieren}
     \bluenote{Beim geeigneten $\glssymbol{eraum} $ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann ``k'', ``z'' nahmen oder ``Kopf'', ``Zahl''. Das sind verschiedenen $\glssymbol{eraum} $, aber beide wären passend.}
     \begin{itemize}
         \item Finden des geeigneten $\glssymbol{eraum} $
@@ -217,11 +217,11 @@
     \newpage
 
 
-    \section{Rechnen mit Wahrscheinlichkeiten}\label{sec:rechnen-mit-wahrscheinlichkeiten}
+    \chapter{Rechnen mit Wahrscheinlichkeiten}\label{sec:rechnen-mit-wahrscheinlichkeiten}
 
-    \subsection*{Vorlesung 2 (25.04.2025)}
+    \section{Vorlesung 2 (25.04.2025)}
 
-    \subsubsection*{Lernziele}
+    \section{Lernziele}
     \begin{itemize}
         \item Unterschied zwischen disjunkten und paarweise disjunkten Mengen
         \item Rechenregeln für Wahrscheinlichkeiten
@@ -592,9 +592,9 @@
     \newpage
 
 
-    \section{Zufallsvariablen und ihre Verteilung}\label{sec:zufallsvariablen-und-ihre-verteilung}
+    \chapter{Zufallsvariablen und ihre Verteilung}\label{sec:zufallsvariablen-und-ihre-verteilung}
 
-    \subsection*{Vorlesung 4}
+    \section{Vorlesung 4}
     \begin{bsp}
         \textbf{n-faches Werfen einer fairen Münze} \\
         \[
@@ -648,7 +648,7 @@
         \]
     \end{lem}
 
-    \subsubsection*{Notationen}
+    \section{Notationen}
     \[
         \pe(X \in B) = \pe(\kl{\oio: X(\glssymbol{elementarereignis}) \in B})
     \]
@@ -703,9 +703,9 @@
     \newpage
 
 
-    \section{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}\label{sec:unabhangigkeit-und-bernoulli-experimente-index{bernoulli-experiment}}
+    \chapter{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}\label{sec:unabhangigkeit-und-bernoulli-experimente-index{bernoulli-experiment}}
 
-    \subsection*{Vorlesung 5}
+    \section{Vorlesung 5}
     Was bedeutet stochastische Unabhängigkeit?
 
     \paragraph{Intuition:} Zwei Ereignisse A und B sind unabhängig, wenn die Information des Eintretens des jeweils
@@ -782,7 +782,7 @@
         Es kann insgesamt unabhängig sein, aber nicht paarweise etc.\ unabhängig.
     \end{bem}
 
-    \subsubsection*{Unabhängige Nacheinanderausführung von Zufallsexperimenten}
+    \section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}
     Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
     \[
         \glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n
@@ -890,11 +890,11 @@
     \newpage
 
 
-    \section{Unabhängigkeiten von \gls{zv}}
+    \chapter{Unabhängigkeiten von \gls{zv}}
 
-    \subsection*{Vorlesung 6}
+    \section{Vorlesung 6}
 
-    \subsubsection*{\gls{zv} mit abzählbarem Bildbereich}
+    \section{\gls{zv} mit abzählbarem Bildbereich}
     \begin{satz}
         \textbf{Satz I.}
         Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
@@ -940,7 +940,7 @@
         \paragraph{Beweis.} \texttt{Siehe Folie 6--7}
     \end{satz}
 
-    \subsubsection*{\gls{zv} mit Dichten \index{Dichte}}
+    \section{\gls{zv} mit Dichten \index{Dichte}}
     \begin{satz}
         \textbf{Satz III.: Unabhängigkeiten von \gls{zv}} (mit und ohne Dichte) \\
         Seien $X_1, \dots, X_n$ unabh. $ \Leftrightarrow \pe(X_1 \leq a_1, \dots, X_n \leq a_n) = \pe(X_1 \leq a_1) \cdot \dots \cdot  \pe(X_n \leq a_n) = \mathcal{F}_{x_1}(a_1) \cdot \dots \cdot \mathcal{F}_{x_n}(a_n) \forall a_1, \dots, a_n \in \mathbb{R}$.
@@ -967,7 +967,7 @@
         \end{bem}
     \end{satz}
 
-    \subsubsection*{Widerlegen von Unabhängigkeiten}
+    \section{Widerlegen von Unabhängigkeiten}
     Es genpgt nicht einen Punkt zu finden, in dem (\ref{eq:gemdichte}) nicht gilt. Wir brauchen eine Menge $D \subseteq \mathbb{R}^n$ mit $|D| = Z(D) > 0$, so dass (\ref{eq:gemdichte}) auf $D$ nicht gilt. \\
     Einfacher: Zeigen, dass $\pe(X_1 \leq a_1, \dots, X_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$
     Randdichten:
@@ -978,9 +978,9 @@
     \texttt{Hier fehlt was}
 
 
-    \section{Erwartungswert und Varianz von Zufallsvariablen}
+    \chapter{Erwartungswert und Varianz von Zufallsvariablen}
 
-    \subsection*{Vorlesung 7}
+    \section{Vorlesung 7}
     Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig. \\
     Sind $X$ und $Y$  zwei \Glspl{zv} mit mit derselben Verteilung, so gilt
     \[
@@ -1029,9 +1029,9 @@
         \texttt{Hinweis Folie 7}
     \end{defi}
 
-    \subsection*{Vorlesung 8}
+    \section{Vorlesung 8}
 
-    \subsection*{Vorlesung 9 - Grenzwertsätze}
+    \section{Vorlesung 9 - Grenzwertsätze}
     \begin{satz}
         \textbf{Schwaches Gesetz der großen Zahlen} \\
         \texttt{Hier fehlen Voraussetzungen (siehe Folie 3)}
