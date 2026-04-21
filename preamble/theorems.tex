@@ -1,5 +1,31 @@
 
 \usepackage{amsthm}
+
+\tcbset{blue box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=accdarklight,
+    coltitle=white, colbacktitle=accdark,
+    attach boxed title to top left={xshift=0.3cm,
+    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+        before upper=\hspace*{0.5cm}, % reserve space for the image
+        overlay={
+            \node at ([xshift=0.5cm]frame.west) {};
+
+        }
+    }
+}
+}
+\newtcolorbox{mybox}[1][]{blue box, #1}
+
+\newtheorem{eig}[test]{Eigenschaften}
+\newcommand{\anm}[2]{
+    \color{Blue} \noindent
+    \begin{anmerkung}  \textit{zu "#1"}  \newline
+    #2
+    \end{anmerkung} \color{black}
+}
+
 \newtheoremstyle{mytheoremstyle} % name
     {\topsep}                    % Space above
     {\topsep}                    % Space below
@@ -11,9 +37,67 @@
     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
 \theoremstyle{mytheoremstyle}
 
+
+\newtheorem{test}{Test}[chapter]
+
+%% BEISPIEL
+
 \newtheorem{bsp}{Beispiel}[chapter]
-\newtheorem{exa}{Example}[chapter]
-\newtheorem{prob}{Problem}[chapter]
+
+\tcolorboxenvironment{bsp}{
+    colback=white,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
+
+
+\newtheorem{info}{Zusatzinformation}[chapter]
+\newtheorem{reg}{Regel}[chapter]
+\newtheorem{kor}{Korollar}[chapter]
+
+%% LEMMA
+
+
+\newtheorem{lem}{Lemma}[chapter]
+\tcolorboxenvironment{lem}{
+    colback=white,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
+
+%% SATZ
+
+\newtheorem{satz}{Satz}[chapter]
+\tcolorboxenvironment{satz}{
+    colback=white,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
+
 \newtheorem{theo}{Theorem}[chapter]
 
 %\newtheorem{formel}[defi]{Definition}
@@ -22,6 +106,20 @@
 %% DEFINITION
 
 \newtheorem{defi}{Definition}[chapter]
+
+\tcolorboxenvironment{defi}{
+    colback=white,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
 
 \newcommand{\defin}[1]{
 \begin{lavenderbox}{\textbf{\gls*{#1}}}
@@ -32,6 +130,10 @@
 \end{lavenderbox}
 }
 
+%% EXAMPLE
+
+\newtheorem{exa}{Example}[chapter]
+
 \newcommand{\examp}[1]{
     \begin{orchidbox}
     \begin{exa}
@@ -40,6 +142,10 @@
     \end{orchidbox}
 }
 
+%% PROBLEM
+
+\newtheorem{prob}{Problem}[chapter]
+
 \newcommand{\probl}[2]{
 \begin{cyanbox}{\textbf{#1}}
 \noindent
@@ -47,4 +153,78 @@
    {#2}
 \end{prob}
 \end{cyanbox}
+}
+
+
+%% FRAGE
+
+\newtheorem{fr}{Frage}[chapter]
+
+%% BEOBACHTUNG
+
+\newtheorem{beo}[test]{Beobachtung}
+
+\newtheorem{prinz}[test]{Prinzip}
+\newtheorem{bem}[test]{Bemerkung}
+\tcolorboxenvironment{bem}{
+    colback=gray!10,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
+\newtheorem{anmerkung}{Anmerkung}[]
+\newtheorem{folg}[test]{Folgerung}
+\newtheorem{erg}[test]{Ergänzung}
+\tcolorboxenvironment{erg}{
+    colback=yellow!5,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
+\newtheorem{er}[test]{Erinnerung}
+\tcolorboxenvironment{er}{
+    colback=blue!10,
+    colframe=ash,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false
+}
+
+
+
+\newcommand{\regel}[2]{
+    \begin{reg} \textbf{#1}  \newline
+    #2
+    \end{reg}
+}
+\newcommand{\prin}[2]{
+    \begin{prinz} \textbf{#1}  \newline
+    #2
+    \end{prinz}
+}
+\newcommand{\rsp}[3]{
+    \noindent \textbf{#1} \pageref{rsp:#2}
+
+    \noindent #3
+
 }

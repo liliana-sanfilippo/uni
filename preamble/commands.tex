@@ -5,6 +5,90 @@ colframe=Cyan}
 \newtcolorbox{orchidbox}{colback=white,
     colframe=Orchid}
 
+%%% MATH
+
+
+\newcommand{\charfunc}[1]{\glsentrytext{charfunc} mit $A = #1$, also $\chi_{#1}$}
+
+\newcommand{\mapsfrom}{\mathrel{\style{display:inline-block; transform:scale(-1,1);}{\mapsto}}}
+\newcommand{\X}{$X$}
+
+
 \newcommand{\txc}[1]{
-\textcolor{red}{#1}
+    \textcolor{Blue}{#1}
 }
+\newcommand{\txo}[1]{
+    \textcolor{Orange}{#1}
+}
+
+\newcommand{\p}[0]{\mathbb{P}}
+\newcommand{\za}[1]{\mathbb{Z} / #1 \mathbb{Z}}
+\newcommand{\zat}[0]{\mathbb{Z} / m \mathbb{Z}}
+\newcommand{\zatx}[1]{\mathbb{Z} / #1 \mathbb{Z}[x]}
+
+\renewcommand{\thefootnote}{\roman{footnote}}
+\newcommand{\limnin}[0]{\lim_{n \rightarrow \infty}}
+\newcommand{\intab}[0]{\int_a^b}
+\newcommand{\dx}[0]{\,dx}
+\newcommand{\sumEN}[0]{\sum_{i=1}^n}
+
+
+
+\newcommand{\explainvkr}[0]{\footnote{$v$: Anzahl der Elemente in der Menge $X$} \footnote{$k$: Anzahl der Elemente pro Block} \footnote{$r$: in wie vielen Blöcken ein Element vorkommen soll}}
+\newcommand{\explainvkrb}[0]{\explainvkr \footnote{$b$: Anzahl der Blöcke im Design}}
+\newcommand{\explaindesign}[0]{\footnote{$\mathcal{B}, \mathcal{C}, ...$: damit sind Designs gemeint}}
+\newcommand{\explainrs}[0]{\footnote{$r_s, r_t, ...$: t bzw. s ist die Größe der Teilmengen von X, die gleich oft in allen $r_t$ Blöcken eines $t$-Designs vorkommen soll}}
+
+
+\newcommand{\bluenote}[1]{\todo[inline, inlinewidth=0.9\linewidth, bordercolor=Blue, backgroundcolor=white]{\textcolor{Blue}{#1}}}
+\newcommand{\orangenote}[1]{\todo[inline, inlinewidth=0.9\linewidth, bordercolor=Orange, backgroundcolor=white]{\textcolor{Orange}{#1}} }
+%\ifvmode\leavevmode\fi
+
+\newcommand{\kl}[1]{\{ #1 \}}
+\newcommand{\txt}[1]{\quad \text{#1}}
+\newcommand{\faoio}[0]{ \quad \forall \glsunit{elementarereignis} \in \glsunit{eraum} }
+\newcommand{\oio}[0]{\glsunit{elementarereignis} \in \glsunit{eraum}}
+\newcommand{\wraum}[0]{\glsunit{wraum}}
+\newcommand{\oub}[2]{\txo{
+    \underbrace{
+        \textcolor{black}{#1}
+    }_{#2}
+}}
+\newcommand{\bub}[2]{\txc{
+    \underbrace{
+        \textcolor{black}{#1}
+    }_{#2}
+}}
+\newcommand{\oob}[2]{\txo{
+    \overbrace{
+        \textcolor{black}{#1}
+    }^{#2}
+}}
+\newcommand{\ma}[1]{\(#1\)}
+\newcommand{\mab}[1]{\[#1\]}
+\newcommand{\E}[1]{\mathbb{E}[#1]}
+\newcommand{\dichte}[0]{\Gls{dichte} \index{Dichte}}
+
+\newglossarystyle{symbunitlong}{%
+    \setglossarystyle{long3col}% base this style on the list style
+    \renewenvironment{theglossary}{% Change the table type --> 3 columns
+        \begin{longtable}{lp{1\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
+        {\end{longtable}}%
+%
+    \renewcommand*{\glossaryheader}{%  Change the table header
+        \bfseries Gegenstand & \bfseries Beschreibung & \bfseries Symbol \\
+        \hline
+        \endhead}
+    \renewcommand*{\glossentry}[2]{%  Change the displayed items
+        \glstarget{##1}{\glossentryname{##1}} %
+        & \glossentrydesc{##1}% Description
+        & \glsunit{##1}  \tabularnewline
+    }
+}
+
+\newcommand{\pe}[0]{\glsunit{wmaß}}
+\newcommand{\bernoulli}[0]{\Gls{bernoulli} \index{Bernoulli-Experiment}}
+\newcommand{\binomv}[0]{\Gls{binomv} \index{Binomialverteilung}}
+\newcommand{\ele}[0]{\glsunit{elementarereignis}}
+\newcommand{\eraum}[0]{\glsunit{eraum}}
+\newcommand{\zv}[0]{\Gls{zv}}
