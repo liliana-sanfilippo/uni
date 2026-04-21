@@ -11,7 +11,7 @@
     \newpage
 
 
-    \section{Legende}
+    \section{Legende}\label{sec:legende}
     \begin{tabular}{ll}
         Skript                                   & normale schwarze Schrift \\
         Meine Anmerkungen und Notizen            & \txc{Blaue Schrift}      \\
@@ -21,7 +21,7 @@
     \pagebreak
 
 
-    \section{Modellieren zufälliger Ereignisse}
+    \section{Modellieren zufälliger Ereignisse}\label{sec:modellieren-zufalliger-ereignisse}
 
     \subsection*{Vorlesung 1 (11.04.2025)}
     \bluenote{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind.}
@@ -263,7 +263,8 @@
                 $\ $ \\
                 \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
                 \item $f$ stückweise \texttt{???} $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
-                \item $f \geq 0: f $ R-intbar $\Leftrightarrow \underset{N \rightarrow \infty}{lim} \int_{-N}^N f(x) dx < \infty$
+                \item $f \geq 0: f $ R-intbar
+                $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx < \infty$
             \end{itemize}
         \end{bem}
     \end{defi}
@@ -600,7 +601,7 @@
             \glssymbol{eraum} _n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = (\frac{1}{2})^n \faoio \txt{(Gleichverteilung)}
         \]
         $\glssymbol{elementarereignis}_i = 1$ bedeute ``Kopf'' \\
-        Falls es uns interessiert, wie oft ''Kopf'' fällt:
+        Falls es uns interessiert, wie oft ``Kopf'' fällt:
         \[
             S_n(\glssymbol{elementarereignis}) \coloneqq  \sum^n_{i=1}     \glssymbol{elementarereignis}_i \txt{ist Anzahl ''Erfolge'' (Kopf)}
         \]

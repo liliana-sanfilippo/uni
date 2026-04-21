@@ -2,7 +2,8 @@ The \gls{edit distance} (or \gls{alignment distance}) is one of the most fundame
 \[
 cost(A) = \sum^n_{i=1} cost(A_i),
 \]
-where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$ , in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = - or b_i = -)$. Then we have:
+where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$, in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = - or b_i = -)$.
+Then we have:
 
 \defin{alignment distance}
 
@@ -28,7 +29,9 @@ Remember that for $q \in N$, a \gls{q-gram} is a string of length q.
 \defin{q-gram distance}
 
 \begin{bsp}
-Consider $\sum = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$. Using lexicographic order (AA, AB, BA, BB) among the q-grams, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ and $p_2(z) = (1, 1, 1, 0)$. Therefore we obtain $d_2(x, y) = 2$ and $d_2(x, z) =0$ (although $x\neq z$). 
+Consider $\sum = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
+Using lexicographic order (AA, AB, BA, BB) among the q-grams, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ and $p_2(z) = (1, 1, 1, 0)$.
+Therefore we obtain $d_2(x, y) = 2$ and $d_2(x, z) =0$ (although $x\neq z$).
 \txc{Hier bsp. tabelle }
 \end{bsp}
 
@@ -37,8 +40,10 @@ The q-gram distance dq is a pseudo-metric.
 \paragraph{Proof.} It fulfills nonnegativity, symmetry and the triangle inequality (exercise). 
 \end{theo}
 
-\subsection{Practical Computation}
-If the q-gram profile of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it makes sense to implement it as an array $p[0 . . . \sum^q - 1]$, where $p[i]$ counts the number of occurrences of the i-th q-gram in some arbitrary but fixed (e. g. lexicographic) order.
+\subsection{Practical Computation}\label{subsec:practical-computation}
+If the q-gram profile of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it
+makes sense to implement it as an array $p[0 \cdots \sum^q - 1]$, where $p[i]$ counts the number of occurrences of the
+i-th q-gram in some arbitrary but fixed (e.g.\ lexicographic) order.
 
 \defin{ranking function}
 
