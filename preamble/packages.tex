@@ -53,11 +53,18 @@
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
+
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}
-{\textcolor{Purple}\thechapter}
+{\textcolor{Purple}{\thechapter}}
 {20pt}
 {\Huge}
+
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}
+{1em}
+{}
 
 %% Other
 

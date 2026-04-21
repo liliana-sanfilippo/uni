@@ -109,7 +109,7 @@
 
 \tcolorboxenvironment{defi}{
     colback=white,
-    colframe=ash,
+    colframe=Lavender,
     boxrule=0.8pt,
     arc=2mm,
     top=1mm,
@@ -122,12 +122,11 @@
 }
 
 \newcommand{\defin}[1]{
-\begin{lavenderbox}{\textbf{\gls*{#1}}}
+\textbf{\gls*{#1}}
 \noindent
 \begin{defi}
     \glsdesc*{#1}
 \end{defi}
-\end{lavenderbox}
 }
 
 %% EXAMPLE
