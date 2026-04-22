@@ -62,7 +62,26 @@
 
 
 \newtheorem{info}{Zusatzinformation}[chapter]
+
+%% REGELN
+
 \newtheorem{reg}{Regel}[chapter]
+\tcolorboxenvironment{reg}{
+    colback=white,
+    colframe=Thistle,
+    boxrule=0.8pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
 \newtheorem{kor}{Korollar}[chapter]
 
 %% LEMMA
@@ -234,9 +253,9 @@
 
 
 
-\newcommand{\regel}[2]{
-    \begin{reg} \textbf{#1}  \newline
-    #2
+\newcommand{\regel}[1]{
+    \begin{reg} \textbf{\gls*{#1}}  \newline
+    \glsdesc*{#1}
     \end{reg}
 }
 \newcommand{\prin}[2]{
