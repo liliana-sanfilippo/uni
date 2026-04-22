@@ -36,3 +36,17 @@
 \definecolor{purp}{HTML}{850F78}
 \definecolor{orang}{HTML}{F59121}
 \definecolor{yello}{HTML}{fae99e}
+
+
+
+% Formats section, subsection and subsubsection titles respectively
+\titleformat{\section}{\sffamily\color{rose}\Large\bfseries}{\thesection\enskip\color{gray}\textbar\enskip}{0cm}{} %
+
+
+\titleformat{\subsection}{\sffamily\color{rose}\large\bfseries}{\thesubsection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats subsection titles
+
+\titleformat{\subsubsection}{\sffamily\color{rose}\bfseries}{\thesubsubsection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats subsubsection titles
+
+% Formats captions
+\DeclareCaptionFont{rose}{\color{rose}}
+\captionsetup{labelfont={rose,bf}}
