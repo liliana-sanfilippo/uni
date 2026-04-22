@@ -1,0 +1,200 @@
+\documentclass{article}
+\usepackage{float}
+% Language setting
+\usepackage[german]{babel}
+\usepackage[table]{xcolor}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{Fragestellungen von Kolloquium Wendisch II.} 
+\author{Lil'Jana}
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\begin{document}
+\maketitle
+
+\subsection*{Beschreiben Sie das trp-Operon und seine Kontrolle}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c||p{5cm}|p{5cm}|} \hline
+         & Repression und Aktivierung
+der Transkriptionsinitiation &  Transkriptionelle
+Attenuation \\ \hline \hline
+        Protein & Repressor oder Aktivator &  \textbf{keins} \\ \hline 
+         Transkription & Initiation wird reguliert & \textbf{vorzeitige Termination
+wird reguliert}  \\ \hline 
+        Vorkommen & Prokaryoten und Eukaryoten &  \textbf{nur in Bakterien}  \\ \hline 
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+\subsection*{Sie wollen ein Protein mit einem Wirtsbakterium produzieren. Dazu klonieren
+Sie das Gen für dieses Protein mitsamt der für Transkription, Translation und Sekretion notwendigen Sequenzen. Welches Bakterium wählen Sie?}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{klonierungswirte.png}
+    \caption{\textit{(aus Folien) }}
+    \label{fig:my_label}
+\end{figure}
+
+
+\subsection*{Bei der Klonierung von Genen nutzt man gerne die a-Komplementation.
+Wieviele Gene dafür sind wo kodiert?}
+Ein Gen ist dafür codiert, das lacZa auf dem Plasmid, z.B. pUC18. \newline
+Es kann durch zwei Teilproteine ersetzt werden, das N-terminale a-Peptid (blau) und das C-terminale w-Peptid (grün). \newline 
+Weder a-Peptid noch w-Peptid sind allein aktiv.
+Sind beide Gene für a- und w-Peptid vorhanden,
+entsteht aufgrund der a-Komplementation
+aktive b-Galactosidase.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{beta-galactosidase.png}
+    \caption{\textit{(aus Folien)} Structure of 1 subunit of tetrameric beta-galactosidase
+showing the N-terminal alpha region (blue) and C-
+terminal omega region (yellow)}
+    \label{fig:my_label}
+\end{figure}
+\subsection*{Wo und warum setzt man die Taq Polymerase ein?}
+bei der PCR, weil es hitzestabil ist
+\subsection*{Beschreiben Sie Taq Polymerase bezüglich ...}
+\subsubsection*{... der Substrate}
+dNTPs
+\subsubsection*{... der Matrize}
+DNA
+\subsubsection*{... der Aktivität}
+DNA-Polymerase
+\subsection*{Lückentext}
+Bei der Expressionsklonierung können Sie experimentell der Frage nach dem \textbf{hinreichenden} wissenschaftsphilosophischen Kriterium nachgehen. 
+\subsection*{Welche Elemente muß die zu klonierende DNA aufweisen?}
+\begin{itemize}
+    \item Promoter
+    \item Transkriptionsterminator
+    \item RBS
+    \item ORF (open reading frame) von Start bis Stop z.B. ATG z.B. TGA
+\end{itemize}
+\subsection*{Beschreiben Sie die Schritte der Gram-Färbung!}
+Beschreiben Sie die Schritte der Gram-Färbung!
+\begin{enumerate}
+    \item Färbung mit Kristallviolett
+    \item Farblackbildung mit Iod
+    \item Differenzierung durch Entfärbung mit Alkohol
+    \item Gegenfärbung mit Safranin
+\end{enumerate}
+
+\subsection*{SSU rDNA-Sequenzanalysen erlauben es alle Lebewesen der Welt phylogenetisch zu betrachten. Was ist die Einheit als evolutionärer Abstandsmesser, was als evolutionäre Uhr?}
+\textbf{“Evolutionäre Abstandsmesser”} (Einheit: Anzahl Mutationen pro nt) \newline
+\textbf{“Evolutionäre Uhr”} (Einheit: Anzahl Mutationen pro nt und Zeiteinheit) \textit{Problem: nicht für alle Organismen konstant}
+\subsection*{Der phylogenetische Stammbaum der Lebewesen basiert auf SSU rDNA-Sequenzanalysen. Beschriften sie die 3 Reiche und zeichnen Sie die ungefähren Positionen von E. coli, Mensch, Maus und Mais ein!}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{stammbaum.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
+\subsection*{Was katalysiert Lysozym?}
+Zerstörung der bakteriellen Zellwandstruktur durch Spaltung der beta-(1,4)-glykosidischen Bindung, was zur Lyse (Auflösung) der Bakterienzelle führt.
+\subsection*{Was katalysiert Transpeptidase?}
+Stabilisierung der Zellwandstruktur durch Vernetzung des Peptidoglykans (Bildung von Querverbindungen zwischen den Peptidseitenketten durch eine Peptidbindung)
+
+\subsection*{Was katalysiert Transglykosidase?} 
+Synthese und Verlängerung der Polysaccharidketten, die für die strukturelle Integrität der bakteriellen Zellwand entscheidend sind. 
+
+\subsection*{Wie wirkt Penicillin (und andere beta-Lactam-Antikiotika)?}
+\begin{itemize}
+    \item Hemmen der Transpeptidase - \textit{bindet irreversibel an das aktive Zentrum der Transpeptidase}
+    \item Verhinderung der Zellwandsynthese - \textit{Da die Transpeptidase gehemmt ist, können keine neuen Quervernetzungen in der Zellwand entstehen, während das Bakterium wächst}
+    \item Lyse der Bakterienzelle - \textit{Ohne eine funktionierende Zellwand kann die Bakterienzelle dem osmotischen Druck nicht standhalten}
+\end{itemize}
+\subsection*{Skizzieren Sie die Zellwand ...}
+\subsubsection*{... eines Gram-positiven Bakterium}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{zellwanda.png}
+    \caption{\textit{(aus Folien) }}
+    \label{fig:my_label}
+\end{figure}
+\subsubsection*{... eines Gram-negativen Bakteriums}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{zellwand2.png}
+    \caption{\textit{(aus Folien) }}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{Was versteht man
+in der mikrobiellen Ökologie unter „great plate
+count anomaly“?}
+Die "Great Plate Count Anomaly" bezieht sich auf die Beobachtung in der mikrobiellen Ökologie, dass die Anzahl der Mikroorganismen, die man in einer Umweltprobe durch direkte mikroskopische Zählung sehen kann, deutlich höher ist als die Anzahl der Mikroorganismen, die man auf einer Agarplatte kultivieren und zählen kann. 
+
+\subsection*{Wie setzt sich das bakterielle Murein
+zusammen? Wie ist es verknüpft?}
+\subsubsection{Zusammensetzung}
+\begin{itemize}
+    \item Glykanketten
+    \item Peptidseitenketten
+\end{itemize}
+\subsubsection{Verknüpfung}
+\begin{itemize}
+    \item Quervernetzung durch Transpeptidase
+    \item Die Peptidseitenketten der benachbarten Glykanketten werden durch Enzyme, wie die Transpeptidase, quervernetzt.
+    \item Diese Quervernetzung bildet ein starkes, netzartiges Gerüst, das die bakterielle Zellwand stabilisiert und ihr Form und Festigkeit verleiht.
+\end{itemize}
+\subsection*{Resistenz gegen Penicillin}
+\subsubsection*{Wie kann ich Penicillin-resistente Bakterien
+selektionieren?}
+Gabe von zu geringen (sub-lethalen) Penicillin-
+Konzentrationen
+\subsubsection*{Welches Enzym kann Penicillin-Resistenz
+vermitteln?}
+beta-lactamase (Penicillinase) öffnet den Lactam-Ring
+\subsection*{Gel-Elektrophorese}
+\subsubsection*{Welchen Typ der Gel-Elektrophorese nutzt
+man zur Analyse und Größenfraktionierung
+von DNA?}
+Agarose-Gelelektrophorese (negative DNA
+wandert zum Pluspol)
+\subsubsection*{Welchen Typ der Gel-Elektrophorese nutzt
+man zur Analyse und Größenfraktionierung
+von Proteinen?}
+SDS-PAGE (SDS denaturiert Proteine und bindet
+an diese so, dass ein konstantes Masse-Ladung-
+Verhältnis resultiert, wandert zum Plus-Pol
+\subsection*{Was ist das Prinzip der DNA-
+Sequenzierung nach Sanger?}
+Kettenabbruch durch di-deoxy-Nukleotide, z.B. ddGTP
+& basen-genaue Größenanalyse der entstandenen Fragmente
+\subsection*{Beschreiben Sie Signaltransduktion und
+Regulation eines Zweikomponenten-Systems}
+
+\subsection*{Beschreiben Sie die
+Genaktivierung durch NtrC~P}
+\begin{enumerate}
+    \item NtrC~P bindet
+an seine entfernt liegende Bindestelle 
+(UAS; upstream activating sequence)
+und oligomerisiert
+(EBP; enhancer binding protein)
+\item IHF biegt die DNA und erlaubt so
+die Bindung von NtrC~P an
+RNA polymerase Es54, welche
+an s54-spezifische Promotoren (-12/-24)
+bindet
+\item NtrC~P hydrolysiert ATP und
+ermöglicht Es54 die Initiation der
+Transkription (open complex formation)
+\end{enumerate}
+\end{document}

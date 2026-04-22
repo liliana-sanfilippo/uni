@@ -1,0 +1,232 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[german]{babel}
+    \usepackage{float}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{BW6 - Geschlechtsbestimmung, Mutationen, Humangenetik}
+\author{Lil'Jana}
+
+ 
+
+\begin{document}
+\maketitle
+\section{Extrachromosomale Gene und Cytoplasmatische Vererbung}
+Extrachromosomale Gene sind genetische Informationen, die sich außerhalb des Zellkerns befinden, d.h. nicht auf den Chromosomen, sondern in anderen Zellorganellen. Die wichtigsten Zellorganellen, die extrachromosomale Gene enthalten, sind: \newline
+\begin{itemize}
+    \item Mitochondrien (in allen eukaryotischen Zellen)
+    \begin{itemize}
+        \item Mitochondriale DNA (mtDNA)
+        \item kodiert Proteine, die an der Energieproduktion beteiligt sind, hauptsächlich in der oxidativen Phosphorylierung
+        \item maternell vererbt
+    \end{itemize}
+    \item Chloroplasten (in Pflanzenzellen)
+    \begin{itemize}
+        \item Chloroplasten-DNA (cpDNA)
+        \item kodiert Proteine für die Photosynthese 
+        \item in der Regel ebenfalls maternell vererbt
+    \end{itemize}
+\end{itemize}
+$\rightarrow$ Kein Mendelsches Vererbungsmuster! \newline
+Relevant für: \newline
+\begin{itemize}
+    \item Endosymbiontentheorie
+    \item Erbkrankheiten
+\end{itemize}
+
+\section{Humane Geschlechtschromosomen}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+    X-Chromosom & Y-Chromosom: \\ \hline
+     ca 1500 Gene & ca 50 Gene \\
+     Mensch ohne nicht lebensfähig & Mensch ohne lebensfähig \\
+    \end{tabular}
+    \caption{Unterschiede X- und Y-Chromosomen}
+    \label{tab:my_label}
+\end{table}
+Wichtige Regionen: \newline
+\begin{itemize}
+    \item PAR: pseudoautosomale Regionen
+    \begin{itemize}
+        \item Gene in diesen Regionen entgehen der X-Inaktivierung
+    \end{itemize}
+    \item SRY: Sex-determining Region of the Y
+\end{itemize}
+
+
+\section{X-Chromosom Inaktivierung bei Säugern}
+Der Prozess beginnt im X-Inaktivierungs-Zentrum (XIC), einer Region auf dem X-Chromosom, die das Gen XIST (X-inactive specific transcript) enthält. XIST produziert eine lange nicht-kodierende RNA, die an das X-Chromosom bindet, das inaktiviert werden soll. \newline
+Die XIST-RNA beschichtet das X-Chromosom, das inaktiviert werden soll, und führt zu strukturellen Veränderungen im Chromatin, wodurch es zu einem dichter gepackten Zustand übergeht. Dies führt zu einer Verringerung der Transkriptionsaktivität auf diesem Chromosom. 
+\begin{multicols}{2}
+\begin{mybox}[title=Barr-Körperchen]
+Inaktiviertes X-Chromosom in weiblichen Zellen, das als kompaktes, sichtbares Objekt im Zellkern erscheint und die Dosierung von X-Chromosomen-Genen ausgleicht.
+\end{mybox}
+\columnbreak
+\begin{mechanism}[title=Chromatin-Remodeling]
+Chromatin-Remodeling steuert den Zugang zu DNA und ist essenziell für die Kontrolle der Genexpression, die zelluläre Funktion und das richtige Wachstum und die Entwicklung von Organismen.
+\end{mechanism}
+\end{multicols} 
+\noindent Einmal inaktiviert, bleibt das Barr-Körperchen in den Tochterzellen nach Zellteilung inaktiv, was bedeutet, dass das gleiche X-Chromosom inaktiv bleibt, während das andere aktiv bleibt. Dieser Prozess wird als klonale Erhaltung bezeichnet.
+
+
+\section{Aneuploidie-Syndrome}
+Entstehung durch Nondisjunktion während der Meiose. \newline
+Wenn homologe Chromosomenpaare sich nicht korrekt trennen, gelangen beide Chromosomen eines Paares in die gleiche Tochterzelle. Dadurch entsteht eine Gamete mit einem zusätzlichen Chromosom (n+1) und eine Gamete mit einem fehlenden Chromosom (n-1).
+\begin{itemize}
+    \item Trisomie 21: Down-Syndrom
+    \begin{itemize}
+        \item Risiko abhängig von Alter der Mutter
+        \item die häufigste Chromosomen-Aberration
+    \end{itemize}
+    \item X0: Turner-Syndrom
+    \begin{itemize}
+        \item unfruchtbar
+    \end{itemize}
+    \item XXY: Klinefelter-Syndrom
+    \begin{itemize}
+        \item unfruchtbar
+    \end{itemize}
+    \item XXX: Phänotypisch Gesund
+    \begin{itemize}
+        \item meist fruchtbar
+    \end{itemize}
+    \item XYY
+    \begin{itemize}
+        \item fruchtbar
+    \end{itemize}
+\end{itemize}
+\begin{mybox}[title=Nondisjunktion]
+Fehler bei der Trennung von Chromosomen oder Chromatiden während der Zellteilung (Meiose oder Mitose), der zu Zellen mit einer abnormen Anzahl von Chromosomen führt, was Aneuploidie verursachen kann.
+\end{mybox}
+
+\section{Konvention zur Darstellung von Erbgängen}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{bilder/erbgänge.png}
+    \label{fig:my_label}
+\end{figure}
+\begin{itemize}
+    \item Männliche Person: Quadrat 
+    \item Weibliche Person: Kreis 
+    \item Geschwister von links nach rechts jünger
+    \item Homozygot gesunde Person: offenes Symbol
+    \item Homozygot kranke Person: ausgefülltes Symbol
+    \item Heterozygote Person: halbgefülltes Symbol
+\end{itemize}
+\section{Mutationen}
+\begin{itemize}
+    \item basale Mutationsrate
+    \item induzierte Mutationen
+    \item Mutationen im Genom / in Genen
+    \item Chromosomen-Mutationen / -Aberrationen
+\end{itemize}
+Somatische Mutation $\rightarrow$ normale Nachkommen \newline
+Keimbahnmutation$\rightarrow$ auch mutante Nachkommen 
+
+\section{Diversität der DNA innerhalb von einem Säugetier}
+Das kann verschiedene Gründe haben. 
+\begin{itemize}
+    \item \underline{Zelldifferenzierung und Genregulation} \newline
+    \textit{Mechanismen wie DNA-Methylierung, Histon-Modifikationen und Chromatin-Remodeling sorgen dafür, dass bestimmte Gene in einer Zellart aktiv bleiben, während andere dauerhaft stillgelegt werden.}
+    \item \underline{Somatische Mutationen }
+    \item \underline{X-Inaktivierung bei Weibchen} \newline
+    \textit{In verschiedenen Zellen können unterschiedliche X-Chromosomen aktiv sein, was zu einer genetischen Vielfalt innerhalb des Organismus führen kann.}
+    \item \underline{Rearrangements in bestimmten Zellen} \newline
+    \textit{Somatische Rekombination in Immunzellen, um die Vielfalt der Antikörper und T-Zell-Rezeptoren zu gewährleisten.}
+    \item \underline{Unterschiede in mitochondrialer DNA} \newline
+    \textit{Da Mitochondrien jedoch unabhängig von der Zellkern-DNA replizieren, können Mutationen in der mitochondrialen DNA auftreten, was dazu führt, dass verschiedene Zellen eines Organismus unterschiedliche mtDNA aufweisen können.}
+\end{itemize}
+
+
+\section{DNA-Methylierung als 'erbliches' Signal}
+\subsection{Zelluläre Vererbung}
+Während der Zellteilung wird das Methylierungsmuster der DNA auf die Tochterzellen weitergegeben. Dies wird als mitotische Vererbung bezeichnet. Das bedeutet, dass spezialisierte Zellen, wie Nervenzellen oder Muskelzellen, ihr spezifisches Genexpressionsmuster über viele Zellgenerationen hinweg beibehalten können, obwohl sie dieselbe DNA wie andere Zelltypen besitzen.
+\subsection{Epigenetische Vererbung}
+DNA-Methylierungsmuster können in manchen Fällen über Generationen hinweg weitergegeben werden (epigenetische Vererbung), was bedeutet, dass Umwelteinflüsse oder Ereignisse, die die Methylierung beeinflussen, die Genexpression in den Nachkommen beeinflussen können, ohne die DNA-Sequenz zu verändern.
+
+\section{Antikörper / Protein-Diversität}
+Antikörper sind Proteine, die im Körper spezifisch als Reaktion auf fast jedes denkbare Antigen gebildet werden. Diese Proteine entstehen durch normale Translation von mRNA, die von Genen abgelesen wird. Die Vielzahl an spezifischen Antikörpern wird dadurch ermöglicht, dass im Immunsystem eine ebenso große Vielfalt an spezifischen mRNAs vorhanden ist. Diese mRNAs stammen von unterschiedlichen Genen, die in B-Zellen durch einen Prozess der somatischen Rekombination vielfältig neu kombiniert werden. So entsteht eine enorme Bandbreite an Antikörpern, die jeweils ein anderes Antigen erkennen können. 
+\subsection{Mechanismen zur Erzeugung der Antikörper-Vielfalt}
+\begin{enumerate}
+    \item \underline{Somatische Rekombination (V(D)J-Rekombination)} \newline
+    \textit{Die Gene, die für die variable Region der Antikörper kodieren, bestehen aus verschiedenen Genabschnitten: V- (variable), D- (diversity) und J- (joining) Segmenten (bei den schweren Ketten) bzw. V- und J-Segmenten (bei den leichten Ketten).}
+    \item \underline{Junktionale Diversität} \newline
+    \textit{Beim Zusammensetzen der V-, D- und J-Segmente treten an den Verbindungsstellen zusätzliche Veränderungen auf. Durch das zufällige Einfügen oder Entfernen von Nukleotiden wird die Diversität der Antikörper weiter erhöht.}
+\end{enumerate}
+\begin{mybox}[title=Schwere und leichte Kette]
+Antikörper bestehen aus vier Polypeptidketten: zwei schwere Ketten und zwei leichte Ketten. Jede dieser Ketten besteht aus einer variablen Region (die spezifisch für das Antigen ist) und einer konstanten Region (die für die Funktion des Antikörpers verantwortlich ist). \newline 
+Die variable Region der schweren Kette wird durch die Kombination von V- (variable), D- (diversity) und J- (joining) Segmenten gebildet. Auf der schweren Kette kann die VDJ-Rekombination stattfinden.  \newline
+Die variable Region der leichten Kette wird durch die Kombination von V- (variable) und J- (joining) Segmenten gebildet. Daher kann auf der leichten Kette VJ-Rekombination stattfinden. 
+\end{mybox}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

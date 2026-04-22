@@ -1,0 +1,176 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[german]{babel}
+  \usepackage{float}  
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{lipsum} 
+\definecolor{blueboxTitle}{HTML}{B3C5D7}
+\definecolor{blueboxFrame}{HTML}{7392B7}
+\definecolor{blueboxBackground}{HTML}{C5D5EA}
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC} 
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+\tcbset{my info/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=blueboxBackground, colframe=blueboxFrame,
+    coltitle=black, colbacktitle=blueboxTitle
+  }
+}
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose
+  }
+}
+
+\newtcolorbox{infobox}[1][]{my info, #1}
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{BW5 - DNA-Verpackung, Allele, Marker, Genkonversion}
+\author{Lil'Jana}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\begin{multicols}{2}
+\section{Allgemeine Struktur der mRNA}
+\begin{itemize}
+    \item 5'-Cap
+    \item 5'-UTR
+    \item AUG-ORF
+    \item Stopcodon
+    \item 3'-UTR
+    \item Poly(A)-Schwanz
+\end{itemize}
+
+\subsection{5'-cap}
+\begin{mybox}[title=5'-cap]     
+Das 5'-Cap ist eine spezielle Struktur, die am 5'-Ende einer neu synthetisierten eukaryotischen mRNA während der RNA-Prozessierung hinzugefügt wird.
+\end{mybox}
+\begin{itemize}
+    \item \textbf{Schutz vor Abbau:} Die 5'-Cap-Struktur schützt die mRNA vor dem Abbau durch Exonukleasen
+    \item \textbf{Initiation der Translation:} Die 5'-Cap-Struktur spielt eine entscheidende Rolle bei der Erkennung der mRNA durch das Ribosom. Sie ermöglicht es den Initiationsfaktoren, die mRNA zu binden und den Ribosomenkomplex korrekt zu positionieren, um die Translation zu starten.
+    \item \textbf{Export aus dem Zellkern:} Spezifische Proteine, die die Kappe erkennen, helfen dabei, die mRNA durch die Kernporen zu transportieren.
+    \item \textbf{Spleißen}: Die 5'-Cap-Struktur kann auch das korrekte Spleißen der prä-mRNA beeinflussen, indem sie an Proteine bindet, die den Prozess der Entfernung von Introns und die Zusammenführung von Exons fördern.
+\end{itemize}
+
+\subsection{5'UTR}
+\begin{mybox}[title=5'-untranslated region]
+Die 5'-UTR ist die untranslatierte Region der mRNA, die vor dem Startcodon liegt. Sie wird nicht in Protein übersetzt, hat aber eine wichtige Rolle bei der Regulation der Translation, der Ribosombindung und der mRNA-Stabilität.
+\end{mybox}
+\begin{itemize}
+    \item Regulation der Translation
+    \item Ribosombindung
+    \item Sekundärstrukturen
+    \item Bindung von regulatorischen Proteinen und microRNAs
+    \item mRNA-Stabilität
+\end{itemize}
+
+\subsection{AUG-ORF}
+In der mRNA-Sequenz beginnt ein offener Leserahmen (ORF) meist mit dem AUG-Startcodon und endet mit einem Stoppcodon.
+\begin{mybox}[title=ORF]
+Ein offener Leserahmen (ORF) ist der Abschnitt einer mRNA, der zwischen einem Startcodon (meist AUG) und einem Stoppcodon (z. B. UAA, UAG, UGA) liegt und in ein Protein übersetzt werden kann.
+\end{mybox}
+\noindent 
+
+\subsection{Stopcodon}
+\begin{itemize}
+    \item UAA
+    \item UAG
+    \item UGA
+\end{itemize} 
+
+\subsection{3'-UTR}
+\begin{mybox}[title=3'-untranslated region]
+Die 3'-UTR ist der untranslatierte Abschnitt der mRNA am 3'-Ende, der nach dem Stoppcodon liegt. Sie spielt eine entscheidende Rolle bei der Regulierung der Stabilität, der Translationseffizienz und dem Abbau der mRNA sowie bei der Bindung von regulatorischen Molekülen wie microRNAs.
+\end{mybox}
+\begin{itemize}
+    \item \textbf{Regulation der mRNA-Stabilität:} Die 3'-UTR enthält häufig Signale, die bestimmen, wie lange die mRNA in der Zelle stabil bleibt.
+    \item \textbf{Kontrolle der Translationseffizienz:} Bestimmte Sequenzen in der 3'-UTR können Proteinen oder microRNAs (miRNAs) binden, die die Translation der mRNA entweder fördern oder hemmen. 
+    \item \textbf{Bindungsstellen für miRNAs:} Die 3'-UTR enthält oft Bindungsstellen für microRNAs, die kleine nicht-kodierende RNAs sind, die die Translation unterdrücken können. 
+    \item \textbf{Polyadenylierung (Poly-A-Schwanz):} Am Ende der 3'-UTR befindet sich der Poly-A-Schwanz, eine lange Kette von Adenin-Nukleotiden, die während der mRNA-Prozessierung hinzugefügt wird.   
+    \item \textbf{Transport der mRNA:} Die 3'-UTR kann auch Signale enthalten, die den Transport der mRNA in bestimmte Bereiche der Zelle lenken. 
+\end{itemize}
+\subsection{Poly-A-Schwanz}
+\begin{mybox}[title=Poly-A-Schwanz]
+Der Poly(A)-Schwanz ist eine Kette von Adenin-Nukleotiden (oft mehrere hundert), die am 3'-Ende einer eukaryotischen mRNA nach der Transkription hinzugefügt wird. Dieser Prozess wird Polyadenylierung genannt.
+\end{mybox}
+\begin{itemize}
+    \item Schutz vor Abbau
+    \item Förderung der Translation
+    \item Stabilität der mRNA
+    \item Export aus dem Zellkern
+\end{itemize}
+\begin{mechanism}[title=Polyadenylierungsprozess]
+ Nach der Transkription wird die prä-mRNA gespleißt und am 3'-Ende durch ein Enzym namens Poly(A)-Polymerase polyadenyliert. Dieser Prozess ist ein Teil der RNA-Prozessierung in Eukaryoten.
+\end{mechanism}
+\section{DNA-Replikation}
+\section{Entwicklungszyklen von Eukaryoten}
+\subsection{Mitose}
+\subsection{Meiose}
+
+\section{Transkription}
+\subsection{Start}
+\subsection{Transkriptionsfaktoren}
+
+\section{Tetradenbildung}
+
+\section{Transkrptionelle Attenuation}
+Das klassische Beispiel für Attenuation ist das trp-Operon, das die Enzyme für die Synthese der Aminosäure Tryptophan kodiert. \newline
+Transkriptionelle Attenuation ist ein Mechanismus, der es Zellen ermöglicht, die Genexpression während der Transkription zu regulieren, indem sie die Transkription vorzeitig stoppen oder fortsetzen. Dieser Mechanismus basiert auf der Faltung von mRNA-Sekundärstrukturen, die durch das Ribosom und die Verfügbarkeit von Metaboliten (wie Aminosäuren) beeinflusst werden.
+
+\section{Fehlerraten bei Replikation}
+
+\section{nukleares Spleißen}
+
+\section{Antibiotika und Chemotherapeutika}
+
+\section{Signaltransduktion und Regulaiton bei zwei-Faktor-Systemen}
+\begin{infobox}[title=Topoisomerase]
+ändert LK
+\end{infobox}
+\begin{infobox}[title=Oktamerprotein]
+Histon
+\end{infobox}
+\begin{infobox}[title=philosoph]
+Histon
+\end{infobox}
+
+
+
+
+\end{multicols}
+
+
+
+
+\end{document}

@@ -1,0 +1,203 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[german]{babel}
+    
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{BW5 - DNA-Verpackung, Allele, Marker, Genkonversion}
+\author{Lil'Jana}
+
+
+
+\begin{document}
+\maketitle
+\begin{mybox}[title={Molekulare (genetische) Marker}]
+Molekulare Marker sind spezifische DNA-Sequenzen, die zur Identifizierung und Analyse von genetischen Unterschieden verwendet werden. Sie können zur Untersuchung von Vererbungsmustern, der Identifizierung von Krankheitsgenen oder zur Untersuchung genetischer Variabilität in Populationen verwendet werden.
+\end{mybox}
+\section*{Analyse genetischer Marker}
+\begin{enumerate}
+    \item DNA aus Proben isolieren
+    \item PCR mit spezifischen Primern für einen Locus 
+    \begin{itemize}
+        \item Der spezifische Locus der DNA wird vervielfältigt
+    \end{itemize}
+    \item Gelauftrennung
+    \begin{itemize}
+        \item Die amplifizierten DNA-Fragmente werden durch Gel-Elektrophorese getrennt
+    \end{itemize}
+    \item Direkter Nachweis der (unterschiedlichen) Amplicons
+    \begin{itemize}
+        \item Die DNA-Fragmente, die durch die Gel-Elektrophorese getrennt wurden, werden visualisiert - das geschieht typischerweise durch Färben des Gels und Sichtbarmachen der DNA-Fragmente unter UV-Licht
+    \end{itemize}
+    \item Analyse
+    \begin{itemize}
+        \item die Unterschiede in der Größe oder Struktur der DNA-Fragmente, die sichtbar gemacht wurden, werden analysiert
+    \end{itemize}
+\end{enumerate}
+\begin{mybox}[title={Loci mit vielen Allelen}]
+Regionen in einem Genom, die eine hohe Variabilität in der Anzahl oder Art der Allele aufweisen.
+\end{mybox}
+\begin{itemize}
+    \item Mikrosatelliten (Simple Sequence Repeats, SSRs)
+    \begin{itemize}
+        \item kurz (1-6 bp)
+        \item Anzahl der Wiederholungen kann stark variieren
+    \end{itemize}
+    \item Variable Number Tandem Repeats (VNTRs)
+    \begin{itemize}
+        \item länger (10-100s bp)
+        \item Anzahl der Wiederholungen kann stark variieren
+    \end{itemize}
+    \item SNPs (Single Nucleotide Polymorphisms)
+    \begin{itemize}
+        \item Variationen in nur einer Base
+        \item ein einzelner SNP kann nur zwei Allele haben
+    \end{itemize}
+\end{itemize}
+\section*{DNA Verpackung im Zellkern}
+Wie passt so viel DNA in den
+winzigen Kern einer Zelle? \newline
+$\rightarrow$ mehrstufige Verpackung der DNA in DNA-Protein Komplexen!
+\subsection*{Kondensation der DNA und hierarchische Verpackung}
+Die DNA wird um Histonproteine gewickelt, um Nukleosomen zu bilden, auch als „Perlenkette“ bekannt. Diese Nukleosomen sind dann in eine Faserstruktur, das Chromatin, verpackt. \newline
+In der Metaphase der Zellteilung (Mitosis und Meiosis) sind die Chromatin-Fasern weiter komprimiert und bilden die hoch kondensierten Chromosomen.
+\begin{multicols}{2}
+\begin{mybox}[title={Heterochromatin}]
+hochverpackte, nicht zugängliche DNA in
+Metaphasechromosomen oder selektiv kondensierten
+Genomabschnitten
+\end{mybox}
+\columnbreak 
+\begin{mybox}[title={Euchromatin}]
+dekondensierte DNA (die aber immer noch an
+Nucleosomen gebunden ist)
+\end{mybox}
+\end{multicols}
+\subsection*{selektiv kondensierter Genomabschnitt} 
+In weiblichen Säugetieren, die zwei X-Chromosomen besitzen, wird eines der beiden X-Chromosomen inaktiviert, um die Dosiskompensation zu gewährleisten, d.h., um die Genexpression auf einem Niveau zu halten, das dem von Männchen (mit nur einem X-Chromosom) entspricht. \newline
+Das inaktivierte X-Chromosom ist stark kondensiert, was zu einer dichten, nicht transkriptionell aktiven Struktur führt. Diese Kondensation ist eine Form der Genregulation, bei der das Chromosom so stark verpackt wird, dass die Gene auf diesem Chromosom nicht mehr transkribiert werden. \newline
+Das geschieht durch: 
+\begin{itemize}
+    \item Histonmodifikationen
+    \item DNA-Methylierung
+    \item X-inaktivierende RNA
+\end{itemize}
+\section*{Allelfrequenzen in Populationen}
+Für ein Gen mit zwei Allelen (A und a), bei dem p die Frequenz des Allels A und q die Frequenz des Allels a ist, gilt: \newline \newline
+\underline{Allelfrequenzen:} \mathbf{p + q = 1} \newline
+\underline{Genotypfrequenzen:} \mathbf{p^2 + 2pq + q^2 = 1 }
+
+\subsection*{Das Hardy-Weinberg-Gesetz}
+\begin{multicols}{2}
+\subsubsection*{Bedingungen} 
+\begin{itemize}
+    \item Keine Mutationen
+    \item Zufallspaarung
+    \item Keine Migration
+    \item Große Population
+    \item Keine natürliche Selektion
+\end{itemize}
+\columnbreak
+\subsubsection*{Anwendung} 
+\begin{itemize}
+    \item Berechnung von Allelfrequenzen
+    \item Vorhersage von Genotypfrequenzen
+    \item Überprüfung von Evolution
+\end{itemize}
+\end{multicols}
+\newpage
+\subsubsection*{Verkomplizierung durch Co-Dominanz und multiple Allele} 
+$\ $
+\begin{multicols}{2}
+\begin{mybox}[title={Multiple Allele}]
+Ein Gen mit multiplen Allelen hat mehr als zwei mögliche Allele in einer Population. Ein klassisches Beispiel für multiple Allele ist das ABO-Blutgruppensystem beim Menschen.
+\end{mybox}
+\columnbreak 
+\begin{mybox}[title={Co-Dominanz}]
+Bei Co-Dominanz zeigen beide Allele im heterozygoten Zustand ihre Eigenschaften vollständig. Beim ABO-System bedeutet das, dass bei einem Individuum mit den Genotypen IAIB sowohl A- als auch B-Oberflächenantigene auf den roten Blutkörperchen exprimiert werden.
+\end{mybox}
+\end{multicols}
+\subsection*{Genkonversion}
+Genkonversion ist ein genetischer Prozess, bei dem die Sequenz eines Gens durch den Austausch von DNA-Abschnitten zwischen homologen Chromosomen verändert wird. Dieser Prozess führt dazu, dass eine Allelsequenz in eine andere überführt wird, wobei die ursprüngliche Sequenz des Allels durch die Sequenz des anderen Allels ersetzt wird. Genkonversion ist oft das Ergebnis von Rekombination und kann die genetische Variation und die Funktion von Genen beeinflussen. 
+\begin{multicols}{2}
+\subsection*{Mechanismen der Genkonversion}
+\begin{itemize}
+    \item Homologe Rekombination
+    \item Fehlerhafte Rekombination
+    \item Repair Mechanismen
+\end{itemize}
+\subsection*{Folgen der Genkonversion}
+\begin{itemize}
+    \item Genetische Variation
+\end{itemize}
+\columnbreak
+\begin{mybox}[title={Co-Dominanz}]
+Bei Co-Dominanz zeigen beide Allele im heterozygoten Zustand ihre Eigenschaften vollständig. Beim ABO-System bedeutet das, dass bei einem Individuum mit den Genotypen IAIB sowohl A- als auch B-Oberflächenantigene auf den roten Blutkörperchen exprimiert werden.
+\end{mybox}
+\end{multicols}
+\subsection*{Tetradenanalyse}
+Die Tetradenanalyse ist eine Methode zur Untersuchung der Rekombination und der genetischen Karten von Eukaryoten, insbesondere in Ascomyceten Pilzen. Sie basiert auf der Analyse der vier Sporen (Tetraden), die aus der Meiose hervorgehen. Diese Sporen stammen aus einer einzigen Mutterzelle und bieten Informationen darüber, wie Gene auf Chromosomen verteilt und rekombiniert werden. \newline
+Tetradenanalysen können Hinweise auf Genkonversion geben. Wenn Genkonversion auftritt, können die Ergebnisse der Tetradenanalyse ungewöhnliche Muster zeigen, weil Genkonversion das Verhältnis von Rekombinationen zwischen den Allelen beeinflusst.
+\subsection*{Holliday Modell} 
+Das Holliday-Modell beschreibt die grundlegenden Schritte der homologen Rekombination, einschließlich des Strang-Austauschs, der Bildung der Holliday Junction, der Branch Migration und der Auflösung der Junction. 
+
+\url{https://www.youtube.com/watch?v=vLuWg1IxoJ4}
+
+\end{document}

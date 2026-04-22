@@ -1,0 +1,119 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[german]{babel}
+    
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{BW4 - Chromosomentheorie, Genkopplung, genet. Rekomb.}
+\author{Lil'Jana}
+
+
+\begin{document}
+\maketitle
+\section*{Geschlechtsgebundene Vererbung}
+\begin{multicols}{2}
+\begin{mechanism}[title={reziproke Kreuzung}]
+Eine reziproke Kreuzung ist eine Methode der genetischen Analyse, bei der zwei Arten von Kreuzungen durchgeführt werden, um festzustellen, wie sich das Geschlecht der Eltern auf die Vererbung bestimmter Merkmale auswirkt. Diese Methode wird verwendet, um geschlechtsgebundene Merkmale oder andere genetische Eigenschaften zu untersuchen, die möglicherweise durch das Geschlecht der Eltern beeinflusst werden.
+\end{mechanism}
+\columnbreak
+\begin{mybox}[title={Kopplungsgruppe}]
+Eine Gruppe von Genen, die auf demselben Chromosom liegen und daher gemeinsam vererbt werden. Gene in einer Kopplungsgruppe sind physisch miteinander verbunden, was bedeutet, dass sie während der Meiose nicht unabhängig voneinander sortiert werden. Dies steht im Gegensatz zu den Genen, die auf verschiedenen Chromosomen liegen und nach den Gesetzen der unabhängigen Assortierung (Mendel'sche Regeln) vererbt werden.
+\end{mybox}
+\end{multicols} 
+\section*{Rekombinationsfrequenz}
+Die Rekombinationsfrequenz ist der Prozentsatz der Nachkommen, die neue Allelkombinationen aufweisen, die sich von denen der Eltern unterscheiden. \newline
+Die Rekombinationsfrequenz gibt Aufschluss über die Entfernung zwischen den Genen auf einem Chromosom. Eine höhere Rekombinationsfrequenz deutet auf eine größere Distanz zwischen den Genen hin.
+\[
+\text{Rekombinationsfrequenz} = \frac{\text{Anzahl der Rekombinanten}}{\text{Gesamtanzahl der Nachkommen}} \times 100 \%
+\]
+Diese Frequenz wird oft verwendet, um Karten von Genen auf Chromosomen zu erstellen (Genkarten), die in der Genetik und in der Züchtung von Pflanzen und Tieren von Bedeutung sind. \newline
+Beispiel: \[
+\text{Rekombinationsfrequenz} = \frac{150}{1000} \times 100 \% = 15 \%
+\]
+\section*{Genetische Karten}
+Aus der Rekombinationsfrequenz kann man die Distanz der Gene in cM ableiten. Bei der Erstellung genetischer Karten werden die Positionen der Gene auf einem Chromosom durch die Analyse von Rekombinationsfrequenzen bestimmt. 
+\[
+\text{Genetische Distanz (cM)} = \text{Rekombinationsfrequenz} \text{ (in Prozent)}
+\]
+Für Gene, die auf demselben Chromosom liegen, beträgt die maximale Rekombinationsfrequenz 50$\%$.  Gene mit mehr als 50 cM
+genetischer Distanz "verhalten sich"
+als wären sie ungekoppelt. \newline
+Wenn man die Rekombinationsfrequenzen zwischen drei Genen misst und das Gen, das die geringste Anzahl von Rekombinanten aufweist, identifizierst, kann man schließen, dass dieses Gen wahrscheinlich in der Mitte der beiden anderen Gene liegt. \newline
+Dies liegt daran, dass das mittlere Gen bei einem Doppelcrossover nicht rekombiniert wird, während die äußeren Gene bei einem Einzelcrossover eher rekombinieren. Das bedeutet, dass das mittlere Gen weniger häufig in den rekombinierten Nachkommen auftritt.
+ 
+\begin{mybox}[title={Centi-Morgan (cM)}]
+Ein Centi-Morgan ist eine Einheit, um die relative Position von Genen auf genetischen Karten darzustellen. \newline
+Ein Centi-Morgan (cM) entspricht einer Rekombinationsfrequenz von 1$\%$. Das bedeutet, dass bei einer genetischen Distanz von 1 cM zwischen zwei Genen in etwa 1% der Nachkommen ein Crossing-over zwischen diesen Genen auftritt.
+\end{mybox}
+
+
+\section*{Erbkrankheiten}
+\subsection*{Hämophilie}
+Die Vererbung von der Blutungsstörung Hämophilie ist an das X-Chromosom gebunden. Da Frauen zwei X-Chromosome haben, sind sie potenziell Trägerinnen, aber beim Vorliegen eines gesunden X-Chromosoms nicht selber erkrankt. 
+\subsection*{Diagnose von Erbkrankheiten}
+\begin{itemize}
+    \item Stammbaumanalyse zur Ermittlung von heterozygoten Trägern
+    \item Direkter Nachweis von rezessiven Allelen
+    \item Karyotyp-Analysen, Enzym- und DNA-Tests auf Erbkrankheiten
+    \item Pränatale Diagnostik
+\end{itemize}
+
+
+\end{document}

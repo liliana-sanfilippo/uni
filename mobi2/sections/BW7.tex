@@ -1,0 +1,102 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[german]{babel}
+\usepackage{float}    
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{BW7 - Regulation der Genexpression in Eukaryoten und Spleißen}
+\author{Lil'Jana}
+
+
+
+\begin{document}
+\maketitle
+\section{Arten von RNA}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c c c c}
+        hnRNA & heterogene nukleäre RNA & Primärtranskripte &  \\
+        mRNA &  Messenger-RNA & proteincodierende RNA & \\
+        rRNA & ribosomale RNA & u.a. Proteinbiosynthese & \\
+        tRNA &  Transfer-RNA & transportiert Aminosäuren zu Ribosomen &  \\
+        snRNA & Small Nuclear RNA &  Bestandteile des Speißosoms  & \\
+        (pre-)miRNA & Mikro-RNA & regulatorische RNAs  & \\
+        siRNA & Small Interfering RNA & regulatorische RNAs  &  \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+\section{rDNA}
+rDNA stellt eine direkte und spezifische Form der Genexpression dar, bei der die Endprodukte der Genexpression nicht in Proteine, sondern in RNA-Moleküle umgesetzt werden. Diese rRNA-Moleküle sind direkt funktional und tragen zur Bildung der Ribosomen bei, die wiederum für die Translation anderer mRNAs in Proteine verantwortlich sind.
+
+\section{Promotoren}
+
+
+
+
+
+
+
+
+\newpage
+Bitte gibt jeweils eine kurze Definition von den Begriffen: 
+Autosomen
+\end{document}

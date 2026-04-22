@@ -1,0 +1,344 @@
+\documentclass{article}
+\usepackage{float}
+% Language setting
+\usepackage[german]{babel}
+\usepackage[table]{xcolor}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\title{Fragestellungen von Kolloquium Weisshaar II.} 
+\author{Lil'Jana}
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\mmark}{\ding{51}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\maybe}{\rlap{($\square$)}{(\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west)
+        
+      }
+    }
+  }
+}
+
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+\begin{document}
+\maketitle
+\subsection*{Die an einem RNA-Template (Matrize) synthetisierte DNA nennt man}
+\begin{todolist}%\textit{\scriptsize }%
+\item Restriktionsenzym \textit{\scriptsize schneiden DNA an spezifischen Sequenzen}
+\item Reverse Transkriptase \textit{\scriptsize katalysiert die DNA-Synthese an einem RNA-Template}
+\item [\done] cDNA
+\item Palindrom \textit{\scriptsize Sequenz von Nukleotiden, die auf beiden Strängen in entgegengesetzter Richtung identisch gelesen werden kann}
+\item Plasmid \textit{\scriptsize extrachromosomales, ringförmiges DNA-Molekül}
+\end{todolist}
+\subsection*{Eine Frau ist rotgrün-blind. Welchen 'Phänotyp' (bezogen auf rotgrün-
+Blindheit) hat ihr Vater?}
+\begin{todolist}%\textit{\scriptsize }%
+\item (Die Information reicht nicht aus, um das zu bestimmen.)
+\item Er kann normal Farben sehen. 
+\item [\done] Er ist rotgrün-blind. \textit{\scriptsize Der Vater muss rotgrün-blind sein, weil er das defekte X-Chromosom an seine Tochter weitergegeben hat und Männer nur ein X-Chromosom haben.}
+\item Er hat zwei Y-Chromosomen.
+\end{todolist}
+\subsection*{Wenn das erste Kind eines Paares ein Junge war, wie hoch ist dann die
+Wahrscheinlichkeit, dass das nächste Kind ein Mädchen sein wird?}
+\begin{todolist}%\textit{\scriptsize }%
+\item $100\%$
+\item[\done] $50\%$  \textit{\scriptsize dass das erste Kind ein Junge war hat keinen Einfluss auf die nächsten Kinder}
+\item $33\%$
+\item $25\%$
+\item $0\%$
+\end{todolist}
+\subsection*{Bei einer Katzenvarietät ist das Auftreten von Silberflecken in der Iris der
+Augen an das Geschlecht gekopppelt. FF-, Ff-, oder FY-Katzen haben
+Flecken, ff- oder fY-Katzen haben keine. Daraus können wir schließen,
+dass ....}
+\begin{todolist}%\textit{\scriptsize }%
+\item sämtliche männliche Nachkommen von Weibchen, die Flecken
+aufweisen, ebenfalls Flecken haben werden. \textit{\scriptsize da ein Weibchen mit Flecken entweder den Genotyp FF oder Ff haben kann. Wenn das Weibchen Ff ist, besteht eine 50$\%$ige Chance, dass es das f-Allel (rezessiv) an seine männlichen Nachkommen weitergibt, was dazu führen würde, dass die männlichen Nachkommen (fY) keine Flecken haben.}
+\item[\done] ein Weibchen, das keine Flecken hat, nur männliche
+Nachkommen ohne Flecken haben wird.
+\item weibliche Katzen gefleckt oder nicht gefleckt sein können, Kater
+dagegen nie Flecken haben. \textit{\scriptsize Kater können durchaus Flecken haben, wenn sie das dominante F-Allel von der Mutter erben}
+\end{todolist}
+\subsection*{Bei vielen Vögeln haben die Männchen den Genotyp ZZ, und die
+Weibchen den Genotyp ZW. Welches Elternteil bestimmt in diesem
+System, welches Geschlecht die Nachkommen haben?}
+\begin{todolist}%\textit{\scriptsize }%
+\item das Männchen
+\item[\done] das Weibchen \textit{\scriptsize Männchen können sowieso nur Z weitergeben}
+\item keines der beiden Elternteile
+\item das Weibchen bestimmt das Geschlecht der weiblichen
+Nachkommen, das Männchen das der männlichen
+\end{todolist}
+
+\subsection*{Bei der Erstellung von genetischen (Gen-) Karten werden aus Daten zu
+Rekombinationsfrequenzen zwischen Genen genetische Distanzen
+errechnet und die Abstände in cM angegeben. Was ist die Ursache für
+dafür, dass Rekombinationsfrequenz-Werte (in $\%$) nicht einfach additiv in
+Centi-Morgan umgerechnet werden können?}
+\begin{todolist}%\textit{\scriptsize }%
+\item Weil Gene oft auf verschiedenen Kopplungsgruppen liegen. \textit{\scriptsize weil Gene auf verschiedenen Kopplungsgruppen keine Rekombinationsfrequenzen zeigen würden}
+\item Weil Einzelcrossover-Ereignisse zu Rekombinanten führen, die
+gegenüber den Parentaltypen einen Austausch zeigen. \textit{\scriptsize das erklärt nicht, warum Rekombinationsfrequenzen nicht einfach additiv in Centi-Morgan umgerechnet werden können}
+\item Weil Gene im Genom öfter die Position verändern. \textit{\scriptsize das beschreibt Translokationen oder Transpositionen, die zwar vorkommen können, aber sie beeinflussen nicht die Rekombinationsfrequenzen im normalen Vererbungsprozess}
+\item[\done] Weil Doppelcrossover-Ereignisse zwischen zwei Genen die
+Rekombinationsfrequenz-Werte reduzieren. \textit{\scriptsize Bei Doppelcrossover-Ereignissen zwischen zwei Genen kommt es zu einem zweiten Crossing-over, das den ersten Austausch rückgängig macht, sodass die Gene wieder in ihrer ursprünglichen Anordnung erscheinen. Dies führt dazu, dass die Rekombinationshäufigkeit unterschätzt wird, weil Doppelcrossover-Ereignisse nicht zu einer sichtbaren Rekombination führen.}
+\end{todolist}
+
+\subsection*{Welche Bedingungen muss eine Population bzw. die Allele in der
+Population erfüllen, damit das Hardy-Weinberg-Gesetz für die
+Allelfrequenzen in Populationen gültig ist?}
+\begin{todolist}%\textit{\scriptsize }%
+\item Alle Allele eines Gens/Lokus müssen mit gleicher Häufigkeit auftreten. \textit{\scriptsize Das Hardy-Weinberg-Gesetz erfordert nicht, dass alle Allele mit gleicher Häufigkeit auftreten}
+\item Manche Allele müssen wegen einer negativen Auswirkung auf die
+Reproduktionsrate weniger häufig an die Nachfolge-Generation
+weitergegeben werden. \textit{\scriptsize Das Hardy-Weinberg-Gesetz gilt nur in Abwesenheit von Selektion}
+\item[\done] Die Population muss unbeschränkte, zufallsbedingte genetische
+Durchmischung aufweisen. \textit{\scriptsize Eine der Grundvoraussetzungen für das Hardy-Weinberg-Gesetz ist, dass es in der Population Panmixie gibt, d.h., dass alle Individuen zufällig miteinander verpaaren, ohne genetische oder soziale Einschränkungen.}
+\end{todolist}
+
+\subsection*{Was für eine Mutation (welche das/die fragliche(n) Gen(e) betrifft) wäre
+wahrscheinlich am wenigsten schädlich für das zu bildende Protein?}
+\begin{todolist}%\textit{\scriptsize }%
+\item[\done] Substitution einer Base durch eine andere  \textit{\scriptsize insbesondere wenn sie eine stumme Mutation verursacht}
+\item Insertion einer Base \textit{\scriptsize führt oft zu einer Verschiebung des Leserasters (Frameshift-Mutation)}
+\item Deletion einer Base \textit{\scriptsize führt oft zu einer Verschiebung des Leserasters (Frameshift-Mutation)}
+\item Inversion eines Teilabschnitts des Chromosoms \textit{\scriptsize kann schwerwiegend sein, da sie oft die Reihenfolge der Gene verändert}
+\item Alle genannten Mutation wären wahrscheinlich gleich schädlich \textit{\scriptsize s.o.}
+\end{todolist}
+
+\subsection*{Den Austausch von Chromosomenabschnitten zwischen nicht-homologen
+Chromosomen bezeichnet man als ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item Inversion. \textit{\scriptsize Austausch von Chromosomenabschnitten innerhalb desselben Chromosoms}
+\item Transduktion. \textit{\scriptsize ein Prozess, bei dem DNA von einem Virus auf eine andere Zelle übertragen wird}
+\item[\done] Translokation. 
+\item Transformation. \textit{\scriptsize Prozess, bei dem eine Zelle freie DNA aus ihrer Umgebung aufnimmt und in ihr Genom integriert}
+\end{todolist}
+
+\subsection*{Eine Person, die den Genotyp XXY aufweist, hat ....}
+\begin{todolist}%\textit{\scriptsize }%
+\item[\done] eine Chromosomenaberration. \textit{\scriptsize Klinefelter-Syndrom}
+\item eine autosomal rezessive Krankheit.  \textit{\scriptsize handelt sich um eine Chromosomenaberration, nicht um eine Erkrankung}
+\item eine autosomal dominante Krankheit. \textit{\scriptsize }
+\item ein geschlechtsgekoppeltes rezessives Merkmal. \textit{\scriptsize st keine geschlechtsgekoppelte Erkrankung}
+\end{todolist} 
+
+\subsection*{Ein Mensch mit Down-Syndrom hat ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item ein seltenes autosomal-rezessives Merkmal. \textit{\scriptsize Chromosomenaberration}
+\item[\done] ein zusätzliches Chromosom 21.
+\item ein spezifisches Gen, das zu einer geistigen Behinderung führt. \textit{\scriptsize Down-Syndrom wird nicht durch ein einzelnes spezifisches Gen verursacht}
+\item ein zusätzliches Chromosom 21 sowie ein spezifisches Gen,
+das zu einer geistigen Behinderung führt. \textit{\scriptsize gibt kein einzelnes spezifisches Gen, das die geistige Behinderung verursacht}
+\end{todolist}
+
+\subsection*{Welche der folgenden Konstellationen trifft für die einzige bekannte lebensfähige Monosomie beim Menschen zu?}
+\begin{todolist}%\textit{\scriptsize }%
+\item XXY \textit{\scriptsize Trisomie, Klinefelter Syndrom}
+\item XYY \textit{\scriptsize Trisomie, XYY-Syndrom}
+\item XY \textit{\scriptsize der normale männliche Genotyp}
+\item Y0 \textit{\scriptsize nicht lebensfähig}
+\item[\done] X0    \textit{\scriptsize Turner-Syndrom}
+\end{todolist}
+
+\subsection*{Wie viele (protein-kodierende) Gene befinden sich in etwa auf dem Y-Chromosom des Menschen?}
+\begin{todolist}%\textit{\scriptsize }%
+\item Keines
+\item[\done] ca. 70
+\item etwa 700
+\item Tausende
+\end{todolist}
+
+\subsection*{Die snRNPs genannten Partikel sind ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item[\done] Bestandteile des Spleißosoms. 
+\item am Entfernen von Exons aus dem Primärtranskript beteiligt. \textit{\scriptsize snRNPs sind am Entfernen von Introns beteiligt}
+\item ein bestimmter Typ spezialisierter Kohlenhydrate. \textit{\scriptsize snRNPs sind keine Kohlenhydrate, sondern Komplexe aus RNA und Proteinen}
+\item ein Zwischenprodukt beim Zusammenbau des Ribosoms. \textit{\scriptsize snRNPs sind nicht am Ribosomenaufbau beteiligt}
+\item an der Einschleusung von Proteinen ins ER beteiligt. \textit{\scriptsize Einschleusung von Proteinen ins Endoplasmatische Retikulum (ER) wird durch das Signal Recognition Particle (SRP) und nicht durch snRNPs vermittelt}
+\end{todolist}
+\begin{mybox}[title={Spleißosom}]
+Das Spleißosom ist ein großes, dynamisches Nukleoprotein-Komplex, der die prä-mRNA (die primäre Transkription der DNA) verarbeitet, indem es Introns entfernt und Exons miteinander verbindet.
+\end{mybox}
+
+\subsection*{Normalerweise werden bei eukaryotischen Genen ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item die Exons nicht transkribiert. \textit{\scriptsize Exons werden während der Transkription in RNA transkribiert}
+\item die Introns nicht transkribiert. \textit{\scriptsize Introns werden während der Transkription ebenfalls in RNA transkribiert. Sie werden jedoch später während des Spleißvorgangs aus der prä-mRNA entfernt.}
+\item[\done] die Introns zwar in RNA transkribiert, aber diese RNA verlässt den
+Zellkern nicht. \textit{\scriptsize Introns werden in der prä-mRNA transkribiert, aber sie werden während des Spleißvorgangs entfernt, bevor die reife mRNA den Zellkern verlässt.}
+\item die Exons zwar in RNA transkribiert, aber diese RNA verlässt den
+Zellkern nicht. \textit{\scriptsize Exons werden in die prä-mRNA transkribiert, und nach dem Entfernen der Introns verlässt die reife mRNA den Zellkern.}
+\item Exons und Introns in RNA transkribiert, und diese RNA verlässt den
+Zellkern. \textit{\scriptsize prä-mRNA enthält Exons und Introns}
+\end{todolist}
+
+\subsection*{Beispiele für Totipotenz sind:}
+\begin{todolist}%\textit{\scriptsize }%
+\item Mutationen, die zur Bildung eines Organs an Stelle eines anderen führen, \textit{\scriptsize beschreibt eine Fehlentwicklung oder eine Mutation, die zur Bildung eines falschen Organs führt}
+\item[\done] die Regeneration einer kompletten Pflanze aus einzelnen Zellen des
+Blattes oder der Wurzel, \textit{\scriptsize Totipotenz bei Pflanzen}
+\item[\maybe] die Teilung embryonaler Zellen, \textit{\scriptsize nicht alle embryonalen Zellen sind totipotent}
+\item die Abspaltung der Keimbahnzellen früh in der Embryogenese. \textit{\scriptsize Keimbahnzellen sind spezialisierte Zellen und pluri- oder multipotent}
+\end{todolist}
+\begin{mybox}[title={Totipotenz}]
+Totipotenz ist die Fähigkeit einer Zelle, sich zu einem vollständigen Organismus zu entwickeln. Diese Eigenschaft bedeutet, dass die Zelle in der Lage ist, alle Zelltypen und Gewebe eines Organismus zu bilden, einschließlich der embryonalen und extraembryonalen Gewebe (wie Plazenta bei Säugetieren). Totipotente Zellen können jede Art von Zelle in einem Organismus generieren und sind daher die undifferenziertesten Zellen mit dem breitesten Entwicklungspotenzial.
+\end{mybox}
+
+\subsection*{Eine einzelne embryonale Stammzelle kann sich nicht zu einem
+kompletten Embryo entwickeln, weil ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item bestimmte Gene fehlen, die durch Rekombination verloren gegangen
+sind. \textit{\scriptsize Gene sind nicht verloren gegangen}
+\item alle Meisterkontrollgene endgültig abgeschaltet sind. \textit{\scriptsize Meisterkontrollgene (wie die Hox-Gene) sind nicht zwangsläufig ausgeschaltet, sondern ihre Aktivität ist nicht ausreichend koordiniert} 
+\item das Genom als Heterochromatin vorliegt. \textit{\scriptsize das Genom von Stammzellen liegt nicht als Heterochromatin vor}
+\item[\done] Informationen fehlen, die aus dem Cytoplasma der Eizelle stammen. \textit{\scriptsize }  
+\end{todolist}
+
+\subsection*{Von einer Möhre werden durch Klonierung (Regenerierung ganzer
+Pflanzen aus Zellen einer Pflanze) Nachkommen ("Klone") erzeugt.
+Diese Nachkommen werden in einem grossen Feld angezogen und
+....}
+\begin{todolist}%\textit{\scriptsize }% 
+\item sehen alle absolut identisch aus, weil sie das gleiche Genom
+enthalten.  
+\item sehen alle absolut identisch aus, weil beim Klonieren Mutationen
+ausgeschlossen sind.
+\item[\done] sehen alle ähnlich aber im Detail doch unterschiedlich aus, weil sich
+kleine Umwelteinflüsse auf das Erscheinungsbild von Pflanzen
+auswirken.
+\end{todolist}
+
+\subsection*{Wodurch werden die Körperachsen in der frühen Entwicklung von D.
+melanogaster festgelegt?}
+\begin{todolist}%\textit{\scriptsize }%
+\item[\done] Durch Konzentrationsgradienten von Genprodukten.
+\item Durch den Ort der Befruchtung der Eizelle durch die Samenzelle.
+\item Durch Morphogene, die die Samenzelle in die Zygote einbringt.
+\item Durch die Schwerkraft, die Stärkekörner zu einer Seite der Zygote
+zieht.
+\end{todolist}
+
+\subsection*{Apoptose ist ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item eine Art biologischer Computervirus, der die Aktivität von Zellen
+lahmlegt. \textit{\scriptsize }
+\item ein Medikament, das zielgerichtet bestimmte Zellen abtötet. \textit{\scriptsize es gibt Medikamente, die Apoptose in Zielzellen auslösen können, aber die Apoptose selbst ist nicht ein Medikament}
+\item[\done] ein Mechanismus, der durch Aktivierung eines bestimmten
+Programms von Proteasen und Nukleasen den Zelltod auslöst. \textit{\scriptsize }
+\item ein Prozess, der normalerweise in Krebszellen abläuft und der die
+Krebsentwicklung fördert. \textit{\scriptsize in Krebszellen ist oft die Apoptose gestört oder inhibiert}
+\end{todolist}
+
+\subsection*{Bei Eukaryoten bezeichet man bestimmte Strukturen im Kern, die aus ca.
+200 bp DNA und Protein bestehen, als ....}
+\begin{todolist}%\textit{\scriptsize }%
+\item Histosomen \textit{\scriptsize gibt es nicht }
+\item Ribosomen \textit{\scriptsize für die Proteinsynthese verantwortlich}
+\item Genetosomen \textit{\scriptsize gibt es nicht}
+\item Centriolen \textit{\scriptsize Bildung der Mitose- und Meiosespindeln}
+\item[\done] Nucleosomen
+\end{todolist}
+ 
+\subsection*{Was ist für den Unterschied in der Genomgrösse zwischen Arabidopsis
+thaliana und Zea mays die wesentliche Ursache?}
+
+\begin{todolist}%\textit{\scriptsize }%
+\item Monocotelydonen enthalten mehr Gene als Dikotelydonen \textit{\scriptsize Anzahl der Gene beeinflusst nicht notwendigerweise die Genomgröße}
+\item Dikotelydonen enthalten mehr Gene als Monocotelydonen. \textit{\scriptsize Die Genomgröße kann variieren, unabhängig von der Anzahl der Gene}
+\item Die Grösse der erwachsenen Pflanze. \textit{\scriptsize Genomgröße und Pflanzengröße sind unabhängig}
+\item[\done] Repetitive DNA
+\item[\maybe] Längere Introns. \textit{\scriptsize oft weniger signifikant im Vergleich zur Menge repetitiver DNA}
+\end{todolist}
+\begin{mybox}[title={Monocotelydonen und Dikotelydonen}]
+Diese Begriffe beziehen sich auf die Anzahl der Keimblätter einer Pflanze. \newline
+Monocotyledonen: Ein Keimblatt \newline
+Dikotyledonen. Zwei Keimblätter
+\end{mybox}
+
+
+\subsection*{Wie kann man sich die Ausbreitung von Retrotransposons in Genomen
+erklären?}
+\begin{todolist}%\textit{\scriptsize }%
+\item Durch Fehler bei der Rekombination zwischen homologen
+Chromosomen. \textit{\scriptsize beschreibt hauptsächlich die Entstehung von chromosomalen Abweichungen}
+\item[\done] Durch die Übernahme von retroviralen Funktionen wie reverse
+Transkription und Insertion der entstandenen cDNA
+\item Durch eine Abfolge von Inversionen und anderen
+Chromosomenmutationen im Verlauf der Evolution \textit{\scriptsize können die Struktur von Chromosomen verändern, aber sie sind nicht die Hauptursache für die Ausbreitung von Retrotransposons}
+\item Durch "cut and paste"-Mechanismen auf der Ebene der DNA wie bei
+Transposons. \textit{\scriptsize Retrotransposons bewegen sich anders}
+\end{todolist}
+\begin{mechanism}[title={Ausbreitung von Retrotransposons}]
+Retrotransposons nutzen das Enzym reverse Transkriptase, um ihre RNA-Vorlage in DNA umzuwandeln. \newline 
+Die neu synthetisierte cDNA wird in das Genom der Wirtszelle integriert. Dies erfolgt durch die Aktivität von Integrasen, die die cDNA in die genomische DNA einfügen.
+\end{mechanism}
+
+
+\subsection*{Die Embryonalentwicklung von Pflanzen und Tieren ...}
+\begin{todolist}%\textit{\scriptsize }%
+\item hat gemeinsam, das in beiden Fällen Zell- und Gewebebewegungen 
+von Bedeutung sind. \textit{\scriptsize Zell- und Gewebebewegungen sind bei der Embryonalentwicklung von Tieren von großer Bedeutung, ei Pflanzen ist die Embryonalentwicklung weniger von Zell- und Gewebebewegungen geprägt}
+\item ist stark von Umweltreizen abhängig. \textit{\scriptsize ei Tieren kann die Embryonalentwicklung in gewissem Maße durch Umweltfaktoren wie Temperatur beeinflusst werden, Pflanzen hingegen sind stärker von Umweltbedingungen abhängig}
+\item[\done] hat gemeinsam, das es zentrale Kontrollgene gibt, die für DNA-
+bindende Proteine kodieren. \textit{\scriptsize Sowohl in Pflanzen als auch in Tieren gibt es zentrale Kontrollgene (z.B. Hox-Gene bei Tieren und MADS-Box-Gene bei Pflanzen), die für Transkriptionsfaktoren kodieren}
+\item Keine der vorherigen Aussagen ist richtig. \textit{\scriptsize s.o.}
+\end{todolist}
+
+\end{document}
