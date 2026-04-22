@@ -1,0 +1,40 @@
+name: Build and deploy LaTeX PDF for gti
+
+on:
+  push:
+    paths:
+      - 'gti/**.tex'
+  workflow_dispatch:
+jobs:
+  latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: true
+          working_directory: gti
+
+      - name: Copy PDF to docs
+        run: |
+          mkdir -p docs
+          cp gti/main.pdf docs/gti.pdf
+      - name: Commit PDF
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git pull
+          git add docs/gti.pdf
+          git diff --cached --quiet || git commit -m "Update KR PDF"
+          git push
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
