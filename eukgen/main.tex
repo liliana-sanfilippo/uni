@@ -1,0 +1,47 @@
+\input{../preamble/general}
+\input{../preamble/packages}
+\input{../preamble/colors}
+\input{../preamble/theorems}
+\input{../preamble/glossarydefs}
+\loadglsentries{glossary/definitionen}
+\input{../preamble/commands}
+
+
+
+%% BIBTEX
+
+\usepackage{biblatex}
+\addbibresource{bib.bib}
+
+\title{Genetik Eukaryoten \\ \small{by ...} \\ \textit{\footnotesize{Summer semester 2026} } }
+\date{April 2026}
+
+\begin{document}
+
+    \maketitle
+
+    \tableofcontents
+
+
+
+
+
+    \backmatter
+    \pagenumbering{roman}
+
+
+    \chapter{Backmatter}\label{ch:backmatter}
+
+    \addcontentsline{toc}{section}{Figures}
+    \listoffigures
+
+    \addcontentsline{toc}{section}{Index}
+    \printindex
+
+    \addcontentsline{toc}{section}{Definitions}
+    \printglossary[type=defi, title=Definitions]
+
+    \addcontentsline{toc}{section}{References}
+    \printbibliography
+
+\end{document}
