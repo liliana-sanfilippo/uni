@@ -1,0 +1,54 @@
+
+\section{1. Präsenzübung 2024}
+\subsection{Primitive Datentypen}
+Die Menge aller valider Zeichenketten für einen primitiven Datentyp ist also eine formale Sprache. Insbesondere sind diese formalen Sprachen regulär, wie wir im folgenden beweisen werden.
+\begin{vorw} $\ $ \\ \newline
+\un{Reguläre Ausdrücke} sind spezielle Formeln, die reguläre Sprachen beschreiben könnnen. \\ \newline
+\un{Formale Sprachen} sind Sprachen, die durch Regeln formalisiert sind. \\ \newline
+\un{Reguläre Sprachen} sind formale Sprachen, die durch endliche Automaten erkannt werden können.  \\ \newline
+\un{Rechtslineare Grammatiken} haben Ersetzungsregeln der Form $A ::= \overline{w}B$ oder $A ::= \overline{w}$, wobei $\overline{w}$ ein Terminalsymbol oder meherer Terminalsymbole (ein Wort) sein kann. 
+\end{vorw}
+
+\subsubsection*{Entwickeln Sie einen regulären Ausdruck, der die Sprache aller möglichen Boolschen Konstanten definiert.}
+
+\[
+ \Sigma = \kl{\un{a},\un{e}, \un{f}, \un{l}, \un{r}, \un{s},\un{t},\un{u}}
+\]
+\[
+regex = \un{true} \mid \un{false}
+\]
+
+\subsubsection*{Entwickeln Sie einen regulären Ausdruck, der die Sprache aller möglichen Integer-Konstanten definiert.}
+
+\[
+\Sigma = \kl{\un{0}, ..., \un{9}}
+\]
+
+\[
+regex = (\un{0} \mid .... \mid \un{9})+
+\]
+
+\subsubsection*{Entwickeln Sie einen regulären Ausdruck, der die Sprache aller möglichen String-Konstanten über dem Alphabet $\kl{\un{a}...\un{z}}$ definiert}
+
+\[
+\Sigma = \kl{\un{a}...\un{z}}
+\]
+
+\[
+regex = (\un{a} \mid .... \mid \un{z})+
+\]
+\subsubsection*{Entwickeln Sie eine rechtslineare Grammatik, die die Sprache der Gleitkommazahlen Zahlen in E-Notation mit beliebig vielen (aber endlich vielen) Dezimalstellen erzeugt}
+
+\begin{align*}
+    G = \{ \quad \\
+    & \Sigma = \kl{\un{-}, \un{.}, \un{E}, \un{0}, ..., \un{9}}, \\
+    & \Phi = \kl{A, B, C,D,E}, \\
+    & S = A,  \\
+    & R = \kl{A :: = \un{-}B \mid \un{ \epsilon} B, \quad B ::= \un{0.}C \mid ... \mid \un{0.}C, \quad C::= \un{0}C \mid \un{9}C \mid  \un{0}D \mid \un{9}D, \quad D ::= \un{E-}E \mid \un{E}E, \quad E::= \un{0} \mid ... \mid \un{9}} \\
+    \}
+\end{align*}
+
+\subsubsection*{Leiten Sie mit der Grammatik das Beispielwort $\un{-7.12E-1}$ ab.}
+
+\[
+\un{-}B \rightarrow \un{-7.}C \rightarrow \un{-7.1}C \rightarrow \un{-7.12}D \rightarrow \un{-7.12E-}E \rightarrow \un{-7.12E-1} \]
