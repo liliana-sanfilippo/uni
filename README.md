@@ -18,9 +18,9 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 | Woche | Vorlesung  | In Notizen         | In Karteikarten | Tutorium   | In Notizen          | Übung (Abgabe) | In Notizen |
 |-------|------------|--------------------|-----------------|------------|---------------------|----------------|------------|
-| KW 16 | Fr, 17.04. | :white_check_mark: || --         | --                  | --             | --         |
+| KW 16 | Fr, 17.04. | :white_check_mark: |                 | --         | --                  | --             | --         |
 | KW 17 | Fr, 24.04. |                    |                 | Mo, 20.04. |                     | Fr, 24.04.     |            |
-| KW 18 | Fr, 01.05. |                    |                 | Mo, 27.04. | :ballot_box_with_check:  | Fr, 01.05.     |            |
+| KW 18 | --         | --                 | --              | Mo, 27.04. | :ballot_box_with_check:  | Fr, 01.05.     |            |
 | KW 19 | Fr, 08.05. |                    |                 | Mo, 04.05. |                     | Fr, 08.05.     |            |
 | KW 20 | Fr, 15.05. |                    |                 | Mo, 11.05. |                     | Fr, 15.05.     |            |
 | KW 21 | Fr, 22.05. |                    |                 | Mo, 18.05. |                     | Fr, 22.05.     |            |
