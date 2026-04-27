@@ -1,0 +1,52 @@
+%! Author = lili
+%! Date = 4/27/26
+
+
+\section{Vorlesung 7}
+Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig. \\
+Sind $X$ und $Y$  zwei \Glspl{zv} mit mit derselben Verteilung, so gilt
+\[
+    \pe(X \in A) = \pe_X(A) = \pe_Y(A) = \pe(Y \in A)
+\]
+für jedes $A$. \\
+Es ist nicht immer klar, welche Verteilung zu einem sinnvollen Modell führt.
+Auch sind die Parameter der Verteilung nicht unbedingt bekannt. \\
+\texttt{BSP Verteilungen Folie 3} \\
+Wie können wir trotzdem Vorhersagen treffen? \\ \newline
+
+\paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}?
+
+\begin{bsp}
+    \textbf{1 $\times$ Würfeln mit einem fairem Würfel} \\
+    Da herrscht eine Gleichverteilung, daher ist die erwartete Augenzahl ist das arithmetische Mittel. \\
+    \texttt{Ganzen Bsp. Folie 5}
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Spiel, bei dem nicht alle Ausgänge gleichwahrscheinlich sind} \\
+    1 $\times$ Würfeln eines fairen Würfels \\
+    Auszahlung:
+    \begin{itemize}
+        \item[] $k$ Euro, falls 2 gewürfelt
+        \item[] 6 Euro, falls $2, \cdots , 6$ gewürfelt
+    \end{itemize}
+    \glssymbol{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
+    Die Auszahlung wird beschrieben durch die \Gls{zv} $Y$ mit
+    \[
+        Y(\glssymbol{elementarereignis}) = k \cdot \chi_{\kl{1}}(\ele) + 6 \cdot \chi_{\kl{2, \dots, 6}}(\ele) \quad \faoio
+    \]
+    Erwartete Auszahlung als arithmetisches Mittel:
+    \mab{\E{Y} = \sum_{\oio} Y(\ele) \glssymbol{wfk}(\ele) = \frac{k+ 5 \cdot 6}{6} = 6 \cdot \frac{5}{6} + k \cdot \frac{1}{6}  = 6 \cdot \pe(Y=6) + k \cdot \pe(Y=k) = \sum_{I\in Y(\glssymbol{eraum})} I \cdot \pe(Y=I)}
+\end{bsp}
+
+\begin{defi}
+    Der \Gls{ew} einer \zv $X$ mit abzählbarem Bildbereich $X(\eraum) \in \mathbb{R}$ ist gegeben durch
+    \mab{\E{X} = \mathbb{E} X = \sum_{x\in X(\eraum)} x \cdot \pe (X=x) }
+    insofern die Reihe \glsverb{abskonv}, also \ma{ \sum_{x\in X(\eraum)} |x| \cdot \pe (X=x) < \infty}. \\
+    Wir sprechen in diesem Fall von der Existenz des \Gls{ew}s. \\ \newline
+    Der \Gls{ew} einer \zv $X$ mit einer \dichte \glssymbol{dichte} ist gegeben durch
+    \mab{\E X = \int_{- \infty}^{\infty} x \glssymbol{dichte}(x) \dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glssymbol{dichte}(x) \dx }
+    insofern \ma{\int_{- \infty}^{\infty} |x| \glssymbol{dichte}(x) \dx < \infty}. \\
+    Wir sprechen in diesem Fall von der Existenz des Erwartungswerts. \\
+    \texttt{Hinweis Folie 7}
+\end{defi}

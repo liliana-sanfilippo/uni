@@ -1,0 +1,111 @@
+%! Author = lili
+%! Date = 4/27/26
+
+
+\section{Vorlesung 4}
+\begin{bsp}
+    \textbf{n-faches Werfen einer fairen Münze} \\
+    \[
+        \glssymbol{eraum} _n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = (\frac{1}{2})^n \faoio \txt{(Gleichverteilung)}
+    \]
+    $\glssymbol{elementarereignis}_i = 1$ bedeute ``Kopf'' \\
+    Falls es uns interessiert, wie oft ``Kopf'' fällt:
+    \[
+        S_n(\glssymbol{elementarereignis}) \coloneqq  \sum^n_{i=1}     \glssymbol{elementarereignis}_i \txt{ist Anzahl ''Erfolge'' (Kopf)}
+    \]
+    \[
+        S_n :\glssymbol{eraum} _n \rightarrow \kl{0,1,..,n} \txt{Abbildung!}
+    \]
+    Falls der relative Anteil der Erfolge relevant ist:
+    \[
+        T_n: \glssymbol{eraum} _n \rightarrow [0,1]
+    \]
+    \[
+        T_n (\glssymbol{elementarereignis}) \coloneqq  \frac{1}{n} S_n (\glssymbol{elementarereignis}) = \frac{1}{n} \sum^n_{i=n} \glssymbol{elementarereignis}_i \faoio
+    \]
+\end{bsp}
+
+\begin{defi}
+    \textbf{\gls{zv}} \\
+    Für einen \gls{wraum} $\wraum$ und eine Menge $E \neq \emptyset$ nennen wir eine messbare Abbildung
+    \[
+        X: \glssymbol{eraum}  \rightarrow E
+    \]
+    eine $E$-wertige \gls{zv}.
+    \bluenote{\gls{zv} ist keine Variable: Es ist eine Zuordnungsvorschrift der Stochastik, welche jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zuordnet. Also das Ergebnis eines Zufallsexperiments.}
+\end{defi}
+\begin{defi}
+    \textbf{Verteilung einer \gls{zv}}\\
+    Sei $X$ eine $E$-wertige \gls{zv} auf $\wraum$
+    \[
+        \pe_X(B) \coloneqq  \pe(\kl{\oio : X(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(X \in B)}{Kurzschreibweise}
+    \]
+    Das \gls{wmaß} $\pe_X$ auf $E$ heißt Verteilung von $X$.
+    \bluenote{Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also \textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
+\end{defi}
+\begin{lem}
+    Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
+
+    \paragraph{Beweis.}
+    \[
+        \glssymbol{wfk}_X (e) = \pe_X(\kl{e}) = \txc{\pe(X \in \kl{e}) = } \pe(X=e) = \sum_{\substack{\oio \\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}(e) \geq 0
+    \]
+    z.z.\ Normierung
+    \[
+        \sum_{e \in E} \glssymbol{wfk}_X (e) = \sum_{e \in E} \sum_{\substack{\oio :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) =  \sum_{\substack{\oio \\ e \in E :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}  (\glssymbol{elementarereignis}) = \sum_{\substack{\oio :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) = \sum_{\oio} \glssymbol{wfk} (\glssymbol{elementarereignis}) = 1
+    \]
+\end{lem}
+
+\section{Notationen}
+\[
+    \pe(X \in B) = \pe(\kl{\oio: X(\glssymbol{elementarereignis}) \in B})
+\]
+Falls $B$ ein Intervall ist:
+\[
+    \pe(X \geq b), \quad \pe(a < X \leq b) , \dots
+\]
+\begin{defi}
+    Geg.:
+    \[
+        X: \glssymbol{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
+    \]
+    Dann heißt $E$ der Wertebereich und $X(\glssymbol{eraum} )\coloneqq  \kl{X(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
+    \begin{bsp}
+        \txo{
+            \[
+                S_n : \glssymbol{eraum} _n \rightarrow \kl{0,\dots,n}
+            \]
+            \[
+                S_n : \glssymbol{eraum} _n \rightarrow \mathbb{N}_0
+            \]
+        }
+    \end{bsp}
+    \begin{bem}
+        $X(\glssymbol{eraum} ) \subset E$ gilt immer.
+        \bluenote{Denn $X(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
+    \end{bem}
+    \begin{bem}
+        Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
+        \bluenote{Zu jedem Wahrscheinlichkeitsmaß auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
+        aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
+        \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
+        $X: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
+        \begin{align*}
+        {\glssymbol{eraum}}
+            & \coloneqq  \tilde{\glssymbol{eraum}}  \\
+            \pe&\coloneqq  \tilde\pe\\
+            X(\glssymbol{elementarereignis}) & = \glssymbol{elementarereignis} \txt{Identität} \faoio
+        \end{align*}
+        \[
+            \pagebreak(X \in B) = \pe(\oub{\kl{\oio: X(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
+        \]
+        $\Rightarrow X$ hat Verteilung $\tilde\pe$
+    \end{bem}
+\end{defi}
+\begin{defi}
+    \textbf{\dichte einer \gls{zv}} \\
+    Gegeben \dichte \glssymbol{dichte} \\
+\end{defi}
+
+\paragraph{Hier fehlt was}
+\newpage

@@ -1,0 +1,185 @@
+%! Author = lili
+%! Date = 4/27/26
+\section{Vorlesung 5}
+Was bedeutet stochastische Unabhängigkeit?
+
+\paragraph{Intuition:} Zwei Ereignisse A und B sind unabhängig, wenn die Information des Eintretens des jeweils
+einen keinen Einfluss darauf hat, als wie wahrscheinlich wir ein Eintreten auch des jeweils anderen einschätzen (
+Bspw.\ mehrmals hintereinander Würfeln).
+
+\paragraph{Formal:} Um A und B unabhängig zu nennen, sollten also gelten
+\[
+    \pe(B|A) = \pe(B)
+    \text{ und }
+    \pe(A|B) = \pe(A) \txo{\ = \frac{\pe(A \cap B)}{\pe(B)}}
+\]
+\bluenote{$\pe(A|B)$: die bedingte Wahrscheinlichkeit von A gegeben B.}
+wobei jede dieser beiden Gleichungen äquivalent ist zu.
+\[
+    \pe(A \cap B) = \pe(A) \cdot \pe(B)
+\]
+\txo{
+    Also
+    \[
+        \pe(A|B) = \pe(A)  = \frac{\pe(A \cap B)}{\pe(B)} \Leftrightarrow \pe(A) \cdot \pe(B) = \pe(A \cap B)
+    \]
+}
+\bluenote{
+    $\pe(A \cap B)$: WS, dass A und B gleichzeitig eintreten}
+\begin{defi}
+    Zwei Ereignisse $A, B \subseteq \glssymbol{eraum} $ heißen unabhängig , wenn $\pe(A \cap B) = \pe(A) \cdot \pe(B)$.
+\end{defi}
+\begin{bsp}
+
+\end{bsp}
+\begin{beo}
+    unabhängig $\neq$ disjunkt!
+    \bluenote{disjunkte Ereignisse: $A \cap B = \emptyset \Rightarrow$ A und B können nicht gleichzeitig eintreten. \\
+    unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
+    }
+    \noindent Also sind disjunkte Ereignisse unabhängig, wenn $0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B)$, also muss entweder $\pe(A)=0$ oder $\pe(B)=0$ sein (mindestens eines der Ereignisse WS Null haben):
+    \[
+        0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B) \Leftrightarrow \pe(A)=0 \text{ oder } \pe(B)=0
+    \]
+\end{beo}
+\begin{beo}
+    Es gilt: A, B unabhängig $\Leftrightarrow$ $A, B^c$ unabhängig $\Leftrightarrow A^c, B^c$ unabhängig.
+
+    \paragraph{Beweis.} \txo{z.z. $\pe(A \cap B^c) = \pe(A) \cdot \pe(B^c)$} \\
+    \texttt{Siehe Folie 9}
+\end{beo}
+\begin{beo}
+    $A$ kann unabhängig von sich selbst sein.
+    \[
+        \pe(A) = \pe(A \cap A) = \pe(A) \cdot \pe(A) = \pe(A)^2 \Leftrightarrow \pe(A) \in \kl{0,1}
+    \]
+    \bluenote{$A$ kann unabhängig von sich selbst sein, wenn seine WS entweder 0 oder 1 ist.}
+\end{beo}
+\begin{defi}
+    Unabhängigkeit von $n$ Ereignissen. \\
+    Die Ereignisse $A_1 , \dots  , A_n \subseteq \glssymbol{eraum} $ heißen unabhängig, wenn
+    \[
+        \pe(A_{i_1} \cap \dots \cap A_{i_k}) = \pe(A_{i_1}) \cdots \pe(A_{i_k})
+    \]
+    für alle $k = 2, \dots  , n$ und alle Auswahlen von $k$ verschiedenen
+    Indizes $i_1 , \dots  , i_k \in \{1, \dots  , n\}$.
+    \bluenote{Also alle Paare, Tripel, etc. prüfen.}
+\end{defi}
+\begin{bsp}
+    \texttt{siehe Folie 14--15}
+\end{bsp}
+\begin{bem}
+    Es genügt nicht, paarweise Unabhängigkeit zu prüfen!
+    Sachen können paarweise unabhängig, aber nicht insgesamt unabhängig sein.
+\end{bem}
+\begin{bem}
+    Es genügt nicht, $\pe(A_1 \cap \dots  \cap A_n ) = \pe(A_1 ) \cdots \pe(A_n )$ zu prüfen.
+    Es kann insgesamt unabhängig sein, aber nicht paarweise etc.\ unabhängig.
+\end{bem}
+
+\section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}
+Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
+\[
+    \glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n
+\]
+und – im Fall, dass wir abzählbare $\glssymbol{eraum} _i$ haben –
+\[
+    \glssymbol{wfk}(\glssymbol{elementarereignis}) = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdots \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n) \forall \glssymbol{elementarereignis} = (\glssymbol{elementarereignis}_, \dots, \glssymbol{elementarereignis}_n) \in \glssymbol{eraum}
+\]
+Sind nämlich $A_1 \subseteq \glssymbol{eraum} _1 , \dots  , A_n \subseteq \glssymbol{eraum} _n$ , so sind bei dieser Wahl
+\begin{align*}
+    B_1 & = A_1 \times \glssymbol{eraum} _2 \times \dots \glssymbol{eraum} _n \\
+    B_2 & = \glssymbol{eraum} _1 \times A_2 \times \glssymbol{eraum} _3 \times \dots \times \glssymbol{eraum} _n \\
+    \vdots & \\
+    B_n & = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _{n-1} \times A_n
+\end{align*}
+\bluenote{$B_1$ bedeutet: Im ersten Experiment tritt $A_1$ ein, die anderen sind egal. }
+unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \dots  , n}$ verschieden gilt:
+\begin{equation}
+    \label{eq:omegaiabzählbar}
+    \oub{\pe(B_{i_1} \cap \dots \cap B_{i_k})}{ = A_1 \times A_2 \times \dots \times A_n} = \pe_{i_1} A_{i_1} \cdot \dots \cdot \pe_{i_k} A_{i_k} = \pe(B_{i_1}) \cdot \dots \cdot \pe(B_{i_k})
+\end{equation}
+
+\paragraph{Beweis.} \texttt{Selbstständig (siehe Hinweis Folie 20)}
+
+\begin{bsp}
+    \texttt{Folie 21}
+\end{bsp}
+
+\noindent Sind die $\glssymbol{eraum} _i$ nicht alle abzählbar, so definieren wir $\pe$ auf $\glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n$
+\begin{equation}
+    \label{eq:omegainichtabzählbar}
+    \pe(A_1 \times \dots \times A_n) = \pe_1(A_1) \cdot \dots \cdot \pe_n(A_n) \quad \forall A_i \subseteq \glssymbol{eraum} _i \forall i
+\end{equation}
+motiviert durch Formel (\ref{eq:omegaiabzählbar}).
+\begin{bem}
+    Formel (\ref{eq:omegainichtabzählbar}) kann immer als Definition verendet werden.
+    Falls alle $\pe_i$ durch WS $\glssymbol{wfk}_i$ gegeben sind, folgt aus Formel (\ref{eq:omegainichtabzählbar}):
+    \begin{align*}
+        \glssymbol{wfk}((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) & = \pe(\kl{(\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)}) \\
+        & = \pe(\kl{\glssymbol{elementarereignis}_1} \times \kl{\glssymbol{elementarereignis}_2} \times \dots \times \kl{\glssymbol{elementarereignis}_n}) \\
+        & \overset{(\ref{eq:omegainichtabzählbar})}{=} \pe_1(\kl{\glssymbol{elementarereignis}_1}) \cdot \pe_2(\kl{\glssymbol{elementarereignis}_2}) \cdot \dots \cdot \pe_n(\kl{\glssymbol{elementarereignis}_n}) \\
+        & = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \glssymbol{wfk}_2 (\glssymbol{elementarereignis}_2) \cdot \dots \cdot \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n)
+    \end{align*}
+\end{bem}
+\begin{defi}
+    \textbf{Einfaches \bernoulli } \\
+    \txc{Ein \bernoulli  ist ein Zufallsexperiment mit genau zwei möglichen Ergebnissen: Einem ''Treffer'' oder einer ''Niete''.} \\
+    $\glssymbol{eraum} _1 = \kl{0,1}; \glssymbol{elementarereignis} = 1$ bedeutet Erfolg, $\glssymbol{elementarereignis} = 0$ bedeutet Misserfolg.  \\
+    $\glssymbol{wfk}_1(1) = p, \glssymbol{wfk}_1(0) = 1-p$ und dabei heißt $p \in [0,1]$ die Erfolgswahrscheinlichkeit.
+\end{defi}
+\begin{defi}
+    \textbf{\bernoulli der Länge $n$} \\
+    Wiederhole dasselbe einfache \bernoulli  $n$-mal unabhängig.
+    \[
+        \glssymbol{eraum} _n = \kl{0,1}^n, \glssymbol{wfk}_n((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) = p^{\oob{^{\sum_{i=1}^n \glssymbol{elementarereignis}_i}}{=k}} \cdot (1 - p)^{n - \oob{^{\sum_{i=1}^n \glssymbol{elementarereignis}_i}}{=k}}
+    \]
+    \txo{\begin{align*}
+             \glssymbol{eraum} _n & = \underbrace{\glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n}_{n-mal} \\
+             \glssymbol{wfk}_n((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) &=  \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \dots \cdot \glssymbol{wfk}_1(\glssymbol{elementarereignis}_n)
+             & \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} _n \\
+             &=   p^{\sum_{i=1}^n \cdot \glssymbol{elementarereignis}_i} \cdot (1 - p)^{n - \sum_{i=1}^n \glssymbol{elementarereignis}_i }
+    \end{align*}
+    }
+\end{defi}
+\begin{defi}
+    \textbf{Binomialverteilung \index{Binomialverteilung}} \\
+    Suche WS für genau $k$ Erfolge in \bernoulli  der Länge $n$. \[
+                                                                     A_k = \kl{S_n = k} = \kl{(\glssymbol{elementarereignis}_1 , \dots  , \glssymbol{elementarereignis}_n ) \in \kl{0, 1}^n : \oub{\sum_{i=1}^n \glssymbol{elementarereignis}_i}{S_n(\glssymbol{elementarereignis})} = k }
+    \]
+    $\binom{n}{k}$ Möglichkeiten, $k$ Einsen auf die $n$ Stellen zu verteilen.
+    \[
+        \Rightarrow \glssymbol{binomv}(k) \coloneqq  \pe(A_k) = \binom{n}{k} p^k (1-p)^{n-k} \text{ für alle } k \in \kl{0,\dots,n}
+    \]
+    $\glssymbol{binomv}(k)$ ist eine Wahrscheinlichkeitsfunktion auf $\glssymbol{eraum}  = \kl{0,\dots,n}$, denn
+    \[
+        \sum^n_{k=0} \glssymbol{binomv}(k)  = \sum^n_{k=0} \pe(A_k) = \pe(\dot\cup^n_{k=0} A_k) = \pe(\kl{0,1}^n)= 1
+    \]
+    \glssymbol{binomv} heißt \binomv  mit den Parametern $n$ und $p$. \\ \\
+    Eine \gls{zv} $X$, deren Verteilung $\pe_X$ die $\glssymbol{binomv}$-Verteilung ist, heißt \textbf{binomialverteilt mit mit den Parametern $n$ und $p$}.
+\end{defi}
+\begin{bsp}
+    Einfaches \bernoulli  \texttt{Siehe Folie 29}
+\end{bsp}
+\begin{bsp}
+    \bernoulli  der Länge n \texttt{Siehe Folie 29}
+\end{bsp}
+\begin{bsp}
+    Binomialverteilung \index{Binomialverteilung}: \texttt{Siehe Folie 29}
+\end{bsp}
+\begin{prob}
+    Wie wahrscheinlich ist, dass in einem \bernoulli  der Länge n der erste Erfolg im n-ten Versuch eintritt?
+    \[
+        A_n = \kl{(0,\dots,0,1)}, \quad \pe(A_n) \ \txo{ = \glssymbol{wfk}_n((0,\dots,0,1))} = p(1 - p)^{n-1}
+    \]
+\end{prob}
+\begin{defi}
+    \textbf{geometrische Verteilung mit Erfolgswahrscheinlichkeit $p$} \\
+    \texttt{Siehe Folie 33}
+\end{defi}
+\begin{defi}
+    \textbf{Unabhängigkeit von \gls{zv}} \\
+    \texttt{Siehe Folie 35}
+\end{defi}
+
+\newpage

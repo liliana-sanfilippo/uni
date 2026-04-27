@@ -1,0 +1,89 @@
+%! Author = lili
+%! Date = 4/27/26
+
+
+\section{Vorlesung 6}
+
+\section{\gls{zv} mit abzählbarem Bildbereich}
+\begin{satz}
+    \textbf{Satz I.}
+    Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
+    Dann
+    \[
+        X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
+    \]
+
+    \paragraph{Beweis.} \texttt{Siehe Folie 2}
+\end{satz}
+\begin{bsp}
+    \textbf{n-mal Würfeln (fairer Würfel)}
+\end{bsp}
+\begin{satz}
+    \textbf{Satz II.} (Neuformulierung von Satz I.) \\
+    Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
+    Dann
+    \[
+        X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((X_1, \dots, X_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
+    \]
+\end{satz}
+\begin{kor}
+    \[
+        X_1, \dots, X_n  \text{ unabh. } \Rightarrow \text{ gemeinsame Verteilung von } X_1, \dots, X_n \text{ eindeutig bestimmt durch die Randverteilung}
+    \]
+    \begin{bem}
+        Das Korollar sagt uns, wie wir unabhängige Zufallsvariablen mit Zähldichte modellieren. \\
+        Ohne Unabhängigkeit ist das nicht der Fall!
+    \end{bem}
+    \begin{bem}
+        Wie haben gesehen, dass Unabhängigkeit bereits gezeigt ist, wenn $\pe(X_1 = x_1, \dots, X_n = x_n) = \pe(X_1 = x_1) \cdot .. \cdot \pe(X_n = x_n) \forall x_i \in E_i (i = 1, \dots, n)$ gilt. (Es ist nicht erforderlich  $X_{i_1}, \dots, X_{i_k}$ seperat zu betrachten.
+    \end{bem}
+\end{kor}
+\begin{satz}
+    Summe unabh.\ Poisson-verteilter \gls{zv} ist wieder Poisson-verteilt. \\
+    Seien $X_1, X_2$ unabh.\ und Poisson-verteilt mit
+    \begin{align*}
+        \glssymbol{wfk}_{x_1}(k) = \pe(X_1 = k) & = \frac{z_1^k}{k!} e^{-z_1} & (z_1 > 0) \forall k \in \mathbb{N}_0 \\
+        \glssymbol{wfk}_{x_2}(k) = \pe(X_2 = k) & = \frac{z_2^k}{k!} e^{-z_2} & (z_2 > 0) \forall k \in \mathbb{N}_0
+    \end{align*}
+    Dann gilt: $X_1 + X_2$ ist Poisson-Verteilt mit Parameter $z_1 + z_2$.
+
+    \paragraph{Beweis.} \texttt{Siehe Folie 6--7}
+\end{satz}
+
+\section{\gls{zv} mit Dichten \index{Dichte}}
+\begin{satz}
+    \textbf{Satz III.: Unabhängigkeiten von \gls{zv}} (mit und ohne Dichte) \\
+    Seien $X_1, \dots, X_n$ unabh. $ \Leftrightarrow \pe(X_1 \leq a_1, \dots, X_n \leq a_n) = \pe(X_1 \leq a_1) \cdot \dots \cdot  \pe(X_n \leq a_n) = \mathcal{F}_{x_1}(a_1) \cdot \dots \cdot \mathcal{F}_{x_n}(a_n) \forall a_1, \dots, a_n \in \mathbb{R}$.
+
+    \paragraph{Beweis.}
+    \texttt{Siehe Folie 8}
+\end{satz}
+\begin{satz}
+    \textbf{Satz IV.} \\
+    $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$. Dann gilt:
+    $X_1, \dots, X_n$ unabh. $\Leftrightarrow$ gemeinsame \dichte hat Produktform $\Leftrightarrow$ $(x_1, \dots, x_n) \mapsto f((x_1, \dots, x_n)) \coloneqq  f_1(x_1)\cdot \dots \cdot f_n(x_n)$ eine gemeinsame Sichte von $X_1, \dots, X_n$ ist.
+    \begin{bem}
+        \begin{itemize}
+            \item Existenz der gem. \dichte ist nicht vorausgesetzt. Gegeben $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$
+            \item Setze
+            \begin{equation}
+                \label{eq:gemdichte}
+                f(x_1, \dots, x_n) \coloneqq  f_1(x_1) \cdot \dots \cdot f_n(x_n) \forall x_i \in \mathbb{R} (i=1, \dots, n)
+            \end{equation}
+            Auusage des Satzes ist: $X_1, \dots, X_n$ unabh. $\Leftrightarrow f$ gem. \dichte von $X_1, \dots, X_n$ ist
+            \item $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$. Modelliere unabh. Exp. durch gem. \dichte (\ref{eq:gemdichte}).
+            \item Gegen eine gem. \dichte $f$ für $X_1, \dots, X_n$ berechne Randdichten $f_{x_1}, \dots, f_{x_n}$. \\ Gilt (\ref{eq:gemdichte})? Falls ja: $X_1, \dots, X_n$ unabh. Falls (\ref{eq:gemdichte}) für $(x_1, \dots, x_n)$ aus einer Menge $; \subseteq \mathbb{R}^n$ gilt mit $\mathbb{R}^n\backslash M$ abzählbar, dann gilt Unabh.
+        \end{itemize}
+    \end{bem}
+\end{satz}
+
+\section{Widerlegen von Unabhängigkeiten}
+Es genpgt nicht einen Punkt zu finden, in dem (\ref{eq:gemdichte}) nicht gilt. Wir brauchen eine Menge $D \subseteq \mathbb{R}^n$ mit $|D| = Z(D) > 0$, so dass (\ref{eq:gemdichte}) auf $D$ nicht gilt. \\
+Einfacher: Zeigen, dass $\pe(X_1 \leq a_1, \dots, X_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$
+Randdichten:
+\begin{bsp}
+
+\end{bsp}
+Randdichten:
+\texttt{Hier fehlt was}
+

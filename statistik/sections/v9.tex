@@ -1,0 +1,149 @@
+%! Author = lili
+%! Date = 4/27/26
+
+\section{Vorlesung 9 - Grenzwertsätze}
+\begin{satz}
+    \textbf{Schwaches Gesetz der großen Zahlen} \\
+    \texttt{Hier fehlen Voraussetzungen (siehe Folie 3)}
+    \mab{\lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} S_n - \E{X_1} \mid \geq \epsilon) = 0 \forall \epsilon > 0}
+    \orangenote{$S_n$: aithmetisches Mittel und $\frac{1}{n} S_n$ relative Häufigkeit, falls $x_i$ Bernoulli-verteilt}
+
+    \paragraph{Beweis.}  \texttt{(siehe Folie 4)}
+
+    \begin{bem}
+        Unabhängigkeit $\Rightarrow$ paarweise Unabhängigkeit $\Rightarrow$ paarweise Unkorreliertheit
+    \end{bem}
+    \begin{bem}
+        \mab{\E{\frac{1}{n} S_n} = \E{X_1}}
+    \end{bem}
+    \begin{bsp}
+        \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
+        Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p = } Erfolgswahrscheinlichkeit. \\
+        Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} S_n} der Erfolge
+        konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
+    \end{bsp}
+\end{satz}
+
+\begin{satz}
+    \textbf{Lokaler zentraler Gesetzwertsatz}
+
+    \paragraph{Notationen}
+    \mab{x_k^{(n)} \coloneqq  (k - np) / \sqrt{npq} \text{ für } k = 0, \dots, n}
+    \mab{\glssymbol{binomv} = \binom{n}{k} p^k q^{n-k}}
+    \begin{er}
+        Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
+        \mab{\pe(S_n = k) = \glssymbol{binomv}(k)}
+        \mab{\E{S_n} = np}
+        \mab{Var(S_n) = npq}
+    \end{er}
+    Sei \ma{ L > 0} eine beliebige Konstante. Dann gilt
+    \begin{equation}
+        \label{eq:lokaleruentralergesetzwertsatz}
+        \oub{\glssymbol{binomv}(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
+    \end{equation}
+    Dabei bedeutet $\sim$:
+    \mab{f(n) \sim g(n) \Leftrightarrow \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)}  = 1}
+    Man kann \ref{eq:lokaleruentralergesetzwertsatz} auch schreiben als
+    \mab{\limnin \sup_{k: |x_k^{(n)}| \leq L} \mid \frac{{B}_{n,p}(k)}{\frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2}}  - 1 \mid = 0 }
+
+    \paragraph{Beweis.} \texttt{Folie 14}
+    \begin{erg}
+        \textbf{Stirlingsche Formel}
+        \begin{equation}
+            \label{eq:strilingscheformel}
+            n! \sim \sqrt{2 \pi n} \binom{n}{e}^n \text{ für große } n
+        \end{equation}
+        \texttt{Siehe Folie 15}
+    \end{erg}
+    \begin{erg}
+        \textbf{Stirlingsche Formel mit Fehlerabschätzung}
+        \begin{equation}
+            1 \leq \frac{n!}{\sqrt{2 \pi n} \binom{n}{e}^n} \leq 1 + \frac{1}{11n}
+        \end{equation}
+    \end{erg}
+    \begin{bsp}
+        1200-mal Würfeln mit einem fairen Würfel \\
+        Wie groß ist die Wahrscheinlichkeit, genau $k$ Sechsen zu werfen?
+
+        \paragraph{a)} $k = 200$
+        \mab{{B}_{1200, \frac{1}{6}}(200) = 0.030888\dots}
+        Approximation gemäß lokalem zentralem Grenzwertsatz:
+        \mab{0.030901\dots}
+
+        \paragraph{b)} $k = 250$
+        \mab{{B}_{1200, \frac{1}{6}}(250) = 0.0000244\dots}
+        Approximation gemäß lokalem zentralem Grenzwertsatz:
+        \mab{0.0000170\dots}
+    \end{bsp}
+    \orangenote{schwaches Gesetz der großen Zahlen ''\ma{\frac{1}{n} S_n \rightarrow \frac{1}{6}}'' und \ma{\pe(\frac{1}{n} S_n = \frac{1}{6})}} ist sehr klein.
+\end{satz}
+\textbf{Neue Fragen} \\
+Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen? Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
+
+\begin{satz}
+    \textbf{Satz von de Moivre-Laplace} \textit{(Spezialfall des zentralen Grenzwertsatzes)}\\
+    Sei \ma{S_n} die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten
+    Bernoulli-Experiment mit Erfolgswahrscheinlichkeit \ma{p \in (0, 1)}. \\
+    Dann gilt für jede Wahl von Konstanten \ma{a, b} mit \ma{- \infty < a < b < \infty}:
+    \begin{equation}
+        \limnin \pe( a < \frac{S_n - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx
+    \end{equation}
+    Dabei verstehen wir die rechte Seite als Riemann-Integral \ma{\intab \varphi(x) \dx} mit
+    \begin{equation}
+        \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{x^2 / 2}
+    \end{equation}
+    \begin{bem}
+        \ma{\varphi} heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}. \\
+        Die Stammfunktion \begin{equation}
+                              \Phi(y) = \int_{- \infty}^y \varphi(x) \dx
+        \end{equation}
+        ist die Verteilungsfunktion der Standardnormalverteilung. \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung} \\
+        Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve. \\
+        \ma{\Phi(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
+    \end{bem}
+
+    \paragraph{Beweis.} \texttt{Siehe Folie 23.}
+    \begin{reg}
+        \textbf{Rechenregeln}
+        \begin{equation}
+            \int_{- \infty}^{\infty} \varphi(x) dx = 1
+        \end{equation}
+        \begin{equation}
+            \Phi(y) \rightarrow \begin{cases}
+                                    0 & \text{für } y \rightarrow - \infty  \\
+                                    1 & \text{für } y \rightarrow \infty
+            \end{cases}
+        \end{equation}
+        \begin{equation}
+            \Phi(0) = \frac{1}{2}
+        \end{equation}
+        \begin{equation}
+            \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (-y)}{f(y)} dy = 1 - \Phi(-z)
+        \end{equation}
+    \end{reg}
+    \begin{erg}
+        \textbf{Lokaler zentraler Grenzwertsatz und Satz von de Moivre-Laplace} \\
+        \texttt{Siehe Folie 25-29}
+    \end{erg}
+\end{satz}
+\begin{bsp}
+    \textbf{Vorlesung vs. Schlaf} \\
+
+    \paragraph{Frage:} Wie groß ist die Wahrscheinlichkeit, daß von den 142 Hörern einer 8-Uhr-Vorlesung nächste Woche zwischen 30\% und 70\% die Vorlesung besuchen?
+
+    \paragraph{Geg.:} \ma{n = 142} Hörer, Jeder Einzelne besucht mit Wahrscheinlichkeit \ma{p \in (0,1)} die Vorlesung \ma{(p = \frac{2}{3})}.
+
+    \paragraph{Vereinfachende Annahmen:}
+    Alle H¨orer besuchen die Vorlesung mit derselben Wahrscheinlichkeit und alle H¨orer entscheiden sich unabh¨angig voneinander.
+
+    \paragraph{Modell:} $n$-mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$. Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glssymbol{binomv}}-verteilt. Man betrachte jeden Anwesenden der n eingeschriebenen H¨orer als ''Erfolg''. \\
+    Also: \mab{\glssymbol{eraum}  = \kl{0,1}^n, \quad \glssymbol{wfk}(\glssymbol{elementarereignis}) = p^{\sumEN \glssymbol{elementarereignis}_i} \cdot (1-p)^{n - \sumEN \glssymbol{elementarereignis}_i}}
+    \mab{S_n(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i}
+    Dass $n$ Leute anwesende sind ist das Ereignis:
+    \mab{A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}} = \kl{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor}}
+    Für \ma{n = 142} ist das \ma{\lceil \frac{3}{10} \cdot n \rceil = 43} und  \ma{\lfloor \frac{7}{10} \cdot n \rfloor = 99}
+    Mit \ma{p = \frac{2}{3}}: \mab{\pe(A_n) = \sum_{k = \lceil \frac{3}{10} \cdot n \rceil}^{\lfloor \frac{7}{10} \cdot n \rfloor} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k} \txc{ = \sum_{k = 43}^{99} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k}}  \approx 0.80}
+    Approximation mit dem Satz von de Moivre-Laplace:
+    \mab{\pe(A_n) = \pe(\frac{3n}{10}) \leq S_n \leq \frac{7n}{10} }
+    \texttt{Mehr Folie 38 bis 45}
+\end{bsp}

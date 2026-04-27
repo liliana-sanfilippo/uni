@@ -1,0 +1,376 @@
+%! Author = lili
+%! Date = 4/27/26
+
+
+\section{Vorlesung 2 (25.04.2025)}
+
+\section{Lernziele}
+\begin{itemize}
+    \item Unterschied zwischen disjunkten und paarweise disjunkten Mengen
+    \item Rechenregeln für Wahrscheinlichkeiten
+    \begin{itemize}
+        \item Komplementär Wahrschienlichkeit
+        \item Ein- und Ausschlussprinzip
+        \item Spezialfall paarweise disjunkter Mengen
+    \end{itemize}
+\end{itemize}
+\begin{bsp}
+    \textbf{\gls{wraum}} \\
+    Stoppen einer Zeit bis zu einer Stunde in ms.
+    \begin{align*}
+        \glssymbol{eraum}  & = \{0,1,\dots,360 000\} & \text{(Zeit in ms)} \\
+        \glssymbol{wfk}(\glssymbol{elementarereignis}) & \coloneqq \frac{1}{\# \glssymbol{eraum} } \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum}  & \text{(Gleichverteilung)} \\
+        \pe(A) & = \frac{\# A}{\# \glssymbol{eraum} } \\
+        A & = \{600 000, \dots , 9000 000\} & \text{Zeit liegt zw. 10 und 15 Minuten} \\
+        \pe(A) & = \frac{300 001}{3 600 001} \approx \frac{300 000}{3 600 000} = \frac{1}{12}
+    \end{align*}
+    Wir wollen kontinuierlich modellieren:
+    \begin{align*}
+        \tilde {\glssymbol{eraum}}  & = [0,60] & \text{(in Minuten)}\\
+        \text{bzw. }  \tilde {\glssymbol{eraum}}  & = [0, 360 000]  & \text{(in ms)} \\
+        \tilde A & = [10,15] \\
+        \mathbb{\tilde P} (\tilde A) & \overset{!}{=} \frac{15-10}{60-0} = \frac{5}{60} = \frac{1}{12}
+    \end{align*}
+    \bluenote{Was genau ist $\tilde {\glssymbol{eraum}} $ ? }
+    Um auch modellieren zu können, dass Intervalle \gls{ws} haben, die nicht \texttt{iwas} von ihrere Länge
+    abgängen, arbeiten wir mit R-Integralen. \texttt{R-Integral?}
+\end{bsp}
+\begin{defi}
+    \textbf{\gls{dichte}} \\
+    EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) R-\texttt{int-iwas} ist, heißt \underline{Dichte}, sofern
+    \[
+        \int_{- \infty}^{\infty} f (x) dx = 1
+    \]
+    \begin{bem}
+        \begin{itemize}
+            $\ $ \\
+            \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
+            \item $f$ stückweise \texttt{???} $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
+            \item $f \geq 0: f $ R-intbar
+            $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx < \infty$
+        \end{itemize}
+    \end{bem}
+\end{defi}
+\begin{defi}
+    \textbf{\gls{wraum}} \\
+    Sei eine \gls{dichte} \index{Dichte}$f \geq 0$ gegeben.
+    Wir setzen
+    \begin{align*}
+        \pe([a,b]) & \coloneqq  \int^b_a f(x) dx & \text{für alle } - \infty < a < b < \infty \\
+        \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b f(x) dx  \\
+        \pe([a, \infty]) & \coloneqq  \int_a^{\infty} f(x) dx \\
+        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} f(x) dx & \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}$}
+    \end{align*}
+    Falls
+    \[
+        a_1 = - \infty : (- \infty, b_1]\quad ; B =+ \infty : [a, \infty)
+    \]
+\end{defi}
+\begin{bsp}
+    \texttt{fehlt}
+\end{bsp}
+\begin{defi}
+    \textbf{Uniforme Verteilung} (Kontinuumsäquivalent zu gleichverteilt) \\
+    Die uniforme Verteilung auf einem beschränkten Intervall $I \subseteq \mathbb{R}$ ist gegeben durch eine \dichte
+    \[
+        f(x) = \begin{cases}
+                   \frac{1}{\mid I \mid } & x \in I \\ 0 & sonst
+        \end{cases}
+    \]
+    wobei $\mid I \mid $ die Intervalllänge bezeichnet.
+\end{defi}
+\begin{defi}
+    \textbf{Exponentialverteilung} \\
+    Die Exponentialverteilung zum Parameter $\alpha > 0$ ist gegeben durch die \dichte
+    \begin{equation}
+        \label{eq:Exponentialverteilung}
+        f(x) = \begin{cases}
+                   0 & \text{ für } x < 0 \\
+                   \alpha e ^{- \alpha x} &  \text{ für } x \geq 0
+        \end{cases}
+    \end{equation}
+    \begin{bem}
+        \ref{eq:Exponentialverteilung} ist eien Dichte:
+        \begin{itemize}
+            \item $f  \geq 0 $
+            \item $f$ R-integrierbar, da stückweise stetig
+            \orangenote{$g(x) = e^{-\alpha x}$ \\ $g'(x) = (-\alpha) e^{- \alpha x}$ (Produktregel)}
+            \item \texttt{???}:
+            \begin{align*}
+                \int_{-\infty}^{\infty} f(x) dx & =   \int_{0}^{\infty} f(x) dx  \\
+                & =   \int_{0}^{\infty} \alpha e^{-\alpha x} dx  \\
+                & = \underset{N \rightarrow \infty}{lim} \int^N_0 \alpha e ^{-\alpha x} dx \\
+                & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha x} \mid^N_{x=0}] \\
+                & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha N}
+                \txo{\underbrace{
+                    \textcolor{black}{- ( -\txo{\underbrace{
+                        \textcolor{black}{e^{-\alpha \cdot 0}
+                        }}_{=1}}}
+                }_{=1}}
+                )] \\
+                & = 1 - \txo{
+                    \underbrace{
+                        \textcolor{black}{\underset{N \rightarrow \infty}{lim} e ^{- \alpha N}}
+                    }_{=1}
+                } \\
+                & = 1
+            \end{align*}
+        \end{itemize}
+    \end{bem}
+\end{defi}
+\begin{defi}
+    \textbf{Vereinigung/Schnitt} abzählbar vieler Mengen \\
+    $I \subseteq \mathbb{N}$ Indexmenge. \\
+    Für jedes $i \in I $ sei $A_i$:
+    \begin{itemize}
+        \item $A_i \in \mathbb{R}(\glssymbol{eraum} )$ für $\glssymbol{eraum}  $ abzählbar
+        \item $A_i$ ein Intervall für $\glssymbol{eraum}  = \mathbb{R}$ (oder $\glssymbol{eraum}  = [0, \infty)$ oder $\glssymbol{eraum}  = [a,b]$)
+    \end{itemize}
+    \begin{itemize}
+        \item[(a)] $\underset{i \in I}{\bigcup} A_i = \{\glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \text{ für mind. ein } i \in I \} = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \exists j \in I \text{ mit } \glssymbol{elementarereignis} \in A_j \}$
+        \item[(b)] $\underset{i \in I}{\bigcap} A_i = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \text{ für alle } i \in I\} = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \forall j \in I \} $
+    \end{itemize}
+\end{defi}
+
+\begin{lem}
+    \textbf{Rechenregeln für Mengen}
+    Seien $A,B,C \subset \glssymbol{eraum} $.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \begin{tikzpicture}
+                % Circle with label at 225 deg.
+                \node[draw,
+                    circle,
+                    minimum size =3cm,
+                    fill=accdarklight,
+                ] (circle1) at (0,0){};
+
+                % Circle with label at 45 deg.
+                \node[draw,
+                circle,
+                minimum size =2cm,
+                fill=accdarklight!80,
+                label={280:$C$}] (circle2) at (0,0.3){};
+
+                \node[draw,
+                circle,
+                minimum size =1cm,
+                fill=accdarklight!50,
+                label={225:$B$}] (circle3) at (0.4,0.4){};
+                \node[black] at (circle3.center){$A$};
+            \end{tikzpicture}
+            \caption{Transitivität: $A\subset B, \quad B \subset C \Rightarrow A \subset C$}
+            \label{fig:Transitivität}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \begin{tikzpicture}[thick,
+                set/.style = {circle,
+                minimum size = 3cm,
+                fill=accdarklight!80}]
+                % Set A
+                \node[set,label={135:$A$}] (A) at (0,0) {};
+
+                % Set B
+                \node[set,label={45:$B$}] (B) at (1.8,0) {};
+
+                % Set C
+                \node[set,label=$C$] (C) at (0.9,1.5) {};
+
+                % Intersection
+                \begin{scope}
+                    \clip (0,0) circle(1.5cm);
+                    \clip (1.8,0) circle(1.5cm);
+                    \clip (0.9,1.5) circle(1.5cm);
+                    \fill[accdarklight!50](0,0) circle(1.5cm);
+                \end{scope}
+
+                % Circles outline
+                \draw (0,0) circle(1.5cm);
+                \draw (1.8,0) circle(1.5cm);
+                \draw (0.9,1.5) circle(1.5cm);
+
+            \end{tikzpicture}
+            \caption{Distributivgesetz: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ und
+                $ A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$}
+            \label{fig:Distributivgesetz}
+        \end{subfigure}\label{fig:figure}
+    \end{figure}
+    \begin{itemize}
+        \item Kommutativitätsgesetz: $A \cup B = B \cup A$ und $A \cap B = B \cap A$
+        \item Assoziativgesetz:$(A \cup B) \cup C = A \cup (B \cup C) $ und $(A \cap B) \cap C = A \cap (B \cap C) $
+        \item de Morgansche Regeln: $(A \cup B)^c = A^c \cap B^c$ und  $(A \cap B)^c = A^c \cup B^c$
+    \end{itemize}
+\end{lem}
+
+\begin{defi}
+    $A, B, A_1, A_2, \dots \subset \glssymbol{eraum} $
+    \begin{itemize}
+        \item[(a)] $A$ und $B$ heißen \underline{disjunkt} , wenn $A \cap B = \emptyset$
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \node[draw,
+                circle,
+                minimum size =2cm,
+                fill=accdarklight!50,
+                label={225:$A$}] (circle1) at (0,0){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=accdarklight!80,
+                ] (circle1) at (0,0.6){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=accdarklight!30,
+                ] (circle1) at (0,-0.5){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=accdarklight!70,
+                ] (circle1) at (-0.3,0){};
+
+                % Circle with label at 45 deg.
+                \node[draw,
+                circle,
+                minimum size =2cm,
+                fill=urgent!50,
+                label={45:$B$}] (circle2) at (3,0){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=urgent!20,
+                ] (circle2) at (3,-0.6){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=urgent!70,
+                ] (circle2) at (3,0.5){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=urgent!90,
+                ] (circle2) at (2.4,0){};
+                \node[draw,
+                    circle,
+                    minimum size =0.5cm,
+                    fill=urgent!20,
+                ] (circle2) at (3.6,0){};
+            \end{tikzpicture}
+            \caption{Disunkte Mengen.}
+            \label{fig:disjunkt}
+        \end{figure}
+        \item[(b)] $A_1, A_2, \dots$  heißen \underline{disjunkt} , wenn $\underset{i}{\bigcap} A_i = \emptyset$
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                % Set A
+                \node [circle,
+                fill=accdarklight!50,
+                minimum size =3cm,
+                label={135:$A_1$}] (A) at (0,0){};
+                \node [circle,
+                fill=accdarklight!50,
+                minimum size =3cm,
+                label={45:$A_3$}] (C) at (3.6,0){};
+
+                \node [circle,
+                fill=accdarklight!50,
+                minimum size =3cm,
+                label={90:$A_2$}] (B) at (1.8,0){};
+                % Circles outline
+                \draw[black,thick] (0,0) circle(1.5cm);
+                \draw[black,thick] (1.8,0) circle(1.5cm);
+                \draw[black,thick] (3.6,0) circle(1.5cm);
+            \end{tikzpicture}
+            \caption{Disjunkte Mengenfamilie.}
+            \label{fig:DisjunkteMengenfamilie}
+        \end{figure}
+        \item[(c)] $A_1, A_2, \dots $ heißen paarweise disjunkt, wenn $A_i \cap A_j \neq \emptyset \quad \forall i,j $ mit $i \neq j$
+        \item[(d)] Sind $A_1, A_2, \dots $ paarweis disjunkt, so schreiben wir $\underset{i}{\dot\cup} A_i$ für die Vereinigung  $\underset{i}{\cup} A_i$.
+        \item Wir sprechen von einer \underline{disjunkten Vereinigung}
+    \end{itemize}
+    \begin{bem}
+        $\ $ \\
+        paarweise disjunkt $\Rightarrow$ disjunkt \\
+        $\underset{i}{\cup} A_i \subset A_1 \cap A_2 = \emptyset$
+    \end{bem}
+\end{defi}
+\begin{bsp}
+    \texttt{fehlt}
+\end{bsp}
+\begin{satz}
+    Seien $A, B, A_1, A_2, \dots \subset \glssymbol{eraum} $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
+    \begin{itemize}
+        \item[(a)] Additivität: Seien $A_1, A_2, \dots$ paarweise disjunkt, dann gilt:
+        \[\pe(\underset{i}{\dot\cup} A_i) = \sum_i \pe(A_i)\]
+        Gilt auch für Dichten \index{Dichte}! \\
+        \textbf{Beweis.}  \\
+        \begin{align*}
+            \pe(\underset{i}{\dot\cup} A_i)&  = \pe(\{\glssymbol{elementarereignis} \in \glssymbol{eraum} : \exists i \text{ mit } \glssymbol{elementarereignis} \in A_i\}) \\
+            & = \sum_i \txo{\underbrace{\textcolor{black}{\sum_{\glssymbol{elementarereignis} \in A_i}}}_{\pe(A_i)}} \glssymbol{wfk} (\glssymbol{elementarereignis}) \\
+            & = \sum_i \pe(A_i)
+        \end{align*}
+        \orangenote{Wir haben die Summe/Reihe umsortiert}
+
+        \item[(b)] Komplementärwahrscheinlichkeit
+        \[\pe(A^c) = \pe(\glssymbol{eraum}  \backslash A) = 1 - \pe(A)\]
+        \textbf{Beweis.}
+        \begin{align*}
+            \glssymbol{eraum}  =  A \dot\cup A^c & \overset{(a)}{\Rightarrow} 1 \overset{\txo{Normierung}}{=} \pe(\glssymbol{eraum} ) = \pe( A \dot\cup A^c) \overset{(a)}{=}\pe(A) + \pe(A^c) \\
+            & \Rightarrow \pe(A^c) = 1-  \pe(A)
+        \end{align*}
+        \item[(c)] Monotonie: \[A \subset B \Rightarrow \pe(A) \leq \pe(B)\]
+        \textbf{Beweis}
+        \begin{align*}
+            B & = A \dot\cup (B\backslash A) \\
+            \pe(B) & = \pe(A) + \txo{
+                \underbrace{\textcolor{black}{\pe(B \backslash A) }}_{\geq 0}
+            } \geq \pe(A)
+        \end{align*}
+        \item[(d)] $A \subset B\Rightarrow \pe(A) = \pe(B) - \pe(B \backslash A) $
+        \item[(e)] $\pe(A \cup B) = \pe(A) + \pe(B) - \pe(A \cap B)$ \\
+        \textbf{Beweis.}
+        \begin{align*}
+            A \cup B & = A \dot\cup [B \backslash (A \cap B)] \\
+            \pe(A \cup B) & = \pe(A) +
+            \txo{
+                \underbrace{
+                    \textcolor{black}{\pe(B \backslash (A \cap B) )}
+                }_{ \overset{(d)}{=}\pe(B) - \pe(A \cap B) }
+            } \\
+            & = \pe(A) + \pe(B) - \pe(A \cap B)
+        \end{align*}
+    \end{itemize}
+    \begin{bem}
+        Sind $A, B$ disjunkt, so gilt nach (a): $\pe(A \dot\cup B)  = \pe(A) + \pe(B) $. \\
+        Sind $A, B$ nicht disjunkt, so gilt nach (e): $\pe(A \cup B) = \pe(A) + \pe(B) - \pe(A \cap B)$. \\
+        Sind $A, B, C$ paarweise disjunkt, so gilt nach (a): $\pe(A \cup B \cup C) \overset{(a)}{=} \pe(A) + \pe(B) + \pe(C) $. \\ \\
+        Was passiert, wenn $A,B,C$ nicht paarweise disjunkt sind? \begin{align*}
+                                                                      \pe(A \cup B \cup C) & = \pe(A \cup (B \cup C)) \\
+                                                                      & = \pe(A) \pe( \cup B \cup C) -  \pe(A \cap (B \cup C)) \\
+                                                                      & = \pe(A) + [\pe(B) + \pe(C) - \pe(B \cap C)] - \pe((A \cap B) \cup (A \cap C))\\
+                                                                      & = \pe(A) + \pe(B) + \pe(C)  & \text{Mengen }  \\
+                                                                      & \quad - \pe(A \cap B) - \pe(A \cap C) - \pe(B \cap C) & \text{Paare von Mengen }  \\
+                                                                      & \quad + \pe(
+                                                                      \txo{
+                                                                          \underbrace{
+                                                                              \textcolor{black}{(A \cap B) \cap (A \cap C)}
+                                                                          }_{= A \cap B \cap C}
+                                                                      }
+                                                                      ) & \text{Tripel von Mengen }
+        \end{align*}
+    \end{bem}
+\end{satz}
+\begin{satz}
+    \textbf{Ein- und Ausschlussprinzip} \\
+    \[A_2,\dots, A_n \subset \glssymbol{eraum}  \]
+    \[\pe( \bigcup^n_{i=1} A_i ) = \sum^n_{k = 1} (-1)^{k+1} \sum_{a \leq i_1 \leq \dots \leq i_k \leq k} \pe(A_{i_1} \cap \dots \cap A_{i_k}) \]
+\end{satz}
+
+\newpage
+
