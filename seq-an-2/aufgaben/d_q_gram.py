@@ -36,8 +36,8 @@ def get_rank(qgram: str, q: int) -> int:
     p=1
     pos = 0
     while pos < q:
-        print("POS: " + str(pos))
-        print("Q: " + str(q))
+        #print("POS: " + str(pos))
+        #print("Q: " + str(q))
         # Die erste Position bekommt die Gewichtung 1
         rank+= get_code(qgram[pos]) * p
         # Die Gewichtung wird erhöht

@@ -21,21 +21,28 @@ def left_to_right_partition(x: str, y: str) -> List[str]:
         longest_match = y_suffix_tree.search_prefix(x[i:])
         long_len = len(longest_match)
 
-
+        # wenn match und aktuelles match nicht leer
         if long_len > 0 and current:
-            # ist kombo in y?
-            potential_sep = current[-1] + longest_match[0]
-            check = y_suffix_tree.search_prefix(potential_sep)
-            if len(check) == len(potential_sep):
+            zsm = current[-1] + longest_match[0]
+            # ist neue kombo in y?
+            check = y_suffix_tree.search_prefix(zsm)
+            # wenn kombi in y und nicht leer
+            if len(check) == len(zsm):
+                # hinzufügen
                 partition.append(current)
+                # das x[i] ist dann der seperator, das was bi im Skript ist
                 partition.append(x[i])
                 current = ""
                 i += 1
                 continue
 
+        # wenn match aber aktuelle sleer
         if long_len > 0:
+            # aktuelles nicht leer machen
             current += longest_match
             i += long_len
+
+        # wenn kein match ist es sep
         else:
             partition.append(current)
             partition.append(x[i])
@@ -44,7 +51,7 @@ def left_to_right_partition(x: str, y: str) -> List[str]:
 
     partition.append(current)
 
-    return      partition
+    return partition
 
 
 def partition_size(partition: List[str]) -> int:
