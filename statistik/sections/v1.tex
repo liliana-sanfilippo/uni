@@ -6,7 +6,7 @@
 \bluenote{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\textwidth]{images/model}
+    \includegraphics[width=0.2\textwidth]{images/model}
     \caption{}
     \label{fig:model}
 \end{figure}
@@ -27,7 +27,7 @@
     So schreiben wir zum Beispiel auch $k$, wenn das Elementarereignis eine natürliche Zahl ist, oder $x$, wenn es
     eine reelle Zahl ist.
 \end{defi}
-\begin{bsp}
+\begin{bsp} \labsatz
     \begin{itemize}
         \item Würfeln: $\ele = 3$ (3 gewürfelt)
         \item Zeitmessung: $\ele = 100$ (Sec)
@@ -44,9 +44,9 @@
     mehrere Ereignisräume benötigen, so schreiben wir
     $\eraum, \tilde {\eraum}, \eraum_1, \eraum_2, \dots$ usw.
 \end{defi}
-\begin{bsp}
+\begin{bsp} \labsatz
     \begin{itemize}
-        \item \textbf{Wuerfeln:}  $\eraum  = \{1,\dots.,6\}$ oder $\eraum  = \{ wuerfelsymbole \}$ \\
+        \item \textbf{Würfeln:}  $\eraum  = \{1,\dots.,6\}$ oder $\eraum  = \{ wuerfelsymbole \}$ \\
         Die Modellierung durch Würfelsymbole zeigt, daß es beim Modellieren wichtig ist anzugeben,
         welche Interpretation unsere Kodierung der Elementarereignisse haben soll.
         Man soll daher
@@ -59,10 +59,11 @@
         zufälligen Zeit modellieren wollen.
         Sofern Zusatzinformationen vorliegen, können wir natürlich
         ein kleineres Intervall wählen.
-        \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht (oder umgekehrt)}
+        \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht.
+            $\infty$ ist keine normale Zahl, sondern ein Symbol für Unbeschränktheit. Deshalb schreibt man praktisch immer die runde klammer auf der Seite.}
     \end{itemize}
 \end{bsp}
-Häufig interessiert uns gar nicht der exakte Ausgang eines Zufallsexperiments, sondern nur, ob der
+\noindent Häufig interessiert uns gar nicht der exakte Ausgang eines Zufallsexperiments, sondern nur, ob der
 Ausgang eine bestimmte Eigenschaft hat: Haben wir eine gerade Zahl gewürfelt?
 Ist die gemessene
 Zeit kürzer als eine Minute?
@@ -75,14 +76,14 @@ Dies führt zur folgenden Definition.
 $A = \emptyset, A = \eraum )$ sind zulässig) \\
 Sprechweise: $\ele \in A$ bedeutet ``A ist eingetroffen''
 \end{defi}
-Im Fall, dass der Ereignisraum $\eraum \subseteq \rz^n$ weder eine endliche noch eine abzählbar unendliche
+\noindent Im Fall, dass der Ereignisraum $\eraum \subseteq \rz^n$ weder eine endliche noch eine abzählbar unendliche
 Menge ist, beschränken wir uns auf Ereignisse, die Intervalle oder bekannte geometrische Figuren wie Dreieck,
 Rechteck oder Kugel sind.
 Auch abzählbare Schnitte oder Vereinigungen solcher Objekte sind zulässig, sowie deren abzählbare Schnitte oder Vereinigungen.
 Und so weiter.
 Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integrationstheorie zu vermeiden.
 
-\begin{bem}
+\begin{bem} \labsatz
     \begin{itemize}
         \item Ein Ereignis $A \subseteq \eraum$ ist also ein (meßbares) Element der Potenzmenge $\potm(\eraum)$
         von $\eraum$, das heißt, $A \in \potm(\eraum)$.
@@ -92,7 +93,7 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \end{itemize}
 \end{bem}
 
-\begin{bsp}
+\begin{bsp} \labsatz
     \begin{itemize}
         \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \ele = 4 \Rightarrow \ele \in A\] Wir sagen: ``gerade Zahl gewürfelt''
         \item \textbf{Zeitmessung:} $A = [100, 200] \subset \eraum  = [0,\infty)$
@@ -266,7 +267,8 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     10.000 Würfe; 4213 R \\
     Möchte $\wfk(R) \approx \frac{4213}{10.000} = 0,4213$ (relative Häufigkeit) \\ \textcolor{Orchid}{-> Gesetz der gr. Zahlen  \\ -> Statistik}
 \end{bsp}
-Take-Home message: Wann immer möglich, modelliere so, dass $\wfk(\ele) = const \forall \ele \in \eraum $ (erfordert Symmetrieargumente)
+\noindent Take-Home message: Wann immer möglich, modelliere so, dass $\wfk(\ele) = const \forall \ele \in \eraum $ (
+erfordert Symmetrieargumente)
 
 \begin{defi}
     \textbf{Gleichverteilung} \\

@@ -1,7 +1,7 @@
 \newtcolorbox{lavenderbox}{colback=white,
-colframe=Lavender}
+    colframe=Lavender}
 \newtcolorbox{cyanbox}{colback=white,
-colframe=Cyan}
+    colframe=Cyan}
 \newtcolorbox{orchidbox}{colback=white,
     colframe=Orchid}
 
@@ -18,7 +18,9 @@ colframe=Cyan}
 
 
 \newcommand{\txc}[1]{
-    \textcolor{Blue}{#1}
+    \begin{kom}
+        \textcolor{Purple}{#1}
+    \end{kom}
 }
 \newcommand{\txo}[1]{
     \textcolor{Orange}{#1}
@@ -101,3 +103,6 @@ colframe=Cyan}
 \newcommand{\potm}[0]{\glssymbol{potenz}}
 \newcommand{\eraum}[0]{\glssymbol{eraum}}
 \newcommand{\zv}[0]{\Gls{zv}}
+
+
+\newcommand{\labsatz}[0]{$\ $ \\}
