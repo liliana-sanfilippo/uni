@@ -80,9 +80,9 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \begin{itemize}
         \item Ein Ereignis $A \subseteq \glssymbol{eraum}$ ist also ein (meßbares) Element der Potenzmenge $\glssymbol{potenz}(\glssymbol{eraum})$
         von $\glssymbol{eraum}$, das heißt, $A \in \glssymbol{potenz}(\glssymbol{eraum})$.
-        \item Ist $\gslsymbol{elementarereignis} \in \glssymbol{eraum}$ ein Elementarereignis, so ist die
-        einelementige Menge $\{\gslsymbol{elementarereignis}\} \in \glssymbol{potenz}(\glssymbol{eraum})$
-        ein Ereignis in $\Omega$.
+        \item Ist $\glssymbol{elementarereignis} \in \glssymbol{eraum}$ ein Elementarereignis, so ist die
+        einelementige Menge $\{\glssymbol{elementarereignis}\} \in \glssymbol{potenz}(\glssymbol{eraum})$
+        ein Ereignis in $\glssymbol{eraum}$.
     \end{itemize}
 \end{bem}
 
@@ -129,12 +129,12 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 \end{defi}
 
 \begin{lem} \textbf{Eigenschaften des Wahrscheinlichkeitsmaßes für abzählbare Ereignisräume} \\
-    Sei $\Omega \neq \emptyset$ eine abzählbare Menge und $\glssymbol{wmaß}$ ein Wahrscheinlichkeitsmaß auf $\Omega$.
+    Sei $\glssymbol{eraum} \neq \emptyset$ eine abzählbare Menge und $\glssymbol{wmaß}$ ein Wahrscheinlichkeitsmaß auf $\glssymbol{eraum}$.
 Dann gelten:
     \begin{itemize}
-        \item $0 \leq \pe (A) \leq 1$ für alle $A \leq \glssymbol{potenz}(\Omega)$
+        \item $0 \leq \pe (A) \leq 1$ für alle $A \leq \glssymbol{potenz}(\glssymbol{eraum})$
         \item $\pe(\epmtyset) = 0$
-        \item $\pe(\Omega) = 1$
+        \item $\pe(\glssymbol{eraum}) = 1$
     \end{itemize}
     % TODO \paragraph{Beweis} im Skript
 \end{lem}
@@ -256,11 +256,35 @@ Take-Home message: Wann immer möglich, modelliere so, dass $\glssymbol{wfk}(\gl
 \begin{bem}
     Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. \\ \bluenote{Mathe 1}
 \end{bem}
+\begin{bem} % aus Skript
+    \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \\
+    Warum müssen wir voraussetzen, dass $\# \glssymbol{eraum} < \infty $?
+    Nehmen wir an, es gäbe eine Gleichverteilung $\glssymbol{elementarereignis}$ auf einer abzählbar unendlichen Menge
+    $\glssymbol{eraum}$.
+    Wir können der Einfachheit halber annehmen, dass $\glssymbol{eraum}$ die Menge
+    der natürlichen Zahlen $\mathbb{N}$ ist.
+    Dann gibt es also ein $c \in [0, 1]$ mit
+    \[
+        1 = \sum^{\infty}_{k = 1} \glssymbol{elementarereignis}(k)    = c \cdot \# \mathbb{N}
+    \]
+    Nun gibt es zwei Fälle.
+    Entweder, $c = 0$.
+    Dann erhalten wir den Widerspruch $1 = 0$.
+    Andernfalls, wenn $c > 0$ gilt, erhalten wir ebenfalls einen Widerspruch, nämlich $1 = \infty$.
+    Folglich kann es auf einer nicht endlichen Menge keine Gleichverteilung geben
+\end{bem}
 \begin{bsp}
     \textbf{Gleichverteilung}
     \begin{itemize}
         \item $1 \times $ Werfen einer fairen Münze: $\glssymbol{eraum}  = \{K,Z\}, \glssymbol{wfk}(\glssymbol{elementarereignis}) = \frac{1}{2} \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} $
         \item $1 \times$ Würfeln oder  $2 \times$ Würfeln mit fairem Würfel
+    \end{itemize}
+\end{bsp}
+\begin{bsp}
+    \textbf{KEINE Gleichverteilung}
+    \begin{itemize}
+        \item Augensumme beim wiederholten Würfeln
+        \item Werfen einer Reißzwecke
     \end{itemize}
 \end{bsp}
 \newpage
