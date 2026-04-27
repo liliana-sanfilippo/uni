@@ -71,7 +71,7 @@ if __name__ == "__main__":
         ys.append(end-start)
     ax1.plot(xs, ys, label="Edit Distance", marker='o')
 
-    #TODO: Plot the runtimes for the other distances and for adversarial inputs
+    # DONE: Plot the runtimes for the other distances and for adversarial inputs
     # Q-gram Distance (Random)
     xs_qgram = []
     ys_qgram = []

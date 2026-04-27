@@ -23,7 +23,7 @@ def left_to_right_partition(x: str, y: str) -> List[str]:
 
 
         if long_len > 0 and current:
-            # ist kombo in y
+            # ist kombo in y?
             potential_sep = current[-1] + longest_match[0]
             check = y_suffix_tree.search_prefix(potential_sep)
             if len(check) == len(potential_sep):
