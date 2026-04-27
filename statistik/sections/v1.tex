@@ -2,7 +2,7 @@
 %! Date = 4/27/26
 
 
-\section{Vorlesung 1 (11.04.2025)}
+\section*{Vorlesung 1 (11.04.2025), ergänzt durch Skript}
 \bluenote{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind.}
 \begin{figure}[H]
     \centering
@@ -11,32 +11,88 @@
     \label{fig:model}
 \end{figure}
 
-\section{Lernziele}
+\subsection*{Lernziele}
 \begin{itemize}
     \item modellieren einfacher Zufallsexperimente
     \item \gls{wraum} kennen und verwenden
     \item \Gls{gleichverteilung} kennen und erkennen
 \end{itemize}
 
-\section{Begriffe}
-\begin{itemize}
-    \item \Gls{elementarereignis}: \glssymbol{elementarereignis}: Möglicher Ausgang eines Zufallsexperiments
+\subsection*{Begriffe}
+\begin{defi}
+    \textbf{\Gls{elementarereignis} \glssymbol{elementarereignis}} \\
+    Möglicher Ausgang eines Zufallsexperiments. \\
+    Es ist üblich, für Elementarereignisse den kleinen griechischen Buchstaben \glssymbol{elementarereignis} (omega) zu verwenden.
+    Davon weichen wir in konkreten Situationen manchmal ab.
+    So schreiben wir zum Beispiel auch $k$, wenn das Elementarereignis eine natürliche Zahl ist, oder $x$, wenn es
+    eine reelle Zahl ist.
+\end{defi}
+\begin{bsp}
     \begin{itemize}
         \item Würfeln: $\glssymbol{elementarereignis} = 3$ (3 gewürfelt)
         \item Zeitmessung: $\glssymbol{elementarereignis} = 100$ (Sec)
     \end{itemize}
-    \item \Gls{eraum} $\glssymbol{eraum}$ : Menge aller Elementarereignisse $\glssymbol{eraum}  \neq \emptyset$ \begin{itemize}
-                                                                                                                    \item \textbf{Wuerfeln:}  $\glssymbol{eraum}  = \{1,\dots.,6\}$ oder $\glssymbol{eraum}  = \{ wuerfelsymbole \}$
-                                                                                                                    \item \textbf{Zeitmessung:} $\glssymbol{eraum}  = [0, \infty)$ \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht (oder umgekehrt)}
+\end{bsp}
+
+\begin{defi}
+    \textbf{\Gls{eraum}} $\glssymbol{eraum}$ \\
+    Die Menge aller Elementarereignisse $\glssymbol{eraum}  \neq \emptyset$ ist die Menge aller möglichen Ausgänge
+    eines Zufallsexperiments. \\
+    Ein Ereignisraum ist also zunächst einmal einfach eine nichtleere Menge.  \\
+    Für einen Ereignisraum verwenden immer den großen griechischen Buchstaben $\glssymbol{eraum}$ (Omega). Wenn wir
+    mehrere Ereignisräume benötigen, so schreiben wir
+    $\glssymbol{eraum}, \tilde {\glssymbol{eraum}}, \glssymbol{eraum}_1, \glssymbol{eraum}_2, \dots$ usw.
+\end{defi}
+\begin{bsp}
+    \begin{itemize}
+        \item \textbf{Wuerfeln:}  $\glssymbol{eraum}  = \{1,\dots.,6\}$ oder $\glssymbol{eraum}  = \{ wuerfelsymbole \}$ \\
+        Die Modellierung durch Würfelsymbole zeigt, daß es beim Modellieren wichtig ist anzugeben,
+        welche Interpretation unsere Kodierung der Elementarereignisse haben soll. Man soll daher
+        stets einen Satz der Art
+        \begin{center}
+            ``Dabei bedeutet $\glssymbol{elementarereignis} = wuerfelsymbol1$, dass der Würfel eine Eins zeigt''
+        \end{center}
+        schreiben, wenn man einen Ereignisraum angibt.
+        \item \textbf{Zeitmessung:} $\glssymbol{eraum}  = [0, \infty)$ ist grundsätzlich eine sinnvolle Wahl, wenn wir das Messen einer
+        zufälligen Zeit modellieren wollen. Sofern Zusatzinformationen vorliegen, können wir natürlich
+        ein kleineres Intervall wählen.
+        \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht (oder umgekehrt)}
     \end{itemize}
-    \item Ereignis $A$: Teilmenge des Ereignisraums $A \subseteq \glssymbol{eraum}  $(
-    $A = \emptyset, A = \glssymbol{eraum} )$ sind zulässig) \\
-    Sprechweise: $\glssymbol{elementarereignis} \in A$ bedeutet ``A ist eingetroffen''
+\end{bsp}
+Häufig interessiert uns gar nicht der exakte Ausgang eines Zufallsexperiments, sondern nur, ob der
+Ausgang eine bestimmte Eigenschaft hat: Haben wir eine gerade Zahl gewürfelt? Ist die gemessene
+Zeit kürzer als eine Minute? Wir fassen also jene Elementarereignisse zusammen, die die gewünschte
+Eigenschaft haben. Dies führt zur folgenden Definition.
+
+\begin{defi} \textbf{Ereignis} $A$ \\
+(Messbare) Teilmenge des Ereignisraums $A \subseteq \glssymbol{eraum}  $(
+$A = \emptyset, A = \glssymbol{eraum} )$ sind zulässig) \\
+Sprechweise: $\glssymbol{elementarereignis} \in A$ bedeutet ``A ist eingetroffen''
+\end{defi}
+Im Fall, dass der Ereignisraum $\glssymbol{eraum} \subseteq \rz^n$ weder eine endliche noch eine abzählbar unendliche
+Menge ist, beschränken wir uns auf Ereignisse, die Intervalle oder bekannte geometrische Figuren wie Dreieck,
+Rechteck oder Kugel sind.
+Auch abzählbare Schnitte oder Vereinigungen solcher Objekte sind zulässig, sowie deren abzählbare Schnitte oder Vereinigungen.
+Und so weiter.
+Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integrationstheorie zu vermeiden.
+
+\begin{bem}
+    \begin{itemize}
+        \item Ein Ereignis $A \subseteq \glssymbol{eraum}$ ist also ein (meßbares) Element der Potenzmenge $\glssymbol{potenz}(\glssymbol{eraum})$
+        von $\glssymbol{eraum}$, das heißt, $A \in \glssymbol{potenz}(\glssymbol{eraum})$.
+        \item Ist $\gslsymbol{elementarereignis} \in \glssymbol{eraum}$ ein Elementarereignis, so ist die
+        einelementige Menge $\{\gslsymbol{elementarereignis}\} \in \glssymbol{potenz}(\glssymbol{eraum})$
+        ein Ereignis in $\Omega$.
+    \end{itemize}
+\end{bem}
+
+\begin{bsp}
     \begin{itemize}
         \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \glssymbol{elementarereignis} = 4 \Rightarrow \glssymbol{elementarereignis} \in A\] Wir sagen: ``gerade Zahl gewürfelt''
         \item \textbf{Zeitmessung:} $A = [100, 200] \subset \glssymbol{eraum}  = [0,\infty)$
     \end{itemize}
-\end{itemize}
+\end{bsp}
+
 
 \section{Vorgehen beim Modellieren}
 \bluenote{Beim geeigneten $\glssymbol{eraum} $ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann ``k'', ``z'' nahmen oder ``Kopf'', ``Zahl''. Das sind verschiedenen $\glssymbol{eraum} $, aber beide wären passend.}
@@ -47,6 +103,7 @@
         \item \textbf{Möglichkeit}: \gls{ws} für $\glssymbol{eraum} $ abzählbar
     \end{enumerate}
 \end{itemize} \vskip 14pt \orangenote{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
+
 \begin{defi}
     \textbf{Zähldichte / \acrfull{wfk}} \\
     Sei $\glssymbol{eraum}  \neq \emptyset$ eine abzählbare Menge.
@@ -70,10 +127,23 @@
         \]
     \end{bem}
 \end{defi}
+
+\begin{lem} \textbf{Eigenschaften des Wahrscheinlichkeitsmaßes für abzählbare Ereignisräume} \\
+    Sei $\Omega \neq \emptyset$ eine abzählbare Menge und $\glssymbol{wmaß}$ ein Wahrscheinlichkeitsmaß auf $\Omega$.
+Dann gelten:
+    \begin{itemize}
+        \item $0 \leq \pe (A) \leq 1$ für alle $A \leq \glssymbol{potenz}(\Omega)$
+        \item $\pe(\epmtyset) = 0$
+        \item $\pe(\Omega) = 1$
+    \end{itemize}
+    % TODO \paragraph{Beweis} im Skript
+\end{lem}
+
 \begin{defi}
     \textbf{\gls{wraum}} \\
     $\underbrace{\glssymbol{wraum}}_{\txo{(\glssymbol{eraum} , \glssymbol{wfk})}}$ heißt \underline{\gls{wraum}}.
     \begin{bem}
+        % TODO noch die längere aus dem Skript dazu holen
         Für $\glssymbol{eraum} $ abzählbar: $\glssymbol{wfk}$ legt $\pe$ eindeutig und umgekehrt!
         \[P(A)=\sum_{\glssymbol{elementarereignis} \in A} \glssymbol{wfk} (\glssymbol{elementarereignis}) \quad \forall A \in \glssymbol{potenz}(\glssymbol{eraum} )\]
         \[\glssymbol{wfk} (\glssymbol{elementarereignis}) = \pe(\underbrace{\{\glssymbol{elementarereignis}\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} \]
@@ -112,7 +182,7 @@ Wie wählen wir $\glssymbol{eraum} $ und $\glssymbol{wfk}$ (bzw. $\pe$)?
         \[\pe_1 (A^{(1)}_3) = \pe_1 (\{(1,2), (2,1)\}) = \glssymbol{wfk}_1((1,2)) + \glssymbol{wfk}_1((2,1)) = \frac{2}{36}\]
         usw\dots Es wird immer eines mehr \\
         \begin{tabular}{c|ccccccccccccc}
-            $k$                 & 2              & 3              & 4              & 5              & 6              & 7              & 8              & 9              & 10             & 11             & 12             \\
+            $k$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
             $\pe_1 (A^{(1)}_k)$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$
             & $\frac{6}{36}$
             & $\frac{5}{36}$
@@ -140,7 +210,7 @@ Wie wählen wir $\glssymbol{eraum} $ und $\glssymbol{wfk}$ (bzw. $\pe$)?
         Finde $\glssymbol{wfk}_3$?
         $\rightarrow$ Verwende Tabelle aus dem 1. Ansatz, denn $\glssymbol{wfk}_3(k) = \pe(A^{(1)}_k)$ :  \\
         \begin{tabular}{c|ccccccccccccc}
-            $k$                                          & 2              & 3              & 4              & 5              & 6              & 7              & 8              & 9              & 10             & 11             & 12             \\
+            $k$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
             \textcolor{Aquamarine}{$\glssymbol{wfk}_3(k)$} & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$
             & $\frac{4}{36}$
             & $\frac{5}{36}$
