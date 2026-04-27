@@ -19,7 +19,8 @@
 \end{itemize}
 
 \subsection*{Begriffe}
-\begin{defi}
+
+\begin{defi} \label{def:elementarereignis}
     \textbf{\Gls{elementarereignis} \ele} \\
     Möglicher Ausgang eines Zufallsexperiments. \\
     Es ist üblich, für Elementarereignisse den kleinen griechischen Buchstaben \ele (omega) zu verwenden.
@@ -27,14 +28,16 @@
     So schreiben wir zum Beispiel auch $k$, wenn das Elementarereignis eine natürliche Zahl ist, oder $x$, wenn es
     eine reelle Zahl ist.
 \end{defi}
-\begin{bsp} \labsatz
+
+\begin{bsp} \textbf{Zu \autoref{def:elementarereignis}} \\
     \begin{itemize}
         \item Würfeln: $\ele = 3$ (3 gewürfelt)
         \item Zeitmessung: $\ele = 100$ (Sec)
     \end{itemize}
 \end{bsp}
 
-\begin{defi}
+
+\begin{defi} \label{def:eraum}
     \textbf{\Gls{eraum}} $\eraum$ \\
     Die Menge aller Elementarereignisse $\eraum  \neq \emptyset$ ist die Menge aller möglichen Ausgänge
     eines Zufallsexperiments. \\
@@ -44,7 +47,8 @@
     mehrere Ereignisräume benötigen, so schreiben wir
     $\eraum, \tilde {\eraum}, \eraum_1, \eraum_2, \dots$ usw.
 \end{defi}
-\begin{bsp} \labsatz
+
+\begin{bsp} \textbf{Zu \autoref{def:eraum}} \\
     \begin{itemize}
         \item \textbf{Würfeln:}  $\eraum  = \{1,\dots.,6\}$ oder $\eraum  = \{ wuerfelsymbole \}$ \\
         Die Modellierung durch Würfelsymbole zeigt, daß es beim Modellieren wichtig ist anzugeben,
@@ -59,10 +63,11 @@
         zufälligen Zeit modellieren wollen.
         Sofern Zusatzinformationen vorliegen, können wir natürlich
         ein kleineres Intervall wählen.
-        \komm{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht.
-            $\infty$ ist keine normale Zahl, sondern ein Symbol für Unbeschränktheit. Deshalb schreibt man praktisch immer die runde klammer auf der Seite.}
     \end{itemize}
+\komm{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht.
+    $\infty$ ist keine normale Zahl, sondern ein Symbol für Unbeschränktheit. Deshalb schreibt man praktisch immer die runde klammer auf der Seite.}
 \end{bsp}
+
 \noindent Häufig interessiert uns gar nicht der exakte Ausgang eines Zufallsexperiments, sondern nur, ob der
 Ausgang eine bestimmte Eigenschaft hat: Haben wir eine gerade Zahl gewürfelt?
 Ist die gemessene
@@ -71,7 +76,8 @@ Wir fassen also jene Elementarereignisse zusammen, die die gewünschte
 Eigenschaft haben.
 Dies führt zur folgenden Definition.
 
-\begin{defi} \textbf{Ereignis} $A$ \\
+
+\begin{defi} \label{def:ereignis} \textbf{Ereignis} $A$ \\
 (Messbare) Teilmenge des Ereignisraums $A \subseteq \eraum  $(
 $A = \emptyset, A = \eraum )$ sind zulässig) \\
 Sprechweise: $\ele \in A$ bedeutet ``A ist eingetroffen''
@@ -83,9 +89,9 @@ Auch abzählbare Schnitte oder Vereinigungen solcher Objekte sind zulässig, sow
 Und so weiter.
 Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integrationstheorie zu vermeiden.
 
-\begin{bem} \labsatz
+\begin{bem} \textbf{Zu \autoref{def:ereignis}} \\
     \begin{itemize}
-        \item Ein Ereignis $A \subseteq \eraum$ ist also ein (meßbares) Element der Potenzmenge $\potm(\eraum)$
+        \item Ein Ereignis $A \subseteq \eraum$ ist also ein (messbares) Element der Potenzmenge $\potm(\eraum)$
         von $\eraum$, das heißt, $A \in \potm(\eraum)$.
         \item Ist $\ele \in \eraum$ ein Elementarereignis, so ist die
         einelementige Menge $\{\ele\} \in \potm(\eraum)$
@@ -93,7 +99,8 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \end{itemize}
 \end{bem}
 
-\begin{bsp} \labsatz
+
+\begin{bsp} \textbf{Zu \autoref{def:ereignis}} \\
     \begin{itemize}
         \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \ele = 4 \Rightarrow \ele \in A\] Wir sagen: ``gerade Zahl gewürfelt''
         \item \textbf{Zeitmessung:} $A = [100, 200] \subset \eraum  = [0,\infty)$
@@ -109,7 +116,8 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \begin{enumerate}
         \item \textbf{Möglichkeit}: \gls{ws} für $\eraum $ abzählbar
     \end{enumerate}
-\end{itemize} \vskip 14pt \orangenote{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
+\end{itemize} \komm{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
+
 
 \begin{defi} \label{def:zaehldichte}
     \textbf{Zähldichte / \acrfull{wfk}} \\
@@ -123,17 +131,19 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
         \[ \pe(A)\coloneqq \sum_{w \in A} \wfk(\ele)\]   \komm{Was hat die Potenzmenge von Omega damit zu tun?}
         \noindent $\pe$ heißt \gls{wmaß} und liegt immer zwischen Null und 1
     \end{itemize}
-    \begin{bem}\label{bem:konvention}
-        \textit{Konvention}: $\pe(\emptyset) = 0$
-    \end{bem}
-    \begin{bem}
-        \[0 \leq \pe \leq 1, \quad \forall A \subseteq \eraum  \quad \txo{\underbrace{(\forall A \in \potm(\eraum )) }_{\potm(\eraum ) \text{Potenzmenge von } \eraum }} \]
-        $\pe$ ist eine Abb.
-        \[
-            \pe: \potm(\eraum ) \rightarrow [0,1] \quad  \text{ mit }  \pe(\emptyset) = 0, \quad  \pe(\eraum ) = 1
-        \]
-    \end{bem}
 \end{defi}
+
+\begin{bem}\label{bem:konvention} \textbf{Zu \autoref{def:zaehldichte} (ii)} \\
+\textit{Konvention}: $\pe(\emptyset) = 0$
+\end{bem}
+
+\begin{bem} \textbf{Zu \autoref{def:zaehldichte}} \\
+    \[0 \leq \pe \leq 1, \quad \forall A \subseteq \eraum  \quad \txo{\underbrace{(\forall A \in \potm(\eraum )) }_{\potm(\eraum ) \text{Potenzmenge von } \eraum }} \]
+    $\pe$ ist eine Abb.
+    \[
+        \pe: \potm(\eraum ) \rightarrow [0,1] \quad  \text{ mit }  \pe(\emptyset) = 0, \quad  \pe(\eraum ) = 1
+    \]
+\end{bem}
 
 \begin{lem} \textbf{Eigenschaften des Wahrscheinlichkeitsmaßes für abzählbare Ereignisräume} \\
     Sei $\eraum \neq \emptyset$ eine abzählbare Menge und $\pe$ ein Wahrscheinlichkeitsmaß auf $\eraum$.
@@ -159,30 +169,33 @@ Dann gelten:
     \end{itemize}
 \end{lem}
 
-\begin{defi}
+
+\begin{defi} \label{def:wraum}
     \textbf{\gls{wraum}} \\
     $\underbrace{\wraum}_{\txo{(\eraum , \wfk)}}$ heißt \underline{\gls{wraum}}.
-    \begin{bem}
-        Für $\eraum $ abzählbar: $\wfk$ legt $\pe$ eindeutig und umgekehrt!
-        \[P(A)=\sum_{\ele \in A} \wfk (\ele) \quad \forall A \in \potm(\eraum )\]
-        \[\wfk (\ele) = \pe(\underbrace{\{\ele\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \ele \in \eraum \]
-        \paragraph{Länger aus dem Skript:} Da es eine ein-eindeutige Zuordnung zwischen der
-        Wahrscheinlichkeitsfunktion $\wfk$ und dem Wahrscheinlichkeitsmaß $\pe$ gibt, bezeichnen wir auch das Paar $\wraum$
-        als Wahrscheinlichkeitsraum.
-        Die Zuordnung von $\wfk$ zu $\pe$ ist direkt durch die Definition von $\pe$ in Definition
-        \autoref{def:zaehldichte} gegeben.
-        Für eine
-        gegebene Wahrscheinlichkeitsfunktion erhalten wir so ein eindeutig bestimmtes Wahrscheinlichkeitsmaß.
-        Ist ein Wahrscheinlichkeitsmaß $\pe$ gegeben, so ergibt sich die zugehörige Wahrscheinlichkeitsfunktion $\wfk$
-        sofort aus den Wahrscheinlichkeiten der Elementarereignisse:
-        \[
-            \wfk(\ele) = \pe(\{\ele\}), \faoio
-        \]
-        Beachten Sie hier, dass die Wahrscheinlichkeitsfunktion $\wfk$ als Argument ein Elementarereignis, also
-        ein einzelnes $\oio$ hat, während das Wahrscheinlichkeitsmaß $\pe$ auf der Potenzmenge $\pe(\eraum)$ von $\eraum$
-        definiert ist und daher das einelementige Ereignis $\{\ele\}$ als Argument hat.
-    \end{bem}
 \end{defi} %
+
+\begin{bem} \textbf{Zu \autoref{def:wraum}} \\
+    Für $\eraum $ abzählbar: $\wfk$ legt $\pe$ eindeutig und umgekehrt!
+    \[P(A)=\sum_{\ele \in A} \wfk (\ele) \quad \forall A \in \potm(\eraum )\]
+    \[\wfk (\ele) = \pe(\underbrace{\{\ele\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \ele \in \eraum \]
+    \paragraph{Länger aus dem Skript:} Da es eine ein-eindeutige Zuordnung zwischen der
+    Wahrscheinlichkeitsfunktion $\wfk$ und dem Wahrscheinlichkeitsmaß $\pe$ gibt, bezeichnen wir auch das Paar $\wraum$
+    als Wahrscheinlichkeitsraum.
+    Die Zuordnung von $\wfk$ zu $\pe$ ist direkt durch die Definition von $\pe$ in Definition
+    \autoref{def:zaehldichte} gegeben.
+    Für eine
+    gegebene Wahrscheinlichkeitsfunktion erhalten wir so ein eindeutig bestimmtes Wahrscheinlichkeitsmaß.
+    Ist ein Wahrscheinlichkeitsmaß $\pe$ gegeben, so ergibt sich die zugehörige Wahrscheinlichkeitsfunktion $\wfk$
+    sofort aus den Wahrscheinlichkeiten der Elementarereignisse:
+    \[
+        \wfk(\ele) = \pe(\{\ele\}), \faoio
+    \]
+    Beachten Sie hier, dass die Wahrscheinlichkeitsfunktion $\wfk$ als Argument ein Elementarereignis, also
+    ein einzelnes $\oio$ hat, während das Wahrscheinlichkeitsmaß $\pe$ auf der Potenzmenge $\pe(\eraum)$ von $\eraum$
+    definiert ist und daher das einelementige Ereignis $\{\ele\}$ als Argument hat.
+\end{bem}
+
 \begin{bsp}
     \textbf{Einmal Würfeln} \\
     $\eraum  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
@@ -203,6 +216,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     \item Frage der Erfahrung
     \item wichtiges Thema und Lernziel dieses Semester
 \end{itemize}
+
 \begin{bsp}
     \textbf{Zweimal würfeln mit fairem Würfel - Augensumme}
     \begin{enumerate}
@@ -260,6 +274,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 
 \end{bsp}
 \komm{Man hat beim Modellieren immer die Wahl. Und mann muss aufpassen wie man es macht. }
+
 \begin{bsp}
     \textbf{Reißzwecke ``würfeln'' - Symmetrieüberlegungen helfen nicht} \\
     $\eraum  = \{R, S\}$ (R auf Kopf, S auf Seite) \\
@@ -269,6 +284,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \end{bsp}
 \noindent Take-Home message: Wann immer möglich, modelliere so, dass $\wfk(\ele) = const \forall \ele \in \eraum $ (
 erfordert Symmetrieargumente)
+
 
 \begin{defi}
     \textbf{Gleichverteilung} \\
@@ -312,6 +328,7 @@ erfordert Symmetrieargumente)
     Andernfalls, wenn $c > 0$ gilt, erhalten wir ebenfalls einen Widerspruch, nämlich $1 = \infty$.
     Folglich kann es auf einer nicht endlichen Menge keine Gleichverteilung geben
 \end{bem}
+
 \begin{bsp}
     \textbf{Gleichverteilung}
     \begin{itemize}
@@ -319,6 +336,7 @@ erfordert Symmetrieargumente)
         \item $1 \times$ Würfeln oder  $2 \times$ Würfeln mit fairem Würfel
     \end{itemize}
 \end{bsp}
+
 \begin{bsp}
     \textbf{KEINE Gleichverteilung}
     \begin{itemize}
