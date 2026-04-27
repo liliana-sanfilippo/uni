@@ -3,7 +3,7 @@
 
 
 \section*{Vorlesung 1 (11.04.2025), ergänzt durch Skript}
-\bluenote{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind}
+\kom{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\textwidth]{images/model}
@@ -59,7 +59,7 @@
         zufälligen Zeit modellieren wollen.
         Sofern Zusatzinformationen vorliegen, können wir natürlich
         ein kleineres Intervall wählen.
-        \bluenote{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht.
+        \kom{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht.
             $\infty$ ist keine normale Zahl, sondern ein Symbol für Unbeschränktheit. Deshalb schreibt man praktisch immer die runde klammer auf der Seite.}
     \end{itemize}
 \end{bsp}
@@ -102,7 +102,7 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 
 
 \section{Vorgehen beim Modellieren}\label{sec:vorgehen-beim-modellieren}
-\bluenote{Beim geeigneten $\eraum $ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann ``k'', ``z'' nahmen oder ``Kopf'', ``Zahl''. Das sind verschiedenen $\eraum $, aber beide wären passend.}
+\kom{Beim geeigneten $\eraum $ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann ``k'', ``z'' nahmen oder ``Kopf'', ``Zahl''. Das sind verschiedenen $\eraum $, aber beide wären passend.}
 \begin{itemize}
     \item Finden des geeigneten $\eraum $
     \item Ereignisse müssen \gls{ws} zugeordnet bekommen
@@ -118,9 +118,9 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
         \item[(i)] Eine Abbildung $\wfk : \eraum  \rightarrow [0,1]$ heißt mit \[
                                                                                                          \underbrace{\sum_{\ele \in \eraum } \wfk (\ele) = 1}_{\text{\txo{Normierung}}}
         \] \underline{Zähldichte / \gls{wfk}} auf $\eraum $. \\
-        \bluenote{Die Reihe (Normierung) muss 1 sein und konvergieren.} \bluenote{Wenn man max abzählbar hat, dann sind die Wahrscheinlichkeiten einfach teile der Summe (Normierung) und daher ist das einfach.}
+        \kom{Die Reihe (Normierung) muss 1 sein und konvergieren.} \kom{Wenn man max abzählbar hat, dann sind die Wahrscheinlichkeiten einfach teile der Summe (Normierung) und daher ist das einfach.}
         \item[(ii)] Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \eraum $ ist bei gegebener \gls{wfk} $\wfk$ definiert durch
-        \[ \pe(A)\coloneqq \sum_{w \in A} \wfk(\ele)\]   \bluenote{Was hat die Potenzmenge von Omega damit zu tun?}
+        \[ \pe(A)\coloneqq \sum_{w \in A} \wfk(\ele)\]   \kom{Was hat die Potenzmenge von Omega damit zu tun?}
         \noindent $\pe$ heißt \gls{wmaß} und liegt immer zwischen Null und 1
     \end{itemize}
     \begin{bem}\label{bem:konvention}
@@ -186,16 +186,16 @@ Dann gelten:
 \begin{bsp}
     \textbf{Einmal Würfeln} \\
     $\eraum  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
-    \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.} \bluenote{In Hausaufgaben zu jedem Omega hinzuschreiben, was es bedeutet! ``Dabei beudeute $\ele = k$, dass \dots''}
+    \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.} \kom{In Hausaufgaben zu jedem Omega hinzuschreiben, was es bedeutet! ``Dabei beudeute $\ele = k$, dass \dots''}
     Wie wählen wir $\wfk$?
     \begin{itemize}
-        \item[(a)] \textbf{fairer Würfel}: \bluenote{Ein ebener Würfel ist ein ``fairer Würfel'', weil alle Seiten gleich Wahrscheinlich sind.}
+        \item[(a)] \textbf{fairer Würfel}: \kom{Ein ebener Würfel ist ein ``fairer Würfel'', weil alle Seiten gleich Wahrscheinlich sind.}
         \[\wfk(k) = const \  \forall k \in \eraum \]
         \[\wfk (k) \coloneqq \frac{1}{6} \text{(weil $\sum_{k=1} \wfk (k) \overset{!}{=} 1$ )}\]
         $\pe(A) = \wfk(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \wfk(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
         \item[(b)] \textbf{gezinkter Würfel}: Seien
         \[\wfk(1) = \frac{1}{2}, \wfk(2) = \wfk(3) = \wfk(4) = \wfk(5) = \frac{1}{12}, \wfk(6)=\frac{1}{6}\]
-        Probe: $\sum_{k=1}^6 \wfk(k) \overset{!}{=} 1$ \bluenote{In der Klausur wenn bei einer Probe ein Fehler herauskommt, gerne hinschreiben man hat gemerkt da ist ein Fehler und wo der gewesen sein muss, besser als nichts hischreiben.}
+        Probe: $\sum_{k=1}^6 \wfk(k) \overset{!}{=} 1$ \kom{In der Klausur wenn bei einer Probe ein Fehler herauskommt, gerne hinschreiben man hat gemerkt da ist ein Fehler und wo der gewesen sein muss, besser als nichts hischreiben.}
     \end{itemize}
 \end{bsp}
 Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
@@ -259,7 +259,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     \end{enumerate}%
 
 \end{bsp}
-\bluenote{Man hat beim Modellieren immer die Wahl. Und mann muss aufpassen wie man es macht. }
+\kom{Man hat beim Modellieren immer die Wahl. Und mann muss aufpassen wie man es macht. }
 \begin{bsp}
     \textbf{Reißzwecke ``würfeln'' - Symmetrieüberlegungen helfen nicht} \\
     $\eraum  = \{R, S\}$ (R auf Kopf, S auf Seite) \\
@@ -293,7 +293,7 @@ erfordert Symmetrieargumente)
     \end{itemize}
 \end{lem}
 \begin{bem}
-    Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. \\ \bluenote{Mathe 1}
+    Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. \\ \kom{Mathe 1}
 \end{bem}
 \begin{bem} % aus Skript
     \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \\
