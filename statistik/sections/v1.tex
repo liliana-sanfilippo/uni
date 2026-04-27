@@ -104,7 +104,7 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \end{enumerate}
 \end{itemize} \vskip 14pt \orangenote{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
 
-\begin{defi}
+\begin{defi} \label{def:zaehldichte}
     \textbf{Zähldichte / \acrfull{wfk}} \\
     Sei $\glssymbol{eraum}  \neq \emptyset$ eine abzählbare Menge.
     \begin{itemize}
@@ -115,10 +115,10 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
         \item[(ii)] Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \glssymbol{eraum} $ ist bei gegebener \gls{wfk} $\glssymbol{wfk}$ definiert durch
         \[ \pe(A)\coloneqq \sum_{w \in A} \glssymbol{wfk}(\glssymbol{elementarereignis})\]   \bluenote{Was hat die Potenzmenge von Omega damit zu tun?}
         \noindent $\pe$ heißt \gls{wmaß} und liegt immer zwischen Null und 1
-        \begin{itemize}
-            \item[] \textit{Konvention}: $\pe(\emptyset) = 0$
-        \end{itemize}
     \end{itemize}
+    \begin{bem}\label{bem:konvention}
+        \textit{Konvention}: $\pe(\emptyset) = 0$
+    \end{bem}
     \begin{bem}
         \[0 \leq \pe \leq 1, \quad \forall A \subseteq \glssymbol{eraum}  \quad \txo{\underbrace{(\forall A \in \glssymbol{potenz}(\glssymbol{eraum} )) }_{\glssymbol{potenz}(\glssymbol{eraum} ) \text{Potenzmenge von } \glssymbol{eraum} }} \]
         $\pe$ ist eine Abb.
@@ -136,17 +136,42 @@ Dann gelten:
         \item $\pe(\emptyset) = 0$
         \item $\pe(\glssymbol{eraum}) = 1$
     \end{itemize}
-    % TODO \paragraph{Beweis} im Skript
+    \paragraph{Beweis.}
+    \begin{itemize}
+        \item Untere Schranke: Da $\pe(A) = \sum_{\mu \in A} \mu(\omega)$ gilt und alle Summanden nichtnegativ sind,
+        folgt $\pe(A) \geq 0$
+        \item Obere Schranke: Aus
+        \[
+            \pe(A) = \sum_{\omega \in A} \mu(\omega) \leq \sum_{\omega \in \Omega} \mu(\omega) = 1
+        \]
+        folgt $\pe(A) \leq 1$. Dabei haben wir in der Abschätzung erneuet verwendet, daß alle Summanden
+        nichtnegativ sind.
+        \item $\pe (\emptyset) = 0$ gilt gemäß Konvention aus \autoref{bem:konvention}.
+        \item $\pe(\Omega) = \sum_{\omega \in \Omega} \mu(\omega) = 1$ folgt direkt aus der Normierung der Wahrscheinlichkeitsfunktion.
+    \end{itemize}
 \end{lem}
 
 \begin{defi}
     \textbf{\gls{wraum}} \\
     $\underbrace{\glssymbol{wraum}}_{\txo{(\glssymbol{eraum} , \glssymbol{wfk})}}$ heißt \underline{\gls{wraum}}.
     \begin{bem}
-        % TODO noch die längere aus dem Skript dazu holen
         Für $\glssymbol{eraum} $ abzählbar: $\glssymbol{wfk}$ legt $\pe$ eindeutig und umgekehrt!
         \[P(A)=\sum_{\glssymbol{elementarereignis} \in A} \glssymbol{wfk} (\glssymbol{elementarereignis}) \quad \forall A \in \glssymbol{potenz}(\glssymbol{eraum} )\]
         \[\glssymbol{wfk} (\glssymbol{elementarereignis}) = \pe(\underbrace{\{\glssymbol{elementarereignis}\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} \]
+        \paragraph{Länger aus dem Skript:} Da es eine ein-eindeutige Zuordnung zwischen der
+        Wahrscheinlichkeitsfunktion $\mu$ und dem Wahrscheinlichkeitsmaß $\pe$ gibt, bezeichnen wir auch das Paar $\wraum$
+        als Wahrscheinlichkeitsraum.
+        Die Zuordung von $\mu$ zu $\pe$ ist direkt durch die Definition von $\pe$ in Definition \autoref{def:zaehldichte} gegeben.
+        Für eine
+        gegebene Wahrscheinlichkeitsfunktion erhalten wir so ein eindeutig bestimmtes Wahrscheinlichkeitsmaß.
+        Ist ein Wahrscheinlichkeitsmaß $\pe$ gegeben, so ergibt sich die zugehörige Wahrscheinlichkeitsfunktion $\mu$
+        sofort aus den Wahrscheinlichkeiten der Elementarereignisse:
+        \[
+            \mu(\omega) = \pe(\{\omega\}), \faoio
+        \]
+        Beachten Sie hier, dass die Wahrscheinlichkeitsfunktion $\mu$ als Argument ein Elementarereignis, also
+        ein einzelnes $\oio$ hat, während das Wahrscheinlichkeitsmaß $\pe$ auf der Potenzmenge $\pe(\Omega)$ von $\Omega$
+        definiert ist und daher das einelementige Ereignis $\{\omega\}$ als Argument hat.
     \end{bem}
 \end{defi} %
 \begin{bsp}
@@ -259,13 +284,13 @@ Take-Home message: Wann immer möglich, modelliere so, dass $\glssymbol{wfk}(\gl
 \begin{bem} % aus Skript
     \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \\
     Warum müssen wir voraussetzen, dass $\# \glssymbol{eraum} < \infty $?
-    Nehmen wir an, es gäbe eine Gleichverteilung $\glssymbol{elementarereignis}$ auf einer abzählbar unendlichen Menge
+    Nehmen wir an, es gäbe eine Gleichverteilung $\glssymbol{wfk}$ auf einer abzählbar unendlichen Menge
     $\glssymbol{eraum}$.
     Wir können der Einfachheit halber annehmen, dass $\glssymbol{eraum}$ die Menge
     der natürlichen Zahlen $\mathbb{N}$ ist.
     Dann gibt es also ein $c \in [0, 1]$ mit
     \[
-        1 = \sum^{\infty}_{k = 1} \glssymbol{elementarereignis}(k)    = c \cdot \# \mathbb{N}
+        1 = \sum^{\infty}_{k = 1} \glssymbol{wfk}(k)    = c \cdot \# \mathbb{N}
     \]
     Nun gibt es zwei Fälle.
     Entweder, $c = 0$.
