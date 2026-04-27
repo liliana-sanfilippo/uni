@@ -19,12 +19,7 @@
 \newtcolorbox{mybox}[1][]{blue box, #1}
 
 \newtheorem{eig}{Eigenschaften}[chapter]
-\newcommand{\anm}[2]{
-    \color{Blue} \noindent
-    \begin{anmerkung}  \textit{zu "#1"}  \newline
-    #2
-    \end{anmerkung} \color{black}
-}
+
 
 \newtheoremstyle{mytheoremstyle} % name
     {\topsep}                    % Space above
@@ -151,7 +146,6 @@
 %% DEFINITION
 
 \newtheorem{defi}{Definition}[chapter]
-
 \tcolorboxenvironment{defi}{
     colback=defif!05,
     colframe=defif,
@@ -169,7 +163,6 @@
 }
 
 \newcommand{\defin}[1]{
-\noindent
 \begin{defi}
 \textbf{\gls*{#1}}  \\
     \glsdesc*{#1}
@@ -179,26 +172,32 @@
 %% EXAMPLE
 
 \newtheorem{exa}{Example}[chapter]
-
-\newcommand{\examp}[1]{
-    \begin{orchidbox}
-    \begin{exa}
-    #1
-    \end{exa}
-    \end{orchidbox}
+\tcolorboxenvironment{exa}{
+    colback=bspf!05,
+    colframe=bspf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
 }
+
+
 
 %% PROBLEM
 
 \newtheorem{prob}{Problem}[chapter]
 
 \newcommand{\probl}[2]{
-\begin{cyanbox}{\textbf{#1}}
-\noindent
-\begin{prob}
+\begin{prob} \textbf{#1} \\
    {#2}
 \end{prob}
-\end{cyanbox}
 }
 
 
@@ -221,7 +220,6 @@
     after skip=6pt
 }
 \newcommand{\frage}[1]{
-    \noindent
     \begin{fr}
     \textbf{\gls*{#1}}  \\
     \glsdesc*{#1}
@@ -232,8 +230,40 @@
 %% BEOBACHTUNG
 
 \newtheorem{beo}{Beobachtung}[chapter]
+\tcolorboxenvironment{beo}{
+    colback=bemf!05,
+    colframe=bemf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
 
 \newtheorem{prinz}{Prinzip}[chapter]
+\tcolorboxenvironment{prinz}{
+    colback=satzf!05,
+    colframe=satzf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+
 \newtheorem{bem}{Bemerkung}[chapter]
 \tcolorboxenvironment{bem}{
     colback=bemf!05,
@@ -250,12 +280,11 @@
     before skip=6pt,
     after skip=6pt
 }
-\newtheorem{anmerkung}{Anmerkung}[chapter]
+
 \newtheorem{folg}{Folgerung}[chapter]
-\newtheorem{erg}{Ergänzung}[chapter]
-\tcolorboxenvironment{erg}{
-    colback=yellow!5,
-    colframe=ash,
+\tcolorboxenvironment{folg}{
+    colback=bemf!05,
+    colframe=bemf,
     boxrule=1pt,
     arc=2mm,
     top=1mm,
@@ -268,6 +297,26 @@
     before skip=6pt,
     after skip=6pt
 }
+
+
+\newtheorem{erg}{Ergänzung}[chapter]
+\tcolorboxenvironment{erg}{
+    colback=bemf!10,
+    colframe=bemf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+
 \newtheorem{er}{Erinnerung}[chapter]
 \tcolorboxenvironment{er}{
     colback=Orchid!05,
