@@ -34,6 +34,12 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 29 | Fr, 17.07. |  |  | Mo, 13.07. |  | Fr, 17.07. |  |
 | KW 30 | Fr, 24.07. |  |  | Mo, 20.07. |  | Fr, 24.07. |  |
 
+| Abschnitt Skript | In Notizen | 
+|---|---|
+| 1  |  |
+| 2  |  |
+| 3  |  |
+
 ## MoBi 2
 
 | Woche | Vorlesung 1 | In Notizen | In Karteikarten | Vorlesung 2 | In Notizen | In Karteikarten |
