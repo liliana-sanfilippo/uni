@@ -64,7 +64,8 @@ def update_rank(
     Note: Use the same system (rising/falling) as in get_rank.
 
     """
-    return int( (prev_rank/ASIZE) + get_code(new_char) *  math.pow(ASIZE, (q-1)) )
+
+    return (prev_rank//ASIZE) + get_code(new_char) *  int(math.pow(ASIZE, (q-1)))
 
 
 
@@ -85,19 +86,18 @@ def get_profile(s: str, q: int) -> List[int]:
 
     # First q-gram.
     # DONE: Compute the rank of the first q-gram and update the profile.
-    rank=get_rank(s, q)
+    rank=get_rank(s[0:q], q)
     profile[rank] += 1
     # Remaining q-grams (sliding window).
-    # TODO: Iterate over all remaining q-grams.
+    # DONE: Iterate over all remaining q-grams.
     # Use update_rank to compute the next rank efficiently
     # and update the profile.
 
-    # new_rank = 0
     old_rank = rank
     index = 1
-    while index < len(s)-q:
+    while index < len(s)-q+1:
         # neuen Rank updaten aus altem
-        new_rank = get_rank(s[index+q-1], old_rank)
+        new_rank = update_rank(old_rank, s[index - 1], s[index + q-1], q )
         # neuen Rank in Array
         profile[new_rank] += 1
         # Neuen alten Rank speichern
@@ -109,6 +109,7 @@ def get_profile(s: str, q: int) -> List[int]:
 
 
 def d_q_gram(a: str, b: str, q: int = 7) -> int:
+
     """
     Compute the q-gram distance between two strings.
 
