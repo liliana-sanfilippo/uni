@@ -1,2 +1,52 @@
 %! Author = lili
 %! Date = 4/27/26
+\section{Präsenzaufgaben 1.1.2}
+\subsection{Aufgabe 1.2.4}
+
+Die Funktion $f: \rz \rightarrow \rz$ sei gegeben durch
+\[
+    f(x) = \begin{cases}
+   3cx^2(1-x) & \text{für } x \in [0,1],
+    \\ 0 & \text{sonst}
+\end{cases}
+\]
+wobei $c \in \rz$ eine Konstante sei.
+\begin{auf}
+    \subsubsection*{(a) Bestimmen Sie ein $c \in \rz$ derart, dass $f$ eine Dichte ist}
+    \paragraph{Lösung:} $f(x)$ ist eine Dichte, wenn $\int_{\rz}  f(x) \dx = 1$ also $\int_{-\infty}^{\infty}  f(x) \dx = 1$
+% TODO tag einbauen?
+    (Von Studi vorgestellt)
+    \begin{align*}
+        \int 3cx^2(1-x) \dx & = 3c \cdot \int x^2(1-x) \dx \\
+        & = 3c \cdot \int_0^1 x^2-x^3 \dx \\
+        & = 3c \cdot \Big[ \frac{1}{3} x^3  - \frac{1}{4} x^4 \Big]^1_0 \\
+        & = 3c \cdot (\frac{1}{3} \cdot \frac{1}{4} \\
+        & = c \cdot \frac{1}{4} \\ \\
+        c\cdot \frac{1}{4} = 1 & \Rightarrow c = 4
+    \end{align*}
+\end{auf}
+Sei $\pe$ das Wahrscheinlichkeitsmaß mit Dichte $f$, wie Sie sie in (a) bestimmt haben. \\
+\textit{Hinweis:} Falls Sie die Konstante c nicht bestimmen konnten, rechnen Sie im folgenden bitte
+mit der unbestimmten Konstanten weiter.
+
+\begin{auf}
+    \subsubsection*{(b) Berechnen Sie die folgenden Wahrscheinlichkeiten}
+    \[
+        \pe((\frac{1}{2}, \infty)), \pe((- \infty, 0)) , \pe([1, \infty)) \text{ und } \pe(\Big\{\frac{1}{2}\Big\})
+    \]
+    \paragraph{Lösung:}
+    (von Tutor)
+    \begin{align*}
+        pe((\frac{1}{2}, \infty)) & = \frac{11}{16} \\ \\
+        \pe((- \infty, 0)) & = \int^0_{-\infty} f(x) \dx \\
+        & = \int^0_{-\infty} 0 \dx \\ & = 0 \\ \\
+        \pe([1, \infty)) & = \int^{\infty}_1 f(x) \dx \\
+        & = \int^{\infty}_1 0 \dx \\
+        & = 0 \\ \\
+        \pe(\Big\{\frac{1}{2}\Big\}) & = \int^{\frac{1}{2}}_{\frac{1}{2}} f(x) \dx \\
+        &= 12 \cdot \Big[\frac{1}{3} \cdot x^3 - \frac{1}{4} \cdot x^4 \Big]^{\frac{1}{2}}_{\frac{1}{2}} \\
+        & = 12 \cdot (\frac{1}{3} \cdot \frac{1}{2^3} - \frac{1}{4} \cdot \frac{1}{2^4} - \frac{1}{3} \cdot
+        \frac{1}{2^3} + \frac{1}{4} \cdot \frac{1}{2^4}) \\ % TODO Rechnung kontrollieren wegen +/-
+        & = 0
+    \end{align*}
+\end{auf}
