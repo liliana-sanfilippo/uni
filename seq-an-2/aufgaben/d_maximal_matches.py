@@ -13,8 +13,38 @@ def left_to_right_partition(x: str, y: str) -> List[str]:
     :return: A list of substrings forming the partition of x.
     """
     y_suffix_tree = SuffixTree(y+"$")
-    # TODO: Calculate the left-to-right partition of x using y_suffix_tree
-    raise NotImplementedError
+    partition = []
+    i = 0
+    current = ""
+
+    while i < len(x):
+        longest_match = y_suffix_tree.search_prefix(x[i:])
+        long_len = len(longest_match)
+
+
+        if long_len > 0 and current:
+            # ist kombo in y
+            potential_sep = current[-1] + longest_match[0]
+            check = y_suffix_tree.search_prefix(potential_sep)
+            if len(check) == len(potential_sep):
+                partition.append(current)
+                partition.append(x[i])
+                current = ""
+                i += 1
+                continue
+
+        if long_len > 0:
+            current += longest_match
+            i += long_len
+        else:
+            partition.append(current)
+            partition.append(x[i])
+            current = ""
+            i += 1
+
+    partition.append(current)
+
+    return      partition
 
 
 def partition_size(partition: List[str]) -> int:
@@ -24,8 +54,16 @@ def partition_size(partition: List[str]) -> int:
     :param partition: An alternating list of substrings and characters.
     :return: The size of the partition.
     """
-    # TODO: Calculate and return the partition size
-    raise NotImplementedError
+    # DONE: Calculate and return the partition size
+    if len(partition) == 0 or (len(partition) == 1 and partition[0] == ""):
+        return 0
+
+    count = 0
+    # jedes zweite halt
+    for i in range(1, len(partition), 2):
+        count += 1
+
+    return count
 
 
 def d_maximal_matches(x: str, y: str) -> int:
@@ -36,5 +74,6 @@ def d_maximal_matches(x: str, y: str) -> int:
     :param y: The reference string.
     :return: The maximal matches distance.
     """
-    # TODO: Compute the maximal matches distance
-    raise NotImplementedError
+    # DONE: Compute the maximal matches distance
+    partition = left_to_right_partition(x, y)
+    return partition_size(partition)
