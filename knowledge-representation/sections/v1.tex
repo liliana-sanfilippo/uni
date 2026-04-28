@@ -238,16 +238,18 @@ There are two subtypes:
 \defin{frame}
 \begin{exa}
     Back to Tweety from fig. \ref{fig:tweety}. \\
-    \makebox[1.5cm]{Frame:}  \makebox[1.5cm]{bird} \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{is_a:} animal  \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{has_parts:} [wings, beak, feathers] \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{can:} fly \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{default_color:} pink \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{locomotion:} flying \par \newline
-    \makebox[1.5cm]{Frame:} \makebox[1.5cm]{Penguin}
-    \makebox[1.5cm]{} \makebox[1.5cm]{is_a:} Bird  \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{can:} swim \par
-    \makebox[1.5cm]{} \makebox[1.5cm]{cannot:} fly (overrides parent default)
+    \begin{tabular}{ccc}
+        Frame:&  Bird \\
+        & is_a: & Animal \\
+        &has_parts:& [wings, beak, feathers] \\
+        &can: &fly \\
+        &default_color: & pink \\
+        &locomotion:& flying \\ \\
+        Frame: & Penguin \\
+        &is_a: &Bird \\
+        &can:& swim \\
+        &cannot: &fly  (overrides parent default)
+    \end{tabular}
 \end{exa}
 
 \section{Distinguishing Features of KR Systems}\label{sec:distinguishing-features-of-kr-systems}
