@@ -182,11 +182,11 @@ There are two subtypes:
     \textbf{First order Logic} \\
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{images/pexels-thirdman-7659874}
-        \caption{This is Tweety. What can we infer about Tweety with the information given below? (image from \url{https://www.pexels.com/photo/pink-cockatoo-perched-in-natural-habitat-29732587/})}
+        \includegraphics[width=0.5\textwidth]{images/pexels-thirdman-7659874}
+        \caption{This is Tweety. What can we infer about Tweety with the information given below? \footnotesize{(image from \url{https://www.pexels.com/photo/pink-cockatoo-perched-in-natural-habitat-29732587/})}}
         \label{fig:tweety}
     \end{figure}
-    We know that all bird can fly if they are not flightless birds, here generalized as penguins.
+    \noindent We know that all bird can fly if they are not flightless birds, here generalized as penguins.
     We know that Tweety is a bird and not a penguin. \\
     Fore formal: \\
     Birds can fly: $\forall x (Bird (x) \land \neg Penguin(x) \rightarrow CanFly(x))$ \\
@@ -221,12 +221,34 @@ There are two subtypes:
 \begin{exa}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{images/pexels-thirdman-7659874}
-        \caption{This is Dr. Dokter. She wants to diagnose her patient. (image from \url{https://www.pexels.com/photo/female-doctor-in-scrub-suit-7659874/})}
+        \includegraphics[width=0.5\textwidth]{images/pexels-thirdman-7659874}
+        \caption{This is Dr. Dokter. She wants to diagnose her patient. \footnotesize{(image from \url{https://www.pexels.com/photo/female-doctor-in-scrub-suit-7659874/})}}
         \label{fig:drdr}
     \end{figure}
+    \noindent The rules are: \textbf{IF} (patient has fever) \textbf{AND} (patient has cough)
+    \textbf{AND} (patient has difficulty breathing) \textbf{THEN} \textbf{diagnose:} possible pneumonia,
+    \textbf{recommend} chest x-ray \\ This allows Dr. Dokter to properly diagnose her patients instead of furthering
+    the antibiotic resistant strand of bacteria!
 \end{exa}
 
+\paragraph{Hybrid approaches} combine declarative and procedural aspects.
+
+
+\subsection*{Frame-Based Representation}
+\defin{frame}
+\begin{exa}
+    Back to Tweety from fig. \ref{fig:tweety}. \\
+    \makebox[1.5cm]{Frame:}  \makebox[1.5cm]{bird} \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{is_a:} animal  \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{has_parts:} [wings, beak, feathers] \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{can:} fly \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{default_color:} pink \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{locomotion:} flying \par \newline
+    \makebox[1.5cm]{Frame:} \makebox[1.5cm]{Penguin}
+    \makebox[1.5cm]{} \makebox[1.5cm]{is_a:} Bird  \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{can:} swim \par
+    \makebox[1.5cm]{} \makebox[1.5cm]{cannot:} fly (overrides parent default)
+\end{exa}
 
 \section{Distinguishing Features of KR Systems}\label{sec:distinguishing-features-of-kr-systems}
 
