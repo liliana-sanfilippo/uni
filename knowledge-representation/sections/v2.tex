@@ -1,0 +1,128 @@
+%! Author = lili
+%! Date = 4/28/26
+
+
+Knowledge representation requires a formal system that expresses knowledge precisely and derives consequences from
+that knowledge.\cite{elcock1987} \\
+The most relevant formal calculations are \gls{propLogic} and \gls{fol}. % \cite gfg2025
+\defin{propLogic}
+
+\begin{exa} \textbf{``If a person is rich, they have a nice car''} \\
+    That statement becomes
+    \begin{align*}
+        BobIsRich  \Rightarrow & \quad  BobHasNiceCar \\
+        JaneIsRich  \Rightarrow & \quad JaneHasNiceCar \\
+        & \quad \vdots
+    \end{align*}
+\end{exa}
+% 4 - One rule per person — impractical and unintuitive: Sie meint man muss die Regel für jede Person einzeln definieren
+\noindent Having to define every rule for every person is impractical and unintuitive though.
+
+
+\section{Syntax}\label{sec:syntax}
+
+
+
+
+6 - Objects sind x,y, \ldots
+8 - not a well-formed formula weil es keinen Sinn macht
+
+
+14 - unary predicate, welche gibt es noch??
+
+% 16
+\defin{formula}
+\defin{atomic-formula}
+\defin{compound-formula}
+\defin{quantified-formula}
+
+% todo \frage{FormulaVsSentence}
+
+% Umgangssprachlich: predicate is a type of function but a function not a predicate
+
+\begin{exa} \textbf{Building a Formula -- Example from OLP}
+\end{exa}
+
+\defin{free}
+\defin{bound}
+
+\begin{example}
+    Von f 18
+\end{example}
+
+\defin{sentence}
+
+\begin{example}
+    Von f 19
+\end{example}
+
+\defin{substitution}
+
+% safe sub if you replace a variable with another variable it should be free(?)  ah man darf nur free vars ersetzen
+
+\begin{example}
+    Von f 20.1
+\end{example}
+
+\defin{captured}
+
+% todo \prob{Variable Capture Problem}
+
+% todo frage hoe to avoid var cap prob
+
+\begin{example}
+    Von f 21
+\end{example}
+
+% todo \frage{when sentence} F22
+
+
+
+\section{Semantics}\label{sec:semantics}
+
+\defin{langstruc}
+\defin{domain}
+
+% todo sollte Modified assignment  auch eine defi sein?
+
+% todo bei F 29 notieren was was ist von den Symbolen
+
+\defin{valid}
+\defin{satisfiable}
+\defin{unsatisfiable}
+
+
+\section{Inference}\label{sec:inference}
+
+\defin{inference}
+
+\defin{mp}
+\defin{mt}
+\defin{ui}
+\defin{ei}
+
+% nf noch generell als defi?
+
+\defin{pnf}
+
+F 38 in step 1: Rule 1: $A \rightarrow B = \neg A \cup B$ \\ Rule 2: $\neg \forall x (P(x)) \equiv \dots$ Ist es hier
+neg oder sim ??
+
+\defin{clause}
+
+\defin{literal}
+
+\defin{cnf}
+
+\defin{rbf}
+
+\defin{resolution}
+
+
+\section{Proof Systems \& Completeness}\label{sec:proof-systems-&-completeness}
+
+\defin{natde}
+
+\defin{secalc}
+
+\defin{devrel}
