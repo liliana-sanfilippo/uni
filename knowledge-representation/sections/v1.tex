@@ -112,7 +112,7 @@ KR enables machines to make informed decisions with fewer rules.
 \defin{representation scheme}
 
 
-\begin{exa}
+\begin{exa} \label{bsp:pacman}
     \textbf{Pac-Man ghost AI} has a knowledge-based approach: We code ghost behaviour as explicit rules.
     \begin{enumerate}
         \item IF player\_nearby THEN chase
@@ -183,23 +183,26 @@ There are two subtypes:
     \textbf{First order Logic} \\
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\textwidth]{images/pexels-thirdman-7659874}
+        \includegraphics[width=0.5\textwidth]{images/pexels-paul-1683381-29732587}
         \caption{This is Tweety. What can we infer about Tweety with the information given below? \footnotesize{(image from \url{https://www.pexels.com/photo/pink-cockatoo-perched-in-natural-habitat-29732587/})}}
         \label{fig:tweety}
     \end{figure}
     \noindent We know that all bird can fly if they are not flightless birds, here generalized as penguins.
     We know that Tweety is a bird and not a penguin. \\
-    Fore formal: \\
-    Birds can fly: $\forall x (Bird (x) \land \neg Penguin(x) \rightarrow CanFly(x))$ \\
-    Facts: $Bird(Tweety)$ and $\neg Penguin(Tweety)$ \\
-    Therefore we can infer: \\
-    $CanFly(Tweety)$
+    More formal:
+    \begin{center}
+        Birds can fly: $\forall x (Bird (x) \land \neg Penguin(x) \rightarrow CanFly(x))$ \\
+        Facts: $Bird(Tweety)$ and $\neg Penguin(Tweety)$ \\
+        Therefore we can infer: \\
+        $CanFly(Tweety)$
+    \end{center}
 \end{exa}
 
 \subsubsection*{2. Semantic (network) schemes}
 \defin{semrep}
 
 \begin{exa}
+    \labsatz
     \begin{figure}[H]
         \centering
         \begin{tikzpicture}
@@ -220,48 +223,121 @@ There are two subtypes:
 \defin{prodrep}
 
 \begin{exa}
+    \labsatz
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\textwidth]{images/pexels-thirdman-7659874}
         \caption{This is Dr. Dokter. She wants to diagnose her patient. \footnotesize{(image from \url{https://www.pexels.com/photo/female-doctor-in-scrub-suit-7659874/})}}
         \label{fig:drdr}
     \end{figure}
-    \noindent The rules are: \textbf{IF} (patient has fever) \textbf{AND} (patient has cough)
-    \textbf{AND} (patient has difficulty breathing) \textbf{THEN} \textbf{diagnose:} possible pneumonia,
-    \textbf{recommend} chest x-ray \\ This allows Dr. Dokter to properly diagnose her patients instead of furthering
+    \noindent The rules are:
+    \begin{center}
+        \textbf{IF} (patient has fever) \textbf{AND} (patient has cough)
+        \textbf{AND} (patient has difficulty breathing) \textbf{THEN} \textbf{diagnose:} possible pneumonia,
+        \textbf{recommend} chest x-ray
+    \end{center}
+    This allows Dr. Dokter to properly diagnose her patients instead of furthering
     the antibiotic resistant strand of bacteria!
 \end{exa}
 
 \paragraph{Hybrid approaches} combine declarative and procedural aspects.
 
-
 \subsection*{Frame-Based Representation}
 \defin{frame}
 \begin{exa}
     Back to Tweety from fig. \ref{fig:tweety}. \\
-    \begin{tabular}{ccc}
-        Frame:&  Bird \\
-        & is\_a: & Animal \\
-        &has\_parts:& [wings, beak, feathers] \\
-        &can: &fly \\
-        &default\_color: & pink \\
-        &locomotion:& flying \\ \\
+    \begin{tabular}{lll}
+        Frame: & Bird \\
+        & is\_a:          & Animal                        \\
+        & has\_parts:     & [wings, beak, feathers]       \\
+        & can:            & fly                           \\
+        & default\_color: & pink                          \\
+        & locomotion:     & flying                        \\ \\
         Frame: & Penguin \\
-        &is\_a: &Bird \\
-        &can:& swim \\
-        &cannot: &fly  (overrides parent default)
+        & is\_a: & Bird \\
+        & can:& swim \\
+        & cannot: & fly  (overrides parent default)
     \end{tabular}
 \end{exa}
 
+
 \section{Distinguishing Features of KR Systems}\label{sec:distinguishing-features-of-kr-systems}
+Unlike databases (retrieval) or programs (execution), knowledge bases reuse the same facts in multiple ways:
 
-Defis:
-Frame, Inference,
+\subsection*{Inference (rule-based reasoning):}
+Facts are used to derive new facts by applying rules.
+\begin{exa}
+    We remember Dr. Dokter from fig. \ref{fig:drdr}.
+    \begin{center}
+        IF fever $\land$ cough $\rightarrow$ possible infection
+    \end{center}
+    $\Rightarrow$ Diagnostic conclusion
+\end{exa}
 
-kinds of reasoning
-inference types (23+) David, Shrobe and Szolovist
+It has multiple subtypes:
+\defin{loginf}
+\begin{exa} \labsatz
+    \begin{center}
+        IF fever $\rightarrow$ infection \\
+        fever $\Rightarrow$ infection
+    \end{center}
+\end{exa}
 
-Wie man mit Incompleteness umgeht
+\defin{specprod}
+
+\begin{exa}
+    Ward A $\rightarrow$ Ward B $\rightarrow$ ICU $\Rightarrow$ Shortest path
+\end{exa}
+
+\defin{prefinf}
+
+\begin{exa}
+    \begin{center}
+        Birds fly \\
+        Tweety is a bird $\Rightarrow$ Tweety flies \\ (except penguins)
+    \end{center}
+\end{exa}
+
+\defin{indinf}
+
+\begin{exa}
+    \begin{center}
+        Data $\Rightarrow$ Pattern \\
+        Symptoms $\Rightarrow$ Diagnosis model
+    \end{center}
+\end{exa}
+
+\defin{adbinf}
+
+\begin{exa}
+    \begin{center}
+        Observed: fever + cough \\
+        $\Rightarrow$ Best explanation: pneumonia
+    \end{center}
+\end{exa}
+
+\subsection*{Access (Direct fact retrieval via queries):}
+Facts are retrieved directly, much like in a database.
+\begin{exa}
+    Query: ``Which patients have fever?'' $\Rightarrow$ Retrieve patient X
+\end{exa}
+
+\subsection*{Matching (Similarity-based reasoning):} Facts are used to identify similar patterns and perform case-based reasoning.
+
+\begin{exa} \labsatz
+    \begin{center}
+       X $\sim$ Patient Y $\Rightarrow$ Case-based reasoning
+    \end{center}
+\end{exa}
+
+\subsection*{Design implications}
+When designing a system, we must choose which inference mechanisms to support (e.g., shortest-path search vs.
+rule-based reasoning).
+Of course, there are trade-offs between expressiveness and efficiency.
+And different applications require different inference types, e.g.\ the Pac-Man game (example~\ref{bsp:pacman}) needs
+heuristic inference for real-time decisions goals.
+
+%Wie man mit Incompleteness umgeht
 
 
 \section{Applications of Knowledge Representation}\label{sec:applications-of-knowledge-representation}
