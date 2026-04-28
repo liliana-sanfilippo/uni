@@ -5,6 +5,7 @@
 
 The core problem with KR is that the real world with its complexity, ambiguity and dynamism can never be fully represented in a computer-based system.
 Nevertheless, intelligent systems must be able to function effectively using partial, incomplete and sometimes contradictory information.
+\cite{folien1}
 
 \subsection*{Why is Knowledge Representation needed?}
 
@@ -142,7 +143,7 @@ In question answering, systems need fast retrieval combined with reasoning over 
 
 \paragraph{The core idea of Knowledge Representation} is not just a data structure.
 It plays multiple roles
-simultaneously and those roles can conflict with each other: 
+simultaneously and those roles can conflict with each other:
 \begin{itemize}
     \item Surrogate for the world: Acts as a substitute for real world objects and relationships
     \item Ontological commitments: Defines what exists and how things are categorized
@@ -151,7 +152,71 @@ simultaneously and those roles can conflict with each other:
     \item Medium of Human expression: Allows humans to express knowledge in understandable ways
 \end{itemize}
 
-\section{Taxonomy of Representation Schemes}\label{sec:taxonomy-of-representation-schemes}~\cite{folien1}
+
+\section{Taxonomy of Representation Schemes}\label{sec:taxonomy-of-representation-schemes}
+Representational schemata can be divided into four basic categories:
+\begin{itemize}
+    \item \Glspl{decrep}
+    \begin{itemize}
+        \item \Glspl{logrep}
+        \item Semantic (network) schemes
+    \end{itemize}
+    \item \Glspl{prodrep}
+    \item Hybrid approaches
+    \item \Glspl{fbrep}
+\end{itemize}
+
+\subsection*{Declarative representations}
+
+\defin{decrep} \label{def:decrep}
+
+\noindent \Glspl{decrep} focus on truth and semantics and enable deductive reasoning.
+The schema is independent of how the knowledge is used. \\
+There are two subtypes:
+
+\subsubsection*{1. Logical representation schemes}
+
+\defin{logrep} \label{def:logrep}
+
+\begin{exa}
+    \textbf{First order Logic} \\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/pexels-paul-1683381-29732587}
+        \caption{This is Tweety. What can we infer about Tweety with the information given below? (image from \url{https://www.pexels.com/photo/pink-cockatoo-perched-in-natural-habitat-29732587/})}
+        \label{fig:tweety}
+    \end{figure}
+    We know that all bird can fly if they are not flightless birds, here generalized as penguins.
+    We know that Tweety is a bird and not a penguin. \\
+    Fore formal: \\
+    Birds can fly: $\forall x (Bird (x) \land \neg Penguin(x) \rightarrow CanFly(x))$ \\
+    Facts: $Bird(Tweety)$ and $\neg Penguin(Tweety)$ \\
+    Therefore we can infer: \\
+    $CanFly(Tweety)$
+\end{exa}
+
+\subsubsection*{2. Semantic (network) schemes}
+\defin{semrep}
+
+\begin{exa}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \node[draw=WildStrawberry, circle, minimum size=2cm, fill=WildStrawberry!10] (a) at (0,4) {Cat};
+            \node[draw=RedViolet, circle, minimum size=2cm, fill=RedViolet!10] (b) at (2,1) {Fish};
+            \node[draw=Lavender, circle, minimum size=2cm, fill=Lavender!10] (c) at (4,4) {Animal};
+            \draw (a) edge ["eat", ->] (b);
+            \draw (c) edge ["is a", ->] (b);
+            \draw (c) edge ["is a", ->] (a);
+            \draw (a) edge [->] (c);
+            \draw (b) edge [->] (c);
+        \end{tikzpicture}
+        \caption{Semantic Network}
+    \end{figure}
+\end{exa}
+
+\subsection*{Procedural representations}
+\defin{prodrep}
 
 
 \section{Distinguishing Features of KR Systems}\label{sec:distinguishing-features-of-kr-systems}
