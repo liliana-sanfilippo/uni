@@ -455,7 +455,40 @@ Such a non-branching path can be collapsed into a into single vertex (representi
 \defin{comdbsg}
 
 \begin{exa}
-    zu comdbsg
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
+
+                \node[WildStrawberry] (gat) at (-3.31,-3.94) {GAT};
+                \node (aga) at (-4.31,-6) {AGA};
+                \node (tga) at (-2.31,-6) {TGA};
+                \node[WildStrawberry] (att) at (-2.37,-1.37) {ATT};
+                \node[WildStrawberry] (tta) at (0,0) {TTA};
+                \node[WildStrawberry] (tac) at (2.37,-1.37) {TAC};
+                \node (aca) at (3.37,-3.94) {ACA};
+                \node (acg) at (1.37,-3.94) {ACG};
+
+                \draw[->, WildStrawberry] (gat) to[bend left=10] (att);
+                \draw[->, WildStrawberry] (att) to[bend left=10] (tta);
+
+                \draw[->] (aga) to[bend left=10] (gat);
+                \draw[->] (tga) to[bend right=10] (gat);
+
+                \draw[->, WildStrawberry] (tta) to[bend left=10] (tac);
+                \draw[->] (tac) to[bend left=10] (aca);
+                \draw[->] (tac) to[bend right=10] (acg);
+
+            \end{tikzpicture}
+            \caption{}
+        \end{subfigure}
+    \end{figure}
 \end{exa}
 
 An additional variant comes into play when the input sequences are partitioned into several groups, for example representing different genomes, and these groups shall also be
