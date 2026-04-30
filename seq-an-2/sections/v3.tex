@@ -14,6 +14,7 @@ Here k refers to the (sub)string length.
 To be more consistent with the literature,
 in this chapter we will adopt that notation.
 
+
 \section{Definition and Basic Properties}\label{sec:definition-and-basic-properties}
 Remember the following definition, where $s_{k,i} \coloneqq s[i \dots i+k-1]$ denotes the k-mer starting
 at index $i$, $1 \leq i \leq |s| -k +1$:
@@ -22,142 +23,155 @@ at index $i$, $1 \leq i \leq |s| -k +1$:
 
 \defin{dimension}
 
-\begin{notte} \textbf{To \autoref{def:dbsg}}
+\begin{notte}
+    \textbf{To \autoref{def:dbsg}}
     If the same (k + 1)-mer occurs multiple times in s, say m times, we have m
-    parallel edges occurring in the multigraph DBG(s, k).
+    parallel edges occurring in the multigraph \dbg(s, k).
 \end{notte}
 
 % \frage{} Todo Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
 
 \komm{Für jeden DB Graph gibt es immer einen Eulerpfad}
 
+
 \section{Words with the same (k + 1)-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
 Motivated by the fact that the q-gram distance does not satisfy the identity property of
-a metric (see Section \ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same q-gram
+a metric (see Section~\ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same q-gram
 profile, we want to determine whether for a given sequence s and integer k there are other
-sequences that are distinct but have the same (k + 1)-mer profile as s. And, if there are,
+sequences that are distinct but have the same (k + 1)-mer profile as s.
+And, if there are,
 how many? \\ \newline
-For $k = 0$, the problem is trivial. Indeed, if a sequence t that is distinct from s corresponds
-to a permutation of the symbols of s, then s and t clearly share the same 1-mer profile. For
-$k \geq 1$, an elegant answer can be found with the help of the de Bruijn subgraph DBG(s, k). \\ \newline
-Clearly, by construction DBG(s, k) forms an Eulerian path $p_s$ , represented by its sequence
+
+For $k = 0$, the problem is trivial.
+Indeed, if a sequence t that is distinct from s corresponds
+to a permutation of the symbols of s, then s and t clearly share the same 1-mer profile.
+For
+$k \geq 1$, an elegant answer can be found with the help of the de Bruijn subgraph \dbg(s, k). \\ \newline
+Clearly, by construction \dbg(s, k) forms an Eulerian path $p_s$ , represented by its sequence
 of vertices
 \[
     s_{k,1}, s_{k,2}, \dots, s_{k, |s| -k+1}.
 \]
 % TODO nochmal klären und erklären was dieses s-k+1 jetzt ist und woher das kommt
-Consequently DBG(s, k) is connected and balanced
-and might contain even more than one Eulerian path. In fact, there is a one-to-one
-correspondence between Eulerian paths in DBG(s, k) and sequences sharing the same
-(k + 1)-mer profile. In other words, a sequence t that is distinct but has the same (k + 1)-
-mer profile as s exists if and only if DBG(s, k) has another Eulerian path $p_t$ orresponding
-to the sequence of (k + 1)-mers of t. Since $p_t$ uses the same edges as $p_s$ n a different
-order, the path $p_t$ an only exist if DBG(s, k) contains a cycle. Note, however, that the
-presence of a cycle is not a sufficient condition. Indeed, it is possible that DBG(s, k)
-contains one or more cycles, but still admits only one Eulerian path. Some examples are
-given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
+Consequently, \dbg(s, k) is connected and balanced
+and might contain even more than one Eulerian path.
+In fact, there is a one-to-one
+correspondence between Eulerian paths in \dbg(s, k) and sequences sharing the same
+(k + 1)-mer profile.
+In other words, a sequence t that is distinct but has the same (k + 1)-
+mer profile as s exists if and only if \dbg(s, k) has another Eulerian path $p_t$ orresponding
+to the sequence of (k + 1)-mers of t.
+Since $p_t$ uses the same edges as $p_s$ n a different
+order, the path $p_t$ an only exist if \dbg(s, k) contains a cycle.
+Note, however, that the
+presence of a cycle is not a sufficient condition.
+Indeed, it is possible that \dbg(s, k)
+contains one or more cycles, but still admits only one Eulerian path.
+Some examples are
+given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
 
 
 
-\begin{exa} $\ $
-\begin{figure}[H]
-    \begin{subfigure}[t]{0.3\textwidth}
-        \begin{tikzpicture}[
-            scale=0.6,
-            node distance=2cm,
-            every node/.style={circle},
-            label distance=2pt,
-            >=Stealth
-        ]
+\begin{exa}
+    $\ $
+    \begin{figure}[H]
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
 
-            \node (gat) at (-3.31,-3.94) {GAT};
-            \node (att) at (-2.37,-1.37) {ATT};
-            \node (tta) at (0,0) {TTA};
-            \node (tac) at (2.37,-1.37) {TAC};
-            \node (aca) at (3.31,-3.94) {ACA};
+                \node (gat) at (-3.31,-3.94) {GAT};
+                \node (att) at (-2.37,-1.37) {ATT};
+                \node (tta) at (0,0) {TTA};
+                \node (tac) at (2.37,-1.37) {TAC};
+                \node (aca) at (3.31,-3.94) {ACA};
 
-            \draw[->] (gat) to[bend left=20] (att);
-            \draw[->] (att) to[bend left=20] (tta);
+                \draw[->] (gat) to[bend left=20] (att);
+                \draw[->] (att) to[bend left=20] (tta);
 
-            \draw[->] (tta) to[bend left=10] (tac);
-            \draw[->] (tac) to[bend left=10] (aca);
+                \draw[->] (tta) to[bend left=10] (tac);
+                \draw[->] (tac) to[bend left=10] (aca);
 
-        \end{tikzpicture}
-        \caption{$x = GATTACA, k = 3$ - Since this graph contains no cycle, it has only one Eulerian path. There can be no other word sharing the same 4-mer profile.} \label{fig:example-dbgs-2-1-a}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[t]{0.3\textwidth}
-        \begin{tikzpicture}[
-            scale=0.6,
-            node distance=2cm,
-            every node/.style={circle},
-            label distance=2pt,
-            >=Stealth
-        ]
+            \end{tikzpicture}
+            \caption{$x = GATTACA, k = 3$ - Since this graph contains no cycle, it has only one Eulerian path. There can be no other word sharing the same 4-mer profile.} \label{fig:example-dbgs-2-1-a}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
 
-            \node (gat) at (-3.31,-3.94) {GAT};
-            \node (att) at (-2.37,-1.37) {ATT};
-            \node (tta) at (0,0) {TTA};
-            \node (tac) at (2.37,-1.37) {TAC};
-            \node (aca) at (3.31,-3.94) {ACA};
-            \node (tat) at (-0.5,-1.5) {TAT};
+                \node (gat) at (-3.31,-3.94) {GAT};
+                \node (att) at (-2.37,-1.37) {ATT};
+                \node (tta) at (0,0) {TTA};
+                \node (tac) at (2.37,-1.37) {TAC};
+                \node (aca) at (3.31,-3.94) {ACA};
+                \node (tat) at (-0.5,-1.5) {TAT};
 
-            \draw[->] (gat) to[bend left=20] (att);
-            \draw[->] (att) to[bend left=50] (tta);
-            \draw[->] (att) -- (tta);
+                \draw[->] (gat) to[bend left=20] (att);
+                \draw[->] (att) to[bend left=50] (tta);
+                \draw[->] (att) -- (tta);
 
-            \draw[->] (tta) to[bend left=10]  (tat);
-            \draw[->] (tat) to[bend left=10]   (att);
+                \draw[->] (tta) to[bend left=10]  (tat);
+                \draw[->] (tat) to[bend left=10]   (att);
 
-            \draw[->] (tta) to[bend left=10] (tac);
-            \draw[->] (tac) to[bend left=10] (aca);
+                \draw[->] (tta) to[bend left=10] (tac);
+                \draw[->] (tac) to[bend left=10] (aca);
 
-        \end{tikzpicture}
-        \caption{$x = GATTATTACA,  k = 3$ - Here the graph contains two cycles, but still only one Eulerian path. There is no other word sharing the same 4-mer profile.}
-        \label{fig:example-dbgs-2-1-b}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[t]{0.3\textwidth}
-        \begin{tikzpicture}[
-            scale=0.6,
-            node distance=2cm,
-            every node/.style={circle},
-            label distance=2pt,
-            >=Stealth
-        ]
-            \node (gat) at (-3.31,-3.94) {GAT};
-            \node (att) at (-2.37,-1.37) {ATT};
-            \node (tta) at (0,0) {TTA};
-            \node (tac) at (2.37,-1.37) {TAC};
-            \node (aca) at (3.31,-3.94) {ACA};
-            \node (tat) at (-0.5,-1.5) {TAT};
+            \end{tikzpicture}
+            \caption{$x = GATTATTACA,  k = 3$ - Here the graph contains two cycles, but still only one Eulerian path. There is no other word sharing the same 4-mer profile.}
+            \label{fig:example-dbgs-2-1-b}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
+                \node (gat) at (-3.31,-3.94) {GAT};
+                \node (att) at (-2.37,-1.37) {ATT};
+                \node (tta) at (0,0) {TTA};
+                \node (tac) at (2.37,-1.37) {TAC};
+                \node (aca) at (3.31,-3.94) {ACA};
+                \node (tat) at (-0.5,-1.5) {TAT};
 
-            \node (taa) at (-0.8,1.3) {TAA};
-            \node (aat) at (-2.5,0.6) {AAT};
+                \node (taa) at (-0.8,1.3) {TAA};
+                \node (aat) at (-2.5,0.6) {AAT};
 
-            \draw[->] (gat) to[bend left=20] (att);
-            \draw[->] (att) to[bend left=50] (tta);
+                \draw[->] (gat) to[bend left=20] (att);
+                \draw[->] (att) to[bend left=50] (tta);
 
-            \draw[->] (aat) to[bend right=50] (att);
-            \draw[->] (tta) to[bend right=50] (taa);
-            \draw[->] (taa) to[bend right=20] (aat);
+                \draw[->] (aat) to[bend right=50] (att);
+                \draw[->] (tta) to[bend right=50] (taa);
+                \draw[->] (taa) to[bend right=20] (aat);
 
-            \draw[->] (att) -- (tta);
-            \draw[->] (att) to[bend left=20] (tta);
+                \draw[->] (att) -- (tta);
+                \draw[->] (att) to[bend left=20] (tta);
 
-            \draw[->] (tta) to[bend left=10]  (tat);
-            \draw[->] (tat) to[bend left=10]   (att);
+                \draw[->] (tta) to[bend left=10]  (tat);
+                \draw[->] (tat) to[bend left=10]   (att);
 
-            \draw[->] (tta) to[bend left=10] (tac);
-            \draw[->] (tac) to[bend left=10] (aca);
+                \draw[->] (tta) to[bend left=10] (tac);
+                \draw[->] (tac) to[bend left=10] (aca);
 
-        \end{tikzpicture}
-        \caption{$x = GATTATTAATTACA, k = 3$ - This graph contains several cycles and two distinct Eulerian paths. There is exactly one other word with the same 4-mer profile,
-            \texttt{GATTAATTATTACA}.}
-        \label{fig:example-dbgs-2-1-c}
-    \end{subfigure}
-    \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:example-dbgs-2-1}
-\end{figure}
+            \end{tikzpicture}
+            \caption{$x = GATTATTAATTACA, k = 3$ - This graph contains several cycles and two distinct Eulerian paths. There is exactly one other word with the same 4-mer profile,
+                \texttt{GATTAATTATTACA}.}
+            \label{fig:example-dbgs-2-1-c}
+        \end{subfigure}
+        \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:example-dbgs-2-1}
+    \end{figure}
 \end{exa}
 \begin{exa}
     \textbf{Additional example from lecture}
@@ -198,7 +212,7 @@ given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
 \kom{
     Reminder that the edges are basically this:
     \begin{tikzpicture}[
-        scale=0.4,
+        scale=0.8,
         node distance=2cm,
         every node/.style={circle},
         label distance=2pt,
@@ -234,50 +248,221 @@ ja aus den Knoten gemacht, nicht den Kanten \ldots sozusagen.
 \noindent We summarize the observations above in the following theorem.
 \begin{theo}
     Given a sequence s and an integer $k \geq 1$, the number of distinct sequences that have the same (k + 1)-mer profile as s equals the number of distinct Eulerian paths in
-    DBG(s, k). If DBG(s, k) is acyclic, it has a single Eulerian path, and no sequence t exists
+    \dbg(s, k).
+    If \dbg(s, k) is acyclic, it has a single Eulerian path, and no sequence t exists
     that is distinct but has the same (k + 1)-mer profile as s.
-    \komm{Auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in DBG(s,k)}
+    \komm{Auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in \dbg(s,k)}
 \end{theo}
-
 
 
 \section{Variants of de Bruijn Graphs}\label{sec:variants-of-de-bruijn-graphs}
 \komm{Der Begriff dbg ist sehr dehnbar, es ist in der Literatur nicht immer das gleiche damit gemeint. Viele sagen
 dbg, wenn sie eigentlich dbsg meinen.}
 Although, strictly speaking, we consider most of the time de Bruijn subgraphs (for a given
-sequence), often they are just called de Bruijn graphs. In fact, there are more variants of
-de Bruijn graphs, and often they are also not named very carefully. Here we will discuss
+sequence), often they are just called de Bruijn graphs.
+In fact, there are more variants of
+de Bruijn graphs, and often they are also not named very carefully.
+Here we will discuss
 them and introduce a precise nomenclature.
 \defin{origdb}
 
 \begin{exa}
-    zu origdb
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
+                \node (abb) at (3,0) {abb};
+                \node (baa) at (2.12,2.12) {baa};
+                \node (bab) at (0,3) {bab};
+                \node (bba) at (-2.12,2.12) {bba};
+                \node (bbb) at (-3,0) {bbb};
+                \node (aaa) at (-2.12,-2.12) {aaa};
+                \node (aab) at (0,-3) {aab};
+                \node (aba) at (2.12,-2.12) {aba};
+
+            \end{tikzpicture}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
+                \node (abb) at (3,0) {abb};
+                \node (baa) at (2.12,2.12) {baa};
+                \node (bab) at (0,3) {bab};
+                \node (bba) at (-2.12,2.12) {bba};
+                \node (bbb) at (-3,0) {bbb};
+                \node (aaa) at (-2.12,-2.12) {aaa};
+                \node (aab) at (0,-3) {aab};
+                \node (aba) at (2.12,-2.12) {aba};
+
+                \draw[->, WildStrawberry] (abb) -- (bba);
+                \draw[->, WildStrawberry] (abb) -- (bbb);
+            \end{tikzpicture}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
+                \node (abb) at (3,0) {abb};
+                \node (baa) at (2.12,2.12) {baa};
+                \node (bab) at (0,3) {bab};
+                \node (bba) at (-2.12,2.12) {bba};
+                \node (bbb) at (-3,0) {bbb};
+                \node (aaa) at (-2.12,-2.12) {aaa};
+                \node (aab) at (0,-3) {aab};
+                \node (aba) at (2.12,-2.12) {aba};
+
+                % Kanten (Kreis)
+                \draw[->] (abb) -- (bba);
+                \draw[->] (abb) -- (bbb);
+                \draw[->, WildStrawberry] (baa) -- (aab);
+                \draw[->, WildStrawberry] (baa) -- (aaa);
+            \end{tikzpicture}
+        \end{subfigure}
+    \end{figure}
+
+    \begin{figure}[H]
+        \begin{tikzpicture}[
+            node distance=2cm,
+            every node/.style={circle},
+            label distance=2pt,
+            >=Stealth
+        ]
+            \node (abb) at (3,0) {abb};
+            \node (baa) at (2.12,2.12) {baa};
+            \node (bab) at (0,3) {bab};
+            \node (bba) at (-2.12,2.12) {bba};
+            \node (bbb) at (-3,0) {bbb};
+            \node (aaa) at (-2.12,-2.12) {aaa};
+            \node (aab) at (0,-3) {aab};
+            \node (aba) at (2.12,-2.12) {aba};
+
+            % Kanten (Kreis)
+            \draw[->] (abb) -- (bba);
+            \draw[->] (abb) -- (bbb);
+
+            \draw[->] (baa) -- (aab);
+            \draw[->] (baa) -- (aaa);
+
+            \draw[->] (bab) to[bend left=10] (aba);
+            \draw[->] (bab) -- (abb);
+
+            \draw[->] (bba) -- (baa);
+            \draw[->] (bba) -- (bab);
+
+            \draw[->] (bbb) -- (bba);
+            \draw[->] (bbb) to[loop left] (bbb);
+
+            \draw[->] (aaa) -- (aab);
+            \draw[->] (aaa) to[loop left]  (aaa);
+
+            \draw[->] (aab) -- (aba);
+            \draw[->] (aab) -- (abb);
+
+            \draw[->] (aba) -- (baa);
+            \draw[->] (aba) to[bend left=10] (bab);
+
+        \end{tikzpicture}
+    \end{figure}
 \end{exa}
 
 The \gls{dbsg} for a given sequence s of dimension k is the one that we
-introduced in Definition \ref{def:dbsg} It has several interesting properties (see Section 2.2) and is
+introduced in Definition~\ref{def:dbsg} It has several interesting properties (see Section \ref{sec:definition-and-basic-properties}) and is
 used in various contexts in bioinformatics like genome assembly and pangenomics.
 
-\begin{exa}
-    zu dbsg
-\end{exa}
 
 \begin{prob}
-    mit dem bi dings, anhang von bsp auf notiz
+    In most bioinformatics applications where DNA sequence reads come from a sequencing machine, it is not clear from
+    which strand of the DNA double helix a read originates.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+            node distance=2cm,
+            every node/.style={circle},
+            label distance=2pt,
+            >=Stealth
+        ]
+            \node (gatt) at (0,0) {GATT};
+            \node (atta) at (2,0) {ATTA};
+            \node (ttac) at (4,0) {TTAC};
+            \node (taca) at (6,0) {TACA};
+
+            \node (gctg) at (2,-1) {GCTG};
+            \node (ctgt) at (4,-1) {CTGT};
+            \node (tgta) at (6,-1) {TGTA};
+
+            \draw[->] (gatt) -- (atta);
+            \draw[->] (atta) -- (ttac);
+            \draw[->] (ttac) -- (taca);
+
+            \draw[->] (gctg) -- (ctgt);
+            \draw[->] (ctgt) -- (tgta);
+
+        \end{tikzpicture}
+    \end{figure}
 \end{prob}
+
+Therefore one prefers to identify a k-mer z with its reverse complement $\overleftarrow{z^{-1}}$
+and represent them by the same vertex in the graph:
+\begin{exa}
+    \begin{tikzpicture}[
+        node distance=2cm,
+        every node/.style={circle},
+        label distance=2pt,
+        >=Stealth
+    ]
+        \node (gatt) at (0,0) {GATT};
+        \node (atta) at (2,0) {ATTA};
+        \node (ttac) at (4,0) {TTAC};
+        \node[WildStrawberry] (taca) at (8,-0.5) {TACA / TGTA};
+
+        \node (gctg) at (2,-1) {GCTG};
+        \node (ctgt) at (4,-1) {CTGT};
+
+
+        \draw[->] (gatt) -- (atta);
+        \draw[->] (atta) -- (ttac);
+        \draw[->, WildStrawberry] (ttac) -- (taca);
+
+        \draw[->] (gctg) -- (ctgt);
+        \draw[->, WildStrawberry] (ctgt) -- (taca);
+
+    \end{tikzpicture}
+\end{exa}
 
 \defin{bidbsg}
 
-\begin{exa}
-    zu bidbsg
-\end{exa}
-
+Finally, in a (bidirected) de Bruijn subgraph one often finds stretches of vertices that have
+only one successor, the next k-mer in the originating sequence(s).
+Such a non-branching path can be collapsed into a into single vertex (representing a k'-mer for some $k'\geq  k$),called unitig, saving space and often computation time.
 
 \defin{comdbsg}
 
 \begin{exa}
     zu comdbsg
 \end{exa}
+
+An additional variant comes into play when the input sequences are partitioned into several groups, for example representing different genomes, and these groups shall also be
+distinguished in the de Bruijn graph.
+Then one assigns a color (usually a single bit indicating presence or absence) to each group.
+A k-mer inherits this color, so that each k-mer
+gets assigned a color set, indicating in which groups it appears and in which not.
 
 \defin{coldbsg}
 
@@ -286,6 +471,11 @@ used in various contexts in bioinformatics like genome assembly and pangenomics.
 \end{exa}
 
 \begin{prob}
+    Colored de Bruijn subgraphs form a very powerful data structure, but their memory-efficient
+    implementation is not trivial.
+    In fact, the main challenge is no longer the storage of the
+    k-mers (whose number is limited by $\sigma^k$ , see above), but the storage of the colors, which
+    may occupy several thousand bits per k-mer in case of large pangenomes. \\
     log der alphabetgröße zur basis 2 ist wie viele bits man braucht zum codieren
     k*2 bits für dbg, aber mit Farben muss man ja noch bits dran hängen, das ist groß und noch ungelöst, denn es ist
     dann k*2 + \# datensätze
@@ -306,4 +496,6 @@ used in various contexts in bioinformatics like genome assembly and pangenomics.
 
 \section{Implementation of de Bruijn Graphs: Sets of k-mers}\label{sec:implementation-of-de-bruijn-graphs:-sets-of-k-mers}
 
-
+Here we consider only the basic variant of de Bruijn subgraphs.
+With a little bit of effort
+all results can also be generalized to the other graph types.
