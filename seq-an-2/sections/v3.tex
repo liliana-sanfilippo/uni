@@ -1,0 +1,25 @@
+
+%! Author = lili
+%! Date = 4/30/26
+
+de bruijn subgraph
+DBG(s,k)  = (V,E)
+
+V 0 alle k-mere von s
+
+Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
+
+info: für jeden DB Graph gibt es immer einen Eulerpfad
+
+\begin{theo}
+    Theorem 2.1 auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in DBG(s,k)
+\end{theo}
+
+\begin{kom}
+    man könnte bei bsp 2.1. denken hey bei a kann es nur einen EP geben, weil es kein Kreis ist, und bei 2b
+    mus es dann
+    mehrere geben, eil da eine Schleife drin ist, abre NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
+    Kanten, also gibt es nur einen (visualisieren) Man kann nicht unterscheiden, ob man zuerst die obere oder untere
+    Kante der Schleife zuerst gegangen ist. Gibt also nur eine sequenz mit em k+1 meer profil. Denn die Seuenz wird
+    ja aus den Knoten gemacht, nicht den Kanten...sozusagen.
+\end{kom}
