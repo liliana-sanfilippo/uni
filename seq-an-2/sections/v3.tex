@@ -14,6 +14,7 @@ Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
 \section{Words with the same (k + 1)-mer Profile}
 info: für jeden DB Graph gibt es immer einen Eulerpfad
 
+\begin{exa} $\ $
 \begin{figure}{H}
     \begin{subfigure}{0.33\textwidth}
         \begin{tikzpicture}[
@@ -31,7 +32,6 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
 
             \draw[->] (gat) to[bend left=20] (att);
             \draw[->] (att) to[bend left=20] (tta);
-            \draw[->] (tta) -- (att);
 
             \draw[->] (tta) to[bend left=10] (tac);
             \draw[->] (tac) to[bend left=10] (aca);
@@ -103,7 +103,64 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
         \end{tikzpicture}
         \caption{$x = GATTATTAATTACA, k = 3$}
     \end{subfigure}
+    \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}
 \end{figure}
+\end{exa}
+
+\begin{exa}
+    \textbf{Additional example from lecture}
+    \begin{figure}[H]
+        \begin{tikzpicture}[
+            node distance=2cm,
+            every node/.style={circle},
+            label distance=2pt,
+            >=Stealth
+        ]
+
+            \node (gat) at (-3.31,-3.94) {GAT};
+            \node (att) at (-2.37,-1.37) {ATT};
+            \node (tta) at (0,0) {TTA};
+            \node (tac) at (2.37,-1.37) {TAC};
+            \node (aca) at (3.31,-3.94) {ACA};
+            \node (cag) at (1.5,-6) {CAG};
+            \node (aga) at (-1.5,-6) {AGA};
+
+            \draw[->] (gat) to[bend left=10] (att);
+            \draw[->] (att) to[bend left=10] (tta);
+
+
+            \draw[->] (tta) to[bend left=10] (tac);
+            \draw[->] (tta) to[bend right=10] (tac);
+            \draw[->] (tac) to[bend left=10] (aca);
+
+            \draw[->] (aca) to[bend left=10] (cag);
+            \draw[->] (cag) to[bend left=10] (aga);
+            \draw[->] (aga) to[bend left=10] (gat);
+
+        \end{tikzpicture}
+        \caption{It could also be on big circle.}
+    \end{figure}
+\end{exa}
+
+\begin{kom}
+    Reminder that the edges are basically this:
+    \begin{figure}[H]
+        \begin{tikzpicture}[
+            node distance=2cm,
+            every node/.style={circle},
+            label distance=2pt,
+            >=Stealth
+        ]
+
+            \node (gat) at (-3.31,-3.94) {GAT};
+            \node (att) at (-2.37,-1.37) {ATT};
+
+
+            \draw[->, WildStrawberry] (gat) to["GAAT"] (att);
+
+        \end{tikzpicture}
+    \end{figure}
+\end{kom}
 
 \begin{theo}
     Theorem 2.1 auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in DBG(s,k)
