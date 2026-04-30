@@ -419,7 +419,7 @@ used in various contexts in bioinformatics like genome assembly and pangenomics.
     \end{figure}
 \end{prob}
 
-Therefore, one prefers to identify a $k$-mer $z$ with its reverse complement $\overleftarrow{z^{-1}}$
+\noindent Therefore, one prefers to identify a $k$-mer $z$ with its reverse complement $\overleftarrow{z^{-1}}$
 and represent them by the same vertex in the graph:
 \begin{exa} \labsatz
     \begin{tikzpicture}[
@@ -449,7 +449,7 @@ and represent them by the same vertex in the graph:
 
 \defin{bidbsg}
 
-Finally, in a (bidirected) \gls{dbsg} one often finds stretches of vertices that have
+\noindent Finally, in a (bidirected) \gls{dbsg} one often finds stretches of vertices that have
 only one successor, the next $k$-mer in the originating sequence(s).
 Such a non-branching path can be collapsed into a single vertex (representing a $k'$-mer for some $k'\geq  k
 $),called unitig, saving space and often computation time.
@@ -520,7 +520,7 @@ $),called unitig, saving space and often computation time.
     \end{figure}
 \end{exa}
 
-An additional variant comes into play when the input sequences are partitioned into several groups, for example representing different genomes, and these groups shall also be
+\noindent An additional variant comes into play when the input sequences are partitioned into several groups, for example representing different genomes, and these groups shall also be
 distinguished in the de Bruijn graph.
 Then one assigns a color (usually a single bit indicating presence or absence) to each group.
 A $k$-mer inherits this color, so that each $k$-mer
@@ -587,7 +587,8 @@ gets assigned a color set, indicating in which groups it appears and in which no
 
 Here we consider only the basic variant of \glspl{dbsg}.
 With a little bit of effort
-all results can also be generalized to the other graph types. \\
+all results can also be generalized to the other graph types.
+
 A simple observation allows to save considerable space: Assume we have a very fast method
 to test if a certain $k$-mer is represented in de Bruijn graph $G = DBG(s, k)$ or not.
 Then one does not need to store the edges explicitly, for the following reason.
@@ -603,7 +604,8 @@ Similarly, if we want to find all possible
 successors of the vertex representing $k$-mer $au$, we perform $\sigma$ tests, one for each possible
 last character $c$ of the new, overlapping $k$-mer $uc$.
 Especially for small alphabets like DNA,
-this is not very much work. \\ \newline
+this is not very much work.
+
 Therefore, in (DNA-) bioinformatics applications, a data structure is very popular that
 represents only a set $S$ of $k$-mers and offers a very quick presence/absence test, instead of
 storing a complete graph data structure: the Bloom filter.
