@@ -602,7 +602,33 @@ represents only a set S of k-mers and offers a very quick presence/absence test,
 storing a complete graph data structure: the Bloom filter.
 
 The idea is to use one large bit array B of length m, say, as a hash table with all bits
-initially set to false (F), and then have a small number of h different hash functions
-f1 , f2 , . . . , fh that map k-mers (respectively, their ranks) to integers in the range [0, m − 1].
+initially set to $false\ (F)$, and then have a small number of h different hash functions
+$f_1 , f_2 , . . . , f_h$ that map k-mers (respectively, their ranks) to integers in the range $[0, m − 1]$.
 In order to store a k-mer (respectively its rank r), the hash functions are computed and
 the corresponding bits in B are set:
+\[
+    B[f_1 (r)] = B[f_2 (r)] = . . . = B[f_h (r)] = T.
+\]
+This is repeated for each k-mer. \\
+As always, the hash functions should be independent and uniformly distributed. A very
+simple one is of the form $f_i (r) = (r^{i+1} >>k) \mod m$, where $>>k$ denotes k-fold bitwise
+right-shift. There exist, however, much more advanced hash functions in the literature.
+
+In order to test whether a k-mer with rank r has been stored in a Bloom filter B, we
+perform the same procedure: We evaluate all hash functions in parallel, and if all of them
+point to T entries in the hash table, then it is very likely that the element r has been
+stored in B:
+\[
+    \text{probably-contains}(B, r) = B[f_1 (r)] \land B[f_2 (r)] \land · · · \land B[f_h (r)],
+\]
+where $\land$ denotes logical AND. \\ \newline
+By the combination of several distinct hash functions, a k-mer z (with rank r = rank(z))
+will be reported as a false positive, although it has not been stored in the Bloom filter,
+only if all hash functions are involved in collisions, i.e., if for each of the h hash values
+$f_i (r), 1 \leq i \leq h$, some other k-mer $z' \neq z$ produces with some hash function fi′ the same
+hash value $(f_i' (rank(z' )) = f_i (r))$ and therefore sets B at this position to T. While this is
+quite unlikely in practice as long as the hash table is only moderately filled, it can not be completely avoided.
+Therefore the above function is called ``probably-contains'' and not
+``contains''. There are some techniques to handle false positives in certain applications
+manually, so that they do not distort the result and the Bloom filter becomes exact.
+Details are omitted here.
