@@ -571,15 +571,13 @@ gets assigned a color set, indicating in which groups it appears and in which no
 \end{prob}
 
 \begin{exa}
-    bsp zu bits: acg codiert als 000110 wenn
-
+    bsp zu bits: acg codiert als 000110 wenn \\
     \begin{tabular}{lll}
         A & 0 & 0 \\
         C & 0 & 1 \\
         G & 1 & 0 \\
         T & 1 & 1
     \end{tabular}
-
 \end{exa}
 
 
@@ -587,4 +585,24 @@ gets assigned a color set, indicating in which groups it appears and in which no
 
 Here we consider only the basic variant of de Bruijn subgraphs.
 With a little bit of effort
-all results can also be generalized to the other graph types.
+all results can also be generalized to the other graph types. \\
+A simple observation allows to save considerable space: Assume we have a very fast method
+to test if a certain k-mer is represented in de Bruijn graph $G = DBG(s, k)$ or not. Then
+one does not need to store the edges explicitly, for the following reason. When traversing
+from a vertex representing k-mer au to an adjacent vertex representing k-mer $ub (a, b \in \Sigma,
+u \in  \Sigma^{k−1} )$, instead of following the edge $au \rightarrow ub$ explicitly (if it exists), we can instead
+just test if ub is represented as a vertex in G or not. If the test is successful, we know
+that the edge exists and therefore can be traversed. If the test is unsuccessful, then the
+edge does not exist and can not be traversed. Similarly, if we want to find all possible
+successors of the vertex representing k-mer au, we perform σ tests, one for each possible
+last character c of the new, overlapping k-mer uc. Especially for small alphabets like DNA,
+this is not very much work. \\ \newline
+Therefore, in (DNA-) bioinformatics applications, a data structure is very popular that
+represents only a set S of k-mers and offers a very quick presence/absence test, instead of
+storing a complete graph data structure: the Bloom filter.
+
+The idea is to use one large bit array B of length m, say, as a hash table with all bits
+initially set to false (F), and then have a small number of h different hash functions
+f1 , f2 , . . . , fh that map k-mers (respectively, their ranks) to integers in the range [0, m − 1].
+In order to store a k-mer (respectively its rank r), the hash functions are computed and
+the corresponding bits in B are set:
