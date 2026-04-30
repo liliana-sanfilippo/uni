@@ -194,11 +194,11 @@
     after skip=6pt
 }
 
-\newcommand{\defin}[1]{
-\begin{defi}
-\textbf{\gls*{#1}}  \\
+\newcommand{\defin}[1]{%
+    \begin{defi}\label{def:#1}
+    \textbf{\gls*{#1}}\\
     \glsdesc*{#1}
-\end{defi}
+    \end{defi}
 }
 
 %% EXAMPLE
@@ -315,6 +315,23 @@
 
 \newtheorem{bem}{Bemerkung}[chapter]
 \tcolorboxenvironment{bem}{
+    colback=bemf!05,
+    colframe=bemf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+\newtheorem{notte}{Note}[chapter]
+\tcolorboxenvironment{notte}{
     colback=bemf!05,
     colframe=bemf,
     boxrule=1pt,

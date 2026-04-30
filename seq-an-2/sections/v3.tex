@@ -2,7 +2,25 @@
 %! Date = 4/30/26
 
 
-\section{Definition and Basic Properties}
+A note on terminology: In Section \ref{sec:the-q-gram-distance} we were speaking of q-grams when referring to
+short (sub)strings of a certain length q. This notation has originally been introduced in
+the computer science literature and is there in use until today. An alternative, equivalent
+notion that one finds in most of the biological\footnote{The true origin is probably in biochemistry, where notions like monomer or polymer refer to molecular
+chains of certain lengths.} and bioinformatics literature, is that of a
+k-mer.
+Here k refers to the (sub)string length. To be more consistent with the literature,
+in this chapter we will adopt that notation.
+
+\section{Definition and Basic Properties
+Remember the following definition, where $s_{k,i} := s[i ... i+k-1]$ denotes the k-mer starting
+at index $i$, $1 \leq i \leq |s| -k +1$:
+\defin{dbsg}
+
+\begin{notte} \textbf{To \autoref{def:dbsg}}
+    If the same (k + 1)-mer occurs multiple times in s, say m times, we have m
+    parallel edges occurring in the multigraph DBG(s, k).
+\end{notte}
+
 de bruijn subgraph
 DBG(s,k)  = (V,E)
 
@@ -188,7 +206,6 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
     zu origdb
 \end{exa}
 
-\defin{dbsg}
 
 \begin{exa}
     zu dbsg
