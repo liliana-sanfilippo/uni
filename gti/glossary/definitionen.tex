@@ -5,6 +5,33 @@
     type=defi
 }
 
+\newglossaryentry{monoid}{
+    name={Monoid},
+    description={todo},
+    type=defi
+}
+
+\newglossaryentry{postfix}{
+    name={Postfix},
+    description={todo},
+    type=defi
+}
+
+\newglossaryentry{präfix}{
+    name={Präfix},
+    description={todo},
+    type=defi
+}
+
+
+\newglossaryentry{konkatenation}{
+    name={Konkatenation},
+    description={  Eine Verkettung zweier Wörter $\overline{w} = a_{i_1}\ldots a_{i_m}$ und $\overline{v} = a_{i_1}\ldots a_{i_l}$ zu
+    \[\overline{wv}=a_{i_1}\ldots a_{i_m}a_{i_1}\ldots a_{i_l}\]},
+    type=defi
+}
+
+
 \newglossaryentry{allewörter}{
     name={test},
     description={todo},
@@ -31,21 +58,26 @@
 
 \newglossaryentry{anzahl}{
     name={Anzahl der Vorkommnisse des Symbols in einem Wort},
-    description={todo},
+    description={Die Anzahl der Vorkommnisse des Symbols $a_i$ im
+Wort $\overline{w}$.},
     type=defi
 }
 
 \newglossaryentry{wort}{
     name={Wort},
-    description={todo},
+    description={ Eine endliche Folge von Elementen aus einem Alphabet:
+\[\overline{w} = a_{i_1}\ldots a_{i_m}, \quad a_{i_j} \in \Sigma, \quad m > 0\]
+Dabei ist $m = \overline{w}$ die Länge des Wortes und ein Wort der Länge 0 ist das leere Wort \underline{$\epsilon$}},
     type=defi
 }
 
 \newglossaryentry{alphabet}{
     name={Alphabet},
-    description={todo},
+    description={Endliche Menge von Symbolen:
+\[\Sigma = \{a_1, \ldots, a_n\}\]
+Dabei ist $\Sigma^*$ die Menge aller Wörter über $\Sigma$ und $\Sigma^m$ die Menge aller Wörter der Länge $m$ über $\Sigma$.},
     type=defi,
-symbol={\\ensuremath{\sum}}
+symbol={\ensuremath{\Sigma}}
 }
 
 \newglossaryentry{wortersetzungssystem}{
