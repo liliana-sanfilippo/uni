@@ -225,7 +225,21 @@
 %% PROBLEM
 
 \newtheorem{prob}{Problem}[chapter]
-
+\tcolorboxenvironment{prob}{
+    colback=Periwinkle!05,
+    colframe=Periwinkle,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
 \newcommand{\probl}[2]{
 \begin{prob} \textbf{#1} \\
    {#2}

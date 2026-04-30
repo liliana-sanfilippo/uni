@@ -9,63 +9,63 @@ the computer science literature and is there in use until today.
 An alternative, equivalent
 notion that one finds in most of the biological\footnote{The true origin is probably in biochemistry, where notions like monomer or polymer refer to molecular
 chains of certain lengths.} and bioinformatics literature, is that of a
-k-mer.
-Here k refers to the (sub)string length.
+$k$-mer.
+Here $k$ refers to the (sub)string length.
 To be more consistent with the literature,
 in this chapter we will adopt that notation.
 
 
 \section{Definition and Basic Properties}\label{sec:definition-and-basic-properties}
-Remember the following definition, where $s_{k,i} \coloneqq s[i \dots i+k-1]$ denotes the k-mer starting
+Remember the following definition, where $s_{k,i} \coloneqq s[i \dots i+k-1]$ denotes the $k$-mer starting
 at index $i$, $1 \leq i \leq |s| -k +1$:
 \defin{dbsg}
-% V = alle k-mere von s
+% V = alle $k$-mere von s
 
 \defin{dimension}
 
 \begin{notte}
     \textbf{To \autoref{def:dbsg}}
-    If the same (k + 1)-mer occurs multiple times in s, say m times, we have m
-    parallel edges occurring in the multigraph \dbg(s, k).
+    If the same ( $k+1$ )-mer occurs multiple times in $s$, say $m$ times, we have m
+    parallel edges occurring in the multigraph $\dbg(s, k)$.
 \end{notte}
 
-% \frage{} Todo Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
+% \frage{} Todo Wie viele $k$-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
 
 \komm{Für jeden DB Graph gibt es immer einen Eulerpfad}
 
 
-\section{Words with the same (k + 1)-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
+\section{Words with the same ( $k+1$ )-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
 Motivated by the fact that the q-gram distance does not satisfy the identity property of
 a metric (see Section~\ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same q-gram
-profile, we want to determine whether for a given sequence s and integer k there are other
-sequences that are distinct but have the same (k + 1)-mer profile as s.
+profile, we want to determine whether for a given sequence $s$ and integer $k$there are other
+sequences that are distinct but have the same ( $k+1$ )-mer profile as $s$.
 And, if there are,
 how many? \\ \newline
 
 For $k = 0$, the problem is trivial.
-Indeed, if a sequence t that is distinct from s corresponds
-to a permutation of the symbols of s, then s and t clearly share the same 1-mer profile.
+Indeed, if a sequence t that is distinct from $s$ corresponds
+to a permutation of the symbols of $s$, then $s$ and t clearly share the same 1-mer profile.
 For
-$k \geq 1$, an elegant answer can be found with the help of the de Bruijn subgraph \dbg(s, k). \\ \newline
-Clearly, by construction \dbg(s, k) forms an Eulerian path $p_s$ , represented by its sequence
+$k \geq 1$, an elegant answer can be found with the help of the de Bruijn subgraph $\dbg(s, k)$. \\ \newline
+Clearly, by construction $\dbg(s, k)$ forms an Eulerian path $p_s$ , represented by its sequence
 of vertices
 \[
     s_{k,1}, s_{k,2}, \dots, s_{k, |s| -k+1}.
 \]
 % TODO nochmal klären und erklären was dieses s-k+1 jetzt ist und woher das kommt
-Consequently, \dbg(s, k) is connected and balanced
+Consequently, $\dbg(s, k)$ is connected and balanced
 and might contain even more than one Eulerian path.
 In fact, there is a one-to-one
-correspondence between Eulerian paths in \dbg(s, k) and sequences sharing the same
+correspondence between Eulerian paths in $\dbg(s, k)$ and sequences sharing the same
 (k + 1)-mer profile.
-In other words, a sequence t that is distinct but has the same (k + 1)-
-mer profile as s exists if and only if \dbg(s, k) has another Eulerian path $p_t$ orresponding
-to the sequence of (k + 1)-mers of t.
+In other words, a sequence t that is distinct but has the same ( $k+1$ )-
+mer profile as $s$ exists if and only if $\dbg(s, k)$ has another Eulerian path $p_t$ orresponding
+to the sequence of ( $k+1$ )-mers of t.
 Since $p_t$ uses the same edges as $p_s$ n a different
-order, the path $p_t$ an only exist if \dbg(s, k) contains a cycle.
+order, the path $p_t$ an only exist if $\dbg(s, k)$ contains a cycle.
 Note, however, that the
 presence of a cycle is not a sufficient condition.
-Indeed, it is possible that \dbg(s, k)
+Indeed, it is possible that $\dbg(s, k)$
 contains one or more cycles, but still admits only one Eulerian path.
 Some examples are
 given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
@@ -97,7 +97,7 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
                 \draw[->] (tac) to[bend left=10] (aca);
 
             \end{tikzpicture}
-            \caption{$x = GATTACA, k = 3$ - Since this graph contains no cycle, it has only one Eulerian path. There can be no other word sharing the same 4-mer profile.} \label{fig:example-dbgs-2-1-a}
+            \caption{$x = GATTACA, $k$= 3$ - Since this graph contains no cycle, it has only one Eulerian path. There can be no other word sharing the same 4-mer profile.} \label{fig:example-dbgs-2-1-a}
         \end{subfigure}
         \hfill
         \begin{subfigure}[t]{0.3\textwidth}
@@ -127,7 +127,7 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
                 \draw[->] (tac) to[bend left=10] (aca);
 
             \end{tikzpicture}
-            \caption{$x = GATTATTACA,  k = 3$ - Here the graph contains two cycles, but still only one Eulerian path. There is no other word sharing the same 4-mer profile.}
+            \caption{$x = GATTATTACA,  $k$= 3$ - Here the graph contains two cycles, but still only one Eulerian path. There is no other word sharing the same 4-mer profile.}
             \label{fig:example-dbgs-2-1-b}
         \end{subfigure}
         \hfill
@@ -166,11 +166,11 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
                 \draw[->] (tac) to[bend left=10] (aca);
 
             \end{tikzpicture}
-            \caption{$x = GATTATTAATTACA, k = 3$ - This graph contains several cycles and two distinct Eulerian paths. There is exactly one other word with the same 4-mer profile,
+            \caption{$x = GATTATTAATTACA, $k$= 3$ - This graph contains several cycles and two distinct Eulerian paths. There is exactly one other word with the same 4-mer profile,
                 \texttt{GATTAATTATTACA}.}
             \label{fig:example-dbgs-2-1-c}
         \end{subfigure}
-        \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:example-dbgs-2-1}
+        \caption{Examples of de Bruijn subgraphs for distinct sequences and $k$= 3.}\label{fig:example-dbgs-2-1}
     \end{figure}
 \end{exa}
 \begin{exa}
@@ -209,7 +209,7 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
     \end{figure}
 \end{exa}
 
-\kom{
+\komm{
     Reminder that the edges are basically this:
     \begin{tikzpicture}[
         scale=0.8,
@@ -228,30 +228,30 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
     \end{tikzpicture}\label{fig:figure3}
 }
 
-\kom{ \textbf{To figure \ref{fig:example-dbgs-2-1}}
+\komm{ \textbf{To figure \ref{fig:example-dbgs-2-1}}
 man könnte bei fig \ref{fig:example-dbgs-2-1-a} denken hey bei a kann es nur einen EP geben, weil es kein Kreis
 ist, und bei \ref{fig:example-dbgs-2-1-b}
 muss es dann
 mehrere geben, weil da eine Schleife drin ist, aber NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
-Kanten, also gibt es nur einen. % todo (visualisieren)
+Kanten, also gibt es nur einen. % $k+1$  todo (visualisieren)
 Man kann nicht unterscheiden, ob man zuerst die obere oder untere
 Kante der Schleife zuerst gegangen ist.
 Gibt also nur eine sequenz mit em k+1 meer profil.
 Denn die Sequenz wird
-ja aus den Knoten gemacht, nicht den Kanten \ldots sozusagen.
+ja $au$s den Knoten gemacht, nicht den Kanten \ldots sozusagen.
 }
 
 
-% TODO De Bruijn subgraphs for the same sequence but with k varying from 3 to 1.
+% TODO De Bruijn subgraphs for the same sequence but with $k$varying from 3 to 1.
 
 
 \noindent We summarize the observations above in the following theorem.
 \begin{theo}
-    Given a sequence s and an integer $k \geq 1$, the number of distinct sequences that have the same (k + 1)-mer profile as s equals the number of distinct Eulerian paths in
-    \dbg(s, k).
-    If \dbg(s, k) is acyclic, it has a single Eulerian path, and no sequence t exists
-    that is distinct but has the same (k + 1)-mer profile as s.
-    \komm{Auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in \dbg(s,k)}
+    Given a sequence $s$ and an integer $k \geq 1$, the number of distinct sequences that have the same ()-mer profile as $s$ equals the number of distinct Eulerian paths in
+    $\dbg(s, k)$.
+    If $\dbg(s, k)$ is acyclic, it has a single Eulerian path, and no sequence t exists
+    that is distinct but has the same ($k + 1$)-mer profile as $s$.
+    \komm{Auf deutsch: \# worte mit gleichen ($k+1$ )-mer Profil wie $s$ = \# Euler-Pfade in \dbg(s,k)}
 \end{theo}
 
 
@@ -266,7 +266,8 @@ Here we will discuss
 them and introduce a precise nomenclature.
 \defin{origdb}
 
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{figure}[H]
         \centering
         \begin{subfigure}[t]{0.3\textwidth}
@@ -334,7 +335,7 @@ them and introduce a precise nomenclature.
                 \draw[->, WildStrawberry] (baa) -- (aab);
                 \draw[->, WildStrawberry] (baa) -- (aaa);
             \end{tikzpicture}
-        \end{subfigure}
+        \end{subfigure}\label{fig:figure}
     \end{figure}
 
     \begin{figure}[H]
@@ -380,12 +381,12 @@ them and introduce a precise nomenclature.
             \draw[->] (aba) -- (baa);
             \draw[->] (aba) to[bend left=10] (bab);
 
-        \end{tikzpicture}
+        \end{tikzpicture}\label{fig:figure4}
     \end{figure}
 \end{exa}
 
-The \gls{dbsg} for a given sequence s of dimension k is the one that we
-introduced in Definition~\ref{def:dbsg} It has several interesting properties (see Section \ref{sec:definition-and-basic-properties}) and is
+The \gls{dbsg} for a given sequence $s$ of dimension $k$is the one that we
+introduced in Definition~\ref{def:dbsg} It has several interesting properties (see Section~\ref{sec:definition-and-basic-properties}) and is
 used in various contexts in bioinformatics like genome assembly and pangenomics.
 
 
@@ -416,13 +417,14 @@ used in various contexts in bioinformatics like genome assembly and pangenomics.
             \draw[->] (gctg) -- (ctgt);
             \draw[->] (ctgt) -- (tgta);
 
-        \end{tikzpicture}
+        \end{tikzpicture}\label{fig:figure5}
     \end{figure}
 \end{prob}
 
-Therefore one prefers to identify a k-mer z with its reverse complement $\overleftarrow{z^{-1}}$
+Therefore, one prefers to identify a $k$-mer $z$ with its reverse complement $\overleftarrow{z^{-1}}$
 and represent them by the same vertex in the graph:
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{tikzpicture}[
         node distance=2cm,
         every node/.style={circle},
@@ -451,17 +453,18 @@ and represent them by the same vertex in the graph:
 \defin{bidbsg}
 
 Finally, in a (bidirected) de Bruijn subgraph one often finds stretches of vertices that have
-only one successor, the next k-mer in the originating sequence(s).
-Such a non-branching path can be collapsed into a into single vertex (representing a k'-mer for some $k'\geq  k$),called unitig, saving space and often computation time.
+only one successor, the next $k$-mer in the originating sequence(s).
+Such a non-branching path can be collapsed into a single vertex (representing a k'-mer for some $k'\geq  k$),called unitig, saving space and often computation time.
 
 \defin{comdbsg}
 
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{figure}[H]
         \centering
         \begin{subfigure}[t]{0.4\textwidth}
             \begin{tikzpicture}[
-                scale=0.6,
+                scale=0.8,
                 node distance=2cm,
                 every node/.style={circle},
                 label distance=2pt,
@@ -493,7 +496,7 @@ Such a non-branching path can be collapsed into a into single vertex (representi
         \hfill
         \begin{subfigure}[t]{0.4\textwidth}
             \begin{tikzpicture}[
-                scale=0.6,
+                scale=0.8,
                 node distance=2cm,
                 every node/.style={circle},
                 label distance=2pt,
@@ -515,21 +518,22 @@ Such a non-branching path can be collapsed into a into single vertex (representi
 
             \end{tikzpicture}
             \caption{}
-        \end{subfigure}
+        \end{subfigure}\label{fig:figure6}
     \end{figure}
 \end{exa}
 
 An additional variant comes into play when the input sequences are partitioned into several groups, for example representing different genomes, and these groups shall also be
 distinguished in the de Bruijn graph.
 Then one assigns a color (usually a single bit indicating presence or absence) to each group.
-A k-mer inherits this color, so that each k-mer
+A $k$-mer inherits this color, so that each $k$-mer
 gets assigned a color set, indicating in which groups it appears and in which not.
 
 \defin{coldbsg}
 
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{figure}[H]
-
+        \centering
         \begin{tikzpicture}[
             node distance=2cm,
             every node/.style={circle},
@@ -555,7 +559,7 @@ gets assigned a color set, indicating in which groups it appears and in which no
             \draw[->] (tac) to[bend left=10] (aca);
             \draw[->] (tac) to[bend right=10] (acg);
 
-        \end{tikzpicture}
+        \end{tikzpicture}\label{fig:figure7}
     \end{figure}
 \end{exa}
 
@@ -563,8 +567,8 @@ gets assigned a color set, indicating in which groups it appears and in which no
     Colored de Bruijn subgraphs form a very powerful data structure, but their memory-efficient
     implementation is not trivial.
     In fact, the main challenge is no longer the storage of the
-    k-mers (whose number is limited by $\sigma^k$ , see above), but the storage of the colors, which
-    may occupy several thousand bits per k-mer in case of large pangenomes. \\
+    $k$-mers (whose number is limited by $\sigma^k$ , see above), but the storage of the colors, which
+    may occupy several thousand bits per $k$-mer in case of large pangenomes. \\
     log der alphabetgröße zur basis 2 ist wie viele bits man braucht zum codieren
     k*2 bits für dbg, aber mit Farben muss man ja noch bits dran hängen, das ist groß und noch ungelöst, denn es ist
     dann k*2 + \# datensätze
@@ -581,54 +585,62 @@ gets assigned a color set, indicating in which groups it appears and in which no
 \end{exa}
 
 
-\section{Implementation of de Bruijn Graphs: Sets of k-mers}\label{sec:implementation-of-de-bruijn-graphs:-sets-of-k-mers}
+\section{Implementation of de Bruijn Graphs: Sets of $k$-mers}\label{sec:implementation-of-de-bruijn-graphs:-sets-of-k-mers}
 
 Here we consider only the basic variant of de Bruijn subgraphs.
 With a little bit of effort
 all results can also be generalized to the other graph types. \\
 A simple observation allows to save considerable space: Assume we have a very fast method
-to test if a certain k-mer is represented in de Bruijn graph $G = DBG(s, k)$ or not. Then
-one does not need to store the edges explicitly, for the following reason. When traversing
-from a vertex representing k-mer au to an adjacent vertex representing k-mer $ub (a, b \in \Sigma,
-u \in  \Sigma^{k−1} )$, instead of following the edge $au \rightarrow ub$ explicitly (if it exists), we can instead
-just test if ub is represented as a vertex in G or not. If the test is successful, we know
-that the edge exists and therefore can be traversed. If the test is unsuccessful, then the
-edge does not exist and can not be traversed. Similarly, if we want to find all possible
-successors of the vertex representing k-mer au, we perform σ tests, one for each possible
-last character c of the new, overlapping k-mer uc. Especially for small alphabets like DNA,
+to test if a certain $k$-mer is represented in de Bruijn graph $G = DBG(s, k)$ or not.
+Then one does not need to store the edges explicitly, for the following reason.
+When traversing
+from a vertex representing $k$-mer $au$ to an adjacent vertex representing $k$-mer $ub$ $(a, $b$ \in \Sigma,
+u \in  \Sigma^{k-1} )$, instead of following the edge $au \rightarrow ub$ explicitly (if it exists), we can instead
+just test if ub is represented as a vertex in G or not.
+If the test is successful, we know
+that the edge exists and therefore can be traversed.
+If the test is unsuccessful, then the
+edge does not exist and can not be traversed.
+Similarly, if we want to find all possible
+successors of the vertex representing $k$-mer $au$, we perform $\sigma$ tests, one for each possible
+last character $c$ of the new, overlapping $k$-mer $uc$.
+Especially for small alphabets like DNA,
 this is not very much work. \\ \newline
 Therefore, in (DNA-) bioinformatics applications, a data structure is very popular that
-represents only a set S of k-mers and offers a very quick presence/absence test, instead of
+represents only a set $S$ of $k$-mers and offers a very quick presence/absence test, instead of
 storing a complete graph data structure: the Bloom filter.
 
-The idea is to use one large bit array B of length m, say, as a hash table with all bits
-initially set to $false\ (F)$, and then have a small number of h different hash functions
-$f_1 , f_2 , . . . , f_h$ that map k-mers (respectively, their ranks) to integers in the range $[0, m − 1]$.
-In order to store a k-mer (respectively its rank r), the hash functions are computed and
-the corresponding bits in B are set:
+The idea is to use one large bit array $B$ of length $m$, say, as a hash table with all bits
+initially set to $false\ (F)$, and then have a small number of $h$ different hash functions
+$f_1 , f_2 , \cdots , f_h$ that map $k$-mers (respectively, their ranks) to integers in the range $[0, $m$ - 1]$.
+In order to store a $k$-mer (respectively its rank $r$), the hash functions are computed and
+the corresponding bits in $B$ are set:
 \[
-    B[f_1 (r)] = B[f_2 (r)] = . . . = B[f_h (r)] = T.
+    B[f_1 (r)] = B[f_2 (r)] = \cdots = B[f_h (r)] = T.
 \]
-This is repeated for each k-mer. \\
-As always, the hash functions should be independent and uniformly distributed. A very
-simple one is of the form $f_i (r) = (r^{i+1} >>k) \mod m$, where $>>k$ denotes k-fold bitwise
-right-shift. There exist, however, much more advanced hash functions in the literature.
+This is repeated for each $k$-mer. \\
+As always, the hash functions should be independent and uniformly distributed.
+A very
+simple one is of the form $f_i (r) = (r^{i+1} \gg k) \mod m$, where $\gg k$ denotes $k$-fold bitwise
+right-shift.
+There exist, however, much more advanced hash functions in the literature.
 
-In order to test whether a k-mer with rank r has been stored in a Bloom filter B, we
+In order to test whether a $k$-mer with rank $r$ has been stored in a Bloom filter B, we
 perform the same procedure: We evaluate all hash functions in parallel, and if all of them
-point to T entries in the hash table, then it is very likely that the element r has been
-stored in B:
+point to T entries in the hash table, then it is very likely that the element $r$ has been
+stored in $B$:
 \[
-    \text{probably-contains}(B, r) = B[f_1 (r)] \land B[f_2 (r)] \land · · · \land B[f_h (r)],
+    \text{probably-contains}(B, $r$) = B[f_1 (r)] \land B[f_2 (r)] \land \cdots \land B[f_h (r)],
 \]
 where $\land$ denotes logical AND. \\ \newline
-By the combination of several distinct hash functions, a k-mer z (with rank r = rank(z))
+By the combination of several distinct hash functions, a $k$-mer $z$ (with $rank\ $r$ = rank(z)$)
 will be reported as a false positive, although it has not been stored in the Bloom filter,
-only if all hash functions are involved in collisions, i.e., if for each of the h hash values
-$f_i (r), 1 \leq i \leq h$, some other k-mer $z' \neq z$ produces with some hash function fi′ the same
-hash value $(f_i' (rank(z' )) = f_i (r))$ and therefore sets B at this position to T. While this is
+only if all hash functions are involved in collisions, i.e., if for each of the $h$ hash values
+$f_i (r), 1 \leq i \leq h$, some other $k$-mer $z' \neq z$ produces with some hash function fi′ the same
+hash value $(f_i' (rank(z' )) = f_i (r))$ and therefore sets $B$ at this position to T. While this is
 quite unlikely in practice as long as the hash table is only moderately filled, it can not be completely avoided.
 Therefore the above function is called ``probably-contains'' and not
-``contains''. There are some techniques to handle false positives in certain applications
+``contains''.
+There are some techniques to handle false positives in certain applications
 manually, so that they do not distort the result and the Bloom filter becomes exact.
 Details are omitted here.
