@@ -46,7 +46,7 @@ For $k = 0$, the problem is trivial.
 Indeed, if a sequence t that is distinct from $s$ corresponds
 to a permutation of the symbols of $s$, then $s$ and t clearly share the same 1-mer profile.
 For
-$k \geq 1$, an elegant answer can be found with the help of the de Bruijn subgraph $\dbg(s, k)$. \\ \newline
+$k \geq 1$, an elegant answer can be found with the help of the \gls{dbsg} $\dbg(s, k)$. \\ \newline
 Clearly, by construction $\dbg(s, k)$ forms an Eulerian path $p_s$ , represented by its sequence
 of vertices
 \[
@@ -75,6 +75,7 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
 \begin{exa}
     $\ $
     \begin{figure}[H]
+        \centering
         \begin{subfigure}[t]{0.3\textwidth}
             \begin{tikzpicture}[
                 scale=0.6,
@@ -170,7 +171,7 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
                 \texttt{GATTAATTATTACA}.}
             \label{fig:example-dbgs-2-1-c}
         \end{subfigure}
-        \caption{Examples of de Bruijn subgraphs for distinct sequences and $k$= 3.}\label{fig:example-dbgs-2-1}
+        \caption{Examples of \glspl{dbsg} for distinct sequences and $k$= 3.}\label{fig:example-dbgs-2-1}
     \end{figure}
 \end{exa}
 \begin{exa}
@@ -210,7 +211,7 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
 \end{exa}
 
 \komm{
-    Reminder that the edges are basically this:
+    Reminder that the edges are basically this: \\
     \begin{tikzpicture}[
         scale=0.8,
         node distance=2cm,
@@ -218,8 +219,8 @@ given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite figure
         label distance=2pt,
         >=Stealth
     ]
-        \node (gat) at (-3.31,-3.94) {GAT};
-        \node (att) at (-2.37,-1.37) {ATT};
+        \node[black] (gat) at (-3.31,-3.94) {GAT};
+        \node[black] (att) at (-2.37,-1.37) {ATT};
         \draw[->, WildStrawberry] (gat) to["GAAT"] (att);
     \end{tikzpicture}\label{fig:figure3}
 }
@@ -238,12 +239,13 @@ ja $au$s den Knoten gemacht, nicht den Kanten \ldots sozusagen.
 }
 
 
-% TODO De Bruijn subgraphs for the same sequence but with $k$varying from 3 to 1.
+% TODO \glspl{dbsg} for the same sequence but with $k$varying from 3 to 1.
 
 
 \noindent We summarize the observations above in the following theorem.
 \begin{theo}
-    Given a sequence $s$ and an integer $k \geq 1$, the number of distinct sequences that have the same ()-mer profile as $s$ equals the number of distinct Eulerian paths in
+    Given a sequence $s$ and an integer $k \geq 1$, the number of distinct sequences that have the same (
+    $k+1$)-mer profile as $s$ equals the number of distinct Eulerian paths in
     $\dbg(s, k)$.
     If $\dbg(s, k)$ is acyclic, it has a single Eulerian path, and no sequence t exists
     that is distinct but has the same ($k + 1$)-mer profile as $s$.
@@ -254,7 +256,7 @@ ja $au$s den Knoten gemacht, nicht den Kanten \ldots sozusagen.
 \section{Variants of de Bruijn Graphs}\label{sec:variants-of-de-bruijn-graphs}
 \komm{Der Begriff dbg ist sehr dehnbar, es ist in der Literatur nicht immer das gleiche damit gemeint. Viele sagen
 dbg, wenn sie eigentlich dbsg meinen.}
-Although, strictly speaking, we consider most of the time de Bruijn subgraphs (for a given
+\noindent Although, strictly speaking, we consider most of the time \glspl{dbsg} (for a given
 sequence), often they are just called de Bruijn graphs.
 In fact, there are more variants of
 de Bruijn graphs, and often they are also not named very carefully.
@@ -419,8 +421,7 @@ used in various contexts in bioinformatics like genome assembly and pangenomics.
 
 Therefore, one prefers to identify a $k$-mer $z$ with its reverse complement $\overleftarrow{z^{-1}}$
 and represent them by the same vertex in the graph:
-\begin{exa}
-    $\ $
+\begin{exa} \labsatz
     \begin{tikzpicture}[
         node distance=2cm,
         every node/.style={circle},
@@ -448,9 +449,10 @@ and represent them by the same vertex in the graph:
 
 \defin{bidbsg}
 
-Finally, in a (bidirected) de Bruijn subgraph one often finds stretches of vertices that have
+Finally, in a (bidirected) \gls{dbsg} one often finds stretches of vertices that have
 only one successor, the next $k$-mer in the originating sequence(s).
-Such a non-branching path can be collapsed into a single vertex (representing a k'-mer for some $k'\geq  k$),called unitig, saving space and often computation time.
+Such a non-branching path can be collapsed into a single vertex (representing a $k'$-mer for some $k'\geq  k
+$),called unitig, saving space and often computation time.
 
 \defin{comdbsg}
 
@@ -560,7 +562,7 @@ gets assigned a color set, indicating in which groups it appears and in which no
 \end{exa}
 
 \begin{prob}
-    Colored de Bruijn subgraphs form a very powerful data structure, but their memory-efficient
+    Colored \glspl{dbsg} form a very powerful data structure, but their memory-efficient
     implementation is not trivial.
     In fact, the main challenge is no longer the storage of the
     $k$-mers (whose number is limited by $\sigma^k$ , see above), but the storage of the colors, which
@@ -583,7 +585,7 @@ gets assigned a color set, indicating in which groups it appears and in which no
 
 \section{Implementation of de Bruijn Graphs: Sets of $k$-mers}\label{sec:implementation-of-de-bruijn-graphs:-sets-of-k-mers}
 
-Here we consider only the basic variant of de Bruijn subgraphs.
+Here we consider only the basic variant of \glspl{dbsg}.
 With a little bit of effort
 all results can also be generalized to the other graph types. \\
 A simple observation allows to save considerable space: Assume we have a very fast method
