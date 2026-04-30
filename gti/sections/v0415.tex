@@ -1,27 +1,96 @@
+Formale Sprachen referieren im Gegensatz zu natürlichen Sprachen auf Sprachen
+in der Technik: wie unterhalte ich mich mit einem Rechner oder Roboter? Eins der
+wichtigsten Beispiele sind Programmiersprachen auf unterschiedlichstem Niveau,
+angefangen von Assembler über gängige Hochsprachen wie Java oder C++ zu
+Anwendungssprachen wie etwa Matlab. Andere wichtige Bereiche, in denen
+formale Sprachen eine zentrale Rolle spielen, sind etwa XML, oder aber direkte
+Maschinenbefehle etwa in der NC Steuerung. Anders als natürliche Sprache muss
+dieses so präzise sein, dass die Maschine keinerlei Interpretationsspielraum hat
+und genau das versteht, was der Mensch intendiert. Zusätzliche Anforderung ist,
+dass dieses auch möglichst effizient umgesetzt werden kann, d.h. der Rechner
+sollte ein Wort möglichst schnell erkennen und interpretieren können.
 
+
+\section*{0\_orga.pdf}
+Vorerst irrelevant.
+
+
+\section{Historisches}
+\untit{1\_theoinf\_motivation.pdf - Skript S. 1--2}
+Die Formalisierung von Sprache ist ein nicht nur für die Informatik im Rahmen
+technischer Systeme relevantes Gebiet, sondern auch im Rahmen der Sprachphi-
+losophie und Linguistik behandelt worden. So ist einer der wichtigsten Forscher
+in dem Gebiet Noam Chomsky, ein Linguist, der 1956 die nach ihm benannte
+Chomsky-Hierarchie von formalen Sprachen einführte (Chomsky 1956). Diese
+unterscheidet unterschiedlich komplexe Formalisierungen, die zu unterschiedlich
+komplexen Sprachkonstrukten führen. Diese theoretischen Überlegungen hatten in
+der Informatik direkte Bedeutung für die Entwicklung von Programmiersprachen.
+Die erste Programmiersprache, für die eine formale Syntax eingeführt wurde, war
+um 1960 ALGOL 60. Unter anderem war hier John Backus beteiligt, nach dem
+die heute noch gebräuchliche Backus-Naur Form von Grammatiken benannt ist.
+Basierend auf dieser Formalisierung war die Entwicklung von Compilern deutlich
+einfacher und eleganter möglich. \\
+Das Gebiet der Formalen Sprachen behandelt unter anderem auch, was auf
+unterschiedlichen Komplexitätsstufen darstellbar ist und welche strukturellen
+Eigenschaften gelten. Interessanterweise sind einige wichtige strukturelle Eigen-
+schaften in dem Gebiet auch noch offen bzw. teilweise sehr spät gelöst worden. Der
+Abschluss so genannter kontextsensitiver Sprachen gegen Komplementbildung
+wurde erst 1988 bewiesen im Satz von Immerman/Szelepcsenyi (Immerman 1988).
+Letzterer war damals noch Student. Er erhielt 1995 zusammen mit Immerman
+hierfür den Gödel-Award, den Nobelpreis der Informatik.
+
+
+\section{Kapitelinhalt}
+\untit{2\_0\_sprachen\_intro.pdf - Skript S. 2}
+In diesem Kapitel werden wir eine Hierarchie von formalen Sprachen auf der
+Basis von Grammatiken und deren Komplexität kennenlernen. Das dient dazu,
+unterschiedlich komplexe formale Sprachen definieren und interessante Eigen-
+schaften wie etwa den Abschluss untersuchen zu können.
+%Wichtige Begriffe in diesem Kapitel sind:
+
+
+\section{Wortersetzungssysteme und Notationen}
+\untit{2\_1\_Sprachen\_Grundlagen.pdf - Skript S. 2--6}
+Wortersetzungssysteme oder auch Semi-Thue-Systeme bilden ein grundlegendes
+Konzept, Wörter zu erzeugen oder abzuändern. Ausgehend von einem Startsymbol
+kann man eine Menge komplexer Wörter durch entsprechende Ersetzungsregeln
+definieren. Wir werden Wortersetzungssysteme als Grundlage in der gesamten
+Vorlesung verwenden. Zunächst geben wir einige Definitionen:
 % 2_0_sprachen_intro.pdf
-\begin{defi} \label{defi:Alphabet} \textbf{Alphabet} $\mathbf{\Sigma}$\\
-Endliche Menge von Symbolen: 
-\[\Sigma = \{a_1, \ldots, a_n\}\]
-Dabei ist $\Sigma^*$ die Menge aller Wörter über $\Sigma$ und $\Sigma^m$ die Menge aller Wörter der Länge $m$ über $\Sigma$.
+
+\defin{symbol}
+\defin{alphabet}
+\defin{wort}
+\defin{anzahl}
+\defin{leereswort}
+\defin{allewörter}
+\defin{allewörterlänge}
+
+\begin{defi}
+    \label{defi:Alphabet} \textbf{Alphabet} $\mathbf{\Sigma}$\\
+    Endliche Menge von Symbolen:
+    \[\Sigma = \{a_1, \ldots, a_n\}\]
+    Dabei ist $\Sigma^*$ die Menge aller Wörter über $\Sigma$ und $\Sigma^m$ die Menge aller Wörter der Länge $m$ über $\Sigma$.
 \end{defi}
-\begin{defi} \label{defi:Wort} \textbf{Wort} $\mathbf{\overline{w}}$ über einem Alphabet $\Sigma$ \\
-Eine endliche Folge von Elementen aus einem Alphabet: 
-\[\overline{w} = a_{i_1}\ldots a_{i_m}, \quad a_{i_j} \in \Sigma, \quad m > 0\]
-Dabei ist $m = \overline{w}$ die Länge des Wortes und ein Wort der Länge 0 ist das leere Wort \underline{$\epsilon$}
+\begin{defi}
+    \label{defi:Wort} \textbf{Wort} $\mathbf{\overline{w}}$ über einem Alphabet $\Sigma$ \\
+    Eine endliche Folge von Elementen aus einem Alphabet:
+    \[\overline{w} = a_{i_1}\ldots a_{i_m}, \quad a_{i_j} \in \Sigma, \quad m > 0\]
+    Dabei ist $m = \overline{w}$ die Länge des Wortes und ein Wort der Länge 0 ist das leere Wort \underline{$\epsilon$}
 \end{defi}
-\begin{defi} \label{defi:Anzahl} \textbf{Anzahl} $\mathbf{(a_i, \overline{w})}$ eines Symbols $a_i$ \\
-Die Anzahl der Vorkommnisse des Symbols $a_i$ im
-Wort $\overline{w}$.
+\begin{defi}
+    \label{defi:Anzahl} \textbf{Anzahl} $\mathbf{(a_i, \overline{w})}$ eines Symbols $a_i$ \\
+    Die Anzahl der Vorkommnisse des Symbols $a_i$ im
+    Wort $\overline{w}$.
 \end{defi}
-\begin{defi}\label{defi:Konkatenation} \textbf{Konkatenation} $\overline{wv}$ zweier Wörter $\overline{w}, \overline{v}$ \\
-Eine Verkettung zweier Wörter $\overline{w} = a_{i_1}\ldots a_{i_m}$ und $\overline{v} = a_{i_1}\ldots a_{i_l}$ zu 
-\[\overline{wv}=a_{i_1}\ldots a_{i_m}a_{i_1}\ldots a_{i_l}\]
+\begin{defi}
+    \label{defi:Konkatenation} \textbf{Konkatenation} $\overline{wv}$ zweier Wörter $\overline{w}, \overline{v}$ \\
+    Eine Verkettung zweier Wörter $\overline{w} = a_{i_1}\ldots a_{i_m}$ und $\overline{v} = a_{i_1}\ldots a_{i_l}$ zu
+    \[\overline{wv}=a_{i_1}\ldots a_{i_m}a_{i_1}\ldots a_{i_l}\]
 \end{defi}
-\begin{defi} \label{defi:Präfix} 
+\begin{defi}
+    \label{defi:Präfix}
 
 \end{defi}
 
-\begin{defi} \label{defi:Wortersetzungssystem} \textbf{Wortersetzungssystem (Semi-Thue-System)}
-
-\end{defi}
+\defin{wortersetzungssystem}
