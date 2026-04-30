@@ -488,6 +488,32 @@ Such a non-branching path can be collapsed into a into single vertex (representi
             \end{tikzpicture}
             \caption{}
         \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \begin{tikzpicture}[
+                scale=0.6,
+                node distance=2cm,
+                every node/.style={circle},
+                label distance=2pt,
+                >=Stealth
+            ]
+
+
+                \node[WildStrawberry] (gat) at (-3.31,-3.94) {p(ATT)};
+                \node (aga) at (-4.31,-6) {AGA};
+                \node (tga) at (-2.31,-6) {TGA};
+                \node (aca) at (1.37,-2.94) {ACA};
+                \node (acg) at (1.37,-4.94) {ACG};
+
+                \draw[->] (aga) to[bend left=10] (gat);
+                \draw[->] (tga) to[bend right=10] (gat);
+
+                \draw[->] (gat) to[bend left=10] (aca);
+                \draw[->] (gat) to[bend right=10] (acg);
+
+            \end{tikzpicture}
+            \caption{}
+        \end{subfigure}
     \end{figure}
 \end{exa}
 
