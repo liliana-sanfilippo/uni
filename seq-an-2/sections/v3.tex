@@ -2,19 +2,23 @@
 %! Date = 4/30/26
 
 
-A note on terminology: In Section \ref{sec:the-q-gram-distance} we were speaking of q-grams when referring to
-short (sub)strings of a certain length q. This notation has originally been introduced in
-the computer science literature and is there in use until today. An alternative, equivalent
+A note on terminology: In Section~\ref{sec:the-q-gram-distance} we were speaking of q-grams when referring to
+short (sub)strings of a certain length q.
+This notation has originally been introduced in
+the computer science literature and is there in use until today.
+An alternative, equivalent
 notion that one finds in most of the biological\footnote{The true origin is probably in biochemistry, where notions like monomer or polymer refer to molecular
 chains of certain lengths.} and bioinformatics literature, is that of a
 k-mer.
-Here k refers to the (sub)string length. To be more consistent with the literature,
+Here k refers to the (sub)string length.
+To be more consistent with the literature,
 in this chapter we will adopt that notation.
 
-\section{Definition and Basic Properties}
-Remember the following definition, where $s_{k,i} := s[i ... i+k-1]$ denotes the k-mer starting
+\section{Definition and Basic Properties}\label{sec:definition-and-basic-properties}
+Remember the following definition, where $s_{k,i} \coloneqq s[i \dots i+k-1]$ denotes the k-mer starting
 at index $i$, $1 \leq i \leq |s| -k +1$:
 \defin{dbsg}
+% V = alle k-mere von s
 
 \defin{dimension}
 
@@ -23,19 +27,14 @@ at index $i$, $1 \leq i \leq |s| -k +1$:
     parallel edges occurring in the multigraph DBG(s, k).
 \end{notte}
 
-de bruijn subgraph
-DBG(s,k)  = (V,E)
-
-V 0 alle k-mere von s
-
-Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
+% \frage{} Todo Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
 
 
-\section{Words with the same (k + 1)-mer Profile}
+\section{Words with the same (k + 1)-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
 info: für jeden DB Graph gibt es immer einen Eulerpfad
 
 \begin{exa} $\ $
-\begin{figure}{H}
+\begin{figure}[H]
     \begin{subfigure}{0.33\textwidth}
         \begin{tikzpicture}[
             node distance=2cm,
@@ -123,7 +122,7 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
         \end{tikzpicture}
         \caption{$x = GATTATTAATTACA, k = 3$}
     \end{subfigure}
-    \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}
+    \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:figure}
 \end{figure}
 \end{exa}
 
@@ -158,7 +157,7 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
             \draw[->] (aga) to[bend left=10] (gat);
 
         \end{tikzpicture}
-        \caption{It could also be on big circle.}
+        \caption{It could also be on big circle.}\label{fig:figure2}
     \end{figure}
 \end{exa}
 
@@ -178,7 +177,7 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
 
             \draw[->, WildStrawberry] (gat) to["GAAT"] (att);
 
-        \end{tikzpicture}
+        \end{tikzpicture}\label{fig:figure3}
     \end{figure}
 \end{kom}
 
@@ -191,8 +190,10 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
     mus es dann
     mehrere geben, eil da eine Schleife drin ist, abre NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
     Kanten, also gibt es nur einen (visualisieren) Man kann nicht unterscheiden, ob man zuerst die obere oder untere
-    Kante der Schleife zuerst gegangen ist. Gibt also nur eine sequenz mit em k+1 meer profil. Denn die Seuenz wird
-    ja aus den Knoten gemacht, nicht den Kanten...sozusagen.
+    Kante der Schleife zuerst gegangen ist.
+    Gibt also nur eine sequenz mit em k+1 meer profil.
+    Denn die Sequenz wird
+    ja aus den Knoten gemacht, nicht den Kanten\ldotssozusagen.
 \end{kom}
 
 \begin{kom}
@@ -200,7 +201,7 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
 \end{kom}
 
 
-\section{Variants of de Bruijn Graphs}
+\section{Variants of de Bruijn Graphs}\label{sec:variants-of-de-bruijn-graphs}
 
 \defin{origdb}
 
@@ -255,6 +256,6 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
 \end{exa}
 
 
-\section{Implementation of de Bruijn Graphs: Sets of k-mers}
+\section{Implementation of de Bruijn Graphs: Sets of k-mers}\label{sec:implementation-of-de-bruijn-graphs:-sets-of-k-mers}
 
 
