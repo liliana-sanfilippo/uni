@@ -103,22 +103,15 @@
 }
 
 \newcommand{\doubleunderlinecolor}[3]{%
-    \begingroup
-    \setulcolor{#1}%
-    \ul{%
-        \bgroup
-        \markoverwith{%
-            \textcolor{#2}{\rule[-0.8ex]{2pt}{0.4pt}}%
-        }\ULon{#3}%
-        \egroup
+        {%
+        \setulcolor{#1}%
+        \uline{#3}%
+        \llap{\raisebox{-1.2ex}{\textcolor{#2}{\rule{\widthof{#3}}{0.4pt}}}}%
     }%
-    \endgroup
 }
+
 \newcommand{\underlinecolor}[2]{%
-    \begingroup
-    \setulcolor{#1}%
-    \ul{#2}%
-    \endgroup
+        {\setulcolor{#1}\uline{#2}}%
 }
 
 \newcommand{\dbg}{\glssymbol{dbsg}}
