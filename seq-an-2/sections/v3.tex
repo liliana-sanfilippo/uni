@@ -266,7 +266,7 @@ Here we will discuss
 them and introduce a precise nomenclature.
 \defin{origdb}
 
-\begin{exa}
+\begin{exa} $\ $
     \begin{figure}[H]
         \centering
         \begin{subfigure}[t]{0.3\textwidth}
@@ -338,7 +338,9 @@ them and introduce a precise nomenclature.
     \end{figure}
 
     \begin{figure}[H]
+        \centering
         \begin{tikzpicture}[
+            scale=0.6,
             node distance=2cm,
             every node/.style={circle},
             label distance=2pt,
@@ -420,7 +422,7 @@ used in various contexts in bioinformatics like genome assembly and pangenomics.
 
 Therefore one prefers to identify a k-mer z with its reverse complement $\overleftarrow{z^{-1}}$
 and represent them by the same vertex in the graph:
-\begin{exa}
+\begin{exa} $\ $
     \begin{tikzpicture}[
         node distance=2cm,
         every node/.style={circle},
@@ -454,10 +456,10 @@ Such a non-branching path can be collapsed into a into single vertex (representi
 
 \defin{comdbsg}
 
-\begin{exa}
+\begin{exa} $\ $
     \begin{figure}[H]
         \centering
-        \begin{subfigure}[t]{0.3\textwidth}
+        \begin{subfigure}[t]{0.4\textwidth}
             \begin{tikzpicture}[
                 scale=0.6,
                 node distance=2cm,
@@ -489,7 +491,7 @@ Such a non-branching path can be collapsed into a into single vertex (representi
             \caption{}
         \end{subfigure}
         \hfill
-        \begin{subfigure}[t]{0.3\textwidth}
+        \begin{subfigure}[t]{0.4\textwidth}
             \begin{tikzpicture}[
                 scale=0.6,
                 node distance=2cm,
@@ -525,8 +527,36 @@ gets assigned a color set, indicating in which groups it appears and in which no
 
 \defin{coldbsg}
 
-\begin{exa}
-    zu coldbsg
+\begin{exa} $\ $
+    \begin{figure}[H]
+
+        \begin{tikzpicture}[
+            node distance=2cm,
+            every node/.style={circle},
+            label distance=2pt,
+            >=Stealth
+        ]
+            \node (gat) at (-3.31,-3.94) {GAT};
+            \node (aga) at (-4.31,-6) {AGA};
+            \node (tga) at (-2.31,-6) {TGA};
+            \node (att) at (-2.37,-1.37) {\doubleunderlinecolor{red}{blue}{ATT}};
+            \node (tta) at (0,0) {\doubleunderlinecolor{red}{blue}{TTA}};
+            \node (tac) at (2.37,-1.37) {\doubleunderlinecolor{red}{blue}{TAC}};
+            \node (aca) at (3.37,-3.94) {\underlinecolor{red}{ACA}};
+            \node (acg) at (1.37,-3.94) {\underlinecolor{blue}{ACG}};
+
+            \draw[->] (gat) to[bend left=10] (att);
+            \draw[->] (att) to[bend left=10] (tta);
+
+            \draw[->] (aga) to[bend left=10] (gat);
+            \draw[->] (tga) to[bend right=10] (gat);
+
+            \draw[->] (tta) to[bend left=10] (tac);
+            \draw[->] (tac) to[bend left=10] (aca);
+            \draw[->] (tac) to[bend right=10] (acg);
+
+        \end{tikzpicture}
+    \end{figure}
 \end{exa}
 
 \begin{prob}
