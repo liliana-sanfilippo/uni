@@ -260,7 +260,7 @@ In fact, there are more variants of
 de Bruijn graphs, and often they are also not named very carefully.
 Here we will discuss
 them and introduce a precise nomenclature.
-\defin{origdb}
+\deffin{origdb}
 
 \begin{exa}
     $\ $
@@ -626,10 +626,10 @@ perform the same procedure: We evaluate all hash functions in parallel, and if a
 point to T entries in the hash table, then it is very likely that the element $r$ has been
 stored in $B$:
 \[
-    \text{probably-contains}(B, $r$) = B[f_1 (r)] \land B[f_2 (r)] \land \cdots \land B[f_h (r)],
+    \text{probably-contains}(B, r) = B[f_1 (r)] \land B[f_2 (r)] \land \cdots \land B[f_h (r)],
 \]
 where $\land$ denotes logical AND. \\ \newline
-By the combination of several distinct hash functions, a $k$-mer $z$ (with $rank\ $r$ = rank(z)$)
+By the combination of several distinct hash functions, a $k$-mer $z$ (with $rank\ r = rank(z)$)
 will be reported as a false positive, although it has not been stored in the Bloom filter,
 only if all hash functions are involved in collisions, i.e., if for each of the $h$ hash values
 $f_i (r), 1 \leq i \leq h$, some other $k$-mer $z' \neq z$ produces with some hash function fi′ the same
