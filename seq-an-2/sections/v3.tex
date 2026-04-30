@@ -29,9 +29,35 @@ at index $i$, $1 \leq i \leq |s| -k +1$:
 
 % \frage{} Todo Wie viele k-mere hat eine Sequenz der Länge n sollte man wissen: n-k+1
 
+\komm{Für jeden DB Graph gibt es immer einen Eulerpfad}
 
 \section{Words with the same (k + 1)-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
-info: für jeden DB Graph gibt es immer einen Eulerpfad
+Motivated by the fact that the q-gram distance does not satisfy the identity property of
+a metric (see Section \ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same q-gram
+profile, we want to determine whether for a given sequence s and integer k there are other
+sequences that are distinct but have the same (k + 1)-mer profile as s. And, if there are,
+how many? \\ \newline
+For $k = 0$, the problem is trivial. Indeed, if a sequence t that is distinct from s corresponds
+to a permutation of the symbols of s, then s and t clearly share the same 1-mer profile. For
+$k \geq 1$, an elegant answer can be found with the help of the de Bruijn subgraph DBG(s, k). \\ \newline
+Clearly, by construction DBG(s, k) forms an Eulerian path $p_s$ , represented by its sequence
+of vertices
+\[
+    s_{k,1}, s_{k,2}, \dots, s_{k, |s| -k+1}.
+\]
+% TODO nochmal klären und erklären was dieses s-k+1 jetzt ist und woher das kommt
+Consequently DBG(s, k) is connected and balanced
+and might contain even more than one Eulerian path. In fact, there is a one-to-one
+correspondence between Eulerian paths in DBG(s, k) and sequences sharing the same
+(k + 1)-mer profile. In other words, a sequence t that is distinct but has the same (k + 1)-
+mer profile as s exists if and only if DBG(s, k) has another Eulerian path $p_t$ orresponding
+to the sequence of (k + 1)-mers of t. Since $p_t$ uses the same edges as $p_s$ n a different
+order, the path $p_t$ an only exist if DBG(s, k) contains a cycle. Note, however, that the
+presence of a cycle is not a sufficient condition. Indeed, it is possible that DBG(s, k)
+contains one or more cycles, but still admits only one Eulerian path. Some examples are
+given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
+
+
 
 \begin{exa} $\ $
 \begin{figure}[H]
@@ -56,7 +82,7 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
             \draw[->] (tac) to[bend left=10] (aca);
 
         \end{tikzpicture}
-        \caption{$x = GATTACA, k = 3$}
+        \caption{$x = GATTACA, k = 3$ - Since this graph contains no cycle, it has only one Eulerian path. There can be no other word sharing the same 4-mer profile.} \label{fig:example-dbgs-2-1-a}
     \end{subfigure}
     \begin{subfigure}{0.33\textwidth}
         \begin{tikzpicture}[
@@ -84,7 +110,8 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
             \draw[->] (tac) to[bend left=10] (aca);
 
         \end{tikzpicture}
-        \caption{$x = GATTATTACA,  k = 3$}
+        \caption{$x = GATTATTACA,  k = 3$ - Here the graph contains two cycles, but still only one Eulerian path. There is no other word sharing the same 4-mer profile.}
+        \label{fig:example-dbgs-2-1-b}
     \end{subfigure}
     \begin{subfigure}{0.33\textwidth}
         \begin{tikzpicture}[
@@ -120,9 +147,11 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
             \draw[->] (tac) to[bend left=10] (aca);
 
         \end{tikzpicture}
-        \caption{$x = GATTATTAATTACA, k = 3$}
+        \caption{$x = GATTATTAATTACA, k = 3$ - This graph contains several cycles and two distinct Eulerian paths. There is exactly one other word with the same 4-mer profile,
+            \texttt{GATTAATTATTACA}.}
+        \label{fig:example-dbgs-2-1-c}
     \end{subfigure}
-    \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:figure}
+    \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:example-dbgs-2-1}
 \end{figure}
 \end{exa}
 
@@ -185,15 +214,17 @@ info: für jeden DB Graph gibt es immer einen Eulerpfad
     Theorem 2.1 auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in DBG(s,k)
 \end{theo}
 
-\begin{kom}
-    man könnte bei bsp 2.1. denken hey bei a kann es nur einen EP geben, weil es kein Kreis ist, und bei 2b
-    mus es dann
-    mehrere geben, eil da eine Schleife drin ist, abre NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
-    Kanten, also gibt es nur einen (visualisieren) Man kann nicht unterscheiden, ob man zuerst die obere oder untere
+\begin{kom} \textbf{To figure \ref{fig:example-dbgs-2-1}}
+    man könnte bei fig \ref{fig:example-dbgs-2-1-a} denken hey bei a kann es nur einen EP geben, weil es kein Kreis
+    ist, und bei \ref{fig:example-dbgs-2-1-b}
+    muss es dann
+    mehrere geben, weil da eine Schleife drin ist, aber NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
+    Kanten, also gibt es nur einen. % todo (visualisieren)
+    Man kann nicht unterscheiden, ob man zuerst die obere oder untere
     Kante der Schleife zuerst gegangen ist.
     Gibt also nur eine sequenz mit em k+1 meer profil.
     Denn die Sequenz wird
-    ja aus den Knoten gemacht, nicht den Kanten\ldotssozusagen.
+    ja aus den Knoten gemacht, nicht den Kanten \ldots sozusagen.
 \end{kom}
 
 \begin{kom}
