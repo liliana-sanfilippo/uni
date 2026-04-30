@@ -102,7 +102,20 @@
     }
 }
 
-\newcommand{\dbg}{\glssymbol{gbsg}}
+\newcommand{\doubleunderlinecolor}[3]{%
+    \begingroup
+    \setulcolor{#1}%
+    \ul{%
+        \bgroup
+        \markoverwith{%
+            \textcolor{#2}{\rule[-0.8ex]{2pt}{0.4pt}}%
+        }\ULon{#3}%
+        \egroup
+    }%
+    \endgroup
+}
+
+\newcommand{\dbg}{\glssymbol{dbsg}}
 
 \newcommand{\pe}[0]{\glssymbol{wmaß}}
 \newcommand{\wfk}[0]{\glssymbol{wfk}}
