@@ -61,8 +61,9 @@ given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
 
 \begin{exa} $\ $
 \begin{figure}[H]
-    \begin{subfigure}{0.33\textwidth}
+    \begin{subfigure}[t]{0.3\textwidth}
         \begin{tikzpicture}[
+            scale=0.6,
             node distance=2cm,
             every node/.style={circle},
             label distance=2pt,
@@ -84,8 +85,10 @@ given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
         \end{tikzpicture}
         \caption{$x = GATTACA, k = 3$ - Since this graph contains no cycle, it has only one Eulerian path. There can be no other word sharing the same 4-mer profile.} \label{fig:example-dbgs-2-1-a}
     \end{subfigure}
-    \begin{subfigure}{0.33\textwidth}
+    \hfill
+    \begin{subfigure}[t]{0.3\textwidth}
         \begin{tikzpicture}[
+            scale=0.6,
             node distance=2cm,
             every node/.style={circle},
             label distance=2pt,
@@ -113,8 +116,10 @@ given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
         \caption{$x = GATTATTACA,  k = 3$ - Here the graph contains two cycles, but still only one Eulerian path. There is no other word sharing the same 4-mer profile.}
         \label{fig:example-dbgs-2-1-b}
     \end{subfigure}
-    \begin{subfigure}{0.33\textwidth}
+    \hfill
+    \begin{subfigure}[t]{0.3\textwidth}
         \begin{tikzpicture}[
+            scale=0.6,
             node distance=2cm,
             every node/.style={circle},
             label distance=2pt,
@@ -154,10 +159,10 @@ given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
     \caption{Examples of de Bruijn subgraphs for distinct sequences and k = 3.}\label{fig:example-dbgs-2-1}
 \end{figure}
 \end{exa}
-
 \begin{exa}
     \textbf{Additional example from lecture}
     \begin{figure}[H]
+        \centering
         \begin{tikzpicture}[
             node distance=2cm,
             every node/.style={circle},
@@ -190,56 +195,68 @@ given in Figures \ref{fig:example-dbgs-2-1} and % todo zweite figure
     \end{figure}
 \end{exa}
 
-\begin{kom}
+\kom{
     Reminder that the edges are basically this:
-    \begin{figure}[H]
-        \begin{tikzpicture}[
-            node distance=2cm,
-            every node/.style={circle},
-            label distance=2pt,
-            >=Stealth
-        ]
+    \begin{tikzpicture}[
+        scale=0.4,
+        node distance=2cm,
+        every node/.style={circle},
+        label distance=2pt,
+        >=Stealth
+    ]
 
-            \node (gat) at (-3.31,-3.94) {GAT};
-            \node (att) at (-2.37,-1.37) {ATT};
+        \node (gat) at (-3.31,-3.94) {GAT};
+        \node (att) at (-2.37,-1.37) {ATT};
 
 
-            \draw[->, WildStrawberry] (gat) to["GAAT"] (att);
+        \draw[->, WildStrawberry] (gat) to["GAAT"] (att);
 
-        \end{tikzpicture}\label{fig:figure3}
-    \end{figure}
-\end{kom}
+    \end{tikzpicture}\label{fig:figure3}
+}
 
+\kom{ \textbf{To figure \ref{fig:example-dbgs-2-1}}
+man könnte bei fig \ref{fig:example-dbgs-2-1-a} denken hey bei a kann es nur einen EP geben, weil es kein Kreis
+ist, und bei \ref{fig:example-dbgs-2-1-b}
+muss es dann
+mehrere geben, weil da eine Schleife drin ist, aber NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
+Kanten, also gibt es nur einen. % todo (visualisieren)
+Man kann nicht unterscheiden, ob man zuerst die obere oder untere
+Kante der Schleife zuerst gegangen ist.
+Gibt also nur eine sequenz mit em k+1 meer profil.
+Denn die Sequenz wird
+ja aus den Knoten gemacht, nicht den Kanten \ldots sozusagen.
+}
+
+
+% TODO De Bruijn subgraphs for the same sequence but with k varying from 3 to 1.
+
+
+\noindent We summarize the observations above in the following theorem.
 \begin{theo}
-    Theorem 2.1 auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in DBG(s,k)
+    Given a sequence s and an integer $k \geq 1$, the number of distinct sequences that have the same (k + 1)-mer profile as s equals the number of distinct Eulerian paths in
+    DBG(s, k). If DBG(s, k) is acyclic, it has a single Eulerian path, and no sequence t exists
+    that is distinct but has the same (k + 1)-mer profile as s.
+    \komm{Auf deutsch: \# worte mit gleichen (k+1)-mer Profil wie s = \# Euler-Pfade in DBG(s,k)}
 \end{theo}
 
-\begin{kom} \textbf{To figure \ref{fig:example-dbgs-2-1}}
-    man könnte bei fig \ref{fig:example-dbgs-2-1-a} denken hey bei a kann es nur einen EP geben, weil es kein Kreis
-    ist, und bei \ref{fig:example-dbgs-2-1-b}
-    muss es dann
-    mehrere geben, weil da eine Schleife drin ist, aber NEIN der Pfad ist die Reihenfolge der Knoten und nicht der
-    Kanten, also gibt es nur einen. % todo (visualisieren)
-    Man kann nicht unterscheiden, ob man zuerst die obere oder untere
-    Kante der Schleife zuerst gegangen ist.
-    Gibt also nur eine sequenz mit em k+1 meer profil.
-    Denn die Sequenz wird
-    ja aus den Knoten gemacht, nicht den Kanten \ldots sozusagen.
-\end{kom}
-
-\begin{kom}
-    Der Begriff dbg ist sehr dehnbar, es ist in der Literatur nicht immer das gleiche damit gemeint.
-\end{kom}
 
 
 \section{Variants of de Bruijn Graphs}\label{sec:variants-of-de-bruijn-graphs}
-
+\komm{Der Begriff dbg ist sehr dehnbar, es ist in der Literatur nicht immer das gleiche damit gemeint. Viele sagen
+dbg, wenn sie eigentlich dbsg meinen.}
+Although, strictly speaking, we consider most of the time de Bruijn subgraphs (for a given
+sequence), often they are just called de Bruijn graphs. In fact, there are more variants of
+de Bruijn graphs, and often they are also not named very carefully. Here we will discuss
+them and introduce a precise nomenclature.
 \defin{origdb}
 
 \begin{exa}
     zu origdb
 \end{exa}
 
+The \gls{dbsg} for a given sequence s of dimension k is the one that we
+introduced in Definition \ref{def:dbsg} It has several interesting properties (see Section 2.2) and is
+used in various contexts in bioinformatics like genome assembly and pangenomics.
 
 \begin{exa}
     zu dbsg
