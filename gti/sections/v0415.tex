@@ -116,7 +116,7 @@ Vorlesung verwenden. Zunächst geben wir einige Definitionen:
 \glspl{regA} werden bei der Textverarbeitung häufig benutzt.
 Es ist daher interessant, möglichst einfache \glspl{regA} für eine gegebene Sprache zu konstruieren.
 Ein Maß, das hier betrachtet wird, ist die so-genannte Sternhöhe, also die Anzahl ineinander verschachtelter Operatoren \kleene.
-Das Sternhöhenproblem war tatsächlich bis 1988 noch ungelöst; das ist die Frage, für eine gegebene Sprache einen \gls{regA}
+Das Sternhöhenproblem war tatsächlich bis 1988 noch ungelöst; das ist die Frage, für eine gegebene Sprache einen \glspldat{regA}
 zu finden mit möglichst wenig ineinander verschachtelten Operatoren \kleene.
 
 \subsection{Lineare Grammatiken}
@@ -127,12 +127,11 @@ zu finden mit möglichst wenig ineinander verschachtelten Operatoren \kleene.
 
 % Gimmick 15 Ó
 
-Kommen wir zu einem ``wüsten Beweis'', der \dativepl{regA} zu \glspl{rlinG} in Beziehung setzt (ein äquivalenter Beweis
-würde es erlauben, \glspl{llinG} zu \dativepl{regA} in Beziehung zu
+Kommen wir zu einem ``wüsten Beweis'', der \glspldat{regA} zu \glspl{rlinG} in Beziehung setzt (ein äquivalenter Beweis
+würde es erlauben, \glspl{llinG} zu \glspldat{regA} in Beziehung zu
 setzen, die Begriffe sind tatsächlich äquivalent):
 \begin{satz}
-    Eine Sprache L über $\Sigma$ ist regulär dann und nur dann, wenn es eine rechtslineare
-    Grammatik G gibt mit $L(G) = L$.
+    Eine Sprache L über $\Sigma$ ist regulär dann und nur dann, wenn es eine \gls{rlinG} G gibt mit $L(G) = L$.
     \paragraph{Beweise} Skript Seite 9--11.
 \end{satz}
 
@@ -142,6 +141,6 @@ setzen, die Begriffe sind tatsächlich äquivalent):
 
 \subsection{Strukturelle Eigenschaften}
 
-Für reguläre Sprachen gelten wichtige strukturelle Eigenschaften:
+Für \glspl{regS} gelten wichtige strukturelle Eigenschaften:
 
 \satzbeweis{strukregA}
