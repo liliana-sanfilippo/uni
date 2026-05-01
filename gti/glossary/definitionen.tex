@@ -5,6 +5,31 @@
     plural={plural}
 }
 
+\newglossaryentry{ableitbarAus}{
+    name={aus $\uu$ ableitbare Wörter},
+    description={todo},
+    plural={plural}
+}
+
+
+\newglossaryentry{ableitbarT}{
+    name={in $t \in \nz$ Schritten auseinander ableitbare Wörter},
+    description={todo},
+    plural={plural},
+    first={in $t \in \nz$ Schritten auseinander ableitbare Wörter}
+}
+
+\newglossaryentry{ableitbar}{
+    name={in einem Schritt ableitbar},
+    first={Wort $\vv \in \alf^{\kleene}$ in einem Schritt ableitbar aus Wort $\uu \in \alf^{\kleene}$}
+    description={Falls es eine \gls{rrsetzungsregel} $\ol{\alpha} ::= \ol{\beta}$ in $R$ gibt mit
+$\uu = \ol{u_1 \alpha u_2}$ und $\vv ::= \ol{u_1 \beta u_2}$. Das heißt, $\vv$ erhält man aus $\uu$, indem man das
+gemäß einer Ersetzungsregel das Teilwort $\ol{\alpha}$ mit dem Teilwort $\ol{\alpha}$ ersetzt.},
+    plural={plural},
+    symbol={todo S. 3}
+}
+
+
 \newglossaryentry{llinG}{
     name={linkslineare Grammatik},
     description={todo},
@@ -113,6 +138,7 @@
     accusative={regulären Ausdruck},
     genitive={regulären Ausdrucks},
     dative={regulären Ausdruck},
+    plural={reguläre Ausdrücke},
     nominativepl={reguläre Ausdrücke},
     accusativepl={reguläre Ausdrücke},
     genitivepl={regulärer Ausdrücke},
@@ -152,8 +178,8 @@
 
 \newglossaryentry{ersetzungsregel}{
     name={Ersetzungsregel},
-    first={Ersetzungsregel über ein \gls{alphabet} $\glssymbol{alphabet}$},
-    description={Ein Tupel von Worten $\ol{\alpha}, \ol{\beta} \in \Sigma^{\kleene}$},
+    first={Ersetzungsregel über einem \gls{alphabet} $\glssymbol{alphabet}$},
+    description={Ein Tupel von Worten $\ol{\alpha}, \ol{\beta} \in \Sigma^{\kleene}$, geschrieben als $\ol{\alpha} \coloneqq \ol{\beta}$},
     plural={Ersetzungsregeln}
 }
 
@@ -233,9 +259,11 @@ symbol={\ensuremath{\Sigma}}
 }
 
 \newglossaryentry{wsys}{
-    name={Wortersetzungssysteme},
-    description={todo},
-    type=defi
+    name={Wortersetzungssystem},
+    first={Wortersetzungssystem über einem \gls{alphabet} $\glssymbol{alphabet}$},
+    description={Eine endliche Menge R von Ersetzungsregeln über $\glssymbol{alphabet}$}
+    type=defi,
+    plural={Wortersetzungssysteme}
 }
 
 
