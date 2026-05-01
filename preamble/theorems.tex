@@ -138,6 +138,15 @@
     after skip=6pt
 }
 
+
+\newcommand{\satzbeweis}[1]{%
+    \begin{satz}\label{satz:#1}
+    \textbf{\gls*{#1}}\\
+    \glsdesc*{#1}
+    \paragraph{Beweis.} \glssymbol*{#1}
+    \end{satz}
+}
+
 \newtheorem{theo}{Theorem}[chapter]
 \tcolorboxenvironment{theo}{
     colback=bemf!05,
@@ -179,6 +188,23 @@
 
 \newtheorem{notation}{Notation}[chapter]
 \tcolorboxenvironment{notation}{
+    colback=defif!05,
+    colframe=defif,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+\newtheorem{konv}{Konvention}[chapter]
+\tcolorboxenvironment{konv}{
     colback=defif!05,
     colframe=defif,
     boxrule=1pt,

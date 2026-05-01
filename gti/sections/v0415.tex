@@ -70,11 +70,85 @@ Vorlesung verwenden. Zunächst geben wir einige Definitionen:
 \defin{postfix}
 \defin{monoid}
 \begin{satz}
-    us der Gleichheit uv = uw oder vu = wu folgt v = w % TODO
+    Aus der Gleichheit $\ol{uv} = \ol{uw}$ oder $\ol{vu} = \ol{wu}$ folgt $\vv = \ww$ % TODO
 \end{satz}
 \begin{notation}
+    Potenzen von Wörtern $\ww$ schreiben wir kurz als $\ww^k = \underbrace{\ww \dots \ww}_{k\ mal}$.
 \end{notation}
 
+% BSP 2 nicht hier
+
+\defin{wsys}
+
+\defin{ersetzungsregel}
+
+% BSP 4 fehlt
+
+\defin{formS}
+\defin{grammatik}
+\defin{erzS}
+\defin{äquivalenz}
+\defin{formR}
+
+% Beispiel 7
+
+% TODO Chomsky Hierachie
+
+% GIMMIK 8
+
+\section{Reguläre Sprachen}
+
+\defin{verkettung}
+\defin{kleene}
+\defin{potenz}
+
+\defin{regA}
+
+\begin{konv}
+    Wie in anderen Programmiersprachen üblich vereinbaren wir noch ein paar Kurzformen.
+    Sei A ein \gls{regA} über dem \gls{alphabet}
+    $\glssymbol{alphabet} =  \{a_1, \dots, a_n\} $, dann ist:
+\end{konv}
+\defin{regS}
+
+% Beispiel 13
+
+\glspl{regA} werden bei der Textverarbeitung häufig benutzt.
+Es ist daher interessant, möglichst einfache \glspl{regA} für eine gegebene Sprache zu konstruieren.
+Ein Maß, das hier betrachtet wird, ist die so-genannte Sternhöhe, also die Anzahl ineinander verschachtelter Operatoren \kleene.
+Das Sternhöhenproblem war tatsächlich bis 1988 noch ungelöst; das ist die Frage, für eine gegebene Sprache einen \gls{regA}
+zu finden mit möglichst wenig ineinander verschachtelten Operatoren \kleene.
+
+\subsection{Lineare Grammatiken}
+
+\defin{linG}
+\defin{rlinG}
+\defin{llinG}
+
+% Gimmick 15 Ó
+
+Kommen wir zu einem ``wüsten Beweis'', der \glspl{regA} zu \glspl{rlinG} in Beziehung setzt (ein äquivalenter Beweis
+würde es erlauben, linkslineare Grammatiken zu regulären Ausdrücken in Beziehung zu
+setzen, die Begriffe sind tatsächlich äquivalent):
+\begin{satz}
+    Eine Sprache L über $\Sigma$ ist regulär dann und nur dann, wenn es eine rechtslineare
+    Grammatik G gibt mit $L(G) = L$.
+    \paragraph{Beweise} Skript Seite 9--11.
+\end{satz}
+
+% Beispiel 17
+
+% Gimmick 18
+
+\subsection{Strukturelle Eigenschaften}
+
+Für reguläre Sprachen gelten wichtige strukturelle Eigenschaften:
+
+\begin{satz}
+
+ ...
+\end{satz}
+
+\satzbeweis{pumping-lemma}
 
 
-\defin{wortersetzungssystem}
