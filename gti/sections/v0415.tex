@@ -75,17 +75,66 @@ Vorlesung verwenden. Zunächst geben wir einige Definitionen:
 \begin{notation}
     Potenzen von Wörtern $\ww$ schreiben wir kurz als $\ww^k = \underbrace{\ww \dots \ww}_{k\ mal}$.
 \end{notation}
+\begin{bsp}
+    Zu Definition \ref{def:alphabet}. \\
+    $\{\un{0}, \un{1}\}$, $\{\un{a}, \un{b}, \un{c}\}$, $\{\un{4711}, \un{ha}, \un{ende}\}$ sind \glspl{alphabet}, wobei jeder
+    Eintrag als ein untrennbares Zeichen gewertet wird.
 
-% BSP 2 nicht hier
+    $\{\un{0}, \un{1}, \un{2}, \un{3}, \dots\}$, ist kein gültiges \gls{alphabet}, weil die Menge unendlich groß ist.
+
+    $\{\un{a}, \un{aa}, \un{aaa}\}$ ist zwar ein gültiges \gls{alphabet} nach unserer Definition, aber nicht
+    empfehlenswert, weil es keine eindeutige Identifikation der Zeichen erlaubt.
+\end{bsp}
+\begin{bsp} Zu Definition \autoref{def:allewörterlänge}  \namref{def:allewörterlänge}. \\
+Alle Wörter über dem Alphabet $\{\un{0}, \un{1}\}$ der Länge maximal 3, aufgeschrieben in
+lexikographischer Reihenfolge, sind
+\[
+    \glssymbol{leereswort}, \un{0}, \un{1}, \un{00}, \un{01}, \un{10}, \un{11}, \un{000}, \un{001}, \un{010}, \un{100}, \un{011}, \un{110}, \un{101}, \un{111}
+\]
+\end{bsp}
+\begin{notation}
+    Um besser zwischen Variablen und Konstanten zu unterscheiden, schreiben wir konstante Wörter and Symbole
+    unterstrichen und aufrecht (etwa \textbf{\underline{bla}}).
+    Variablen schreiben wir stattdessen kursiv.
+    Außerdem heben wir Wortvariablen, ähnlich zu Vektoren in der linearen Algebra, durch einen Überstrich hervor (
+    etwa $\ww$).
+\end{notation}
+
 
 \deffin{wsys}
+
+\begin{bem}
+    Für den Begriff ``Ersetzungsregel'' gibt
+    es reichlich Synonyme, z.B. ``Regel'',
+    ``Grammatikregel'',
+    ``Substitution'', ``Produktionsregel'' und
+    ``Produktion''. Dementsprechend wird ein
+    Wortersetzungssystem
+    auch häufig ``Regelmenge'' oder ``Produktionen'' genannt
+\end{bem}
 
 \deffin{ersetzungsregel}
 
 \deffin{ableitbar}
 
+\begin{bem}
+    Falls das Wortersetzungssystem für
+    die Ableitung aus
+    dem Kontext klar
+    ist, schreiben wir
+    $\rightarrow_R$ auch als $\rightarrow$
+\end{bem}
+
+Diese Relation gibt Anlass zu ihrer transitiven Hülle der in $t \in \nz$ Schritten
+auseinander ableitbaren Wörter. Wir definieren:
 \deffin{ableitbarT}
 
+Die transitive Hülle ist dann gegeben als die Menge
+\[
+    \{
+    (\uu, \vv) \mid \uu % todo
+    \}
+\]
 \begin{notation}
     Falls für irgendein % Todo S3
 \end{notation}
@@ -106,6 +155,7 @@ Vorlesung verwenden. Zunächst geben wir einige Definitionen:
 % TODO Chomsky Hierachie
 
 % GIMMIK 8
+
 
 \section{Reguläre Sprachen}
 
@@ -143,6 +193,7 @@ würde es erlauben, \glspl{llinG} zu \glspldat{regA} in Beziehung zu
 setzen, die Begriffe sind tatsächlich äquivalent):
 \begin{satz}
     Eine Sprache L über $\Sigma$ ist regulär dann und nur dann, wenn es eine \gls{rlinG} G gibt mit $L(G) = L$.
+
     \paragraph{Beweise} Skript Seite 9--11.
 \end{satz}
 
