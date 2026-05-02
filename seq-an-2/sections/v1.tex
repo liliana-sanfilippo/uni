@@ -29,8 +29,8 @@ Remember that for $q \in N$, a \gls{q-gram} is a string of length q.
 \txc{Wir reden hier über überlappende \gls{q-gram}me!}
 
 \defin{occurrence count}
-\defin{\gls{q-gram} profile}
-\defin{\gls{q-gram} distance}
+\defin{q-gram profile}
+\defin{q-gram distance}
 
 \begin{exa} \label{exa:example-1-1}
 Consider $\sum = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
@@ -46,7 +46,7 @@ The \gls{q-gram distance} $\dq$ is a pseudo-metric.
 \end{theo}
 
 \subsection{Practical Computation}\label{subsec:practical-computation}
-If the \gls{\gls{q-gram} profile} of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it
+If the \gls{q-gram profile} of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it
 makes sense to implement it as an array $p[0 \cdots \sum^q - 1]$, where $p[i]$ counts the number of occurrences of the
 i-th \gls{q-gram} in some arbitrary but fixed (e.g.\ lexicographic) order.
 
