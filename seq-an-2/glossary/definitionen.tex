@@ -49,25 +49,26 @@ type=defi
 
 \newglossaryentry{ranking function}{
 name={ranking function},
-description={},
-type=defi
+description={A bijective function $r: \mathcal{X} \rightarrow [0, |\mathcal{X}|-1]$ for a finite set $\mathcal{X}$},
+type=defi,
+symbol={\ensuremath{r}}
 }
 
 \newglossaryentry{unranking function}{
 name={unranking function},
-description={},
+description={The inverse of a \gls{ranking function}},
 type=defi
 }
 
 \newglossaryentry{ranking algorithm}{
 name={ranking algorithm},
-description={},
+description={An algorithm that implements a \gls{ranking function}},
 type=defi
 }
 
-\newglossaryentry{unranking algorithm}{
+\newglossaryentry{unranking algorithm}
 name={unranking algorithm},
-description={},
+description={An algorithm that implements a \gls{unranking function}},
 type=defi
 }
 
@@ -110,14 +111,16 @@ The q-gram distance of $x \in \sum^m$ and $y \in \sum^n$ is defined for $1 \leq 
 \[d_q(x, y) := \sum_{z\in\sum^q}
 |p_q(x)_z - p_q(y)_z |
 \]},
-type=defi
+type=defi,
+symbol={\ensuremath{d_q}}
 }
 
 
 
 \newglossaryentry{alignment distance}{
 name={alignment distance},
-description={The alignment distance of two sequences $x,y \in \sum^*$ is defined as $d(x, y) := min{cost(A) : A \in \mathcal{A}* \text{ is an alignment of } x \text{ and } y}$},
+description={The alignment distance of two sequences $x,y \in \sum^*$ is defined as $d(x, y) := min\{cost(A) :
+A \in \mathcal{A}*$  is an alignment of  $x$  and $y\}$},
 type=defi
 }
 
