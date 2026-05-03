@@ -42,7 +42,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 | Abschnitt Skript | In Notizen | 
 |------------------|------------|
-| 1                |            |
+| 1                | 1.1 fertig |
 | 2                |            |
 | 3                |            |
 
