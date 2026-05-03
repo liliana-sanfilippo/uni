@@ -4,6 +4,22 @@
     type=defi
 }
 
+\newglossaryentry{ltrpartition}{
+    name={left-to-right partition},
+    first={left-to-right partition of $x$ with respect to $y$},
+    description={},
+    symbol={\ensuremath{P_{LR}}}
+    type=defi
+}
+
+\newglossaryentry{rtlpartition}{
+    name={right-to-left partition},
+    first={right-to-left partition of $x$ with respect to $y$},
+    description={},
+    symbol={\ensuremath{P_{RL}}},
+    type=defi
+}
+
 \newglossaryentry{dimension}{
     name={dimension of a \gls{dbsg}},
     description={},
@@ -62,13 +78,13 @@ type=defi
 
 \newglossaryentry{ranking algorithm}{
 name={ranking algorithm},
-description={An algorithm that implements a \gls{ranking function}},
+description={An algorithm that implements a \gls{rankfun}},
 type=defi
 }
 
 \newglossaryentry{unranking algorithm}{
 name={unranking algorithm},
-description={An algorithm that implements a \gls{unranking function}},
+description={An algorithm that implements a \gls{unrankfun}},
 type=defi
 }
 
@@ -135,6 +151,8 @@ type=defi
 
 \newglossaryentry{mmdis}{
 name={maximal matches distance},
-description={test},
-type=defi
+first={maximal matches distance to $x$ from $y$}
+description={$\delta (x||y) := min\{|P | : P$ is a partition of $x$  with respect to $y\}$ },
+type=defi,
+symbol={\ensuremath{\delta}}
 }

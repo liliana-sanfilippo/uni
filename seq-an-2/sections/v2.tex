@@ -11,18 +11,161 @@ sequence (and vice versa) that are interspersed with single characters.
 such that each $z_i$ is a (possibly empty) string (for $0 \leq i \leq l$) and each $b_i$ is a single
 character (for $1 \leq i \leq l$). The tuple 
 $P = (z_0 , \langle b_1 \rangle , z_1 , \langle b_2 \rangle , \dots, z_{l-1} , \langle b_l \rangle , z_l )$ is a partition
-of $x$ with respect to another sequence $y$ if each $z_i$ is also a substring of $y$. The size of
+of $x$ with respect to another sequence $y$ if each $z_i$ is also a substring of $y$.
+The size of
 the partition $P$ , denoted by $|P|$, is the number of its separating single characters, that is, $|P| = l$.
 Note that, if $x$ is a substring of $y$, there exists the shortest partition $P_0 = (x)$, of
 size 0.
 In the other extreme, the longest partition $P_m = (\epsilon, \langle x[1]\rangle , \epsilon, \lange x[2]\rangle , \dots , \langle x[m]\rangle , \epsilon)$
 of size $m$ always exists, even if $y = \epsilon$.
 
+\begin{exa}
+    Let $x = CTAATGCT$ and $y = ATCTA$.
+    The following sequences are partitions of
+    $x$ with respect to $y$: $P = (CTA, \langle A\rangle , T, \langle G\rangle , CT)$ with $P | = 2, P ' = (CTA, \langle A\rangle , T, \langle G\rangle , C, \langle T\rangle , \epsilon)$ with
+    $|P ' | = 3$ and $P '' = (CT, \langle A\rangle , AT, \langle G\rangle , CT)$ with $|P '' | = 2$.
+\end{exa}
+
+\deffin{mmdis}
+
 \subsection{Efficient Computation}\label{subsec:efficient-computation}
+The next question is how to find a minimum size partition of $x$ with respect to $y$ among
+all the partitions.
+Fortunately, this turns out to be easy: A greedy strategy does the
+job.
+We start covering $x$ at the first position by a match of maximal length k such that
+$z_0 \coloneqq x[1 \dots k]$ is a substring of $y$, but $z_0 b_1 = x[1 \dots k + 1]$ is not a substring of $y$.
+We apply the same strategy to the remainder of $x$, $x[k + 2 \dots m]$.
+
+\deffin{ltrpartition}
+
+\deffin{rtlpartition}
+
+\begin{theo} \label{thm:theorem-1-3}
+    The \gls{ltrpartition} is a partition of minimal length, i.e.,
+    \begin{center}
+        $|\glssymbol{ltrpartition} (x, y)| = \min\{|P | : P $is a partition of $x$ with respect to $y\} = \mmsym(x||y)$.
+    \end{center}
+    The same is true for the \gls{rtlpartition}, which means:
+    \[
+        |\glssymbol{rtlpartition} (x, y)| = |\glssymbol{ltrpartition} (x, y)| = \mmsym (x||y).
+    \]
+    \paragraph{Proof.} Skript S. 7 % TODO
+\end{theo}
+It is important to discuss how (and how fast) we can compute the size of a \deffin{ltrpartition}.
+In fact, because the longest common substring $z$ that starts at a given position
+$i$ in $x$ and occurs somewhere in $y$ can easily be found in $O(|z|)$ time using the suffix tree
+of $y$, we obtain the following result.
+
+\begin{theo} \label{thm:theorem-1-4}
+    The maximal matches distance $\mmsym(x||y)$ to a sequence $x$ from another sequence
+    $y$ can be computed in $ O(|x| + |y|)$ time.
+    \paragraph{Proof.} Skript S. 8 % TODO
+\end{theo}
 
 \subsection{Relation to the Edit Distance}\label{subsec:relation-to-the-edit-distance}
 
-\subsection{Maximal Matches Metric}\label{subsec:maximal-matches-metric}
+Like the \gls{qgdis}, also the maximal matches distance can be used to compute a
+lower bound of the \gls{edis}.
 
+\begin{theo} \label{thm:theorem-1-5}
+    Let $d(x, y)$ be the unit cost edit distance between sequences $x$ and $y$.
+    Then $\mmsym(x||y) \leq d(x, y)$.
+    \paragraph{Proof.} Skript S. 8 % TODO
+\end{theo}
+
+Again, this bound permits us to speed up the computation of the \gls{edis}, as will be
+shown in Section~\ref{subsec:maximal-matches-metric}.
+
+\subsection{Maximal Matches Metric}\label{subsec:maximal-matches-metric}
+A final observation is that $\mmsym$ is obviously not symmetric: $\mmsym(x||y)  = 0$ is equivalent to
+$x$ being a substring of $y$.
+Therefore, the maximal matches distance is not a metric and the name distance is misleading.
+But it is possible to use $\mmsym$ for designing an appropriate
+symmetric function that satisfies the triangular inequality and is a metric.
+
+\begin{theo} \label{thm:theorem-1-6}
+    Given sequences $x$ and $y$ from $\Sigma^*$, let the function $d_{||} (x, y)$ defined as
+    $d_{||} (x, y) = \log(\mmsym(x||y)+1) + \log(\mmsym(y||x)+1)$.
+    Then $d_{||} (x, y)$ is a metric on $\Sigma^*$.
+    \paragraph{Proof.} Skript S. 8 % TODO
+\end{theo}
 
 \section{Filtration for Edit Distance}\label{sec:filtration-for-edit-distance}
+Coming back to the edit distance, while – given the fact that the search space (consisting
+of all pairwise alignments of $x$ and $y$) is of exponential size – the quadratic time dynamic
+programming solution can be considered very efficient, it can also be considered quite
+slow in practice when the sequences are long.
+Moreover, the quadratic space requirements
+(unless a space-saving technique is used that we will discuss in Chapter 6) can cause even
+larger problems. % TODO chapter ref
+
+Now, remember that in many applications the goal of sequence comparison is not the
+construction of an accurate alignment.
+Instead, for example in a database search context,
+one is mostly interested in identifying sequences similar to a given query.
+More formally:
+
+\begin{prob}
+    Given a database $X = {x_1 , x_2 , \dots , x_k }$ of $k$ sequences $x_i \in \Sigma^*$,
+    a query sequence $y \in \Sigma^*$ and a distance threshold $t \geq 0$, find all
+    sequences $x \in X$ such that $d(x, y) \leq t$.
+\end{prob}
+
+Clearly, a straightforward way to solve this problem is to compare $y$ to each sequence
+$x \in X$, one after the other.
+Whenever in such a comparison the distance $d(x, y)$ is smaller
+or equal to the threshold $t$, then the sequence $x$ is reported, otherwise it is discarded.
+This strategy clearly takes $O(k \cdot mn)$ time, where $m$ is an upper bound for the database
+sequence length and $n = |y|$.
+
+However, since usually $t$ is small and many sequences in $x$ will be quite dissimilar from
+$y$,it may be possible to quickly screen the database and separate interesting candidates
+from irrelevant sequences, faster than computing the edit distance for all of them.
+If such
+a screening procedure guarantees that all relevant sequences $x \in X$ with $d(x, y) \leq t$ are
+among the remaining candidates, it is called a filter.
+Generally, we thus have a two-step procedure.
+First, in a fast filtration step, candidates
+are identified that have a chance to be hits.
+Then, in a verification step these candidates
+are checked with the (usually slower) exact method whether they really qualify as hits.
+Obviously, filtration makes sense only if the procedure employed in the filtration step has
+a lower time complexity than the procedure used in the verification step.
+Indeed, if one has multiple filters, one can first apply all of them, and then employ the
+verification only to those elements $x \in X$ that pass all the filters.
+In the previous sections we have seen two fast sequence comparison methods that can be
+used as filters for the unit cost edit distance.
+Both of them require only time proportional
+to the sum of the lengths of the two sequences (“linear time”) and provide lower bounds
+for the edit distance.
+
+\paragraph{Filtration with the \gls{qdis}.} The property outlined in Theorem~\ref{thm:theorem-1-2} can be used
+as a filter criterion for the edit distance: For a given query sequence $y$ and edit distance
+threshold t, and a given value of q, a database sequence $x \in X$ can be discarded whenever
+$\dq (x, y)/(2q) > t$.
+In case of a global similarity of the sequences and the differences spread
+out evenly, this filter will work quite well.
+If the difference between the two sequences,
+however, is by block movements, then the edit distance is usually very high, although the
+\gls{qdis} may still be low and produce a false positive candidate when used as a
+filter.
+
+
+\paragraph{Filtration with the maximal matches distance.} As shown in Theorem~\ref{thm:theorem-1-5}, the maximal
+matches distance also gives us a bound for the unit cost edit distance.
+In fact, since the
+edit distance is symmetric, the filtration can even be used twice, once with $d(x||y)$ and
+once with $d(y||x)$.
+This results in the following filter: For a given query sequence $y$ and edit
+distance threshold $t$, a database sequence $x \in X$ can be discarded whenever $\mmsym(x||y) >t$ or
+$\mmsym(y||x) > t$.
+
+Note that the distinguishing feature of a filter is that it never discards a hit (has no false
+negatives).
+On the other hand, one can also develop heuristics that approximate the edit
+distance and are efficiently computable.
+Good heuristics (like BLAST) will be close to the
+true result with high probability; hence the error made by using them is small most of the
+time.
+There is no guarantee, though, that a true hit will not be missed.
