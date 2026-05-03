@@ -140,7 +140,7 @@ Both of them require only time proportional
 to the sum of the lengths of the two sequences (“linear time”) and provide lower bounds
 for the \gls{edis}.
 
-\paragraph{Filtration with the \gls{qdis}.} The property outlined in Theorem~\ref{thm:theorem-1-2} can be used
+\paragraph{Filtration with the \gls{qgdis}.} The property outlined in Theorem~\ref{thm:theorem-1-2} can be used
 as a filter criterion for the \gls{edis}: For a given query sequence $y$ and \gls{edis}
 threshold t, and a given value of q, a database sequence $x \in X$ can be discarded whenever
 $\dq (x, y)/(2q) > t$.
@@ -148,7 +148,7 @@ In case of a global similarity of the sequences and the differences spread
 out evenly, this filter will work quite well.
 If the difference between the two sequences,
 however, is by block movements, then the \gls{edis} is usually very high, although the
-\gls{qdis} may still be low and produce a false positive candidate when used as a
+\gls{qgdis} may still be low and produce a false positive candidate when used as a
 filter.
 
 
