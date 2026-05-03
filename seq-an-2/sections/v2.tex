@@ -58,18 +58,18 @@ $i$ in $x$ and occurs somewhere in $y$ can easily be found in $O(|z|)$ time usin
 of $y$, we obtain the following result.
 
 \begin{theo} \label{thm:theorem-1-4}
-    The maximal matches distance $\mmsym(x||y)$ to a sequence $x$ from another sequence
+    The \gls{mmdis} $\mmsym(x||y)$ to a sequence $x$ from another sequence
     $y$ can be computed in $ O(|x| + |y|)$ time.
     \paragraph{Proof.} Skript S. 8 % TODO
 \end{theo}
 
 \subsection{Relation to the Edit Distance}\label{subsec:relation-to-the-edit-distance}
 
-Like the \gls{qgdis}, also the maximal matches distance can be used to compute a
+Like the \gls{qgdis}, also the \gls{mmdis} can be used to compute a
 lower bound of the \gls{edis}.
 
 \begin{theo} \label{thm:theorem-1-5}
-    Let $d(x, y)$ be the unit cost edit distance between sequences $x$ and $y$.
+    Let $d(x, y)$ be the unit cost \gls{edis} between sequences $x$ and $y$.
     Then $\mmsym(x||y) \leq d(x, y)$.
     \paragraph{Proof.} Skript S. 8 % TODO
 \end{theo}
@@ -80,7 +80,7 @@ shown in Section~\ref{subsec:maximal-matches-metric}.
 \subsection{Maximal Matches Metric}\label{subsec:maximal-matches-metric}
 A final observation is that $\mmsym$ is obviously not symmetric: $\mmsym(x||y)  = 0$ is equivalent to
 $x$ being a substring of $y$.
-Therefore, the maximal matches distance is not a metric and the name distance is misleading.
+Therefore, the \gls{mmdis} is not a metric and the name distance is misleading.
 But it is possible to use $\mmsym$ for designing an appropriate
 symmetric function that satisfies the triangular inequality and is a metric.
 
@@ -92,7 +92,7 @@ symmetric function that satisfies the triangular inequality and is a metric.
 \end{theo}
 
 \section{Filtration for Edit Distance}\label{sec:filtration-for-edit-distance}
-Coming back to the edit distance, while – given the fact that the search space (consisting
+Coming back to the \gls{edis}, while – given the fact that the search space (consisting
 of all pairwise alignments of $x$ and $y$) is of exponential size – the quadratic time dynamic
 programming solution can be considered very efficient, it can also be considered quite
 slow in practice when the sequences are long.
@@ -121,7 +121,7 @@ sequence length and $n = |y|$.
 
 However, since usually $t$ is small and many sequences in $x$ will be quite dissimilar from
 $y$,it may be possible to quickly screen the database and separate interesting candidates
-from irrelevant sequences, faster than computing the edit distance for all of them.
+from irrelevant sequences, faster than computing the \gls{edis} for all of them.
 If such
 a screening procedure guarantees that all relevant sequences $x \in X$ with $d(x, y) \leq t$ are
 among the remaining candidates, it is called a filter.
@@ -135,27 +135,27 @@ a lower time complexity than the procedure used in the verification step.
 Indeed, if one has multiple filters, one can first apply all of them, and then employ the
 verification only to those elements $x \in X$ that pass all the filters.
 In the previous sections we have seen two fast sequence comparison methods that can be
-used as filters for the unit cost edit distance.
+used as filters for the unit cost \gls{edis}.
 Both of them require only time proportional
 to the sum of the lengths of the two sequences (“linear time”) and provide lower bounds
-for the edit distance.
+for the \gls{edis}.
 
 \paragraph{Filtration with the \gls{qdis}.} The property outlined in Theorem~\ref{thm:theorem-1-2} can be used
-as a filter criterion for the edit distance: For a given query sequence $y$ and edit distance
+as a filter criterion for the \gls{edis}: For a given query sequence $y$ and \gls{edis}
 threshold t, and a given value of q, a database sequence $x \in X$ can be discarded whenever
 $\dq (x, y)/(2q) > t$.
 In case of a global similarity of the sequences and the differences spread
 out evenly, this filter will work quite well.
 If the difference between the two sequences,
-however, is by block movements, then the edit distance is usually very high, although the
+however, is by block movements, then the \gls{edis} is usually very high, although the
 \gls{qdis} may still be low and produce a false positive candidate when used as a
 filter.
 
 
-\paragraph{Filtration with the maximal matches distance.} As shown in Theorem~\ref{thm:theorem-1-5}, the maximal
-matches distance also gives us a bound for the unit cost edit distance.
+\paragraph{Filtration with the \gls{mmdis}.} As shown in Theorem~\ref{thm:theorem-1-5}, the maximal
+matches distance also gives us a bound for the unit cost \gls{edis}.
 In fact, since the
-edit distance is symmetric, the filtration can even be used twice, once with $d(x||y)$ and
+\gls{edis} is symmetric, the filtration can even be used twice, once with $d(x||y)$ and
 once with $d(y||x)$.
 This results in the following filter: For a given query sequence $y$ and edit
 distance threshold $t$, a database sequence $x \in X$ can be discarded whenever $\mmsym(x||y) >t$ or
