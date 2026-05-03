@@ -4,17 +4,19 @@
 %bis ende section 1 ging das 6--10
 
 \section{The Maximal Matches Distance}\label{sec:the-maximal-matches-distance}
-Another notion of distance that admits large block movements is the maximal matches
-distance.
-It is based on the idea that we can cover a sequence x with substrings of another
+Another notion of distance that admits large block movements is the \gls{mmdis}.
+It is based on the idea that we can cover a sequence $x$ with substrings of another
 sequence (and vice versa) that are interspersed with single characters.
 \paragraph{Partitioning a sequence.} Consider a sequence $x = z_0 b_1 z_1 b_2 \dots z_{l-1} b_l z_l$, with $|x| = m$,
 such that each $z_i$ is a (possibly empty) string (for $0 \leq i \leq l$) and each $b_i$ is a single
 character (for $1 \leq i \leq l$). The tuple 
 $P = (z_0 , \langle b_1 \rangle , z_1 , \langle b_2 \rangle , \dots, z_{l-1} , \langle b_l \rangle , z_l )$ is a partition
-of x with respect to another sequence y if each $z_i$ is also a substring of y. The size of
-the partition P , denoted by $|P|$, is the number of its separating single characters, that is, $|P| = l$.
-Note that, if x is a substring of y, there exists the shortest partition $P-0 = (x)$
+of $x$ with respect to another sequence $y$ if each $z_i$ is also a substring of $y$. The size of
+the partition $P$ , denoted by $|P|$, is the number of its separating single characters, that is, $|P| = l$.
+Note that, if $x$ is a substring of $y$, there exists the shortest partition $P_0 = (x)$, of
+size 0.
+In the other extreme, the longest partition $P_m = (\epsilon, \langle x[1]\rangle , \epsilon, \lange x[2]\rangle , \dots , \langle x[m]\rangle , \epsilon)$
+of size $m$ always exists, even if $y = \epsilon$.
 
 \subsection{Efficient Computation}\label{subsec:efficient-computation}
 

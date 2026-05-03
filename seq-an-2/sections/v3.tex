@@ -2,7 +2,7 @@
 %! Date = 4/30/26
 
 
-A note on terminology: In Section~\ref{sec:the-q-gram-distance} we were speaking of \glspl{q-gram} when referring to short (sub)strings of a certain length $q$.
+A note on terminology: In Section~\ref{sec:the-q-gram-distance} we were speaking of \glspl{qgram} when referring to short (sub)strings of a certain length $q$.
 This notation has originally been introduced in the computer science literature and is there in use until today.
 An alternative, equivalent notion that one finds in most of the biological\footnote{The true origin is probably in biochemistry, where notions like monomer or polymer refer to molecular chains of certain lengths.} and bioinformatics literature, is that of a $k$-mer.
 Here $k$ refers to the (sub)string length.
@@ -29,7 +29,7 @@ at index $i$, $1 \leq i \leq |s| -k +1$:
 
 
 \section{Words with the same ( $k+1$ )-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
-Motivated by the fact that the \gls{q-gram distance} does not satisfy the identity property of a metric (see Section~\ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same \gls{q-gram profile}, we want to determine whether for a given sequence $s$ and integer $k$there are other sequences that are distinct but have the same ( $k+1$ )-mer profile as $s$.
+Motivated by the fact that the \gls{qgdis} does not satisfy the identity property of a metric (see Section~\ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same \gls{q-gram profile}, we want to determine whether for a given sequence $s$ and integer $k$there are other sequences that are distinct but have the same ( $k+1$ )-mer profile as $s$.
 And, if there are, how many? \\ \newline
 
 For $k = 0$, the problem is trivial.

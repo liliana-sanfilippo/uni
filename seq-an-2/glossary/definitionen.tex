@@ -47,14 +47,14 @@ type=defi
 }
 
 
-\newglossaryentry{ranking function}{
+\newglossaryentry{rankfun}{
 name={ranking function},
 description={A bijective function $r: \mathcal{X} \rightarrow [0, |\mathcal{X}|-1]$ for a finite set $\mathcal{X}$},
 type=defi,
 symbol={\ensuremath{r}}
 }
 
-\newglossaryentry{unranking function}{
+\newglossaryentry{unrankfun}{
 name={unranking function},
 description={The inverse of a \gls{ranking function}},
 type=defi
@@ -79,7 +79,7 @@ type=defi
 }
 
 
-\newglossaryentry{q-gram}{
+\newglossaryentry{qgram}{
 name={$q$-gram},
 description={},
 type=defi
@@ -98,13 +98,13 @@ type=defi
 }
 
 
-\newglossaryentry{q-gram profile}{
+\newglossaryentry{qgprof}{
 name={q-gram profile},
 description={Let $\sigma = |\sum|$. The q-gram profile of x is a $\sigma^q$-element vector $p_q(x) := (p_q(x)_z)_{z\in\sum^q}$, indexed by all q-grams, defined by $p_q(x)_z := Occ(x, z)$},
 type=defi
 }
 
-\newglossaryentry{q-gram distance}{
+\newglossaryentry{qgdis}{
 name={q-gram distance},
 description={
 The q-gram distance of $x \in \sum^m$ and $y \in \sum^n$ is defined for $1 \leq q \leq min\{m, n\}$ as
@@ -112,7 +112,8 @@ The q-gram distance of $x \in \sum^m$ and $y \in \sum^n$ is defined for $1 \leq 
 |p_q(x)_z - p_q(y)_z |
 \]},
 type=defi,
-symbol={\ensuremath{d_q}}
+symbol={\ensuremath{d_q}},
+altsymbol={d}
 }
 
 
@@ -126,8 +127,14 @@ type=defi
 
 
 
-\newglossaryentry{edit distance}{
+\newglossaryentry{edis}{
 name={edit distance},
+description={test},
+type=defi
+}
+
+\newglossaryentry{mmdis}{
+name={maximal matches distance},
 description={test},
 type=defi
 }

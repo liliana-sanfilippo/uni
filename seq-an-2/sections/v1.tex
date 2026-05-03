@@ -1,96 +1,96 @@
-The \gls{edit distance} (or \gls{alignment distance}) is one of the most fundamental ways of quantifying the
-dissimilarity of two sequences $x$ and $y$ over a finite alphabet $\sum$.
+The \gls{edis} (or \gls{alignment distance}) is one of the most fundamental ways of quantifying the
+dissimilarity of two sequences $x$ and $y$ over a finite alphabet $\Sigma$.
 It is based on the cost of an alignment $A = (A_1, A_2, \dots , A_n),$ , defined as the sum of the costs of $A$’s
 columns,
 i.e.,
 \[
-cost(A) = \sum^n_{i=1} cost(A_i),
+cost(A) = \Sigma^n_{i=1} cost(A_i),
 \]
-where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \sum$, in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = - or b_i = -)$.
+where the cost of alignment column $A_i = \binom{a_i}{b_i}$, $a_i, b_i \in \Sigma$, in the simplest (unit cost) case is 0 for a match column $(a_i = b_i)$, and 1 for a mismatch column $(a_i \neq b_i)$ or an indel column $(a_i = - or b_i = -)$.
 Then we have:
 
 \defin{alignment distance}
 
 \noindent The corresponding computational problem is as follows:
 
-\probl{Alignment Problem}{For two given strings $x, y \in \sum^*$ and a given cost function, find the alignment distance of $x$ and $y$ and one or all optimal alignment(s).\\ \newline From the “Sequence Analysis 1” lecture we know that this problem can be solved in $O(mn)$ time using a simple and elegant dynamic programming algorithm, where $m = |x|$ and $n = |y|$ are the two sequence lengths. \\ \newline However, there are situations in which edit distance and alignments are not the perfect model to compare sequences. In the following two sections we will study two interesting alternatives.}
+\probl{Alignment Problem}{For two given strings $x, y \in \Sigma^*$ and a given cost function, find the alignment distance of $x$ and $y$ and one or all optimal alignment(s).\\ \newline From the “Sequence Analysis 1” lecture we know that this problem can be solved in $O(mn)$ time using a simple and elegant dynamic programming algorithm, where $m = |x|$ and $n = |y|$ are the two sequence lengths. \\ \newline However, there are situations in which \gls{edis} and alignments are not the perfect model to compare sequences. In the following two sections we will study two interesting alternatives.}
 
 % TODO \txc{Hier das über die Block moves einfügen.}
 
-\section{The \gls{q-gram} Distance}\label{sec:the-q-gram-distance}
+\section{The \gls{qgram} Distance}\label{sec:the-q-gram-distance}
 Edit distances emphasize the correct order of the characters in a string.
 If, however, a large block of a text is moved somewhere else (e.g.\ two paragraphs of a text are exchanged), the
-edit distance will be high, although from a certain standpoint, the texts are still quite similar.
+\gls{edis} will be high, although from a certain standpoint, the texts are still quite similar.
 A more appropriate notion of distance can be defined in several ways.
-Here we introduce the \gls{q-gram distance} $\dq$, which is actually a pseudo-metric: There exist strings
+Here we introduce the \gls{qgdis} $\dq$, which is actually a pseudo-metric: There exist strings
 $x \neq y$ with $\dq(x, y) = 0$.
 
-Remember that for $q \in N$, a \gls{q-gram} is a string of length q.
-\txc{Wir reden hier über überlappende \gls{q-gram}me!}
+Remember that for $q \in N$, a \gls{qgram} is a string of length q.
+\txc{Wir reden hier über überlappende \gls{qgram}me!}
 
 \defin{occurrence count}
-\defin{q-gram profile}
-\defin{q-gram distance}
+\defin{qgprof}
+\defin{qgdis}
 
 \begin{exa} \label{exa:example-1-1}
-Consider $\sum = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
-Using lexicographic order (AA, AB, BA, BB) among the \glspl{q-gram}, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ 
+Consider $\Sigma = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
+Using lexicographic order (AA, AB, BA, BB) among the \glspl{qgram}, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ 
 and $p_2(z) = (1, 1, 1, 0)$.
-Therefore, we obtain $d_2(x, y) = 2$ and $d_2(x, z) =0$ (although $x\neq z$).
+Therefore, we obtain $d_2(x, y) = 2$ and $\dqgen_2(x, z) =0$ (although $x\neq z$).
 % Todo {Hier bsp. tabelle }
 \end{exa}
 
 \begin{theo}
-The \gls{q-gram distance} $\dq$ is a pseudo-metric.
+The \gls{qgdis} $\dq$ is a pseudo-metric.
 \paragraph{Proof.} It fulfills nonnegativity, symmetry and the triangle inequality (exercise). 
 \end{theo}
 
 \subsection{Practical Computation}\label{subsec:practical-computation}
-If the \gls{q-gram profile} of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it
-makes sense to implement it as an array $p\left[0 \cdots \sum^q - 1\right]$, where $p[i]$ counts the number of occurrences of the
-i-th \gls{q-gram} in some arbitrary but fixed (e.g.\ lexicographic) order.
+If the \gls{qgprof} of a string $x \in \Sigma^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it
+makes sense to implement it as an array $p\left[0 \cdots \Sigma^q - 1\right]$, where $p[i]$ counts the number of occurrences of the
+i-th \gls{qgram} in some arbitrary but fixed (e.g.\ lexicographic) order.
 
-\defin{ranking function}
+\defin{rankfun}
 
 \komm{Warum $|X|-1$?}
 
 \defin{ranking algorithm} 
 
-\defin{unranking function}
+\defin{unrankfun}
 
 \defin{unranking algorithm}
 
-Of course, we are interested in an efficient (un-)ranking algorithm for the set of all \glspl{q-gram} over $\sum$.
-A classical one is to first define a \gls{ranking function} $\rf_{\sum}$ on the characters (alphabet encoding) and then
-extend it to a \gls{ranking function} $\rf$ on the \glspl{q-gram} by interpreting them as base-$\sigma$ numbers.
-There are two possibilities to number the positions of a \gls{q-gram}: From $q$ to 1 falling or from 1 to
+Of course, we are interested in an efficient (un-)ranking algorithm for the set of all \glspl{qgram} over $\Sigma$.
+A classical one is to first define a \gls{rankfun} $\rf_{\Sigma}$ on the characters (alphabet encoding) and then
+extend it to a \gls{rankfun} $\rf$ on the \glspl{qgram} by interpreting them as base-$\sigma$ numbers.
+There are two possibilities to number the positions of a \gls{qgram}: From $q$ to 1 falling or from 1 to
 $q$ rising, as shown in the Example \autoref{exa:example-1-2}.
 
 \komm{Was sind base-$\sigma$ numbers?}
 
 \begin{exa}  \label{exa:example-1-2}
-Assume the alphabet $\sum = {A, C, G, T}$ and the alphabet encoding $\rf_{\sum}(A) = 0$,
-$\rf_{\sum}(C) = 1, \rf_{\sum}(G) = 2$, and $\rf_{\sum}(T) = 3$.
-For q = 5, the two different possibilities to rank the
-\gls{q-gram} $z = $ \texttt{ATACG} are:
+Assume the alphabet $\Sigma = {A, C, G, T}$ and the alphabet encoding $\rf_{\Sigma}(A) = 0$,
+$\rf_{\Sigma}(C) = 1, \rf_{\Sigma}(G) = 2$, and $\rf_{\Sigma}(T) = 3$.
+For $q = 5$, the two different possibilities to rank the
+\gls{qgram} $z = $ \texttt{ATACG} are:
 \begin{itemize}
     \item[(a)] Falling ranking
     \begin{align*}
-        \rf(ATACG) & = \underbrace{\rf_{\sum}(z[1]) \cdot \sigma^4}_{0\cdot 4^4} +
-        \underbrace{\rf_{\sum}(z[2]) \cdot \sigma^3}_{3\cdot 4^3} +
-        \underbrace{\rf_{\sum}(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
-        \underbrace{\rf_{\sum}(z[4]) \cdot \sigma^1}_{1\cdot 4^1}+
-        \underbrace{\rf_{\sum}(z[5]) \cdot \sigma^0}_{2\cdot 4^0} \\
+        \rf(ATACG) & = \underbrace{\rf_{\Sigma}(z[1]) \cdot \sigma^4}_{0\cdot 4^4} +
+        \underbrace{\rf_{\Sigma}(z[2]) \cdot \sigma^3}_{3\cdot 4^3} +
+        \underbrace{\rf_{\Sigma}(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
+        \underbrace{\rf_{\Sigma}(z[4]) \cdot \sigma^1}_{1\cdot 4^1}+
+        \underbrace{\rf_{\Sigma}(z[5]) \cdot \sigma^0}_{2\cdot 4^0} \\
         & = 0 + 192 + 0 + 4 + 2 = 198
     \end{align*}
     \item[(b)] Rising ranking
     \begin{align*}
         \rf(ATACG) & =
-        \underbrace{\rf_{\sum}(z[1]) \cdot \sigma^0}_{0\cdot 4^0} +
-        \underbrace{\rf_{\sum}(z[2]) \cdot \sigma^1}_{3\cdot 4^1} +
-        \underbrace{\rf_{\sum}(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
-        \underbrace{\rf_{\sum}(z[4]) \cdot \sigma^3}_{1\cdot 4^3}+
-        \underbrace{\rf_{\sum}(z[5]) \cdot \sigma^4}_{2\cdot 4^4} \\
+        \underbrace{\rf_{\Sigma}(z[1]) \cdot \sigma^0}_{0\cdot 4^0} +
+        \underbrace{\rf_{\Sigma}(z[2]) \cdot \sigma^1}_{3\cdot 4^1} +
+        \underbrace{\rf_{\Sigma}(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
+        \underbrace{\rf_{\Sigma}(z[4]) \cdot \sigma^3}_{1\cdot 4^3}+
+        \underbrace{\rf_{\Sigma}(z[5]) \cdot \sigma^4}_{2\cdot 4^4} \\
         & =  0 + 12 + 0 + 64 + 512 = 588
     \end{align*}
 \end{itemize}
@@ -99,20 +99,20 @@ The first numbering of positions in (a) corresponds naturally to the ordering of
 in the decimal number 23, the first 2 has positional value (weight) $10^1 = 10$ whereas the 3 has the lower weight of $10^0 = 1$.
 For texts, however, the second numbering in (b) is more natural since we expect lower position numbers on the left side of higher position numbers.
 
-In general, we see that $z \in \sum^q$ has rank
+In general, we see that $z \in \Sigma^q$ has rank
 \[
 (a): \rf(z) =
-\sum^q_{i=1}
-\rf_{\sum}
+\Sigma^q_{i=1}
+\rf_{\Sigma}
 (z[i]) \cdot \sigma^{q-i}, (b): \rf(z) =
-\sum^q_{i=1} 
-\rf_{\sum}
-(z[i]) \cdot \sum^{i-1}.
+\Sigma^q_{i=1} 
+\rf_{\Sigma}
+(z[i]) \cdot \Sigma^{i-1}.
 \]
 Whichever numbering system we use, we have to do it consistently. \\ \newline
-For each of the two ways to rank a \gls{q-gram}, there is a corresponding unranking method.
+For each of the two ways to rank a \gls{qgram}, there is a corresponding unranking method.
 Both methods work with integer division and remainder.
-The one for the falling ranking function uses a dynamic divisor and determines the characters of the \gls{q-gram}
+The one for the falling ranking function uses a dynamic divisor and determines the characters of the \gls{qgram}
 based on the integer results, the other one for the rising ranking function uses a fixed divisor and determines the characters based on the remainder.
 
 \begin{exa}   \label{exa:example-1-3}
@@ -140,18 +140,18 @@ To example \ref{exa:example-1-3}.
 \[
     \frac{198}{4^4} = 0, \quad  \text{R } 198 \rightarrow A
 \]
-Because $\frac{198}{4^4} = \frac{198}{256} \approx \un{0},77$ which means the rest (R) ist 198, since $198 - 0 = 198$. We decode it into A, since we are using the result of the fraction to find the letters: $\rf_{\sum}(A) = 0$.
+Because $\frac{198}{4^4} = \frac{198}{256} \approx \un{0},77$ which means the rest (R) ist 198, since $198 - 0 = 198$. We decode it into A, since we are using the result of the fraction to find the letters: $\rf_{\Sigma}(A) = 0$.
 \[
     \frac{588}{4} = 147, \quad  \text{R } 0 \rightarrow A
 \]
 Because with the rising function we are using the rest to find the letters instead of the result of the fraction.
 }
 
-Both methods need q iterations and reconstruct the q-gram from the first position to the last.
-Each iteration takes a starting value r and determines the corresponding character of the q-gram while updating r for the next iteration.
-The starting value for the first iteration is the rank of the q-gram.
+Both methods need q iterations and reconstruct the \gls{qgram} from the first position to the last.
+Each iteration takes a starting value r and determines the corresponding character of the \gls{qgram} while updating r for the next iteration.
+The starting value for the first iteration is the rank of the \gls{qgram}.
 In iteration i in the unranking method (a), for $1 \leq i \leq q$, the starting value r is divided by $\sigma^{q-i}$.
-The integer result c of the division determines the decoded character as described by $\rf_{\sum}$ of the used ranking
+The integer result c of the division determines the decoded character as described by $\rf_{\Sigma}$ of the used ranking
 function.
 The remainder r' of the division serves as starting value for the next iteration.
 \[
@@ -176,26 +176,26 @@ If m and
 n are large, there are many (even very differently looking) strings with the same letter
 counts, which would all have distance zero from each other.
 
-If on the other hand $q = m \leq n$, and $m \approx n$, the distance $\dq$ \txc{(q-gram distance)} between the strings is always
+If on the other hand $q = m \leq n$, and $m \approx n$, the distance $\dq$ \txc{(\gls{qgdis})} between the strings is always
 close to $n - m$, which does not give us a good resolution either.
-Also, the q-gram profile of both strings is extremely sparse in these cases.
+Also, the \gls{qgprof} of both strings is extremely sparse in these cases.
 % TODO wie würde das aussehen und sich auswirken?
-We thus ask for a value of q such that each q-gram occurs about once (or $c \geq 1$ times) on average.
+We thus ask for a value of q such that each \gls{qgram} occurs about once (or $c \geq 1$ times) on average.
 
-Assuming a uniform random distribution of letters in a given string $x \in \sum^m$, the probability
-that a fixed q-gram $z$ starts at a fixed position $i \in [1, m - q + 1]$ is $1/\sigma^q$, where $\sigma = |\Sigma|$.
+Assuming a uniform random distribution of letters in a given string $x \in \Sigma^m$, the probability
+that a fixed \gls{qgram} $z$ starts at a fixed position $i \in [1, m - q + 1]$ is $1/\sigma^q$, where $\sigma = |\Sigma|$.
 \komm{It is NOT $1/\sigma$ (1 divided though the number of letters in the alphabet). One might think that, since at
 that ``fixed position'' (aka. any position) every letter of the alphabet can occur and if the distribution is uniform every letter has the same chance to occur there so it could start there, right?
-No. We have to account for the length of the q-gram. The chance that the starting letter of the q-gram is at that position is $1/\sigma$. The chance that the second letter of the q-gram is in the position thereafter is $1/\sigma$.
-The chance that the third letter of the q-gram \dots and so on. Meaning we have
+No. We have to account for the length of the \gls{qgram}. The chance that the starting letter of the \gls{qgram} is at that position is $1/\sigma$. The chance that the second letter of the \gls{qgram} is in the position thereafter is $1/\sigma$.
+The chance that the third letter of the \gls{qgram} \dots and so on. Meaning we have
 \[
     \underbrace{1/\sigma \cdot 1/\sigma \cdots 1/\sigma}_{q\ times} = 1/\sigma^q.
 \]}
 The expected number of occurrences of z in x is thus $(m - q + 1)/\sigma^q$.
 \komm{
-Because there are $(m - q + 1)$ possible starting position for a q-gram in a string of length m.
+Because there are $(m - q + 1)$ possible starting position for a \gls{qgram} in a string of length m.
 }
-The condition that this number equals c \txc{(The number each q-gram occurs approximately)} %
+The condition that this number equals c \txc{(The number each \gls{qgram} occurs approximately)} %
 leads to the condition $(m + 1)/c = q/c + \sigma^q$ (see Comment~\ref{kom:rechnung-choice-q}), or
 approximately
 $m/c = \sigma^q$, since
@@ -212,50 +212,50 @@ Thus setting
 \[
     q = \Bigg\lfloor \frac{\log(m) − \log(c)}{\log(\sigma)} \Bigg\rfloor
 \]
-ensures an expected occurrence count $\geq c$ of each q-gram.
+ensures an expected occurrence count $\geq c$ of each \gls{qgram}.
 
 % DONE die Formeln nochmal auseinander nehmen und erklären
 \subsection{Efficiency}\label{subsec:efficiency}
 
-Obviously, for $z \in \sum^q$ , the ranking function $\rf(z)$ can be computed in O(q) time.
+Obviously, for $z \in \Sigma^q$ , the ranking function $\rf(z)$ can be computed in O(q) time.
 Both the falling and the rising ranking functions have the advantage that when a window of length
-q is shifted along a text, the rank of the q-gram can be updated in O(1) time:
+q is shifted along a text, the rank of the \gls{qgram} can be updated in O(1) time:
 
-Assume that $t = aub$ with $a \in \sum$, $u \in \sum^{q-1}$ and $b \in \sum$.
-The first q-gram is au, whereas ub
+Assume that $t = aub$ with $a \in \Sigma$, $u \in \Sigma^{q-1}$ and $b \in \Sigma$.
+The first \gls{qgram} is $au$, whereas $ub$
 is the updated one.
 Now we can define an update system for each of the ranking systems
 above.
-Let j = r(au).
+$Let j = r(au)$.
 For the falling ranking function we compute:
 \[
-    \text{(a) } \rf(ub) = (j \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\sum} (b),
+    \text{(a) } \rf(ub) = (j \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\Sigma} (b),
 \]
 \txc{Or without using j:
 \[
-    \text{(a) } \rf(ub) = (\rf(au) \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\sum} (b),
+    \text{(a) } \rf(ub) = (\rf(au) \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\Sigma} (b),
 \]
 }
 and for the rising ranking function:
 \[
-    \text{(b) }  \rf(zb) = \lfloor \frac{j}{\sigma} \rfloor + f (b), \quad \text{where } f (b) = \rf_{\sum} (b) \cdot \sigma^{q-1}.
+    \text{(b) }  \rf(zb) = \lfloor \frac{j}{\sigma} \rfloor + f (b), \quad \text{where } f (b) = \rf_{\Sigma} (b) \cdot \sigma^{q-1}.
 \]
 \txc{Or without using j an f:
     \[
-        \text{(b) }  \rf(zb) = \lfloor \frac{\rf(au)}{\sigma} \rfloor +  \rf_{\sum} (b) \cdot \sigma^{q-1}.
+        \text{(b) }  \rf(zb) = \lfloor \frac{\rf(au)}{\sigma} \rfloor +  \rf_{\Sigma} (b) \cdot \sigma^{q-1}.
     \]
 }
 
 If we take a more detailed look at both systems now, we can see that the second way is
 possibly more efficient (as it avoids the modulo operation and only uses integer division) if
-f is implemented as a lookup table $f: \sum \rightarrow \nz_0$.
+f is implemented as a lookup table $f: \Sigma \rightarrow \nz_0$.
 If $\sigma = 2^k$ for some $k \in \nz$, multiplications
 and divisions can be implemented by bit shifting operators, e.g.\ in the second system (b), $\rf(ub) = (j \gg k) + f (b)$.
 
-It is \txc{allegedly} easy to see that the q-gram corresponding to a ranking value can be obtained in O(q)
+It is \txc{allegedly} easy to see that the \gls{qgram} corresponding to a ranking value can be obtained in O(q)
 time for both unranking methods.
 
-Now, to compute $\dq (x, y)$ for $x \in \sum^m$ and $y \in \sum^n$,
+Now, to compute $\dq (x, y)$ for $x \in \Sigma^m$ and $y \in \Sigma^n$,
 \begin{enumerate}
     \item initialize integer array $p_q [ 0 \dots \sigma^q -1]$ with zeroes
     \item for each $i \in [1, m − q + 1]$, increment $p_q[\rf(x[i \cdot i + q − 1])]$
@@ -270,8 +270,8 @@ Explanation of the steps and complexites.
     \begin{tabular}{c p{5cm}c p{5cm}}
         & \textbf{Step} & \textbf{Complexity} & \textbf{Because...} \\
         1. & Initialise empty array  &  $O(\sigma^q)$ & the array has $\sigma^q$ entries \\
-        2. & Count q-grams in $x$ & $O(m)$ & compute hash of first q-gram in $O(q)$, then use rolling hash to update in $O(1)$ for each remaining position \\
-        3. & Count q-grams in $y$ & $O(n)$ & see above \\ 4. & Initialize distance & $O(1)$ & trivial \\
+        2. & Count \glspl{qgram} in $x$ & $O(m)$ & compute hash of first \gls{qgram} in $O(q)$, then use rolling hash to update in $O(1)$ for each remaining position \\
+        3. & Count \glspl{qgram} in $y$ & $O(n)$ & see above \\ 4. & Initialize distance & $O(1)$ & trivial \\
         5. & Summarize the absolute difference & $ O(\sigma^q)$ & Iteration through $\sigma^q$ items
     \end{tabular}\label{tab:table}
 \end{table}
@@ -291,31 +291,31 @@ If $q = O(\log(m+n))$, we can still achieve $O(m + n)$ time using hashing.
 
 \subsection{Relation to the Edit Distance}\label{subsec:relation-to-the-edit-distance2}
 
-While the q-gram distance $\dq$ has its own applications in the comparison of sequences
+While the \gls{qgdis} $\dq$ has its own applications in the comparison of sequences
 that have undergone block movements, it also has a weak connection to the unit cost edit
 distance d.
-Recall that we can have a high edit distance even though $\dq (x, y) = 0$.
-On the other hand, a single edit operation changes up to q q-grams.
+Recall that we can have a high \gls{edis} even though $\dq (x, y) = 0$.
+On the other hand, a single edit operation changes up to $q$ \glspl{qgram}.
 Generally, one can show the following relationship.
 
 \begin{theo}
-    Let d denote the standard unit cost edit distance.
+    Let d denote the standard unit cost \gls{edis}.
     Then
     \[
         \frac{\dq(x,y)}{2q} \leq d(x,y).
     \]
     \paragraph{Proof.}
-    Each edit operation locally affects up to q q-grams.
-    Each changed q-gram can
-    cause a change of up to 2 in $\dq$, as the occurrence count of one q-gram decreases, the
+    Each edit operation locally affects up to $q$ \glspl{qgram}.
+    Each changed \gls{qgram} can
+    cause a change of up to 2 in $\dq$, as the occurrence count of one \gls{qgram} decreases, the
     other increases.
-    Therefore each edit operation can lead to an increase of 2q of the q-gram
+    Therefore, each edit operation can lead to an increase of $2q$ of the \gls{qgram}
     distance in the worst case (e.g.\ consider AAAAAAAAAAA vs.
-    AABAABAABAA with edit distance
-    3, q = 3, and, as can be verified, $d_3 = 18$).
+    AABAABAABAA with \gls{edis}
+    3, $q = 3$, and, as can be verified, $\dqgen_3 = 18$).
 
     How this relationship can be used productively in order to speed up the computation of
-    the edit distance will be discussed in Section~\ref{sec:the-maximal-matches-distance}.
+    the \gls{edis} will be discussed in Section~\ref{sec:the-maximal-matches-distance}.
 \end{theo}
 
 %\subsection{The Maximal Matches Metric}
