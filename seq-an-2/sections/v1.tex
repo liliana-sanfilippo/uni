@@ -36,7 +36,7 @@ Remember that for $q \in N$, a \gls{q-gram} is a string of length q.
 Consider $\sum = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
 Using lexicographic order (AA, AB, BA, BB) among the \glspl{q-gram}, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ 
 and $p_2(z) = (1, 1, 1, 0)$.
-Therefore we obtain $d_2(x, y) = 2$ and $d_2(x, z) =0$ (although $x\neq z$).
+Therefore, we obtain $d_2(x, y) = 2$ and $d_2(x, z) =0$ (although $x\neq z$).
 % Todo {Hier bsp. tabelle }
 \end{exa}
 
@@ -47,7 +47,7 @@ The \gls{q-gram distance} $\dq$ is a pseudo-metric.
 
 \subsection{Practical Computation}\label{subsec:practical-computation}
 If the \gls{q-gram profile} of a string $x \in \sum^m$ is \gls{dense} (i.e., if it does not contain mostly zeros), it
-makes sense to implement it as an array $p[0 \cdots \sum^q - 1]$, where $p[i]$ counts the number of occurrences of the
+makes sense to implement it as an array $p\left[0 \cdots \sum^q - 1\right]$, where $p[i]$ counts the number of occurrences of the
 i-th \gls{q-gram} in some arbitrary but fixed (e.g.\ lexicographic) order.
 
 \defin{ranking function}
@@ -116,7 +116,7 @@ The one for the falling ranking function uses a dynamic divisor and determines t
 based on the integer results, the other one for the rising ranking function uses a fixed divisor and determines the characters based on the remainder.
 
 \begin{exa}   \label{exa:example-1-3}
-    Unranking the rank values 198 and 588 from Example \ref{exa:example-1-2}.
+    Unranking the rank values 198 and 588 from Example~\ref{exa:example-1-2}.
     \paragraph{(a)} Unranking for falling ranking function
     \begin{align*}
         \frac{198}{4^4} = 0, & \quad  \text{R } 198 \rightarrow A  \\
@@ -164,14 +164,15 @@ Here, the remainder c of the integer division decodes the corresponding characte
 \[
     \text{(b) } \frac{r}{\sigma} = r', \quad  \text{R } c
 \]
-\subsection{Choice of q}
+\subsection{Choice of q}\label{subsec:choice-of-q}
 
-In principle, we could use any $q \in [1, min\{m, n\}]$
+In principle, we could use any $q \in [1, \min\{m, n\}]$
 \txc{(Any $q$ that is only as ling as the shorter of the two strings being compared)} to
 compare two strings of lengths m and n.
 In practice, some choices are more reasonable than others.
 
-For example, for $q = 1$, we merely add the differences of the single letter counts. If m and
+For example, for $q = 1$, we merely add the differences of the single letter counts.
+If m and
 n are large, there are many (even very differently looking) strings with the same letter
 counts, which would all have distance zero from each other.
 
@@ -195,7 +196,7 @@ The expected number of occurrences of z in x is thus $(m - q + 1)/\sigma^q$.
 Because there are $(m - q + 1)$ possible starting position for a q-gram in a string of length m.
 }
 The condition that this number equals c \txc{(The number each q-gram occurs approximately)} %
-leads to the condition $(m + 1)/c = q/c + \sigma^q$ (see Comment \ref{kom:rechnung-choice-q}), or
+leads to the condition $(m + 1)/c = q/c + \sigma^q$ (see Comment~\ref{kom:rechnung-choice-q}), or
 approximately
 $m/c = \sigma^q$, since
 $1/c$ and $q/c$ are comparatively small.
@@ -209,20 +210,24 @@ m-q+1 &  = c \cdot \sigma^q & \mid + q \\
 }
 Thus setting
 \[
-    q = \Bigg\lfloor \frac{log(m) − log(c)}{log(\sigma)} \Bigg\rfloor
+    q = \Bigg\lfloor \frac{\log(m) − \log(c)}{\log(\sigma)} \Bigg\rfloor
 \]
 ensures an expected occurrence count $\geq c$ of each q-gram.
 
 % DONE die Formeln nochmal auseinander nehmen und erklären
-\subsection{Efficiency}
+\subsection{Efficiency}\label{subsec:efficiency}
 
 Obviously, for $z \in \sum^q$ , the ranking function $\rf(z)$ can be computed in O(q) time.
 Both the falling and the rising ranking functions have the advantage that when a window of length
 q is shifted along a text, the rank of the q-gram can be updated in O(1) time:
 
-Assume that $t = aub$ with $a \in \sum$, $u \in \sum^{q-1}$ and $b \in \sum$. The first q-gram is au, whereas ub
-is the updated one. Now we can define an update system for each of the ranking systems
-above. Let j = r(au). For the falling ranking function we compute:
+Assume that $t = aub$ with $a \in \sum$, $u \in \sum^{q-1}$ and $b \in \sum$.
+The first q-gram is au, whereas ub
+is the updated one.
+Now we can define an update system for each of the ranking systems
+above.
+Let j = r(au).
+For the falling ranking function we compute:
 \[
     \text{(a) } \rf(ub) = (j \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\sum} (b),
 \]
@@ -240,10 +245,12 @@ and for the rising ranking function:
         \text{(b) }  \rf(zb) = \lfloor \frac{\rf(au)}{\sigma} \rfloor +  \rf_{\sum} (b) \cdot \sigma^{q-1}.
     \]
 }
+
 If we take a more detailed look at both systems now, we can see that the second way is
 possibly more efficient (as it avoids the modulo operation and only uses integer division) if
-f is implemented as a lookup table $f: \sum \rightarrow \nz_0$. If $\sigma = 2^k$ for some $k \in \nz$, multiplications
-and divisions can be implemented by bit shifting operators, e.g. in the second system (b), $\rf(ub) = (j >> k) + f (b)$.
+f is implemented as a lookup table $f: \sum \rightarrow \nz_0$.
+If $\sigma = 2^k$ for some $k \in \nz$, multiplications
+and divisions can be implemented by bit shifting operators, e.g.\ in the second system (b), $\rf(ub) = (j \gg k) + f (b)$.
 
 It is \txc{allegedly} easy to see that the q-gram corresponding to a ranking value can be obtained in O(q)
 time for both unranking methods.
@@ -253,20 +260,20 @@ Now, to compute $\dq (x, y)$ for $x \in \sum^m$ and $y \in \sum^n$,
     \item initialize integer array $p_q [ 0 \dots \sigma^q -1]$ with zeroes
     \item for each $i \in [1, m − q + 1]$, increment $p_q[\rf(x[i \cdot i + q − 1])]$
     \item for each $i \in [1, n − q + 1]$, decrement $p_q[\rf(y[i \cdot i + q − 1])]$
-    \item initialize $d := 0$,
+    \item initialize $d \coloneqq 0$,
     \item for each $j \in [0, \sigma^q -1]$, increment $d$ by $|p_q[j]|$
 \end{enumerate}
 \komm{
 Explanation of the steps and complexites.
 \begin{table}[H]
     \centering
-    \begin{tabular}{c p{5cm}c c p{5cm}}
+    \begin{tabular}{c p{5cm}c p{5cm}}
         & \textbf{Step} & \textbf{Complexity} & \textbf{Because...} \\
         1. & Initialise empty array  &  $O(\sigma^q)$ & the array has $\sigma^q$ entries \\
         2. & Count q-grams in $x$ & $O(m)$ & compute hash of first q-gram in $O(q)$, then use rolling hash to update in $O(1)$ for each remaining position \\
         3. & Count q-grams in $y$ & $O(n)$ & see above \\ 4. & Initialize distance & $O(1)$ & trivial \\
         5. & Summarize the absolute difference & $ O(\sigma^q)$ & Iteration through $\sigma^q$ items
-    \end{tabular}
+    \end{tabular}\label{tab:table}
 \end{table}
 Leading to:
 \[
@@ -280,10 +287,36 @@ The space complexity is $O(\sigma^q)$ to store the array $p_q$.
 
 If q is comparatively large, it does not make sense to maintain a full array.
 Instead, we maintain a data structure that contains only the nonzero entries of $p_q$.
-If $q = O(log(m+n))$,
-we can still achieve O(m + n) time using hashing.
+If $q = O(\log(m+n))$, we can still achieve $O(m + n)$ time using hashing.
 
-\subsection{Relation to the Edit Distance}
+\subsection{Relation to the Edit Distance}\label{subsec:relation-to-the-edit-distance2}
+
+While the q-gram distance $\dq$ has its own applications in the comparison of sequences
+that have undergone block movements, it also has a weak connection to the unit cost edit
+distance d.
+Recall that we can have a high edit distance even though $\dq (x, y) = 0$.
+On the other hand, a single edit operation changes up to q q-grams.
+Generally, one can show the following relationship.
+
+\begin{theo}
+    Let d denote the standard unit cost edit distance.
+    Then
+    \[
+        \frac{\dq(x,y)}{2q} \leq d(x,y).
+    \]
+    \paragraph{Proof.}
+    Each edit operation locally affects up to q q-grams.
+    Each changed q-gram can
+    cause a change of up to 2 in $\dq$, as the occurrence count of one q-gram decreases, the
+    other increases.
+    Therefore each edit operation can lead to an increase of 2q of the q-gram
+    distance in the worst case (e.g.\ consider AAAAAAAAAAA vs.
+    AABAABAABAA with edit distance
+    3, q = 3, and, as can be verified, $d_3 = 18$).
+
+    How this relationship can be used productively in order to speed up the computation of
+    the edit distance will be discussed in Section~\ref{sec:the-maximal-matches-distance}.
+\end{theo}
 
 %\subsection{The Maximal Matches Metric}
 \txc{Notiz}
