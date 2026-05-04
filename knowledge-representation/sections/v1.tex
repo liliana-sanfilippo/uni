@@ -112,7 +112,8 @@ KR enables machines to make informed decisions with fewer rules.
 \defin{representation scheme}
 
 
-\begin{exa} \label{bsp:pacman}
+\begin{exa}
+    \label{bsp:pacman}
     \textbf{Pac-Man ghost AI} has a knowledge-based approach: We code ghost behaviour as explicit rules.
     \begin{enumerate}
         \item IF player\_nearby THEN chase
@@ -276,7 +277,8 @@ Facts are used to derive new facts by applying rules.
 
 It has multiple subtypes:
 \defin{loginf}
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{center}
         IF fever $\rightarrow$ infection \\
         fever $\Rightarrow$ infection
@@ -291,7 +293,8 @@ It has multiple subtypes:
 
 \defin{prefinf}
 
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{center}
         Birds fly \\
         Tweety is a bird $\Rightarrow$ Tweety flies \\ (except penguins)
@@ -300,7 +303,8 @@ It has multiple subtypes:
 
 \defin{indinf}
 
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{center}
         Data $\Rightarrow$ Pattern \\
         Symptoms $\Rightarrow$ Diagnosis model
@@ -309,7 +313,8 @@ It has multiple subtypes:
 
 \defin{abdinf}
 
-\begin{exa}$\ $
+\begin{exa}
+    $\ $
     \begin{center}
         Observed: fever + cough \\
         $\Rightarrow$ Best explanation: pneumonia
@@ -324,9 +329,10 @@ Facts are retrieved directly, much like in a database.
 
 \subsection*{Matching (Similarity-based reasoning):} Facts are used to identify similar patterns and perform case-based reasoning.
 
-\begin{exa} $\ $
+\begin{exa}
+    $\ $
     \begin{center}
-       X $\sim$ Patient Y $\Rightarrow$ Case-based reasoning
+        X $\sim$ Patient Y $\Rightarrow$ Case-based reasoning
     \end{center}
 \end{exa}
 
@@ -339,35 +345,462 @@ heuristic inference for real-time decisions goals.
 
 %Wie man mit Incompleteness umgeht
 
-\begin{obs} \label{obs:incompleteness}
+
+
+\begin{obs}
+    \label{obs:incompleteness}
     Knowledge bases cannot completely describe the world they model
     (except artificial microworlds)
+
     \paragraph{Consequences} exist for operations, reasoning and design methodology.
 \end{obs}
-\begin{imp} \label{imp:worlds} Regarding observation \autoref{obs:incompleteness} \\
+
+\subsubsection*{Consequences for Operations}
+\begin{imp}
+    \label{imp:worlds} Regarding observation \autoref{obs:incompleteness} \\
     There are different answers to existence queries depending on assumptions. \\
     We can assume a closed world, where everything not explicitly stated in the knowledge base is assumed FALSE or
     an open world, where we simply cannot conclude anything if it is not explicitly stated in the knowledge base.
 \end{imp}
 
-\begin{exa} To implication \autoref{imp:worlds} \\
+
+
+\begin{exa}
+    To definition \autoref{ef:cwa} - Closed World Assumption \\
+    \begin{center}
+        Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\ \newline
+        Query: ``Is there a person in Toronto?'' \\
+        CWA Answer: NO (because Toronto is not mentioned in the KB) \\
+        Reasoning: If someone lived in Toronto, the KB would state it.
+    \end{center}
 \end{exa}
 
+\begin{exa}
+    To definition \autoref{def:owa} - Open World Assumption \\
+    \begin{center}
+        Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\ \newline
+        Query: ``Is there a person in Toronto?'' \\
+        OWA Answer: Unknown (because Toronto is not mentioned, but also not excluded) \\
+        Reasoning: The KB does not mention Toronto, but that does not mean no one lives there.
+    \end{center}
+\end{exa}
+The choice between CWA and OWA fundamentally influences system behavior and must be made during the design phase.
+
+\subsubsection*{Consequences for Reasoning}
+Incompleteness requires special reasoning strategies:
+
+\begin{itemize}
+    \item Assumption of Defaults: In the absence of information, make reasonable assumptions
+    \item Probabilistic Reasoning: Explicitly model uncertainties
+    \item Constraint Propagation: Use constraints to reduce search spaces
+\end{itemize}
+
+\subsubsection*{Consequences for Design Methodology}
+Unlike machine learning, where knowledge is implicit in model parameters and retraining is required, in KGs knowledge is explicit and can be extended, revised, and corrected without retraining the entire model.
+
+This distinction is important for practical systems where expert knowledge needs to be continuously updated without
+expensive computational overhead.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{5cm}p{5cm}p{5cm}}
+        \textbf{Programming} & \textbf{Knowledge Representation} & \textbf{Machine Learning} \\
+        ``Once and for all'' complete specification.
+        Code is written and then ``frozen'' & Continuous, incremental
+        development.
+        The knowledge base is iteratively extended, revised, and refined
+        &
+        Knowledge is implicitly encoded in model parameters and requires retraining when incomplete
+    \end{tabular}
+    \caption{Differences in knowledge/information acquisition and handling.}\label{tab:table}
+\end{table}
+
+\defin{knowledge-acquisition-processes} % todo evtl noch quellen folie 28 ergänzen
+
+
 \section{Applications of Knowledge Representation}\label{sec:applications-of-knowledge-representation}
+\begin{center}
+    ``The KR discipline has developed in waves, with each era developing different approaches to different problems.''
+\end{center}
+\textit{-- claude.ai}
+
+\defin{expert-systems}
+
+\begin{exa}
+    To definition \autoref{def:expert-systems} - \textbf{MYCIN’s Approach} \\
+
+    \paragraph{Domain:}
+    Infectious blood diseases and bacterial infections
+
+    \paragraph{Knowledge Base Structure:}
+    \begin{itemize}
+        \item Approximately 600 production rules
+        \item Rules encoded expert medical knowledge
+        \item Format: IF [conditions] THEN [conclusions/actions]
+    \end{itemize}
+\end{exa}
+
+\defin{nlp}
+
+\gls{nlp} includes Semantic understanding, Machine translation, Question answering and Dialogue systems.
+
+\begin{exa}
+    For \gls{nlp}:
+    \begin{itemize}
+        \item Semantic understanding - “Paris is the capital of France” $\Rightarrow$ understands
+        (capital\_of(Paris, France))
+        \item Machine translation - “The doctor treated the patient” $\Rightarrow$  preserves roles across
+        languages (doctor = agent, patient = object)
+        \item Question answering - Q: “Who is the capital of France?” $\Rightarrow$  Query knowledge
+        graph ⇒ Answer: Paris
+        \item Dialogue systems - User: “I have a fever.” System: “Do you also have a cough?”
+        $\Rightarrow$  Uses context and stored knowledge
+    \end{itemize}
+\end{exa}
+
+Today (in the modern era), we use \glspl{kg}.
+
+\defin{kg}
+
+\begin{exa}
+    To \autoref{def:kg} \\
+    \begin{itemize}
+        \item Google Knowledge Graph (search enhancement) Example: Search “Albert
+        Einstein” $\rightarrow$ panel shows: born in Ulm, Nobel Prize, physicist, spouse Mileva Maric
+        \item Knowledge Vault (knowledge fusion) Example: Automatically merges facts
+        from Wikipedia, Freebase, and news articles into unified knowledge base
+        \item Enterprise Knowledge Management Example: Company stores employee skills,
+        projects, teams $\rightarrow$ helps find experts for new projects
+        \item Recommendation Systems Example: Amazon recommends “Laptop Bag”
+        because you bought “Laptop” $\rightarrow$ relationship stored in knowledge graph
+    \end{itemize}
+\end{exa}
+
+% TODO evtl noch genauere bsp von Claude einfügen
+
+% todo Enterprise Knowledge Management für mich näher ansehen
+\Glspl{kg} are used for better information retrieval.
+E.g. for \glspl{semantic-search}.
+\deffin{semantic-search}
+
+\begin{exa}
+    Query: ``treatment for viral pneumonia'' \\ \newline
+    Without KG: Documents containing ``treatment'' + ``viral'' + ``pneumonia'' \\ \newline
+    With KG: \\
+    pneumonia --[caused\_by]--> virus
+    virus --[type]--> COVID-19, Influenza, etc.
+    COVID-19 --[treated\_by]--> antiviral drugs, ventilation \\ \newline
+    Retrieval: Documents about COVID-19 treatment, antiviral therapies
+    (not necessarily containing the word ``pneumonia'')
+\end{exa}
+
+Knowledge representation techniques are also used in database design for semantic data models, query optimization,
+constraint management and data integration.
+
+\begin{exa}
+    \textbf{Semantic Data Models}: using an ER diagram to represent Students,
+    Courses, and Enrollments. \textit{Shoutout to claude} \\
+    Entities:
+    \begin{itemize}
+        \item Student (ID, Name, Major, CGPA)
+        \item Course (Course\_ID, Name, Credits)
+        \item Enrollment (Student\_ID, Course\_ID, Grade)
+    \end{itemize}
+    Relationships:
+    \begin{itemize}
+        \item Student enrolls\_in Course
+        \item Course belongs\_to Department
+    \end{itemize}
+\end{exa}
+
+\begin{exa}
+    \textbf{Query Optimization} - creating an index on student\_id to speed up
+    SELECT queries. \textit{Shoutout to claude} \\
+    Query: SELECT student\_name FROM Student WHERE enrolled\_in\_course(CS101) \\ \newline
+    Plan A (inefficient): \\
+    \begin{enumerate}
+        \item Load all students from disk
+        \item For each student, check all enrollments
+        \item Filter for CS101
+    \end{enumerate}
+    Plan B (efficient): \\
+    \begin{enumerate}
+        \item Use index on (Course\_ID)
+        \item Find all enrollments where Course\_ID = CS101
+        \item Load corresponding student records
+
+    \end{enumerate}
+
+\end{exa}
 
 
+\begin{exa}
+    \textbf{Constraint Management} - enforcing primary key and foreign key
+    constraints to maintain data integrity. \textit{Shoutout to claude} \\
+    Primary Key Constraint: Each student has a unique ID \\
+    Foreign Key Constraint: Each enrollment must reference a valid student\_ID \\
+    Domain Constraint: CGPA must be between 0.0 and 4.0 \\
+    Business Rule: A student cannot take more than 5 courses per semester \\
+\end{exa}
 
-Enterprise Knowledge Management
+Further, \gls{kr} can be used for program specifications and system interfaces.
+
+% TODO example Space Tutor
+
+\begin{exa}
+    Space Tutor, Folie 37
+\end{exa}
 
 
 \section{Future Directions}\label{sec:future-directions}
 
-Multi-hop reasoning
-Unified framework
+\subsection*{Multi-hop Reasoning (Complex Reasoning)}
+Many questions require multiple reasoning steps across relationships.
+\begin{exa}
+    Query: ``What medicine treats diseases caused by virus X?'' \\ \newline
+    Requires: \\
+    medicine --[treats]--> disease --[caused\_by]--> virus \\ \newline
+    Path: \\
+    Starting from virus\_X: \\
+    virus\_X --[causes]--> disease\_Y \\
+    disease\_Y --[treated\_by]--> medicine\_Z \\
+    Result: medicine\_Z
+\end{exa}
+Simple embedding methods struggle with this multi-step logical chain, so complex multi-hop relations require dedicated
+design. \\
+\textbf{Promising Directions:}
+\begin{itemize}
+    \item \textbf{Recurrent Relational Path Encoding:}
+    \begin{itemize}
+        \item Methods like DeepPath use LSTM networks
+        \item The LSTM ``encodes'' a path like: Person $\rightarrow$ LivesIn $\rightarrow$ City $\rightarrow$ LocatedIn $\rightarrow$ Country
+        \item This encoded path representation can then be used for reasoning
+    \end{itemize}
 
-knowledge Aggregation
+    \item \textbf{GNN-based Message Passing:}
+    \begin{itemize}
+        \item Graph Neural Networks (GNNs) aggregate information from neighbors
+        \item Multi-hop reasoning through iterative message passing
+        \item Each ``hop'' collects information from the next node
+    \end{itemize}
 
-def attention weight
+    \item \textbf{Reinforcement Learning-based Path Finding:}
+    \begin{itemize}
+        \item An agent learns to navigate through the knowledge graph
+        \item Example agent path: ``Marie Curie $\rightarrow$ BornIn $\rightarrow$ Ulm $\rightarrow$ \dots $\rightarrow$ Paris''
+        \item The agent receives rewards when reaching the correct target
+    \end{itemize}
+\end{itemize}
+
+\defin{one-hop}
+\defin{multi-hop}
+
+\begin{exa}
+    To definitions \autoref{def:one-hop} and \autoref{def:multi-hop} - Simple vs.\ Multi-hop Reasoning \\
+    A simple 1-hop query can be expressed as:
+    \[
+        \text{Einstein} \rightarrow \text{worked\_at} \rightarrow \text{Princeton}
+    \]
+
+    A more complex multi-hop query is:
+    \emph{Where did Einstein's doctoral advisor teach?}
+
+    This requires chaining relations:
+    \[
+        \text{Einstein} \rightarrow \text{advised\_by} \rightarrow \text{Kleiner} \rightarrow \text{worked\_at} \rightarrow \text{University of Zurich}
+    \]
+
+    This corresponds to a 2-hop reasoning process.
+\end{exa}
+Structured knowledge provides commonsense observations and acts as relational inductive biases (assumptions about
+the world). Meaning they provide such biases like: ``Some relations are more likely than others''. It also boosts
+commonsense knowledge fusion between symbolic and semantic space. E.g.:
+\begin{exa}
+    \textbf{Query:} \emph{Can a fish play piano?}
+
+    \textbf{Without Knowledge:}
+    A machine learning model could predict this based on training data, but provide no reasoning.
+
+    \textbf{With Knowledge:}
+
+    \begin{align*}
+        \text{Fish} &\rightarrow \text{hasBodyPart} \rightarrow \text{Fins} \quad (\text{not Hands}) \\
+        \text{PlayingPiano} &\rightarrow \text{requires} \rightarrow \text{Hands}
+    \end{align*}
+
+    \textbf{Symbolic Rule:}
+    If $X \rightarrow \text{hasBodyPart} \rightarrow p$ and $\text{action} \rightarrow \text{requires} \rightarrow p$,
+    then $X \rightarrow \text{can} \rightarrow \text{action}$.
+
+    \textbf{Application:}
+    \begin{align*}
+        \text{Fish} &\rightarrow \text{hasBodyPart} \rightarrow \text{Fins} \\
+        \text{PlayingPiano} &\rightarrow \text{requires} \rightarrow \text{Hands} \\
+        \text{Fins} &\neq \text{Hands}
+    \end{align*}
+
+    \textbf{Conclusion:}
+    \[
+        \text{Fish} \rightarrow \text{cannot} \rightarrow \text{PlayPiano}
+    \]
+
+    \textbf{Answer with Reasoning:}
+    No, a fish cannot play piano because it lacks hands.
+\end{exa}
+Commonsense knowledge provides strong priors, enabling systems to function with less training data.
+
+\subsection*{Unified Framework}
+Many KR embedding methods are mathematically equivalent under transformation.
+Actually, several representation learning models are verified as equivalent.
+\begin{exa}
+    \textbf{Example: Unifying Knowledge Graph Embedding Models}
+    \begin{align*}
+        \text{HolE:} \quad & h \star r \quad \text{(circular correlation)} \\
+        \text{ComplEx:} \quad & \text{complex-valued embeddings} \\
+        \text{DistMult:} \quad & \text{real-valued symmetric embeddings}
+    \end{align*}
+
+    These can be understood as special cases of a more general framework.
+
+    \medskip
+
+    \textbf{ANALOGY Framework:}
+
+    The ANALOGY framework unifies these approaches via analogical inference:
+    \[
+        h + r \approx t
+    \]
+
+    \noindent
+    where an entity $h$ combined with a relation $r$ approximates the target entity $t$.
+
+    \textbf{Interpretation:}
+    Different models correspond to different ways of representing this analogy.
+\end{exa}
+
+\subsection*{Interpretability}
+Modern neural-KR systems (KG embedding models) work well, but it's unclear \textit{why}.
+
+\begin{exa}
+    \textbf{Example: Lack of Interpretability in Neural Models} \\
+    \textbf{Prediction:}
+    Neural model predicts:
+    \[
+        \text{Aspirin} \rightarrow \text{treats} \rightarrow \text{Headache}
+    \]
+
+    \textbf{Question:}
+    Why? Which reasoning path?
+
+    \textbf{Reasoning:}
+    Just learned embedding similarity.
+\end{exa}
+There are different ways this could habe been reasoned:
+\begin{itemize}
+    \item \textbf{Path-based explanation:} \\
+    Aspirin $\rightarrow$ type $\rightarrow$ Painkiller $\rightarrow$ treats $\rightarrow$ Pain $\rightarrow$ symptom\_of $\rightarrow$ Headache
+
+    \item \textbf{Attention visualization:} \\
+    Model focuses on ``anti-inflammatory'' and ``pain-relief'' relations
+
+    \item \textbf{Rule extraction:}
+    \begin{itemize}
+        \item IF drug $\rightarrow$ has\_property $\rightarrow$ analgesic AND disease $\rightarrow$ has\_symptom $\rightarrow$ pain
+        \item THEN drug $\rightarrow$ treats $\rightarrow$ disease
+    \end{itemize}
+\end{itemize}
+And different applications:
+\begin{itemize}
+    \item \textbf{Medical diagnosis:} \\
+    Doctor needs to see reasoning path before trusting AI recommendation
+
+    \item \textbf{Legal applications:} \\
+    Must explain why system reached a conclusion
+\end{itemize}
+
+\subsection*{Scalability}
+Knowledge graphs can be extremely large which leads to a trade-off between and computational efficiency and model
+expressiveness. \\ % TODO defi system experssiveness
+Limited amount of works were applied to/tested on more than 1 million entities and inference over probabilistic
+logic is computationally intensive.
+
+
+\subsection*{Knowledge Aggregation}
+Knowledge aggregation is the core of knowledge-aware applications. Many approaches rely on neural architectures. NLP
+has been significantly improved by large-scale pre-training. A key challenge remains the efficient and interpretable
+aggregation of knowledge.
+\begin{exa}
+    \textbf{Query:}
+    Who directed Inception?
+
+    \textbf{Knowledge neighbors:}
+    \[
+        [\text{Nolan}, \text{Warner Bros}, 2010, \text{Sci-Fi}, \text{DiCaprio}]
+    \]
+
+    \textbf{Attention weights:}
+    \[
+        \text{director} = 0.8, \quad \text{actor} = 0.15, \quad \text{studio} = 0.05
+    \]
+
+    \textbf{Interpretation:}
+    The model focuses on the most relevant relation (director).
+\end{exa}
+
+\subsection*{Automatic Construction and Dynamics}
+Knowledge graphs are currently mostly manually constructed or extracted from structured sources (e.g. Wikipedia),
+which is very labor-intensive.
+
+We would need automatic construction from large-scale unstructured content, but there are several challanges:
+\begin{itemize}
+    \item Multimodality: Information can be in text, images, video
+
+    \item Heterogeneity: Different sources use different schemas
+
+    \item Large-scale: Billions of documents
+
+\end{itemize}
+Additionally, \glspl{kg} should be dynamic, as real-world facts change over time.
+\begin{exa}
+    \textbf{Static representation:}
+    \[
+        (\text{Pluto}, \text{classified\_as}, \text{Planet})
+    \]
+
+    \textbf{Dynamic representation:}
+    \begin{align*}
+    (\text{Pluto}, \text{classified\_as}, \text{Planet}, [1930\text{-}2006])
+        \\
+        (\text{Pluto}, \text{classified\_as}, \text{Dwarf\_Planet}, [2006\text{-present}])
+    \end{align*}
+
+    \textbf{Requirement:}
+    System must track temporal validity of facts.
+\end{exa}
+
+% todo def attention weight
+
+
+\section{Conclusion \textit{brought to you by claude.ai}}
+\begin{center}
+    ``Knowledge representation remains a central discipline in artificial intelligence. While the field has
+    historically undergone several paradigm shifts (from pure symbolic AI to knowledge graphs to hybrid systems),
+    the fundamental motivation remains unchanged: How can we structure complex knowledge in a form that machines can
+    understand and use?\\
+    The answer continues to evolve. Modern systems combine:''
+\end{center}
+\begin{itemize}
+    \item Expressiveness of logical systems
+
+    \item Efficiency of algorithmic approaches
+
+    \item Scalability of big data techniques
+
+    \item Learning capability of neural networks
+
+    \item Interpretability through explicit knowledge
+
+\end{itemize}
 
 
 \section{Course structure}\label{sec:course-structure}
