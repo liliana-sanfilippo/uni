@@ -1,5 +1,7 @@
 %! Author = lili
 %! Date = 5/4/26
+\chapter{Präsenzaufgaben Zusatztutorium}
+\section{Aufgabe 1.0.1}
 Aus dem Intervall [0, 1] wird rein zufällig eine Zahl gezogen. Wir betrachten in dieser Aufgabe
 nur die Nachkommastellen der Dezimalentwicklung.
 \begin{auf}
@@ -36,7 +38,7 @@ nur die Nachkommastellen der Dezimalentwicklung.
         $A_5 = [\frac{1}{\pi}-\frac{1}{100}, \frac{1}{\pi} + \frac{1}{100}]$
     \end{enumerate}
     \begin{figure}[H]
-
+        \centering
         \begin{tikzpicture}
             \draw (0,0)-- (10,0); %Axis
 
@@ -105,4 +107,60 @@ nur die Nachkommastellen der Dezimalentwicklung.
     \[
         \pe(A_5) = \pe([\frac{1}{\pi}-\frac{1}{100}, \frac{1}{\pi} + \frac{1}{100}]) = \frac{2}{100}
     \]
+\end{auf}
+
+\section{Aufgabe 1.0.2.}
+Beim Spiel Mensch ärgere dich nicht würfelt der Spieler zunächst einmal. Dann wird die Figur
+des Spielers auf dem Brett um die entsprechende Anzahl an Feldern vorgerückt.
+Falls der Spieler eine 6 würfelt hat, so darf er anschließend erneut würfeln. Wieder wird die
+Figur um die entsprechende Anzahl an Feldern vorgerückt. Dieser Vorgang wird wiederholt, bis
+der Würfel zum ersten Mal keine 6 zeigt. Uns interessiert nur, um wie viele Felder die Figur
+insgesamt vorgerückt wird
+
+\begin{auf}
+    \subsubsection*{Geben Sie einen geeigneten Wahrscheinlichkeitsraum für dieses Zufallsexperiment an.}
+    \paragraph{Lösung:} $\eraum = \nz$ also
+    \[
+        \tilde\eraum \{(k,l) \mid k \in \nz_0, l \in \{0,...,5\}\} = \nz_0 \times \{0,...,5\}
+    \]
+    \[
+        mu = ? \squiggarrow \pe(A) = \sum_{\elem \in A} mu(\elem)
+    \]
+    Für $1 \leq \elem \leq 6:$: $mu_1 \sim \cup_{\{1,...,6\}} $
+
+    $mu(\elem) = mu_1(\elem) = \frac{1}{6} \quad \forall \elem \in \{1,...,5\}$
+
+    $mu(6) = 0$
+
+    Für $7 \leq \elem \leq 12:$: $mu_2 \sim \cup_{\{1,...,6\}^2} $
+
+    $mu(\elem) = mu_2((6,6-\elem)) = \frac{1}{36} \quad \forall \elem \in \{7,...,11\}$
+
+    $mu(12) =  mu_2((6,6))$ = 0 ist falsch!, weil wir direkt nochmal würfeln
+    würden nach der zweiten 6,richtig wäre:
+
+    $mu(12) = 0$ und $mu_2((6,6)) = \frac{1}{36}$
+
+    Weitere Beispiele:
+
+    bspw. $mu(7) = mu_2((6,1))$
+
+    und bspw. $mu(72) = mu(6\cdot 12 +1) = \frac{1}{6^{13}}$
+
+
+    % TODO nochmal mit bild überprüfen
+    Damit man überhaupt den zweiten Wurf machen darf, muss das erste ja schon eine 6 gewesen sein, deswegen 1/36
+\end{auf}
+
+\begin{auf}
+    \[
+        \frac{\nz}{6} = \{n \in \nz : n nichtkongruent o \mod 6\}
+    \]
+    also auch
+    \[
+        \nz_0 \times \{0,...,5\}
+    \]
+
+
+    dannam ende mit dem squiggy arrow  muss man noch ausrechnen, dass das eine Zähldichte ist
 \end{auf}
