@@ -2,9 +2,9 @@
 %! Date = 4/27/26
 
 
-\section{Vorlesung 2 (25.04.2025)}
+\section*{Vorlesung 2 (25.04.2025)}
 
-\section{Lernziele}
+\subsection*{Lernziele}
 \begin{itemize}
     \item Unterschied zwischen disjunkten und paarweise disjunkten Mengen
     \item Rechenregeln für Wahrscheinlichkeiten
@@ -14,6 +14,7 @@
         \item Spezialfall paarweise disjunkter Mengen
     \end{itemize}
 \end{itemize}
+\section{Wahrscheinlichkeitsräume, deren Ereignisraum nicht abzählbar ist}
 \begin{bsp}
     \textbf{\gls{wraum}} \\
     Stoppen einer Zeit bis zu einer Stunde in ms.
@@ -37,17 +38,32 @@
 \end{bsp}
 \begin{defi}
     \textbf{\gls{dichte}} \\
-    EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) R-\texttt{int-iwas} ist, heißt \underline{Dichte}, sofern
+    EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt
+    \underline{Dichte}, sofern
     \[
         \int_{- \infty}^{\infty} f (x) dx = 1
     \]
-    \begin{bem}
+    \begin{bem} $\ $
         \begin{itemize}
-            $\ $ \\
-            \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
-            \item $f$ stückweise \texttt{???} $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
-            \item $f \geq 0: f $ R-intbar
+            \item  % a
+            \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert für alle $(a, b \in \mathbb{R})$
+            \txc{auch: für $- \infty < a < b < \infty$}
+            % b
+            \item $f$ stückweise stetig oder stückweise monoton, $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
+            % e
+            \item $f \geq 0: f $ Riemann-integrierbar
             $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx < \infty$
+            \begin{itemize}
+                \item Damit ist gemeint: Ist $f \geq 0$, so ist $f$ genau dann uneigentlich Riemann-integrierbar über
+                $\rz$, wenn das Riemann-Integral $\int_a^b f(x) dx$ für jede Wahl $- \infty < a < b < \infty$
+                existiert und $\underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
+                existiert. In diesem Fall gilt $\int_{- \infty}^{\infty} f(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
+            \end{itemize}
+            % d
+            \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw. sowohl $(- \infty, 0] $ als auch $[0, \infty)$
+            uneigentlich Riemann-integrierbar ist.
+            % c TODO
+            \item
         \end{itemize}
     \end{bem}
 \end{defi}
