@@ -1,0 +1,172 @@
+%! Author = lili
+%! Date = 5/5/26
+
+\defin{Prolog}
+
+\section{Why Prolog for KR?}
+Prolog is usually taught as a programming language, but it is also a knowledge representation language.
+
+We can view programs (also prolog) from two perspectives which both apply.
+
+\paragraph{Declarative / KR view} is that a program is a set of logical definitions. You describe
+what is true, not how to compute it.
+
+\paragraph{Procedural view} is that a program is a set of instructions that Prolog executes to
+answer queries step by step.
+
+Since both views apply to the same program, this means the same program is both
+knowledge representation and executable reasoning.
+% todo häh und was sagt uns das genau?
+
+\komm{facts represent anything that could be true}
+
+When you write a Prolog program as a set of logical definitions, the same rules can be
+used for many tasks, not just answering a fixed query.
+
+% todo frage sind das die Rules odder types of rules?
+
+% TODO entwerder defis oder als explanation wie es finktioniert
+\defin{Deduction}
+\defin{Abduction}
+\defin{Containment testing}
+\defin{View differentiation}
+\defin{Query folding}
+
+None of these are straightforward if you treat the program as pure code.
+% todo why? dont quite understand it
+
+\section{Prolog and First-Order Logic}
+Basically Prolog works the same as fol, we have predicates and rules, but it is not the same!
+Prolog was designed as a direct computational realization of first-order predicate logic. Each concept in FOL has an exact counterpart in Prolog:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \textbf{FOL concept} & \textbf{Prolog equivalent} \\
+        \hline
+        Predicate symbol & predicate name, e.g.\ parent, mortal \\
+        $\forall x$ & variable (any uppercase name) \\
+        Conjunction $\land$ & comma `,` in rule body \\
+        Implication $A \rightarrow B$ & rule \texttt{B :- A.} \\
+        Ground atom (no variables) & fact \\
+        Horn clause & any Prolog clause \\
+    \end{tabular}
+\end{table}
+This is why reading a Prolog program declaratively is reading logic.
+% todo was bedeutet "reading a Prolog program declaratively"??? wie kann man es anders lesen?
+
+\komm{F8: ":-" ist a headsign(neck)}
+
+\komm{"? - mortal ( socrates ) ." ist the query}
+
+\defin{horn-clause}
+
+% todo verallgemeinerung F 8  wie man das übersetzt / formalisiert
+
+\begin{exa}
+    F8 % todo farblich codiert gegenüber stellen
+\end{exa}
+
+FOL is descriptive but not executable and therefore needs external theorem provers. Prolog provides built-in
+inference and supports automatic query answering.
+% todo diesen satz nochmal genau auseonander nehmen
+
+% todo was genau bedeutet escriptive but not executable? wie muss man sich das in der Realität vorstellen?
+
+\section{Prolog Syntax}
+Before writing programs, we need to know what Prolog data looks like. Everything in
+Prolog is a term. There are four kinds:
+\defin{atom}
+
+\defin{compound term}
+
+\begin{exa}
+    clauses F 12 % todo
+\end{exa}
+
+\defin{prolog-number}
+\defin{prolog-variable}
+
+% todo frage four kinds
+
+
+A Prolog program consists of clauses. There are three kinds:
+% todo frage typen von Klauseln
+\defin{prolog-fact}
+
+\begin{exa}
+    clauses F 11 % todo
+\end{exa}
+
+\defin{prolog-rule}
+
+\begin{exa}
+    clauses F 11 % todo
+\end{exa}
+
+\defin{prolog-query}
+
+\begin{exa}
+    clauses F 11 % todo
+\end{exa}
+
+\begin{notation}
+    Comma , in a rule body means AND. The neck :- means IF
+\end{notation}
+
+% todo fragen zu wie schreibt man das
+\defin{Identity of a functor} % F 12
+
+\section{A Running Example: Family Relations}
+To learn Prolog syntax and reasoning, we will use one concrete example throughout the
+next several slides: a family tree.
+
+The family tree contains these people: % todo
+
+% todo schritte F 15 + erst generalisiert aufschreiben, dann
+
+
+
+\section{How Prolog Executes: Matching and Search}
+
+\section{Declarative vs. Procedural Meaning}
+
+\section{Lists}
+
+% zu f30 todo bsp von Tafel
+
+We need to specify head and tail for every list if we want to do smth like append ([ H | T1 ] , List2 , [ H | T3 ]) : -
+
+\begin{exa} Extra
+\[
+    A =  [ \underbrace{1,2}_{H}, \underbrace{3,4}_{T} ] \\
+    B =  [ \underbrace{d}_{H}, \underbrace{e,f}_{T} ]
+\]
+If we now do that:
+\[
+    append([\underbrace{H_1}_{1} \mid  \underbrace{T_1}_{3}], B, [\underbrace{H_2}_{2} \mid  \underbrace{T_2}_{4}],) :-
+\]
+we get
+\[
+    [1,3,d,e,f,2,4]
+\]
+\end{exa}
+
+\komm{built-in =  pred defined}
+
+\section{Recursion and Arithmetic}
+
+
+
+\section{Clause Ordering and Loops}
+
+\section{The Monkey and Banana Problem}
+
+\section{Backtracking, Cuts, and Negation}
+
+\section{Horn Clauses and Proof}
+
+\section{Operators}
+
+% todo das mit den predecessors ist whack beschrieben, das muss ich mir genauer anschauen und nachfragen (auf Foto)
+
+%  F 12 - 30 nochmal durchgehen wegen defis usw.

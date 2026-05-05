@@ -73,7 +73,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 16 | Di, 14.04. | :ballot_box_with_check: |                 | --         | --         | --         | --         |
 | KW 17 | --         | --                      | --              | --         | --         | --         | --         |
 | KW 18 | Di, 28.04. | :construction:          |                 | --         | --         | Fr, 08.05. |            |
-| KW 19 | Di, 05.05. |                         |                 | Di, 05.05. |            | --         | --         |
+| KW 19 | Di, 05.05. | :construction:          |                 | Di, 05.05. |            | --         | --         |
 | KW 20 | Di, 12.05. |                         |                 | Di, 12.05. |            | --         | --         |
 | KW 21 | Di, 19.05. |                         |                 | Di, 19.05. |            | Fr, 22.05. |            |
 | KW 22 | Di, 26.05. |                         |                 | Di, 26.05. |            | --         | --         |
