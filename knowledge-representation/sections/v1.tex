@@ -368,7 +368,7 @@ heuristic inference for real-time decisions goals.
 \begin{exa}
     To definition \autoref{ef:cwa} - Closed World Assumption \\
     \begin{center}
-        Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\ \newline
+        Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\
         Query: ``Is there a person in Toronto?'' \\
         CWA Answer: NO (because Toronto is not mentioned in the KB) \\
         Reasoning: If someone lived in Toronto, the KB would state it.
@@ -378,7 +378,7 @@ heuristic inference for real-time decisions goals.
 \begin{exa}
     To definition \autoref{def:owa} - Open World Assumption \\
     \begin{center}
-        Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\ \newline
+        Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\
         Query: ``Is there a person in Toronto?'' \\
         OWA Answer: Unknown (because Toronto is not mentioned, but also not excluded) \\
         Reasoning: The KB does not mention Toronto, but that does not mean no one lives there.
@@ -484,12 +484,12 @@ E.g. for \glspl{semantic-search}.
 \deffin{semantic-search}
 
 \begin{exa}
-    Query: ``treatment for viral pneumonia'' \\ \newline
-    Without KG: Documents containing ``treatment'' + ``viral'' + ``pneumonia'' \\ \newline
+    Query: ``treatment for viral pneumonia'' \\
+    Without KG: Documents containing ``treatment'' + ``viral'' + ``pneumonia'' \\
     With KG: \\
     pneumonia --[caused\_by]--> virus
     virus --[type]--> COVID-19, Influenza, etc.
-    COVID-19 --[treated\_by]--> antiviral drugs, ventilation \\ \newline
+    COVID-19 --[treated\_by]--> antiviral drugs, ventilation \\
     Retrieval: Documents about COVID-19 treatment, antiviral therapies
     (not necessarily containing the word ``pneumonia'')
 \end{exa}
@@ -516,7 +516,7 @@ constraint management and data integration.
 \begin{exa}
     \textbf{Query Optimization} - creating an index on student\_id to speed up
     SELECT queries. \textit{Shoutout to claude} \\
-    Query: SELECT student\_name FROM Student WHERE enrolled\_in\_course(CS101) \\ \newline
+    Query: SELECT student\_name FROM Student WHERE enrolled\_in\_course(CS101) \\
     Plan A (inefficient): \\
     \begin{enumerate}
         \item Load all students from disk
@@ -557,9 +557,9 @@ Further, \gls{kr} can be used for program specifications and system interfaces.
 \subsection*{Multi-hop Reasoning (Complex Reasoning)}
 Many questions require multiple reasoning steps across relationships.
 \begin{exa}
-    Query: ``What medicine treats diseases caused by virus X?'' \\ \newline
+    Query: ``What medicine treats diseases caused by virus X?'' \\
     Requires: \\
-    medicine --[treats]--> disease --[caused\_by]--> virus \\ \newline
+    medicine --[treats]--> disease --[caused\_by]--> virus \\
     Path: \\
     Starting from virus\_X: \\
     virus\_X --[causes]--> disease\_Y \\
