@@ -164,6 +164,81 @@
     after skip=6pt
 }
 
+\newtheorem{hypo}{Hypothese}[chapter]
+\tcolorboxenvironment{hypo}{
+    colback=bemf!15,
+    colframe=bemf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+\newcommand{\hypothese}[1]{%
+    \begin{hypo}\label{def:#1}
+    \textbf{\gls*{#1}}\\
+    \glsdesc*{#1}
+    \end{hypo}
+}
+
+
+\newtheorem{mode}{Modell}[chapter]
+\tcolorboxenvironment{mode}{
+    colback=bemf!15,
+    colframe=bemf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+\newcommand{\model}[1]{%
+    \begin{mode}\label{def:#1}
+    \textbf{\gls*{#1}}\\
+    \glsdesc*{#1}
+    \end{mode}
+}
+
+\newtheorem{theori}{Theorie}[chapter]
+\tcolorboxenvironment{theori}{
+    colback=bemf!15,
+    colframe=bemf,
+    boxrule=1pt,
+    arc=2mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced,
+    breakable,
+    parbox=false,
+    before skip=6pt,
+    after skip=6pt
+}
+
+\newcommand{\theorie}[1]{%
+    \begin{theori}\label{def:#1}
+    \textbf{\gls*{#1}}\\
+    \glsdesc*{#1}
+    \end{theori}
+}
+
+
+
 %\newtheorem{formel}[defi]{Definition}
 %\newtheorem{gese}{Gesetz}[section]
 
