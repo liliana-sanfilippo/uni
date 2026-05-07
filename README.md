@@ -131,7 +131,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | Woche | Vorlesung  | In Notizen     | In Karteikarten |
 |-------|------------|----------------|-----------------|
 | KW 16 | Do, 16.04. | :construction: |                 |
-| KW 17 | Do, 23.04. |                |                 |
+| KW 17 | Do, 23.04. | :construction: |                 |
 | KW 18 | Do, 30.04. |                |                 |
 | KW 19 | Do, 07.05. |                |                 |
 | KW 20 | --         | --             | --              |
