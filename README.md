@@ -132,7 +132,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 |-------|------------|----------------|-----------------|
 | KW 16 | Do, 16.04. | :construction: |                 |
 | KW 17 | Do, 23.04. | :construction: |                 |
-| KW 18 | Do, 30.04. |                |                 |
+| KW 18 | Do, 30.04. | :construction: |                 |
 | KW 19 | Do, 07.05. |                |                 |
 | KW 20 | --         | --             | --              |
 | KW 21 | Do, 21.05. |                |                 |
