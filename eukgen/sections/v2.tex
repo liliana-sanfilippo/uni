@@ -72,7 +72,71 @@ Wie findet man sich in so viel DNA bzw. Genen zurecht?
 \begin{itemize}
     \item Restriktionskartierung (Beispiel: DNA Tumorviren, etwa Adenovirus-2)
     \item BAC-Contigs (Beispiel: Physikalische Karte von Arabidopsis thaliana)
+    \item genetische Karten (Kopplungsgruppen, Rekombinations-Distanz (cM))
+    \item Sequenzierung
 \end{itemize}
 
-% TODO
-\frage{wiekarte}
+\subsection{Kartierung mittels Restriktionsfragmentanalyse (Restriktionskartierung)}
+Die DNA wird mit verschiedenen Restriktionsenzymen – einzeln und paarweise – verdaut, im Agarosegel getrennt
+und die resultierenden Fragmentgrößen bestimmt. Die einzelnen Fragmente müssen dann kombiniert werden.
+\cite{muelhardt2013}
+
+\subsection{BAC-Contigs}
+\begin{prinz}
+    Man zerlegt das Genom in große DNA-Stücke, klont sie in BACs und sucht heraus, welche Stücke sich überlappen.
+    Dadurch kann man die ursprüngliche Reihenfolge im Genom rekonstruieren. \chatti
+\end{prinz}
+\frage{wiephyskarte}
+
+\subsection{Genetische Karten}
+\begin{prinz}
+    Gene, die nahe beieinander auf einem Chromosom liegen, werden meist gemeinsam vererbt. \\
+    Während der Meiose können homologe Chromosomen Stücke austauschen (Crossing-over). Je weiter zwei Gene auseinander
+liegen, desto häufiger passiert ein Crossing-over zwischen ihnen. Je näher sie liegen, desto seltener werden sie
+    getrennt vererbt. \\
+    Man kann die Rekombinationsfrequenzen zwischen vielen \glspl{genet-marker} messen und so eine Karte erstellen. \chatti
+\end{prinz}
+\defin{genet-marker}
+\frage{wiecmkarte}
+
+\subsection{Sequenzierung}
+Wir haben verschiedene Sequenziermethoden in MoBi1 kennen gelernt.
+
+% Rausgelassen Genome im verlauf der Zeit
+
+\subsubsection{Von Sequenz zu Annotation}
+Es gibt drei Wege:
+\begin{itemize}
+    \item \gls{ab-initio}
+    \item \gls{comparative-genomics}
+    \item Datenbanksuchen/Alignments
+\end{itemize}
+
+\defin{ab-initio}
+
+\begin{exa} Zu \autoref{def:ab-initio} \\
+Annotation: Beispiel Folien % TODO F 63
+\end{exa}
+
+\defin{comparative-genomics}
+\begin{exa} Zu \autoref{def:comparative-genomics} \\
+Annotation: mittels Syntänie % TODO F 64
+\end{exa}
+
+\begin{prinz}
+    Konservierung der Struktur eukaryotischer
+    Gene % TODO F 66-68
+\end{prinz}
+
+\begin{exa} Zu \autoref{def:comparative-genomics} \\
+Annotation an Hand von Konservierung
+der CDS eukaryotischer Gene % TODO F 65
+\end{exa}
+
+% TODO \defin{homolog}
+% TODO \defin{paralog}
+% TODO \defin{otholog}
+% Folie 69
+
+
+
