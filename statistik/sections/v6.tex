@@ -6,35 +6,76 @@
 \untit{Vorlesung 6 in 2025 / Vorlesung 22.05.2026}
 \begin{bsp}
     \textbf{Die Randverteilungen legen die gemeinsame Verteilung nicht eindeutig fest} \\
-    TODO
+    Wir werfen eine faire Münze zweimal.
+    Die Ergebnisse der beiden Würfe sollen notiert werden. \\
+    Alex schreibt korrekt auf, während Kim einen Moment lang abgelenkt ist, dadurch das Ergebnis des
+    zweiten Wurfs verpasst und als Notlösung einfach so tut, als hätten beide Würfe dasselbe Ergebnis
+    gehabt. \\
+    \textit{Modellierung}
+    \[
+        \eraum = \{0,1\}^2
+    \]
+    mit Gleichverteilung $\pe$. \\
+    \textit{Zufallsvariable}
+    \begin{itemize}
+        \item Alex notiert den zweifachen Münzwurf \\ $X : \eraum \rightarrow \eraum$ mit $X = (X_1, X_2)$ wobei
+        $X_1((\ele_1, \ele_2)) = \ele_1$ und $X_2((\ele_1, \ele_2)) = \ele_2$ für alle $\oio$ \\ (das heißt,
+        $X$ ist die Identität auf $\eraum$)
+        \item Kim notiert nur den ersten Münzwurf \\ $Y : \eraum \rightarrow \eraum$ mit $Y = (Y_1, Y_2)$ wobei
+        $Y_1((\ele_1, \ele_2)) = \ele_1$ und $Y_2((\ele_1, \ele_2)) = Y_1((\ele_1, \ele_2)) = \ele_1$ für alle $\oio$
+    \end{itemize}
+    \begin{table}[H]
+        \begin{tabular}{cccc}
+            $\wfk_X ((x_1, x_2))$ & $x_2 = 0$ & $x_2 = 1$ & $\wfk_{X_1}(x_1)$ \\
+            $x_1 = 0$ & \frac{1}{4} & \frac{1}{4} & \frac{1}{2} \\
+            $x_1 = 1$ & \frac{1}{4} & \frac{1}{4} & \frac{1}{2} \\
+            $\wfk_{X_2}(x_2)$ & \frac{1}{2} & \frac{1}{2} & 1
+        \end{tabular}
+
+        \begin{tabular}{cccc}
+            $\wfk_Y ((y_1, y_2))$ & $y_2 = 0$ & $y_2 = 1$ & $\wfk_{Y_1}(y_1)$ \\
+            $y_1 = 0$ & \frac{1}{2} & 0 & \frac{1}{2} \\
+            $y_1 = 1$ & 0 & \frac{1}{2} & \frac{1}{2} \\
+            $\wfk_{Y_2}(y_2)$ & \frac{1}{2} & \frac{1}{2} & 1
+        \end{tabular}\label{tab:table}
+    \end{table}
+    Offensichtlich sind die Randverteilungen von $X$ und von $Y$ gleich, während die gemeinsame Verteilung
+    von $Y_1$ und $Y_2$ ist nicht dieselbe ist wie jene von $X_1$ und $X_2$.
 \end{bsp}
 
 \begin{bsp}
-    \textbf{n-mal würfeln} \\
+    \textbf{n-mal würfeln mit fairem Würfel} \\
     $\eraum \{1,\dots,6\}^n, \quad \ele_i$ das Ereignis des i-ten Wurfs. $\pe$ gleichverteilt. \\
     $X_i: \eraum \rightarrow \{1,\dots ,6 \}, \quad X_i(\ele) = \ele_i \quad \forall i \in \{1,\dots ,6 \}$ \\
-    z.z. $X_i, \dots, X_n$ unab. \\
+    z.z. $X_i, \dots, X_n$ unabhängig \\
     \begin{align*}
-        \pe(X_1=k_1, ..., X_n= k_n) \quad \text{ für } k_i \in 1-6 \\
-        \pe(\{(k_1,..,K_n)\}) = \frac{1}{6^n}\\
-        \pe(X_i = k_i) =
-        \pe(X_!\in \{1,..,6\}, ..., X_{i-1} \in \{1,..,6\}, X_i = k_i, X_{i+1} \in \{1,..,6\}, ..., X_n \in 1-6) = \pe(\{1,..,6\}^{i-1} \times ...) = \frac{g^{n-1}}{6^n} = \frac{1}{6}\\
-        \pe(X_1 = k_1, ...) = \pe(X_1 = k_1) \cdot \dots \cdot \pe(X)
-        % TODO heir schauen ob das letzte richtig ist die hat das komisch angeschrieben\\
+        \pe(X_1=k_1, ..., X_n= k_n) & \quad \text{ für } k_i \in \{1,..,6\} \\
+        \pe(\{(k_1,..,K_n)\}) & = \frac{1}{6^n}\\
+        \pe(X_i = k_i)  & =
+        \pe(X_1\in \{1,..,6\}, ..., X_{i-1} \in \{1,..,6\}, X_i = k_i, X_{i+1} \in \{1,..,6\}, ..., X_n \in \{1,..,6\}) \\
+        & = \pe(\{1,..,6\}^{i-1} \times ...) \\
+        & = \frac{6^{n-1}}{6^n}
+        & = \frac{1}{6}
     \end{align*}
+    \[
+        \pe(X_1 = k_1, ..., X_n = k_n)  = \pe(X_1 = k_1) \cdot \dots \cdot \pe(X_n = k_n)
+    \]
     \txo{! jetzt müssen wir noch prüfen: Paare, Tripel, ...}
     Danach: $X_1, \dots, X_n$ bewiesenermaßen unabhängig \\
     Beispielsweise:
     $\Rightarrow \{x_1 \in \{2,4,6\}, \dots, \{x_4 \leq 4\}\}$ unabhängig \\
     % über arrow "z.B."
-    Frage: müssen wir \ldots wirklich prüfen?
-    % TODO BILD 1
+\end{bsp}
+Frage: müssen wir die Paare und Tripel wirklich prüfen?
 
+
+\begin{satz}
+    Seien $X_1, \dots, X_n$ unabhängig $\Rightarrow \pe(X_1 \in B_1 , \dots , X_n \in B_n) =  \pe(X_1 \in B_1) \cdot \dots \cdot \pe(X_n \in B_n)$
     \paragraph{Beweis.} Um zu zeigen, dass \[\pe(X_1 \in B_1, X_3 = B_3) = \pe(X_1 = B_3) \cdot \pe(X_3 = B_3)\]
     gilt, wählen wir
     \[B_2 = E_2, B_4 = E_4 , \dots, B_n = E_n\]
-\end{bsp}
 
+\end{satz}
 \begin{defi}
     \textbf{Unabhängigkeit von Zufallsvariablen} \\
     Auf einem Wahrscheinlichkeitsraum $\wraum$ seien Zufallsvariablen $X_1, .., X_n$ gegeben mit $X_i : \eraum E_i$ für
@@ -53,21 +94,20 @@ Wir werden uns daher im folgenden darum bemühen, einfacher nachzuweisende Krite
 Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Mengen $B_i$ zu betrachten.
 
 \subsection{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}\label{subsec:unabhangigkeit-fur-zufallsvariable-mit-abzahlbarem-bildbereich}
-\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version}
-\begin{satz}
-    \textbf{Satz I. (2025)}
+\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version. Es handelt sich dabei um verschiedene Charackterisierungen der Unabhängigkeit. Es sind danach auch noch weitere Charackterisierungen bzw. Konsequenzen zu finden.}
+\begin{satz} \label{satz:satz-i} \\
+    \textbf{Satz I. (2025) - Charakterisierung über Ereignisse}
     Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
     Dann
     \[
         X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
     \]
-
-    \paragraph{Beweis.} \texttt{Siehe Folie 2}
+    \paragraph{Beweis.} \texttt{Siehe Folie 2 (2025)}
 \end{satz}
 
 
-\begin{satz}
-    \textbf{Satz II. (2025)} (Neuformulierung von Satz I.) \\
+\begin{satz} \label{satz:satz-ii}
+\textbf{Satz II. (2025)} (Neuformulierung von Satz I. - Charakterisierung über Produktform) \\
     Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
     Dann
     \[
@@ -76,8 +116,8 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \end{satz}
 
 
-\begin{theo}
-    \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
+\begin{theo} \label{theo:unabhängigkeit-zv-abzählbar}
+\textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
     Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bild-
     bereich gegeben.
     Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
@@ -85,7 +125,6 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
         \{X_1 = x_1\}, \dots , \{X_n = x_n\}
     \]
     für alle $x_i \in X_i(\eraum), i = 1, .., n$ unabhängig sind.
-
     \paragraph{Beweis.} Siehe Skript S. 58.
 \end{theo}
 
@@ -109,23 +148,29 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 }
 
 
-\begin{kor}
-    Anz.
-    Bildbereich \\
-    Es genügt \[\pe(X_1 = x_1 , ..., X_n = x_n) = \pe (X_1 = x_1) \cdot \dots \cdot \pe(X_n = x_n) \forall x_i in X_i(\eraum)\]
+\begin{kor} \textbf{Konsequenz aus Satz \ref{satz:satz-ii}} \\
+    Abzählbarer Bildbereich \\
+    Es genügt
+    \[\pe(X_1 = x_1 , ..., X_n = x_n) = \pe (X_1 = x_1) \cdot \dots \cdot \pe(X_n = x_n) \forall x_i \in X_i(\eraum)\]
     zz, um Unabh.
-    von $X_1, \dots X_n $ zz
+    von $X_1, \dots X_n $ zz.
 \end{kor}
 
 % todo satz von tafel, insgesamt alles von der Tafel
 
-\begin{satz}
-    $X_1, .., X_n$ unabh. $\Leftrightarrow \pe ( X_1 \leq a_1 , ..., X_n \leq a_n ) = [das gleiche nur mit mals] = F_{X_1}(a_1) \cdot \dots \cdot \pe_{X_n}(a_n \quad \forall a_i \in \rz)$
-    % TODO Fehler? vermischung von F und \pe
+\begin{satz} \label{satz:charaktersierung-verteilungsfunktion}
+\textbf{Charakterisierung über die Produktform der Verteilungsfunktion} \\
+    $X_1, .., X_n$ unabhängih
+    \begin{align*}
+        \Leftrightarrow \pe ( X_1 \leq a_1 , ..., X_n \leq a_n ) & = \pe(X_1 \leq a_1) \cdot \dots \cdot
+        \pe(X_n \leq a_n) \\
+        & =  F_{X_1}(a_1) \cdot \dots \cdot F_{X_n}(a_n \quad \forall a_i \in \rz)
+    \end{align*}
+    % Fehler? vermischung von F und \pe
 \end{satz}
 
-\begin{kor}
-    \label{kor:unabh-gem-verteilung-eindeutig}
+\begin{kor} \label{kor:unabh-gem-verteilung-eindeutig}
+\textbf{Konsequenz aus Satz \ref{satz:charaktersierung-verteilungsfunktion}} \\
     $X_1, .., X_n$ unabh. $\Leftrightarrow$ gemeinsame Verteilung eindeutig bestimmt durch (Rand-)Verteilungen von
     $X_1, .., X_n$ \\
     Aka.:
@@ -133,19 +178,21 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
         X_1, \dots, X_n  \text{ unabh. } \Rightarrow \text{ gemeinsame Verteilung von } X_1, \dots, X_n \text{ eindeutig bestimmt durch die Randverteilung}
     \]
 \end{kor}
+
 \begin{bem}
     Zu Korollar \autoref{kor:unabh-gem-verteilung-eindeutig} \\
     Das Korollar sagt uns, wie wir unabhängige Zufallsvariablen mit Zähldichte modellieren. \\
     Ohne Unabhängigkeit ist das nicht der Fall!
 \end{bem}
-\begin{bem}
+
+\begin{bem} \textbf{Erinnerung an mathematisches Kriterium für Unabhängigkeit} \\
     Wie haben gesehen, dass Unabhängigkeit bereits gezeigt ist, wenn
     $\pe(X_1 = x_1, \dots, X_n = x_n) = \pe(X_1 = x_1) \cdot .. \cdot \pe(X_n = x_n) \forall x_i \in E_i (i = 1, \dots, n)$ gilt.
     \txc{Wenn also die Produktform existiert.}
-    (Es ist nicht erforderlich $X_{i_1}, \dots, X_{i_k}$ separat zu betrachten.
+    (Es ist nicht erforderlich $X_{i_1}, \dots, X_{i_k}$ separat zu betrachten.)
 \end{bem}
 
-\begin{bem}
+\begin{bem} \textbf{Anwendung des mathematischen Kriteriums für Unabhängigkeit}
     \textbf{(a)} Wenn wir die Produktform finden: Beweis der Unabh.
     \txc{Wenn man also zeigen kann $\pe_{X_1, \dots, X_n} = \prod_i \pe_{X_i}$ } \\
     \txc{Umkehridee:} \\
