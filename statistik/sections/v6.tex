@@ -1,8 +1,158 @@
 %! Author = lili
 %! Date = 4/27/26
 
+ % TODO alte Folien noch einbauen
 
-\section{Vorlesung 6}
+\untit{Vorlesung 6 in 2025 / Vorlesung 22.05.2026}
+\begin{bsp} \textbf{Die Randverteilungen legen die gemeinsame Verteilung nicht eindeutig fest} \\
+    TODO
+\end{bsp}
+
+\begin{bsp} \textbf{n-mal würfeln} \\
+    $\eraum \{1,\dots,6\}^n, \quad \elem_i$ das Eregenis des i-ten Wurfs. $\pe$ gleichverteilt. \\
+    $X_i: \eraum \rightarrow \{1,\dots,6\}, \quad X_i(\elem) = \elem_i \quad \forall i \in \{1,\dots,6\}$ \\
+    z.z. $X_I, \dots, X_n$ unab. \\
+    \begin{gather*}
+        \pe(X_1=k_1, ..., X_n= k_n) \quad \text{ für } k_i \in 1-6 \\
+        \pe(\{(k_1,..,K_n)\}) = \frac{1}{6^n}\\
+        \pe(X_i = k_i) = \pe(X_!\in \{1,..,6\}, ..., X_{i-1} \in \{1,..,6\}, X_i = k_i, X_{i+1} \in \{1,..,6\}, ..., X_n \0n 1-6) = \e(\{1,..,6\}^{i-1} \times ...) = \frac{g^{n-1}}{6^n} = \frac{1}{6}\\
+        \pe(X_1 = k_1, ...) = \pe(X_1 = k_1) \cdot \dots \cdot \pe(X)
+        % TODO heir schauen ob das letzte richtig ist die hat das komisch angeschrieben\\
+    \end{gather*}
+    \txo{! jetzt müssen wir noch prügen: Paare, tripel, ...}
+    Danach: $X_!, \dots, X_n$ unabh. \\
+    $\Rightarrow \{x_1 \in \{2,4,6\}, \dots, \{x_4 \leq 4\}\}$ unabh. \\
+    % todo über arrow "z.B."
+    Frage: müssen wir \ldots wirklich prüfen?
+    % TODO BILD 1
+    \paragraph{Beweis.} UM zu zeigen, dass \[\pe(X_1 \in B_1, X_3 = B_3) = \pe(X_1 = B_3) \cdot \pe(X_3 = B_3)\]
+    gilt, wählen wir
+    \[B_2 = E_2, B_4 = E_4 , \dots, B_n = E_n\]
+\end{bsp}
+
+\begin{defin} \textbf{nabhängigkeit von Zufallsvariablen} \\
+    todo skript
+\end{defin}
+
+\begin{kor}
+    Anz.
+    Bildbereich \\
+    Es genügt \[\pe(X_1 = x_1 , ..., X_n = x_n) = \pe (X_1 = x_1) \cdot \dots \cdot \pe(X_n = x_n) \forall x_i in X_i(\eraum)\]
+    zz, um Unabh.
+    von $X_1, \dots X_n $ zz
+\end{kor}
+
+% todo satz von tafel, insgesamt alles von der Tafel
+
+\begin{satz}
+    $X_1, .., X_n$ unabh. $\Leftrightarrow \pe ( X_1 \leq a_1 , ..., X_n \leq a_n ) = [das gleiche nur mit mals] = F_{X_1}(a_1) \cdot \dots \cdot \pe_{X_n}(a_n \quad \forall a_i \in \rz)$
+    % TODO Fehler? vermischung von F und \pe
+\end{satz}
+
+\begin{kor}
+    $X_1, .., X_n$ unabh. $\Leftrightarrow$ gemeinsame Verteilung eindeutig bestimmt durch (Rand-)Verteilungen von
+    $X_1, .., X_n$
+\end{kor}
+\begin{bem}
+    \paragraph{(a)} Wenn wir dProduktform finden: Beweis eder Unabh.
+    \paragraph{(b)} Gegeb.
+    Verteilung der $X_i$: Wir nutzen Produktform, um die gemeinsame Verteilung für unabh. $X_i$
+    UZ BESTIMMWEN  Todo inddex Produktform
+\end{bem}
+% Tafel:
+$X_1, .., X_n$ mit DIchten, Unabh.
+dann
+\[
+    \pe(X_1 \in a_1, X_n \in a_n) = siehebild (aber das zweite)
+\]
+
+% TODO die ganzen Sätze vergleichen ...
+\begin{satz} für ZV mit Dichte \\
+$X_1, .., X_n$ ZV mit Dichten $f_1, .., f_n$.
+Dann gilt
+    \[
+        X_1, .., X_n \Rightarrow \txo{"gemDichte hat produktform"} \Rightarrow  BOLD % TODO
+    \]
+\end{satz}
+
+\begin{bem}
+    \paragraph{(a)} Existenz der gemeinsamen DIchte ist nicht vorausgesetzt: \\ Gegeben $f_1, .., f_n$ \\
+    Satz $f(x_1, .., x_n) = komisches U sammelzeichen wir $ BILD % TODO
+    \paragraph{(b)} BILD % todo
+    \paragraph{(c)} gegeben gemeinsame Dichte: prüfe auf
+    \txc{Vosichtig sein, denn Dichten sind ja nicht eindeutig.! (Bezug auf Ja, Nein)}
+    \komm{Wenn das nicht gilt, dann kann das sein, weil es an einzelnen Punkten nicht gilt, deshalb reicht es nicht xxxx zu zeigen. Man sol in der Klaussur nicht hinschreiben "Offensichtlich gilt nicht Gleichheit" oder so für "diese" zahlen, das muss man schon zeigen.}
+\end{bem}
+
+Widerlegen bvon Unabh.
+bei Dichten: zeigen Sie, Produktform \textbf{nicht} gilt auf Quader oder verwenden Sie die (
+nicht geltende) Produktform der Verteilungsfunktion.
+% TODO wtf ist die Produktform
+
+\komm{Bei Bild Tafel link ganz unten reicht es an einem Punkt zu zeigen, weil wir da ganze Mengen benutzt haben. Okay ????}
+
+\begin{bsp} \textbf{uniform. verteilung auf Rechteck}
+    Bild Rechteck\ldots % TODO
+    $(X,Y)$ hat (gem.) Dichte $f(x,y) = \Chi_R (x,y) \frac{1}{a \cdot b} \quad \forall (x,y) \in \rz^2$
+    Randdichten:
+    \begin{gather*}
+        f_X(x) = \Chi_{[0,a]}(x) \in_0^b \underbrace{f(x,y)}_{\frac{1}{a \cdot b}} dy = \frac{1}{a} \Chi_{[0,a]}(x)\\
+        f_Y(y) = \frac{1}{b} \Chi_{[0,b]}(y)\\
+    \end{gather*}
+BILD % TODO
+    schlauer:
+    \[
+        f(x,y) =
+    \]
+\txo{Wir müssen die Randdichten gar nicht berechnen!}
+X,Y unabh.
+\komm{wenn man sieht die Dichte zerfällt in x und y Argument muss man nicht integrieren, sondern nur schauen, dass die Funktionen (?) das richtige Gewicht haben. OK. Gerald fragen...} % TODO
+\end{bsp}
+
+\begin{bsp} DREIECK \\
+    BILD
+\end{bsp}
+
+Randdichten
+\[
+    f_X (x) = \Chi_{[0,1]}(x) \int .. BILD % TODO
+\]
+
+mehr bilder % TODO
+
+Wir sehen:
+Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$, aber ``rechte Seite'' $> 0$. \\
+Keine Unabhängigkeit. \\
+Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \in \rz^2$ gibt mit
+\[
+    \pe(X \leq a, Y \leq b) \neq F_X(a) \cdot F_Y(b).
+\]
+\begin{bsp}
+    Verteilung der Summe von zwei unabh., poisson.verteilt, \zv \\
+    $X_1, X_2 unabh.$
+    \[
+        \mu_{x_!} (k) = \pe(X_! = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \foall k \in \nz_0
+    \]
+    das gleiche fpr i = 2 % TODO
+\end{bsp}
+
+\begin{beh}
+    $X_1 + X_2$ ist poisson verteilz mit Parameter $\lambda_1 + \lambda_2 $
+    \[
+        \mu_{X_1 + X_2}(n) = \pe(X_1 + X_2 = n) \quad \text{ für } n \in \nz_0 \\
+        = \pe \big( \bigcup^k_{k_1 = 0} \{ X_1 = k_1 , X_2 = n - k_1\} \big)
+        = \sum1 n_{k_1=0} \pe(X_1 = k_1, X_2 = n - k_1)
+        = Rest bild \dots % TODO
+    \]
+    da muss noch ein + in den cup % TODO
+    \komm{$X_1 + X_2$ nehmen beide wete aus n 0 an, also ist die Summe auch da drin }
+\end{beh}
+
+\begin{defi}
+    X,Y unabh. \zv. Dann heipt die Verteilung der Summe \textbf{Faltung} (der Verteilungen).
+\end{defi}
+
+%%%%% Alt unten
 
 \section{\gls{zv} mit abzählbarem Bildbereich}
 \begin{satz}
