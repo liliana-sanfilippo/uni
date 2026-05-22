@@ -11,7 +11,7 @@
 
 \begin{bsp}
     \textbf{n-mal würfeln} \\
-    $\eraum \{1,\dots,6\}^n, \quad \ele_i$ das Eregenis des i-ten Wurfs. $\pe$ gleichverteilt. \\
+    $\eraum \{1,\dots,6\}^n, \quad \ele_i$ das Ereignis des i-ten Wurfs. $\pe$ gleichverteilt. \\
     $X_i: \eraum \rightarrow \{1,\dots ,6 \}, \quad X_i(\ele) = \ele_i \quad \forall i \in \{1,\dots ,6 \}$ \\
     z.z. $X_i, \dots, X_n$ unab. \\
     \begin{align*}
@@ -40,18 +40,18 @@
     $i = 1, .., n$. \\
     Die Zufallsvariablen $X_1, .., X_n$ heißen unabhängig, wenn die Ereignisse
     \[
-        \{X_1 \in B\}, ... , \{X_n \in B\}
+        \{X_1 \in B\}, \dots , \{X_n \in B\}
     \]
-    für alle Wahlen von messbaren Mengen $B_i \subseteq E_i, i = 1, ..., n$, unabhängig sind.
+    für alle Wahlen von messbaren Mengen $B_i \subseteq E_i, i = 1, \dots, n$, unabhängig sind.
 \end{defi}
-Diese Definition ist zunächst einmal abschreckend. Wir haben bereits gesehen, wie viele Bedingungen
-für den Nachweis der Unabhängigkeit von n Ereignissen zu prüfen sind. Und nun sollen wir diesen
-Aufwand auch noch für jede Wahl von $B_i$ betreiben! Wir werden uns daher im folgenden darum
-bemühen, einfacher nachzuweisende Kriterien für Unabhängigkeit herzuleiten.
+Diese Definition ist zunächst einmal abschreckend.
+Wir haben bereits gesehen, wie viele Bedingungen für den Nachweis der Unabhängigkeit von n Ereignissen zu prüfen sind.
+Und nun sollen wir diesen Aufwand auch noch für jede Wahl von $B_i$ betreiben!
+Wir werden uns daher im folgenden darum bemühen, einfacher nachzuweisende Kriterien für Unabhängigkeit herzuleiten.
 
 Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Mengen $B_i$ zu betrachten.
 
-\subsection*{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}
+\subsection{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}\label{subsec:unabhangigkeit-fur-zufallsvariable-mit-abzahlbarem-bildbereich}
 \komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version}
 \begin{satz}
     \textbf{Satz I. (2025)}
@@ -78,9 +78,10 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{theo}
     \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
     Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bild-
-    bereich gegeben. Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
+    bereich gegeben.
+    Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
     \[
-        \{X_1 = x_1\}, ... , \{X_n = x_n\}
+        \{X_1 = x_1\}, \dots , \{X_n = x_n\}
     \]
     für alle $x_i \in X_i(\eraum), i = 1, .., n$ unabhängig sind.
 
@@ -101,7 +102,7 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
         X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \overbrace{\underbrace{\kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)}_{
             \glssymbol{wfk}_{X_1, \dots, X_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
         }}^{\text{wenn die Ereignisse }
-        \{X_1 = x_1\}, ... , \{X_n = x_n\}
+        \{X_1 = x_1\}, \dots , \{X_n = x_n\}
         \text{ für alle } x_i \in X_i(\eraum), i = 1, .., n \text{  unabhängig sind.}}
     \]
 }
@@ -145,14 +146,14 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 
 \begin{bem}
     \textbf{(a)} Wenn wir die Produktform finden: Beweis der Unabh.
-    \txc{Wenn man also zeigen kann $\pe_{X_1, ..., X_n} = \prod_i \pe_{X_i}$ } \\
+    \txc{Wenn man also zeigen kann $\pe_{X_1, \dots, X_n} = \prod_i \pe_{X_i}$ } \\
     \txc{Umkehridee:} \\
     \textbf{(b)} Gegeb.
     Verteilung der $X_i$: Wir nutzen Produktform, um die gemeinsame Verteilung für unabh. $X_i$
     UZ BESTIMMWEN Todo inddex Produktform
     \txc{Also wenn die $X_i$ unabhängig sind und die Randverteilungen bekannt sind, dann kann man die gemeinsame Verteilung berechnen durch
         \[
-            \pe_{X_1, ..., X_n} (x_1, .., x_n) = \prod_i \pe_{X_i}(x_i)
+            \pe_{X_1, \dots, X_n} (x_1, .., x_n) = \prod_i \pe_{X_i}(x_i)
         \]
     }
 \end{bem}
@@ -163,7 +164,7 @@ dann
     \pe(X_1 \in a_1, X_n \in a_n) = siehebild (aber das zweite)
 \]
 
-\subsection{Poisson-Verteilte ZV}
+\subsection{Poisson-Verteilte ZV}\label{subsec:poisson-verteilte-zv}
 
 \begin{satz} (2025)
     \\
@@ -201,7 +202,7 @@ dann
 \end{bem}
 
 
-\section{\gls{zv} mit Dichten}
+\section{\gls{zv} mit Dichten}\label{sec:zv-mit-dichten}
 
 \begin{satz}
     \textbf{Satz III. (2025): Unabhängigkeiten von \gls{zv}} (mit und ohne Dichte) \\
@@ -231,10 +232,11 @@ dann
             f(x_1, \dots, x_n) \coloneqq  f_1(x_1) \cdot \dots \cdot f_n(x_n) \forall x_i \in \mathbb{R} (i=1, \dots, n)
         \end{equation}
         Aussage des Satzes ist: $X_1, \dots, X_n$ unabh. $\Leftrightarrow f$ gem. \dichte von $X_1, \dots, X_n$ ist
-        \item $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$. Modelliere unabh. Exp. durch gem. \dichte (\ref{eq:gemdichte}).
+        \item $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$.
+        Modelliere unabhängige Experimente durch gemeinsame \dichte \eqref{eq:gemdichte}.
         \item Gegen eine gem. \dichte $f$ für $X_1, \dots, X_n$ berechne Randdichten $f_{x_1}, \dots, f_{x_n}$. \\
-        Gilt Gleichung (\ref{eq:gemdichte})? Falls ja: $X_1, \dots, X_n$ unabh. Falls (\ref{eq:gemdichte}) für
-        $(x_1, \dots, x_n)$ aus einer Menge $; \subseteq \mathbb{R}^n$ gilt mit $\mathbb{R}^n\backslash M$ abzählbar, dann gilt Unabh.
+        Gilt Gleichung~\eqref{eq:gemdichte}? Falls ja: $X_1, \dots, X_n$ unabhängig.
+        Falls~\eqref{eq:gemdichte} für $(x_1, \dots, x_n)$ aus einer Menge $; \subseteq \mathbb{R}^n$ gilt mit $\mathbb{R}^n\backslash M$ abzählbar, dann gilt Unabh.
     \end{itemize}
 \end{bem}
 
@@ -256,7 +258,7 @@ dann
 \end{bem}
 
 
-\section{Widerlegen von Unabhängigkeiten}
+\section{Widerlegen von Unabhängigkeiten}\label{sec:widerlegen-von-unabhangigkeiten}
 \begin{bem}
     \label{bem:widerlegen}
     Es genügt nicht einen Punkt zu finden, in dem (\ref{eq:gemdichte}) nicht gilt. Wir brauchen eine Menge $D \subseteq \mathbb{R}^n$ mit $|D| = Z(D) > 0$, so dass (\ref{eq:gemdichte}) auf $D$ nicht gilt. \\
@@ -266,7 +268,7 @@ dann
 \komm{
     Zu Bemerkung \autoref{bem:widerlegen}: \\
     $\pe(X_1 \leq a_1, \dots, X_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$ bedeutet, die gemeinsame Verteilungsfunktion faktorisiert nicht. Das ist gemeint mit ``verwenden Sie die (nicht geltende) Produktform der Verteilungsfunktion'', denn da
-    $F_{X_1, ..., X_n}(a_1, ..., a_n) = \pe(X_1 \leq a_1, \dots, X_n \leq a_n)$ gilt, ist das die Negation der Produktform der Verteilungsfunktion.
+    $F_{X_1, \dots, X_n}(a_1, \dots, a_n) = \pe(X_1 \leq a_1, \dots, X_n \leq a_n)$ gilt, ist das die Negation der Produktform der Verteilungsfunktion.
 }
 \komm{
     Zu Bemerkung \autoref{bem:widerlegen}: \\
@@ -347,7 +349,7 @@ Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \i
 
 
 \begin{defi}
-    X,Y unabh. \zv. Dann heipt die Verteilung der Summe \textbf{Faltung} (der Verteilungen).
+    X,Y unabh. \zv. Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen).
 \end{defi}
 
 

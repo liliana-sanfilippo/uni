@@ -33,7 +33,7 @@ nur die Nachkommastellen der Dezimalentwicklung.
         $ A_2 =  \bigsqcup^9_{i=0} [\frac{10i + 4}{100}, \frac{10i + 5}{100})$
         \item Die Summe der ersten beiden Nachkommastellen der Zahl beträgt 5:
         $A_3 =  \bigsqcup^5_{i=0} [ \frac{10i+(5-i)}{100}, \frac{10i+(5-i)+1}{100})$
-        \item Die Zahl ist exakt $\frac{1}{\pi}$: $A_4 = {\frac{1}{\pi}} = {0,3138...}$
+        \item Die Zahl ist exakt $\frac{1}{\pi}$: $A_4 = {\frac{1}{\pi}} = {0,3138\dots}$
         \item Die Zahl ist um höchstens $\frac{1}{100}$ von $\frac{1}{\pi}$ entfernt:
         $A_5 = [\frac{1}{\pi}-\frac{1}{100}, \frac{1}{\pi} + \frac{1}{100}]$
     \end{enumerate}
@@ -121,20 +121,20 @@ insgesamt vorgerückt wird
     \subsubsection*{Geben Sie einen geeigneten Wahrscheinlichkeitsraum für dieses Zufallsexperiment an.}
     \paragraph{Lösung:} $\eraum = \nz$ also
     \[
-        \tilde\eraum \{(k,l) \mid k \in \nz_0, l \in \{0,...,5\}\} = \nz_0 \times \{0,...,5\}
+        \tilde\eraum \{(k,l) \mid k \in \nz_0, l \in \{0,\dots,5\}\} = \nz_0 \times \{0,\dots,5\}
     \]
     \[
-        mu = ? \squiggarrow \pe(A) = \sum_{\elem \in A} mu(\elem)
+        mu = ? \squiggarrow \pe(A) = \sum_{\ele \in A} mu(\ele)
     \]
-    Für $1 \leq \elem \leq 6:$: $mu_1 \sim \cup_{\{1,...,6\}} $
+    Für $1 \leq \ele \leq 6:$: $mu_1 \sim \cup_{\{1,\dots,6\}} $
 
-    $mu(\elem) = mu_1(\elem) = \frac{1}{6} \quad \forall \elem \in \{1,...,5\}$
+    $mu(\ele) = mu_1(\ele) = \frac{1}{6} \quad \forall \ele \in \{1,\dots,5\}$
 
     $mu(6) = 0$
 
-    Für $7 \leq \elem \leq 12:$: $mu_2 \sim \cup_{\{1,...,6\}^2} $
+    Für $7 \leq \ele \leq 12:$: $mu_2 \sim \cup_{\{1,\dots,6\}^2} $
 
-    $mu(\elem) = mu_2((6,6-\elem)) = \frac{1}{36} \quad \forall \elem \in \{7,...,11\}$
+    $mu(\ele) = mu_2((6,6-\ele)) = \frac{1}{36} \quad \forall \ele \in \{7,\dots,11\}$
 
     $mu(12) =  mu_2((6,6))$ = 0 ist falsch!, weil wir direkt nochmal würfeln
     würden nach der zweiten 6,richtig wäre:
@@ -158,7 +158,7 @@ insgesamt vorgerückt wird
     \]
     also auch
     \[
-        \nz_0 \times \{0,...,5\}
+        \nz_0 \times \{0,\dots,5\}
     \]
 
 
