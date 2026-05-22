@@ -21,7 +21,7 @@
         % TODO heir schauen ob das letzte richtig ist die hat das komisch angeschrieben\\
     \end{align*}
     \txo{! jetzt müssen wir noch prügen: Paare, tripel, ...}
-    Danach: $X_!, \dots, X_n$ unabh. \\
+    Danach: $X_1, \dots, X_n$ unabh. \\
     $\Rightarrow \{x_1 \in \{2,4,6\}, \dots, \{x_4 \leq 4\}\}$ unabh. \\
     % todo über arrow "z.B."
     Frage: müssen wir \ldots wirklich prüfen?
@@ -32,9 +32,20 @@
 \end{bsp}
 
 \begin{defi} \textbf{Unabhängigkeit von Zufallsvariablen} \\
-    todo skript
+Auf einem Wahrscheinlichkeitsraum $\wraum$ seien Zufallsvariablen $X_1, .., X_n$ gegeben mit $X_i : \eraum E_i$ für
+$i = 1, .., n$. \\
+Die Zufallsvariablen $X_1, .., X_n$ heißen unabhängig, wenn die Ereignisse
+    \[
+        \{X_1 \in B\}, ... , \{X_n \in B\}
+    \]
+    für alle Wahlen von messbaren Mengen $B_i \subseteq E_i, i = 1, ..., n$, unabhängig sind.
 \end{defi}
+Diese Definition ist zunächst einmal abschreckend. Wir haben bereits gesehen, wie viele Bedingungen
+für den Nachweis der Unabhängigkeit von n Ereignissen zu prüfen sind. Und nun sollen wir diesen
+Aufwand auch noch für jede Wahl von $B_i$ betreiben! Wir werden uns daher im folgenden darum
+bemühen, einfacher nachzuweisende Kriterien für Unabhängigkeit herzuleiten.
 
+Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Mengen $B_i$ zu betrachten.
 \begin{kor}
     Anz.
     Bildbereich \\
@@ -55,8 +66,8 @@
     $X_1, .., X_n$
 \end{kor}
 \begin{bem}
-    \paragraph{(a)} Wenn wir die Produktform finden: Beweis der Unabh.
-    \paragraph{(b)} Gegeb.
+    \textbf{(a)} Wenn wir die Produktform finden: Beweis der Unabh.
+    \textbf{(b)} Gegeb.
     Verteilung der $X_i$: Wir nutzen Produktform, um die gemeinsame Verteilung für unabh. $X_i$
     UZ BESTIMMWEN  Todo inddex Produktform
 \end{bem}
@@ -77,10 +88,10 @@ Dann gilt
 \end{satz}
 
 \begin{bem}
-    \paragraph{(a)} Existenz der gemeinsamen DIchte ist nicht vorausgesetzt: \\ Gegeben $f_1, .., f_n$ \\
+    \textbf{(a)} Existenz der gemeinsamen DIchte ist nicht vorausgesetzt: \\ Gegeben $f_1, .., f_n$ \\
     Satz $f(x_1, .., x_n) = komisches U sammelzeichen wir $ BILD % TODO
-    \paragraph{(b)} BILD % todo
-    \paragraph{(c)} gegeben gemeinsame Dichte: prüfe auf
+    \textbf{(b)} BILD % todo
+    \textbf{(c)} gegeben gemeinsame Dichte: prüfe auf
     \txc{Vosichtig sein, denn Dichten sind ja nicht eindeutig.! (Bezug auf Ja, Nein)}
     \komm{Wenn das nicht gilt, dann kann das sein, weil es an einzelnen Punkten nicht gilt, deshalb reicht es nicht xxxx zu zeigen. Man sol in der Klaussur nicht hinschreiben "Offensichtlich gilt nicht Gleichheit" oder so für "diese" zahlen, das muss man schon zeigen.}
 \end{bem}
