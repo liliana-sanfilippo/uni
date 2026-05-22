@@ -47,8 +47,8 @@ bemühen, einfacher nachzuweisende Kriterien für Unabhängigkeit herzuleiten.
 
 Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Mengen $B_i$ zu betrachten.
 
-\subsection{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}
-\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen.}
+\subsection*{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}
+\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version}
 \begin{satz}
     \textbf{Satz I. (2025)}
     Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
@@ -66,7 +66,7 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
     Dann
     \[
-        X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((X_1, \dots, X_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
+        X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
     \]
 \end{satz}
 
@@ -80,6 +80,26 @@ bereich gegeben. Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Erei
     für alle $x_i \in X_i(\eraum), i = 1, .., n$ unabhängig sind.
     \paragraph{Beweis.} Siehe Skript S. 58.
 \end{theo}
+
+\komm{
+Gemeinsam haben alle drei Formulierungen: 
+\begin{center}
+    $X_1, .., X_n$ sind \glspl{zv} auf \gls{wraum} $\wraum$
+\end{center}
+Verschieden formuliert sind:
+\begin{center}
+    ``haben abzählbare Werte-/Bildbereiche'' $\Leftrightarrow$ $X_i$ sei $E_i$-wertig
+\end{center}
+und
+    \[
+        X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \overbrace{\underbrace{\kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)}_{
+        \glssymbol{wfk}_{X_1, \dots, X_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
+        }}^{\text{wenn die Ereignisse }
+        \{X_1 = x_1\}, ... , \{X_n = x_n\}
+        \text{ für alle } x_i \in X_i(\eraum), i = 1, .., n \text{  unabhängig sind.}}
+    \]
+
+}
 
 
 \begin{kor}
@@ -179,7 +199,7 @@ Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \i
     Verteilung der Summe von zwei unabh., poisson.verteilt, \zv \\
     $X_1, X_2 unabh.$
     \[
-        \mu_{x_!} (k) = \pe(X_! = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \foall k \in \nz_0
+        \mu_{x_!} (k) = \pe(X_! = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \forall k \in \nz_0
     \]
     das gleiche fpr i = 2 % TODO
 \end{bsp}
