@@ -98,8 +98,8 @@ und
         \{X_1 = x_1\}, ... , \{X_n = x_n\}
         \text{ für alle } x_i \in X_i(\eraum), i = 1, .., n \text{  unabhängig sind.}}
     \]
-
 }
+
 
 
 \begin{kor}
@@ -119,8 +119,17 @@ und
 
 \begin{kor}
     $X_1, .., X_n$ unabh. $\Leftrightarrow$ gemeinsame Verteilung eindeutig bestimmt durch (Rand-)Verteilungen von
-    $X_1, .., X_n$
+    $X_1, .., X_n$ \\
+    Aka.:
+    \[
+        X_1, \dots, X_n  \text{ unabh. } \Rightarrow \text{ gemeinsame Verteilung von } X_1, \dots, X_n \text{ eindeutig bestimmt durch die Randverteilung}
+    \]
+    \begin{bem}
+        Das Korollar sagt uns, wie wir unabhängige Zufallsvariablen mit Zähldichte modellieren. \\
+        Ohne Unabhängigkeit ist das nicht der Fall!
+    \end{bem}
 \end{kor}
+
 \begin{bem}
     \textbf{(a)} Wenn wir die Produktform finden: Beweis der Unabh.
     \textbf{(b)} Gegeb.
@@ -222,16 +231,8 @@ Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \i
 
 %%%%% Alt unten
 
-\section{\gls{zv} mit abzählbarem Bildbereich}
-
 \begin{kor}
-    \[
-        X_1, \dots, X_n  \text{ unabh. } \Rightarrow \text{ gemeinsame Verteilung von } X_1, \dots, X_n \text{ eindeutig bestimmt durch die Randverteilung}
-    \]
-    \begin{bem}
-        Das Korollar sagt uns, wie wir unabhängige Zufallsvariablen mit Zähldichte modellieren. \\
-        Ohne Unabhängigkeit ist das nicht der Fall!
-    \end{bem}
+
     \begin{bem}
         Wie haben gesehen, dass Unabhängigkeit bereits gezeigt ist, wenn $\pe(X_1 = x_1, \dots, X_n = x_n) = \pe(X_1 = x_1) \cdot .. \cdot \pe(X_n = x_n) \forall x_i \in E_i (i = 1, \dots, n)$ gilt. (Es ist nicht erforderlich  $X_{i_1}, \dots, X_{i_k}$ seperat zu betrachten.
     \end{bem}
