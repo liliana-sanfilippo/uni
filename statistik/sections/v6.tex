@@ -22,14 +22,15 @@
         \pe(X_1 = k_1, ...) = \pe(X_1 = k_1) \cdot \dots \cdot \pe(X)
         % TODO heir schauen ob das letzte richtig ist die hat das komisch angeschrieben\\
     \end{align*}
-    \txo{! jetzt müssen wir noch prügen: Paare, tripel, ...}
-    Danach: $X_1, \dots, X_n$ unabh. \\
-    $\Rightarrow \{x_1 \in \{2,4,6\}, \dots, \{x_4 \leq 4\}\}$ unabh. \\
-    % todo über arrow "z.B."
+    \txo{! jetzt müssen wir noch prüfen: Paare, Tripel, ...}
+    Danach: $X_1, \dots, X_n$ bewiesenermaßen unabhängig \\
+    Beispielsweise:
+    $\Rightarrow \{x_1 \in \{2,4,6\}, \dots, \{x_4 \leq 4\}\}$ unabhängig \\
+    % über arrow "z.B."
     Frage: müssen wir \ldots wirklich prüfen?
     % TODO BILD 1
 
-    \paragraph{Beweis.} UM zu zeigen, dass \[\pe(X_1 \in B_1, X_3 = B_3) = \pe(X_1 = B_3) \cdot \pe(X_3 = B_3)\]
+    \paragraph{Beweis.} Um zu zeigen, dass \[\pe(X_1 \in B_1, X_3 = B_3) = \pe(X_1 = B_3) \cdot \pe(X_3 = B_3)\]
     gilt, wählen wir
     \[B_2 = E_2, B_4 = E_4 , \dots, B_n = E_n\]
 \end{bsp}
@@ -261,7 +262,8 @@ dann
 \section{Widerlegen von Unabhängigkeiten}\label{sec:widerlegen-von-unabhangigkeiten}
 \begin{bem}
     \label{bem:widerlegen}
-    Es genügt nicht einen Punkt zu finden, in dem (\ref{eq:gemdichte}) nicht gilt. Wir brauchen eine Menge $D \subseteq \mathbb{R}^n$ mit $|D| = Z(D) > 0$, so dass (\ref{eq:gemdichte}) auf $D$ nicht gilt. \\
+    Es genügt nicht einen Punkt zu finden, in dem (\ref{eq:gemdichte}) nicht gilt.
+    Wir brauchen eine Menge $D \subseteq \mathbb{R}^n$ mit $|D| = Z(D) > 0$, so dass (\ref{eq:gemdichte}) auf $D$ nicht gilt. \\
     Einfacher: Zeigen, dass $\pe(X_1 \leq a_1, \dots, X_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$. \\
     Zeigen Sie, dass die Produktform \textbf{nicht} gilt auf Quader oder verwenden Sie die (nicht geltende) Produktform der Verteilungsfunktion.
 \end{bem}
@@ -349,7 +351,8 @@ Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \i
 
 
 \begin{defi}
-    X,Y unabh. \zv. Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen).
+    X,Y unabh. \zv.
+    Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen).
 \end{defi}
 
 
