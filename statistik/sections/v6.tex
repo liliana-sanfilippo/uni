@@ -46,6 +46,42 @@ Aufwand auch noch für jede Wahl von $B_i$ betreiben! Wir werden uns daher im fo
 bemühen, einfacher nachzuweisende Kriterien für Unabhängigkeit herzuleiten.
 
 Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Mengen $B_i$ zu betrachten.
+
+\subsection{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}
+\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen.}
+\begin{satz}
+    \textbf{Satz I. (2025)}
+    Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
+    Dann
+    \[
+        X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
+    \]
+
+    \paragraph{Beweis.} \texttt{Siehe Folie 2}
+\end{satz}
+
+
+\begin{satz}
+    \textbf{Satz II. (2025)} (Neuformulierung von Satz I.) \\
+    Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
+    Dann
+    \[
+        X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((X_1, \dots, X_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
+    \]
+\end{satz}
+
+
+\begin{theo} \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
+    Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bild-
+bereich gegeben. Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
+    \[
+        \{X_1 = x_1\}, ... , \{X_n = x_n\}
+    \]
+    für alle $x_i \in X_i(\eraum), i = 1, .., n$ unabhängig sind.
+    \paragraph{Beweis.} Siehe Skript S. 58.
+\end{theo}
+
+
 \begin{kor}
     Anz.
     Bildbereich \\
@@ -105,11 +141,11 @@ nicht geltende) Produktform der Verteilungsfunktion.
 
 \begin{bsp} \textbf{uniform. verteilung auf Rechteck}
     Bild Rechteck\ldots % TODO
-    $(X,Y)$ hat (gem.) Dichte $f(x,y) = \Chi_R (x,y) \frac{1}{a \cdot b} \quad \forall (x,y) \in \rz^2$
+    $(X,Y)$ hat (gem.) Dichte $f(x,y) = \chi_R (x,y) \frac{1}{a \cdot b} \quad \forall (x,y) \in \rz^2$
     Randdichten:
     \begin{align*}
-        f_X(x) = \Chi_{[0,a]}(x) \in_0^b \underbrace{f(x,y)}_{\frac{1}{a \cdot b}} dy = \frac{1}{a} \Chi_{[0,a]}(x)\\
-        f_Y(y) = \frac{1}{b} \Chi_{[0,b]}(y)\\
+        f_X(x) = \chi_{[0,a]}(x) \in_0^b \underbrace{f(x,y)}_{\frac{1}{a \cdot b}} dy = \frac{1}{a} \chi_{[0,a]}(x)\\
+        f_Y(y) = \frac{1}{b} \chi_{[0,b]}(y)\\
     \end{align*}
 BILD % TODO
     schlauer:
@@ -127,7 +163,7 @@ X,Y unabh.
 
 Randdichten
 \[
-    f_X (x) = \Chi_{[0,1]}(x) \int .. BILD % TODO
+    f_X (x) = \chi_{[0,1]}(x) \int .. BILD % TODO
 \]
 
 mehr bilder % TODO
@@ -167,27 +203,7 @@ Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \i
 %%%%% Alt unten
 
 \section{\gls{zv} mit abzählbarem Bildbereich}
-\begin{satz}
-    \textbf{Satz I.}
-    Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
-    Dann
-    \[
-        X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
-    \]
 
-    \paragraph{Beweis.} \texttt{Siehe Folie 2}
-\end{satz}
-\begin{bsp}
-    \textbf{n-mal Würfeln (fairer Würfel)}
-\end{bsp}
-\begin{satz}
-    \textbf{Satz II.} (Neuformulierung von Satz I.) \\
-    Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
-    Dann
-    \[
-        X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((X_1, \dots, X_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
-    \]
-\end{satz}
 \begin{kor}
     \[
         X_1, \dots, X_n  \text{ unabh. } \Rightarrow \text{ gemeinsame Verteilung von } X_1, \dots, X_n \text{ eindeutig bestimmt durch die Randverteilung}
