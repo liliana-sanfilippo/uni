@@ -98,7 +98,7 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version. Es handelt sich dabei um verschiedene Charackterisierungen der Unabhängigkeit (also es sind nur verschiedene Betrachtungsweisen des gleichen Umstands). Es sind danach auch noch weitere Charackterisierungen bzw. Konsequenzen zu finden.}
 \begin{satz}
     \label{satz:satz-i}
-    \textbf{Satz I. (2025) - Charakterisierung über Ereignisse} \\
+    \textbf{Satz I. - Charakterisierung über Ereignisse} (2025) \\
     Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
     Dann
     \[
@@ -111,7 +111,7 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 
 \begin{satz}
     \label{satz:satz-ii}
-    \textbf{Satz II. (2025)} (Neuformulierung von Satz I. - Charakterisierung über Produktform) \\
+    \textbf{Satz II.  - Neuformulierung von Satz I. / Charakterisierung über Produktform} (2025)  \index{Produktform} \\
     Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
     Dann
     \[
@@ -122,9 +122,8 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 
 \begin{theo}
     \label{theo:unabhängigkeit-zv-abzählbar}
-    \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
-    Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bild-
-    bereich gegeben.
+    \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich} (2026)\\
+    Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bildbereich gegeben.
     Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
     \[
         \{X_1 = x_1\}, \dots , \{X_n = x_n\}
@@ -208,8 +207,8 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     \txc{Wenn man also zeigen kann $\pe_{X_1, \dots, X_n} = \prod_i \pe_{X_i}$ } \\
     \txc{Umkehridee:} \\
     \textbf{(b)} Gegeb.
-    Verteilung der $X_i$: Wir nutzen Produktform, um die gemeinsame Verteilung für unabh. $X_i$
-    UZ BESTIMMWEN Todo inddex Produktform
+    Verteilung der $X_i$: Wir nutzen die Produktform, um die gemeinsame Verteilung für unabh. $X_i$
+    zu bestimmen.\index{Produktform}
     \txc{Also wenn die $X_i$ unabhängig sind und die Randverteilungen bekannt sind, dann kann man die gemeinsame Verteilung berechnen durch
         \[
             \pe_{X_1, \dots, X_n} (x_1, .., x_n) = \prod_i \pe_{X_i}(x_i)
@@ -217,11 +216,11 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     }
 \end{bem}
 % Tafel:
-$X_1, .., X_n$ mit Dichten, Unabh.
-dann
-\[
-    \pe(X_1 \in a_1, X_n \in a_n) = siehebild (aber das zweite)
-\]
+%$X_1, .., X_n$ mit Dichten, Unabh.
+%dann
+%\[
+%    \pe(X_1 \in a_1, X_n \in a_n) = siehebild (aber das zweite)
+%\]
 
 \subsection{Poisson-Verteilte ZV}\label{subsec:poisson-verteilte-zv}
 
@@ -261,10 +260,6 @@ dann
     \end{align*}
 \end{satz}
 
-\begin{bem}
-
-
-\end{bem}
 
 
 \section{\gls{zv} mit Dichten}\label{sec:zv-mit-dichten}
@@ -308,8 +303,7 @@ dann
 \end{bem}
 
 \komm{Vorsicht: Eine Wahrscheinlichkeitsdichte ist nur ``fast überall'' eindeutig. \\ Also: Die Produktform muss nicht an jedem einzelnen Punkt gelten.
-Es genügt, wenn sie fast überall gilt.
-}
+Es genügt, wenn sie fast überall gilt.}
 
 %\begin{satz} \textbf{für ZV mit Dichte (2026)}\\
 %$X_1, .., X_n$ ZV mit Dichten $f_1, .., f_n$.
@@ -363,7 +357,7 @@ Es genügt, wenn sie fast überall gilt.
     Man sagt dann: \\
     Die Verteilungsfunktion besitzt Produktform auf Quadern. \\
     Um zu zeigen, dass Zufallsvariablen nicht unabhängig sind, genügt es daher,
-    einen Quader zu finden, für den diese Produktform nicht gilt. \\
+    einen Quader zu finden, für den diese Produktform nicht gilt. \index{Produktform} \\
     \chatti
 }
 % todo 2025  Randdichten: BSP  \texttt{Hier fehlt was}
@@ -375,7 +369,7 @@ Es genügt, wenn sie fast überall gilt.
     \textbf{uniform. verteilung auf Rechteck} \\
     Sei $(X,Y)$ ein zufälliger Punkt in $\rz$ (uniforme Verteilung)
     \begin{figure}[H]
-        \includegraphics[width=0.6\linewidth]{./images/viereck}\label{fig:figure2}
+        \includegraphics[width=0.4\linewidth]{./images/viereck}\label{fig:figure2}
     \end{figure}
     $(X,Y)$ hat (gem.) Dichte $f(x,y) = \chi_R (x,y) \frac{1}{a \cdot b} \quad \forall (x,y) \in \rz^2$
     Randdichten:
@@ -398,7 +392,7 @@ Es genügt, wenn sie fast überall gilt.
     \label{bsp:dreieck}
     Dreieck
     \begin{figure}[H]
-        \includegraphics[width=0.6\linewidth]{./images/dreieck}\label{fig:dreieck}
+        \includegraphics[width=0.3\linewidth]{./images/dreieck}\label{fig:dreieck}
     \end{figure}
     Sei $(X,Y)$ ein zufälliger Punkt \txc{gleichverteilt} im Dreieck $D$. \\
     \txc{Gleichverteilt bedeutet: Dichte ist konstant auf $D$ und 0 außerhalb.}
@@ -428,7 +422,7 @@ Es genügt, wenn sie fast überall gilt.
     Wir sehen:
     Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$, also
     ``rechte Seite'' $> 0$. \\
-    Keine Unabhängigkeit. \txc{Für Erklöärung siehe Kommentar \ref{kom:dreieck-erklärt}.} \\
+    Keine Unabhängigkeit. \txc{Für Erklärung siehe Kommentar \ref{kom:dreieck-erklärt}.} \\
     Alternative:
     \txc{Statt Dichten zu vergleichen, kann man Unabhängigkeit auch testen über:
         \[
@@ -497,7 +491,7 @@ Alternative: berechne $F_X$ und $F_Y$, zeigem dass es einen (Un) Punkt $(a,b) \i
 
 \begin{defi}
     X,Y unabh. \zv.
-    Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen).
+    Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen). \index{Faltung}
 \end{defi}
 
 
