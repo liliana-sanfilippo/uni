@@ -95,7 +95,7 @@ Wir werden uns daher im folgenden darum bemühen, einfacher nachzuweisende Krite
 Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Mengen $B_i$ zu betrachten.
 
 \subsection{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}\label{subsec:unabhangigkeit-fur-zufallsvariable-mit-abzahlbarem-bildbereich}
-\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version. Es handelt sich dabei um verschiedene Charackterisierungen der Unabhängigkeit. Es sind danach auch noch weitere Charackterisierungen bzw. Konsequenzen zu finden.}
+\komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version. Es handelt sich dabei um verschiedene Charackterisierungen der Unabhängigkeit (also es sind nur verschiedene Betrachtungsweisen des gleichen Umstands). Es sind danach auch noch weitere Charackterisierungen bzw. Konsequenzen zu finden.}
 \begin{satz}
     \label{satz:satz-i}
     \textbf{Satz I. (2025) - Charakterisierung über Ereignisse} \\
@@ -225,39 +225,45 @@ dann
 
 \subsection{Poisson-Verteilte ZV}\label{subsec:poisson-verteilte-zv}
 
-\begin{satz} (2025)
+%\begin{bsp}
+%    Verteilung der Summe von zwei unabhängigen, Poisson-verteilten \zv \\
+%    Seien $X_1, X_2$ unabhängig.
+%    \[
+%        \mu_{x_1} (k) = \pe(X_1 = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \forall k \in \nz_0
+%    \]
+%    \[
+%        \mu_{x_2} (k) = \pe(X_2 = k) = \frac{\lambda^k_2}{k!} e^{-\lambda_2} \quad \forall k \in \nz_0
+%    \]
+%\end{bsp}
+
+\begin{satz}
+    \textbf{Summe unabhängiger Poisson-verteilter \gls{zv} ist wieder Poisson-verteilt.}
     \\
-    Summe unabh.\ Poisson-verteilter \gls{zv} ist wieder Poisson-verteilt. \\
-    Seien $X_1, X_2$ unabh.\ und Poisson-verteilt mit
+    Seien $X_1, X_2$ unabhängig und Poisson-verteilt mit
     \begin{align*}
         \glssymbol{wfk}_{x_1}(k) = \pe(X_1 = k) & = \frac{z_1^k}{k!} e^{-z_1} & (z_1 > 0) \forall k \in \mathbb{N}_0 \\
         \glssymbol{wfk}_{x_2}(k) = \pe(X_2 = k) & = \frac{z_2^k}{k!} e^{-z_2} & (z_2 > 0) \forall k \in \mathbb{N}_0
     \end{align*}
     Dann gilt: $X_1 + X_2$ ist Poisson-Verteilt mit Parameter $z_1 + z_2$.
+    \komm{$X_1 + X_2$ nehmen beide wete aus $\nz_0$ an, also ist die Summe auch in $\nz_0$.}
 
-    \paragraph{Beweis.} \texttt{Siehe Folie 6--7}
+    \paragraph{Beweis.} \texttt{Siehe auch Folie 6--7 2025} \\
+    $X_1 + X_2$ ist poisson verteilt mit Parameter $z_1 + z_2 $
+    \begin{align*}
+        \mu_{X_1 + X_2}(n) & = \pe(X_1 + X_2 = n) \quad \text{ für } n \in \nz_0 \\
+        & = \pe \big( \uplus^k_{k_1 = 0} \{ X_1 = k_1 , X_2 = n - k_1\} \big) \\
+        & = \sum^n_{k_1=0} \pe(X_1 = k_1, X_2 = n - k_1) \\
+        & = \sum^n_{k_1=0} \pe(X_1 = k_1) \pe(X_2 = n - k_1) & \text{da unabhängig} \\
+        & = \sum^n_{k_1=0} \frac{z_1^{k_1}}{k_1 !} e^{-z_1} \frac{z_2^{n-k_1}}{(n-k_1)!} e^{-z_2} \\
+        & = \sum^n_{k=0} \frac{n!}{k! (n-k)!} z_1^k z_2^{n-k} & \text{durch herausziehen von }
+        \big[ \frac{1}{n!} e^{-(z_1 + z_2)} \big] \\
+        & = \frac{(z_1 + z_2)^n}{n!} e^{-(z_1 + z_2)}
+    \end{align*}
 \end{satz}
 
-
-\begin{bsp}
-    Verteilung der Summe von zwei unabh., poisson.verteilt, \zv \\
-    $X_1, X_2 unabh.$
-    \[
-        \mu_{x_!} (k) = \pe(X_! = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \forall k \in \nz_0
-    \]
-    das gleiche fpr i = 2 % TODO
-\end{bsp}
-
 \begin{bem}
-    $X_1 + X_2$ ist poisson verteilz mit Parameter $\lambda_1 + \lambda_2 $
-    \[
-        \mu_{X_1 + X_2}(n) = \pe(X_1 + X_2 = n) \quad \text{ für } n \in \nz_0 \\
-        = \pe \big( \bigcup^k_{k_1 = 0} \{ X_1 = k_1 , X_2 = n - k_1\} \big)
-        = \sum1 n_{k_1=0} \pe(X_1 = k_1, X_2 = n - k_1)
-        = Rest bild \dots % TODO
-    \]
-    da muss noch ein + in den cup % TODO
-    \komm{$X_1 + X_2$ nehmen beide wete aus n 0 an, also ist die Summe auch da drin }
+
+
 \end{bem}
 
 
@@ -464,10 +470,10 @@ Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$
     Denn wir haben ja oben ausgerechnet, dass $f_X (x) = 2 x  \chi_{[0,1]}(x)$ und $f_Y (y) = 2(1-y)\chi_{[0,1]}(y)$, INSOFERN $X$ und $Y$ unabhängig sind. \\
     Weil aber $y<1$ gilt, muss $1-y>0$ sein, also
     \[
-       \overbrace{ 4  \underbrace{x}_{> 0}  ( \underbrace{1-y}_{> 0} )}^{> 0}
+        \overbrace{ 4  \underbrace{x}_{> 0}  ( \underbrace{1-y}_{> 0} )}^{> 0}
     \]
-Das ist dann ein Widerspruch damit, dass jeder Punkt außerhalb des Dreiecks $f(x,y) = 0$ hat. Wir haben einen Punkt außerhalb des Dreiecks betrachtet, und der hatte
-$f_X(x) f_Y(y) > 0$. Also $ f(x,y) \neq f_X(x) f_Y(y)$, was äauivalet ist zu ``X und Y sind NICHT unabhängig''.
+    Das ist dann ein Widerspruch damit, dass jeder Punkt außerhalb des Dreiecks $f(x,y) = 0$ hat. Wir haben einen Punkt außerhalb des Dreiecks betrachtet, und der hatte
+    $f_X(x) f_Y(y) > 0$. Also $ f(x,y) \neq f_X(x) f_Y(y)$, was äauivalet ist zu ``X und Y sind NICHT unabhängig''.
 }
 
 \komm{Zu Beispiel \autoref{bsp:dreieck} \\
@@ -477,7 +483,6 @@ Wenn Unabhängigkeit gilt, muss die Gleichung für \emph{alle} $(a,b)$ gelten. F
     "Unabhängigkeit ist eine globale Eigenschaft und ein Gegenbeispiel genügt, um sie zu zerstören."
 }
 
-\paragraph{hier}
 
 mehr bilder % TODO
 
