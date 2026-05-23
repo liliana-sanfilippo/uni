@@ -369,7 +369,7 @@ Es genügt, wenn sie fast überall gilt.
     \textbf{uniform. verteilung auf Rechteck} \\
     Sei $(X,Y)$ ein zufälliger Punkt in $\rz$ (uniforme Verteilung)
     \begin{figure}[H]
-        \includegraphics[width=0.6\linewidth]{./images/viereck}
+        \includegraphics[width=0.6\linewidth]{./images/viereck}\label{fig:figure2}
     \end{figure}
     $(X,Y)$ hat (gem.) Dichte $f(x,y) = \chi_R (x,y) \frac{1}{a \cdot b} \quad \forall (x,y) \in \rz^2$
     Randdichten:
@@ -389,11 +389,13 @@ Es genügt, wenn sie fast überall gilt.
 \end{bsp}
 
 \begin{bsp}
+    \label{bsp:dreieck}
     Dreieck
     \begin{figure}[H]
-        \includegraphics[width=0.6\linewidth]{./images/dreieck}
+        \includegraphics[width=0.6\linewidth]{./images/dreieck}\label{fig:dreieck}
     \end{figure}
-    Sei $(X,Y)$ ein zufälliger Punkt im Dreieck D. \\
+    Sei $(X,Y)$ ein zufälliger Punkt \txc{gleichverteilt} im Dreieck $D$. \\
+    \txc{Gleichverteilt bedeutet: Dichte ist konstant auf $D$ und 0 außerhalb.}
     \begin{align*}
         f(x,y) & = \frac{1}{|D|} \chi_D (x,y) \\
         & = 2 \chi_D(x,y) \\
@@ -401,26 +403,81 @@ Es genügt, wenn sie fast überall gilt.
                 2 & 0 \leq y \leq x \leq 1 \\ 0 & sonst
         \end{cases}
     \end{align*}
-    Randdichten:
+    Randdichten: \txc{(Man ``integriert die andere Variable weg'')})
     \begin{align*}
         f_X (x) & = \chi_{[0,1]}(x) \int_{- \infty}^{\infty} f(x,y) dy \\
         & = \chi_{[0,1]}(x) \int_{0}^{\txo{x}} 2 dy = 2 x  \chi_{[0,1]}(x) \\
         f_Y (y) & = \dots = 2(1-y)\chi_{[0,1]}(y)
     \end{align*}
-    Wenn $X,Y$ unabhängig:
+    Wenn $X,Y$ unabhängig \txc{wären, dann würde gelten}:
+    \txc{\begin{equation}
+             f(x,y) = f_X(x)\,f_Y(y)\label{eq:wenn-unabhängig}
+    \end{equation}}
+    \txc{Einsetzen ergibt:}
     \begin{align*}
         f(x,y) & = 2 \cdot \chi_D(x,y) \\
         & \overset{?}{=} f_X(x) f_Y(y) \\
         & = 2x 2 (1-y) \chi_{[0,1]}(x,y)
     \end{align*}
     Wir sehen:
-    Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$, also ``rechte Seite'' $> 0$. \\
-    Keine Unabhängigkeit. \\
-    Alternative: Berechne
-    \paragraph{hier}
+    Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$, also
+    ``rechte Seite'' $> 0$. \\
+    Keine Unabhängigkeit. \txc{Für Erklöärung siehe Kommentar \ref{kom:dreieck-erklärt}.} \\
+    Alternative:
+    \txc{Statt Dichten zu vergleichen, kann man Unabhängigkeit auch testen über:
+        \[
+            \mathbb \pe(X\le a, Y\le b) \stackrel{?}{=} F_X(a)F_Y(b)
+        \]}
+    Explizit: Berechne $F_X$ und $F_Y$, zeige, dass eis \textbf{einen} Punkt $(a,b) \in \rz^2$ gibt mit
+    \[
+        \pe(X \leq a, Y \leq b) \neq F_X(a) F_Y(b).
+    \]
 \end{bsp}
 
+\komm{Symbole und Terme in Beispiel \autoref{bsp:dreieck}
+    \begin{itemize}
+        \item $\chi_D(x,y)$ = Indikatorfunktion:
+        \[
+            \chi_D(x,y)=
+            \begin{cases}
+                1 & (x,y)\in D \\
+                0 & \text{sonst}
+            \end{cases}
+        \]
+        \item $|D|$ = Fläche des Dreiecks (hier: $|D|=\tfrac12$)
+        \item $f(x,y)$ = gemeinsame Dichte von $(X,Y)$
+        \item $f_X(x)$ beschreibt die Verteilung von $X$ alleine
+        \item $f_Y(y)$ beschreibt die Verteilung von $Y$ alleine
+    \end{itemize}
+}
 
+\komm{ \label{kom:dreieck-erklärt}
+Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$
+    weil in der Dichtefunktion oben explizit festgelegt wird, dass es außerhalb des Dreiecks 0 ist und $[0,1]^2 \backslash D$ ist alles außer das Dreieck. \\ Also
+    ist die ``rechte Seite''  $f_X(x)\,f_Y(y)$ aus \ref{eq:wenn-unabhängig}). \\
+    Diese ist $> 0$, denn $x$ kann 0 sein (siehe Bild \ref{fig:dreieck}, 0 ist der innerste Randpunkt von ``außerhalb des Dreiecks'') und
+    $y$ kann 1 sein (analog äußerster Randpunkt von ``außerhalb des Dreiecks''). Aber da es Randpunkte sind, haben sie keinen Einfluss auf die Dichte, denn Punkte haben keine Fläche und somit keine relevante ``Menge''. Also kann man diese Punkte
+    wegignorieren und einfach sagen $x > 0$ und $y < 1$. Und wenn man das annimmt, dann erhält man:
+    \[
+        f_X(x) f_Y(y) = 4 x (1-y) \chi_{[0,1]^2}(x,y)
+    \]
+    Denn wir haben ja oben ausgerechnet, dass $f_X (x) = 2 x  \chi_{[0,1]}(x)$ und $f_Y (y) = 2(1-y)\chi_{[0,1]}(y)$, INSOFERN $X$ und $Y$ unabhängig sind. \\
+    Weil aber $y<1$ gilt, muss $1-y>0$ sein, also
+    \[
+       \overbrace{ 4  \underbrace{x}_{> 0}  ( \underbrace{1-y}_{> 0} )}^{> 0}
+    \]
+Das ist dann ein Widerspruch damit, dass jeder Punkt außerhalb des Dreiecks $f(x,y) = 0$ hat. Wir haben einen Punkt außerhalb des Dreiecks betrachtet, und der hatte
+$f_X(x) f_Y(y) > 0$. Also $ f(x,y) \neq f_X(x) f_Y(y)$, was äauivalet ist zu ``X und Y sind NICHT unabhängig''.
+}
+
+\komm{Zu Beispiel \autoref{bsp:dreieck} \\
+\textbf{Warum reicht ein einzelner Punkt zur Widerlegung?}
+Wenn Unabhängigkeit gilt, muss die Gleichung für \emph{alle} $(a,b)$ gelten. Findet man \emph{einen einzigen} Punkt $(a,b)$ mit Ungleichheit,
+    ist Unabhängigkeit widerlegt. \\
+    "Unabhängigkeit ist eine globale Eigenschaft und ein Gegenbeispiel genügt, um sie zu zerstören."
+}
+
+\paragraph{hier}
 
 mehr bilder % TODO
 
