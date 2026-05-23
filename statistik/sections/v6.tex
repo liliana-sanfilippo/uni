@@ -26,17 +26,17 @@
     \end{itemize}
     \begin{table}[H]
         \begin{tabular}{cccc}
-            $\wfk_X ((x_1, x_2))$ & $x_2 = 0$ & $x_2 = 1$ & $\wfk_{X_1}(x_1)$ \\
-            $x_1 = 0$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{2}$ \\
-            $x_1 = 1$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{2}$  \\
-            $\wfk_{X_2}(x_2)$ & $\frac{1}{2}$  & $\frac{1}{2}$  & 1
+            $\wfk_X ((x_1, x_2))$ & $x_2 = 0$     & $x_2 = 1$     & $\wfk_{X_1}(x_1)$ \\
+            $x_1 = 0$             & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{2}$     \\
+            $x_1 = 1$             & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{2}$     \\
+            $\wfk_{X_2}(x_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
         \end{tabular}
 
         \begin{tabular}{cccc}
-            $\wfk_Y ((y_1, y_2))$ & $y_2 = 0$ & $y_2 = 1$ & $\wfk_{Y_1}(y_1)$ \\
-            $y_1 = 0$ & $\frac{1}{2}$  & 0 & $\frac{1}{2}$  \\
-            $y_1 = 1$ & 0 &$\frac{1}{2}$  & $\frac{1}{2}$  \\
-            $\wfk_{Y_2}(y_2)$ & $\frac{1}{2}$  & $\frac{1}{2}$ & 1
+            $\wfk_Y ((y_1, y_2))$ & $y_2 = 0$     & $y_2 = 1$     & $\wfk_{Y_1}(y_1)$ \\
+            $y_1 = 0$             & $\frac{1}{2}$ & 0             & $\frac{1}{2}$     \\
+            $y_1 = 1$             & 0             & $\frac{1}{2}$ & $\frac{1}{2}$     \\
+            $\wfk_{Y_2}(y_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
         \end{tabular}\label{tab:table}
     \end{table}
     Offensichtlich sind die Randverteilungen von $X$ und von $Y$ gleich, während die gemeinsame Verteilung
@@ -71,6 +71,7 @@ Frage: müssen wir die Paare und Tripel wirklich prüfen?
 
 \begin{satz}
     Seien $X_1, \dots, X_n$ unabhängig $\Rightarrow \pe(X_1 \in B_1 , \dots , X_n \in B_n) =  \pe(X_1 \in B_1) \cdot \dots \cdot \pe(X_n \in B_n)$
+
     \paragraph{Beweis.} Um zu zeigen, dass \[\pe(X_1 \in B_1, X_3 = B_3) = \pe(X_1 = B_3) \cdot \pe(X_3 = B_3)\]
     gilt, wählen wir
     \[B_2 = E_2, B_4 = E_4 , \dots, B_n = E_n\]
@@ -95,19 +96,22 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 
 \subsection{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}\label{subsec:unabhangigkeit-fur-zufallsvariable-mit-abzahlbarem-bildbereich}
 \komm{In 2025 und 2026 wurden diese Informationen verschieden formuliert. Hier befinden sich alle drei Versionen und eine zusammengeführte Version. Es handelt sich dabei um verschiedene Charackterisierungen der Unabhängigkeit. Es sind danach auch noch weitere Charackterisierungen bzw. Konsequenzen zu finden.}
-\begin{satz} \label{satz:satz-i} \\
-    \textbf{Satz I. (2025) - Charakterisierung über Ereignisse}
+\begin{satz}
+    \label{satz:satz-i}
+    \textbf{Satz I. (2025) - Charakterisierung über Ereignisse} \\
     Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
     Dann
     \[
         X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
     \]
+
     \paragraph{Beweis.} \texttt{Siehe Folie 2 (2025)}
 \end{satz}
 
 
-\begin{satz} \label{satz:satz-ii}
-\textbf{Satz II. (2025)} (Neuformulierung von Satz I. - Charakterisierung über Produktform) \\
+\begin{satz}
+    \label{satz:satz-ii}
+    \textbf{Satz II. (2025)} (Neuformulierung von Satz I. - Charakterisierung über Produktform) \\
     Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
     Dann
     \[
@@ -116,8 +120,9 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \end{satz}
 
 
-\begin{theo} \label{theo:unabhängigkeit-zv-abzählbar}
-\textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
+\begin{theo}
+    \label{theo:unabhängigkeit-zv-abzählbar}
+    \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich (2026)} \\
     Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bild-
     bereich gegeben.
     Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
@@ -125,6 +130,7 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
         \{X_1 = x_1\}, \dots , \{X_n = x_n\}
     \]
     für alle $x_i \in X_i(\eraum), i = 1, .., n$ unabhängig sind.
+
     \paragraph{Beweis.} Siehe Skript S. 58.
 \end{theo}
 
@@ -148,19 +154,21 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 }
 
 
-\begin{kor} \textbf{Konsequenz aus Satz \ref{satz:satz-ii}} \\
+\begin{kor}
+    \textbf{Konsequenz aus Satz \ref{satz:satz-ii}} \\
     Abzählbarer Bildbereich \\
     Es genügt
     \[\pe(X_1 = x_1 , ..., X_n = x_n) = \pe (X_1 = x_1) \cdot \dots \cdot \pe(X_n = x_n) \forall x_i \in X_i(\eraum)\]
-    zz, um Unabh.
-    von $X_1, \dots X_n $ zz.
+    zu zeigen, um Unabhängigkeit
+    von $X_1, \dots X_n $ zu zeigen.
 \end{kor}
 
 % todo satz von tafel, insgesamt alles von der Tafel
 
-\begin{satz} \label{satz:charaktersierung-verteilungsfunktion}
-\textbf{Charakterisierung über die Produktform der Verteilungsfunktion} \\
-    $X_1, .., X_n$ unabhängih
+\begin{satz}
+    \label{satz:charaktersierung-verteilungsfunktion}
+    \textbf{Charakterisierung über die Produktform der Verteilungsfunktion} \\
+    $X_1, .., X_n$ unabhängig
     \begin{align*}
         \Leftrightarrow \pe ( X_1 \leq a_1 , ..., X_n \leq a_n ) & = \pe(X_1 \leq a_1) \cdot \dots \cdot
         \pe(X_n \leq a_n) \\
@@ -169,8 +177,9 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     % Fehler? vermischung von F und \pe
 \end{satz}
 
-\begin{kor} \label{kor:unabh-gem-verteilung-eindeutig}
-\textbf{Konsequenz aus Satz \ref{satz:charaktersierung-verteilungsfunktion}} \\
+\begin{kor}
+    \label{kor:unabh-gem-verteilung-eindeutig}
+    \textbf{Konsequenz aus Satz \ref{satz:charaktersierung-verteilungsfunktion}} \\
     $X_1, .., X_n$ unabh. $\Leftrightarrow$ gemeinsame Verteilung eindeutig bestimmt durch (Rand-)Verteilungen von
     $X_1, .., X_n$ \\
     Aka.:
@@ -185,14 +194,16 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     Ohne Unabhängigkeit ist das nicht der Fall!
 \end{bem}
 
-\begin{bem} \textbf{Erinnerung an mathematisches Kriterium für Unabhängigkeit} \\
+\begin{bem}
+    \textbf{Erinnerung an mathematisches Kriterium für Unabhängigkeit} \\
     Wie haben gesehen, dass Unabhängigkeit bereits gezeigt ist, wenn
     $\pe(X_1 = x_1, \dots, X_n = x_n) = \pe(X_1 = x_1) \cdot .. \cdot \pe(X_n = x_n) \forall x_i \in E_i (i = 1, \dots, n)$ gilt.
     \txc{Wenn also die Produktform existiert.}
     (Es ist nicht erforderlich $X_{i_1}, \dots, X_{i_k}$ separat zu betrachten.)
 \end{bem}
 
-\begin{bem} \textbf{Anwendung des mathematischen Kriteriums für Unabhängigkeit}
+\begin{bem}
+    \textbf{Anwendung des mathematischen Kriteriums für Unabhängigkeit}
     \textbf{(a)} Wenn wir die Produktform finden: Beweis der Unabh.
     \txc{Wenn man also zeigen kann $\pe_{X_1, \dots, X_n} = \prod_i \pe_{X_i}$ } \\
     \txc{Umkehridee:} \\
@@ -302,6 +313,7 @@ Es genügt, wenn sie fast überall gilt.
 %    \]
 %\end{satz}
 
+
 \section{Widerlegen von Unabhängigkeiten}\label{sec:widerlegen-von-unabhangigkeiten}
 \begin{bem}
     \label{bem:widerlegen}
@@ -376,11 +388,12 @@ Es genügt, wenn sie fast überall gilt.
     \komm{wenn man sieht die Dichte zerfällt in x und y Argument muss man nicht integrieren, sondern nur schauen, dass die Funktionen (?) das richtige Gewicht haben. OK. Gerald fragen...} % TODO
 \end{bsp}
 
-\begin{bsp} Dreieck
+\begin{bsp}
+    Dreieck
     \begin{figure}[H]
         \includegraphics[width=0.6\linewidth]{./images/dreieck}
     \end{figure}
-Sei $(X,Y)$ ein zufälliger Punkt im Dreieck D. \\
+    Sei $(X,Y)$ ein zufälliger Punkt im Dreieck D. \\
     \begin{align*}
         f(x,y) & = \frac{1}{|D|} \chi_D (x,y) \\
         & = 2 \chi_D(x,y) \\
@@ -388,16 +401,26 @@ Sei $(X,Y)$ ein zufälliger Punkt im Dreieck D. \\
                 2 & 0 \leq y \leq x \leq 1 \\ 0 & sonst
         \end{cases}
     \end{align*}
+    Randdichten:
+    \begin{align*}
+        f_X (x) & = \chi_{[0,1]}(x) \int_{- \infty}^{\infty} f(x,y) dy \\
+        & = \chi_{[0,1]}(x) \int_{0}^{\txo{x}} 2 dy = 2 x  \chi_{[0,1]}(x) \\
+        f_Y (y) & = \dots = 2(1-y)\chi_{[0,1]}(y)
+    \end{align*}
+    Wenn $X,Y$ unabhängig:
+    \begin{align*}
+        f(x,y) & = 2 \cdot \chi_D(x,y) \\
+        & \overset{?}{=} f_X(x) f_Y(y) \\
+        & = 2x 2 (1-y) \chi_{[0,1]}(x,y)
+    \end{align*}
+    Wir sehen:
+    Für $(x,y) \in [0,1]^2 \backslash D $ gilt $f(x,y) = 0$, also ``rechte Seite'' $> 0$. \\
+    Keine Unabhängigkeit. \\
+    Alternative: Berechne
+    \paragraph{hier}
 \end{bsp}
 
-Randdichten
-\begin{align*}
-    f_X (x) & = \chi_{[0,1]}(x) \int_{- \infty}^{\infty} f(x,y) dy \\
-    & = \chi_{[0,1]}(x) \int_{0}^{\txo{x}} 2 dy = 2 x  \chi_{[0,1]}(x) \\
-    f_Y (y) & = \dots = 2(1-y)\chi_{[0,1]}(y)
-\end{align*}
 
-% TODO das zu ende
 
 mehr bilder % TODO
 
