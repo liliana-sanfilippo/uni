@@ -132,21 +132,21 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 ## Eukaryotengenetik
 
-| Woche | Vorlesung  | In Notizen     | In Karteikarten |
-|-------|------------|----------------|-----------------|
-| KW 16 | Do, 16.04. | :construction: |                 |
-| KW 17 | Do, 23.04. | :construction: |                 |
-| KW 18 | Do, 30.04. | :construction: |                 |
-| KW 19 | Do, 07.05. | :no_entry:     |                 |
-| KW 20 | --         | --             | --              |
-| KW 21 | Do, 21.05. | :no_entry:     |                 |
-| KW 22 | Do, 28.05. | :soon:         |                 |
-| KW 23 | --         | --             | --              |
-| KW 24 | Do, 11.06. | :soon:         |                 |
-| KW 25 | Do, 18.06. | :soon:         |                 |
-| KW 26 | Do, 25.06. | :soon:         |                 |
-| KW 27 | Do, 02.07. | :soon:         |                 |
-| KW 28 | Do, 09.07. | :soon:         |                 |
-| KW 29 | Do, 16.07. | :soon:         |                 |
-| KW 30 | Do, 23.07. | :soon:         |                 |
+| Woche | Vorlesung  | In Notizen              | In Karteikarten |
+|-------|------------|-------------------------|-----------------|
+| KW 16 | Do, 16.04. | :ballot_box_with_check: |                 |
+| KW 17 | Do, 23.04. | :construction:          |                 |
+| KW 18 | Do, 30.04. | :construction:          |                 |
+| KW 19 | Do, 07.05. | :no_entry:              |                 |
+| KW 20 | --         | --                      | --              |
+| KW 21 | Do, 21.05. | :no_entry:              |                 |
+| KW 22 | Do, 28.05. | :soon:                  |                 |
+| KW 23 | --         | --                      | --              |
+| KW 24 | Do, 11.06. | :soon:                  |                 |
+| KW 25 | Do, 18.06. | :soon:                  |                 |
+| KW 26 | Do, 25.06. | :soon:                  |                 |
+| KW 27 | Do, 02.07. | :soon:                  |                 |
+| KW 28 | Do, 09.07. | :soon:                  |                 |
+| KW 29 | Do, 16.07. | :soon:                  |                 |
+| KW 30 | Do, 23.07. | :soon:                  |                 |
 
