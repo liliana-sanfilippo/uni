@@ -20,31 +20,35 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 :construction: - in Arbeit
 
+:hourglass: not started
+
+
+
 ## Statistik
 
-| Woche | Vorlesung  | In Notizen         | In Karteikarten | Tutorium   | In Notizen              | Übung (Abgabe) | In Notizen |
-|-------|------------|--------------------|-----------------|------------|-------------------------|----------------|------------|
-| KW 16 | Fr, 17.04. | :white_check_mark: |                 | --         | --                      | --             | --         |
-| KW 17 | Fr, 24.04. |                    |                 | Mo, 20.04. |                         | Fr, 24.04.     |            |
-| KW 18 | --         | --                 | --              | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     |            |
-| KW 19 | Fr, 08.05. |                    |                 | Mo, 04.05. | :construction:          | Fr, 08.05.     |            |
-| KW 20 | Fr, 15.05. |                    |                 | Mo, 11.05. |                         | Fr, 15.05.     |            |
-| KW 21 | Fr, 22.05. |                    |                 | Mo, 18.05. |                         | Fr, 22.05.     |            |
-| KW 22 | Fr, 29.05. |                    |                 | Mo, 25.05. |                         | Fr, 29.05.     |            |
-| KW 23 | Fr, 05.06. |                    |                 | Mo, 01.06. |                         | Fr, 05.06.     |            |
-| KW 24 | Fr, 12.06. |                    |                 | Mo, 08.06. |                         | Fr, 12.06.     |            |
-| KW 25 | Fr, 19.06. |                    |                 | Mo, 15.06. |                         | Fr, 19.06.     |            |
-| KW 26 | Fr, 26.06. |                    |                 | Mo, 22.06. |                         | Fr, 26.06.     |            |
-| KW 27 | Fr, 03.07. |                    |                 | Mo, 29.06. |                         | Fr, 03.07.     |            |
-| KW 28 | Fr, 10.07. |                    |                 | Mo, 06.07. |                         | Fr, 10.07.     |            |
-| KW 29 | Fr, 17.07. |                    |                 | Mo, 13.07. |                         | Fr, 17.07.     |            |
-| KW 30 | Fr, 24.07. |                    |                 | Mo, 20.07. |                         | Fr, 24.07.     |            |
+| Woche | Vorlesung  | In Notizen              | In Karteikarten | Tutorium   | In Notizen              | Übung (Abgabe) | In Notizen |
+|-------|------------|-------------------------|-----------------|------------|-------------------------|----------------|------------|
+| KW 16 | Fr, 17.04. | :white_check_mark:      |                 | --         | --                      | --             | --         |
+| KW 17 | Fr, 24.04. |                         |                 | Mo, 20.04. |                         | Fr, 24.04.     |            |
+| KW 18 | --         | --                      | --              | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     |            |
+| KW 19 | Fr, 08.05. |                         |                 | Mo, 04.05. | :construction:          | Fr, 08.05.     |            |
+| KW 20 | Fr, 15.05. |                         |                 | Mo, 11.05. |                         | Fr, 15.05.     |            |
+| KW 21 | Fr, 22.05. | :ballot_box_with_check: |                 | Mo, 18.05. |                         | Fr, 22.05.     |            |
+| KW 22 | Fr, 29.05. |                         |                 | Mo, 25.05. |                         | Fr, 29.05.     |            |
+| KW 23 | Fr, 05.06. |                         |                 | Mo, 01.06. |                         | Fr, 05.06.     |            |
+| KW 24 | Fr, 12.06. |                         |                 | Mo, 08.06. |                         | Fr, 12.06.     |            |
+| KW 25 | Fr, 19.06. |                         |                 | Mo, 15.06. |                         | Fr, 19.06.     |            |
+| KW 26 | Fr, 26.06. |                         |                 | Mo, 22.06. |                         | Fr, 26.06.     |            |
+| KW 27 | Fr, 03.07. |                         |                 | Mo, 29.06. |                         | Fr, 03.07.     |            |
+| KW 28 | Fr, 10.07. |                         |                 | Mo, 06.07. |                         | Fr, 10.07.     |            |
+| KW 29 | Fr, 17.07. |                         |                 | Mo, 13.07. |                         | Fr, 17.07.     |            |
+| KW 30 | Fr, 24.07. |                         |                 | Mo, 20.07. |                         | Fr, 24.07.     |            |
 
-| Abschnitt Skript | In Notizen | 
-|------------------|------------|
-| 1                | 1.1 fertig |
-| 2                |            |
-| 3                |            |
+| Abschnitt Skript | In Notizen         | 
+|------------------|--------------------|
+| 1                | 1.1 fertig         |
+| 2                | :white_check_mark: |
+| 3                |                    |
 
 ## MoBi 2
 
@@ -74,7 +78,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 17 | --         | --                      | --              | --         | --         | --         | --         |
 | KW 18 | Di, 28.04. | :construction:          |                 | --         | --         | Fr, 08.05. |            |
 | KW 19 | Di, 05.05. | :construction:          |                 | Di, 05.05. |            | --         | --         |
-| KW 20 | Di, 12.05. |                         |                 | Di, 12.05. |            | --         | --         |
+| KW 20 | Di, 12.05. | :construction:          |                 | Di, 12.05. |            | --         | --         |
 | KW 21 | Di, 19.05. |                         |                 | Di, 19.05. |            | Fr, 22.05. |            |
 | KW 22 | Di, 26.05. |                         |                 | Di, 26.05. |            | --         | --         |
 | KW 23 | Di, 02.06. |                         |                 | Di, 02.06. |            | Fr, 05.06. |            |
@@ -113,9 +117,9 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 16 | Do, 16.04. | :ballot_box_with_check: |                 | Do, 16.04. |            | Do, 30.04. |            |
 | KW 17 | Do, 23.04. | :ballot_box_with_check: |                 | Do, 23.04. |            | Do, 07.05. |            |
 | KW 18 | Do, 30.04. | :ballot_box_with_check: |                 | Do, 30.04. | --         | Do, 14.05. |            |
-| KW 19 | Do, 07.05. |                         |                 | Do, 07.05. |            | Do, 21.05. |            |
+| KW 19 | Do, 07.05. | :ballot_box_with_check: |                 | Do, 07.05. |            | Do, 21.05. |            |
 | KW 20 | --         |                         |                 | --         |            | --         |            |
-| KW 21 | Do, 21.05. |                         |                 | Do, 21.05. |            | Do, 28.05. |            |
+| KW 21 | Do, 21.05. | :construction:          |                 | Do, 21.05. |            | Do, 28.05. |            |
 | KW 22 | Do, 28.05. |                         |                 | Do, 28.05. |            | --         |            |
 | KW 23 | --         |                         |                 | --         |            | --         |            |
 | KW 24 | Do, 11.06. |                         |                 | Do, 11.06. |            | Do, 18.06. |            |
