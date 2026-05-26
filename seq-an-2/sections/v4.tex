@@ -1,4 +1,21 @@
 %! Author = lili
 %! Date = 5/21/26
 
+% S. 17 Bis Skript S. 22
+
+In the ``Sequence Analysis 1'' class, we have already discussed a variant of the Universal
+Alignment Algorithm that can be used to find a best (highest score) alignment of a (short)
+pattern x within a (long) text y: semi-global alignment. Often, we are interested in all
+matches with at least a certain score. A simple modification makes this possible: We just
+need to visit all predecessors of the final cell vE and check whether the corresponding
+solutions fulfill the given criterion. (In the case of semi-global alignment, these cells
+correspond to the last row of the alignment matrix.)
+
+In this section, we consider the cost-based formulation and therefore alignment matrix $D$.
+We assume that a sensible cost function cost: $\mathcal{A} \rightarrow \rz_0^+$ for alignment columns is given
+where $cost((\binom{a}{a})) = 0$, $cost((\binom{a}{b})) > 0$ for $a \neq b$ and all indels have the same cost $\gamma > 0$. \\
+Then we consider the following problem variant:
+\defin{approximate-string-matching-problem}
+
+
 \section{Sellers' Algorithm}
