@@ -1,0 +1,96 @@
+%! Author = lili
+%! Date = 5/23/26
+
+
+\section{Types of Knowledge}
+Different levels of knowledge that are central to understanding how people learn and
+reason:
+
+\defin{declarative-knowledge}
+\defin{structural-knowledge}
+\defin{procedural-knowledge}
+
+\begin{exa}
+    \textbf{Examples for \autoref{def:declarative-knowledge}, \autoref{def:structural-knowledge} and
+    \autoref{procedural-knowledge}} \\
+    \begin{itemize}
+        \item \Gls{declarative-knowledge}: warm air rises
+        \item \Gls{structural-knowledge}: heat $\rightarrow$ low density $\rightarrow$ buoyancy
+        \item \Gls{procedural-knowledge}: performing a convection calculation
+    \end{itemize}
+\end{exa}
+
+\subsection*{What is Structural Knowledge?}
+
+\begin{center}
+    `` \textit{In order to know how, you must know why. Structural knowledge provides the
+    conceptual bases for why; it describes how the declarative knowledge is
+    interconnected} ''
+\end{center}
+(Jonassen, Beissner, and Yacci 1993)
+
+According to Jonassen, Beissner, and Yacci (1993), the meaning of a concept is implicit in its pattern of relationships to other concepts.
+Therefore, structural knowledge is closely related to conceptual knowledge, internal connectedness, and integrative understanding.
+Tennyson and Cocchiarella (1986) define conceptual knowledge as the integrated storage of meaningful dimensions within a specific knowledge domain.
+Structural knowledge also plays an important role in learning because it mediates the acquisition of procedural
+knowledge by connecting facts and concepts to actions and procedures.
+
+\subsection*{Why Not Just First-Order Logic?}
+\Gls{fol} quantifies over individual objects only, not over predicates or sets.
+This creates fundamental expressive limits:
+\begin{itemize}
+    \item Cannot quantify over predicates or sets. Anything about sets must be
+    rephrased in terms of predicates, which is often not possible
+    (Quora contributors, 2024).
+
+    \item Cannot define mathematical induction in a single finite sentence.
+    Induction requires quantifying over predicates --- a second-order principle
+    (Wikipedia contributors, 2026b; Logic and Proof contributors, 2024).
+
+    \item Cannot express ``finitely many'' or characterise finiteness/countability:
+    by the Löwenheim--Skolem theorem, any consistent FOL theory with an infinite
+    model also has a countable model (Wikipedia contributors, 2026b).
+
+    \item No natural grouping of properties around a concept, no built-in defaults,
+    and no context (Steels, 1979).
+\end{itemize}
+
+\begin{lem}
+    \textbf{FOL requires an axiom schema}
+    FOL cannot write a single axiom
+    $\forall P.(P (0) \land \forall k. (P (k) \rightarrow P (k+1))) \rightarrow \forall n. P (n)$
+    because $\forall P$
+    quantifies over predicates. Instead, FOL needs one axiom per predicate (wiki 2026b).
+\end{lem}
+
+\begin{theo}
+    \textbf{Constructing a knowledge representation} \\
+    ``\textit{What we do in constructing a knowledge representation language is to make an
+    abstraction over a class of representational structures and introduce a syntactic
+    mechanism to represent that abstraction.}'' \\
+    (Steels 1979)
+\end{theo}
+
+
+\section{Frames and Slots} % 9/44
+
+\defin{frame}
+
+
+\section{Object-Oriented Analogy: Classes and Instances} % 18/44
+
+
+\section{Inheritance Hierarchies} % 23/44
+
+
+\section{Scripts and Semantic Networks} % 27/44
+
+
+\section{Default Reasoning and Conditionals} % 30/44
+
+
+\section{Problems with Schema Systems} % 33/44
+
+
+\section{Frames in Practice: JSON-LD} % 35/44
+

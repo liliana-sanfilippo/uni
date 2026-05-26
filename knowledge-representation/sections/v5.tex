@@ -1,0 +1,104 @@
+%! Author = lili
+%! Date = 5/26/26
+
+\section*{A Tutorial on Preprocessing, Estimating, and Analyzing Semantic
+Networks (Christensen and Kenett 2023)}
+
+\section{Motivation}\label{sec:motivation}
+
+\subsection*{Why Semantic Network Analysis?}
+Network science has become a popular approach to study language, memory, personality, and psychopathology~\cite{SiewEtAl2019}.
+\Gls{semantic-memory} can be modelled as a network of
+nodes (concepts) and edges (associations).
+
+\Gls{verbal-fluency} is one of the most widely
+used neuropsychological measures for
+capturing memory retrieval~\cite{Ardila2006}.
+
+The Core Problem (according to Christensen and
+Kenett 2023) is that no standardised pipeline exists
+for preprocessing \gls{verbal-fluency}
+data~\cite{ChristensenKenett2023}.
+Different labs make different
+decisions which (can) lead to reliability threats
+that compound in later analysis
+steps.
+
+Also, novice researchers lack accessible
+resources to get started.
+
+\subsection*{What Can Semantic Networks Reveal?}
+
+The structure of \gls{semantic-memory} -- not just its content -- is a meaningful,
+measurable, and clinically relevant cognitive variable.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l p{10cm}}
+    \textbf{Application Domain} & \textbf{Finding} \\
+    Creative cognition & Lower average shortest path length (ASPL) linked to greater
+    creative ability~\cite{KenettAnakiFaust2014} \\
+        Cognition changes & Older adults show smaller clustering coefficient (CC), possibly explaining cognitive slowing~\cite{WulffHillsMata2018} \\
+        Diagnostics of neurodivergence & (Asperger) autists  show ``hyper-modular'' semantic networks; rigid,
+        over-partitioned knowledge~\cite{KenettGoldFaust2016} \\
+    Personality (traits) & High openness to experience $\rightarrow$ more interconnected, flexi-
+    ble semantic networks~\cite{ChristensenEtAl2018} \\
+    Psychopathology / Diagnostics & Network structure of \gls{semantic-memory} linked to schizotypy
+    and other clinical traits~\cite{ChristensenKenett2023}
+    \end{tabular}
+    \caption{What \glspl{semantic-network} can reveal.}\label{tab:semantic-network-reveal}
+\end{table}
+
+\section{Key Definitions}\label{sec:key-definitions}
+\defin{semantic-memory}
+\defin{network-graph}
+\defin{verbal-fluency-task}
+% TODO definitionen erfragen
+We remember the definitions of:
+\begin{center}
+    \gls{kg}: \glsdesc{kg}
+\end{center}
+\begin{center}
+    \gls{semantic-network}: \glsdesc{semantic-network}
+\end{center}
+
+\begin{note}
+    \textbf{Node Types Depend on Task} \\
+    The type of node in a \gls{semantic-network} depends on what cognitive task is being analyzed.
+    For example, the node type \gls{category-exemplars} is used in tasks measuring \gls{verbal-fluency} and the node
+    type \gls{association} is used for free association tasks.
+\end{note}
+
+\subsection*{Network Science}
+\defin{network-science}
+According to Christensen and Kenett 2023, Network science methodologies provide a powerful computational approach for
+modeling cognitive structures such as \gls{semantic-memory} and \gls{mental-lexicon}.
+
+In the context of cognitive systems, \gls{semantic-memory} is for concept organization and the \gls{mental-lexicon}
+is for word storage and word retrieval.
+
+It is possible to measure certain aspects of \glspl{semantic-network} such as local clustering, global integration
+and community structure.
+Additional information about the terms (nodes) of the network can be extracted through this measuring. Measuring
+methods are:
+\defin{cc}
+\defin{aspl}
+\defin{q-modularity}
+
+
+\section{Problem Statement}\label{sec:problem-statement}
+
+
+\section{Proposed Solution}\label{sec:proposed-solution}
+
+
+\section{Network Measures}\label{sec:network-measures}
+
+
+\section{Results}\label{sec:results}
+
+
+\section{Limitations \& Discussion}\label{sec:limitations-&-discussion}
+
+
+\section{Discussion \& Conclusion}\label{sec:discussion-&-conclusion}
