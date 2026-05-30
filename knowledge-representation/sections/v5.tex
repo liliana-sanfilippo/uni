@@ -95,15 +95,91 @@ methods are:
 (Christensen and Kenett 2023)
 
 \frage{why-vf}
+% TODO was bedeutet hier wohldefiniert?
 
-\begin{exa} To Definition
+\begin{exa} To \defiref{verbal-fluency}
+\paragraph{Instruction:}
+\textit{“Name as many animals as you can in 60 seconds.”}
+\paragraph{Response:}
+cat, dog, mouse, elephant, giraffe, tiger, \dots
+\paragraph{Dataset Overview:}
+\begin{itemize}
+    \item 516 participants (rows)
+    \item 38 columns per participant
+    \item Animal naming task (60 seconds)
+    \item Groups: Low vs.\ High openness
+\end{itemize}
+\paragraph{Column Structure}
+\begin{enumerate}
+    \item Group (1 = Low, 2 = High)
+    \item Openness score
+    \item Participant ID
+    \item Animal responses (Animal 1 -- Animal 35)
+\end{enumerate}
+A dataset could then look like this:
+\begin{center}
+    \begin{tabular}{cccccc}
+        \toprule
+        \textbf{Group} & \textbf{Openness} & \textbf{ID} & \textbf{Animal 1} & \textbf{Animal 2} \\
+        \midrule
+        1 & 42 & P001 & cat      & dog    \\
+        1 & 38 & P002 & dog      & mouse  \\
+        2 & 67 & P003 & elephant & tiger  \\
+        2 & 71 & P004 & giraffe  & lion   \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
 \end{exa}
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lll}
+        \textbf{Name} & \textbf{Description} & \textbf{Example} \\
+        Perseveration & Repeat of the same response & cat, dog, cat \\
+        Intrusion & Response from the wrong category & apple (in animal task) \\
+        Moniker & Colloquial or informal name & water bear (tardigrade) \\
+        Compound & Missing space between words & guineapig \\
+        String & Multiple responses written as one word & catdogmouse \\
+        Typo & Spelling mistake & elefant
+    \end{tabular}
+    \caption{Common Data Errors in Verbal Fluency. Perseverations and intrusions are counted and extracted for analysis \cite{ChristensenKenett2023}.}\label{tab:data-errors-verbal-fluency}
+\end{table}
+
+\subsection*{From Raw Data to Semantic Networks}
+Semantic networks are constructed from patterns of co-occurrence across participants.
+If two concepts are frequently produced together by many participants, a stronger edge is formed between them in the network.
+\begin{figure}[H]
+    % TODO tikz flowchart
+\end{figure}
 
 \section{Problem Statement}\label{sec:problem-statement}
+\begin{center}
+    ``There is no standardised pipeline for preprocessing verbal fluency data. Different labs
+    make heterogeneous analytical decisions that compound in the network estimation
+    and statistical analysis steps, threatening reliability and reproducibility.''
+\end{center}
+(Christensen and Kenett 2023)
 
+\noindent As mentioned before in \nameref{sec:motivation}, there are no standardised pipelines for (pre)processing
+verbal fluency data.
+Additionally, there are no accessible tools for non-experts and the best estimation method (
+todo: for what?) is unknown.
+% TODO estimation method
+% TODO nur processing oder auch pre processing?
+\paragraph{Open research questions} are: 
+\begin{itemize}
+    \item How to standardise preprocessing?
+    \item Which methods for group comparisons?
+    \item How does structure relate to individual differences?
+\end{itemize}
 
-\section{Proposed Solution}\label{sec:proposed-solution}
+\section{Proposed Solution: the SemNA pipeline}\label{sec:proposed-solution}
+\begin{center}
+    ``A step-by-step depiction of the Semantic Network Analysis (SemNA) pipeline: pre-
+    processing, estimating, and analyzing networks.''
+\end{center}
+(Christensen and Kenett 2023)
 
 
 \section{Network Measures}\label{sec:network-measures}

@@ -1,0 +1,109 @@
+%! Author = lili
+%! Date = 5/26/26
+
+\section{What is RDF?}
+\untit{Slides 1--4}
+\Glspl{rdf} is intended for situations where information on the Web needs to be
+processed by applications.
+\defin{rdf}
+It provides a common framework for exchanging information without loss of
+meaning and enables \gls{linked-data} fpr publishing and interlinking data on the web.
+% TODO loss of meaning?
+
+The W3C (World Wide Web Consortium) standardizes the \gls{rdf}.
+
+\section{Triple Model}
+\untit{Slides 5--8}
+\defin{triple-model}
+\begin{itemize}
+    \item \textbf{subject}: who or what we are talking about
+    \item \textbf{predicate}: the relationship or property
+    \item \textbf{object}: the thing the subject is related to
+\end{itemize}
+
+\begin{exa}
+todo
+\end{exa}
+The same resource can appear in multiple triples, leading to a  NETWORK of
+connected information which makes RDF powerful.
+\begin{exa}
+    TODO Mona Lisa
+\end{exa}
+
+\section{International Resource Identifiers (IRIs/URIs)}
+\untit{Slides 8--9}
+\defin{iri}
+
+\begin{exa} To \defiref{iri} \\
+URLs are one form of IRI:
+\begin{verbatim*}
+    http://dbpedia.org/resource/Leonardo_da_Vinci
+    http://xmlns.com/foaf/0.1/knows
+    http://www.example.org/bob#me
+\end{verbatim*}
+\end{exa}
+\Glspl{iri} can appear in subject, predicate, or object position: \glspl{literal} are restricted
+to object position.
+\Glspl{iri} are also global identifiers, which means other people can reuse them. \Gls{rdf} is gnostic about what an \gls{iri} represents, only vocabularies provide meaning.
+\begin{exa} \textbf{Vocabularies} \\
+FOAF, Dublin Core, or Schema.org
+\end{exa}
+\section{Literals}
+\untit{Slides 10--12}
+\defin{literal}
+\begin{exa} To \defiref{literal} \\
+strings, dates, numbers
+\end{exa}
+\begin{notation}
+    The $\^ \^$ symbol means ``has datatype''.
+\end{notation}
+\begin{exa} \textbf{Literal with data type:}
+    \begin{center}
+        $"1990-07-04" \^ \^ <http://www.w3.org/2001/XMLSchema\#date>$
+    \end{center}
+    \textbf{Literal with language tag:}
+    \begin{center}
+        "Leonard de Vinci"@fr
+    \end{center}
+\end{exa}
+
+\begin{note}
+    \glspl{literal} may only appear in the object position if a triple.
+\end{note}
+
+
+\begin{exa} \textbf{Correct:}
+\begin{center}
+    :bob schema:birthDate "1990-07-04"^^xsd:date .
+\end{center}
+    Is interpreted as: Bob’s birth date is 1990-07-04 \\
+\textbf{Incorrect:}
+    \begin{center}
+        "1990-07-04" schema:birthDate :bob
+    \end{center}
+    Is interpreted as: 1990-07-04 has birthDate Bob, because \glspl{literal} are values (like text, numbers, dates),
+not entities that can act as subjects.
+\end{exa}
+
+
+\section{Standard Format Turtle - Terse RDF Triple Language}
+\untit{Slides 13--16}
+
+
+
+\section{Standard Format JSON}
+\untit{Slides 17--19}
+
+\section{Flat Triplet Approach to RDF Graphs in JSON}
+\untit{Slides 20--24}
+
+\section{Comparison of Standard RDF Formats}
+\untit{Slides 25--27}
+
+\section{Summary}
+\untit{Slides 28--29}
+
+% Triple base database vs relational databases ??
+% RDF dumps & sparql api
+% owl mit sameAs wäre top für die iGEM Datenbank
+
