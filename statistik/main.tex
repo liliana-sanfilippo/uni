@@ -20,7 +20,9 @@
 \begin{document}
     \frontmatter
     \input{../preamble/frontpage}
-    \tableofcontents
+    % Generates a ToC without page number
+    {\hypersetup{linkcolor=black} % Keeps the ToC black even with non-black linkcolor
+    \tableofcontents\thispagestyle{empty}}
     \newpage
 
     \mainmatter
