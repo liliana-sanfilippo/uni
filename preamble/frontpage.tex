@@ -1,0 +1,48 @@
+%! Author = lili
+%! Date = 5/31/26
+
+\begin{titlepage}
+
+    \centering
+
+    \begin{tikzpicture}
+
+        \node[inner sep=0pt] (logo) at (0,0)
+            {\includegraphics[width=.25\textwidth]{../preamble/notes-notepad-svgrepo-com}};
+
+        \node[text width = 0.5\textwidth, right = of logo](title){\sffamily\huge\reporttitle};
+
+        \node[text width = 0.5\textwidth, yshift = 0.75cm, below = of title](subtitle){\sffamily\Large \reportsubtitle};
+
+        \gettikzxy{(subtitle.south)}{\sffamily\subtitlex}{\subtitley}
+        \gettikzxy{(title.north)}{\titlex}{\titley}
+        \draw[line width=1mm, Tue-red]($(logo.east)!0.5!(title.west)$) +(0,\subtitley) -- +(0,\titley);
+
+    \end{tikzpicture}
+    \vspace{5cm}
+
+    \sffamily\large\reportsubsubtitle
+
+    \sffamily\large\reportauthors
+
+
+    \vspace{5cm}
+    %\sffamily \textcolor{black!80}{\placeanddate} \\
+
+
+    %\tikz[remember picture,overlay]\node[anchor=south,inner sep=0pt] at (current page.south)
+    %{\includegraphics[width=\paperwidth]{Figures/0. General/footer.pdf}};
+
+    \mbox{}
+
+
+
+\end{titlepage}
+
+
+
+
+
+
+
+
