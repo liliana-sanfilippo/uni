@@ -1,4 +1,5 @@
 \input{../preamble/general}
+\usepackage[ngerman]{babel}
 \input{../preamble/packages}
 \input{../preamble/colors}
 \input{../preamble/theorems}
@@ -10,17 +11,19 @@
 
 \newcommand\reporttitle{Vorlesung Wahrscheinlichkeitstheorie und Statistik}
 \newcommand\reportsubtitle{Sommersemester 2026}
+\newcommand\profs{Vorlesung von Prof. Gentz}
 \newcommand\reportsubsubtitle{Vorlesungsnotizen und Aufarbeitung}
 \newcommand\reportauthors{
-    \textbf{Liliana Sanfilippo}
+     \textbf{Liliana Sanfilippo}
 }
 
 \begin{document}
+    \frontmatter
     \input{../preamble/frontpage}
     \tableofcontents
     \newpage
 
-
+    \mainmatter
     \part{Skript}
 
 
@@ -32,7 +35,6 @@
     \end{tabular}
     \let\thefootnote\relax\footnote{Fußnoten haben keine Zahlen}
     \pagebreak
-
 
     \chapter{Modellieren zufälliger Ereignisse}\label{sec:modellieren-zufalliger-ereignisse}
     \input{sections/v1}
