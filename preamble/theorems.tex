@@ -1,8 +1,7 @@
 
 \usepackage{amsthm}
 
-\tcbset{blue box/.style={
-    enhanced, fonttitle=\bfseries,
+\tcbset{blue box/.style={ fonttitle=\bfseries,
     colback=white, colframe=accdarklight,
     coltitle=white, colbacktitle=accdark,
     attach boxed title to top left={xshift=0.3cm,
@@ -29,7 +28,8 @@
     {\bfseries}                   % Theorem head font
     {}                          % Punctuation after theorem head
     {1.5em}                       % Space after theorem head
-    {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
+    {\textcolor{sectionf}{\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}}  % Theorem head spec (can be left empty, meaning
+‘normal’)
 \theoremstyle{mytheoremstyle}
 
 
@@ -43,16 +43,15 @@
     colback=white,
     colframe=bspf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
@@ -65,32 +64,31 @@
     colback=white,
     colframe=Thistle,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{auf}{Aufgabe}[chapter]
-\tcocolback=white,
+\tcolorboxenvironment{reg}{
+    colback=white,
     colframe=auff,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{kor}{Korollar}[chapter]
@@ -103,16 +101,15 @@
     colback=white,
     colframe=lemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{kom}{Kommentar}[chapter]
@@ -125,16 +122,15 @@
     colback=white,
     colframe=satzf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
@@ -151,16 +147,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{hypo}{Hypothese}[chapter]
@@ -168,16 +163,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newcommand{\hypothese}[1]{%
@@ -193,16 +187,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newcommand{\model}[1]{%
@@ -217,16 +210,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newcommand{\theorie}[1]{%
@@ -248,16 +240,15 @@
     colback=white,
     colframe=defif,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{notation}{Notation}[chapter]
@@ -265,16 +256,15 @@
     colback=white,
     colframe=defif,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{konv}{Konvention}[chapter]
@@ -282,16 +272,15 @@
     colback=white,
     colframe=defif,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newcommand{\defin}[1]{%
@@ -321,16 +310,15 @@
     colback=white,
     colframe=bspf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
@@ -342,16 +330,15 @@
     colback=white,
     colframe=Rhodamine,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 \newcommand{\probl}[2]{
 \begin{prob} \textbf{#1} \\
@@ -367,16 +354,15 @@
     colback=white,
     colframe=Periwinkle,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 \newcommand{\frage}[1]{
     \begin{fr}
@@ -393,16 +379,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{obs}{Observation}[chapter]
@@ -410,16 +395,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{prinz}{Prinzip}[chapter]
@@ -427,16 +411,15 @@
     colback=white,
     colframe=satzf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
@@ -446,16 +429,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{notte}{Note}[chapter]
@@ -463,16 +445,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{folg}{Folgerung}[chapter]
@@ -480,16 +461,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtheorem{imp}{Implication}[chapter]
@@ -497,16 +477,15 @@
     colback=white,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
@@ -515,16 +494,15 @@
     colback=bemf!10,
     colframe=bemf,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
@@ -533,16 +511,15 @@
     colback=white,
     colframe=Orchid,
     boxrule=1pt,
-    arc=2mm,
+    arc=0mm,
     top=1mm,
     bottom=1mm,
     left=1mm,
     right=1mm,
-    enhanced,
     breakable,
     parbox=false,
-    before skip=6pt,
-    after skip=6pt
+    before skip=12pt,
+    after skip=12pt
 }
 
 
