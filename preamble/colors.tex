@@ -69,3 +69,19 @@
 % Formats captions
 \DeclareCaptionFont{sectionf}{\color{sectionf}}
 \captionsetup{labelfont={sectionf,bf}}
+
+
+
+% Change bullet style for level 1, 2 and 3 respectively for itemize
+\renewcommand{\labelitemi}{\scriptsize\textcolor{sectionf}{$\blacksquare$}}% level 1
+\renewcommand{\labelitemii}{\scriptsize\textcolor{sectionf}{$\square$}}% level 2
+\renewcommand{\labelitemiii}{\textcolor{sectionf}{$\circ$}}% level 3
+
+% \renewcommand{\labelitemi}{\small\textcolor{sectionf}{\ding{70}}} % level 1
+% \renewcommand{\labelitemii}{\small\textcolor{sectionf}{\ding{71}}}% level 2
+% \renewcommand{\labelitemiii}{\tiny\textcolor{sectionf}{\ding{71}}}% level 3
+
+% Change bullet style for level 1, 2 and 3 respectively for enumerate
+\renewcommand{\labelenumi}{\textbf{\textcolor{sectionf}{\arabic*.}}}% level 1
+\renewcommand{\labelenumii}{\textbf{\textcolor{sectionf}{[\alph*]}}}% level 2
+\renewcommand{\labelenumiii}{\textbf{\textcolor{sectionf}{\roman*.}}}% level 3
