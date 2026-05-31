@@ -26,23 +26,27 @@
 \end{bsp}
 
 \begin{defi}
+    \label{def:zv}
     \textbf{\gls{zv}} \\
     Für einen \gls{wraum} $\wraum$ und eine Menge $E \neq \emptyset$ nennen wir eine messbare Abbildung
     \[
         X: \glssymbol{eraum}  \rightarrow E
     \]
     eine $E$-wertige \gls{zv}.
-    \bluenote{\gls{zv} ist keine Variable: Es ist eine Zuordnungsvorschrift der Stochastik, welche jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zuordnet. Also das Ergebnis eines Zufallsexperiments.}
 \end{defi}
+\komm{\defirefman{zv}: \gls{zv} ist keine Variable: Es ist eine Zuordnungsvorschrift der Stochastik, welche jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zuordnet. Also das Ergebnis eines Zufallsexperiments.}
+
 \begin{defi}
+    \label{def:verteilung-zv}
     \textbf{Verteilung einer \gls{zv}}\\
     Sei $X$ eine $E$-wertige \gls{zv} auf $\wraum$
     \[
         \pe_X(B) \coloneqq  \pe(\kl{\oio : X(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(X \in B)}{Kurzschreibweise}
     \]
     Das \gls{wmaß} $\pe_X$ auf $E$ heißt Verteilung von $X$.
-    \bluenote{Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also \textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
 \end{defi}
+\komm{\defirefman{verteilung-zv}: Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also
+\textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
 \begin{lem}
     Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
 
@@ -56,6 +60,7 @@
     \]
 \end{lem}
 
+
 \section{Notationen}
 \[
     \pe(X \in B) = \pe(\kl{\oio: X(\glssymbol{elementarereignis}) \in B})
@@ -64,44 +69,46 @@ Falls $B$ ein Intervall ist:
 \[
     \pe(X \geq b), \quad \pe(a < X \leq b) , \dots
 \]
-\begin{defi}
+\begin{defi} \label{def:wert-bild-e}
     Geg.:
     \[
         X: \glssymbol{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
     \]
     Dann heißt $E$ der Wertebereich und $X(\glssymbol{eraum} )\coloneqq  \kl{X(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
-    \begin{bsp}
-        \txo{
-            \[
-                S_n : \glssymbol{eraum} _n \rightarrow \kl{0,\dots,n}
-            \]
-            \[
-                S_n : \glssymbol{eraum} _n \rightarrow \mathbb{N}_0
-            \]
-        }
-    \end{bsp}
-    \begin{bem}
-        $X(\glssymbol{eraum} ) \subset E$ gilt immer.
-        \bluenote{Denn $X(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
-    \end{bem}
-    \begin{bem}
-        Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
-        \bluenote{Zu jedem Wahrscheinlichkeitsmaß auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
-        aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
-        \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
-        $X: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
-        \begin{align*}
-        {\glssymbol{eraum}}
-            & \coloneqq  \tilde{\glssymbol{eraum}}  \\
-            \pe&\coloneqq  \tilde\pe\\
-            X(\glssymbol{elementarereignis}) & = \glssymbol{elementarereignis} \txt{Identität} \faoio
-        \end{align*}
-        \[
-            \pagebreak(X \in B) = \pe(\oub{\kl{\oio: X(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
-        \]
-        $\Rightarrow X$ hat Verteilung $\tilde\pe$
-    \end{bem}
 \end{defi}
+\begin{bsp} \defirefman{wert-bild-e}
+    \txo{
+        \[
+            S_n : \glssymbol{eraum} _n \rightarrow \kl{0,\dots,n}
+        \]
+        \[
+            S_n : \glssymbol{eraum} _n \rightarrow \mathbb{N}_0
+        \]
+    }
+\end{bsp}
+\begin{bem} \defirefman{wert-bild-e} \\
+    $X(\glssymbol{eraum} ) \subset E$ gilt immer.
+\end{bem}
+\komm{Denn $X(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
+\begin{bem} \defirefman{wert-bild-e} \\
+    Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
+    \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
+    $X: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
+    \begin{align*}
+    {\glssymbol{eraum}}
+        & \coloneqq  \tilde{\glssymbol{eraum}}  \\
+        \pe&\coloneqq  \tilde\pe\\
+        X(\glssymbol{elementarereignis}) & = \glssymbol{elementarereignis} \txt{Identität} \faoio
+    \end{align*}
+    \[
+        \pagebreak(X \in B) = \pe(\oub{\kl{\oio: X(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
+    \]
+    $\Rightarrow X$ hat Verteilung $\tilde\pe$
+\end{bem}
+\komm{Zu jedem Wahrscheinlichkeitsmaß auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
+aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
+
+
 \begin{defi}
     \textbf{\dichte einer \gls{zv}} \\
     Gegeben \dichte \glssymbol{dichte} \\

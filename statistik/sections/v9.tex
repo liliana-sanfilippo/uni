@@ -47,40 +47,41 @@
     \mab{\limnin \sup_{k: |x_k^{(n)}| \leq L} \mid \frac{{B}_{n,p}(k)}{\frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2}}  - 1 \mid = 0 }
 
     \paragraph{Beweis.} \texttt{Folie 14}
-    \begin{erg}
-        \textbf{Stirlingsche Formel}
-        \begin{equation}
-            \label{eq:strilingscheformel}
-            n! \sim \sqrt{2 \pi n} \binom{n}{e}^n \text{ für große } n
-        \end{equation}
-        \texttt{Siehe Folie 15}
-    \end{erg}
-    \begin{erg}
-        \textbf{Stirlingsche Formel mit Fehlerabschätzung}
-        \begin{equation}
-            1 \leq \frac{n!}{\sqrt{2 \pi n} \binom{n}{e}^n} \leq 1 + \frac{1}{11n}
-        \end{equation}
-    \end{erg}
-    \begin{bsp}
-        1200-mal Würfeln mit einem fairen Würfel \\
-        Wie groß ist die Wahrscheinlichkeit, genau $k$ Sechsen zu werfen?
 
-        \paragraph{a)} $k = 200$
-        \mab{{B}_{1200, \frac{1}{6}}(200) = 0.030888\dots}
-        Approximation gemäß lokalem zentralem Grenzwertsatz:
-        \mab{0.030901\dots}
-
-        \paragraph{b)} $k = 250$
-        \mab{{B}_{1200, \frac{1}{6}}(250) = 0.0000244\dots}
-        Approximation gemäß lokalem zentralem Grenzwertsatz:
-        \mab{0.0000170\dots}
-    \end{bsp}
     \orangenote{schwaches Gesetz der großen Zahlen ''\ma{\frac{1}{n} S_n \rightarrow \frac{1}{6}}'' und \ma{\pe(\frac{1}{n} S_n = \frac{1}{6})}} ist sehr klein.
 \end{satz}
+\begin{erg}
+    \textbf{Stirlingsche Formel}
+    \begin{equation}
+        \label{eq:strilingscheformel}
+        n! \sim \sqrt{2 \pi n} \binom{n}{e}^n \text{ für große } n
+    \end{equation}
+    \texttt{Siehe Folie 15}
+\end{erg}
+\begin{erg}
+    \textbf{Stirlingsche Formel mit Fehlerabschätzung}
+    \begin{equation}
+        1 \leq \frac{n!}{\sqrt{2 \pi n} \binom{n}{e}^n} \leq 1 + \frac{1}{11n}
+    \end{equation}
+\end{erg}
+\begin{bsp}
+    1200-mal Würfeln mit einem fairen Würfel \\
+    Wie groß ist die Wahrscheinlichkeit, genau $k$ Sechsen zu werfen?
+
+    \paragraph{a)} $k = 200$
+    \mab{{B}_{1200, \frac{1}{6}}(200) = 0.030888\dots}
+    Approximation gemäß lokalem zentralem Grenzwertsatz:
+    \mab{0.030901\dots}
+
+    \paragraph{b)} $k = 250$
+    \mab{{B}_{1200, \frac{1}{6}}(250) = 0.0000244\dots}
+    Approximation gemäß lokalem zentralem Grenzwertsatz:
+    \mab{0.0000170\dots}
+\end{bsp}
 \textbf{Neue Fragen} \\
 Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen? Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 
-\begin{satz}
+\begin{satz} \label{satz:Moivre-Laplace}
     \textbf{Satz von de Moivre-Laplace} \textit{(Spezialfall des zentralen Grenzwertsatzes)}\\
     Sei \ma{S_n} die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten
     Bernoulli-Experiment mit Erfolgswahrscheinlichkeit \ma{p \in (0, 1)}. \\
@@ -92,40 +93,39 @@ Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen? Wie groß ist die
     \begin{equation}
         \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{x^2 / 2}
     \end{equation}
-    \begin{bem}
-        \ma{\varphi} heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}. \\
-        Die Stammfunktion \begin{equation}
-                              \Phi(y) = \int_{- \infty}^y \varphi(x) \dx
-        \end{equation}
-        ist die Verteilungsfunktion der Standardnormalverteilung. \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung} \\
-        Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve. \\
-        \ma{\Phi(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
-    \end{bem}
-
     \paragraph{Beweis.} \texttt{Siehe Folie 23.}
-    \begin{reg}
-        \textbf{Rechenregeln}
-        \begin{equation}
-            \int_{- \infty}^{\infty} \varphi(x) dx = 1
-        \end{equation}
-        \begin{equation}
-            \Phi(y) \rightarrow \begin{cases}
-                                    0 & \text{für } y \rightarrow - \infty  \\
-                                    1 & \text{für } y \rightarrow \infty
-            \end{cases}
-        \end{equation}
-        \begin{equation}
-            \Phi(0) = \frac{1}{2}
-        \end{equation}
-        \begin{equation}
-            \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (-y)}{f(y)} dy = 1 - \Phi(-z)
-        \end{equation}
-    \end{reg}
-    \begin{erg}
-        \textbf{Lokaler zentraler Grenzwertsatz und Satz von de Moivre-Laplace} \\
-        \texttt{Siehe Folie 25-29}
-    \end{erg}
 \end{satz}
+\begin{bem}  \textbf{Zu Satz \ref{satz:Moivre-Laplace}} \\
+    \ma{\varphi} heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}. \\
+    Die Stammfunktion \begin{equation}
+                          \Phi(y) = \int_{- \infty}^y \varphi(x) \dx
+    \end{equation}
+    ist die Verteilungsfunktion der Standardnormalverteilung. \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung} \\
+    Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve. \\
+    \ma{\Phi(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
+\end{bem}
+\begin{reg}
+    \textbf{Rechenregeln}
+    \begin{equation}
+        \int_{- \infty}^{\infty} \varphi(x) dx = 1
+    \end{equation}
+    \begin{equation}
+        \Phi(y) \rightarrow \begin{cases}
+                                0 & \text{für } y \rightarrow - \infty  \\
+                                1 & \text{für } y \rightarrow \infty
+        \end{cases}
+    \end{equation}
+    \begin{equation}
+        \Phi(0) = \frac{1}{2}
+    \end{equation}
+    \begin{equation}
+        \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (-y)}{f(y)} dy = 1 - \Phi(-z)
+    \end{equation}
+\end{reg}
+\begin{erg}
+    \textbf{Lokaler zentraler Grenzwertsatz und Satz von de Moivre-Laplace} \\
+    \texttt{Siehe Folie 25-29}
+\end{erg}
 \begin{bsp}
     \textbf{Vorlesung vs. Schlaf} \\
 

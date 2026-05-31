@@ -3,6 +3,7 @@
 
 % todo beispiele für abhängige ereignisse
 
+
 \section{Vorlesung 5}
 Was bedeutet stochastische Unabhängigkeit?
 
@@ -16,35 +17,35 @@ Bspw.\ mehrmals hintereinander Würfeln).
     \text{ und }
     \pe(A|B) = \pe(A) \txo{\ = \frac{\pe(A \cap B)}{\pe(B)}}
 \]
-\bluenote{$\pe(A|B)$: die bedingte Wahrscheinlichkeit von A gegeben B.}
+\txc{($\pe(A|B)$: die bedingte Wahrscheinlichkeit von A gegeben B.)}
 wobei jede dieser beiden Gleichungen äquivalent ist zu.
 \[
     \pe(A \cap B) = \pe(A) \cdot \pe(B)
 \]
-\txo{
-    Also
-    \[
-        \pe(A|B) = \pe(A)  = \frac{\pe(A \cap B)}{\pe(B)} \Leftrightarrow \pe(A) \cdot \pe(B) = \pe(A \cap B)
-    \]
-}
-\bluenote{
+
+Also
+\[
+    \pe(A|B) = \pe(A)  = \frac{\pe(A \cap B)}{\pe(B)} \Leftrightarrow \pe(A) \cdot \pe(B) = \pe(A \cap B)
+\]
+
+\txc{
     $\pe(A \cap B)$: WS, dass A und B gleichzeitig eintreten}
 \begin{defi}
     Zwei Ereignisse $A, B \subseteq \glssymbol{eraum} $ heißen unabhängig , wenn $\pe(A \cap B) = \pe(A) \cdot \pe(B)$.
 \end{defi}
 \begin{bsp}
-
+TODO
 \end{bsp}
 \begin{beo}
     unabhängig $\neq$ disjunkt!
-    \bluenote{disjunkte Ereignisse: $A \cap B = \emptyset \Rightarrow$ A und B können nicht gleichzeitig eintreten. \\
-    unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
-    }
     \noindent Also sind disjunkte Ereignisse unabhängig, wenn $0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B)$, also muss entweder $\pe(A)=0$ oder $\pe(B)=0$ sein (mindestens eines der Ereignisse WS Null haben):
     \[
         0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B) \Leftrightarrow \pe(A)=0 \text{ oder } \pe(B)=0
     \]
 \end{beo}
+\komm{disjunkte Ereignisse: $A \cap B = \emptyset \Rightarrow$ A und B können nicht gleichzeitig eintreten. \\
+unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
+}
 \begin{beo}
     Es gilt: A, B unabhängig $\Leftrightarrow$ $A, B^c$ unabhängig $\Leftrightarrow A^c, B^c$ unabhängig.
 
@@ -56,7 +57,7 @@ wobei jede dieser beiden Gleichungen äquivalent ist zu.
     \[
         \pe(A) = \pe(A \cap A) = \pe(A) \cdot \pe(A) = \pe(A)^2 \Leftrightarrow \pe(A) \in \kl{0,1}
     \]
-    \bluenote{$A$ kann unabhängig von sich selbst sein, wenn seine WS entweder 0 oder 1 ist.}
+    \txc{Umgangssprachlicher gesagt: $A$ kann unabhängig von sich selbst sein, wenn seine WS entweder 0 oder 1 ist.}
 \end{beo}
 \begin{defi}
     Unabhängigkeit von $n$ Ereignissen. \\
@@ -65,8 +66,7 @@ wobei jede dieser beiden Gleichungen äquivalent ist zu.
         \pe(A_{i_1} \cap \dots \cap A_{i_k}) = \pe(A_{i_1}) \cdots \pe(A_{i_k})
     \]
     für alle $k = 2, \dots  , n$ und alle Auswahlen von $k$ verschiedenen
-    Indizes $i_1 , \dots  , i_k \in \{1, \dots  , n\}$.
-    \bluenote{Also alle Paare, Tripel, etc. prüfen.}
+    Indizes $i_1 , \dots  , i_k \in \{1, \dots  , n\}$. \txc{(Also alle Paare, Tripel, etc. prüfen.)}
 \end{defi}
 \begin{bsp}
     \texttt{siehe Folie 14--15}
@@ -79,6 +79,7 @@ wobei jede dieser beiden Gleichungen äquivalent ist zu.
     Es genügt nicht, $\pe(A_1 \cap \dots  \cap A_n ) = \pe(A_1 ) \cdots \pe(A_n )$ zu prüfen.
     Es kann insgesamt unabhängig sein, aber nicht paarweise etc.\ unabhängig.
 \end{bem}
+
 
 \section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}
 Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
@@ -96,7 +97,7 @@ Sind nämlich $A_1 \subseteq \glssymbol{eraum} _1 , \dots  , A_n \subseteq \glss
     \vdots & \\
     B_n & = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _{n-1} \times A_n
 \end{align*}
-\bluenote{$B_1$ bedeutet: Im ersten Experiment tritt $A_1$ ein, die anderen sind egal. }
+\txc{$B_1$ bedeutet: Im ersten Experiment tritt $A_1$ ein, die anderen sind egal. }
 unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \dots  , n}$ verschieden gilt:
 \begin{equation}
     \label{eq:omegaiabzählbar}

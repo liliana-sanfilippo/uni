@@ -19,63 +19,63 @@
     \textbf{\gls{wraum}} \\
     Stoppen einer Zeit bis zu einer Stunde in ms.
     \begin{align*}
-        \glssymbol{eraum}  & = \{0,1,\dots,360 000\} & \text{(Zeit in ms)} \\
-        \glssymbol{wfk}(\glssymbol{elementarereignis}) & \coloneqq \frac{1}{\# \glssymbol{eraum} } \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum}  & \text{(Gleichverteilung)} \\
-        \pe(A) & = \frac{\# A}{\# \glssymbol{eraum} } \\
+        \eraum  & = \{0,1,\dots,360 000\} & \text{(Zeit in ms)} \\
+        \glssymbol{wfk}(\glssymbol{elementarereignis}) & \coloneqq \frac{1}{\# \eraum } \quad \forall \glssymbol{elementarereignis} \in \eraum  & \text{(Gleichverteilung)} \\
+        \pe(A) & = \frac{\# A}{\# \eraum } \\
         A & = \{600 000, \dots , 9000 000\} & \text{Zeit liegt zw. 10 und 15 Minuten} \\
         \pe(A) & = \frac{300 001}{3 600 001} \approx \frac{300 000}{3 600 000} = \frac{1}{12}
     \end{align*}
     Wir wollen kontinuierlich modellieren:
     \begin{align*}
-        \tilde {\glssymbol{eraum}}  & = [0,60] & \text{(in Minuten)}\\
-        \text{bzw. }  \tilde {\glssymbol{eraum}}  & = [0, 360 000]  & \text{(in ms)} \\
+        \tilde {\eraum}  & = [0,60] & \text{(in Minuten)}\\
+        \text{bzw. }  \tilde {\eraum}  & = [0, 360 000]  & \text{(in ms)} \\
         \tilde A & = [10,15] \\
         \mathbb{\tilde P} (\tilde A) & \overset{!}{=} \frac{15-10}{60-0} = \frac{5}{60} = \frac{1}{12}
     \end{align*}
-    \bluenote{Was genau ist $\tilde {\glssymbol{eraum}} $ ? }
-    Um auch modellieren zu können, dass Intervalle \gls{ws} haben, die nicht \texttt{iwas} von ihrere Länge
+    Um auch modellieren zu können, dass Intervalle \gls{ws} haben, die nicht \texttt{iwas} von ihrer Länge
     abgängen, arbeiten wir mit R-Integralen. \texttt{R-Integral?}
 \end{bsp}
-\begin{defi}
-    \textbf{\gls{dichte}} \\
+\komm{TODO: Was genau ist $\tilde {\eraum} $ ? }
+\begin{defi} \label{def:dichte}
+    \textbf{\dichte} \\
     EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt
     \underline{\dichte}, sofern
     \[
         \int_{- \infty}^{\infty} f (x) dx = 1
     \]
-    \begin{bem} $\ $
-        \begin{itemize}
-            \item  % a
-            \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert für alle $(a, b \in \mathbb{R})$
-            \txc{auch: für $- \infty < a < b < \infty$}
-            % b
-            \item $f$ stückweise stetig oder stückweise monoton, $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
-            % e
-            \item $f \geq 0: f $ Riemann-integrierbar
-            $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx < \infty$
-            \begin{itemize}
-                \item Damit ist gemeint: Ist $f \geq 0$, so ist $f$ genau dann uneigentlich Riemann-integrierbar über
-                $\rz$, wenn das Riemann-Integral $\int_a^b f(x) dx$ für jede Wahl $- \infty < a < b < \infty$
-                existiert und $\underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
-                existiert. In diesem Fall gilt $\int_{- \infty}^{\infty} f(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
-            \end{itemize}
-            % d
-            \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw. sowohl $(- \infty, 0] $ als auch $[0, \infty)$
-            uneigentlich Riemann-integrierbar ist.
-            % c TODO
-            \item TODO
-        \end{itemize}
-    \end{bem}
 \end{defi}
+\begin{bem} \defirefman{dichte}
+\begin{itemize}
+    \item  % a
+    \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert für alle $(a, b \in \mathbb{R})$
+    \txc{auch: für $- \infty < a < b < \infty$}
+    % b
+    \item $f$ stückweise stetig oder stückweise monoton, $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
+    % e
+    \item $f \geq 0: f $ Riemann-integrierbar
+    $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx < \infty$
+    \begin{itemize}
+        \item Damit ist gemeint: Ist $f \geq 0$, so ist $f$ genau dann uneigentlich Riemann-integrierbar über
+        $\rz$, wenn das Riemann-Integral $\int_a^b f(x) dx$ für jede Wahl $- \infty < a < b < \infty$
+        existiert und $\underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
+        existiert. In diesem Fall gilt $\int_{- \infty}^{\infty} f(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
+    \end{itemize}
+    % d
+    \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw. sowohl $(- \infty, 0] $ als auch $[0, \infty)$
+    uneigentlich Riemann-integrierbar ist.
+    % c TODO
+    \item TODO
+\end{itemize}
+\end{bem}
 \begin{defi}
     \textbf{\gls{wraum}} \\
-    Sei eine \dichte $\Dichte \geq 0$ gegeben.
+    Sei eine \dichte $\dcht \geq 0$ gegeben.
     Wir setzen
     \begin{align*}
-        \pe([a,b]) & \coloneqq  \int^b_a \Dichte(x) dx & \text{für alle } - \infty < a < b < \infty \\
-        \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b \Dichte(x) dx  \\
-        \pe([a, \infty]) & \coloneqq  \int_a^{\infty} \Dichte(x) dx \\
-        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} \Dichte(x) dx & \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}$}
+        \pe([a,b]) & \coloneqq  \int^b_a \dcht(x) dx & \text{für alle } - \infty < a < b < \infty \\
+        \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b \dcht(x) dx  \\
+        \pe([a, \infty]) & \coloneqq  \int_a^{\infty} \dcht(x) dx \\
+        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} \dcht(x) dx & \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}$}
     \end{align*}
     Falls
     \[
@@ -89,7 +89,7 @@
     \textbf{Uniforme Verteilung} (Kontinuumsäquivalent zu gleichverteilt) \\
     Die uniforme Verteilung auf einem beschränkten Intervall $I \subseteq \mathbb{R}$ ist gegeben durch eine \dichte
     \[
-        \Dichte(x) = \begin{cases}
+        \dcht(x) = \begin{cases}
                    \frac{1}{\mid I \mid } & x \in I \\ 0 & sonst
         \end{cases}
     \]
@@ -100,7 +100,7 @@
     Die Exponentialverteilung zum Parameter $\alpha > 0$ ist gegeben durch die \dichte
     \begin{equation}
         \label{eq:Exponentialverteilung}
-        \Dichte(x) = \begin{cases}
+        \dcht(x) = \begin{cases}
                    0 & \text{ für } x < 0 \\
                    \alpha e ^{- \alpha x} &  \text{ für } x \geq 0
         \end{cases}
@@ -139,18 +139,18 @@
     $I \subseteq \mathbb{N}$ Indexmenge. \\
     Für jedes $i \in I $ sei $A_i$:
     \begin{itemize}
-        \item $A_i \in \mathbb{R}(\glssymbol{eraum} )$ für $\glssymbol{eraum}  $ abzählbar
-        \item $A_i$ ein Intervall für $\glssymbol{eraum}  = \mathbb{R}$ (oder $\glssymbol{eraum}  = [0, \infty)$ oder $\glssymbol{eraum}  = [a,b]$)
+        \item $A_i \in \mathbb{R}(\eraum )$ für $\eraum  $ abzählbar
+        \item $A_i$ ein Intervall für $\eraum  = \mathbb{R}$ (oder $\eraum  = [0, \infty)$ oder $\eraum  = [a,b]$)
     \end{itemize}
     \begin{itemize}
-        \item[(a)] $\underset{i \in I}{\bigcup} A_i = \{\glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \text{ für mind. ein } i \in I \} = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \exists j \in I \text{ mit } \glssymbol{elementarereignis} \in A_j \}$
-        \item[(b)] $\underset{i \in I}{\bigcap} A_i = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \text{ für alle } i \in I\} = \{ \glssymbol{elementarereignis} \in \glssymbol{eraum}  : \glssymbol{elementarereignis} \in A_i \forall j \in I \} $
+        \item[(a)] $\underset{i \in I}{\bigcup} A_i = \{\glssymbol{elementarereignis} \in \eraum  : \glssymbol{elementarereignis} \in A_i \text{ für mind. ein } i \in I \} = \{ \glssymbol{elementarereignis} \in \eraum  : \exists j \in I \text{ mit } \glssymbol{elementarereignis} \in A_j \}$
+        \item[(b)] $\underset{i \in I}{\bigcap} A_i = \{ \glssymbol{elementarereignis} \in \eraum  : \glssymbol{elementarereignis} \in A_i \text{ für alle } i \in I\} = \{ \glssymbol{elementarereignis} \in \eraum  : \glssymbol{elementarereignis} \in A_i \forall j \in I \} $
     \end{itemize}
 \end{defi}
 
 \begin{lem}
     \textbf{Rechenregeln für Mengen}
-    Seien $A,B,C \subset \glssymbol{eraum} $.
+    Seien $A,B,C \subset \eraum $.
     \begin{figure}[H]
         \centering
         \begin{subfigure}[t]{0.45\textwidth}
@@ -223,7 +223,7 @@
 \end{lem}
 
 \begin{defi}
-    $A, B, A_1, A_2, \dots \subset \glssymbol{eraum} $
+    $A, B, A_1, A_2, \dots \subset \eraum $
     \begin{itemize}
         \item[(a)] $A$ und $B$ heißen \underline{disjunkt} , wenn $A \cap B = \emptyset$
         \begin{figure}[H]
@@ -320,24 +320,24 @@
     \texttt{fehlt}
 \end{bsp}
 \begin{satz}
-    Seien $A, B, A_1, A_2, \dots \subset \glssymbol{eraum} $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
+    Seien $A, B, A_1, A_2, \dots \subset \eraum $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
     \begin{itemize}
         \item[(a)] Additivität: Seien $A_1, A_2, \dots$ paarweise disjunkt, dann gilt:
         \[\pe(\underset{i}{\dot\cup} A_i) = \sum_i \pe(A_i)\]
-        Gilt auch für Dichten \index{Dichte}! \\
+        Gilt auch für \Glspl{dichte}! \\
         \textbf{Beweis.}  \\
         \begin{align*}
-            \pe(\underset{i}{\dot\cup} A_i)&  = \pe(\{\glssymbol{elementarereignis} \in \glssymbol{eraum} : \exists i \text{ mit } \glssymbol{elementarereignis} \in A_i\}) \\
+            \pe(\underset{i}{\dot\cup} A_i)&  = \pe(\{\glssymbol{elementarereignis} \in \eraum : \exists i \text{ mit } \glssymbol{elementarereignis} \in A_i\}) \\
             & = \sum_i \txo{\underbrace{\textcolor{black}{\sum_{\glssymbol{elementarereignis} \in A_i}}}_{\pe(A_i)}} \glssymbol{wfk} (\glssymbol{elementarereignis}) \\
             & = \sum_i \pe(A_i)
         \end{align*}
         \orangenote{Wir haben die Summe/Reihe umsortiert}
 
         \item[(b)] Komplementärwahrscheinlichkeit
-        \[\pe(A^c) = \pe(\glssymbol{eraum}  \backslash A) = 1 - \pe(A)\]
+        \[\pe(A^c) = \pe(\eraum  \backslash A) = 1 - \pe(A)\]
         \textbf{Beweis.}
         \begin{align*}
-            \glssymbol{eraum}  =  A \dot\cup A^c & \overset{(a)}{\Rightarrow} 1 \overset{\txo{Normierung}}{=} \pe(\glssymbol{eraum} ) = \pe( A \dot\cup A^c) \overset{(a)}{=}\pe(A) + \pe(A^c) \\
+            \eraum  =  A \dot\cup A^c & \overset{(a)}{\Rightarrow} 1 \overset{\txo{Normierung}}{=} \pe(\eraum ) = \pe( A \dot\cup A^c) \overset{(a)}{=}\pe(A) + \pe(A^c) \\
             & \Rightarrow \pe(A^c) = 1-  \pe(A)
         \end{align*}
         \item[(c)] Monotonie: \[A \subset B \Rightarrow \pe(A) \leq \pe(B)\]
@@ -384,7 +384,7 @@
 \end{bem}
 \begin{satz}
     \textbf{Ein- und Ausschlussprinzip} \\
-    \[A_2,\dots, A_n \subset \glssymbol{eraum}  \]
+    \[A_2,\dots, A_n \subset \eraum  \]
     \[\pe( \bigcup^n_{i=1} A_i ) = \sum^n_{k = 1} (-1)^{k+1} \sum_{a \leq i_1 \leq \dots \leq i_k \leq k} \pe(A_{i_1} \cap \dots \cap A_{i_k}) \]
 \end{satz}
 
