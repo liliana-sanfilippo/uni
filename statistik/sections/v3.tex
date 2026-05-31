@@ -19,7 +19,7 @@
 
     Wie wahrscheinlich ist es, dass eine 1 oder eine 6 gewürfelt wurde?
 
-    $|\Omega| = \{1, \dots, 6\}, \; \pe$ Gleichverteilung, $A = \{1,6\}, \; P(A) = \frac{|A|}{|\Omega|} = \frac{2}{6} = \frac{1}{3}$
+    $|\eraum| = \{1, \dots, 6\}, \; \pe$ Gleichverteilung, $A = \{1,6\}, \; \pe(A) = \frac{|A|}{|\eraum|} = \frac{2}{6} = \frac{1}{3}$
 
     Wie wahrscheinlich ist es, dass eine 1 oder eine 6 gewürfelt wurde, wenn wir schon wissen, dass die geworfene Zahl durch 3 teilbar ist?
 
@@ -28,13 +28,13 @@
     Wahrscheinlichkeit von $A$:
 
     \[
-        P(A) = \frac{\text{Anz. günstige Ausgänge}}{\text{Anz. mögliche Ausgänge}} = \frac{|A|}{|\Omega|}
+        \pe(A) = \frac{\text{Anz. günstige Ausgänge}}{\text{Anz. mögliche Ausgänge}} = \frac{|A|}{|\eraum|}
     \]
 
     Wahrscheinlichkeit von $A$ gegeben $B$:
 
     \[
-        P(A \mid B) =
+        \pe(A \mid B) =
         \frac{\text{Anz. günstige Ausgänge in } A \cap B}{\text{Anz. mögliche Ausgänge in } B}
         = \frac{|A \cap B|}{|B|}
         = \frac{|\{6\}|}{|\{3,6\}|}
@@ -48,10 +48,10 @@
     \label{def:bedingte-ws} \textbf{\gls{bws}} \\
     Für Ereignisse A und B heißt
     \[
-        P(A \mid B) =
+        \pe(A \mid B) =
         \begin{cases}
-            \frac{P(A \cap B)}{P(B)}, & \text{falls } P(B) > 0, \\
-            0, & \text{falls } P(B) = 0,
+            \frac{\pe(A \cap B)}{\pe(B)}, & \text{falls } \pe(B) > 0, \\
+            0, & \text{falls } \pe(B) = 0,
         \end{cases}
     \]
     die bedingte Wahrscheinlichkeit von A gegeben B.
@@ -62,23 +62,23 @@
     Bei Gleichverteilung gilt
 
     \[
-        P(A \mid B)
+        \pe(A \mid B)
         =
-        \frac{\frac{\#|A \cap B|}{\#|\Omega|}}{\frac{\#|B|}{\#|\Omega|}} =
+        \frac{\frac{\#|A \cap B|}{\#|\eraum|}}{\frac{\#|B|}{\#|\eraum|}} =
         \frac{|A \cap B|}{|B|}
     \]
 
     D.h., die bedingte Wahrscheinlichkeit von A gegeben B ist tatsächlich der relative Anteil von A in B.
 \end{beo}
 \begin{fr}
-    In obigem Beispiel gilt $P(A \mid B) > P(A)$. Gilt das immer?
+    In obigem Beispiel gilt $\pe(A \mid B) > \pe(A)$. Gilt das immer?
 
-    \paragraph{Antwort} Nein! Sowohl $P(A_1 \mid B_1) > P(A_1)$ als auch $P(A_2 \mid B_2) < P(A_2)$ sind möglich.
+    \paragraph{Antwort} Nein! Sowohl $\pe(A_1 \mid B_1) > \pe(A_1)$ als auch $\pe(A_2 \mid B_2) < \pe(A_2)$ sind möglich.
 
 \end{fr}
 \begin{bsp}
     \[
-        \Omega = \{1,\dots,6\} \text{ mit Gleichverteilung } P
+        \eraum = \{1,\dots,6\} \text{ mit Gleichverteilung } \pe
     \]
 
     \[
@@ -88,17 +88,17 @@
     Dann gelten
 
     \[
-        P(A_1 \mid B) = \frac{|A_1 \cap B|}{|B|} = \frac{1}{2} > \frac{1}{3} = P(A_1)
+        \pe(A_1 \mid B) = \frac{|A_1 \cap B|}{|B|} = \frac{1}{2} > \frac{1}{3} = \pe(A_1)
     \]
 
     \[
-        P(A_2 \mid B) = \frac{|A_2 \cap B|}{|B|} = \frac{1}{2} < \frac{2}{3} = P(A_2)
+        \pe(A_2 \mid B) = \frac{|A_2 \cap B|}{|B|} = \frac{1}{2} < \frac{2}{3} = \pe(A_2)
     \]
 \end{bsp}
 
 Beispiel: Zweifacher Wurf einer fairen Münze
 
-\Omega = \{KK, KZ, ZK, ZZ\} \text{ mit Gleichverteilung } P
+\eraum = \{KK, KZ, ZK, ZZ\} \text{ mit Gleichverteilung } \pe
 
 
 
@@ -111,7 +111,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     A = \{ZZ\}, \quad B = \{KZ, ZK, ZZ\}
 
     \[
-        P(A \mid B) = \frac{|A \cap B|}{|B|} = \frac{1}{3}
+        \pe(A \mid B) = \frac{|A \cap B|}{|B|} = \frac{1}{3}
     \]
 
 \end{fr}
@@ -125,18 +125,18 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     A = \{ZZ\}, \quad C = \{ZK, ZZ\}
 
     \[
-        P(A \mid C) = \frac{|A \cap C|}{|C|} = \frac{1}{2}
+        \pe(A \mid C) = \frac{|A \cap C|}{|C|} = \frac{1}{2}
     \]
 \end{fr}
 
 \begin{reg}
     \textbf{Rechenregeln für bedingte Wahrscheinlichkeiten \txo{(diskreter Fall - analog für Fall einer Dichte)}} \\
-    Für ein festes Ereignis $B$ mit $P(B) > 0$ definiert
+    Für ein festes Ereignis $B$ mit $\pe(B) > 0$ definiert
 
     \[
-        \mu_B(\omega) = P(\{\omega\} \mid B) =
+        \wfk_B(\ele) = \pe(\{\omega\} \mid B) =
         \begin{cases}
-            \frac{P(\{\omega\})}{P(B)} = \frac{\mu(\{\omega\})}{P(B)}, & \text{falls } \omega \in B, \\
+            \frac{\pe(\{\omega\})}{\pe(B)} = \frac{\wfk(\{\omega\})}{\pe(B)}, & \text{falls } \omega \in B, \\
             0, & \text{falls } \omega \notin B,
         \end{cases}
     \]
@@ -144,40 +144,40 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     eine Wahrscheinlichkeitsfunktion, und es gilt
 
     \[
-        \sum_{\omega \in A}\mu_B(\omega)
+        \sum_{\omega \in A}\wfk_B(\omega)
         =
-        \frac{1}{P(B)}
+        \frac{1}{\pe(B)}
         =
-        \sum_{\omega \in A \cap B} \mu(\omega)
+        \sum_{\omega \in A \cap B} \wfk(\omega)
         =
-        \frac{P(A \cap B)}{P(B)}
+        \frac{\pe(A \cap B)}{\pe(B)}
         =
-        P(A \mid B)
+        \pe(A \mid B)
     \]
 
-    für alle $A \subseteq \Omega$.
+    für alle $A \subseteq \eraum$.
 
-    Die Abbildung $A \mapsto P(A \mid B)$ ist also ein Wahrscheinlichkeitsmaß.
+    Die Abbildung $A \mapsto \pe(A \mid B)$ ist also ein Wahrscheinlichkeitsmaß.
 
     Es gelten also alle bekannten Rechenregeln für Wahrscheinlichkeiten, z.B.
 
     \[
-        P(A^c \mid B) = 1 - P(A \mid B)
+        \pe(A^c \mid B) = 1 - \pe(A \mid B)
     \]
 
     oder
 
     \[
-        P(A_1 \cup^+ A_2 \mid B) = P(A_1 \mid B) + P(A_2 \mid B)
+        \pe(A_1 \cup^+ A_2 \mid B) = \pe(A_1 \mid B) + \pe(A_2 \mid B)
     \]
 
     \txc{(Achtung: nur für disjunkte Ereignisse.)}
 
-    Achtung! Die Abbildung $B \mapsto P(A \mid B)$ ist kein Wahrscheinlichkeitsmaß!
+    Achtung! Die Abbildung $B \mapsto \pe(A \mid B)$ ist kein Wahrscheinlichkeitsmaß!
 
     (Beweisen Sie dies selbständig, indem Sie z.B. Beispiele finden mit
-    $P(A \mid B) \neq 1 - P(A \mid B^c)$ oder
-    $P(A\mid B_1 \cup B_2) \neq P(A \mid B_1) + P(A \mid B_2)$.)
+    $\pe(A \mid B) \neq 1 - \pe(A \mid B^c)$ oder
+    $\pe(A\mid B_1 \cup B_2) \neq \pe(A \mid B_1) + \pe(A \mid B_2)$.)
 \end{reg}
 \begin{bsp}
     \textbf{Gedächtnislosigkeit der Exponentialverteilung} \\
@@ -222,57 +222,57 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Aus der Definition der bedingten Wahrscheinlichkeit folgt
 
     \[
-        P(A \cap B) = P(A \mid B)\,P(B)
-        \qquad \forall\, A,B \subseteq \Omega.
+        \pe(A \cap B) = \pe(A \mid B)\,\pe(B)
+        \qquad \forall\, A,B \subseteq \eraum.
     \]
 
     Da Multiplikation mit Null wieder Null ergibt, gilt diese Formel auch im Fall
-    \(P(B)=0\).
+    \(\pe(B)=0\).
     \txo{
         \[
-            P(B)=0 \Rightarrow \pe(A \cap B) \leq \pe(B) = 0 \Rightarrow \pe(A \cap B) = 0
+            \pe(B)=0 \Rightarrow \pe(A \cap B) \leq \pe(B) = 0 \Rightarrow \pe(A \cap B) = 0
         \]
     }
 
     Wiederholtes Anwenden zeigt
 
     \[
-        P(A_1 \cap A_2 \cap A_3)
+        \pe(A_1 \cap A_2 \cap A_3)
         =
-        P(A_3 \mid A_1 \cap A_2)\,P(A_1 \cap A_2)
+        \pe(A_3 \mid A_1 \cap A_2)\,\pe(A_1 \cap A_2)
     \]
 
     und damit
 
     \[
-        P(A_1 \cap A_2 \cap A_3)
+        \pe(A_1 \cap A_2 \cap A_3)
         =
-        P(A_3 \mid A_1 \cap A_2)\,
-        P(A_2 \mid A_1)\,
-        P(A_1)
+        \pe(A_3 \mid A_1 \cap A_2)\,
+        \pe(A_2 \mid A_1)\,
+        \pe(A_1)
     \]
 
-    für alle \(A_1, A_2, A_3 \subseteq \Omega\).
+    für alle \(A_1, A_2, A_3 \subseteq \eraum\).
 
     Mit vollständiger Induktion beweist man die allgemeine Formel
 
     \[
-        P(A_1 \cap A_2 \cap \cdots \cap A_n)
+        \pe(A_1 \cap A_2 \cap \cdots \cap A_n)
         =
-        P(A_n \mid A_1 \cap \cdots \cap A_{n-1})
+        \pe(A_n \mid A_1 \cap \cdots \cap A_{n-1})
         \cdots
-        P(A_2 \mid A_1)\,
-        P(A_1)
+        \pe(A_2 \mid A_1)\,
+        \pe(A_1)
     \]
 
-    für alle \(A_1,\dots,A_n \subseteq \Omega\).
+    für alle \(A_1,\dots,A_n \subseteq \eraum\).
 \end{reg}
 \begin{bsp}
     \textbf{Wie wahrscheinlich ist es, dass beim Skat jeder der drei Spieler genau ein As hat?}
 
     \paragraph{Modell}
     \[
-        \Omega
+        \eraum
         =
         \Bigl\{
         (S_1,S_2,S_3)
@@ -284,7 +284,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
         \Bigr\}.
     \]
 
-    \((S_1,S_2,S_3)\in\Omega\) bedeute:
+    \((S_1,S_2,S_3)\in\eraum\) bedeute:
     \begin{itemize}
         \item Spieler \(i\) erhält die 10 Karten \(S_i\), \(i\in\{1,2,3\}\).
         \item Die übrigen 2 Karten
@@ -295,13 +295,13 @@ Beispiel: Zweifacher Wurf einer fairen Münze
         \item Die vier Asse seien die Karten mit den Nummern \(1,2,3,4\).
         \item Gleichverteilung:
         \[
-            \mu(\omega)
+            \wfk(\omega)
             =
-            \frac{1}{|\Omega|}
+            \frac{1}{|\eraum|}
             =
             \frac{1}
             {\binom{32}{10}\binom{22}{10}\binom{12}{10}}
-            \qquad \forall\, \omega\in\Omega.
+            \qquad \forall\, \omega\in\eraum.
         \]
     \end{itemize}
 
@@ -323,17 +323,17 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     (Jeder Spieler hat genau ein As)
 
     \[
-        P(A)
+        \pe(A)
         =
-        P(A_1\cap A_2\cap A_3)
+        \pe(A_1\cap A_2\cap A_3)
         =
-        P(A_1)\,P(A_2\mid A_1)\,P(A_3\mid A_1\cap A_2) \txo{= P(A_3\mid A_1\cap A_2)\,P(A_2\mid A_1)\,P(A_1)}
+        \pe(A_1)\,\pe(A_2\mid A_1)\,\pe(A_3\mid A_1\cap A_2) \txo{= \pe(A_3\mid A_1\cap A_2)\,\pe(A_2\mid A_1)\,\pe(A_1)}
     \]
 
     \[
-        P(A_1)
+        \pe(A_1)
         =
-        \frac{|A_1|}{|\Omega|}
+        \frac{|A_1|}{|\eraum|}
         =
         \frac{\binom{4}{1}\binom{28}{9}\textcolor{red}{\binom{22}{10}\binom{12}{10}}}
         {\binom{32}{10}\textcolor{red}{\binom{22}{10}\binom{12}{10}}}
@@ -343,7 +343,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     \]
 
     \[
-        P(A_2\mid A_1)
+        \pe(A_2\mid A_1)
         =
         \frac{|A_1\cap A_2|}{|A_1|}
         =
@@ -355,7 +355,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     \]
 
     \[
-        P(A_3\mid A_1\cap A_2)
+        \pe(A_3\mid A_1\cap A_2)
         =
         \frac{|A_1\cap A_2\cap A_3|}
         {|A_1\cap A_2|}
@@ -367,7 +367,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Somit
 
     \[
-        P(A)
+        \pe(A)
         =
         \frac{\binom{4}{1}\binom{28}{9}}
         {\binom{32}{10}}
@@ -380,36 +380,36 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     \]
 
     \[
-        P(A)\approx 0.056.
+        \pe(A)\approx 0.056.
     \]
 \end{bsp}
 \begin{defi}
     \textbf{Formel von der totalen Wahrscheinlichkeit} \\
-    Sei \((\Omega,\pe)\) ein Wahrscheinlichkeitsraum und \txo{(abzählbar viele $B_i$)}
-    \(B_1,B_2,\dots \subseteq \Omega\) \txo{paarweise disjunkte} Ereignisse mit
+    Sei \((\eraum,\pe)\) ein Wahrscheinlichkeitsraum und \txo{(abzählbar viele $B_i$)}
+    \(B_1,B_2,\dots \subseteq \eraum\) \txo{paarweise disjunkte} Ereignisse mit
 
     \[
-        \bigcup^+_i B_i = \Omega.
+        \bigcup^+_i B_i = \eraum.
     \]
 
     Dann gilt
 
     \[
-        P(A)
+        \pe(A)
         =
-        \sum_i P(A\mid B_i)\,P(B_i)
+        \sum_i \pe(A\mid B_i)\,\pe(B_i)
     \]
 
-    für alle Ereignisse \(A \subseteq \Omega\).
+    für alle Ereignisse \(A \subseteq \eraum\).
 
-    \txc{Hinweis: \(B_1,B_2,\dots\) ist eine Partition von $\Omega$}
+    \txc{Hinweis: \(B_1,B_2,\dots\) ist eine Partition von $\eraum$}
 
     \paragraph{Beweis (im einfachsten Fall).}
 
     Für
 
     \[
-        \Omega = B_1 \cup^+ B_2\txc{,
+        \eraum = B_1 \cup^+ B_2\txc{,
             \qquad
             B_1 \cap B_2 = \varnothing}
     \]
@@ -427,18 +427,18 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Da die Ereignisse \(A\cap B_1\) und \(A\cap B_2\) disjunkt sind, folgt (über Rechenregeln für Wahrscheinlichkeiten)
 
     \[
-        P(A)
+        \pe(A)
         =
-        P(A\cap B_1)+P(A\cap B_2)
+        \pe(A\cap B_1)+\pe(A\cap B_2)
         \tag{1}
     \]
 
     und mit der Definition der bedingten Wahrscheinlichkeit
 
     \[
-        P(A\cap B_i)
+        \pe(A\cap B_i)
         =
-        P(A\mid B_i)\,P(B_i),
+        \pe(A\mid B_i)\,\pe(B_i),
         \qquad i=1,2.
         \tag{2}
     \]
@@ -446,11 +446,11 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Einsetzen von (2) in (1) ergibt
 
     \[
-        P(A)
+        \pe(A)
         =
-        P(A\mid B_1)\,P(B_1)
+        \pe(A\mid B_1)\,\pe(B_1)
         +
-        P(A\mid B_2)\,P(B_2).
+        \pe(A\mid B_2)\,\pe(B_2).
     \]
 
     Der allgemeine Fall geht vollkommen analog und verbleibt als Hausaufgabe.
@@ -469,7 +469,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     \paragraph{Modellierung}
 
     \[
-        \Omega = \{r,\bar r\}\times\{s,\bar s\}
+        \eraum = \{r,\bar r\}\times\{s,\bar s\}
         = \{(r,s),(\bar r,s),(r,\bar s),(\bar r,\bar s)\}
     \]
 
@@ -486,17 +486,17 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     \]
 
     \[
-        P(S\mid R)=\frac{9}{10},
+        \pe(S\mid R)=\frac{9}{10},
         \qquad
-        P(S\mid R^c)=\frac{3}{10},
+        \pe(S\mid R^c)=\frac{3}{10},
         \qquad
-        P(R)=\frac{6}{10}.
+        \pe(R)=\frac{6}{10}.
     \]
 
     \paragraph{Gesucht:}
 
     \[
-        P(S^c).
+        \pe(S^c).
     \]
 
     \paragraph{Problem:} Wie können wir diese „absolute“ Wahrscheinlichkeit aus den bedingten Wahrscheinlichkeiten bestimmen?
@@ -506,27 +506,27 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Die Formel der totalen Wahrscheinlichkeit mit
 
     \[
-        \Omega = R \cup R^c
+        \eraum = R \cup R^c
     \]
 
     zeigt:
 
     \[
-        P(S^c)
+        \pe(S^c)
         =
-        P(S^c\mid R)\,P(R)
+        \pe(S^c\mid R)\,\pe(R)
         +
-        P(S^c\mid R^c)\,P(R^c).
+        \pe(S^c\mid R^c)\,\pe(R^c).
     \]
 
     Nach Zurückführen auf die gegebenen Daten und Einsetzen erhalten wir
 
     \[
-        P(S^c)
+        \pe(S^c)
         =
-        \bigl[1-P(S\mid R)\bigr]P(R)
+        \bigl[1-\pe(S\mid R)\bigr]\pe(R)
         +
-        \bigl[1-P(S\mid R^c)\bigr]\bigl[1-P(R)\bigr]
+        \bigl[1-\pe(S\mid R^c)\bigr]\bigl[1-\pe(R)\bigr]
     \]
 
     \[
@@ -541,15 +541,15 @@ Beispiel: Zweifacher Wurf einer fairen Münze
 
 \begin{satz}
     \textbf{Satz von Bayes (einfache Version)} \\
-    Seien \((\Omega,\mu)\) ein Wahrscheinlichkeitsraum und
-    \(A,B \subseteq \Omega\) Ereignisse mit \(P(B)>0\).
+    Seien \((\eraum,\wfk)\) ein Wahrscheinlichkeitsraum und
+    \(A,B \subseteq \eraum\) Ereignisse mit \(\pe(B)>0\).
 
     Dann gilt
 
     \[
-        P(A\mid B)
+        \pe(A\mid B)
         =
-        P(B\mid A)\cdot\frac{P(A)}{P(B)}.
+        \pe(B\mid A)\cdot\frac{\pe(A)}{\pe(B)}.
     \]
 
     \paragraph{Beweis.}
@@ -557,19 +557,19 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Direkt nach Definition der bedingten Wahrscheinlichkeit gilt
 
     \[
-        P(A\mid B)\,P(B)
+        \pe(A\mid B)\,\pe(B)
         =
-        P(A\cap B)
+        \pe(A\cap B)
         =
-        P(B\mid A)\,P(A).
+        \pe(B\mid A)\,\pe(A).
     \]
 
-    Division durch \(P(B)\) ergibt die gesuchte Formel:
+    Division durch \(\pe(B)\) ergibt die gesuchte Formel:
 
     \[
-        P(A\mid B)
+        \pe(A\mid B)
         =
-        P(B\mid A)\cdot\frac{P(A)}{P(B)}.
+        \pe(B\mid A)\cdot\frac{\pe(A)}{\pe(B)}.
     \]
 \end{satz}
 
@@ -584,7 +584,7 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     \paragraph{Gesucht:}
 
     \[
-        P(R\mid S).
+        \pe(R\mid S).
     \]
 
     \paragraph{Problem:} Wie können wir „Bedingungen umkehren“?
@@ -596,21 +596,21 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Nach dem Satz von Bayes (einfache Version) ist
 
     \[
-        P(R\mid S)
+        \pe(R\mid S)
         =
-        P(S\mid R)\cdot \frac{P(R)}{P(S)}.
+        \pe(S\mid R)\cdot \frac{\pe(R)}{\pe(S)}.
     \]
 
     Da
 
     \[
-        P(S)=1-P(S^c)=1-\frac{34}{100}=\frac{66}{100},
+        \pe(S)=1-\pe(S^c)=1-\frac{34}{100}=\frac{66}{100},
     \]
 
     folgt
 
     \[
-        P(R\mid S)
+        \pe(R\mid S)
         =
         \frac{9}{10}\cdot
         \frac{\frac{6}{10}}{\frac{66}{100}}
@@ -621,23 +621,23 @@ Beispiel: Zweifacher Wurf einer fairen Münze
 
 \begin{satz}
     \textbf{Satz von Bayes (allgemeine Version)} \\
-    Sei \((\Omega,\pe)\) ein Wahrscheinlichkeitsraum,
-    \(B_1,B_2,\dots \subseteq \Omega\) Ereignisse mit
+    Sei \((\eraum,\pe)\) ein Wahrscheinlichkeitsraum,
+    \(B_1,B_2,\dots \subseteq \eraum\) Ereignisse mit
 
     \[
-        \bigcup^+_i B_i = \Omega,
+        \bigcup^+_i B_i = \eraum,
     \]
 
-    und \(A \subseteq \Omega\) ein Ereignis mit \(P(A)>0\).
+    und \(A \subseteq \eraum\) ein Ereignis mit \(\pe(A)>0\).
 
     Dann gilt für jedes \(i\)
 
     \[
-        P(B_i\mid A)
+        \pe(B_i\mid A)
         =
-        \frac{P(A\mid B_i)\,P(B_i)}
+        \frac{\pe(A\mid B_i)\,\pe(B_i)}
         {
-        \oub{\sum_j P(A\mid B_j)\,P(B_j)}{\overset{*}{=}\pe(A)}
+        \oub{\sum_j \pe(A\mid B_j)\,\pe(B_j)}{\overset{*}{=}\pe(A)}
         }.
     \]
     \txo{* Satz der totalen WS}
@@ -647,26 +647,26 @@ Beispiel: Zweifacher Wurf einer fairen Münze
     Kombiniere die einfache Version des Satzes von Bayes
 
     \[
-        P(B_i\mid A)
+        \pe(B_i\mid A)
         =
-        P(A\mid B_i)\,\frac{P(B_i)}{P(A)}
+        \pe(A\mid B_i)\,\frac{\pe(B_i)}{\pe(A)}
     \]
 
     mit der Formel von der totalen Wahrscheinlichkeit
 
     \[
-        P(A)
+        \pe(A)
         =
-        \sum_j P(A\mid B_j)\,P(B_j).
+        \sum_j \pe(A\mid B_j)\,\pe(B_j).
     \]
 
-    Einsetzen von \(P(A)\) in die Bayes-Formel ergibt
+    Einsetzen von \(\pe(A)\) in die Bayes-Formel ergibt
 
     \[
-        P(B_i\mid A)
+        \pe(B_i\mid A)
         =
-        \frac{P(A\mid B_i)\,P(B_i)}
-        {\sum_j P(A\mid B_j)\,P(B_j)}.
+        \frac{\pe(A\mid B_i)\,\pe(B_i)}
+        {\sum_j \pe(A\mid B_j)\,\pe(B_j)}.
     \]
 
     Die Details sind eine Hausaufgabe.
