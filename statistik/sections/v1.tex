@@ -30,7 +30,7 @@
     eine reelle Zahl ist.
 \end{defi}
 
-\begin{bsp} \textbf{Zu \autoref{defi:elementarereignis}} \\
+\begin{bsp} \defirefman{elementarereignis}
     \begin{itemize}
         \item Würfeln: $\ele = 3$ (3 gewürfelt)
         \item Zeitmessung: $\ele = 100$ (Sec)
@@ -49,7 +49,7 @@
     $\eraum, \tilde {\eraum}, \eraum_1, \eraum_2, \dots$ usw.
 \end{defi}
 
-\begin{bsp} \textbf{Zu \autoref{defi:eraum}} \\
+\begin{bsp} \defirefman{defi:eraum}
     \begin{itemize}
         \item \textbf{Würfeln:}  $\eraum  = \{1,\dots.,6\}$ oder $\eraum  = \{ wuerfelsymbole \}$ \\
         Die Modellierung durch Würfelsymbole zeigt, daß es beim Modellieren wichtig ist anzugeben,
@@ -65,9 +65,9 @@
         Sofern Zusatzinformationen vorliegen, können wir natürlich
         ein kleineres Intervall wählen.
     \end{itemize}
+\end{bsp}
 \komm{Siehe die Klammernnotation, die bedeutet die Null ist drin, aber infinity nicht.
     $\infty$ ist keine normale Zahl, sondern ein Symbol für Unbeschränktheit. Deshalb schreibt man praktisch immer die runde klammer auf der Seite.}
-\end{bsp}
 
 \noindent Häufig interessiert uns gar nicht der exakte Ausgang eines Zufallsexperiments, sondern nur, ob der
 Ausgang eine bestimmte Eigenschaft hat: Haben wir eine gerade Zahl gewürfelt?
@@ -90,7 +90,7 @@ Auch abzählbare Schnitte oder Vereinigungen solcher Objekte sind zulässig, sow
 Und so weiter.
 Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integrationstheorie zu vermeiden.
 
-\begin{bem} \textbf{Zu \autoref{defi:ereignis}} \\
+\begin{bem} \defirefman{defi:ereignis}
     \begin{itemize}
         \item Ein Ereignis $A \subseteq \eraum$ ist also ein (messbares) Element der Potenzmenge $\potm(\eraum)$
         von $\eraum$, das heißt, $A \in \potm(\eraum)$.
@@ -101,7 +101,7 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 \end{bem}
 
 
-\begin{bsp} \textbf{Zu \autoref{defi:ereignis}} \\
+\begin{bsp} \defirefman{ereignis}
     \begin{itemize}
         \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \ele = 4 \Rightarrow \ele \in A\] Wir sagen: ``gerade Zahl gewürfelt''
         \item \textbf{Zeitmessung:} $A = [100, 200] \subset \eraum  = [0,\infty)$
@@ -121,24 +121,27 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 
 
 \begin{defi} \label{defi:zaehldichte}
-    \textbf{Zähldichte / \acrfull{wfk}} \\
+    \textbf{Zähldichte / $\wfk$} \\
     Sei $\eraum  \neq \emptyset$ eine abzählbare Menge.
-    \begin{itemize}
-        \item[(i)] Eine Abbildung $\wfk : \eraum  \rightarrow [0,1]$ heißt mit \[
+    \begin{enumerate}
+        \item Eine Abbildung $\wfk : \eraum  \rightarrow [0,1]$ heißt mit \[
                                                                                                          \underbrace{\sum_{\ele \in \eraum } \wfk (\ele) = 1}_{\text{\txo{Normierung}}}
         \] \underline{Zähldichte / \gls{wfk}} auf $\eraum $. \\
-        \komm{Die Reihe (Normierung) muss 1 sein und konvergieren.} \komm{Wenn man max abzählbar hat, dann sind die Wahrscheinlichkeiten einfach teile der Summe (Normierung) und daher ist das einfach.}
-        \item[(ii)] Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \eraum $ ist bei gegebener \gls{wfk} $\wfk$ definiert durch
-        \[ \pe(A)\coloneqq \sum_{w \in A} \wfk(\ele)\]   \komm{Was hat die Potenzmenge von Omega damit zu tun?}
+        \item Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \eraum $ ist bei gegebener \gls{wfk} $\wfk$
+        definiert durch
+        \[ \pe(A)\coloneqq \sum_{w \in A} \wfk(\ele)\]
         \noindent $\pe$ heißt \gls{wmaß} und liegt immer zwischen Null und 1
-    \end{itemize}
+    \end{enumerate}
 \end{defi}
+\komm{\defirefman{zaehldichte} (i): Die Reihe (Normierung) muss 1 sein und konvergieren. \\ Wenn man max abzählbar hat, dann sind die Wahrscheinlichkeiten einfach teile der Summe (Normierung) und daher ist das einfach.}
 
-\begin{bem}\label{bem:konvention} \textbf{Zu \autoref{defi:zaehldichte} (ii)} \\
+\komm{TODO: Was hat die Potenzmenge von Omega damit zu tun?}
+
+\begin{bem}\label{bem:konvention} \defirefman{zaehldichte} (ii) \\
 \textit{Konvention}: $\pe(\emptyset) = 0$
 \end{bem}
 
-\begin{bem} \textbf{Zu \autoref{defi:zaehldichte}} \\
+\begin{bem} \defirefman{zaehldichte}
     \[0 \leq \pe \leq 1, \quad \forall A \subseteq \eraum  \quad \txo{\underbrace{(\forall A \in \potm(\eraum )) }_{\potm(\eraum ) \text{Potenzmenge von } \eraum }} \]
     $\pe$ ist eine Abb.
     \[
@@ -176,7 +179,7 @@ Dann gelten:
     $\underbrace{\wraum}_{\txo{(\eraum , \wfk)}}$ heißt \underline{\gls{wraum}}.
 \end{defi} %
 
-\begin{bem} \textbf{Zu \autoref{defi:wraum}} \\
+\begin{bem} \defirefman{wraum} \\
     Für $\eraum $ abzählbar: $\wfk$ legt $\pe$ eindeutig und umgekehrt!
     \[P(A)=\sum_{\ele \in A} \wfk (\ele) \quad \forall A \in \potm(\eraum )\]
     \[\wfk (\ele) = \pe(\underbrace{\{\ele\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \ele \in \eraum \]
@@ -197,21 +200,24 @@ Dann gelten:
     definiert ist und daher das einelementige Ereignis $\{\ele\}$ als Argument hat.
 \end{bem}
 
-\begin{bsp}
+\begin{bsp} \label{bsp:einmal-würfeln-i}
     \textbf{Einmal Würfeln} \\
     $\eraum  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
-    \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.} \komm{In Hausaufgaben zu jedem Omega hinzuschreiben, was es bedeutet! ``Dabei beudeute $\ele = k$, dass \dots''}
+    \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.}
     Wie wählen wir $\wfk$?
-    \begin{itemize}
-        \item[(a)] \textbf{fairer Würfel}: \komm{Ein ebener Würfel ist ein ``fairer Würfel'', weil alle Seiten gleich Wahrscheinlich sind.}
+    \begin{enumerate}
+        \item \textbf{fairer Würfel}:
         \[\wfk(k) = const \  \forall k \in \eraum \]
         \[\wfk (k) \coloneqq \frac{1}{6} \text{(weil $\sum_{k=1} \wfk (k) \overset{!}{=} 1$ )}\]
         $\pe(A) = \wfk(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \wfk(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
-        \item[(b)] \textbf{gezinkter Würfel}: Seien
+        \item  \textbf{gezinkter Würfel}: Seien
         \[\wfk(1) = \frac{1}{2}, \wfk(2) = \wfk(3) = \wfk(4) = \wfk(5) = \frac{1}{12}, \wfk(6)=\frac{1}{6}\]
-        Probe: $\sum_{k=1}^6 \wfk(k) \overset{!}{=} 1$ \komm{In der Klausur wenn bei einer Probe ein Fehler herauskommt, gerne hinschreiben man hat gemerkt da ist ein Fehler und wo der gewesen sein muss, besser als nichts hischreiben.}
-    \end{itemize}
+        Probe: $\sum_{k=1}^6 \wfk(k) \overset{!}{=} 1$
+    \end{enumerate}
 \end{bsp}
+\komm{\bspref{einmal-würfeln-i}: In Hausaufgaben zu jedem Omega hinzuschreiben, was es bedeutet! ``Dabei beudeute $\ele = k$, dass \dots''}
+\komm{\bspref{einmal-würfeln-i} (1.): Ein ebener Würfel ist ein ``fairer Würfel'', weil alle Seiten gleich Wahrscheinlich sind.}
+\komm{\bspref{einmal-würfeln-i} (2.): In der Klausur wenn bei einer Probe ein Fehler herauskommt, gerne hinschreiben man hat gemerkt da ist ein Fehler und wo der gewesen sein muss, besser als nichts hischreiben.}
 Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \begin{itemize}
     \item Frage der Erfahrung
@@ -310,7 +316,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     \end{itemize}
 \end{lem}
 \begin{bem}
-    Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. \\ \komm{Mathe 1}
+    Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. %\\ \komm{Mathe 1}
 \end{bem}
 \begin{bem} % aus Skript
     \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \\

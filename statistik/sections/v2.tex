@@ -39,7 +39,7 @@
 \begin{defi}
     \textbf{\gls{dichte}} \\
     EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt
-    \underline{Dichte}, sofern
+    \underline{\dichte}, sofern
     \[
         \int_{- \infty}^{\infty} f (x) dx = 1
     \]
@@ -63,19 +63,19 @@
             \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw. sowohl $(- \infty, 0] $ als auch $[0, \infty)$
             uneigentlich Riemann-integrierbar ist.
             % c TODO
-            \item
+            \item TODO
         \end{itemize}
     \end{bem}
 \end{defi}
 \begin{defi}
     \textbf{\gls{wraum}} \\
-    Sei eine \gls{dichte} \index{Dichte}$f \geq 0$ gegeben.
+    Sei eine \dichte $\Dichte \geq 0$ gegeben.
     Wir setzen
     \begin{align*}
-        \pe([a,b]) & \coloneqq  \int^b_a f(x) dx & \text{für alle } - \infty < a < b < \infty \\
-        \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b f(x) dx  \\
-        \pe([a, \infty]) & \coloneqq  \int_a^{\infty} f(x) dx \\
-        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} f(x) dx & \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}$}
+        \pe([a,b]) & \coloneqq  \int^b_a \Dichte(x) dx & \text{für alle } - \infty < a < b < \infty \\
+        \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b \Dichte(x) dx  \\
+        \pe([a, \infty]) & \coloneqq  \int_a^{\infty} \Dichte(x) dx \\
+        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} \Dichte(x) dx & \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}$}
     \end{align*}
     Falls
     \[
@@ -89,51 +89,51 @@
     \textbf{Uniforme Verteilung} (Kontinuumsäquivalent zu gleichverteilt) \\
     Die uniforme Verteilung auf einem beschränkten Intervall $I \subseteq \mathbb{R}$ ist gegeben durch eine \dichte
     \[
-        f(x) = \begin{cases}
+        \Dichte(x) = \begin{cases}
                    \frac{1}{\mid I \mid } & x \in I \\ 0 & sonst
         \end{cases}
     \]
     wobei $\mid I \mid $ die Intervalllänge bezeichnet.
 \end{defi}
 \begin{defi}
-    \textbf{Exponentialverteilung} \\
+    \textbf{Exponentialverteilung} \label{defi:exponentialverteilung} \\
     Die Exponentialverteilung zum Parameter $\alpha > 0$ ist gegeben durch die \dichte
     \begin{equation}
         \label{eq:Exponentialverteilung}
-        f(x) = \begin{cases}
+        \Dichte(x) = \begin{cases}
                    0 & \text{ für } x < 0 \\
                    \alpha e ^{- \alpha x} &  \text{ für } x \geq 0
         \end{cases}
     \end{equation}
-    \begin{bem}
-        \ref{eq:Exponentialverteilung} ist eien Dichte:
-        \begin{itemize}
-            \item $f  \geq 0 $
-            \item $f$ R-integrierbar, da stückweise stetig
-            \orangenote{$g(x) = e^{-\alpha x}$ \\ $g'(x) = (-\alpha) e^{- \alpha x}$ (Produktregel)}
-            \item \texttt{???}:
-            \begin{align*}
-                \int_{-\infty}^{\infty} f(x) dx & =   \int_{0}^{\infty} f(x) dx  \\
-                & =   \int_{0}^{\infty} \alpha e^{-\alpha x} dx  \\
-                & = \underset{N \rightarrow \infty}{lim} \int^N_0 \alpha e ^{-\alpha x} dx \\
-                & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha x} \mid^N_{x=0}] \\
-                & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha N}
-                \txo{\underbrace{
-                    \textcolor{black}{- ( -\txo{\underbrace{
-                        \textcolor{black}{e^{-\alpha \cdot 0}
-                        }}_{=1}}}
-                }_{=1}}
-                )] \\
-                & = 1 - \txo{
-                    \underbrace{
-                        \textcolor{black}{\underset{N \rightarrow \infty}{lim} e ^{- \alpha N}}
-                    }_{=1}
-                } \\
-                & = 1
-            \end{align*}
-        \end{itemize}
-    \end{bem}
 \end{defi}
+\begin{bem} \defirefman{exponentialverteilung} \\
+    \ref{eq:Exponentialverteilung} ist eine \dichte:
+    \begin{itemize}
+        \item $f  \geq 0 $
+        \item $f$ R-integrierbar, da stückweise stetig
+        \orangenote{$g(x) = e^{-\alpha x}$ \\ $g'(x) = (-\alpha) e^{- \alpha x}$ (Produktregel)}
+        \item \texttt{???}:
+        \begin{align*}
+            \int_{-\infty}^{\infty} f(x) dx & =   \int_{0}^{\infty} f(x) dx  \\
+            & =   \int_{0}^{\infty} \alpha e^{-\alpha x} dx  \\
+            & = \underset{N \rightarrow \infty}{lim} \int^N_0 \alpha e ^{-\alpha x} dx \\
+            & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha x} \mid^N_{x=0}] \\
+            & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha N}
+            \txo{\underbrace{
+                \textcolor{black}{- ( -\txo{\underbrace{
+                    \textcolor{black}{e^{-\alpha \cdot 0}
+                    }}_{=1}}}
+            }_{=1}}
+            )] \\
+            & = 1 - \txo{
+                \underbrace{
+                    \textcolor{black}{\underset{N \rightarrow \infty}{lim} e ^{- \alpha N}}
+                }_{=1}
+            } \\
+            & = 1
+        \end{align*}
+    \end{itemize}
+\end{bem}
 \begin{defi}
     \textbf{Vereinigung/Schnitt} abzählbar vieler Mengen \\
     $I \subseteq \mathbb{N}$ Indexmenge. \\
@@ -310,12 +310,12 @@
         \item[(d)] Sind $A_1, A_2, \dots $ paarweis disjunkt, so schreiben wir $\underset{i}{\dot\cup} A_i$ für die Vereinigung  $\underset{i}{\cup} A_i$.
         \item Wir sprechen von einer \underline{disjunkten Vereinigung}
     \end{itemize}
-    \begin{bem}
-        $\ $ \\
-        paarweise disjunkt $\Rightarrow$ disjunkt \\
-        $\underset{i}{\cup} A_i \subset A_1 \cap A_2 = \emptyset$
-    \end{bem}
 \end{defi}
+\begin{bem}
+    $\ $ \\
+    paarweise disjunkt $\Rightarrow$ disjunkt \\
+    $\underset{i}{\cup} A_i \subset A_1 \cap A_2 = \emptyset$
+\end{bem}
 \begin{bsp}
     \texttt{fehlt}
 \end{bsp}
@@ -362,26 +362,26 @@
             & = \pe(A) + \pe(B) - \pe(A \cap B)
         \end{align*}
     \end{itemize}
-    \begin{bem}
-        Sind $A, B$ disjunkt, so gilt nach (a): $\pe(A \dot\cup B)  = \pe(A) + \pe(B) $. \\
-        Sind $A, B$ nicht disjunkt, so gilt nach (e): $\pe(A \cup B) = \pe(A) + \pe(B) - \pe(A \cap B)$. \\
-        Sind $A, B, C$ paarweise disjunkt, so gilt nach (a): $\pe(A \cup B \cup C) \overset{(a)}{=} \pe(A) + \pe(B) + \pe(C) $. \\ \\
-        Was passiert, wenn $A,B,C$ nicht paarweise disjunkt sind? \begin{align*}
-                                                                      \pe(A \cup B \cup C) & = \pe(A \cup (B \cup C)) \\
-                                                                      & = \pe(A) \pe( \cup B \cup C) -  \pe(A \cap (B \cup C)) \\
-                                                                      & = \pe(A) + [\pe(B) + \pe(C) - \pe(B \cap C)] - \pe((A \cap B) \cup (A \cap C))\\
-                                                                      & = \pe(A) + \pe(B) + \pe(C)  & \text{Mengen }  \\
-                                                                      & \quad - \pe(A \cap B) - \pe(A \cap C) - \pe(B \cap C) & \text{Paare von Mengen }  \\
-                                                                      & \quad + \pe(
-                                                                      \txo{
-                                                                          \underbrace{
-                                                                              \textcolor{black}{(A \cap B) \cap (A \cap C)}
-                                                                          }_{= A \cap B \cap C}
-                                                                      }
-                                                                      ) & \text{Tripel von Mengen }
-        \end{align*}
-    \end{bem}
 \end{satz}
+\begin{bem}
+    Sind $A, B$ disjunkt, so gilt nach (a): $\pe(A \dot\cup B)  = \pe(A) + \pe(B) $. \\
+    Sind $A, B$ nicht disjunkt, so gilt nach (e): $\pe(A \cup B) = \pe(A) + \pe(B) - \pe(A \cap B)$. \\
+    Sind $A, B, C$ paarweise disjunkt, so gilt nach (a): $\pe(A \cup B \cup C) \overset{(a)}{=} \pe(A) + \pe(B) + \pe(C) $. \\ \\
+    Was passiert, wenn $A,B,C$ nicht paarweise disjunkt sind? \begin{align*}
+                                                                  \pe(A \cup B \cup C) & = \pe(A \cup (B \cup C)) \\
+                                                                  & = \pe(A) \pe( \cup B \cup C) -  \pe(A \cap (B \cup C)) \\
+                                                                  & = \pe(A) + [\pe(B) + \pe(C) - \pe(B \cap C)] - \pe((A \cap B) \cup (A \cap C))\\
+                                                                  & = \pe(A) + \pe(B) + \pe(C)  & \text{Mengen }  \\
+                                                                  & \quad - \pe(A \cap B) - \pe(A \cap C) - \pe(B \cap C) & \text{Paare von Mengen }  \\
+                                                                  & \quad + \pe(
+                                                                  \txo{
+                                                                      \underbrace{
+                                                                          \textcolor{black}{(A \cap B) \cap (A \cap C)}
+                                                                      }_{= A \cap B \cap C}
+                                                                  }
+                                                                  ) & \text{Tripel von Mengen }
+    \end{align*}
+\end{bem}
 \begin{satz}
     \textbf{Ein- und Ausschlussprinzip} \\
     \[A_2,\dots, A_n \subset \glssymbol{eraum}  \]

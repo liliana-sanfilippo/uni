@@ -18,11 +18,9 @@
 
 
 \newcommand{\komm}[1]{
-    \textcolor{Fuchsia}{
     \begin{kom}
        #1
     \end{kom}
-    }
 }
 \newcommand{\txc}[1]{
     \textcolor{Fuchsia}{#1}
@@ -86,6 +84,7 @@
 \newcommand{\mab}[1]{\[#1\]}
 \newcommand{\E}[1]{\ensuremath{\mathbb{E}[#1]}}
 \newcommand{\dichte}[0]{\Gls{dichte} \index{Dichte}}
+\newcommand{\Dichte}[0]{\glssymbol{dichte} \index{Dichte}}
 
 \newglossarystyle{symbunitlong}{%
     \setglossarystyle{long3col}% base this style on the list style
@@ -150,5 +149,9 @@
 \newcommand{\claude}[0]{\textit{Danke an claude.ai \cite{claude} (Überprüft)}}
 
 
-\newcommand{\defiref}[1]{\textbf{Definition \ref{def:#1} (\gls{#1})}}
+\newcommand{\defiref}[1]{\textcolor{sectionf}{\textbf{Zu Definition \ref{def:#1} (\gls*{#1})}}}
+\newcommand{\defirefman}[1]{\textcolor{sectionf}{\textbf{Zu Definition \ref{def:#1}}}}
+
+\newcommand{\bspref}[1]{\textcolor{sectionf}{\textbf{Zu Beispiel \ref{bsp:#1}}}}
+
 
