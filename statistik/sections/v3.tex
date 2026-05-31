@@ -1,0 +1,673 @@
+%! Author = lili
+%! Date = 5/31/26
+
+\untit{Vorlesung 3 (02.05.2025)}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item Definition und Bedeutung bedingter Wahrscheinlichkeiten kennen
+    \item Modellieren von Zufallsexperimenten, wenn diese durch bedingte
+    Wahrscheinlichkeiten beschrieben sind
+    \item Satz von der totalen Wahrscheinlichkeit kennen und anwenden können
+    \item Bayes-Formel kennen und anwenden können
+\end{itemize}
+
+\begin{bsp}
+    \textbf{Einmaliges Würfeln} \\
+    Wie wahrscheinlich ist es, daß eine 1 oder eine 6 gewürfelt wurde?
+    Einmaliges Würfeln
+
+    Wie wahrscheinlich ist es, dass eine 1 oder eine 6 gewürfelt wurde?
+
+    $|\Omega| = \{1, \dots, 6\}, \; \pe$ Gleichverteilung, $A = \{1,6\}, \; P(A) = \frac{|A|}{|\Omega|} = \frac{2}{6} = \frac{1}{3}$
+
+    Wie wahrscheinlich ist es, dass eine 1 oder eine 6 gewürfelt wurde, wenn wir schon wissen, dass die geworfene Zahl durch 3 teilbar ist?
+
+    Was ist ``$\pe$ von A, gegeben B'' \txc{$\pe(A \mid B)$} mit $B = \{3,6\}$?
+
+    Wahrscheinlichkeit von $A$:
+
+    \[
+        P(A) = \frac{\text{Anz. günstige Ausgänge}}{\text{Anz. mögliche Ausgänge}} = \frac{|A|}{|\Omega|}
+    \]
+
+    Wahrscheinlichkeit von $A$ gegeben $B$:
+
+    \[
+        P(A \mid B) =
+        \frac{\text{Anz. günstige Ausgänge in } A \cap B}{\text{Anz. mögliche Ausgänge in } B}
+        = \frac{|A \cap B|}{|B|}
+        = \frac{|\{6\}|}{|\{3,6\}|}
+        = \frac{1}{2}
+    \]
+\end{bsp}
+\begin{notation}
+    $|A| = \# A$
+\end{notation}
+\begin{defi}
+    \label{def:bedingte-ws} \textbf{\gls{bws}} \\
+    Für Ereignisse A und B heißt
+    \[
+        P(A \mid B) =
+        \begin{cases}
+            \frac{P(A \cap B)}{P(B)}, & \text{falls } P(B) > 0, \\
+            0, & \text{falls } P(B) = 0,
+        \end{cases}
+    \]
+    die bedingte Wahrscheinlichkeit von A gegeben B.
+\end{defi}
+\komm{\defirefman{bedingte-ws}: Wenn
+    $\pe$ durch eine Dichte gegeben ist, muss man die Definition über Integrale interpretieren.}
+\begin{beo}
+    Bei Gleichverteilung gilt
+
+    \[
+        P(A \mid B)
+        =
+        \frac{\frac{\#|A \cap B|}{\#|\Omega|}}{\frac{\#|B|}{\#|\Omega|}} =
+        \frac{|A \cap B|}{|B|}
+    \]
+
+    D.h., die bedingte Wahrscheinlichkeit von A gegeben B ist tatsächlich der relative Anteil von A in B.
+\end{beo}
+\begin{fr}
+    In obigem Beispiel gilt $P(A \mid B) > P(A)$. Gilt das immer?
+
+    \paragraph{Antwort} Nein! Sowohl $P(A_1 \mid B_1) > P(A_1)$ als auch $P(A_2 \mid B_2) < P(A_2)$ sind möglich.
+
+\end{fr}
+\begin{bsp}
+    \[
+        \Omega = \{1,\dots,6\} \text{ mit Gleichverteilung } P
+    \]
+
+    \[
+        A_1 = \{1,6\}, \quad A_2 = \{1,2,3,4\}, \quad B = B_1 = B_2 = \{3,6\}
+    \]
+
+    Dann gelten
+
+    \[
+        P(A_1 \mid B) = \frac{|A_1 \cap B|}{|B|} = \frac{1}{2} > \frac{1}{3} = P(A_1)
+    \]
+
+    \[
+        P(A_2 \mid B) = \frac{|A_2 \cap B|}{|B|} = \frac{1}{2} < \frac{2}{3} = P(A_2)
+    \]
+\end{bsp}
+
+Beispiel: Zweifacher Wurf einer fairen Münze
+
+\Omega = \{KK, KZ, ZK, ZZ\} \text{ mit Gleichverteilung } P
+
+
+
+\begin{fr}
+    Jemand wirft die Münze zweimal und sagt uns nur, dass dabei mindestens einmal Zahl gefallen ist.
+
+    Wie groß ist die Wahrscheinlichkeit, dass zweimal Zahl gefallen ist?
+
+    \paragraph{Antwort:}
+    A = \{ZZ\}, \quad B = \{KZ, ZK, ZZ\}
+
+    \[
+        P(A \mid B) = \frac{|A \cap B|}{|B|} = \frac{1}{3}
+    \]
+
+\end{fr}
+
+\begin{fr}
+
+    Jemand wirft die Münze zweimal und sagt uns nur, dass beim ersten Wurf Zahl gefallen ist.
+
+    Wie groß ist die Wahrscheinlichkeit, dass zweimal Zahl gefallen ist?
+
+    A = \{ZZ\}, \quad C = \{ZK, ZZ\}
+
+    \[
+        P(A \mid C) = \frac{|A \cap C|}{|C|} = \frac{1}{2}
+    \]
+\end{fr}
+
+\begin{reg}
+    \textbf{Rechenregeln für bedingte Wahrscheinlichkeiten \txo{(diskreter Fall - analog für Fall einer Dichte)}} \\
+    Für ein festes Ereignis $B$ mit $P(B) > 0$ definiert
+
+    \[
+        \mu_B(\omega) = P(\{\omega\} \mid B) =
+        \begin{cases}
+            \frac{P(\{\omega\})}{P(B)} = \frac{\mu(\{\omega\})}{P(B)}, & \text{falls } \omega \in B, \\
+            0, & \text{falls } \omega \notin B,
+        \end{cases}
+    \]
+
+    eine Wahrscheinlichkeitsfunktion, und es gilt
+
+    \[
+        \sum_{\omega \in A}\mu_B(\omega)
+        =
+        \frac{1}{P(B)}
+        =
+        \sum_{\omega \in A \cap B} \mu(\omega)
+        =
+        \frac{P(A \cap B)}{P(B)}
+        =
+        P(A \mid B)
+    \]
+
+    für alle $A \subseteq \Omega$.
+
+    Die Abbildung $A \mapsto P(A \mid B)$ ist also ein Wahrscheinlichkeitsmaß.
+
+    Es gelten also alle bekannten Rechenregeln für Wahrscheinlichkeiten, z.B.
+
+    \[
+        P(A^c \mid B) = 1 - P(A \mid B)
+    \]
+
+    oder
+
+    \[
+        P(A_1 \cup^+ A_2 \mid B) = P(A_1 \mid B) + P(A_2 \mid B)
+    \]
+
+    \txc{(Achtung: nur für disjunkte Ereignisse.)}
+
+    Achtung! Die Abbildung $B \mapsto P(A \mid B)$ ist kein Wahrscheinlichkeitsmaß!
+
+    (Beweisen Sie dies selbständig, indem Sie z.B. Beispiele finden mit
+    $P(A \mid B) \neq 1 - P(A \mid B^c)$ oder
+    $P(A\mid B_1 \cup B_2) \neq P(A \mid B_1) + P(A \mid B_2)$.)
+\end{reg}
+\begin{bsp}
+    \textbf{Gedächtnislosigkeit der Exponentialverteilung} \\
+    Parameter $z > 0$; \dichte:
+    \[
+        \dcht(x) = \begin{cases}
+                       z e^{-zx}, & x \geq 0 \\ 0, & sonst
+        \end{cases}
+    \]
+    $ \pe(I) = \intab \dcht(x) \dx $ für $I = (a,b] \subset [0,\infty)$ \\
+    Warteschleife beim Kundenservice als Exponentialverteilung
+    \begin{itemize}
+        \item Sie haben schon 10 Min gewartet $(t=10)$
+        \item \gls{ws}, dass Sie noch \textbf{mindestens} weitere 10 Minuten warten? \\ ($T=t+10=20$)
+    \end{itemize}
+    Gesucht: $\pe([T,a) | [t, \infty) )$
+    \[
+        \pe([T,a) | [t, \infty) ) = \frac{\pe([T,a)) \cap \pe([t, \infty) )}{\pe([t, \infty) )} =
+        \frac{\pe([T, \infty) )}{\pe([t, \infty) )}
+    \]
+    Nebenrechnung:
+    \begin{align*}
+        \pe([\tau, \infty) ) &= \int_{\tau}^{\infty} z e^{-zx} \dx \\
+        & = \lim_{N \rightarrow \infty } \int_{\tau}^{\infty} z e^{-zx} \dx \\
+        & = \lim_{N \rightarrow \infty } ( - e^{-zx}) \mid_{x=\tau}^{N} \\
+        & =\lim_{N \rightarrow \infty } [ \underbrace{- e^{-zN}}_{\rightarrow_{N \rightarrow \infty} 0} + e^{-z\tau} ]  \\
+        & = e^{-z\tau}
+    \end{align*}
+    \txc{Zurück zur Hauptrechnung:}
+    \begin{align*}
+        \pe([T,a) | [t, \infty) ) & = \frac{\pe([T, \infty) )}{\pe([t, \infty) )} \\
+        & \overset{NR}{=} \frac{e^{-zT}}{e^{-zt}} \\
+        & = e^{-z(T-t)} \\
+        & \overset{T=10+t}{=} e^{-zt} \\
+        & \overset{NR}{=} \pe([t,\infty))
+    \end{align*}
+\end{bsp}
+
+
+\begin{reg}
+    \textbf{Neue Rechenregel: Sukzessives Bedingen} \\
+    Aus der Definition der bedingten Wahrscheinlichkeit folgt
+
+    \[
+        P(A \cap B) = P(A \mid B)\,P(B)
+        \qquad \forall\, A,B \subseteq \Omega.
+    \]
+
+    Da Multiplikation mit Null wieder Null ergibt, gilt diese Formel auch im Fall
+    \(P(B)=0\).
+    \txo{
+        \[
+            P(B)=0 \Rightarrow \pe(A \cap B) \leq \pe(B) = 0 \Rightarrow \pe(A \cap B) = 0
+        \]
+    }
+
+    Wiederholtes Anwenden zeigt
+
+    \[
+        P(A_1 \cap A_2 \cap A_3)
+        =
+        P(A_3 \mid A_1 \cap A_2)\,P(A_1 \cap A_2)
+    \]
+
+    und damit
+
+    \[
+        P(A_1 \cap A_2 \cap A_3)
+        =
+        P(A_3 \mid A_1 \cap A_2)\,
+        P(A_2 \mid A_1)\,
+        P(A_1)
+    \]
+
+    für alle \(A_1, A_2, A_3 \subseteq \Omega\).
+
+    Mit vollständiger Induktion beweist man die allgemeine Formel
+
+    \[
+        P(A_1 \cap A_2 \cap \cdots \cap A_n)
+        =
+        P(A_n \mid A_1 \cap \cdots \cap A_{n-1})
+        \cdots
+        P(A_2 \mid A_1)\,
+        P(A_1)
+    \]
+
+    für alle \(A_1,\dots,A_n \subseteq \Omega\).
+\end{reg}
+\begin{bsp}
+    \textbf{Wie wahrscheinlich ist es, dass beim Skat jeder der drei Spieler genau ein As hat?}
+
+    \paragraph{Modell}
+    \[
+        \Omega
+        =
+        \Bigl\{
+        (S_1,S_2,S_3)
+        :
+        S_i \subseteq \{1,\dots,32\},
+        \ |S_i|=10
+        \ \forall i\in\{1,2,3\},
+        \ S_i \cap S_j = \varnothing \text{ für } i\neq j
+        \Bigr\}.
+    \]
+
+    \((S_1,S_2,S_3)\in\Omega\) bedeute:
+    \begin{itemize}
+        \item Spieler \(i\) erhält die 10 Karten \(S_i\), \(i\in\{1,2,3\}\).
+        \item Die übrigen 2 Karten
+        \[
+            \{1,\dots,32\}\setminus(S_1\cup^+ S_2\cup^+ S_3)
+        \]
+        liegen im Skat.
+        \item Die vier Asse seien die Karten mit den Nummern \(1,2,3,4\).
+        \item Gleichverteilung:
+        \[
+            \mu(\omega)
+            =
+            \frac{1}{|\Omega|}
+            =
+            \frac{1}
+            {\binom{32}{10}\binom{22}{10}\binom{12}{10}}
+            \qquad \forall\, \omega\in\Omega.
+        \]
+    \end{itemize}
+
+    \paragraph{Rechnung}
+    Beispiel: Wie wahrscheinlich ist es, dass beim Skat alle genau ein As haben?
+
+
+    \[
+        A_i=\bigl\{|S_i\cap\{1,2,3,4\}|=1\bigr\},
+        \qquad i=1,2,3
+    \]
+
+    (Spieler \(i\) hat genau ein As)
+
+    \[
+        A=A_1\cap A_2\cap A_3
+    \]
+
+    (Jeder Spieler hat genau ein As)
+
+    \[
+        P(A)
+        =
+        P(A_1\cap A_2\cap A_3)
+        =
+        P(A_1)\,P(A_2\mid A_1)\,P(A_3\mid A_1\cap A_2) \txo{= P(A_3\mid A_1\cap A_2)\,P(A_2\mid A_1)\,P(A_1)}
+    \]
+
+    \[
+        P(A_1)
+        =
+        \frac{|A_1|}{|\Omega|}
+        =
+        \frac{\binom{4}{1}\binom{28}{9}\textcolor{red}{\binom{22}{10}\binom{12}{10}}}
+        {\binom{32}{10}\textcolor{red}{\binom{22}{10}\binom{12}{10}}}
+        =
+        \frac{\binom{4}{1}\binom{28}{9}}
+        {\binom{32}{10}}
+    \]
+
+    \[
+        P(A_2\mid A_1)
+        =
+        \frac{|A_1\cap A_2|}{|A_1|}
+        =
+        \frac{\textcolor{red}{\binom{4}{1}\binom{28}{9}}\binom{3}{1}\binom{19}{9}\textcolor{red}{\binom{12}{10}}}
+        {\textcolor{red}{\binom{4}{1}\binom{28}{9}}\binom{22}{10}\textcolor{red}{\binom{12}{10}}}
+        =
+        \frac{\binom{3}{1}\binom{19}{9}}
+        {\binom{22}{10}}
+    \]
+
+    \[
+        P(A_3\mid A_1\cap A_2)
+        =
+        \frac{|A_1\cap A_2\cap A_3|}
+        {|A_1\cap A_2|}
+        = ... =
+        \frac{\binom{2}{1}\binom{10}{9}}
+        {\binom{12}{10}}
+    \]
+
+    Somit
+
+    \[
+        P(A)
+        =
+        \frac{\binom{4}{1}\binom{28}{9}}
+        {\binom{32}{10}}
+        \cdot
+        \frac{\binom{3}{1}\binom{19}{9}}
+        {\binom{22}{10}}
+        \cdot
+        \frac{\binom{2}{1}\binom{10}{9}}
+        {\binom{12}{10}}
+    \]
+
+    \[
+        P(A)\approx 0.056.
+    \]
+\end{bsp}
+\begin{defi}
+    \textbf{Formel von der totalen Wahrscheinlichkeit} \\
+    Sei \((\Omega,\pe)\) ein Wahrscheinlichkeitsraum und \txo{(abzählbar viele $B_i$)}
+    \(B_1,B_2,\dots \subseteq \Omega\) \txo{paarweise disjunkte} Ereignisse mit
+
+    \[
+        \bigcup^+_i B_i = \Omega.
+    \]
+
+    Dann gilt
+
+    \[
+        P(A)
+        =
+        \sum_i P(A\mid B_i)\,P(B_i)
+    \]
+
+    für alle Ereignisse \(A \subseteq \Omega\).
+
+    \txc{Hinweis: \(B_1,B_2,\dots\) ist eine Partition von $\Omega$}
+
+    \paragraph{Beweis (im einfachsten Fall).}
+
+    Für
+
+    \[
+        \Omega = B_1 \cup^+ B_2\txc{,
+            \qquad
+            B_1 \cap B_2 = \varnothing}
+    \]
+
+    (also \(B_1=B\) und \(B_2=B^c\)) gilt
+
+    \[
+        A
+        =
+        A \cap (B_1 \cup^+ B_2)
+        =
+        (A\cap B_1)\cup^+(A\cap B_2).
+    \]
+
+    Da die Ereignisse \(A\cap B_1\) und \(A\cap B_2\) disjunkt sind, folgt (über Rechenregeln für Wahrscheinlichkeiten)
+
+    \[
+        P(A)
+        =
+        P(A\cap B_1)+P(A\cap B_2)
+        \tag{1}
+    \]
+
+    und mit der Definition der bedingten Wahrscheinlichkeit
+
+    \[
+        P(A\cap B_i)
+        =
+        P(A\mid B_i)\,P(B_i),
+        \qquad i=1,2.
+        \tag{2}
+    \]
+
+    Einsetzen von (2) in (1) ergibt
+
+    \[
+        P(A)
+        =
+        P(A\mid B_1)\,P(B_1)
+        +
+        P(A\mid B_2)\,P(B_2).
+    \]
+
+    Der allgemeine Fall geht vollkommen analog und verbleibt als Hausaufgabe.
+\end{defi}
+\begin{bsp}
+    \textbf{Herr Zimperlich und sein Regenschirm} \\
+    Herr Zimperlich hasst es, nass zu werden.
+    Wenn der Wetterbericht Regen ankündigt, nimmt er seinen Schirm mit einer Wahrscheinlichkeit von \(90\%\) mit. (Die fehlenden \(10\%\) sind seiner Vergesslichkeit geschuldet.)
+
+    Auch wenn der Wetterbericht einen trockenen Tag verheißt, nimmt Herr Zimperlich mit einer Wahrscheinlichkeit von \(30\%\) trotzdem seinen Schirm mit.
+
+    Dem feuchten Bielefelder Klima gemäß nehmen wir an, dass für \(60\%\) aller Tage Regen vorhergesagt wird.
+
+    Frage: Wie groß ist die Wahrscheinlichkeit, dass Herr Zimperlich das Haus ohne Schirm verlässt?
+
+    \paragraph{Modellierung}
+
+    \[
+        \Omega = \{r,\bar r\}\times\{s,\bar s\}
+        = \{(r,s),(\bar r,s),(r,\bar s),(\bar r,\bar s)\}
+    \]
+
+    Dabei sei \((r,\bar s)\) das Elementarereignis, dass Regen vorhergesagt wurde und Herr Zimperlich keinen Schirm mitnimmt, usw.
+
+    \[
+        R=\{(r,s),(r,\bar s)\}
+        \qquad\text{(Regen vorhergesagt)}
+    \]
+
+    \[
+        S=\{(r,s),(\bar r,s)\}
+        \qquad\text{(Schirm dabei)}
+    \]
+
+    \[
+        P(S\mid R)=\frac{9}{10},
+        \qquad
+        P(S\mid R^c)=\frac{3}{10},
+        \qquad
+        P(R)=\frac{6}{10}.
+    \]
+
+    \paragraph{Gesucht:}
+
+    \[
+        P(S^c).
+    \]
+
+    \paragraph{Problem:} Wie können wir diese „absolute“ Wahrscheinlichkeit aus den bedingten Wahrscheinlichkeiten bestimmen?
+
+    \paragraph{Lösung:}
+
+    Die Formel der totalen Wahrscheinlichkeit mit
+
+    \[
+        \Omega = R \cup R^c
+    \]
+
+    zeigt:
+
+    \[
+        P(S^c)
+        =
+        P(S^c\mid R)\,P(R)
+        +
+        P(S^c\mid R^c)\,P(R^c).
+    \]
+
+    Nach Zurückführen auf die gegebenen Daten und Einsetzen erhalten wir
+
+    \[
+        P(S^c)
+        =
+        \bigl[1-P(S\mid R)\bigr]P(R)
+        +
+        \bigl[1-P(S\mid R^c)\bigr]\bigl[1-P(R)\bigr]
+    \]
+
+    \[
+        =
+        \left(1-\frac{9}{10}\right)\frac{6}{10}
+        +
+        \left(1-\frac{3}{10}\right)\left(1-\frac{6}{10}\right)
+        =
+        \frac{34}{100}.
+    \]
+\end{bsp}
+
+\begin{satz}
+    \textbf{Satz von Bayes (einfache Version)} \\
+    Seien \((\Omega,\mu)\) ein Wahrscheinlichkeitsraum und
+    \(A,B \subseteq \Omega\) Ereignisse mit \(P(B)>0\).
+
+    Dann gilt
+
+    \[
+        P(A\mid B)
+        =
+        P(B\mid A)\cdot\frac{P(A)}{P(B)}.
+    \]
+
+    \paragraph{Beweis.}
+
+    Direkt nach Definition der bedingten Wahrscheinlichkeit gilt
+
+    \[
+        P(A\mid B)\,P(B)
+        =
+        P(A\cap B)
+        =
+        P(B\mid A)\,P(A).
+    \]
+
+    Division durch \(P(B)\) ergibt die gesuchte Formel:
+
+    \[
+        P(A\mid B)
+        =
+        P(B\mid A)\cdot\frac{P(A)}{P(B)}.
+    \]
+\end{satz}
+
+
+\begin{bsp}
+    Neue Frage:
+
+    Sie haben den Wetterbericht nicht gehört, aber Sie sehen, dass Herr Zimperlich seinen Schirm dabei hat.
+
+    Wie groß ist die Wahrscheinlichkeit, dass für diesen Tag Regen vorhergesagt wurde?
+
+    \paragraph{Gesucht:}
+
+    \[
+        P(R\mid S).
+    \]
+
+    \paragraph{Problem:} Wie können wir „Bedingungen umkehren“?
+
+    \paragraph{Lösung:} Satz von Bayes / Bayes-Formel.
+
+    \paragraph{Lösung}
+
+    Nach dem Satz von Bayes (einfache Version) ist
+
+    \[
+        P(R\mid S)
+        =
+        P(S\mid R)\cdot \frac{P(R)}{P(S)}.
+    \]
+
+    Da
+
+    \[
+        P(S)=1-P(S^c)=1-\frac{34}{100}=\frac{66}{100},
+    \]
+
+    folgt
+
+    \[
+        P(R\mid S)
+        =
+        \frac{9}{10}\cdot
+        \frac{\frac{6}{10}}{\frac{66}{100}}
+        =
+        \frac{9}{11}.
+    \]
+\end{bsp}
+
+\begin{satz}
+    \textbf{Satz von Bayes (allgemeine Version)} \\
+    Sei \((\Omega,\pe)\) ein Wahrscheinlichkeitsraum,
+    \(B_1,B_2,\dots \subseteq \Omega\) Ereignisse mit
+
+    \[
+        \bigcup^+_i B_i = \Omega,
+    \]
+
+    und \(A \subseteq \Omega\) ein Ereignis mit \(P(A)>0\).
+
+    Dann gilt für jedes \(i\)
+
+    \[
+        P(B_i\mid A)
+        =
+        \frac{P(A\mid B_i)\,P(B_i)}
+        {
+        \oub{\sum_j P(A\mid B_j)\,P(B_j)}{\overset{*}{=}\pe(A)}
+        }.
+    \]
+    \txo{* Satz der totalen WS}
+
+    \paragraph{Beweis.}
+
+    Kombiniere die einfache Version des Satzes von Bayes
+
+    \[
+        P(B_i\mid A)
+        =
+        P(A\mid B_i)\,\frac{P(B_i)}{P(A)}
+    \]
+
+    mit der Formel von der totalen Wahrscheinlichkeit
+
+    \[
+        P(A)
+        =
+        \sum_j P(A\mid B_j)\,P(B_j).
+    \]
+
+    Einsetzen von \(P(A)\) in die Bayes-Formel ergibt
+
+    \[
+        P(B_i\mid A)
+        =
+        \frac{P(A\mid B_i)\,P(B_i)}
+        {\sum_j P(A\mid B_j)\,P(B_j)}.
+    \]
+
+    Die Details sind eine Hausaufgabe.
+\end{satz}
