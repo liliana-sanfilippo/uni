@@ -1,0 +1,584 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\geometry{margin=1in}
+
+% ── solution environment ─────────────────────────────────────────────────────
+\newenvironment{solution}{%
+    \begin{tcolorbox}[
+        breakable,
+        colback=green!4,
+        colframe=green!50!black,
+        fonttitle=\bfseries,
+        title={ Solution},
+        left=6pt, right=6pt, top=4pt, bottom=4pt
+    ]%
+    }{%
+    \end{tcolorbox}%
+}
+
+% ── marks command ────────────────────────────────────────────────────────────
+\newcommand{\mks}[1]{\hfill\textcolor{gray}{\textbf{[#1 marks]}}}
+
+% ── FOL shortcuts ────────────────────────────────────────────────────────────
+\newcommand{\fall}[1]{\forall #1\,}
+\newcommand{\fex}[1]{\exists #1\,}
+
+\author{By Sishir Rijal and Liliana Sanfilippo}
+\title{\textbf{Solution for Knowledge Representation \& First-Order Logic\\[4pt]
+Exercise Sheet 01}}
+\date{}
+\begin{document}
+    \maketitle
+    \section*{}
+    \addcontentsline{toc}{section}{Scenario}
+    %----------------------------------------
+
+% ============================================================================
+    \section*{Task 1.01: From Raw Data to Knowledge}
+% ============================================================================
+
+    The jungle scenario is presented as raw descriptive text. Explain how the raw story can be transformed using the DIK pyramid
+    (Data $\to$ Information $\to$ Knowledge). For each level give one concrete example from the jungle scenario.
+
+    \subsection*{Solution}
+    \begin{solution}
+
+        From the raw facts (the description) such as "bird" and "tree" we can get information about the existance of different entities or rather categories of entities. For example things such as Trees and Birds exist or that there is the concept of (biological) species. And through context we can derive knowledge from that, for example that birds nest in trees or that sparrows is a species of birds. \end{solution}
+
+
+
+
+
+% ============================================================================
+    \section*{Task 1.02: Define a complete FOL vocabulary for the jungle ecosystem.}
+% ============================================================================
+
+    Complete the table below with appropriate FOL symbols for the jungle scenario. \\
+    \begin{solution}
+        We can say from the description:
+        \begin{itemize}
+            \item There is one canal
+            \item there is one area
+        \end{itemize}
+        And I make the general assumption that is is only one ground, abstractly speaking. Due to gravity. Therefore, those are constants.
+
+        From the description we can also say that we need "is [noun]"-predicates for:
+        \begin{itemize}
+            \item Species
+            \item Animal, Tree
+            \item Carnivor (and Herbivore is the negation of that)
+            \item Bird, Snake, Wild cat, Leopard
+            \item Eagle, Cuckoo, Parrot, Sparrow
+            \item Predator, Prey (hunted)
+            \item Nest, Egg
+        \end{itemize}
+        and is "is [adjective]" predicates for:
+        \begin{itemize}
+            \item small
+            \item safe (in danger is the negation of that)
+        \end{itemize}
+        And we need verbs as predicates:
+        \begin{itemize}
+            \item smth eats smth
+            \item smth hunts smth
+            \item smth raids smth
+            \item smth lives on smth
+            \item smth nests in smth
+
+        \end{itemize}
+        And a few other realtions:
+        \begin{itemize}
+            \item smth is near smth
+            \item smth is surrounded by smth
+            \item smth is safe from smth
+        \end{itemize}
+    \end{solution}
+
+    \begin{solution}
+        \begin{center}
+            \renewcommand{\arraystretch}{1.4}
+            \begin{tabular}{>{\bfseries}p{3.5cm} p{9cm}}
+                \toprule
+                Category & Definitions \\
+                \midrule
+                Predicates (arity)
+                & Species(x): x is a species in the biological sense \\
+                & Carnivor(x): x is carnivorous \\
+                & Bird(x): x is a bird \\
+                & Tree(x): x is a tree \\
+                & Animal(x): x is animal \\
+                & Predator(x): x is predator \\
+                & Prey(x): x is prey \\
+                & Parrot(x): x is parrot \\
+                & Cuckoo(x): x is cuckoo \\
+                & Sparrow(x): x is sparrow \\
+                & Eagle(x): x is eagle \\
+                & Egg(x): x is egg \\
+                & Nest(x): x is nest \\
+
+                & Small(x): x is small \\
+                & Safe$_1$(x): x is safe \\
+
+                & Eat(x,y): x eats y \\
+                & LivesOn(x, y): x lives on y  \\
+                & Home(x,y): x provides home for y = y nests in x \\
+                & Hunts(x,y): x preys on (hunts) y \\
+                & Raids(x,y): x raids y \\
+
+                & Near(x,y): x is near y \\
+                & Safe$_2$(x,y): x is safe from y \\
+                & Sorround(x,y): x is sorrounded by y  \\
+
+                Constants & area: the jungle area \\
+                & canal: the canal (the only one)\\
+                & ground: the ground (meaning floor) \\
+                Variables & x,y,z  \\
+                Function symbols
+                & It is possible to model this without functions and I choose to do it without \\
+                Quantifiers & $\exists$, $\forall$ \\
+                \bottomrule
+            \end{tabular}
+        \end{center}
+    \end{solution}
+% ============================================================================
+    \section*{Task 1.03: Facts in First-Order Logic}
+% ============================================================================
+
+    Express each given statement below as a FOL formula.
+
+    \begin{enumerate}
+        \item Every bird that nests in a tree near the canal is safe from ground predators.
+        \item Snakes hunt birds that nest in trees.
+        \item A bird is in danger if at least one of its predators lives in the same area.
+        \item Eagles are predators of all small birds.
+        \item Cuckoos and parrots are small birds.
+        \item All carnivorous animals hunt at least one species.
+    \end{enumerate}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \subsubsection*{1. Every bird that nests in a tree near the canal is safe from ground predators.}
+        \textit{I included my abstraction steps to not confuse myself} \\
+        \begin{itemize}
+            \item Every bird for which exists a tree it nests in that is near the canal is safe from every ground predators.
+            \item Every bird for which exists something that it nests in that is a tree and that is near the canal is safe from every ground predators.
+            \item Every x that is a bird for that exists a y that is nests in and the y is a tree and is near the canal is safe from every y that is a predator and lives on the ground.
+            \item Forall all x and y we can say that if x is a bird and there exists a z that x nests in that is a tree and that is near the canal; and y is a predator and y lives on the ground; then x is safe from the y
+        \end{itemize}
+        \[
+% for all x and y we can say
+            \forall x \forall y(
+            % that if x ist a bird
+            Bird(x) \land
+            % and there exists a z
+            \exists z(
+            % that x nests in and
+            Home(z,x) \land
+            % that is a tree and
+            Tree(z) \land
+            % that is near the canal
+            Near(z, canal)
+            )
+            % and y is a predator and y lives on the ground
+            \land (Predator(y) \land Lives(y, ground))
+            % then
+            \rightarrow
+            % x is safe from y
+            Safe_2(x,y)
+            )
+        \]
+
+        \paragraph{2. Snakes hunt birds that nest in trees}
+        \begin{itemize}
+            \item Every snake hunts avery bird that nests in a tree
+            \item Every snake hunts every bird that nests in something that is a tree
+            \item For every x that is a bird and for whixh exists a z that it nests in that is a tree and for every y that is a snake we can say that y hunts x
+        \end{itemize}
+        \[
+            \forall x \forall y(
+            Bird(x) \land
+            Snake(y) \land
+            \exists z(
+            Home(z,x) \land Tree(z)
+            )
+            \rightarrow
+            Hunts(y,x)
+            )
+        \]
+
+        \paragraph{3. A bird is in danger if at least one of its predators lives in the same area.}
+        \begin{itemize}
+            \item Every bird is not safe if at there exists one of its pedators in the area
+            \item Every bird for which there exists a predator of in the area, we can say it is not safe
+            \item Every x that is a bird and that lives in the area and there is a y that is a predator of the x and also lives in the area we can say that x is not safe
+        \end{itemize}
+        \[
+            \forall x (
+            Bird(x) \land
+            Lives(x, area) \land
+            \exists y (
+            Hunts(y,x) \land
+            Lives(y,area)
+            )
+            \rightarrow \neg Safe_1(x)
+            )
+        \]
+
+        \paragraph{4. Eagles are predators of all small birds.}
+        \begin{itemize}
+            \item All eagles prey on all birds that are small
+            \item Every x that is an eagle preys on every y that is a bird and that is small
+            \item For every x that is an eagle and every y that is a bird and that is small we can say that x preys on y
+        \end{itemize}
+        \[
+            \forall x \forall y(
+            Eagle(x) \land
+            Bird(y) \land
+            Small(y)
+            \rightarrow
+            Hunts(x,y)
+            )
+        \]
+
+
+        \paragraph{5. Cuckoos and parrots are small birds.}
+        \begin{itemize}
+            \item All parrots and all cuckoos are birds and are small
+            \item we can say for every x that is a parrot or that is a cuckoo that it is small and that it is a bird
+        \end{itemize}
+        \[
+            \forall x ( (Parrot(x) \lor Cuckoo(x)) \rightarrow (Bird(x) \land Small(x))
+        \]
+
+
+        \paragraph{6. All carnivorous animals hunt at least one species.}
+        \begin{itemize}
+            \item We can say for every x that is an animal and that is carnivorous that there exists a y that is a species and that is hunts
+        \end{itemize}
+        \[
+            \forall x (
+            Carnivor(x) \land Animal(x) \rightarrow
+            \exists y(
+            Species(y) \land Hunts(x,y)
+            )
+            )
+        \]
+    \end{solution}
+
+% ============================================================================
+    \section*{Task 1.04: Terms, Atomic Formulas, and Sentences}
+% ============================================================================
+
+    For the given signature $\Sigma = \{a,\, b,\, f^2,\, R^2\}$ where $a,b$ are constants, $f$ is a binary function symbol, and $R$ is a binary predicate symbol:
+
+    \begin{itemize}[itemindent=1em]
+        \item List three distinct terms you can build from this signature.
+        \item Write one atomic formula using the terms you built.
+        \item Is your formula in (b) a sentence? Justify in one sentence.
+    \end{itemize}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \subsubsection*{(a) Three distinct terms}
+        \begin{itemize}
+            \item a
+            \item f(a,b)
+            \item b
+        \end{itemize}
+
+        \subsubsection*{(b) One atomic formula}
+        R(a,b)
+
+        \subsubsection*{(c) Is the formula a sentence?}
+        Yes, because therre is no free variables, a and b are constants.
+    \end{solution}
+
+% ============================================================================
+    \section*{Task 1.05: Substitution (Safe vs. Unsafe)}
+% ============================================================================
+
+    For each substitution state whether it is \textbf{safe} or \textbf{unsafe}. Give the result, and if unsafe show the corrected alpha-renamed version first.
+
+    \begin{itemize}[itemindent=1em]
+        \item $\varphi = \forall y\, R(x,y)$, substitute $a$ for $x$
+        \item $\varphi = \exists y\, P(x,y)$, substitute $y$ for $x$
+        \item $\varphi = \forall z\,(Q(x) \to R(z,x))$, substitute $t = z$ for $x$
+    \end{itemize}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \textbf{(1)} $\varphi = \forall y\,R(x,y)$, substitute $a$ for $x$.
+
+        \textit{Safe.} The term $a$ is a constant (ground term) and cannot be captured by any quantifier. No variable clash occurs.
+        \[
+            \varphi[x \mapsto a] \;=\; \forall y\,R(a,\,y)
+        \]
+
+        \bigskip
+        \textbf{(2)} $\varphi = \exists y\,P(x,y)$, substitute $y$ for $x$.
+
+        \textit{Unsafe.} The free occurrence of $x$ would be substituted by $y$, but $y$ is bound by $\exists y$ — this causes variable capture.
+
+        \textit{Alpha-rename first:} $\varphi' = \exists z\,P(x,z)$
+
+        \textit{Now apply substitution safely:}
+        \[
+            \varphi'[x \mapsto y] \;=\; \exists z\,P(y,\,z)
+        \]
+
+        \bigskip
+        \textbf{(3)} $\varphi = \forall z\,(Q(x) \to R(z,x))$, substitute $t = z$ for $x$.
+
+        \textit{Unsafe.} The free variable $x$ would be replaced by $z$, but $z$ is bound by $\forall z$ — this causes variable capture.
+
+        \textit{Alpha-rename first:} $\varphi' = \forall w\,(Q(x) \to R(w,x))$
+
+        \textit{Now apply substitution safely:}
+        \[
+            \varphi'[x \mapsto z] \;=\; \forall w\,(Q(z) \to R(w,\,z))
+        \]
+    \end{solution}
+
+% ============================================================================
+    \section*{Task 1.06: Semantic Evaluation}
+% ============================================================================
+
+    \textbf{Structure $\mathcal{M}$:}
+    \[
+        |\mathcal{M}| = \{1,2,3,4,5\},\quad
+        a^{\mathcal{M}} = 2,\quad b^{\mathcal{M}} = 4
+    \]
+    \[
+        \mathrm{Even}^{\mathcal{M}} = \{2,4\},\qquad
+        \mathrm{Gt}^{\mathcal{M}} = \{\langle3,2\rangle,\langle4,2\rangle,\langle4,3\rangle,
+        \langle5,2\rangle,\langle5,3\rangle,\langle5,4\rangle\}
+    \]
+
+    Evaluate each formula as TRUE or FALSE. Briefly justify your answer.
+
+    \begin{enumerate}[label=(\alph*)]
+        \item $\mathrm{Even}(a)$
+        \item $\mathrm{Gt}(b,a)$
+        \item $\forall x\;\mathrm{Even}(x)$
+        \item $\exists x\;(\mathrm{Even}(x) \land \mathrm{Gt}(x,a))$
+        \item $\forall x\;\exists y\;\mathrm{Gt}(y,x)$
+    \end{enumerate}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \begin{enumerate}[label=(\alph*)]
+            \item \textbf{TRUE.} $a^{\mathcal{M}} = 2$ and $2 \in \mathrm{Even}^{\mathcal{M}} = \{2,4\}$.
+
+            \item \textbf{TRUE.} $b^{\mathcal{M}} = 4$, $a^{\mathcal{M}} = 2$, and $\langle 4,2\rangle \in \mathrm{Gt}^{\mathcal{M}}$.
+
+            \item \textbf{FALSE.} Not every element of $|\mathcal{M}|$ is in $\mathrm{Even}^{\mathcal{M}}$. For example, $1 \notin \{2,4\}$, so $\mathrm{Even}(1)$ is false. The universal fails at $x = 1$.
+
+            \item \textbf{TRUE.} Choose $x = 4$: $4 \in \mathrm{Even}^{\mathcal{M}}$ \checkmark, and $\langle 4,2\rangle \in \mathrm{Gt}^{\mathcal{M}}$ (i.e.\ $\mathrm{Gt}(4,a)$ since $a^{\mathcal{M}}=2$) \checkmark. The existential is satisfied.
+
+            \item \textbf{FALSE.} Consider $x = 5$: we need some $y$ with $\langle y, 5\rangle \in \mathrm{Gt}^{\mathcal{M}}$, but no such pair appears in $\mathrm{Gt}^{\mathcal{M}}$. Likewise for $x = 1$. The universal therefore fails.
+        \end{enumerate}
+    \end{solution}
+
+
+% ============================================================================
+    \section*{Task 1.07: Predicate Interpretations and Truth Evaluation}
+% ============================================================================
+
+    Domain: $D = \{\text{rhine},\text{moselle},\text{saar},\text{pine},\text{palm}\}$
+
+    Interpretation $I$:
+    \begin{itemize}
+        \item $\mathrm{River}(x)$ true for $\{\text{rhine},\text{moselle},\text{saar}\}$
+        \item $\mathrm{Tree}(x)$ true for $\{\text{pine},\text{palm}\}$
+        \item $\mathrm{Near}(x,y)$ true if $x$ and $y$ are consecutive in the domain ordering
+        \item $\mathrm{protects}(x)$: rhine$\to$pine, moselle$\to$palm, saar$\to$pine
+    \end{itemize}
+
+    \subsection*{(a) Write down the predicate interpretations as sets of tuples.}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \begin{align*}
+            \mathrm{River}^I &= \{\,\text{rhine},\;\text{moselle},\;\text{saar}\,\}\\[4pt]
+            \mathrm{Tree}^I  &= \{\,\text{pine},\;\text{palm}\,\}\\[4pt]
+            \mathrm{Near}^I  &= \{\,\langle\text{rhine},\text{moselle}\rangle,\;
+            \langle\text{moselle},\text{rhine}\rangle,\;
+            \langle\text{moselle},\text{saar}\rangle,\;
+            \langle\text{saar},\text{moselle}\rangle,\;
+            \langle\text{saar},\text{pine}\rangle,\;
+            \langle\text{pine},\text{saar}\rangle,\;
+            \langle\text{pine},\text{palm}\rangle,\;
+            \langle\text{palm},\text{pine}\rangle\,\}\\[4pt]
+            \mathrm{protects}^I &: \text{rhine} \mapsto \text{pine},\quad
+            \text{moselle} \mapsto \text{palm},\quad
+            \text{saar} \mapsto \text{pine}
+        \end{align*}
+    \end{solution}
+
+    \subsection*{(b) Evaluate the formula (TRUE or FALSE)}
+    \[
+        \forall x\,\bigl(\mathrm{River}(x) \to \exists y\,(\mathrm{Tree}(y) \land \mathrm{Tree}(\mathrm{protects}(x)))\bigr)
+    \]
+
+    \subsection*{Solution}
+    \begin{solution}
+        textbf{TRUE.}
+
+        We only need to check elements where $\mathrm{River}(x)$ holds, i.e.\ $x \in \{\text{rhine},\text{moselle},\text{saar}\}$.
+
+        \begin{itemize}
+            \item $x = \text{rhine}$: $\mathrm{protects}(\text{rhine}) = \text{pine}$; $\mathrm{Tree}(\text{pine}) = \mathsf{T}$.
+            Choose $y = \text{pine}$: $\mathrm{Tree}(y) \land \mathrm{Tree}(\mathrm{protects}(x)) = \mathsf{T} \land \mathsf{T} = \mathsf{T}$. \checkmark
+            \item $x = \text{moselle}$: $\mathrm{protects}(\text{moselle}) = \text{palm}$; $\mathrm{Tree}(\text{palm}) = \mathsf{T}$.
+            Choose $y = \text{palm}$: $\mathsf{T} \land \mathsf{T} = \mathsf{T}$. \checkmark
+            \item $x = \text{saar}$: $\mathrm{protects}(\text{saar}) = \text{pine}$; $\mathrm{Tree}(\text{pine}) = \mathsf{T}$.
+            Choose $y = \text{pine}$: $\mathsf{T} \land \mathsf{T} = \mathsf{T}$. \checkmark
+        \end{itemize}
+
+        The antecedent is false for non-river elements, so those cases are vacuously true. The formula holds for all $x \in D$.
+    \end{solution}
+
+    \subsection*{(c) Check if the formula is valid and true in $I$}
+    \[
+        \varphi = \exists x\;\mathrm{River}(x)
+    \]
+
+    \subsection*{Solution}
+    \begin{solution}
+        \textbf{True in $I$, but not valid.}
+
+        \begin{itemize}
+            \item \textbf{True in $I$:} $\mathrm{River}^I = \{\text{rhine},\text{moselle},\text{saar}\} \neq \emptyset$, so the existential is satisfied by, e.g., $x = \text{rhine}$. Therefore $I \models \varphi$.
+            \item \textbf{Not valid:} A formula is \emph{logically valid} only if it is true in \emph{every} structure. It is easy to construct a structure $I'$ where $\mathrm{River}^{I'} = \emptyset$, which makes $\varphi$ false (see part (d)). Hence $\varphi$ is not valid.
+        \end{itemize}
+    \end{solution}
+
+    \subsection*{(d) Construct $I'$ such that $I' \not\models \varphi$}
+
+    \subsection*{Solution}
+    \begin{solution}
+        Let $I'$ share the same domain $D = \{\text{rhine},\text{moselle},\text{saar},\text{pine},\text{palm}\}$ but reinterpret $\mathrm{River}$ as the \textbf{empty set}:
+        \[
+            \mathrm{River}^{I'} = \emptyset
+        \]
+        (all other predicate and function interpretations may remain unchanged.)
+
+        Under $I'$, there is no element $x \in D$ satisfying $\mathrm{River}(x)$, so $\exists x\,\mathrm{River}(x)$ is \textbf{false}, i.e.\ $I' \not\models \varphi$.
+    \end{solution}
+
+% ============================================================================
+    \section*{Task 1.08: Predicate Logic Inference — Snakes are Dangerous}
+% ============================================================================
+
+    \subsection*{(a) Formalise the following statements in FOL}
+
+    \begin{enumerate}
+        \item All carnivorous animals hunt birds.
+        \item Snakes are carnivorous animals.
+        \item Any animal that hunts birds is dangerous.
+    \end{enumerate}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \begin{align}
+            P_1 &:\; \forall x\,\bigl(\mathrm{Carnivorous}(x) \land \mathrm{Animal}(x)
+            \;\to\; \forall y\,(\mathrm{Bird}(y) \to \mathrm{Hunts}(x,y))\bigr) \tag{1}\\[4pt]
+            P_2 &:\; \forall x\,\bigl(\mathrm{Snake}(x)
+            \;\to\; \mathrm{Carnivorous}(x) \land \mathrm{Animal}(x)\bigr) \tag{2}\\[4pt]
+            P_3 &:\; \forall x\,\bigl(\mathrm{Animal}(x) \land \exists y\,(\mathrm{Bird}(y) \land \mathrm{Hunts}(x,y))
+            \;\to\; \mathrm{Dangerous}(x)\bigr) \tag{3}
+        \end{align}
+    \end{solution}
+    \subsection*{(b) Prove: Snakes are dangerous}
+
+    \subsection*{Solution}
+    \begin{solution}
+        \textbf{Goal:} $\forall x\,(\mathrm{Snake}(x) \to \mathrm{Dangerous}(x))$
+
+        \medskip
+        Let $s$ be an arbitrary individual. Assume $\mathrm{Snake}(s)$.
+
+        \medskip
+        \begin{tabular}{r l l}
+            1. & $\mathrm{Snake}(s)$ & Assumption \\
+            2. & $\mathrm{Carnivorous}(s) \land \mathrm{Animal}(s)$ & $\forall$-elim on $P_2$ with $s$, from step 1 \\
+            3. & $\forall y\,(\mathrm{Bird}(y) \to \mathrm{Hunts}(s,y))$ & $\forall$-elim on $P_1$ with $s$, from step 2 \\
+            4. & $\mathrm{Bird}(\mathit{cuckoo})$ & Background fact (cuckoo is a bird) \\
+            5. & $\mathrm{Hunts}(s,\,\mathit{cuckoo})$ & $\forall$-elim on step 3 with $\mathit{cuckoo}$, from step 4 \\
+            6. & $\exists y\,(\mathrm{Bird}(y) \land \mathrm{Hunts}(s,y))$ & $\exists$-intro from steps 4 \& 5 \\
+            7. & $\mathrm{Animal}(s) \land \exists y\,(\mathrm{Bird}(y) \land \mathrm{Hunts}(s,y))$ & Conjunction of steps 2 \& 6 \\
+            8. & $\mathrm{Dangerous}(s)$ & $\forall$-elim on $P_3$ with $s$, from step 7 \\
+        \end{tabular}
+
+        \medskip
+        Since $s$ was arbitrary, by $\forall$-introduction: $\forall x\,(\mathrm{Snake}(x) \to \mathrm{Dangerous}(x))$.\hfill$\square$
+    \end{solution}
+% ============================================================================
+    \subsection*{Task 1.09: Normal Forms — PNF and CNF}
+% ============================================================================
+
+    For the given formula: (a) Explain intuitive meaning, (b) Convert to Prenex Normal Form (PNF), and (c) Convert the matrix to CNF.
+
+    \[
+        \fex{x}\Bigl(\mathrm{Animal}(x) \land \mathrm{Carnivorous}(x)
+        \land \fall{y}\bigl(\mathrm{Bird}(y) \to \mathrm{Hunts}(x,y)\bigr)\Bigr)
+    \]
+    \subsection*{Solution}
+    \begin{solution}
+        \subsubsection*{(a) Intuitive meaning}
+        There exists at least one animal that is carnivorous \emph{and} hunts every bird. In other words, some specific carnivore in our domain is a universal bird-hunter.
+
+        \subsubsection*{(b) Prenex Normal Form (PNF)}
+        The formula already has all quantifiers in a nested form. We pull the inner $\forall y$ to the front of the whole formula. Since $x$ is bound by $\exists x$ and $y$ is a fresh variable, no renaming is needed:
+        \[
+            \boxed{\exists x\;\forall y\;\Bigl(\mathrm{Animal}(x) \land \mathrm{Carnivorous}(x) \land \bigl(\mathrm{Bird}(y) \to \mathrm{Hunts}(x,y)\bigr)\Bigr)}
+        \]
+        This is in PNF: all quantifiers precede a quantifier-free matrix.
+
+        \subsubsection*{(c) Conjunctive Normal Form (CNF)}
+
+        \textbf{Step 1 — Eliminate $\to$:}
+        \[
+            \exists x\;\forall y\;\Bigl(\mathrm{Animal}(x) \land \mathrm{Carnivorous}(x) \land (\neg\mathrm{Bird}(y) \lor \mathrm{Hunts}(x,y))\Bigr)
+        \]
+
+        \textbf{Step 2 — Push negations inward:} No compound negations remain; the formula is unchanged.
+
+        \textbf{Step 3 — Standardize variables:} Already standardized.
+
+        \textbf{Step 4 — Already in PNF} (from part (b)).
+
+        \textbf{Step 5 — Skolemize:} The $\exists x$ is outermost with no preceding $\forall$, so replace $x$ with a new Skolem constant $c$:
+        \[
+            \forall y\;\Bigl(\mathrm{Animal}(c) \land \mathrm{Carnivorous}(c) \land (\neg\mathrm{Bird}(y) \lor \mathrm{Hunts}(c,y))\Bigr)
+        \]
+
+        \textbf{Step 6 — Drop universal quantifier} $\forall y$:
+        \[
+            \mathrm{Animal}(c) \land \mathrm{Carnivorous}(c) \land (\neg\mathrm{Bird}(y) \lor \mathrm{Hunts}(c,y))
+        \]
+
+        \textbf{Step 7 — Distribute $\lor$ over $\land$:} The matrix is already a conjunction of disjunctions (unit clauses are degenerate disjunctions).
+
+        \medskip
+        \textbf{CNF (three clauses):}
+        \[
+            \boxed{\mathrm{Animal}(c) \;\;\land\;\; \mathrm{Carnivorous}(c) \;\;\land\;\; \bigl(\neg\mathrm{Bird}(y) \lor \mathrm{Hunts}(c,y)\bigr)}
+        \]
+        where $c$ is a Skolem constant representing the carnivorous animal that hunts all birds.
+    \end{solution}
+
+% ============================================================================
+
+\end{document}
