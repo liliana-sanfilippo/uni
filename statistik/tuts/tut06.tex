@@ -1,8 +1,10 @@
 %! Author = lili
 %! Date = 6/1/26
 
-\chapter{Tutorium 01.06.2026}
-\section{PÜ 1.6.4.}
+\chapter{Tutorium 01.06.2026}\label{ch:tutorium-01.06.2026}
+
+
+\section{PÜ 1.6.4.}\label{sec:pu-1.6.4.}
 Auf einem Tisch stehen zwei Urnen.
 \begin{itemize}
     \item Urne $U_K$ enthalte eine schwarze Kugel und zwei weiße Kugeln.
@@ -17,15 +19,16 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
     Kugeln aus Urne $U_Z$.
 \end{itemize}
 \begin{auf}
-    \subsubsection*{(a) Geben Sie einen geeigneten Ereignisraum $\Omega$ an, mit dem Sie die folgenden Aufgabenteile
+    \subsection*{(a) Geben Sie einen geeigneten Ereignisraum $\Omega$ an, mit dem Sie die folgenden Aufgabenteile
     bearbeiten können.}
     \paragraph{Meine Lösung:} $\Omega = \{k,z\} \times \{s, w\}^2 $, wobei $\omega = (k, s, w)$ bedeutet, dass aus
     der Urne $U_K$ erst eine schwarze und dann eine weiße Kugel gezogen wurde.
     \paragraph{Tutor Lösung:} $\Omega = \{k,z\} \times \{s, w\}^2$ mit der Bemerkung, dass $\pe((k,s,s)) = \pe(z,w,w) = 0$.
     Die Bemerkung muss nicht dazu.
-    Dabei ist $\{k,z\}$ der Münzwurf und $\{s, w\}^2$ das ziehen zweier Kugeln.
+    Dabei ist $\{k,z\}$ der Münzwurf und $\{s, w\}^2$ das Ziehen zweier Kugeln.
 
-    Man kann es auch direkt mit Tripeln machen, aber das ist mehr Schreibarbeit. Aber dann hat man die Sachen mit $\Pe = 0$ auch nicht drin, sondern nur das, was tatsächlich möglich ist.
+    Man kann es auch direkt mit Tripeln machen, aber das ist mehr Schreibarbeit.
+    Aber dann hat man die Sachen mit $\pe = 0$ auch nicht drin, sondern nur das, was tatsächlich möglich ist.
 \end{auf}
 
 \begin{auf}
@@ -43,7 +46,7 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
         U_Z & = \{\text{Es wurde aus Urne $U_Z$ gezogen}\} \\
         & = \{(z,s,w), (z,w,s), (z,s,s)\}
     \end{align*}
-    (Alle Ereignisse, nicht nur die für die Aufgaben relevanten...)
+    (Alle Ereignisse, nicht nur die für die Aufgaben relevanten\ldots)
     \paragraph{Tutor Lösung:}
     \begin{align*}
     W &= \{k,z\} \times \{w\}^2 \\
@@ -71,10 +74,9 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
 \end{auf}
 
 \begin{auf}
-    \subsubsection*{(d) Berechnen Sie die Wahrscheinlichkeit, daß Mavi mindestens eine schwarze Kugel zieht
-        (d.h., die Wahrscheinlichkeit, daß Mavi eine oder zwei schwarze Kugeln zieht)}
-    \paragraph{Tutor Lösung:} $\pe(\text{"Mindestens eine schwarze Kugel gezogen"}) = \pe(W^c) = 1 - \pe(W)$, wobei
-    $W = \{\text{"Es werden nur weiße Kugeln gezogen"}\}$.
+    \subsubsection*{(d) Berechnen Sie die Wahrscheinlichkeit, dass Mavi mindestens eine schwarze Kugel zieht
+        (d.h., die Wahrscheinlichkeit, dass Mavi eine oder zwei schwarze Kugeln zieht)}
+    \paragraph{Tutor Lösung:} $\pe(\text{"Mindestens eine schwarze Kugel gezogen"}) = \pe(W^c) = 1 - \pe(W)$, wobei $W = \{\text{"Es werden nur weiße Kugeln gezogen"}\}$.
     \begin{align*}
         \pe(W) & = \pe(W \mid K) \cdot \pe(K) + \pe(W \mid Z) \cdot \pe(Z) \\
         & = \frac{1}{3} \cdot \frac{1}{2} + 0 \cdot \frac{1}{2} \\
@@ -83,8 +85,8 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
 \end{auf}
 
 \begin{auf}
-    \subsubsection*{(e) Sie wissen, daß Mavi mindestens eine schwarze Kugel gezogen hat. Berechnen Sie die
-    Wahrscheinlichkeit, daß Mavi aus der Urne $U_Z$ gezogen hat.}
+    \subsubsection*{(e) Sie wissen, dass Mavi mindestens eine schwarze Kugel gezogen hat. Berechnen Sie die
+    Wahrscheinlichkeit, dass Mavi aus der Urne $U_Z$ gezogen hat.}
     \paragraph{Tutor Lösung:}
     \begin{align*}
         \pe(\text{"Zahl"} \mid \text{"min. 1 schwarze Kugel"}) & = \pe(Z \mid W^c) \\
@@ -95,7 +97,7 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
     \end{align*}
 \end{auf}
 
-\section{Besprechung ÜB 1.5.1}
+\section{Besprechung ÜB 1.5.1}\label{sec:besprechung-ub-1.5.1}
 Seien $X,Y$ ZVs mit gemeinsamer Dichte f:
 \[
     f(x,y) = \begin{cases}
@@ -103,7 +105,7 @@ Seien $X,Y$ ZVs mit gemeinsamer Dichte f:
                  o, & sonst
     \end{cases}
 \]
-\subsubsection*{(a) Finde c, so dass f Dichte ist }
+\subsection*{(a) Finde c, sodass f Dichte ist}
 $f \geq 0$ sqiggy-Pfeil zu $c \overset{!}{\geq}$ 0 \\
 
 \begin{align*}
@@ -123,7 +125,7 @@ sqiggy-Pfeil zu:
     f(x,y) = \underbrace{c_1 \cdot e^{-x} \cdot \chi_{[0,1]}(x)}_{f_X(x)} \cdot \underbrace{c_2 \cdot e^{-\frac{y}{2}} \cdot \chi_{[0,\infty)}(x)}_{f_Y(y)}
 \]
 mit $c = c_1 \cdot c_2$
-TODO von Bild abtippen, hat weggewischt % TODO Bild
+TO-DO von Bild abtippen, hat weggewischt % TODO Bild
 
 \subsubsection*{(c)}
 $F_X$ \& $F_Y$ = ?
@@ -143,7 +145,7 @@ sqiggy-Pfeil zu:
 \]
 
 
-TODO von Bild abtippen, hat weggewischt % TODO Bild
+TO-DO von Bild abtippen, hat weggewischt % TODO Bild
 
 \subsubsection*{(d)}
 
@@ -157,9 +159,9 @@ TODO von Bild abtippen, hat weggewischt % TODO Bild
     & = 2c \cdot ( (1-e^{-1}) - (- \frac{2}{3} - \frac{2}{3} e^{-\frac{3}{2}x}))
 \end{align*}
 
-\section{Besprechung ÜB 1.5.2}
+\section{Besprechung ÜB 1.5.2}\label{sec:besprechung-ub-1.5.2}
 Seien $X,Y \sim Exp(\lambda), \quad X \_||\_ Y$
-\subsubsection*{(a)}
+\subsection*{(a)}
 \[
     \pe(X> 10) = 1 - \pe(X \leq 10)
 \]
@@ -176,5 +178,5 @@ Für $\lambda = \frac{1}{5}$
 
 subsubsection*{(c oder b?)}
 
-\section{Besprechung ÜB 1.5.3}
-todo von Bild % TODO
+\section{Besprechung ÜB 1.5.3}\label{sec:besprechung-ub-1.5.3}
+To-do von Bild % TODO
