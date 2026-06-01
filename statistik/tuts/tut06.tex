@@ -1,8 +1,8 @@
 %! Author = lili
 %! Date = 6/1/26
 
-\chapter{Präsenzaufgaben 1.6}
-\section{Aufgabe 1.6.4.}
+\chapter{Tutorium 01.06.2026}
+\section{PÜ 1.6.4.}
 Auf einem Tisch stehen zwei Urnen.
 \begin{itemize}
     \item Urne $U_K$ enthalte eine schwarze Kugel und zwei weiße Kugeln.
@@ -94,3 +94,87 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
         & = \frac{3}{5}
     \end{align*}
 \end{auf}
+
+\section{Besprechung ÜB 1.5.1}
+Seien $X,Y$ ZVs mit gemeinsamer Dichte f:
+\[
+    f(x,y) = \begin{cases}
+                 c \cdot e^{-x+ \frac{y}{z}},& x \in [0,1], y \geq 0 \\
+                 o, & sonst
+    \end{cases}
+\]
+\subsubsection*{(a) Finde c, so dass f Dichte ist }
+$f \geq 0$ sqiggy-Pfeil zu $c \overset{!}{\geq}$ 0 \\
+
+\begin{align*}
+    1 & \overset{!}{=} \int^{\infty}_{-\infty}  \int^{\infty}_{-\infty} f(x,y) dx \ dy \\
+    &= c \cdot \int^1_0 e^{-x} dx \int^{infty}_0 e^{\frac{1}{2}y} dy \\
+    & = c \cdot [-e^{-x}]^1_0 \cdot [-2 \cdot e^{-\frac{y}{2}}]^{\infty}_0 \\
+    &  = c \cdot (1-e^{-1}) \cdot (2)
+\end{align*}
+
+sqiggy-Pfeil zu:
+\[
+    c = \frac{1}{2(2-l^{-1})} \geq 0
+\]
+
+\subsubsection*{(b)} Bemerke: $\chi$
+\[
+    f(x,y) = \underbrace{c_1 \cdot e^{-x} \cdot \chi_{[0,1]}(x)}_{f_X(x)} \cdot \underbrace{c_2 \cdot e^{-\frac{y}{2}} \cdot \chi_{[0,\infty)}(x)}_{f_Y(y)}
+\]
+mit $c = c_1 \cdot c_2$
+TODO von Bild abtippen, hat weggewischt % TODO Bild
+
+\subsubsection*{(c)}
+$F_X$ \& $F_Y$ = ?
+
+\paragraph{$x <0$:} $F_X(x)= 0$
+\paragraph{$x \in [0,1]:$}
+$F_X(x)= \int_0^x c_1 e^{- \tilde x} d\tilde x = c_1 \cdot (1 - e^{-x}) = \frac{1-e^{-x}}{1-e^{-1}}$
+\paragraph{$x>1$:} $F_X(x)) = 1$
+
+sqiggy-Pfeil zu:
+\[
+    f_X(x) = \begin{cases}
+                 0, & x<0 \\
+                 \frac{1-e^{-x}}{1-e^{-1}}, & x \in [0,1] \\
+                 1, & x>0
+    \end{cases}
+\]
+
+
+TODO von Bild abtippen, hat weggewischt % TODO Bild
+
+\subsubsection*{(d)}
+
+\subsubsection*{(e)}
+
+\begin{align*}
+    \pe(X > Y) &= \int_0^1 f_X(x) \underbrace{ \int_0^x f_Y(y) dy}_{F_Y(x)} \ dx  \\
+    &= \int_0^{1} 2c e^{-x} \cdot (1-e^{-\frac{x}{2}}) dx \\
+    & = 2c \int_0^1 e^{-x} - e^{-\frac{3}{2}x} dx \\
+    & = 2c \cdot ( (1-e^{-1}) - [-\frac{2}{3} e^{-\frac{3}{2}x} ]^1_0) \\
+    & = 2c \cdot ( (1-e^{-1}) - (- \frac{2}{3} - \frac{2}{3} e^{-\frac{3}{2}x}))
+\end{align*}
+
+\section{Besprechung ÜB 1.5.2}
+Seien $X,Y \sim Exp(\lambda), \quad X \_||\_ Y$
+\subsubsection*{(a)}
+\[
+    \pe(X> 10) = 1 - \pe(X \leq 10)
+\]
+Für $\lambda = \frac{1}{5}$
+\[
+    \pe(X> 10) = 1 - \pe(X \leq 10) = 1-F_X(10) = 1 - (1-e^{-\frac{1}{5} \cdot 10}) = e^{-2}
+\]
+\subsubsection*{(c)}
+
+\begin{align*}
+    \underbrace{\pe(X+Y \leq Z )}_{F_{X+Y}(z)} & = \int_0^2 f_X(x) \overbrace{\int_0^{z-x} f_Y(y) dy}^{F_Y(z-x)} \ dx \\
+    &=  TODO rest von Bild % TODO
+\end{align*}
+
+subsubsection*{(c oder b?)}
+
+\section{Besprechung ÜB 1.5.3}
+todo von Bild % TODO
