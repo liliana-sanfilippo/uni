@@ -1,7 +1,7 @@
 %! Author = lili
 %! Date = 5/24/26
 % 63 Folien
-% TODO Unklar F 47, F 50
+% TODO Unklar F 46 - 48, F 50
 
 \untit{F. 1--8 Intro u. Wdh.}
 
@@ -176,7 +176,37 @@ Bei Eukaryonten weist er eine komplexere Organisation als bei Prokaryonten auf.
 Besteht aus zwei Domänen die ca 40\% Identität aufweisen.
 % TODO muss das auf eien karte?
 
-% TODO F 48 - 49, 51 - 52, 55 - 57
+\subsection{Boxen}
+\defin{uas}
+\defin{urs}
+\defin{re}
+\defin{dpe}
+\defin{bre}
+\defin{mte}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|p{9cm}|}
+        \hline
+        \textbf{Kategorie} & \textbf{Elemente} \\
+        \hline
+        \gls{corepromoter}&
+        \gls{tatabox}, \gls{inr}, \gls{bre}, \gls{dpe}, \gls{mte} \\
+        \hline
+        Proximale Promotorelemente &
+        \gls{caatbox}, \gls{gcbox} \\
+        \hline
+        Distale regulatorische Elemente &
+        \gls{uas}, \gls{urs}, \gls{re}, Enhancer, Silencer \\
+        \hline
+    \end{tabular}
+    \caption{Einteilung wichtiger regulatorischer DNA-Elemente eukaryotischer Promotoren}
+    \label{tab:promotorelemente}
+\end{table}
+
+
+% 49, 51 - 52, 55 - 57
+% TODO 51 - 52, 55 - 57
 % TODO Frage wie unterscheiden sich die Promotoren der POLs
 
 \section{Transkriptionsfaktoren}
@@ -188,7 +218,8 @@ Besteht aus zwei Domänen die ca 40\% Identität aufweisen.
 
 
 \section{Termination der Transkription}
-% TODO F 42 - 46
+%  F 42 - 46
+% TODO F 44
 Gelangt eines der drei Stopcodons, UAA, UAG oder UGA in die A‑Position des Ribosoms, so kann keine \gls{trna} gebunden
 werden, da es keine \gls{trna} gibt, die diese Tripletts erkennt.
  Jedoch werden diese Tripletts von \glspl{tf}, den sog. \glspl{releasefaktor},
@@ -202,10 +233,36 @@ abgespalten und das Ribosom zerfällt in seine Untereinheiten. \cite{Knust2025_9
 \defin{tf}
 \defin{releasefaktor}
 
+Einzelheiten des Terminationsvorgangs bei Eukaryonten sind wenig bekannt, aber alle drei RNA‐Polymerasen verwenden unterschiedliche Mechanismen.\cite{Knust2025_9}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llll}
+        & \gls{rnapoli} & \gls{rnapolii} & \gls{rnapoliii} \\
+        klare Terminationssingale? & Ja & Nein & Ja \\
+        Signal & 18 bp Seq Hilfsfaktor & ``Torperdo'' & (G/C)nUUUU(G/C)n
+    \end{tabular}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    % TODO  \includegraphics[width=0.7\linewidth]{images/transkription}
+    \caption{Termination bei RNA Pol-II}
+\end{figure}
+
+
 In Eukaryonten wird durch einen Reifungsprozess das \gls{primaertranskript} zur fertigen mRNA umgebildet.
 Dieser Prozess umfasst das Hinzufügen einer m$^7$Gppp‐Kappe (Cap) am 5′-Ende, die Spaltung und Polyadenylierung des
 3′-Endes und das \gls{spleißen}. \cite{Knust2025_9}
 
+Ausnahme: Normale (``canonical'') Histon-mRNA hat keinen \gls{polya}.
+Histon-mRNAs sind (in der Regel) nicht polyadenyliert; die Expression ist an die Replikation
+gekoppelt und durch den Zellzyklus reguliert.
+Die Erstellung des 3’ Endes von Histon mRNA erfordert einen konservierten "hairpin" und
+das HDE ("histone downstream element") welches mit U7 snRNA hybridisiert.
+Die RNA-Schnittreaktion erfordert SLBP (stem-loop binding protein) und U7 snRNA; CPSF
+schneidet auch bei mRNA mit polyA.
 
 \section{Genetische Regulation}
 % F 21
