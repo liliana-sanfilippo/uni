@@ -46,6 +46,7 @@ Die Transkription wird von einer DNA‐abhängigen RNA‐Polymerase katalysiert.
 % TODO F 11
 % TODO F 31 - 32
 
+
 \section{RNA-Klassen in Eukaryoten}\label{sec:rna-klassen-in-eukaryoten}
 % TODO F 13
 In eukaryontischen Zellen gibt es mehrere Klassen von RNA
@@ -65,7 +66,7 @@ Der Anteil nicht‐kodierender RNA steigt mit höherer Komplexität eines Organi
         \hline
         \textbf{Klasse}    & \textbf{RNA}                             & \textbf{DNA-abhängige RNA-Polymerase} \\
         \hline
-        \gls{hnrna}        & \glspl{primaertranskript}                        & \gls{rnapolii}                        \\
+        \gls{hnrna}        & \glspl{primaertranskript}                & \gls{rnapolii}                        \\
         \hline
         \gls{mrna}         & proteincodierende RNA                    & \gls{rnapolii}                        \\
         \hline
@@ -94,8 +95,6 @@ Die Bildung des Nukleolus geht vom Nukleolus‐Organisator, der aus der \gls{nor
 Besonderheit der \gls{rdna}: Sie hat eine ``Sichtbare Genexpression''.
 D.h. man die Genexpression direkt ``sehen'',
 weil das Genprodukt selbst RNA ist.
-
-
 
 \subsection{Aufbau der eukaryotischen mRNA}
 %  F 22 - 30
@@ -131,11 +130,13 @@ vorhanden ist).
 Spezielle Signale in der mRNA-Sequenz (oft im ``\gls{trailer}'')
 regulieren die Halbwertszeit einer mRNA (kann trotz poly(A)
 sehr kurz sein).
+
 \paragraph{Update:} Die Entfernung oder Verkürzung des Poly(A)-Schwanzes (Deadenylierung) führt zur Ablösung des Poly(A)-bindenden Proteins (PABPC) und leitet den Abbau der mRNA ein.
 
 Poly(A)-Schwänze können jedoch auch bei stabilen und effizient translatierten mRNAs relativ kurz sein (etwa 30 Adenosinreste).
 
 % TODO Exkurs: Oligo(dT) Reinigung ??? F29
+
 
 \section{Promotoren - Start der Transkription}
 Der Promotor bestimmt den Start der Transkription.
@@ -156,10 +157,12 @@ Bei Eukaryonten weist er eine komplexere Organisation als bei Prokaryonten auf.
         \hline
         Pol II &
         extern (upstream) &
-        \gls{mrna}, \gls{hnrna}, viele \glspl{mirna}, einige \glspl{snrna} &
+        \gls{mrna}, \gls{hnrna}, viele \glspl{mirna}, einige \glspl{snrna}
+        &
         Häufig \gls{tatabox} ($\sim$-25) und/oder ein \gls{inr}, oft zusätzlich \gls{caatbox}, \gls{gcbox} und weitere
         regulatorische
-        Elemente. \\
+        Elemente.
+        \\
         \hline
         Pol III &
         meist intern &
@@ -191,7 +194,7 @@ Besteht aus zwei Domänen die ca 40\% Identität aufweisen.
         \hline
         \textbf{Kategorie} & \textbf{Elemente} \\
         \hline
-        \gls{corepromoter}&
+        \gls{corepromotor} &
         \gls{tatabox}, \gls{inr}, \gls{bre}, \gls{dpe}, \gls{mte} \\
         \hline
         Proximale Promotorelemente &
@@ -206,14 +209,83 @@ Besteht aus zwei Domänen die ca 40\% Identität aufweisen.
 \end{table}
 
 \defin{basaletrankskription}
-Der Core Promoter ist der minimale Promotorbereich, der zusammen mit den allgemeinen Transkriptionsfaktoren die basale (Grund-)Transkription durch RNA-Polymerase II ermöglicht.
+Für die basale Transkription reicht in vielen experimentellen Systemen ein Promotor mit nur \gls{inr} und
+\gls{tatabox}.
+
+Es gibt aber bei der \gls{rnapolii} mehrere Core-Promotor-Elemente, die in unterschiedlichen Kombinationen vorkommen:
+\begin{itemize}
+    \item \gls{bre}
+    \item \gls{tata}
+    \item \gls{inr}
+    \item \gls{dpe}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/ini_pol2}
+    \caption{Bild aus Vorlesungsfolien}\label{fig:figure6}
+\end{figure}
+
+In der linearen 2D-Darstellung können regulatorische Elemente weit vom Gen entfernt sein, in der 3D-Organisation des Chromatins werden sie jedoch durch Schleifenbildung räumlich zusammengebracht und können so direkt auf die Transkription wirken.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/distale_wirkung}
+    \caption{2D / 3D - Wirkung auf Distanz. Bild aus Vorlesungsfolien}\label{fig:figure7}
+\end{figure}
+
 
 % 49, 51 - 52, 55 - 57
 % TODO 55 - 57
 
 
 \section{Transkriptionsfaktoren}
-% TODO F 53 - 54, 58 - 59
+%  F 53 - 54, 58 - 59
+% TODO F 58 - 59
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|c|c|p{8cm}|}
+        \hline
+        \textbf{Bezeichnung} & \textbf{Untereinheiten} & \textbf{Mol.-Gew. (kDa)} & \textbf{Funktion}                               \\
+        \hline
+        \textbf{TFIID (TBP)} & 1 & 38 &
+        Erkennen der TATA-Box \\
+        &                         &                          & Bindung von TAFs                                \\
+        \hline
+        TFIID (TAFs) & bis zu 12 & 15--250 &
+        Erkennen von TATA-freien Promotoren \\
+        &                         &                          & verschiedene regulatorische Funktionen          \\
+        \hline
+        TFIIA & 3 & 12, 19, 35 &
+        Stabilisierung der TFIID-Bindung \\
+        &                         &                          & Entfernen/Neutralisieren von negativen Faktoren \\
+        \hline
+        TFIIB & 1 & 35 &
+        Bindung der RNA-Polymerase II \\
+        \hline
+        TFIIF & 2 & 30, 74 &
+        Heranführen der RNA-Polymerase II an den Promotor \\
+        \hline
+        TFIIE & 2 & 34, 57 &
+        Heranführen von TFIIH, Regulation der enzymatischen Aktivitäten von TFIIH \\
+        \hline
+        TFIIH & 9 & 35--89 &
+        DNA-Helikase: Entwindung der Promotor-Sequenz \\
+        & & &
+        Protein-Kinase: Phosphorylierung der carboxyterminalen Domäne von RNA-Polymerase II \\
+        \hline
+        \multicolumn{4}{|l|}{\textbf{Hierzu gehören:}} \\
+        \hline
+        XPB                  & 1                       & 89                       & 3'-5'-DNA-Helikase                              \\
+        XPD                  & 1                       & 80                       & 5'-3'-DNA-Helikase                              \\
+        CDK7                 & 1                       & 40                       & Cyclinabhängige Protein-Kinase                  \\
+        Cyclin H             & 1                       & 38                       & Regulatorische Untereinheit von CDK7            \\
+        \hline
+    \end{tabular}
+    \caption{Allgemeine Transkriptionsfaktoren der RNA-Polymerase II.}
+    \label{tab:tfII}
+\end{table}
 
 
 \section{Elongation}
@@ -225,8 +297,8 @@ Der Core Promoter ist der minimale Promotorbereich, der zusammen mit den allgeme
 % TODO F 44
 Gelangt eines der drei Stopcodons, UAA, UAG oder UGA in die A‑Position des Ribosoms, so kann keine \gls{trna} gebunden
 werden, da es keine \gls{trna} gibt, die diese Tripletts erkennt.
- Jedoch werden diese Tripletts von \glspl{tf}, den sog. \glspl{releasefaktor},
- RF1 und RF2, erkannt.
+Jedoch werden diese Tripletts von \glspl{tf}, den sog. \glspl{releasefaktor},
+RF1 und RF2, erkannt.
 Bindet einer dieser Faktoren an die freie
 A‑Stelle, wird die Polypeptidkette von der tRNA in der P‑Position
 abgespalten und das Ribosom zerfällt in seine Untereinheiten.
@@ -241,9 +313,9 @@ Einzelheiten des Terminationsvorgangs bei Eukaryonten sind wenig bekannt, aber a
 \begin{table}[H]
     \centering
     \begin{tabular}{llll}
-        & \gls{rnapoli} & \gls{rnapolii} & \gls{rnapoliii} \\
-        klare Terminationssingale? & Ja & Nein & Ja \\
-        Signal & 18 bp Seq Hilfsfaktor & ``Torperdo'' & (G/C)nUUUU(G/C)n
+        & \gls{rnapoli}         & \gls{rnapolii} & \gls{rnapoliii}  \\
+        klare Terminationssingale? & Ja                    & Nein           & Ja               \\
+        Signal                     & 18 bp Seq Hilfsfaktor & ``Torperdo''   & (G/C)nUUUU(G/C)n
     \end{tabular}
 \end{table}
 
@@ -267,6 +339,7 @@ das HDE ("histone downstream element") welches mit U7 snRNA hybridisiert.
 Die RNA-Schnittreaktion erfordert SLBP (stem-loop binding protein) und U7 snRNA; CPSF
 schneidet auch bei mRNA mit polyA.
 
+
 \section{Genetische Regulation}
 % F 21
 % TODO in frage umwandeln
@@ -274,15 +347,15 @@ schneidet auch bei mRNA mit polyA.
 \begin{table}[H]
     \centering
     \begin{tabular}{p{6cm} p{6cm}}
-        \textbf{In Bakterien} & \textbf{In Eukaryota} \\
-        Kein Zellkern & Zellkern \\
-        polycistronische Transkripte & monocystronische Transkripte \\
-        Operons & Keine Operons \\
-        \gls{rnapol} mit alternativen \glspl{sigma_faktor} & Mehrere versch. \glspl{rnapol} für Genklassen \\
-        \gls{consensus_promoter} & sehr diverse Promotoren \\
-        Shine-Dalgarno-Sequenz & Cap statt Shine-Dalgarno-Sequenz \\
-        Transkriptionsregulatoren & nukleäres Spleißen \\
-        transkriptionelle Attenuation & Enhancer, Chromatinstruktur und generelle/spezielle Transkriptionsfaktoren \\
+        \textbf{In Bakterien}                              & \textbf{In Eukaryota}                                                      \\
+        Kein Zellkern                                      & Zellkern                                                                   \\
+        polycistronische Transkripte                       & monocystronische Transkripte                                               \\
+        Operons                                            & Keine Operons                                                              \\
+        \gls{rnapol} mit alternativen \glspl{sigma_faktor} & Mehrere versch. \glspl{rnapol} für Genklassen                              \\
+        \gls{consensus_promoter}                           & sehr diverse Promotoren                                                    \\
+        Shine-Dalgarno-Sequenz                             & Cap statt Shine-Dalgarno-Sequenz                                           \\
+        Transkriptionsregulatoren                          & nukleäres Spleißen                                                         \\
+        transkriptionelle Attenuation                      & Enhancer, Chromatinstruktur und generelle/spezielle Transkriptionsfaktoren \\
     \end{tabular}
 \end{table}
 
