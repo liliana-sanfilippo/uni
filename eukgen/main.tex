@@ -1,4 +1,5 @@
 \input{../preamble/general}
+\usepackage[ngerman]{babel}
 \input{../preamble/packages}
 \input{../preamble/colors}
 \input{../preamble/theorems}
@@ -15,15 +16,24 @@
 \usepackage{biblatex}
 \addbibresource{bib.bib}
 
-\title{Genetik Eukaryoten \\ \small{by ...} \\ \textit{\footnotesize{Summer semester 2026} } }
-\date{April 2026}
+\title{Eukaryotengenetik \\ \small{by Frau Gentz} \\ \textit{\footnotesize{Summer semester 2026} } }
+
+\newcommand\reporttitle{Vorlesung Eukaryotengenetik}
+\newcommand\reportsubtitle{Sommersemester 2026}
+\newcommand\profs{Vorlesung von Prof. Weisshaar}
+\newcommand\reportsubsubtitle{Vorlesungsnotizen und Aufarbeitung}
+\newcommand\reportauthors{
+    \textbf{Liliana Sanfilippo}
+}
 
 \begin{document}
 
-    \maketitle
+    \frontmatter
+    \input{../preamble/frontpage}
 
     \tableofcontents
 
+    \mainmatter
     \chapter*{Infos}
     Empfohlene Literatur:
 
