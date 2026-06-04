@@ -19,13 +19,13 @@ gleichzeitig mit der Transkription statt.
     \caption{Bild aus \cite{Knust2025}}\label{fig:figure4}
 \end{figure}
 
-Die Synthese der \gls{rna} (Transkription) wird von \gls{rna}-Polymerasen katalysiert.
-Anders als DNA‐Polymerasen, brauchen \gls{rna}‐Polymerasen keinen Primer für die Initiation.
+Die Synthese der \gls{rna} (Transkription) wird von \glspl{rnapol} katalysiert.
+Anders als DNA‐Polymerasen, brauchen \glspl{rnapol} keinen Primer für die Initiation.
 
 \defin{transkription}
 
 \begin{equation*}
-    DNA + n(NTP) \overset{\gls{rna}-Polymerase}{\rightarrow} DNA + \gls{rna} + n(PP)
+    DNA + n(NTP) \overset{\gls{rnapol}}{\rightarrow} DNA + \gls{rna} + n(PP)
 \end{equation*}
 
 \defin{antisense}
@@ -43,19 +43,19 @@ Die Transkription wird von einer DNA‐abhängigen \gls{rnapol} katalysiert. \ci
 In eukaryontischen Zellen gibt es mehrere Klassen von \gls{rna}
 und es werden immer neue Klassen gefunden, die entsprechend ihrer
 Funktion oder Lokalisation in der Zelle benannt werden.
-Dabei unterscheidet man Protein‐kodierende (\textit{coding}) \gls{rna} und nicht‐kodierende (\textit{non‐coding; nc}) \gls{rna}.
-Der Anteil nicht‐kodierender \gls{rna} steigt mit höherer Komplexität eines Organismus.
+Dabei unterscheidet man Protein‐kodierende (\textit{coding}) \gls{rna} und nicht-kodierende (\gls{ncrna}) RNA.
+Der Anteil \gls{ncrna} steigt mit höherer Komplexität eines Organismus.
 \cite{Knust2025_9}
 
 
-\section{\gls{rna} Polymerasen}\label{sec:rna-polymerasen}
+\subsection{\gls{rna} Polymerasen}\label{sec:rna-polymerasen}
 % F 14 - 20
 % TODO F 15, 18-20
 \begin{table}[h]
     \centering
     \begin{tabular}{p{3cm} p{3cm} p{6cm}}
         \hline
-        \textbf{Klasse}    & \textbf{\gls{rna}}                             & \textbf{DNA-abhängige \gls{rnapol}} \\
+        \textbf{Klasse}    & \textbf{\gls{rna}}                             & \textbf{\gls{dnarnapol}} \\
         \hline
         \gls{hnrna}        & \glspl{primaertranskript}                & \gls{rnapolii}                        \\
         \hline
@@ -65,11 +65,11 @@ Der Anteil nicht‐kodierender \gls{rna} steigt mit höherer Komplexität eines 
         \hline
         \gls{trna}         & transfer RNA                             & \gls{rnapoliii}                       \\
         \hline
-        \gls{snrna}        & Bestandteile des Spleißosoms (nicht nur) & \gls{rnapoliii}                       \\
+        \gls{snrna}        & Bestandteile des \glspl{spliceosom} (nicht nur) & \gls{rnapoliii}                       \\
         \hline
-        \gls{mirna}        & regulatorische RNAs (20–22 nt)           & \gls{rnapolii}                        \\
+        \gls{mirna}        & \glspl{regulatorische_rna} (20–22 nt)           & \gls{rnapolii}                        \\
         \hline
-        \gls{sirna} & regulatorische RNAs (24 nt) & Pol \gls{rnapoliv}   u.
+        \gls{sirna} & \glspl{regulatorische_rna}  (24 nt) & Pol \gls{rnapoliv}   u.
         \gls{rnapolv} (+ \gls{rdrp}) \\
         \hline
         prokaryotische RNA & alle RNAs                                & Pol                                   \\
@@ -89,8 +89,8 @@ Der Anteil nicht‐kodierender \gls{rna} steigt mit höherer Komplexität eines 
 \frage{welchepolinpflanzen}
 \subsection{rDNA}
 \defin{rdna}
-Die Ribosomen von Eukaryonten werden im Nukleolus zusammengebaut.
-Die Bildung des Nukleolus geht vom Nukleolus‐Organisator, der aus der \gls{nor} entsteht. \cite{Knust2025_9}
+Die Ribosomen von Eukaryonten werden im \gls{nukleolus} zusammengebaut.
+Die Bildung des \gls{nukleolus} geht vom Nukleolus‐Organisator, der aus der \gls{nor} entsteht. \cite{Knust2025_9}
 
 
 Besonderheit der \gls{rdna}: Sie hat eine ``Sichtbare Genexpression''.
@@ -101,7 +101,7 @@ weil das Genprodukt selbst \gls{rna} ist.
 %  F 22 - 30
 % TODO Frage Was muss man über die Enden der euk \gls{mrna} wissen
 Die Enden eukaryotischer \gls{mrna} sind modifiziert, was sie von prokaryotischer \gls{mrna} unterscheidet.
-Eukaryotische \gls{mrna} besitzt am 5'-Ende eine Cap-Struktur und am 3'-Ende einen Poly(A)-Schwanz.
+Eukaryotische \gls{mrna} besitzt am 5'-Ende eine Cap-Struktur und am 3'-Ende einen \gls{polya}.
 Beide schützen die \gls{mrna} vor Abbau und fördern ihre Translation.
 
 \begin{figure}[H]
@@ -147,8 +147,8 @@ Beide schützen die \gls{mrna} vor Abbau und fördern ihre Translation.
 
 \defin{polya}
 Der \gls{polya} ist etwa 200 nt lang und nicht im Genom kodiert.
-Er wird nach dem ``Abschneiden'' des Transkripts vom Enzym poly(A)-Polymerase erstellt und von einem speziellen
-Protein (PABP: poly(A) binding protein) gebunden.
+Er wird nach dem ``Abschneiden'' des Transkripts vom Enzym \gls{polya_polymerase} erstellt und von einem speziellen
+Protein (\gls{pabp}) gebunden.
 Das Vorhandensein des \gls{polya}es ``erleichtert'' die
 Translation der \gls{mrna}, denn der \gls{polya} stabilisiert die \gls{mrna} (wenn PABP
 vorhanden ist).
@@ -156,15 +156,16 @@ Spezielle Signale in der \gls{mrna}-Sequenz (oft im ``\gls{trailer}'')
 regulieren die Halbwertszeit einer \gls{mrna} (kann trotz poly(A)
 sehr kurz sein).
 
-\paragraph{Update:} Die Entfernung oder Verkürzung des Poly(A)-Schwanzes (Deadenylierung) führt zur Ablösung des Poly(A)-bindenden Proteins (PABPC) und leitet den Abbau der \gls{mrna} ein.
+\paragraph{Update:} Die Entfernung oder Verkürzung des \gls{polya}es (\gls{deadenylierung}) führt zur Ablösung des \gls{pabp} und leitet den Abbau der \gls{mrna} ein.
 
-Poly(A)-Schwänze können jedoch auch bei stabilen und effizient translatierten \gls{mrna}s relativ kurz sein (etwa 30 Adenosinreste).
+\glspl{polya} können jedoch auch bei stabilen und effizient translatierten \gls{mrna}s relativ kurz sein (etwa 30
+Adenosinreste).
 
 % TODO Exkurs: Oligo(dT) Reinigung ??? F29
 
 
 \section{Promotoren - Start der Transkription}
-Der Promotor bestimmt den Start der Transkription.
+Der \gls{promotor} bestimmt den Start der Transkription.
 Er ist durch spezifische DNA‐Sequenzen (Boxen) charakterisiert.
 Bei Eukaryonten weist er eine komplexere Organisation als bei Prokaryonten auf.
 
@@ -193,8 +194,8 @@ Jede \gls{rnapol} erkennt eigene, spezifische Promotorsequenzen, die ihre Zielge
         \hline
         \gls{rnapoliii} &
         meist intern &
-        \gls{trna}, 5S-rRNA, einige \gls{snrna}s &
-        Promotor liegt häufig innerhalb des transkribierten Gens (\gls{internerpromotor}; z.\,B. Box A und Box B). \\
+        \gls{trna}, \gls{fives_rrna}, einige \gls{snrna} &
+        \gls{promotor} liegt häufig innerhalb des transkribierten Gens (\gls{internerpromotor}; z.\,B. Box A und Box B). \\
         \hline
     \end{tabular}
     \caption{Vergleich der eukaryotischen \glspl{rnapol}n und ihrer Promotoren}
@@ -208,7 +209,7 @@ Besteht aus zwei Domänen die ca 40\% Identität aufweisen.
 % TODO muss das auf eien karte?
 
 \subsection{Boxen}
-Das TATA-box Binding Protein (TBP) ist ein zentraler Faktor der Promotorerkennung bei allen drei \glspl{rnapol}n.
+Das TATA-box Binding Protein (TBP) ist ein zentraler Faktor der Promotorerkennung bei allen drei \glspl{rnapol}.
 \defin{uas}
 \defin{urs}
 \defin{re}
@@ -229,7 +230,7 @@ Das TATA-box Binding Protein (TBP) ist ein zentraler Faktor der Promotorerkennun
         \gls{caatbox}, \gls{gcbox} \\
         \hline
         Distale regulatorische Elemente &
-        \gls{uas}, \gls{urs}, \gls{re}, Enhancer, Silencer \\
+        \gls{uas}, \gls{urs}, \gls{re}, \gls{enhancer}, \gls{silencer} \\
         \hline
     \end{tabular}
     \caption{Einteilung wichtiger regulatorischer DNA-Elemente eukaryotischer Promotoren}
@@ -238,12 +239,12 @@ Das TATA-box Binding Protein (TBP) ist ein zentraler Faktor der Promotorerkennun
 
 In vitro-Systeme ermöglichen es, die einzelnen Schritte der Transkriptionsinitiation mechanistisch getrennt voneinander zu analysieren.
 
-\gls{basaletrankskription} findet in vitro statt, ist aber in vivo unterdrückt, denn
+\gls{basaletrankskription} findet \gls{invitro} statt, ist aber \gls{invivo} unterdrückt, denn
 ohne regulatorische Faktoren ist eine Grundaktivität der Transkription möglich, die in der Zelle jedoch durch
 Chromatin und Regulatoren stark moduliert wird.
 
 \defin{basaletrankskription}
-Für die \gls{basaletrankskription} reicht in vielen experimentellen Systemen ein Promotor mit nur \gls{inr} und
+Für die \gls{basaletrankskription} reicht in vielen experimentellen Systemen ein \gls{promotor} mit nur \gls{inr} und
 \gls{tatabox}.
 
 Es gibt aber bei der \gls{rnapolii} mehrere \gls{corepromotor}-Elemente, die in unterschiedlichen Kombinationen vorkommen:
@@ -286,11 +287,11 @@ Allgemeine \glspl{tf} (GTFs) sind für die \gls{basaletrankskription} notwendig,
         \textbf{Bezeichnung} & \textbf{Untereinheiten} & \textbf{Mol.-Gew. (kDa)} & \textbf{Funktion}                               \\
         \hline
         \textbf{TFIID (TBP)} & 1 & 38 &
-        Erkennen der TATA-Box \\
+        Erkennen der \gls{tatabox} \\
         &                         &                          & Bindung von TAFs                                \\
         \hline
         TFIID (TAFs) & bis zu 12 & 15--250 &
-        Erkennen von TATA-freien Promotoren \\
+        Erkennen von TATA-freien \glspl{promotor} \\
         &                         &                          & verschiedene regulatorische Funktionen          \\
         \hline
         TFIIA & 3 & 12, 19, 35 &
@@ -301,21 +302,21 @@ Allgemeine \glspl{tf} (GTFs) sind für die \gls{basaletrankskription} notwendig,
         Bindung der \gls{rnapolii} \\
         \hline
         TFIIF & 2 & 30, 74 &
-        Heranführen der \gls{rnapolii} an den Promotor \\
+        Heranführen der \gls{rnapolii} an den \gls{promotor} \\
         \hline
         TFIIE & 2 & 34, 57 &
         Heranführen von TFIIH, Regulation der enzymatischen Aktivitäten von TFIIH \\
         \hline
         TFIIH & 9 & 35--89 &
-        DNA-Helikase: Entwindung der Promotor-Sequenz \\
+        DNA-\gls{helikase}: Entwindung der \gls{promotor}-Sequenz \\
         & & &
-        Protein-Kinase: Phosphorylierung der carboxyterminalen Domäne von \gls{rnapolii} \\
+        \gls{protein_kinase}: Phosphorylierung der \gls{ctd} von \gls{rnapolii} \\
         \hline
         \multicolumn{4}{|l|}{\textbf{Hierzu gehören:}} \\
         \hline
-        XPB                  & 1                       & 89                       & 3'-5'-DNA-Helikase                              \\
-        XPD                  & 1                       & 80                       & 5'-3'-DNA-Helikase                              \\
-        CDK7                 & 1                       & 40                       & Cyclinabhängige Protein-Kinase                  \\
+        XPB                  & 1                       & 89                       & 3'-5'-DNA-\gls{helikase}                              \\
+        XPD                  & 1                       & 80                       & 5'-3'-DNA-\gls{helikase}                              \\
+        CDK7                 & 1                       & 40                       & Cyclinabhängige \gls{protein_kinase}                  \\
         Cyclin H             & 1                       & 38                       & Regulatorische Untereinheit von CDK7            \\
         \hline
     \end{tabular}
@@ -332,8 +333,9 @@ Er besteht aus der \gls{rnapolii} und den allgemeinen \glspl{tf} TFIIA, TFIIB, T
 
 \section{Elongation}
 % TODO Elongationsphase lernkarte
-Die Elongationsphase kann in drei Schritte unterteilt werden: i) Erkennung der Codons durch die Aminoacyl‐\gls{trna}s. ii) Ausbildung der Peptidbindung zwischen zwei Aminosäuren. iii) Verschiebung des \gls{trna}‐\gls{mrna} Komplexes.
-An diesen Prozessen sind vier eukaryontische Elongationsfaktoren (eEF) beteiligt
+Die Elongationsphase kann in drei Schritte unterteilt werden: i) Erkennung der \glspl{codon} durch die \gls{aminoacyl_trna}
+s. ii) Ausbildung der \gls{peptidbindung} zwischen zwei Aminosäuren. iii) Verschiebung des \gls{trna}‐\gls{mrna} Komplexes.
+An diesen Prozessen sind vier \glspl{eef} beteiligt
 % F 60 - 61
 
 
@@ -380,9 +382,9 @@ Polyadenylierung des
 Ausnahme: Normale (``canonical'') Histon-\gls{mrna} hat keinen \gls{polya}.
 Histon-\gls{mrna}s sind (in der Regel) nicht polyadenyliert; die Expression ist an die Replikation
 gekoppelt und durch den Zellzyklus reguliert.
-Die Erstellung des 3’ Endes von Histon \gls{mrna} erfordert einen konservierten "hairpin" und
+Die Erstellung des 3’ Endes von Histon \gls{mrna} erfordert einen konservierten "hairpin" (\gls{hairpin_rna}) und
 das HDE ("histone downstream element") welches mit U7 \gls{snrna} hybridisiert.
-Die \gls{rna}-Schnittreaktion erfordert SLBP (stem-loop binding protein) und U7 \gls{snrna}; CPSF
+Die \gls{rna}-Schnittreaktion erfordert SLBP (stem-loop binding protein) und U7 \gls{snrna}; \gls{cpsf}
 schneidet auch bei \gls{mrna} mit \gls{polya}.
 
 
@@ -398,10 +400,10 @@ schneidet auch bei \gls{mrna} mit \gls{polya}.
         polycistronische Transkripte                       & monocystronische Transkripte                                               \\
         Operons                                            & Keine Operons                                                              \\
         \gls{rnapol} mit alternativen \glspl{sigma_faktor} & Mehrere versch. \glspl{rnapol} für Genklassen                              \\
-        \gls{consensus_promoter}                           & sehr diverse Promotoren                                                    \\
-        Shine-Dalgarno-Sequenz                             & Cap statt Shine-Dalgarno-Sequenz                                           \\
+        \gls{consensus_promoter}                           & sehr diverse \glspl{promotor}                                                   \\
+        Shine-Dalgarno-Sequenz                             & \gls{cap} statt Shine-Dalgarno-Sequenz                                           \\
         Transkriptionsregulatoren                          & nukleäres \gls{spleißen}                                                         \\
-        transkriptionelle Attenuation                      & Enhancer, Chromatinstruktur und generelle/spezielle \glspl{tf} \\
+        transkriptionelle Attenuation                      & \gls{enhancer}, Chromatinstruktur und generelle/spezielle \glspl{tf} \\
     \end{tabular}
 \end{table}
 
