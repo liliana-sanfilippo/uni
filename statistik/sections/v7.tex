@@ -215,7 +215,7 @@ Dies führt uns in die Statistik (später).
         & = \sum^{\infty}_{\txr{k=1}} \txg{k} \cdot \frac{\txb{\lambda^k}}{\txg{k!}} e^{-\lambda} \\
         & = \txb{\lambda}   \sum^{\infty}_{\txr{k=1}}  \frac{\txb{\lambda^{k-1}}}{\txg{(k-1)!}} e^{-\lambda} \\
         & = \lambda e^{-\lambda} \sum^{\infty}_{\txr{k=1}}  \frac{\lambda^{k-1}}{(k-1)!} \\
-        & = \lambda e^{-\lambda} \oub{\sum^{\infty}_{\txr{l=0}}  \frac{\lambda^{\txr{l}}}{\txr{l}!}}_{= e^{\lambda}}
+        & = \lambda e^{-\lambda} \oub{\sum^{\infty}{\txr{l=0}}  \frac{\lambda^{\txr{l}}}{\txr{l}!}}_{= e^{\lambda}}
     \end{align*}
     \txo{
         \begin{align*}
@@ -271,9 +271,12 @@ Dies führt uns in die Statistik (später).
     ... f stetig ist auf dem kompakten Intervall [a, b]
     und f = 0 außerhalb des Intervalls [a, b] gilt.
     \[
-        \E{X} = \intab x \frac{1}{b-a} \dx = \frac{1}{2(b-a)} x^2 |^b_{x=a} = \frac{b^2 - a^2}{2(b-a)} = \oub{\frac{a+b}{2}}_{*}
+        \E{X} = \intab x \frac{1}{b-a} \dx = \frac{1}{2(b-a)} x^2 |^b_{x=a} = \frac{b^2 - a^2}{2(b-a)} = \oub{\frac{a+b}{2}}{*}
     \]
-    \txo{* Mittelpunkt des Intervalls}
+    \txo{* Mittelpunkt des Intervalls} \\
+    \txo{
+    Erinnerung: $\intab x \dx = \frac{x^2}{}$
+    }
 \end{bsp}
 
 
