@@ -5,23 +5,145 @@
 
 \chapter{Erwartungswert und Varianz von Zufallsvariablen}
 \untit{Vorlesung 30. Mai 2025 (V07 2025) und 05. Juni 2026 (V07 2026)}
+
+\section*{Lernziele}
+\subsection*{Konzepte}
+\begin{itemize}
+    \item Erwartungswert einer Zufallsvariablen (gewichteter Mittelwert)
+    \item Varianz als weitere Kennzahl
+\end{itemize}
+
+\subsection*{Fakten}
+\begin{itemize}
+    \item Zwei verschiedene Darstellungen des Erwartungswerts
+    \item Der Erwartungswert ist linear.
+\end{itemize}
+
+\subsection*{Wissen}
+\begin{itemize}
+    \item Existenz des Erwartungswerts prüfen können.
+    \item Spezialfall: \(X(\Omega)\) ist eine endliche Menge (insbesondere erfüllt, wenn \(\Omega\) endlich ist).
+    \item Spezialfall: \(X \geq 0\).
+    \item Erwartungswerte berechnen können.
+\end{itemize}
+
+\section*{Grundgedanke}
 Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig. \\
-Sind $X$ und $Y$  zwei \Glspl{zv} mit mit derselben Verteilung, so gilt
+Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \[
     \pe(X \in A) = \pe_X(A) = \pe_Y(A) = \pe(Y \in A)
 \]
 für jedes $A$. \\
 Es ist nicht immer klar, welche Verteilung zu einem sinnvollen Modell führt.
-Auch sind die Parameter der Verteilung nicht unbedingt bekannt. \\
-\texttt{BSP Verteilungen Folie 3} \\
-Wie können wir trotzdem Vorhersagen treffen? \\ \newline
+Auch sind die Parameter der Verteilung nicht unbedingt bekannt. Siehe
+\begin{itemize}
+    \item \textbf{Binomialverteilung:}
+    \[
+        \binomv(k)
+        =
+        \binom{n}{k}
+        p^k (1-p)^{n-k},
+        \qquad
+        k \in \{0,\dots,n\}.
+    \]
 
-\paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}?
+    \item \textbf{Geometrische Verteilung:}
+    \[
+        G_p(n)
+        =
+        p(1-p)^{n-1},
+        \qquad
+        n \in \mathbb{N}.
+    \]
+    % TODO gloss für geom verteilung
+
+    \item \textbf{Poisson-Verteilung:}
+    \[
+        P_{\lambda}(k)
+        =
+        \frac{\lambda^k}{k!} e^{-\lambda},
+        \qquad
+        k \in \mathbb{N}_0.
+    \]
+
+    \item \textbf{Exponentialverteilung:}
+    \[
+        f(x)
+        =
+        \omega e^{-\lambda x}\,
+        \chi_{[0,\infty)}(x),
+        \qquad
+        x \in \mathbb{R}.
+    \]
+\end{itemize}
+Wie können wir trotzdem Vorhersagen treffen? \\ \newline
+Dies führt uns in die Statistik (später).
+% F4
+\paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}? \\
+\begin{itemize}
+    \item Wie groß ist der mittlere Gewinn bei einem Glücksspiel?
+    \item Wie lange muß man bei einem wiederholten Zufallsexperiment im Mittel
+    warten, bis ein bestimmtes Ereignis eintritt?
+    \item Wie viele weitere Personen steckt eine infizierte Person im Mittel an?
+\end{itemize}
+
+\begin{bsp}
+    \textbf{Ansteckungen}
+    \begin{itemize}
+        \item Die \textbf{Basisreproduktionszahl} \(R_0\) gibt an, wie viele Personen
+        eine infizierte Person im Mittel ansteckt, wenn es in der Bevölkerung keine
+        Immunität gibt. Gemäß RKI gilt:
+        \[
+            R_0 \in [2.8,\,3.8]
+        \]
+        (vor möglicherweise ansteckenderen Mutationen).
+
+        \item Die \textbf{zeitabhängige Reproduktionszahl}
+        \[
+            R = R(t)
+        \]
+        berücksichtigt Effekte durch Hygienemaßnahmen, Impfungen und Immunität.
+        Sie gibt an, wie viele Personen eine infizierte Person in einem Zeitfenster
+        gegebener Länge im Mittel ansteckt.
+
+        \item Die \textbf{Inzidenz} setzt Neuinfektionen in Relation zur
+        Bevölkerungsgröße. Die \emph{7-Tage-Inzidenz} gibt beispielsweise an,
+        wie viele neu infizierte Personen es in den vergangenen sieben Tagen
+        pro \(100\,000\) Einwohner gegeben hat.
+    \end{itemize}
+\end{bsp}
 
 \begin{bsp}
     \textbf{1 $\times$ Würfeln mit einem fairem Würfel} \\
-    Da herrscht eine Gleichverteilung, daher ist die erwartete Augenzahl ist das arithmetische Mittel. \\
-    \texttt{Ganzen Bsp. Folie 5}
+    \txc{Da herrscht eine Gleichverteilung, daher ist die erwartete Augenzahl ist das arithmetische Mittel.} \\
+    \[
+        \Omega = \{1,\dots,6\}
+    \]
+    mit Gleichverteilung \(\pe\).
+
+    Die Zufallsvariable
+    \[
+        X : \Omega \to \mathbb{R},
+        \qquad
+        X(\omega)=\omega,
+    \]
+    besitzt das Bild
+    \[
+        X(\Omega)=\{1,\dots,6\}\subseteq\mathbb{R}.
+    \]
+
+    Für einen fairen Würfel ist der Erwartungswert die mittlere Augenzahl, also das
+    arithmetische Mittel:
+    \[
+        E[X]
+        =
+        \frac{1+2+3+4+5+6}{6}
+        =
+        3.5.
+    \]
+
+    Die erwartete Augenzahl entspricht der mittleren Zahl von Schritten, die man
+    in einem Würfelspiel pro Wurf vorwärts gehen würde.
 \end{bsp}
 
 \begin{bsp}
@@ -29,8 +151,11 @@ Wie können wir trotzdem Vorhersagen treffen? \\ \newline
     1 $\times$ Würfeln eines fairen Würfels \\
     Auszahlung:
     \begin{itemize}
-        \item[] $k$ Euro, falls 2 gewürfelt
-        \item[] 6 Euro, falls $2, \cdots , 6$ gewürfelt
+        \item $k$ Euro, falls 2 gewürfelt
+        \item 6 Euro, falls $2, \cdots , 6$ gewürfelt
+        \item \(
+                  \Omega = \{1,\dots,6\}
+        \) mit Gleichverteilung \(\pe\).
     \end{itemize}
     \glssymbol{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
     Die Auszahlung wird beschrieben durch die \Gls{zv} $Y$ mit
@@ -39,16 +164,77 @@ Wie können wir trotzdem Vorhersagen treffen? \\ \newline
     \]
     Erwartete Auszahlung als arithmetisches Mittel:
     \mab{\E{Y} = \sum_{\oio} Y(\ele) \glssymbol{wfk}(\ele) = \frac{k+ 5 \cdot 6}{6} = 6 \cdot \frac{5}{6} + k \cdot \frac{1}{6}  = 6 \cdot \pe(Y=6) + k \cdot \pe(Y=k) = \sum_{I\in Y(\glssymbol{eraum})} I \cdot \pe(Y=I)}
+
 \end{bsp}
 
 \begin{defi}
-    Der \Gls{ew} einer \zv $X$ mit abzählbarem Bildbereich $X(\eraum) \in \mathbb{R}$ ist gegeben durch
+    Der \Gls{ew} einer \zv $X$ mit abzählbarem Bildbereich $X(\eraum) \in \rz$ ist gegeben durch
     \mab{\E{X} = \mathbb{E} X = \sum_{x\in X(\eraum)} x \cdot \pe (X=x) }
     insofern die Reihe \glsverb{abskonv}, also \ma{ \sum_{x\in X(\eraum)} |x| \cdot \pe (X=x) < \infty}. \\
     Wir sprechen in diesem Fall von der Existenz des \Gls{ew}s. \\ \newline
     Der \Gls{ew} einer \zv $X$ mit einer \dichte \glssymbol{dichte} ist gegeben durch
     \mab{\E X = \int_{- \infty}^{\infty} x \glssymbol{dichte}(x) \dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glssymbol{dichte}(x) \dx }
     insofern \ma{\int_{- \infty}^{\infty} |x| \glssymbol{dichte}(x) \dx < \infty}. \\
-    Wir sprechen in diesem Fall von der Existenz des Erwartungswerts. \\
-    \texttt{Hinweis Folie 7}
+    Wir sprechen in diesem Fall von der Existenz des Erwartungswerts.
+    \paragraph{Hinweis:} Für \glspl{dichte} \dcht, die gerade Funktionen sind, gilt \(\int_{-N}^N x \dcht (x) \dx = 0\) für
+    alle N, auch wenn der Erwartungswert ggf. gar nicht existiert.
 \end{defi}
+
+\begin{bem}
+    Absolute Konvergenz der Reihe, die den Erwartungswert definiert, garantiert,
+    daß wir die Summanden beliebig umsortieren dürfen. Es gilt daher
+    \[
+        \txo{\E{X} \overset{Def.}{=}} \sum_{x\in X(\eraum)} x \pe(X=x) = \sum_{x\in \eraum} X(\ele) \wfk(\ele)
+    \]
+    sofern eine der Reihen absolut konvergent ist. (Vgl. obiges Bsp. mit dem Spiel.)
+
+    Wenn $\eraum$ oder $X(\eraum)$ endlich ist, so existiert der Erwartungswert automatisch.
+
+    Nimmt X nur nichtnegative Werte an, können wir einfach anfangen, den
+    Erwartungswert auszurechnen, weil
+    \[
+        \sumxinXO  |x| \ow(X=x) = \sumxinXO x \pe(X=x)
+    \]
+    bzw.
+    \[
+        \intinfs |x| \dcht (x) \dx = \intinfs x \dcht (x) \dx \txc{ = \int^{\infty}_0 x \dcht (x) \dx }
+    \]
+\end{bem}
+
+\begin{bsp}
+    \textbf{Erwartungswert der Poisson-Verteilung} \\
+    X Poisson-verteilt, d.h., es existiert ein $\lambda > 0$ mit
+    \[
+        \wfk_X(k) = \pe (X=k) = \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, . . . \}
+    \]
+    Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat: \\
+    (Wir verwenden in dieser Argumentation, daß X nur nichtnegative Werte hat, d.h., $X \geq 0$.)
+    \begin{align*}
+        \E{X} & \overset{\txo{*1}}{=} \sum^{\infty}_{k=0} k \pe(X=k) \\
+        & \overset{\txo{*2}}{=}  \sum^{\infty}_{k=0} \frac{\lambda^k}{k!} e^{-\lambda} \\
+        & = \sum^{\infty}_{\txr{k=1}} \txg{k} \cdot \frac{\txb{\lambda^k}}{\txg{k!}} e^{-\lambda} \\
+        & = \txb{\lambda}   \sum^{\infty}_{\txr{k=1}}  \frac{\txb{\lambda^{k-1}}}{\txg{(k-1)!}} e^{-\lambda} \\
+        & = \lambda e^{-\lambda} \sum^{\infty}_{\txr{k=1}}  \frac{\lambda^{k-1}}{(k-1)!} \\
+        & = \lambda e^{-\lambda} \oub{\sum^{\infty}_{\txr{l=0}}  \frac{\lambda^{\txr{l}}}{\txr{l}!}}_{= e^{\lambda}}
+    \end{align*}
+    \txo{
+        \begin{align*}
+            *1 & \quad X(\Omega) = \nz_0 \\
+            *2 & \quad \pe(X=k) = \wft_X(k) = ---
+        \end{align*}
+    }
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Erwartungswert der geometrischen Verteilung} \\
+    Wie lange müssen wir im Mittel warten, bis der erste Erfolg eintritt?
+    (Zum Beispiel bis zur ersten Sechs beim Werfen eines fairen Würfels? – Raten Sie!) \\
+    X geometrisch verteilt mit Erfolgswahrscheinlichkeit \(p \in (0,1)\), d.h.,
+    \[
+        \wfk_X(k) = \pe (X=k) = p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, . . . \}
+    \]
+    Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, daß $X \geq 0$)).
+\end{bsp}
+
+
+
