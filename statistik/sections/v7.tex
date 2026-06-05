@@ -215,7 +215,7 @@ Dies führt uns in die Statistik (später).
         & = \sum^{\infty}_{\txr{k=1}} \txg{k} \cdot \frac{\txb{\lambda^k}}{\txg{k!}} e^{-\lambda} \\
         & = \txb{\lambda}   \sum^{\infty}_{\txr{k=1}}  \frac{\txb{\lambda^{k-1}}}{\txg{(k-1)!}} e^{-\lambda} \\
         & = \lambda e^{-\lambda} \sum^{\infty}_{\txr{k=1}}  \frac{\lambda^{k-1}}{(k-1)!} \\
-        & = \lambda e^{-\lambda} \oub{\sum^{\infty}{\txr{l=0}}  \frac{\lambda^{\txr{l}}}{\txr{l}!}}_{= e^{\lambda}}
+        & = \lambda e^{-\lambda} \oub{\sum^{\infty}_{\txr{l=0}}  \frac{\lambda^{\txr{l}}}{\txr{l}!}}_{= e^{\lambda}}
     \end{align*}
     \txo{
         \begin{align*}
@@ -275,9 +275,49 @@ Dies führt uns in die Statistik (später).
     \]
     \txo{* Mittelpunkt des Intervalls} \\
     \txo{
-    Erinnerung: $\intab x \dx = \frac{x^2}{}$
+    Erinnerung: $\intab x \dx = \frac{x^2}{2} |^b_{x=a}$
     }
 \end{bsp}
+\begin{bsp}
+    \textbf{Erwartungswert der Exponentialverteilung} \\
+    \txo{
+    Erinnerung:
+    \[
+        F(x) := - e^{-\alpha x}, \quad F'(x) := \alpha e^{-\alpha x}, \quad \E{X} = \frac{1}{\alpha}
+    \]
+    }
+    Der Erwartungswert existiert genau dann, wenn die folgende Berechnung einen
+    endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, daß $X \geq 0$):
+    % TODO Rest F 12
+\end{bsp}
 
+\begin{satz}
+    \textbf{Der Erwartungswert ist linear} % TODO 13
+    \paragraph{Beweis (für Zufallsvariable mit abzählbarem Bildbereich)}
+    % TODO 14
+\end{satz}
 
+\begin{bsp}
+    \textbf{Augensumme bei mehrfachem Würfeln mit fairem Würfel}
+    % TODO 15-16 (33-37)
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Binomialverteilung}
+    % TODO 17 (38-41)
+\end{bsp}
+
+\begin{bsp}
+    \textbf{St. Petersburger Paradoxon (Erwartungswert muß nicht existieren)}
+    % TODO 18 (42-45)
+\end{bsp}
+
+\begin{defi}
+    \textbf{Zusammengesetzte Zufallsvariablen}
+    % TODO F 19 (46)
+\end{defi}
+
+\begin{satz}
+        % TODO F 19 (46-49)
+\end{satz}
 
