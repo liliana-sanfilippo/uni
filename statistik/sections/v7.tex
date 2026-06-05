@@ -215,7 +215,12 @@ Dies führt uns in die Statistik (später).
         & = \sum^{\infty}_{\txr{k=1}} \txg{k} \cdot \frac{\txb{\lambda^k}}{\txg{k!}} e^{-\lambda} \\
         & = \txb{\lambda}   \sum^{\infty}_{\txr{k=1}}  \frac{\txb{\lambda^{k-1}}}{\txg{(k-1)!}} e^{-\lambda} \\
         & = \lambda e^{-\lambda} \sum^{\infty}_{\txr{k=1}}  \frac{\lambda^{k-1}}{(k-1)!} \\
-        & = \lambda e^{-\lambda} \oub{\sum^{\infty}_{\txr{l=0}}  \frac{\lambda^{\txr{l}}}{\txr{l}!}}_{= e^{\lambda}}
+        & = \lambda e^{-\lambda}
+        \oub{
+            \sum_{l=0}^{\infty}
+            \frac{\lambda^{\txr{l}}}{\txr{l}!}
+        }{=e^{\lambda}} \\
+        & = \lambda
     \end{align*}
     \txo{
         \begin{align*}
@@ -288,6 +293,12 @@ Dies führt uns in die Statistik (später).
     }
     Der Erwartungswert existiert genau dann, wenn die folgende Berechnung einen
     endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, daß $X \geq 0$):
+    \begin{align*}
+        \E{X} & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
+        & = - \lim_{N \rightarrow \infty} x  e^{- \alpha x} |^N_{x=0} +  \int^{\infty}_0 1 \cdot  e^{- \alpha x} \dx \\
+        & = 0 + \frac{1}{\alpha} \intinfs \dcht(x) \dx \\
+        & = \frac{1}{\alpha}^{\txo{*}}
+    \end{align*}
     % TODO Rest F 12
 \end{bsp}
 
