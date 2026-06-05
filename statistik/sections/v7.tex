@@ -25,6 +25,10 @@
     \item Spezialfall: \(X(\eraum)\) ist eine endliche Menge (insbesondere erfüllt, wenn \(\eraum\) endlich ist).
     \item Spezialfall: \(X \geq 0\).
     \item Erwartungswerte berechnen können.
+    \item Erwartungswert und Varianz f¨ur die wichtigsten Verteilungen kennen
+    \item Erwartungswert von Produkten zum Widerlegen von Unabh¨angigkeit
+    \item Erwartungswert von Produkten bei Unabh¨angigkeit berechnen k¨onnen
+    \item Markov-Ungleichung kennen und anwenden k¨onnen
 \end{itemize}
 
 \section*{Grundgedanke}
@@ -295,8 +299,9 @@ Dies führt uns in die Statistik (später).
     endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, daß $X \geq 0$):
     \begin{align*}
         \E{X} & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
-        & = - \lim_{N \rightarrow \infty} x  e^{- \alpha x} |^N_{x=0} +  \int^{\infty}_0 1 \cdot  e^{- \alpha x} \dx \\
-        & = 0 + \frac{1}{\alpha} \intinfs \dcht(x) \dx \\
+        & = - \lim_{N \rightarrow \infty} \oub{x  e^{- \alpha x}}{=0} |^N_{x=0} +  \int^{\infty}_0 \oub{1 \cdot  e^{- \alpha
+        x} }{=f(x) \cdot \frac{1}{\alpha}} \dx \\
+        & = 0 + \frac{1}{\alpha} \oub{\intinfs \dcht(x) \dx }{=1} \\
         & = \frac{1}{\alpha}^{\txo{*}}
     \end{align*}
     \txc{
@@ -330,7 +335,7 @@ Dies führt uns in die Statistik (später).
     Eine analoge Rechnung mit Betragszeichen und Abschätzungen zeigt die
     Existenz des Erwartungswerts:
     \[
-        \sum_{\oio} | aX(\ele) + bY(\ele)| \wfk(\ele) \leq |a| \oub{\sum_{\oio} |X(\ele)| \wfk(\ele)}{< \infty\ u.\ Vor.} + |b|  \oub{\sum_{\oio} |Y(\ele)| \wfk(\ele)}{< \infty\ u.\ Vor.} < \infty
+        \sum_{\oio} \oub{ | aX(\ele) + bY(\ele)| }{\leq |a| |X(\ele)| + |b| |Y(\ele)|} \wfk(\ele) \leq |a| \oub{\sum_{\oio} |X(\ele)| \wfk(\ele)}{< \infty\ unab.\ Ver.} + |b|  \oub{\sum_{\oio} |Y(\ele)| \wfk(\ele)}{< \infty\ unab.\ Ver.} < \infty
     \]
     da nach Voraussetzung $\E{X}$ und $\E{Y}$ existieren.
 \end{satz}
@@ -421,16 +426,20 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$}
+    \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \\
+    \txo{
+    X(\eraum) = \{ 0,...,n\}, \quad \# X(\eraum) = n+1 < \infty
+    }
     \begin{itemize}
         \item \(X\) sei binomialverteilt mit den Parametern \(n\) und \(p\).
-        \item Der Erwartungswert von \(X\) existiert, da der Bildbereich von \(X\)
+        \item Der Erwartungswert^{\txo{*}} von \(X\) existiert, da der Bildbereich von \(X\)
         endlich ist.
     \end{itemize}
+    \txo{erwartete Anzahl an Erfolgen in einem n-fach unabhängig wiederholten Bernoulli-Experiment}
 
     \paragraph{1. Versuch} (mit binomischer Formel und etwas Geschick)
     \[
-        \E{X} = \sum^n_{k=0} k \binom{n}{k} p^k (1-p)^{n-k} = ...
+        \E{X} = \sum^n_{k=0} k \oub{\binom{n}{k} p^k (1-p)^{n-k}}{=\pe(X=x)} = ...
     \]
 
     \paragraph{2. Versuch}
@@ -463,7 +472,7 @@ Dies führt uns in die Statistik (später).
     \[
         E[X]
         =
-        \sum_{i=1}^{n} E[X_i]
+        \sum_{i=1}^{n} \oub{E[X_i]}{=p}
         =
         \sum_{i=1}^{n} p
         =
@@ -483,12 +492,12 @@ Dies führt uns in die Statistik (später).
         \qquad
         p=\frac12.
     \]
-    Die Zufallsvariable $X:\eraum\to\rz$ sei definiert durch $ X(n)=2^n$ für alle $n\in\eraum$
+    Die Zufallsvariable $X:\eraum\to\rz$ sei definiert durch $ X(n)=2^n$ \txo{(Ausazhlung)} für alle $n\in\eraum$
 
     \[
         \wfk_X(2^n)
         =
-        \pe(X=2^n)
+        \pe( \oub{X=2^n}{\text{Kopf erstmalig im n-ten Wurf}} )
         =
         \wfk(n)
         =
@@ -512,7 +521,281 @@ Dies führt uns in die Statistik (später).
     Der Erwartungswert existiert also nicht.
     Ein fairer Einsatz kann nicht bestimmt werden.
 \end{bsp}
+\begin{er}
+    Aus Satz (E), d.h. der Linearit¨at des Erwartungswerts, folgen:
+    \[
+        \E{aX}= a \E{X} \text{ und } \E{X + Y } = \E{X} + \E{Y}
+    \]
+    f¨ur $a \in \rz$ und $\rz$-wertige X und Y mit existierendem Erwartungswert
+\end{er}
 
+\begin{fr}
+    Gilt auch \(\E{XY}  = \E{X}  \E{Y}\)? \\
+    \txo{Spezialfall $X=Y$: $\E{E^2} = (\E{X})^2$. \\ Gilt das?
+    }
+\end{fr}
+\begin{bsp}
+    Es gibt Zufallsvariablen \(X,Y\) mit
+    \[
+        \E{X\cdot Y} \neq \E{X}\cdot\E{Y}.
+    \]
+
+    Wähle
+    \[
+        P(X=+1)=P(X=-1)=\frac{1}{2}
+    \]
+    und
+    \[
+        Y=X.
+    \]
+
+    Dann gilt
+    \[
+        \E{X}
+        =
+        \E{Y}
+        =
+        0
+    \]
+    und
+    \[
+        \E{XY}
+        =
+        \E{X^2}
+        =
+        \E{1}
+        =
+        1.
+    \]
+\end{bsp}
+
+\begin{satz}
+    \textbf{Satz (P)} \\
+    Seien
+    \[
+        X:\Omega\to\mathbb{R}
+        \quad\text{und}\quad
+        Y:\Omega\to\mathbb{R}
+    \]
+    zwei unabhängige Zufallsvariablen, deren Erwartungswerte existieren.
+
+    Dann existiert auch der Erwartungswert von \(X\cdot Y\), und es gilt
+    \[
+        \E{X\cdot Y}
+        =
+        \E{X}\cdot\E{Y}.
+    \]
+
+    \paragraph{Beweis.}
+    \paragraph{Schritt 1:}
+    Wir nehmen zunächst an, dass der Erwartungswert von \(X\cdot Y\) existiert.
+
+    Wir beginnen mit der folgenden Darstellung. Für \(z\neq 0\) gilt: \txo{(xy = z)}
+    \[
+        \begin{aligned}
+            P(XY=z)
+            & \overset{\txo{*}}{=}
+            \sum_{y\neq 0}
+            P(XY=z\mid Y=y)\,P(Y=y)
+            \\
+            &=
+            \sum_{y\neq 0}
+            P\left(X=\frac{z}{y}\mid Y=y\right)
+            P(Y=y)
+            \\
+            &=
+            \sum_{y\neq 0}
+            P\left(X=\frac{z}{y}\right)
+            P(Y=y),
+        \end{aligned}
+    \]
+    da \(X\) und \(Y\) unabhängig sind.
+    \[
+        \txo{
+            \pe(X \cdot X = z) = \sum_{y \in Y(\eraum)} \pe(X \cdot Y = z, Y = y) \overset{z \neq 0}{=} \sum_{y \in Y(\eraum), y \neq 0} \pe(X \cdot Y = z| Y = y) \cdot \pe(Y=y)
+        }
+    \]
+    Aus
+    \[
+        P(XY=z)
+        =
+        \sum_{y\neq 0}
+        P\left(X=\frac{z}{y}\right)
+        P(Y=y),
+        \qquad z\neq 0,
+    \]
+    folgt
+    \[
+        \begin{aligned}
+            \E{XY}
+            &=
+            \sum_{z\in XY(\Omega)\txo{, z \neq 0}}
+            z\,P(XY=z)
+            \\
+            &=
+            \sum_{z\neq 0}
+            \sum_{y\neq 0}
+            \frac{z}{y}\,y\,
+            P\left(X=\frac{z}{y}\right)
+            P(Y=y)
+            &=
+            \sum_{y\neq 0}
+            \sum_{x\neq 0}
+            xy \pe(X=x) \pe(Y=y)
+            &=
+            \big(
+            \sum_{y\neq 0} y \pe(Y=y)
+            \big)
+            \big(
+            \sum_{x\neq 0} x \pe(X=x)
+            \big)
+            &=
+            \E{X} \cdot \E{Y}
+        \end{aligned}
+    \]
+    \paragraph{Schritt 2:} Eine analoge Rechnung zeigt die Existenz des Erwartungswerts:
+\end{satz}
+\begin{satz}
+    \textbf{Kurzfassung Satz (P)}
+    \[
+        X,Y \text{ unabhängig mit ex. EW}
+        \;\Longrightarrow\;
+        \E{XY}
+        =
+        \E{X}\,\E{Y}.
+    \]
+\end{satz}
+
+\begin{bsp}
+    \[
+        \E{X\cdot Y}
+        =
+        \E{X}\cdot\E{Y}
+    \]
+    impliziert nicht, dass \(X\) und \(Y\) unabhängig sind.
+
+    \begin{itemize}
+        \item Definiere Hilfszufallsvariablen \(X_1\) und \(Y_1\), unabhängig mit
+        \[
+            P(X_1=0)=P(X_1=1)=\frac12
+        \]
+        und
+        \[
+            P(Y_1=0)=P(Y_1=1)=\frac12.
+        \]
+
+        \item Setze
+        \[
+            X:=X_1+Y_1,
+            \qquad
+            Y:=|X_1-Y_1|.
+        \]
+    \end{itemize}
+
+    \paragraph{Beobachtungen}
+
+    \begin{itemize}
+        \item Bildbereiche:
+        \[
+            X(\Omega)=\{0,1,2\},
+            \qquad
+            Y(\Omega)=\{0,1\}.
+        \]
+
+        \item
+        \[
+            Y=0
+            \iff
+            X_1=Y_1
+            \iff
+            X\in\{0,2\}.
+        \]
+
+        \item
+        \[
+            Y=1
+            \iff
+            X_1\neq Y_1
+            \iff
+            X=1.
+        \]
+    \end{itemize}
+
+    \paragraph{\(X\) und \(Y\) sind nicht unabhängig.}
+
+    \[
+        P(X=1,Y=0)=0,
+    \]
+    da
+    \[
+        \{X=1,Y=0\}=\varnothing.
+    \]
+
+    Andererseits gilt
+    \[
+        P(X=1)
+        =
+        2\cdot\frac14
+        >
+        0
+    \]
+    und
+    \[
+        P(Y=0)
+        =
+        2\cdot\frac14
+        >
+        0.
+    \]
+
+    \paragraph{Dennoch gilt \(\E{XY}=\E{X}\E{Y}\).}
+
+    \[
+        \begin{aligned}
+            \E{XY}
+            &=
+            0\cdot P(XY=0)
+            +
+            1\cdot P(XY=1)
+            +
+            2\cdot P(XY=2)
+            \\
+            &=
+            0+P(X=1)+0
+            \\
+            &=
+            \frac12.
+        \end{aligned}
+    \]
+
+    Außerdem
+    \[
+        \begin{aligned}
+            \E{X}\,\E{Y}
+            &=
+            (\E{X_1}+\E{Y_1})\,P(Y=1)
+            \\
+            &=
+            2\,\E{X_1}\,P(X=1)
+            \\
+            &=
+            2\cdot\frac12\cdot\frac12
+            \\
+            &=
+            \frac12.
+        \end{aligned}
+    \]
+\end{bsp}
+
+\begin{bem}
+    Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
+    unabh¨angiger Zufallsvariablen verwendet werden, sondern kann auch benutzt
+    werden, um zu zeigen, daß zwei Zufallsvariablen nicht unabh¨angig sein k¨onnen,
+    wenn der Erwartungswert des Produkts der Zufallsvariablen nicht ins Produkt der
+    einzelnen Erwartungswerte zerf¨allt.
+\end{bem}
+
+% TODO 2026 ab Seite 65 weiter
 \begin{defi}
     \textbf{Zusammengesetzte Zufallsvariablen} \\
     Eine Zufallsvariable $X: \eraum \rightarrow \rz$ und eine \txo{messbare} Funktion $f: \rz \rightarrow \rz$ können
