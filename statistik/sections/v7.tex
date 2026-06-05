@@ -22,7 +22,7 @@
 \subsection*{Wissen}
 \begin{itemize}
     \item Existenz des Erwartungswerts prüfen können.
-    \item Spezialfall: \(X(\Omega)\) ist eine endliche Menge (insbesondere erfüllt, wenn \(\Omega\) endlich ist).
+    \item Spezialfall: \(X(\eraum)\) ist eine endliche Menge (insbesondere erfüllt, wenn \(\eraum\) endlich ist).
     \item Spezialfall: \(X \geq 0\).
     \item Erwartungswerte berechnen können.
 \end{itemize}
@@ -53,7 +53,7 @@ Auch sind die Parameter der Verteilung nicht unbedingt bekannt. Siehe
         =
         p(1-p)^{n-1},
         \qquad
-        n \in \mathbb{N}.
+        n \in \nz.
     \]
     % TODO gloss für geom verteilung
 
@@ -63,17 +63,17 @@ Auch sind die Parameter der Verteilung nicht unbedingt bekannt. Siehe
         =
         \frac{\lambda^k}{k!} e^{-\lambda},
         \qquad
-        k \in \mathbb{N}_0.
+        k \in \nz_0.
     \]
 
     \item \textbf{Exponentialverteilung:}
     \[
         f(x)
         =
-        \omega e^{-\lambda x}\,
+        \ele e^{-\lambda x}\,
         \chi_{[0,\infty)}(x),
         \qquad
-        x \in \mathbb{R}.
+        x \in \rz.
     \]
 \end{itemize}
 Wie können wir trotzdem Vorhersagen treffen? \\ \newline
@@ -117,19 +117,19 @@ Dies führt uns in die Statistik (später).
     \textbf{1 $\times$ Würfeln mit einem fairem Würfel} \\
     \txc{Da herrscht eine Gleichverteilung, daher ist die erwartete Augenzahl ist das arithmetische Mittel.} \\
     \[
-        \Omega = \{1,\dots,6\}
+        \eraum = \{1,\dots,6\}
     \]
     mit Gleichverteilung \(\pe\).
 
     Die Zufallsvariable
     \[
-        X : \Omega \to \mathbb{R},
+        X : \eraum \to \rz,
         \qquad
-        X(\omega)=\omega,
+        X(\ele)=\ele,
     \]
     besitzt das Bild
     \[
-        X(\Omega)=\{1,\dots,6\}\subseteq\mathbb{R}.
+        X(\eraum)=\{1,\dots,6\}\subseteq\rz.
     \]
 
     Für einen fairen Würfel ist der Erwartungswert die mittlere Augenzahl, also das
@@ -154,7 +154,7 @@ Dies führt uns in die Statistik (später).
         \item $k$ Euro, falls 2 gewürfelt
         \item 6 Euro, falls $2, \cdots , 6$ gewürfelt
         \item \(
-                  \Omega = \{1,\dots,6\}
+                  \eraum = \{1,\dots,6\}
         \) mit Gleichverteilung \(\pe\).
     \end{itemize}
     \glssymbol{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
@@ -224,7 +224,7 @@ Dies führt uns in die Statistik (später).
     \end{align*}
     \txo{
         \begin{align*}
-            *1 & \quad X(\Omega) = \nz_0 \\
+            *1 & \quad X(\eraum) = \nz_0 \\
             *2 & \quad \pe(X=k) = \wfk_X(k) = ...
         \end{align*}
     }
@@ -299,37 +299,337 @@ Dies führt uns in die Statistik (später).
         & = 0 + \frac{1}{\alpha} \intinfs \dcht(x) \dx \\
         & = \frac{1}{\alpha}^{\txo{*}}
     \end{align*}
-
-    % TODO Rest F 12
+    \txc{
+        \begin{align*}
+        * \dcht(x) & = \alpha  e^{- \alpha x} \chi_{[0,\infty)}(x) \\
+            \Rightarrow \int_0^{\infty} e^{- \alpha x} \dx
+            & = \frac{1}{\alpha} \int_0^{\infty} \alpha  e^{- \alpha x} \dx \\
+            & = \frac{1}{\alpha}  \intinfs \dcht(x) \dx \\
+            & = \frac{1}{\alpha}
+        \end{align*}
 \end{bsp}
 
 \begin{satz}
     \textbf{Der Erwartungswert ist linear} % TODO 13
+    Geg. \glspl{zv} $X : \eraum \rightarrow \rz $ und  $Y : \eraum \rightarrow \rz $ auf $\wraum$; Konstanten $a,b \in \rz$. \\
+    Annahme: $\E{X}$ und $\E{Y}$ existieren. \\
+    Dann gelten $aX + bY$ ist ebenfalls eine Zufallsvariable.
+    Der Erwartungswert von $aX + bY$ existiert und berechnet sich als
+    \[
+        \E{aX + bY} = a\E{X} + b\E{Y}
+    \]
     \paragraph{Beweis (für Zufallsvariable mit abzählbarem Bildbereich)}
-    % TODO 14
+    Nehmen wir zunächst an, der Erwartungswert von $aX + bY$ existiert.
+    Dann dürfen alle Reihen beliebig umsortiert werden:
+    \begin{align*}
+        \E{aX + bY} & = \sum_{\oio} [aX(\ele) + bY(\ele)] \wfk(\ele) \\
+        & = a \sum_{\oio} X(\ele) \wfk(ele) + \sum_{\oio} Y(\ele) \wfk(ele) \\
+        & = a\E{X} + b\E{Y}
+    \end{align*}
+    Eine analoge Rechnung mit Betragszeichen und Abschätzungen zeigt die
+    Existenz des Erwartungswerts:
+    \[
+        \sum_{\oio} | aX(\ele) + bY(\ele)| \wfk(\ele) \leq |a| \oub{\sum_{\oio} |X(\ele)| \wfk(\ele)}{< \infty\ u.\ Vor.} + |b|  \oub{\sum_{\oio} |Y(\ele)| \wfk(\ele)}{< \infty\ u.\ Vor.} < \infty
+    \]
+    da nach Voraussetzung $\E{X}$ und $\E{Y}$ existieren.
 \end{satz}
 
 \begin{bsp}
     \textbf{Augensumme bei mehrfachem Würfeln mit fairem Würfel}
-    % TODO 15-16 (33-37)
+    \[
+        \eraum = \{1,\dots,6\}^n
+    \]
+    mit Gleichverteilung \(P\).
+
+    Für \(i=1,\dots,n\) sei
+    \[
+        X_i(\ele)=\ele_i,
+    \]
+    wobei \(\ele=(\ele_1,\dots,\ele_n)\in\eraum\).
+
+    Die Zufallsvariable
+    \[
+        X=\sum_{i=1}^{n} X_i
+    \]
+    beschreibt die Augensumme.
+
+    \textbf{Berechnung der erwarteten Augensumme für zweimaliges Würfeln (\(n=2\)):}
+
+    Direkt über die Verteilung:
+    \[
+        E[X]
+        =
+        \sum_{i=2}^{12}
+        i \, \pe(X_1+X_2=i) = ...
+    \]
+    was etwas aufwendig ist.
+
+    Alternativ:
+    \[
+        \begin{aligned}
+            E[X]
+            &=
+            \sum_{\ele\in\eraum}
+            \bigl(X_1(\ele)+X_2(\ele)\bigr)\,\wfk(\ele) \\
+            &=
+            \frac{1}{36}
+            \sum_{\ele_1, \ele_2=1}^{6} [\ele_1 + \ele_2] \\
+            &=
+            \frac{1}{36}
+            \sum_{\ele_1=1}^{6}
+            \sum_{\ele_2=1}^{6}
+            (\ele_1+\ele_2) \\
+            &=
+            \frac{1}{36}
+            \left[
+                6\sum_{\ele_1=1}^{6}\ele_1
+            +
+            6\sum_{\ele_2=1}^{6}\ele_2
+            \right] \\
+            &=
+            \frac{1}{36}
+            \left(
+                6\cdot 21 + 6\cdot 21
+            \right)
+            =
+            7.
+        \end{aligned}
+    \]
+
+    Mit der Linearität des Erwartungswertes erhält man sofort:
+    \[
+        E[X]
+        =
+        E[X_1]+E[X_2]
+        =
+        2\cdot 3,5
+        =
+        7.
+    \]
+
+    Dies verallgemeinert sich unmittelbar auf \(n\)-maliges Würfeln:
+    \[
+        E[X]
+        =
+        E[X_1+\cdots+X_n]
+        =
+        E[X_1]+\cdots+E[X_n]
+        =
+        n\cdot\frac{7}{2}.
+    \]
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Binomialverteilung}
-    % TODO 17 (38-41)
+    \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$}
+    \begin{itemize}
+        \item \(X\) sei binomialverteilt mit den Parametern \(n\) und \(p\).
+        \item Der Erwartungswert von \(X\) existiert, da der Bildbereich von \(X\)
+        endlich ist.
+    \end{itemize}
+
+    \paragraph{1. Versuch} (mit binomischer Formel und etwas Geschick)
+    \[
+        \E{X} = \sum^n_{k=0} k \binom{n}{k} p^k (1-p)^{n-k} = ...
+    \]
+
+    \paragraph{2. Versuch}
+    Wähle
+    \[
+        \eraum=\{0,1\}^n.
+    \]
+
+    Die Anzahl der Erfolge lässt sich darstellen als
+    \[
+        X=\sum_{i=1}^{n} X_i,
+    \]
+    wobei
+    \[
+        X_i(\ele)=\ele_i.
+    \]
+
+    Für jede Indikatorvariable gilt
+    \[
+        E[X_i]
+        =
+        0\cdot \pe(X_i=0)
+        +
+        1\cdot \pe(X_i=1)
+        =
+        p.
+    \]
+
+    Mit der Linearität des Erwartungswertes folgt unmittelbar:
+    \[
+        E[X]
+        =
+        \sum_{i=1}^{n} E[X_i]
+        =
+        \sum_{i=1}^{n} p
+        =
+        np.
+    \]
 \end{bsp}
 
 \begin{bsp}
-    \textbf{St. Petersburger Paradoxon (Erwartungswert muß nicht existieren)}
-    % TODO 18 (42-45)
+    \textbf{St. Petersburger Paradoxon (Erwartungswert muß nicht existieren)} \\
+    Ein Casino möchte folgendes Spiel anbieten:
+    Eine faire Münze wird geworfen, bis zum ersten Mal Kopf erscheint.
+    Passiert dies beim n-ten Wurf, so sei die Auszahlung $X = 2^n$
+    \[
+        \eraum=\nz,
+        \qquad
+        \wfk(n)=p(1-p)^{n-1},
+        \qquad
+        p=\frac12.
+    \]
+    Die Zufallsvariable $X:\eraum\to\rz$ sei definiert durch $ X(n)=2^n$ für alle $n\in\eraum$
+
+    \[
+        \wfk_X(2^n)
+        =
+        \pe(X=2^n)
+        =
+        \wfk(n)
+        =
+        p(1-p)^{n-1}
+        =
+        2^{-n},
+        \qquad
+        n\in \eruam = \nz.
+    \]
+    \txo{$\wfk(n) = (\frac{1}{2})^n = 2^{-n} \quad \froall n \in \eraum = \nz$} \\
+    Was wäre ein fairer Einsatz für dieses Spiel?
+    (Wir nennen den Einsatz fair, wenn der Einsatz gleich der erwarteten Auszahlung ist.) \\
+    Wir suchen also $\E{X}$
+
+    \txo{$X \geq 0$, EW existiert genau dann, wenn Rechnung endliches Ergebnis hat}
+
+    Nun ist jedoch
+    \[
+        \sum_{n=1}^{\infty} 2^n \pe(X=2^n) = \sum_{n=1}^{\infty} 2^n \wfk_X(2^n) = \sum_{n=1}^{\infty} 2^n 2^{-n} = \sum_{n=1}^{\infty} 1 = \infty
+    \]
+    Der Erwartungswert existiert also nicht.
+    Ein fairer Einsatz kann nicht bestimmt werden.
 \end{bsp}
 
 \begin{defi}
-    \textbf{Zusammengesetzte Zufallsvariablen}
-    % TODO F 19 (46)
+    \textbf{Zusammengesetzte Zufallsvariablen} \\
+    Eine Zufallsvariable $X: \eraum \rightarrow \rz$ und eine \txo{messbare} Funktion $f: \rz \rightarrow \rz$ können
+    zusammengesetzt werden zu einer neuen Zufallsvariablen:
+    \[
+        Y(\ele) = (f \circ X)(\ele) = f(X(\ele))
+    \]
+    \txo{
+    $Y(\ele) = f(X(\ele)) \quad \forall \ele$
+    }
 \end{defi}
 
 \begin{satz}
-        % TODO F 19 (46-49)
+    Sofern der Erwartungswert $\E{Y}$ existiert, gilt
+    \[
+        \E{Y} = \sum_{x \in X(\eruam)} f(x) \pe(X=x)
+    \]
+    \paragraph{Beweis.}
+    \begin{align*}
+        \E{Y} & =   \sum_{y \in Y(\eruam)} y \pe(Y=y) \\
+        & =   \sum_{y \in Y(\eruam)} y  \sum_{x \in X(\eraum): f(x) = y\txo{*}} \pe(X=x) \\
+        & =   \sum_{y \in Y(\eruam)}   \sum_{x \in X(\eraum): f(x) = y} \oub{y}{=f(x)} \pe(X=x) \\
+        & =\sum_{y \in Y(\eruam)}   \sum_{x \in X(\eraum): f(x) = y} f(x) \pe(X=x) \\
+        & = \sum_{x \in X(\eraum)} f(x) \pe(X=x)
+    \end{align*}
+    \txo{
+        \[
+           *  Y=y \Leftrightarrow f(x) = y, \quad \pe(Y=y) = \sum_{x \in X(\eraum): f(x) = y} \pe(X=x)
+        \]
+    }
 \end{satz}
+
+\begin{defi}
+    \textbf{n-tes Moment von X} \\
+    Für $n \in \nz $ heißt $\E{X^n}$ das erste n-te Moment von $X$, insofern $\E{|X|^n} < \infty$.
+    (Erwartungswert ist das 1. Moment)
+\end{defi}
+\begin{defi}
+    $\E{ ( X -  \E{X} )^n } $ heißt das n-te zentrierte Moment von $X$.
+    Es existiert, wenn $\E{|X|^n} < \infty$. \\
+\end{defi}
+\begin{defi}
+    Die Varianz von $X$ ist das 2 zentrierte Moment, d.h.
+    \[
+        Var(X) = \E{ ( X -  \E{X} )^2 }
+    \]
+    (mittlere quadratische Abweichung) \\
+    Die Varianz von $X$ existiert, wenn $Var(X) < \infty$
+\end{defi}
+
+\begin{bsp}
+    \textbf{Bsp.}
+
+    Seien \(X, Y\) Zufallsvariablen mit
+    \[
+        \pe(X=+1)=\frac{1}{2}=\pe(X=-1)
+    \]
+    und
+    \[
+        Y=100\cdot X.
+    \]
+
+    \textbf{Anhand des Erwartungswertes: kein Unterschied!}
+
+    \[
+        \E{X}
+        =1\cdot \pe(X=1)+(-1)\cdot \pe(X=-1)
+        =1\cdot\frac{1}{2}-1\cdot\frac{1}{2}
+        =0.
+    \]
+
+    Da \(Y=100X\) gilt,
+
+    \[
+        \E{Y}=100\cdot \E{X}=0.
+    \]
+    \textbf{Die Varianz zeigt den Unterschied:}
+
+    Da \(\E{X}=0\),
+
+    \[
+        \operatorname{Var}(X)
+        =\E{(X- \oub{\E{X}}{=0} )^{2}}
+        =\E{ \oub{X^{2}}{1} }
+        = \E{1}
+        = 1
+    \]
+
+    Wegen \(X\in\{-1,1\}\) ist
+
+    \[
+        X^{2}=1,
+    \]
+
+    also
+
+    \[
+        \operatorname{Var}(X)
+        =\E{1}
+        =1.
+    \]
+
+    Ebenso gilt wegen \(\E{Y}=0\),
+
+    \[
+        \operatorname{Var}(Y)
+        =\E{(Y-\E{Y})^{2}}
+        =\E{Y^2}
+        =\E{(100X)^{2}}
+    \]
+
+    Damit folgt
+
+    \[
+        \operatorname{Var}(Y)
+        =\E{100^{2}X^{2}}
+        =100^{2}\E{X^{2}}
+        =100^{2}.
+    \]
+\end{bsp}
 
