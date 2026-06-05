@@ -193,7 +193,7 @@ Dies führt uns in die Statistik (später).
     Nimmt X nur nichtnegative Werte an, können wir einfach anfangen, den
     Erwartungswert auszurechnen, weil
     \[
-        \sumxinXO  |x| \ow(X=x) = \sumxinXO x \pe(X=x)
+        \sumxinXO  |x| \pe(X=x) = \sumxinXO x \pe(X=x)
     \]
     bzw.
     \[
@@ -220,7 +220,7 @@ Dies führt uns in die Statistik (später).
     \txo{
         \begin{align*}
             *1 & \quad X(\Omega) = \nz_0 \\
-            *2 & \quad \pe(X=k) = \wft_X(k) = ---
+            *2 & \quad \pe(X=k) = \wft_X(k) = ...
         \end{align*}
     }
 \end{bsp}
@@ -234,6 +234,46 @@ Dies führt uns in die Statistik (später).
         \wfk_X(k) = \pe (X=k) = p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, . . . \}
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, daß $X \geq 0$)).
+    \txo{
+    \[
+        h(x) = x^k \Rightarrow h'(x) = k x^{k-1}
+    \]
+    }
+    \begin{align*}
+        \E{X}&  \overset{\txo{*1}}{=}   \sum^{\infty}_{k=1} \txr{k} p(1-p)^{\txr{k-1}} \\
+        & =  p  \sum^{\infty}_{k=1} \big( \frac{d}{dx} x^{\txr{k}} \big) \big|_{x=1-p} \\
+        &  \overset{\txo{*2}}{=}  p  \frac{d}{dx}   \sum^{\infty}_{\txg{k=1}} \big(x^{\txr{k}} \big) \big|_{x=1-p} \\
+        & = p  \frac{d}{dx}   \sum^{\infty}_{\txg{k=0}} \big(x^{k} \big) \big|_{x=1-p} \\
+        & = p  \frac{d}{dx}  \big( \frac{1}{1-x} \big) \big|_{x=1-p} \\
+        & = p  \frac{1}{(1-x)^2}  \big|_{x=1-p} \\
+        & = \frac{1}{p}
+    \end{align*}
+    \txo{
+        \begin{align*}
+            *1 & \quad \text{Definition Erwartungswert } \\
+            *2 & \quad \text{gilt, weil gliedweises Di”erenzieren einer Potenzreihe im Innern ihres Konvergenzradius
+            zulässig ist}
+        \end{align*}
+    }
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Erwartungswert der uniformen Verteilung auf [a, b]} \\
+    (Raten. – Warum ist der Erwartungswert (a + b)/2 ?) \\
+    Der Erwartungswert existiert, weil...
+    \txc{
+    Denn: Zu prüfen ist: \( \intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a,b]}(x)$. \\
+    Hier ist $\dcht(x) = 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
+    \[
+        \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{max\{|a|, |b|\}}{b-a} \dx = max\{|a|, |b|\} \cdot 1 < \infty
+    \]
+    }
+    ... f stetig ist auf dem kompakten Intervall [a, b]
+    und f = 0 außerhalb des Intervalls [a, b] gilt.
+    \[
+        \E{X} = \intab x \frac{1}{b-a} \dx = \frac{1}{2(b-a)} x^2 |^b_{x=a} = \frac{b^2 - a^2}{2(b-a)} = \oub{\frac{a+b}{2}}_{*}
+    \]
+    \txo{* Mittelpunkt des Intervalls}
 \end{bsp}
 
 
