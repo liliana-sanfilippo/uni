@@ -1,4 +1,5 @@
 \input{../preamble/general}
+\usepackage[ngerman]{babel}
 \input{../preamble/packages}
 \input{../preamble/colors}
 \input{../preamble/theorems}
@@ -15,15 +16,20 @@
 \usepackage{biblatex}
 \addbibresource{bib.bib}
 
-\title{Grundlagen Molekularbiologie \\ \small{by ...} \\ \textit{\footnotesize{Summer semester 2026} } }
-\date{April 2026}
+\newcommand\reporttitle{Vorlesung Grundlagen der molekularen Biologie II}
+\newcommand\reportsubtitle{Sommersemester 2026}
+\newcommand\profs{Vorlesung von Prof. Weisshaar, Prof. Wendisch und Prof. Hoffman}
+\newcommand\reportsubsubtitle{Vorlesungsnotizen und Aufarbeitung}
+\newcommand\reportauthors{
+    \textbf{Liliana Sanfilippo}
+}
 
 \begin{document}
-
-    \maketitle
+    \frontmatter
+    \input{../preamble/frontpage}
 
     \tableofcontents
-
+    \mainmatter
     \chapter{BW1 - DNA als Träger der Erbinformation}
     \input{sections/v01_BW1}
 
