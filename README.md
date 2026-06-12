@@ -36,7 +36,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 21 | Fr, 22.05. | :ballot_box_with_check: |                 | Mo, 18.05. | :no_entry:              | Fr, 22.05.     | :no_entry: |
 | KW 22 | Fr, 29.05. | :no_entry:              |                 | Mo, --     | --                      | Fr, 29.05.     | :no_entry: |
 | KW 23 | Fr, 05.06. | :soon:                  |                 | Mo, 01.06. | :no_entry:              | Fr, 05.06.     | :no_entry: |
-| KW 24 | Fr, 12.06. | :soon:                  |                 | Mo, 08.06. | :no_entry:              | Fr, 12.06.     | :soon:     |
+| KW 24 | Fr, 12.06. | :soon:                  |                 | Mo, 08.06. | :no_entry:              | Fr, 12.06.     | :no_entry: |
 | KW 25 | Fr, 19.06. | :soon:                  |                 | Mo, 15.06. | :soon:                  | Fr, 19.06.     | :soon:     |
 | KW 26 | Fr, 26.06. | :soon:                  |                 | Mo, 22.06. | :soon:                  | Fr, 26.06.     | :soon:     |
 | KW 27 | Fr, 03.07. | :soon:                  |                 | Mo, 29.06. | :soon:                  | Fr, 03.07.     | :soon:     |
@@ -62,7 +62,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 21 | Mo, 18.05.  | :no_entry:     |                 | Fr, 22.05.  | :no_entry:     |                 |
 | KW 22 | --          | --             |                 | Fr, 29.05.  | :no_entry:     |                 |
 | KW 23 | Mo, 01.06.  | :no_entry:     |                 | Fr, 05.06.  | :no_entry:     |                 |
-| KW 24 | Mo, 08.06.  | :no_entry:     |                 | Fr, 12.06.  | :soon:         |                 |
+| KW 24 | Mo, 08.06.  | :no_entry:     |                 | Fr, 12.06.  | :no_entry:     |                 |
 | KW 25 | Mo, 15.06.  | :soon:         |                 | Fr, 19.06.  | :soon:         |                 |
 | KW 26 | Mo, 22.06.  | :soon:         |                 | Fr, 26.06.  | :soon:         |                 |
 | KW 27 | Mo, 29.06.  | :soon:         |                 | Fr, 03.07.  | :soon:         |                 |
@@ -102,7 +102,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 21 | Mi, 20.05.   | :no_entry:     |                 | --           | --             | --              | --         | --         |
 | KW 22 | Mi, 27.05.   | :no_entry:     |                 | Do, 28.05.   | :no_entry:     |                 | Mi, 03.06. |            |
 | KW 23 | Mi, 03.06.   | :no_entry:     |                 | --           | --             | --              | --         | --         |
-| KW 24 | Mi, 10.06.   | :soon:         |                 | Do, 11.06.   | :soon:         |                 | Mi, 17.06. |            |
+| KW 24 | Mi, 10.06.   | :no_entry:     |                 | Do, 11.06.   | :no_entry:     |                 | Mi, 17.06. |            |
 | KW 25 | Mi, 17.06.   | :soon:         |                 | --           | --             | --              | --         | --         |
 | KW 26 | Mi, 24.06.   | :soon:         |                 | Do, 25.06.   | :soon:         |                 | Mi, 01.07. |            |
 | KW 27 | Mi, 01.07.   | :soon:         |                 | --           | --             | --              | --         | --         |
@@ -122,7 +122,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 21 | Do, 21.05. | :construction:          |                 | Do, 21.05. |            | Do, 28.05. | :no_entry: |
 | KW 22 | Do, 28.05. | :no_entry:              |                 | Do, 28.05. | :no_entry: | --         | --         |
 | KW 23 | --         | --                      |                 | --         | --         | --         |            |
-| KW 24 | Do, 11.06. | :soon:                  |                 | Do, 11.06. | :soon:     | Do, 18.06. | :soon:     |
+| KW 24 | Do, 11.06. | :no_entry:              |                 | Do, 11.06. | :no_entry: | Do, 18.06. | :soon:     |
 | KW 25 | Do, 18.06. | :soon:                  |                 | Do, 18.06. | :soon:     | --         | --         |
 | KW 26 | Do, 25.06. | :soon:                  |                 | Do, 25.06. | :soon:     | Do, 02.07. | :soon:     |
 | KW 27 | Do, 02.07. | :soon:                  |                 | Do, 02.07. | :soon:     | Do, 09.07. | :soon:     |

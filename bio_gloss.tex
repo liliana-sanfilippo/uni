@@ -7,457 +7,702 @@
     type=defi
 }
 
-\newglossaryentry{codonanticodon}{
-    name={Codon-Anticodon Wechselwirkung},
+\newglossaryentry{dsrna}{
+    name={dsRNA},
+    description={Doppelsträngige RNA (\emph{double-stranded RNA}); entsteht
+    z.\,B.\ bei Virusinfektionen, durch Transkription invertierter Repeats
+    oder synthetisch. Wird von Dicer in siRNAs prozessiert und löst
+    RNA-Interferenz aus. Wirkt als molekulares Gefahrensignal und
+    aktiviert in Säugern zusätzlich angeborene Immunantworten
+    (z.\,B.\ Interferon-Signalweg).},
+    type=defi
+}
+
+\newglossaryentry{endonuklease}{
+    name={Endonuklease},
+    description={Enzym, das Phosphodiesterbindungen \emph{innerhalb} eines
+    Nukleinsäurestrangs spaltet (im Gegensatz zur Exonuklease, die vom
+    Ende her abbaut). Beispiele: Restriktionsendonukleasen (sequenzspezifisch),
+    RNase~III-Familie (dsRNA-spezifisch, z.\,B.\ Dicer, Drosha),
+    AGO2 (RISC-Slicer-Aktivität).},
+    type=defi
+}
+
+\newglossaryentry{effektorkomplex}{
+    name={Effektorkomplex},
+    description={Multimerer Proteinkomplex, der eine regulatorische
+    RNA als Guide nutzt, um spezifische Zielmoleküle zu erkennen und
+    funktionell zu beeinflussen. Im RNAi-Kontext: RISC mit AGO als
+    Kernkomponente; im CRISPR-Kontext: Cas9/sgRNA-Komplex.
+    Verbindet Sequenzspezifität (durch die RNA) mit katalytischer
+    Aktivität (durch das Protein).},
+    type=defi
+}
+
+\newglossaryentry{guiderna}{
+    name={Guide-RNA},
+    description={Einzelsträngige RNA, die einen Effektorkomplex durch
+    Basenpaarung zur komplementären Zielsequenz dirigiert. Im RNAi-Kontext:
+    der in RISC geladene miRNA- oder siRNA-Strang; im CRISPR-Kontext:
+    die sgRNA, die Cas9 zur Ziel-DNA leitet.},
+    type=defi
+}
+
+\newglossaryentry{prämrna}{
+    name={prä-mRNA},
+    description={Unreifes, primäres RNA-Pol-II-Transkript im Zellkern
+    vor der Prozessierung. Enthält Introns und Exons sowie nicht-translatierte
+    Bereiche. Wird durch 5'-Capping, Spleißen (Entfernung der Introns)
+    und 3'-Polyadenylierung zur reifen mRNA prozessiert,
+    die anschließend ins Zytoplasma exportiert wird.},
+    type=defi
+}
+
+\newglossaryentry{lncrna}{
+    name={lncRNA},
+    description={\emph{Long non-coding RNA}; nicht-kodierende RNA
+    $>$\,200\,nt ohne signifikantes offenes Leseraster. Reguliert
+    Genexpression auf transkriptioneller (z.\,B.\ Chromatinremodellierung,
+    Rekrutierung von PRC2), post-transkriptioneller und
+    translationaler Ebene. Beispiele: \emph{Xist} (X-Inaktivierung),
+    \emph{HOTAIR} (Hox-Genregulation). Häufig zell- und
+    entwicklungsstadiumspezifisch exprimiert.},
+    type=defi
+}
+
+\newglossaryentry{dicer}{
+    name={Dicer},
+    description={Evolutionär konservierte RNase-III-\gls{endonuklease}, die
+    lange doppelsträngige RNA (\gls{dsrna}) oder \gls{premirna} in kurze
+    21--23\,nt-Fragmente mit charakteristischen 2-nt-3'-Überhängen
+    prozessiert (\gls{sirna} bzw.\ \gls{mirna}). Das Produkt wird anschließend
+    in den \gls{risc}-Komplex geladen.},
+    type=defi
+}
+
+\newglossaryentry{risc}{
+    name={RISC-Komplex (RNA-induced silencing complex)},
+    description={\gls{effektorkomplex} der
+    RNA-Interferenz. Kernkomponente ist ein Argonaute-Protein (AGO),
+    das einen einzelsträngigen \gls{guiderna}-Strang (\gls{sirna} oder \gls{mirna}) bindet
+    und komplementäre Ziel-\glspl{mrna} erkennt. Bei vollständiger Komplementarität
+    erfolgt endonukleolytische Spaltung (Slicer-Aktivität von AGO2);
+    bei partieller Komplementarität wird die Translation reprimiert
+    oder die \gls{mrna} destabilisiert.},
+    type=defi
+}
+
+\newglossaryentry{knockdown}{
+    name={Knockdown-Analyse},
+    description={Methode der reversen Genetik zur funktionellen Analyse
+    eines Gens durch gezielte Reduktion (nicht vollständige Elimination)
+    seiner \gls{mrna}-Menge.},
+    type=defi
+}
+
+\newglossaryentry{primimrna}{
+    name={pri-miRNA},
+    description={Primäres RNA-Pol-II-Transkript, das eine oder mehrere
+    Haarnadelstrukturen (Hairpins) enthält. Wird im Zellkern durch den
+    \emph{Microprocessor}-Komplex (Drosha\,+\,DGCR8) zur ca.\ 60--70\,nt
+    langen \gls{premirna} prozessiert.},
+    type=defi
+}
+
+\newglossaryentry{premiRNA}{
+    name={pre-miRNA},
+    description={Ca.\ 60--70\,nt lange Haarnadel-RNA, die durch Drosha-
+    Prozessierung aus der \gls{primirna} entsteht. Wird durch Exportin-5
+    in das Zytoplasma transportiert und dort von \gls{dicer} zur reifen
+    \gls{mirna} prozessiert.},
+    type=defi
+}
+
+\newglossaryentry{mirnaduplex}{
+    name={miRNA-miRNA* Duplex},
+    description={Kurzlebiges, ca.\ 21--23\,bp langes RNA-Duplex-Intermediat,
+    das nach \gls{dicer}-Prozessierung der \gls{premirna} entsteht. Der funktionelle
+    \emph{Guide}-Strang (\gls{mirna}) wird in \gls{risc} geladen; der komplementäre
+    \emph{Passenger}-Strang (\gls{mirna}*, auch miRNA-3p) wird meist degradiert.
+    Die Strangauswahl erfolgt anhand der thermodynamischen Stabilität
+    der Duplex-Enden: der Strang mit dem weniger stabilen 5'-Ende
+    wird bevorzugt als Guide-Strang selektiert.},
+    type=defi
+}
+
+\newglossaryentry{histon}{
+    name={Histon},
+    description={Kleine, basische Kernproteine (reich an Lysin und Arginin),
+    die den Histonoktamer des Nukleosoms bilden.},
+    type=defi
+}
+
+\newglossaryentry{silencing}{
+    name={Silencing},
+    description={Sequenzspezifische Repression der Genexpression auf
+    transkriptioneller (TGS) oder post-transkriptioneller Ebene (PTGS).
+    Mechanismen umfassen Chromatinkondensation, DNA-Methylierung sowie
+    gezielte Degradierung oder Translationshemmung spezifischer \glspl{mrna},
+    z.\,B.\ durch RNA-Interferenz.},
+    type=defi
+}
+
+\newglossaryentry{rnai}{
+    name={RNA-Interferenz (RNAi)},
+    description={Post-transkriptioneller Gen-Silencing-Mechanismus, bei dem
+    kurze doppelsträngige RNAs (\gls{sirna}, \gls{mirna}) nach Prozessierung durch
+    \gls{dicer} in den \gls{risc}-Komplex (\emph{RNA-induced silencing complex})
+    geladen werden. \gls{risc} erkennt komplementäre \glspl{mrna} und bewirkt deren
+    Degradierung (vollständige Komplementarität) oder Translationsrepression
+    (partielle Komplementarität).},
+    type=defi
+}
+
+\newglossaryentry{ptgs}{
+    name={post-transkriptionelles Gene Silencing (PTGS)},
+    description={Regulation der Genexpression auf \gls{mrna}-Ebene nach der
+    Transkription; umfasst zwei Hauptmechanismen: (1)~gezielte Degradierung
+    spezifischer \glspl{mrna} und (2)~gezielte Inhibierung ihrer Translation.
+    Wird u.\,a.\ durch RNA-Interferenz (\gls{sirna}, \gls{mirna}) vermittelt.
+    Bedeutend für endogene Genregulation sowie als Werkzeug der reversen
+    Genetik zur Analyse von Genfunktionen (Knockdown).},
+    type=defi
+}
+
+\newglossaryentry{euchromatin}{
+    name={Euchromatin},
     description={todo},
     type=defi
+}
+
+\newglossaryentry{heterochromatin}{
+    name={Heterochromatin},
+    description={stark kondensierte Chromosomenregion,
+    die Transkriptions-inaktiv ist und spät repliziert wird},
+    type=defi
+}
+
+
+
+\newglossaryentry{linkerdna}{
+    name={Linker-DNA},
+    description={DNA-Abschnitt (10--80\,bp) zwischen zwei aufeinanderfolgenden
+    Nukleosomen; frei zugänglich für Nukleasen (z.\,B.\ MNase) und
+    Transkriptionsfaktoren. Wird durch Histon H1 stabilisiert und
+    beim vollständigen MNase-Verdau als erstes abgebaut.},
+    type=defi
+}
+
+\newglossaryentry{corenukleosom}{
+    name={Core-Nukleosom},
+    description={Minimale Nukleosomeneinheit nach Verdau der Linker-DNA:
+    147\,bp DNA, die 1{,}65-mal linkshändig um den Core-Oktamer gewickelt
+    sind. Enthält kein Histon H1; entspricht dem nucleosome core particle
+    (NCP) in der Kristallstruktur.},
+    type=defi
+}
+
+\newglossaryentry{coreoktamer}{
+    name={Core-Oktamer},
+    description={Proteinkern des Nukleosoms aus acht Core-Histonen:
+    ein (H3$_2$--H4$_2$)-Tetramer als zentrale Grundstruktur, flankiert
+    von zwei H2A--H2B-Dimeren. Hoch symmetrisch aufgebaut mit
+    pseudo-dyadischer Symmetrieachse.},
+    type=defi
+}
+
+\newglossaryentry{zehnnmfaser}{
+    name={10-nm-Faser},
+    description={Erste Verdichtungsstufe des Chromatins; entspricht der
+    Perlenketten-Struktur (``beads-on-a-string''): Nukleosomen sind
+    durch Linker-DNA verbunden},
+    type=defi
+}
+
+\newglossaryentry{dreißignmfaser}{
+    name={30-nm-Faser},
+    description={Zweite Verdichtungsstufe durch Aufwindung der 10-nm-Faser
+    zu einer kompakteren Helix
+    Histon H1 ist für die Stabilisierung essentiell.},
+    type=defi
+}
+% ; Durchmesser ca.\ 30\,nm,
+% Kompaktierungsfaktor $\approx$\,40-fach gegenüber nackter DNA.
+
+\newglossaryentry{nukleosom}{
+name={Nukleosom},
+description={Grundlegende Verpackungseinheit des eukaryotischen Chromatins: ca. 147\,bp DNA sind 1{,}65-mal linkshändig um einen Histonoktamer (je zwei Kopien von H2A, H2B, H3 und H4) gewickelt},
+type=defi
+}
+
+\newglossaryentry{sigma_faktor}{
+name={Sigma-Faktor},
+description={Unterheit der bakteriellen RNA-Polymerase, die die spezifische Erkennung von Promotorsequenzen ermöglicht und die Initiation der Transkription steuert.},
+type=defi
+}
+
+\newglossaryentry{rbs}{
+name={RBS},
+first={Shine-Dalgarno-Sequenzen (RBS)},
+description={Purinreiche Sequenz in prokaryotischen \glspl{mrna} (Konsensus: 5'-AGGAGG-3'), die ca. 5--10\,nt upstream des Startcodons liegt und durch komplementäre Basenpaarung mit der 16S-rRNA die Ribosomenbindung vermittelt.},
+type=defi
+}
+
+\newglossaryentry{codonanticodon}{
+name={Codon-Anticodon Wechselwirkung},
+description={Antiparallele Basenpaarung zwischen dem \gls{mrna}-Codon (5'$\to$3') und dem tRNA-Anticodon (3'$\to$5') an der A-Stelle des Ribosoms; bestimmt die Aminosäure-Zuordnung gemäß dem genetischen Code.},
+type=defi
 }
 
 \newglossaryentry{wobble}{
-    name={Wobble-Position},
-    description={todo},
-    type=defi
-}
-
-\newglossaryentry{codon}{
-    name={Codon},
-    plural={Codons},
-    description={Basentriplett in der mRNA, das für eine bestimmte Aminosäure oder ein Stop-Signal während der Translation codiert.},
-    type=defi
+name={Wobble-Position},
+description={Dritte Codonposition (3'), an der nicht-Watson-Crick-Basenpaarungen toleriert werden. Ermöglicht einer tRNA die Erkennung mehrerer synonymer Codons (z.\,B. G\,:\,U-Paar).},
+type=defi
 }
 
 \newglossaryentry{anticodon}{
-    name={Anticodon},
-    description={todo},
-    type=defi
+name={Anticodon},
+description={Drei Nucleotide an Position 34--36 der tRNA-Sequenz, die durch komplementäre Basenpaarung mit dem \gls{mrna}-Codon die korrekte Aminosäure in die Peptidkette einführen.},
+type=defi
 }
 
 \newglossaryentry{aminoacyl_trna_synthasen}{
-    name={Aminoacyl-tRNA-Synthetasen},
-    description={todo},
-    type=defi
-}
-
-\newglossaryentry{aminoacyl_trna}{
-    name={Aminoacyl-tRNA},
-    plural={Aminoacyl-tRNAs},
-    description={Mit einer spezifischen Aminosäure beladene tRNA, die durch Aminoacyl-tRNA-Synthetasen erzeugt wird und die Aminosäure während der Translation zum Ribosom transportiert.},
-    type=defi
+name={Aminoacyl-tRNA-Synthetasen},
+description={Enzyme, die unter ATP-Verbrauch eine Aminosäure kovalent an das 3'-CCA-Ende der zugehörigen tRNA knüpfen (Aminoacylierung). Gewährleisten die korrekte Codon-Aminosäure-Zuordnung (zweiter genetischer Code).},
+type=defi
 }
 
 \newglossaryentry{pseudouridine}{
-    name={Pseudouridine},
-    description={todo},
-    type=defi
+name={Pseudouridin},
+description={Häufigste RNA-Modifikation ($\Psi$); C-glykosidische Umlagerung von Uridin, bei der C5 statt N1 die glykosidische Bindung trägt. Stabilisiert Sekundärstrukturen durch verbesserte Basenstapelung.},
+type=defi
 }
 
 \newglossaryentry{dihydrouridine}{
-    name={Dihydrouridine},
-    description={todo},
-    type=defi
+name={Dihydrouridin},
+description={Modifiziertes Uridin mit gesättigter C5--C6-Doppelbindung, vorwiegend in der D-Schleife der tRNA. Erhöht die Flexibilität der tRNA durch Destabilisierung der Stapelwechselwirkungen.},
+type=defi
 }
 
-
 \newglossaryentry{kleeblatt}{
-    name={Kleeblatt-Struktur},
-    description={todo},
-    type=defi
+name={Kleeblatt-Struktur},
+description={Zweidimensionale Sekundärstruktur der tRNA mit vier Doppelstrang-Helices (Akzeptor-, D-, Anticodon- und T$\Psi$C-Arm) und drei Schleifen; Grundlage der L-förmigen 3D-Tertiärstruktur.},
+type=defi
 }
 
 \newglossaryentry{heterosom}{
-    name={Heterosom},
-    description={todo},
-    type=defi
+name={Heterosom},
+description={Geschlechtschromosom (Allosom), das sich strukturell oder im Replikationsverhalten vom Autosomensatz unterscheidet},
+type=defi
 }
 
 \newglossaryentry{autosom}{
-    name={Autosom},
-    description={todo},
-    type=defi
+name={Autosom},
+description={Nicht-geschlechtsbestimmendes Chromosom; beim Menschen 22 homologe Paare, die in beiden Geschlechtern identisch vorliegen.},
+type=defi
 }
 
 \newglossaryentry{cm}{
-    name={Centimorgan},
-    description={todo},
-    type=defi
+name={Centimorgan},
+description={Genetische Karteneinheit; entspricht 1\,\% Rekombinationsfrequenz zwischen zwei Loci. Näherungsweise: 1\,
+cM $\approx$ 1\,Mb beim Menschen.},
+type=defi
 }
-\newglossaryentry{Allel}{
-    name={Allel},
-    description={ variant form of a gene},
-    type=defi
-}
-
-\newglossaryentry{gen}{
-    name={gen},
-    description={ unit of hereditary information},
-    type=defi
-}
-
 
 \newglossaryentry{zweichrchr}{
-    name={Zwei-Chromatid Chromosom},
-    description={todo},
-    type=defi
+name={Zwei-Chromatid-Chromosom},
+description={Repliziertes Chromosom, das aus zwei genetisch identischen Schwesterchromatiden besteht, die am Centromer durch Cohesin zusammengehalten werden; entsteht nach der S-Phase.},
+type=defi
 }
 
 \newglossaryentry{mutagenese}{
-    name={Mutagenese},
-    description={todo},
-    type=defi
+name={Mutagenese},
+description={Entstehung oder gezielte Herbeiführung von Mutationen im Erbgut durch endogene (Replikationsfehler) oder exogene Einwirkung (Mutagene).},
+type=defi
 }
 
 \newglossaryentry{phmutagenese}{
-    name={physikalische Mutagenese},
-    description={todo},
-    type=defi
+name={physikalische Mutagenese},
+description={Mutationsauslösung durch energiereiche Strahlung: ionisierende Strahlung (Röntgen, $\gamma$) verursacht Strangbrüche und Basenmodifikationen; UV-Licht induziert Pyrimidin-Dimere.},
+type=defi
 }
 
 \newglossaryentry{chmutagenese}{
-    name={chemische Mutagenese},
-    description={todo},
-    type=defi
+name={chemische Mutagenese},
+description={Mutationsauslösung durch chemische Agenzien},
+type=defi
 }
+
+\newglossaryentry{codon}{
+name={Codon},
+plural={Codons},
+description={Basentriplett in der \gls{mrna}, das für eine bestimmte Aminosäure oder ein Stop-Signal während der Translation codiert.},
+type=defi
+}
+
+
+\newglossaryentry{aminoacyl_trna}{
+name={Aminoacyl-tRNA},
+plural={Aminoacyl-\glspl{trna}},
+description={Mit einer spezifischen Aminosäure beladene tRNA, die durch Aminoacyl-tRNA-Synthetasen erzeugt wird und die Aminosäure während der Translation zum Ribosom transportiert.},
+type=defi
+}
+
+\newglossaryentry{Allel}{
+name={Allel},
+description={variant form of a gene},
+type=defi
+}
+
+\newglossaryentry{gen}{
+name={gen},
+description={unit of hereditary information},
+type=defi
+}
+
+
 \newglossaryentry{synapsis}{
-    name={Synapsis},
-    description={Paarung homologer Chromosomen},
-    type=defi
+name={Synapsis},
+description={Paarung homologer Chromosomen},
+type=defi
 }
 
 
 \newglossaryentry{chiasma}{
-    name={Chiasma},
-    description={Die cytologisch
-    sichtbare Folge von Crossover-
-    Ereignissen.},
-    type=defi
+name={Chiasma},
+description={Die cytologisch
+sichtbare Folge von Crossover-
+Ereignissen.},
+type=defi
 }
 
 \newglossaryentry{crossover}{
-    name={Crossover},
-    description={Das Ereignis, welches
-    zum Austausch genetischen
-    Materials zwischen Chromosomen
-    führt (und dessen Resultat man
-    genetisch verfolgen kann)},
-    type=defi
+name={Crossover},
+description={Das Ereignis, welches
+zum Austausch genetischen
+Materials zwischen Chromosomen
+führt (und dessen Resultat man
+genetisch verfolgen kann)},
+type=defi
 }
 
 \newglossaryentry{rna}{
-    name={RNA},
-    description={Ribonukleinsäure; ein meist einzelsträngiges Nukleinsäuremolekül, das aus Ribonukleotiden besteht und zentrale Funktionen in der Genexpression, Katalyse und Regulation übernimmt.},
-    type=defi
+name={RNA},
+description={Ribonukleinsäure; ein meist einzelsträngiges Nukleinsäuremolekül, das aus Ribonukleotiden besteht und zentrale Funktionen in der Genexpression, Katalyse und Regulation übernimmt.},
+type=defi
 }
 
 \newglossaryentry{spleißosom}{
-    name={Spleißosom},
-    plural={Spleißosomen},
-    description={Großer Ribonukleoprotein-Komplex aus snRNAs und Proteinen, der das Spleißen der prä-mRNA katalysiert, indem Introns entfernt und Exons miteinander verknüpft werden.},
-    type=defi
+name={Spleißosom},
+plural={Spleißosomen},
+description={Großer Ribonukleoprotein-Komplex aus \glspl{snrna} und Proteinen, der das Spleißen der \gls{prämrna} katalysiert, indem Introns entfernt und Exons miteinander verknüpft werden.},
+type=defi
 }
 
 \newglossaryentry{nukleolus}{
-    name={Nukleolus},
-    plural={Nukleoli},
-    description={Struktur im Zellkern, in der die rRNA-Synthese und der Zusammenbau der ribosomalen Untereinheiten stattfindet; bildet sich an den Nukleolus-Organisator-Regionen (NORs).},
-    type=defi
+name={Nukleolus},
+plural={Nukleoli},
+description={Struktur im Zellkern, in der die rRNA-Synthese und der Zusammenbau der ribosomalen Untereinheiten stattfindet; bildet sich an den Nukleolus-Organisator-Regionen (NORs).},
+type=defi
 }
 
 \newglossaryentry{regulatorische_rna}{
-    name={regulatorische RNA},
-    plural={regulatorische RNAs},
-    description={Sammelbegriff für nicht-kodierende RNAs, die die Genexpression auf Transkriptions-, posttranskriptioneller oder translationaler Ebene regulieren, z. B. miRNA, siRNA oder lncRNA.},
-    type=defi
+name={regulatorische RNA},
+plural={regulatorische RNAs},
+description={Sammelbegriff für nicht-kodierende RNAs, die die Genexpression auf Transkriptions-,
+posttranskriptioneller oder translationaler Ebene regulieren, z. B. \gls{mirna}, \gls{sirna} oder \gls{lncrna}.},
+type=defi
 }
 
 \newglossaryentry{polya}{
-    name={Poly-A-Schwanz},
-    description={Posttranskriptionelle Modifikation am 3'-Ende eukaryotischer mRNA, bestehend aus einer Kette von Adenin-Nukleotiden, die Stabilität, Export aus dem Zellkern und Translationseffizienz erhöht.},
-    type=defi
+name={Poly-A-Schwanz},
+description={Posttranskriptionelle Modifikation am 3'-Ende eukaryotischer \gls{mrna}, bestehend aus einer Kette von Adenin-Nukleotiden, die Stabilität, Export aus dem Zellkern und Translationseffizienz erhöht.},
+type=defi
 }
 
 \newglossaryentry{snrna}{
-    name={snRNA},
-    description={Small nuclear RNA; Bestandteil des Spleißosoms und an der Prozessierung von prä-mRNA durch Spleißen beteiligt.},
-    type=defi
+name={snRNA},
+description={Small nuclear RNA; Bestandteil des Spleißosoms und an der Prozessierung von \gls{prämrna} durch Spleißen beteiligt.},
+type=defi
 }
 
 \newglossaryentry{sncrna}{
-    name={sncRNA},
-    description={Small non-coding RNA; Sammelbegriff für kurze nicht-kodierende RNAs, die regulatorische Funktionen in der Genexpression übernehmen.},
-    type=defi
+name={sncRNA},
+description={Small non-coding RNA; Sammelbegriff für kurze nicht-kodierende RNAs, die regulatorische Funktionen in der Genexpression übernehmen.},
+type=defi
 }
 
 \newglossaryentry{sirna}{
-    name={siRNA},
-    description={Small interfering RNA; kurze regulatorische RNA (ca. 21–24 Nukleotide), die durch RNA-Interferenz spezifische mRNAs abbaut oder deren Translation hemmt.},
-    type=defi
+name={siRNA},
+description={Small interfering RNA; kurze regulatorische RNA (ca. 21–24 Nukleotide), die durch RNA-Interferenz spezifische \glspl{mrna} abbaut oder deren Translation hemmt.},
+type=defi
 }
 
 \newglossaryentry{rnapol}{
-    name={RNA-Polymerase},
-    description={Enzym, das RNA anhand einer DNA- (oder RNA-) Matrize synthetisiert. In Eukaryoten existieren mehrere Typen (Pol I–III), die unterschiedliche RNA-Klassen transkribieren.},
-    type=defi
+name={RNA-Polymerase},
+description={Enzym, das RNA anhand einer DNA- (oder RNA-) Matrize synthetisiert. In Eukaryoten existieren mehrere Typen (Pol I–III), die unterschiedliche RNA-Klassen transkribieren.},
+type=defi
 }
 
 \newglossaryentry{rnapoliv}{
-    name={RNA-Polymerase IV},
-    description={Pflanzenspezifische RNA-Polymerase, die an der Bildung von siRNAs und der RNA-gerichteten DNA-Methylierung beteiligt ist.},
-    type=defi
+name={RNA-Polymerase IV},
+description={Pflanzenspezifische RNA-Polymerase, die an der Bildung von siRNAs und der RNA-gerichteten DNA-Methylierung beteiligt ist.},
+type=defi
 }
 
 \newglossaryentry{replikation}{
-    name={Replikation},
-    description={Prozess der Verdopplung der DNA vor der Zellteilung, bei dem eine identische Kopie des Genoms durch DNA-abhängige DNA-Polymerasen synthetisiert wird.},
-    type=defi
+name={Replikation},
+description={Prozess der Verdopplung der DNA vor der Zellteilung, bei dem eine identische Kopie des Genoms durch DNA-abhängige DNA-Polymerasen synthetisiert wird.},
+type=defi
 }
 
 \newglossaryentry{rev-transkription}{
-    name={reverse Transkription},
-    description={Synthese von DNA aus einer RNA-Matrize durch das Enzym Reverse Transkriptase, typisch für Retroviren und bestimmte mobile genetische Elemente.},
-    type=defi
+name={reverse Transkription},
+description={Synthese von DNA aus einer RNA-Matrize durch das Enzym Reverse Transkriptase, typisch für Retroviren und bestimmte mobile genetische Elemente.},
+type=defi
 }
 
 \newglossaryentry{mtdna}{
-    name={mtDNA},
-    description={Mitochondriale DNA; ringförmiges Genom der Mitochondrien, das für einen Teil der mitochondrialen Proteine sowie rRNAs und tRNAs kodiert.},
-    type=defi
+name={mtDNA},
+description={Mitochondriale DNA; ringförmiges Genom der Mitochondrien, das für einen Teil der mitochondrialen Proteine sowie rRNAs und \glspl{trna} kodiert.},
+type=defi
 }
 
 \newglossaryentry{ndna}{
-    name={nDNA},
-    description={Nukleäre DNA; die im Zellkern lokalisierte Hauptform des eukaryotischen Genoms.},
-    type=defi
+name={nDNA},
+description={Nukleäre DNA; die im Zellkern lokalisierte Hauptform des eukaryotischen Genoms.},
+type=defi
 }
 
 \newglossaryentry{cpdna}{
-    name={cpDNA},
-    description={Chloroplasten-DNA; ringförmiges Genom der Chloroplasten, das für Gene der Photosynthese sowie eigene rRNAs und tRNAs kodiert.},
-    type=defi
+name={cpDNA},
+description={Chloroplasten-DNA; ringförmiges Genom der Chloroplasten, das für Gene der Photosynthese sowie eigene rRNAs und \glspl{trna} kodiert.},
+type=defi
 }
 
 \newglossaryentry{mirna}{
-    name={miRNA},
-    description={MicroRNA; kurze regulatorische RNA (ca. 20–22 Nukleotide), die durch Basenpaarung mit Ziel-mRNAs deren Translation hemmt oder deren Abbau fördert.},
-    type=defi
+name={miRNA (microRNA)},
+description={MicroRNA; kurze regulatorische RNA (ca. 20–22 Nukleotide), die durch Basenpaarung mit Ziel-\glspl{mrna} deren Translation hemmt oder deren Abbau fördert.},
+type=defi
 }
 
 \newglossaryentry{ncrna}{
-    name={ncRNA},
-    description={Non-coding RNA; Sammelbegriff für alle RNAs, die nicht in Proteine übersetzt werden, aber strukturelle, katalytische oder regulatorische Funktionen besitzen.},
-    type=defi
+name={ncRNA},
+description={Non-coding RNA; Sammelbegriff für alle RNAs, die nicht in Proteine übersetzt werden, aber strukturelle, katalytische oder regulatorische Funktionen besitzen.},
+type=defi
 }
 
 \newglossaryentry{rrna}{
-    name={rRNA},
-    description={Ribosomale RNA; struktureller und katalytischer Bestandteil der Ribosomen, der maßgeblich an der Peptidbindung während der Translation beteiligt ist.},
-    type=defi
+name={rRNA},
+description={Ribosomale RNA; struktureller und katalytischer Bestandteil der Ribosomen, der maßgeblich an der Peptidbindung während der Translation beteiligt ist.},
+type=defi
 }
 
 \newglossaryentry{mrna}{
-    name={mRNA},
-    description={Messenger-RNA; RNA, die die genetische Information von der DNA zu den Ribosomen überträgt und als Vorlage für die Proteinsynthese dient.},
-    type=defi
+name={mRNA},
+description={Messenger-RNA; RNA, die die genetische Information von der DNA zu den Ribosomen überträgt und als Vorlage für die Proteinsynthese dient.},
+type=defi
 }
 
 \newglossaryentry{spleißen}{
-    name={Spleißen},
-    description={Entfernen der Introns},
-    type=defi
+name={Spleißen},
+description={Entfernen der Introns},
+type=defi
 }
 
 \newglossaryentry{exon}{
-    name={Exon},
-    description={Für RNA und Protein kodierender Ab-
-    schnitt eines gespaltenen Gens. Bleibt beim
-    Verspleißen erhalten},
-    type=defi
+name={Exon},
+description={Für RNA und Protein kodierender Ab-
+schnitt eines gespaltenen Gens. Bleibt beim
+Verspleißen erhalten},
+type=defi
 }
 
 
 \newglossaryentry{intron}{
-    name={Intron},
-    description={Abschnitt eines gespaltenen
-    Gens, der beider Reifung der RNA  (Verspleißen)
-    herausgeschnitten und demzufolge nicht in Protein übersetzt wird},
-    type=defi
+name={Intron},
+description={Abschnitt eines gespaltenen
+Gens, der beider Reifung der RNA  (Verspleißen)
+herausgeschnitten und demzufolge nicht in Protein übersetzt wird},
+type=defi
 }
 
 \newglossaryentry{transposition}{
-    name={Transposition},
-    description={Einbau eines
-    DNA-Segments an einen anderen Ort im Genom.},
-    type=defi
+name={Transposition},
+description={Einbau eines
+DNA-Segments an einen anderen Ort im Genom.},
+type=defi
 }
 
 
 
 \newglossaryentry{transposon}{
-    name={Transposon},
-    description={Mobiles genetisches Ele-
-    ment mit der Fähigkeit zur \gls{transposition}},
-    type=defi
+name={Transposon},
+description={Mobiles genetisches Ele-
+ment mit der Fähigkeit zur \gls{transposition}},
+type=defi
 }
 
 
 
 \newglossaryentry{hnrna}{
-    name={hnRNA},
-    first={heterogene nukleäre RNA (hnRNA)},
-    description={RNA-Klasse heterogener Größe, die im Kern lokalisiert ist und zu der vor allem die Vorläufer der mRNAs gehören, die im Kern in unreifer Form als Primärtranskripte vorliegen},
-    type=defi
+name={hnRNA},
+first={heterogene nukleäre RNA (hnRNA)},
+description={RNA-Klasse heterogener Größe, die im Kern lokalisiert ist und zu der vor allem die Vorläufer der \glspl{mrna} gehören, die im Kern in unreifer Form als Primärtranskripte vorliegen},
+type=defi
 }
 
 \newglossaryentry{primaertranskript}{
-    name={Primärtranskript},
-    plural={Primärtranskripte},
-    description={Das unmittelbare Produkt der Transkription eines Gens. Bei eukaryotischen proteincodierenden Genen entspricht es der prä-mRNA (hnRNA) und wird durch Prozessierungsschritte wie 5'-Capping, Spleißen und Polyadenylierung zur reifen mRNA verarbeitet.},
-    type=defi
+name={Primärtranskript},
+plural={Primärtranskripte},
+description={Das unmittelbare Produkt der Transkription eines Gens. Bei eukaryotischen proteincodierenden Genen entspricht es der \gls{prämrna} (hnRNA) und wird durch Prozessierungsschritte wie 5'-Capping, Spleißen und Polyadenylierung zur reifen \gls{mrna} verarbeitet.},
+type=defi
 }
 
 
 \newglossaryentry{rnapolv}{
-    name={RNA-Polymerase V},
-    description={ranskribiert ``intergenic long ncRNA''},
-    type=defi
+name={RNA-Polymerase V},
+description={ranskribiert ``intergenic long ncRNA''},
+type=defi
 }
 
 \newglossaryentry{protein_kinase}{
-    name={Protein-Kinase},
-    plural={Protein-Kinasen},
-    description={Enzym, das Proteine durch Übertragung einer Phosphatgruppe (meist von ATP auf Serin-, Threonin- oder Tyrosinreste) phosphoryliert und dadurch deren Aktivität, Interaktionen oder Lokalisation reguliert.},
-    type=defi
+name={Protein-Kinase},
+plural={Protein-Kinasen},
+description={Enzym, das Proteine durch Übertragung einer Phosphatgruppe (meist von ATP auf Serin-, Threonin- oder Tyrosinreste) phosphoryliert und dadurch deren Aktivität, Interaktionen oder Lokalisation reguliert.},
+type=defi
 }
 
 \newglossaryentry{helikase}{
-    name={Helikase},
-    plural={Helikasen},
-    description={Enzym, das Nukleinsäure-Doppelstränge (DNA oder RNA) unter ATP-Verbrauch entwinden und trennen kann, z. B. während Replikation oder Transkription.},
-    type=defi
+name={Helikase},
+plural={Helikasen},
+description={Enzym, das Nukleinsäure-Doppelstränge (DNA oder RNA) unter ATP-Verbrauch entwinden und trennen kann, z. B. während Replikation oder Transkription.},
+type=defi
 }
 
 \newglossaryentry{rnapolii}{
-    name={RNA-Polymerase II},
-    description={Im Nukleoplasma lokalisierte \gls{rnapol}, die die Synthese der 5S‑rRNAs, tRNAs, snRNAs und weiterer kleiner RNAs katalysiert},
-    type=defi
+name={RNA-Polymerase II},
+description={Im Nukleoplasma lokalisierte \gls{rnapol}, die die Synthese der 5S‑rRNAs, \glspl{trna}, \glspl{snrna} und weiterer kleiner RNAs katalysiert},
+type=defi
 }
 \newglossaryentry{rnapoliii}{
-    name={RNA-Polymerase III},
-    description={Im Nukleoplasma lokalisierte \gls{rnapol}, die für die Synthese der mRNAs bzw. ihrer Vorläufer, die hnRNAs, sowie microRNAs zuständig ist},
-    type=defi
+name={RNA-Polymerase III},
+description={Im Nukleoplasma lokalisierte \gls{rnapol}, die für die Synthese der \glspl{mrna} bzw. ihrer Vorläufer, die \glspl{hnrna}, sowie \glspl{mirna} zuständig ist},
+type=defi
 }
 
 
 \newglossaryentry{rnapoli}{
-    name={RNA-Polymerase I},
-    description={Im Nukleolus lokalisierte \gls{rnapol}, die für die Synthese der rRNAs (außer der 5S‑rRNA) verantwortlich ist},
-    type=defi
+name={RNA-Polymerase I},
+description={Im Nukleolus lokalisierte \gls{rnapol}, die für die Synthese der rRNAs (außer der 5S‑rRNA) verantwortlich ist},
+type=defi
 }
 
 
 
 \newglossaryentry{transkription}{
-    name={Transkription},
-    description={Die Synthese von RNA anhand einer DNA-Matrize},
-    type=defi
+name={Transkription},
+description={Die Synthese von RNA anhand einer DNA-Matrize},
+type=defi
 }
 
 
 
 \newglossaryentry{translation}{
-    name={Translation},
-    description={Proteinsynthese
-    an einer RNA-Matrize mittels Ribosomen},
-    type=defi
+name={Translation},
+description={Proteinsynthese
+an einer RNA-Matrize mittels Ribosomen},
+type=defi
 }
 
 \newglossaryentry{Syntenie}{
-    name={Syntenie},
-    description={Physikalische Ko-Lokalisierung von genetischen Loci (Reihenfolge
-    von Loci) auf äquivalenten Chromosomen verschiedener Spezies},
-    type=defi
+name={Syntenie},
+description={Physikalische Ko-Lokalisierung von genetischen Loci (Reihenfolge
+von Loci) auf äquivalenten Chromosomen verschiedener Spezies},
+type=defi
 }
 
 
 \newglossaryentry{trna}{
-    name={tRNA},
-    first={transfer RNA (tRNA)},
-    description={NA-Moleküle, die wäh-
-    rend der Translation spezifische Aminosäuren zu den
-    Ribosomen transportieren},
-    type=defi
+name={tRNA},
+first={transfer RNA (tRNA)},
+description={NA-Moleküle, die wäh-
+rend der Translation spezifische Aminosäuren zu den
+Ribosomen transportieren},
+type=defi
 }
 
 
 
 \newglossaryentry{ortholog}{
-    name={Orthologie},
+name={Orthologie},
 first={orthologe Gene},
-    description={Gene in unterschiedlichen Arten, die von einer gemeinsamen
-    Sequenz abstammen. Sie können die gleiche Funktion haben, müssen es aber nicht.},
-    type=defi
+description={Gene in unterschiedlichen Arten, die von einer gemeinsamen
+Sequenz abstammen. Sie können die gleiche Funktion haben, müssen es aber nicht.},
+type=defi
 }
 
 \newglossaryentry{paralog}{
-    name={Paralogie},
-    first={paraloge Gene},
-    description={homologe Gene in einer Art, die durch Duplikation
-    entstanden sind},
-    type=defi
+name={Paralogie},
+first={paraloge Gene},
+description={homologe Gene in einer Art, die durch Duplikation
+entstanden sind},
+type=defi
 }
 
 \newglossaryentry{homolog}{
-    name={Homologie},
-    description={Ähnlichkeit biologischer Strukturen oder Sequenzen aufgrund gemeinsamer evolutionärer Abstammung},
-    type=defi
+name={Homologie},
+description={Ähnlichkeit biologischer Strukturen oder Sequenzen aufgrund gemeinsamer evolutionärer Abstammung},
+type=defi
 }
 
 \newglossaryentry{orf}{
-    name={Open Reading Frame (ORF)},
-    plural={Open Reading Frames (ORFs)},
-    description={Leserahmen einer mRNA, der zwischen Startcodon (AUG) und Stopcodon liegt und die Information für die Proteinsequenz enthält.},
-    type=defi
+name={Open Reading Frame (ORF)},
+plural={Open Reading Frames (ORFs)},
+description={Leserahmen einer \gls{mrna}, der zwischen Startcodon (AUG) und Stopcodon liegt und die Information für die Proteinsequenz enthält.},
+type=defi
 }
 
 \newglossaryentry{Interaktom}{
-    name={Interaktom},
-    description={Gesamtheit aller Protein-Protein-Interaktionen},
-    type=defi
+name={Interaktom},
+description={Gesamtheit aller Protein-Protein-Interaktionen},
+type=defi
 }
 
 \newglossaryentry{Proteom}{
-    name={Proteom},
-    description={Gesamtheit aller Proteine in einer Zelle, Gewebe, Organismus unter geg. Bedingungen (abh. von mRNA und Proteinmenge, -stabilität, -modifikationen)},
-    type=defi
+name={Proteom},
+description={Gesamtheit aller Proteine in einer Zelle, Gewebe, Organismus unter geg. Bedingungen (abh. von \gls{mrna} und Proteinmenge, -stabilität, -modifikationen)},
+type=defi
 }
 
 \newglossaryentry{Transkriptom}{
-    name={Transkriptom},
-    description={Gesamtheit aller (auf RNA-Ebene) exprimierten Gene Gesamtheit aller (auf RNA-Ebene) exprimierten
+name={Transkriptom},
+description={Gesamtheit aller (auf RNA-Ebene) exprimierten Gene Gesamtheit aller (auf RNA-Ebene) exprimierten
 Gene (inkl. \glspl{mrna}, \glspl{trna}, \glspl{rrna}, \glspl{ncrna}, \glspl{mirna}, ...)},
-    type=defi
+type=defi
 }
 
 
 \newglossaryentry{Genom}{
-    name={Genom},
-    description={ Alle Erbinformationen (DNA-Sequenzen, Gene), inkl. der aus bspw. den Mitochondrien.},
-    type=defi
+name={Genom},
+description={Alle Erbinformationen (DNA-Sequenzen, Gene), inkl. der aus bspw. den Mitochondrien.},
+type=defi
 }
 
 \newglossaryentry{Nukleom}{
-    name={nucleares Genom},
-    description={Die Erbinformationen aus dem Zellkern.},
-    type=defi
+name={nucleares Genom},
+description={Die Erbinformationen aus dem Zellkern.},
+type=defi
 }
 
 \newglossaryentry{Plastom}{
-    name={Plastom},
-    description={Die Erbinformationen aus den Chlorpolasten; das Chlorpolasten-Genom},
-    type=defi
+name={Plastom},
+description={Die Erbinformationen aus den Chlorpolasten; das Chlorpolasten-Genom},
+type=defi
 }
 
 \newglossaryentry{Chondrom}{
-    name={Chondrom},
-    description={Die Erbinformationen aus den Mitochondrien; das Mitochondrien-Genom},
-    type=defi
+name={Chondrom},
+description={Die Erbinformationen aus den Mitochondrien; das Mitochondrien-Genom},
+type=defi
 }
