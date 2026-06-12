@@ -33,7 +33,7 @@ Membrangebundene Ribosomen (am rauen ER) produzieren:
     \item Plasmamembranproteine
     \item sekretierte Proteine
 \end{itemize}
-Bei diesen beginnt die Translation am freien Ribosom, aber ein Signalpeptid am N-Terminus dirigiert das Ribosom
+Bei diesen beginnt die Translation am freien Ribosom, aber ein Signalpeptid am \gls{nterminus} dirigiert das Ribosom
 ko-translational ans ER.
 Die Proteinsynthese läuft dann direkt in das ER-Lumen oder die ER-Membran hinein.
 
@@ -67,7 +67,7 @@ an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
 % TODO TABLE F 39
 
 \subsubsection{Import in Mitochondrien}
-Proteine, die für die mitochondriale Matrix bestimmt sind, weisen an ihrem Anfang (N-Terminus) spezifische
+Proteine, die für die mitochondriale Matrix bestimmt sind, weisen an ihrem Anfang (\gls{nterminus}) spezifische
 Signalsequenzen (Importsequenzen) auf, die aus einer Kette von 20 bis 50 Aminosäuren bestehen.
 Diese Sequenzen sind so konzipiert, dass sie mit Rezeptoren interagieren, die die Proteine an ihren richtigen Ort innerhalb der Mitochondrien leiten.
 
@@ -107,7 +107,7 @@ Sie ermöglichen den Import von Kern-genkodierten Proteinen durch die beiden Hü
 Da Chloroplasten von einer äußeren und einer inneren Membran umgeben sind, müssen viele Proteine beide Membranen passieren, um ihr Ziel zu erreichen.
 
 \subsubsection{Import ins ER}
-% TODO F 42 - 51
+% TODO F 40 - 51
 
 \subsubsection*{N-Glykosylierung im ER und Golgi}
 % TODO F 55 - 57 
@@ -117,13 +117,14 @@ Da Chloroplasten von einer äußeren und einer inneren Membran umgeben sind, mü
 
 \subsection{Kerntransport}\label{subsec:kerntransport}
 %  F 20 - 31, F 35 - 37, F 40
-% TODO F 23 - 31, F 35 - 37, F 40
+% TODO F 23 - 31, F 39
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
         \includegraphics[width=\linewidth]{images/kerntransport1}
-        \caption{\gls{snrna}/snRNP-Transport: \glspl{snrna} werden zunächst exportiert, dort zu einem \gls{snrnp} umgewandelt und diese in die Zelle re-importiert.}
+        \caption{\gls{snrna}/\gls{snrnp}-Transport: \glspl{snrna} werden zunächst exportiert, dort zu einem
+        \gls{snrnp} umgewandelt und diese in die Zelle re-importiert.}
     \end{subfigure}
     \begin{subfigure}[t]{0.45\textwidth}
         \includegraphics[width=\linewidth]{images/kerntransport2}
@@ -161,10 +162,50 @@ Proteine mit einem \gls{nes} werden von Exportin 1 (CRM1) erkannt.
 Die Kernhülle trennt Translation und Transkription und der Austausch von Makromolekülen (\glspl{mrna}, \glspl{trna},
 Proteine, ...) zwischen Cytosol und Zellkern geschieht ausschließlich über die \glspl{npc}.
 
+\begin{bsp}
+    \textbf{Beispiel Exportin1}
+    % TODO F 36-37
+\end{bsp}
+
 \subsubsection*{Aufbau der Kernporenkomplexe}
 
+\subsubsection*{Einbau des NPC in den NE}
+
+\subsubsection*{Kerntransport-Rezeptoren}
+
+\subsubsection*{Postleitzahlen}
+% TODO F 35
+
+\subsubsection*{Nukleo-cytoplasmatische Partitionierung}
+% TODO F 40
+
 \subsubsection{G-Proteine}
-% TODO F 32 - 34
+\defin{gproteine}
+\gls{gproteine} binden Guanosin-Nukleotide und existieren in zwei stabilen, unterschiedlichen Konformationen:
+GDP-gebunden (``inaktiv'') und GTP-gebunden (``aktiv'').
+Die endogene GTPase-Aktivität ist meist sehr gering. \gls{gproteine} sind regulatorische Proteine für den
+GTPase-Zyklus.
+\defin{gef}
+\defin{gap}
+\defin{ran}
+\gls{ran} ist ein lösliches Protein
+(die meisten \gls{gproteine} sind membranassoziiert,
+weil sie mit Fettsäuren oder Isoprenoiden modifiziert sind,
+``Membrananker'').
+Es ist im Zellkern, aber auch im Cytoplasma lokalisiert und essentiell für die Direktionalität der Kerntransport-Prozesse
+(Importin beta-ähnliche Rezeptoren)
+
+Es herrscht eine asymmetrische Verteilung
+der regulatorischen Proteine
+RanGAP und RanGEF. Dies erzeugt den Ran-GTP Gradient (viel im Kern, wenig im Cytoplasma).
+Dieser Gradient ist ein molekularer Schalter, der die Direktionalität
+der Kerntransportvorgänge kontrolliert.
+% F 32 - 34
+
+\subsubsection*{Modell für gerichteten Zellkerntransport}
+% TODO F 38
+
+
 
 
 
