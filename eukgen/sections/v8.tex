@@ -6,28 +6,100 @@
 \section*{Chromatin als Werkzeug
 der Genomsequenzierung - Chicago libraries}
 \begin{figure}[H]
+    \centering
     \includegraphics[width=0.7\textwidth]{images/chicago}
     \caption{Schematische Darstellung eines Protokolls zur Erzeugung von Chicago-Bibliotheken. A) Chromatin (
-    Nukleosomen in Blau) wird in vitro auf nackter DNA (schwarzer Strang) rekonstituiert. B) Das Chromatin wird mit Formaldehyd fixiert (dünne rote Linien stellen Vernetzungen dar). C) Das fixierte Chromatin wird mit einem Restriktionsenzym geschnitten, wodurch freie klebrige Enden entstehen (durchgeführt auf Streptavidin-beschichteten Beads, nicht abgebildet). D) Die klebrigen Enden werden mit biotinylierten (blaue Kreise) und thiolierten (grüne Quadrate) Nukleotiden aufgefüllt. E) Freie stumpfe Enden werden ligiert (Ligationen durch rote Sternchen gekennzeichnet). F) Die Vernetzungen werden rückgängig gemacht und Proteine entfernt, um Bibliotheksfragmente zu erhalten. \cite{chicago}}\label{fig:figure8}
+        Nukleosomen in Blau) wird in vitro auf nackter DNA (schwarzer Strang) rekonstituiert. B) Das Chromatin wird mit Formaldehyd fixiert (dünne rote Linien stellen Vernetzungen dar). C) Das fixierte Chromatin wird mit einem Restriktionsenzym geschnitten, wodurch freie klebrige Enden entstehen (durchgeführt auf Streptavidin-beschichteten Beads, nicht abgebildet). D) Die klebrigen Enden werden mit biotinylierten (blaue Kreise) und thiolierten (grüne Quadrate) Nukleotiden aufgefüllt. E) Freie stumpfe Enden werden ligiert (Ligationen durch rote Sternchen gekennzeichnet). F) Die Vernetzungen werden rückgängig gemacht und Proteine entfernt, um Bibliotheksfragmente zu erhalten. \cite{chicago}}\label{fig:figure8}
 \end{figure}
 % F 9 - 10
+
+
 \section{Proteinlokalisation}\label{sec:proteinlokalisation}
+
 \subsection*{Überblick}
-% TODO F 11 - 12, F 19, F 52 - 54
+% F 11 - 12, F 19, F 52 - 54
+% TODO F 52 - 54
+Je nachdem, wo ein Protein am Ende gebraucht wird, wird es an unterschiedlichen Ribosomen translatiert.
+
+Freie Ribosomen (im Cytosol) produzieren:
+\begin{itemize}
+    \item cytosolische Proteine, die im Cytosol verbleiben
+    \item Proteine, die post-translational in Organellen importiert werden (Mitochondrien, Plastiden, Peroxisomen, Zellkern) — sie werden vollständig translatiert und dann durch spezifische Signalsequenzen zu ihrem Zielort dirigiert
+\end{itemize}
+
+Membrangebundene Ribosomen (am rauen ER) produzieren:
+\begin{itemize}
+    \item Proteine des Endomembransystems (ER, Golgi, Endosomen, Lysosomen)
+    \item Plasmamembranproteine
+    \item sekretierte Proteine
+\end{itemize}
+Bei diesen beginnt die Translation am freien Ribosom, aber ein Signalpeptid am N-Terminus dirigiert das Ribosom
+ko-translational ans ER.
+Die Proteinsynthese läuft dann direkt in das ER-Lumen oder die ER-Membran hinein.
+
+Translokation von Proteinen über
+Membranen (physikalische Barriere) findet statt über:
+\begin{itemize}
+    \item Translocons (ER, Mitochondrien,
+    Plastiden)
+    \item Carrier (Peroxisomen)
+    \item komplexes System (Zellkern)
+\end{itemize}
+
+Da die Übersetzung von mRNA in Proteine durch ein Ribosom im Cytosol stattfindet, müssen Proteine, die zur Sekretion
+oder zu einer bestimmten Organelle bestimmt sind, transportiert werden.
+Dieser Vorgang kann entweder während der
+Translation (ER) stattfinden – man spricht dann von einer cotranslationalen Translokation – oder nach Abschluss der
+Translation (Mitochondrien, Plastiden, Zellkern) – man spricht dann von einer posttranslationalen Translokation. \cite{proteinSorting}
+
 
 \subsubsection{Cytosolische Sortierung von Proteinen}
-% TODO F 13
+Die Proteinsortierung ist der biologische Mechanismus, durch den Proteine an ihre jeweiligen Zielorte innerhalb oder außerhalb der Zelle transportiert werden.
+Proteine können gezielt in das Innere einer Organelle, zu verschiedenen intrazellulären Membranen, zur Plasmamembran oder durch Sekretion an die Außenseite der Zelle transportiert werden. Dieser Transportprozess wird durch Informationen gesteuert, die im Protein selbst enthalten sind.
+Eine korrekte Sortierung ist für die Zelle von entscheidender Bedeutung; Fehler oder Funktionsstörungen bei der Sortierung werden mit zahlreichen Krankheiten in Verbindung gebracht.\cite{proteinSorting}
+% F 13
+
+Signalpeptide (Transitpeptide) dienen als Zielsignale, die es dem zellulären Transportapparat ermöglichen, Proteine
+an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
 
 \subsection{Proteinimport in Organellen}\label{subsec:proteinimport-in-organellen}
-% TODO F 14, 38
+% F 14, 38
+% TODO F 38
 % TODO TABLE F 39
 
 \subsubsection{Import in Mitochondrien}
-% TODO F 15 - 17
+Proteine, die für die mitochondriale Matrix bestimmt sind, weisen an ihrem Anfang (N-Terminus) spezifische
+Signalsequenzen (Importsequenzen) auf, die aus einer Kette von 20 bis 50 Aminosäuren bestehen.
+Diese Sequenzen sind so konzipiert, dass sie mit Rezeptoren interagieren, die die Proteine an ihren richtigen Ort innerhalb der Mitochondrien leiten.
 
+Wenn das Polypeptid in die Matrix gelangt, wird die Signalsequenz durch eine Prozesspeptidase gespalten, und die
+verbleibenden Sequenzen werden von mitochondrialen Chaperonen gebunden, um auf die korrekte Faltung und Aktivierung
+zu warten. \cite{proteinSorting}
+
+Es gibt keine Konservierung der Primärsequenz!
+D.h. die genaue Aminosäurenfolge (Primärstruktur) mitochondrialer Importsequenzen muss bei verschiedenen
+Proteinen nicht ähnlich oder identisch sein.
+Die Struktur und Ladungsverteilung ist konserviert, nicht die genaue Aminosäuresequenz.
+%  F 15 - 17
+% TODO exkurs domain swap experiments?
+
+Ein Protein kann mehrere Signalsequenzen besitzen, die nacheinander ausgewertet werden (Hierarchische Signale) und
+ein Transitpeptid kann aus mehreren Signalen bestehen.
+
+Denn ein Transitpeptid ist nicht nur ein einfaches ``Mitochondrium-Signal'', sondern kann mehrere hierarchisch
+wirkende Signale enthalten, die festlegen, ob ein Protein nach dem Eintritt im Mitochondrium in der Matrix, einer
+Membran oder im Intermembranraum landet (also ob eine Proteintranslokation über zwei Membranen nötig ist).
+\subsubsection*{Mitochondriale Translokatorkomplexe}
+\defin{tom}
+\defin{tim}
 \subsubsection{Import in Chloroplasten}
-% TODO F 18
-
+% F 18
+\subsubsection*{Chloroplastische Translokatorkomplexe}
+Die meisten Chloroplastenproteine werden im Cytosol synthetisiert und anschließend in den Chloroplasten importiert.
+Der Import erfolgt über spezielle Translokatorkomplexe:
+\defin{toc}
+\defin{tic}
+Da Chloroplasten von einer äußeren und einer inneren Membran umgeben sind, müssen viele Proteine beide Membranen passieren, um ihr Ziel zu erreichen.
 \subsubsection{Import ins ER}
 % TODO F 42 - 51
 
@@ -39,6 +111,7 @@ der Genomsequenzierung - Chicago libraries}
 
 \subsection{Kerntransport}\label{subsec:kerntransport}
 % TODO F 20 - 31, F 35 - 37, F 40
+
 
 \subsubsection{G-Proteine}
 % TODO F 32 - 34
