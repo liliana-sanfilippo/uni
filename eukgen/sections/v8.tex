@@ -23,7 +23,6 @@ Die Adressen sind kurze lineare
 Signalsequenzen, räumlich strukturierte Signale in größeren gefalteten Regionen des Proteins oder posttranslational
 übertragene Strukturen. \cite{Christen2024}
 % F 11 - 12, F 19, F 52 - 54
-% TODO F 52 - 54
 Je nachdem, wo ein Protein am Ende gebraucht wird, wird es an unterschiedlichen Ribosomen translatiert.
 
 Freie Ribosomen (im Cytosol) produzieren:
@@ -45,7 +44,7 @@ Die Proteinsynthese läuft dann direkt in das ER-Lumen oder die ER-Membran hinei
 Translokation von Proteinen über
 Membranen (physikalische Barriere) findet statt über:
 \begin{itemize}
-    \item Translocons (ER, Mitochondrien,
+    \item \gls{translocon}s (ER, Mitochondrien,
     Plastiden)
     \item Carrier (Peroxisomen)
     \item komplexes System (Zellkern)
@@ -60,8 +59,27 @@ Translation (Mitochondrien, Plastiden, Zellkern) – man spricht dann von einer 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/transport_vergleich}
-    \caption{Abb. aus \cite{genes_protein_sorting}}
+    \caption{Abb. aus \cite{genes_protein_sorting}}\label{fig:transport_vergleich}
 \end{figure}
+
+Translokation von Proteinen über
+Membranen findet durch verschiedene Systeme statt:
+\begin{itemize}
+    \item Translocons (ER, Mitochondrien,
+    Plastiden)
+    \item Carrier (Peroxisomen)
+    \item komplexes System (Zellkern)
+\end{itemize}
+
+Kurze Zusammenfassung (Folie 54)
+\begin{itemize}
+    \item Proteine enthalten Sortiersignale (kurze Aminosäuresequenzen oder kovalente Modifikationen), die ihre Zieladresse in der Zelle bestimmen
+    \item Transport erfolgt über Vesikel als abgegrenzte Membranbläschen
+    \item Vesikeltransport basiert auf wiederholten Prozessen von Vesicle budding (Abschnürung) und Vesicle fusion (Verschmelzung)
+    \item Lösliche Proteine werden im Lumen der Vesikel transportiert und in das Zielkompartiment freigesetzt
+    \item Membranproteine bleiben in der Vesikelmembran eingebaut und behalten ihre Orientierung bei
+    \item Zielgerichteter Proteintransport ermöglicht die Verteilung von Proteinen zwischen verschiedenen Zellkompartimenten
+\end{itemize}
 
 \subsection*{Cytosolische Sortierung von Proteinen}
 Die Proteinsortierung ist der biologische Mechanismus, durch den Proteine an ihre jeweiligen Zielorte innerhalb oder außerhalb der Zelle transportiert werden.
@@ -101,7 +119,7 @@ an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
         Möglich (ATP-abhängiges „Remodeling“ von Komplexen), aber für die Translokation selbst nicht notwendig
         &
         Chaperone essentiell (analog zur Translokation ins ER)
-    \end{tabular}
+    \end{tabular}\label{tab:table6}
 \end{table}
 
 \subsection{Posttranslationale Translokation in Mitochondrien, Plastiden und Peroxisomen}\label{subsec:posttranslationale-translokation-in-mitochondrien-plastiden-und-peroxisomen}
@@ -153,16 +171,18 @@ Hierbei wird das Protein durch eine Membran hindurch aus dem Zellinnenraum herau
 \subsubsection{Import ins ER}
 \kfrage{transportsignaleimport}
 % F 42 - 51
-% TODO F 45 - 51
 % TODO Bild ER F 42
+\subsubsection*{Kotranslationale Translokation ins ER}
 Sobald ein Protein während der Translation ins ER eingeschleust wird, ist sein ``Standard-pathway'' die Sekretion aus
 der Zelle.
 Es sei denn, zusätzliche Signale leiten es an einen anderen Ort.
 
 Länger:
 Nach dem kotranslationalen Import ins ER folgen Proteine standardmäßig dem sekretorischen Weg über ER und Golgi zur
-Plasmamembran bzw. nach außen.
-Eine andere Zieladressierung erfordert zusätzliche Sortierungssignale, z. B. KDEL/HDEL für ER-residente Proteine oder Mannose-6-Phosphat für lysosomale Enzyme.
+Plasmamembran bzw.
+nach außen.
+Eine andere Zieladressierung erfordert zusätzliche Sortierungssignale, z.
+B. KDEL/HDEL für ER-residente Proteine oder Mannose-6-Phosphat für lysosomale Enzyme.
 
 Der Import von Proteinen ins ER erfolgt über ein N-terminales Signalpeptid.
 Dieses ist sowohl notwendig als auch hinreichend für die ER-Adressierung, wie Fusionsexperimente mit heterologen Proteinen zeigen.
@@ -172,15 +192,116 @@ insbesondere einen hydrophoben Kernbereich, auf. \cite{vorlesung8}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/signal_hypothesis_with_signal_peptidase_diagram}
-    \caption{\url{https://en.wikiversity.org/wiki/File:Signal_hypothesis_with_signal_peptidase_diagram.jpg}}
+    \caption{\url{https://en.wikiversity.org/wiki/File:Signal_hypothesis_with_signal_peptidase_diagram.jpg}}\label{fig:signal_hypothesis_with_signal_peptidase_diagram}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/signal_hypothesis_with_signal_peptidase_diagram_2}
+    \caption{\url{https://nerd.wwnorton.com/nerd/179437/r/goto/cfi/192!/4?demo=true}}
+    \label{fig:signal_hypothesis_with_signal_peptidase_diagram_2}
+\end{figure}
+Die ER-Signalsequenz eines Proteins wird bereits während der Translation von einem \gls{srp} erkannt.
+Nach der Bindung an die Signalsequenz bindet das \gls{srp} auch an das Ribosom und führt zu einer vorübergehenden Blockierung der Translation.
+Dadurch wird verhindert, dass das Protein vollständig im Cytosol synthetisiert wird.
+
+Der Komplex aus Ribosom, naszierender Polypeptidkette und \gls{srp} wird anschließend zum SRP-Rezeptor in der Membran des endoplasmatischen Retikulums (ER) dirigiert.
+Dort wird das Ribosom an einen Translokator (Sec61-Komplex) übergeben.
+Nach der Übergabe werden \gls{srp} und SRP-Rezeptor freigesetzt, und die Translation wird fortgesetzt.
+
+Während die Proteinsynthese weiterläuft, wird die neu entstehende Polypeptidkette gleichzeitig durch den Translokator in das ER-Lumen eingeschleust bzw.
+in die ER-Membran eingebaut.
+Dieser Vorgang wird als kotranslationaler Transport bezeichnet, da Translation und Proteintranslokation gleichzeitig stattfinden.
+Häufig sind mehrere Ribosomen gleichzeitig an einer mRNA gebunden (Polyribosom), sodass mehrere Proteinmoleküle parallel synthetisiert und ins ER transportiert werden können.
+% chattie
+Die Abbildungen \ref{fig:signal_hypothesis_with_signal_peptidase_diagram} und
+\ref{fig:signal_hypothesis_with_signal_peptidase_diagram_2} zeigen dies in zwei verschiedenen Darstellungsarten.
+
+Bei löslichen ER-Proteinen dient die N-terminale ER-Signalsequenz zunächst als SRP-Erkennungssignal und anschließend als Start-Transfer-Signal für die Translokation durch den Sec61-Kanal ins ER-Lumen.
+Danach wird das Signalpeptid meist abgespalten. % chattie F 46
+
+Der Translokationsmechanismus garantiert, dass die entfaltete Konformation der Proteine erhalten bleibt, keine
+Fehlfaltung/Aggregation auftritt und die korrekte Faltung und Modifikation im ER/Golgi erfolgt.
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/Cotranslationaler_Proteintransport}
+    % https://de.wikipedia.org/wiki/Datei:Cotranslationaler_Proteintransport.svg
+    \caption{Für die Kotranslationale Translokation ins ER benötigt man: ein Signalpeptid am N-Terminus
+    des zu translozierenden Proteins, das \gls{srp}, den SRP-Rezeptor in der ER-Membran, das
+    \gls{\gls{translocon}} (Trimer aus Sec61) und die \gls{signalpeptidase} im ER-Lumen
+        (Komplex aus 5 Proteinen)}
+    \label{fig:Cotranslationaler_Proteintransport}
+\end{figure}
 
+\defin{srp}
+
+Das \gls{srp} besteht aus einer 7S RNA und 6 Proteinen.
+\begin{table}{H}
+    \centering
+    \begin{tabular}{ll}
+        SRP54 & Erkennung des Signalpeptids \\
+        SRP68-SRP72 & bindet zentrale Region der 7S RNA,
+        Interaktion mit SRP-Rezeptor \\
+        SRP9-SRP14 & Elongationsstopp
+    \end{tabular}
+    \caption{Aufgaben der SRP-Bestandteile}
+    \label{tab:srp}
+\end{table}
+
+\defin{\gls{translocon}}
+
+Der SRP-Rezeptor ist ein zweigeteilter Membrankomplex, bei dem SR
+$\beta$ die Verankerung in der ER-Membran übernimmt und SR$\alpha$ als cytosolischer Bindungspartner für \gls{srp}
+dient.
+
+%Transmembranproteine werden durch spezielle Signal- und Stoppsequenzen so ins ER eingeschleust, dass sie in der
+%Membran verankert bleiben.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{6cm} p{6cm}}
+        \textbf{Transmembranprotein mit einer TMD} & \textbf{Transmembranprotein mit mehreren TMD} \\
+        \newline
+        Einleitung durch ein Signalpeptid am N-Terminus oder eine interne ER-Signalsequenz, die die Translokation über den Sec61-\gls{translocon} startet. & Einleitung durch eine interne Transfer-Start-Sequenz, die die Translokation initialisiert. \\
+        \newline
+        Ein einzelnes Transfer-Stoppsignal stoppt den Durchtritt durch den \gls{translocon} und verankert das Protein in der Membran. & Kombination aus mehreren Transfer-Start- und Transfer-Stoppsignalen steuert den wiederholten Ein- und Austritt durch den \gls{translocon}. \\
+        \newline
+        Das Protein besitzt nur eine Transmembranhelix. & Mehrere Transmembranhelices entstehen durch wiederholte Reinitiation der Translokation. \\
+        \newline
+        Die Orientierung (N- oder C-Terminus luminal) wird durch die Position von Start- und Stoppsignal bestimmt. & Die Topologie wird durch die Abfolge und Position der Signale in der Polypeptidkette festgelegt. \\
+    \end{tabular}
+\end{table} % chattie
+
+\subsubsection*{Einbau von Proteinen in Membranen}
+Dieser Einbau findet über STOP-transfer
+Signale statt. % TODO F 52 genauer?
+
+Bei Transmembranproteinen mit einer \gls{tmd} sorgt zusätzlich eine interne ER-Signalsequenz zusammen mit einem
+Transfer-Stoppsignal dafür, dass das Protein im Sec61-Kanal in die Membran eingebaut wird, wobei je nach Signal die N- oder C-terminale Seite im ER-Lumen liegt.
+
+Transmembranproteine mit mehreren \glspl{tmd} entstehen durch eine Kombination aus internen Signalen, die den Einbau 
+in die ER-Membran steuern. 
+Der Prozess beginnt mit einer internen Transfer-Start-Sequenz, die die Einleitung der Translokation durch den Sec61-\gls{translocon} auslöst. 
+Im Verlauf der Polypeptidverlängerung können zusätzliche hydrophobe Sequenzen als Transfer-Stoppsignale wirken, wodurch der Durchtritt durch den Kanal unterbrochen und ein Abschnitt des Proteins in der Membran verankert wird.
+Anschließend kann eine erneute interne Transfer-Start-Sequenz die Translokation wieder fortsetzen (Reinitiation), sodass weitere Segmente durch den Kanal geschleust werden.
+Durch die abwechselnde Wirkung von Start- und Stoppsignalen entsteht so ein Protein mit mehreren Transmembranhelices.
+Ob eine hydrophobe Sequenz als Start- oder Stoppsignal fungiert, hängt dabei von ihrer Position innerhalb der wachsenden Polypeptidkette sowie von ihrer Orientierung und Kontextsequenz ab.
+% chattie
+
+\paragraph{Zusammenfassung:} Membranproteine werden auf unterschiedliche Weise in und an Membranen verankert, ihre
+Orientierung und Anzahl der Membrandurchgänge wird durch Signalsequenzen gesteuert, und zusätzlich gibt es auch
+lipidverankerte Proteine ohne Transmembranregion. \cite{vorlesung8}
 
 \subsubsection*{N-Glykosylierung im ER und Golgi}
 % TODO F 55 - 57 
+Wichtige Funktionen des Endomembransystems sind: 
+\begin{itemize}
+    \item Transport
+    \item korrekte Faltung (\gls{chaperone})
+    \item Modifikationen (können Faltung beeinflussen)
+\end{itemize}
 
 \subsection{Vesikeltransport des sekretorischen Weges}\label{subsec:vesikeltransport-des-sekretorischen-weges}
 Hierbei verschiebt sich das Protein innerhalb der Zelle zwischen verschiedenen Organellen; die
@@ -303,6 +424,14 @@ Translokation, siehe \nameref{subsec:cotranslationale-membraninsertion-oder-memb
 posttranslationale Translokation, siehe \nameref{subsec:posttranslationale-translokation-in-mitochondrien-plastiden-und-peroxisomen}).
 Eine Signalpeptidase spaltet das N-terminale Signalpeptid bei seinem Erscheinen im Lumen des ER bzw.
 der Mitochondrien oder Plastiden ab. \cite{Christen2024}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/signal_sequence}
+    \caption{Schematische Darstellung der Signalsequenz}
+    % https://de.wikipedia.org/wiki/Datei:Signal_sequence.svg
+\end{figure}
+
 
 \subsubsection{G-Proteine}\label{subsubsec:gproteine}
 \defin{gprotein}
