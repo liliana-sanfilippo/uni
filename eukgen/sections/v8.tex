@@ -14,9 +14,14 @@ der Genomsequenzierung - Chicago libraries}
 % F 9 - 10
 
 
-\section{Proteinlokalisation}\label{sec:proteinlokalisation}
-
-\subsection*{Überblick}
+\section{Überblick Proteinlokalisation}\label{sec:proteinlokalisation}
+In eukaryontischen Zellen werden außer Mitochondrien und Chloroplasten diverse andere Organellen und auch Membranen
+mit spezifischen Proteinen ausgestattet.
+Diese nichtcytosolischen Proteine werden bei ihrer Synthese mit einem
+Kennzeichen, einer Adresse, ausgestattet, die ihren Bestimmungsort festlegt.
+Die Adressen sind kurze lineare
+Signalsequenzen, räumlich strukturierte Signale in größeren gefalteten Regionen des Proteins oder posttranslational
+übertragene Strukturen. \cite{Christen2024}
 % F 11 - 12, F 19, F 52 - 54
 % TODO F 52 - 54
 Je nachdem, wo ein Protein am Ende gebraucht wird, wird es an unterschiedlichen Ribosomen translatiert.
@@ -52,7 +57,7 @@ Dieser Vorgang kann entweder während der
 Translation (ER) stattfinden – man spricht dann von einer cotranslationalen Translokation – oder nach Abschluss der
 Translation (Mitochondrien, Plastiden, Zellkern) – man spricht dann von einer posttranslationalen Translokation. \cite{proteinSorting}
 
-\subsubsection{Cytosolische Sortierung von Proteinen}
+\subsection*{Cytosolische Sortierung von Proteinen}
 Die Proteinsortierung ist der biologische Mechanismus, durch den Proteine an ihre jeweiligen Zielorte innerhalb oder außerhalb der Zelle transportiert werden.
 Proteine können gezielt in das Innere einer Organelle, zu verschiedenen intrazellulären Membranen, zur Plasmamembran oder durch Sekretion an die Außenseite der Zelle transportiert werden. Dieser Transportprozess wird durch Informationen gesteuert, die im Protein selbst enthalten sind.
 Eine korrekte Sortierung ist für die Zelle von entscheidender Bedeutung; Fehler oder Funktionsstörungen bei der Sortierung werden mit zahlreichen Krankheiten in Verbindung gebracht.\cite{proteinSorting}
@@ -61,13 +66,16 @@ Eine korrekte Sortierung ist für die Zelle von entscheidender Bedeutung; Fehler
 Signalpeptide (Transitpeptide) dienen als Zielsignale, die es dem zellulären Transportapparat ermöglichen, Proteine
 an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
 
+\kfrage{signaleproteinsorting}
 \kfrage{transportsignaleimportII}
 
-\subsection{Proteinimport in Organellen}\label{subsec:proteinimport-in-organellen}
+\section{Proteinimport in Organellen}\label{subsec:proteinimport-in-organellen}
 % F 14, 38
 % TODO F 38
 % TODO TABLE F 39
 
+\subsection{Posttranslationale Translokation in Mitochondrien, Plastiden und Peroxisomen}
+Hierbei wird das Protein durch eine Membran hindurch aus dem Zellinnenraum herausgebracht. \cite{Christen2024}
 \subsubsection{Import in Mitochondrien}
 Proteine, die für die mitochondriale Matrix bestimmt sind, weisen an ihrem Anfang (\gls{nterminus}) spezifische
 Signalsequenzen (Importsequenzen) auf, die aus einer Kette von 20 bis 50 Aminosäuren bestehen.
@@ -108,6 +116,8 @@ Sie ermöglichen den Import von Kern-genkodierten Proteinen durch die beiden Hü
 
 Da Chloroplasten von einer äußeren und einer inneren Membran umgeben sind, müssen viele Proteine beide Membranen passieren, um ihr Ziel zu erreichen.
 
+\subsection{Cotranslationale Membraninsertion oder Membranpassage ins raue ER}
+Hierbei wird das Protein durch eine Membran hindurch aus dem Zellinnenraum herausgebracht. \cite{Christen2024}
 \subsubsection{Import ins ER}
 \kfrage{transportsignaleimport}
 % TODO F 40 - 51
@@ -115,12 +125,17 @@ Da Chloroplasten von einer äußeren und einer inneren Membran umgeben sind, mü
 \subsubsection*{N-Glykosylierung im ER und Golgi}
 % TODO F 55 - 57 
 
-\subsubsection{Vesikeltransport im ER - Golgi - System}
+\subsection{Vesikeltransport des sekretorischen Weges}
+Hierbei verschiebt sich das Protein innerhalb der Zelle zwischen verschiedenen Organellen; die
+Innen-außen-Topologie ändert sich nicht. \cite{Christen2024}
+%\subsubsection{Vesikeltransport im ER - Golgi - System}
 % TODO F 60 - 62
 
-\subsection{Kerntransport}\label{subsec:kerntransport}
+\section{Pförtner-kontrollierter Transport (Gated transport) durch die Kernhülle}\label{sec:kerntransport}
+Hierbei verschiebt sich das Protein innerhalb der Zelle zwischen verschiedenen Organellen; die
+Innen-außen-Topologie ändert sich nicht. \cite{Christen2024}
 %  F 20 - 31, F 35 - 37, F 40
-% TODO F 23 - 31, F 39
+% TODO F 25 - 28, 31, F 39
 
 \begin{figure}[H]
     \centering
@@ -170,11 +185,32 @@ Proteine, ...) zwischen Cytosol und Zellkern geschieht ausschließlich über die
     % TODO F 36-37
 \end{bsp}
 
-\subsubsection*{Aufbau der Kernporenkomplexe}
+\subsection*{Die Kernporenkomplexe}
+\defin{npc}
+Die Kernhülle (Nuclear envelope) besteht aus zwei über Porenstrukturen verbundenen Membranen (einer Doppelmembran).
+Der Rand der Pore besteht außen wie innen aus je acht Proteinkomplexen und besitzt daher eine ``achtfache
+Rotationssymmetrie''.
+Auf der Kernseite hat es eine korbähnliche Struktur (den ``basket'') und auf der cytoplasmatischen
+Seite Filamente.
+
+Kernporen katalysieren den passiven oder aktiven Transport von Proteinen, RNA, Ribonukleotid-Protein-Komplexen und
+kleinen Molekülen durch die Kernmembran, da es eine Diffusionsbarriere für
+größere Proteine gibt.
+Diese existiert, weil der \gls{npc} aus \glspl{nukleoporin} besteht und etwa ein Drittel dieser \glspl{nukleoporin} enthält
+sogenannte \glspl{fgrepeat} (FG, GLFG, FXFG).
+Diese bilden die Diffusions-Barriere (ein hydrophobes Hydrogel).
+\cite{Christen2024, Kernpore, vorlesung8}
+% TODO BILD
+
+Es gibt etwa 2-4.000 \glspl{npc}
+pro Kern (variabel).
 
 \subsubsection*{Einbau des NPC in den NE}
 
 \subsubsection*{Kerntransport-Rezeptoren}
+Die meisten (nicht alle) Kerntransportvorgänge
+werden von Rezeptoren der
+Importin-beta Familie durchgeführt % TODO defi
 
 \subsubsection*{Postleitzahlen}
 % TODO F 35
@@ -207,6 +243,7 @@ der Kerntransportvorgänge kontrolliert.
 
 \subsubsection*{Modell für gerichteten Zellkerntransport}
 % TODO F 38
+
 
 
 
