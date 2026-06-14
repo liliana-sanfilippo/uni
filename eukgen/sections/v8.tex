@@ -39,7 +39,7 @@ Membrangebundene Ribosomen (am rauen ER) produzieren:
     \item sekretierte Proteine
 \end{itemize}
 Bei diesen beginnt die Translation am freien Ribosom, aber ein Signalpeptid am \gls{nterminus} dirigiert das Ribosom
-ko-translational ans ER.
+ko-translational ans ER\@.
 Die Proteinsynthese läuft dann direkt in das ER-Lumen oder die ER-Membran hinein.
 
 Translokation von Proteinen über
@@ -57,9 +57,17 @@ Dieser Vorgang kann entweder während der
 Translation (ER) stattfinden – man spricht dann von einer cotranslationalen Translokation – oder nach Abschluss der
 Translation (Mitochondrien, Plastiden, Zellkern) – man spricht dann von einer posttranslationalen Translokation. \cite{proteinSorting}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/transport_vergleich}
+    \caption{Abb. aus \cite{genes_protein_sorting}}
+\end{figure}
+
+
 \subsection*{Cytosolische Sortierung von Proteinen}
 Die Proteinsortierung ist der biologische Mechanismus, durch den Proteine an ihre jeweiligen Zielorte innerhalb oder außerhalb der Zelle transportiert werden.
-Proteine können gezielt in das Innere einer Organelle, zu verschiedenen intrazellulären Membranen, zur Plasmamembran oder durch Sekretion an die Außenseite der Zelle transportiert werden. Dieser Transportprozess wird durch Informationen gesteuert, die im Protein selbst enthalten sind.
+Proteine können gezielt in das Innere einer Organelle, zu verschiedenen intrazellulären Membranen, zur Plasmamembran oder durch Sekretion an die Außenseite der Zelle transportiert werden.
+Dieser Transportprozess wird durch Informationen gesteuert, die im Protein selbst enthalten sind.
 Eine korrekte Sortierung ist für die Zelle von entscheidender Bedeutung; Fehler oder Funktionsstörungen bei der Sortierung werden mit zahlreichen Krankheiten in Verbindung gebracht.\cite{proteinSorting}
 % F 13
 
@@ -69,13 +77,37 @@ an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
 \kfrage{signaleproteinsorting}
 \kfrage{transportsignaleimportII}
 
-\section{Proteinimport in Organellen}\label{subsec:proteinimport-in-organellen}
-% F 14, 38
-% TODO F 38
-% TODO TABLE F 39
 
-\subsection{Posttranslationale Translokation in Mitochondrien, Plastiden und Peroxisomen}
+\section{Proteinimport in Organellen}\label{sec:proteinimport-in-organellen}
+% F 14, 38
+%  F 39
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{5cm}p{5cm}}
+        \textbf{Eigenschaft} & \textbf{Kerntransport} & \textbf{Import in Organellen} \\
+        Signal &
+        Signal bleibt permanent erhalten &
+        Signal wird nach dem Import abgespalten
+        (Transitpeptid, Präprotein) \\
+
+        Faltungszustand des Proteins &
+        Entfaltung nicht nötig &
+        Nur entfaltete Proteine werden transloziert \\
+
+        Translokierte Struktur &
+        Translokation sehr großer Komplexe möglich &
+        Translokation einzelner Polypeptide \\
+
+        Beteiligung von Chaperonen &
+        Möglich (ATP-abhängiges „Remodeling“ von Komplexen), aber für die Translokation selbst nicht notwendig
+        &
+        Chaperone essentiell (analog zur Translokation ins ER)
+    \end{tabular}
+\end{table}
+
+\subsection{Posttranslationale Translokation in Mitochondrien, Plastiden und Peroxisomen}\label{subsec:posttranslationale-translokation-in-mitochondrien-plastiden-und-peroxisomen}
 Hierbei wird das Protein durch eine Membran hindurch aus dem Zellinnenraum herausgebracht. \cite{Christen2024}
+
 \subsubsection{Import in Mitochondrien}
 Proteine, die für die mitochondriale Matrix bestimmt sind, weisen an ihrem Anfang (\gls{nterminus}) spezifische
 Signalsequenzen (Importsequenzen) auf, die aus einer Kette von 20 bis 50 Aminosäuren bestehen.
@@ -86,7 +118,7 @@ verbleibenden Sequenzen werden von mitochondrialen Chaperonen gebunden, um auf d
 zu warten. \cite{proteinSorting}
 
 Es gibt keine Konservierung der Primärsequenz!
-D.h. die genaue Aminosäurenfolge (Primärstruktur) mitochondrialer Importsequenzen muss bei verschiedenen
+D.h.\ die genaue Aminosäurenfolge (Primärstruktur) mitochondrialer Importsequenzen muss bei verschiedenen
 Proteinen nicht ähnlich oder identisch sein.
 Die Struktur und Ladungsverteilung ist konserviert, nicht die genaue Aminosäuresequenz.
 %  F 15 - 17
@@ -116,26 +148,29 @@ Sie ermöglichen den Import von Kern-genkodierten Proteinen durch die beiden Hü
 
 Da Chloroplasten von einer äußeren und einer inneren Membran umgeben sind, müssen viele Proteine beide Membranen passieren, um ihr Ziel zu erreichen.
 
-\subsection{Cotranslationale Membraninsertion oder Membranpassage ins raue ER}
+\subsection{Cotranslationale Membraninsertion oder Membranpassage ins raue ER}\label{subsec:cotranslationale-membraninsertion-oder-membranpassage-ins-raue-er}
 Hierbei wird das Protein durch eine Membran hindurch aus dem Zellinnenraum herausgebracht. \cite{Christen2024}
+
 \subsubsection{Import ins ER}
 \kfrage{transportsignaleimport}
-% TODO F 40 - 51
+% TODO F 42 - 51
+
 
 \subsubsection*{N-Glykosylierung im ER und Golgi}
 % TODO F 55 - 57 
 
-\subsection{Vesikeltransport des sekretorischen Weges}
+\subsection{Vesikeltransport des sekretorischen Weges}\label{subsec:vesikeltransport-des-sekretorischen-weges}
 Hierbei verschiebt sich das Protein innerhalb der Zelle zwischen verschiedenen Organellen; die
 Innen-außen-Topologie ändert sich nicht. \cite{Christen2024}
 %\subsubsection{Vesikeltransport im ER - Golgi - System}
 % TODO F 60 - 62
 
+
 \section{Pförtner-kontrollierter Transport (Gated transport) durch die Kernhülle}\label{sec:kerntransport}
 Hierbei verschiebt sich das Protein innerhalb der Zelle zwischen verschiedenen Organellen; die
 Innen-außen-Topologie ändert sich nicht. \cite{Christen2024}
 %  F 20 - 31, F 35 - 37, F 40
-% TODO F 25 - 28, 31, F 39
+% TODO F 25 - 28
 
 \begin{figure}[H]
     \centering
@@ -178,10 +213,10 @@ Proteine mit einem \gls{nes} werden von Exportin 1 (CRM1) erkannt.
 \end{enumerate}
 
 Die Kernhülle trennt Translation und Transkription und der Austausch von Makromolekülen (\glspl{mrna}, \glspl{trna},
-Proteine, ...) zwischen Cytosol und Zellkern geschieht ausschließlich über die \glspl{npc}.
+Proteine, \ldots) zwischen Cytosol und Zellkern geschieht ausschließlich über die \glspl{npc}.
 
 \begin{bsp}
-    \textbf{Beispiel Exportin1}
+    \textbf{Beispiel Exportin1} \\ TODO F 36--37
     % TODO F 36-37
 \end{bsp}
 
@@ -211,14 +246,42 @@ pro Kern (variabel).
 Die meisten (nicht alle) Kerntransportvorgänge
 werden von Rezeptoren der
 Importin-beta Familie durchgeführt % TODO defi
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        Hefe        & 14    \\
+        Arabidopsis & 17    \\
+        Säuger      & $>$20
+    \end{tabular}
+    \caption{Anzahl an Importin-beta Rezeptor-Typen in verschiedenen Organismen.}\label{tab:table5}
+\end{table}
+Die Rezeptoren können an die \glspl{fgrepeat} der \glspl{nukleoporin} binden und die Diffusionsbarriere des \gls{npc}
+überwinden (Interaktion mit \glspl{nukleoporin}).
+Importine (und Exportine) binden \gls{ran} und das \gls{ran} reguliert den Transport, indem es bestimmt, ob Cargo
+gebunden oder freigesetzt wird (Interaktion mit Ran-GTP).
+Außerdem erkennt jeder Rezeptor bestimmte Signale (spezifische Substraterkennung).
+% Chattie
+
+\paragraph{Direktionalität:} Der \gls{npc} selbst transportiert nicht aktiv in eine Richtung!
+Die Richtung entsteht durch den Ran-GTP-Gradienten (siehe \nameref{subsubsec:gproteine} und
+\nameref{fig:modell-gerichteter-zelltransport}).
 
 \subsubsection*{Postleitzahlen}
-% TODO F 35
+Erinnerung an \nameref{sec:proteinlokalisation}: ``Die Adressen sind kurze lineare
+Signalsequenzen, räumlich strukturierte Signale in größeren gefalteten Regionen des Proteins oder posttranslational
+übertragene Strukturen.''
 
-\subsubsection*{Nukleo-cytoplasmatische Partitionierung}
-% TODO F 40
+Das primäre Sortierungssignal (Zielerkennungssequenz, Präsequenz) der im Cytosol produzierten Proteine befindet sich
+am \gls{nterminus}.
+Es erscheint daher bei der Synthese des Proteins zuerst an der Oberfläche des Ribosoms und bestimmt
+die Einschleusung in den sekretorischen Weg.
+Bei diesen Proteinen kann die Membrantranslokation schon während der Translation in Gang kommen (cotranslationale
+Translokation, siehe \nameref{subsec:cotranslationale-membraninsertion-oder-membranpassage-ins-raue-er}), während sie bei anderen Proteinen erst nach Abschluss der Translation stattfindet (
+posttranslationale Translokation, siehe \nameref{subsec:posttranslationale-translokation-in-mitochondrien-plastiden-und-peroxisomen}).
+Eine Signalpeptidase spaltet das N-terminale Signalpeptid bei seinem Erscheinen im Lumen des ER bzw.
+der Mitochondrien oder Plastiden ab. \cite{Christen2024}
 
-\subsubsection{G-Proteine}
+\subsubsection{G-Proteine}\label{subsubsec:gproteine}
 \defin{gprotein}
 \glspl{gprotein} binden Guanosin-Nukleotide und existieren in zwei stabilen, unterschiedlichen Konformationen:
 GDP-gebunden (``inaktiv'') und GTP-gebunden (``aktiv'').
@@ -240,11 +303,25 @@ RanGAP und RanGEF. Dies erzeugt den Ran-GTP Gradient (viel im Kern, wenig im Cyt
 Dieser Gradient ist ein molekularer Schalter, der die Direktionalität
 der Kerntransportvorgänge kontrolliert.
 % F 32 - 34
+% F 38
+Der Gradient zwischen Ran-GDP und Ran-GTP treibt Transport in gewünschte Richtung.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/rangdpgradient}
+    \caption{Modell für gerichteten Zellkerntransport}\label{fig:modell-gerichteter-zelltransport}
+\end{figure}
 
-\subsubsection*{Modell für gerichteten Zellkerntransport}
-% TODO F 38
+\subsubsection*{Nukleo-cytoplasmatische Partitionierung}
+% F 40
+Kernimport und Kernexport können auf vielen Ebenen reguliert sein:
+\begin{itemize}
+    \item Modifikation
+    \item Konformation
+    \item Interaktion
+    \item Retention im Cytoplasma / Kern
+\end{itemize}
 
-
+% TODO Stichwort Membranfluss
 
 
 
