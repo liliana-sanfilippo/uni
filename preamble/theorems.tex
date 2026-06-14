@@ -364,11 +364,35 @@
     before skip=12pt,
     after skip=12pt
 }
+\newtheorem{kfr}{Frühere Klausurfrage}[chapter]
+\tcolorboxenvironment{kfr}{
+    colback=white,
+    colframe=Cyan,
+    boxrule=1pt,
+    arc=0mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    breakable,
+    parbox=false,
+    before skip=12pt,
+    after skip=12pt
+}
 \newcommand{\frage}[1]{
     \begin{fr}
     \textbf{\gls*{#1}}  \\
     \glsdesc*{#1}
     \end{fr}
+}
+\newcommand{\kfrage}[1]{
+    \begin{kfr}
+    \textbf{\gls*{#1}}  \\
+    \glsdesc*{#1} \\
+    \textcolor{gray}{
+    \textit{Klausur \glssymbol*{#1}}
+    }
+    \end{kfr}
 }
 
 
