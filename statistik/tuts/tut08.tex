@@ -2,15 +2,33 @@
 %! Date = 6/15/26
 
 \chapter{Tutorium 15.06.2026}\label{ch:tutorium-15.06.2026}
-\section{PÜ 2.2.4.}
-Der Lufthansa Airbus A380 bietet insgesamt 526 Fluggästen Platz. Da Kunden manchmal
+Binomialverteilung benutzt man, wenn es aus der Aufgabenstellungen hervor sinnvoll ist oder wenn die Aufgabenstellung
+sagt, dass etwas binomialverteilt ist.
+\begin{align*}
+    \pe(X_n \leq \delta) & = \pe(X_n - np \leq \delta - np) \\
+    & \pe(\frac{X_n - np}{\sqrt{npq}} \leq \frac{\delta - np}{\sqrt{npq}}) \\
+    & \overset{*}{\approx} \phi(\frac{\delta - np }{\sqrt{npq}})
+\end{align*}
+* das ist das Anwenden von Moire-Laplace.
+
+
+Tscheby:
+\[
+    \pe(|X- \E{X} | \geq \delta) \leq \frac{Var(X)}{\delta^2}
+\]
+
+\section{PÜ 2.2.4.}\label{sec:pu-2.2.4.}
+Der Lufthansa Airbus A380 bietet insgesamt 526 Fluggästen Platz.
+Da Kunden manchmal
 ihren Flug nicht antreten, lassen Fluggesellschaften zwecks optimaler Auslastung Überbuchungen
-zu. Es sollen möglichst viele Tickets verkauft werden, wobei jedoch die Wahrscheinlichkeit
-einer Überbuchung maximal 5\% betragen soll. Erfahrungsgemäß erscheinen Kunden mit einer
+zu.
+Es sollen möglichst viele Tickets verkauft werden, wobei jedoch die Wahrscheinlichkeit
+einer Überbuchung maximal 5\% betragen soll.
+Erfahrungsgemäß erscheinen Kunden mit einer
 Wahrscheinlichkeit von 10\% nicht zum Flug.
 
 \begin{auf}
-    \subsubsection*{(a) Geben Sie einen geeigneten Wahrscheinlichkeitsraum an, der es erlaubt, die folgenden
+    \subsection*{(a) Geben Sie einen geeigneten Wahrscheinlichkeitsraum an, der es erlaubt, die folgenden
     Aufgabenteile zu bearbeiten. Diskutieren Sie, welche Annahmen Sie machen müssen, um Ihre Wahl des Wahrschein-
     lichkeitsraums zu rechtfertigen.}
 \end{auf}
@@ -25,14 +43,49 @@ Wahrscheinlichkeit von 10\% nicht zum Flug.
     Tickets unter den oben genannten Bedingungen maximal angeboten werden können.}
 \end{auf}
 
-\section{Besprechung ÜB 2.1.1}
-Am Rande des Leinewebermarkts wird Ihnen folgendes Spiel vorgeschlagen. Es werden zwei faire
-Würfel geworfen. Anschließend wird das Maximum und das Minimum der beiden Ergebnisse
-gebildet. Der Einsatz des Spiels beträgt zwei Euro, und Sie erhalten die Di!erenz von Maximum
+\begin{auf}
+    \subsubsection*{(d) Beweisen Sie mit Hilfe der Tschebysche!schen Ungleichung, daß $b_{200} < b_{20}$ gilt.}
+\end{auf}
+
+\section{PÜ 2.2.5}\label{sec:pu-2.2.5}
+Eine Süßwarenfirma gibt an, daß 25\% ihrer Gummibärchen die beliebte Farbe rot haben.
+Im
+folgenden gehen wir davon aus, daß die Angaben des Herstellers richtig sind.
+Wir nehmen auch
+an, daß die Gummibärchen unabhängig voneinander rot sind oder eine andere Farbe haben.
+
+Trotzdem waren in einer kleineren Stichprobe lediglich 20\% der Gummibärchen rot.
+Wir wollen
+der Sache auf den Grund gehen und kaufen daher n weitere Gummibärchen.
+Sei $b_n$ die
+Wahrscheinlichkeit, dass höchstens 20\% der neu gekauften n Gummibärchen rot sind.
+
+\begin{auf}
+    \subsection*{(a) Geben Sie für jedes beliebige $n \in \nz$ einen geeigneten Wahrscheinlichkeitsraum an, der es
+    erlaubt, die folgenden Aufgabenteile zu bearbeiten}
+\end{auf}
+
+\begin{auf}
+    \subsubsection*{(b) Definieren Sie eine Zufallsvariable $S_n$, die die Anzahl der roten Gummibärchen unter den
+    n gekauften Gummibärchen angibt.}
+\end{auf}
+
+\begin{auf}
+    \subsubsection*{(c) Sei n = 20. Berechnen Sie $b_{20}$ auf drei Nachkommastellen genau, d.h., geben Sie die
+    Wahrscheinlichkeit in der Form 0.xyz bzw. xy.z \% an.}
+\end{auf}
+
+\section{Besprechung ÜB 2.1.1}\label{sec:besprechung-ub-2.1.1}
+Am Rande des Leinewebermarkts wird Ihnen folgendes Spiel vorgeschlagen.
+Es werden zwei faire
+Würfel geworfen.
+Anschließend wird das Maximum und das Minimum der beiden Ergebnisse
+gebildet.
+Der Einsatz des Spiels beträgt zwei Euro, und Sie erhalten die Di!erenz von Maximum
 und Minimum ausgezahlt.
 
 \begin{auf}
-    \subsubsection*{(a) Geben Sie einen Wahrscheinlichkeitsraum \wraum an, der es erlaubt, die folgenden Auf-
+    \subsection*{(a) Geben Sie einen Wahrscheinlichkeitsraum \wraum an, der es erlaubt, die folgenden Auf-
     gabenteile zu bearbeiten}
 \end{auf}
 
@@ -57,23 +110,30 @@ und Minimum ausgezahlt.
     \subsubsection*{(e) Ist das Spiel fair , das heißt, beträgt der erwartete Gewinn 0 Euro?}
 \end{auf}
 
-\section{Besprechung ÜB 2.1.2}
+\section{Besprechung ÜB 2.1.2}\label{sec:besprechung-ub-2.1.2}
+Die gemeinsame Dichte der Zufallsvariablen X und Y sei gegeben durch
+\[
+    f (x, y) = \begin{cases}
+                   ce^{-2(x+y)},& f\ddot ur\ 0 \leq x \leq y \geq \infty, \\
+                   0, & sonst
+    \end{cases}
+\]
 
 \begin{auf}
-    \subsubsection*{(a)}
+    \subsection*{(a) Bestimmen Sie c derart, daß f eine \gls{zweidimensionaledichte} ist}
 \end{auf}
 
 \begin{auf}
-    \subsubsection*{(b)}
+    \subsubsection*{(b) Berechnen Sie Erwartungswert und Varianz von X und Y . Warum existieren diese?}
 \end{auf}
 
 \begin{auf}
-    \subsubsection*{(c)}
+    \subsubsection*{(c) Berechnen Sie den Erwartungswert von 2X - Y . Warum existiert dieser?}
 \end{auf}
 
-\section{Besprechung ÜB 2.1.3}
+\section{Besprechung ÜB 2.1.3}\label{sec:besprechung-ub-2.1.3}
 \begin{auf}
-    \subsubsection*{(a)}
+    \subsection*{(a)}
 \end{auf}
 \begin{auf}
     \subsubsection*{(b)}
