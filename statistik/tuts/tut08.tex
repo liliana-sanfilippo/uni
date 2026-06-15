@@ -112,20 +112,62 @@ Wahrscheinlichkeit, dass höchstens 20\% der neu gekauften n Gummibärchen rot s
 \begin{auf}
     \subsection*{(a) Geben Sie für jedes beliebige $n \in \nz$ einen geeigneten Wahrscheinlichkeitsraum an, der es
     erlaubt, die folgenden Aufgabenteile zu bearbeiten}
+    \[
+        \eraum = \{
+        \underbrace{0}_{nicht\ rot}, \underbrace{1}_{rot}
+        \}^n
+    \]
+    wobei $n$ die Anzahl der gekauften Gummibärchen ist.
+    \[
+        \pe( \{\ele\}) = p^{\sum_{i=1}^n \ele_i} \cdot (1-p)^{\sum_{i=1}^n \ele_i}
+    \]
+    mit p=0,25 = WS für rot und q = 1-p
 \end{auf}
 
 \begin{auf}
     \subsubsection*{(b) Definieren Sie eine Zufallsvariable $S_n$, die die Anzahl der roten Gummibärchen unter den
     n gekauften Gummibärchen angibt.}
+    \[
+        S_n = \sum_{i=1}^n \ele_i, \quad S_n \sim Bin(n,p)
+    \]
 \end{auf}
 
 \begin{auf}
     \subsubsection*{(c) Sei n = 20. Berechnen Sie $b_{20}$ auf drei Nachkommastellen genau, d.h., geben Sie die
     Wahrscheinlichkeit in der Form 0.xyz bzw. xy.z \% an.}
+    \[
+        \frac{S_n}{n} (=mitHütchenzeichen) Durchschnittliche\ Anzahl\ rot
+    \]
+    Es gilt
+    \[
+        \pe( \frac{1}{n} S_n \leq \frac{1}{5} ) = \pe(S_n \leq \frac{n}{5})
+    \]
+    Und mit n = 20
+    \[
+        \pe(S_{20} \leq \frac{20}{5}) = \pe(S_{20} \leq 4) = \sum_{i=1}^n \binom{20}{i} p^i \cdot (1-p)^{20-i} = 0,4148...
+    \]
 \end{auf}
 
 \begin{auf}
     \subsubsection*{(d) Beweisen Sie mit Hilfe der Tschebysche!schen Ungleichung, daß $b_{200} < b_{20}$ gilt.}
+    Also $b_n = \pe(\frac{1}{n} S_n \leq \frac{1}{5})$ \\
+    Heißt wir müssen $ \pe(|X- \E{X} | \geq \delta) \leq \frac{Var(X)}{\delta^2}$ in jene Form umwandeln. Erstmal
+    Erwartungswert von beiden Seiten abziehen(?):
+    \[
+        \pe(\frac{1}{n} S_n - \E{\frac{1}{n} S_n} \leq \frac{1}{5} - \E{\frac{1}{n} S_n})
+    \]
+    Es ist ja
+    \[
+        \E{\frac{1}{n} S_n} = - \frac{1}{n} \E{S_n} = \frac{1}{n} \cdot np = p \overset{Aufgabe}{=} \frac{1}{4}
+    \]
+    Also
+    \begin{align*}
+        \pe(\frac{1}{n} S_n - \E{\frac{1}{n} S_n} \leq \frac{1}{5} - \E{\frac{1}{n} S_n}) & =
+        \pe(\frac{1}{n} S_n - \E{\frac{1}{n} S_n} \leq - \frac{1}{20}) \\
+        & =  \pe(| \frac{1}{n} S_n - \E{\frac{1}{n} S_n} | \geq \frac{1}{20})
+    \end{align*}
+    % TODO
+    TODO die Sachen von der Tafel noch zu ende
 \end{auf}
 
 \begin{auf}
