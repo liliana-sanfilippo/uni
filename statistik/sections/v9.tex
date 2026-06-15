@@ -1,22 +1,39 @@
 %! Author = lili
 %! Date = 4/27/26
 
-\chapter{Grenzwertsätze}
+
+\chapter{Grenzwertsätze}\label{ch:grenzwertsatze}
 \untit{Vorlesung 13. Juni 2025 (V09 2025) und 12. Juni 2026 (V08 2026)} % und 08 bzw 12 Juni in 2026
 \begin{satz}
     \textbf{Markoffsche Ungleichung}
-    % TODO F 2
-    TODO F2 26
+    %  F 2
+    Sei $X$ eine Zufallsvariable. $\E{|X|^k}$ existiert für ein $k \in \nz$.
+    Dann existiert auch der Erwartungswert $\E{X}$, und es gilt
+    \[
+        \pe( \oub{|X - \E{X}|}{*} \geq h ) \leq \frac{\E{|X - \E{X}|^k}}{h^k} \quad \forall h > 0
+    \]
+    \txo{* Menge aller $\oio$ derart, dass $X(\ele)$ um mindestens h von ihrem EW $\E{X}$ abweicht.}
 \end{satz}
 
 \begin{satz}
-    \textbf{Tschebysche!sche Ungleichung (Spezialfall k = 2)}
-    % TODO F 3
-    TODO F3 26
+    \textbf{Tschebyscheffsche Ungleichung (Spezialfall k = 2)} \\
+    %  F 3
+    Für eine Zufallsvariable X, deren Erwartungswert und Varianz existieren, gilt
+    \[
+        \pe( |X - \E{X}| \geq h ) \leq \frac{\Var(X)}{h^2} \quad \forall h > 0
+    \]
+    \paragraph{Beweis:} \txo{Spezialfall diskreter \gls{wraum}}
+    \begin{align*}
+        \pe( |X - \E{X}| \geq h ) & = \sum_{\oio : |X(\ele)- \E{X}| \geq h} \wfk(\ele) \\
+        & = \sum_{x \in X(\eraum) : |x - \E{X}| \geq h} \pe( \{\oio: X(\ele) = x\} ) \\
+        & \leq  \sum_{x \in X(\eraum) : |x - \E{X}| \geq h} \big( \frac{|x - \E{X}|}{h} \big)^2 \pe(X=x) \\
+        & \leq \frac{1}{h^2}  \sum_{x \in X(\eraum)} |x - \E{X}|^2  \pe(X=x)  \\
+        & \leq  \frac{1}{h^2} \Var(X)
+    \end{align*}
 \end{satz}
 
 \begin{bsp}
-    \textbf{Die Tschebysche!sche Ungleichung kann nicht verbessert werden}
+    \textbf{Die Tschebyscheffsche Ungleichung kann nicht verbessert werden}
     % TODO F 4-9
     TODO F4-9 26
 \end{bsp}
@@ -30,17 +47,31 @@
 \begin{satz}
     \textbf{Schwaches Gesetz der großen Zahlen}
     %\texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)}
-    \paragraph{Gegeben} Zufallsvariablen $X_1, X_2, X_3, ...$ auf einem $\wraum$.
+
+    \paragraph{Gegeben} Zufallsvariablen $X_1, X_2, X_3, \dots$ auf einem $\wraum$.
     Dabei muss die Verteilung der $X_i$ nicht identisch sein.
     Es gilt $S_n = \sum^n_{i=1} X_i$
+
     \paragraph{Angenommen} alle Erwartungswerte $\E{X_i}$ existieren mit $\E{X_i} = \E{X_1}$
     \txc{(es sind also alle gleich)} für alle $i \in \nz$.
-    $\exists C > 0$ mit $Var(X_i) \leq C$ für alle $i \in \nz$.
+    $\exists C > 0$ mit $\Var(X_i) \leq C$ für alle $i \in \nz$.
+    (Beachte $\Var(X_i) < \infty \Rightarrow \E{X_i}$ ex.)
 
+    Die Zufallsvariablen sind \gls{paarweiseunkorreliert} \txo{(Also wenn $\Cov(X_i, X_j) = 0$ für $i \neq j$)}:
+    \[
+        \E{
+            (X_i - \E{X_i}) (X_j - \E{X_j}) = 0, \quad \text{für alle } i \neq j
+        }
+    \]
+    Dann gilt: \\
     \mab{\lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} S_n - \E{X_1} \mid \geq \epsilon) = 0 \forall \epsilon > 0}
-    \orangenote{$S_n$: aithmetisches Mittel und $\frac{1}{n} S_n$ relative Häufigkeit, falls $x_i$ Bernoulli-verteilt}
 
-    \paragraph{Beweis.}  \texttt{(siehe Folie 4)}
+    \orangenote{$S_n$: arithmetisches Mittel und $\frac{1}{n} S_n$ relative Häufigkeit, falls $x_i$ Bernoulli-verteilt}
+    \txc{Soll heißen.: Generell ist $\frac{1}{n} S_n$ das arithmetische Mittel, aber bei einer Bernoulli-Verteilung ist
+        $\frac{1}{n} S_n$ auch gleichzeitig die relative Häufigkeit der Erfolge, da $S_n$ die Anzahl der Erfolge unter $n$ Versuchen ist.}
+
+    \paragraph{Beweis.}  \texttt{(siehe Folie 4--2025 bzw. 18--19 2026)}
+    % TODO F 18-19 2026
 \end{satz}
 
 \begin{bem}
@@ -56,30 +87,44 @@
     konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
 \end{bsp}
 
-\begin{satz}
-    \textbf{Lokaler zentraler Gesetzwertsatz}
+\begin{bsp}
+    \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
+% TODO F 20-22
+    TODO F 20--22
+\end{bsp}
 
-    \paragraph{Notationen}
+\begin{notation}
     \mab{x_k^{(n)} \coloneqq  (k - np) / \sqrt{npq} \text{ für } k = 0, \dots, n}
     \mab{\glssymbol{binomv} = \binom{n}{k} p^k q^{n-k}}
-    \begin{er}
-        Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
-        \mab{\pe(S_n = k) = \glssymbol{binomv}(k)}
-        \mab{\E{S_n} = np}
-        \mab{Var(S_n) = npq}
-    \end{er}
-    Sei \ma{ L > 0} eine beliebige Konstante. Dann gilt
+\end{notation}
+
+\begin{er}
+    Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
+    \mab{\pe(S_n = k) = \glssymbol{binomv}(k)}
+    \mab{\E{S_n} = np}
+    \mab{\Var(S_n) = npq}
+\end{er}
+
+\begin{satz}
+    \textbf{Lokaler zentraler Gesetzwertsatz}
+    Sei \ma{ L > 0} eine beliebige Konstante.
+    Dann gilt
     \begin{equation}
         \label{eq:lokaleruentralergesetzwertsatz}
         \oub{\glssymbol{binomv}(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
     \end{equation}
     Dabei bedeutet $\sim$:
-    \mab{f(n) \sim g(n) \Leftrightarrow \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)}  = 1}
-    Man kann \ref{eq:lokaleruentralergesetzwertsatz} auch schreiben als
-    \mab{\limnin \sup_{k: |x_k^{(n)}| \leq L} \mid \frac{{B}_{n,p}(k)}{\frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2}}  - 1 \mid = 0 }
+    \[
+        f(n) \sim g(n) \Leftrightarrow \lim_{n \rightarrow \infty} \frac{f(n)}{g(n)}  = 1
+    \]
+    Man kann~\ref{eq:lokaleruentralergesetzwertsatz} auch schreiben als
+    \[
+        \limnin \sup_{k: |x_k^{(n)}| \leq L} \mid \frac{{B}_{n,p}(k)}{\frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2}}  - 1 \mid = 0
 
-    \paragraph{Beweis.} \texttt{Folie 14}
+    \]
 
+    \paragraph{Beweis.} \texttt{Folie 14--2025 bzw. F 25 in 2026}
+    % TODO F 25
     \orangenote{schwaches Gesetz der großen Zahlen ''\ma{\frac{1}{n} S_n \rightarrow \frac{1}{6}}'' und \ma{\pe(\frac{1}{n} S_n = \frac{1}{6})}} ist sehr klein.
 \end{satz}
 \begin{erg}
@@ -88,13 +133,15 @@
         \label{eq:strilingscheformel}
         n! \sim \sqrt{2 \pi n} \binom{n}{e}^n \text{ für große } n
     \end{equation}
-    \texttt{Siehe Folie 15}
+    %\texttt{Siehe Folie 15}
+    % TODO Tabelle F 26
 \end{erg}
 \begin{erg}
     \textbf{Stirlingsche Formel mit Fehlerabschätzung}
     \begin{equation}
-        1 \leq \frac{n!}{\sqrt{2 \pi n} \binom{n}{e}^n} \leq 1 + \frac{1}{11n}
+        1 \leq \frac{n!}{\sqrt{2 \pi n} \binom{n}{e}^n} \leq 1 + \frac{1}{11n}\label{eq:equation}
     \end{equation}
+    Die Approximation verwendet die untere Schranke und Fehler ist der Ordnung $\frac{1}{n}$.
 \end{erg}
 \begin{bsp}
     1200-mal Würfeln mit einem fairen Würfel \\
@@ -111,24 +158,40 @@
     \mab{0.0000170\dots}
 \end{bsp}
 \textbf{Neue Fragen} \\
-Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen? Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
+Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen?
+Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 
-\begin{satz} \label{satz:Moivre-Laplace}
+\begin{satz}
+    \label{satz:Moivre-Laplace}
     \textbf{Satz von de Moivre-Laplace} \textit{(Spezialfall des zentralen Grenzwertsatzes)}\\
     Sei \ma{S_n} die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten
     Bernoulli-Experiment mit Erfolgswahrscheinlichkeit \ma{p \in (0, 1)}. \\
     Dann gilt für jede Wahl von Konstanten \ma{a, b} mit \ma{- \infty < a < b < \infty}:
     \begin{equation}
-        \limnin \pe( a < \frac{S_n - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx
+        \limnin \pe( a < \frac{S_n - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx \txo{=
+            \intab \varphi(x) \dx}\label{eq:equation2}
     \end{equation}
     Dabei verstehen wir die rechte Seite als Riemann-Integral \ma{\intab \varphi(x) \dx} mit
     \begin{equation}
         \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{x^2 / 2}
     \end{equation}
-    \paragraph{Beweis.} \texttt{Siehe Folie 23.}
+    \txo{
+        Standartisieren: $X$ ist ZV mit existierender Varianz.\\
+        $Y \coloneqq \frac{X - \E{X}}{\sqrt{\Var(X)}}$ hat $\E{Y} = 0, \quad \Var(Y) = 1$
+    }
+
+    \paragraph{Beweisidee:}
+    Zunächst Approximieren der Summanden $\binomv$ durch den lokalen zentralen
+    Grenzwertsatz.
+    Approximieren der Summe mit Hilfe eines Riemann-Integrals.
+
+    \paragraph{Beweis.}
+    \texttt{Siehe Folie 23.}
 \end{satz}
-\begin{bem}  \textbf{Zu Satz \ref{satz:Moivre-Laplace}} \\
-    \ma{\varphi} heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}. \\
+\begin{bem}
+    \textbf{Zu Satz \ref{satz:Moivre-Laplace}} \\
+    $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{x^2 / 2}$ heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}
+    . \\
     Die Stammfunktion \begin{equation}
                           \Phi(y) = \int_{- \infty}^y \varphi(x) \dx
     \end{equation}
@@ -136,27 +199,40 @@ Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen? Wie groß ist die
     Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve. \\
     \ma{\Phi(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
 \end{bem}
+
+
 \begin{reg}
     \textbf{Rechenregeln}
+    Dichte:
     \begin{equation}
         \int_{- \infty}^{\infty} \varphi(x) dx = 1
     \end{equation}
+    Verteilungsfunktion:
     \begin{equation}
         \Phi(y) \rightarrow \begin{cases}
                                 0 & \text{für } y \rightarrow - \infty  \\
                                 1 & \text{für } y \rightarrow \infty
         \end{cases}
     \end{equation}
+    gerade Funktion:
     \begin{equation}
         \Phi(0) = \frac{1}{2}
     \end{equation}
     \begin{equation}
-        \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (-y)}{f(y)} dy = 1 - \Phi(-z)
+        \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (y)}{f(y)} dy = 1 - \Phi(-z)
     \end{equation}
+    \txo{($y = -z$)} \\
+    Illustration in Abbildung~\ref{fig:moivrelaplaceGlocke}.
 \end{reg}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/moivrelaplaceGlocke}
+    \caption{}\label{fig:moivrelaplaceGlocke}
+\end{figure}
 \begin{erg}
     \textbf{Lokaler zentraler Grenzwertsatz und Satz von de Moivre-Laplace} \\
-    \texttt{Siehe Folie 25-29}
+    \texttt{Siehe Folie 25--29 bzw. F 36--40}
+    % TODO F 36-40
 \end{erg}
 \begin{bsp}
     \textbf{Vorlesung vs. Schlaf} \\
@@ -166,16 +242,141 @@ Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen? Wie groß ist die
     \paragraph{Geg.:} \ma{n = 142} Hörer, Jeder Einzelne besucht mit Wahrscheinlichkeit \ma{p \in (0,1)} die Vorlesung \ma{(p = \frac{2}{3})}.
 
     \paragraph{Vereinfachende Annahmen:}
-    Alle H¨orer besuchen die Vorlesung mit derselben Wahrscheinlichkeit und alle H¨orer entscheiden sich unabh¨angig voneinander.
+    Alle Hörer besuchen die Vorlesung mit derselben Wahrscheinlichkeit und alle Hörer entscheiden sich unabhängig
+    voneinander.
 
-    \paragraph{Modell:} $n$-mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$. Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glssymbol{binomv}}-verteilt. Man betrachte jeden Anwesenden der n eingeschriebenen H¨orer als ''Erfolg''. \\
-    Also: \mab{\glssymbol{eraum}  = \kl{0,1}^n, \quad \glssymbol{wfk}(\glssymbol{elementarereignis}) = p^{\sumEN \glssymbol{elementarereignis}_i} \cdot (1-p)^{n - \sumEN \glssymbol{elementarereignis}_i}}
-    \mab{S_n(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i}
+    \paragraph{Modell:} $n$-mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$.
+    Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glssymbol{binomv}}-verteilt.
+    Man betrachte jeden Anwesenden der n
+    eingeschriebenen Hörer als ``Erfolg''. \\
+    Also:
+    \[
+        \glssymbol{eraum} = \kl{0,1}^n, \quad \glssymbol{wfk}(\glssymbol{elementarereignis}) = p^{\sumEN
+        \glssymbol{elementarereignis}_i} \cdot (1-p)^{n - \sumEN \glssymbol{elementarereignis}_i}
+        \quad (\text{mit } n = 142 \text{ und } p = 2/3)
+    \]
+    Anzahl der Erfolge ist die Anzahl Anwesender
+    \[
+        S_n(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i
+    \]
     Dass $n$ Leute anwesende sind ist das Ereignis:
-    \mab{A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}} = \kl{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor}}
+    \[
+        A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}} = \kl{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor}
+    \]
     Für \ma{n = 142} ist das \ma{\lceil \frac{3}{10} \cdot n \rceil = 43} und  \ma{\lfloor \frac{7}{10} \cdot n \rfloor = 99}
-    Mit \ma{p = \frac{2}{3}}: \mab{\pe(A_n) = \sum_{k = \lceil \frac{3}{10} \cdot n \rceil}^{\lfloor \frac{7}{10} \cdot n \rfloor} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k} \txc{ = \sum_{k = 43}^{99} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k}}  \approx 0.80}
-    Approximation mit dem Satz von de Moivre-Laplace:
-    \mab{\pe(A_n) = \pe(\frac{3n}{10}) \leq S_n \leq \frac{7n}{10} }
-    \texttt{Mehr Folie 38 bis 45}
+    Mit \ma{p = \frac{2}{3}}:
+    \[
+        \pe(A_n) = \sum_{k = \lceil \frac{3}{10} \cdot n \rceil}^{\lfloor \frac{7}{10} \cdot n \rfloor} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k} \txc{ = \sum_{k = 43}^{99} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k}}  \approx 0.80
+    \]
+    Approximation mit dem Satz von de Moivre-Laplace \txo{(in Form $a < \dots \leq b bringen$)}:
+    \begin{align*}
+        \pe(A_n) & = \pe(\frac{3n}{10}) \leq S_n \leq \frac{7n}{10} \\
+        & \txo{= pe( \lceil \frac{3n}{10} \rceil  \leq S_n \leq \lfloor \frac{7n}{10} \rfloor)}  \\
+        & = \pe(\lceil \frac{3n}{10} \rceil -1  < S_n \leq \lfloor \frac{7n}{10} \rfloor) &
+        \text{(weil $S_n$ ganzzahlig ist)} \\
+        & = \pe ( a < \frac{S_n - np}{\sqrt{npq}} \leq b ) & \text{(Standardisieren, q = 1 - p = 1/3)} \\
+        & \overset{\txo{*}}{\approx} \phi(b) - \phi(a) & \text{(Satz von de Moivre-Laplace)}\\
+        & \approx \phi(0.77) - 0 \\
+        & \approx 0.7794v & (Tabelle)
+    \end{align*}
+    \[
+        \txo{
+            * \intab \varphi(x) \dx = \phi(b) - \phi(a)
+        }
+    \]
+    mit
+    \[
+        a = \frac{\lceil \frac{3n}{10} \rceil - 1 - np}{\sqrt{npq}} \approx -9.38 \quad und \quad  b = \frac{\lfloor \frac{7n}{10} \rfloor - 1 - np}{\sqrt{npq}} \approx 0.77
+    \]
+    % todo \texttt{Mehr Folie 38 bis 45}
 \end{bsp}
+
+Das Resultat wirft einige Fragen auf:
+\begin{fr}
+    \textbf{Warum spielt die untere Grenze a, die von den 30\% herrührt, praktisch keine
+    Rolle?}
+
+    \paragraph{1. Antwort:} $\phi (a) \approx \phi(-9) = 1 - \phi(9)$ und $\phi(9)$ ist so nah an 1, dass wir diesen
+    Wert nicht einmal in der Tabelle finden . . . \\
+    Aber das erklärt noch gar nichts – oder?
+
+    \paragraph{2. Antwort:} Wir wissen aus dem Gesetz der großen Zahlen, dass $\frac{1}{n} S_n$ in einem
+    gewissen Sinne gegen $p = 2/3 \approx 66\%$ konvergiert. Daher ist die Forderung,
+    dass $\frac{1}{n} S_n \leq 70\%$ sein soll, sehr viel restriktiver als die Forderung $\frac{1}{n} S_n \geq 30\%$.
+\end{fr}
+
+\komm{Da $\frac{1}{n}S_n$ nach dem Gesetz der großen Zahlen gegen
+    $p=\frac{2}{3}\approx 66{,}7\%$ konvergiert, liegt es für große $n$
+    mit hoher Wahrscheinlichkeit in der Nähe von $66{,}7\%$. Die Bedingung
+    $\frac{1}{n}S_n \ge 30\%$ ist daher nahezu immer erfüllt, während
+    $\frac{1}{n}S_n \le 70\%$ nur eine kleine Abweichung vom Grenzwert
+    zulässt und somit restriktiver ist.}
+
+\begin{fr}
+    Die exakte Rechnung ergab $\pe(A_n) \approx 0.80$ (Genauer $pe(A_n) \approx 0.804486$). \textbf{Warum finden wir mit dem Satz von de Moivre-Laplace nur $pe(A_n) \approx 0.78$?}
+
+    \paragraph{1. Antwort:} n = 142 ist noch kein wirklich großes n.
+
+    \paragraph{2. Antwort:} Grob gesprochen, approximieren wir eine diskrete Größe, die
+    Anzahl der Erfolge $S_n$, durch etwas Kontinuierliches.
+    Eine Verbesserung ist oft
+    möglich durch die so genannte Stetigkeitskorrektur: \index{Stetigkeitskorrektur}
+
+    Wir modifizieren die Grenzen in $A_n$ geschickt und rechnen
+    \begin{align*}
+        \pe(A_n) & = \pe(\lceil \frac{3n}{10} \rceil -1  < S_n \leq \lfloor \frac{7n}{10} \rfloor) \\
+        & \pe(\lceil \frac{3n}{10} \rceil \txo{- \frac{1}{2}}  < S_n \leq \lfloor \frac{7n}{10} \rfloor \txo{+
+        \frac{1}{2}} ) & \text{(weil $S_n$ ganzzahlig ist)} \\
+        & \approx \phi(0.86) \approx 0.8051 & (Tabelle)
+    \end{align*}
+    \txc{Bingo!} \\
+    Beachte, daß die Stetigkeitskorrektur nicht immer besser ist (siehe Hausaufgaben).
+\end{fr}
+
+\begin{bsp}
+    \textbf{Vorlesung vs. Schlaf II} \\
+    Wie groß ist die Wahrscheinlichkeit, daß
+    von 142 Hörern nächste Woche mindestens
+    90 die Vorlesung besuchen?
+
+    \paragraph{Was ist anders als im obigen Beispiel?} Neu an dieser Frage ist, daß wir nur eine untere Schranke gegeben haben,
+    d.h., wir suchen die Wahrscheinlichkeit von
+    \[
+        B_n = \{S_n \geq 90\}
+    \]
+    Dieser Fall ist in unserer Formulierung des Satzes von de Moivre-Laplace nicht
+    vorgesehen!
+
+    \paragraph{Idee, das Problem zu umgehen:} Wir werden uns künstlich eine triviale obere Schranke verschaffen.
+    \begin{align*}
+        \pe(B_n) & = \pe(S_n \geq 90) \\
+        & = \pe(89 < S_n \leq n ) & \text{(triviale obere Schranke)} \\
+        & = \pe(89.5 < S_n \leq n ) & (S_n\text{ ganzzahlig, Stetigkeitskorrektur)} \\
+        & \pe( c_n < \frac{S_n - np}{\sqrt{npq}} \leq d_n ) & (Standardisieren) \\
+        & \approx \phi(d_n) - \phi(c_n) & \text{(Satz von de Moivre-Laplace)} \\
+        & = \phi(d_n) - [1- \phi( \oub{-c_n}{>0} )] \approx 0.8212 & (Tabelle)
+    \end{align*}
+    mit \[
+            c_n = \frac{89.5 - np}{\sqrt{npq}} \approx -0.92 \quad und \quad d_n = \frac{nq}{\sqrt{npq}} 0 \sqrt{\frac{nq}{p}} \approx 8.43
+    \]
+    Exakte Rechnung ergibt $\pe(B_n) = 0.821556 \dots$
+\end{bsp}
+
+\begin{bem}
+    Generell gelten, sofern der Satz von de Moivre-Laplace anwendbar ist,
+    \[
+        \pe (s_n > c) = \pe(
+        \frac{c-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{n-np}{\sqrt{npq}}
+        ) \approx 1 - \phi(\frac{c-np}{\sqrt{npq}})
+    \]
+    und
+    \[
+        \pe (s_n \leq d) = \pe(
+        \frac{-1-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{d-np}{\sqrt{npq}}
+        ) \approx \phi(\frac{d-np}{\sqrt{npq}})
+    \]
+    weil für große n
+    \[
+        \phi(\frac{-1-np}{\sqrt{npq}}) \approx 0 \quad und \quad \frac{n-np}{\sqrt{npq}} \approx 1
+    \]
+\end{bem}
