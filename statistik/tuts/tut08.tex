@@ -31,7 +31,19 @@ Wahrscheinlichkeit von 10\% nicht zum Flug.
     \subsection*{(a) Geben Sie einen geeigneten Wahrscheinlichkeitsraum an, der es erlaubt, die folgenden
     Aufgabenteile zu bearbeiten. Diskutieren Sie, welche Annahmen Sie machen müssen, um Ihre Wahl des Wahrschein-
     lichkeitsraums zu rechtfertigen.}
+    \paragraph{Lösung Tutor}
+    \[
+        \eraum = \{ \underbrace{0}_{kommt\ nicht}, \underbrace{1}_{kommt}\}^n
+    \]
+    kommt nicht ist $q = \frac{1}{10}$ und kommt ist $p = \frac{9}{10}$.
+    \[
+        \pe( \{\ele\}) = p^{\sum_{i=1}^n \ele_i} \cdot (1-p)^{\sum_{i=1}^n \ele_i}
+    \]
+    Bspw. $\{\ele\} = (1,0,1,1,0)$
 \end{auf}
+
+%Der Erwartungswert ist nicht die WS aller möglichen Kombinationen, sondern die WS gewichtet nach de...
+Erwartungswert berechnet den Durchschnitt einer ZV!
 
 \begin{auf}
     \subsubsection*{(b) Geben Sie ein Verfahren an, wie die Frage, wie viele Tickets unter den oben genannten
@@ -43,9 +55,6 @@ Wahrscheinlichkeit von 10\% nicht zum Flug.
     Tickets unter den oben genannten Bedingungen maximal angeboten werden können.}
 \end{auf}
 
-\begin{auf}
-    \subsubsection*{(d) Beweisen Sie mit Hilfe der Tschebysche!schen Ungleichung, daß $b_{200} < b_{20}$ gilt.}
-\end{auf}
 
 \section{PÜ 2.2.5}\label{sec:pu-2.2.5}
 Eine Süßwarenfirma gibt an, daß 25\% ihrer Gummibärchen die beliebte Farbe rot haben.
@@ -73,6 +82,15 @@ Wahrscheinlichkeit, dass höchstens 20\% der neu gekauften n Gummibärchen rot s
 \begin{auf}
     \subsubsection*{(c) Sei n = 20. Berechnen Sie $b_{20}$ auf drei Nachkommastellen genau, d.h., geben Sie die
     Wahrscheinlichkeit in der Form 0.xyz bzw. xy.z \% an.}
+\end{auf}
+
+\begin{auf}
+    \subsubsection*{(d) Beweisen Sie mit Hilfe der Tschebysche!schen Ungleichung, daß $b_{200} < b_{20}$ gilt.}
+\end{auf}
+
+\begin{auf}
+    \subsubsection*{(e) Zeigen Sie mit Hilfe der Tschebysche!schen Ungleichung, dass
+        $\lim_{n \rightarrow \infty} b_n = 0$ gilt}
 \end{auf}
 
 \section{Besprechung ÜB 2.1.1}\label{sec:besprechung-ub-2.1.1}
