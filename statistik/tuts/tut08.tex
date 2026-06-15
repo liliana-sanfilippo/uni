@@ -40,6 +40,9 @@ Wahrscheinlichkeit von 10\% nicht zum Flug.
         \pe( \{\ele\}) = p^{\sum_{i=1}^n \ele_i} \cdot (1-p)^{\sum_{i=1}^n \ele_i}
     \]
     Bspw. $\{\ele\} = (1,0,1,1,0)$
+
+    Wenn Binomialverteilt, geht man davon aus jeder hat die gleich WS zu kommen und sie sind unabhängig (wir
+    ignorieren bspw., dass Familien meistens zusammen reisen oder absagen).
 \end{auf}
 
 %Der Erwartungswert ist nicht die WS aller möglichen Kombinationen, sondern die WS gewichtet nach de...
@@ -48,6 +51,43 @@ Erwartungswert berechnet den Durchschnitt einer ZV!
 \begin{auf}
     \subsubsection*{(b) Geben Sie ein Verfahren an, wie die Frage, wie viele Tickets unter den oben genannten
     Bedingungen maximal angeboten werden können, exakt beantwortet werden könnte}
+    \paragraph{Lösung des Tutors:} Man definiert eine ZV $S_n$ über die aufsummiert wird:
+    \[
+        S_n( \underbrace{\ele}_{\ele = \omega_1, ... \omega_n}) = \sum^n_{i=1} \ele_i
+    \]
+    $S_n$ ist die Anzahl der Leute, die kommen. \\
+    Wenn wir die WS der Überbuchung auf maximal 0,05 halten wollen, interessiert uns
+    \[
+        \pe( S_n > 526 ) \leq 0,05
+    \]
+    \begin{itemize}
+        \item $n$ = Anzahl verkaufte Tickets (wir wollen n maximieren)
+        \item $S_n$ = Anzahl der Personen, die kommen
+    \end{itemize}
+    Auf Basis dessen oben:
+    \[
+        \underbrace{\pe(S_n \leq 526) }_{ = \sum^{526}_{i=1} \binom{n}{i} p^i (1-p)^{n-i}} \geq 0,95
+    \]
+    Starte bei n = 526 und berechne $\pe(S_n \leq 526)$ mit inkrementierendem n und wenn es bei einem n über 0,95
+    liegt, dann ist das das gesuchte n das n-1 ist.
+    \begin{align*}
+        \pe(S_n \leq 526) & = \pe(S_n - np \leq 526 - np) \\
+        & = \pe(\frac{S_n - np}{\sqrt{npq}} \leq \frac{256 - np}{\sqrt{npq}}) \\
+        & \approx \phi(\underbrace{\frac{526 - np }{\sqrt{npq}}}_{\geq 1,65})
+    \end{align*}
+    \[
+        \frac{526 - np }{\sqrt{npq}} \geq 1,65
+    \]
+    p und q einsetzen
+    \[
+        526 - (\sqrt{n})^2 \cdot \frac{9}{10} \geq 1,65 \sqrt{n} \cdot \frac{3}{10}
+    \]
+    und dann landet man durch Rumschieben bei
+    \[
+        ( \underbrace{\sqrt{n}}_{x} )^2  \underbrace{+ 1,65 \cdot \frac{1}{3}}_{c_1} \underbrace{\sqrt{n}}_{x}  \underbrace{- \frac{10}{q o. 9?}}_{c_2} \leq 0
+    \]
+    % TODO
+    TODO noch das letzte von der Tafel
 \end{auf}
 
 \begin{auf}

@@ -2,28 +2,59 @@
 %! Date = 4/27/26
 
 \chapter{Grenzwertsätze}
-\untit{Vorlesung 13. Juni 2025 (V09 2025)}
+\untit{Vorlesung 13. Juni 2025 (V09 2025) und 12. Juni 2026 (V08 2026)} % und 08 bzw 12 Juni in 2026
 \begin{satz}
-    \textbf{Schwaches Gesetz der großen Zahlen} \\
-    \texttt{Hier fehlen Voraussetzungen (siehe Folie 3)}
+    \textbf{Markoffsche Ungleichung}
+    % TODO F 2
+    TODO F2 26
+\end{satz}
+
+\begin{satz}
+    \textbf{Tschebysche!sche Ungleichung (Spezialfall k = 2)}
+    % TODO F 3
+    TODO F3 26
+\end{satz}
+
+\begin{bsp}
+    \textbf{Die Tschebysche!sche Ungleichung kann nicht verbessert werden}
+    % TODO F 4-9
+    TODO F4-9 26
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Werfen eines fairen Würfels}
+    % TODO F 10 - 16
+    TODO F10-16 26
+\end{bsp}
+
+\begin{satz}
+    \textbf{Schwaches Gesetz der großen Zahlen}
+    %\texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)}
+    \paragraph{Gegeben} Zufallsvariablen $X_1, X_2, X_3, ...$ auf einem $\wraum$.
+    Dabei muss die Verteilung der $X_i$ nicht identisch sein.
+    Es gilt $S_n = \sum^n_{i=1} X_i$
+    \paragraph{Angenommen} alle Erwartungswerte $\E{X_i}$ existieren mit $\E{X_i} = \E{X_1}$
+    \txc{(es sind also alle gleich)} für alle $i \in \nz$.
+    $\exists C > 0$ mit $Var(X_i) \leq C$ für alle $i \in \nz$.
+
     \mab{\lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} S_n - \E{X_1} \mid \geq \epsilon) = 0 \forall \epsilon > 0}
     \orangenote{$S_n$: aithmetisches Mittel und $\frac{1}{n} S_n$ relative Häufigkeit, falls $x_i$ Bernoulli-verteilt}
 
     \paragraph{Beweis.}  \texttt{(siehe Folie 4)}
-
-    \begin{bem}
-        Unabhängigkeit $\Rightarrow$ paarweise Unabhängigkeit $\Rightarrow$ paarweise Unkorreliertheit
-    \end{bem}
-    \begin{bem}
-        \mab{\E{\frac{1}{n} S_n} = \E{X_1}}
-    \end{bem}
-    \begin{bsp}
-        \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
-        Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p = } Erfolgswahrscheinlichkeit. \\
-        Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} S_n} der Erfolge
-        konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
-    \end{bsp}
 \end{satz}
+
+\begin{bem}
+    Unabhängigkeit $\Rightarrow$ paarweise Unabhängigkeit $\Rightarrow$ paarweise Unkorreliertheit
+\end{bem}
+\begin{bem}
+    \mab{\E{\frac{1}{n} S_n} = \E{X_1}}
+\end{bem}
+\begin{bsp}
+    \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
+    Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p = } Erfolgswahrscheinlichkeit. \\
+    Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} S_n} der Erfolge
+    konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
+\end{bsp}
 
 \begin{satz}
     \textbf{Lokaler zentraler Gesetzwertsatz}
