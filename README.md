@@ -35,9 +35,9 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 20 | Fr, 15.05. | :no_entry:              |                 | Mo, 11.05. | :no_entry:              | Fr, 15.05.     | :no_entry: |
 | KW 21 | Fr, 22.05. | :ballot_box_with_check: |                 | Mo, 18.05. | :no_entry:              | Fr, 22.05.     | :no_entry: |
 | KW 22 | Fr, 29.05. | :no_entry:              |                 | Mo, --     | --                      | Fr, 29.05.     | :no_entry: |
-| KW 23 | Fr, 05.06. | :soon:                  |                 | Mo, 01.06. | :no_entry:              | Fr, 05.06.     | :no_entry: |
-| KW 24 | Fr, 12.06. | :soon:                  |                 | Mo, 08.06. | :no_entry:              | Fr, 12.06.     | :no_entry: |
-| KW 25 | Fr, 19.06. | :soon:                  |                 | Mo, 15.06. | :soon:                  | Fr, 19.06.     | :soon:     |
+| KW 23 | Fr, 05.06. | :construction:          |                 | Mo, 01.06. | :construction:          | Fr, 05.06.     | :no_entry: |
+| KW 24 | Fr, 12.06. | :construction:          |                 | Mo, 08.06. | :no_entry:              | Fr, 12.06.     | :no_entry: |
+| KW 25 | Fr, 19.06. | :soon:                  |                 | Mo, 15.06. | :construction:          | Fr, 19.06.     | :soon:     |
 | KW 26 | Fr, 26.06. | :soon:                  |                 | Mo, 22.06. | :soon:                  | Fr, 26.06.     | :soon:     |
 | KW 27 | Fr, 03.07. | :soon:                  |                 | Mo, 29.06. | :soon:                  | Fr, 03.07.     | :soon:     |
 | KW 28 | Fr, 10.07. | :soon:                  |                 | Mo, 06.07. | :soon:                  | Fr, 10.07.     | :soon:     |
@@ -56,9 +56,9 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 |-------|-------------|----------------|-----------------|-------------|----------------|-----------------|
 | KW 16 | Mo, 13.04.  | :construction: |                 | Fr, 17.04.  | :construction: |                 |
 | KW 17 | Mo, 20.04.  | :construction: |                 | Fr, 24.04.  | :construction: |                 |
-| KW 18 | Mo, 27.04.  | :no_entry:     |                 | Fr, 01.05.  | :no_entry:     |                 |
-| KW 19 | Mo, 04.05.  | :no_entry:     |                 | Fr, 08.05.  | :no_entry:     |                 |
-| KW 20 | Mo, 11.05.  | :no_entry:     |                 | Fr, 15.05.  | :no_entry:     |                 |
+| KW 18 | Mo, 27.04.  | :construction: |                 | Fr, 01.05.  | :construction: |                 |
+| KW 19 | Mo, 04.05.  | :construction: |                 | Fr, 08.05.  | :no_entry:     |                 |
+| KW 20 | Mo, 11.05.  | :construction: |                 | Fr, 15.05.  | :no_entry:     |                 |
 | KW 21 | Mo, 18.05.  | :no_entry:     |                 | Fr, 22.05.  | :no_entry:     |                 |
 | KW 22 | --          | --             |                 | Fr, 29.05.  | :no_entry:     |                 |
 | KW 23 | Mo, 01.06.  | :no_entry:     |                 | Fr, 05.06.  | :no_entry:     |                 |
