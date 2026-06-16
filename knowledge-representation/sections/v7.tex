@@ -1,0 +1,157 @@
+%! Author = lili
+%! Date = 6/16/26
+
+
+\section{Motivation and Background}
+\begin{prob}
+    \textbf{Incomplete Knowledge Graphs} \\
+    Most existing \glspl{kg} suffer from limitations in knowledge
+    sources.
+    Biases during knowledge extraction lead to incomplete or erroneous information.
+\end{prob}
+
+\begin{exa}
+    A \gls{kg} about football might know ``Nunez plays for Liverpool'' but miss ``Nunez is a forward''
+\end{exa}
+
+\defin{kgr}
+
+\begin{application}
+    \begin{itemize}
+        \item Intelligent question-answering
+        \begin{itemize}
+            \item e.g. ``Who won the Champions League in 2020?''
+        \end{itemize}
+        \item Recommendation systems
+        \begin{itemize}
+            \item e.g. ``Users who liked X also liked Y''
+        \end{itemize}
+        \item Dialogue generation
+        \begin{itemize}
+            \item e.g. Chatbots with world knowledge
+        \end{itemize}
+    \end{itemize}
+\end{application}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{2cm} p{5cm} p{5cm} }
+       &  \textbf{Embedding-Based Methods} & \textbf{Logical Rule-Based Methods} \\
+        Interpretability & Lack it & Strong \\
+    TODO % TODO
+    \end{tabular}
+\end{table}
+
+\begin{keyin}
+    Logical rule-based methods excel at inference by uncovering underlying logical rules,
+    showcasing remarkable generalization ability and interpretability. They can be
+    seamlessly integrated with neural networks.
+\end{keyin}
+
+\begin{figure}[H]
+    % TODO 
+    \caption{Taxonomy of Logical Rule-Based \gls{kgr} methods}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ p{3cm} p{7cm} p{2cm}}
+        \textbf{Category} & \textbf{Key Characteristics} & \textbf{Timeline} \\
+        ILP-Based & Inductive Logic Programming, Horn rules, rule
+        learning from examples & 1990s \\
+        Probabilistic Graphical
+        Models + Rules & MLN (Markov Logic Networks), ProbLog, PSL
+        (Probabilistic Soft Logic), fuzzy reasoning & 2000s \\
+        Embedding Techniques
+        + Rules & KGE (Knowledge Graph Embedding), rule em-
+        bedding, mutual enhancement & 2010s \\
+        Neural Networks + Rules & RNN (Recurrent Neural Network), GNN
+        (Graph Neural Network), neural theorem prov-
+        ing & 2018+
+    \end{tabular}
+\end{table}
+% TODO noch notizen hinzufügen?
+
+\section{Background Knowledge}
+
+\defin{kg_formal}
+\defin{fact_formal}
+
+\begin{exa} \defiref{fact_formal}
+\[
+    \langle Nunez, PlayForTeam, Liverpool \rangle
+\]
+\end{exa}
+
+% TODO triple types genauer recherchieren
+% riple Types: SKG (Static KG), TKG (Temporal KG), MMKG (Multi-Modal KG)
+
+\begin{figure}[H]
+    % TODO  F 10
+    \caption{An example of a knowledge graph showing entities (circles) and relations (edges)}
+\end{figure}
+
+\defin{kgdenoising}
+
+% TODO F 11 generell
+
+\begin{figure}[H]
+    % TODO  F 11
+    \caption{KGR task illustration}
+\end{figure}
+
+% TODO F 12 - 13
+
+\section{ILP-Based KGR Methods}
+
+\defin{ilp}
+
+% TODO F 15 -17
+
+
+\section{Probabilistic Graphical Models + Rules}
+
+The core idea of unifying probabilistic graphical models and logical rules is to combine the expressive power of \gls{fol}
+with probabilistic reasoning to handle
+uncertainty and incompleteness in \glspl{kg}.
+
+\paragraph{Three Main Approaches:}
+\defin{mln}
+% TODO F 20
+\defin{it_sld}
+% TODO F 21
+\defin{psl}
+% TODO F 22
+
+\begin{challenge}
+    These methods rely on rule-based search mining requiring complex traversal
+    computations and are therefore not well-suited for large-scale \glspl{kg}.
+\end{challenge}
+
+
+\section{Embedding Techniques + Rules}
+
+% TODO F 24 - 28
+
+
+\section{Neural Networks + Rules}
+% TODO F 30 - 39
+
+
+\section{Comparison and Analysis}
+% TODO F 41 - 42
+
+
+\section{Challenges and Future Directions}
+\begin{challenge}
+    \textbf{Efficiency of Rule Learning} TODO F 44 % TODO
+\end{challenge}
+\begin{challenge}
+    \textbf{Rule Quality Evaluation} TODO F 44 % TODO
+\end{challenge}
+\begin{challenge}
+    \textbf{Interpretability Balance} TODO F 44 % TODO
+\end{challenge}
+
+% TODO F 45-46
+
