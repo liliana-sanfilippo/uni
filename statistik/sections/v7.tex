@@ -4,7 +4,7 @@
 % beim erwartungswert trägt 0 nichts bei, bei der varianz schon? 2026 Folie
 
 
-\chapter{Erwartungswert und Varianz von Zufallsvariablen}
+\chapter{Erwartungswert und Varianz von Zufallsvariablen}\label{ch:erwartungswert-und-varianz-von-zufallsvariablen}
 \untit{Vorlesung 30. Mai 2025 (V07 2025) und 05. Juni 2026 (V07 2026)}
 
 
@@ -28,16 +28,16 @@
     \item Spezialfall: \(X(\eraum)\) ist eine endliche Menge (insbesondere erfüllt, wenn \(\eraum\) endlich ist).
     \item Spezialfall: \(X \geq 0\).
     \item Erwartungswerte berechnen können.
-    \item Erwartungswert und Varianz f¨ur die wichtigsten Verteilungen kennen
-    \item Erwartungswert von Produkten zum Widerlegen von Unabh¨angigkeit
-    \item Erwartungswert von Produkten bei Unabh¨angigkeit berechnen k¨onnen
-    \item Markov-Ungleichung kennen und anwenden k¨onnen
+    \item Erwartungswert und Varianz für die wichtigsten Verteilungen kennen
+    \item Erwartungswert von Produkten zum Widerlegen von Unabhängigkeit
+    \item Erwartungswert von Produkten bei Unabhängigkeit berechnen können
+    \item Markov-Ungleichung kennen und anwenden können
 \end{itemize}
 
 
 \section*{Grundgedanke}
-Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir k¨onnen Wahrscheinlichkeiten
-berechnen wie z.B. $\pe(X \geq 2)$,  und diese Wahrscheinlichkeiten h¨angen nur von der
+Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir können Wahrscheinlichkeiten
+berechnen wie z.B. $\pe(X \geq 2)$,  und diese Wahrscheinlichkeiten hängen nur von der
 Verteilung ab, nicht von der Wahl des Wahrscheinlichkeitsraums $\wraum$.). \\
 Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \[
@@ -45,7 +45,8 @@ Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \]
 für jedes $A$. \\
 Es ist nicht immer klar, welche Verteilung zu einem sinnvollen Modell führt.
-Auch sind die Parameter der Verteilung nicht unbedingt bekannt. Siehe
+Auch sind die Parameter der Verteilung nicht unbedingt bekannt.
+Siehe
 \begin{itemize}
     \item \textbf{Binomialverteilung:}
     \[
@@ -93,7 +94,7 @@ Dies führt uns in die Statistik (später).
 \paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}? \\
 \begin{itemize}
     \item Wie groß ist der mittlere Gewinn bei einem Glücksspiel?
-    \item Wie lange muß man bei einem wiederholten Zufallsexperiment im Mittel
+    \item Wie lange muss man bei einem wiederholten Zufallsexperiment im Mittel
     warten, bis ein bestimmtes Ereignis eintritt?
     \item Wie viele weitere Personen steckt eine infizierte Person im Mittel an?
 \end{itemize}
@@ -103,7 +104,8 @@ Dies führt uns in die Statistik (später).
     \begin{itemize}
         \item Die \textbf{Basisreproduktionszahl} \(R_0\) gibt an, wie viele Personen
         eine infizierte Person im Mittel ansteckt, wenn es in der Bevölkerung keine
-        Immunität gibt. Gemäß RKI gilt:
+        Immunität gibt.
+        Gemäß RKI gilt:
         \[
             R_0 \in [2.8,\,3.8]
         \]
@@ -118,7 +120,8 @@ Dies führt uns in die Statistik (später).
         gegebener Länge im Mittel ansteckt.
 
         \item Die \textbf{Inzidenz} setzt Neuinfektionen in Relation zur
-        Bevölkerungsgröße. Die \emph{7-Tage-Inzidenz} gibt beispielsweise an,
+        Bevölkerungsgröße.
+        Die \emph{7-Tage-Inzidenz} gibt beispielsweise an,
         wie viele neu infizierte Personen es in den vergangenen sieben Tagen
         pro \(100\,000\) Einwohner gegeben hat.
     \end{itemize}
@@ -189,16 +192,21 @@ Dies führt uns in die Statistik (später).
     Wir sprechen in diesem Fall von der Existenz des Erwartungswerts.
 
     \paragraph{Hinweis:} Für \glspl{dichte} \dcht, die gerade Funktionen sind, gilt \(\int_{-N}^N x \dcht (x) \dx = 0\) für
-    alle N, auch wenn der Erwartungswert ggf. gar nicht existiert.
+    alle N, auch wenn der Erwartungswert ggf.
+    gar nicht existiert.
 \end{defi}
 
 \begin{bem}
     Absolute Konvergenz der Reihe, die den Erwartungswert definiert, garantiert,
-    daß wir die Summanden beliebig umsortieren dürfen. Es gilt daher
+    dass wir die Summanden beliebig umsortieren dürfen.
+    Es gilt daher
     \[
         \txo{\E{X} \overset{Def.}{=}} \sum_{x\in X(\eraum)} x \pe(X=x) = \sum_{x\in \eraum} X(\ele) \wfk(\ele)
     \]
-    sofern eine der Reihen absolut konvergent ist. (Vgl. obiges Bsp. mit dem Spiel.)
+    sofern eine der Reihen absolut konvergent ist.
+    (Vgl.
+    obiges Bsp.
+    mit dem Spiel.)
 
     Wenn $\eraum$ oder $X(\eraum)$ endlich ist, so existiert der Erwartungswert automatisch.
 
@@ -217,10 +225,10 @@ Dies führt uns in die Statistik (später).
     \textbf{Erwartungswert der Poisson-Verteilung} \\
     X Poisson-verteilt, d.h., es existiert ein $\lambda > 0$ mit
     \[
-        \wfk_X(k) = \pe (X=k) = \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, . . . \}
+        \wfk_X(k) = \pe (X=k) = \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat: \\
-    (Wir verwenden in dieser Argumentation, daß X nur nichtnegative Werte hat, d.h., $X \geq 0$.)
+    (Wir verwenden in dieser Argumentation, dass X nur nichtnegative Werte hat, d.h., $X \geq 0$.)
     \begin{align*}
         \E{X} & \overset{\txo{*1}}{=} \sum^{\infty}_{k=0} k \pe(X=k) \\
         & \overset{\txo{*2}}{=}  \sum^{\infty}_{k=0} \frac{\lambda^k}{k!} e^{-\lambda} \\
@@ -237,7 +245,7 @@ Dies führt uns in die Statistik (später).
     \txo{
         \begin{align*}
             *1 & \quad X(\eraum) = \nz_0 \\
-            *2 & \quad \pe(X=k) = \wfk_X(k) = ...
+            *2 & \quad \pe(X=k) = \wfk_X(k) = \dots
         \end{align*}
     }
 \end{bsp}
@@ -250,7 +258,7 @@ Dies führt uns in die Statistik (später).
     \[
         \wfk_X(k) = \pe (X=k) = p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, . . . \}
     \]
-    Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, daß $X \geq 0$)).
+    Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, dass $X \geq 0$)).
     \txo{
         \[
             h(x) = x^k \Rightarrow h'(x) = k x^{k-1}
@@ -277,7 +285,7 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Erwartungswert der uniformen Verteilung auf [a, b]} \\
     (Raten. – Warum ist der Erwartungswert (a + b)/2 ?) \\
-    Der Erwartungswert existiert, weil...
+    Der Erwartungswert existiert, weil\ldots
     \txc{
         Denn: Zu prüfen ist: \( \intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a,b]}(x)$. \\
         Hier ist $\dcht(x) = 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
@@ -285,7 +293,7 @@ Dies führt uns in die Statistik (später).
             \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{max\{|a|, |b|\}}{b-a} \dx = max\{|a|, |b|\} \cdot 1 < \infty
         \]
     }
-    ... f stetig ist auf dem kompakten Intervall [a, b]
+    \ldots f stetig ist auf dem kompakten Intervall [a, b]
     und f = 0 außerhalb des Intervalls [a, b] gilt.
     \[
         \E{X} = \intab x \frac{1}{b-a} \dx = \frac{1}{2(b-a)} x^2 |^b_{x=a} = \frac{b^2 - a^2}{2(b-a)} = \oub{\frac{a+b}{2}}{*}
@@ -300,11 +308,11 @@ Dies führt uns in die Statistik (später).
     \txo{
         Erinnerung:}
     \[
-        \txo{ F(x) := - e^{-\alpha x}, \quad F'(x) := \alpha e^{-\alpha x}, \quad \E{X} = \frac{1}{\alpha}}
+        \txo{ F(x) \coloneqq - e^{-\alpha x}, \quad F'(x) \coloneqq \alpha e^{-\alpha x}, \quad \E{X} = \frac{1}{\alpha}}
     \]
 
     Der Erwartungswert existiert genau dann, wenn die folgende Berechnung einen
-    endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, daß $X \geq 0$):
+    endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, dass $X \geq 0$):
     \begin{align*}
         \E{X} & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
         & = - \lim_{N \rightarrow \infty} \oub{x e^{- \alpha x}}{=0} |^N_{x=0} +  \int^{\infty}_0 \oub{1 \cdot  e^{- \alpha
@@ -375,7 +383,7 @@ Dies führt uns in die Statistik (später).
         E[X]
         =
         \sum_{i=2}^{12}
-        i \, \pe(X_1+X_2=i) = ...
+        i \, \pe(X_1+X_2=i) = \dots
     \]
     was etwas aufwendig ist.
 
@@ -437,7 +445,7 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \\
     \txo{
-        $X(\eraum) = \{ 0,...,n\}, \quad \# X(\eraum) = n+1 < \infty$}
+        $X(\eraum) = \{ 0,\dots,n\}, \quad \# X(\eraum) = n+1 < \infty$}
     \begin{itemize}
         \item \(X\) sei binomialverteilt mit den Parametern \(n\) und \(p\).
         \item Der Erwartungswert$^{\txo{*}}$ von \(X\) existiert, da der Bildbereich von \(X\)
@@ -447,7 +455,7 @@ Dies führt uns in die Statistik (später).
 
     \paragraph{1. Versuch} (mit binomischer Formel und etwas Geschick)
     \[
-        \E{X} = \sum^n_{k=0} k \oub{\binom{n}{k} p^k (1-p)^{n-k}}{=\pe(X=x)} = ...
+        \E{X} = \sum^n_{k=0} k \oub{\binom{n}{k} p^k (1-p)^{n-k}}{=\pe(X=x)} = \dots
     \]
 
     \paragraph{2. Versuch}
@@ -489,7 +497,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{St. Petersburger Paradoxon (Erwartungswert muß nicht existieren)} \\
+    \textbf{St. Petersburger Paradoxon (Erwartungswert muss nicht existieren)} \\
     Ein Casino möchte folgendes Spiel anbieten:
     Eine faire Münze wird geworfen, bis zum ersten Mal Kopf erscheint.
     Passiert dies beim n-ten Wurf, so sei die Auszahlung $X = 2^n$
@@ -530,11 +538,11 @@ Dies führt uns in die Statistik (später).
     Ein fairer Einsatz kann nicht bestimmt werden.
 \end{bsp}
 \begin{er}
-    Aus Satz (E), d.h. der Linearit¨at des Erwartungswerts, folgen:
+    Aus Satz (E), d.h. der Linearität des Erwartungswerts, folgen:
     \[
         \E{aX}= a \E{X} \text{ und } \E{X + Y } = \E{X} + \E{Y}
     \]
-    f¨ur $a \in \rz$ und $\rz$-wertige X und Y mit existierendem Erwartungswert
+    für $a \in \rz$ und $\rz$-wertige X und Y mit existierendem Erwartungswert
 \end{er}
 
 \begin{fr}
@@ -696,9 +704,9 @@ Dies führt uns in die Statistik (später).
 
         \item Setze
         \[
-            X:=X_1+Y_1,
+            X\coloneqq X_1+Y_1,
             \qquad
-            Y:=|X_1-Y_1|.
+            Y\coloneqq|X_1-Y_1|.
         \]
     \end{itemize}
 
@@ -799,10 +807,10 @@ Dies führt uns in die Statistik (später).
 
 \begin{bem}
     Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
-    unabh¨angiger Zufallsvariablen verwendet werden, sondern kann auch benutzt
-    werden, um zu zeigen, daß zwei Zufallsvariablen nicht unabh¨angig sein k¨onnen,
+    unabhängiger Zufallsvariablen verwendet werden, sondern kann auch benutzt
+    werden, um zu zeigen, dass zwei Zufallsvariablen nicht unabhängig sein können,
     wenn der Erwartungswert des Produkts der Zufallsvariablen nicht ins Produkt der
-    einzelnen Erwartungswerte zerf¨allt.
+    einzelnen Erwartungswerte zerfällt.
 \end{bem}
 
 % TODO 2026 ab Seite 65 weiter
@@ -969,7 +977,7 @@ Dies führt uns in die Statistik (später).
 
 \begin{bsp}
     \textbf{Bernoulli-Variable (Spezialfall der Binomialverteilung mit n = 1)} \\
-    Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ f¨ur Erfolgsws. $p \in [0,1]$ und $\E{X} = p$. \\
+    Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ für Erfolgsws. $p \in [0,1]$ und $\E{X} = p$. \\
     \txc{$\Var(X)$ existiert, da}
     \begin{align*}
         \txo{\Var(X) & = \sum_{x\in X(\eraum)}  (x - \E{X})^2 \pe(X=x)} \\
@@ -1033,5 +1041,71 @@ Dies führt uns in die Statistik (später).
     Es gilt daher stets $(\E{X})^2 \le \E{X^2}$.
 \end{folg}
 
+\begin{satz}
+    \textbf{Satz V} \\
+    TODO F 79 - 86 % TODO F 79 - 86
+\end{satz}
 
+\begin{bsp}
+    \textbf{binomialverteilte Zufallsvariable $S_n$ mit Parametern n und p} \\
+    TODO F 87 - 89  % TODO F 87 - 89
+\end{bsp}
 
+\begin{bsp}
+    \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$} \\
+    TODO F 90 - 94 % TODO F 90 - 94
+\end{bsp}
+
+\begin{bsp}
+    \textbf{geometrisch verteilte Zufallsvariable X mit Erfolgswahrscheinlichkeit p} \\
+    \[
+        \E{X} = \frac{1}{p} \quad und \quad \Var(X) = \frac{1-p}{p^2}
+    \]
+    \txo{(Nicht auswendig lernen)}
+\end{bsp}
+
+\begin{bsp}
+    \textbf{auf [a, b] uniform verteilte Zufallsvariable X} \\
+    Dann ist
+    \[
+        \E{X} = \frac{a + b}{2}
+    \]
+    und
+    \begin{align*}
+
+        \E{X^2}&  = \intab x^2 \frac{1}{b - a} \dx \\
+        &= \frac{1}{3(b - a)} \ x^3 \Big|_{x=a}^b \\
+        &= \frac{b^3 - a^3}{3(b - a)} \\
+        &= \frac{1}{3}(a^2 + ab + b^2)
+    \end{align*}
+    \[
+        \Var(X) = \E{X^2} - (\E{X})^2
+        = \frac{a^2 + ab + b^2}{3} - \frac{a^2 + 2ab + b^2}{4}
+        = \frac{(a - b)^2}{12}^{\txo{*}}
+    \]
+    \txo{* Nicht auswendig lernen.}
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Exponentialverteilte Zufallsvariable X}
+    \[
+        \E{X} = \frac{1}{\alpha}
+    \]
+    \begin{align*}
+        \E{X^2}  & = \int^{\infty}_0 \underbrace{x^2}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
+        & = - \lim_{N \rightarrow \infty} x^2  e^{- \alpha x} \Big|_{x=0}^N + 2 \int_0^{\infty} x e^{- \alpha x} \dx \\
+        & = 0 + \frac{2}{\alpha} \E{X} \\
+        & = \frac{2}{\alpha^2}
+    \end{align*}
+    \[
+        \Var(X) = \E{X^2} - \E{X}^2 =  \frac{2}{\alpha^2} - \big( \frac{1}{\alpha} \big)^2 =  \frac{1}{\alpha^2}
+    \]
+\end{bsp}
+
+\untit{Ende der Vorlesung vom 5. Juni 2026}
+
+\begin{satz}
+    TODO F 98 - 100 % TODO F 98 - 100
+\end{satz}
+
+% Ab F 101 ist es einfach eine versehentliche Wdh der früheren Folien
