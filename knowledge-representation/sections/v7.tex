@@ -56,7 +56,7 @@
 \begin{mytable}
     \begin{tabular}{ p{3cm} p{7cm} p{2cm}}
         \textbf{Category} & \textbf{Key Characteristics} & \textbf{Timeline} \\
-        ILP-Based & Inductive Logic Programming, Horn rules, rule
+        \gls{ilp}-Based & Inductive Logic Programming, Horn rules, rule
         learning from examples & 1990s \\
         Probabilistic Graphical
         Models + Rules & MLN (Markov Logic Networks), ProbLog, PSL
@@ -101,7 +101,7 @@
 
 % TODO F 12 - 13
 
-\section{ILP-Based KGR Methods}\label{sec:ilp-based-kgr-methods}
+\section{\gls{ilp}-Based KGR Methods}\label{sec:ilp-based-kgr-methods}
 
 
 \defin{ilp}
@@ -147,8 +147,8 @@ uncertainty and incompleteness in \glspl{kg}.
     \begin{tabular}{llccc}
         \textbf{Category} & \textbf{Method} & \gls{mrr} & \textbf{\glssymbol{hitat}1} & \textbf{\glssymbol{hitat}10} \\
 
-        ILP-Based & AnyBURL & 0.310 & 0.233 & -- \\
-        ILP-Based & SAFRAN & 0.389 & 0.298 & 0.537 \\
+        \gls{ilp}-Based & AnyBURL & 0.310 & 0.233 & -- \\
+        \gls{ilp}-Based & SAFRAN & 0.389 & 0.298 & 0.537 \\
 
         Embedding + Rules & RUGE & 0.768 & 0.703 & 0.815 \\
         Embedding + Rules & TARE & 0.781 & 0.721 & 0.839 \\
@@ -168,10 +168,10 @@ uncertainty and incompleteness in \glspl{kg}.
     \begin{tabular}{lcccc}
         \textbf{Category} & \textbf{Accuracy} & \textbf{Efficiency} & \textbf{Interpretability} & \textbf{Transferability} \\
 
-        ILP-Based &
+        \gls{ilp}-Based &
         Low--Medium &
         Low--Medium &
-            {\color{green}High} &
+            {\color{oceanmist}High} &
         Low \\
 
         Probabilistic + Rules &
@@ -181,20 +181,28 @@ uncertainty and incompleteness in \glspl{kg}.
         Low \\
 
         Embedding + Rules &
-        Medium--{\color{green}High} &
-            {\color{green}High} &
+        Medium--{\color{oceanmist}High} &
+            {\color{oceanmist}High} &
         Medium &
         Medium \\
 
         NN + Rules &
-            {\color{green}High} &
-            {\color{green}High} &
-        Medium--{\color{green}High} &
-            {\color{green}High} \\
+            {\color{oceanmist}High} &
+            {\color{oceanmist}High} &
+        Medium--{\color{oceanmist}High} &
+            {\color{oceanmist}High} \\
     \end{tabular}
     \caption{Comparative Analysis Summary.}
     \label{tab:kgr_comparison}
 \end{mytable}
+
+\begin{keyin}
+    \begin{itemize}
+        \item \gls{ilp}-based methods are most interpretable, but least efficient
+        \item NN+Rules results in the best accuracy and efficiency, but interpretability still challenging
+        \item The tradeoff is Accuracy/Efficiency vs. Interpretability
+    \end{itemize}
+\end{keyin}
 
 \section{Challenges and Future Directions}\label{sec:challenges-and-future-directions}
 \begin{challenge}
@@ -202,7 +210,7 @@ uncertainty and incompleteness in \glspl{kg}.
     sampling strategies or pre-trained models are needed.
 \end{challenge}
 \begin{challenge}
-    \textbf{Rule Quality Evaluation} Traditional metrics (confidence, support) assume closed world (see \defirefshort{owa)}. \gls{pca} is a compromise, not definitive solution and \gls{owa} prevalent in KGs makes missing data unusable
+    \textbf{Rule Quality Evaluation} Traditional metrics (confidence, support) assume closed world (see \defirefshort{owa}). \gls{pca} is a compromise, not definitive solution and \gls{owa} prevalent in KGs makes missing data unusable
     as negative examples.
 \end{challenge}
 \begin{challenge}
@@ -249,7 +257,7 @@ uncertainty and incompleteness in \glspl{kg}.
 
     \item Four main categories of logical rule-based KGR:
     \begin{itemize}
-        \item ILP
+        \item \gls{ilp}
         \item Probabilistic + Rules
         \item Embedding + Rules
         \item NN + Rules
@@ -257,7 +265,7 @@ uncertainty and incompleteness in \glspl{kg}.
 
     \item Evolution:
     \begin{itemize}
-        \item From interpretable but inefficient (ILP)
+        \item From interpretable but inefficient (\gls{ilp})
         \item To efficient but less interpretable (NN + Rules)
     \end{itemize}
 
