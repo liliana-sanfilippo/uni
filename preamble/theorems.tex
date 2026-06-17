@@ -64,8 +64,8 @@
 
 \newtheorem{reg}{Regel}[chapter]
 \DefineBoxEnv{reg}{Thistle}{breakable}
-\newtheorem{rule}{Rule}[chapter]
-\DefineBoxEnv{rule}{Thistle}{breakable}
+\newtheorem{regen}{Rule}[chapter]
+\DefineBoxEnv{regen}{Thistle}{breakable}
 
 
 %% AUFGABE / EXERCISE
@@ -75,49 +75,24 @@
 \newtheorem{exercise}{Exercise}[chapter]
 \DefineBoxEnv{exercise}{auff}{breakable}
 
+%% KOROLLAR
 
 \newtheorem{kor}{Korollar}[chapter]
 
 %% LEMMA
 
-
 \newtheorem{lem}{Lemma}[chapter]
-\tcolorboxenvironment{lem}{
-    colback=white,
-    colframe=lemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{lem}{lemf}{breakable}
+
+%% KOMMENTAR / COMMENT
 
 \newtheorem{kom}{Kommentar}[chapter]
-
+\newtheorem{comment}{Comment}[chapter]
 
 %% SATZ
 
 \newtheorem{satz}{Satz}[chapter]
-\tcolorboxenvironment{satz}{
-    colback=white,
-    colframe=satzf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
-
+\DefineBoxEnv{satz}{satzf}{breakable}
 
 \newcommand{\satzbeweis}[1]{%
     \begin{satz}\label{satz:#1}
@@ -127,37 +102,18 @@
     \end{satz}
 }
 
+%% THEOREM
+
 \newtheorem{theo}{Theorem}[chapter]
-\tcolorboxenvironment{theo}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{theo}{bemf}{breakable}
+
+%% HYPOTHESE / HYPOTHESIS
 
 \newtheorem{hypo}{Hypothese}[chapter]
-\tcolorboxenvironment{hypo}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{hypo}{bemf}{breakable}
+\newtheorem{hypoen}{Hypothese}[chapter]
+\DefineBoxEnv{hypoen}{bemf}{breakable}
+
 
 \newcommand{\hypothese}[1]{%
     \begin{hypo}\label{def:#1}
@@ -166,22 +122,11 @@
     \end{hypo}
 }
 
+%% MODELL
 
 \newtheorem{mode}{Modell}[chapter]
-\tcolorboxenvironment{mode}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{mode}{bemf}{breakable}
+
 
 \newcommand{\model}[1]{%
     \begin{mode}\label{def:#1}
