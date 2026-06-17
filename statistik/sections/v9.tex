@@ -58,7 +58,7 @@
         & = \pe (X = N) + \pe (X = -N) \\
         & = \frac{1}{N^2} \\
         & = \frac{ \oob{\Var(X)}{=1} }{N^2} \\
-        & \overset{\txc{*}}{\leq} \frac{1}{h^2} \Var(X)
+        & \leq \frac{1}{h^2} \Var(X)
     \end{align*}
     Die Wahl $h = N$ zeigt: Ungleichung kann nicht verbessert werden.
 
@@ -71,16 +71,16 @@
 \begin{bsp}
     \textbf{Werfen eines fairen Würfels}
     % F 10 - 16
-    Wie oft m¨ussen wir einen fairen W¨urfel werfen, bis mit Ws. $\geq 1  - 0.05$ die relative H¨aufigkeit einer Sechs um weniger als 1/10 von 1/6 abweicht?
-    \paragraph{Ansatz:} $\eraum = \{1, ..., 6\}^N$ mit Gleichverteilung $\pe$ (f¨ur N W¨urfe) und Zufallsvariablen
+    Wie oft müssen wir einen fairen Würfel werfen, bis mit Ws. $\geq 1  - 0.05$ die relative Häufigkeit einer Sechs um weniger als 1/10 von 1/6 abweicht?
+    \paragraph{Ansatz:} $\eraum = \{1, \dots, 6\}^N$ mit Gleichverteilung $\pe$ (für N Würfe) und Zufallsvariablen
     $X_i \eraum \rightarrow \{0,1\}$.
 
-    Dabei sind $X_i(\ele) = 1_{\{6\}} (\ele_i)$ unabh¨angig und identisch verteilt (u.i.v.) mit $\pe(X_i = 1) = \frac{1}{6}$.
+    Dabei sind $X_i(\ele) = 1_{\{6\}} (\ele_i)$ unabhängig und identisch verteilt (u.i.v.) mit $\pe(X_i = 1) = \frac{1}{6}$.
 
     $S_N = \sum^N_{i=1} X_i$ ist die Anzahl der geworfenen Sechsen und $\frac{1}{N} S_N$ ist die relative
-    H¨aufigkeit einer Sechs.
-    \paragraph{Gesucht} ist das kleinste N derart, dass $ \pe(| \frac{S_N}{N} - \frac{1}{6}| \geq \frac{1}{10}) \leq \frac{5}{100}$
-    \txo{(Gegenereignis zu $\pe(| \frac{S_N}{N} - \frac{1}{6}| < \frac{1}{10}) \geq 1- \frac{5}{100}$ )}.
+    Häufigkeit einer Sechs.
+    \paragraph{Gesucht} ist das kleinste N derart, dass $ \pe\left(| \frac{S_N}{N} - \frac{1}{6}| \geq \frac{1}{10}\right) \leq \frac{5}{100}$
+    \txo{(Gegenereignis zu $\pe\left(| \frac{S_N}{N} - \frac{1}{6}| < \frac{1}{10}\right) \geq 1- \frac{5}{100}$ )}.
     \paragraph{Lösung:} \txo{für Tschebyscheffsche Ungleichung in Bezug auf EW und Var} \\
     Seien p = 1/6 und q = 1 - p = 5/6 und sei $S_N$ binomialverteilt mit Parametern N und p.
     Dann ist
@@ -90,20 +90,20 @@
     \txc{* da $S_N$ binomialverteilt ist}
     und
     \[
-        \Var(\frac{1}{N}  S_N) = \frac{1}{N} \Var(S_N) \overset{\txc{**}}{=} \frac{1}{N} Npq = \frac{1}{N} pq = \frac{1}{N} \frac{1}{6} \frac{5}{6}
+        \Var\left(\frac{1}{N}  S_N\right) = \frac{1}{N} \Var(S_N) \overset{\txc{**}}{=} \frac{1}{N} Npq = \frac{1}{N} pq = \frac{1}{N} \frac{1}{6} \frac{5}{6}
     \]
     \txc{** Ebenfalls, weil $S_N$ binomialverteilt ist.} \\
     Tschebyscheffsche Ungleichung:
     \[
-        \pe(
+        \pe\left(
         \oub{
             | \frac{S_N}{N} - \frac{1}{6} | \geq \frac{1}{10}
         }{Gegenereignis}
-        )
+        \right)
         \leq 
-        \frac{\Var(\frac{S_N}{N})}{(1/10)^2} = 100 \frac{5}{36 N}
+        \frac{\Var\left(\frac{S_N}{N}\right)}{(1/10)^2} = 100 \frac{5}{36 N}
     \]
-    Wir w¨ahlen also N so groß, dass $100 \frac{5}{36 N} \leq \frac{5}{100}$.
+    Wir wählen also N so groß, dass $100 \frac{5}{36 N} \leq \frac{5}{100}$.
     \paragraph{Fazit}
     Jedes $N \approx 278$ (genauer aus der Abschätzung $(100)^2/36 \approx 277.7$) garantiert, dass mit
     Wahrscheinlichkeit $\geq 0.95$ die relative Häufigkeit einer Sechs bei $N$-maligem Würfeln um weniger als $1/10$
@@ -116,7 +116,7 @@
 
 \begin{satz}
     \textbf{Schwaches Gesetz der großen Zahlen}
-    %\texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)}
+    %\texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)} a ber die aus 2026 stehen da
 
     \paragraph{Gegeben} Zufallsvariablen $X_1, X_2, X_3, \dots$ auf einem $\wraum$.
     Dabei muss die Verteilung der $X_i$ nicht identisch sein.
@@ -151,17 +151,17 @@
     \mab{\E{\frac{1}{n} S_n} = \E{X_1}}
 \end{bem}
 \begin{bsp}
+    % 2020: 20 - 22
     \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
-    Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p =} Erfolgswahrscheinlichkeit. \\
+    Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p =} Erfolgswahrscheinlichkeit.
+
+    $S_n$ ist hier die Anzahl der Erfolge in einem n-mal unabhängig wiederholten Bernoulli-Experiment,
+    z.B.\ Anzahl Sechsen bei n-maligem Werfen eines möglicherweise nicht fairen Würfels.
+
     Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} S_n} der Erfolge
     konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
 \end{bsp}
 
-\begin{bsp}
-    \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
-% TODO F 20-22
-    TODO F 20--22
-\end{bsp}
 
 \begin{notation}
     \mab{x_k^{(n)} \coloneqq  (k - np) / \sqrt{npq} \text{ für } k = 0, \dots, n}
@@ -192,11 +192,19 @@
         \limnin \sup_{k: |x_k^{(n)}| \leq L} \mid \frac{{B}_{n,p}(k)}{\frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2}}  - 1 \mid = 0
     \]
 
-    \paragraph{Beweis.} \texttt{Folie 14--2025 bzw. F 25 in 2026}
-    % TODO F 25
+    \paragraph{Beweis.}
+    % 2026 F 25
+    \begin{itemize}
+        \item Ausschreiben des Binomialkoeffizienten in $\binomv)$
+        \item Approximieren der Fakultäten mit Hilfe der Stirlingschen Formel (siehe unten)
+        \item Sortieren der Terme
+        \item Sorgfältiges Berechnen des Limes $n \to \infty$
+    \end{itemize}
+    % TODO noch mehr auf \texttt{Folie 14--2025}
     \orangenote{schwaches Gesetz der großen Zahlen ``$\frac{1}{n} S_n \rightarrow \frac{1}{6}$'' und \ma{\pe(
-    \frac{1}{n} S_n = \frac{1}{6})}} ist sehr klein.
+    \frac{1}{n} S_n = \frac{1}{6})}  ist sehr klein.}
 \end{satz}
+
 \begin{erg}
     \textbf{Stirlingsche Formel}
     \begin{equation}
@@ -204,8 +212,29 @@
         n! \sim \sqrt{2 \pi n} \binom{n}{e}^n \text{ für große } n
     \end{equation}
     %\texttt{Siehe Folie 15}
-    % TODO Tabelle F 26
+    % 2026 Tabelle F 26
+    \begin{mytable}
+        \begin{tabular}{ccc}
+            \textbf{n} & \textbf{n!} & \textbf{Approximation} \\
+            1 & 1 & 0.922 \\
+            2 & 2 & 1.919 \\
+            3 & 6 & 5.836 \\
+            4 & 24 & 23.506 \\
+            5 & 120 & 118.019 \\
+            6 & 720 & 710.078 \\
+            7 & 5040 & 4980.4 \\
+            8 & 40320 & 39902.4 \\
+            9 & 362880 & 359537 \\
+            10 & 3628800 & 3.5987 $\cdot 10^6$ \\
+            11 & 39916800 & 3.96156 $\cdot 10^7$ \\
+            12 & 479001600 & 4.75687 $\cdot 10^8$ \\
+        \end{tabular}
+        \caption{Exact factorial values and their approximations.}
+        \label{tab:factorial_approx}
+    \end{mytable}
 \end{erg}
+
+
 \begin{erg}
     \textbf{Stirlingsche Formel mit Fehlerabschätzung}
     \begin{equation}
@@ -226,6 +255,7 @@
     \mab{{B}_{1200, \frac{1}{6}}(250) = 0.0000244\dots}
     Approximation gemäß lokalem zentralem Grenzwertsatz:
     \mab{0.0000170\dots}
+    % TODO 2026 Sind das wirklich die Wahrscheinlichkeiten, die uns typischerweise interessieren?
 \end{bsp}
 \textbf{Neue Fragen:} \\
 Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen?
@@ -293,7 +323,7 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
         \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (y)}{f(y)} dy = 1 - \Phi(-z)\label{eq:equation8}
     \end{equation}
     \txo{($y = -z$)} \\
-    Illustration in Abbildung~\ref{fig: moivrelaplaceGlocke}.
+    Illustration in Abbildung~\ref{fig:moivrelaplaceGlocke}.
 \end{reg}
 \begin{figure}[H]
     \centering
@@ -303,7 +333,28 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 \begin{erg}
     \textbf{Lokaler zentraler Grenzwertsatz und Satz von de Moivre-Laplace} \\
     \texttt{Siehe Folie 25--29 bzw. F 36--40}
-    % TODO F 36-40
+    % 2026 F 36-40
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{images/verteilungsgraphenZehn}
+        \caption{Beispiel für n = 10, p = 1/10}\label{fig:verteilungsgraphenZehn}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{images/verteilungsgraphenZwanzig}
+        \caption{Beispiel für n = 20, p = 1/10}\label{fig:verteilungsgraphenZwanzig}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{images/verteilungsgraphenHundert}
+        \caption{Beispiel für n = 100, p = 1/10}\label{fig:verteilungsgraphenHundert}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{images/verteilungsgraphenFHundert}
+        \caption{Beispiel für n = 500, p = 1/10}\label{fig:verteilungsgraphenFHundert}
+    \end{figure}
+
 \end{erg}
 \begin{bsp}
     \textbf{Vorlesung vs. Schlaf} \\
@@ -332,14 +383,17 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \]
     Dass $n$ Leute anwesende sind, ist das Ereignis:
     \[
-        A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}} = \kl{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor}
+        A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}}
+        = \{
+        S_n \in \{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor\}
+        \}
     \]
     Für \ma{n = 142} ist das \ma{\lceil \frac{3}{10} \cdot n \rceil = 43} und  \ma{\lfloor \frac{7}{10} \cdot n \rfloor = 99}
     Mit \ma{p =\frac{2}{3}}:
     \[
         \pe(A_n) = \sum_{k = \lceil \frac{3}{10} \cdot n \rceil}^{\lfloor \frac{7}{10} \cdot n \rfloor} \binom{142}{k} \left(\frac{2}{3}\right)^k \left(\frac{1}{3}\right)^{142-k} \txc{ = \sum_{k = 43}^{99} \binom{142}{k} \left(\frac{2}{3}\right)^k \left(\frac{1}{3}\right)^{142-k}}  \approx 0.80
     \]
-    Approximation mit dem Satz von de Moivre-Laplace \txo{(in Form $a < \dots \leq b bringen$)}:
+    Approximation mit dem Satz von de Moivre-Laplace \txo{(in Form $a < \dots \leq b$ bringen)}:
     \begin{align*}
         \pe(A_n) & = \pe(\frac{3n}{10}) \leq S_n \leq \frac{7n}{10} \\
         & \txo{= pe( \lceil \frac{3n}{10} \rceil  \leq S_n \leq \lfloor \frac{7n}{10} \rfloor)}  \\
