@@ -980,8 +980,9 @@ Dies führt uns in die Statistik (später).
     Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ für Erfolgsws. $p \in [0,1]$ und $\E{X} = p$. \\
     \txc{$\Var(X)$ existiert, da}
     \begin{align*}
-        \txo{\Var(X) & = \sum_{x\in X(\eraum)}  (x - \E{X})^2 \pe(X=x)} \\
-        &\txo{ = (0 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=0)}{=1-p} + (1 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=1)}{=p}} \\
+        \txo{\Var(X)} & \txo{= \sum_{x\in X(\eraum)}  (x - \E{X})^2 \pe(X=x)} \\
+        &
+        \txo{ = (0 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=0)}{=1-p} + (1 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=1)}{=p}} \\
         & \txo{ = p^2 (1-p) + (1-p)^2 p } \\
         & \txo{= p(1-p) [p+(1-p)]} \\
         & \txo{= p(1-p) < \infty}
@@ -1052,8 +1053,33 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$} \\
-    TODO F 90 - 94 % TODO F 90 - 94
+    \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$}
+    \[
+        \E{X} = \lambda = \Var(X)
+    \]
+    Trick:
+    \[
+        \Var(X) = \E{X^2} - (\E{X})^2 = \E{X(X-1)} + \E{X} - (\E{X})^2
+    \]
+    Wir wissen bereits:
+    \[
+        \E{X} = \lambda \quad und \quad  (\E{X})^2 = \lambda^2
+    \]
+    Die Behauptung folgt daher aus
+    \[
+        \E{X(X-1)}
+        = \sum_{k=2}^{\infty} k(k-1)\,\frac{\lambda^k}{k!} e^{-\lambda}
+        = \lambda^2 \sum_{l=0}^{\infty} \frac{\lambda^l}{l!} e^{-\lambda}
+        = \lambda^2
+    \]
+
+    und damit
+    \[
+        \Var(X)
+        = \E{X(X-1)} + \E{X} - (\E{X})^2
+        = \lambda^2 + \lambda - \lambda^2
+        = \lambda
+    \]
 \end{bsp}
 
 \begin{bsp}
