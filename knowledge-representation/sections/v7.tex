@@ -45,7 +45,7 @@
     Logical rule-based methods excel at inference by uncovering underlying logical rules,
     showcasing remarkable generalization ability and interpretability.
     They can be
-    seamlessly integrated with neural networks.
+    seamlessly integrated with \glspl{nn}.
 \end{keyin}
 
 \begin{figure}[H]
@@ -59,13 +59,11 @@
         \gls{ilp}-Based & Inductive Logic Programming, Horn rules, rule
         learning from examples & 1990s \\
         Probabilistic Graphical
-        Models + Rules & MLN (Markov Logic Networks), ProbLog, PSL
-        (Probabilistic Soft Logic), fuzzy reasoning & 2000s \\
+        Models + Rules & \gls{mln}, ProbLog, \gls{psl}, fuzzy reasoning & 2000s \\
         Embedding Techniques
-        + Rules & KGE (Knowledge Graph Embedding), rule em-
+        + Rules & \gls{kge}, rule em-
         bedding, mutual enhancement & 2010s \\
-        Neural Networks + Rules & RNN (Recurrent Neural Network), GNN
-        (Graph Neural Network), neural theorem prov-
+        \glspl{nn} + Rules & \gls{rnn}, \gls{gnn}, neural theorem prov-
         ing & 2018+
     \end{tabular}\label{tab:table3}
 \end{mytable}
@@ -83,7 +81,7 @@
 \end{bsp}
 
 % TODO triple types genauer recherchieren
-% Triple Types: SKG (Static KG), TKG (Temporal KG), MMKG (Multi-Modal KG)
+% Triple Types: \gls{skg} (Static KG), \gls{tkg} (Temporal KG), MMKG (Multi-Modal KG)
 
 \begin{figure}[H]
     % TODO  F 10
@@ -137,19 +135,19 @@ uncertainty and incompleteness in \glspl{kg}.
 
 
 \section{Neural Networks + Rules}\label{sec:neural-networks-rules}
-% TODO F 30 - 39
-\subsection*{Why should we combine NNs with rules?}
-NNs are fast, accurate, robust and good at generalization.
+
+\subsection*{Why should we combine \glspl{nn} with rules?}
+\glspl{nn} are fast, accurate, robust and good at generalization.
 But they are limited due to being black-boxes and lacking explainability.
 And our goal ist efficiency and explainable reasoning.
 
 \begin{mytable}
     \begin{tabular}{ll}
         \textbf{Approach} & \textbf{Dominant Role} \\
-        Rule-Enhanced NN Modeling & NNs (rules augment NN) \\
-        NN-Enhanced Rule Learning & Rules (NNs help learn rules) \\
+        Rule-Enhanced \gls{nn} Modeling & \glspl{nn} (rules augment \gls{nn}) \\
+        \gls{nn}-Enhanced Rule Learning & Rules (\glspl{nn} help learn rules) \\
     \end{tabular}
-    \caption{The two subcategories of joining neural networks and logical rules.}
+    \caption{The two subcategories of joining \glspl{nn} and logical rules.}
     \label{tab:nn_rules_roles}
 \end{mytable}
 
@@ -157,6 +155,38 @@ And our goal ist efficiency and explainable reasoning.
 \defin{lan}
 \deffinS{law}
 
+\begin{idee}
+    \Glspl{lan} combine logical rule attention with neural attention.
+
+    Final attention = weighted sum of $\alpha^{Logic}$ and $\alpha^{NN}$.
+
+    This addresses query relation perception and neighborhood redundancy.
+\end{idee}
+
+\subsection*{AnyBURL}
+
+TODO slide 32 % TODO
+
+\subsection*{pLogicNet (\gls{gnn}-Based Approach)}
+A Variational Expectation-
+Maximization
+Framework defines joint
+distribution of all
+possible triples using
+\gls{mln} and \gls{fol}.
+
+TODO slide 33 % TODO
+
+\subsection*{VN Network: Virtual Neighbors for Emerging Entities}
+TODO slide 34 % TODO
+
+\subsection*{\gls{nn}-Enhanced Rule Learning}
+\defin{ntp}
+\Gls{ntp} ist based on the prolog programming language, uses a differentiable prover (DP) for differentiable proof
+and recursive matching with \gls{nn} embeddings.
+
+TODO slide 35 - 39
+% TODO F 35 - 39
 
 \section{Comparison and Analysis}\label{sec:comparison-and-analysis}
 
@@ -170,12 +200,12 @@ And our goal ist efficiency and explainable reasoning.
         Embedding + Rules & RUGE & 0.768 & 0.703 & 0.815 \\
         Embedding + Rules & TARE & 0.781 & 0.721 & 0.839 \\
 
-        NN + Rules & VN & 0.463 & 0.345 & 0.526 \\
-        NN + Rules & GCR & 0.492 & -- & 0.490 \\
-        NN + Rules & GraIL & -- & -- & 0.641 \\
-        NN + Rules & CoMPILE & -- & -- & 0.847 \\
-        NN + Rules & ConGLR & 0.741 & -- & 0.830 \\
-        NN + Rules & BERTRL & 0.718 & -- & 0.867 \\
+        \gls{nn} + Rules & VN & 0.463 & 0.345 & 0.526 \\
+        \gls{nn} + Rules & GCR & 0.492 & -- & 0.490 \\
+        \gls{nn} + Rules & GraIL & -- & -- & 0.641 \\
+        \gls{nn} + Rules & CoMPILE & -- & -- & 0.847 \\
+        \gls{nn} + Rules & ConGLR & 0.741 & -- & 0.830 \\
+        \gls{nn} + Rules & BERTRL & 0.718 & -- & 0.867 \\
     \end{tabular}
     \caption{Performance Comparison on FB15K-237}
     \label{tab:kgr_performance}
@@ -203,11 +233,9 @@ And our goal ist efficiency and explainable reasoning.
         Medium &
         Medium \\
 
-        NN + Rules &
+        \gls{nn} + Rules &
             {\color{oceanmist}High} &
-            {\color{oceanmist}High} &
-        Medium--{\color{oceanmist}High} &
-            {\color{oceanmist}High} \\
+            {\color{oceanmist}High} &        Medium--{\color{oceanmist}} &            {\color{oceanmist}} \\
     \end{tabular}
     \caption{Comparative Analysis Summary.}
     \label{tab:kgr_comparison}
@@ -216,8 +244,9 @@ And our goal ist efficiency and explainable reasoning.
 \begin{keyin}
     \begin{itemize}
         \item \gls{ilp}-based methods are most interpretable, but least efficient
-        \item NN+Rules results in the best accuracy and efficiency, but interpretability still challenging
-        \item The tradeoff is Accuracy/Efficiency vs. Interpretability
+        \item \gls{nn}+Rules results in the best accuracy and efficiency, but interpretability still challenging
+        \item The tradeoff is Accuracy/Efficiency vs.
+        Interpretability
     \end{itemize}
 \end{keyin}
 
@@ -231,7 +260,8 @@ And our goal ist efficiency and explainable reasoning.
     as negative examples.
 \end{challenge}
 \begin{challenge}
-    \textbf{Interpretability Balance} \gls{nn} integration improves speed but reduces interpretability. Embed
+    \textbf{Interpretability Balance} \gls{nn} integration improves speed but reduces interpretability.
+    Embed
     reasoning steps in model architecture are needed.
 \end{challenge}
 
@@ -243,13 +273,13 @@ And our goal ist efficiency and explainable reasoning.
         \item Need datasets with pre-defined rules for proper evaluation.
     \end{itemize}
 
-    \item \textbf{Temporal KG (TKG) Reasoning}
+    \item \textbf{\gls{tkg} Reasoning}
     \begin{itemize}
         \item Uncover time-dependent or dynamic rules.
-        \item Combine RNN/LSTM with existing rule-learning methods.
+        \item Combine \gls{rnn}/LSTM with existing rule-learning methods.
     \end{itemize}
 
-    \item \textbf{Multi-Modal KG (MMKG) Reasoning}
+    \item \textbf{\gls{mmkg} Reasoning}
     \begin{itemize}
         \item Heterogeneous information (images, text, etc.).
         \item Use multi-modal learning for automatic rule extraction.
@@ -277,26 +307,27 @@ And our goal ist efficiency and explainable reasoning.
         \item \gls{ilp}
         \item Probabilistic + Rules
         \item Embedding + Rules
-        \item NN + Rules
+        \item \gls{nn} + Rules
     \end{itemize}
 
     \item Evolution:
     \begin{itemize}
         \item From interpretable but inefficient (\gls{ilp})
-        \item To efficient but less interpretable (NN + Rules)
+        \item To efficient but less interpretable (\gls{nn} + Rules)
     \end{itemize}
 
     \item Trade-off:
     \begin{itemize}
-        \item Accuracy/Efficiency vs. Interpretability remains a key challenge.
+        \item Accuracy/Efficiency vs.
+        Interpretability remains a key challenge.
     \end{itemize}
 
-    \item Best performance is currently achieved by NN + Rules hybrid methods.
+    \item Best performance is currently achieved by \gls{nn} + Rules hybrid methods.
 
     \item Future directions:
     \begin{itemize}
         \item Integration with LLMs
-        \item TKG/MMKG reasoning
+        \item \gls{tkg}/\gls{mmkg} reasoning
         \item Better evaluation benchmarks
     \end{itemize}
 \end{enumerate}

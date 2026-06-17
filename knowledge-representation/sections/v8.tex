@@ -1,2 +1,132 @@
 %! Author = lili
 %! Date = 6/16/26
+
+\section*{Information Extraction from Structured, Semi-Structured, and Unstructured Data}
+
+\section{Motivation and Background}
+\defin{kga}
+
+
+\begin{center}
+    ``\textit{Learning is associated with increased degrees of true belief, although these beliefs need not
+    necessarily be justified. Knowledge acquisition additionally requires that the true belief is
+    justified, or has been formed for the right reason.}''
+\end{center}
+- Hössjer, Díaz-Pachón, and Rao 2022
+
+\begin{mytable}
+    \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
+
+        \textbf{KG Reasoning} & \textbf{KG Acquisition} \\
+
+        Assumes KG already exists &
+        Starts from raw data (text, tables, etc.) \\
+
+        Focus: Inferring new facts from existing ones &
+        Focus: Building the KG from scratch \\
+
+        Methods: Logical rules, embeddings, neural models &
+        Methods: NER, NED, NEL, LLM-based extraction \\
+
+    \end{tabular}
+    \caption{Comparison of KG Reasoning and KG Acquisition.}
+    \label{tab:kg_reasoning_vs_acquisition}
+\end{mytable}
+
+\[
+    \text{Data} \overset{\text{Information Extraction}}{\Rightarrow} \text{KG} \overset{\text{Reasoning}}{\Rightarrow} \text{New Knowledge}
+\]
+
+\begin{center}
+    ``\textit{Knowledge extraction can be performed from structured,
+        semi-structured, and unstructured data sources.}''
+\end{center}
+- Zhu et al. 2024)
+
+\begin{mytable}
+    \begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+        \toprule
+        \textbf{Data Type} & \textbf{Description} \\
+        \midrule
+        Structured & Relational databases, tables with predefined schemas \\
+
+        Semi-Structured & XML, JSON, HTML, Wikipedia infoboxes, documents with some structural markup \\
+
+        Unstructured & Raw text from news articles, social media posts, scientific papers, web pages \\
+        \bottomrule
+    \end{tabular}
+    \caption{The three types of data sources for knowledge graph construction.}
+    \label{tab:data_types}
+\end{mytable}
+
+\begin{challenge}
+    ``\textit{The majority of previous studies have focused on unstructured text, as this represents the
+    most abundant and challenging data source for KG construction.}''
+\end{challenge}
+- Al-Moslmi et al. 2020
+
+\paragraph{Named entity extraction} has three core tasks:
+\defin{ner}
+\defin{ned}
+\defin{nel}
+
+\begin{bsp}
+    \defiref{ner} \\
+    find every segment in a text that
+    mentions a named entity
+\end{bsp}
+
+\begin{bsp}
+    \defiref{ned} \\
+    determine which named entity a
+    mention refers to
+\end{bsp}
+
+\begin{bsp}
+    \defiref{nel} \\
+    provide a standard \gls{iri} for each
+    disambiguated entity
+\end{bsp}
+
+\subsection*{Structured Data: Direct Mapping to KGs}
+\begin{center}
+    ``\textit{Representing NL text in computer-processable form, KGs are a natural way: entities
+    can be represented as nodes in KGs and relations as edges.}''
+\end{center}
+- Al-Moslmi et al. 2020
+
+\begin{bsp}
+\begin{mytable}
+    \begin{tabular}{cccc}
+        \toprule
+        \textbf{Event} & \textbf{Date} & \textbf{Attribute-1} & \textbf{Attribute-2} \\
+        \midrule
+        1 & 14 Mar & severe & 38.5 \\
+        2 & 18 Jun & mild & 37.5 \\
+        3 & 23 Jul & mild & 36.9 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Time-Oriented Database Example.}
+    \label{tab:event_attributes}
+\end{mytable}
+    As Triple:
+    \[
+        <Event1> <hasSeverity> <severe>
+        <Event1> <hasTemp> <38.5>
+    \]
+\end{bsp}
+
+``The defining
+characteristic of a time-oriented database is that
+sequential values for each attribute may be
+recorded. The time intervals between events
+may differ.''
+
+The advantages of direct mapping is that there is no ambiguity and predicates are defined by clear schemas.
+
+\subsection*{Semi-Structured Data}
+\begin{bsp}
+    \textbf{Wikipedia Infobox} \\
+    Wikipedia infoboxes contain attribute-value pairs that can be directly mapped to KG
+    triples.
+\end{bsp}
