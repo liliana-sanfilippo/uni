@@ -4,6 +4,23 @@
     type=defi
 }
 
+\newglossaryentry{law}{
+    name={Logic Attention Weight},
+    description={A normalized logical relevance score that measures how strongly relation $r$ implies query
+    relation $q$, compared with the strongest implication coming from neighboring relations
+    of entity $e_i$},
+    symbol={
+    $\alpha_{j|i, q}^{Logic} = \frac{\mathcal{P}(r \Rightarrow q)}{ max(\{\mathcal{P}(r' \Rightarrow r) | r' \in N_R (e_i) \land r' \neq r\}) }$
+    },
+    type=defi
+}
+
+\newglossaryentry{lan}{
+    name={Logic Attention Networ},
+    description={todo},
+    type=defi
+}
+
 \newglossaryentry{hitat}{
     name={hit\@ k},
     description={poportion of accurate predictions

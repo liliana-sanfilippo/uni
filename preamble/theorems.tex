@@ -32,64 +32,49 @@
 % Theorem head spec (can be left empty, meaning‘normal’)
 \theoremstyle{mytheoremstyle}
 
+\newcommand{\DefineBoxEnv}[3]{%
+    \tcolorboxenvironment{#1}{
+        colback=white,
+        colframe=#2,
+        boxrule=1pt,
+        arc=0mm,
+        top=1mm,
+        bottom=1mm,
+        left=1mm,
+        right=1mm,
+        #3,
+        parbox=false,
+        before skip=12pt,
+        after skip=12pt
+    }
+}
 
 \newtheorem{test}{Test}[chapter]
 
-%% BEISPIEL
+%% BEISPIEL / EXAMPLE
 
 \newtheorem{bsp}{Beispiel}[chapter]
-
-\tcolorboxenvironment{bsp}{
-    colback=white,
-    colframe=bspf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{bsp}{bspf}{breakable}
+\newtheorem{exa}{Example}[chapter]
+\DefineBoxEnv{exa}{bspf}{breakable}
 
 
-\newtheorem{info}{Zusatzinformation}[chapter]
 
-%% REGELN
+%% REGELN / RULE
 
 \newtheorem{reg}{Regel}[chapter]
-\tcolorboxenvironment{reg}{
-    colback=white,
-    colframe=Thistle,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{reg}{Thistle}{breakable}
+\newtheorem{rule}{Rule}[chapter]
+\DefineBoxEnv{rule}{Thistle}{breakable}
+
+
+%% AUFGABE / EXERCISE
 
 \newtheorem{auf}{Aufgabe}[chapter]
-\tcolorboxenvironment{reg}{
-    colback=white,
-    colframe=auff,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{auf}{auff}{breakable}
+\newtheorem{exercise}{Exercise}[chapter]
+\DefineBoxEnv{exercise}{auff}{breakable}
+
 
 \newtheorem{kor}{Korollar}[chapter]
 
@@ -335,23 +320,6 @@
     \end{defi}
 }
 
-%% EXAMPLE
-
-\newtheorem{exa}{Example}[chapter]
-\tcolorboxenvironment{exa}{
-    colback=white,
-    colframe=bspf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
 
 
 
@@ -494,7 +462,7 @@
     after skip=12pt
 }
 
-
+\newtheorem{info}{Zusatzinformation}[chapter]
 
 \newtheorem{bem}{Bemerkung}[chapter]
 \tcolorboxenvironment{bem}{
