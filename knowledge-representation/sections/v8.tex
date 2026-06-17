@@ -162,7 +162,7 @@ The advantages of direct mapping is that there is no ambiguity and predicates ar
 \begin{mytable}
     \begin{tabular}{p{0.4\textwidth} p{0.4\textwidth}}
         \textbf{Explicit Construction} & \textit{Implicit Construction} \\
-        & Real-world scenarios where many documents have explicit connections.
+         Real-world scenarios where many documents have explicit connections.
         Examples
         include web pages linked through hyperlinks, academic papers citing other works, and
         social media posts connected by reports, comments, and interactions.
@@ -333,11 +333,55 @@ NED attempts to determine which named entity a mention refers to.
 \end{bsp}
 
 \subsection*{Traditional NED: Individual Approaches}
-
 \zitat{Independent approaches use semantic similarity techniques to rank candidate entities
 solely according to their lexical similarity and/or empirical co-occurrence with mentions.
 In these methods, each mention is independently disambiguated, and they consider
 entity disambiguation as a ranking problem that picks the entity with the highest
 confidence.}{Al-Moslmi et al. 2020}
+
+\subsection*{Traditional NED: Collective Approaches}
+\zitat{Collective approaches take into account that what is mentioned in the same text tends
+to be about the same topic and that co-occurring entities should therefore often be
+semantically related. Most commonly used collective approaches establish associations
+between candidate entities and build mention-entity pairs using a probabilistic graph
+approach.}{Al-Moslmi et al. 2020}
+
+\begin{bsp}
+    GDISTIS (A novel multilingual, knowledge-base agnostic and
+    deterministic approach to entity linking), Babelfy (unified graph-based approach to
+    multilingual Entity Linking and Word Sense Disambiguation), TagME use ``graph
+    connectedness to exploit semantic relations''.
+\end{bsp}
+
+\subsection*{Neural Network-Based NED}
+\zitat{In recent years, neural-network (NN) based methods have become more common and
+achieved competitive results. One family of approaches map words into continuous
+vector spaces using word2vec. Another family uses deep NNs to learn the latent
+semantic features automatically. NED accuracy is thereby enhanced along with the
+model’s generalization ability.}{Al-Moslmi et al. 2020}
+
+More recently, attention mechanisms have been introduced to assign graded
+importance... a multi-perspective attention NN model was proposed to enrich mentions
+and entities representation.
+
+Empirical evaluations show that NN-based approaches are effective in NED systems.
+
+\subsection*{Joint NER and NED}
+Motivation: Many previous studies have dealt with NER and NED in two separate steps. The
+consequence is that NED may not use all the information provided by NER. Named
+Entity Recognition and Disambiguation (NERD) therefore deals with NER and NED
+jointly.
+
+\begin{bsp}
+    \textbf{Example Methods}
+    \begin{itemize}
+        \item ERL model: utilizes the mutual dependency between NER and NED
+        \item J-NERD: uses a probabilistic graph model
+        \item TwitterNEED: supports NERD of short and informal tweets
+    \end{itemize}
+\end{bsp}
+
+\subsection*{NED Using Knowledge Graphs and Discovery}
+\zitat{Few papers have employed KGs for NED tasks}{Al-Moslmi et al. 2020}
 
 
