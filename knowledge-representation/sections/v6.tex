@@ -21,43 +21,43 @@ The W3C (World Wide Web Consortium) standardizes the \gls{rdf}.
     \item \textbf{object}: the thing the subject is related to
 \end{itemize}
 
-\begin{exa}
+\begin{bsp}
 todo
-\end{exa}
+\end{bsp}
 The same resource can appear in multiple triples, leading to a  NETWORK of
 connected information which makes RDF powerful.
-\begin{exa}
+\begin{bsp}
     TODO Mona Lisa
-\end{exa}
+\end{bsp}
 
 \section{International Resource Identifiers (IRIs/URIs)}
 \untit{Slides 8--9}
 \defin{iri}
 
-\begin{exa} To \defiref{iri} \\
+\begin{bsp} To \defiref{iri} \\
 URLs are one form of IRI:
 \begin{verbatim*}
     http://dbpedia.org/resource/Leonardo_da_Vinci
     http://xmlns.com/foaf/0.1/knows
     http://www.example.org/bob#me
 \end{verbatim*}
-\end{exa}
+\end{bsp}
 \Glspl{iri} can appear in subject, predicate, or object position: \glspl{literal} are restricted
 to object position.
 \Glspl{iri} are also global identifiers, which means other people can reuse them. \Gls{rdf} is gnostic about what an \gls{iri} represents, only vocabularies provide meaning.
-\begin{exa} \textbf{Vocabularies} \\
+\begin{bsp} \textbf{Vocabularies} \\
 FOAF, Dublin Core, or Schema.org
-\end{exa}
+\end{bsp}
 \section{Literals}
 \untit{Slides 10--12}
 \defin{literal}
-\begin{exa} To \defiref{literal} \\
+\begin{bsp} To \defiref{literal} \\
 strings, dates, numbers
-\end{exa}
+\end{bsp}
 \begin{notation}
     The $\^ \^$ symbol means ``has datatype''.
 \end{notation}
-\begin{exa} \textbf{Literal with data type:}
+\begin{bsp} \textbf{Literal with data type:}
     \begin{center}
         $"1990-07-04" \^ \^ <http://www.w3.org/2001/XMLSchema\#date>$
     \end{center}
@@ -65,14 +65,14 @@ strings, dates, numbers
     \begin{center}
         "Leonard de Vinci"@fr
     \end{center}
-\end{exa}
+\end{bsp}
 
 \begin{notte}
     \glspl{literal} may only appear in the object position if a triple.
 \end{notte}
 
 
-\begin{exa} \textbf{Correct:}
+\begin{bsp} \textbf{Correct:}
 \begin{center}
     :bob schema:birthDate "1990-07-04"^^xsd:date .
 \end{center}
@@ -83,7 +83,7 @@ strings, dates, numbers
     \end{center}
     Is interpreted as: 1990-07-04 has birthDate Bob, because \glspl{literal} are values (like text, numbers, dates),
 not entities that can act as subjects.
-\end{exa}
+\end{bsp}
 
 
 \section{Standard Format Turtle - Terse RDF Triple Language}

@@ -11,7 +11,7 @@ Nevertheless, intelligent systems must be able to function effectively using par
 
 \subsubsection*{The problem of data meaninglessness}
 To understand the need for KR, let’s consider a practical scenario:
-\begin{exa}
+\begin{bsp}
 
     A student database.
 
@@ -38,7 +38,7 @@ To understand the need for KR, let’s consider a practical scenario:
         \item Query 3: ``What are the emerging trends?'' → No analysis possible
     \end{itemize}
 
-\end{exa}
+\end{bsp}
 
 Data is meaningless without context and relationships.
 It does not allow for intelligent reasoning or deeper analysis.
@@ -56,7 +56,7 @@ queryable knowledge using:
 This allows for semantic searches, automatic relationship discovery and reasoning across all connection.
 
 
-\begin{exa}
+\begin{bsp}
     \begin{itemize}
         \item Semantic search
         \begin{itemize}
@@ -72,7 +72,7 @@ This allows for semantic searches, automatic relationship discovery and reasonin
         \end{itemize}
     \end{itemize}
 
-\end{exa}
+\end{bsp}
 
 \begin{table}[H]
     \begin{tabular}{p{5cm}p{5cm}p{5cm}}
@@ -112,7 +112,7 @@ KR enables machines to make informed decisions with fewer rules.
 \defin{representation scheme}
 
 
-\begin{exa}
+\begin{bsp}
     \label{bsp:pacman}
     \textbf{Pac-Man ghost AI} has a knowledge-based approach: We code ghost behaviour as explicit rules.
     \begin{enumerate}
@@ -122,7 +122,7 @@ KR enables machines to make informed decisions with fewer rules.
     \end{enumerate}
     Decisions are transparent, explainable, and modifiable without recomputing.
     (Ogland 2016)
-\end{exa}
+\end{bsp}
 
 \subsection*{Challenges in Knowledge Representation}
 Knowledge representation involves designing formal structures that allow computers to store, interpret, and reason
@@ -180,7 +180,7 @@ There are two subtypes:
 
 \defin{logrep} \label{def:logrep}
 
-\begin{exa}
+\begin{bsp}
     \textbf{First order Logic} \\
     \begin{figure}[H]
         \centering
@@ -197,12 +197,12 @@ There are two subtypes:
         Therefore we can infer: \\
         $CanFly(Tweety)$
     \end{center}
-\end{exa}
+\end{bsp}
 
 \subsubsection*{2. Semantic (network) schemes}
 \defin{semrep}
 
-\begin{exa}
+\begin{bsp}
     \labsatz
     \begin{figure}[H]
         \centering
@@ -218,12 +218,12 @@ There are two subtypes:
         \end{tikzpicture}
         \caption{Semantic Network}\label{fig:semantic-network}
     \end{figure}
-\end{exa}
+\end{bsp}
 
 \subsection*{Procedural representations}
 \defin{prodrep}
 
-\begin{exa}
+\begin{bsp}
     \labsatz
     \begin{figure}[H]
         \centering
@@ -239,13 +239,13 @@ There are two subtypes:
     \end{center}
     This allows Dr. Dokter to properly diagnose her patients instead of furthering
     the antibiotic resistant strand of bacteria!
-\end{exa}
+\end{bsp}
 
 \paragraph{Hybrid approaches} combine declarative and procedural aspects.
 
 \subsection*{Frame-Based Representation}
 \defin{frame}
-\begin{exa}
+\begin{bsp}
     Back to Tweety from fig. \ref{fig:tweety}. \\
     \begin{tabular}{lll}
         Frame: & Bird \\
@@ -259,7 +259,7 @@ There are two subtypes:
         & can:& swim \\
         & cannot: & fly  (overrides parent default)
     \end{tabular}
-\end{exa}
+\end{bsp}
 
 
 \section{Distinguishing Features of KR Systems}\label{sec:distinguishing-features-of-kr-systems}
@@ -267,74 +267,74 @@ Unlike databases (retrieval) or programs (execution), knowledge bases reuse the 
 
 \subsection*{Inference (rule-based reasoning):}
 Facts are used to derive new facts by applying rules.
-\begin{exa}
+\begin{bsp}
     We remember Dr. Dokter from fig. \ref{fig:drdr}.
     \begin{center}
         IF fever $\land$ cough $\rightarrow$ possible infection
     \end{center}
     $\Rightarrow$ Diagnostic conclusion
-\end{exa}
+\end{bsp}
 
 It has multiple subtypes:
 \defin{loginf}
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{center}
         IF fever $\rightarrow$ infection \\
         fever $\Rightarrow$ infection
     \end{center}
-\end{exa}
+\end{bsp}
 
 \defin{specprod}
 
-\begin{exa}
+\begin{bsp}
     Ward A $\rightarrow$ Ward B $\rightarrow$ ICU $\Rightarrow$ Shortest path
-\end{exa}
+\end{bsp}
 
 \defin{prefinf}
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{center}
         Birds fly \\
         Tweety is a bird $\Rightarrow$ Tweety flies \\ (except penguins)
     \end{center}
-\end{exa}
+\end{bsp}
 
 \defin{indinf}
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{center}
         Data $\Rightarrow$ Pattern \\
         Symptoms $\Rightarrow$ Diagnosis model
     \end{center}
-\end{exa}
+\end{bsp}
 
 \defin{abdinf}
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{center}
         Observed: fever + cough \\
         $\Rightarrow$ Best explanation: pneumonia
     \end{center}
-\end{exa}
+\end{bsp}
 
 \subsection*{Access (Direct fact retrieval via queries):}
 Facts are retrieved directly, much like in a database.
-\begin{exa}
+\begin{bsp}
     Query: ``Which patients have fever?'' $\Rightarrow$ Retrieve patient X
-\end{exa}
+\end{bsp}
 
 \subsection*{Matching (Similarity-based reasoning):} Facts are used to identify similar patterns and perform case-based reasoning.
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{center}
         X $\sim$ Patient Y $\Rightarrow$ Case-based reasoning
     \end{center}
-\end{exa}
+\end{bsp}
 
 \subsection*{Design implications}
 When designing a system, we must choose which inference mechanisms to support (e.g., shortest-path search vs.
@@ -365,7 +365,7 @@ heuristic inference for real-time decisions goals.
 
 
 
-\begin{exa}
+\begin{bsp}
     To definition \autoref{ef:cwa} - Closed World Assumption \\
     \begin{center}
         Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\
@@ -373,9 +373,9 @@ heuristic inference for real-time decisions goals.
         CWA Answer: NO (because Toronto is not mentioned in the KB) \\
         Reasoning: If someone lived in Toronto, the KB would state it.
     \end{center}
-\end{exa}
+\end{bsp}
 
-\begin{exa}
+\begin{bsp}
     To definition \autoref{def:owa} - Open World Assumption \\
     \begin{center}
         Knowledge Base: Alice (New York), Bob (London), Carol (Paris) \\
@@ -383,7 +383,7 @@ heuristic inference for real-time decisions goals.
         OWA Answer: Unknown (because Toronto is not mentioned, but also not excluded) \\
         Reasoning: The KB does not mention Toronto, but that does not mean no one lives there.
     \end{center}
-\end{exa}
+\end{bsp}
 The choice between CWA and OWA fundamentally influences system behavior and must be made during the design phase.
 
 \subsubsection*{Consequences for Reasoning}
@@ -426,7 +426,7 @@ expensive computational overhead.
 
 \defin{expert-systems}
 
-\begin{exa}
+\begin{bsp}
     To definition \autoref{def:expert-systems} - \textbf{MYCIN’s Approach} \\
 
     \paragraph{Domain:}
@@ -438,13 +438,13 @@ expensive computational overhead.
         \item Rules encoded expert medical knowledge
         \item Format: IF [conditions] THEN [conclusions/actions]
     \end{itemize}
-\end{exa}
+\end{bsp}
 
 \defin{nlp}
 
 \gls{nlp} includes Semantic understanding, Machine translation, Question answering and Dialogue systems.
 
-\begin{exa}
+\begin{bsp}
     For \gls{nlp}:
     \begin{itemize}
         \item Semantic understanding - “Paris is the capital of France” $\Rightarrow$ understands
@@ -456,13 +456,13 @@ expensive computational overhead.
         \item Dialogue systems - User: “I have a fever.” System: “Do you also have a cough?”
         $\Rightarrow$  Uses context and stored knowledge
     \end{itemize}
-\end{exa}
+\end{bsp}
 
 Today (in the modern era), we use \glspl{kg}.
 
 \defin{kg-basic}
 
-\begin{exa}
+\begin{bsp}
     To \autoref{def:kg} \\
     \begin{itemize}
         \item Google Knowledge Graph (search enhancement) Example: Search “Albert
@@ -474,7 +474,7 @@ Today (in the modern era), we use \glspl{kg}.
         \item Recommendation Systems Example: Amazon recommends “Laptop Bag”
         because you bought “Laptop” $\rightarrow$ relationship stored in knowledge graph
     \end{itemize}
-\end{exa}
+\end{bsp}
 
 % TODO evtl noch genauere bsp von Claude einfügen
 
@@ -483,7 +483,7 @@ Today (in the modern era), we use \glspl{kg}.
 E.g. for \glspl{semantic-search}.
 \deffin{semantic-search}
 
-\begin{exa}
+\begin{bsp}
     Query: ``treatment for viral pneumonia'' \\
     Without KG: Documents containing ``treatment'' + ``viral'' + ``pneumonia'' \\
     With KG: \\
@@ -492,12 +492,12 @@ E.g. for \glspl{semantic-search}.
     COVID-19 --[treated\_by]--> antiviral drugs, ventilation \\
     Retrieval: Documents about COVID-19 treatment, antiviral therapies
     (not necessarily containing the word ``pneumonia'')
-\end{exa}
+\end{bsp}
 
 Knowledge representation techniques are also used in database design for semantic data models, query optimization,
 constraint management and data integration.
 
-\begin{exa}
+\begin{bsp}
     \textbf{Semantic Data Models}: using an ER diagram to represent Students,
     Courses, and Enrollments. \textit{Shoutout to claude} \\
     Entities:
@@ -511,9 +511,9 @@ constraint management and data integration.
         \item Student enrolls\_in Course
         \item Course belongs\_to Department
     \end{itemize}
-\end{exa}
+\end{bsp}
 
-\begin{exa}
+\begin{bsp}
     \textbf{Query Optimization} - creating an index on student\_id to speed up
     SELECT queries. \textit{Shoutout to claude} \\
     Query: SELECT student\_name FROM Student WHERE enrolled\_in\_course(CS101) \\
@@ -531,32 +531,32 @@ constraint management and data integration.
 
     \end{enumerate}
 
-\end{exa}
+\end{bsp}
 
 
-\begin{exa}
+\begin{bsp}
     \textbf{Constraint Management} - enforcing primary key and foreign key
     constraints to maintain data integrity. \textit{Shoutout to claude} \\
     Primary Key Constraint: Each student has a unique ID \\
     Foreign Key Constraint: Each enrollment must reference a valid student\_ID \\
     Domain Constraint: CGPA must be between 0.0 and 4.0 \\
     Business Rule: A student cannot take more than 5 courses per semester \\
-\end{exa}
+\end{bsp}
 
 Further, \gls{kr} can be used for program specifications and system interfaces.
 
 % TODO example Space Tutor
 
-\begin{exa}
+\begin{bsp}
     Space Tutor, Folie 37
-\end{exa}
+\end{bsp}
 
 
 \section{Future Directions}\label{sec:future-directions}
 
 \subsection*{Multi-hop Reasoning (Complex Reasoning)}
 Many questions require multiple reasoning steps across relationships.
-\begin{exa}
+\begin{bsp}
     Query: ``What medicine treats diseases caused by virus X?'' \\
     Requires: \\
     medicine --[treats]--> disease --[caused\_by]--> virus \\
@@ -565,7 +565,7 @@ Many questions require multiple reasoning steps across relationships.
     virus\_X --[causes]--> disease\_Y \\
     disease\_Y --[treated\_by]--> medicine\_Z \\
     Result: medicine\_Z
-\end{exa}
+\end{bsp}
 Simple embedding methods struggle with this multi-step logical chain, so complex multi-hop relations require dedicated
 design. \\
 \textbf{Promising Directions:}
@@ -595,7 +595,7 @@ design. \\
 \defin{one-hop}
 \defin{multi-hop}
 
-\begin{exa}
+\begin{bsp}
     To definitions \autoref{def:one-hop} and \autoref{def:multi-hop} - Simple vs.\ Multi-hop Reasoning \\
     A simple 1-hop query can be expressed as:
     \[
@@ -611,11 +611,11 @@ design. \\
     \]
 
     This corresponds to a 2-hop reasoning process.
-\end{exa}
+\end{bsp}
 Structured knowledge provides commonsense observations and acts as relational inductive biases (assumptions about
 the world). Meaning they provide such biases like: ``Some relations are more likely than others''. It also boosts
 commonsense knowledge fusion between symbolic and semantic space. E.g.:
-\begin{exa}
+\begin{bsp}
     \textbf{Query:} \emph{Can a fish play piano?}
 
     \textbf{Without Knowledge:}
@@ -646,13 +646,13 @@ commonsense knowledge fusion between symbolic and semantic space. E.g.:
 
     \textbf{Answer with Reasoning:}
     No, a fish cannot play piano because it lacks hands.
-\end{exa}
+\end{bsp}
 Commonsense knowledge provides strong priors, enabling systems to function with less training data.
 
 \subsection*{Unified Framework}
 Many KR embedding methods are mathematically equivalent under transformation.
 Actually, several representation learning models are verified as equivalent.
-\begin{exa}
+\begin{bsp}
     \textbf{Example: Unifying Knowledge Graph Embedding Models}
     \begin{align*}
         \text{HolE:} \quad & h \star r \quad \text{(circular correlation)} \\
@@ -676,12 +676,12 @@ Actually, several representation learning models are verified as equivalent.
 
     \textbf{Interpretation:}
     Different models correspond to different ways of representing this analogy.
-\end{exa}
+\end{bsp}
 
 \subsection*{Interpretability}
 Modern neural-KR systems (KG embedding models) work well, but it's unclear \textit{why}.
 
-\begin{exa}
+\begin{bsp}
     \textbf{Example: Lack of Interpretability in Neural Models} \\
     \textbf{Prediction:}
     Neural model predicts:
@@ -694,7 +694,7 @@ Modern neural-KR systems (KG embedding models) work well, but it's unclear \text
 
     \textbf{Reasoning:}
     Just learned embedding similarity.
-\end{exa}
+\end{bsp}
 There are different ways this could habe been reasoned:
 \begin{itemize}
     \item \textbf{Path-based explanation:} \\
@@ -729,7 +729,7 @@ logic is computationally intensive.
 Knowledge aggregation is the core of knowledge-aware applications. Many approaches rely on neural architectures. NLP
 has been significantly improved by large-scale pre-training. A key challenge remains the efficient and interpretable
 aggregation of knowledge.
-\begin{exa}
+\begin{bsp}
     \textbf{Query:}
     Who directed Inception?
 
@@ -745,7 +745,7 @@ aggregation of knowledge.
 
     \textbf{Interpretation:}
     The model focuses on the most relevant relation (director).
-\end{exa}
+\end{bsp}
 
 \subsection*{Automatic Construction and Dynamics}
 Knowledge graphs are currently mostly manually constructed or extracted from structured sources (e.g. Wikipedia),
@@ -761,7 +761,7 @@ We would need automatic construction from large-scale unstructured content, but 
 
 \end{itemize}
 Additionally, \glspl{kg} should be dynamic, as real-world facts change over time.
-\begin{exa}
+\begin{bsp}
     \textbf{Static representation:}
     \[
         (\text{Pluto}, \text{classified\_as}, \text{Planet})
@@ -776,7 +776,7 @@ Additionally, \glspl{kg} should be dynamic, as real-world facts change over time
 
     \textbf{Requirement:}
     System must track temporal validity of facts.
-\end{exa}
+\end{bsp}
 
 % todo def attention weight
 

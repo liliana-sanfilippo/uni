@@ -62,9 +62,9 @@ This is why reading a Prolog program declaratively is reading logic.
 
 % todo verallgemeinerung F 8  wie man das übersetzt / formalisiert
 
-\begin{exa}
+\begin{bsp}
     F8 % todo farblich codiert gegenüber stellen
-\end{exa}
+\end{bsp}
 
 FOL is descriptive but not executable and therefore needs external theorem provers. Prolog provides built-in
 inference and supports automatic query answering.
@@ -79,9 +79,9 @@ Prolog is a term. There are four kinds:
 
 \defin{compound term}
 
-\begin{exa}
+\begin{bsp}
     clauses F 12 % todo
-\end{exa}
+\end{bsp}
 
 \defin{prolog-number}
 \defin{prolog-variable}
@@ -93,21 +93,21 @@ A Prolog program consists of clauses. There are three kinds:
 % todo frage typen von Klauseln
 \defin{prolog-fact}
 
-\begin{exa}
+\begin{bsp}
     clauses F 11 % todo
-\end{exa}
+\end{bsp}
 
 \defin{prolog-rule}
 
-\begin{exa}
+\begin{bsp}
     clauses F 11 % todo
-\end{exa}
+\end{bsp}
 
 \defin{prolog-query}
 
-\begin{exa}
+\begin{bsp}
     clauses F 11 % todo
-\end{exa}
+\end{bsp}
 
 \begin{notation}
     Comma , in a rule body means AND. The neck :- means IF
@@ -136,7 +136,7 @@ The family tree contains these people: % todo
 
 We need to specify head and tail for every list if we want to do smth like append ([ H | T1 ] , List2 , [ H | T3 ]) : -
 
-\begin{exa} Extra
+\begin{bsp} Extra
 \[
     A =  [ \underbrace{1,2}_{H}, \underbrace{3,4}_{T} ] \\
     B =  [ \underbrace{d}_{H}, \underbrace{e,f}_{T} ]
@@ -149,7 +149,7 @@ we get
 \[
     [1,3,d,e,f,2,4]
 \]
-\end{exa}
+\end{bsp}
 
 \komm{built-in =  pre defined}
 

@@ -53,10 +53,11 @@
 
 %% BEISPIEL / EXAMPLE
 
-\newtheorem{bsp}{Beispiel}[chapter]
+\newtheorem{bsp}{
+    \iflanguage{ngerman}{Beispiel}{Example}
+}[chapter]
 \DefineBoxEnv{bsp}{bspf}{breakable}
-\newtheorem{exa}{Example}[chapter]
-\DefineBoxEnv{exa}{bspf}{breakable}
+
 
 
 
@@ -86,8 +87,9 @@
 
 %% KOMMENTAR / COMMENT
 
-\newtheorem{kom}{Kommentar}[chapter]
-\newtheorem{com}{Comment}[chapter]
+\newtheorem{kom}{
+    \iflanguage{ngerman}{Kommentar}{Comment}
+}[chapter]
 
 %% SATZ
 
@@ -109,11 +111,10 @@
 
 %% HYPOTHESE / HYPOTHESIS
 
-\newtheorem{hypo}{Hypothese}[chapter]
+\newtheorem{hypo}{%
+    \iflanguage{ngerman}{Hypothese}{Hypothese}
+}[chapter]
 \DefineBoxEnv{hypo}{bemf}{breakable}
-\newtheorem{hypoen}{Hypothese}[chapter]
-\DefineBoxEnv{hypoen}{bemf}{breakable}
-
 
 \newcommand{\hypothese}[1]{%
     \begin{hypo}\label{def:#1}
@@ -238,12 +239,11 @@
 
 %% BEOBACHTUNG / OBSERVATION
 
-\newtheorem{beo}{Beobachtung}[chapter]
+\newtheorem{beo}{
+    \iflanguage{ngerman}{Beobachtung}{Observation}
+}[chapter]
 \DefineBoxEnv{beo}{bemf}{breakable}
 
-
-\newtheorem{obs}{Observation}[chapter]
-\DefineBoxEnv{obs}{bemf}{breakable}
 
 %% PRINZIP
 
