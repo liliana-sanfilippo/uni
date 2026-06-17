@@ -138,11 +138,11 @@ The advantages of direct mapping is that there is no ambiguity and predicates ar
 
 \begin{bsp}
     \textbf{Example Output}
-    \[
-        <Barack_Obama> <birthPlace> <Honolulu>
-        <Barack_Obama> <spouse> <Michelle_Obama>
-        <Barack_Obama> <party> <Democratic_Party>
-    \]
+    \begin{align*}
+        <Barack\_Obama> & <birthPlace> <Honolulu> \\
+        <Barack\_Obama> & <spouse> <Michelle\_Obama> \\
+        <Barack\_Obama> & <party> <Democratic\_Party>
+    \end{align*}
 \end{bsp}
 
 \begin{center}
@@ -174,6 +174,7 @@ The advantages of direct mapping is that there is no ambiguity and predicates ar
     \end{tabular}
 \end{mytable}
 
+
 \section{Named Entity Recognition}
 
 \begin{figure}[H]
@@ -184,5 +185,159 @@ The advantages of direct mapping is that there is no ambiguity and predicates ar
 \zitat{NER is a rapidly evolving research field,
     Al-moslmi et al., divide them into three main categories}{Al-moslmi et al. 2020}
 
+\subsection*{Category 1: Rule-Based Approaches}
+Most studies in this category are based on hand-crafted rules.
+
+\begin{mytable}
+    \begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
+        \textbf{Advantages} & \textbf{Disadvantages} \\
+
+        Do not require annotated training data &
+        Domain dependent \\
+
+        Rely on lexical resources &
+        Lexicon resources may be unavailable \\
+
+        Precision can become high because of lexicons and domain-specific knowledge &
+        Constructing and maintaining such resources for many languages is costly \\
+    \end{tabular}
+    \caption{Advantages and disadvantages of rule-based approaches.}
+    \label{tab:advantages_disadvantages}
+\end{mytable}
+
+\subsection*{Category 2: Learning-Based Approaches}
+These models are used to replace the human-curated rules needed by the first
+category.
+
+\paragraph{Three Types:}
+\begin{itemize}
+    \item Supervised
+    \item Semi-supervised
+    \item Unsupervised
+\end{itemize}
+
+\paragraph{Common Models:}
+\begin{itemize}
+    \item Support Vector Machines (SVM)
+    \item Hidden Markov Models (HMM)
+    \item Conditional Random Fields (CRF)
+    \item Decision trees
+\end{itemize}
+
+\subsection*{Category 3: Neural Network Approaches}
+Feature-Inferring Neural Networks differ from rule- and learning-based approaches by automatically inferring
+features through deep learning. Recent research reports that they thus outperform
+earlier methods.
+
+\begin{mytable}
+    \begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
+        \textbf{Advantages}                                           & \textbf{Limitation}                            \\
+
+        Do not require seeds, ontologies, or domain specific lexicons &                                                \\
+
+        More domain-independent                                       &                                                \\
+
+        Benefit from precision of inferred features                   &                                                \\
+
+        & Big datasets are needed to build robust models \\
+    \end{tabular}
+    \caption{Advantages and limitation of embedding-based approaches.}
+    \label{tab:embedding_adv_limitation}
+\end{mytable}
+
+\begin{bsp}
+    \textbf{NER Task Example}
+    \begin{figure}[H]
+        % TODO F 17
+        \caption{NER task showing entity mentions extracted from text}
+    \end{figure}
+\end{bsp}
+
+NER extracts all the entity candidates in the text.
+
+Entity types typically include: Persons, Locations, Organizations, Time, Clinical
+procedures, Money, Biological proteins, etc.
+
+\begin{beo}
+    by Al-Moslmi et al 2020: \\
+    Although numerous NER studies have been reported recently, few have been used for
+    semantic lifting or received attention in KG research.
+
+    \paragraph{Identified reasons:}
+    \begin{itemize}
+        \item NER is an initial step for many other tasks - such as sentiment analysis, concept
+        extraction, event identification and so forth - that have received more attention
+        than semantic lifting.
+        \item Semantic lifting research has focused on the KG-construction side, leaving the
+        NER task to off-the-shelf APIs and tools.
+    \end{itemize}
+\end{beo}
+
+\paragraph{Conclusion:} There is a need to exploit [SOTA NER] outputs to achieve more precise
+and complete lifting.
+
+\zitat{Many NLP tools and APIs have been used in NL-to-KG pipelines. [...] Most of them are restricted to a single or a limited number of languages}{Al-Moslmi et al. 2020}
+
+\begin{mytable}
+    \begin{tabular}{p{0.3\textwidth} p{0.2\textwidth} p{0.45\textwidth}}
+        \textbf{Tool}     & \textbf{Year} & \textbf{URL}                                               \\
+
+        NLTK              & 2002          & https://www.nltk.org/                                      \\
+
+        Stanford CoreNLP  & 2014          & https://stanfordnlp.github.io/CoreNLP/                     \\
+
+        DBpedia Spotlight & 2011          & https://www.dbpedia-spotlight.org/                         \\
+
+        GATE              & 2013          & https://gate.ac.uk/                                        \\
+
+        spaCy             & 2015          & https://spacy.io/                                          \\
+
+        Polyglot          & 2015          & https://sites.google.com/site/rnveid/projects/polyglot-ner \\
+
+        NLP-Cube          & 2018          & End-to-end raw text processing                             \\
+
+        Apache OpenNLP    & 2018          & http://opennlp.apache.org/                                 \\
+    \end{tabular}
+    \caption{Common NER Tools and APIs.}
+    \label{tab:nlp_tools}
+\end{mytable}
+
+
+\section{Named Entity Disambiguation}
+NED attempts to determine which named entity a mention refers to.
+\begin{bsp}
+    'Trump' can refer to either a person, a corporation or a building.
+\end{bsp}
+
+\begin{bsp}
+    \textbf{NED Example}
+    \begin{figure}[H]
+        % TODO F 17
+        \caption{Disambiguation candidates: ’Washington’,
+            ’Trump’, ’Apple’, ’Hussein’, ’Bush’}
+    \end{figure}
+\end{bsp}
+
+\begin{bsp}
+    (Analogy: Hossjer et al.
+    (2022)) \\
+    Teacher evaluating if child learned addition:
+    \begin{itemize}
+        \item $x_1$: Student guesses (50\% correct)
+        \item $x_2$: Student knows addition (80\% correct)
+        \item $x_3$: Student cheats/gets help (80\% correct)
+    \end{itemize}
+
+    \paragraph{Problem:} Teacher cannot distinguish $X_2$
+    from $X_3$ - same data, different causes!
+\end{bsp}
+
+\subsection*{Traditional NED: Individual Approaches}
+
+\zitat{Independent approaches use semantic similarity techniques to rank candidate entities
+solely according to their lexical similarity and/or empirical co-occurrence with mentions.
+In these methods, each mention is independently disambiguated, and they consider
+entity disambiguation as a ranking problem that picks the entity with the highest
+confidence.}{Al-Moslmi et al. 2020}
 
 
