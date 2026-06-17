@@ -28,7 +28,7 @@
         Focus: Building the KG from scratch \\
 
         Methods: Logical rules, embeddings, neural models &
-        Methods: NER, NED, NEL, LLM-based extraction \\
+        Methods: \gls{ner}, \gls{ned}, \gls{nel}, LLM-based extraction \\
 
     \end{tabular}
     \caption{Comparison of KG Reasoning and KG Acquisition.}
@@ -179,10 +179,10 @@ The advantages of direct mapping is that there is no ambiguity and predicates ar
 
 \begin{figure}[H]
     % TODO F 12
-    \caption{The three Main Categories of NER}
+    \caption{The three Main Categories of \gls{ner}}
 \end{figure}
 
-\zitat{NER is a rapidly evolving research field,
+\zitat{\gls{ner} is a rapidly evolving research field,
     Al-moslmi et al., divide them into three main categories}{Al-moslmi et al. 2020}
 
 \subsection*{Category 1: Rule-Based Approaches}
@@ -246,30 +246,30 @@ earlier methods.
 \end{mytable}
 
 \begin{bsp}
-    \textbf{NER Task Example}
+    \textbf{\gls{ner} Task Example}
     \begin{figure}[H]
         % TODO F 17
-        \caption{NER task showing entity mentions extracted from text}
+        \caption{\gls{ner} task showing entity mentions extracted from text}
     \end{figure}
 \end{bsp}
 
-NER extracts all the entity candidates in the text.
+\gls{ner} extracts all the entity candidates in the text.
 
 Entity types typically include: Persons, Locations, Organizations, Time, Clinical
 procedures, Money, Biological proteins, etc.
 
 \begin{beo}
     by Al-Moslmi et al 2020: \\
-    Although numerous NER studies have been reported recently, few have been used for
+    Although numerous \gls{ner} studies have been reported recently, few have been used for
     semantic lifting or received attention in KG research.
 
     \paragraph{Identified reasons:}
     \begin{itemize}
-        \item NER is an initial step for many other tasks - such as sentiment analysis, concept
+        \item \gls{ner} is an initial step for many other tasks - such as sentiment analysis, concept
         extraction, event identification and so forth - that have received more attention
         than semantic lifting.
         \item Semantic lifting research has focused on the KG-construction side, leaving the
-        NER task to off-the-shelf APIs and tools.
+        \gls{ner} task to off-the-shelf APIs and tools.
     \end{itemize}
 \end{beo}
 
@@ -298,19 +298,19 @@ and complete lifting.
 
         Apache OpenNLP    & 2018          & http://opennlp.apache.org/                                 \\
     \end{tabular}
-    \caption{Common NER Tools and APIs.}
+    \caption{Common \gls{ner} Tools and APIs.}
     \label{tab:nlp_tools}
 \end{mytable}
 
 
 \section{Named Entity Disambiguation}
-NED attempts to determine which named entity a mention refers to.
+\gls{ned} attempts to determine which named entity a mention refers to.
 \begin{bsp}
     'Trump' can refer to either a person, a corporation or a building.
 \end{bsp}
 
 \begin{bsp}
-    \textbf{NED Example}
+    \textbf{\gls{ned} Example}
     \begin{figure}[H]
         % TODO F 17
         \caption{Disambiguation candidates: ’Washington’,
@@ -332,14 +332,14 @@ NED attempts to determine which named entity a mention refers to.
     from $X_3$ - same data, different causes!
 \end{bsp}
 
-\subsection*{Traditional NED: Individual Approaches}
+\subsection*{Traditional \gls{ned}: Individual Approaches}
 \zitat{Independent approaches use semantic similarity techniques to rank candidate entities
 solely according to their lexical similarity and/or empirical co-occurrence with mentions.
 In these methods, each mention is independently disambiguated, and they consider
 entity disambiguation as a ranking problem that picks the entity with the highest
 confidence.}{Al-Moslmi et al. 2020}
 
-\subsection*{Traditional NED: Collective Approaches}
+\subsection*{Traditional \gls{ned}: Collective Approaches}
 \zitat{Collective approaches take into account that what is mentioned in the same text tends
 to be about the same topic and that co-occurring entities should therefore often be
 semantically related. Most commonly used collective approaches establish associations
@@ -353,35 +353,37 @@ approach.}{Al-Moslmi et al. 2020}
     connectedness to exploit semantic relations''.
 \end{bsp}
 
-\subsection*{Neural Network-Based NED}
+\subsection*{Neural Network-Based \gls{ned}}
 \zitat{In recent years, neural-network (NN) based methods have become more common and
 achieved competitive results. One family of approaches map words into continuous
 vector spaces using word2vec. Another family uses deep NNs to learn the latent
-semantic features automatically. NED accuracy is thereby enhanced along with the
+semantic features automatically. \gls{ned} accuracy is thereby enhanced along with the
 model’s generalization ability.}{Al-Moslmi et al. 2020}
 
 More recently, attention mechanisms have been introduced to assign graded
 importance... a multi-perspective attention NN model was proposed to enrich mentions
 and entities representation.
 
-Empirical evaluations show that NN-based approaches are effective in NED systems.
+Empirical evaluations show that NN-based approaches are effective in \gls{ned} systems.
 
-\subsection*{Joint NER and NED}
-Motivation: Many previous studies have dealt with NER and NED in two separate steps. The
-consequence is that NED may not use all the information provided by NER. Named
-Entity Recognition and Disambiguation (NERD) therefore deals with NER and NED
+\subsection*{Joint \gls{ner} and \gls{ned}}
+Motivation: Many previous studies have dealt with \gls{ner} and \gls{ned} in two separate steps. The
+consequence is that \gls{ned} may not use all the information provided by \gls{ner}. Named
+Entity Recognition and Disambiguation (NERD) therefore deals with \gls{ner} and \gls{ned}
 jointly.
 
 \begin{bsp}
     \textbf{Example Methods}
     \begin{itemize}
-        \item ERL model: utilizes the mutual dependency between NER and NED
+        \item ERL model: utilizes the mutual dependency between \gls{ner} and \gls{ned}
         \item J-NERD: uses a probabilistic graph model
         \item TwitterNEED: supports NERD of short and informal tweets
     \end{itemize}
 \end{bsp}
 
-\subsection*{NED Using Knowledge Graphs and Discovery}
-\zitat{Few papers have employed KGs for NED tasks}{Al-Moslmi et al. 2020}
+\subsection*{\gls{ned} Using Knowledge Graphs and Discovery}
+\zitat{Few papers have employed KGs for \gls{ned} tasks}{Al-Moslmi et al. 2020}
+% TODO F 26 +
 
 
+TODO slides 26+
