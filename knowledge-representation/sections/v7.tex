@@ -131,17 +131,34 @@ uncertainty and incompleteness in \glspl{kg}.
 
 
 
-\section{Embedding Techniques + Rules}\label{sec:embedding-techniques-+-rules}
+\section{Embedding Techniques + Rules}\label{sec:embedding-techniques-rules}
 
 % TODO F 24 - 28
 
 
-\section{Neural Networks + Rules}\label{sec:neural-networks-+-rules}
+\section{Neural Networks + Rules}\label{sec:neural-networks-rules}
 % TODO F 30 - 39
+\subsection*{Why should we combine NNs with rules?}
+NNs are fast, accurate, robust and good at generalization.
+But they are limited due to being black-boxes and lacking explainability.
+And our goal ist efficiency and explainable reasoning.
+
+\begin{mytable}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Approach} & \textbf{Dominant Role} \\
+        \midrule
+        Rule-Enhanced NN Modeling & NNs (rules augment NN) \\
+        NN-Enhanced Rule Learning & Rules (NNs help learn rules) \\
+        \bottomrule
+    \end{tabular}
+    \caption{The two subcategories of joining neural networks and logical rules.}
+    \label{tab:nn_rules_roles}
+\end{mytable}
+
 
 
 \section{Comparison and Analysis}\label{sec:comparison-and-analysis}
-% TODO F 41 - 42
 
 \begin{mytable}
     \begin{tabular}{llccc}
