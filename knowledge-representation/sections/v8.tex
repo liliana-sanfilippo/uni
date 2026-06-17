@@ -1,7 +1,9 @@
 %! Author = lili
 %! Date = 6/16/26
 
+
 \section*{Information Extraction from Structured, Semi-Structured, and Unstructured Data}
+
 
 \section{Motivation and Background}
 \defin{kga}
@@ -45,15 +47,12 @@
 
 \begin{mytable}
     \begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
-        \toprule
-        \textbf{Data Type} & \textbf{Description} \\
-        \midrule
-        Structured & Relational databases, tables with predefined schemas \\
+        \textbf{Data Type} & \textbf{Description}                                                          \\
+        Structured         & Relational databases, tables with predefined schemas                          \\
 
-        Semi-Structured & XML, JSON, HTML, Wikipedia infoboxes, documents with some structural markup \\
+        Semi-Structured    & XML, JSON, HTML, Wikipedia infoboxes, documents with some structural markup   \\
 
-        Unstructured & Raw text from news articles, social media posts, scientific papers, web pages \\
-        \bottomrule
+        Unstructured       & Raw text from news articles, social media posts, scientific papers, web pages \\
     \end{tabular}
     \caption{The three types of data sources for knowledge graph construction.}
     \label{tab:data_types}
@@ -96,19 +95,17 @@
 - Al-Moslmi et al. 2020
 
 \begin{bsp}
-\begin{mytable}
-    \begin{tabular}{cccc}
-        \toprule
-        \textbf{Event} & \textbf{Date} & \textbf{Attribute-1} & \textbf{Attribute-2} \\
-        \midrule
-        1 & 14 Mar & severe & 38.5 \\
-        2 & 18 Jun & mild & 37.5 \\
-        3 & 23 Jul & mild & 36.9 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Time-Oriented Database Example.}
-    \label{tab:event_attributes}
-\end{mytable}
+    \begin{mytable}
+        \begin{tabular}{cccc}
+            \textbf{Event} & \textbf{Date} & \textbf{Attribute-1} & \textbf{Attribute-2} \\
+            1              & 14 Mar        & severe               & 38.5                 \\
+            2              & 18 Jun        & mild                 & 37.5                 \\
+            3              & 23 Jul        & mild                 & 36.9                 \\
+
+        \end{tabular}
+        \caption{Time-Oriented Database Example.}
+        \label{tab:event_attributes}
+    \end{mytable}
     As Triple:
     \[
         <Event1> <hasSeverity> <severe>
@@ -130,3 +127,62 @@ The advantages of direct mapping is that there is no ambiguity and predicates ar
     Wikipedia infoboxes contain attribute-value pairs that can be directly mapped to KG
     triples.
 \end{bsp}
+
+\paragraph{Extraction Process:}
+\begin{itemize}
+    \item Parse HTML/XML structure
+    \item Extract attribute-value pairs
+    \item Map to KB predicates
+    \item Generate triples
+\end{itemize}
+
+\begin{bsp}
+    \textbf{Example Output}
+    \[
+        <Barack_Obama> <birthPlace> <Honolulu>
+        <Barack_Obama> <spouse> <Michelle_Obama>
+        <Barack_Obama> <party> <Democratic_Party>
+    \]
+\end{bsp}
+
+\begin{center}
+    ``\textit{A knowledge graph... can either encompass a broad spectrum of general knowledge, such as
+    the widely recognized Google Knowledge Graph, or delve deeply into specialized domains.}''
+\end{center}
+- Zeng, Cheng, and Si 2023
+
+\subsection{Document Graph Construction}
+\begin{center}
+    ``\textit{Document graphs typically model the connections between different documents or
+    various granularity of documents.}''
+\end{center}
+- Han et al 2024
+
+
+\begin{mytable}
+    \begin{tabular}{p{0.4\textwidth} p{0.4\textwidth}}
+        \textbf{Explicit Construction} & \textit{Implicit Construction} \\
+        & Real-world scenarios where many documents have explicit connections.
+        Examples
+        include web pages linked through hyperlinks, academic papers citing other works, and
+        social media posts connected by reports, comments, and interactions.
+        &
+        Despite the presence of explicit connections between documents, different components
+        within those documents also exhibit important semantic and syntactic relationships...
+        nodes in document graphs can represent various granularity, such as words, entities,
+        sentences, text segments, paragraphs, documents, or topics.
+    \end{tabular}
+\end{mytable}
+
+\section{Named Entity Recognition}
+
+\begin{figure}[H]
+    % TODO F 12
+    \caption{The three Main Categories of NER}
+\end{figure}
+
+\zitat{NER is a rapidly evolving research field,
+    Al-moslmi et al., divide them into three main categories}{Al-moslmi et al. 2020}
+
+
+
