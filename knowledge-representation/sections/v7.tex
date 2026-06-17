@@ -2,7 +2,7 @@
 %! Date = 6/16/26
 
 
-\section{Motivation and Background}
+\section{Motivation and Background}\label{sec:motivation-and-background}
 \begin{prob}
     \textbf{Incomplete Knowledge Graphs} \\
     Most existing \glspl{kg} suffer from limitations in knowledge
@@ -20,41 +20,40 @@
     \begin{itemize}
         \item Intelligent question-answering
         \begin{itemize}
-            \item e.g. ``Who won the Champions League in 2020?''
+            \item e.g.\ ``Who won the Champions League in 2020?''
         \end{itemize}
         \item Recommendation systems
         \begin{itemize}
-            \item e.g. ``Users who liked X also liked Y''
+            \item e.g.\ ``Users who liked X also liked Y''
         \end{itemize}
         \item Dialogue generation
         \begin{itemize}
-            \item e.g. Chatbots with world knowledge
+            \item e.g.\ Chatbots with world knowledge
         \end{itemize}
     \end{itemize}
 \end{application}
 
-\begin{table}[H]
-    \centering
+\begin{mytable}
     \begin{tabular}{p{2cm} p{5cm} p{5cm} }
        &  \textbf{Embedding-Based Methods} & \textbf{Logical Rule-Based Methods} \\
         Interpretability & Lack it & Strong \\
     TODO % TODO
-    \end{tabular}
-\end{table}
+    \end{tabular}\label{tab:table2}
+\end{mytable}
 
 \begin{keyin}
     Logical rule-based methods excel at inference by uncovering underlying logical rules,
-    showcasing remarkable generalization ability and interpretability. They can be
+    showcasing remarkable generalization ability and interpretability.
+    They can be
     seamlessly integrated with neural networks.
 \end{keyin}
 
 \begin{figure}[H]
     % TODO 
-    \caption{Taxonomy of Logical Rule-Based \gls{kgr} methods}
+    \caption{Taxonomy of Logical Rule-Based \gls{kgr} methods}\label{fig:figure}
 \end{figure}
 
-\begin{table}[H]
-    \centering
+\begin{mytable}
     \begin{tabular}{ p{3cm} p{7cm} p{2cm}}
         \textbf{Category} & \textbf{Key Characteristics} & \textbf{Timeline} \\
         ILP-Based & Inductive Logic Programming, Horn rules, rule
@@ -68,11 +67,11 @@
         Neural Networks + Rules & RNN (Recurrent Neural Network), GNN
         (Graph Neural Network), neural theorem prov-
         ing & 2018+
-    \end{tabular}
-\end{table}
+    \end{tabular}\label{tab:table3}
+\end{mytable}
 % TODO noch notizen hinzufügen?
 
-\section{Background Knowledge}
+\section{Background Knowledge}\label{sec:background-knowledge}
 
 \defin{kg_formal}
 \defin{fact_formal}
@@ -84,11 +83,11 @@
 \end{exa}
 
 % TODO triple types genauer recherchieren
-% riple Types: SKG (Static KG), TKG (Temporal KG), MMKG (Multi-Modal KG)
+% Triple Types: SKG (Static KG), TKG (Temporal KG), MMKG (Multi-Modal KG)
 
 \begin{figure}[H]
     % TODO  F 10
-    \caption{An example of a knowledge graph showing entities (circles) and relations (edges)}
+    \caption{An example of a knowledge graph showing entities (circles) and relations (edges)}\label{fig:figure2}
 \end{figure}
 
 \defin{kgdenoising}
@@ -97,19 +96,21 @@
 
 \begin{figure}[H]
     % TODO  F 11
-    \caption{KGR task illustration}
+    \caption{KGR task illustration}\label{fig:figure3}
 \end{figure}
 
 % TODO F 12 - 13
 
-\section{ILP-Based KGR Methods}
+\section{ILP-Based KGR Methods}\label{sec:ilp-based-kgr-methods}
+
 
 \defin{ilp}
 
 % TODO F 15 -17
 
 
-\section{Probabilistic Graphical Models + Rules}
+
+\section{Probabilistic Graphical Models + Rules}\label{sec:probabilistic-graphical-models-+-rules}
 
 The core idea of unifying probabilistic graphical models and logical rules is to combine the expressive power of \gls{fol}
 with probabilistic reasoning to handle
@@ -129,29 +130,149 @@ uncertainty and incompleteness in \glspl{kg}.
 \end{challenge}
 
 
-\section{Embedding Techniques + Rules}
+
+\section{Embedding Techniques + Rules}\label{sec:embedding-techniques-+-rules}
 
 % TODO F 24 - 28
 
 
-\section{Neural Networks + Rules}
+\section{Neural Networks + Rules}\label{sec:neural-networks-+-rules}
 % TODO F 30 - 39
 
 
-\section{Comparison and Analysis}
+\section{Comparison and Analysis}\label{sec:comparison-and-analysis}
 % TODO F 41 - 42
 
+\begin{mytable}
+    \begin{tabular}{llccc}
+        \textbf{Category} & \textbf{Method} & \gls{mrr} & \textbf{Hit@1} & \gls{Hit@10} \\
 
-\section{Challenges and Future Directions}
+        ILP-Based & AnyBURL & 0.310 & 0.233 & -- \\
+        ILP-Based & SAFRAN & 0.389 & 0.298 & 0.537 \\
+
+        Embedding + Rules & RUGE & 0.768 & 0.703 & 0.815 \\
+        Embedding + Rules & TARE & 0.781 & 0.721 & 0.839 \\
+
+        NN + Rules & VN & 0.463 & 0.345 & 0.526 \\
+        NN + Rules & GCR & 0.492 & -- & 0.490 \\
+        NN + Rules & GraIL & -- & -- & 0.641 \\
+        NN + Rules & CoMPILE & -- & -- & 0.847 \\
+        NN + Rules & ConGLR & 0.741 & -- & 0.830 \\
+        NN + Rules & BERTRL & 0.718 & -- & 0.867 \\
+    \end{tabular}
+    \caption{Performance comparison of representative KGR methods.}
+    \label{tab:kgr_performance}
+\end{mytable}
+
+\begin{mytable}
+    \begin{tabular}{lcccc}
+        \textbf{Category} & \textbf{Accuracy} & \textbf{Efficiency} & \textbf{Interpretability} & \textbf{Transferability} \\
+
+        ILP-Based &
+        Low--Medium &
+        Low--Medium &
+            {\color{green}High} &
+        Low \\
+
+        Probabilistic + Rules &
+        Low &
+        Low &
+        Medium &
+        Low \\
+
+        Embedding + Rules &
+        Medium--{\color{green}High} &
+            {\color{green}High} &
+        Medium &
+        Medium \\
+
+        NN + Rules &
+            {\color{green}High} &
+            {\color{green}High} &
+        Medium--{\color{green}High} &
+            {\color{green}High} \\
+    \end{tabular}
+    \caption{Comparison of logical rule-based KGR methods.}
+    \label{tab:kgr_comparison}
+\end{mytable}
+
+\section{Challenges and Future Directions}\label{sec:challenges-and-future-directions}
 \begin{challenge}
-    \textbf{Efficiency of Rule Learning} TODO F 44 % TODO
+    \textbf{Efficiency of Rule Learning} Path search complexity grows exponentially with KG size and effective
+    sampling strategies or pre-trained models are needed.
 \end{challenge}
 \begin{challenge}
-    \textbf{Rule Quality Evaluation} TODO F 44 % TODO
+    \textbf{Rule Quality Evaluation} Traditional metrics (confidence, support) assume closed world (see \defirefshort{owa)}. \gls{pca} is a compromise, not definitive solution and \gls{owa} prevalent in KGs makes missing data unusable
+    as negative examples.
 \end{challenge}
 \begin{challenge}
-    \textbf{Interpretability Balance} TODO F 44 % TODO
+    \textbf{Interpretability Balance} \gls{nn} integration improves speed but reduces interpretability. Embed
+    reasoning steps in model architecture are needed.
 \end{challenge}
 
-% TODO F 45-46
+\subsection*{Future Research Directions}
+\begin{enumerate}
+    \item \textbf{Better Benchmark Datasets}
+    \begin{itemize}
+        \item Current datasets (FB15K-237, NELL-995, WN18R) do not capture all logical patterns.
+        \item Need datasets with pre-defined rules for proper evaluation.
+    \end{itemize}
+
+    \item \textbf{Temporal KG (TKG) Reasoning}
+    \begin{itemize}
+        \item Uncover time-dependent or dynamic rules.
+        \item Combine RNN/LSTM with existing rule-learning methods.
+    \end{itemize}
+
+    \item \textbf{Multi-Modal KG (MMKG) Reasoning}
+    \begin{itemize}
+        \item Heterogeneous information (images, text, etc.).
+        \item Use multi-modal learning for automatic rule extraction.
+    \end{itemize}
+
+    \item \textbf{Few-Shot and Zero-Shot Rule Discovery}
+    \begin{itemize}
+        \item Enhance representation with additional information.
+        \item Leverage existing high-quality KGs as priors.
+    \end{itemize}
+
+    \item \textbf{Incorporating Logical Rules into LLMs (Large Language Models)}
+    \begin{itemize}
+        \item Address LLM hallucinations.
+        \item Enhance pre-training, during-training, and post-training stages.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Key Takeaways}
+\begin{enumerate}
+    \item Knowledge graphs are often incomplete $\rightarrow$ reasoning is essential for filling gaps and correcting errors.
+
+    \item Four main categories of logical rule-based KGR:
+    \begin{itemize}
+        \item ILP
+        \item Probabilistic + Rules
+        \item Embedding + Rules
+        \item NN + Rules
+    \end{itemize}
+
+    \item Evolution:
+    \begin{itemize}
+        \item From interpretable but inefficient (ILP)
+        \item To efficient but less interpretable (NN + Rules)
+    \end{itemize}
+
+    \item Trade-off:
+    \begin{itemize}
+        \item Accuracy/Efficiency vs. Interpretability remains a key challenge.
+    \end{itemize}
+
+    \item Best performance is currently achieved by NN + Rules hybrid methods.
+
+    \item Future directions:
+    \begin{itemize}
+        \item Integration with LLMs
+        \item TKG/MMKG reasoning
+        \item Better evaluation benchmarks
+    \end{itemize}
+\end{enumerate}
 

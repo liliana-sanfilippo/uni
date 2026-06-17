@@ -19,7 +19,7 @@
 
 \newcommand{\komm}[1]{
     \begin{kom}
-       #1
+    #1
     \end{kom}
 }
 \newcommand{\txc}[1]{
@@ -167,8 +167,19 @@
 
 
 \newcommand{\defiref}[1]{\textcolor{sectionf}{\textbf{Zu Definition \ref{def:#1} (\gls*{#1})}}}
+\newcommand{\defirefshort}[1]{\textcolor{sectionf}{\textbf{Definition \ref{def:#1} (\gls*{#1})}}}
 \newcommand{\defirefman}[1]{\textcolor{sectionf}{\textbf{Zu Definition \ref{def:#1}}}}
 
 \newcommand{\bspref}[1]{\textcolor{sectionf}{\textbf{Zu Beispiel \ref{bsp:#1}}}}
+
+\newenvironment{mytable}
+{
+    \begin{table}[H]
+        \centering
+        \rowcolors{2}{kapitelf!10}{white}
+        }
+        {
+    \end{table}
+}
 
 
