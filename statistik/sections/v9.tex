@@ -70,7 +70,7 @@
 
 \begin{bsp}
     \textbf{Werfen eines fairen Würfels}
-    % TODO F 10 - 16
+    % F 10 - 16
     Wie oft m¨ussen wir einen fairen W¨urfel werfen, bis mit Ws. $\geq 1  - 0.05$ die relative H¨aufigkeit einer Sechs um weniger als 1/10 von 1/6 abweicht?
     \paragraph{Ansatz:} $\eraum = \{1, ..., 6\}^N$ mit Gleichverteilung $\pe$ (f¨ur N W¨urfe) und Zufallsvariablen
     $X_i \eraum \rightarrow \{0,1\}$.
@@ -103,7 +103,15 @@
         \leq 
         \frac{\Var(\frac{S_N}{N})}{(1/10)^2} = 100 \frac{5}{36 N}
     \]
-    Wir w¨ahlen also N so groß, dass $100 \frac{5}{36 N} \leq \frac{5}{100}$
+    Wir w¨ahlen also N so groß, dass $100 \frac{5}{36 N} \leq \frac{5}{100}$.
+    \paragraph{Fazit}
+    Jedes $N \approx 278$ (genauer aus der Abschätzung $(100)^2/36 \approx 277.7$) garantiert, dass mit
+    Wahrscheinlichkeit $\geq 0.95$ die relative Häufigkeit einer Sechs bei $N$-maligem Würfeln um weniger als $1/10$
+    von $1/6$ abweicht.
+
+    Wenn wir $N = 278$ wählen, sind wir auf der sicheren Seite.
+
+    Da wir abgeschätzt haben, ist dieses $N$ möglicherweise nicht das minimale.
 \end{bsp}
 
 \begin{satz}
@@ -182,7 +190,6 @@
     Man kann~\ref{eq:lokaleruentralergesetzwertsatz} auch schreiben als
     \[
         \limnin \sup_{k: |x_k^{(n)}| \leq L} \mid \frac{{B}_{n,p}(k)}{\frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2}}  - 1 \mid = 0
-
     \]
 
     \paragraph{Beweis.} \texttt{Folie 14--2025 bzw. F 25 in 2026}
