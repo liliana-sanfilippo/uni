@@ -3,7 +3,7 @@
 
 % todo beispiele für abhängige ereignisse
 
-\chapter{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}\label{sec:unabhangigkeit-und-bernoulli-experimente-index{bernoulli-experiment}}
+\chapter{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}\label{ch:unabhangigkeit-und-bernoulli-experimente-index{bernoulli-experiment}}
 \untit{Vorlesung 16.05.2025 (V05 2025)}
 Was bedeutet stochastische Unabhängigkeit?
 
@@ -81,7 +81,7 @@ unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
 \end{bem}
 
 
-\section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}
+\section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}\label{sec:unabhangige-nacheinanderausfuhrung-von-zufallsexperimenten}
 Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
 \[
     \glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n
@@ -100,7 +100,7 @@ Sind nämlich $A_1 \subseteq \glssymbol{eraum} _1 , \dots  , A_n \subseteq \glss
 \txc{$B_1$ bedeutet: Im ersten Experiment tritt $A_1$ ein, die anderen sind egal. }
 unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \dots  , n}$ verschieden gilt:
 \begin{equation}
-    \label{eq:omegaiabzählbar}
+    \label{eq:omegaiabzaehlbar}
     \oub{\pe(B_{i_1} \cap \dots \cap B_{i_k})}{ = A_1 \times A_2 \times \dots \times A_n} = \pe_{i_1} A_{i_1} \cdot \dots \cdot \pe_{i_k} A_{i_k} = \pe(B_{i_1}) \cdot \dots \cdot \pe(B_{i_k})
 \end{equation}
 
@@ -112,17 +112,17 @@ unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \d
 
 \noindent Sind die $\glssymbol{eraum} _i$ nicht alle abzählbar, so definieren wir $\pe$ auf $\glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n$
 \begin{equation}
-    \label{eq:omegainichtabzählbar}
+    \label{eq:omegainichtabzaehlbar}
     \pe(A_1 \times \dots \times A_n) = \pe_1(A_1) \cdot \dots \cdot \pe_n(A_n) \quad \forall A_i \subseteq \glssymbol{eraum} _i \forall i
 \end{equation}
-motiviert durch Formel (\ref{eq:omegaiabzählbar}).
+motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
 \begin{bem}
-    Formel (\ref{eq:omegainichtabzählbar}) kann immer als Definition verendet werden.
-    Falls alle $\pe_i$ durch WS $\glssymbol{wfk}_i$ gegeben sind, folgt aus Formel (\ref{eq:omegainichtabzählbar}):
+    Formel~\eqref{eq:omegainichtabzaehlbar} kann immer als Definition verendet werden.
+    Falls alle $\pe_i$ durch WS $\glssymbol{wfk}_i$ gegeben sind, folgt aus Formel~\eqref{eq:omegainichtabzaehlbar}:
     \begin{align*}
         \glssymbol{wfk}((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) & = \pe(\kl{(\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)}) \\
         & = \pe(\kl{\glssymbol{elementarereignis}_1} \times \kl{\glssymbol{elementarereignis}_2} \times \dots \times \kl{\glssymbol{elementarereignis}_n}) \\
-        & \overset{(\ref{eq:omegainichtabzählbar})}{=} \pe_1(\kl{\glssymbol{elementarereignis}_1}) \cdot \pe_2(\kl{\glssymbol{elementarereignis}_2}) \cdot \dots \cdot \pe_n(\kl{\glssymbol{elementarereignis}_n}) \\
+        &~\overset{(\ref{eq:omegainichtabzaehlbar})}{=} \pe_1(\kl{\glssymbol{elementarereignis}_1}) \cdot \pe_2(\kl{\glssymbol{elementarereignis}_2}) \cdot \dots \cdot \pe_n(\kl{\glssymbol{elementarereignis}_n}) \\
         & = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \glssymbol{wfk}_2 (\glssymbol{elementarereignis}_2) \cdot \dots \cdot \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n)
     \end{align*}
 \end{bem}

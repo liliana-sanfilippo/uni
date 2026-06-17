@@ -1,6 +1,6 @@
 %! Author = lili
 %! Date = 5/31/26
-\chapter{Bedingte Wahrscheinlichkeiten}
+\chapter{Bedingte Wahrscheinlichkeiten}\label{ch:bedingte-wahrscheinlichkeiten}
 
 \untit{Vorlesung 02.05.2025 (V03 2025) und Vorlauf Kapitel 6 am 22.05.2026 (V05 2026) und 29 Mai 2026 (V06 2026)}
 
@@ -35,8 +35,10 @@
 % TODO bsp von Nickis Bildern bei dem einen bleiben zwei Möglichkeiten und bei dem anderen drei
 
 Zusammenhang mit der Unabhängigkeit?
-Zwei Ereignisse A,B sind unabh.  genau dann, wenn die WS der Schnitt auch das produkt der einzelnen WS ist usw. (
-siehe Anschnitt aus alten Aufzeichnungen)...
+Zwei Ereignisse A,B sind unabh.
+ genau dann, wenn die WS der Schnitt auch das produkt der einzelnen WS ist usw.
+(
+siehe Anschnitt aus alten Aufzeichnungen)\ldots
 
 \begin{satz}
     TODO foto
@@ -86,7 +88,7 @@ siehe Anschnitt aus alten Aufzeichnungen)...
             0, & \text{falls } \pe(B) = 0,
         \end{cases}
     \]
-    die bedingte Wahrscheinlichkeit von A gegeben B.
+    die bedingte Wahrscheinlichkeit von A gegeben B\@.
 \end{defi}
 \komm{\defirefman{bedingte-ws}: Wenn
     $\pe$ durch eine Dichte gegeben ist, muss man die Definition über Integrale interpretieren.}
@@ -100,12 +102,14 @@ siehe Anschnitt aus alten Aufzeichnungen)...
         \frac{|A \cap B|}{|B|}
     \]
 
-    D.h., die bedingte Wahrscheinlichkeit von A gegeben B ist tatsächlich der relative Anteil von A in B.
+    D.h., die bedingte Wahrscheinlichkeit von A gegeben B ist tatsächlich der relative Anteil von A in B\@.
 \end{beo}
 \begin{fr}
-    In obigem Beispiel gilt $\pe(A \mid B) > \pe(A)$. Gilt das immer?
+    In obigem Beispiel gilt $\pe(A \mid B) > \pe(A)$.
+    Gilt das immer?
 
-    \paragraph{Antwort} Nein! Sowohl $\pe(A_1 \mid B_1) > \pe(A_1)$ als auch $\pe(A_2 \mid B_2) < \pe(A_2)$ sind möglich.
+    \paragraph{Antwort} Nein!
+    Sowohl $\pe(A_1 \mid B_1) > \pe(A_1)$ als auch $\pe(A_2 \mid B_2) < \pe(A_2)$ sind möglich.
 
 \end{fr}
 \begin{bsp}
@@ -195,7 +199,7 @@ siehe Anschnitt aus alten Aufzeichnungen)...
 
     Die Abbildung $A \mapsto \pe(A \mid B)$ ist also ein Wahrscheinlichkeitsmaß.
 
-    Es gelten also alle bekannten Rechenregeln für Wahrscheinlichkeiten, z.B.
+    Es gelten also alle bekannten Rechenregeln für Wahrscheinlichkeiten, z.B\@.
 
     \[
         \pe(A^c \mid B) = 1 - \pe(A \mid B)
@@ -209,9 +213,10 @@ siehe Anschnitt aus alten Aufzeichnungen)...
 
     \txc{(Achtung: nur für disjunkte Ereignisse.)}
 
-    Achtung! Die Abbildung $B \mapsto \pe(A \mid B)$ ist kein Wahrscheinlichkeitsmaß!
+    Achtung!
+    Die Abbildung $B \mapsto \pe(A \mid B)$ ist kein Wahrscheinlichkeitsmaß!
 
-    (Beweisen Sie dies selbständig, indem Sie z.B. Beispiele finden mit
+    (Beweisen Sie dies selbständig, indem Sie z.B.\ Beispiele finden mit
     $\pe(A \mid B) \neq 1 - \pe(A \mid B^c)$ oder
     $\pe(A\mid B_1 \cup B_2) \neq \pe(A \mid B_1) + \pe(A \mid B_2)$.)
 \end{reg}
@@ -395,7 +400,7 @@ siehe Anschnitt aus alten Aufzeichnungen)...
         =
         \frac{|A_1\cap A_2\cap A_3|}
         {|A_1\cap A_2|}
-        = ... =
+        = \dots =
         \frac{\binom{2}{1}\binom{10}{9}}
         {\binom{12}{10}}
     \]
@@ -494,7 +499,8 @@ siehe Anschnitt aus alten Aufzeichnungen)...
 \begin{bsp}
     \textbf{Herr Zimperlich und sein Regenschirm} \\
     Herr Zimperlich hasst es, nass zu werden.
-    Wenn der Wetterbericht Regen ankündigt, nimmt er seinen Schirm mit einer Wahrscheinlichkeit von \(90\%\) mit. (Die fehlenden \(10\%\) sind seiner Vergesslichkeit geschuldet.)
+    Wenn der Wetterbericht Regen ankündigt, nimmt er seinen Schirm mit einer Wahrscheinlichkeit von \(90\%\) mit.
+    (Die fehlenden \(10\%\) sind seiner Vergesslichkeit geschuldet.)
 
     Auch wenn der Wetterbericht einen trockenen Tag verheißt, nimmt Herr Zimperlich mit einer Wahrscheinlichkeit von \(30\%\) trotzdem seinen Schirm mit.
 

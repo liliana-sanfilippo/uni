@@ -18,7 +18,7 @@
 
 \subsection*{Fakten}
 \begin{itemize}
-    \item Zwei verschiedene Darstellungen des Erwartungswerts
+    \item Zwei verschiedene Darstellungen des Erwartungswerts.
     \item Der Erwartungswert ist linear.
 \end{itemize}
 
@@ -37,7 +37,7 @@
 
 \section*{Grundgedanke}
 Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir können Wahrscheinlichkeiten
-berechnen wie z.B. $\pe(X \geq 2)$,  und diese Wahrscheinlichkeiten hängen nur von der
+berechnen wie z.B. $\pe(X \geq 2)$, und diese Wahrscheinlichkeiten hängen nur von der
 Verteilung ab, nicht von der Wahl des Wahrscheinlichkeitsraums $\wraum$.). \\
 Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \[
@@ -128,7 +128,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{1 $\times$ Würfeln mit einem fairem Würfel} \\
+    \textbf{1 $\times$ Würfeln mit einem fairen Würfel} \\
     \txc{Da herrscht eine Gleichverteilung, daher ist die erwartete Augenzahl ist das arithmetische Mittel.} \\
     \[
         \eraum = \{1,\dots,6\}
@@ -157,7 +157,7 @@ Dies führt uns in die Statistik (später).
     \]
 
     Die erwartete Augenzahl entspricht der mittleren Zahl von Schritten, die man
-    in einem Würfelspiel pro Wurf vorwärts gehen würde.
+    in einem Würfelspiel pro Wurf vorwärtsgehen würde.
 \end{bsp}
 
 \begin{bsp}
@@ -253,10 +253,11 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Erwartungswert der geometrischen Verteilung} \\
     Wie lange müssen wir im Mittel warten, bis der erste Erfolg eintritt?
-    (Zum Beispiel bis zur ersten Sechs beim Werfen eines fairen Würfels? – Raten Sie!) \\
+    (Zum Beispiel bis zur ersten Sechs beim Werfen eines fairen Würfels?
+    – Raten Sie!) \\
     X geometrisch verteilt mit Erfolgswahrscheinlichkeit \(p \in (0,1)\), d.h.,
     \[
-        \wfk_X(k) = \pe (X=k) = p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, . . . \}
+        \wfk_X(k) = \pe (X=k) = p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, dass $X \geq 0$)).
     \txo{
@@ -275,7 +276,7 @@ Dies führt uns in die Statistik (später).
     \end{align*}
     \txo{
         \begin{align*}
-            *1 & \quad \text{Definition Erwartungswert } \\
+            *1 & \quad \text{Definition Erwartungswert} \\
             *2 & \quad \text{gilt, weil gliedweises Di”erenzieren einer Potenzreihe im Innern ihres Konvergenzradius
             zulässig ist}
         \end{align*}
@@ -284,13 +285,14 @@ Dies führt uns in die Statistik (später).
 
 \begin{bsp}
     \textbf{Erwartungswert der uniformen Verteilung auf [a, b]} \\
-    (Raten. – Warum ist der Erwartungswert (a + b)/2 ?) \\
+    (Raten.
+    – Warum ist der Erwartungswert (a + b)/2 ?) \\
     Der Erwartungswert existiert, weil\ldots
     \txc{
-        Denn: Zu prüfen ist: \( \intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a,b]}(x)$. \\
+        Denn: Zu prüfen ist: \(\intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a, b]}(x)$. \\
         Hier ist $\dcht(x) = 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
         \[
-            \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{max\{|a|, |b|\}}{b-a} \dx = max\{|a|, |b|\} \cdot 1 < \infty
+            \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{\max\{|a|, |b|\}}{b-a} \dx = \max\{|a|, |b|\} \cdot 1 < \infty
         \]
     }
     \ldots f stetig ist auf dem kompakten Intervall [a, b]
@@ -312,7 +314,7 @@ Dies führt uns in die Statistik (später).
     \]
 
     Der Erwartungswert existiert genau dann, wenn die folgende Berechnung einen
-    endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, dass $X \geq 0$):
+    endlichen Wert ergibt (was der Fall ist, wir verwenden wieder, dass $X \geq 0$):
     \begin{align*}
         \E{X} & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
         & = - \lim_{N \rightarrow \infty} \oub{x e^{- \alpha x}}{=0} |^N_{x=0} +  \int^{\infty}_0 \oub{1 \cdot  e^{- \alpha
@@ -322,9 +324,9 @@ Dies führt uns in die Statistik (später).
     \end{align*}
     \txc{
         \begin{align*}
-            * \dcht(x) & = \alpha  e^{- \alpha x} \chi_{[0,\infty)}(x) \\
+            * \dcht(x) & = \alpha e^{- \alpha x} \chi_{[0,\infty)}(x) \\
             \Rightarrow \int_0^{\infty} e^{- \alpha x} \dx
-            & = \frac{1}{\alpha} \int_0^{\infty} \alpha  e^{- \alpha x} \dx \\
+            & = \frac{1}{\alpha} \int_0^{\infty} \alpha e^{- \alpha x} \dx \\
             & = \frac{1}{\alpha}  \intinfs \dcht(x) \dx \\
             & = \frac{1}{\alpha}
         \end{align*}
@@ -333,7 +335,7 @@ Dies führt uns in die Statistik (später).
 
 \begin{satz}
     \textbf{Der Erwartungswert ist linear} % 2026 13
-    Geg. \glspl{zv} $X : \eraum \rightarrow \rz $ und  $Y : \eraum \rightarrow \rz $ auf $\wraum$; Konstanten $a,b \in \rz$. \\
+    Geg. \glspl{zv} $X : \eraum \rightarrow \rz $ und  $Y : \eraum \rightarrow \rz $auf $\wraum$; Konstanten $a,b \in \rz$. \\
     Annahme: $\E{X}$ und $\E{Y}$ existieren. \\
     Dann gelten $aX + bY$ ist ebenfalls eine Zufallsvariable.
     Der Erwartungswert von $aX + bY$ existiert und berechnet sich als
@@ -376,7 +378,7 @@ Dies führt uns in die Statistik (später).
     \]
     beschreibt die Augensumme \txo{(Und $X_i$ das Ergebnis des i-ten Wurfs)}.
 
-    \textbf{Berechnung der erwarteten Augensumme für zweimaliges Würfeln (\(n=2\)):}
+    \textbf{Berechnung der erwarteten Augensumme für zweimaliges Würfeln(\(n=2\)):}
 
     Direkt über die Verteilung:
     \[
@@ -445,7 +447,7 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \\
     \txo{
-        $X(\eraum) = \{ 0,\dots,n\}, \quad \# X(\eraum) = n+1 < \infty$}
+        $X(\eraum) = \{ 0,\dots, n\}, \quad \# X(\eraum) = n+1 < \infty$}
     \begin{itemize}
         \item \(X\) sei binomialverteilt mit den Parametern \(n\) und \(p\).
         \item Der Erwartungswert$^{\txo{*}}$ von \(X\) existiert, da der Bildbereich von \(X\)
@@ -523,7 +525,7 @@ Dies führt uns in die Statistik (später).
         \qquad
         n\in \eraum = \nz.
     \]
-    \txo{$\wfk(n) = (\frac{1}{2})^n = 2^{-n} \quad \forall n \in \eraum = \nz$} \\
+    \txo{$\wfk(n) = \left(\frac{1}{2}\right)^n = 2^{-n} \quad \forall n \in \eraum = \nz$} \\
     Was wäre ein fairer Einsatz für dieses Spiel?
     (Wir nennen den Einsatz fair, wenn der Einsatz gleich der erwarteten Auszahlung ist.) \\
     Wir suchen also $\E{X}$
@@ -538,7 +540,7 @@ Dies führt uns in die Statistik (später).
     Ein fairer Einsatz kann nicht bestimmt werden.
 \end{bsp}
 \begin{er}
-    Aus Satz (E), d.h. der Linearität des Erwartungswerts, folgen:
+    Aus Satz (E), d.h.\ der Linearität des Erwartungswerts, folgen: % TODO Satz E
     \[
         \E{aX}= a \E{X} \text{ und } \E{X + Y } = \E{X} + \E{Y}
     \]
@@ -558,7 +560,7 @@ Dies führt uns in die Statistik (später).
 
     Wähle
     \[
-        P(X=+1)=P(X=-1)=\frac{1}{2}
+        \pe(X=+1)=\pe(X=-1)=\frac{1}{2}
     \]
     und
     \[
@@ -589,9 +591,9 @@ Dies führt uns in die Statistik (später).
     \textbf{Satz (P)} \\
     Seien
     \[
-        X:\Omega\to\mathbb{R}
+        X:\eraum\to\mathbb{R}
         \quad\text{und}\quad
-        Y:\Omega\to\mathbb{R}
+        Y:\eraum\to\mathbb{R}
     \]
     zwei unabhängige Zufallsvariablen, deren Erwartungswerte existieren.
 
@@ -607,23 +609,24 @@ Dies führt uns in die Statistik (später).
     \paragraph{Schritt 1:}
     Wir nehmen zunächst an, dass der Erwartungswert von \(X\cdot Y\) existiert.
 
-    Wir beginnen mit der folgenden Darstellung. Für \(z\neq 0\) gilt: \txo{(xy = z)}
+    Wir beginnen mit der folgenden Darstellung.
+    Für \(z\neq 0\) gilt: \txo{(xy = z)}
     \[
         \begin{aligned}
-            P(XY=z)
+            \pe(XY=z)
             & \overset{\txo{*}}{=}
             \sum_{y\neq 0}
-            P(XY=z\mid Y=y)\,P(Y=y)
+            \pe(XY=z\mid Y=y)\,\pe(Y=y)
             \\
             &=
             \sum_{y\neq 0}
             P\left(X=\frac{z}{y}\mid Y=y\right)
-            P(Y=y)
+            \pe(Y=y)
             \\
             &=
             \sum_{y\neq 0}
             P\left(X=\frac{z}{y}\right)
-            P(Y=y),
+            \pe(Y=y),
         \end{aligned}
     \]
     da \(X\) und \(Y\) unabhängig sind.
@@ -634,11 +637,11 @@ Dies führt uns in die Statistik (später).
     \]
     Aus
     \[
-        P(XY=z)
+        \pe(XY=z)
         =
         \sum_{y\neq 0}
         P\left(X=\frac{z}{y}\right)
-        P(Y=y),
+        \pe(Y=y),
         \qquad z\neq 0,
     \]
     folgt
@@ -646,26 +649,26 @@ Dies führt uns in die Statistik (später).
         \begin{aligned}
             \E{XY}
             &=
-            \sum_{z\in XY(\Omega)\txo{, z \neq 0}}
-            z\,P(XY=z)
+            \sum_{z\in XY(\eraum)\txo{, z \neq 0}}
+            z\,\pe(XY=z)
             \\
             &=
             \sum_{z\neq 0}
             \sum_{y\neq 0}
             \frac{z}{y}\,y\,
             P\left(X=\frac{z}{y}\right)
-            P(Y=y)
+            \pe(Y=y)
             &=
             \sum_{y\neq 0}
             \sum_{x\neq 0}
             xy \pe(X=x) \pe(Y=y)
             &=
-            \big(
-            \sum_{y\neq 0} y \pe(Y=y)
-            \big)
-            \big(
-            \sum_{x\neq 0} x \pe(X=x)
-            \big)
+            \big\left(
+                    \sum_{y\neq 0} y \pe(Y=y)
+                    \big\right)
+            \big\left(
+                    \sum_{x\neq 0} x \pe(X=x)
+                    \big\right)
             &=
             \E{X} \cdot \E{Y}
         \end{aligned}
@@ -695,11 +698,11 @@ Dies führt uns in die Statistik (später).
     \begin{itemize}
         \item Definiere Hilfszufallsvariablen \(X_1\) und \(Y_1\), unabhängig mit
         \[
-            P(X_1=0)=P(X_1=1)=\frac12
+            \pe(X_1=0)=\pe(X_1=1)=\frac12
         \]
         und
         \[
-            P(Y_1=0)=P(Y_1=1)=\frac12.
+            \pe(Y_1=0)=\pe(Y_1=1)=\frac12.
         \]
 
         \item Setze
@@ -715,9 +718,9 @@ Dies führt uns in die Statistik (später).
     \begin{itemize}
         \item Bildbereiche:
         \[
-            X(\Omega)=\{0,1,2\},
+            X(\eraum)=\{0,1,2\},
             \qquad
-            Y(\Omega)=\{0,1\}.
+            Y(\eraum)=\{0,1\}.
         \]
 
         \item
@@ -742,7 +745,7 @@ Dies führt uns in die Statistik (später).
     \paragraph{\(X\) und \(Y\) sind nicht unabhängig.}
 
     \[
-        P(X=1,Y=0)=0,
+        \pe(X=1,Y=0)=0,
     \]
     da
     \[
@@ -751,7 +754,7 @@ Dies führt uns in die Statistik (später).
 
     Andererseits gilt
     \[
-        P(X=1)
+        \pe(X=1)
         =
         2\cdot\frac14
         >
@@ -759,7 +762,7 @@ Dies führt uns in die Statistik (später).
     \]
     und
     \[
-        P(Y=0)
+        \pe(Y=0)
         =
         2\cdot\frac14
         >
@@ -772,14 +775,14 @@ Dies führt uns in die Statistik (später).
         \begin{aligned}
             \E{XY}
             &=
-            0\cdot P(XY=0)
+            0\cdot \pe(XY=0)
             +
-            1\cdot P(XY=1)
+            1\cdot \pe(XY=1)
             +
-            2\cdot P(XY=2)
+            2\cdot \pe(XY=2)
             \\
             &=
-            0+P(X=1)+0
+            0+\pe(X=1)+0
             \\
             &=
             \frac12.
@@ -791,10 +794,10 @@ Dies führt uns in die Statistik (später).
         \begin{aligned}
             \E{X}\,\E{Y}
             &=
-            (\E{X_1}+\E{Y_1})\,P(Y=1)
+            (\E{X_1}+\E{Y_1})\,\pe(Y=1)
             \\
             &=
-            2\,\E{X_1}\,P(X=1)
+            2\,\E{X_1}\,\pe(X=1)
             \\
             &=
             2\cdot\frac12\cdot\frac12
@@ -813,7 +816,7 @@ Dies führt uns in die Statistik (später).
     einzelnen Erwartungswerte zerfällt.
 \end{bem}
 
-% TODO 2026 ab Seite 65 weiter
+
 \begin{defi}
     \textbf{Zusammengesetzte Zufallsvariablen} \\
     Eine Zufallsvariable $X: \eraum \rightarrow \rz$ und eine \txo{messbare} Funktion $f: \rz \rightarrow \rz$ können
@@ -856,14 +859,15 @@ Dies führt uns in die Statistik (später).
 \end{satz}
 
 \begin{bsp}
-    Zu Satz \ref{satz:7-4}. \\
+    Zu Satz~\ref{satz:7-4}. \\
     Mit $f(x) = x^2$
 \end{bsp}
 
 \begin{defi}
     \textbf{n-tes Moment von X} \\
     Für $n \in \nz $ heißt $\E{X^n}$ das erste n-te Moment von $X$, insofern $\E{|X|^n} < \infty$.
-    (Erwartungswert ist das 1. Moment)
+    (Erwartungswert ist das 1.
+    Moment)
 \end{defi}
 \begin{defi}
     $\E{ ( X -  \E{X} )^n } $ heißt das n-te zentrierte Moment von $X$.
@@ -932,7 +936,7 @@ Dies führt uns in die Statistik (später).
     \]
     \textbf{Die Varianz zeigt den Unterschied:}
 
-    Da \(\E{X}=0\),
+    da \(\E{X}=0\),
 
     \[
         \operatorname{Var}(X)
@@ -977,7 +981,8 @@ Dies führt uns in die Statistik (später).
 
 \begin{bsp}
     \textbf{Bernoulli-Variable (Spezialfall der Binomialverteilung mit n = 1)} \\
-    Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ für Erfolgsws. $p \in [0,1]$ und $\E{X} = p$. \\
+    Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ für Erfolgswahrscheinlichkeit $p \in [0,1]$ und $\E{X} = p$
+    . \\
     \txc{$\Var(X)$ existiert, da}
     \begin{align*}
         \txo{\Var(X)} & \txo{= \sum_{x\in X(\eraum)}  (x - \E{X})^2 \pe(X=x)} \\
@@ -997,7 +1002,7 @@ Dies führt uns in die Statistik (später).
 
 \begin{bsp}
     \textbf{gleichverteilte Zufallsvariable auf \{1,..,n\}} \\
-    Zufallsvariable  X mit $P(X = k) = \frac{1}{n} \text{ für } k = 1, \dots, n$
+    Zufallsvariable X mit $\pe(X = k) = \frac{1}{n} \text{ für } k = 1, \dots, n$
 
     \[
         \E{X}
@@ -1006,9 +1011,9 @@ Dies führt uns in die Statistik (später).
         = \frac{n+1}{2}
     \]
     und
-     \[
-         \Var(X) = \frac{n^2 - 1}{12}
-     \]
+    \[
+        \Var(X) = \frac{n^2 - 1}{12}
+    \]
     weil
     \begin{align*}
         \Var(X)
@@ -1023,12 +1028,13 @@ Dies führt uns in die Statistik (später).
 \begin{lem}
     \textbf{Technisches Lemma} \\
     Für alle $a \in \rz$ gilt $\E{(X - a)^2} = \Var(X) + (\E{X} - a)^2$
+
     \paragraph{Beweis} TODO F 76 % TODO
 \end{lem}
 
 \begin{folg}
     \textbf{Folgerung I} \\
-    $a \Leftrightarrow \E{(X - a)^2}$ wird minimal für $a = \E{X}$
+    $a \Leftrightarrow \E{(X - a)^2}$ wird minimal für $a = \E{X}$.
 
     In diesem Fall ist $\E{(X - a)^2} = \Var(X)$ per Definition der Varianz.
 \end{folg}
@@ -1043,14 +1049,94 @@ Dies führt uns in die Statistik (später).
 \end{folg}
 
 \begin{satz}
-    \textbf{Satz V} \\
-    TODO F 79 - 86 % TODO F 79 - 86
+    \textbf{Satz (V)} \label{satz:satz-v} \\
+    Seien X, Y diskrete\txc{(?)}) Zufallsvariablen mit existierendem Erwartungswert, $a,b \in \rz$.
+
+    \paragraph{(a)} $\Var(aX+b) = a^2 \Var(X)$
+    \begin{align*}
+        \txo{\Var(aX+b)} & \txo{ \E{ (aX+b - \E{aX+b} )^2 } } \\
+        & \txo{ \E{ (a (X_\E{X}  ))^2 } } \\
+        & \txo{ a^2 \E{(X- \E{X} )^2} } \\
+        & \txo{= a^2 \Var(X)}
+    \end{align*}
+
+    \paragraph{(b)} $\Var(X + Y ) = \Var(X ) + \Var(Y ) + 2 \Cov(X , Y )$ mit Kovarianz
+    $\Cov(X,Y) \coloneqq \E{(X-\E{X}) (Y-\E{Y})}$.
+    \begin{align*}
+        \txo{\Var(X + Y )} & \txo{= \E{ ( (X+Y) - \E{(X+Y)} )^2 } } \\
+        & \txo{= \E{ (X-\E{X})^2 }  + 2 \E{ (X-\E{X}) (Y-\E{Y}) } + \E{(Y-\E{Y})^2}  } \\
+        & \txo{  \Var(X ) + \Var(Y ) + 2 \Cov(X , Y ) }
+    \end{align*}
+
+    \paragraph{(c)} X und Y unabhängig $\Rightarrow \Var(X + Y ) = \Var(X ) + \Var(Y )$.
+    \begin{align*}
+        \txo{\text{X und Y unabhängig}} & \txo{\Rightarrow X-\E{X}, Y-\E{Y}\ unabh.} \\
+        &  \txo{\Cov(X,Y)} & \txo{= \E{(X-\E{X}) (Y-\E{Y})}} \\
+        & & \txo{ \overset{(P)}{=}  \E{X-\E{X}} \E{Y-\E{Y}}} \\
+        & & \txo{=0}
+    \end{align*}
+
+    \paragraph{(d)} Für diskrete Zufallsvariablen gilt: \\
+    $\Var(X ) = 0 \Rightarrow$ Es existiert eine Konstante c mit $\pe(X=c) = 1$. \\
+    $c = \E{X}$
+
+    \paragraph{Beweis für (a) bis (c):} Verwende $\Var(Z ) = \E{(Z- \E{Z})^2}$ und die Rechenregeln für den EW\@.
+
+    \paragraph{Beweis für (d):} $0 = \Var(X) = \E{(X- \E{X})^2} = \sum_{x\in X(\eraum)} (x- \E{X})^2 \pe(X=x)$. \\
+    Alle Summanden sind $\geq 0$, folglich impliziert $\pe(X=x) > 0$ sofort $x = \E{X}$
+    \txc{, da die Summe nicht 0 sein könnte, wenn ein Summand nicht 0 wäre.
+    Also muss jedes $(x- \E{X})^2 \pe(X=x)$ sein und wenn $\pe(X=x) > 0$, muss also $(x- \E{X})^2 = 0$ sein, also muss $x- \E{X} = 0$ sein, also $x = \E{X}$}.
+
+    Damit ist gezeigt, dass $\pe(X=\E{X}) = 1$\txc{, da jedes $x \in X$ gleich $\E{X}$ ist}.
+
+    \txo{Kann nicht gelten, wenn f Dichte hat}
 \end{satz}
 
+% TODO F 82 Was sol ldas mit dem herumkritzeln?
+% TODO Auf welchen regeln diese Übergänge basieren
+
 \begin{bsp}
-    \textbf{binomialverteilte Zufallsvariable $S_n$ mit Parametern n und p} \\
-    TODO F 87 - 89  % TODO F 87 - 89
+    \textbf{Binomialverteilte Zufallsvariable $S_n$ mit Parametern n und p} \\
+    $\eraum = \{0,1\}^n$ und
+
+    \[
+        p(\ele)
+        = p^{\sum_{i=1}^{n} \ele_i}
+        (1-p)^{\,n-\sum_{i=1}^{n} \ele_i}
+    \]
+    Darstellung:
+    \[
+        S_n = \sum_{i=1}^{n} X_i
+    \]
+    mit
+    \[
+        X_i(\ele) = \ele_i
+        \quad \text{für alle } \ele \in \eraum.
+    \]
+
+    Dabei sind die $X_i$ unabhängig mit
+    \[
+        \pe(X_i = 1) = p
+    \]
+    und
+    \[
+        \pe(X_i = 0) = 1-p = q
+    \]
+    für alle $i$.
+
+    \[
+        \E{X}
+        = \sum_{i=1}^{n} \E{X_i}
+        = np
+    \]
+
+    nach Satz (E). % TODO Satz E
 \end{bsp}
+
+Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Satz (V) (\ref{satz: satz-v})
+\[
+    \Var(X) = \sum^n_{i=1} \oub{\Var(X_i)}{=pq} = npq
+\]
 
 \begin{bsp}
     \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$}
@@ -1118,19 +1204,19 @@ Dies führt uns in die Statistik (später).
     \]
     \begin{align*}
         \E{X^2}  & = \int^{\infty}_0 \underbrace{x^2}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
-        & = - \lim_{N \rightarrow \infty} x^2  e^{- \alpha x} \Big|_{x=0}^N + 2 \int_0^{\infty} x e^{- \alpha x} \dx \\
+        & = - \lim_{N \rightarrow \infty} x^2 e^{- \alpha x} \Big|_{x=0}^N + 2 \int_0^{\infty} x e^{- \alpha x} \dx \\
         & = 0 + \frac{2}{\alpha} \E{X} \\
         & = \frac{2}{\alpha^2}
     \end{align*}
     \[
-        \Var(X) = \E{X^2} - \E{X}^2 =  \frac{2}{\alpha^2} - \big( \frac{1}{\alpha} \big)^2 =  \frac{1}{\alpha^2}
+        \Var(X) = \E{X^2} - \E{X}^2 =  \frac{2}{\alpha^2} - \big\left( \frac{1}{\alpha} \big\right)^2 =  \frac{1}{\alpha^2}
     \]
 \end{bsp}
 
 \untit{Ende der Vorlesung vom 5. Juni 2026}
 
 \begin{satz}
-    TODO F 98 - 100 % TODO F 98 - 100
+    TODO F 98--100 % TODO F 98 - 100
 \end{satz}
 
 % Ab F 101 ist es einfach eine versehentliche Wdh der früheren Folien

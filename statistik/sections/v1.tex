@@ -2,9 +2,9 @@
 %! Date = 4/27/26
 
 \chapter{Modellieren zufälliger Ereignisse}
-\label{sec:modellieren-zufalliger-ereignisse}
+\label{ch:modellieren-zufalliger-ereignisse}
 \untit{Vorlesung 11.04.2025 (V01 2025), ergänzt durch Skript (Skript 2026)}
-\section{Wahrscheinlichkeitsräume}
+\section{Wahrscheinlichkeitsräume}\label{sec:wahrscheinlichkeitsraume}
 \komm{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind}
 \begin{figure}[H]
     \centering
@@ -201,7 +201,7 @@ Dann gelten:
     definiert ist und daher das einelementige Ereignis $\{\ele\}$ als Argument hat.
 \end{bem}
 
-\begin{bsp} \label{bsp:einmal-würfeln-i}
+\begin{bsp} \label{bsp:einmal-wuerfeln-i}
     \textbf{Einmal Würfeln} \\
     $\eraum  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
     \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.}
@@ -209,7 +209,7 @@ Dann gelten:
     \begin{enumerate}
         \item \textbf{fairer Würfel}:
         \[\wfk(k) = const \  \forall k \in \eraum \]
-        \[\wfk (k) \coloneqq \frac{1}{6} \text{(weil $\sum_{k=1} \wfk (k) \overset{!}{=} 1$ )}\]
+        \[\wfk (k) \coloneqq \frac{1}{6} \text{\left(weil $\sum_{k=1} \wfk (k) \overset{!}{=} 1$ \right)}\]
         $\pe(A) = \wfk(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \wfk(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
         \item  \textbf{gezinkter Würfel}: Seien
         \[\wfk(1) = \frac{1}{2}, \wfk(2) = \wfk(3) = \wfk(4) = \wfk(5) = \frac{1}{12}, \wfk(6)=\frac{1}{6}\]

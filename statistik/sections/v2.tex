@@ -2,10 +2,10 @@
 %! Date = 4/27/26
 
 \chapter{Rechnen mit Wahrscheinlichkeiten}
-\label{sec:rechnen-mit-wahrscheinlichkeiten}
+\label{ch:rechnen-mit-wahrscheinlichkeiten}
 \untit{Vorlesung 25.04.2025 (V02 2025)}
 % TODO ergänzen durch skript 2026
-\subsection*{Lernziele}
+\section*{Lernziele}
 \begin{itemize}
     \item Unterschied zwischen disjunkten und paarweise disjunkten Mengen
     \item Rechenregeln für Wahrscheinlichkeiten
@@ -15,7 +15,7 @@
         \item Spezialfall paarweise disjunkter Mengen
     \end{itemize}
 \end{itemize}
-\section{Wahrscheinlichkeitsräume, deren Ereignisraum nicht abzählbar ist}
+\section{Wahrscheinlichkeitsräume, deren Ereignisraum nicht abzählbar ist}\label{sec:wahrscheinlichkeitsraume-deren-ereignisraum-nicht-abzahlbar-ist}
 \begin{bsp}
     \textbf{\gls{wraum}} \\
     Stoppen einer Zeit bis zu einer Stunde in ms.
@@ -59,10 +59,12 @@
         \item Damit ist gemeint: Ist $f \geq 0$, so ist $f$ genau dann uneigentlich Riemann-integrierbar über
         $\rz$, wenn das Riemann-Integral $\int_a^b f(x) dx$ für jede Wahl $- \infty < a < b < \infty$
         existiert und $\underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
-        existiert. In diesem Fall gilt $\int_{- \infty}^{\infty} f(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
+        existiert.
+        In diesem Fall gilt $\int_{- \infty}^{\infty} f(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
     \end{itemize}
     % d
-    \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw. sowohl $(- \infty, 0] $ als auch $[0, \infty)$
+    \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw.
+    sowohl $(- \infty, 0] $ als auch $[0, \infty)$
     uneigentlich Riemann-integrierbar ist.
     % c TODO
     \item TODO
@@ -179,7 +181,7 @@
                 \node[black] at (circle3.center){$A$};
             \end{tikzpicture}
             \caption{Transitivität: $A\subset B, \quad B \subset C \Rightarrow A \subset C$}
-            \label{fig:Transitivität}
+            \label{fig:Transitivitaet}
         \end{subfigure}
         \hfill
         \begin{subfigure}[t]{0.45\textwidth}
@@ -386,7 +388,7 @@
 \begin{satz}
     \textbf{Ein- und Ausschlussprinzip} \\
     \[A_2,\dots, A_n \subset \eraum  \]
-    \[\pe( \bigcup^n_{i=1} A_i ) = \sum^n_{k = 1} (-1)^{k+1} \sum_{a \leq i_1 \leq \dots \leq i_k \leq k} \pe(A_{i_1} \cap \dots \cap A_{i_k}) \]
+    \[\pe\left( \bigcup^n_{i=1} A_i \right) = \sum^n_{k = 1} (-1)^{k+1} \sum_{a \leq i_1 \leq \dots \leq i_k \leq k} \pe(A_{i_1} \cap \dots \cap A_{i_k}) \]
 \end{satz}
 
 \newpage
