@@ -22,7 +22,7 @@
     \[
         \pe( |X - \E{X}| \geq h ) \leq \frac{\Var(X)}{h^2} \quad \forall h > 0
     \]
-    \paragraph{Beweis:} \txo{Spezialfall diskreter \gls{wraum}}
+    \paragraph{Beweis:} \txo{Spezialfall diskreter \glspl{wraum}}
     \begin{align*}
         \pe( |X - \E{X}| \geq h ) & = \sum_{\oio : |X(\ele)- \E{X}| \geq h} \wfk(\ele) \\
         & = \sum_{x \in X(\eraum) : |x - \E{X}| \geq h} \pe( \{\oio: X(\ele) = x\} ) \\
@@ -34,14 +34,73 @@
 
 \begin{bsp}
     \textbf{Die Tschebyscheffsche Ungleichung kann nicht verbessert werden}
-    % TODO F 4-9
-    TODO F4-9 26
+    %  F 4-9
+    Sei $N \in \nz$ beliebig und die Zufallsvariable $X$ mit $X(\eraum) = \{ -N, 0, +N\}$ und $\pe ( X = \pm N) = \frac{1}{2N^2}$
+    % TODO Ist X damit vollständig beschrieben?
+    \begin{align*}
+        \txo{\pe( X= +N)} & \txo{= \frac{1}{2N^2}} \\
+        \txo{\pe( X= -N)} & \txo{= \frac{1}{2N^2}} \\
+        \txo{\pe( X= 0)} & \txo{= 1- \frac{1}{N^2}}
+    \end{align*}
+    Aus $\E{X} = 0$ folgt
+    \[
+        \Var(X) = N^2 \pe (X = -N) + N^2 \pe (X = +N) = 1
+    \]
+    \txo{Denn}
+    \[
+        \txo{
+        \Var(X) = \E{X^2} = N^2 \pe(X^2 = N) = N^2 \frac{2}{2N^2} = 1
+        }
+    \]
+    Für jedes $h \in (0,N]$ gilt
+    \begin{align*}
+        \pe(|X - \oub{\E{X}}{=0}|  \geq h ) & =  \pe(|X - \E{X} | > 0) \\
+        & = \pe (X = N) + \pe (X = -N) \\
+        & = \frac{1}{N^2} \\
+        & = \frac{ \oob{\Var(X)}{=1} }{N^2} \\
+        & \overset{\txc{*}}{\leq} \frac{1}{h^2} \Var(X)
+    \end{align*}
+    Die Wahl $h = N$ zeigt: Ungleichung kann nicht verbessert werden.
+
+    Die Wahl $h = 2N$ dagegen zeigt, dass sie nicht immer gut ist:
+    \[
+        \pe(|X - \E{X} | \geq 2N) = \pe(|X | > N) = 0 < \frac{1}{(2N)^2} = \frac{\Var(X)}{(2N)^2}
+    \]
 \end{bsp}
 
 \begin{bsp}
     \textbf{Werfen eines fairen Würfels}
     % TODO F 10 - 16
-    TODO F10-16 26
+    Wie oft m¨ussen wir einen fairen W¨urfel werfen, bis mit Ws. $\geq 1  - 0.05$ die relative H¨aufigkeit einer Sechs um weniger als 1/10 von 1/6 abweicht?
+    \paragraph{Ansatz:} $\eraum = \{1, ..., 6\}^N$ mit Gleichverteilung $\pe$ (f¨ur N W¨urfe) und Zufallsvariablen
+    $X_i \eraum \rightarrow \{0,1\}$.
+
+    Dabei sind $X_i(\ele) = 1_{\{6\}} (\ele_i)$ unabh¨angig und identisch verteilt (u.i.v.) mit $\pe(X_i = 1) = \frac{1}{6}$.
+
+    $S_N = \sum^N_{i=1} X_i$ ist die Anzahl der geworfenen Sechsen und $\frac{1}{N} S_N$ ist die relative
+    H¨aufigkeit einer Sechs.
+    \paragraph{Gesucht} ist das kleinste N derart, dass $ \pe(| \frac{S_N}{N} - \frac{1}{6}| \geq \frac{1}{10}) \leq \frac{5}{100}$
+    \txo{(Gegenereignis zu $\pe(| \frac{S_N}{N} - \frac{1}{6}| < \frac{1}{10}) \geq 1- \frac{5}{100}$ )}.
+    \paragraph{Lösung:} \txo{für Tschebyscheffsche Ungleichung in Bezug auf EW und Var} \\
+    Seien p = 1/6 und q = 1 - p = 5/6 und sei $S_N$ binomialverteilt mit Parametern N und p.
+    Dann ist
+    \[
+        \E{ \frac{1}{N}  S_N} = \frac{1}{N} \E{S_N} \overset{\txc{*}}{=}  \frac{1}{N} Np  = p = 1/6
+    \]
+    \txc{* da $S_N$ binomialverteilt ist}
+    und
+    \[
+        \Var(\frac{1}{N}  S_N) = \frac{1}{N} \Var(S_N) \overset{\txc{**}}{=} \frac{1}{N} Npq = \frac{1}{N} pq = \frac{1}{N} \frac{1}{6} \frac{5}{6}
+    \]
+    \txc{** Ebenfalls, weil $S_N$ binomialverteilt ist.} \\
+    Tschebyscheffsche Ungleichung:
+    \[
+        \pe(
+        \oub{
+
+        }{Gegenereignis}
+        )
+    \]
 \end{bsp}
 
 \begin{satz}
@@ -57,7 +116,7 @@
     $\exists C > 0$ mit $\Var(X_i) \leq C$ für alle $i \in \nz$.
     (Beachte $\Var(X_i) < \infty \Rightarrow \E{X_i}$ ex.)
 
-    Die Zufallsvariablen sind \gls{paarweiseunkorreliert} \txo{(Also wenn $\Cov(X_i, X_j) = 0$ für $i \neq j$)}:
+    Die Zufallsvariablen sind \gls{paarweiseunkorreliert} \txo{(Also wenn $\Cov(X_i, X_j) = 0 $ für $i \neq j$)}:
     \[
         \E{
             (X_i - \E{X_i}) (X_j - \E{X_j}) = 0, \quad \text{für alle } i \neq j
@@ -82,7 +141,7 @@
 \end{bem}
 \begin{bsp}
     \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \\
-    Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p = } Erfolgswahrscheinlichkeit. \\
+    Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p =} Erfolgswahrscheinlichkeit. \\
     Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} S_n} der Erfolge
     konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
 \end{bsp}
@@ -125,7 +184,8 @@
 
     \paragraph{Beweis.} \texttt{Folie 14--2025 bzw. F 25 in 2026}
     % TODO F 25
-    \orangenote{schwaches Gesetz der großen Zahlen ''\ma{\frac{1}{n} S_n \rightarrow \frac{1}{6}}'' und \ma{\pe(\frac{1}{n} S_n = \frac{1}{6})}} ist sehr klein.
+    \orangenote{schwaches Gesetz der großen Zahlen ``$\frac{1}{n} S_n \rightarrow \frac{1}{6}$'' und \ma{\pe(
+    \frac{1}{n} S_n = \frac{1}{6})}} ist sehr klein.
 \end{satz}
 \begin{erg}
     \textbf{Stirlingsche Formel}
@@ -144,7 +204,7 @@
     Die Approximation verwendet die untere Schranke und Fehler ist der Ordnung $\frac{1}{n}$.
 \end{erg}
 \begin{bsp}
-    1200-mal Würfeln mit einem fairen Würfel \\
+    1200-mal Würfeln mit einem fairen Würfel. \\
     Wie groß ist die Wahrscheinlichkeit, genau $k$ Sechsen zu werfen?
 
     \paragraph{a)} $k = 200$
@@ -157,7 +217,7 @@
     Approximation gemäß lokalem zentralem Grenzwertsatz:
     \mab{0.0000170\dots}
 \end{bsp}
-\textbf{Neue Fragen} \\
+\textbf{Neue Fragen:} \\
 Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen?
 Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 
@@ -173,7 +233,7 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \end{equation}
     Dabei verstehen wir die rechte Seite als Riemann-Integral \ma{\intab \varphi(x) \dx} mit
     \begin{equation}
-        \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{x^2 / 2}
+        \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{x^2 / 2}\label{eq:equation3}
     \end{equation}
     \txo{
         Standartisieren: $X$ ist ZV mit existierender Varianz.\\
@@ -183,7 +243,7 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \paragraph{Beweisidee:}
     Zunächst Approximieren der Summanden $\binomv$ durch den lokalen zentralen
     Grenzwertsatz.
-    Approximieren der Summe mit Hilfe eines Riemann-Integrals.
+    Approximieren der Summe mithilfe eines Riemann-Integrals.
 
     \paragraph{Beweis.}
     \texttt{Siehe Folie 23.}
@@ -193,9 +253,10 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{x^2 / 2}$ heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}
     . \\
     Die Stammfunktion \begin{equation}
-                          \Phi(y) = \int_{- \infty}^y \varphi(x) \dx
+                          \Phi(y) = \int_{- \infty}^y \varphi(x) \dx\label{eq:equation4}
     \end{equation}
-    ist die Verteilungsfunktion der Standardnormalverteilung. \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung} \\
+    ist die Verteilungsfunktion der Standardnormalverteilung.
+    \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung}. \\
     Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve. \\
     \ma{\Phi(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
 \end{bem}
@@ -205,24 +266,24 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \textbf{Rechenregeln}
     Dichte:
     \begin{equation}
-        \int_{- \infty}^{\infty} \varphi(x) dx = 1
+        \int_{- \infty}^{\infty} \varphi(x) dx = 1\label{eq:equation5}
     \end{equation}
     Verteilungsfunktion:
     \begin{equation}
         \Phi(y) \rightarrow \begin{cases}
                                 0 & \text{für } y \rightarrow - \infty  \\
                                 1 & \text{für } y \rightarrow \infty
-        \end{cases}
+        \end{cases}\label{eq:equation6}
     \end{equation}
     gerade Funktion:
     \begin{equation}
-        \Phi(0) = \frac{1}{2}
+        \Phi(0) = \frac{1}{2}\label{eq:equation7}
     \end{equation}
     \begin{equation}
-        \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (y)}{f(y)} dy = 1 - \Phi(-z)
+        \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (y)}{f(y)} dy = 1 - \Phi(-z)\label{eq:equation8}
     \end{equation}
     \txo{($y = -z$)} \\
-    Illustration in Abbildung~\ref{fig:moivrelaplaceGlocke}.
+    Illustration in Abbildung~\ref{fig: moivrelaplaceGlocke}.
 \end{reg}
 \begin{figure}[H]
     \centering
@@ -237,15 +298,15 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 \begin{bsp}
     \textbf{Vorlesung vs. Schlaf} \\
 
-    \paragraph{Frage:} Wie groß ist die Wahrscheinlichkeit, daß von den 142 Hörern einer 8-Uhr-Vorlesung nächste Woche zwischen 30\% und 70\% die Vorlesung besuchen?
+    \paragraph{Frage:} Wie groß ist die Wahrscheinlichkeit, dass von den 142 Hörern einer 8-Uhr-Vorlesung nächste Woche zwischen 30\% und 70\% die Vorlesung besuchen?
 
-    \paragraph{Geg.:} \ma{n = 142} Hörer, Jeder Einzelne besucht mit Wahrscheinlichkeit \ma{p \in (0,1)} die Vorlesung \ma{(p = \frac{2}{3})}.
+    \paragraph{Geg.:} \ma{n = 142} Hörer, jeder Einzelne besucht mit Wahrscheinlichkeit \ma{p \in (0,1)} die Vorlesung \ma{(p = \frac{2}{3})}.
 
     \paragraph{Vereinfachende Annahmen:}
     Alle Hörer besuchen die Vorlesung mit derselben Wahrscheinlichkeit und alle Hörer entscheiden sich unabhängig
     voneinander.
 
-    \paragraph{Modell:} $n$-mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$.
+    \paragraph{Modell:} $n$ -mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$.
     Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glssymbol{binomv}}-verteilt.
     Man betrachte jeden Anwesenden der n
     eingeschriebenen Hörer als ``Erfolg''. \\
@@ -259,14 +320,14 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \[
         S_n(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i
     \]
-    Dass $n$ Leute anwesende sind ist das Ereignis:
+    Dass $n$ Leute anwesende sind, ist das Ereignis:
     \[
         A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}} = \kl{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor}
     \]
     Für \ma{n = 142} ist das \ma{\lceil \frac{3}{10} \cdot n \rceil = 43} und  \ma{\lfloor \frac{7}{10} \cdot n \rfloor = 99}
-    Mit \ma{p = \frac{2}{3}}:
+    Mit \ma{p =\frac{2}{3}}:
     \[
-        \pe(A_n) = \sum_{k = \lceil \frac{3}{10} \cdot n \rceil}^{\lfloor \frac{7}{10} \cdot n \rfloor} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k} \txc{ = \sum_{k = 43}^{99} \binom{142}{k} (\frac{2}{3})^k (\frac{1}{3})^{142-k}}  \approx 0.80
+        \pe(A_n) = \sum_{k = \lceil \frac{3}{10} \cdot n \rceil}^{\lfloor \frac{7}{10} \cdot n \rfloor} \binom{142}{k} \left(\frac{2}{3}\right)^k \left(\frac{1}{3}\right)^{142-k} \txc{ = \sum_{k = 43}^{99} \binom{142}{k} \left(\frac{2}{3}\right)^k \left(\frac{1}{3}\right)^{142-k}}  \approx 0.80
     \]
     Approximation mit dem Satz von de Moivre-Laplace \txo{(in Form $a < \dots \leq b bringen$)}:
     \begin{align*}
@@ -297,17 +358,20 @@ Das Resultat wirft einige Fragen auf:
     Rolle?}
 
     \paragraph{1. Antwort:} $\phi (a) \approx \phi(-9) = 1 - \phi(9)$ und $\phi(9)$ ist so nah an 1, dass wir diesen
-    Wert nicht einmal in der Tabelle finden . . . \\
+    Wert nicht einmal in der Tabelle finden .
+    .
+    . \\
     Aber das erklärt noch gar nichts – oder?
 
     \paragraph{2. Antwort:} Wir wissen aus dem Gesetz der großen Zahlen, dass $\frac{1}{n} S_n$ in einem
-    gewissen Sinne gegen $p = 2/3 \approx 66\%$ konvergiert. Daher ist die Forderung,
+    gewissen Sinne gegen $p = 2/3 \approx 66\%$ konvergiert.
+    Daher ist die Forderung,
     dass $\frac{1}{n} S_n \leq 70\%$ sein soll, sehr viel restriktiver als die Forderung $\frac{1}{n} S_n \geq 30\%$.
 \end{fr}
 
 \komm{Da $\frac{1}{n}S_n$ nach dem Gesetz der großen Zahlen gegen
-    $p=\frac{2}{3}\approx 66{,}7\%$ konvergiert, liegt es für große $n$
-    mit hoher Wahrscheinlichkeit in der Nähe von $66{,}7\%$. Die Bedingung
+    $p=\frac{2}{3}\approx 66{, }7\%$ konvergiert, liegt es für große $n$
+    mit hoher Wahrscheinlichkeit in der Nähe von $66{, }7\%$. Die Bedingung
     $\frac{1}{n}S_n \ge 30\%$ ist daher nahezu immer erfüllt, während
     $\frac{1}{n}S_n \le 70\%$ nur eine kleine Abweichung vom Grenzwert
     zulässt und somit restriktiver ist.}
@@ -320,7 +384,7 @@ Das Resultat wirft einige Fragen auf:
     \paragraph{2. Antwort:} Grob gesprochen, approximieren wir eine diskrete Größe, die
     Anzahl der Erfolge $S_n$, durch etwas Kontinuierliches.
     Eine Verbesserung ist oft
-    möglich durch die so genannte Stetigkeitskorrektur: \index{Stetigkeitskorrektur}
+    möglich durch die sogenannte Stetigkeitskorrektur: \index{Stetigkeitskorrektur}.
 
     Wir modifizieren die Grenzen in $A_n$ geschickt und rechnen
     \begin{align*}
@@ -330,16 +394,17 @@ Das Resultat wirft einige Fragen auf:
         & \approx \phi(0.86) \approx 0.8051 & (Tabelle)
     \end{align*}
     \txc{Bingo!} \\
-    Beachte, daß die Stetigkeitskorrektur nicht immer besser ist (siehe Hausaufgaben).
+    Beachte, dass die Stetigkeitskorrektur nicht immer besser ist (siehe Hausaufgaben).
 \end{fr}
 
 \begin{bsp}
     \textbf{Vorlesung vs. Schlaf II} \\
-    Wie groß ist die Wahrscheinlichkeit, daß
+
+    Wie groß ist die Wahrscheinlichkeit, dass
     von 142 Hörern nächste Woche mindestens
     90 die Vorlesung besuchen?
 
-    \paragraph{Was ist anders als im obigen Beispiel?} Neu an dieser Frage ist, daß wir nur eine untere Schranke gegeben haben,
+    \paragraph{Was ist anders als im obigen Beispiel?} Neu an dieser Frage ist, dass wir nur eine untere Schranke gegeben haben,
     d.h., wir suchen die Wahrscheinlichkeit von
     \[
         B_n = \{S_n \geq 90\}
@@ -357,7 +422,7 @@ Das Resultat wirft einige Fragen auf:
         & = \phi(d_n) - [1- \phi( \oub{-c_n}{>0} )] \approx 0.8212 & (Tabelle)
     \end{align*}
     mit \[
-            c_n = \frac{89.5 - np}{\sqrt{npq}} \approx -0.92 \quad und \quad d_n = \frac{nq}{\sqrt{npq}} 0 \sqrt{\frac{nq}{p}} \approx 8.43
+            c_n = \frac{89.5 - np}{\sqrt{npq}} \approx -0.92 \quad und \quad d_n = \frac{nq}{\sqrt{npq}} 0 \sqrt{\frac{nq}{p}} \approx 8.43.
     \]
     Exakte Rechnung ergibt $\pe(B_n) = 0.821556 \dots$
 \end{bsp}
@@ -365,18 +430,18 @@ Das Resultat wirft einige Fragen auf:
 \begin{bem}
     Generell gelten, sofern der Satz von de Moivre-Laplace anwendbar ist,
     \[
-        \pe (s_n > c) = \pe(
+        \pe (s_n > c) = \pe\left(
         \frac{c-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{n-np}{\sqrt{npq}}
-        ) \approx 1 - \phi(\frac{c-np}{\sqrt{npq}})
+        \right) \approx 1 - \phi\left(\frac{c-np}{\sqrt{npq}}\right)
     \]
     und
     \[
-        \pe (s_n \leq d) = \pe(
+        \pe (s_n \leq d) = \pe\left(
         \frac{-1-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{d-np}{\sqrt{npq}}
-        ) \approx \phi(\frac{d-np}{\sqrt{npq}})
+        \right) \approx \phi\left(\frac{d-np}{\sqrt{npq}}\right)
     \]
     weil für große n
     \[
-        \phi(\frac{-1-np}{\sqrt{npq}}) \approx 0 \quad und \quad \frac{n-np}{\sqrt{npq}} \approx 1
+        \phi\left(\frac{-1-np}{\sqrt{npq}}\right) \approx 0 \quad und \quad \frac{n-np}{\sqrt{npq}} \approx 1
     \]
 \end{bem}
