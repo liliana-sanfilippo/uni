@@ -87,7 +87,7 @@
 %% KOMMENTAR / COMMENT
 
 \newtheorem{kom}{Kommentar}[chapter]
-\newtheorem{comment}{Comment}[chapter]
+\newtheorem{com}{Comment}[chapter]
 
 %% SATZ
 
@@ -135,53 +135,20 @@
     \end{mode}
 }
 
+%% APPLICATION
+
 \newtheorem{application}{Application}[chapter]
-\tcolorboxenvironment{application}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{application}{bemf}{breakable}
+
+%% INSIGHTS
 
 \newtheorem{keyin}{Key insight}[chapter]
-\tcolorboxenvironment{keyin}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{keyin}{bemf}{breakable}
+
+%% THEORIE / THEORIE
 
 \newtheorem{theori}{Theorie}[chapter]
-\tcolorboxenvironment{theori}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{theori}{bemf}{breakable}
 
 \newcommand{\theorie}[1]{%
     \begin{theori}\label{def:#1}
@@ -191,59 +158,20 @@
 }
 
 
-
-%\newtheorem{formel}[defi]{Definition}
-%\newtheorem{gese}{Gesetz}[section]
-
 %% DEFINITION
 
 \newtheorem{defi}{Definition}[chapter]
-\tcolorboxenvironment{defi}{
-    colback=white,
-    colframe=defif,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{defi}{defif}{breakable}
+
+% NOTATION
 
 \newtheorem{notation}{Notation}[chapter]
-\tcolorboxenvironment{notation}{
-    colback=white,
-    colframe=defif,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{notation}{defif}{breakable}
+
+% KONVENTION
 
 \newtheorem{konv}{Konvention}[chapter]
-\tcolorboxenvironment{konv}{
-    colback=white,
-    colframe=defif,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{konv}{defif}{breakable}
 
 \newcommand{\defin}[1]{%
     \begin{defi}\label{def:#1}
@@ -266,41 +194,16 @@
 }
 
 
-
-
 %% PROBLEM
 
 \newtheorem{prob}{Problem}[chapter]
-\tcolorboxenvironment{prob}{
-    colback=white,
-    colframe=Rhodamine,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{prob}{Rhodamine}{breakable}
+
+%% CHALLENGE
 
 \newtheorem{challenge}{Challenge}[chapter]
-\tcolorboxenvironment{challenge}{
-    colback=white,
-    colframe=Rhodamine,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{challenge}{Rhodamine}{breakable}
+
 \newcommand{\probl}[2]{
 \begin{prob} \textbf{#1} \\
    {#2}
@@ -311,35 +214,11 @@
 %% FRAGE
 
 \newtheorem{fr}{Frage}[chapter]
-\tcolorboxenvironment{fr}{
-    colback=white,
-    colframe=Periwinkle,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{fr}{Periwinkle}{breakable}
+
 \newtheorem{kfr}{Frühere Klausurfrage}[chapter]
-\tcolorboxenvironment{kfr}{
-    colback=white,
-    colframe=Cyan,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{kfr}{Cyan}{breakable}
+
 \newcommand{\frage}[1]{
     \begin{fr}
     \textbf{\gls*{#1}?}  \\
@@ -357,39 +236,16 @@
 }
 
 
-%% BEOBACHTUNG
+%% BEOBACHTUNG / OBSERVATION
 
 \newtheorem{beo}{Beobachtung}[chapter]
-\tcolorboxenvironment{beo}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{beo}{bemf}{breakable}
+
 
 \newtheorem{obs}{Observation}[chapter]
-\tcolorboxenvironment{obs}{
-    colback=white,
-    colframe=bemf,
-    boxrule=1pt,
-    arc=0mm,
-    top=1mm,
-    bottom=1mm,
-    left=1mm,
-    right=1mm,
-    breakable,
-    parbox=false,
-    before skip=12pt,
-    after skip=12pt
-}
+\DefineBoxEnv{obs}{bemf}{breakable}
+
+%% PRINZIP
 
 \newtheorem{prinz}{Prinzip}[chapter]
 \tcolorboxenvironment{prinz}{
