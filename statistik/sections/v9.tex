@@ -166,12 +166,12 @@
 
 \begin{notation}
     \mab{x_k^{(n)} \coloneqq  (k - np) / \sqrt{npq} \text{ für } k = 0, \dots, n}
-    \mab{\glssymbol{binomv} = \binom{n}{k} p^k q^{n-k}}
+    \mab{\Binomv(k) = \binom{n}{k} p^k q^{n-k}}
 \end{notation}
 
 \begin{er}
     Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
-    \mab{\pe(S_n = k) = \glssymbol{binomv}(k)}
+    \mab{\pe(S_n = k) = \Binomv(k)}
     \mab{\E{S_n} = np}
     \mab{\Var(S_n) = npq}
 \end{er}
@@ -182,7 +182,7 @@
     Dann gilt
     \begin{equation}
         \label{eq:lokaleruentralergesetzwertsatz}
-        \oub{\glssymbol{binomv}(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
+        \oub{\Binomv(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
     \end{equation}
     Dabei bedeutet $\sim$:
     \[
@@ -369,7 +369,7 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     voneinander.
 
     \paragraph{Modell:} $n$ -mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$.
-    Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\glssymbol{binomv}}-verteilt.
+    Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\Binomv}-verteilt.
     Man betrachte jeden Anwesenden der n
     eingeschriebenen Hörer als ``Erfolg''. \\
     Also:

@@ -3,10 +3,13 @@
 
 % beim erwartungswert trägt 0 nichts bei, bei der varianz schon? 2026 Folie
 
+
 \chapter{Erwartungswert und Varianz von Zufallsvariablen}
 \untit{Vorlesung 30. Mai 2025 (V07 2025) und 05. Juni 2026 (V07 2026)}
 
+
 \section*{Lernziele}
+
 \subsection*{Konzepte}
 \begin{itemize}
     \item Erwartungswert einer Zufallsvariablen (gewichteter Mittelwert)
@@ -31,8 +34,11 @@
     \item Markov-Ungleichung kennen und anwenden k¨onnen
 \end{itemize}
 
+
 \section*{Grundgedanke}
-Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig. \\
+Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir k¨onnen Wahrscheinlichkeiten
+berechnen wie z.B. $\pe(X \geq 2)$,  und diese Wahrscheinlichkeiten h¨angen nur von der
+Verteilung ab, nicht von der Wahl des Wahrscheinlichkeitsraums $\wraum$.). \\
 Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \[
     \pe(X \in A) = \pe_X(A) = \pe_Y(A) = \pe(Y \in A)
@@ -43,7 +49,7 @@ Auch sind die Parameter der Verteilung nicht unbedingt bekannt. Siehe
 \begin{itemize}
     \item \textbf{Binomialverteilung:}
     \[
-        \binomv(k)
+        \Binomv(k)
         =
         \binom{n}{k}
         p^k (1-p)^{n-k},
@@ -83,6 +89,7 @@ Auch sind die Parameter der Verteilung nicht unbedingt bekannt. Siehe
 Wie können wir trotzdem Vorhersagen treffen? \\ \newline
 Dies führt uns in die Statistik (später).
 % F4
+
 \paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}? \\
 \begin{itemize}
     \item Wie groß ist der mittlere Gewinn bei einem Glücksspiel?
@@ -158,7 +165,7 @@ Dies führt uns in die Statistik (später).
         \item $k$ Euro, falls 2 gewürfelt
         \item 6 Euro, falls $2, \cdots , 6$ gewürfelt
         \item \(
-                  \eraum = \{1,\dots,6\}
+        \eraum = \{1,\dots,6\}
         \) mit Gleichverteilung \(\pe\).
     \end{itemize}
     \glssymbol{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
@@ -180,6 +187,7 @@ Dies führt uns in die Statistik (später).
     \mab{\E X = \int_{- \infty}^{\infty} x \glssymbol{dichte}(x) \dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glssymbol{dichte}(x) \dx }
     insofern \ma{\int_{- \infty}^{\infty} |x| \glssymbol{dichte}(x) \dx < \infty}. \\
     Wir sprechen in diesem Fall von der Existenz des Erwartungswerts.
+
     \paragraph{Hinweis:} Für \glspl{dichte} \dcht, die gerade Funktionen sind, gilt \(\int_{-N}^N x \dcht (x) \dx = 0\) für
     alle N, auch wenn der Erwartungswert ggf. gar nicht existiert.
 \end{defi}
@@ -244,9 +252,9 @@ Dies führt uns in die Statistik (später).
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, daß $X \geq 0$)).
     \txo{
-    \[
-        h(x) = x^k \Rightarrow h'(x) = k x^{k-1}
-    \]
+        \[
+            h(x) = x^k \Rightarrow h'(x) = k x^{k-1}
+        \]
     }
     \begin{align*}
         \E{X}&  \overset{\txo{*1}}{=}   \sum^{\infty}_{k=1} \txr{k} p(1-p)^{\txr{k-1}} \\
@@ -271,11 +279,11 @@ Dies führt uns in die Statistik (später).
     (Raten. – Warum ist der Erwartungswert (a + b)/2 ?) \\
     Der Erwartungswert existiert, weil...
     \txc{
-    Denn: Zu prüfen ist: \( \intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a,b]}(x)$. \\
-    Hier ist $\dcht(x) = 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
-    \[
-        \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{max\{|a|, |b|\}}{b-a} \dx = max\{|a|, |b|\} \cdot 1 < \infty
-    \]
+        Denn: Zu prüfen ist: \( \intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a,b]}(x)$. \\
+        Hier ist $\dcht(x) = 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
+        \[
+            \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{max\{|a|, |b|\}}{b-a} \dx = max\{|a|, |b|\} \cdot 1 < \infty
+        \]
     }
     ... f stetig ist auf dem kompakten Intervall [a, b]
     und f = 0 außerhalb des Intervalls [a, b] gilt.
@@ -284,29 +292,29 @@ Dies führt uns in die Statistik (später).
     \]
     \txo{* Mittelpunkt des Intervalls} \\
     \txo{
-    Erinnerung: $\intab x \dx = \frac{x^2}{2} |^b_{x=a}$
+        Erinnerung: $\intab x \dx = \frac{x^2}{2} |^b_{x=a}$
     }
 \end{bsp}
 \begin{bsp}
     \textbf{Erwartungswert der Exponentialverteilung} \\
     \txo{
-    Erinnerung:}
+        Erinnerung:}
     \[
-       \txo{ F(x) := - e^{-\alpha x}, \quad F'(x) := \alpha e^{-\alpha x}, \quad \E{X} = \frac{1}{\alpha}}
+        \txo{ F(x) := - e^{-\alpha x}, \quad F'(x) := \alpha e^{-\alpha x}, \quad \E{X} = \frac{1}{\alpha}}
     \]
 
     Der Erwartungswert existiert genau dann, wenn die folgende Berechnung einen
     endlichen Wert ergibt (was der Fall ist, Wir verwenden wieder, daß $X \geq 0$):
     \begin{align*}
         \E{X} & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
-        & = - \lim_{N \rightarrow \infty} \oub{x  e^{- \alpha x}}{=0} |^N_{x=0} +  \int^{\infty}_0 \oub{1 \cdot  e^{- \alpha
+        & = - \lim_{N \rightarrow \infty} \oub{x e^{- \alpha x}}{=0} |^N_{x=0} +  \int^{\infty}_0 \oub{1 \cdot  e^{- \alpha
         x} }{=f(x) \cdot \frac{1}{\alpha}} \dx \\
         & = 0 + \frac{1}{\alpha} \oub{\intinfs \dcht(x) \dx }{=1} \\
         & = \frac{1}{\alpha}^{\txo{*}}
     \end{align*}
     \txc{
         \begin{align*}
-        * \dcht(x) & = \alpha  e^{- \alpha x} \chi_{[0,\infty)}(x) \\
+            * \dcht(x) & = \alpha  e^{- \alpha x} \chi_{[0,\infty)}(x) \\
             \Rightarrow \int_0^{\infty} e^{- \alpha x} \dx
             & = \frac{1}{\alpha} \int_0^{\infty} \alpha  e^{- \alpha x} \dx \\
             & = \frac{1}{\alpha}  \intinfs \dcht(x) \dx \\
@@ -316,7 +324,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{satz}
-    \textbf{Der Erwartungswert ist linear} % TODO 13
+    \textbf{Der Erwartungswert ist linear} % 2026 13
     Geg. \glspl{zv} $X : \eraum \rightarrow \rz $ und  $Y : \eraum \rightarrow \rz $ auf $\wraum$; Konstanten $a,b \in \rz$. \\
     Annahme: $\E{X}$ und $\E{Y}$ existieren. \\
     Dann gelten $aX + bY$ ist ebenfalls eine Zufallsvariable.
@@ -324,6 +332,7 @@ Dies führt uns in die Statistik (später).
     \[
         \E{aX + bY} = a\E{X} + b\E{Y}
     \]
+
     \paragraph{Beweis (für Zufallsvariable mit abzählbarem Bildbereich)}
     Nehmen wir zunächst an, der Erwartungswert von $aX + bY$ existiert.
     Dann dürfen alle Reihen beliebig umsortiert werden:
@@ -357,7 +366,7 @@ Dies führt uns in die Statistik (später).
     \[
         X=\sum_{i=1}^{n} X_i
     \]
-    beschreibt die Augensumme.
+    beschreibt die Augensumme \txo{(Und $X_i$ das Ergebnis des i-ten Wurfs)}.
 
     \textbf{Berechnung der erwarteten Augensumme für zweimaliges Würfeln (\(n=2\)):}
 
@@ -428,7 +437,7 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \\
     \txo{
-    $X(\eraum) = \{ 0,...,n\}, \quad \# X(\eraum) = n+1 < \infty$}
+        $X(\eraum) = \{ 0,...,n\}, \quad \# X(\eraum) = n+1 < \infty$}
     \begin{itemize}
         \item \(X\) sei binomialverteilt mit den Parametern \(n\) und \(p\).
         \item Der Erwartungswert$^{\txo{*}}$ von \(X\) existiert, da der Bildbereich von \(X\)
@@ -586,6 +595,7 @@ Dies führt uns in die Statistik (später).
     \]
 
     \paragraph{Beweis.}
+
     \paragraph{Schritt 1:}
     Wir nehmen zunächst an, dass der Erwartungswert von \(X\cdot Y\) existiert.
 
@@ -652,6 +662,7 @@ Dies führt uns in die Statistik (später).
             \E{X} \cdot \E{Y}
         \end{aligned}
     \]
+
     \paragraph{Schritt 2:} Eine analoge Rechnung zeigt die Existenz des Erwartungswerts:
 \end{satz}
 \begin{satz}
@@ -803,29 +814,43 @@ Dies führt uns in die Statistik (später).
         Y(\ele) = (f \circ X)(\ele) = f(X(\ele))
     \]
     \txo{
-    $Y(\ele) = f(X(\ele)) \quad \forall \ele$
+        $Y(\ele) = f(X(\ele)) \quad \forall \ele$
     }
 \end{defi}
 
 \begin{satz}
+    \label{satz:7-4}
     Sofern der Erwartungswert $\E{Y}$ existiert, gilt
     \[
         \E{Y} = \sum_{x \in X(\eraum)} f(x) \pe(X=x)
     \]
+    \txo{
+        bzw., falls X Dichte d hat und EW von $Y$ gleich $f(x)$ existiert
+    }
+    \[
+        \txo{
+            \E{Y} = \intinfs f(x) d(x) \dx
+        }
+    \]
+
     \paragraph{Beweis.}
     \begin{align*}
         \E{Y} & =   \sum_{y \in Y(\eraum)} y \pe(Y=y) \\
         & =   \sum_{y \in Y(\eraum)} y  \sum_{x \in X(\eraum): f(x) = y\txo{*}} \pe(X=x) \\
         & =   \sum_{y \in Y(\eraum)}   \sum_{x \in X(\eraum): f(x) = y} \oub{y}{=f(x)} \pe(X=x) \\
         & =\sum_{y \in Y(\eraum)}   \sum_{x \in X(\eraum): f(x) = y} f(x) \pe(X=x) \\
-        & = \sum_{x \in X(\eraum)} f(x) \pe(X=x)
+        & = \sum_{x \in X(\eraum)} f(x) \pe(X=x) \\
+        & \txo{= \E{f(x)}}
     \end{align*}
-
-        \[
-           \txo{*  Y=y \Leftrightarrow f(x) = y, \quad \pe(Y=y) = \sum_{x \in X(\eraum): f(x) = y} \pe(X=x)}
-        \]
-
+    \[
+        \txo{*  Y=y \Leftrightarrow f(x) = y, \quad \pe(Y=y) = \sum_{x \in X(\eraum): f(x) = y} \pe(X=x)}
+    \]
 \end{satz}
+
+\begin{bsp}
+    Zu Satz \ref{satz:7-4}. \\
+    Mit $f(x) = x^2$
+\end{bsp}
 
 \begin{defi}
     \textbf{n-tes Moment von X} \\
@@ -841,8 +866,34 @@ Dies führt uns in die Statistik (später).
     \[
         Var(X) = \E{ ( X -  \E{X} )^2 }
     \]
-    (mittlere quadratische Abweichung) \\
-    Die Varianz von $X$ existiert, wenn $Var(X) < \infty$
+    \txo{(mittlere quadratische Abweichung)} \\
+    Die Varianz von $X$ existiert, wenn $Var(X) < \infty$. \\
+    Die Varianz einer Zufallsvariable X mit existierendem Erwartungswert ist gegeben
+    durch
+    \[
+        Var(X) = \E{ ( X -  \E{X} )^2 } = \sum_{x\in X(\eraum)} (x - \E{X})^2 \pe(X=x)
+    \]
+    (gewichtete quadratische Abweichung vom Erwartungswert)
+    \txo{bzw.}
+    \[
+        \txo{\Var(X) = \intinfs \underbrace{ (x - \E{X})^2 }{=f(x)} d(x) \dx }
+    \]
+\end{defi}
+
+\begin{bem}
+    $\Var(X) \geq 0$
+\end{bem}
+
+\begin{defi}
+    \textbf{Existierende Varianz (2025)} \\
+    Wir sagen, dass die Varianz existiert, wenn
+    \[
+        \Var(X) = \sum_{x\in X(\eraum)} (x - \E{X})^2 \pe(X=x) < \infty
+    \]
+    \txo{bzw.}
+    \[
+        \txo{ \intinfs (x - \E{X})^2 d(x) \dx < \infty }
+    \]
 \end{defi}
 
 \begin{bsp}
@@ -915,4 +966,72 @@ Dies führt uns in die Statistik (später).
         =100^{2}.
     \]
 \end{bsp}
+
+\begin{bsp}
+    \textbf{Bernoulli-Variable (Spezialfall der Binomialverteilung mit n = 1)} \\
+    Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ f¨ur Erfolgsws. $p \in [0,1]$ und $\E{X} = p$. \\
+    \txc{$\Var(X)$ existiert, da}
+    \begin{align*}
+        \txo{\Var(X) & = \sum_{x\in X(\eraum)}  (x - \E{X})^2 \pe(X=x)} \\
+        &\txo{ = (0 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=0)}{=1-p} + (1 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=1)}{=p}} \\
+        & \txo{ = p^2 (1-p) + (1-p)^2 p } \\
+        & \txo{= p(1-p) [p+(1-p)]} \\
+        & \txo{= p(1-p) < \infty}
+    \end{align*}
+    \begin{align*}
+        \Var(X)
+        & = (1 - \E{X})^2 p + (0 - \E{X})^2 (1 - p) \\
+        & = (1 - p)^2 p + p^2 (1 - p) \\
+        & = p(1 - p)
+    \end{align*}
+\end{bsp}
+
+\begin{bsp}
+    \textbf{gleichverteilte Zufallsvariable auf \{1,..,n\}} \\
+    Zufallsvariable  X mit $P(X = k) = \frac{1}{n} \text{ für } k = 1, \dots, n$
+
+    \[
+        \E{X}
+        = \sum_{k=1}^{n} k \cdot \frac{1}{n}
+        = \frac{n(n+1)}{2n}
+        = \frac{n+1}{2}
+    \]
+    und
+     \[
+         \Var(X) = \frac{n^2 - 1}{12}
+     \]
+    weil
+    \begin{align*}
+        \Var(X)
+        &= \frac{1}{n} \sum_{k=1}^{n} (k - \E{X})^2 \\
+        &= \frac{1}{n} \sum_{k=1}^{n} \left( k^2 - 2k\E{X} + \E{X}^2\right) \\
+        &= \frac{1}{n} \sum_{k=1}^{n} k^2 - 2\E{X} \cdot \oub{\frac{1}{n} \sum_{k=1}^{n} k}{=\E{X}} + \E{X}^2 \\
+        &= \frac{(n+1)(2n+1)}{6} - \E{X}^2 \\
+        &= \frac{n^2 - 1}{12}
+    \end{align*}
+\end{bsp}
+
+\begin{lem}
+    \textbf{Technisches Lemma} \\
+    Für alle $a \in \rz$ gilt $\E{(X - a)^2} = \Var(X) + (\E{X} - a)^2$
+    \paragraph{Beweis} TODO F 76 % TODO
+\end{lem}
+
+\begin{folg}
+    \textbf{Folgerung I} \\
+    $a \Leftrightarrow \E{(X - a)^2}$ wird minimal für $a = \E{X}$
+
+    In diesem Fall ist $\E{(X - a)^2} = \Var(X)$ per Definition der Varianz.
+\end{folg}
+
+\begin{folg}
+    \textbf{Folgerung II und wichtige Rechenregel} \\
+    Die Wahl a = 0 zeigt
+    \[
+        \txo{0 \leq } \Var(X) = \E{X^2} - (\E{X})^2
+    \]
+    Es gilt daher stets $(\E{X})^2 \le \E{X^2}$.
+\end{folg}
+
+
 
