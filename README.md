@@ -58,7 +58,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 17 | Mo, 20.04.  | :construction: |                 | Fr, 24.04.  | :construction: |                 |
 | KW 18 | Mo, 27.04.  | :construction: |                 | Fr, 01.05.  | :construction: |                 |
 | KW 19 | Mo, 04.05.  | :construction: |                 | Fr, 08.05.  | :no_entry:     |                 |
-| KW 20 | Mo, 11.05.  | :construction: |                 | Fr, 15.05.  | :no_entry:     |                 |
+| KW 20 | Mo, 11.05.  | :construction: |                 | Fr, 15.05.  | :construction: |                 |
 | KW 21 | Mo, 18.05.  | :no_entry:     |                 | Fr, 22.05.  | :no_entry:     |                 |
 | KW 22 | --          | --             |                 | Fr, 29.05.  | :no_entry:     |                 |
 | KW 23 | Mo, 01.06.  | :no_entry:     |                 | Fr, 05.06.  | :no_entry:     |                 |

@@ -6,11 +6,15 @@
 %% https://link.springer.com/chapter/10.1007/978-3-662-70442-4_7#Sec12
 % 35-41: Meiose - Die Meiose genetisch gesehen ( Unterschiede in der zytologischen und genetischen Betrachtung
 %der Meiose + Wann werden die Zellen während der Meiose haploid? )
+%% https://link.springer.com/chapter/10.1007/978-3-662-70442-4_5#Sec12
 % 84-104: Genkartierung - Wie kann man genetische Kopplung erkennen?, Testkreuzung zur Interpretation der
 % Kopplungsverhältnisse, Statistik: Stimmen Hypothese und Experiment überein?, Dreifaktorenkreuzungen, Tetradenanalyse
 % 148-151: Struktur und Funktion der DNA - Genkonversion
+%% https://link.springer.com/chapter/10.1007/978-3-662-70442-4_5#Sec12
 
 % Bis F 9 Wdh.
+
+
 \section{Sequenzbasierte Molekulare Marker}
 \defin{marker}
 \begin{fr}
@@ -21,15 +25,25 @@
         \item Die PCR-Produkte (Amplicons) werden in einem Agarosegel nach ihrer Größe getrennt.
         \item Man schaut, welche PCR-Produkte entstanden sind.
     \end{enumerate}
-    Die Unterschiede entstehen durch Veränderungen in der DNA-Sequenz.
+    Die Unterschiede entstehen durch Veränderungen in der DNA-Sequenz. \cite{vorlesung10}
 \end{fr}
 \zitat{Bei molekularen Markern kann es sich um einfache, hintereinanderliegende, also
-\textbf{in Tandem angeordnete Di-, Tri-, Tetra‐Penta- oder Hexanukleotide} handeln, die verstreut im Genom lokalisiert sind und die Gruppe der \glspl{ssr} bilden.}{\cite{Knust2025_Analyse_von_Erbgängen}}
+\textbf{in Tandem angeordnete Di-, Tri-, Tetra‐Penta- oder Hexanukleotide} handeln, die verstreut im Genom lokalisiert sind und die Gruppe der \glspl{ssr} bilden.}{\cite{Knust2025_Modellorganismen}}
+
 \paragraph{Marker können sein:}
 \begin{itemize}
-    \item Längenvariationen
-    \item Sequenzvariationen
-\end{itemize}
+    \item Längenvariationen (wie \gls{vntr}, \gls{mikrosatellit})
+    \item Sequenzvariationen (wie \gls{snp})
+\end{itemize} \cite{Knust2025_Modellorganismen}
+
+\zitat{Je nach Länge der wiederholten Einheiten klassifiziert man diese in \glspl{minisatellit} oder
+\gls{vntr}(10–60bp) und \glspl{mikrosatellit} oder \gls{str} (1–6 bp). Diese sind in vielen Spezies zu finden und stellen \textbf{neutrale Variationen}
+dar. Neutral deshalb, weil diese Sequenzen i.A. in nicht‐kodierenden
+Regionen vorkommen und deshalb eine Veränderung ihrer Sequenz nicht mit
+der Veränderung eines Genprodukts einhergeht. Sie sind hochgradig \textbf{polymorph}, d.h. sie kommen in vielen Variationen im Genom vor, die sich in ihrer Länge und/oder ihrer Sequenz voneinander unterscheiden.
+Kommt der Polymorphismus durch eine unterschiedliche Anzahl repetitiver
+Einheiten an einer bestimmten Stelle im Genom zustande, so spricht man
+von \gls{sslp}.}{\cite{Knust2025_Modellorganismen}}
 
 \begin{itemize}
     \item \gls{str} bzw. kurze DNA-Wiederholungen (\gls{mikrosatellit} / \gls{ssr}): Die Sequenz selbst ist gleich,
@@ -37,23 +51,234 @@
     \begin{itemize}
         \item Jeder Mensch besitzt eine bestimmte Kombination solcher Wiederholungszahlen.
         \item Diese Varianten können von Eltern an Kinder weitergegeben werden.
+        \item Ist ein ``multi‐allelische polymorphe Marker'' - es kann mehr als zwei Varianten geben, da die Zahl
+        der wiederholten Einheiten variieren kann \cite{Knust2025_Modellorganismen}
+        \item In Tandem angeordnete Einheiten von 2–6 Basenpaaren, von denen jeweils 10–1000 hintereinander liegen
+        können. \cite{Knust2025_Genom_Eukaryontenzelle}
+        \item  machen 1–3\% des menschlichen Genoms aus \cite{Knust2025_Genom_Eukaryontenzelle}
     \end{itemize}
     \item \gls{rflp}
     \item \gls{snp}
+    \begin{itemize}
+        \item Ist ein ``bi‑allelischer Marker'' - gibt nur zwei Variationen
+    \end{itemize}
     \item \gls{vntr}
     \begin{itemize}
-        \item Im Genom gibt es verschiedene Stellen, an denen man VNTRs findet. Diese Loci werden nach Genen benannt, neben denen sie auftreten. Im Gegensatz zu Mikrosatelliten (STR) sind sie längere repetitive Abschnitte.
+        \item Im Genom gibt es verschiedene Stellen, an denen man VNTRs findet. Diese Loci werden nach Genen
+        benannt, neben denen sie auftreten. Im Gegensatz zu Mikrosatelliten (STR) sind sie längere repetitive
+        Abschnitte. \cite{dewiki:marker}
+        \item In Tandem angeordnete Einheiten von 10–100 Basenpaaren, von denen jeweils 4–40 hintereinander liegen
+        können. Sehr heterogene Gruppe, die häufig in Zentromeren und Telomeren vorkommen. \cite{Knust2025_Genom_Eukaryontenzelle}
     \end{itemize}
     \item \gls{rapd}
 \end{itemize}
 
+\zitat{Ein menschliches Genom trägt im Durchschnitt alle 1000 Basenpaare einen SNP und kann sich somit an 4–5 Mio.
+Stellen vom Referenzgenom unterscheiden.
+    [...]
+    Diese hohe Variabilität erlaubt es, jedes menschliche Individuum eindeutig an Hand dieser molekularen Marker zu identifizieren.
+    Man spricht deshalb – in Anlehnung an den für jedes Individuum typischen Fingerabdruck, der in der Kriminalistik verwendet wird – von dem \gls{dnafingerprint} oder dem \textbf{genetischen Fingerabdruck} (DNA \textit{fingerprint}) eines Individuums.
+}{\cite{Knust2025_Modellorganismen}}
+
 
 \begin{bsp}
-    \textbf{Vaterschaftstest mit molekularen Markern}
+    \textbf{Vaterschaftstest mit molekularen Markern} Folie 13
 \end{bsp}
+
+
+\begin{bsp}
+    \textbf{Genetische Karte von Chr-1
+    der Zuckerrübe (Beta vulgaris)} Folie 14
+\end{bsp}
+
 
 \section{Chromatin - DNA Verpackung im Zellkern}
 
+\begin{fr}
+    \textbf{Wie viel DNA hat H. sapiens?}
+    \begin{itemize}
+        \item ca. $3 * 10^9$ bp
+        (für 1 n, also für das haploide Genom)
+        \item entspricht für 2 n ca. 2 m (200 cm) DNA,
+        wenn man über die 23 x 2 Chromosomen aufaddiert (oder etwa 6 cm pro Chromosom - aber die Chromosomen haben sehr
+        unterschiedliche Grössen)
+    \end{itemize}
+    \cite{vorlesung10}
+\end{fr}
+\begin{fr}
+    \textbf{Wie passt so viel DNA in den
+    winzigen Kern einer Zelle?}
+    \begin{itemize}
+        \item mehrstufige Verpackung der DNA in DNA-Protein Komplexen!
+        \item Proteinanteil: \gls{histon} (H2A, H2B, H3 und H4), in einem als Oktamer
+        bezeichneten Komplex (je 2 von jedem Protein)
+        \item \gls{nucleosom}: Grundeinheit der DNA-Verpackung im (eukaryotischen)
+        Zellkern
+    \end{itemize}
+    \cite{vorlesung10}
+\end{fr}
+
+\begin{figure}[H]
+    % TODO F 18
+    \caption{elektronenmikroskopische Aufnahme. TODO F 18}
+\end{figure}
+
+\subsection{Verpackungsstufen}
+\begin{figure}[H]
+    \includegraphics[heigt=25cm]{bilder/verpackungsstufen}
+\end{figure}
+Siehe \defiref{zehnnmfaser}, \defiref{dreißignmfaser}. \defiref{chromosom} und \defiref{chromatid}.
+\defin{chromatinschleife}
+\defin{dreihundertnmfibrille}
+
+\begin{figure}[H]
+    % TODO
+    \caption{Abbildung DNA Schleife TOOD}
+\end{figure}
+
+
+\begin{bsp}
+    \textbf{für Heterochromatin:
+    Das inaktivierte X-Chromosom}
+    Folie 24 % TODO
+\end{bsp}
+
+\defin{xci}
+
+\zitat{X chromosome inactivation dynamics in
+mouse and human early development.
+In mice, the paternal X chromosome
+    (Xp) is inactivated during early preim-
+    plantationdevelopment in an imprinted
+    manner. \\
+    Xp inactivation is maintained in the
+    trophectoderm (TE)*1, while in the inner
+    cell mass (ICM)*2, both X chromosomes
+    are transiently activated.
+    In the ICM, one X chromosome is then
+    randomly inactivated at post-
+    implantation. \\
+    In humans, during the early phases,
+    expression of X-linked genes is reduced
+    on both X chromosomes (dampening).
+    At the post-implantation stage, one X
+    chromosome is randomly inactivated,
+    similar to mice.}{The complex story of human X chromosome inactivation
+Basilicata \& Einsiedel (2024)}
+
+% TODO Exkurs: SDS-PAGE ? F 26
+
+% TODO wvtl nochmal F 26-29 Histonkram ergönzen, falls es nicht woanders schon drin ist
+
+
 \section{Allelfrequenzen in Populationen}
+\zitat{Dominant‐rezessive Mendel‐Kreuzungen oder Familienstammbäume könnten den Eindruck erwecken, dass rezessive Allele im Laufe der Zeit abnehmen und schließlich verschwinden werden.
+Die Beobachtung zeigt, dass dies nicht stimmt. Allelfrequenzen bleiben unabhängig von ihrer absoluten Größe im Allgemeinen über die Generationen hinweg konstant, solange die Träger eines der Allele weder bevorzugt noch benachteiligt werden (z.B. durch Umweltbedingungen).
+}{\cite{Knust2025_Analyse_von_Erbgängen}}
+\subsection*{Von Rekombinationsfrequenz zu Allelfrequenz}
+Wenn in einer Population
+die Allele a und A
+in den
+Frequenzen p und q
+vorhanden sind und a und A die gleiche Chance
+zur Vererbung besitzen und es eine unbeschränkte,
+zufallsbedingte genetische
+Durchmischung gibt, dann gilt für die Population das \gls{hardy_weinberg}. \cite{vorlesung10}
+\defin{hardy_weinberg}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{bilder/weinberg1}
+\end{figure}
+\zitat{Das Hardy‐Weinberg‐Gesetz oder die Stabilität von Allelfrequenzen in Populationen. Wenn in einer Population
+die beiden Allele \textit{a} und \textit{A}
+ in den Frequenzen p und q vorhanden sind, dann bleibt dieses Verhältnis
+ auch in den Folgegenerationen erhalten (Hardy‐Weinberg‐Gleichgewicht).
+Dies ist hier für die F1‑Generation im Kreuzungsquadrat und deren
+Gametenproduktion gezeigt.
+}{\cite{Knust2025_Analyse_von_Erbgängen}}
+Das Hardy-Weinberg-Gesetz ist unabhängig von den
+absoluten Größen von p
+und q.
+Das Verhältnis der
+Frequenzen bleibt über
+Generationen stabil
+(Gleichgewicht).
+% TODO daraus karteikarten machen
+Gilt auch bei mehr als 2
+Allelen:
+\[
+    p + q + r = 1
+\]
+oder
+\[
+    n_1 + n_2 + n_3 + ..... + n_i = 1
+\]
+
+\begin{bsp}
+    % TODO F 34
+    \textbf{Blutgruppensystem AB0}
+    \begin{itemize}
+        \item Gen auf Chromosom 9
+        \item kodiert eine Glycosyl-Transferase, die das
+        Oberflächenantigen H der Erythrozyten modifiziert:
+        \begin{itemize}
+            \item Allel A: Enzym, das N-Acetylgalactosamin an H anhängt
+            \item Allel B: Enzym, das D-Galactose hinzufügt
+            \item Allel 0: Enzym, das H nicht modifizieren kann
+        \end{itemize}
+        \item 3 Allele an einem Locus
+        \item 0 ist rezessiv
+        \item A und B sind \gls{codominant} (siehe \defiref{codominant}) % vergl. Folie 48 aus VL BW2
+    \end{itemize}
+    Menschen mit der Blutgruppe A besitzen Antikörper gegen B in
+    Ihrem Serum und umgekehrt.
+    Phänotyp 0 hat Antikörper gegen A und B.
+    AB-Individuen besitzen keine Antikörper gegen A oder B.
+    Ignoriert man Untergruppen, ergeben sich die unten abgebildeten Geno-
+    und Phänotypen.
+    \begin{mytable}
+        \begin{tabular}{c|c|c|c}
+            \textbf{Genotyp} & \textbf{Phänotyp} & \textbf{Antigene} & \textbf{Serum Antikörper} \\
+            AA & A & A & Anti-B \\
+            A0 & A & A & Anti-B \\
+            BB & B & B & Anti-A \\
+            B0 & B & B & Anti-A \\
+            AB & AB & A und B & keine \\
+            00 & 0 & keine & Anti-A und Anti-B \\
+        \end{tabular}
+    \end{mytable}
+    \cite{vorlesung10}
+\end{bsp}
+
+\begin{bsp}
+    \textbf{Hardy-Weinberg-Gesetz bei 3 Allelen} TODO F 36
+    % TODO
+\end{bsp}
 
 \section{Genkonversion}
+\defin{tetradenanalyse}
+\zitat{[Tetradenanalyse] untersucht die direkte Beziehung zwischen Meiosevorgängen und genetischer Rekombination.
+Bei den meisten höheren Organismen ist das schwierig, weil in der weiblichen Meiose nur eine der vier haploiden Zellen zur Eizelle oder Makrospore reift, während in der männlichen Meiose zwar vier Spermien oder Mikrosporen entstehen, die sich jedoch nicht in der Nachkommenschaft zuordnen lassen.
+}{\cite{Knust2025_Genkartierung}}
+TODO Bilder F 43 - 47 % TODO Bilder F 43 - 47 auch bei https://link.springer.com/chapter/10.1007/978-3-662-70442-4_8#Sec8
+
+% TODO 8.5.2 Tetradenanalysen bei höheren Organismen + \subsection*{5.3.5 Genkonversion} https://link.springer.com/chapter/10.1007/978-3-662-70442-4_8#Sec8
+\defin{genkonversion}
+
+% TODO 5.3.4.1 Das Holliday-Modell https://link.springer.com/chapter/10.1007/978-3-662-70442-4_5#Sec12
+
+\subsection*{Holliday Modell}
+TODO F 48-49    % TODO F 48-49
+% TODO 5.3.4 Rekombination https://link.springer.com/chapter/10.1007/978-3-662-70442-4_5#Sec12
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.9\linewidth]{bilder/weinberg1}
+    \caption{TODO Tetraden auf der Nucleotidebene} % TODO F 50
+\end{figure}
+
+\begin{bsp}
+    \textbf{Roter Brotschimmelpilz)} TODO F 40+ % TODO F 40-41, F 53
+\end{bsp}
+
+
