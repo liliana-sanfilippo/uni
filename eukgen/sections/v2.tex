@@ -36,6 +36,7 @@
     \caption{Prokaryoten vs. Eukaryoten}\label{tab:prokaryoten-vs-eukaryoten}
 \end{table}
 
+
 \section{Gene}\label{sec:gene}
 Jedes Chromosom besteht aus einem einzigen, langen DNA-Molekül,
 in dem sich die Sequenzen der einzelnen Gene befinden.
@@ -47,8 +48,9 @@ Gens sind die verschiedenen Formen, die an seinem Lokus vorkommen. Obwohl
 es bei einem diploiden Individuum im Allgemeinen bis zu zwei Allele pro Lokus gibt,
     kann eine Population viele Allele eines einzelnen Gens aufweisen.}{\cite{lewins}}
 
-Gene sind linear auf Chromosomen angeordnet.
+%Gene sind linear auf Chromosomen angeordnet.
 Ein Chromosom enthält viele Gene.
+
 \paragraph{Was ist ein Gen?}
 Naive Annahme:
 \begin{center}
@@ -131,17 +133,42 @@ Reihe von Bereichen definierter Länge unterteilt, die zwischen den Stellen lieg
 \begin{prinz}
     Gene, die nahe beieinander auf einem Chromosom liegen, werden meist gemeinsam vererbt. \\
     Während der Meiose können homologe Chromosomen Stücke austauschen (Crossing-over). Je weiter zwei Gene auseinander
-liegen, desto häufiger passiert ein Crossing-over zwischen ihnen. Je näher sie liegen, desto seltener werden sie
+    liegen, desto häufiger passiert ein Crossing-over zwischen ihnen. Je näher sie liegen, desto seltener werden sie
     getrennt vererbt. \\
     Man kann die Rekombinationsfrequenzen zwischen vielen \glspl{genet-marker} messen und so eine Karte erstellen. \chatti
 \end{prinz}
+\ausschnitt{Der Schlüssel zum Verständnis der Anordnung von Genen in
+Chromosomen war die Entdeckung der genetischen Kopplung – der
+Tendenz, dass Gene auf demselben Chromosom in der Nachkommenschaft
+zusammenbleiben, anstatt sich unabhängig voneinander zu verteilen, wie es
+Mendels Gesetz vorhersagt. Nachdem die Rekombinationseinheit (Neuordnung)
+    als Maß für die Kopplung eingeführt worden war, wurde die Erstellung
+    genetischer Karten möglich. Die Rekombinationshäufigkeit
+    zwischen Loci ist proportional zum physikalischen Abstand zwischen den
+    Loci.}{\cite{lewins}}
 \defin{genet-marker}
+\ausschnitt{Eine Kopplungskarte zeigt den Abstand
+zwischen Loci in Einheiten, die auf Rekombinationshäufigkeiten basieren; sie ist
+durch ihre Abhängigkeit von der Beobachtung von Rekombinationen
+zwischen variablen Markern begrenzt, die entweder direkt sichtbar sind (z. B.
+phänotypische Merkmale) oder auf andere Weise sichtbar gemacht werden können (z. B. durch
+Elektrophorese).
+Eine Restriktionskarte wird erstellt, indem DNA
+mit Restriktionsenzymen in Fragmente geschnitten wird und die
+physikalischen Abstände – ausgedrückt als DNA-Länge in Basenpaaren
+    (bestimmt durch die Wanderung auf einem elektrophoretischen Gel) – zwischen den
+    Schnittstellen gemessen werden.}{\cite{lewins}}
 \frage{wiecmkarte}
+
+\ausschnitt{Klassische Kopplungskarten
+von Eukaryoten können zwar die Reihenfolge der Gene bestimmen, lassen sich jedoch nicht die
+Positionen variabler Stellen innerhalb eines Gens ermitteln.}{\cite{lewins}}
 
 \subsection{Sequenzierung}\label{subsec:sequenzierung}
 Wir haben verschiedene Sequenziermethoden in MoBi1 kennen gelernt.
 
 % Rausgelassen Genome im verlauf der Zeit
+
 
 \section{Von Sequenz zu Annotation}\label{sec:von-sequenz-zu-annotation}
 Es gibt drei Wege:
@@ -153,13 +180,15 @@ Es gibt drei Wege:
 
 \defin{ab-initio}
 
-\begin{bsp} Zu \autoref{def:ab-initio} \\
-Annotation: Beispiel Folien % TODO F 63
+\begin{bsp}
+    Zu \autoref{def:ab-initio} \\
+    Annotation: Beispiel Folien % TODO F 63
 \end{bsp}
 
 \defin{comparative-genomics}
-\begin{bsp} Zu \autoref{def:comparative-genomics} \\
-Annotation: mittels Syntänie % TODO F 64
+\begin{bsp}
+    Zu \autoref{def:comparative-genomics} \\
+    Annotation: mittels Syntänie % TODO F 64
 \end{bsp}
 
 \begin{bsp}
@@ -167,9 +196,10 @@ Annotation: mittels Syntänie % TODO F 64
     Gene % TODO F 66-68
 \end{bsp}
 
-\begin{bsp} Zu \autoref{def:comparative-genomics} \\
-Annotation an Hand von Konservierung
-der CDS eukaryotischer Gene % TODO F 65
+\begin{bsp}
+    Zu \autoref{def:comparative-genomics} \\
+    Annotation an Hand von Konservierung
+    der CDS eukaryotischer Gene % TODO F 65
 \end{bsp}
 
 % done  Folie 69
@@ -178,12 +208,13 @@ der CDS eukaryotischer Gene % TODO F 65
 \deffin{paralog}
 \deffin{ortholog}
 
+
 \section{Von der Struktur zur Funktion}\label{sec:von-der-struktur-zur-funktion}
 Es liegen nicht alle Gene im Zellkern.
-Das Gesamt-Genom eines Eukaryoten besteht aus dem \gls{Nukleom} mit deiner
+Das Gesamt-Genom eines Eukaryoten besteht aus dem \gls{nukleom} mit deiner
 \gls{ndna}, dem
-\gls{Chondrom} mit seiner \gls{mtdna} und bei Pflanzen auch aus dem
-\gls{Plastom} mit seiner \gls{cpdna}.
+\gls{chondrom} mit seiner \gls{mtdna} und bei Pflanzen auch aus dem
+\gls{plastom} mit seiner \gls{cpdna}.
 
 Die meisten Organellengenome liegen in Form eines einzelnen ringförmigen
 DNA-Moleküls mit einer einzigartigen Sequenz vor.
