@@ -36,9 +36,16 @@
     \caption{Prokaryoten vs. Eukaryoten}\label{tab:prokaryoten-vs-eukaryoten}
 \end{table}
 
-\section{Gene}
+\section{Gene}\label{sec:gene}
 Jedes Chromosom besteht aus einem einzigen, langen DNA-Molekül,
 in dem sich die Sequenzen der einzelnen Gene befinden.
+
+\ausschnitt{Jedes Chromosom besteht aus einer linearen Anordnung von Genen, und jedes
+Gen befindet sich an einer bestimmten Stelle auf dem Chromosom. Diese
+Stelle wird formal als genetischer Lokus bezeichnet. Die Allele eines
+Gens sind die verschiedenen Formen, die an seinem Lokus vorkommen. Obwohl
+es bei einem diploiden Individuum im Allgemeinen bis zu zwei Allele pro Lokus gibt,
+    kann eine Population viele Allele eines einzelnen Gens aufweisen.}{\cite{lewins}}
 
 Gene sind linear auf Chromosomen angeordnet.
 Ein Chromosom enthält viele Gene.
@@ -96,19 +103,31 @@ Genomgröße.}{\cite{lewins}}
     \item Sequenzierung
 \end{itemize}
 
-\subsection{Kartierung mittels Restriktionsfragmentanalyse (Restriktionskartierung)}
+\subsection{Kartierung mittels Restriktionsfragmentanalyse (Restriktionskartierung)}\label{subsec:kartierung-mittels-restriktionsfragmentanalyse-(restriktionskartierung)}
 Die DNA wird mit verschiedenen Restriktionsenzymen – einzeln und paarweise – verdaut, im Agarosegel getrennt
 und die resultierenden Fragmentgrößen bestimmt. Die einzelnen Fragmente müssen dann kombiniert werden.
 \cite{muelhardt2013}
 
-\subsection{BAC-Contigs}
+\defin{restriktionskarte}
+\ausschnitt{Die Karte zeigt die Stellen, an denen
+bestimmte Restriktionsenzyme die DNA spalten. Die DNA wird in eine
+Reihe von Bereichen definierter Länge unterteilt, die zwischen den Stellen liegen,
+    die von den Restriktionsenzymen erkannt werden. Eine Restriktionskarte lässt sich
+    für jede DNA-Sequenz erstellen, unabhängig davon, ob wir
+    etwas über ihre Funktion wissen. Ist die Sequenz der DNA
+    bekannt, können wir eine Restriktionskarte computergestützt erstellen, indem wir einfach
+    nach den Erkennungsstellen bekannter Enzyme suchen. Die Kenntnis
+    der Restriktionskarte einer interessierenden DNA-Sequenz ist beim
+    DNA-Klonieren äußerst wertvoll.}{\cite{lewins}}
+
+\subsection{BAC-Contigs}\label{subsec:bac-contigs}
 \begin{prinz}
     Man zerlegt das Genom in große DNA-Stücke, klont sie in BACs und sucht heraus, welche Stücke sich überlappen.
     Dadurch kann man die ursprüngliche Reihenfolge im Genom rekonstruieren. \chatti
 \end{prinz}
 \frage{wiephyskarte}
 
-\subsection{Genetische Karten}
+\subsection{Genetische Karten}\label{subsec:genetische-karten}
 \begin{prinz}
     Gene, die nahe beieinander auf einem Chromosom liegen, werden meist gemeinsam vererbt. \\
     Während der Meiose können homologe Chromosomen Stücke austauschen (Crossing-over). Je weiter zwei Gene auseinander
@@ -119,12 +138,12 @@ liegen, desto häufiger passiert ein Crossing-over zwischen ihnen. Je näher sie
 \defin{genet-marker}
 \frage{wiecmkarte}
 
-\subsection{Sequenzierung}
+\subsection{Sequenzierung}\label{subsec:sequenzierung}
 Wir haben verschiedene Sequenziermethoden in MoBi1 kennen gelernt.
 
 % Rausgelassen Genome im verlauf der Zeit
 
-\section{Von Sequenz zu Annotation}
+\section{Von Sequenz zu Annotation}\label{sec:von-sequenz-zu-annotation}
 Es gibt drei Wege:
 \begin{itemize}
     \item \gls{ab-initio}
@@ -134,24 +153,24 @@ Es gibt drei Wege:
 
 \defin{ab-initio}
 
-\begin{exa} Zu \autoref{def:ab-initio} \\
+\begin{bsp} Zu \autoref{def:ab-initio} \\
 Annotation: Beispiel Folien % TODO F 63
-\end{exa}
+\end{bsp}
 
 \defin{comparative-genomics}
-\begin{exa} Zu \autoref{def:comparative-genomics} \\
+\begin{bsp} Zu \autoref{def:comparative-genomics} \\
 Annotation: mittels Syntänie % TODO F 64
-\end{exa}
+\end{bsp}
 
-\begin{exa}
+\begin{bsp}
     Konservierung der Struktur eukaryotischer
     Gene % TODO F 66-68
-\end{exa}
+\end{bsp}
 
-\begin{exa} Zu \autoref{def:comparative-genomics} \\
+\begin{bsp} Zu \autoref{def:comparative-genomics} \\
 Annotation an Hand von Konservierung
 der CDS eukaryotischer Gene % TODO F 65
-\end{exa}
+\end{bsp}
 
 % done  Folie 69
 
@@ -159,7 +178,7 @@ der CDS eukaryotischer Gene % TODO F 65
 \deffin{paralog}
 \deffin{ortholog}
 
-\section{Von der Struktur zur Funktion}
+\section{Von der Struktur zur Funktion}\label{sec:von-der-struktur-zur-funktion}
 Es liegen nicht alle Gene im Zellkern.
 Das Gesamt-Genom eines Eukaryoten besteht aus dem \gls{Nukleom} mit deiner
 \gls{ndna}, dem
