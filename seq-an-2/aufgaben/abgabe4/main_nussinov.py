@@ -12,7 +12,6 @@ if __name__=="__main__":
     fasta = read_mfasta(args.fasta)
 
     for seq in fasta:
-        print(seq.sequence)
-        nussinov_matrix(seq.sequence
-                        )
+        #print(seq.sequence)
+        nussinov_matrix(seq.sequence)
 

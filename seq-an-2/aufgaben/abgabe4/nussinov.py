@@ -51,18 +51,18 @@ def nussinov_matrix(rna: str, delta : float = 1.0, score_scheme : Dict[(Tuple[st
     for d in range(0,n-1):
         for i in range(1,n-d):
             j=i+d
-            if i == 1 and j == 4:
-                print(j - i > delta)
+            #if i == 1 and j == 4:
+            #    print(j - i > delta)
             if j - i > delta:
-                #print(str(i) + ", " + str(j) + " sind " + rna[i] + " und " + rna[j])
+                #print(str(i) + ", " + str(j) + " sind " + rna[i] + " und " + rna[j] + "")
                 pair_score = result[(i+1,j-1)] + score_scheme.get((rna[i], rna[j]), 0)
                 if pair_score == float("-inf"):
                     pair_score = 0
 
-                if i == 1 and j == 4:
-                    print(result[(i+1,j-1)])
-                    print((i+1,j-1))
-                    print(pair_score)
+                #if i == 1 and j == 4:
+                #    print(result[(i+1,j-1)])
+                #    print((i+1,j-1))
+                #    print(pair_score)
 
                 maxi = {
                     result[(i,k)] + result[(k+1,j)]
@@ -75,16 +75,22 @@ def nussinov_matrix(rna: str, delta : float = 1.0, score_scheme : Dict[(Tuple[st
                 else:
                     split = 0
 
-                #print("from result[(i+1,j)] = " + str(result[(i+1,j)]) + ", result[(i,j-1)] = " + str(result[(i,j-1)]))
+
                 result[(i,j)] = max(
                     result[(i+1,j)],
                     result[(i,j-1)],
                     pair_score,
                     split
                 )
+                #print("from result[(i+1,j)] = " + str(result[(i+1,j)]) + ", result[(i,j-1)] = " + str(result[(i,j-1)])
+                #      + ", pair_score = " + str(pair_score) + " und split = " + str(split) + " ist result[(" + str(i) +
+                #      "," + str(j) + ")] = " + str(result[(i,j)]) )
+            #else:
+            #    print("result[(" + str(i) + "," + str(j) + ")] = 0, weil " + str(j) + "-" + str(i) + " = " + str(j-i)
+            #          + " <= " + str(delta))
 
-    print("-----------")
-    print_matrix(result, n)
+    #print("-----------")
+    #print_matrix(result, n)
     print(result[(1, n-1)])
     return result[(1, n-1)]
 
