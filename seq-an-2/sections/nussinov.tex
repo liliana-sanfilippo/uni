@@ -1,0 +1,972 @@
+%! suppress = UndefinedCommand
+%! Author = lili
+%! Date = 6/26/26
+
+
+\section{Nussinov example}\label{sec:nussinov-example}
+
+\paragraph{Input:} RNA sequence $s = GGUCCA$ (meaning $n = 6$), scoring function for base pairs, minimum number $\delta = 1$ of unpaired bases in a hairpin loop
+
+\subsection*{First loop} todo what does it
+\begin{algorithmic}
+    \For{$i \gets 2$ to $6$}
+        \State $M(i,i-1) \gets 0$
+        \State $T(i,i-1) \gets \text{``init''}$ \Comment{$\epsilon$ (case 0)}
+    \EndFor
+\end{algorithmic}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$  \\ \hline
+                     1 & &  \textcolor{red}{0}\\
+                     2 &  \\
+                     3 & \\
+                     4 & \\
+                     5 & \\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(2,1) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$  \\ \hline
+                        1 & &  \textcolor{red}{init}\\
+                        2 & \\
+                        3 & \\
+                        4 & \\
+                        5 & \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(2,1) \gets \text{``init''}$ }
+    \end{subfigure}
+    \caption{\textbf{i = 2} (first iteration)}\label{fig:figure29}
+
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$  \\ \hline
+                     1 & &  0 \\
+                     2 &  & & \textcolor{red}{0}\\
+                     3 & \\
+                     4 & \\
+                     5 & \\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(3,2) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                        1 & &  init\\
+                        2 & & & \textcolor{red}{init}\\
+                        3 & \\
+                        4 & \\
+                        5 & \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(3,2) \gets \text{``init''}$ }
+    \end{subfigure}
+    \caption{\textbf{i = 3} (second iteration)}\label{fig:figure28}
+
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & &  0 \\
+                     2 &  & & 0\\
+                     3 & & & & \textcolor{red}{0} \\
+                     4 & \\
+                     5 & \\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(4,3) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & &  init\\
+                        2 & & & init \\
+                        3 & & & & \textcolor{red}{init}\\
+                        4 & \\
+                        5 & \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(4,3) \gets \text{``init''}$ }
+    \end{subfigure}
+    \caption{\textbf{i = 4} (third iteration)}\label{fig:figure27}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & &  0 \\
+                     2 &  & & 0\\
+                     3 & & & & 0 \\
+                     4 & &  && & \textcolor{red}{0}\\
+                     5 & \\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(5,4) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & &  init\\
+                        2 & & & init \\
+                        3 & & & & init\\
+                        4 & & & & & \textcolor{red}{init} \\
+                        5 & \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(5,4) \gets \text{``init''}$ }
+    \end{subfigure}
+    \caption{\textbf{i = 5} (fourth iteration)}\label{fig:figure26}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & &  0 \\
+                     2 &  & & 0\\
+                     3 & & & & 0 \\
+                     4 & &  && & 0\\
+                     5 & & & & & & \textcolor{red}{0}\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(6,5) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & &  init\\
+                        2 & & & init \\
+                        3 & & & & init\\
+                        4 & & & & & init\\
+                        5 & & & & & & \textcolor{red}{init} \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(6,5) \gets \text{``init''}$ }
+    \end{subfigure}
+    \caption{\textbf{i = 6} (fifth iteration)}\label{fig:figure25}
+
+\end{figure}
+
+\subsection*{Second loop}
+\begin{algorithmic}
+    \For{$d \gets 0$ to $1$}
+        \For{$i \gets 1$ to $5$}
+            \State $M(i,i+d) \gets 0$
+            \State $T(i,i+d) \gets \text{``unpaired''}$
+            \Comment{$.S$ and/or $S.$ (case 1 or 2)}
+        \EndFor
+    \EndFor
+\end{algorithmic}
+\subsubsection*{First iteration of sub-loop}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & \textcolor{red}{0}&  0 \\
+                     2 &  & & 0\\
+                     3 & & & & 0 \\
+                     4 & &  && & 0\\
+                     5 & & & & & & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(1,1) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & \textcolor{red}{unpaired} &  init\\
+                        2 & & & init \\
+                        3 & & & & init\\
+                        4 & & & & & init\\
+                        5 & & & & & & init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(1,1) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 0} und \textbf{i = 1} (first iteration)}\label{fig:figure24}
+
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 &  & \textcolor{red}{0}& 0\\
+                     3 & & & & 0 \\
+                     4 & &  && & 0\\
+                     5 & & & & & & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(2,2) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired &  init\\
+                        2 & & \textcolor{red}{unpaired} & init \\
+                        3 & & & & init\\
+                        4 & & & & & init\\
+                        5 & & & & & & init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(2,2) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 0} und \textbf{i = 2} (second iteration)}\label{fig:figure23}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 &  & 0 & 0\\
+                     3 & & & \textcolor{red}{0} & 0 \\
+                     4 & &  && & 0\\
+                     5 & & & & & & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(3,3) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired &  init\\
+                        2 & & unpaired& init \\
+                        3 & & &  \textcolor{red}{unpaired}  & init\\
+                        4 & & & & & init\\
+                        5 & & & & & & init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(3,3) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 0} und \textbf{i = 3} (third iteration)}\label{fig:figure22}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 &  & 0 & 0\\
+                     3 & & & 0& 0 \\
+                     4 & &  &&  \textcolor{red}{0}  & 0\\
+                     5 & & & & & & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(4,4) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired &  init\\
+                        2 & & unpaired& init \\
+                        3 & & &  unpaired  & init\\
+                        4 & & & & \textcolor{red}{unpaired} & init\\
+                        5 & & & & & & init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(4,4) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 0} und \textbf{i = 4} (fourth iteration)}\label{fig:figure21}
+
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 &  & 0 & 0\\
+                     3 & & & 0& 0 \\
+                     4 & &  && 0 & 0\\
+                     5 & & & & &  \textcolor{red}{0}  & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(5,5) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired &  init\\
+                        2 & & unpaired& init \\
+                        3 & & &  unpaired  & init\\
+                        4 & & & & unpaired & init\\
+                        5 & & & & &   \textcolor{red}{unpaired}& init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(5,5) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 0} und \textbf{i = 5} (fifth iteration)}\label{fig:figure20}
+
+\end{figure}
+
+
+
+\subsubsection*{Second iteration of sub-loop}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 & \textcolor{red}{0} & 0 & 0\\
+                     3 & & & 0& 0 \\
+                     4 & &  && 0 & 0\\
+                     5 & & & & &  0  & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(1,2) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired &  init\\
+                        2 & \textcolor{red}{unpaired} & unpaired& init \\
+                        3 & & &  unpaired  & init\\
+                        4 & & & & unpaired & init\\
+                        5 & & & &  &   unpaired& init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(1,2) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 1} und \textbf{i = 1} (first iteration)}\label{fig:figure19}
+
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 & 0 & 0 & 0\\
+                     3 & & \textcolor{red}{1} & 0& 0 \\
+                     4 & &  && 0 & 0\\
+                     5 & & & & &  0  & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(2,3) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired & unpaired&  init \\
+                        3 & &  \textcolor{red}{case 3}&  unpaired  & init\\
+                        4 & & & & unpaired & init\\
+                        5 & & & &  &   unpaired& init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(2,3) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 1} und \textbf{i = 2} (second iteration)}\label{fig:figure18}
+
+\end{figure}
+
+
+
+\color{purple}
+Warning!
+
+Following the instruction in the script, this would be the result:
+
+\begin{figure}[H]
+    \color{purple}
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 & 0 & 0 & 0\\
+                     3 & & \textcolor{red}{0} & 0& 0 \\
+                     4 & &  && 0 & 0\\
+                     5 & & & & &  0  & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{\color{purple}$M(2,3) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired & unpaired&  init \\
+                        3 & &  \textcolor{red}{unpaired}&  unpaired  & init\\
+                        4 & & & & unpaired & init\\
+                        5 & & & &  &   unpaired& init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{\color{purple} $T(2,3) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\color{purple}\textbf{d = 1} und \textbf{i = 2} (second iteration)}\label{fig:figure17}
+
+\end{figure}
+But this is (apparently) wrong.
+\color{black}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 & 0 & 0 & 0\\
+                     3 & & 1 & 0& 0 \\
+                     4 & &  & \textcolor{red}{0}& 0 & 0\\
+                     5 & & & & &  0  & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(3,4) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired & unpaired&  init \\
+                        3 & & case 3 &    unpaired  & init\\
+                        4 & & & \textcolor{red}{unpaired} & unpaired & init\\
+                        5 & & & &  &   unpaired& init \\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(3,4) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 1} und \textbf{i = 3} (third iteration)}\label{fig:figure16}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 &  0& 0 & 0\\
+                     3 & & 1 & 0& 0 \\
+                     4 & &  &0& 0 & 0\\
+                     5 & & & &\textcolor{red}{0}  &  0  & 0\\
+                     6 &
+            \end{tabular}
+        \]
+        \caption{$M(4,5) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired & unpaired&  init \\
+                        3 & & case 3 &    unpaired  & init\\
+                        4 & & & unpaired & unpaired & init\\
+                        5 & & & & \textcolor{red}{unpaired} &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(4,5) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 1} und \textbf{i = 4} (fourth iteration)}\label{fig:figure15}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 \\
+                     2 &0  & 0 & 0\\
+                     3 & & 1 & 0& 0 \\
+                     4 & &  &0& 0 & 0\\
+                     5 & & & & 0&  0  & 0\\
+                     6 & & & & & \textcolor{red}{0}
+            \end{tabular}
+        \]
+        \caption{$M(5,6) \gets 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & & case 3 &    unpaired  & init\\
+                        4 & & & unpaired& unpaired & init\\
+                        5 & & & & unpaired &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{red}{unpaired} & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(5,6) \gets \text{``unpaired''}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 1} und \textbf{i = 5} (fifth iteration)}\label{fig:figure14}
+
+\end{figure}
+
+\subsection*{Third loop}
+
+\begin{algorithmic}
+    \For{$d \gets 2$ to $5$}
+        \For{$i \gets 1$ to $5$}
+            \State Compute $M(i,i+d)$ according to the recurrence
+            \State Store the maximizing case in $T(i,i+d)$
+            \Comment{cases 1--3; or case 4 with maximizing $k$}
+        \EndFor
+    \EndFor
+\end{algorithmic}
+
+\subsubsection*{First iteration of sub-loop}
+\paragraph{We are loking at $M(1,3)$}
+\begin{itemize}
+    \item[] Is $j-i \leq \delta$?
+    \item[$\rightarrow$]  Nein $3-1 = 2 > 1$
+    \item[] Is $\{s[1], s[3]\} = \{G, U\}$ a valid base pair?
+    \item[$\rightarrow$]  Wobble, yes
+\end{itemize}
+
+\begin{align*}
+    M(1,3) & = max \begin{cases}
+                       M(2,3) & = 0 \\ % nach rechts
+                       M(1,2) & = 0 \\ % nach oben
+                       M(2,2) + \mu(2,4) = M(2,2) +  score(\{G, U\}) = 0 + 1 & = 1 \\ % rechts oben + score
+                       max_{2 < k < 3} \{ M(1, ???) + M( ???, 3) \} & = NaN
+    \end{cases} \quad =  1
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 & \\
+                     2 &0  & 0 & 0\\
+                     3 & \textcolor{red}{1} &1 & 0& 0 \\
+                     4 & &  &0& 0 & 0\\
+                     5 & & & & 0&  0  & 0\\
+                     6 & & & &  & 0
+            \end{tabular}
+        \]
+        \caption{ Compute $M(1,3)$ according to the recurrence}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & \textcolor{red}{case 3} & case 3 &    unpaired  & init\\
+                        4 & & & unpaired& unpaired & init\\
+                        5 & & & & unpaired &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} &  & unpaired & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(1,3) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 2} und \textbf{i = 1} (first iteration)}\label{fig:figure13}
+
+\end{figure}
+
+
+\paragraph{We are loking at $M(2,4)$}
+\begin{itemize}
+    \item[] Is $j-i \leq \delta$?
+    \item[$\rightarrow$]  No $4-2 = 2 > 1$
+    \item[] Is $\{s[2], s[4]\} = \{G, C\}$ a valid base pair?
+    \item[$\rightarrow$]  Yes
+\end{itemize}
+
+
+\begin{align*}
+    M(2,4) & = max \begin{cases}
+                       M(3,4) & = 0 \\ % nach rechts
+                       M(2,3) & = 0 \\ % nach oben
+                       M(3,3) + \mu(2,4) = M(3,3) +  score(\{G, C\}) = 0 + 1 & = 1 \\ % rechts oben + score
+                       max_{3 < k < 4} \{ M(2, ???) + M( ???, 4) \} & = NaN
+    \end{cases} \quad =  1
+\end{align*}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 & \\
+                     2 &0  & 0 & 0\\
+                     3 & 1 & 1 & 0& 0 \\
+                     4 & & \textcolor{red}{1} &0& 0 & 0\\
+                     5 & & & & 0&  0  & 0\\
+                     6 & & & &  & 0
+            \end{tabular}
+        \]
+        \caption{ Compute $M(2,4)$ according to the recurrence}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & case 3 & case 3 &    unpaired  & init\\
+                        4 & & \textcolor{red}{case 3} & unpaired& unpaired & init\\
+                        5 & & & & unpaired &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} &  & unpaired & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(2,4) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 2} und \textbf{i = 2} (second iteration)}\label{fig:figure12}
+
+\end{figure}
+
+
+
+
+\paragraph{We are loking at $M(3,5)$}
+\begin{itemize}
+    \item[] Is $j-i \leq \delta$?
+    \item[$\rightarrow$]  No $5-2 = 2 > 1$
+    \item[] Is $\{s[3], s[5]\} = \{U, C\}$ a valid base pair?
+    \item[$\rightarrow$]  No
+\end{itemize}
+
+\begin{align*}
+    M(3,5) & = max \begin{cases}
+                       M(4,5) & = 0 \\ % nach rechts
+                       M(3,4) & = 0 \\ % nach oben
+                       M(4,4) + \mu(3,5) = M(4,4) +  score(\{U, C\}) = 0 + 0 & = 0 \\ % rechts oben + score
+                       max_{4 < k < 5} \{ M(3, ???) + M( ???, 5) \} & = NaN
+    \end{cases} \quad =  0
+\end{align*}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 & \\
+                     2 &0  & 0 & 0\\
+                     3 & 1 & 1 & 0& 0 \\
+                     4 & & 1 &0& 0 & 0\\
+                     5 & & & \textcolor{red}{0}& 0&  0  & 0\\
+                     6 & & & &  & 0
+            \end{tabular}
+        \]
+        \caption{ Compute $M(3,5)$ according to the recurrence}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & case 3 & case 3 &    unpaired  & init\\
+                        4 & & case 3 & unpaired& unpaired & init\\
+                        5 & & & \textcolor{red}{case 1-3 } & unpaired &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} &  & unpaired & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(3,5) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 2} und \textbf{i = 3} (third iteration)}\label{fig:figure11}
+
+\end{figure}
+
+
+
+
+
+
+\paragraph{We are loking at $M(4,6)$}
+\begin{itemize}
+    \item[] Is $j-i \leq \delta$?
+    \item[$\rightarrow$]  No $6-4 = 2 > 1$
+    \item[] Is $\{s[4], s[6]\} = \{C, A\}$ a valid base pair?
+    \item[$\rightarrow$]  No
+\end{itemize}
+
+\begin{align*}
+    M(4,6) & = max \begin{cases}
+                       M(5,6) & = 0 \\ % nach rechts
+                       M(4,5) & = 0 \\ % nach oben
+                       M(5,5) + \mu(4,6) = M(5,5) +  score(\{C, A\}) = 0 + 0 & = 0 \\ % rechts oben + score
+                       max_{5 < k < 6} \{ M(4, ???) + M( ???, 6) \} & = NaN
+    \end{cases} \quad =  0
+\end{align*}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 & \\
+                     2 &0  & 0 & 0\\
+                     3 & 1 & 1 & 0& 0 \\
+                     4 & & 1 &0& 0 & 0\\
+                     5 & & & 0& 0&  0  & 0\\
+                     6 & & & & \textcolor{red}{0} & 0
+            \end{tabular}
+        \]
+        \caption{ Compute $M(4,6)$ according to the recurrence}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & case 3 & case 3 &    unpaired  & init\\
+                        4 & & case 3 & unpaired& unpaired & init\\
+                        5 & & & case 1-3 & unpaired &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{red}{case 1-3 } & unpaired & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(4,6) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 2} und \textbf{i = 4} (fourth iteration)}\label{fig:figure10}
+
+\end{figure}
+
+\paragraph{$M(5,7)$ does not exist}
+
+\subsubsection*{Iteration 2 and 3} were taken from
+\url{https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov} and checked with \url{https://iba-amrt.vlabs.ac.in/exp/rna-nussinov/simulation/index.html}.
+Resulting in:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 & \\
+                     2 &0  & 0 & 0\\
+                     3 & 1 & 1 & 0& 0 \\
+                     4 & \textcolor{red}{2} & 1 &0& 0 & 0\\
+                     5 & \textcolor{red}{2} & \textcolor{red}{1} & 0& 0&  0  & 0\\
+                     6 & &  \textcolor{red}{1} & \textcolor{red}{1} & 0 & 0
+            \end{tabular}
+        \]
+        \caption{ Compute $M(4,6)$ according to the recurrence}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & case 3 & case 3 &    unpaired  & init\\
+                        4 & -- & case 3 & unpaired& unpaired & init\\
+                        5 & -- & -- & case 1-3 & unpaired &   unpaired&  init\\
+                        6 & \textcolor{white}{unpaired} & -- & -- & case 1-3  & unpaired & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(4,6) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 2..3} und \textbf{i = 1..5} (whole iterations)}\label{fig:figure9}
+
+\end{figure}
+
+\subsubsection*{Fourth iteration of sub-loop}
+
+
+\paragraph{We are loking at $M(1,6)$}
+
+\begin{itemize}
+    \item[] Is $j-i \leq \delta$?
+    \item[$\rightarrow$]  No $6-1 = 5 > 1$
+    \item[] Is $\{s[1], s[6]\} = \{G, A\}$ a valid base pair?
+    \item[$\rightarrow$]  No
+\end{itemize}
+
+\begin{align*}
+    M(1,6) & = max \begin{cases}
+                       M(2,6) & = 1 \\ % nach rechts
+                       M(1,5) & = 2 \\ % nach oben
+                       M(2,5) + \mu(1,6) = M(2,5) +  score(\{G, A\}) = 1 + 0 & = 0 \\ % rechts oben + score
+                       max_{2 < k < 6} \{ M (1, k - 1) + M (k, 6) \} = * & = 2
+    \end{cases} \quad =  2
+\end{align*}
+
+\begin{align*}
+    *   max_{2 < k < 6} \{ M (1, k - 1) + M (k, 6) \} & = max\{
+    M (1,3-1 ) + M (3, 6) ,
+    M (1,4-1 ) + M (4, 6) ,
+    M (1,5-1 ) + M (5, 6)
+    \} \\
+    & =  max\{
+    M (1,2 ) + M (3, 6) ,
+    M (1,3 ) + M (4, 6) ,
+    M (1,4 ) + M (5, 6)
+    \} \\
+    & =  max\{
+    0 + 1,
+    1 + 0,
+    2 + 0
+    \}  \\
+    & = max \{
+    1,
+    1 ,
+    2
+    \}  \\
+    & = 2 \quad  mit\ k=5
+\end{align*}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \[
+            M =  \begin{tabular}{ccccccc}
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                     1 & 0&  0 & \\
+                     2 &0  & 0 & 0\\
+                     3 & 1 & 1 & 0& 0 \\
+                     4 & 2 & 1 &0& 0 & 0\\
+                     5 & 2 & 1 & 0& 0&  0  & 0\\
+                     6 & \textcolor{red}{2} & 1& 1& 0 & 0
+            \end{tabular}
+        \]
+        \caption{ Compute $M(4,6)$ according to the recurrence}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.65\textwidth}
+        \[
+            T =     \begin{tabular}{ccccccc}
+                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$\\ \hline
+                        1 & unpaired & init\\
+                        2 & unpaired& unpaired&  init \\
+                        3 & case 3 & case 3 &    unpaired  & init\\
+                        4 & -- & case 3 & unpaired& unpaired & init\\
+                        5 & -- & -- & case 1-3 & unpaired &   unpaired&  init\\
+                        6 & \textcolor{red}{case 3/ 4 (k=5)} & -- & -- & case 1-3  & unpaired & \textcolor{white}{init}
+            \end{tabular}
+        \]
+        \caption{$T(4,6) \gets \text{case}$ }
+    \end{subfigure}
+    \caption{\textbf{d = 5} und \textbf{i = 1} (first iteration)}\label{fig:figure8}
+
+\end{figure}

@@ -54,21 +54,21 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 | Woche | Vorlesung 1 | In Notizen     | In Karteikarten | Vorlesung 2 | In Notizen     | In Karteikarten |
 |-------|-------------|----------------|-----------------|-------------|----------------|-----------------|
-| KW 16 | Mo, 13.04.  | :construction: |                 | Fr, 17.04.  | :construction: |                 |
-| KW 17 | Mo, 20.04.  | :construction: |                 | Fr, 24.04.  | :construction: |                 |
-| KW 18 | Mo, 27.04.  | :construction: |                 | Fr, 01.05.  | :construction: |                 |
-| KW 19 | Mo, 04.05.  | :construction: |                 | Fr, 08.05.  | :no_entry:     |                 |
-| KW 20 | Mo, 11.05.  | :construction: |                 | Fr, 12.05.  | :construction: |                 |
-| KW 21 | Mo, 18.05.  | :no_entry:     |                 | Fr, 19.05.  | :construction: |                 |
-| KW 22 | --          | --             |                 | Fr, 29.05.  | :no_entry:     |                 |
-| KW 23 | Mo, 01.06.  | :no_entry:     |                 | Fr, 02.06.  | :no_entry:     |                 |
-| KW 24 | Mo, 08.06.  | :no_entry:     |                 | Fr, 12.06.  | :no_entry:     |                 |
-| KW 25 | Mo, 15.06.  | :no_entry:     |                 | Fr, 19.06.  | :no_entry:     |                 |
-| KW 26 | Mo, 22.06.  | :soon:         |                 | Fr, 26.06.  | :soon:         |                 |
-| KW 27 | Mo, 29.06.  | :soon:         |                 | Fr, 03.07.  | :soon:         |                 |
-| KW 28 | Mo, 06.07.  | :soon:         |                 | Fr, 10.07.  | :soon:         |                 |
-| KW 29 | Mo, 13.07.  | :soon:         |                 | Fr, 17.07.  | :soon:         |                 |
-| KW 30 | Mo, 20.07.  | :soon:         |                 | Fr, 24.07.  | :soon:         |                 |
+| KW 16 | Mo, 13.04.  | :construction: |                 | Di, 14.04.  | :construction: |                 |
+| KW 17 | Mo, 20.04.  | :construction: |                 | Di, 21.04.  | :construction: |                 |
+| KW 18 | Mo, 27.04.  | :construction: |                 | Di, 28.04.  | :construction: |                 |
+| KW 19 | Mo, 04.05.  | :construction: |                 | Di, 05.05.  | :no_entry:     |                 |
+| KW 20 | Mo, 11.05.  | :construction: |                 | Di, 12.05.  | :construction: |                 |
+| KW 21 | Mo, 18.05.  | :no_entry:     |                 | Di, 19.05.  | :construction: |                 |
+| KW 22 | --          | --             |                 | Di, 26.05.  | :no_entry:     |                 |
+| KW 23 | Mo, 01.06.  | :no_entry:     |                 | Di, 02.06.  | :no_entry:     |                 |
+| KW 24 | Mo, 08.06.  | :no_entry:     |                 | Di, 09.06.  | :no_entry:     |                 |
+| KW 25 | Mo, 15.06.  | :no_entry:     |                 | Di, 16.06.  | :no_entry:     |                 |
+| KW 26 | Mo, 22.06.  | :soon:         |                 | Di, 23.06.  | :soon:         |                 |
+| KW 27 | Mo, 29.06.  | :soon:         |                 | Di, 30.06.  | :soon:         |                 |
+| KW 28 | Mo, 06.07.  | :soon:         |                 | Di, 07.07.  | :soon:         |                 |
+| KW 29 | Mo, 13.07.  | :soon:         |                 | Di, 14.07.  | :soon:         |                 |
+| KW 30 | Mo, 20.07.  | :soon:         |                 | Di, 21.07.  | :soon:         |                 |
 
 ## Knowledge Representation SoSe 2026
 
