@@ -1,9 +1,12 @@
 %! Author = lili
 %! Date = 4/27/26
 
+
 \chapter{Modellieren zufälliger Ereignisse}
 \label{ch:modellieren-zufalliger-ereignisse}
 \untit{Vorlesung 11.04.2025 (V01 2025), ergänzt durch Skript (Skript 2026)}
+
+
 \section{Wahrscheinlichkeitsräume}\label{sec:wahrscheinlichkeitsraume}
 \komm{Fehlkalkulationen durch unzureichende Modelle bzw. fehlende Parameter werden oft als Zufall gesehen. Wir versuchen Modelle so zu wählen, dass sie möglichst einfach sind}
 \begin{figure}[H]
@@ -22,8 +25,9 @@
 
 \subsection*{Begriffe}
 
-\begin{defi} \label{defi:elementarereignis}
-    \textbf{\Gls{elementarereignis} \ele} \\
+\begin{defi}
+    \label{defi:elementarereignis}
+    \textbf{\Gls{elementarereignis} \ele}  \txc{(2025)} \\
     Möglicher Ausgang eines Zufallsexperiments. \\
     Es ist üblich, für Elementarereignisse den kleinen griechischen Buchstaben \ele (omega) zu verwenden.
     Davon weichen wir in konkreten Situationen manchmal ab.
@@ -31,7 +35,8 @@
     eine reelle Zahl ist.
 \end{defi}
 
-\begin{bsp} \defirefman{elementarereignis}
+\begin{bsp}
+    \defirefman{elementarereignis}  \txc{(2025)}
     \begin{itemize}
         \item Würfeln: $\ele = 3$ (3 gewürfelt)
         \item Zeitmessung: $\ele = 100$ (Sec)
@@ -39,8 +44,9 @@
 \end{bsp}
 
 
-\begin{defi} \label{defi:eraum}
-    \textbf{\Gls{eraum}} $\eraum$ \\
+\begin{defi}
+    \label{defi:eraum}
+    \textbf{\Gls{eraum}} $\eraum$  \txc{(2025)}  \\
     Die Menge aller Elementarereignisse $\eraum  \neq \emptyset$ ist die Menge aller möglichen Ausgänge
     eines Zufallsexperiments. \\
     Ein Ereignisraum ist also zunächst einmal einfach eine nichtleere Menge.  \\
@@ -50,7 +56,8 @@
     $\eraum, \tilde {\eraum}, \eraum_1, \eraum_2, \dots$ usw.
 \end{defi}
 
-\begin{bsp} \defirefman{defi:eraum}
+\begin{bsp}
+    \defirefman{defi:eraum}  \txc{(2025)}
     \begin{itemize}
         \item \textbf{Würfeln:}  $\eraum  = \{1,\dots.,6\}$ oder $\eraum  = \{ wuerfelsymbole \}$ \\
         Die Modellierung durch Würfelsymbole zeigt, daß es beim Modellieren wichtig ist anzugeben,
@@ -79,10 +86,11 @@ Eigenschaft haben.
 Dies führt zur folgenden Definition.
 
 
-\begin{defi} \label{defi:ereignis} \textbf{Ereignis} $A$ \\
-(Messbare) Teilmenge des Ereignisraums $A \subseteq \eraum  $(
-$A = \emptyset, A = \eraum )$ sind zulässig) \\
-Sprechweise: $\ele \in A$ bedeutet ``A ist eingetroffen''
+\begin{defi}
+    \label{defi:ereignis} \textbf{Ereignis} $A$  \txc{(2025)}  \\
+    (Messbare) Teilmenge des Ereignisraums $A \subseteq \eraum  $(
+    $A = \emptyset, A = \eraum )$ sind zulässig) \\
+    Sprechweise: $\ele \in A$ bedeutet ``A ist eingetroffen''
 \end{defi}
 \noindent Im Fall, dass der Ereignisraum $\eraum \subseteq \rz^n$ weder eine endliche noch eine abzählbar unendliche
 Menge ist, beschränken wir uns auf Ereignisse, die Intervalle oder bekannte geometrische Figuren wie Dreieck,
@@ -91,7 +99,8 @@ Auch abzählbare Schnitte oder Vereinigungen solcher Objekte sind zulässig, sow
 Und so weiter.
 Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integrationstheorie zu vermeiden.
 
-\begin{bem} \defirefman{defi:ereignis}
+\begin{bem}
+    \defirefman{defi:ereignis}  \txc{(2026)}
     \begin{itemize}
         \item Ein Ereignis $A \subseteq \eraum$ ist also ein (messbares) Element der Potenzmenge $\potm(\eraum)$
         von $\eraum$, das heißt, $A \in \potm(\eraum)$.
@@ -102,7 +111,9 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 \end{bem}
 
 
-\begin{bsp} \defirefman{ereignis}
+\begin{bsp}
+    \txc{(2025)}
+    \defirefman{ereignis}
     \begin{itemize}
         \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \ele = 4 \Rightarrow \ele \in A\] Wir sagen: ``gerade Zahl gewürfelt''
         \item \textbf{Zeitmessung:} $A = [100, 200] \subset \eraum  = [0,\infty)$
@@ -121,12 +132,13 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 \end{itemize} \komm{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
 
 
-\begin{defi} \label{defi:zaehldichte}
-    \textbf{Zähldichte / $\wfk$} \\
+\begin{defi}
+    \label{defi:zaehldichte}
+    \textbf{Zähldichte / $\wfk$} \txc{(2025)} \\
     Sei $\eraum  \neq \emptyset$ eine abzählbare Menge.
     \begin{enumerate}
         \item Eine Abbildung $\wfk : \eraum  \rightarrow [0,1]$ heißt mit \[
-                                                                                                         \underbrace{\sum_{\ele \in \eraum } \wfk (\ele) = 1}_{\text{\txo{Normierung}}}
+                                                                              \underbrace{\sum_{\ele \in \eraum } \wfk (\ele) = 1}_{\text{\txo{Normierung}}}
         \] \underline{Zähldichte / \gls{wfk}} auf $\eraum $. \\
         \item Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \eraum $ ist bei gegebener \gls{wfk} $\wfk$
         definiert durch
@@ -138,11 +150,14 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 
 \komm{TODO: Was hat die Potenzmenge von Omega damit zu tun?}
 
-\begin{bem}\label{bem:konvention} \defirefman{zaehldichte} (ii) \\
-\textit{Konvention}: $\pe(\emptyset) = 0$
+\begin{bem}
+    \txc{(2025)}
+    \label{bem:konvention} \defirefman{zaehldichte} (ii) \\
+    \textit{Konvention}: $\pe(\emptyset) = 0$
 \end{bem}
 
-\begin{bem} \defirefman{zaehldichte}
+\begin{bem}
+    \defirefman{zaehldichte} \txc{(2025)}
     \[0 \leq \pe \leq 1, \quad \forall A \subseteq \eraum  \quad \txo{\underbrace{(\forall A \in \potm(\eraum )) }_{\potm(\eraum ) \text{Potenzmenge von } \eraum }} \]
     $\pe$ ist eine Abb.
     \[
@@ -150,14 +165,16 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \]
 \end{bem}
 
-\begin{lem} \textbf{Eigenschaften des Wahrscheinlichkeitsmaßes für abzählbare Ereignisräume} \\
+\begin{lem}
+    \textbf{Eigenschaften des Wahrscheinlichkeitsmaßes für abzählbare Ereignisräume} \txc{(2026)} \\
     Sei $\eraum \neq \emptyset$ eine abzählbare Menge und $\pe$ ein Wahrscheinlichkeitsmaß auf $\eraum$.
-Dann gelten:
+    Dann gelten:
     \begin{itemize}
         \item $0 \leq \pe (A) \leq 1$ für alle $A \leq \potm(\eraum)$
         \item $\pe(\emptyset) = 0$
         \item $\pe(\eraum) = 1$
     \end{itemize}
+
     \paragraph{Beweis.}
     \begin{itemize}
         \item Untere Schranke: Da $\pe(A) = \sum_{\wfk \in A} \wfk(\ele)$ gilt und alle Summanden nichtnegativ sind,
@@ -175,16 +192,19 @@ Dann gelten:
 \end{lem}
 
 
-\begin{defi} \label{defi:wraum}
-    \textbf{\gls{wraum}} \\
+\begin{defi}
+    \label{defi:wraum}
+    \textbf{\gls{wraum}}  \txc{(2025)}  \\
     $\underbrace{\wraum}_{\txo{(\eraum , \wfk)}}$ heißt \underline{\gls{wraum}}.
 \end{defi} %
 
-\begin{bem} \defirefman{wraum} \\
+\begin{bem}
+    \defirefman{wraum} \txc{(2025)}   \\
     Für $\eraum $ abzählbar: $\wfk$ legt $\pe$ eindeutig und umgekehrt!
     \[P(A)=\sum_{\ele \in A} \wfk (\ele) \quad \forall A \in \potm(\eraum )\]
     \[\wfk (\ele) = \pe(\underbrace{\{\ele\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \ele \in \eraum \]
-    \paragraph{Länger aus dem Skript:} Da es eine ein-eindeutige Zuordnung zwischen der
+
+    \paragraph{Länger aus dem Skript:}  \txc{(2026)}  Da es eine ein-eindeutige Zuordnung zwischen der
     Wahrscheinlichkeitsfunktion $\wfk$ und dem Wahrscheinlichkeitsmaß $\pe$ gibt, bezeichnen wir auch das Paar $\wraum$
     als Wahrscheinlichkeitsraum.
     Die Zuordnung von $\wfk$ zu $\pe$ ist direkt durch die Definition von $\pe$ in Definition
@@ -201,8 +221,9 @@ Dann gelten:
     definiert ist und daher das einelementige Ereignis $\{\ele\}$ als Argument hat.
 \end{bem}
 
-\begin{bsp} \label{bsp:einmal-wuerfeln-i}
-    \textbf{Einmal Würfeln} \\
+\begin{bsp}
+    \label{bsp:einmal-wuerfeln-i}
+    \textbf{Einmal Würfeln} \txc{(2025)} \\
     $\eraum  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
     \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.}
     Wie wählen wir $\wfk$?
@@ -226,7 +247,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \end{itemize}
 
 \begin{bsp}
-    \textbf{Zweimal würfeln mit fairem Würfel - Augensumme}
+    \textbf{Zweimal würfeln mit fairem Würfel - Augensumme} \txc{(2025)}
     \begin{enumerate}
         \item \textbf{Ansatz}: $\eraum _1 = \{1,\dots,6\}^2 = \{(i,j): i,j \in \{1,\dots,6\}\}$  \\
         \textcolor{Orchid}{ Für $\ele = (i,j) \in \eraum _1$ bedeutet $i$ die Augenzahl des ersten Würfels und $j$ jene des zweiten Würfels.} \\
@@ -284,7 +305,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \komm{Man hat beim Modellieren immer die Wahl. Und mann muss aufpassen wie man es macht. }
 
 \begin{bsp}
-    \textbf{Reißzwecke ``würfeln'' - Symmetrieüberlegungen helfen nicht} \\
+    \textbf{Reißzwecke ``würfeln'' - Symmetrieüberlegungen helfen nicht} \txc{(2025)}  \\
     $\eraum  = \{R, S\}$ (R auf Kopf, S auf Seite) \\
     Definition: $\wfk(S) > \wfk(R)$ \\
     10.000 Würfe; 4213 R \\
@@ -295,12 +316,13 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     erfordert Symmetrieargumente)}
 
 \begin{defi}
-    \textbf{Gleichverteilung} \\
+    \textbf{Gleichverteilung} \txc{(2025)}  \\
     Sei $\eraum  \neq \emptyset$ eine endl.
     Menge, d.h. $0 < \#\eraum  < \infty$.
     Gilt $\wfk(\ele) = \wfk(\tilde{\ele}) \quad  \forall \ele, \tilde{\ele} \in \eraum $ d.h.\ die \gls{wfk} $\wfk$ ist konstant, so heißen die wfkt mu und das zugehörige wmaß P die \underline{Gleichverteilung auf $\eraum $}
 \end{defi}
-\begin{lem} \textbf{Rechnen mit der Gleichverteilung} \\
+\begin{lem}
+    \textbf{Rechnen mit der Gleichverteilung} \txc{(2026)} \\
     Sei $\wfk$ die Gleichverteilung auf $\eraum $.
     Dann gelten:
     \begin{itemize}
@@ -317,10 +339,11 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     \end{itemize}
 \end{lem}
 \begin{bem}
+    \txc{(2025)}
     Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. %\\ \komm{Mathe 1}
 \end{bem}
 \begin{bem} % aus Skript
-    \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \\
+    \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \txc{(2026)} \\
     Warum müssen wir voraussetzen, dass $\# \eraum < \infty $?
     Nehmen wir an, es gäbe eine Gleichverteilung $\wfk$ auf einer abzählbar unendlichen Menge
     $\eraum$.
@@ -336,7 +359,9 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     Andernfalls, wenn $c > 0$ gilt, erhalten wir ebenfalls einen Widerspruch, nämlich $1 = \infty$.
     Folglich kann es auf einer nicht endlichen Menge keine Gleichverteilung geben
 \end{bem}
-\section{Gleichverteilung auf einer endlichen Menge}\label{sec:gleichverteilung-auf-einer-endlichen-menge}
+
+
+\section{Gleichverteilung auf einer endlichen Menge}\label{sec:gleichverteilung-auf-einer-endlichen-menge} \txc{(2025)}
 \begin{bsp}
     \textbf{Gleichverteilung}
     \begin{itemize}
@@ -346,7 +371,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \end{bsp}
 
 \begin{bsp}
-    \textbf{KEINE Gleichverteilung}
+    \textbf{KEINE Gleichverteilung} \txc{(2026)}
     \begin{itemize}
         \item Augensumme beim wiederholten Würfeln
         \item Werfen einer Reißzwecke
