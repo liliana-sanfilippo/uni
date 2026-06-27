@@ -1,6 +1,7 @@
 %! Author = lili
 %! Date = 5/7/26
 % nonallelic genes
+% localization signal / zipcode
 
 \newglossaryentry{biovorl}{
     name={test},
@@ -8,9 +9,60 @@
     type=defi
 }
 
+\newglossaryentry{kopplungsgruppe}{
+    name={Kopplungsgruppe},
+    description={todo},
+    type=defi
+}
+
+\newglossaryentry{transposition}{
+    name={Transposition},
+    description={Einbau eines
+    DNA-Segments an einen anderen Ort im Genom.},
+    type=defi
+}
+
+\newglossaryentry{transposon}{
+    name={Transposon},
+    description={Transposable Element - eine mobile Nukleinsäuresequenz (Mobiles genetisches Element) mit der Fähigkeit
+    zur \gls{transposition}},
+    type=defi
+}
+
+
+\newglossaryentry{retrotransposon}{
+    name={Retrotransposon},
+    description={Ein \gls{transposon}, das über eine RNA-Form mobilisiert; das DNA-Element
+    wird in RNA transkribiert und anschließend in
+    DNA revers transkribiert, die an einer neuen Stelle im Genom inseriert wird. Es besitzt keine
+    infektiöse (virale) Form.},
+    type=defi
+}
+
+
+\newglossaryentry{telomerase}{
+    name={Telomerase},
+    description={Das Ribonukleoprotein-Enzym, das am Telomer sich wiederholende Einheiten aus
+    einem Strang bildet, indem es einzelne Basen an das
+    3′-Ende der DNA anfügt, gemäß der Vorgabe einer RNA-Sequenz in der RNA-Komponente
+    des Enzyms. (Lewin)},
+    type=defi
+}
+
+
+\newglossaryentry{replikon}{
+    name={Replikon},
+    description={Replikationseinheit der
+    Erbsubstanz, die einen Startpunkt der Replikation enthält und zur autonomen Replikation befähigt ist. (Allgemeine Genetik)},
+    type=defi
+}
+
 \newglossaryentry{topoisomerase}{
     name={Topoisomerase},
-    description={todo},
+    description={Ein Enzym, das die Anzahl der Kreuzungspunkte der beiden Stränge
+    in einem geschlossenen DNA-Molekül verändert. Dazu
+    spaltet es die DNA, führt die DNA durch den Bruch und verbindet
+    die DNA wieder miteinander. (Lewin)},
     type=defi
 }
 
@@ -55,7 +107,8 @@
 
 \newglossaryentry{superfamilie}{
     name={Superfamilie},
-    description={todo},
+    description={Eine Gruppe von Genen, die alle durch eine vermutete Abstammung von einem gemeinsamen
+    Vorfahren miteinander verbunden sind, mittlerweile jedoch erhebliche Unterschiede aufweisen. (Lewin)},
     type=defi
 }
 
@@ -70,6 +123,14 @@
     type=defi
 }
 
+\newglossaryentry{alu_seq}{
+    name={Alu-Element},
+    description={Eine von mehreren verstreuten, miteinander verwandten Sequenzen, die jeweils
+    etwa 300 bp lang sind, im menschlichen Genom (Mitglieder der
+    \gls{sine}-Familie). Die einzelnen Mitglieder weisen an beiden Enden Alu-Schnittstellen
+    auf. (Lewin)},
+    type=defi
+}
 
 \newglossaryentry{alu}{
     name={Alu-Repeats},
@@ -79,13 +140,20 @@
 
 \newglossaryentry{line}{
     name={LINE},
-    description={todo},
+    first={LINE (long-interspersed nuclear element)},
+    description={Eine wichtige Klasse von \gls{retrotransposon}s, die etwa
+    21\% des menschlichen Genoms ausmachen. (Lewin)},
     type=defi
 }
 
+
+
 \newglossaryentry{sine}{
     name={SINE},
-    description={todo},
+    first={SINE (short-interspersed nuclear element)},
+    description={Eine bedeutende Klasse kurzer (weniger als 500 bp) nicht-autonomer
+    \gls{retrotransposon}s, die etwa 13 \% des menschlichen
+    Genoms einnehmen. (Lewin)},
     type=defi
 }
 
@@ -127,7 +195,8 @@
 
 \newglossaryentry{ribonukleoprotein}{
     name={Ribonukleoprotein},
-    description={todo},
+    description={Ein Komplex aus RNA und Proteinen. Größere Komplexe werden
+    manchmal als Ribonukleoprotein-Partikel bezeichnet. (Lewin)},
     type=defi
 }
 
@@ -183,19 +252,23 @@
 
 \newglossaryentry{monocistronisch}{
     name={monocistronisch},
-    description={todo},
+    description={nur für ein Polypeptid kodierend},
     type=defi
 }
 
 \newglossaryentry{polycistronisch}{
     name={polycistronisch},
-    description={todo},
+    description={Kodierend für mehrere Polypedtide},
     type=defi
 }
 
 \newglossaryentry{operon}{
     name={Operon},
-    description={todo},
+    description={enetische Funktionseinheit bei
+    des Zellkerns.Bakterien, die aus einer Gruppe von Genen besteht, die
+    über einen gemeinsamen Promotor reguliert werden und
+    eine gemeinsame mRNA (Messenger) produzieren, die
+    für mehrere Proteine kodiert. (Allgemeine Genetik)},
     type=defi
 }
 
@@ -220,8 +293,9 @@
 % wikipedia
 
 \newglossaryentry{aneuploidie}{
-    name={Aneuploidie},
-    description={todo},
+        name={Aneuploidie},
+    description={bweichung
+    von der normalen Chromosomenzahl ganzer Chromosomensätze. (Allgemeine Genetik)},
     type=defi
 }
 
@@ -889,21 +963,6 @@ herausgeschnitten und demzufolge nicht in Protein übersetzt wird},
 type=defi
 }
 
-\newglossaryentry{transposition}{
-name={Transposition},
-description={Einbau eines
-DNA-Segments an einen anderen Ort im Genom.},
-type=defi
-}
-
-
-
-\newglossaryentry{transposon}{
-name={Transposon},
-description={Transposable Element - eine mobile Nukleinsäuresequenz (Mobiles genetisches Element) mit der Fähigkeit
-zur \gls{transposition}},
-type=defi
-}
 
 
 
@@ -1168,14 +1227,14 @@ type=defi
 
 \newglossaryentry{snrnp}{
 name={snRNP},
-first={kleine nukleäre Ribonukleoprotein-Komplex (snRNP)},
+first={kleiner nukleärer Ribonukleoprotein-Komplex (snRNP)},
 description={todo},
 type=defi
 }
 
 \newglossaryentry{hnrnp}{
 name={hRNP},
-first={heterogene Ribonukleoprotein-Komplex (mRNP)},
+first={heterogener Ribonukleoprotein-Komplex (mRNP)},
 description={todo},
 type=defi
 }

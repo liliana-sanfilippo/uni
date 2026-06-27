@@ -11,7 +11,7 @@ RNA in derselben Reihenfolge vor, doch ist ein unterbrochenes Gen länger als se
     doch entsprechen die Abstände entlang des Gens nicht den Abständen entlang
     der mRNA oder der Polypeptidprodukte.}
 \begin{bsp}
-    Vorkommen in verschiedenen Aktin Genen % TODO F 7
+    Vorkommen in verschiedenen Aktin Genen; Folie 7 % EVTL F 7
 \end{bsp}
 
 \paragraph{Eine Frage der Genomevolution} ist:
@@ -25,12 +25,12 @@ Dazu gibt es verschiedene Modelle und Hypothesen:
 
 \frage{wieintrons}
 \begin{bsp}
-    bZIP Domänen % TODO F 10
+    bZIP Domänen; Folie 10 % EVTL F 10
 \end{bsp}
 
 \frage{mutationinttrons}
 
-% erstmal nicht TODO F 11-13 ???
+% erstmal nicht EVTL F 11-13 ???
 
 \lewin{Einige eukaryotische Gene sind nicht unterbrochen und entsprechen, ähnlich wie prokaryotische
 Gene, direkt dem Polypeptidprodukt. Bei der
@@ -79,7 +79,7 @@ Mehrzellige Eukaryoten haben mehr Gene, aber die Anzahl korreliert nicht gut mit
 
 
 Die Summe aus der Anzahl der einzigartigen Gene und der Anzahl
-der Genfamilien ist eine Schätzung der Anzahl der Arten von Genen.
+der \gls{genfamilie}n ist eine Schätzung der Anzahl der Arten von Genen.
 
 
 Die Mindestgröße des Proteoms lässt sich
@@ -90,7 +90,7 @@ aus der Anzahl der Genarten abschätzen.
 \lewin{Die Mindestanzahl an Genen, die für jede Art von
 Organismus erforderlich ist, steigt mit dessen Komplexität.}
 
-% todo F 22
+% EVTL Bsp. F 22
 
 \frage{warumsteigtnichtimmer}
 %  26-29
@@ -98,21 +98,21 @@ Organismus erforderlich ist, steigt mit dessen Komplexität.}
 \subsection*{Exkurs Syntenie}
 \defin{syntenie}
 Bezeichnung der Eigenschaft verwandter Spezies, eine
-konservierte Co-Lokalisierung von Genen auf Chromosomen
+konservierte Co-Lokalisierung von Genen auf \gls{chromosom}en
 aufzuweisen.
 
 ursprüngliche Definition (eingeführt 1971) war:
-Gene auf dem gleichen Chromosom (einer Kopplungsgruppe),
+Gene auf dem gleichen \gls{chromosom} (einer Kopplungsgruppe),
 aber nicht ``linked'' (gekoppelt) in genetischen Kreuzungen.
 
 Untersuchung der Anordnung von Genen ist ein wichtiges Kriterium zur Etablierung
-von Orthologie zwischen genomischen Regionen -
-Konservierung von Syntenie kann auf wichtige funktionelle Zusammenhänge
+von \gls{ortholog} zwischen genomischen Regionen -
+Konservierung von \gls{syntenie} kann auf wichtige funktionelle Zusammenhänge
 zwischen Genen hindeuten.
 
-% todo Makrosyntenie u Mikrosyntenie
+% EVTL Makrosyntenie u Mikrosyntenie
 
-% TODO Syntenie bei nahe verwandten Spezies F 25
+% EVTL Syntenie bei nahe verwandten Spezies F 25
 
 \paragraph{Zusammenfassung}
 \begin{itemize}
@@ -141,9 +141,25 @@ besser wider als die Gesamtgröße des Genoms.}
 \frage{komplexitätmessen}
 
 \subsection{Reassoziationskinetik}\label{subsec:reassoziationskinetik}
-% todo f 30-33
-
+% EVTL f 30-33
 \defin{reassoziation}
+Hochrepetitive Sequenzen (repetitive DNA) lagern sich schnell zusammen, Einzelkopiesequenzen nur langsam.
+
+
+\begin{itemize}
+    \item $C$: Konzentration an einzelsträngiger DNA (ssDNA)
+    \item $C_0$: Konzentration an ssDNA zum Zeitpunkt 0 (vor Beginn der Reassoziation)
+    \item $C_{0}t$: Konzentration an ssDNA zum Zeitpunkt 0 * Zeit in Sekunden
+\end{itemize}
+
+Reassoziationskurven von Viren und Bakterien relativ einfach, bei vielzelligen Organismen sehr komplex.
+Es gibt mittel- und hochrepetitive DNA-Abschnitte,
+die schneller reassoziieren.
+
+\begin{itemize}
+    \item Anwendung in der Genomsequenzierung: C0t Filtration
+\end{itemize}
+
 
 \subsection{Repetitive Sequenzen}\label{subsec:repetitive-sequenzen}
 \begin{itemize}
@@ -157,7 +173,7 @@ besser wider als die Gesamtgröße des Genoms.}
     \begin{itemize}
         \item mittel-repetitiv
         \item “short (long) interspersed nuclear elements”
-        \item transponierbar über RNA-Zwischenprodukt (z.B. Retrotransposonen)
+        \item transponierbar über RNA-Zwischenprodukt (z.B. \gls{retrotransposon}en)
     \end{itemize}
     \item \gls{alu} (SINE, 10\% des humanen Genoms)
     \begin{itemize}
@@ -168,7 +184,7 @@ besser wider als die Gesamtgröße des Genoms.}
     \begin{itemize}
         \item kurze \gls{ssr}
     \end{itemize}
-    \item Genfamilien
+    \item \gls{genfamilie}n
     \begin{itemize}
         \item Duplizierte Gene mit (möglicherweise) differenzierter Funktion
     \end{itemize}
@@ -309,10 +325,13 @@ sofort als Folge einer Mutation erkennbar. Außerdem kann bei diploiden
 Organismen eine neue rezessive Mutation über viele Generationen hinweg in heterozygoter Form ``verborgen'' bleiben. }
 
 
-\section{Replikation beu Eukaryoten}\label{sec:replikation}
-% TODO 51+
-% INFO wdh prokaryotisch F 50 nicht drin
-DNA-Replikation ist semikonservativ und semi-diskontinuierlich. Ein Strang (leading strand, Leitstrang) kann
+\section{Replikation bei Eukaryoten}\label{sec:replikation}
+DNA wird sowohl durch die \gls{semiRep}
+als auch bei Reparaturreaktionen synthetisiert.
+% INFO wdh F 49-50 nicht drin
+%  51+
+DNA-Replikation ist semikonservativ und semi-diskontinuierlich.
+Ein Strang (leading strand, Leitstrang) kann
 kontinuierlich synthetisiert werden und der andere Strang (lagging strand, Folgestrang) muss
 diskontinierlich synthetisiert werden.
 Die Replikation verläuft bi-direktional und alle DNA-Polymerasen verlängern nur freie 3' OH-Enden. \cite{vorlesung3}
@@ -325,6 +344,52 @@ jedoch beginnen kann, muss das supergewickelte Chromosom entspannt werden. Dies 
     Eine Replikation kann nicht an supergewickelter DNA stattfinden, sondern nur an der entspannten
     Form.}
 
+
+%\subsection*{Replikation und Dauer des Zellzyklus}
+
+\lewin{Die Replikation findet
+während der S-Phase des Zellzyklus statt. Replikons im Euchromatin
+beginnen früher mit der Replikation als Replikons im Heterochromatin; Replikons in der Nähe aktiver
+Gene beginnen früher mit der Replikation als Replikons in der Nähe inaktiver Gene.}
+
+In Zellen von adulten Tieren dauert der Zellzyklus und damit die S-Phase deutlich länger als bei Embryonalzellen.
+
+%\subsection*{Replikationsabschnitte / Replikons)}
+\defin{replikon}
+
+
+\lewin{Am Ende des \gls{replikon}s sind Verbindungs- und/oder Terminationsreaktionen
+erforderlich. Nach der Termination müssen die duplizierten
+Chromosomen voneinander getrennt werden, was
+eine Manipulation der DNA-Struktur höherer Ordnung erfordert.}
+
 \subsection{Telomer-Verkürzung}\label{subsec:telomer-verkurzung}
-% TODO 55+
+%  55+
+% 12.2 The Ends of Linear DNA Are a Problem for Replication
+Telomere verlieren in der Replikation (bei jeder Zellteilung) an Länge und werden durch ein Ribonucleoprotein (
+\gls{telomerase}) verlängert.
+Denn die (normale) DNA-Polymerase kann am Folgestrang nicht mehr ansetzen.
+
+Unterschreitet die Telomerlänge ein kritisches Minimum von circa 4 kbp, kann sich die Zelle nicht mehr teilen.
+Oft tritt dann der programmierte Zelltod (Apoptose) oder ein permanenter Wachstumsstopp ein (Seneszenz).
+Die hierdurch begrenzte Lebenszeit der Zelle wird als Mechanismus zur Tumorunterdrückung verstanden. \cite{dewiki:Telomer}
+
+Das passiert auch in der Zellkultur, wenn die Linie nicht ``immortalisiert'' ist.
+
+Telomere sind durch \gls{telomerase}n verlängerbar.
+Eine \gls{telomerase} nutzt das 3′-OH Ende
+des G+T Strangs als Primer.
+Die RNA Komponente der
+\gls{telomerase} enthält eine Sequenz,
+die mit den C+A-reichen Repeats
+paart.
+Eine Proteinuntereinheit ist eine
+reverse Transkriptase, die mit dem
+RNA Template die G+T-reiche
+Sequenz synthetisiert. \cite{vorlesung3}
+
+Telomere schützen die Enden der \gls{chromosom}en.
+
+Telomere schützen Chromosomenenden, indem sie sie strukturell verstecken (T-loop) und mit Schutzproteinen markieren (Shelterin).
+Dadurch werden sie nicht als DNA-Schaden erkannt.
 
