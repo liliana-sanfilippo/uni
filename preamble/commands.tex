@@ -74,7 +74,7 @@
 \newcommand{\txt}[1]{\quad \text{#1}}
 \newcommand{\faoio}[0]{ \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} }
 \newcommand{\oio}[0]{\glssymbol{elementarereignis} \in \glssymbol{eraum}}
-\newcommand{\wraum}[0]{\glssymbol{wraum}}
+\newcommand{\wraum}[0]{\pdftooltip{Wahrscheinlichkeitsraum}{\glssymbol{wraum}}}
 \newcommand{\elem}[0]{\gls{elementarereignis}}
 \newcommand{\oub}[2]{\txo{
     \underbrace{
@@ -93,11 +93,11 @@
 }}
 \newcommand{\ma}[1]{\(#1\)}
 \newcommand{\mab}[1]{\[#1\]}
-\newcommand{\E}[1]{\ensuremath{\mathbb{E}[#1]}}
+\newcommand{\E}[1]{\pdftooltip{Erwartungswert}{\glssymbol{ew}[#1]}}
 \newcommand{\dichte}[0]{\Gls{dichte} \index{Dichte}}
 \newcommand{\dcht}[0]{\glssymbol{dichte} \index{Dichte}}
-\newcommand{\Var}[0]{\glssymbol{varianz}}
-\newcommand{\Cov}[0]{\glssymbol{covarianz}}
+\newcommand{\Var}[0]{\pdftooltip{Varianz}{\glssymbol{varianz}}}
+\newcommand{\Cov}[0]{\pdftooltip{Covarianz}{\glssymbol{covarianz}}}
 
 \newglossarystyle{symbunitlong}{%
     \setglossarystyle{long3col}% base this style on the list style
@@ -131,21 +131,23 @@
 \newcommand{\dbg}{\glssymbol{dbsg}}
 
 \newcommand{\pe}[0]{
-    \pdftooltip{\glssymbol{wmaß}}{
+    \pdftooltip{Wahrscheinlichkeitsmaß}{
         \glssymbol{wmaß}
     }
 }
 \newcommand{\wfk}[0]{\glssymbol{wfk}}
-\newcommand{\vfkt}[0]{\glssymbol{vfkt}}
-\newcommand{\vfktlong}[0]{\glsdesc{vfkt}}
-\newcommand{\vfktname}[0]{\scriptsize{\gls{vfkt}}}
+\newcommand{\vfkt}[0]{
+    \pdftooltip{Verteilungsfunktion der Standardnormalverteilung}{\glssymbol{vfkt}}
+}
+\newcommand{\vfktlong}[0]{\pdftooltip{Verteilungsfunktion der Standardnormalverteilung}{\glsdesc{vfkt}}}
+\newcommand{\vfktname}[0]{\pdftooltip{Verteilungsfunktion der Standardnormalverteilung}{\scriptsize{\gls{vfkt}}}}
 \newcommand{\bernoulli}[0]{\Gls{bernoulli} \index{Bernoulli-Experiment}}
 \newcommand{\binomv}[0]{\Gls{binomv} \index{Binomialverteilung}}
 \newcommand{\Binomv}[0]{\glssymbol{binomv} \index{Binomialverteilung}}
-\newcommand{\ele}[0]{\glssymbol{elementarereignis}}
+\newcommand{\ele}[0]{\pdftooltip{Elementarereignis}{\glssymbol{elementarereignis}}}
 \newcommand{\potm}[0]{\glssymbol{potenz}}
-\newcommand{\eraum}[0]{\glssymbol{eraum}}
-\newcommand{\zv}[0]{\Gls{zv}}
+\newcommand{\eraum}[0]{\pdftooltip{Ereignisraum}{\glssymbol{eraum}}}
+\newcommand{\zv}[0]{\pdftooltip{Zufallsvariable}{\Gls{zv}}}
 
 \newcommand{\kleene}[0]{\glssymbol{kleene}}
 \newcommand{\alf}[0]{\glssymbol{alphabet}}
