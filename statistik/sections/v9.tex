@@ -289,17 +289,21 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \paragraph{Beweis.}
     \texttt{Siehe Folie 23. 2025} % TODO
 \end{satz}
+\komm{ Zu Satz \ref{satz:Moivre-Laplace} \\
+    Der Satz von de Moivre-Laplace macht eine Aussage über einen Grenzwert. Das bedeutet: Wenn man
+n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinlichkeit exakt gegen $\vfkt(b) - \vfkt(a)$ n der Praxis hast du aber nie $n = \infty$.
+}
 \begin{bem}
     \textbf{Zu Satz \ref{satz:Moivre-Laplace}} \txc{(2025)} \\
     $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{x^2 / 2}$ heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}
     . \\
     Die Stammfunktion \begin{equation}
-                          \Phi(y) = \int_{- \infty}^y \varphi(x) \dx\label{eq:equation4}
+                          \vfkt(y) = \int_{- \infty}^y \varphi(x) \dx \txc{ = \int_{- \infty}^y  \frac{1}{\sqrt{2\pi}} e^{x^2 / 2} \dx  }  \label{eq:equation4}
     \end{equation}
     ist die Verteilungsfunktion der Standardnormalverteilung.
     \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung}. \\
     Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve. \\
-    \ma{\Phi(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
+    \ma{\vfkt(y)} st die Fläche unter der Kurve $\varphi$ von \ma{- \infty} bis $y$.
 \end{bem}
 
 
@@ -311,17 +315,17 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \end{equation}
     Verteilungsfunktion:
     \begin{equation}
-        \Phi(y) \rightarrow \begin{cases}
+        \vfkt(y) \rightarrow \begin{cases}
                                 0 & \text{für } y \rightarrow - \infty  \\
                                 1 & \text{für } y \rightarrow \infty
         \end{cases}\label{eq:equation6}
     \end{equation}
     gerade Funktion:
     \begin{equation}
-        \Phi(0) = \frac{1}{2}\label{eq:equation7}
+        \vfkt(0) = \frac{1}{2}\label{eq:equation7}
     \end{equation}
     \begin{equation}
-        \Phi(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (y)}{f(y)} dy = 1 - \Phi(-z)\label{eq:equation8}
+        \vfkt(z) = \int_{- \infty}^z \varphi(x) \dx = 1 - \int_z^{\infty} \varphi(x) \dx = 1 - \int_{- \infty}^{-z} \oub{\varphi (y)}{f(y)} dy = 1 - \vfkt(-z)\label{eq:equation8}
     \end{equation}
     \txo{($y = -z$)} \\
     Illustration in Abbildung~\ref{fig:moivrelaplaceGlocke}.
@@ -401,13 +405,13 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
         & = \pe(\lceil \frac{3n}{10} \rceil -1  < S_n \leq \lfloor \frac{7n}{10} \rfloor) &
         \text{(weil $S_n$ ganzzahlig ist)} \\
         & = \pe ( a < \frac{S_n - np}{\sqrt{npq}} \leq b ) & \text{(Standardisieren, q = 1 - p = 1/3)} \\
-        & \overset{\txo{*}}{\approx} \phi(b) - \phi(a) & \text{(Satz von de Moivre-Laplace)}\\
-        & \approx \phi(0.77) - 0 \\
+        & \overset{\txo{*}}{\approx} \vfkt(b) - \vfkt(a) & \text{(Satz von de Moivre-Laplace)}\\
+        & \approx \vfkt(0.77) - 0 \\
         & \approx 0.7794v & (Tabelle)
     \end{align*}
     \[
         \txo{
-            * \intab \varphi(x) \dx = \phi(b) - \phi(a)
+            * \intab \varphi(x) \dx = \vfkt(b) - \vfkt(a)
         }
     \]
     mit
@@ -422,7 +426,7 @@ Das Resultat wirft einige Fragen auf:
     \textbf{Warum spielt die untere Grenze a, die von den 30\% herrührt, praktisch keine
     Rolle?} \txc{(2026)}
 
-    \paragraph{1. Antwort:} $\phi (a) \approx \phi(-9) = 1 - \phi(9)$ und $\phi(9)$ ist so nah an 1, dass wir diesen
+    \paragraph{1. Antwort:} $\phi (a) \approx \vfkt(-9) = 1 - \vfkt(9)$ und $\vfkt(9)$ ist so nah an 1, dass wir diesen
     Wert nicht einmal in der Tabelle finden .
     .
     . \\
@@ -456,7 +460,7 @@ Das Resultat wirft einige Fragen auf:
         \pe(A_n) & = \pe(\lceil \frac{3n}{10} \rceil -1  < S_n \leq \lfloor \frac{7n}{10} \rfloor) \\
         & \pe(\lceil \frac{3n}{10} \rceil \txo{- \frac{1}{2}}  < S_n \leq \lfloor \frac{7n}{10} \rfloor \txo{+
         \frac{1}{2}} ) & \text{(weil $S_n$ ganzzahlig ist)} \\
-        & \approx \phi(0.86) \approx 0.8051 & (Tabelle)
+        & \approx \vfkt(0.86) \approx 0.8051 & (Tabelle)
     \end{align*}
     \txc{Bingo!} \\
     Beachte, dass die Stetigkeitskorrektur nicht immer besser ist (siehe Hausaufgaben).
@@ -483,8 +487,8 @@ Das Resultat wirft einige Fragen auf:
         & = \pe(89 < S_n \leq n ) & \text{(triviale obere Schranke)} \\
         & = \pe(89.5 < S_n \leq n ) & (S_n\text{ ganzzahlig, Stetigkeitskorrektur)} \\
         & \pe( c_n < \frac{S_n - np}{\sqrt{npq}} \leq d_n ) & (Standardisieren) \\
-        & \approx \phi(d_n) - \phi(c_n) & \text{(Satz von de Moivre-Laplace)} \\
-        & = \phi(d_n) - [1- \phi( \oub{-c_n}{>0} )] \approx 0.8212 & (Tabelle)
+        & \approx \vfkt(d_n) - \vfkt(c_n) & \text{(Satz von de Moivre-Laplace)} \\
+        & = \vfkt(d_n) - [1- \vfkt( \oub{-c_n}{>0} )] \approx 0.8212 & (Tabelle)
     \end{align*}
     mit \[
             c_n = \frac{89.5 - np}{\sqrt{npq}} \approx -0.92 \quad und \quad d_n = \frac{nq}{\sqrt{npq}} 0 \sqrt{\frac{nq}{p}} \approx 8.43.
@@ -497,16 +501,16 @@ Das Resultat wirft einige Fragen auf:
     \[
         \pe (s_n > c) = \pe\left(
         \frac{c-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{n-np}{\sqrt{npq}}
-        \right) \approx 1 - \phi\left(\frac{c-np}{\sqrt{npq}}\right)
+        \right) \approx 1 - \vfkt\left(\frac{c-np}{\sqrt{npq}}\right)
     \]
     und
     \[
         \pe (s_n \leq d) = \pe\left(
         \frac{-1-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{d-np}{\sqrt{npq}}
-        \right) \approx \phi\left(\frac{d-np}{\sqrt{npq}}\right)
+        \right) \approx \vfkt\left(\frac{d-np}{\sqrt{npq}}\right)
     \]
     weil für große n
     \[
-        \phi\left(\frac{-1-np}{\sqrt{npq}}\right) \approx 0 \quad und \quad \frac{n-np}{\sqrt{npq}} \approx 1
+        \vfkt\left(\frac{-1-np}{\sqrt{npq}}\right) \approx 0 \quad und \quad \frac{n-np}{\sqrt{npq}} \approx 1
     \]
 \end{bem}

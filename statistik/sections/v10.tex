@@ -3,3 +3,73 @@
 
 % \chapter{Grenzwertsätze} #2
 %\untit{Vorlesung 20. Juni 2025 (V10 2025)}
+\untit{Vorlesung 18. Juni 2026 (V09 2026)}
+
+
+\section*{Lernziele}
+\begin{itemize}
+    \item Zentraler Grenzwertsatz:
+    Aussage formulieren k¨onnen and anwenden k¨onnen
+    \item Poissonscher Grenzwertsatz:
+    Aussage formulieren k¨onnen and anwenden k¨onnen
+    \item Wann wird welche Approximation verwendet?
+\end{itemize}
+
+\begin{er}
+    \textbf{Satz von de Moivre-Laplace}\label{er:mlp} \txc{(2026)} \\
+    Sei $S_n$ die Anzahl der Erfolge in einem n-fach unabhängig wiederholten Bernoulli-Experiment mit
+    Erfolgswahrscheinlichkeit $p \in (0,1)$. \\
+    Dann gilt f¨ur jede Wahl von Konstanten a, b mit $- \infty < a < b < \infty$
+    \[
+        \lim_{n \rightarrow \infty} \pe \big( a < \frac{S_n - np}{\sqrt{npq}} \leq b \big) = \frac{1}{\sqrt{2 \pi}} \intab e^{-x^{2} / 2} dx
+    \]
+    F¨ur große n folgt insbesondere, dass
+    \[
+        \pe(np - c < S_n \leq np +c ) \approx
+        \txc{\int^{c / \sqrt{npq}}_{-c / \sqrt{npq}} \underbrace{ \frac{1}{\sqrt{2 \pi}} e^{-x^{2} / 2}}_{\vfktname} dx =}
+        \frac{1}{\sqrt{2 \pi}} \int^{c / \sqrt{npq}}_{-c / \sqrt{npq}} e^{-x^{2} / 2} dx
+        = 2 \vfkt (\frac{c}{\sqrt{npq}}) -1
+    \]
+    \txc{
+        Das folgt direkt aus dem allgemeinen Satz, wenn man die Konstanten a und b passend wählt. \\
+        Denn die WS für  $np-c < S_n \leq np+c$ ist äquivalent für die von $-c < S_n - np \leq c$.
+        Weil $\sqrt{npq} > 0$ (und das ist gegeben, weil $p \in (0,1)$, also
+        $p$ ist echt größer als 0 und echt kleiern als 1;
+        $n \leq 1$ ist die Anzahl der Versuche;
+        $q = 1-p$ und wir wissen ja bereits, dass
+        $p$ echt kleiner 1, also
+        $q > 0$), kann man dadurch teilen und das hat dann die passende Form, um Moivre-Laplace anzuwenden:
+        \[
+            \frac{-c}{\sqrt{npq}} < \frac{S_n - np}{\sqrt{npq}} \leq \frac{c}{\sqrt{npq}}
+        \]
+    Und die Gleichung ergibt sich aus
+    \[
+        \vfkt \left(\frac{c}{\sqrt{npq}}\right) - \vfkt \left(-\frac{c}{\sqrt{npq}}\right) = \vfkt \left(\frac{c}{\sqrt{npq}}\right) - \left(1 - \vfkt \left(\frac{c}{\sqrt{npq}}\right)\right) = 2\vfkt \left(\frac{c}{\sqrt{npq}}\right) - 1
+    \]
+    }
+   \begin{itemize}
+       \item  Ist $c > 0$ nicht von n abh¨angig, so geht die Ws. mit $n \rightarrow \infty$ gegen Null
+       \txc{(c ist eine feste Konstante, hängt nicht von nn
+       n ab)}
+       \item Ist $ 0 < c << \sqrt{n}$ , so geht die Ws. mit $n \rightarrow \infty$ immer noch gegen Null
+       \txc{(c wächst, aber langsamer als $\sqrt{n}$)}
+       \item Relevanter Beitrag, d.h., Ws. gr¨oßer als null, nur f¨ur $c \approx \sqrt{n}$ (oder gr¨oßer)
+       \txc{(c wächst in derselben Größenordnung wie $\sqrt{n}$))}
+   \end{itemize}
+    \txc{
+        Das erklärt, wie sich die Wahrscheinlichkeit $\mathbb{P}(np-c < S_n \leq np+c) \approx 2\Phi\left(\frac{c}{\sqrt{npq}}\right) - 1$
+        verhält, je nachdem wie schnell c mit n wächst (oder eben nicht wächst).
+    }
+\end{er}
+
+\komm{
+Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Normalapproximation schlecht, und man sollte lieber exakt mit der Binomialverteilung rechnen (oder mit der Poisson-Approximation, falls
+    p sehr klein ist). % TODO notizen.txt
+}
+
+
+
+
+
+
+
