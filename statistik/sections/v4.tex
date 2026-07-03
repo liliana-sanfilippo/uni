@@ -3,8 +3,9 @@
 
 \chapter{Zufallsvariablen und ihre Verteilung}\label{ch:zufallsvariablen-und-ihre-verteilung}
 \untit{Vorlesung 09.05.2025 (V04 2025)}
+\section{Die Verteilung einer Zufallsvariablen}
 \begin{bsp}
-    \textbf{n-faches Werfen einer fairen Münze} \\
+    \textbf{n-faches Werfen einer fairen Münze} \txc{(2025)}  \\
     \[
         \glssymbol{eraum} _n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = \left(\frac{1}{2}\right)^n \faoio \txt{(Gleichverteilung)}
     \]
@@ -27,7 +28,7 @@
 
 \begin{defi}
     \label{def:zv}
-    \textbf{\gls{zv}} \\
+    \textbf{\gls{zv}} \txc{(2025)}  \\
     Für einen \gls{wraum} $\wraum$ und eine Menge $E \neq \emptyset$ nennen wir eine messbare Abbildung
     \[
         X: \glssymbol{eraum}  \rightarrow E
@@ -38,7 +39,7 @@
 
 \begin{defi}
     \label{def:verteilung-zv}
-    \textbf{Verteilung einer \gls{zv}}\\
+    \textbf{Verteilung einer \gls{zv}} \txc{(2025)}  \\
     Sei $X$ eine $E$-wertige \gls{zv} auf $\wraum$
     \[
         \pe_X(B) \coloneqq  \pe(\kl{\oio : X(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(X \in B)}{Kurzschreibweise}
@@ -47,8 +48,8 @@
 \end{defi}
 \komm{\defirefman{verteilung-zv}: Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also
 \textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
-\begin{lem}
-    Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
+\begin{lem} \txc{(2025)} \\
+Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
 
     \paragraph{Beweis.}
     \[
@@ -61,7 +62,7 @@
 \end{lem}
 
 
-\section{Notationen}\label{sec:notationen}
+\section{Notationen}\label{sec:notationen} \txc{(2025)}
 \[
     \pe(X \in B) = \pe(\kl{\oio: X(\glssymbol{elementarereignis}) \in B})
 \]
@@ -69,15 +70,15 @@ Falls $B$ ein Intervall ist:
 \[
     \pe(X \geq b), \quad \pe(a < X \leq b) , \dots
 \]
-\begin{defi} \label{def:wert-bild-e}
+\begin{defi} \textbf{Wertebereich} \txc{(2025)}  \label{def:wert-bild-e} \\
     Geg.:
     \[
         X: \glssymbol{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
     \]
     Dann heißt $E$ der Wertebereich und $X(\glssymbol{eraum} )\coloneqq  \kl{X(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
 \end{defi}
-\begin{bsp} \defirefman{wert-bild-e}
-    \txo{
+\begin{bsp} \defirefman{wert-bild-e} \txc{(2025)}
+\txo{
         \[
             S_n : \glssymbol{eraum} _n \rightarrow \kl{0,\dots,n}
         \]
@@ -86,11 +87,11 @@ Falls $B$ ein Intervall ist:
         \]
     }
 \end{bsp}
-\begin{bem} \defirefman{wert-bild-e} \\
+\begin{bem} \defirefman{wert-bild-e} \txc{(2025)}  \\
     $X(\glssymbol{eraum} ) \subset E$ gilt immer.
 \end{bem}
 \komm{Denn $X(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
-\begin{bem} \defirefman{wert-bild-e} \\
+\begin{bem} \defirefman{wert-bild-e} \txc{(2025)}  \\
     Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
     \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
     $X: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
@@ -108,11 +109,23 @@ Falls $B$ ein Intervall ist:
 \komm{Zu jedem Wahrscheinlichkeitsmaß auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
 aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
 
+\section{Zufallsvariablen mit abzählbarem Bildbereich}
 
+\paragraph{Hier fehlt was} % TODO
+
+\section{Zufallsvariablen mit Dichte}
 \begin{defi}
-    \textbf{\dichte einer \gls{zv}} \\
+    \textbf{\dichte einer \gls{zv}} \txc{(2025)}   \\
     Gegeben \dichte \glssymbol{dichte} \\
 \end{defi}
 
-\paragraph{Hier fehlt was}
+\paragraph{Hier fehlt was} % TODO
+
+\section{Mehrdimensionale Zufallsvariablen und ihre gemein-
+same Verteilung: Abzählbare Bildbereiche}
+\paragraph{Hier fehlt was} % TODO
+
+\section{Mehrdimensionale Zufallsvariablen und ihre gemein-
+same Verteilung: Dichten}
+\paragraph{Hier fehlt was} % TODO 
 \newpage
