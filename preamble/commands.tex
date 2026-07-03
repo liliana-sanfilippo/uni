@@ -156,10 +156,12 @@
     }{Ereignis C}
 }
 
-\newcommand{\wfk}[0]{
-    \pdftooltip{
-        \glssymbol{wfk}
-    }{Zähldichte / Wahrscheinlichkeitsfunktion}
+\newcommand{\wfk}{%
+    \ifmmode
+        \text{\pdftooltip{\glssymbol{wfk}}{Zähldichte / Wahrscheinlichkeitsfunktion}}%
+    \else
+        \pdftooltip{\glssymbol{wfk}}{Zähldichte / Wahrscheinlichkeitsfunktion}%
+    \fi
 }
 \newcommand{\vfkt}[0]{
     \pdftooltip{
