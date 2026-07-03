@@ -194,13 +194,13 @@
                 minimum size = 3cm,
                 fill=accdarklight!80}]
                 % Set A
-                \node[set,label={135:$\erga$}] (\erga) at (0,0) {};
+                \node[set,label={135:$\erga$}] (A) at (0,0) {};
 
                 % Set B
-                \node[set,label={45:$\ergb$}] (\ergb) at (1.8,0) {};
+                \node[set,label={45:$\ergb$}] (B) at (1.8,0) {};
 
                 % Set C
-                \node[set,label=$\ergc$] (\ergc) at (0.9,1.5) {};
+                \node[set,label=$\ergc$] (C) at (0.9,1.5) {};
 
                 % Intersection
                 \begin{scope}
@@ -294,16 +294,16 @@
                 \node [circle,
                 fill=accdarklight!50,
                 minimum size =3cm,
-                label={135:$\erga_1$}] (\erga) at (0,0){};
+                label={135:$\erga_1$}] (A) at (0,0){};
                 \node [circle,
                 fill=accdarklight!50,
                 minimum size =3cm,
-                label={45:$\erga_3$}] (\ergc) at (3.6,0){};
+                label={45:$\erga_3$}] (C) at (3.6,0){};
 
                 \node [circle,
                 fill=accdarklight!50,
                 minimum size =3cm,
-                label={90:$\erga_2$}] (\ergb) at (1.8,0){};
+                label={90:$\erga_2$}] (B) at (1.8,0){};
                 % Circles outline
                 \draw[black,thick] (0,0) circle(1.5cm);
                 \draw[black,thick] (1.8,0) circle(1.5cm);
