@@ -26,10 +26,10 @@
 \subsection*{Begriffe}
 
 \begin{defi}
-    \label{defi:elementarereignis}
-    \textbf{\Gls{elementarereignis} \ele}  \txc{(2025)} \\
+    \label{def:elementarereignis}
+    \textbf{\Gls{elementarereignis} $\ele$}  \txc{(2025)} \\
     Möglicher Ausgang eines Zufallsexperiments. \\
-    Es ist üblich, für Elementarereignisse den kleinen griechischen Buchstaben \ele (omega) zu verwenden.
+    Es ist üblich, für Elementarereignisse den kleinen griechischen Buchstaben $\ele$ (omega) zu verwenden.
     Davon weichen wir in konkreten Situationen manchmal ab.
     So schreiben wir zum Beispiel auch $k$, wenn das Elementarereignis eine natürliche Zahl ist, oder $x$, wenn es
     eine reelle Zahl ist.
@@ -45,7 +45,7 @@
 
 
 \begin{defi}
-    \label{defi:eraum}
+    \label{def:eraum}
     \textbf{\Gls{eraum}} $\eraum$  \txc{(2025)}  \\
     Die Menge aller Elementarereignisse $\eraum  \neq \emptyset$ ist die Menge aller möglichen Ausgänge
     eines Zufallsexperiments. \\
@@ -57,7 +57,7 @@
 \end{defi}
 
 \begin{bsp}
-    \defirefman{defi:eraum}  \txc{(2025)}
+    \defirefman{def:eraum}  \txc{(2025)}
     \begin{itemize}
         \item \textbf{Würfeln:}  $\eraum  = \{1,\dots.,6\}$ oder $\eraum  = \{ wuerfelsymbole \}$ \\
         Die Modellierung durch Würfelsymbole zeigt, daß es beim Modellieren wichtig ist anzugeben,
@@ -87,10 +87,10 @@ Dies führt zur folgenden Definition.
 
 
 \begin{defi}
-    \label{defi:ereignis} \textbf{Ereignis} $A$  \txc{(2025)}  \\
-    (Messbare) Teilmenge des Ereignisraums $A \subseteq \eraum  $(
-    $A = \emptyset, A = \eraum )$ sind zulässig) \\
-    Sprechweise: $\ele \in A$ bedeutet ``A ist eingetroffen''
+    \label{def:ereignis} \textbf{Ereignis} $\erga$  \txc{(2025)}  \\
+    (Messbare) Teilmenge des Ereignisraums $\erga \subseteq \eraum$ (
+    $A = \emptyset, \erga = \eraum )$ sind zulässig) \\
+    Sprechweise: $\ele \in \erga$ bedeutet ``$\erga$ ist eingetroffen''
 \end{defi}
 \noindent Im Fall, dass der Ereignisraum $\eraum \subseteq \rz^n$ weder eine endliche noch eine abzählbar unendliche
 Menge ist, beschränken wir uns auf Ereignisse, die Intervalle oder bekannte geometrische Figuren wie Dreieck,
@@ -100,10 +100,10 @@ Und so weiter.
 Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integrationstheorie zu vermeiden.
 
 \begin{bem}
-    \defirefman{defi:ereignis}  \txc{(2026)}
+    \defirefman{def:ereignis}  \txc{(2026)}
     \begin{itemize}
-        \item Ein Ereignis $A \subseteq \eraum$ ist also ein (messbares) Element der Potenzmenge $\potm(\eraum)$
-        von $\eraum$, das heißt, $A \in \potm(\eraum)$.
+        \item Ein Ereignis $\erga\subseteq \eraum$ ist also ein (messbares) Element der Potenzmenge $\potm(\eraum)$
+        von $\eraum$, das heißt, $\erga\in \potm(\eraum)$.
         \item Ist $\ele \in \eraum$ ein Elementarereignis, so ist die
         einelementige Menge $\{\ele\} \in \potm(\eraum)$
         ein Ereignis in $\eraum$.
@@ -115,8 +115,8 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \txc{(2025)}
     \defirefman{ereignis}
     \begin{itemize}
-        \item \textbf{Würfeln} einer geraden Zahl: \[A = \{2,4,6\}, \quad \ele = 4 \Rightarrow \ele \in A\] Wir sagen: ``gerade Zahl gewürfelt''
-        \item \textbf{Zeitmessung:} $A = [100, 200] \subset \eraum  = [0,\infty)$
+        \item \textbf{Würfeln} einer geraden Zahl: \[\erga= \{2,4,6\}, \quad \ele = 4 \Rightarrow \ele \in \erga\] Wir sagen: ``gerade Zahl gewürfelt''
+        \item \textbf{Zeitmessung:} $\erga= [100, 200] \subset \eraum  = [0,\infty)$
     \end{itemize}
 \end{bsp}
 
@@ -133,16 +133,16 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 
 
 \begin{defi}
-    \label{defi:zaehldichte}
+    \label{def:zaehldichte}
     \textbf{Zähldichte / $\wfk$} \txc{(2025)} \\
     Sei $\eraum  \neq \emptyset$ eine abzählbare Menge.
     \begin{enumerate}
         \item Eine Abbildung $\wfk : \eraum  \rightarrow [0,1]$ heißt mit \[
                                                                               \underbrace{\sum_{\ele \in \eraum } \wfk (\ele) = 1}_{\text{\txo{Normierung}}}
         \] \underline{Zähldichte / \gls{wfk}} auf $\eraum $. \\
-        \item Die \gls{ws} $\pe(A)$ einer Ereignisses $A \subseteq \eraum $ ist bei gegebener \gls{wfk} $\wfk$
+        \item Die \gls{ws} $\pe(\erga)$ einer Ereignisses $\erga\subseteq \eraum $ ist bei gegebener \gls{wfk} $\wfk$
         definiert durch
-        \[ \pe(A)\coloneqq \sum_{w \in A} \wfk(\ele)\]
+        \[ \pe(\erga)\coloneqq \sum_{w \in \erga} \wfk(\ele)\]
         \noindent $\pe$ heißt \gls{wmaß} und liegt immer zwischen Null und 1
     \end{enumerate}
 \end{defi}
@@ -158,7 +158,7 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 
 \begin{bem}
     \defirefman{zaehldichte} \txc{(2025)}
-    \[0 \leq \pe \leq 1, \quad \forall A \subseteq \eraum  \quad \txo{\underbrace{(\forall A \in \potm(\eraum )) }_{\potm(\eraum ) \text{Potenzmenge von } \eraum }} \]
+    \[0 \leq \pe \leq 1, \quad \forall \erga\subseteq \eraum  \quad \txo{\underbrace{(\forall \erga\in \potm(\eraum )) }_{\potm(\eraum ) \text{Potenzmenge von } \eraum }} \]
     $\pe$ ist eine Abb.
     \[
         \pe: \potm(\eraum ) \rightarrow [0,1] \quad  \text{ mit }  \pe(\emptyset) = 0, \quad  \pe(\eraum ) = 1
@@ -170,20 +170,20 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     Sei $\eraum \neq \emptyset$ eine abzählbare Menge und $\pe$ ein Wahrscheinlichkeitsmaß auf $\eraum$.
     Dann gelten:
     \begin{itemize}
-        \item $0 \leq \pe (A) \leq 1$ für alle $A \leq \potm(\eraum)$
+        \item $0 \leq \pe(\erga) \leq 1$ für alle $\erga\leq \potm(\eraum)$
         \item $\pe(\emptyset) = 0$
         \item $\pe(\eraum) = 1$
     \end{itemize}
 
     \paragraph{Beweis.}
     \begin{itemize}
-        \item Untere Schranke: Da $\pe(A) = \sum_{\wfk \in A} \wfk(\ele)$ gilt und alle Summanden nichtnegativ sind,
-        folgt $\pe(A) \geq 0$
+        \item Untere Schranke: Da $\pe(\erga) = \sum_{\wfk \in \erga} \wfk(\ele)$ gilt und alle Summanden nichtnegativ sind,
+        folgt $\pe(\erga) \geq 0$
         \item Obere Schranke: Aus
         \[
-            \pe(A) = \sum_{\ele \in A} \wfk(\ele) \leq \sum_{\ele \in \eraum} \wfk(\ele) = 1
+            \pe(\erga) = \sum_{\ele \in \erga} \wfk(\ele) \leq \sum_{\ele \in \eraum} \wfk(\ele) = 1
         \]
-        folgt $\pe(A) \leq 1$.
+        folgt $\pe(\erga) \leq 1$.
         Dabei haben wir in der Abschätzung erneuet verwendet, daß alle Summanden
         nichtnegativ sind.
         \item $\pe (\emptyset) = 0$ gilt gemäß Konvention aus \autoref{bem:konvention}.
@@ -193,7 +193,7 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 
 
 \begin{defi}
-    \label{defi:wraum}
+    \label{def:wraum}
     \textbf{\gls{wraum}}  \txc{(2025)}  \\
     $\underbrace{\wraum}_{\txo{(\eraum , \wfk)}}$ heißt \underline{\gls{wraum}}.
 \end{defi} %
@@ -201,14 +201,14 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 \begin{bem}
     \defirefman{wraum} \txc{(2025)}   \\
     Für $\eraum $ abzählbar: $\wfk$ legt $\pe$ eindeutig und umgekehrt!
-    \[P(A)=\sum_{\ele \in A} \wfk (\ele) \quad \forall A \in \potm(\eraum )\]
+    \[\pe(\erga)=\sum_{\ele \in \erga} \wfk (\ele) \quad \forall \erga \in \potm(\eraum )\]
     \[\wfk (\ele) = \pe(\underbrace{\{\ele\}}_{\txo{\text{1-elementige Menge}}}) \quad \forall \ele \in \eraum \]
 
     \paragraph{Länger aus dem Skript:}  \txc{(2026)}  Da es eine ein-eindeutige Zuordnung zwischen der
     Wahrscheinlichkeitsfunktion $\wfk$ und dem Wahrscheinlichkeitsmaß $\pe$ gibt, bezeichnen wir auch das Paar $\wraum$
     als Wahrscheinlichkeitsraum.
     Die Zuordnung von $\wfk$ zu $\pe$ ist direkt durch die Definition von $\pe$ in Definition
-    \autoref{defi:zaehldichte} gegeben.
+    \autoref{def:zaehldichte} gegeben.
     Für eine
     gegebene Wahrscheinlichkeitsfunktion erhalten wir so ein eindeutig bestimmtes Wahrscheinlichkeitsmaß.
     Ist ein Wahrscheinlichkeitsmaß $\pe$ gegeben, so ergibt sich die zugehörige Wahrscheinlichkeitsfunktion $\wfk$
@@ -224,14 +224,14 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
 \begin{bsp}
     \label{bsp:einmal-wuerfeln-i}
     \textbf{Einmal Würfeln} \txc{(2025)} \\
-    $\eraum  = \{1,..,6\}, \quad A = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
+    $\eraum  = \{1,..,6\}, \quad \erga = \{6\} \text{ (sechs gewürfel)}, \quad B = \{2,4,6\}$ (gerade Zahl). \\
     \textcolor{Orchid}{Dabei beudeute $\ele = k$, dass der Würfel $k$ Augen hat.}
     Wie wählen wir $\wfk$?
     \begin{enumerate}
         \item \textbf{fairer Würfel}:
         \[\wfk(k) = const \  \forall k \in \eraum \]
         \[\wfk (k) \coloneqq \frac{1}{6} \left( \text{ weil }\sum_{k=1} \wfk (k) \overset{!}{=} 1 \right)\]
-        $\pe(A) = \wfk(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \wfk(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
+        $\pe(\erga) = \wfk(a) = \frac{1}{6}, \quad \pe(B) \sum_{k \in \{2,4,6\}} \wfk(k) = \frac{1}{6} \cdot \#B = \frac{3}{6} = \frac{1}{2}$
         \item  \textbf{gezinkter Würfel}: Seien
         \[\wfk(1) = \frac{1}{2}, \wfk(2) = \wfk(3) = \wfk(4) = \wfk(5) = \frac{1}{12}, \wfk(6)=\frac{1}{6}\]
         Probe: $\sum_{k=1}^6 \wfk(k) \overset{!}{=} 1$
@@ -252,15 +252,15 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
         \item \textbf{Ansatz}: $\eraum _1 = \{1,\dots,6\}^2 = \{(i,j): i,j \in \{1,\dots,6\}\}$  \\
         \textcolor{Orchid}{ Für $\ele = (i,j) \in \eraum _1$ bedeutet $i$ die Augenzahl des ersten Würfels und $j$ jene des zweiten Würfels.} \\
         Aus Symmetriegründen wählen wir $\wfk_1(\ele)$ konstant, also  \[\wfk_1(\ele) = \frac{1}{|\eraum _1|} = \frac{1}{36} \quad \forall \ele \in \eraum _1\]
-        \underline{ $A^{(1)}_k \leq \eraum _1$}: Augensumme ist $k$ \\
-        \underline{ Für $k \leq 1$ oder $k \leq 13$:} \[A^{(1)}_k = \emptyset \Rightarrow \pe_1 (A^{(1)}_k) = 0\]
+        \underline{ $\erga^{(1)}_k \leq \eraum _1$}: Augensumme ist $k$ \\
+        \underline{ Für $k \leq 1$ oder $k \leq 13$:} \[\erga^{(1)}_k = \emptyset \Rightarrow \pe_1 (\erga ^{(1)}_k) = 0\]
         \underline{Für $k = \{2,,12\}$:}
-        \[\pe_1 (A^{(1)}_2) = \pe_1 (\{(1,1)\}) = \wfk_1((1,1)) = \frac{1}{36}\]
-        \[\pe_1 (A^{(1)}_3) = \pe_1 (\{(1,2), (2,1)\}) = \wfk_1((1,2)) + \wfk_1((2,1)) = \frac{2}{36}\]
+        \[\pe_1 (\erga ^{(1)}_2) = \pe_1 (\{(1,1)\}) = \wfk_1((1,1)) = \frac{1}{36}\]
+        \[\pe_1 (\erga ^{(1)}_3) = \pe_1 (\{(1,2), (2,1)\}) = \wfk_1((1,2)) + \wfk_1((2,1)) = \frac{2}{36}\]
         usw\dots Es wird immer eines mehr \\
         \begin{tabular}{c|ccccccccccccc}
             $k$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
-            $\pe_1 (A^{(1)}_k)$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$
+            $\pe_1 (\erga ^{(1)}_k)$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$
             & $\frac{6}{36}$
             & $\frac{5}{36}$
             & $\frac{4}{36}$
@@ -268,7 +268,7 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
             & $\frac{2}{36}$
             & $\frac{1}{36}$
         \end{tabular} \\
-        Probe: \[\sum_{k=2}^{12} \pe_1 (A^{(1)}_k) = 1\]
+        Probe: \[\sum_{k=2}^{12} \pe_1 (\erga ^{(1)}_k) = 1\]
         \item \textbf{Ansatz}: ``Wir beachten die Reihenfolge beim Würfeln nicht'' \\
         $\eraum _2 = \{(i,j) \in \eraum _1: i \leq j\}$ \\
         \textcolor{Orchid}{ Dabei bedeute $\ele =(i,j)$, dass sowohl i alas auch j gewürfelt wurden. } \\
@@ -280,13 +280,13 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
             \[\wfk_2((i,i)) = \frac{1}{36}\]
         \end{itemize}
         Probe machen!
-        \[A^{(2)}_k = \{(i,j) \in \eraum _2: i+j = k\}\]
+        \[\erga^{(2)}_k = \{(i,j) \in \eraum _2: i+j = k\}\]
         Exemplische Ausrechnung:
-        \[\pe_2(A^{(2)}_4) = \wfk_2((1,3)) + \wfk_2((2,2)) = \frac{2}{36} + \frac{1}{36} = \frac{3}{26}\]
+        \[\pe_2(\erga ^{(2)}_4) = \wfk_2((1,3)) + \wfk_2((2,2)) = \frac{2}{36} + \frac{1}{36} = \frac{3}{26}\]
         \item \textbf{Ansatz}: $\eraum _3$ = \{2,3,..,12\} \\
         Finde $\wfk_3$?
         $\rightarrow$ Verwende Tabelle aus dem 1.
-        Ansatz, denn $\wfk_3(k) = \pe(A^{(1)}_k)$ :  \\
+        Ansatz, denn $\wfk_3(k) = \pe(\erga ^{(1)}_k)$ :  \\
         \begin{tabular}{c|ccccccccccccc}
             $k$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
             \textcolor{Aquamarine}{$\wfk_3(k)$} & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$
@@ -327,14 +327,14 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     Dann gelten:
     \begin{itemize}
         \item[(a)] $\wfk(\ele) = \frac{1}{\#\eraum } \quad \forall \ele \in \eraum $
-        \item[(b)] $\pe(A) = \frac{\#A}{\#\eraum } \forall A \in \pe(\eraum )$ \txo{($\forall A \subseteq \eraum $)}
+        \item[(b)] $\pe(\erga) = \frac{\#A}{\#\eraum } \forall \erga \in \pe(\eraum )$ \txo{($\forall \erga \subseteq \eraum $)}
     \end{itemize}
 
     \paragraph{Beweis.}
     \begin{itemize}
         \item[(a)] \(1 = \sum_{\ele \in \eraum } \wfk(\ele) = \) \footnote{Wir dürfen annehmen, dass ein $c \in [0,1]$ existiert mit $\wfk(\ele) = c \quad \forall \ele \in \eraum $}$\ c \cdot \# \eraum  \Rightarrow c = \frac{1}{\#\eraum }$
-        \item[(b)] $\pe(A) = \sum_{\ele \in A } \wfk(\ele) \overset{(a)}{=} \frac{\#A}{\# \eraum }$ \\
-        \txo{$\pe(A)$ ist die Anzahl der günstigen Ausgänge, geteilt durch die Anzahl aller möglichen Ausgänge} \\
+        \item[(b)] $\pe(\erga) = \sum_{\ele \in \erga } \wfk(\ele) \overset{(a)}{=} \frac{\#A}{\# \eraum }$ \\
+        \txo{$\pe(\erga)$ ist die Anzahl der günstigen Ausgänge, geteilt durch die Anzahl aller möglichen Ausgänge} \\
 
     \end{itemize}
 \end{lem}

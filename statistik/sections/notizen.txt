@@ -1,0 +1,50 @@
+In der Praxis läuft es meistens auf folgende konkrete Punkte hinaus:
+
+**1. Erkennen, wann die Approximation überhaupt sinnvoll ist**
+
+Bevor du die Formel $\mathbb{P}(np-c < S_n \leq np+c) \approx 2\Phi\left(\frac{c}{\sqrt{npq}}\right) - 1$ anwendest, solltest du kurz prüfen, ob $n$ groß genug ist. Typische Faustregeln, die in Aufgaben verlangt werden:
+$$npq \geq 9 \quad \text{(manchmal auch } npq \geq 10 \text{ oder Faustregel } n \geq 30 \text{)}$$
+
+Ist $npq$ zu klein, ist die Normalapproximation schlecht, und man sollte lieber exakt mit der Binomialverteilung rechnen (oder mit der Poisson-Approximation, falls $p$ sehr klein ist).
+
+**2. Der typische Aufgabentyp: "Wie oft muss man würfeln/prüfen/messen, damit..."**
+
+Die Fallunterscheidung mit $c$ taucht meistens in Aufgaben auf wie:
+
+> "Wie viele Bernoulli-Versuche $n$ braucht man mindestens, damit $\mathbb{P}(|S_n - np| \leq c) \geq 0{,}95$ gilt?"
+
+oder umgekehrt:
+
+> "Wie stark weicht $S_n$ typischerweise vom Erwartungswert $np$ ab?"
+
+Hier ist die Erkenntnis aus den drei Fällen entscheidend: Du darfst $c$ nicht fest lassen, wenn $n$ wächst — sonst wird die Wahrscheinlichkeit trivial (geht gegen 0 oder du bekommst keine sinnvolle Aussage). Stattdessen setzt man in der Praxis oft an:
+$$c = k \cdot \sqrt{npq}$$
+für ein festes $k$, und liest dann $2\Phi(k) - 1$ aus der Tabelle ab.
+
+**3. Konkretes Rechenschema, das in Aufgaben immer wiederkehrt**
+
+Willst du z.B. $\mathbb{P}(|S_n - np| \leq c)$ für ein gegebenes $n, p, c$ berechnen:
+
+1. Berechne $q = 1-p$
+2. Berechne $\sqrt{npq}$
+3. Berechne $k = \frac{c}{\sqrt{npq}}$
+4. Schlage $\Phi(k)$ in der Tabelle nach
+5. Ergebnis: $2\Phi(k) - 1$
+
+Willst du umgekehrt ein **c** oder ein **n** bestimmen, damit eine Wahrscheinlichkeit einen Zielwert (z.B. $0{,}95$) erreicht:
+
+1. Löse $2\Phi(k) - 1 = 0{,}95 \Rightarrow \Phi(k) = 0{,}975$
+2. Lies aus der Tabelle ab: $k \approx 1{,}96$
+3. Setze $k = \frac{c}{\sqrt{npq}}$ und löse nach der gesuchten Größe auf ($c$ oder $n$)
+
+**4. Wofür genau die drei Fälle in der Klausur relevant sind**
+
+Die drei Fälle sind meist eine **Verständnisfrage** oder eine **Begründung**, warum man $c$ überhaupt proportional zu $\sqrt{n}$ wählen "muss", damit die Aussage nicht trivial wird. Typische Prüfungsfrage dazu:
+
+> "Warum wählt man in der Praxis $c$ proportional zu $\sqrt{n}$ und nicht konstant?"
+
+Antwort: Weil sonst (Fall 1 und 2) die Wahrscheinlichkeit im Limes gegen 0 geht und die Aussage nutzlos wird — man würde behaupten, $S_n$ läge fast sicher außerhalb jedes festen Intervalls um $np$, was zwar richtig, aber uninteressant ist. Erst mit $c \sim \sqrt{n}$ bekommt man eine nicht-triviale, informative Wahrscheinlichkeitsaussage.
+
+**5. Faustregel für die eigene Intuition**
+
+Wenn du in einer Aufgabe siehst, dass $c$ mit einem festen Faktor mal $\sqrt{n}$ (oder direkt mal $\sqrt{npq}$) angegeben ist, weißt du sofort: Das Ergebnis wird ein fester Wert zwischen 0 und 1 sein (kein Grenzfall). Wird $c$ dagegen absolut/konstant angegeben (z.B. "$c=5$") bei wachsendem $n$, ist das oft genau der Punkt, an dem die Aufgabe von dir verlangt zu erkennen, dass die Wahrscheinlichkeit gegen 0 geht.
