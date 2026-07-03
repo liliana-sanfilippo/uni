@@ -1053,18 +1053,10 @@ $\Var(X) \geq 0$
     Seien X, Y diskrete\txc{(?)}) Zufallsvariablen mit existierendem Erwartungswert, $a,b \in \rz$.
 
     \paragraph{(a)} $\Var(aX+b) = a^2 \Var(X)$
-    \begin{align*}
-        \Var(aX+b)
-    \end{align*}
-    \begin{align*}
-        \E{X}
-    \end{align*}
-    \begin{align*}
-        \E{(aX+b-\E{aX+b})^2}
-    \end{align*}
+
     \begin{align*}
         \txo{\Var(aX+b)} & \txo{ \E{ (aX+b - \E{aX+b} )^2 } } \\
-        & \txo{ \E{ (a (X_\E{X}  ))^2 } } \\
+        & \txo{ \E{ (a (X-\E{X}  ))^2 } } \\
         & \txo{ a^2 \E{(X- \E{X} )^2} } \\
         & \txo{= a^2 \Var(X)}
     \end{align*}
