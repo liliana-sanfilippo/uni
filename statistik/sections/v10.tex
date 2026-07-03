@@ -72,6 +72,17 @@ Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Norm
     \begin{align*}
         \pe(|\frac{1}{n} S_n - \E{X_1} \geq \epsilon|)
     \end{align*}
+    \txc{
+    Gesetz der großen Zahlen:
+    \[
+        \lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} S_n - \E{X_1} \mid \geq \epsilon) = 0 \quad \forall \epsilon > 0
+    \]
+    und Satz von de Moivre-Laplace
+    \[
+        \limnin \pe( a < \frac{S_n - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx \txo{ \ =
+            \intab \varphi(x) \dx}
+    \]
+    }
 \end{beo}
 
 
