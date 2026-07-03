@@ -57,7 +57,8 @@
        \txc{(c wächst in derselben Größenordnung wie $\sqrt{n}$))}
    \end{itemize}
     \txc{
-        Das erklärt, wie sich die Wahrscheinlichkeit $\mathbb{P}(np-c < S_n \leq np+c) \approx 2\Phi\left(\frac{c}{\sqrt{npq}}\right) - 1$
+        Das erklärt, wie sich die Wahrscheinlichkeit
+        $\pe(np-c < S_n \leq np+c) \approx 2\Phi\left(\frac{c}{\sqrt{npq}}\right) - 1$
         verhält, je nachdem wie schnell c mit n wächst (oder eben nicht wächst).
     }
 \end{er}
@@ -118,7 +119,11 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \begin{satz}
     \textbf{Zentraler Grenzwertsatz für Bernoulli-Variablen} \txc{(2026)} \\
     Sind die Zufallsvariablen $X_1, X_2, X_3, ...$ unabhängige Bernoulli-Variablen, so
-    gelten:
+    gelten: $\mathcal{M} = \E{X_i} = p$ und $\sigma^2 = \Var(X_1) = pq$ mit $q = 1 - p$
+    und es folgt
+    \[
+        \limnin  \pe \left(  a < \frac{S_n - n \mathcal{M}}{\sqrt{n \sigma^2}} \leq b \right) = \pe \left(  a < \frac{S_n - n p}{\sqrt{n pq}} \leq b \right) = \vfkt(b) - \vfkt(a)
+    \]
 \end{satz}
 
 
