@@ -1,8 +1,6 @@
 %! Author = lili
 %! Date = 4/27/26
 
-\chapter{Rechnen mit Wahrscheinlichkeiten}
-\label{ch:rechnen-mit-wahrscheinlichkeiten}
 \untit{Vorlesung 25.04.2025 (V02 2025)}
 % TODO ergänzen durch skript 2026
 \section*{Lernziele}
@@ -10,14 +8,14 @@
     \item Unterschied zwischen disjunkten und paarweise disjunkten Mengen
     \item Rechenregeln für Wahrscheinlichkeiten
     \begin{itemize}
-        \item Komplementär Wahrschienlichkeit
+        \item Komplementär Wahrscheinlichkeit
         \item Ein- und Ausschlussprinzip
         \item Spezialfall paarweise disjunkter Mengen
     \end{itemize}
 \end{itemize}
 \section{Wahrscheinlichkeitsräume, deren Ereignisraum nicht abzählbar ist}\label{sec:wahrscheinlichkeitsraume-deren-ereignisraum-nicht-abzahlbar-ist}
 \begin{bsp}
-    \textbf{\gls{wraum}} \\
+    \textbf{\gls{wraum}}  \txc{(2025)} \\
     Stoppen einer Zeit bis zu einer Stunde in ms.
     \begin{align*}
         \eraum  & = \{0,1,\dots,360 000\} & \text{(Zeit in ms)} \\
@@ -36,16 +34,16 @@
     Um auch modellieren zu können, dass Intervalle \gls{ws} haben, die nicht \texttt{iwas} von ihrer Länge
     abgängen, arbeiten wir mit R-Integralen. \texttt{R-Integral?}
 \end{bsp}
-\komm{TODO: Was genau ist $\tilde {\eraum} $ ? }
+\komm{TODO: Was genau ist $\tilde {\eraum} $ ? } % TODO
 \begin{defi} \label{def:dichte}
-    \textbf{\dichte} \\
+    \textbf{\dichte} \txc{(2025)} \\
     EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt
     \underline{\dichte}, sofern
     \[
         \int_{- \infty}^{\infty} f (x) dx = 1
     \]
 \end{defi}
-\begin{bem} \defirefman{dichte}
+\begin{bem} \defirefman{dichte}  \txc{(2025)}
 \begin{itemize}
     \item  % a
     \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert für alle $(a, b \in \mathbb{R})$
@@ -71,7 +69,7 @@
 \end{itemize}
 \end{bem}
 \begin{defi}
-    \textbf{\gls{wraum}} \\
+    \textbf{\gls{wraum}} \txc{(2025)} \\
     Sei eine \dichte $\dcht \geq 0$ gegeben.
     Wir setzen
     \begin{align*}
@@ -89,7 +87,7 @@
     \texttt{fehlt}
 \end{bsp}
 \begin{defi}
-    \textbf{Uniforme Verteilung} (Kontinuumsäquivalent zu gleichverteilt) \\
+    \textbf{Uniforme Verteilung} (Kontinuumsäquivalent zu gleichverteilt) \txc{(2025)} \\
     Die uniforme Verteilung auf einem beschränkten Intervall $I \subseteq \mathbb{R}$ ist gegeben durch eine \dichte
     \[
         \dcht(x) = \begin{cases}
@@ -99,7 +97,7 @@
     wobei $\mid I \mid $ die Intervalllänge bezeichnet.
 \end{defi}
 \begin{defi}
-    \textbf{Exponentialverteilung} \label{defi:exponentialverteilung} \\
+    \textbf{Exponentialverteilung} \label{defi:exponentialverteilung} \txc{(2025)}\\
     Die Exponentialverteilung zum Parameter $\alpha > 0$ ist gegeben durch die \dichte
     \begin{equation}
         \label{eq:Exponentialverteilung}
@@ -109,7 +107,7 @@
         \end{cases}
     \end{equation}
 \end{defi}
-\begin{bem} \defirefman{exponentialverteilung} \\
+\begin{bem} \defirefman{exponentialverteilung}  \txc{(2025)} \\
     \ref{eq:Exponentialverteilung} ist eine \dichte:
     \begin{itemize}
         \item $f  \geq 0 $
@@ -137,8 +135,13 @@
         \end{align*}
     \end{itemize}
 \end{bem}
+
+\chapter{Rechnen mit Wahrscheinlichkeiten}
+\label{ch:rechnen-mit-wahrscheinlichkeiten}
+\untit{Vorlesung 25.04.2025 (V02 2025)}
+\section{Mengenoperationen und Ereignisse}
 \begin{defi}
-    \textbf{Vereinigung/Schnitt} abzählbar vieler Mengen \\
+    \textbf{Vereinigung/Schnitt} abzählbar vieler Mengen \txc{(2025)} \\
     $I \subseteq \mathbb{N}$ Indexmenge. \\
     Für jedes $i \in I $ sei $A_i$:
     \begin{itemize}
@@ -152,7 +155,7 @@
 \end{defi}
 
 \begin{lem}
-    \textbf{Rechenregeln für Mengen}
+    \textbf{Rechenregeln für Mengen}  \txc{(2025)} \\
     Seien $A,B,C \subset \eraum $.
     \begin{figure}[H]
         \centering
@@ -226,7 +229,7 @@
 \end{lem}
 
 \begin{defi}
-    $A, B, A_1, A_2, \dots \subset \eraum $
+    $A, B, A_1, A_2, \dots \subset \eraum $ \txc{(2025)}
     \begin{itemize}
         \item[(a)] $A$ und $B$ heißen \underline{disjunkt} , wenn $A \cap B = \emptyset$
         \begin{figure}[H]
@@ -315,14 +318,15 @@
     \end{itemize}
 \end{defi}
 \begin{bem}
-    $\ $ \\
+    \txc{(2025)}\\
     paarweise disjunkt $\Rightarrow$ disjunkt \\
     $\underset{i}{\cup} A_i \subset A_1 \cap A_2 = \emptyset$
 \end{bem}
 \begin{bsp}
     \texttt{fehlt}
 \end{bsp}
-\begin{satz}
+\section{Erste Rechenregeln für Wahrscheinlichkeiten}
+\begin{satz}  \txc{(2025)} \\
     Seien $A, B, A_1, A_2, \dots \subset \eraum $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
     \begin{itemize}
         \item[(a)] Additivität: Seien $A_1, A_2, \dots$ paarweise disjunkt, dann gilt:
@@ -366,7 +370,7 @@
         \end{align*}
     \end{itemize}
 \end{satz}
-\begin{bem}
+\begin{bem}  \txc{(2025)} \\
     Sind $A, B$ disjunkt, so gilt nach (a): $\pe(A \dot\cup B)  = \pe(A) + \pe(B) $. \\
     Sind $A, B$ nicht disjunkt, so gilt nach (e): $\pe(A \cup B) = \pe(A) + \pe(B) - \pe(A \cap B)$. \\
     Sind $A, B, C$ paarweise disjunkt, so gilt nach (a): $\pe(A \cup B \cup C) \overset{(a)}{=} \pe(A) + \pe(B) + \pe(C) $. \\ \\
@@ -386,7 +390,7 @@
     \end{align*}
 \end{bem}
 \begin{satz}
-    \textbf{Ein- und Ausschlussprinzip} \\
+    \textbf{Ein- und Ausschlussprinzip}  \txc{(2025)} \\
     \[A_2,\dots, A_n \subset \eraum  \]
     \[\pe\left( \bigcup^n_{i=1} A_i \right) = \sum^n_{k = 1} (-1)^{k+1} \sum_{a \leq i_1 \leq \dots \leq i_k \leq k} \pe(A_{i_1} \cap \dots \cap A_{i_k}) \]
 \end{satz}
