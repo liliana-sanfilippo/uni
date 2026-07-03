@@ -75,7 +75,9 @@
 \newcommand{\faoio}[0]{ \quad \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} }
 \newcommand{\oio}[0]{\glssymbol{elementarereignis} \in \glssymbol{eraum}}
 \newcommand{\wraum}[0]{
-    \pdftooltip{\glssymbol{wraum}}{Wahrscheinlichkeitsraum}
+    \pdftooltip{
+        \glssymbol{wraum}
+    }{Wahrscheinlichkeitsraum}
 }
 \newcommand{\elem}[0]{\gls{elementarereignis}}
 \newcommand{\oub}[2]{\txo{
@@ -95,7 +97,11 @@
 }}
 \newcommand{\ma}[1]{\(#1\)}
 \newcommand{\mab}[1]{\[#1\]}
-\newcommand{\E}[1]{\pdftooltip{Erwartungswert}{\glssymbol{ew}[#1]}}
+\newcommand{\E}[1]{
+    \pdftooltip{
+        \glssymbol{ew}[#1]
+    }{Erwartungswert}
+}
 \newcommand{\dichte}[0]{\Gls{dichte} \index{Dichte}}
 \newcommand{\dcht}[0]{\glssymbol{dichte} \index{Dichte}}
 \newcommand{\Var}[0]{\pdftooltip{Varianz}{\glssymbol{varianz}}}
@@ -156,12 +162,10 @@
     }{Ereignis C}
 }
 
-\newcommand{\wfk}{%
-    \ifmmode
-        \text{\pdftooltip{\glssymbol{wfk}}{Zähldichte / Wahrscheinlichkeitsfunktion}}%
-    \else
-        \pdftooltip{\glssymbol{wfk}}{Zähldichte / Wahrscheinlichkeitsfunktion}%
-    \fi
+\newcommand{\wfk}[0]{
+    \pdftooltip{
+        \glssymbol{wfk}
+    }{Zähldichte / Wahrscheinlichkeitsfunktion}
 }
 \newcommand{\vfkt}[0]{
     \pdftooltip{
@@ -169,31 +173,34 @@
     }{Verteilungsfunktion der Standardnormalverteilung}
 }
 \newcommand{\vfktlong}[0]{
-    \pdftooltip{\glsdesc{vfkt}{Verteilungsfunktion der Standardnormalverteilung}
-    }
+    \pdftooltip{
+        \glsdesc{vfkt}
+    }{Verteilungsfunktion der Standardnormalverteilung}
 }
 \newcommand{\vfktname}[0]{
     \pdftooltip{
         \scriptsize{\gls{vfkt}
-    }{Verteilungsfunktion der Standardnormalverteilung}
+        }{Verteilungsfunktion der Standardnormalverteilung}
     }
 }
 \newcommand{\bernoulli}[0]{\Gls{bernoulli} \index{Bernoulli-Experiment}}
 \newcommand{\binomv}[0]{\Gls{binomv} \index{Binomialverteilung}}
 \newcommand{\Binomv}[0]{\glssymbol{binomv} \index{Binomialverteilung}}
-\newcommand{\ele}[0]{
+\newcommand{\ele}{%
     \pdftooltip{
-        \glssymbol{elementarereignis}{Elementarereignis}
-    }
+        \glssymbol{elementarereignis}
+    }{Elementarereignis}%
 }
 \newcommand{\potm}[0]{\glssymbol{potenz}}
 \newcommand{\eraum}[0]{
-    \pdftooltip{Ereignisraum}{
+    \pdftooltip{
         \glssymbol{eraum}
-    }
+    }{Ereignisraum}
 }
 \newcommand{\zv}[0]{
-    \pdftooltip{\Gls{zv}}{Zufallsvariable}
+    \pdftooltip{
+        \Gls{zv}
+    }{Zufallsvariable}
 }
 
 \newcommand{\kleene}[0]{\glssymbol{kleene}}
