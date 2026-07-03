@@ -35,7 +35,7 @@
 \end{itemize}
 
 
-\section*{Grundgedanke}
+\section*{Grundgedanke} \txc{(2025)}
 Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir können Wahrscheinlichkeiten
 berechnen wie z.B. $\pe(X \geq 2)$, und diese Wahrscheinlichkeiten hängen nur von der
 Verteilung ab, nicht von der Wahl des Wahrscheinlichkeitsraums $\wraum$.). \\
@@ -46,7 +46,7 @@ Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 für jedes $A$. \\
 Es ist nicht immer klar, welche Verteilung zu einem sinnvollen Modell führt.
 Auch sind die Parameter der Verteilung nicht unbedingt bekannt.
-Siehe
+Siehe \txc{(2026)}
 \begin{itemize}
     \item \textbf{Binomialverteilung:}
     \[
@@ -91,7 +91,7 @@ Wie können wir trotzdem Vorhersagen treffen? \\ \newline
 Dies führt uns in die Statistik (später).
 % F4
 
-\paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}? \\
+\paragraph{Typische Fragestellungen:} Wie \dots \textit{im Mittel}? \txc{(2025)} \\
 \begin{itemize}
     \item Wie groß ist der mittlere Gewinn bei einem Glücksspiel?
     \item Wie lange muss man bei einem wiederholten Zufallsexperiment im Mittel
@@ -100,7 +100,7 @@ Dies führt uns in die Statistik (später).
 \end{itemize}
 
 \begin{bsp}
-    \textbf{Ansteckungen}
+    \textbf{Ansteckungen} \txc{(2026)}
     \begin{itemize}
         \item Die \textbf{Basisreproduktionszahl} \(R_0\) gibt an, wie viele Personen
         eine infizierte Person im Mittel ansteckt, wenn es in der Bevölkerung keine
@@ -128,7 +128,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{1 $\times$ Würfeln mit einem fairen Würfel} \\
+    \textbf{1 $\times$ Würfeln mit einem fairen Würfel} \txc{(2025)} \\
     \txc{Da herrscht eine Gleichverteilung, daher ist die erwartete Augenzahl ist das arithmetische Mittel.} \\
     \[
         \eraum = \{1,\dots,6\}
@@ -161,7 +161,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Spiel, bei dem nicht alle Ausgänge gleichwahrscheinlich sind} \\
+    \textbf{Spiel, bei dem nicht alle Ausgänge gleichwahrscheinlich sind} \txc{(2025)} \\
     1 $\times$ Würfeln eines fairen Würfels \\
     Auszahlung:
     \begin{itemize}
@@ -181,7 +181,7 @@ Dies führt uns in die Statistik (später).
 
 \end{bsp}
 
-\begin{defi}
+\begin{defi} \txc{(2025)}
     Der \Gls{ew} einer \zv $X$ mit abzählbarem Bildbereich $X(\eraum) \in \rz$ ist gegeben durch
     \mab{\E{X} = \mathbb{E} X = \sum_{x\in X(\eraum)} x \cdot \pe (X=x) }
     insofern die Reihe \glsverb{abskonv}, also \ma{ \sum_{x\in X(\eraum)} |x| \cdot \pe (X=x) < \infty}. \\
@@ -196,7 +196,7 @@ Dies führt uns in die Statistik (später).
     gar nicht existiert.
 \end{defi}
 
-\begin{bem}
+\begin{bem} \txc{(2026)}
     Absolute Konvergenz der Reihe, die den Erwartungswert definiert, garantiert,
     dass wir die Summanden beliebig umsortieren dürfen.
     Es gilt daher
@@ -222,7 +222,7 @@ Dies führt uns in die Statistik (später).
 \end{bem}
 
 \begin{bsp}
-    \textbf{Erwartungswert der Poisson-Verteilung} \\
+    \textbf{Erwartungswert der Poisson-Verteilung} \txc{(2026)}  \\
     X Poisson-verteilt, d.h., es existiert ein $\lambda > 0$ mit
     \[
         \wfk_X(k) = \pe (X=k) = \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
@@ -251,7 +251,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Erwartungswert der geometrischen Verteilung} \\
+    \textbf{Erwartungswert der geometrischen Verteilung} \txc{(2026)}  \\
     Wie lange müssen wir im Mittel warten, bis der erste Erfolg eintritt?
     (Zum Beispiel bis zur ersten Sechs beim Werfen eines fairen Würfels?
     – Raten Sie!) \\
@@ -284,7 +284,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Erwartungswert der uniformen Verteilung auf [a, b]} \\
+    \textbf{Erwartungswert der uniformen Verteilung auf [a, b]} \txc{(2026)}  \\
     (Raten.
     – Warum ist der Erwartungswert (a + b)/2 ?) \\
     Der Erwartungswert existiert, weil\ldots
@@ -306,7 +306,7 @@ Dies führt uns in die Statistik (später).
     }
 \end{bsp}
 \begin{bsp}
-    \textbf{Erwartungswert der Exponentialverteilung} \\
+    \textbf{Erwartungswert der Exponentialverteilung} \txc{(2026)}  \\
     \txo{
         Erinnerung:}
     \[
@@ -334,7 +334,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{satz}
-    \textbf{Der Erwartungswert ist linear} % 2026 13
+    \textbf{Der Erwartungswert ist linear} \txc{(2026)} \\ % 2026 13
     Geg. \glspl{zv} $X : \eraum \rightarrow \rz $ und  $Y : \eraum \rightarrow \rz $auf $\wraum$; Konstanten $a,b \in \rz$. \\
     Annahme: $\E{X}$ und $\E{Y}$ existieren. \\
     Dann gelten $aX + bY$ ist ebenfalls eine Zufallsvariable.
@@ -360,8 +360,8 @@ Dies führt uns in die Statistik (später).
 \end{satz}
 
 \begin{bsp}
-    \textbf{Augensumme bei mehrfachem Würfeln mit fairem Würfel}
-    \[
+    \textbf{Augensumme bei mehrfachem Würfeln mit fairem Würfel} \txc{(2026)}
+\[
         \eraum = \{1,\dots,6\}^n
     \]
     mit Gleichverteilung \(P\).
@@ -445,7 +445,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \\
+    \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \txc{(2026)}  \\
     \txo{
         $X(\eraum) = \{ 0,\dots, n\}, \quad \# X(\eraum) = n+1 < \infty$}
     \begin{itemize}
@@ -499,7 +499,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{St. Petersburger Paradoxon (Erwartungswert muss nicht existieren)} \\
+    \textbf{St. Petersburger Paradoxon (Erwartungswert muss nicht existieren)} \txc{(2026)} \\
     Ein Casino möchte folgendes Spiel anbieten:
     Eine faire Münze wird geworfen, bis zum ersten Mal Kopf erscheint.
     Passiert dies beim n-ten Wurf, so sei die Auszahlung $X = 2^n$
@@ -539,7 +539,7 @@ Dies führt uns in die Statistik (später).
     Der Erwartungswert existiert also nicht.
     Ein fairer Einsatz kann nicht bestimmt werden.
 \end{bsp}
-\begin{er}
+\begin{er} \txc{(2026)} \\
     Aus Satz (E), d.h.\ der Linearität des Erwartungswerts, folgen: % TODO Satz E
     \[
         \E{aX}= a \E{X} \text{ und } \E{X + Y } = \E{X} + \E{Y}
@@ -547,13 +547,13 @@ Dies führt uns in die Statistik (später).
     für $a \in \rz$ und $\rz$-wertige X und Y mit existierendem Erwartungswert
 \end{er}
 
-\begin{fr}
-    Gilt auch \(\E{XY}  = \E{X}  \E{Y}\)? \\
+\begin{fr} \txc{(2026)}
+Gilt auch \(\E{XY}  = \E{X}  \E{Y}\)? \\
     \txo{Spezialfall $X=Y$: $\E{E^2} = (\E{X})^2$. \\ Gilt das?
     }
 \end{fr}
-\begin{bsp}
-    Es gibt Zufallsvariablen \(X,Y\) mit
+\begin{bsp} \txc{(2026)}
+Es gibt Zufallsvariablen \(X,Y\) mit
     \[
         \E{X\cdot Y} \neq \E{X}\cdot\E{Y}.
     \]
@@ -588,7 +588,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{satz}
-    \textbf{Satz (P)} \\
+    \textbf{Satz (P)} \txc{(2026)}  \\
     Seien
     \[
         X:\eraum\to\mathbb{R}
@@ -677,7 +677,7 @@ Dies führt uns in die Statistik (später).
     \paragraph{Schritt 2:} Eine analoge Rechnung zeigt die Existenz des Erwartungswerts:
 \end{satz}
 \begin{satz}
-    \textbf{Kurzfassung Satz (P)}
+    \textbf{Kurzfassung Satz (P)} \txc{(2026)}
     \[
         X,Y \text{ unabhängig mit ex. EW}
         \;\Longrightarrow\;
@@ -687,8 +687,8 @@ Dies führt uns in die Statistik (später).
     \]
 \end{satz}
 
-\begin{bsp}
-    \[
+\begin{bsp} \txc{(2026)}
+\[
         \E{X\cdot Y}
         =
         \E{X}\cdot\E{Y}
@@ -808,8 +808,8 @@ Dies führt uns in die Statistik (später).
     \]
 \end{bsp}
 
-\begin{bem}
-    Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
+\begin{bem} \txc{(2026)} \\
+Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
     unabhängiger Zufallsvariablen verwendet werden, sondern kann auch benutzt
     werden, um zu zeigen, dass zwei Zufallsvariablen nicht unabhängig sein können,
     wenn der Erwartungswert des Produkts der Zufallsvariablen nicht ins Produkt der
@@ -818,7 +818,7 @@ Dies führt uns in die Statistik (später).
 
 
 \begin{defi}
-    \textbf{Zusammengesetzte Zufallsvariablen} \\
+    \textbf{Zusammengesetzte Zufallsvariablen} \txc{(2026)}  \\
     Eine Zufallsvariable $X: \eraum \rightarrow \rz$ und eine \txo{messbare} Funktion $f: \rz \rightarrow \rz$ können
     zusammengesetzt werden zu einer neuen Zufallsvariablen:
     \[
@@ -830,7 +830,7 @@ Dies führt uns in die Statistik (später).
 \end{defi}
 
 \begin{satz}
-    \label{satz:7-4}
+    \label{satz:7-4} \txc{(2026)} \\
     Sofern der Erwartungswert $\E{Y}$ existiert, gilt
     \[
         \E{Y} = \sum_{x \in X(\eraum)} f(x) \pe(X=x)
@@ -864,17 +864,17 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{defi}
-    \textbf{n-tes Moment von X} \\
+    \textbf{n-tes Moment von X} \txc{(2026)}  \\
     Für $n \in \nz $ heißt $\E{X^n}$ das erste n-te Moment von $X$, insofern $\E{|X|^n} < \infty$.
     (Erwartungswert ist das 1.
     Moment)
 \end{defi}
-\begin{defi}
-    $\E{ ( X -  \E{X} )^n } $ heißt das n-te zentrierte Moment von $X$.
+\begin{defi} \txc{(2026)}
+$\E{ ( X -  \E{X} )^n } $ heißt das n-te zentrierte Moment von $X$.
     Es existiert, wenn $\E{|X|^n} < \infty$. \\
 \end{defi}
-\begin{defi}
-    Die Varianz von $X$ ist das 2 zentrierte Moment, d.h.
+\begin{defi} \txc{(2026)}
+Die Varianz von $X$ ist das 2 zentrierte Moment, d.h.
     \[
         Var(X) = \E{ ( X -  \E{X} )^2 }
     \]
@@ -892,12 +892,12 @@ Dies führt uns in die Statistik (später).
     \]
 \end{defi}
 
-\begin{bem}
-    $\Var(X) \geq 0$
+\begin{bem} \txc{(2026)}
+$\Var(X) \geq 0$
 \end{bem}
 
 \begin{defi}
-    \textbf{Existierende Varianz (2025)} \\
+    \textbf{Existierende Varianz} \txc{(2025)}  \\
     Wir sagen, dass die Varianz existiert, wenn
     \[
         \Var(X) = \sum_{x\in X(\eraum)} (x - \E{X})^2 \pe(X=x) < \infty
@@ -909,7 +909,7 @@ Dies führt uns in die Statistik (später).
 \end{defi}
 
 \begin{bsp}
-    \textbf{Bsp.}
+    \textbf{Bsp.} \txc{(2026)} \\
 
     Seien \(X, Y\) Zufallsvariablen mit
     \[
@@ -980,7 +980,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Bernoulli-Variable (Spezialfall der Binomialverteilung mit n = 1)} \\
+    \textbf{Bernoulli-Variable (Spezialfall der Binomialverteilung mit n = 1)} \txc{(2026)}  \\
     Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ für Erfolgswahrscheinlichkeit $p \in [0,1]$ und $\E{X} = p$
     . \\
     \txc{$\Var(X)$ existiert, da}
@@ -1001,7 +1001,7 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{bsp}
-    \textbf{gleichverteilte Zufallsvariable auf \{1,..,n\}} \\
+    \textbf{gleichverteilte Zufallsvariable auf \{1,..,n\}} \txc{(2026)}  \\
     Zufallsvariable X mit $\pe(X = k) = \frac{1}{n} \text{ für } k = 1, \dots, n$
 
     \[
@@ -1026,21 +1026,21 @@ Dies führt uns in die Statistik (später).
 \end{bsp}
 
 \begin{lem}
-    \textbf{Technisches Lemma} \\
+    \textbf{Technisches Lemma} \txc{(2026)}  \\
     Für alle $a \in \rz$ gilt $\E{(X - a)^2} = \Var(X) + (\E{X} - a)^2$
 
     \paragraph{Beweis} TODO F 76 % TODO
 \end{lem}
 
 \begin{folg}
-    \textbf{Folgerung I} \\
+    \textbf{Folgerung I} \txc{(2026)}  \\
     $a \Leftrightarrow \E{(X - a)^2}$ wird minimal für $a = \E{X}$.
 
     In diesem Fall ist $\E{(X - a)^2} = \Var(X)$ per Definition der Varianz.
 \end{folg}
 
 \begin{folg}
-    \textbf{Folgerung II und wichtige Rechenregel} \\
+    \textbf{Folgerung II und wichtige Rechenregel} \txc{(2026)}  \\
     Die Wahl a = 0 zeigt
     \[
         \txo{0 \leq } \Var(X) = \E{X^2} - (\E{X})^2
@@ -1049,7 +1049,7 @@ Dies führt uns in die Statistik (später).
 \end{folg}
 
 \begin{satz}
-    \textbf{Satz (V)} \label{satz:satz-v} \\
+    \textbf{Satz (V)} \label{satz:satz-v} \txc{(2026)}  \\
     Seien X, Y diskrete\txc{(?)}) Zufallsvariablen mit existierendem Erwartungswert, $a,b \in \rz$.
 
     \paragraph{(a)} $\Var(aX+b) = a^2 \Var(X)$
@@ -1096,7 +1096,7 @@ Dies führt uns in die Statistik (später).
 % TODO Auf welchen regeln diese Übergänge basieren
 
 \begin{bsp}
-    \textbf{Binomialverteilte Zufallsvariable $S_n$ mit Parametern n und p} \\
+    \textbf{Binomialverteilte Zufallsvariable $S_n$ mit Parametern n und p} \txc{(2026)}  \\
     $\eraum = \{0,1\}^n$ und
 
     \[
@@ -1139,7 +1139,7 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 \]
 
 \begin{bsp}
-    \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$}
+    \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$} \txc{(2026)}
     \[
         \E{X} = \lambda = \Var(X)
     \]
@@ -1169,7 +1169,7 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 \end{bsp}
 
 \begin{bsp}
-    \textbf{geometrisch verteilte Zufallsvariable X mit Erfolgswahrscheinlichkeit p} \\
+    \textbf{geometrisch verteilte Zufallsvariable X mit Erfolgswahrscheinlichkeit p} \txc{(2026)}  \\
     \[
         \E{X} = \frac{1}{p} \quad und \quad \Var(X) = \frac{1-p}{p^2}
     \]
@@ -1177,7 +1177,7 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 \end{bsp}
 
 \begin{bsp}
-    \textbf{auf [a, b] uniform verteilte Zufallsvariable X} \\
+    \textbf{auf [a, b] uniform verteilte Zufallsvariable X} \txc{(2026)}  \\
     Dann ist
     \[
         \E{X} = \frac{a + b}{2}
@@ -1198,7 +1198,7 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Exponentialverteilte Zufallsvariable X}
+    \textbf{Exponentialverteilte Zufallsvariable X} \txc{(2026)}
     \[
         \E{X} = \frac{1}{\alpha}
     \]
@@ -1215,8 +1215,8 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 
 \untit{Ende der Vorlesung vom 5. Juni 2026}
 
-\begin{satz}
-    TODO F 98--100 % TODO F 98 - 100
+\begin{satz} \txc{(2026)}
+TODO F 98--100 % TODO F 98 - 100
 \end{satz}
 
 % Ab F 101 ist es einfach eine versehentliche Wdh der früheren Folien

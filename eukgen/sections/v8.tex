@@ -98,9 +98,8 @@ an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
 \section{Proteinimport in Organellen}\label{sec:proteinimport-in-organellen}
 % F 14, 38
 %  F 39
-\begin{table}[H]
-    \centering
-    \begin{tabular}{p{2cm}p{5cm}p{5cm}}
+\begin{mytable}
+    \begin{tabular}{p{3cm}p{5cm}p{5cm}}
         \textbf{Eigenschaft} & \textbf{Kerntransport} & \textbf{Import in Organellen} \\
         Signal &
         Signal bleibt permanent erhalten &
@@ -120,8 +119,7 @@ an bestimmte intrazelluläre oder extrazelluläre Orte zu leiten.
         &
         Chaperone essentiell (analog zur Translokation ins ER)
     \end{tabular}\label{tab:table6}
-\end{table}
-
+\end{mytable}
 \subsection{Posttranslationale Translokation in Mitochondrien, Plastiden und Peroxisomen}\label{subsec:posttranslationale-translokation-in-mitochondrien-plastiden-und-peroxisomen}
 Hierbei wird das Protein durch eine Membran hindurch aus dem Zellinnenraum herausgebracht. \cite{Christen2024}
 
@@ -212,10 +210,10 @@ Nach der Übergabe werden \gls{srp} und SRP-Rezeptor freigesetzt, und die Transl
 Während die Proteinsynthese weiterläuft, wird die neu entstehende Polypeptidkette gleichzeitig durch den Translokator in das ER-Lumen eingeschleust bzw.
 in die ER-Membran eingebaut.
 Dieser Vorgang wird als kotranslationaler Transport bezeichnet, da Translation und Proteintranslokation gleichzeitig stattfinden.
-Häufig sind mehrere Ribosomen gleichzeitig an einer mRNA gebunden (Polyribosom), sodass mehrere Proteinmoleküle parallel synthetisiert und ins ER transportiert werden können.
+Häufig sind mehrere Ribosomen gleichzeitig an einer \gls{mrna} gebunden (Polyribosom), sodass mehrere Proteinmoleküle
+parallel synthetisiert und ins ER transportiert werden können.
 % chattie
-Die Abbildungen \ref{fig:signal_hypothesis_with_signal_peptidase_diagram} und
-\ref{fig:signal_hypothesis_with_signal_peptidase_diagram_2} zeigen dies in zwei verschiedenen Darstellungsarten.
+Die Abbildungen~\ref{fig:signal_hypothesis_with_signal_peptidase_diagram} und~\ref{fig:signal_hypothesis_with_signal_peptidase_diagram_2} zeigen dies in zwei verschiedenen Darstellungsarten.
 
 Bei löslichen ER-Proteinen dient die N-terminale ER-Signalsequenz zunächst als SRP-Erkennungssignal und anschließend als Start-Transfer-Signal für die Translokation durch den Sec61-Kanal ins ER-Lumen.
 Danach wird das Signalpeptid meist abgespalten. % chattie F 46
@@ -238,8 +236,7 @@ Fehlfaltung/Aggregation auftritt und die korrekte Faltung und Modifikation im ER
 \defin{srp}
 
 Das \gls{srp} besteht aus einer 7S RNA und 6 Proteinen.
-\begin{table}{H}
-    \centering
+\begin{mytable}
     \begin{tabular}{ll}
         SRP54 & Erkennung des Signalpeptids \\
         SRP68-SRP72 & bindet zentrale Region der 7S RNA,
@@ -248,8 +245,7 @@ Das \gls{srp} besteht aus einer 7S RNA und 6 Proteinen.
     \end{tabular}
     \caption{Aufgaben der SRP-Bestandteile}
     \label{tab:srp}
-\end{table}
-
+\end{mytable}
 \defin{translocon}
 
 Der SRP-Rezeptor ist ein zweigeteilter Membrankomplex, bei dem SR
@@ -259,19 +255,22 @@ dient.
 %Transmembranproteine werden durch spezielle Signal- und Stoppsequenzen so ins ER eingeschleust, dass sie in der
 %Membran verankert bleiben.
 
-\begin{table}[H]
-    \centering
+\begin{mytable}
     \begin{tabular}{p{6cm} p{6cm}}
         \textbf{Transmembranprotein mit einer TMD} & \textbf{Transmembranprotein mit mehreren TMD} \\
-        Einleitung durch ein Signalpeptid am N-Terminus oder eine interne ER-Signalsequenz, die die Translokation über den Sec61-\gls{translocon} startet. & Einleitung durch eine interne Transfer-Start-Sequenz, die die Translokation initialisiert. \\
+        Einleitung durch ein Signalpeptid am N-Terminus oder eine interne ER-Signalsequenz, die die Translokation über den Sec61-\gls{translocon} startet.
+        & Einleitung durch eine interne Transfer-Start-Sequenz, die die Translokation initialisiert. \\
 
-        Ein einzelnes Transfer-Stoppsignal stoppt den Durchtritt durch den \gls{translocon} und verankert das Protein in der Membran. & Kombination aus mehreren Transfer-Start- und Transfer-Stoppsignalen steuert den wiederholten Ein- und Austritt durch den \gls{translocon}. \\
+        Ein einzelnes Transfer-Stoppsignal stoppt den Durchtritt durch den \gls{translocon} und verankert das Protein in der Membran.
+        & Kombination aus mehreren Transfer-Start- und Transfer-Stoppsignalen steuert den wiederholten Ein- und Austritt durch den \gls{translocon}. \\
 
-        Das Protein besitzt nur eine Transmembranhelix. & Mehrere Transmembranhelices entstehen durch wiederholte Reinitiation der Translokation. \\
+        Das Protein besitzt nur eine Transmembranhelix.
+        & Mehrere Transmembranhelices entstehen durch wiederholte Reinitiation der Translokation. \\
 
-        Die Orientierung (N- oder C-Terminus luminal) wird durch die Position von Start- und Stoppsignal bestimmt. & Die Topologie wird durch die Abfolge und Position der Signale in der Polypeptidkette festgelegt. \\
+        Die Orientierung (N- oder C-Terminus luminal) wird durch die Position von Start- und Stoppsignal bestimmt.
+        & Die Topologie wird durch die Abfolge und Position der Signale in der Polypeptidkette festgelegt. \\
     \end{tabular}
-\end{table} % chattie
+\end{mytable} % chattie
 
 \subsubsection*{Einbau von Proteinen in Membranen}
 Dieser Einbau findet über STOP-transfer
@@ -389,15 +388,14 @@ pro Kern (variabel).
 Die meisten (nicht alle) Kerntransportvorgänge
 werden von Rezeptoren der
 Importin-beta Familie durchgeführt % TODO defi
-\begin{table}[H]
-    \centering
+\begin{mytable}
     \begin{tabular}{ll}
         Hefe        & 14    \\
         Arabidopsis & 17    \\
         Säuger      & $>$20
     \end{tabular}
     \caption{Anzahl an Importin-beta Rezeptor-Typen in verschiedenen Organismen.}\label{tab:table5}
-\end{table}
+\end{mytable}
 Die Rezeptoren können an die \glspl{fgrepeat} der \glspl{nukleoporin} binden und die Diffusionsbarriere des \gls{npc}
 überwinden (Interaktion mit \glspl{nukleoporin}).
 Importine (und Exportine) binden \gls{ran} und das \gls{ran} reguliert den Transport, indem es bestimmt, ob Cargo
@@ -427,8 +425,8 @@ der Mitochondrien oder Plastiden ab. \cite{Christen2024}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/signal_sequence}
-    \caption{Schematische Darstellung der Signalsequenz}
-    % https://de.wikipedia.org/wiki/Datei:Signal_sequence.svg
+    \caption{Schematische Darstellung der Signalsequenz}\label{fig:figure11}
+        % https://de.wikipedia.org/wiki/Datei:Signal_sequence.svg
 \end{figure}
 
 
@@ -436,8 +434,8 @@ der Mitochondrien oder Plastiden ab. \cite{Christen2024}
 \defin{gprotein}
 \glspl{gprotein} binden Guanosin-Nukleotide und existieren in zwei stabilen, unterschiedlichen Konformationen:
 GDP-gebunden (``inaktiv'') und GTP-gebunden (``aktiv'').
-Die endogene GTPase-Aktivität ist meist sehr gering. \glspl{gprotein} sind regulatorische Proteine für den
-GTPase-Zyklus.
+Die endogene \gls{gtpase}-Aktivität ist meist sehr gering. \glspl{gprotein} sind regulatorische Proteine für den
+\gls{gtpase}-Zyklus.
 \defin{gef}
 \defin{gap}
 \defin{ran}

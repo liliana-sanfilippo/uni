@@ -5,13 +5,14 @@
 
 \chapter{Unabhängigkeit und Bernoulli-Experimente \index{Bernoulli-Experiment}}\label{ch:unabhangigkeit-und-bernoulli-experimente-index{bernoulli-experiment}}
 \untit{Vorlesung 16.05.2025 (V05 2025)}
+\section{Stochastische Unabhängigkeit von Ereignissen}
 Was bedeutet stochastische Unabhängigkeit?
 
 \paragraph{Intuition:} Zwei Ereignisse A und B sind unabhängig, wenn die Information des Eintretens des jeweils
 einen keinen Einfluss darauf hat, als wie wahrscheinlich wir ein Eintreten auch des jeweils anderen einschätzen (
 Bspw.\ mehrmals hintereinander Würfeln).
 
-\paragraph{Formal:} Um A und B unabhängig zu nennen, sollten also gelten
+\paragraph{Formal:} Um A und B unabhängig zu nennen, sollten also gelten \txc{(2025)}
 \[
     \pe(B|A) = \pe(B)
     \text{ und }
@@ -36,8 +37,8 @@ Also
 \begin{bsp}
 TODO
 \end{bsp}
-\begin{beo}
-    unabhängig $\neq$ disjunkt!
+\begin{beo} \txc{(2025)} \\
+unabhängig $\neq$ disjunkt!
     \noindent Also sind disjunkte Ereignisse unabhängig, wenn $0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B)$, also muss entweder $\pe(A)=0$ oder $\pe(B)=0$ sein (mindestens eines der Ereignisse WS Null haben):
     \[
         0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B) \Leftrightarrow \pe(A)=0 \text{ oder } \pe(B)=0
@@ -46,21 +47,21 @@ TODO
 \komm{disjunkte Ereignisse: $A \cap B = \emptyset \Rightarrow$ A und B können nicht gleichzeitig eintreten. \\
 unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
 }
-\begin{beo}
-    Es gilt: A, B unabhängig $\Leftrightarrow$ $A, B^c$ unabhängig $\Leftrightarrow A^c, B^c$ unabhängig.
+\begin{beo} \txc{(2025)} \\
+Es gilt: A, B unabhängig $\Leftrightarrow$ $A, B^c$ unabhängig $\Leftrightarrow A^c, B^c$ unabhängig.
 
     \paragraph{Beweis.} \txo{z.z. $\pe(A \cap B^c) = \pe(A) \cdot \pe(B^c)$} \\
     \texttt{Siehe Folie 9}
 \end{beo}
 \begin{beo}
-    $A$ kann unabhängig von sich selbst sein.
+    $A$ kann unabhängig von sich selbst sein. \txc{(2025)}
     \[
         \pe(A) = \pe(A \cap A) = \pe(A) \cdot \pe(A) = \pe(A)^2 \Leftrightarrow \pe(A) \in \kl{0,1}
     \]
     \txc{Umgangssprachlicher gesagt: $A$ kann unabhängig von sich selbst sein, wenn seine WS entweder 0 oder 1 ist.}
 \end{beo}
 \begin{defi}
-    Unabhängigkeit von $n$ Ereignissen. \\
+    Unabhängigkeit von $n$ Ereignissen. \txc{(2025)}  \\
     Die Ereignisse $A_1 , \dots  , A_n \subseteq \glssymbol{eraum} $ heißen unabhängig, wenn
     \[
         \pe(A_{i_1} \cap \dots \cap A_{i_k}) = \pe(A_{i_1}) \cdots \pe(A_{i_k})
@@ -71,18 +72,19 @@ unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
 \begin{bsp}
     \texttt{siehe Folie 14--15}
 \end{bsp}
-\begin{bem}
-    Es genügt nicht, paarweise Unabhängigkeit zu prüfen!
+\begin{bem} \txc{(2025)} \\
+Es genügt nicht, paarweise Unabhängigkeit zu prüfen!
     Sachen können paarweise unabhängig, aber nicht insgesamt unabhängig sein.
 \end{bem}
-\begin{bem}
+\begin{bem}  \txc{(2025)}
     Es genügt nicht, $\pe(A_1 \cap \dots  \cap A_n ) = \pe(A_1 ) \cdots \pe(A_n )$ zu prüfen.
     Es kann insgesamt unabhängig sein, aber nicht paarweise etc.\ unabhängig.
 \end{bem}
 
 
 \section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}\label{sec:unabhangige-nacheinanderausfuhrung-von-zufallsexperimenten}
-Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$ unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
+\txc{(2025)} Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$
+unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
 \[
     \glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n
 \]
@@ -116,7 +118,7 @@ unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \d
     \pe(A_1 \times \dots \times A_n) = \pe_1(A_1) \cdot \dots \cdot \pe_n(A_n) \quad \forall A_i \subseteq \glssymbol{eraum} _i \forall i
 \end{equation}
 motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
-\begin{bem}
+\begin{bem}  \txc{(2025)} \\
     Formel~\eqref{eq:omegainichtabzaehlbar} kann immer als Definition verendet werden.
     Falls alle $\pe_i$ durch WS $\glssymbol{wfk}_i$ gegeben sind, folgt aus Formel~\eqref{eq:omegainichtabzaehlbar}:
     \begin{align*}
@@ -126,8 +128,12 @@ motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
         & = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \glssymbol{wfk}_2 (\glssymbol{elementarereignis}_2) \cdot \dots \cdot \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n)
     \end{align*}
 \end{bem}
+
+
+\section{Die Binomialverteilung}
+
 \begin{defi}
-    \textbf{Einfaches \bernoulli } \\
+    \textbf{Einfaches \bernoulli }  \txc{(2025)} \\
     \txc{Ein \bernoulli  ist ein Zufallsexperiment mit genau zwei möglichen Ergebnissen: Einem ''Treffer'' oder einer ''Niete''.} \\
     $\glssymbol{eraum} _1 = \kl{0,1}; \glssymbol{elementarereignis} = 1$ bedeutet Erfolg, $\glssymbol{elementarereignis} = 0$ bedeutet Misserfolg.  \\
     $\glssymbol{wfk}_1(1) = p, \glssymbol{wfk}_1(0) = 1-p$ und dabei heißt $p \in [0,1]$ die Erfolgswahrscheinlichkeit.
@@ -147,7 +153,7 @@ motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
     }
 \end{defi}
 \begin{defi}
-    \textbf{Binomialverteilung \index{Binomialverteilung}} \\
+    \textbf{Binomialverteilung \index{Binomialverteilung}}  \txc{(2025)} \\
     Suche WS für genau $k$ Erfolge in \bernoulli  der Länge $n$. \[
                                                                      A_k = \kl{S_n = k} = \kl{(\glssymbol{elementarereignis}_1 , \dots  , \glssymbol{elementarereignis}_n ) \in \kl{0, 1}^n : \oub{\sum_{i=1}^n \glssymbol{elementarereignis}_i}{S_n(\glssymbol{elementarereignis})} = k }
     \]
@@ -172,17 +178,17 @@ motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
     Binomialverteilung \index{Binomialverteilung}: \texttt{Siehe Folie 29}
 \end{bsp}
 \begin{prob}
-    Wie wahrscheinlich ist, dass in einem \bernoulli  der Länge n der erste Erfolg im n-ten Versuch eintritt?
+    Wie wahrscheinlich ist, dass in einem \bernoulli  der Länge n der erste Erfolg im n-ten Versuch eintritt?  \txc{(2025)}
     \[
         A_n = \kl{(0,\dots,0,1)}, \quad \pe(A_n) \ \txo{ = \glssymbol{wfk}_n((0,\dots,0,1))} = p(1 - p)^{n-1}
     \]
 \end{prob}
 \begin{defi}
-    \textbf{geometrische Verteilung mit Erfolgswahrscheinlichkeit $p$} \\
+    \textbf{geometrische Verteilung mit Erfolgswahrscheinlichkeit $p$}   \txc{(2025)}\\
     \texttt{Siehe Folie 33}
 \end{defi}
 \begin{defi}
-    \textbf{Unabhängigkeit von \gls{zv}} \\
+    \textbf{Unabhängigkeit von \gls{zv}}  \txc{(2025)} \\
     \texttt{Siehe Folie 35}
 \end{defi}
 
