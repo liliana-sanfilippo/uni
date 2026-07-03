@@ -70,7 +70,9 @@ Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Norm
 \begin{beo}
     \textbf{Vergleich mit dem Gesetz der großen Zahlen} \txc{(2026)}
     \begin{align*}
-        \pe(|\frac{1}{n} S_n - \E{X_1} \geq \epsilon|)
+        \pe(|\frac{1}{n} S_n - \E{X_1} \geq \epsilon|) & = 1 - \pe (- \epsilon < \frac{1}{n} S_n - p < \epsilon) \\
+        & \approx 1 - \pe (- \frac{n \epsilon}{\sqrt{npq}} <  \frac{S_n - np}{\sqrt{npq}} \leq \frac{n \epsilon}{
+            \sqrt{npq}})
     \end{align*}
     \txc{
     Gesetz der großen Zahlen:
