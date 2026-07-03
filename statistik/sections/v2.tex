@@ -156,7 +156,7 @@
 
 \begin{lem}
     \textbf{Rechenregeln für Mengen}  \txc{(2025)} \\
-    Seien $\erga,\ergb,C \subset \eraum $.
+    Seien $\erga,\ergb,\ergc \subset \eraum $.
     \begin{figure}[H]
         \centering
         \begin{subfigure}[t]{0.45\textwidth}
@@ -174,7 +174,7 @@
                 circle,
                 minimum size =2cm,
                 fill=accdarklight!80,
-                label={280:$C$}] (circle2) at (0,0.3){};
+                label={280:$\ergc$}] (circle2) at (0,0.3){};
 
                 \node[draw,
                 circle,
@@ -183,7 +183,7 @@
                 label={225:$\ergb$}] (circle3) at (0.4,0.4){};
                 \node[black] at (circle3.center){$\erga$};
             \end{tikzpicture}
-            \caption{Transitivität: $\erga\subset \ergb, \quad \ergb \subset C \Rightarrow \erga \subset C$}
+            \caption{Transitivität: $\erga\subset \ergb, \quad \ergb \subset \ergc \Rightarrow \erga \subset \ergc$}
             \label{fig:Transitivitaet}
         \end{subfigure}
         \hfill
@@ -200,7 +200,7 @@
                 \node[set,label={45:$\ergb$}] (\ergb) at (1.8,0) {};
 
                 % Set C
-                \node[set,label=$C$] (C) at (0.9,1.5) {};
+                \node[set,label=$\ergc$] (\ergc) at (0.9,1.5) {};
 
                 % Intersection
                 \begin{scope}
@@ -216,14 +216,14 @@
                 \draw (0.9,1.5) circle(1.5cm);
 
             \end{tikzpicture}
-            \caption{Distributivgesetz: $\erga \cap (\ergb \cup C) = (\erga \cap \ergb) \cup (\erga \cap C)$ und
-                $ \erga \cup (\ergb \cap C) = (\erga \cup \ergb) \cap (\erga \cup C)$}
+            \caption{Distributivgesetz: $\erga \cap (\ergb \cup \ergc) = (\erga \cap \ergb) \cup (\erga \cap \ergc)$ und
+                $ \erga \cup (\ergb \cap \ergc) = (\erga \cup \ergb) \cap (\erga \cup \ergc)$}
             \label{fig:Distributivgesetz}
         \end{subfigure}\label{fig:figure}
     \end{figure}
     \begin{itemize}
         \item Kommutativitätsgesetz: $\erga \cup \ergb = \ergb \cup \erga$ und $\erga \cap \ergb = \ergb \cap \erga$
-        \item Assoziativgesetz:$(\erga \cup \ergb) \cup C = \erga \cup (\ergb \cup C) $ und $(\erga \cap \ergb) \cap C = \erga \cap (\ergb \cap C) $
+        \item Assoziativgesetz:$(\erga \cup \ergb) \cup \ergc = \erga \cup (\ergb \cup \ergc) $ und $(\erga \cap \ergb) \cap \ergc = \erga \cap (\ergb \cap \ergc) $
         \item de Morgansche Regeln: $(\erga \cup \ergb)^c = \erga^c \cap \ergb^c$ und  $(\erga \cap \ergb)^c = \erga^c \cup \ergb^c$
     \end{itemize}
 \end{lem}
@@ -298,7 +298,7 @@
                 \node [circle,
                 fill=accdarklight!50,
                 minimum size =3cm,
-                label={45:$\erga_3$}] (C) at (3.6,0){};
+                label={45:$\erga_3$}] (\ergc) at (3.6,0){};
 
                 \node [circle,
                 fill=accdarklight!50,
@@ -373,18 +373,18 @@
 \begin{bem}  \txc{(2025)} \\
     Sind $\erga, \ergb$ disjunkt, so gilt nach (a): $\pe(\erga \dot\cup \ergb)  = \pe(\erga) + \pe(\ergb) $. \\
     Sind $\erga, \ergb$ nicht disjunkt, so gilt nach (e): $\pe(\erga \cup \ergb) = \pe(\erga) + \pe(\ergb) - \pe(\erga \cap \ergb)$. \\
-    Sind $\erga, \ergb, C$ paarweise disjunkt, so gilt nach (a): $\pe(\erga \cup \ergb \cup C) \overset{(a)}{=} \pe(\erga) + \pe(\ergb) + \pe(C) $. \\ \\
-    Was passiert, wenn $\erga,\ergb,C$ nicht paarweise disjunkt sind? \begin{align*}
-                                                                  \pe(\erga \cup \ergb \cup C) & = \pe(\erga \cup (\ergb \cup C)) \\
-                                                                  & = \pe(\erga) \pe( \cup \ergb \cup C) -  \pe(\erga \cap (\ergb \cup C)) \\
-                                                                  & = \pe(\erga) + [\pe(\ergb) + \pe(C) - \pe(\ergb \cap C)] - \pe((\erga \cap \ergb) \cup (\erga \cap C))\\
-                                                                  & = \pe(\erga) + \pe(\ergb) + \pe(C)  & \text{Mengen }  \\
-                                                                  & \quad - \pe(\erga \cap \ergb) - \pe(\erga \cap C) - \pe(\ergb \cap C) & \text{Paare von Mengen }  \\
+    Sind $\erga, \ergb, \ergc$ paarweise disjunkt, so gilt nach (a): $\pe(\erga \cup \ergb \cup \ergc) \overset{(a)}{=} \pe(\erga) + \pe(\ergb) + \pe(\ergc) $. \\ \\
+    Was passiert, wenn $\erga,\ergb,\ergc$ nicht paarweise disjunkt sind? \begin{align*}
+                                                                  \pe(\erga \cup \ergb \cup \ergc) & = \pe(\erga \cup (\ergb \cup \ergc)) \\
+                                                                  & = \pe(\erga) \pe( \cup \ergb \cup \ergc) -  \pe(\erga \cap (\ergb \cup \ergc)) \\
+                                                                  & = \pe(\erga) + [\pe(\ergb) + \pe(\ergc) - \pe(\ergb \cap \ergc)] - \pe((\erga \cap \ergb) \cup (\erga \cap \ergc))\\
+                                                                  & = \pe(\erga) + \pe(\ergb) + \pe(\ergc)  & \text{Mengen }  \\
+                                                                  & \quad - \pe(\erga \cap \ergb) - \pe(\erga \cap \ergc) - \pe(\ergb \cap \ergc) & \text{Paare von Mengen }  \\
                                                                   & \quad + \pe(
                                                                   \txo{
                                                                       \underbrace{
-                                                                          \textcolor{black}{(\erga \cap \ergb) \cap (\erga \cap C)}
-                                                                      }_{= \erga \cap \ergb \cap C}
+                                                                          \textcolor{black}{(\erga \cap \ergb) \cap (\erga \cap \ergc)}
+                                                                      }_{= \erga \cap \ergb \cap \ergc}
                                                                   }
                                                                   ) & \text{Tripel von Mengen }
     \end{align*}
