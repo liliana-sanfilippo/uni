@@ -1,3 +1,99 @@
 %! Author = lili
 %! Date = 7/3/26
 
+\begin{mytable}
+    \begin{tabular}{|l|l|l|l|p{5cm}|}
+        \hline
+        \textbf{Verteilung} & \textbf{Parameter} & $E[X]$ & $\text{Var}(X)$ & \textbf{Anwendung} \\
+        \hline
+        Bernoulli $\text{Ber}(p)$ & $p \in (0,1)$ & $p$ & $pq$ & Einzelnes Ja/Nein-Experiment \\
+        \hline
+        Binomial $\text{Bin}(n,p)$ & $n \in \mathbb{N}, p \in (0,1)$ & $np$ & $npq$ & Anzahl Erfolge bei $n$ unabh. Bernoulli-Versuchen \\
+        \hline
+        Geometrisch $\text{Geo}(p)$ & $p \in (0,1)$ & $\dfrac{1}{p}$ & $\dfrac{1-p}{p^2}$ & Wartezeit bis zum ersten Erfolg \\
+        \hline
+        Poisson $\text{Poi}(\lambda)$ & $\lambda > 0$ & $\lambda$ & $\lambda$ & Seltene Ereignisse in festem Intervall \\
+        \hline
+        %Hypergeometrisch $\text{Hyp}(N,K,n)$ & $N,K,n$ & $n\dfrac{K}{N}$ &
+        %$n\dfrac{K}{N}\dfrac{N-K}{N}\dfrac{N-n}{N-1}$ & Ziehen ohne Zurücklegen \\
+        %\hline
+        Diskret Gleichverteilt $U\{1,\dots,n\}$ & $n \in \mathbb{N}$ & $\dfrac{n+1}{2}$ & $\dfrac{n^2-1}{12}$ &
+        Würfeln, Zufallszahl aus endlicher Menge %\\
+        %\hline
+        %Multinomial & $n, p_1,\dots,p_k$ & $np_i$ & $np_i(1-p_i)$ & Verallgemeinerung der Binomial auf $k>2$
+        %Kategorien \\
+        %\hline
+        %Negativ-Binomial & $r, p$ & $\dfrac{r(1-p)}{p}$ & $\dfrac{r(1-p)}{p^2}$ & Anzahl Misserfolge bis zum $r$-ten
+        %Erfolg \\
+        %\hline
+    \end{tabular}
+    \caption{Diskrete Verteilungen}
+\end{mytable}
+
+
+
+\begin{mytable}
+    \begin{tabular}{|l|l|l|l|p{5cm}|}
+        \hline
+        \textbf{Verteilung} & \textbf{Parameter} & $E[X]$ & $\text{Var}(X)$ & \textbf{Anwendung} \\
+        \hline
+        Stetig Gleichverteilt $U(a,b)$ & $a<b$ & $\dfrac{a+b}{2}$ & $\dfrac{(b-a)^2}{12}$ & "Keine Information" auf Intervall \\
+        \hline
+        Normal $N(\mu,\sigma^2)$ & $\mu \in \mathbb{R}, \sigma^2>0$ & $\mu$ & $\sigma^2$ & Grenzverteilung durch ZGWS, Messfehler \\
+        \hline
+        Exponential $\text{Exp}(\lambda)$ & $\lambda>0$ & $\dfrac{1}{\lambda}$ & $\dfrac{1}{\lambda^2}$ & Wartezeit
+        bis zum nächsten Ereignis, gedächtnislos %\\
+        %\hline
+        %Gamma $\Gamma(\alpha,\beta)$ & $\alpha,\beta>0$ & $\dfrac{\alpha}{\beta}$ & $\dfrac{\alpha}{\beta^2}$ &
+        %Summe von $\alpha$ unabh. $\text{Exp}(\beta)$-Variablen \\
+        %\hline
+        %Chi-Quadrat $\chi^2_k$ & $k \in \mathbb{N}$ & $k$ & $2k$ & Summe von $k$ quadrierten unabh. $N(0,1)
+        %$-Variablen \\
+        %\hline
+        %Beta $\text{Beta}(\alpha,\beta)$ & $\alpha,\beta>0$ & $\dfrac{\alpha}{\alpha+\beta}$ & $\dfrac{\alpha\beta}{
+        %(\alpha+\beta)^2(\alpha+\beta+1)}$ & Modellierung von Anteilen auf $(0,1)$ \\
+        %\hline
+        %Cauchy & $x_0, \gamma$ & existiert nicht & existiert nicht & Gegenbeispiel: Integrale divergieren \\
+        %\hline
+    \end{tabular}
+    \caption{Stetige Verteilungen}
+\end{mytable}
+
+
+\begin{mytable}
+    \begin{tabular}{|l|p{4cm}|p{6cm}|}
+        \hline
+        \textbf{Satz} & \textbf{Anwendbar auf} & \textbf{Aussage / Zweck} \\
+        \hline
+        Satz von de Moivre-Laplace & $\text{Bin}(n,p)$ & $\text{Bin}(n,p) \to N(np,npq)$ für $n\to\infty$; Approximation der Binomial- durch Normalverteilung \\
+        \hline
+        Poisson-Approximation (Gesetz seltener Ereignisse) & $\text{Bin}(n,p)$ mit kleinem $p$, großem $n$ & $\text{Bin}(n,p) \to \text{Poi}(\lambda)$ für $n\to\infty, p\to 0, np\to\lambda$ \\
+        \hline
+        Zentraler Grenzwertsatz (ZGWS) & beliebige unabh. $X_i$ mit endlicher Varianz (i.i.d.\ oder Lindeberg-Bedingung) & $\dfrac{S_n - E[S_n]}{\sqrt{\text{Var}(S_n)}} \to N(0,1)$ in Verteilung \\
+        \hline
+        Schwaches Gesetz der großen Zahlen (WGGZ) & i.i.d.\ $X_i$ mit endlichem $E[X_i]$ & $\dfrac{S_n}{n} \xrightarrow{P} \mu$ (stochastische Konvergenz) \\
+        \hline
+        Starkes Gesetz der großen Zahlen (SGGZ) & i.i.d.\ $X_i$ mit endlichem $E[X_i]$ & $\dfrac{S_n}{n} \xrightarrow{\text{f.s.}} \mu$ (fast sichere Konvergenz) \\
+        \hline
+        Ungleichung von Chebyshev & jede Verteilung mit endlicher Varianz & $\mathbb{P}(|X-\mu|\geq k\sigma) \leq \dfrac{1}{k^2}$; grobe Abschätzung, kein Verteilungswissen nötig \\
+        \hline
+        Ungleichung von Markov & jede nichtnegative Zufallsvariable & $\mathbb{P}(X \geq a) \leq \dfrac{E[X]}{a}$;
+        schwächer, aber allgemeiner als Chebyshev % \\
+        \hline
+        %Additionssatz für Binomial & unabh. $\text{Bin}(n_i,p)$, gleiches $p$ & $\sum_i \text{Bin}(n_i,p) =
+        %\text{Bin}\left(\sum_i n_i, p\right)$ \\
+        %\hline
+        %Additionssatz für Poisson & unabh. $\text{Poi}(\lambda_i)$ & $\sum_i \text{Poi}(\lambda_i) = \text{Poi}\left
+        %(\sum_i \lambda_i\right)$ \\
+        %\hline
+        %Additionssatz für Gamma & unabh. $\Gamma(\alpha_i,\beta)$, gleiches $\beta$ & $\sum_i \Gamma(\alpha_i,\beta)
+        %= \Gamma\left(\sum_i \alpha_i, \beta\right)$ \\
+        %\hline
+        %Additionssatz für Normalverteilung & unabh. $N(\mu_i,\sigma_i^2)$ & $\sum_i N(\mu_i,\sigma_i^2) = N\left
+        %(\sum_i \mu_i, \sum_i \sigma_i^2\right)$ \\
+        %\hline
+        %Gedächtnislosigkeit & Geo$(p)$, Exp$(\lambda)$ & $\mathbb{P}(X>s+t \mid X>s) = \mathbb{P}(X>t)$; nur für
+        %diese beiden Verteilungen \\
+        %\hline
+    \end{tabular}
+\end{mytable}

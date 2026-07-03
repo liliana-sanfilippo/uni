@@ -97,10 +97,8 @@
 }}
 \newcommand{\ma}[1]{\(#1\)}
 \newcommand{\mab}[1]{\[#1\]}
-\newcommand{\E}[1]{
-    \pdftooltip{
-        \glssymbol{ew}[#1]
-    }{Erwartungswert}
+\newcommand{\E}[1]{%
+    \pdftooltip{\glssymbol{ew}}{Erwartungswert}\left[#1\right]%
 }
 \newcommand{\dichte}[0]{\Gls{dichte} \index{Dichte}}
 \newcommand{\dcht}[0]{\glssymbol{dichte} \index{Dichte}}
