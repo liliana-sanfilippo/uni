@@ -1054,11 +1054,21 @@ $\Var(X) \geq 0$
 
     \paragraph{(a)} $\Var(aX+b) = a^2 \Var(X)$
     \begin{align*}
+        \Var(aX+b)
+    \end{align*}
+    \begin{align*}
+        \E{X}
+    \end{align*}
+    \begin{align*}
+        \E{(aX+b-\E{aX+b})^2}
+    \end{align*}
+    \begin{align*}
         \txo{\Var(aX+b)} & \txo{ \E{ (aX+b - \E{aX+b} )^2 } } \\
         & \txo{ \E{ (a (X_\E{X}  ))^2 } } \\
         & \txo{ a^2 \E{(X- \E{X} )^2} } \\
         & \txo{= a^2 \Var(X)}
     \end{align*}
+
 
     \paragraph{(b)} $\Var(X + Y ) = \Var(X ) + \Var(Y ) + 2 \Cov(X , Y )$ mit Kovarianz
     $\Cov(X,Y) \coloneqq \E{(X-\E{X}) (Y-\E{Y})}$.
