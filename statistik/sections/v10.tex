@@ -104,10 +104,15 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 %Φ-Tabelle
 
 \begin{satz}
-    \textbf{Zentraler Grenzwertsatz} \txc{(2026)} \\
+    \textbf{Zentraler Grenzwertsatz} \textit{Verallgemeinerung des Satzes von de Moivre-Laplace} \txc{(2026)}  \\
     Gegeben Zufallsvariablen $X_1, X_2, X_3, ...$ auf einem Wahrscheinlichkeitsraum $\wraum$. \\
-    Angenommen $X_1, X_2, X_3, ...$ sind unabh¨angig und identisch verteilt und $\sigma^2 = \Var(X_i) \in (0, \infty)$ für alle i. \\
-    (Beachte $ \Var(X_i)  < \infty \Rightarrow \E{X_i}$ ex.)
+    Angenommen $X_1, X_2, X_3, ...$ sind unabhängig und identisch verteilt und $\sigma^2 = \Var(X_i) \in (0, \infty)$ für alle i. \\
+    (Beachte $ \Var(X_i)  < \infty \Rightarrow \E{X_i}$ ex.) \\
+    Dabei ist $S_n = \sumEN X_i$ und $\mathcal{M} = \E{X_i}$. \\
+    Dann gilt:
+    \[
+        \limnin \pe \left(  a < \frac{S_n - n \mathcal{M}}{\sqrt{n \sigma^2}} \leq b \right) = \vfkt(b) - \vfkt(a)
+    \]
 \end{satz}
 
 
