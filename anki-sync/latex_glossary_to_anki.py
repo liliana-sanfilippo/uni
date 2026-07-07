@@ -7,9 +7,8 @@ from pathlib import Path
 from collections import defaultdict
 
 
-
 def extract_brace_content(text, start):
-    """Liest den Inhalt einer geschweiften Klammer inklusive verschachtelter Klammern."""
+    """Liest den Inhalt einer geschweiften Klammer inkl. verschachtelter Klammern."""
     depth = 1
     i = start
     content = ""
@@ -33,16 +32,26 @@ def parse_fields(body):
     pos = 0
 
     while pos < len(body):
-        m = re.search(r'([a-zA-Z]+)\s*=\s*\{', body[pos:])
+        m = re.search(r'([a-zA-Z]+)\s*=\s*(\{)?', body[pos:])
         if not m:
             break
 
         key = m.group(1)
-        start = pos + m.end()
-        value, end = extract_brace_content(body, start)
+        has_braces = m.group(2) == "{"
 
-        fields[key] = value.strip()
-        pos = end + 1
+        if has_braces:
+            start = pos + m.end()
+            value, end = extract_brace_content(body, start)
+            fields[key] = value.strip()
+            pos = end + 1
+        else:
+            start = pos + m.end()
+            end = body.find(",", start)
+            if end == -1:
+                end = len(body)
+
+            fields[key] = body[start:end].strip()
+            pos = end + 1
 
     return fields
 
@@ -77,16 +86,57 @@ def parse_glossary(tex):
     return entries
 
 
+def resolve_glossary_refs(text, glossary):
+    """Ersetzt Glossarverweise durch den Namen des Glossarbegriffs."""
+
+    def repl(match):
+        command = match.group(1)
+        key = match.group(2)
+
+        name = glossary.get(key, key)
+
+        if command.startswith("G"):
+            name = name[:1].upper() + name[1:]
+
+        return name
+
+    pattern = r'\\(gls|Gls|glspl|Glspl)\{([^}]+)\}'
+    return re.sub(pattern, repl, text)
+
+
+def clean_latex(text):
+    """Entfernt einfache LaTeX-Formatierung."""
+
+    # Zeilenumbrüche entfernen
+    text = re.sub(r"\s+", " ", text)
+
+    # Formatierungsbefehle entfernen, Inhalt behalten
+    text = re.sub(
+        r'\\(?:textbf|textit|emph|textrm|texttt|underline)\{([^}]*)\}',
+        r'\1',
+        text
+    )
+
+    # Geschütztes Leerzeichen
+    text = text.replace("~", " ")
+
+    # Mehrere Leerzeichen
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip()
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Konvertiert ein LaTeX-Glossar in mehrere Anki-CSV-Dateien."
+        description="LaTeX-Glossar in Anki-CSV-Dateien umwandeln."
     )
-    parser.add_argument("input", help="LaTeX-Datei (.tex)")
+
+    parser.add_argument("input", help="Glossar (.tex)")
     parser.add_argument(
         "-o",
         "--output-dir",
         default="anki_csv",
-        help="Ausgabeverzeichnis (Standard: anki_csv)"
+        help="Ausgabeverzeichnis"
     )
 
     args = parser.parse_args()
@@ -96,6 +146,22 @@ def main():
 
     entries = parse_glossary(tex)
 
+    # key -> Name
+    glossary = {
+        entry["key"]: entry["name"]
+        for entry in entries
+    }
+
+    # Referenzen auflösen
+    for entry in entries:
+        entry["description"] = resolve_glossary_refs(
+            entry["description"],
+            glossary
+        )
+        entry["description"] = clean_latex(
+            entry["description"]
+        )
+
     groups = defaultdict(list)
 
     for entry in entries:
@@ -104,22 +170,25 @@ def main():
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Optionale Zuordnung von Typen zu Dateinamen
     filename_map = {
         "defi": "definition.csv",
         "begriff": "begriff.csv",
-        "algorithmus": "algorithmus.csv",
         "satz": "satz.csv",
         "formel": "formel.csv",
+        "frage": "fragen.csv",
+        "algorithmus": "algorithmus.csv",
     }
 
     total = 0
 
     for typ, items in sorted(groups.items()):
         filename = filename_map.get(typ, f"{typ}.csv")
-        filepath = output_dir / filename
 
-        with open(filepath, "w", newline="", encoding="utf-8") as f:
+        with open(output_dir / filename,
+                  "w",
+                  newline="",
+                  encoding="utf-8") as f:
+
             writer = csv.writer(f)
 
             for item in items:
