@@ -120,7 +120,7 @@
 
     \paragraph{Gegeben} Zufallsvariablen $X_1, X_2, X_3, \dots$ auf einem $\wraum$.
     Dabei muss die Verteilung der $X_i$ nicht identisch sein.
-    Es gilt $S_n = \sum^n_{i=1} X_i$
+    Es gilt $\sn = \sum^n_{i=1} X_i$
 
     \paragraph{Angenommen} alle Erwartungswerte $\E{X_i}$ existieren mit $\E{X_i} = \E{X_1}$
     \txc{(es sind also alle gleich)} für alle $i \in \nz$.
@@ -134,11 +134,11 @@
         }
     \]
     Dann gilt: \\
-    \mab{\lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} S_n - \E{X_1} \mid \geq \epsilon) = 0 \quad  \forall \epsilon > 0}
+    \mab{\lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} \sn - \E{X_1} \mid \geq \epsilon) = 0 \quad  \forall \epsilon > 0}
 
-    \orangenote{$S_n$: arithmetisches Mittel und $\frac{1}{n} S_n$ relative Häufigkeit, falls $x_i$ Bernoulli-verteilt}
-    \txc{Soll heißen.: Generell ist $\frac{1}{n} S_n$ das arithmetische Mittel, aber bei einer Bernoulli-Verteilung ist
-        $\frac{1}{n} S_n$ auch gleichzeitig die relative Häufigkeit der Erfolge, da $S_n$ die Anzahl der Erfolge unter $n$ Versuchen ist.}
+    \orangenote{$\sn$: arithmetisches Mittel und $\frac{1}{n} \sn$ relative Häufigkeit, falls $x_i$ Bernoulli-verteilt}
+    \txc{Soll heißen.: Generell ist $\frac{1}{n} \sn$ das arithmetische Mittel, aber bei einer Bernoulli-Verteilung ist
+        $\frac{1}{n} \sn$ auch gleichzeitig die relative Häufigkeit der Erfolge, da $\sn$ die Anzahl der Erfolge unter $n$ Versuchen ist.}
 
     \paragraph{Beweis.}  \texttt{(siehe Folie 4--2025 bzw. 18--19 2026)}
     % TODO F 18-19 2026
@@ -149,17 +149,17 @@
 Unabhängigkeit $\Rightarrow$ paarweise Unabhängigkeit $\Rightarrow$ paarweise Unkorreliertheit
 \end{bem}
 \begin{bem} \txc{(2026)}
-\mab{\E{\frac{1}{n} S_n} = \E{X_1}}
+\mab{\E{\frac{1}{n} \sn} = \E{X_1}}
 \end{bem}
 \begin{bsp}
     % 2020: 20 - 22
     \textbf{Ermitteln der Erfolgswahrscheinlichkeit aus Daten} \txc{(2025)}  \\
-    Geg. \ma{S_n}, ges.  \ma{\E{\frac{1}{n} S_n} = \E{X_1} = p =} Erfolgswahrscheinlichkeit.
+    Geg. \ma{\sn}, ges.  \ma{\E{\frac{1}{n} \sn} = \E{X_1} = p =} Erfolgswahrscheinlichkeit.
 
-    $S_n$ ist hier die Anzahl der Erfolge in einem n-mal unabhängig wiederholten Bernoulli-Experiment,
+    $\sn$ ist hier die Anzahl der Erfolge in einem n-mal unabhängig wiederholten Bernoulli-Experiment,
     z.B.\ Anzahl Sechsen bei n-maligem Werfen eines möglicherweise nicht fairen Würfels.
 
-    Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} S_n} der Erfolge
+    Erinnerung: Die relative Häufigkeit \ma{\frac{1}{n} \sn} der Erfolge
     konvergiert gegen die Erfolgswahrscheinlichkeit $p$. \orangenote{Die Wahrscheinlichkeit, daß die relative Häufigkeit um mindestens \ma{\epsilon} von der Erfolgswahrscheinlichkeit abweicht, konvergiert gegen Null}
 \end{bsp}
 
@@ -170,10 +170,10 @@ Unabhängigkeit $\Rightarrow$ paarweise Unabhängigkeit $\Rightarrow$ paarweise 
 \end{notation}
 
 \begin{er} \txc{(2025)}
-Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
-    \mab{\pe(S_n = k) = \Binomv(k)}
-    \mab{\E{S_n} = np}
-    \mab{\Var(S_n) = npq}
+Ist $\sn$ binomialverteilt mit Parametern $n$ und $p$, so gelten
+    \mab{\pe(\sn = k) = \Binomv(k)}
+    \mab{\E{\sn} = np}
+    \mab{\Var(\sn) = npq}
 \end{er}
 
 \begin{satz}
@@ -182,7 +182,7 @@ Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
     Dann gilt
     \begin{equation}
         \label{eq:lokaleruentralergesetzwertsatz}
-        \oub{\Binomv(k)}{\pe(S_n = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
+        \oub{\Binomv(k)}{\pe(\sn = k)} \sim \frac{1}{\sqrt{2 \pi npq}} e^{-(x_k^{(n)})^2 / 2} \text{ gleichmäßig für alle $k$ mit }  |x_k^{(n)}| \leq L
     \end{equation}
     Dabei bedeutet $\sim$:
     \[
@@ -202,8 +202,8 @@ Ist $S_n$ binomialverteilt mit Parametern $n$ und $p$, so gelten
         \item Sorgfältiges Berechnen des Limes $n \to \infty$
     \end{itemize}
     % TODO noch mehr auf \texttt{Folie 14--2025}
-    \orangenote{schwaches Gesetz der großen Zahlen ``$\frac{1}{n} S_n \rightarrow \frac{1}{6}$'' und \ma{\pe(
-    \frac{1}{n} S_n = \frac{1}{6})}  ist sehr klein.}
+    \orangenote{schwaches Gesetz der großen Zahlen ``$\frac{1}{n} \sn \rightarrow \frac{1}{6}$'' und \ma{\pe(
+    \frac{1}{n} \sn = \frac{1}{6})}  ist sehr klein.}
 \end{satz}
 
 \begin{erg}
@@ -265,11 +265,11 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 \begin{satz}
     \label{satz:Moivre-Laplace}
     \textbf{Satz von de Moivre-Laplace} \textit{(Spezialfall des zentralen Grenzwertsatzes)} \txc{(2025)}\\
-    Sei \ma{S_n} die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten
+    Sei \ma{\sn} die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten
     Bernoulli-Experiment mit Erfolgswahrscheinlichkeit \ma{p \in (0, 1)}. \\
     Dann gilt für jede Wahl von Konstanten \ma{a, b} mit \ma{- \infty < a < b < \infty}:
     \begin{equation}
-        \limnin \pe( a < \frac{S_n - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx \txo{ \ =
+        \limnin \pe( a < \frac{\sn - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx \txo{ \ =
             \intab \varphi(x) \dx}\label{eq:equation2}
     \end{equation}
     Dabei verstehen wir die rechte Seite als Riemann-Integral \ma{\intab \varphi(x) \dx} mit
@@ -373,7 +373,7 @@ n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinli
     voneinander.
 
     \paragraph{Modell:} $n$ -mal unabhängig wiederholtes Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p$.
-    Also: Die Anzahl der Erfolge \ma{S_n} ist \ma{\Binomv}-verteilt.
+    Also: Die Anzahl der Erfolge \ma{\sn} ist \ma{\Binomv}-verteilt.
     Man betrachte jeden Anwesenden der n
     eingeschriebenen Hörer als ``Erfolg''. \\
     Also:
@@ -384,13 +384,13 @@ n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinli
     \]
     Anzahl der Erfolge ist die Anzahl Anwesender
     \[
-        S_n(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i
+        \sn(\glssymbol{elementarereignis}_i) = \sumEN \glssymbol{elementarereignis}_i
     \]
     Dass $n$ Leute anwesende sind, ist das Ereignis:
     \[
-        A_n = \kl{\frac{3}{10}\leq \frac{1}{n} S_n  \leq \frac{7}{10}}
+        A_n = \kl{\frac{3}{10}\leq \frac{1}{n} \sn  \leq \frac{7}{10}}
         = \{
-        S_n \in \{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor\}
+        \sn \in \{\lceil \frac{3}{10} \cdot n \rceil, \lceil  \frac{3}{10} \cdot n  \rceil + 1, \dots, \lfloor \frac{7}{10} \cdot n \rfloor\}
         \}
     \]
     Für \ma{n = 142} ist das \ma{\lceil \frac{3}{10} \cdot n \rceil = 43} und  \ma{\lfloor \frac{7}{10} \cdot n \rfloor = 99}
@@ -400,11 +400,11 @@ n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinli
     \]
     Approximation mit dem Satz von de Moivre-Laplace \txo{(in Form $a < \dots \leq b$ bringen)}:
     \begin{align*}
-        \pe(A_n) & = \pe(\frac{3n}{10}) \leq S_n \leq \frac{7n}{10} \\
-        & \txo{= pe( \lceil \frac{3n}{10} \rceil  \leq S_n \leq \lfloor \frac{7n}{10} \rfloor)}  \\
-        & = \pe(\lceil \frac{3n}{10} \rceil -1  < S_n \leq \lfloor \frac{7n}{10} \rfloor) &
-        \text{(weil $S_n$ ganzzahlig ist)} \\
-        & = \pe ( a < \frac{S_n - np}{\sqrt{npq}} \leq b ) & \text{(Standardisieren, q = 1 - p = 1/3)} \\
+        \pe(A_n) & = \pe(\frac{3n}{10}) \leq \sn \leq \frac{7n}{10} \\
+        & \txo{= \pe( \lceil \frac{3n}{10} \rceil  \leq \sn \leq \lfloor \frac{7n}{10} \rfloor)}  \\
+        & = \pe(\lceil \frac{3n}{10} \rceil -1  < \sn \leq \lfloor \frac{7n}{10} \rfloor) &
+        \text{(weil $\sn$ ganzzahlig ist)} \\
+        & = \pe ( a < \frac{\sn - np}{\sqrt{npq}} \leq b ) & \text{(Standardisieren, q = 1 - p = 1/3)} \\
         & \overset{\txo{*}}{\approx} \vfkt(b) - \vfkt(a) & \text{(Satz von de Moivre-Laplace)}\\
         & \approx \vfkt(0.77) - 0 \\
         & \approx 0.7794v & (Tabelle)
@@ -426,40 +426,41 @@ Das Resultat wirft einige Fragen auf:
     \textbf{Warum spielt die untere Grenze a, die von den 30\% herrührt, praktisch keine
     Rolle?} \txc{(2026)}
 
-    \paragraph{1. Antwort:} $\phi (a) \approx \vfkt(-9) = 1 - \vfkt(9)$ und $\vfkt(9)$ ist so nah an 1, dass wir diesen
+    \paragraph{1. Antwort:} $\vfkt (a) \approx \vfkt(-9) = 1 - \vfkt(9)$ und $\vfkt(9)$ ist so nah an 1, dass wir diesen
     Wert nicht einmal in der Tabelle finden .
     .
     . \\
     Aber das erklärt noch gar nichts – oder?
 
-    \paragraph{2. Antwort:} Wir wissen aus dem Gesetz der großen Zahlen, dass $\frac{1}{n} S_n$ in einem
+    \paragraph{2. Antwort:} Wir wissen aus dem Gesetz der großen Zahlen, dass $\frac{1}{n} \sn$ in einem
     gewissen Sinne gegen $p = 2/3 \approx 66\%$ konvergiert.
     Daher ist die Forderung,
-    dass $\frac{1}{n} S_n \leq 70\%$ sein soll, sehr viel restriktiver als die Forderung $\frac{1}{n} S_n \geq 30\%$.
+    dass $\frac{1}{n} \sn \leq 70\%$ sein soll, sehr viel restriktiver als die Forderung $\frac{1}{n} \sn \geq 30\%$.
 \end{fr}
 
-\komm{Da $\frac{1}{n}S_n$ nach dem Gesetz der großen Zahlen gegen
+\komm{Da $\frac{1}{n}\sn$ nach dem Gesetz der großen Zahlen gegen
     $p=\frac{2}{3}\approx 66{, }7\%$ konvergiert, liegt es für große $n$
     mit hoher Wahrscheinlichkeit in der Nähe von $66{, }7\%$. Die Bedingung
-    $\frac{1}{n}S_n \ge 30\%$ ist daher nahezu immer erfüllt, während
-    $\frac{1}{n}S_n \le 70\%$ nur eine kleine Abweichung vom Grenzwert
+    $\frac{1}{n}\sn \ge 30\%$ ist daher nahezu immer erfüllt, während
+    $\frac{1}{n}\sn \le 70\%$ nur eine kleine Abweichung vom Grenzwert
     zulässt und somit restriktiver ist.}
 
 \begin{fr}
-    Die exakte Rechnung ergab $\pe(A_n) \approx 0.80$ (Genauer $pe(A_n) \approx 0.804486$). \textbf{Warum finden wir mit dem Satz von de Moivre-Laplace nur $pe(A_n) \approx 0.78$?}
+    Die exakte Rechnung ergab $\pe(A_n) \approx 0.80$ (Genauer $\pe(\erga_n) \approx 0.804486$).
+    \textbf{Warum finden wir mit dem Satz von de Moivre-Laplace nur $pe(A_n) \approx 0.78$?}
     \txc{(2026)}
     \paragraph{1. Antwort:} n = 142 ist noch kein wirklich großes n.
 
     \paragraph{2. Antwort:} Grob gesprochen, approximieren wir eine diskrete Größe, die
-    Anzahl der Erfolge $S_n$, durch etwas Kontinuierliches.
+    Anzahl der Erfolge $\sn$, durch etwas Kontinuierliches.
     Eine Verbesserung ist oft
     möglich durch die sogenannte Stetigkeitskorrektur: \index{Stetigkeitskorrektur}.
 
     Wir modifizieren die Grenzen in $A_n$ geschickt und rechnen
     \begin{align*}
-        \pe(A_n) & = \pe(\lceil \frac{3n}{10} \rceil -1  < S_n \leq \lfloor \frac{7n}{10} \rfloor) \\
-        & \pe(\lceil \frac{3n}{10} \rceil \txo{- \frac{1}{2}}  < S_n \leq \lfloor \frac{7n}{10} \rfloor \txo{+
-        \frac{1}{2}} ) & \text{(weil $S_n$ ganzzahlig ist)} \\
+        \pe(A_n) & = \pe(\lceil \frac{3n}{10} \rceil -1  < \sn \leq \lfloor \frac{7n}{10} \rfloor) \\
+        & \pe(\lceil \frac{3n}{10} \rceil \txo{- \frac{1}{2}}  < \sn \leq \lfloor \frac{7n}{10} \rfloor \txo{+
+        \frac{1}{2}} ) & \text{(weil $\sn$ ganzzahlig ist)} \\
         & \approx \vfkt(0.86) \approx 0.8051 & (Tabelle)
     \end{align*}
     \txc{Bingo!} \\
@@ -476,17 +477,17 @@ Das Resultat wirft einige Fragen auf:
     \paragraph{Was ist anders als im obigen Beispiel?} Neu an dieser Frage ist, dass wir nur eine untere Schranke gegeben haben,
     d.h., wir suchen die Wahrscheinlichkeit von
     \[
-        B_n = \{S_n \geq 90\}
+        B_n = \{\sn \geq 90\}
     \]
     Dieser Fall ist in unserer Formulierung des Satzes von de Moivre-Laplace nicht
     vorgesehen!
 
     \paragraph{Idee, das Problem zu umgehen:} Wir werden uns künstlich eine triviale obere Schranke verschaffen.
     \begin{align*}
-        \pe(B_n) & = \pe(S_n \geq 90) \\
-        & = \pe(89 < S_n \leq n ) & \text{(triviale obere Schranke)} \\
-        & = \pe(89.5 < S_n \leq n ) & (S_n\text{ ganzzahlig, Stetigkeitskorrektur)} \\
-        & \pe( c_n < \frac{S_n - np}{\sqrt{npq}} \leq d_n ) & (Standardisieren) \\
+        \pe(B_n) & = \pe(\sn \geq 90) \\
+        & = \pe(89 < \sn \leq n ) & \text{(triviale obere Schranke)} \\
+        & = \pe(89.5 < \sn \leq n ) & (\sn\text{ ganzzahlig, Stetigkeitskorrektur)} \\
+        & \pe( c_n < \frac{\sn - np}{\sqrt{npq}} \leq d_n ) & (Standardisieren) \\
         & \approx \vfkt(d_n) - \vfkt(c_n) & \text{(Satz von de Moivre-Laplace)} \\
         & = \vfkt(d_n) - [1- \vfkt( \oub{-c_n}{>0} )] \approx 0.8212 & (Tabelle)
     \end{align*}
@@ -500,13 +501,13 @@ Das Resultat wirft einige Fragen auf:
     Generell gelten, sofern der Satz von de Moivre-Laplace anwendbar ist,
     \[
         \pe (s_n > c) = \pe\left(
-        \frac{c-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{n-np}{\sqrt{npq}}
+        \frac{c-np}{\sqrt{npq}} < \frac{\sn-np}{\sqrt{npq}} \leq \frac{n-np}{\sqrt{npq}}
         \right) \approx 1 - \vfkt\left(\frac{c-np}{\sqrt{npq}}\right)
     \]
     und
     \[
         \pe (s_n \leq d) = \pe\left(
-        \frac{-1-np}{\sqrt{npq}} < \frac{S_n-np}{\sqrt{npq}} \leq \frac{d-np}{\sqrt{npq}}
+        \frac{-1-np}{\sqrt{npq}} < \frac{\sn-np}{\sqrt{npq}} \leq \frac{d-np}{\sqrt{npq}}
         \right) \approx \vfkt\left(\frac{d-np}{\sqrt{npq}}\right)
     \]
     weil für große n
