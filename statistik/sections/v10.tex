@@ -320,10 +320,10 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Beispiel zur Poisson-Approximation: Im zeitlichen Verlauf eintre!ende Rechenauftr¨age} \txc{(2026)} \\
-    Im Schnitt $\alpha$ eintre#ende Rechenauftr¨age pro
+    \textbf{Beispiel zur Poisson-Approximation: Im zeitlichen Verlauf eintreffende Rechenauftr¨age} \txc{(2026)} \\
+    Im Schnitt $\alpha$ eintreffende Rechenauftr¨age pro
     Zeiteinheit (z.B. pro Stunde) \\
-    Ws., daß ein Auftrag eintri#t in einem sehr kleinen
+    Ws., daß ein Auftrag eintrifft in einem sehr kleinen
     Zeitfenster der L¨ange $\delta << 1$ sei n¨aherungsweise $\alpha \delta$.
     ($\delta$ sehr klein, z.B. eine Millisekunde)). \\
     Wir zerlegen das Gesamtzeitintervall $[0, t)$ in N sehr kleine, disjunkte
@@ -334,14 +334,15 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     Ws., dass ein Auftrag eintrifft in einem bestimmten dieser Zeitfenster, ist
     n¨aherungsweise $\alpha t / N$.
     \paragraph{Annahmen:} F¨ur großes N sind die Zeitfenster so klein, daß wir annehmen d¨urfen, daß in
-    jedem Fenster ein oder kein Auftrag eintrifft (d.h., wir schließen aus, daß mehr als ein Auftrag eintre!en kann). Ob ein Auftrag in einem bestimmten Fenster eintri#t, sei unabh¨angig vom
+    jedem Fenster ein oder kein Auftrag eintrifft (d.h., wir schließen aus, daß mehr als ein Auftrag eintreffen kann)
+    . Ob ein Auftrag in einem bestimmten Fenster eintrifft, sei unabh¨angig vom
     Eintreffen von Auftr¨agen in allen anderen Zeitfenstern.
     \paragraph{Modellierung:} Damit haben wir jedem Zeitfenster, d.h. jedem k, eine Bernoulli-Variable
     zugeordnet, die uns sagt, ob im zugeh¨origen Zeitfenster k ein Auftrag
     eintrifft.
     Die Erfolgsws. dieser Bernoulli-Variable ist $\alpha t / N$
     \txc{(Also die Ws, dass ein Auftrag in einem bestimmten Zeitfenster eintritt)}.
-    Die Anzahl der Auftr¨age, die im Intervall $[0, t)$ eintre#en, ist binomialverteilt
+    Die Anzahl der Auftr¨age, die im Intervall $[0, t)$ eintreffen, ist binomialverteilt
     mit Parametern N und $\alpha t / N$.
     \[
         \txo{ n = N, \quad p_n = \frac{\alpha t}{N}  = \alpha t \frac{1}{N}}
