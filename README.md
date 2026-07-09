@@ -31,7 +31,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 16 | Fr, 17.04. | :white_check_mark:      |                 | --         | --                      | --             | --         |
 | KW 17 | Fr, 24.04. | :ballot_box_with_check: |                 | Mo, 20.04. | :no_entry:              | Fr, 24.04.     | :no_entry: |
 | KW 18 | --         | --                      | --              | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     | :no_entry: | 
-| KW 19 | Fr, 08.05. | :no_entry:              |                 | Mo, 04.05. | :construction:          | Fr, 08.05.     | :no_entry: |
+| KW 19 | Fr, 08.05. | :ballot_box_with_check: |                 | Mo, 04.05. | :construction:          | Fr, 08.05.     | :no_entry: |
 | KW 20 | Fr, 15.05. | :no_entry:              |                 | Mo, 11.05. | :no_entry:              | Fr, 15.05.     | :no_entry: |
 | KW 21 | Fr, 22.05. | :ballot_box_with_check: |                 | Mo, 18.05. | :no_entry:              | Fr, 22.05.     | :no_entry: |
 | KW 22 | Fr, 29.05. | :no_entry:              |                 | Mo, --     | --                      | Fr, 29.05.     | :no_entry: |
