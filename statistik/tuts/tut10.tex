@@ -1,0 +1,52 @@
+%! Author = lili
+%! Date = 6/22/26
+
+\chapter{Tutorium 22.06.2026}\label{ch:tutorium-22.06.2026}
+
+
+\section{PÜ 2.3.4}\label{sec:pu-2.3.4}
+Bei einer Maschine, die Elektronikbauteile produziert, ist im Schnitt jedes 50. Bauteil fehlerhaft.
+Wir testen eine Lieferung von 300 Bauteilen.
+Wie groß ist die Wahrscheinlichkeit, dass genau 3 Bauteile fehlerhaft sind?
+
+Denken Sie daran, einen Wahrscheinlichkeitsraum anzugeben und die benötigten Zufallsvariablen
+zu definieren!
+
+\begin{auf}
+    \[
+        \eraum =\{0,1\}^n, \quad n = 300
+    \]
+    mit
+    \[
+        \wfk(\ele) = p^{\sum_{i=1}^k \ele_i} q^{n - \sum_{i=1}^k \ele_i} \quad mit \quad  p = \frac{1}{50}, q =  \frac{49}{50}
+    \]
+    Teil ist kaputt ist Erfolg, damit wir uns nicht mit Gegenwahrscheinlichkeiten auseinandersetzen müssen.
+    \[
+        S_n(\ele) = \sum_{i=1}^n \ele_i
+    \]
+    Aunahme: teile sind Unabhängig voneinander kaputt und immer $p = \frac{1}{50}$
+    \begin{align*}
+        \pe(S_n = x) & = \binom{n}{x} \cdot p^3 \cdot q^{n-3} \\
+        & = \binom{300}{3} (\frac{1}{50})^3 (\frac{49}{50})^{297} \\
+        & \approx 0,0883
+    \end{align*}
+    Poisson Approximation (p klein q groß)
+    \[\alpha = np = \frac{300}{50} = 6\]
+    Sei $X \sim Poi(\alpha)$
+    \begin{align*}
+        \pe(S_n = 3) & \approx \pe(X=3) \\
+        & = \frac{\alpha^3}{3!} e^{-\alpha} \\
+        & = \frac{6^3}{3!} e^{-6} \\
+        & \approx 0,0892
+    \end{align*}
+    \begin{align*}
+        \pe(S_n = k ) & = \binom{n}{k} p^k q^{n-k} \\
+        \pe(S_n \in A) & = \sum_{k\in A} \pe(S_n = k) \\
+        & = \sum_{k\in A}
+    \end{align*}
+    % TODO
+    TODO ! Noch Rest von Bildern eintragen
+\end{auf}
+
+\section{PÜ 2.3.5}
+\section{PÜ 2.3.6}

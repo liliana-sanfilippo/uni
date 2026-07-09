@@ -65,6 +65,13 @@
     after skip=12pt
 }
 
+\newcommand{\karkar}[1]{%
+    \begin{karteikarte}\label{kar:#1}
+    \textbf{\gls*{#1}}\\
+    \glsdesc*{#1}.
+    \end{karteikarte}
+}
+
 \newtheorem{test}{Test}[chapter]
 
 %% BEISPIEL / EXAMPLE

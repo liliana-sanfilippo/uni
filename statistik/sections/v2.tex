@@ -1,8 +1,8 @@
 %! Author = lili
 %! Date = 4/27/26
 
-\untit{Vorlesung 25.04.2025 (V02 2025)}
-% TODO ergänzen durch skript 2026
+\untit{Vorlesung 25.04.2025 (V02 2025), ergänzt mit dem Skript aus 2026}
+
 \section*{Lernziele}
 \begin{itemize}
     \item Unterschied zwischen disjunkten und paarweise disjunkten Mengen
@@ -13,6 +13,12 @@
         \item Spezialfall paarweise disjunkter Mengen
     \end{itemize}
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Beispiele Wraum %
+%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Wahrscheinlichkeitsräume, deren Ereignisraum nicht abzählbar ist}\label{sec:wahrscheinlichkeitsraume-deren-ereignisraum-nicht-abzahlbar-ist}
 \begin{bsp}
     \textbf{\gls{wraum}}  \txc{(2025)} \\
@@ -35,87 +41,349 @@
     abgängen, arbeiten wir mit R-Integralen. \texttt{R-Integral?}
 \end{bsp}
 \komm{TODO: Was genau ist $\tilde {\eraum} $ ? } % TODO
-\begin{defi} \label{def:dichte}
-    \textbf{\dichte} \txc{(2025)} \\
-    EIne Funktion $f: \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt
+
+%%%%%%%%%%%%%%%%%%%%%
+% Dichten %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Eindimensionale Dichten}\label{subsec:eindimensionale-dichten}
+\begin{defi}
+    \label{def:dichte}
+    \textbf{Eindimensionale \dichte} \txc{(2025, Skript 26 - Definition 1.22)} \\
+    EIne Funktion $\dcht : \mathbb{R} \rightarrow [0, \infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt
     \underline{\dichte}, sofern
     \[
-        \int_{- \infty}^{\infty} f (x) dx = 1
+        \int_{- \infty}^{\infty}\dcht  (x) dx = 1
     \]
 \end{defi}
-\begin{bem} \defirefman{dichte}  \txc{(2025)}
-\begin{itemize}
-    \item  % a
-    \item $f$ monoton oder $f$ stetig $\Rightarrow \int_a^b f(x) dx$ existiert für alle $(a, b \in \mathbb{R})$
-    \txc{auch: für $- \infty < a < b < \infty$}
-    % b
-    \item $f$ stückweise stetig oder stückweise monoton, $\Rightarrow \int_a^b f(x) dx$ existiert $(a, b \in \mathbb{R})$
-    % e
-    \item $f \geq 0: f $ Riemann-integrierbar
-    $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx < \infty$
-    \begin{itemize}
-        \item Damit ist gemeint: Ist $f \geq 0$, so ist $f$ genau dann uneigentlich Riemann-integrierbar über
-        $\rz$, wenn das Riemann-Integral $\int_a^b f(x) dx$ für jede Wahl $- \infty < a < b < \infty$
-        existiert und $\underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
-        existiert.
-        In diesem Fall gilt $\int_{- \infty}^{\infty} f(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N f(x) dx$
-    \end{itemize}
-    % d
-    \item $f$ ist uneigentlich Riemann-integrierbar über R, gdw.
-    sowohl $(- \infty, 0] $ als auch $[0, \infty)$
-    uneigentlich Riemann-integrierbar ist.
-    % c TODO
-    \item TODO
-\end{itemize}
+
+\begin{bem}
+    \defirefman{dichte}  \txc{(Skript 26 - Bemerkung 1.23)}
+
+    \paragraph{Dichten sind nichtnegativ:} Die Definition einer \dichte f beinhaltet die Forderung
+    $\dcht \leq 0$, das heißt,
+    es muss
+    \[
+        \dcht (x) \geq 0 \forall x \in \rz
+    \]
+    gelten.
 \end{bem}
+Die folgende Bemerkung erinnert uns wohl an die für den Zweck dieser Vorlesung wichtigsten Aussagen über
+die Existenz von Riemann-Integralen.
+\begin{bem}
+    \defirefman{dichte}  \txc{(2025, Skript 26 - Bemerkung 1.24)}
+
+    \paragraph{Riemann-Integrierbarkeit}
+    \begin{itemize}
+        \item  % a
+        \item $\dcht$ monoton oder $\dcht$ stetig $\Rightarrow \int_a^b \dcht(x) dx$ existiert für alle $(a, b \in \mathbb{R})$
+        \txc{auch: für $- \infty < a < b < \infty$}
+        % b
+        \item $\dcht$ \gls{stst} oder stückweise monoton, $\Rightarrow \int_a^b \dcht(x) dx$ existiert
+        $(a, b \in \mathbb{R})$
+        \txc{auch: für $- \infty < a < b < \infty$}
+        % e
+        \item $\dcht \geq 0:\dcht $ Riemann-integrierbar
+        $\Leftrightarrow \underset{N \rightarrow \infty}{\lim} \int_{-N}^N \dcht(x) dx < \infty$
+        \begin{itemize}
+            \item Damit ist gemeint: Ist $\dcht \geq 0$, so ist $\dcht$ genau dann uneigentlich Riemann-integrierbar über
+            $\rz$, wenn das Riemann-Integral $\int_a^b \dcht(x) dx$ für jede Wahl $- \infty < a < b < \infty$
+            existiert und $\underset{N \rightarrow \infty}{\lim} \int_{-N}^N \dcht(x) dx$
+            existiert.
+            In diesem Fall gilt $\int_{- \infty}^{\infty} \dcht(x) dx = \underset{N \rightarrow \infty}{\lim} \int_{-N}^N \dcht(x) dx$
+        \end{itemize}
+        % d
+        \item $\dcht$ ist uneigentlich Riemann-integrierbar über R, gdw.
+        sowohl $(- \infty, 0] $ als auch $[0, \infty)$
+        uneigentlich Riemann-integrierbar ist.
+        % c TODO
+        \item $\dcht$ ist genau dann uneigentlich Riemann-integrierbar über $[0,\infty)$, wenn $\dcht$ über
+        jedes Intervall $[0,b]$ Riemann-integrierbar ist und $\lim_{b \rightarrow \infty} \int_0^b \dcht(x) \dx$
+        existiert.
+        In diesem Fall schreiben wir
+        \[
+            \int^{\infty}_0 \dcht (x) \dx =  \lim_{b \rightarrow \infty} \int_0^b \dcht(x) \dx
+        \]
+        \item Analog: $\dcht$ ist genau dann uneigentlich Riemann-integrierbar über $(-\infty, 0]$, wenn $\dcht$
+        über jedes Intervall $[a,0]$ Riemann-integrierbar ist $\lim_{a \rightarrow -\infty} \int_a^0 \dcht(x) \dx$ existiert.
+        In diesem Fall schreiben wir
+        \[
+            \int_{-\infty}^0 \dcht (x) \dx =  \lim_{a \rightarrow - \infty} \int_a^0 \dcht(x) \dx
+        \]
+    \end{itemize}
+\end{bem}
+
+\karkar{def_dichte}
+\karkar{bem_dichte_nichtnegativ}
+\karkar{bem_riemann_integrierbarkeit_kriterien}
+\karkar{bem_uneigentliche_integrierbarkeit_kriterium}
+\karkar{bem_integrierbarkeit_halbachsen}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Wahrscheinlichkeitsräume mit Dichten %
+%%%%%%%%%%%%%%%%%%%%%
+
 \begin{defi}
-    \textbf{\gls{wraum}} \txc{(2025)} \\
-    Sei eine \dichte $\dcht \geq 0$ gegeben.
+    \textbf{Wahrscheinlichkeitsräume mit Dichten}\label{defi:wr_dichte} \txc{(2025, Skript 26 - Definition 1.25)} \\
+    Sei eine \dichte $\dcht \geq 0$ gegeben (also $f: \rz \rightarrow [0,\infty)$.
     Wir setzen
     \begin{align*}
         \pe([a,b]) & \coloneqq  \int^b_a \dcht(x) dx & \text{für alle } - \infty < a < b < \infty \\
         \pe([-\infty, b]) & \coloneqq  \int_{-\infty}^b \dcht(x) dx  \\
         \pe([a, \infty]) & \coloneqq  \int_a^{\infty} \dcht(x) dx \\
-        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} \dcht(x) dx & \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}$}
+        \pe(\bigcup_{i \in I} [a_i, b_i]) & \coloneqq  \sum_{i \in I} \int^{b_i}_{a_i} \dcht(x) dx &
+        \text{für $I \subseteq\mathbb{N}$ (abzählbar)  und $a_i < b_i \leq a_{i+1}\txc{*}$}
     \end{align*}
     Falls
     \[
         a_1 = - \infty : (- \infty, b_1]\quad ; \ergb =+ \infty : [a, \infty)
     \]
+    \txc{* Auch geschrieben als: Seien
+        $I \subseteq\mathbb{N}$ eine abzählbare Indexmenge und $[a_i, b_i]$ Intervalle mit
+        $a_i \leq b_i \leq a_{i+1} \leq b_{i+1}$ für
+        alle $i, i + 1 \in I$. }
 \end{defi}
 \begin{bsp}
+    \txc{(2025)}
     \texttt{fehlt}
 \end{bsp}
-\begin{defi}
-    \textbf{Uniforme Verteilung} (Kontinuumsäquivalent zu gleichverteilt) \txc{(2025)} \\
-    Die uniforme Verteilung auf einem beschränkten Intervall $I \subseteq \mathbb{R}$ ist gegeben durch eine \dichte
+
+\komm{\defirefman{wr_dichte} Die Definition von $\pe$ auf einer abzählbaren Vereinigung disjunkter,
+    aufsteigend geordneter Intervalle $[a_i,b_i]$ ist additiv über die Dichte
+    $\dcht$ definiert. Uneigentliche Randintervalle ($a_1=-\infty$ bzw.
+    $b_{\max}=+\infty$) werden gesondert als Halbintervalle behandelt.
+    Eine alternative, schwächere Formulierung erlaubt statt $a_i < b_i$ auch
+    $a_i\leq b_i$, wodurch entartete (einpunktige) Intervalle zugelassen
+    werden; da diese jeweils das Maß $0$ besitzen, ändert sich der Wert von
+    $\pe$ dadurch nicht.}
+
+\begin{bem}
+    \defirefman{wr_dichte} \txc{(Skript 26 - Bemerkung 1.26)}
+    \begin{itemize}
+        \item Wann immer das Wahrscheinlichkeitsmass $\pe$ durch eine eindimensionale Dichte gegeben ist,
+        betrachten wir nur Wahrscheinlichkeiten von Mengen, die wir darstellen können als maximal
+        abzählbar unendliche Vereinigung oder als maximal abzählbar unendlichen Schnitt von Intervallen.
+        Auch können wir wiederum Vereinigungen und Schnitte von derart erhaltenen Mengen
+        betrachten.
+        Diese Prozedur kann beliebig oft wiederholt werden.
+        Trotzdem gibt es Mengen, denen wir keine Wahrscheinlichkeit zuordnen können.
+        Da es nicht
+        ganz einfach ist, derartige - pathologische - Mengen zu konstruieren, bedeutet das für uns keine
+        wesentliche Einschränkung.
+        \item Um ein Zufallsexperiment zu modellieren, in dem nur Elementarereignisse aus einer echten
+        Teilmenge $I \in \rz$ angenommen werden können, wählen wir eine Dichte, die außerhalb von I
+        Null ist, das heißt, es soll $\dcht (x) = 0$ für alle $x \notin I$
+    \end{itemize}
+\end{bem}
+% Im folgenden Beispiel 1.30 werden wir
+%diese Idee zum ersten Mal anwenden.
+
+\begin{lem}
+    \textbf{Wahrscheinlichkeit einelementiger Mengen} \txc{(Skript 26 - Lemma 1.27)} \\
+    Ist ein Wahrscheinlichkeitsmass $\pe$ durch eine \dichte f gegeben, so gilt
+    \[
+        \pe(\{a\}) = 0 \quad \forall a \in \rz
+    \]
+    \paragraph{Beweis.} Skript 26 Seite 11 % TODO
+\end{lem}
+
+\begin{kor}
+    \textbf{Dichten sind nicht eindeutig bestimmt} \txc{(Skript 26 - Korollar 1.28)} \\
+    Das Wahrscheinlichkeitsmass $\pe$ sei durch eine Dichte f gegeben.
+    Sei g eine weitere Dichte, die sich in
+    höchstens abzählbar vielen Punkten von f unterscheidet, das heißt, es gebe eine abzählbare Menge M
+    derart, dass $g(x) = f (x)$ für alle $x \in \rz \backslash M$.
+    Dann definiert g dasselbe Wahrscheinlichkeitsmass $\pe$
+    wie f.
+\end{kor}
+
+\begin{kor}
+    \textbf{Wahrscheinlichkeit von Intervallen} \txc{(Skript 26 - Korollar 1.29)} \\
+    Sei $\pe$ durch eine Dichte f gegeben.
+    Dann gilt für jede Wahl von $a,b \in \rz$ mit $- \infty < a < b < \infty$,
+    \[
+        \pe([a, b]) = \pe((a, b]) = \pe([a, b)) = \pe((a, b))
+    \]
+\end{kor}
+
+\begin{bsp}\label{bsp:1-30}
+    \textbf{Messen einer zufälligen Zeit} \txc{(Skript 26 - Beispiel 1.30)} \\
+    Wir wählen $\eraum = \rz$ und die Dichte
     \[
         \dcht(x) = \begin{cases}
-                   \frac{1}{\mid I \mid } & x \in I \\ 0 & sonst
+                       \frac{1}{60} & x \in [0,60] \\
+                       0 & sonst
         \end{cases}
     \]
-    wobei $\mid I \mid $ die Intervalllänge bezeichnet.
-\end{defi}
+    Dabei verstehen wir $\oio$ als die gemessene Zeit (in Minuten) bei einer Realisierung des Zufallsexperiments.
+    Die Tatsache, daß $f = 0$ außerhalb von $[0, 60]$ gilt, reflektiert, daß in unserem Experiment
+    nur Zeiten innerhalb einer Stunde ab Start möglich sein sollen. \\
+    Wir müssen zeigen, daß f eine Dichte ist
+    \begin{enumerate}
+        \item $f \geq 0$ gilt per Definition von f
+        \item f ist \gls{stst} und daher Riemann-integrierbar
+        \item Die Normierungsbedingung ist erfüllt, weil
+        \[
+            \intinfs \dcht(x) \dx = \int_0^{60} \dcht(x) \dx = \int_0^{60} \frac{1}{60} \dx = \frac{60 - 0}{60} = 1
+        \]
+    \end{enumerate}
+    Wir sehen, dass, wie zuvor,
+    \[
+        \pe([10, 15]) = \int_{10}^{15}  \dcht(x) \dx \int_{10}^{15} \frac{1}{60} \dx = \frac{5}{60} = \frac{1}{12}
+    \]
+    gilt.
+\end{bsp}
+
+\begin{bem}
+    \textbf{Vorgehen beim Berechnen von Integralen mit stückweise gegebener Dichte}
+    \txc{(Skript 26 - Bemerkung 1.31)} \\
+    Es empfiehlt sich, sukzessive wie in obigem Beispiel vorzugehen:
+    \begin{enumerate}
+        \item Integral über Intervall aufschreiben
+        \item Grenzen anpassen, so daß nicht mehr über Intervalle integriert wird, auf denen $f = 0$ gilt
+        \item Konkrete Form von f einsetzen
+        \item Integral ausrechnen
+    \end{enumerate}
+    Genauer
+    \begin{enumerate}
+        \item Integral über Intervall aufschreiben:
+        \begin{itemize}
+            \item $\intinfs \dcht(x) \dx$, um zu verifizieren, daß f die Normierungsbedingung erfüllt
+            \item $\pe([a, b]) = \intinfs \dcht(x) \dx$, um eine Wahrscheinlichkeit zu berechnen
+        \end{itemize}
+        \item Grenzen anpassen, so daß nicht mehr über Intervalle integriert wird, auf denen $f = 0$ gilt:
+        \begin{itemize}
+            \item $\intinfs \dcht(x) \dx = \int_0^{60} \dcht(x) \dx$
+            \item $\pe([50, 70]) = \int_{50}^{70} \dcht(x) \dx  = \int_{50}^{60} \dcht(x) \dx $
+        \end{itemize}
+        \item Konkrete Form von f einsetzen:
+        \begin{itemize}
+            \item $ \pe([10, 15]) = \int_{10}^{15}  \dcht(x) \dx \int_{10}^{15} \frac{1}{60} \dx$
+            \item $\pe([50, 70]) = \int_{50}^{70} \dcht(x) \dx  = \int_{50}^{60} \dcht(x) \dx =  \int_{50}^{60} \frac{1}{60} \dx$
+        \end{itemize}
+        \item Integral ausrechnen:
+        \begin{itemize}
+            \item $ \pe([10, 15]) = \int_{10}^{15}  \dcht(x) \dx \int_{10}^{15} \frac{1}{60} \dx = 1$
+            \item $\pe([50, 70]) = \int_{50}^{70} \dcht(x) \dx  = \int_{50}^{60} \dcht(x) \dx =  \int_{50}^{60} \frac{1}{60} \dx = \frac{1}{6}$
+        \end{itemize}
+    \end{enumerate}
+\end{bem}
+
+\begin{bem} \txc{(Skript 26)}
+Falls f durch eine Fallunterscheidung mit mehr Fällen als in unserem Beispiel gegeben ist, so muss im
+    dritten Schritt das Integral entsprechend aufgespalten werden,
+    \[
+        \int^d_a \dcht(x) \dx = \int^b_a \dcht(x) \dx + \int^c_b \dcht(x) \dx + \int^d_c \dcht(x) \dx
+    \]
+    Für $a < b < c < d$, bevor die konkrete Form von f einsetzt wird. \\
+    Losgelöst von der Idee, daß wir eine zufällige Zeit messen wollen, können wir ganz allgemein für ein
+    beliebiges beschränktes Intervall I eine Dichte definieren derart, daß die Wahrscheinlichkeit, daß der
+    Ausgang des entsprechenden Zufallsexperiments in einem Teilintervall $J \subseteq I$ liegt, weiterhin nur von
+    der Länge des entsprechenden Teilintervalls J abhängt
+\end{bem}
+
+\karkar{def_wraum_mit_dichte}
+\karkar{bem_grenzen_der_wsmodellierung_mit_dichte}
+\karkar{bem_dichte_null_ausserhalb_I}
+\karkar{lem_einelementige_mengen_wahrscheinlichkeit_null}
+\karkar{kor_dichten_nicht_eindeutig}
+\karkar{kor_ws_intervalle_rand_egal}
+\karkar{bem_vorgehen_integrale_stueckweise_dichte}
+\karkar{bem_integral_aufspalten_mehr_faelle}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Uniforme Verteilung %
+%%%%%%%%%%%%%%%%%%%%%
+
 \begin{defi}
-    \textbf{Exponentialverteilung} \label{defi:exponentialverteilung} \txc{(2025)}\\
+    \textbf{Uniforme Verteilung auf einem Intervall}
+    \label{def:uniform_intervall} (Kontinuumsäquivalent zu gleichverteilt)
+    \txc{(2025, Skript 26 - Definition 1.32)} \\
+    Die uniforme Verteilung auf einem beschränkten Intervall $I \subseteq \mathbb{R}$ (äquivalent zu $I = [a, b]$ mit $- \infty < a < b < \infty$) ist gegeben
+    durch eine \dichte
+    \[
+        \dcht(x) = \begin{cases}
+                       \frac{1}{\mid I \mid } & x \in I \\ 0 & sonst
+        \end{cases} \quad = \begin{cases}
+                                                   \frac{1}{b-a} & x \in I \\ 0 & sonst
+        \end{cases}
+    \]
+    wobei $\mid I \mid $ die Intervalllänge bezeichnet. \\
+\end{defi}
+
+\begin{bsp} \defirefman{uniform_intervall} txc{(Skript 26 - Definition 1.32)} \\
+    Sei nun $[a, b] = [0, 10]$.
+    Die Wahrscheinlichkeit, daß der Ausgang des Zufallsexperiments sehr klein oder sehr groß ist, sagen wir entweder kleiner als 0.1 oder größer als 9.9 ist, beträgt
+    \[
+        \pe((- \infty, 0.0) \cup (9.9, \infty)) = \int_0^{0.1} \dcht(x) \dx + \int_{9.9}^{10} \dcht(x) \dx = \frac{1}{10} [0.1 + 0.1] = \frac{2}{100} = \frac{1}{50}
+    \]
+\end{bsp}
+
+\begin{bem} \bspref{1-30}
+    \txc{(Skript 26 - Bemerkung 1.33)} \\
+Der Wert $\frac{1}{b-a}$ ergibt sich aus der
+Normierungsbedingung.
+Daraus ergibt sich, daß es auf einem nicht beschränkten Intervall keine uni-
+forme Verteilung geben kann.
+Der Beweis verwendet dieselbe Idee wie jene, die wir in Bemerkung \autoref{bem:1-18}
+benutzt haben.
+\end{bem}
+Wir können die Definition der uniformen Verteilung verallgemeinern.
+\begin{defi}
+    \textbf{Uniforme Verteilung auf einer Menge M} \txc{(Skript 26 - Definition 1.34)} \\
+    Sei $M \subseteq \rz$ eine Menge, der wir einen Inhalt $|M| = \lambda(M )$ zuordnen können.
+    Ist
+    $|M| < \infty$, so ist die
+    uniforme Verteilung auf M gegeben durch die Dichte
+    \[
+        \dcht(x) = \begin{cases}
+                       \frac{1}{|M|} & x \in M \\
+                       0 & sonst
+        \end{cases}
+    \]
+\end{defi}
+
+\begin{bem}
+    \txc{(Skript 26 - Bemerkung 1.35)} \\
+    Die uniforme Verteilung auf einer beschränkten Menge $M \subseteq \rz$ ist das kontinuierliche Analogon der
+    Gleichverteilung auf einer endlichen Menge.
+    Es gilt
+    \[
+        \pe(A)  =\frac{|A \cap M|}{|M|}
+    \]
+    für alle $A \subseteq \rz$, für die der Inhalt $|A|$ definiert ist. \\
+    Wartezeiten werden häufig mit Hilfe der Exponentialverteilung modelliert. % TODO Karteikarte
+\end{bem}
+
+\karkar{def_uniforme_verteilung_intervall}
+\karkar{bem_uniform_nur_beschraenkt}
+\karkar{def_uniforme_verteilung_menge_M}
+\karkar{bem_uniform_M_kontinuierliches_analogon}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Exponentialverteilung %
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    \textbf{Exponentialverteilung} \label{defi:exponentialverteilung} \txc{(2025, Skript 26 - Definition 1.36)}\\
     Die Exponentialverteilung zum Parameter $\alpha > 0$ ist gegeben durch die \dichte
     \begin{equation}
         \label{eq:Exponentialverteilung}
         \dcht(x) = \begin{cases}
-                   0 & \text{ für } x < 0 \\
-                   \alpha e ^{- \alpha x} &  \text{ für } x \geq 0
+                       0 & \text{ für } x < 0 \\
+                       \alpha e ^{- \alpha x} &  \text{ für } x \geq 0
         \end{cases}
     \end{equation}
 \end{defi}
-\begin{bem} \defirefman{exponentialverteilung}  \txc{(2025)} \\
-    \ref{eq:Exponentialverteilung} ist eine \dichte:
+\begin{bem}
+    \defirefman{exponentialverteilung} \textbf{ - Die Exponentialverteilung ist wohldefiniert}  \txc{(2025, Skript 26 - Lemma 1.37)} \\
+    Gleichung~\ref{eq:Exponentialverteilung} ist eine \dichte:
     \begin{itemize}
-        \item $f  \geq 0 $
-        \item $f$ R-integrierbar, da stückweise stetig
+        \item $\dcht  \geq 0 $
+        \item $\dcht$ R-integrierbar, da \gls{stst}
         \orangenote{$g(x) = e^{-\alpha x}$ \\ $g'(x) = (-\alpha) e^{- \alpha x}$ (Produktregel)}
         \item \texttt{???}:
         \begin{align*}
-            \int_{-\infty}^{\infty} f(x) dx & =   \int_{0}^{\infty} f(x) dx  \\
+            \int_{-\infty}^{\infty} \dcht(x) dx & =   \int_{0}^{\infty} \dcht(x) dx  \\
             & =   \int_{0}^{\infty} \alpha e^{-\alpha x} dx  \\
             & = \underset{N \rightarrow \infty}{lim} \int^N_0 \alpha e ^{-\alpha x} dx \\
             & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha x} \mid^N_{x=0}] \\
@@ -136,10 +404,14 @@
     \end{itemize}
 \end{bem}
 
+
+
 \chapter{Rechnen mit Wahrscheinlichkeiten}
 \label{ch:rechnen-mit-wahrscheinlichkeiten}
 \untit{Vorlesung 25.04.2025 (V02 2025)}
-\section{Mengenoperationen und Ereignisse}
+
+
+\section{Mengenoperationen und Ereignisse}\label{sec:mengenoperationen-und-ereignisse}
 \begin{defi}
     \textbf{Vereinigung/Schnitt} abzählbar vieler Mengen \txc{(2025)} \\
     $I \subseteq \mathbb{N}$ Indexmenge. \\
@@ -325,8 +597,11 @@
 \begin{bsp}
     \texttt{fehlt}
 \end{bsp}
-\section{Erste Rechenregeln für Wahrscheinlichkeiten}
-\begin{satz}  \txc{(2025)} \\
+
+
+\section{Erste Rechenregeln für Wahrscheinlichkeiten}\label{sec:erste-rechenregeln-fur-wahrscheinlichkeiten}
+\begin{satz}
+    \txc{(2025)} \\
     Seien $\erga, \ergb, \erga_1, \erga_2, \dots \subset \eraum $ (und Intervalle, falls $\pe$ durch \dichte gegeben ist)
     \begin{itemize}
         \item[(a)] Additivität: Seien $\erga_1, \erga_2, \dots$ paarweise disjunkt, dann gilt:
@@ -370,23 +645,24 @@
         \end{align*}
     \end{itemize}
 \end{satz}
-\begin{bem}  \txc{(2025)} \\
+\begin{bem}
+    \txc{(2025)} \\
     Sind $\erga, \ergb$ disjunkt, so gilt nach (a): $\pe(\erga \dot\cup \ergb)  = \pe(\erga) + \pe(\ergb) $. \\
     Sind $\erga, \ergb$ nicht disjunkt, so gilt nach (e): $\pe(\erga \cup \ergb) = \pe(\erga) + \pe(\ergb) - \pe(\erga \cap \ergb)$. \\
     Sind $\erga, \ergb, \ergc$ paarweise disjunkt, so gilt nach (a): $\pe(\erga \cup \ergb \cup \ergc) \overset{(a)}{=} \pe(\erga) + \pe(\ergb) + \pe(\ergc) $. \\ \\
     Was passiert, wenn $\erga,\ergb,\ergc$ nicht paarweise disjunkt sind? \begin{align*}
-                                                                  \pe(\erga \cup \ergb \cup \ergc) & = \pe(\erga \cup (\ergb \cup \ergc)) \\
-                                                                  & = \pe(\erga) \pe( \cup \ergb \cup \ergc) -  \pe(\erga \cap (\ergb \cup \ergc)) \\
-                                                                  & = \pe(\erga) + [\pe(\ergb) + \pe(\ergc) - \pe(\ergb \cap \ergc)] - \pe((\erga \cap \ergb) \cup (\erga \cap \ergc))\\
-                                                                  & = \pe(\erga) + \pe(\ergb) + \pe(\ergc)  & \text{Mengen }  \\
-                                                                  & \quad - \pe(\erga \cap \ergb) - \pe(\erga \cap \ergc) - \pe(\ergb \cap \ergc) & \text{Paare von Mengen }  \\
-                                                                  & \quad + \pe(
-                                                                  \txo{
-                                                                      \underbrace{
-                                                                          \textcolor{black}{(\erga \cap \ergb) \cap (\erga \cap \ergc)}
-                                                                      }_{= \erga \cap \ergb \cap \ergc}
-                                                                  }
-                                                                  ) & \text{Tripel von Mengen }
+                                                                              \pe(\erga \cup \ergb \cup \ergc) & = \pe(\erga \cup (\ergb \cup \ergc)) \\
+                                                                              & = \pe(\erga) \pe( \cup \ergb \cup \ergc) -  \pe(\erga \cap (\ergb \cup \ergc)) \\
+                                                                              & = \pe(\erga) + [\pe(\ergb) + \pe(\ergc) - \pe(\ergb \cap \ergc)] - \pe((\erga \cap \ergb) \cup (\erga \cap \ergc))\\
+                                                                              & = \pe(\erga) + \pe(\ergb) + \pe(\ergc)  & \text{Mengen }  \\
+                                                                              & \quad - \pe(\erga \cap \ergb) - \pe(\erga \cap \ergc) - \pe(\ergb \cap \ergc) & \text{Paare von Mengen }  \\
+                                                                              & \quad + \pe(
+                                                                              \txo{
+                                                                                  \underbrace{
+                                                                                      \textcolor{black}{(\erga \cap \ergb) \cap (\erga \cap \ergc)}
+                                                                                  }_{= \erga \cap \ergb \cap \ergc}
+                                                                              }
+                                                                              ) & \text{Tripel von Mengen }
     \end{align*}
 \end{bem}
 \begin{satz}

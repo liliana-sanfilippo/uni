@@ -1,0 +1,255 @@
+%! Author = lili
+%! Date = 7/9/26
+\newglossaryentry{test}{
+    name={test},
+    description={todo},
+    type=dinge
+}
+
+%% 2
+
+
+\newglossaryentry{def_dichte}{
+    name={Was ist eine (eindimensionale) Dichte?},
+    description={Eine Funktion $f:\mathbb{R}\to[0,\infty)$, die (uneigentlich) Riemann-integrierbar ist, heißt Dichte, sofern $\int_{-\infty}^{\infty} f(x)\,dx = 1$ (Normierungsbedingung).},
+    type=dinge
+}
+
+\newglossaryentry{bem_dichte_nichtnegativ}{
+    name={Welche Vorzeichenbedingung erfüllt eine Dichte $f$?},
+description={Dichten sind nichtnegativ: $f(x) \geq 0$ für alle $x \in \mathbb{R}$.},
+type=dinge
+}
+
+\newglossaryentry{bem_riemann_integrierbarkeit_kriterien}{
+name={Welche hinreichenden Kriterien für Riemann-Integrierbarkeit von $f$ auf $[a,b]$ kennst du?},
+description={$\int_a^b f(x)\,dx$ existiert für $-\infty<a<b<\infty$, wenn $f$ monoton ODER stetig ist, oder wenn $f$ stückweise stetig ODER stückweise monoton ist.},
+type=dinge
+}
+
+\newglossaryentry{bem_uneigentliche_integrierbarkeit_kriterium}{
+name={Wann ist eine nichtnegative Funktion $f\geq 0$ uneigentlich Riemann-integrierbar über $\mathbb{R}$?},
+description={Genau dann, wenn $\lim_{N\to\infty}\int_{-N}^N f(x)\,dx < \infty$ existiert (und $\int_a^b f(x)\,dx$ für jede Wahl $-\infty<a<b<\infty$ existiert). In diesem Fall gilt $\int_{-\infty}^{\infty}f(x)\,dx = \lim_{N\to\infty}\int_{-N}^N f(x)\,dx$.},
+type=dinge
+}
+
+\newglossaryentry{bem_integrierbarkeit_halbachsen}{
+name={Wie zerlegt man die uneigentliche Riemann-Integrierbarkeit von $f$ über $\mathbb{R}$?},
+description={$f$ ist uneigentlich Riemann-integrierbar über $\mathbb{R}$ genau dann, wenn sowohl $(-\infty,0]$ als auch $[0,\infty)$ uneigentlich Riemann-integrierbar sind. Für $[0,\infty)$: $f$ integrierbar über jedes $[0,b]$ und $\lim_{b\to\infty}\int_0^b f(x)\,dx$ existiert; man schreibt dann $\int_0^\infty f(x)\,dx := \lim_{b\to\infty}\int_0^b f(x)\,dx$. Analog für $(-\infty,0]$ mit $\lim_{a\to-\infty}\int_a^0 f(x)\,dx$.},
+type=dinge
+}
+
+\newglossaryentry{def_wraum_mit_dichte}{
+name={Wie definiert man $P$ auf Intervallen, wenn eine Dichte $f\geq 0$ gegeben ist?},
+description={$P([a,b]) := \int_a^b f(x)\,dx$ für $-\infty<a<b<\infty$; $P([-\infty,b]):=\int_{-\infty}^b f(x)\,dx$; $P([a,\infty]):=\int_a^\infty f(x)\,dx$. Für abzählbare, aufsteigend geordnete disjunkte Intervalle $[a_i,b_i]$, $i\in I\subseteq\mathbb{N}$: $P\left(\bigcup_{i\in I}[a_i,b_i]\right) := \sum_{i\in I}\int_{a_i}^{b_i} f(x)\,dx$.},
+type=dinge
+}
+
+\newglossaryentry{bem_grenzen_der_wsmodellierung_mit_dichte}{
+name={Welche Mengen können bei einem Wahrscheinlichkeitsraum mit Dichte überhaupt eine Wahrscheinlichkeit bekommen?},
+description={Nur Mengen, die als maximal abzählbar unendliche Vereinigung oder Schnitt von Intervallen darstellbar sind (auch wiederholt kombiniert). Es gibt zwar pathologische Mengen ohne zugeordnete Wahrscheinlichkeit, diese sind aber schwer zu konstruieren und für die Praxis irrelevant.},
+type=dinge
+}
+
+\newglossaryentry{bem_dichte_null_ausserhalb_I}{
+name={Wie modelliert man ein Zufallsexperiment, bei dem nur Werte aus einer Teilmenge $I\subseteq\mathbb{R}$ angenommen werden können?},
+description={Man wählt eine Dichte $f$, die außerhalb von $I$ Null ist, also $f(x)=0$ für alle $x \notin I$.},
+type=dinge
+}
+
+\newglossaryentry{lem_einelementige_mengen_wahrscheinlichkeit_null}{
+name={Welche Wahrscheinlichkeit hat eine einelementige Menge $\{a\}$, wenn $P$ durch eine Dichte gegeben ist?},
+description={$P(\{a\}) = 0$ für alle $a \in \mathbb{R}$. (Dichte-Modelle weisen einzelnen Punkten also stets Wahrscheinlichkeit 0 zu, im Gegensatz zu diskreten Modellen.)},
+type=dinge
+}
+
+\newglossaryentry{kor_dichten_nicht_eindeutig}{
+name={Sind Dichten, die zu einem gegebenen Wahrscheinlichkeitsmaß gehören, eindeutig bestimmt?},
+description={Nein. Unterscheiden sich zwei Dichten $f$ und $g$ nur auf einer höchstens abzählbaren Menge $M$ (d.h. $g(x)=f(x)$ für alle $x \notin M$), so definieren sie dasselbe Wahrscheinlichkeitsmaß $P$.},
+type=dinge
+}
+
+\newglossaryentry{kor_ws_intervalle_rand_egal}{
+name={Spielt es bei einer Dichte eine Rolle, ob ein Intervall offen, halboffen oder abgeschlossen ist?},
+description={Nein. Für $-\infty<a<b<\infty$ gilt $P([a,b]) = P((a,b]) = P([a,b)) = P((a,b))$, da einzelne Randpunkte jeweils Wahrscheinlichkeit 0 haben.},
+type=dinge
+}
+
+
+\newglossaryentry{bem_vorgehen_integrale_stueckweise_dichte}{
+name={In welchen 4 Schritten berechnet man Integrale mit stückweise gegebener Dichte?},
+description={(1) Integral über das gewünschte Intervall aufschreiben (Normierung oder $P([a,b])$). (2) Grenzen anpassen, sodass nicht mehr über Bereiche integriert wird, auf denen $f=0$ gilt. (3) Konkrete Form von $f$ einsetzen. (4) Integral ausrechnen. Beispiel: $P([50,70]) = \int_{50}^{70}f(x)dx = \int_{50}^{60}f(x)dx = \int_{50}^{60}\frac{1}{60}dx = \frac{1}{6}$.},
+type=dinge
+}
+
+\newglossaryentry{bem_integral_aufspalten_mehr_faelle}{
+name={Wie geht man vor, wenn die Dichte $f$ durch mehr als zwei Fälle definiert ist?},
+description={Das Integral muss vor dem Einsetzen der konkreten Form von $f$ entsprechend aufgespalten werden: $\int_a^d f(x)dx = \int_a^b f(x)dx + \int_b^c f(x)dx + \int_c^d f(x)dx$ für $a<b<c<d$.},
+type=dinge
+}
+
+\newglossaryentry{def_uniforme_verteilung_intervall}{
+name={Was ist die uniforme Verteilung auf einem Intervall $I=[a,b]$ (Kontinuumsäquivalent zur Gleichverteilung)?},
+description={Gegeben durch die Dichte $f(x) = \frac{1}{|I|}=\frac{1}{b-a}$ für $x\in I$, sonst $0$, wobei $|I|$ die Intervalllänge ist. Voraussetzung: $I$ beschränkt, $-\infty<a<b<\infty$.},
+type=dinge
+}
+
+
+\newglossaryentry{bem_uniform_nur_beschraenkt}{
+name={Warum kann es keine uniforme Verteilung auf einem unbeschränkten Intervall geben?},
+description={Der Dichtewert $\frac{1}{b-a}$ ergibt sich aus der Normierungsbedingung $\int f(x)dx=1$. Bei unbeschränktem Intervall würde dies (analog zum Beweis, dass es keine Gleichverteilung auf unendlichen Mengen gibt) zu einem Widerspruch führen — daher ist eine uniforme Verteilung nur auf beschränkten Intervallen definierbar.},
+type=dinge
+}
+
+\newglossaryentry{def_uniforme_verteilung_menge_M}{
+name={Wie verallgemeinert man die uniforme Verteilung von Intervallen auf beliebige Mengen $M\subseteq\mathbb{R}$?},
+description={Sei $M\subseteq\mathbb{R}$ eine Menge mit Inhalt $|M|=\lambda(M)<\infty$. Die uniforme Verteilung auf $M$ ist gegeben durch $f(x)=\frac{1}{|M|}$ für $x\in M$, sonst $0$.},
+type=dinge
+}
+
+\newglossaryentry{bem_uniform_M_kontinuierliches_analogon}{
+name={Wie berechnet man bei uniformer Verteilung auf $M$ die Wahrscheinlichkeit eines beliebigen Ereignisses $A$?},
+description={$P(A) = \frac{|A\cap M|}{|M|}$ für alle $A\subseteq\mathbb{R}$, für die der Inhalt $|A|$ definiert ist. Dies ist das kontinuierliche Analogon zur Gleichverteilung auf einer endlichen Menge ($P(A)=\frac{\#A}{\#\Omega}$).},
+type=dinge
+}
+
+\newglossaryentry{def_exponentialverteilung}{
+name={Wie lautet die Dichte der Exponentialverteilung mit Parameter $\alpha>0$?},
+description={$f(x) = \begin{cases} 0 & x<0 \\ \alpha e^{-\alpha x} & x\geq 0 \end{cases}$. Die Exponentialverteilung wird häufig zur Modellierung von Wartezeiten verwendet.},
+type=dinge
+}
+
+\newglossaryentry{lem_exponentialverteilung_wohldefiniert}{
+name={Wie zeigt man, dass die Exponentialverteilung eine gültige Dichte ist?},
+description={(1) $f\geq 0$ nach Definition. (2) $f$ ist stückweise stetig, also Riemann-integrierbar. (3) Normierung: $\int_{-\infty}^{\infty}f(x)dx = \int_0^{\infty}\alpha e^{-\alpha x}dx = \lim_{N\to\infty}[-e^{-\alpha x}]_0^N = \lim_{N\to\infty}(1-e^{-\alpha N}) = 1-0 = 1$.},
+type=dinge
+}
+
+%% 1
+
+\newglossaryentry{wann_poisson}{
+    name={Wann ist die Poisson-Approximation ist gut?},
+    description={Wenn n groß im Vergleich zu k ist ($n >> k$) und p klein ist (
+    $n >> \alpha := np$). Das heißt insbesondere, daß die Erfolgswahrscheinlichkeit klein sein muss.},
+    type=dinge
+}
+
+\newglossaryentry{def_elementarereignis}{
+    name={Was ist ein Elementarereignis?},
+    description={Ein möglicher Ausgang eines Zufallsexperiments.
+    Notation: kleiner griechischer Buchstabe $\omega$ (omega).
+    Je nach Kontext auch andere Symbole, z.B. $k$ für natürliche Zahlen oder $x$ für reelle Zahlen.},
+    type=dinge
+}
+
+\newglossaryentry{def_ereignisraum}{
+    name={Was ist ein Ereignisraum $\Omega$?},
+description={Die Menge aller Elementarereignisse, also aller möglichen Ausgänge eines Zufallsexperiments.
+Muss nichtleer sein ($\Omega \neq \emptyset$). Notation: großer griechischer Buchstabe $\Omega$ (Omega).
+Bei mehreren Ereignisräumen: $\Omega, \tilde\Omega, \Omega_1, \Omega_2, \dots$},
+type=dinge
+}
+
+\newglossaryentry{bsp_ereignisraum_wahl}{
+name={Wie wählt man den Ereignisraum beim Würfeln bzw. bei der Zeitmessung?},
+description={Würfeln: $\Omega = \{1,\dots,6\}$ (oder Würfelsymbole). Zeitmessung: $\Omega = [0,\infty)$ als sinnvolle Grundwahl, kann bei Zusatzinformationen auf ein kleineres Intervall eingeschränkt werden. Wichtig: Bei Angabe von $\Omega$ stets die Interpretation der Elementarereignisse angeben, z.B. ``Dabei bedeutet $\omega = 1$, dass der Würfel eine Eins zeigt''.},
+type=dinge
+}
+
+\newglossaryentry{def_ereignis}{
+name={Was ist ein Ereignis $A$?},
+description={Eine (messbare) Teilmenge des Ereignisraums, $A \subseteq \Omega$. Auch $A=\emptyset$ und $A=\Omega$ sind zulässig. Sprechweise: $\omega \in A$ bedeutet ``$A$ ist eingetroffen''. Formal ist $A$ ein Element der Potenzmenge $\mathcal{P}(\Omega)$, also $A \in \mathcal{P}(\Omega)$.},
+type=dinge
+}
+
+\newglossaryentry{bem_einelementige_menge}{
+name={Ist ein Elementarereignis auch ein Ereignis?},
+description={Ja. Ist $\omega \in \Omega$ ein Elementarereignis, so ist die einelementige Menge $\{\omega\} \in \mathcal{P}(\Omega)$ ein Ereignis in $\Omega$.},
+type=dinge
+}
+
+\newglossaryentry{einschraenkung_ueberabzaehlbar}{
+name={Welche Ereignisse betrachtet man, wenn $\Omega \subseteq \mathbb{R}^n$ weder endlich noch abzählbar unendlich ist?},
+description={Man beschränkt sich auf Ereignisse, die Intervalle oder bekannte geometrische Figuren sind (Dreieck, Rechteck, Kugel), sowie abzählbare Schnitte oder Vereinigungen solcher Objekte. Dies vermeidet Probleme der Maß- und Integrationstheorie.},
+type=dinge
+}
+
+\newglossaryentry{def_zaehldichte}{
+name={Was ist eine Zähldichte / Wahrscheinlichkeitsfunktion $\mu$?},
+description={Sei $\Omega \neq \emptyset$ abzählbar. Eine Abbildung $\mu: \Omega \to [0,1]$ mit $\sum_{\omega \in \Omega} \mu(\omega) = 1$ (Normierung) heißt Zähldichte bzw. Wahrscheinlichkeitsfunktion auf $\Omega$.},
+type=dinge
+}
+
+\newglossaryentry{def_wahrscheinlichkeitsmass}{
+name={Wie berechnet man aus einer Zähldichte $\mu$ die Wahrscheinlichkeit $P(A)$ eines Ereignisses?},
+description={$P(A) := \sum_{\omega \in A} \mu(\omega)$. $P$ heißt Wahrscheinlichkeitsmaß und liegt immer zwischen 0 und 1.},
+type=dinge
+}
+
+\newglossaryentry{konvention_leere_menge}{
+name={Welchen Wert hat $P(\emptyset)$?},
+description={Konvention: $P(\emptyset) = 0$.},
+type=dinge
+}
+
+\newglossaryentry{eigenschaften_wmass}{
+name={Welche drei Grundeigenschaften hat ein Wahrscheinlichkeitsmaß $P$ auf abzählbarem $\Omega$?},
+description={(1) $0 \leq P(A) \leq 1$ für alle $A \in \mathcal{P}(\Omega)$. (2) $P(\emptyset) = 0$. (3) $P(\Omega) = 1$. $P$ ist eine Abbildung $P: \mathcal{P}(\Omega) \to [0,1]$.},
+type=dinge
+}
+
+\newglossaryentry{beweis_untere_obere_schranke}{
+name={Wie zeigt man $0 \leq P(A) \leq 1$?},
+description={Untere Schranke: $P(A) = \sum_{\omega \in A} \mu(\omega) \geq 0$, da alle Summanden nichtnegativ sind. Obere Schranke: $P(A) = \sum_{\omega \in A}\mu(\omega) \leq \sum_{\omega \in \Omega}\mu(\omega) = 1$, ebenfalls weil alle Summanden nichtnegativ sind.},
+type=dinge
+}
+
+\newglossaryentry{def_wraum}{
+name={Was ist ein Wahrscheinlichkeitsraum?},
+description={Das Paar $(\Omega, \mu)$ heißt Wahrscheinlichkeitsraum. Es besteht eine ein-eindeutige Zuordnung zwischen der Wahrscheinlichkeitsfunktion $\mu$ und dem Wahrscheinlichkeitsmaß $P$: $P(A) = \sum_{\omega \in A}\mu(\omega)$ und umgekehrt $\mu(\omega) = P(\{\omega\})$.},
+type=dinge
+}
+
+\newglossaryentry{unterschied_mu_P}{
+name={Was ist der Unterschied zwischen $\mu$ und $P$ bezüglich ihres Definitionsbereichs?},
+description={$\mu$ hat als Argument ein einzelnes Elementarereignis $\omega$ (also $\mu(\omega)$), während $P$ auf der Potenzmenge $\mathcal{P}(\Omega)$ definiert ist und daher das einelementige Ereignis $\{\omega\}$ als Argument hat (also $P(\{\omega\})$).},
+type=dinge
+}
+
+
+\newglossaryentry{take_home_modellieren}{
+name={Was ist die Take-Home-Message beim Modellieren von $\mu$?},
+description={Wann immer möglich, modelliere so, dass $\mu(\omega) = \text{const} \ \forall \omega \in \Omega$ gilt (Gleichverteilung). Dies erfordert Symmetrieargumente.},
+type=dinge
+}
+
+\newglossaryentry{def_gleichverteilung}{
+name={Wann heißt $\mu$ Gleichverteilung auf $\Omega$?},
+description={Sei $\Omega \neq \emptyset$ endlich, d.h. $0 < \#\Omega < \infty$. Gilt $\mu(\omega) = \mu(\tilde\omega)$ für alle $\omega,\tilde\omega \in \Omega$ (d.h. $\mu$ ist konstant), so heißen $\mu$ und das zugehörige $P$ die Gleichverteilung auf $\Omega$.},
+type=dinge
+}
+
+\newglossaryentry{lem_gleichverteilung_rechnen}{
+name={Wie berechnet man $\mu(\omega)$ und $P(A)$ bei Gleichverteilung?},
+description={(a) $\mu(\omega) = \frac{1}{\#\Omega}$ für alle $\omega \in \Omega$. (b) $P(A) = \frac{\#A}{\#\Omega}$ für alle $A \subseteq \Omega$. Anschaulich: Anzahl der günstigen Ausgänge geteilt durch Anzahl aller möglichen Ausgänge.},
+type=dinge
+}
+
+\newglossaryentry{beweis_gleichverteilung}{
+name={Wie beweist man $\mu(\omega) = \frac{1}{\#\Omega}$ bei Gleichverteilung?},
+description={Da $\mu$ konstant ist, existiert ein $c \in [0,1]$ mit $\mu(\omega) = c$ für alle $\omega$. Aus der Normierung folgt $1 = \sum_{\omega \in \Omega}\mu(\omega) = c \cdot \#\Omega$, also $c = \frac{1}{\#\Omega}$.},
+type=dinge
+}
+
+\newglossaryentry{bem_gleichverteilung_abzaehlprobleme}{
+name={Worauf reduziert sich das Berechnen von Wahrscheinlichkeiten bei Gleichverteilung?},
+description={Auf reine Abzählprobleme (Kombinatorik), da $P(A) = \frac{\#A}{\#\Omega}$ gilt.},
+type=dinge
+}
+
+\newglossaryentry{keine_gleichverteilung_unendlich}{
+name={Warum kann es keine Gleichverteilung auf einer abzählbar unendlichen Menge geben?},
+description={Annahme: Gleichverteilung $\mu$ auf $\Omega = \mathbb{N}$ mit Wert $c$. Aus $1 = \sum_{k=1}^\infty \mu(k) = c \cdot \#\mathbb{N}$ folgt ein Widerspruch: Für $c=0$ ergibt sich $1=0$, für $c>0$ ergibt sich $1=\infty$. Beide Fälle sind unmöglich, also existiert keine Gleichverteilung auf unendlichen Mengen. Deshalb ist in der Definition $\#\Omega < \infty$ vorausgesetzt.},
+type=dinge
+}
+

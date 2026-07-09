@@ -23,7 +23,13 @@
     \item \Gls{gleichverteilung} kennen und erkennen
 \end{itemize}
 
-\subsection*{Begriffe}
+%\subsection*{Begriffe}
+
+%%%%%%%%%%%%%%%%%%%%%
+% elementarereignis %
+%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Elementarereignisse}\label{subsec:elementarereignisse}
 
 \begin{defi}
     \textbf{\Gls{elementarereignis}} \label{def:elementarereignis}  $\ele$  \txc{(2025)} \\
@@ -42,7 +48,12 @@
     \end{itemize}
 \end{bsp}
 
+\karkar{def_elementarereignis}
 
+%%%%%%%%%%%%%%%%%%%%%
+% Ereignisraum %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ereignisräume}\label{subsec:ereignisraume}
 \begin{defi}
     \label{def:eraum}
     \textbf{\Gls{eraum}} $\eraum$  \txc{(2025)}  \\
@@ -84,7 +95,14 @@ Wir fassen also jene Elementarereignisse zusammen, die die gewünschte
 Eigenschaft haben.
 Dies führt zur folgenden Definition.
 
+\karkar{def_ereignisraum}
 
+\karkar{bsp_ereignisraum_wahl}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Ereignis %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ereignisse}\label{subsec:ereignisse}
 \begin{defi}
     \label{def:ereignis} \textbf{Ereignis} $\erga$  \txc{(2025)}  \\
     (Messbare) Teilmenge des Ereignisraums $\erga \subseteq \eraum$ (
@@ -119,6 +137,9 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \end{itemize}
 \end{bsp}
 
+\karkar{def_ereignis}
+\karkar{bem_einelementige_menge}
+
 
 %\section{Vorgehen beim Modellieren}\label{sec:vorgehen-beim-modellieren}
 \komm{Beim geeigneten $\eraum$ können Modelle sich bereits unterscheiden. Bspw. Münzwurf: Man kann ``k'', ``z'' nahmen oder ``Kopf'', ``Zahl''. Das sind verschiedenen $\eraum $, aber beide wären passend.}
@@ -130,7 +151,12 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \end{enumerate}
 \end{itemize} \komm{Wenn sie abzählbar sagt, meint sie sowohl endlich als auch abzählbar unendlich.}
 
+\karkar{einschraenkung_ueberabzaehlbar}
 
+%%%%%%%%%%%%%%%%%%%%%
+% Zähldichte %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zähldichten und Wahrscheinlichkeitsmaße}\label{subsec:zahldichten-und-wahrscheinlichkeitsmae}
 \begin{defi}
     \label{def:zaehldichte}
     \textbf{Zähldichte / $\wfk$} \txc{(2025)} \\
@@ -190,7 +216,17 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     \end{itemize}
 \end{lem}
 
+\karkar{def_zaehldichte}
+\karkar{def_wahrscheinlichkeitsmass}
+\karkar{konvention_leere_menge}
+\karkar{eigenschaften_wmass}
+\karkar{beweis_untere_obere_schranke}
+\karkar{unterschied_mu_P}
 
+%%%%%%%%%%%%%%%%%%%%%
+% Wahrscheinlichkeitsraum %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wahrscheinlichkeitsräume}\label{subsec:wahrscheinlichkeitsraume}
 \begin{defi}
     \label{def:wraum}
     \textbf{\gls{wraum}}  \txc{(2025)}  \\
@@ -220,6 +256,12 @@ Diese Einschränkung erlaubt es uns, Fragen der mathematischen Maß- und Integra
     definiert ist und daher das einelementige Ereignis $\{\ele\}$ als Argument hat.
 \end{bem}
 
+\karkar{def_wraum}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Beispiele Modellierung %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modellierung}\label{subsec:modellierung}
 \begin{bsp}
     \label{bsp:einmal-wuerfeln-i}
     \textbf{Einmal Würfeln} \txc{(2025)} \\
@@ -314,6 +356,12 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \komm{Take-Home message: Wann immer möglich, modelliere so, dass $\wfk(\ele) = const \forall \ele \in \eraum $ (
     erfordert Symmetrieargumente)}
 
+\karkar{take_home_modellieren}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Gleichverteilung %
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gleichverteilung}\label{subsec:gleichverteilung}
 \begin{defi}
     \textbf{Gleichverteilung} \txc{(2025)}  \\
     Sei $\eraum  \neq \emptyset$ eine endl.
@@ -341,10 +389,10 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
 \end{lem}
 \begin{bem}
     \txc{(2025)}
-    Im Fall der Gleichverteilung reduziert sich das Berechnen von WS auf Abzählprobleme. %\\ \komm{Mathe 1}
+    Im Fall der Gleichverteilung reduziert sich das Berechnen von \gls{ws} auf Abzählprobleme. %\\ \komm{Mathe 1}
 \end{bem}
-\begin{bem} % aus Skript
-    \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \txc{(2026)} \\
+\begin{bem}\label{bem:1-18} % aus Skript
+    \textbf{Keine Gleichverteilung, wenn der Ereignisraum nicht endlich ist} \txc{(Skript 26 - Bemerkung 1.18 )} \\
     Warum müssen wir voraussetzen, dass $\# \eraum < \infty $?
     Nehmen wir an, es gäbe eine Gleichverteilung $\wfk$ auf einer abzählbar unendlichen Menge
     $\eraum$.
@@ -379,3 +427,9 @@ Wie wählen wir $\eraum $ und $\wfk$ (bzw. $\pe$)?
     \end{itemize}
 \end{bsp}
 \newpage
+
+\karkar{def_gleichverteilung}
+\karkar{lem_gleichverteilung_rechnen}
+\karkar{beweis_gleichverteilung}
+\karkar{bem_gleichverteilung_abzaehlprobleme}
+\karkar{keine_gleichverteilung_unendlich}

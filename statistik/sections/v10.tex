@@ -9,9 +9,9 @@
 \section*{Lernziele}
 \begin{itemize}
     \item Zentraler Grenzwertsatz:
-    Aussage formulieren k¨onnen and anwenden k¨onnen
+    Aussage formulieren können and anwenden können
     \item Poissonscher Grenzwertsatz:
-    Aussage formulieren k¨onnen and anwenden k¨onnen
+    Aussage formulieren können and anwenden können
     \item Wann wird welche Approximation verwendet?
 \end{itemize}
 
@@ -19,11 +19,11 @@
     \textbf{Satz von de Moivre-Laplace}\label{er:mlp} \txc{(2026)} \\
     Sei $\sn$ die Anzahl der Erfolge in einem n-fach unabhängig wiederholten Bernoulli-Experiment mit
     Erfolgswahrscheinlichkeit $p \in (0,1)$. \\
-    Dann gilt f¨ur jede Wahl von Konstanten a, b mit $- \infty < a < b < \infty$
+    Dann gilt für jede Wahl von Konstanten a, b mit $- \infty < a < b < \infty$
     \[
         \lim_{n \rightarrow \infty} \pe \big( a < \frac{\sn - np}{\sqrt{npq}} \leq b \big) = \frac{1}{\sqrt{2 \pi}} \intab e^{-x^{2} / 2} dx
     \]
-    F¨ur große n folgt insbesondere, dass
+    Für große n folgt insbesondere, dass
     \[
         \pe(np - c < \sn \leq np +c ) \approx
         \txc{\int^{c / \sqrt{npq}}_{-c / \sqrt{npq}} \underbrace{ \frac{1}{\sqrt{2 \pi}} e^{-x^{2} / 2}}_{\vfktname} dx =}
@@ -48,12 +48,12 @@
     \]
     }
    \begin{itemize}
-       \item  Ist $c > 0$ nicht von n abh¨angig, so geht die Ws. mit $n \rightarrow \infty$ gegen Null
+       \item  Ist $c > 0$ nicht von n abhängig, so geht die Ws. mit $n \rightarrow \infty$ gegen Null
        \txc{(c ist eine feste Konstante, hängt nicht von nn
        n ab)}
        \item Ist $ 0 < c << \sqrt{n}$ , so geht die Ws. mit $n \rightarrow \infty$ immer noch gegen Null
        \txc{(c wächst, aber langsamer als $\sqrt{n}$)}
-       \item Relevanter Beitrag, d.h., Ws. gr¨oßer als null, nur f¨ur $c \approx \sqrt{n}$ (oder gr¨oßer)
+       \item Relevanter Beitrag, d.h., Ws. größer als null, nur für $c \approx \sqrt{n}$ (oder größer)
        \txc{(c wächst in derselben Größenordnung wie $\sqrt{n}$))}
    \end{itemize}
     \txc{
@@ -86,7 +86,7 @@ Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Norm
             \intab \varphi(x) \dx
     \]
     }
-    Verhalten f¨ur beschrieben durch
+    Verhalten für beschrieben durch
     \begin{itemize}
         \item $\epsilon$ der Ordnung 1 \txc{(konstant)}: Gesetz der großen Zahlen
         \item $\epsilon$ der Ordnung $\frac{1}{\sqrt{n}}$ \txc{()}
@@ -129,7 +129,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \begin{lem}
     \textbf{Bekannte Verallgemeinerungen} \txc{(2026)}
     \begin{itemize}
-        \item Die Voraussetzung der identischen Verteilung kann abgeschw¨acht werden (z.B. zur Lindeberg-Bedingung).
+        \item Die Voraussetzung der identischen Verteilung kann abgeschwächt werden (z.B. zur Lindeberg-Bedingung).
         \begin{itemize}
             \item
             \txc{Also: man muss nicht verlangen, dass alle $X_i$ dieselbe  Verteilung haben. Zum Beispiel darf
@@ -137,7 +137,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
                 Damit der ZGWS trotzdem noch gilt, braucht man aber eine Ersatzbedingung, die dafür sorgt, dass keine einzelne Variable
                 die Summe zu stark dominiert. Das ist die Lindeberg-Bedingung.}
         \end{itemize}
-        \item Die Voraussetzung der Unabh¨angigkeit kann abgeschw¨acht werden (Zentraler Grenzwertsatz von Lindeberg-Feller).
+        \item Die Voraussetzung der Unabhängigkeit kann abgeschwächt werden (Zentraler Grenzwertsatz von Lindeberg-Feller).
         \begin{itemize}
             \item \txc{Es gibt Verallgemeinerungen des ZGWS für gewisse Arten von abhängigen Zufallsvariablen.
             Diese Verallgemeinerung erlaubt es, den ZGWS trotzdem anzuwenden, solange die Abhängigkeit nicht zu stark ist.}
@@ -147,14 +147,14 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{lem}
 
 \begin{bsp}
-    \textbf{Augensumme in 420 W¨urfen eines fairen W¨urfels} \txc{(2026)} \\
+    \textbf{Augensumme in 420 Würfen eines fairen Würfels} \txc{(2026)} \\
     Wie groß ist die Ws., daß die Augensumme zwischen 1400 und 1550 liegt? \\
     \begin{itemize}
         \item $\eraum = \{1, ... , 6\}^n$ mit $n = 420$
         \item $\pe$ Gleichverteilung auf $\eraum$
-        \item $X_i(\ele) = \ele_i$ für $i = 1, . . . , n$ sind unabh¨angige, identisch verteilte ZV
+        \item $X_i(\ele) = \ele_i$ für $i = 1, . . . , n$ sind unabhängige, identisch verteilte ZV
         \item $\mathcal{M} = \E{X_i} = \frac{7}{2}$ und $\sigma^2 = \Var(X_i) = \frac{35}{12}$
-        \item $\sn (\ele) = \sumEN X_i(\ele)$ ist die Augensumme in n W¨urfen
+        \item $\sn (\ele) = \sumEN X_i(\ele)$ ist die Augensumme in n Würfen
     \end{itemize}
     \begin{align*}
         \pe(1400 \leq \sn \leq 1550) & = \txc{\pe \left( 1399 <   \sn \leq 1550 \right)} \\
@@ -170,11 +170,11 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Augensumme aus n W¨urfen eines fairen W¨urfels} \txc{(2026)}  \\
-    Jede Durchf¨uhrung des Experiments ergibt die Augensumme aus n W¨urfen
-    eines fairen W¨urfels.
-    Jedes Histogramm f¨ur ein festes n zeigt diese Augensumme in jeweils 5000
-    Durchf¨uhrungen des Experiments.
+    \textbf{Augensumme aus n Würfen eines fairen Würfels} \txc{(2026)}  \\
+    Jede Durchführung des Experiments ergibt die Augensumme aus n Würfen
+    eines fairen Würfels.
+    Jedes Histogramm für ein festes n zeigt diese Augensumme in jeweils 5000
+    Durchführungen des Experiments.
     Vergleich mit der entsprechend skalierten Gaußschen Glockenkurve. \\
     $n \in \{1, 2, 3, 4, 5, 10, 50, 100\}$
     \begin{figure}[H]
@@ -215,7 +215,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 
 \begin{satz}
     \textbf{Poissonscher Grenzwertsatz} \textit{Approximationen der Binomialverteilung} \txc{(2026)} \\
-    Gilt $np_n \rightarrow \alpha > 0$ für $ n \rightarrow \infty$, so gilt f¨ur jedes feste $k \in \nz$
+    Gilt $np_n \rightarrow \alpha > 0$ für $ n \rightarrow \infty$, so gilt für jedes feste $k \in \nz$
     \[
         \Binomv(k) \rightarrow \potm_{\alpha}(k) = \frac{\alpha^k}{k!} e^{- \alpha} \quad \text{ für } n \rightarrow \infty
     \]
@@ -234,14 +234,14 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{satz}
 
 \begin{bem}
-    \textbf{Fehlerabsch¨atzung / G¨ute der Approximation} \txc{(2026)} \\
+    \textbf{Fehlerabschätzung / Güte der Approximation} \txc{(2026)} \\
     Gegeben $\sn$ binomialverteilt mit Parametern n und $p_n$ und $Z_{np_n}$ poisson-verteilt mit Parameter $np_n$.
     Angenommen $np_n \rightarrow \alpha$.
     Dann gilt die Abschätzung
     \[
         sup_{C \subset \nz_0} | \pe(\sn \in C) - \pe(Z_{np_n} \in C)| \leq 2np^2_n \txo{\ = 2 \underbrace{np_n}_{\rightarrow \alpha} p_n}
     \]
-    Und f¨ur jede Konstante $K > 2$ und n groß genug gilt
+    Und für jede Konstante $K > 2$ und n groß genug gilt
     \[
         sup_{C \subset \nz_0} | \pe(\sn \in C) - \pe(Z_{np_n} \in C)| \leq K \alpha p_n \rightarrow 0 \quad \text{ für } n \rightarrow \infty
     \]
@@ -251,8 +251,11 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     Die Poisson-Approximation ist gut, wenn n groß im Vergleich zu k ist ($n >> k$) und p klein ist (
     $n >> \alpha := np$).
     Das heißt insbesondere, daß die Erfolgswahrscheinlichkeit klein sein muss.
-    F¨ur derartige seltene Ereignisse verwenden wir $\pe (\sn = k) \approx \potm_{\alpha}(k)$ mit $\alpha := np$.
+    % TODO für das untere auch karteikarte?
+    Für derartige seltene Ereignisse verwenden wir $\pe (\sn = k) \approx \potm_{\alpha}(k)$ mit $\alpha := np$.
 \end{bem}
+
+\karkar{wann_poisson}
 
 \begin{bsp}
     \textbf{Seltenes Ereignis / Roulette} \txc{(2026)} \\
@@ -276,7 +279,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 
 \begin{bsp}
     \textbf{Historisches Beispiel zur Poisson-Approximation: Tote durch Hufschlag in Preussen} \txc{(2026)} \\
-    Vorliegende Daten: 10 Armeecorps ¨uber 20 Jahre,
+    Vorliegende Daten: 10 Armeecorps über 20 Jahre,
     entspricht 200 Corps-Jahren.
     \begin{mytable}
         \begin{tabular}{|c|c|c|}
@@ -291,19 +294,19 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
             $\geq 5$ & 0 & 0 \\
             \hline
         \end{tabular}
-        \caption{Die durch Schlag eines Pferdes im preussischen Heere Get¨oteten (Ladislaus von Bortkiewicz, Das Gesetz der kleinen Zahlen, Teubner (1898))}
+        \caption{Die durch Schlag eines Pferdes im preussischen Heere Getöteten (Ladislaus von Bortkiewicz, Das Gesetz der kleinen Zahlen, Teubner (1898))}
     \end{mytable}
-    Hier wurde $\alpha$ gew¨ahlt als die mittlere Anzahl an Toten pro (Corps-)Jahr:
+    Hier wurde $\alpha$ gewählt als die mittlere Anzahl an Toten pro (Corps-)Jahr:
     \[
         \alpha = (1 · 65 + 2 · 22 + 3 · 3 + 1 · 4)/200 = 0, 61
     \]
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Beispiel zur Poisson-Approximation: Zellz¨ahlung im Gitternetz} \txc{(2026)} \\
+    \textbf{Beispiel zur Poisson-Approximation: Zellzählung im Gitternetz} \txc{(2026)} \\
     Zellen unter dem Mikroskop, Gitternetz, im Schnitt $\nu$ Zellen pro kleinem Quadrat, N Quadrate.
-    \paragraph{Modellierung:} Verteile $N \nu$ Zellen zuf¨allig und unabh¨angig voneinander auf N Quadrate.
-    Wahrscheinlichkeit $p = 1/N$ f¨ur eine Zelle, im vorab gew¨ahlten Quadrat $\varphi$ zu landen.
+    \paragraph{Modellierung:} Verteile $N \nu$ Zellen zufällig und unabhängig voneinander auf N Quadrate.
+    Wahrscheinlichkeit $p = 1/N$ für eine Zelle, im vorab gewählten Quadrat $\varphi$ zu landen.
     Wahrscheinlichkeit k Zellen im Quadrat $\varphi$ zu finden, ist $\Bnmv_{N\nu , 1/N}(k)$. \\
     \[
         \txo{ np_n \equiv \nu
@@ -320,39 +323,39 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Beispiel zur Poisson-Approximation: Im zeitlichen Verlauf eintreffende Rechenauftr¨age} \txc{(2026)} \\
-    Im Schnitt $\alpha$ eintreffende Rechenauftr¨age pro
+    \textbf{Beispiel zur Poisson-Approximation: Im zeitlichen Verlauf eintreffende Rechenaufträge} \txc{(2026)} \\
+    Im Schnitt $\alpha$ eintreffende Rechenaufträge pro
     Zeiteinheit (z.B. pro Stunde) \\
     Ws., daß ein Auftrag eintrifft in einem sehr kleinen
-    Zeitfenster der L¨ange $\delta << 1$ sei n¨aherungsweise $\alpha \delta$.
+    Zeitfenster der Länge $\delta << 1$ sei näherungsweise $\alpha \delta$.
     ($\delta$ sehr klein, z.B. eine Millisekunde)). \\
     Wir zerlegen das Gesamtzeitintervall $[0, t)$ in N sehr kleine, disjunkte
-    Teilintervalle der L¨ange $t/N$. (f¨ur ein festes t, z.B. 30 Minuten, 24 Stunden, drei Wochen, . . . )
+    Teilintervalle der Länge $t/N$. (für ein festes t, z.B. 30 Minuten, 24 Stunden, drei Wochen, . . . )
     \[
         [0, t) = \bigcup_{k=1}^N \left[  \frac{k-1}{N} \cdot t, \frac{k}{N} \cdot t \right)
     \]
     Ws., dass ein Auftrag eintrifft in einem bestimmten dieser Zeitfenster, ist
-    n¨aherungsweise $\alpha t / N$.
-    \paragraph{Annahmen:} F¨ur großes N sind die Zeitfenster so klein, daß wir annehmen d¨urfen, daß in
+    näherungsweise $\alpha t / N$.
+    \paragraph{Annahmen:} Für großes N sind die Zeitfenster so klein, daß wir annehmen dürfen, daß in
     jedem Fenster ein oder kein Auftrag eintrifft (d.h., wir schließen aus, daß mehr als ein Auftrag eintreffen kann)
-    . Ob ein Auftrag in einem bestimmten Fenster eintrifft, sei unabh¨angig vom
-    Eintreffen von Auftr¨agen in allen anderen Zeitfenstern.
+    . Ob ein Auftrag in einem bestimmten Fenster eintrifft, sei unabhängig vom
+    Eintreffen von Aufträgen in allen anderen Zeitfenstern.
     \paragraph{Modellierung:} Damit haben wir jedem Zeitfenster, d.h. jedem k, eine Bernoulli-Variable
-    zugeordnet, die uns sagt, ob im zugeh¨origen Zeitfenster k ein Auftrag
+    zugeordnet, die uns sagt, ob im zugehörigen Zeitfenster k ein Auftrag
     eintrifft.
     Die Erfolgsws. dieser Bernoulli-Variable ist $\alpha t / N$
     \txc{(Also die Ws, dass ein Auftrag in einem bestimmten Zeitfenster eintritt)}.
-    Die Anzahl der Auftr¨age, die im Intervall $[0, t)$ eintreffen, ist binomialverteilt
+    Die Anzahl der Aufträge, die im Intervall $[0, t)$ eintreffen, ist binomialverteilt
     mit Parametern N und $\alpha t / N$.
     \[
         \txo{ n = N, \quad p_n = \frac{\alpha t}{N}  = \alpha t \frac{1}{N}}
     \]
-    F¨ur die Ws., insgesamt $\varphi$ Auftr¨age im Intervall $[0, t)$ zu haben, ergibt die
-    Poisson-Approximation f¨ur große N:
+    Für die Ws., insgesamt $\varphi$ Aufträge im Intervall $[0, t)$ zu haben, ergibt die
+    Poisson-Approximation für große N:
     \[
         \Bnmv_{N, \alpha t / N}(\varphi) \approx \potm_{N \cdot \alpha t / N}(\varphi) = \potm_{\alpha t}(\varphi)
     \]
-    (Beachten Sie, daß wir in diesem Problem N beliebig groß machen d¨urfen. Wir verwenden
+    (Beachten Sie, daß wir in diesem Problem N beliebig groß machen dürfen. Wir verwenden
     hier die beliebige Teilbarkeit der Zeit!) \\
     Wiederum rechtfertigt unsere Betrachtung, beim Modellieren derartiger Prozesse
     generell die Poisson-Verteilung zu verwenden.
@@ -361,22 +364,22 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 % TODO geneinsamkeite und unterschiede Normal- und Poisson-Approximation / Diskussion
 
 \begin{lem}
-    \textbf{Poisson-Approximation f¨ur Erfolgswahrscheinlichkeit p nahe 1} \txc{(2026)} \\
-    Betrachte die Anzahl Erfolge $\sn$ in einem unabh¨angig n-mal wiederholten
+    \textbf{Poisson-Approximation für Erfolgswahrscheinlichkeit p nahe 1} \txc{(2026)} \\
+    Betrachte die Anzahl Erfolge $\sn$ in einem unabhängig n-mal wiederholten
     Bernoulli-Experiment mit:
     \begin{itemize}
         \item n groß
         \item p nahe bei 1, d.h., q = 1 - p klein
     \end{itemize}
-    Zusatz¨uberlegung erlaubt es, die Poisson-Approximation anzuwenden:
-    Tausche die Rollen von ``Erfolg'' und ``Mißerfolg'' (z¨ahle Mißerfolge !)\\
-    $\tilde\sn = n - \sn$ z¨ahlt die Anzahl der ``Mißerfolge''  $\tilde\sn$ ist $\Bnmv_{n,q}$-verteilt. \\
+    Zusatzüberlegung erlaubt es, die Poisson-Approximation anzuwenden:
+    Tausche die Rollen von ``Erfolg'' und ``Mißerfolg'' (zähle Mißerfolge !)\\
+    $\tilde\sn = n - \sn$ zählt die Anzahl der ``Mißerfolge''  $\tilde\sn$ ist $\Bnmv_{n,q}$-verteilt. \\
     Sei $\tilde \alpha = \E{\tilde\sn} = nq$. \\
     Poisson-Approximation:
     \[
         \pe(\tilde\sn = k) = \Bnmv_{n,q}(k) \approx \potm_{\tilde\alpha}(k); \quad \forall k \in \nz_0
     \]
-    ``Zur¨uck ¨ubersetzen'': : F¨ur alle $k \in \nz_0$ gilt:
+    ``Zurück übersetzen'': : Für alle $k \in \nz_0$ gilt:
     \[
         \pe(\sn = k) = \pe( \tilde\sn = n - k) = \Bnmv_{n,q}(n - k) \approx \potm_{\tilde\alpha}(n - k) = \frac{(nq)^{(n-k)}}{(n - k)!} e^{-nq}
     \]

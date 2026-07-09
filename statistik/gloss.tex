@@ -1,3 +1,5 @@
+
+
 \newacronym{ws}{WS}{Wahrscheinlichkeiten}
 \newacronym{bws}{B-WS}{Bedingte Wahrscheinlichkeit}
 
@@ -6,6 +8,25 @@
 \newglossaryentry{zweidimensionaledichte}{
     name={zweidimensionale Dichte},
     description ={todo}
+}
+
+\newglossaryentry{stst}{
+    name={stückweise stetig},
+    description ={Eine Funktion \(f \colon [a,b] \to \mathbb{R}\) heißt \emph{stückweise stetig}, wenn es eine Zerlegung
+                      \[
+                          a = x_0 < x_1 < \cdots < x_n = b
+                      \]
+                      gibt, sodass \(f\) auf jedem offenen Teilintervall
+                      \[
+                          (x_{i-1},x_i), \quad i=1,\dots,n,
+                      \]
+                      stetig ist und an den Zerlegungspunkten die einseitigen Grenzwerte
+                      \[
+                          \lim_{x \to x_i^-} f(x)
+                          \quad \text{und} \quad
+                          \lim_{x \to x_i^+} f(x)
+                      \]
+                      jeweils existieren und endlich sind.}
 }
 
 \newglossaryentry{vfkt}{
@@ -129,3 +150,4 @@ name={Absolute Konvergenz},
 description={},
 verb={absolut konvergiert}
 }
+

@@ -29,7 +29,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | Woche | Vorlesung  | In Notizen              | In Karteikarten | Tutorium   | In Notizen              | Übung (Abgabe) | In Notizen |
 |-------|------------|-------------------------|-----------------|------------|-------------------------|----------------|------------|
 | KW 16 | Fr, 17.04. | :white_check_mark:      |                 | --         | --                      | --             | --         |
-| KW 17 | Fr, 24.04. | :no_entry:              |                 | Mo, 20.04. | :no_entry:              | Fr, 24.04.     | :no_entry: |
+| KW 17 | Fr, 24.04. | :ballot_box_with_check: |                 | Mo, 20.04. | :no_entry:              | Fr, 24.04.     | :no_entry: |
 | KW 18 | --         | --                      | --              | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     | :no_entry: | 
 | KW 19 | Fr, 08.05. | :no_entry:              |                 | Mo, 04.05. | :construction:          | Fr, 08.05.     | :no_entry: |
 | KW 20 | Fr, 15.05. | :no_entry:              |                 | Mo, 11.05. | :no_entry:              | Fr, 15.05.     | :no_entry: |
@@ -46,7 +46,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 | Abschnitt Skript | In Notizen         | 
 |------------------|--------------------|
-| 1                | 1.1 fertig         |
+| 1                | :white_check_mark: |
 | 2                | :white_check_mark: |
 | 3                | :soon:             |
 
