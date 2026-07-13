@@ -915,7 +915,7 @@ und die Rolle der Erfolgswahrscheinlichkeit übernimmt.
 \begin{bsp}\textbf{\gls{Bernoulli-Variable}} \txc{(Skript 26)} \\
     Im Fall von \gls{Bernoulli-Variable}n erfüllen die unabhängigen \gls{Stichprobenvariable}n $X_1,\dots,X_n$
     \[
-        \pe_\theta(X_i=1)=\theta \qquad\text{und}\qquad \pe_\theta(X_i=0)=1-\theta \qquad \forall i\in\{1,\dots,n\} \cdot
+        \pe_{\theta}(X_i=1)=\theta \qquad\text{und}\qquad \pe_{\theta}(X_i=0)=1-\theta \qquad \forall i\in\{1,\dots,n\} \cdot
     \]
     Ist $n=3$ und $\ele\in\eraum$ zum Beispiel gegeben durch $\ele=(0,0,1)$, so ergibt sich die Stichprobe zu $x=(x_1,x_2,x_3)=(X_1(\ele),X_2(\ele),X_3(\ele))=(0,0,1)$, weil die \gls{Stichprobenvariable}n in diesem Fall die Projektionen von $\eraum$ auf die einzelnen Komponenten sind.
 
@@ -925,11 +925,11 @@ und die Rolle der Erfolgswahrscheinlichkeit übernimmt.
 \begin{defi}\textbf{Statistisches Modell} \txc{(Skript 26)} \\
     Ein \emph{statistisches Modell} für ein gegebenes Zufallsexperiment ist eine Familie $\mathcal P$ von Wahrscheinlichkeitsmaßen $P$ auf dem \gls{Stichprobenraum} $\mathcal X$, wobei die Wahrscheinlichkeitsmaße $P\in\mathcal P$ die möglichen Verteilungen von $X=(X_1,\dots,X_n)$ beschreiben.
 
-    Gilt $\mathcal P = \{\pe_\theta : \theta\in\Theta\}$, so heißt $\Theta$ der \emph{Parameterraum} und $\theta\in\Theta$ heißt \emph{Parameter}.
+    Gilt $\mathcal P = \{\pe_{\theta} : \theta\in\Theta\}$, so heißt $\Theta$ der \emph{Parameterraum} und $\theta\in\Theta$ heißt \emph{Parameter}.
 \end{defi}
 
 \begin{bsp}\textbf{\gls{Bernoulli-Variable}} \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\mathcal P = \{\pe_\theta:\theta\in\Theta\}$, wobei wir im Allgemeinen $\Theta=[0,1]$ wählen und $\pe_\theta$ durch die Wahrscheinlichkeitsfunktion $\wfk_\theta$ mit
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\mathcal P = \{\pe_{\theta}:\theta\in\Theta\}$, wobei wir im Allgemeinen $\Theta=[0,1]$ wählen und $\pe_{\theta}$ durch die Wahrscheinlichkeitsfunktion $\wfk_\theta$ mit
     \[
         \wfk_\theta(\ele) = \theta^{\sum_{i=1}^n\ele_i}(1-\theta)^{n-\sum_{i=1}^n\ele_i} \qquad \text{für alle } \ele\in\eraum
     \]
@@ -953,7 +953,7 @@ Grundsätzlich gibt es verschiedene Typen von Resultaten, die wir anhand einer S
 Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
 
 \begin{defi}\textbf{\gls{Punktschätzer}} \txc{(Skript 26)} \\
-    Sei ein statistisches Modell der Form $\mathcal P=\{\pe_\theta:\theta\in\Theta\}$ gegeben.
+    Sei ein statistisches Modell der Form $\mathcal P=\{\pe_{\theta}:\theta\in\Theta\}$ gegeben.
     \begin{enumerate}[label=(\alph*)]
         \item Ein \emph{\gls{Schätzer}} für $\theta\in\Theta$ ist eine Abbildung $t:\mathcal X\to\Theta$.
         Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen \gls{Schätzer} für $\theta\in\Theta$.
@@ -992,14 +992,14 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
 \end{bsp}
 
 \begin{defi}\textbf{Kriterien zur Beurteilung von \gls{Punktschätzer}n} \txc{(Skript 26)} \\
-    Gegeben seien ein statistisches Modell der Form $\mathcal P=\{\pe_\theta:\theta\in\Theta\}$, eine Abbildung $g:\Theta\to\Gamma$, sowie ein \gls{Schätzer} $t:\mathcal X\to\Gamma$ für $g(\theta)$.\footnote{Der Fall, dass wir mit einem \gls{Schätzer} für den Parameter $\theta$ selbst arbeiten, entspricht der Wahl $\Gamma=\Theta$ und $g(x)=x$ für alle $x\in\mathcal X$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
+    Gegeben seien ein statistisches Modell der Form $\mathcal P=\{\pe_{\theta}:\theta\in\Theta\}$, eine Abbildung $g:\Theta\to\Gamma$, sowie ein \gls{Schätzer} $t:\mathcal X\to\Gamma$ für $g(\theta)$.\footnote{Der Fall, dass wir mit einem \gls{Schätzer} für den Parameter $\theta$ selbst arbeiten, entspricht der Wahl $\Gamma=\Theta$ und $g(x)=x$ für alle $x\in\mathcal X$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
 
     \begin{enumerate}[label=(\alph*)]
         \item Der \emph{Bias} des \gls{Schätzer}s $t$ ist definiert als
         \[
             \mathrm{Bias}_t(\theta) = \ET[T] - g(\theta) = \ET[t((X_1,\dots,X_n))] - g(\theta) \qquad \text{für alle } \theta\in\Theta \cdot
         \]
-        Dabei sei $\ET$ der Erwartungswert, der mit dem Wahrscheinlichkeitsmaß $\pe_\theta$ definiert ist.
+        Dabei sei $\ET$ der Erwartungswert, der mit dem Wahrscheinlichkeitsmaß $\pe_{\theta}$ definiert ist.
         \item Der \gls{Schätzer} $t$ heißt \emph{erwartungstreu}, wenn $\mathrm{Bias}_t(\theta)=0$ für alle $\theta\in\Theta$ gilt.
         \item Das \emph{Risiko} des \gls{Schätzer}s $t$ im Punkt $\theta\in\Theta$ ist definiert als die erwartete quadratische Abweichung des \gls{Schätzer}s von $g(\theta)$, das heißt,
         \[
@@ -1045,7 +1045,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
             \end{tikzpicture}\label{fig:figure6}
         \end{figure}
 
-        \item Die Risikofunktion des \gls{Schätzer}s $t$ ist gegeben durch die Abbildung $\theta\mapsto\dfrac{\theta(1-\theta)}{n}$.
+        \item Die \gls{Risikofunktion} des \gls{Schätzer}s $t$ ist gegeben durch die Abbildung $\theta\mapsto\dfrac{\theta(1-\theta)}{n}$.
         \item Wir wollen nun den \gls{Schätzer} $t$ mit einem anderen \gls{Schätzer} vergleichen.
         Sei der \gls{Schätzer} $\tilde t$ gegeben durch
         \[
@@ -1096,7 +1096,7 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
     \begin{enumerate}[label=(\alph*)]
         \item \textbf{Geometrisch verteilte Stichprobenvariable.} Sei $\theta\in\Theta=[0,1]$ und gelte
         \[
-            \pe_\theta(X_i=k) = (1-\theta)^{k-1}\theta \qquad \text{für alle } k\in\nz \cdot
+            \pe_{\theta}(X_i=k) = (1-\theta)^{k-1}\theta \qquad \text{für alle } k\in\nz \cdot
         \]
         Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
         \[
@@ -1108,7 +1108,7 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
 
         \item \textbf{Gleichverteilte Stichprobenvariable.} Sei $\theta\in\Theta=\nz$ und gelte
         \[
-            \pe_\theta(X_i=k) = \frac1\theta \qquad \text{für alle } k\in\{1,\dots,\theta\} \cdot
+            \pe_{\theta}(X_i=k) = \frac1\theta \qquad \text{für alle } k\in\{1,\dots,\theta\} \cdot
         \]
         Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
         \[
@@ -1120,7 +1120,7 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
 
         \item \textbf{Poisson-verteilte Stichprobenvariable.} Sei $\theta\in\Theta=\nz$ und gelte
         \[
-            \pe_\theta(X_i=k) = \frac{\theta^k}{k!}e^{-\theta} \qquad \text{für alle } k\in\nz_0 \cdot
+            \pe_{\theta}(X_i=k) = \frac{\theta^k}{k!}e^{-\theta} \qquad \text{für alle } k\in\nz_0 \cdot
         \]
         Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
         \[
