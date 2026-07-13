@@ -8,6 +8,264 @@
 
 \subsection{Daten und Häufigkeitsverteilungen}
 
+
+\noindent \textbf{Erstes Ziel:} Darstellung empirischer Daten
+
+\subsection*{Grundbegriffe}
+
+
+\definstat{Datenerhebung}
+
+\begin{center}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Versuchseinheit} & \textbf{Merkmal} \\
+        \midrule
+        Schweinchen & Lage (beim Schweinewürfeln) \\
+        Schweinchen & Farbe (beim Ziehen aus Beutel) \\
+        Studierende & erster Buchstabe vom Vornamen \\
+        & Geburtstag \\
+        & Abiturnote \\
+        Schüler     & Alter in Jahren \\
+        & Größe \\
+        & Gewicht \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\definstat{Merkmal}
+
+\begin{bsp}
+    \textbf{Schweinewürfeln} \txc{(Skript 26)} \\
+    Fünf bis sieben Elementarereignisse (abhängig von Problemstellung):
+
+    \begin{itemize}
+        \item \textbf{Suhle:} Das Schwein liegt auf dem Rücken
+        \item \textbf{Haxe:} Das Schwein steht auf seinen Füßen
+        \item \textbf{Schnauze:} Das Schwein balanciert auf Vorderpfoten und Schnauze
+        \item \textbf{Backe:} Das Schwein lehnt auf Vorderpfoten, Schnauze und einem Ohr
+        \begin{itemize}
+            \item \dots auf Vorderpfoten, Schnauze und linkem Ohr
+            \item \dots auf Vorderpfoten, Schnauze und rechtem Ohr
+        \end{itemize}
+        \item \textbf{Faule Sau:} Das Schwein liegt auf der Seite
+        \begin{itemize}
+            \item \dots und der Punkt ist \emph{sichtbar}
+            \item \dots und der Punkt ist \emph{nicht sichtbar}
+        \end{itemize}
+    \end{itemize}
+
+    Wir betrachten die folgenden sechs Elementarereignisse:
+    \emph{Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt}.
+
+
+    \paragraph{Modell}
+    \[
+        \Om = \{\text{Suhle}, \text{Haxe}, \text{Schnauze}, \text{Backe}, \text{Faul-mit-Punkt}, \text{Faul-ohne-Punkt}\}
+    \]
+    Wie finden wir $\mu(\omega)$ für alle $\omega \in \Om$?
+
+    \paragraph{Experiment am 14.01.2026} (gerechtfertigt durch das Gesetz der großen Zahlen)
+
+    \begin{center}
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Elementarereignis} & \textbf{Anzahl} & \textbf{relative Häufigkeit} \\
+            \midrule
+            Suhle            & 59  & $\tfrac{59}{166}$ \\
+            Haxe              & 10  & $\tfrac{10}{166}$ \\
+            Schnauze          & 3   & $\tfrac{3}{166}$ \\
+            Backe             & 2   & $\tfrac{2}{166}$ \\
+            Faul-mit-Punkt    & 46  & $\tfrac{46}{166}$ \\
+            Faul-ohne-Punkt   & 46  & $\tfrac{46}{166}$ \\
+            \midrule
+            $\sum$            & $166$ & $1$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{bsp}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \pie[radius=2.2,text=legend]{
+                30.7/Suhle, 24.1/Haxe, 12.1/Schnauze, 12.0/Backe, 21.1/Faul-mit-Punkt
+            }
+        \end{tikzpicture}
+        \caption{Kreisdiagramm --- kleiner Datensatz (Beispiel 1.3)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \pie[radius=2.2,text=legend]{
+                35.5/Suhle, 6.0/Haxe, 1.8/Schnauze, 1.2/Backe, 27.7/Faul-mit-Punkt, 27.7/Faul-ohne-Punkt
+            }
+        \end{tikzpicture}
+       \caption{ Kreisdiagramm --- Experiment vom 14.01.2026 ($n=166$)}
+    \end{subfigure}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, width=7cm, height=5cm,
+                symbolic x coords={Suhle,Haxe,Schnauze,Backe,FmP,FoP},
+                xtick=data, x tick label style={rotate=45,anchor=east,font=\tiny},
+                ylabel={rel.\ Häufigkeit}, ymin=0,
+                bar width=10pt
+            ]
+                \addplot coordinates {(Suhle,0.375) (Haxe,0.25) (Schnauze,0.125) (Backe,0.125) (FmP,0.125) (FoP,0)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Balkendiagramm --- kleiner Datensatz}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, width=7cm, height=5cm,
+                symbolic x coords={Suhle,Haxe,Schnauze,Backe,FmP,FoP},
+                xtick=data, x tick label style={rotate=45,anchor=east,font=\tiny},
+                ylabel={Anzahl}, ymin=0,
+                bar width=10pt
+            ]
+                \addplot coordinates {(Suhle,59) (Haxe,10) (Schnauze,3) (Backe,2) (FmP,46) (FoP,46)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Balkendiagramm --- Experiment vom 14.01.2026}
+    \end{subfigure}
+\end{figure}
+
+
+\bigskip
+
+Merkmale treten in verschiedenen Ausprägungen auf.
+
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Ausprägung} \\
+        \midrule
+        Schweinchen & Lage & Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt \\
+        Schweinchen & Farbe & weiß, braun, rosa, schwarz \\
+        Studierende & erster Buchstabe vom Vornamen & A,\dots,Z \\
+        & Geburtstag & $1,\dots,365$ \\
+        & Abiturnote & $x/10$ mit $x\in\{10,\dots,40\}$ \\
+        Schüler     & Alter in Jahren & $n\in\Nz$ \\
+        & Größe & $l\in(0,\infty)$ \\
+        & Gewicht & untergewichtig, normal, übergewichtig \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Für quantitative Merkmale unterscheiden wir zwischen \emph{diskreten} und \emph{stetigen} Merkmalen (vgl.\ Alter in Jahren mit Größe).
+
+Für qualitative Merkmale unterscheiden wir zwischen \emph{ordinalen} Merkmalen bzw.\ \emph{Rangmerkmalen} einerseits und \emph{nominalen} Merkmalen andererseits. Rangmerkmale weisen im Gegensatz zu nominalen Merkmalen eine natürliche Ordnung auf (vgl.\ untergewichtig, normal, übergewichtig mit weiß, braun, rosa, schwarz).
+
+\textbf{Grundgesamtheit} oder \textbf{Population} ist die Menge aller Merkmalsträger, über die eine Aussage getroffen werden soll. Die Grundgesamtheit muss bei jeder Datenerhebung sorgfältig definiert werden.
+
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Grundgesamtheit} \\
+        \midrule
+        Schweinchen & Lage & alle vorhandenen Schweinchen nach dem Würfeln \\
+        Schweinchen & Farbe & alle Schweinchen im Beutel \\
+        Studierende & erster Buchstabe vom Vornamen & alle Studierenden im Hörsaal \\
+        & Geburtstag & \\
+        & Abiturnote & \\
+        Schüler     & Alter in Jahren & alle Schüler einer Jahrgangsstufe \\
+        & Größe & \\
+        & Gewicht & \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\textbf{Stichprobe:} Die Grundgesamtheit ist oft zu groß, um komplett ausgewertet zu werden. In der Regel wird daher nur eine Stichprobe ausgewertet.
+
+Eine Teilmenge der Größe $n$, zufällig aus der Grundgesamtheit gewählt, heißt \emph{Stichprobe vom Umfang $n$}.
+
+Dabei wird, leicht missbräuchlich, in der Regel nicht unterschieden zwischen den $n$ Versuchseinheiten, die für die Stichprobe aus der Grundgesamtheit gewählt werden, und den zu der Stichprobe gehörenden Merkmalsausprägungen.
+
+\textbf{Urliste} bezeichnet die so erhobenen Daten, d.h., die Elemente der Stichprobe zusammen mit ihren Merkmalsausprägungen.
+
+\begin{center}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Versuchseinheit} & \textbf{Merkmalsausprägung} \\
+        \midrule
+        Schweinchen 1 & Suhle \\
+        Schweinchen 2 & Schnauze \\
+        Schweinchen 3 & Faul-mit-Punkt \\
+        Schweinchen 4 & Haxe \\
+        Schweinchen 5 & Backe \\
+        Schweinchen 6 & Haxe \\
+        Schweinchen 7 & Suhle \\
+        Schweinchen 8 & Suhle \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Kürzere Darstellung als Liste:
+\[
+    (1,\text{Suhle}),(2,\text{Schnauze}),(3,\text{Faul-mit-Punkt}),(4,\text{Haxe}),(5,\text{Backe}),(6,\text{Haxe}),(7,\text{Suhle}),(8,\text{Suhle})
+\]
+
+\begin{definition}[Häufigkeitsverteilung]
+    Gegeben: Stichprobe $x_1,\dots,x_n$; Merkmal $X$ mit genau $s$ möglichen Ausprägungen $a_1,\dots,a_s$.
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Absolute Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
+        \[
+            H_n(a_i) = \#\{j\in\{1,\dots,n\} : x_j = a_i\}
+        \]
+        \item \textbf{Absolute empirische Häufigkeitsverteilung} der Stichprobe $x_1,\dots,x_n$:
+        Abbildung $H_n : \{a_1,\dots,a_s\}\to\{0,\dots,n\}$ mit $a_i\mapsto H_n(a_i)$ für $i=1,\dots,s$.
+        \item \textbf{Relative Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
+        \[
+            h_n(a_i) = \frac{1}{n} H_n(a_i)
+        \]
+        \item \textbf{Relative Häufigkeitsverteilung} der Stichprobe $x_1,\dots,x_n$:
+        Abbildung $h_n : \{a_1,\dots,a_s\}\to\left\{\frac{k}{n} : k\in\{0,\dots,n\}\right\}$ mit $a_i\mapsto h_n(a_i)$ für $i=1,\dots,s$.
+    \end{enumerate}
+\end{definition}
+
+\begin{bemerkung}
+    \[
+        H_n(a_1)+\cdots+H_n(a_s) = n \qquad\text{und}\qquad h_n(a_1)+\cdots+h_n(a_s)=1
+    \]
+\end{bemerkung}
+
+\begin{beispiel}[Werfen von acht Schweinchen]
+    Stichprobe: Suhle, Schnauze, Faul-mit-Punkt, Haxe, Backe, Haxe, Suhle, Suhle
+
+    bzw.\ Urliste: $(1,\text{Suhle}),(2,\text{Schnauze}),(3,\text{Faul-mit-Punkt}),(4,\text{Haxe}),(5,\text{Backe}),(6,\text{Haxe}),(7,\text{Suhle}),(8,\text{Suhle})$
+
+    \begin{center}
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Merkmalsausprägung} & $H_n(a_i)$ & $h_n(a_i)$ \\
+            \midrule
+            Suhle             & 3 & $3/8$ \\
+            Haxe              & 2 & $1/4$ \\
+            Schnauze          & 1 & $1/8$ \\
+            Backe             & 1 & $1/8$ \\
+            Faul-mit-Punkt    & 1 & $1/8$ \\
+            Faul-ohne-Punkt   & 0 & $0$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{beispiel}
+
 \subsection{Graphische Darstellungen eindimensionaler Daten}
 
 \section{Empirische Häufigkeitsverteilungen und ihre Lagemaße}
