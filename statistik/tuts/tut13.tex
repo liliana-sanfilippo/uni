@@ -26,7 +26,7 @@ Politiker aus.
     \begin{itemize}
         \item Stichprobenraum: $\chi = \{0,1\}^n$ mit $n = 200$
         \begin{itemize}
-            \item Jedes $\x in \chi$ ist ein n-fach unabhängig wiederholtes Bernoulli-Experiment
+            \item Jedes $x in \chi$ ist ein n-fach unabhängig wiederholtes Bernoulli-Experiment
         \end{itemize}
         \item $\Theta = \left[ 0,1 \right] \leftarrow$ ``Zustimmung''
         \item $P = \{ \pe_{\theta} : \theta \in \Theta \}$, wobei
@@ -37,14 +37,14 @@ Politiker aus.
         \item $n = 200$
         \item Stichprobenvariablen:
         \begin{itemize}
-            \item $X = (X_1, ..., X_n)$ mit $\{X_i\}^n_{i=1}$ unabhängig identisch verteilt
+            \item $X = (X_1, \dots, X_n)$ mit $\{X_i\}^n_{i=1}$ unabhängig identisch verteilt
             \item $X_i \sim Ber()$
         \end{itemize}
     \end{itemize}
     \paragraph{Weitere Lösung:}
     % Teststatistik
     \[
-        t : \chi \rightarrow \{0, ..., n\}
+        t : \chi \rightarrow \{0, \dots, n\}
     \]
     Möglich:
     \[
@@ -78,7 +78,7 @@ Politiker aus.
     Betrachte $p(\tilde x) = \pe_{\frac{3}{10}} (\sumEN X_i \leq 45)$
     % Erfolgsparameter 3/10, man geht davon aus alle dier Vernoulli Experimente haben den gleichen Erfolgsparameter
     \begin{align*}
-        \sumEN X_i \sim Bin(n, \frac{3}{10}) & = Bin_{200, \frac{3}{10}}(\{0, ..., 45\}) \\
+        \sumEN X_i \sim Bin(n, \frac{3}{10}) & = Bin_{200, \frac{3}{10}}(\{0, \dots, 45\}) \\
         & = \sum^{45}_{i = 1} \binom{n}{1} \left( \frac{3}{10} \right)^i \left( \frac{7}{10} \right)^{n-i} \\
         & \approx 0,011 & Taschenrechner
     \end{align*}
@@ -87,7 +87,7 @@ Politiker aus.
         = \mathbb{1}_{[0, 0.05]} (p(\tilde x)) % Indikatorfunktion
         = \mathbb{1}_{[0, \alpha]} (0,011) = 1
     \]
-    % Schlussforlgerung
+    % Schlussfolgerung
     $H_0$ muss verworfen werden.
 \end{auf}
 
@@ -127,8 +127,8 @@ Zusatz des Tutors:
 
 % TODO konkrete Stickprobe vs. Stichproben
 % TODO Arten von Hypothesen
-\section{PÜ 2.6.5}
-Beantworten Sie die folgenden Fragen zur Theorie der Hypothesentests. Eine Begründung Ihrer
+\section{PÜ 2.6.5}\label{sec:pu-2.6.5}
+Beantworten Sie die folgenden Fragen zur Theorie der \gls{Hypothesentest}s. Eine Begründung Ihrer
 Antworten ist nicht nötig.
 \begin{auf}
     \subsubsection*{Ein Fehler erster Art tritt ein, wenn ...}
@@ -174,7 +174,7 @@ Anmerkung: Fehler zweiter Art ist wir verwerfen H0 nicht, obwohl H0 falsch ist (
     \end{enumerate}
 \end{auf}
 
-\section{Besprechung ÜB 2.5.1}
+\section{Besprechung ÜB 2.5.1}\label{sec:besprechung-ub-2.5.1}
 Wir nehmen in dieser Aufgabe an, daß unsere Stichprobe von einem n-mal unabhängig wieder-
 holten Bernoulli-Experiment mit unbekannter Erfolgswahrscheinlichkeit $\theta \in (0, 1)$ stammt.
 
