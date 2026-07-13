@@ -16,22 +16,24 @@
 
 \definstat{Datenerhebung}
 
-\begin{center}
-    \begin{tabular}{ll}
-        \toprule
-        \textbf{Versuchseinheit} & \textbf{Merkmal} \\
-        \midrule
-        Schweinchen & Lage (beim Schweinewürfeln) \\
-        Schweinchen & Farbe (beim Ziehen aus Beutel) \\
-        Studierende & erster Buchstabe vom Vornamen \\
-        & Geburtstag \\
-        & Abiturnote \\
-        Schüler     & Alter in Jahren \\
-        & Größe \\
-        & Gewicht \\
-        \bottomrule
-    \end{tabular}
-\end{center}
+\begin{bsp} \txc{(Skript 26)}
+   \begin{mytable}
+       \begin{tabular}{ll}
+           \hline
+           \textbf{Versuchseinheit} & \textbf{Merkmal} \\
+           \hline
+           Schweinchen & Lage (beim Schweinewürfeln) \\
+           Schweinchen & Farbe (beim Ziehen aus Beutel) \\
+           Studierende & erster Buchstabe vom Vornamen \\
+           & Geburtstag \\
+           & Abiturnote \\
+           Schüler     & Alter in Jahren \\
+           & Größe \\
+           & Gewicht \\
+           \hline
+       \end{tabular}
+   \end{mytable}
+\end{bsp}
 
 \definstat{Merkmal}
 
@@ -67,22 +69,22 @@
 
     \paragraph{Experiment am 14.01.2026} (gerechtfertigt durch das Gesetz der großen Zahlen)
 
-    \begin{center}
+    \begin{mytable}
         \begin{tabular}{lcc}
-            \toprule
+            \hline
             \textbf{Elementarereignis} & \textbf{Anzahl} & \textbf{relative Häufigkeit} \\
-            \midrule
+            \hline
             Suhle            & 59  & $\tfrac{59}{166}$ \\
             Haxe              & 10  & $\tfrac{10}{166}$ \\
             Schnauze          & 3   & $\tfrac{3}{166}$ \\
             Backe             & 2   & $\tfrac{2}{166}$ \\
             Faul-mit-Punkt    & 46  & $\tfrac{46}{166}$ \\
             Faul-ohne-Punkt   & 46  & $\tfrac{46}{166}$ \\
-            \midrule
+            \hline
             $\sum$            & $166$ & $1$ \\
-            \bottomrule
+            \hline
         \end{tabular}
-    \end{center}
+    \end{mytable}
 \end{bsp}
 
 
@@ -147,38 +149,41 @@
 \end{figure}
 
 
-\bigskip
-
-Merkmale treten in verschiedenen Ausprägungen auf.
-
-\begin{center}
-    \begin{tabular}{lll}
-        \toprule
-        \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Ausprägung} \\
-        \midrule
-        Schweinchen & Lage & Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt \\
-        Schweinchen & Farbe & weiß, braun, rosa, schwarz \\
-        Studierende & erster Buchstabe vom Vornamen & A,\dots,Z \\
-        & Geburtstag & $1,\dots,365$ \\
-        & Abiturnote & $x/10$ mit $x\in\{10,\dots,40\}$ \\
-        Schüler     & Alter in Jahren & $n\in\Nz$ \\
-        & Größe & $l\in(0,\infty)$ \\
-        & Gewicht & untergewichtig, normal, übergewichtig \\
-        \bottomrule
-    \end{tabular}
-\end{center}
+\begin{bsp}
+    Merkmale treten in verschiedenen Ausprägungen auf. \txc{(Skript 26)}
+    \begin{mytable}
+        \begin{tabular}{lll}
+            \hline
+            \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Ausprägung} \\
+            \hline
+            Schweinchen & Lage & Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt \\
+            Schweinchen & Farbe & weiß, braun, rosa, schwarz \\
+            Studierende & erster Buchstabe vom Vornamen & A,\dots,Z \\
+            & Geburtstag & $1,\dots,365$ \\
+            & Abiturnote & $x/10$ mit $x\in\{10,\dots,40\}$ \\
+            Schüler     & Alter in Jahren & $n\in\Nz$ \\
+            & Größe & $l\in(0,\infty)$ \\
+            & Gewicht & untergewichtig, normal, übergewichtig \\
+            \hline
+        \end{tabular}
+    \end{mytable}
+\end{bsp}
 
 Für quantitative Merkmale unterscheiden wir zwischen \emph{diskreten} und \emph{stetigen} Merkmalen (vgl.\ Alter in Jahren mit Größe).
 
 Für qualitative Merkmale unterscheiden wir zwischen \emph{ordinalen} Merkmalen bzw.\ \emph{Rangmerkmalen} einerseits und \emph{nominalen} Merkmalen andererseits. Rangmerkmale weisen im Gegensatz zu nominalen Merkmalen eine natürliche Ordnung auf (vgl.\ untergewichtig, normal, übergewichtig mit weiß, braun, rosa, schwarz).
 
-\textbf{Grundgesamtheit} oder \textbf{Population} ist die Menge aller Merkmalsträger, über die eine Aussage getroffen werden soll. Die Grundgesamtheit muss bei jeder Datenerhebung sorgfältig definiert werden.
+% TODO welche arten von merkmalen gibt es?
 
-\begin{center}
+\definstat{Grundgesamtheit}
+
+Die Grundgesamtheit muss bei jeder Datenerhebung sorgfältig definiert werden.
+
+\begin{mytable}
     \begin{tabular}{lll}
-        \toprule
+        \hline
         \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Grundgesamtheit} \\
-        \midrule
+        \hline
         Schweinchen & Lage & alle vorhandenen Schweinchen nach dem Würfeln \\
         Schweinchen & Farbe & alle Schweinchen im Beutel \\
         Studierende & erster Buchstabe vom Vornamen & alle Studierenden im Hörsaal \\
@@ -187,9 +192,9 @@ Für qualitative Merkmale unterscheiden wir zwischen \emph{ordinalen} Merkmalen 
         Schüler     & Alter in Jahren & alle Schüler einer Jahrgangsstufe \\
         & Größe & \\
         & Gewicht & \\
-        \bottomrule
+        \hline
     \end{tabular}
-\end{center}
+\end{mytable}
 
 \textbf{Stichprobe:} Die Grundgesamtheit ist oft zu groß, um komplett ausgewertet zu werden. In der Regel wird daher nur eine Stichprobe ausgewertet.
 
@@ -199,11 +204,11 @@ Dabei wird, leicht missbräuchlich, in der Regel nicht unterschieden zwischen de
 
 \textbf{Urliste} bezeichnet die so erhobenen Daten, d.h., die Elemente der Stichprobe zusammen mit ihren Merkmalsausprägungen.
 
-\begin{center}
+\begin{mytable}
     \begin{tabular}{ll}
-        \toprule
+        \hline
         \textbf{Versuchseinheit} & \textbf{Merkmalsausprägung} \\
-        \midrule
+        \hline
         Schweinchen 1 & Suhle \\
         Schweinchen 2 & Schnauze \\
         Schweinchen 3 & Faul-mit-Punkt \\
@@ -212,16 +217,16 @@ Dabei wird, leicht missbräuchlich, in der Regel nicht unterschieden zwischen de
         Schweinchen 6 & Haxe \\
         Schweinchen 7 & Suhle \\
         Schweinchen 8 & Suhle \\
-        \bottomrule
+        \hline
     \end{tabular}
-\end{center}
+\end{mytable}
 
 Kürzere Darstellung als Liste:
 \[
     (1,\text{Suhle}),(2,\text{Schnauze}),(3,\text{Faul-mit-Punkt}),(4,\text{Haxe}),(5,\text{Backe}),(6,\text{Haxe}),(7,\text{Suhle}),(8,\text{Suhle})
 \]
 
-\begin{definition}[Häufigkeitsverteilung]
+\begin{defi}\textbf{Häufigkeitsverteilung} \txc{(Skript 26)} \\
     Gegeben: Stichprobe $x_1,\dots,x_n$; Merkmal $X$ mit genau $s$ möglichen Ausprägungen $a_1,\dots,a_s$.
     \begin{enumerate}[label=(\alph*)]
         \item \textbf{Absolute Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
@@ -237,34 +242,34 @@ Kürzere Darstellung als Liste:
         \item \textbf{Relative Häufigkeitsverteilung} der Stichprobe $x_1,\dots,x_n$:
         Abbildung $h_n : \{a_1,\dots,a_s\}\to\left\{\frac{k}{n} : k\in\{0,\dots,n\}\right\}$ mit $a_i\mapsto h_n(a_i)$ für $i=1,\dots,s$.
     \end{enumerate}
-\end{definition}
+\end{defi}
 
-\begin{bemerkung}
+\begin{bem}
     \[
         H_n(a_1)+\cdots+H_n(a_s) = n \qquad\text{und}\qquad h_n(a_1)+\cdots+h_n(a_s)=1
     \]
-\end{bemerkung}
+\end{bem}
 
-\begin{beispiel}[Werfen von acht Schweinchen]
+\begin{bsp}\textbf{Werfen von acht Schweinchen}  \txc{(Skript 26)} \\
     Stichprobe: Suhle, Schnauze, Faul-mit-Punkt, Haxe, Backe, Haxe, Suhle, Suhle
 
     bzw.\ Urliste: $(1,\text{Suhle}),(2,\text{Schnauze}),(3,\text{Faul-mit-Punkt}),(4,\text{Haxe}),(5,\text{Backe}),(6,\text{Haxe}),(7,\text{Suhle}),(8,\text{Suhle})$
 
-    \begin{center}
+    \begin{mytable}
         \begin{tabular}{lcc}
-            \toprule
+            \hline
             \textbf{Merkmalsausprägung} & $H_n(a_i)$ & $h_n(a_i)$ \\
-            \midrule
+            \hline
             Suhle             & 3 & $3/8$ \\
             Haxe              & 2 & $1/4$ \\
             Schnauze          & 1 & $1/8$ \\
             Backe             & 1 & $1/8$ \\
             Faul-mit-Punkt    & 1 & $1/8$ \\
             Faul-ohne-Punkt   & 0 & $0$ \\
-            \bottomrule
+            \hline
         \end{tabular}
-    \end{center}
-\end{beispiel}
+    \end{mytable}
+\end{bsp}
 
 \subsection{Graphische Darstellungen eindimensionaler Daten}
 
