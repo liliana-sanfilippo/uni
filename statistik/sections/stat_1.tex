@@ -386,9 +386,9 @@ Wir verweisen diesbezüglich auf die Literatur.
 
 \begin{defi} \textbf{\gls{Lagemaß}}\label{bsp:lagemaß}  \txc{(Skript 26)} \\
     Sei $X$ ein quantitatives \gls{Merkmal}.
-    Eine Funktion $l:\Rz^n\to\Rz$, $(x_1,\dots,x_n)\mapsto l(x_1,\dots,x_n)$, heißt \emph{Lagemaß}, wenn
+    Eine Funktion $l:\rz^n\to\rz$, $(x_1,\dots,x_n)\mapsto l(x_1,\dots,x_n)$, heißt \emph{Lagemaß}, wenn
     \[
-        l(x_1+a,\dots,x_n+a) = l(x_1,\dots,x_n) + a \qquad \forall (x_1,\dots,x_n)\in\Rz^n \ \forall a\in\Rz \cdot
+        l(x_1+a,\dots,x_n+a) = l(x_1,\dots,x_n) + a \qquad \forall (x_1,\dots,x_n)\in\rz^n \ \forall a\in\rz \cdot
     \]
     Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um $a$ äquivalent ist zum Verschieben des \gls{Lagema}ßes um $a$.
 \end{defi}
@@ -406,7 +406,7 @@ Wir verweisen diesbezüglich auf die Literatur.
     \noindent\textbf{Das arithmetische Mittel $\bar x=\frac{1}{n}\sum_{i=1}^n x_i$ ist ein Lagemaß:}
 
     Sei $l_{\mathrm{arith}}(x_1,\dots,x_n) = \frac1n\sum_{i=1}^n x_i$.
-    Dann gilt für alle $(x_1,\dots,x_n)\in\Rz^n$ und alle $a\in\Rz$
+    Dann gilt für alle $(x_1,\dots,x_n)\in\rz^n$ und alle $a\in\rz$
     \[
         l_{\mathrm{arith}}(x_1+a,\dots,x_n+a) = \frac1n \sum_{i=1}^n [x_i+a] = \frac1n\sum_{i=1}^n x_i + \frac1n\sum_{i=1}^n a = l_{\mathrm{arith}}(x_1,\dots,x_n) + a \cdot
     \]
@@ -420,10 +420,10 @@ Wir verweisen diesbezüglich auf die Literatur.
 Seien $n=2$ und $l_g(x_1,x_2)=\sqrt{x_1\cdot x_2}$.
     Wäre $l_g$ ein \gls{Lagema}ß, so müsste gelten
     \[
-        (*) \qquad l_g(x_1+a,x_2+a) = l_g(x_1,x_2)+a \qquad \forall (x_1,x_2)\in\Rz^2 \ \forall a\in\Rz \cdot
+        (*) \qquad l_g(x_1+a,x_2+a) = l_g(x_1,x_2)+a \qquad \forall (x_1,x_2)\in\rz^2 \ \forall a\in\rz \cdot
     \]
     Quadrieren beider Seiten zeigt, dass $(*)$ äquivalent ist zu $\sqrt{x_1\cdot x_2} = \frac{x_1+x_2}{2}$.
-Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagema}ß sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\Rz^2$ gleich wären.
+Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagema}ß sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\rz^2$ gleich wären.
 
     \smallskip
     \noindent\textbf{Das harmonische Mittel $\bar x_h = \dfrac{n}{\frac1{x_1}+\cdots+\frac1{x_n}}$ ist kein Lagemaß:}
@@ -464,9 +464,9 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \item \textbf{Schwerpunkteigenschaft:} $\displaystyle\sum_{i=1}^n (x_i-\bar x) = 0$
     \item \textbf{Minimierungseigenschaft:} $\displaystyle\sum_{i=1}^n (x_i-c)^2 \to \min$ für $c=\bar x$.
 
-    Das arithmetische Mittel minimiert die quadratische Abweichung der Stichprobenwerte von einer Konstanten $c\in\Rz$:
+    Das arithmetische Mittel minimiert die quadratische Abweichung der Stichprobenwerte von einer Konstanten $c\in\rz$:
     \[
-        \sum_{i=1}^n (x_i-\bar x)^2 = \inf_{c\in\Rz} \sum_{i=1}^n (x_i-c)^2
+        \sum_{i=1}^n (x_i-\bar x)^2 = \inf_{c\in\rz} \sum_{i=1}^n (x_i-c)^2
     \]
 \end{enumerate}
 \paragraph{Beweis.}
@@ -591,7 +591,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     Das heißt, mindestens die Hälfte der Werte in der Stichprobe sind kleiner oder gleich dem Wert des Medians und mindestens die Hälfte der Werte in der Stichprobe sind größer oder gleich dem Wert des Medians.
     \item Gelten
     \[
-        \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12 \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12 \qquad\text{für ein } a\in\Rz ,
+        \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12 \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12 \qquad\text{für ein } a\in\rz ,
     \]
     so folgt $x_{(\lceil n/2\rceil)} \leq a \leq x_{(\lceil n/2\rceil+1)}$.
     Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
@@ -633,7 +633,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
         Es ist $x_{\mathrm{med}}=\frac12[x_{(3)}+x_{(4)}]=\frac32$, und
         $\frac16\#\{i: x_{(i)}\leq \frac32\} = \frac36=\frac12\geq\frac12$, ebenso $h_6(1)=\frac36=\frac12\geq\frac12$.
 
-        \item Wir müssen zeigen: Gelten $\sum_{k: a_k\leq a} h_n(a_k)\geq\frac12$ und $\sum_{k: a_k\geq a} h_n(a_k)\geq\frac12$ für ein $a\in\Rz$, so folgt $x_{(\lceil n/2\rceil)}\leq a\leq x_{(\lceil n/2+1\rceil)}$.
+        \item Wir müssen zeigen: Gelten $\sum_{k: a_k\leq a} h_n(a_k)\geq\frac12$ und $\sum_{k: a_k\geq a} h_n(a_k)\geq\frac12$ für ein $a\in\rz$, so folgt $x_{(\lceil n/2\rceil)}\leq a\leq x_{(\lceil n/2+1\rceil)}$.
 
         Wir schreiben wieder die Summen um und erhalten $\#\{i: x_{(i)}\leq a\}\geq\frac n2$ und $\#\{i: x_{(i)}\geq a\}\geq\frac n2$.
 
@@ -681,7 +681,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
 
 
 
-\section{Empirische Häufigkeitsverteilungen und ihre Streumaße}\label{sec:empirische-haufigkeitsverteilungen-und-ihre-streumae}
+\section{Empirische Häufigkeitsverteilungen und ihre \gls{Streumaß}e}\label{sec:empirische-haufigkeitsverteilungen-und-ihre-streumae}
 
 \noindent \textbf{Ziel:} Charakterisierung von Häufigkeitsverteilungen durch Kennzahlen (Fortsetzung).
 
@@ -692,20 +692,20 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \item geordnete Stichprobe $x_{(1)},\dots,x_{(n)}$
 \end{itemize}
 
-\begin{defi}\textbf{Streumaß} \txc{(Skript 26)} \\
-    Eine Funktion $s:\Rz^n\to\Rz$, $(x_1,\dots,x_n)\mapsto s(x_1,\dots,x_n)$, heißt \emph{Streumaß}, wenn
+\begin{defi}\textbf{\gls{Streumaß}} \txc{(Skript 26)} \\
+    Eine Funktion $s:\rz^n\to\rz$, $(x_1,\dots,x_n)\mapsto s(x_1,\dots,x_n)$, heißt \emph{\gls{Streumaß}}, wenn
     \[
-        s(x_1+a,\dots,x_n+a) = s(x_1,\dots,x_n) \qquad \forall (x_1,\dots,x_n)\in\Rz^n \ \forall a\in\Rz \cdot
+        s(x_1+a,\dots,x_n+a) = s(x_1,\dots,x_n) \qquad \forall (x_1,\dots,x_n)\in\rz^n \ \forall a\in\rz \cdot
     \]
-    Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um ein $a$ den Wert eines Streumaßes nicht verändert.
+    Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um ein $a$ den Wert eines \gls{Streumaß}es nicht verändert.
 \end{defi}
 
-\begin{bsp}\textbf{Ein ganzer Zoo an Streumaßen} \txc{(Skript 26)} \\
+\begin{bsp}\textbf{Ein ganzer Zoo an \gls{Streumaß}en} \txc{(Skript 26)} \\
     Im Folgenden dient uns zur Illustration stets die (geordnete) Stichprobe $1,1,2,2,2,3,4,4,4,6$ der Länge $n=10$.
     Wir können uns die Stichprobe vorstellen als das Ergebnis von 10-maligem Würfeln.
 
     \begin{enumerate}[label=(\alph*)]
-        \item Die \emph{Spannweite} $x_{\max}-x_{\min} = x_{(n)}-x_{(1)}$ der Stichprobe $x_1,\dots,x_n$ ist ein Streumaß (nicht robust gegenüber Ausreißern).
+        \item Die \emph{Spannweite} $x_{\max}-x_{\min} = x_{(n)}-x_{(1)}$ der Stichprobe $x_1,\dots,x_n$ ist ein \gls{Streumaß} (nicht robust gegenüber Ausreißern).
 
         Im Beispiel: $x_{\max}-x_{\min} = 6-1=5$.
 
@@ -749,7 +749,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
         \item Die \emph{Standardabweichung} ist definiert als $s=\sqrt{s^2}$ (nicht robust gegenüber Ausreißern, da die Stichprobenvarianz nicht robust ist).
     \end{enumerate}
 
-    Beweisen Sie als Hausaufgabe, dass es sich jeweils um Streumaße handelt.
+    Beweisen Sie als Hausaufgabe, dass es sich jeweils um \gls{\gls{Streumaß}}e handelt.
 \end{bsp}
 
 \begin{satz}\textbf{Berechnen der (Stichproben-)Varianz / Steinersche Formel} \txc{(Skript 26)} \\
@@ -831,7 +831,7 @@ Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jew
     Das heißt, mindestens $100\,p\,\%$ der Werte in der Stichprobe sind kleiner oder gleich dem Wert des $p$-Quantils und mindestens $100\,(1-p)\,\%$ der Werte in der Stichprobe sind größer oder gleich dem Wert des $p$-Quantils.
     \item Gelten
     \[
-        \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq p \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq 1-p \qquad\text{für ein } a\in\Rz ,
+        \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq p \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq 1-p \qquad\text{für ein } a\in\rz ,
     \]
     so folgt $x_{(\lceil np\rceil)}\leq a\leq x_{(\lceil np\rceil+1)}$.
     Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
@@ -843,16 +843,16 @@ Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jew
 \begin{defi}\textbf{$p$-Quantilsabstand} \txc{(Skript 26)} \\
     Sei $p\in(0,\tfrac12)$.
     Wir nennen $x_{1-p}-x_p$ den \emph{$p$-Quantilsabstand}.
-    Der $1/4$-Quantilsabstand wird auch \emph{Quartilsabstand} genannt.
+    Der $1/4$-\gls{Quantilsabstand} wird auch \emph{Quartilsabstand} genannt.
 \end{defi}
 
 Zeigen Sie das folgende Lemma als Hausaufgabe.
 
-\begin{lem}\textbf{$p$-Quantilsabstand als Streumaß} \txc{(Skript 26)} \\
-    Der $p$-Quantilsabstand ist ein Streumaß.
+\begin{lem}\textbf{$p$-\gls{Quantilsabstand} als \gls{Streumaß}} \txc{(Skript 26)} \\
+    Der $p$-\gls{Quantilsabstand} ist ein \gls{Streumaß}.
 \end{lem}
 
-In unserem Beispieldatensatz zum Würfeln sehen wir, dass der Quartilsabstand
+In unserem Beispieldatensatz zum Würfeln sehen wir, dass der \gls{Quartilsabstand}
 \[
     x_{3/4} - x_{1/4} = 4-2 = 2
 \]
@@ -866,24 +866,31 @@ beträgt.
 \noindent \textbf{Ziel:} Schließen von einer Stichprobe auf Verteilungsparameter.
 
 \section*{Annahme}
-Im Folgenden nehmen wir stets an, dass eine Stichprobe $x_1,\dots,x_n$ vorliegt, von der wir annehmen können, dass sie aus Werten besteht, die von einem $n$-fach unabhängig wiederholten Zufallsexperiment stammen.
+Im Folgenden nehmen wir stets an, dass eine Stichprobe $x_1,\dots,x_n$ vorliegt, von der wir annehmen können, dass
+sie aus Werten besteht, die von einem $n$-fach unabhängig wiederholten Zufallsexperiment stammen.
 
-Das heißt, wir nehmen an, dass es einen Wahrscheinlichkeitsraum $\wraum$, unabhängige, identisch verteilte, $\Rz
-$-wertige Zufallsvariablen $X_1,\dots,X_n$ und ein $\ele\in\eraum$ gibt derart, dass
+Das heißt, wir nehmen an, dass es einen Wahrscheinlichkeitsraum $\wraum$, unabhängige, identisch verteilte, $\rz$
+-wertige Zufallsvariablen $X_1,\dots,X_n$ und ein $\ele\in\eraum$ gibt derart, dass
 \[
     (x_1,\dots,x_n) = (X_1(\ele),\dots,X_n(\ele)) \cdot
 \]
-Wir werden die Theorie jeweils am Beispiel von Bernoulli-Variablen illustrieren.
+Wir werden die Theorie jeweils am Beispiel von \gls{Bernoulli-Variable}n illustrieren.
 
-\begin{bsp}\textbf{Fragestellung im Fall von Bernoulli-Variablen} \txc{(Skript 26)} \\
-    Die $n$ unabhängigen Bernoulli-Variablen können wir als Modell verstehen für das Werfen einer (nicht unbedingt fairen) Münze, für das Werfen einer Reißzwecke oder auch für einen Spezialfall des Werfens unserer Schweinchen: Beim Werfen der Schweinchen in der Vorlesung haben wir die Schweinchen 166-mal geworfen.
-    Wenn wir nur jene Würfe als Erfolg gezählt hätten, in denen ein Schweinchen auf der Schnauze gelandet ist, so wäre dies ein Bernoulli-Experiment gewesen.
-    Wir können jedoch auch im Nachhinein die anderen Resultate ignorieren und unser Experiment als reines Bernoulli-Experiment betrachten, wenn uns nur eine der möglichen Positionen interessiert.
+\begin{bsp}\textbf{Fragestellung im Fall von \gls{Bernoulli-Variable}n} \txc{(Skript 26)} \\
+    Die $n$ unabhängigen \gls{Bernoulli-Variable}n können wir als Modell verstehen für das Werfen einer (nicht
+unbedingt fairen) Münze, für das Werfen einer Reißzwecke oder auch für einen Spezialfall des Werfens unserer
+Schweinchen: Beim Werfen der Schweinchen in der Vorlesung haben wir die Schweinchen 166-mal geworfen.
+    Wenn wir nur jene Würfe als Erfolg gezählt hätten, in denen ein Schweinchen auf der Schnauze gelandet ist, so
+wäre dies ein Bernoulli-Experiment gewesen.
+    Wir können jedoch auch im Nachhinein die anderen Resultate ignorieren und unser Experiment als reines
+Bernoulli-Experiment betrachten, wenn uns nur eine der möglichen Positionen interessiert.
 
-    All diesen Situationen ist gemein, dass wir die tatsächliche Erfolgswahrscheinlichkeit nicht kennen und auch kein Symmetrieargument verwenden können, um diese zu bestimmen.
-    Wir arbeiten daher zunächst mit einem Parameter, der in der Statistik üblicherweise mit $\theta$ bezeichnet wird und die Rolle der Erfolgswahrscheinlichkeit übernimmt.
+    All diesen Situationen ist gemein, dass wir die tatsächliche Erfolgswahrscheinlichkeit nicht kennen und auch
+kein Symmetrieargument verwenden können, um diese zu bestimmen.
+    Wir arbeiten daher zunächst mit einem Parameter, der in der Statistik üblicherweise mit $\theta$ bezeichnet wird
+und die Rolle der Erfolgswahrscheinlichkeit übernimmt.
 
-    Im Fall von Bernoulli-Variablen ist das Modell für das Zufallsexperiment also gegeben durch
+    Im Fall von \gls{Bernoulli-Variable}n ist das Modell für das Zufallsexperiment also gegeben durch
     \begin{itemize}
         \item Ereignisraum $\eraum=\{0,1\}^n$
         \item unbekannte Erfolgswahrscheinlichkeit $\theta\in[0,1]$
@@ -905,8 +912,8 @@ Wir werden die Theorie jeweils am Beispiel von Bernoulli-Variablen illustrieren.
 \end{enumerate}
 \end{defi}
 
-\begin{bsp}\textbf{Bernoulli-Variable} \txc{(Skript 26)} \\
-    Im Fall von Bernoulli-Variablen erfüllen die unabhängigen \gls{Stichprobenvariable}n $X_1,\dots,X_n$
+\begin{bsp}\textbf{\gls{Bernoulli-Variable}} \txc{(Skript 26)} \\
+    Im Fall von \gls{Bernoulli-Variable}n erfüllen die unabhängigen \gls{Stichprobenvariable}n $X_1,\dots,X_n$
     \[
         \pe_\theta(X_i=1)=\theta \qquad\text{und}\qquad \pe_\theta(X_i=0)=1-\theta \qquad \forall i\in\{1,\dots,n\} \cdot
     \]
@@ -921,8 +928,8 @@ Wir werden die Theorie jeweils am Beispiel von Bernoulli-Variablen illustrieren.
     Gilt $\mathcal P = \{\pe_\theta : \theta\in\Theta\}$, so heißt $\Theta$ der \emph{Parameterraum} und $\theta\in\Theta$ heißt \emph{Parameter}.
 \end{defi}
 
-\begin{bsp}\textbf{Bernoulli-Variable} \txc{(Skript 26)} \\
-    Im Fall von unabhängigen Bernoulli-Variablen als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\mathcal P = \{\pe_\theta:\theta\in\Theta\}$, wobei wir im Allgemeinen $\Theta=[0,1]$ wählen und $\pe_\theta$ durch die Wahrscheinlichkeitsfunktion $\wfk_\theta$ mit
+\begin{bsp}\textbf{\gls{Bernoulli-Variable}} \txc{(Skript 26)} \\
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\mathcal P = \{\pe_\theta:\theta\in\Theta\}$, wobei wir im Allgemeinen $\Theta=[0,1]$ wählen und $\pe_\theta$ durch die Wahrscheinlichkeitsfunktion $\wfk_\theta$ mit
     \[
         \wfk_\theta(\ele) = \theta^{\sum_{i=1}^n\ele_i}(1-\theta)^{n-\sum_{i=1}^n\ele_i} \qquad \text{für alle } \ele\in\eraum
     \]
@@ -932,37 +939,38 @@ Wir werden die Theorie jeweils am Beispiel von Bernoulli-Variablen illustrieren.
 \end{bsp}
 
 Unser Ziel ist es nun, systematisch aus Stichproben Schlüsse zu ziehen über die dem Zufallsexperiment zugrunde liegende Wahrscheinlichkeitsverteilung.
-Konkreter heißt das: Wir nehmen an, dass wir die Verteilung der \gls{Stichprobenvariable}n bis auf den oder die Parameter der Verteilung kennen, und wollen nun anhand einer Stichprobe die Parameter der Verteilung bestmöglich schätzen.
-Im Fall von Bernoulli-Variablen heißt das, dass wir die Erfolgswahrscheinlichkeit $\theta$ schätzen wollen.
+Konkreter heißt das: Wir nehmen an, dass wir die Verteilung der \gls{Stichprobenvariable}n bis auf den oder die
+Parameter der Verteilung kennen, und wollen nun anhand einer Stichprobe die Parameter der Verteilung bestmöglich schätzen.
+Im Fall von \gls{Bernoulli-Variable}n heißt das, dass wir die Erfolgswahrscheinlichkeit $\theta$ schätzen wollen.
 Im Folgenden werden wir auch andere Kennzahlen der Wahrscheinlichkeitsverteilung wie Erwartungswert oder Varianz schätzen.
 
 Grundsätzlich gibt es verschiedene Typen von Resultaten, die wir anhand einer Stichprobe gewinnen können:
 \begin{enumerate}
-    \item \textbf{Punktschätzer:} Resultat ist ein Wert $\theta$ oder $g(\theta)$ mit $\theta\in\Theta$
-    \item \textbf{Bereichsschätzer:} Resultat ist eine Teilmenge von $\Theta$
-    \item \textbf{Hypothesentest:} Resultat ist eine Ja-Nein-Entscheidung über eine den Parameter betreffende \gls{Hypothese}
+    \item \textbf{\gls{Punktschätzer}:} Resultat ist ein Wert $\theta$ oder $g(\theta)$ mit $\theta\in\Theta$
+    \item \textbf{\gls{Bereichsschätzer}:} Resultat ist eine Teilmenge von $\Theta$
+    \item \textbf{\gls{Hypothesentest}:} Resultat ist eine Ja-Nein-Entscheidung über eine den Parameter betreffende \gls{Hypothese}
 \end{enumerate}
-Wir befassen uns in diesem Kapitel mit Punktschätzern.
+Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
 
-\begin{defi}\textbf{Punktschätzer} \txc{(Skript 26)} \\
+\begin{defi}\textbf{\gls{Punktschätzer}} \txc{(Skript 26)} \\
     Sei ein statistisches Modell der Form $\mathcal P=\{\pe_\theta:\theta\in\Theta\}$ gegeben.
     \begin{enumerate}[label=(\alph*)]
-        \item Ein \emph{Schätzer} für $\theta\in\Theta$ ist eine Abbildung $t:\mathcal X\to\Theta$.
-        Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen Schätzer für $\theta\in\Theta$.
+        \item Ein \emph{\gls{Schätzer}} für $\theta\in\Theta$ ist eine Abbildung $t:\mathcal X\to\Theta$.
+        Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen \gls{Schätzer} für $\theta\in\Theta$.
         Eine Realisierung $t(x)=t((x_1,\dots,x_n))$ bzw.\ $T(\ele)$ heißt \emph{Schätzung} für $\theta$.
         \item Sei zusätzlich eine Abbildung $g:\Theta\to\Gamma$ gegeben.
-        Ein \emph{Schätzer} für $g(\theta)$ ist eine Abbildung $t:\mathcal X\to\Gamma$.
-        Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen Schätzer für $g(\theta)$.
+        Ein \emph{\gls{Schätzer}} für $g(\theta)$ ist eine Abbildung $t:\mathcal X\to\Gamma$.
+        Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen \gls{Schätzer} für $g(\theta)$.
         Eine Realisierung $t(x)=t((x_1,\dots,x_n))$ bzw.\ $T(\ele)$ heißt \emph{Schätzung} für $g(\theta)$.
     \end{enumerate}
-    Wir werden uns zunächst auf Schätzer für $\theta$ konzentrieren und später auf Schätzer für $g(\theta)$ zurückkommen.
+    Wir werden uns zunächst auf \gls{Schätzer} für $\theta$ konzentrieren und später auf \gls{Schätzer} für $g(\theta)$ zurückkommen.
 \end{defi}
 
-\begin{bem}\textbf{Unterschied zwischen Schätzer und Schätzung für $\theta$}
+\begin{bem}\textbf{Unterschied zwischen \gls{Schätzer} und Schätzung für $\theta$}
     \begin{mytable}
         \begin{tabular}{ll}
             \hline
-            \textbf{Schätzer (Funktion)} & \textbf{Schätzung (Funktionswert)} \\
+            \textbf{\gls{Schätzer} (Funktion)} & \textbf{Schätzung (Funktionswert)} \\
             \hline
             Rechenvorschrift $t:\mathcal X\to\Theta$; & Ergebnis $t(x)$ der Auswertung \\
             ordnet jeder Stichprobe einen & der Rechenvorschrift für eine \\
@@ -972,52 +980,52 @@ Wir befassen uns in diesem Kapitel mit Punktschätzern.
     \end{mytable}
 \end{bem}
 
-\begin{bsp}\textbf{Schätzer können absurd schlecht sein} \txc{(Skript 26)} \\
-    Im Fall von unabhängigen Bernoulli-Variablen als \gls{Stichprobenvariable} $X_1,\dots,X_n$ haben wir den \gls{Stichprobenraum} $\mathcal X=\{0,1\}^n$ sowie den Parameterraum $\Theta=[0,1]$.
-    Gemäß Definition ist die Abbildung $t:\mathcal X\to\Theta$ mit $t(x)=\frac12$ für alle $x\in\mathcal X$ eine zulässige Wahl für einen Schätzer der Erfolgswahrscheinlichkeit.
+\begin{bsp}\textbf{\gls{Schätzer} können absurd schlecht sein} \txc{(Skript 26)} \\
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ haben wir den \gls{Stichprobenraum} $\mathcal X=\{0,1\}^n$ sowie den Parameterraum $\Theta=[0,1]$.
+    Gemäß Definition ist die Abbildung $t:\mathcal X\to\Theta$ mit $t(x)=\frac12$ für alle $x\in\mathcal X$ eine zulässige Wahl für einen \gls{Schätzer} der Erfolgswahrscheinlichkeit.
     Offensichtlich ist diese, nicht von der Stichprobe abhängige Wahl nicht sinnvoll.
 
-    Motiviert durch das Gesetz der großen Zahlen und die Tatsache, dass für Bernoulli-Variable der Erwartungswert der Erfolgswahrscheinlichkeit entspricht, vermuten wir, dass das arithmetische Mittel der Stichprobenwerte $t(x)=\frac1n\sum_{i=1}^n x_i$ eine klügere Wahl sein sollte.
+    Motiviert durch das Gesetz der großen Zahlen und die Tatsache, dass für \gls{Bernoulli-Variable} der Erwartungswert der Erfolgswahrscheinlichkeit entspricht, vermuten wir, dass das arithmetische Mittel der Stichprobenwerte $t(x)=\frac1n\sum_{i=1}^n x_i$ eine klügere Wahl sein sollte.
 
-    Dies wirft die Frage auf, wann ein Schätzer ein guter Schätzer ist.
-    Wir benötigen Kriterien, um Schätzer systematisch beurteilen zu können.
+    Dies wirft die Frage auf, wann ein \gls{Schätzer} ein guter \gls{Schätzer} ist.
+    Wir benötigen Kriterien, um \gls{Schätzer} systematisch beurteilen zu können.
 \end{bsp}
 
-\begin{defi}\textbf{Kriterien zur Beurteilung von Punktschätzern} \txc{(Skript 26)} \\
-    Gegeben seien ein statistisches Modell der Form $\mathcal P=\{\pe_\theta:\theta\in\Theta\}$, eine Abbildung $g:\Theta\to\Gamma$, sowie ein Schätzer $t:\mathcal X\to\Gamma$ für $g(\theta)$.\footnote{Der Fall, dass wir mit einem Schätzer für den Parameter $\theta$ selbst arbeiten, entspricht der Wahl $\Gamma=\Theta$ und $g(x)=x$ für alle $x\in\mathcal X$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
+\begin{defi}\textbf{Kriterien zur Beurteilung von \gls{Punktschätzer}n} \txc{(Skript 26)} \\
+    Gegeben seien ein statistisches Modell der Form $\mathcal P=\{\pe_\theta:\theta\in\Theta\}$, eine Abbildung $g:\Theta\to\Gamma$, sowie ein \gls{Schätzer} $t:\mathcal X\to\Gamma$ für $g(\theta)$.\footnote{Der Fall, dass wir mit einem \gls{Schätzer} für den Parameter $\theta$ selbst arbeiten, entspricht der Wahl $\Gamma=\Theta$ und $g(x)=x$ für alle $x\in\mathcal X$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
 
     \begin{enumerate}[label=(\alph*)]
-        \item Der \emph{Bias} des Schätzers $t$ ist definiert als
+        \item Der \emph{Bias} des \gls{Schätzer}s $t$ ist definiert als
         \[
             \mathrm{Bias}_t(\theta) = \ET[T] - g(\theta) = \ET[t((X_1,\dots,X_n))] - g(\theta) \qquad \text{für alle } \theta\in\Theta \cdot
         \]
         Dabei sei $\ET$ der Erwartungswert, der mit dem Wahrscheinlichkeitsmaß $\pe_\theta$ definiert ist.
-        \item Der Schätzer $t$ heißt \emph{erwartungstreu}, wenn $\mathrm{Bias}_t(\theta)=0$ für alle $\theta\in\Theta$ gilt.
-        \item Das \emph{Risiko} des Schätzers $t$ im Punkt $\theta\in\Theta$ ist definiert als die erwartete quadratische Abweichung des Schätzers von $g(\theta)$, das heißt,
+        \item Der \gls{Schätzer} $t$ heißt \emph{erwartungstreu}, wenn $\mathrm{Bias}_t(\theta)=0$ für alle $\theta\in\Theta$ gilt.
+        \item Das \emph{Risiko} des \gls{Schätzer}s $t$ im Punkt $\theta\in\Theta$ ist definiert als die erwartete quadratische Abweichung des \gls{Schätzer}s von $g(\theta)$, das heißt,
         \[
             R(\theta,t) = \ET\big[(T-g(\theta))^2\big] \cdot
         \]
-        \item Die \emph{Risikofunktion} des Schätzers $t$ ist definiert als die Abbildung $\theta\mapsto R(\theta,t)$.
-        \item Sind $t_1,t_2:\mathcal X\to\Gamma$ zwei Schätzer für $g(\theta)$, so sagen wir, dass $t_1$ \emph{mindestens so gut} ist wie $t_2$, wenn $R(\theta,t_1)\leq R(\theta,t_2)$ für alle $\theta\in\Theta$ gilt.
+        \item Die \emph{Risikofunktion} des \gls{Schätzer}s $t$ ist definiert als die Abbildung $\theta\mapsto R(\theta,t)$.
+        \item Sind $t_1,t_2:\mathcal X\to\Gamma$ zwei \gls{Schätzer} für $g(\theta)$, so sagen wir, dass $t_1$ \emph{mindestens so gut} ist wie $t_2$, wenn $R(\theta,t_1)\leq R(\theta,t_2)$ für alle $\theta\in\Theta$ gilt.
         Gilt zusätzlich, dass es ein $\theta\in\Theta$ gibt mit $R(\theta,t_1)<R(\theta,t_2)$, so sagen wir, dass $t_1$ \emph{besser} als $t_2$ ist.
     \end{enumerate}
 \end{defi}
 
-\begin{bsp}\textbf{Das arithmetische Mittel als Schätzer im Fall von Bernoulli-Variablen} \txc{(Skript 26)} \\
-    Im Fall von unabhängigen Bernoulli-Variablen als \gls{Stichprobenvariable} $X_1,\dots,X_n$ erhalten wir folgende Ergebnisse für den Schätzer $t$ mit
+\begin{bsp}\textbf{Das arithmetische Mittel als \gls{Schätzer} im Fall von \gls{Bernoulli-Variable}n} \txc{(Skript 26)} \\
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ erhalten wir folgende Ergebnisse für den \gls{Schätzer} $t$ mit
     \[
         t(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\{0,1\}^n ,
     \]
     den wir verwenden wollen, um den Parameter $\theta$, d.h.\ die Erfolgswahrscheinlichkeit, zu schätzen.
 
     \begin{enumerate}[label=(\alph*)]
-        \item Der Bias des Schätzers $t$ ist
+        \item Der Bias des \gls{Schätzer}s $t$ ist
         \[
             \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \theta = \frac1n\sum_{i=1}^n \ET[X_i] - \theta = 0 \qquad \text{für alle } \theta\in\Theta ,
         \]
-        weil für die Bernoulli-Variablen $\ET[X_i]=\theta$ gilt.
-        \item Daher ist der Schätzer $t$ erwartungstreu.
-        \item Das Risiko des Schätzers $t$ im Punkt $\theta\in\Theta$ ergibt sich zu
+        weil für die \gls{Bernoulli-Variable}n $\ET[X_i]=\theta$ gilt.
+        \item Daher ist der \gls{Schätzer} $t$ erwartungstreu.
+        \item Das Risiko des \gls{Schätzer}s $t$ im Punkt $\theta\in\Theta$ ergibt sich zu
         \[
             R(\theta,t) = \ET\left[\left(\frac1n\sum_{i=1}^n X_i - \theta\right)^2\right] = \mathrm{Var}_\theta\left(\frac1n\sum_{i=1}^n X_i\right) = \frac1n\,\mathrm{Var}_\theta(X_1) = \frac{\theta(1-\theta)}{n} \cdot
         \]
@@ -1037,9 +1045,9 @@ Wir befassen uns in diesem Kapitel mit Punktschätzern.
             \end{tikzpicture}\label{fig:figure6}
         \end{figure}
 
-        \item Die Risikofunktion des Schätzers $t$ ist gegeben durch die Abbildung $\theta\mapsto\dfrac{\theta(1-\theta)}{n}$.
-        \item Wir wollen nun den Schätzer $t$ mit einem anderen Schätzer vergleichen.
-        Sei der Schätzer $\tilde t$ gegeben durch
+        \item Die Risikofunktion des \gls{Schätzer}s $t$ ist gegeben durch die Abbildung $\theta\mapsto\dfrac{\theta(1-\theta)}{n}$.
+        \item Wir wollen nun den \gls{Schätzer} $t$ mit einem anderen \gls{Schätzer} vergleichen.
+        Sei der \gls{Schätzer} $\tilde t$ gegeben durch
         \[
             \tilde t(x) = \frac{x_1+x_n}{2} \qquad \text{für alle } x\in\{0,1\}^n ,
         \]
@@ -1052,10 +1060,10 @@ Wir befassen uns in diesem Kapitel mit Punktschätzern.
 \end{bsp}
 
 \begin{lem}\textbf{Rechenregeln für Bias und Risiko} \txc{(Skript 26)} \\
-    Sei $t$ ein Schätzer für $g(\theta)$.
+    Sei $t$ ein \gls{Schätzer} für $g(\theta)$.
     Dann gelten:
     \begin{enumerate}[label=(\alph*)]
-        \item Der Schätzer $t$ ist genau dann erwartungstreu, wenn $\ET[T]=g(\theta)$ für alle $\theta\in\Theta$ gilt.
+        \item Der \gls{Schätzer} $t$ ist genau dann erwartungstreu, wenn $\ET[T]=g(\theta)$ für alle $\theta\in\Theta$ gilt.
         \item $R(\theta,t) = (\mathrm{Bias}_t(\theta))^2 + \mathrm{Var}_\theta(T)$
         \item Ist $t$ erwartungstreu, so gilt $R(\theta,t) = \mathrm{Var}_\theta(T)$.
     \end{enumerate}
@@ -1072,13 +1080,14 @@ Wir befassen uns in diesem Kapitel mit Punktschätzern.
 \end{enumerate}
 \end{lem}
 
-Bisher haben wir ausschließlich den Parameter geschätzt, der im Spezialfall der Bernoulli-Variablen mit dem Erwartungswert zusammenfällt.
-Im allgemeinen Fall, wenn die \gls{Stichprobenvariable}n möglicherweise eine andere Verteilung haben, dient das arithmetische Mittel als Schätzer für den Erwartungswert.
+Bisher haben wir ausschließlich den Parameter geschätzt, der im Spezialfall der \gls{Bernoulli-Variable}n mit dem Erwartungswert zusammenfällt.
+Im allgemeinen Fall, wenn die \gls{Stichprobenvariable}n möglicherweise eine andere Verteilung haben, dient das
+arithmetische Mittel als \gls{Schätzer} für den Erwartungswert.
 Wir sehen uns als Nächstes ein paar Beispiele an.
 Der allgemeine Fall verbleibt als Hausaufgabe.
 
-\begin{bsp}\textbf{Das arithmetische Mittel als Schätzer des Erwartungswerts} \txc{(Skript 26)} \\
-    Seien $X_1,\dots,X_n$ \gls{Stichprobenvariable} und $t$ ein Schätzer für den Erwartungswert, der durch
+\begin{bsp}\textbf{Das arithmetische Mittel als \gls{Schätzer} des Erwartungswerts} \txc{(Skript 26)} \\
+    Seien $X_1,\dots,X_n$ \gls{Stichprobenvariable} und $t$ ein \gls{Schätzer} für den Erwartungswert, der durch
     \[
         t(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\mathcal X
     \]
@@ -1089,45 +1098,45 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
         \[
             \pe_\theta(X_i=k) = (1-\theta)^{k-1}\theta \qquad \text{für alle } k\in\nz \cdot
         \]
-        Dann ist der Bias des Schätzers $t$ gegeben durch
+        Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
         \[
             \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \E[X_1] = \frac1n\sum_{i=1}^n \ET[X_i] - \E[X_1] = 0 \qquad \text{für alle } \theta\in\Theta ,
         \]
         weil $X_1,\dots,X_n$ identisch verteilt sind.
         Wir schätzen mit $t$ den Erwartungswert $\E[X_1]=\frac1\theta$.
-        Der Schätzer ist erwartungstreu.
+        Der \gls{Schätzer} ist erwartungstreu.
 
         \item \textbf{Gleichverteilte Stichprobenvariable.} Sei $\theta\in\Theta=\nz$ und gelte
         \[
             \pe_\theta(X_i=k) = \frac1\theta \qquad \text{für alle } k\in\{1,\dots,\theta\} \cdot
         \]
-        Dann ist der Bias des Schätzers $t$ gegeben durch
+        Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
         \[
             \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \theta\in\Theta ,
         \]
         weil $X_1,\dots,X_n$ identisch verteilt sind.
         Wir schätzen mit $t$ den Erwartungswert $\ET[X_1]=\frac{\theta+1}{2}$.
-        Der Schätzer ist erwartungstreu.
+        Der \gls{Schätzer} ist erwartungstreu.
 
         \item \textbf{Poisson-verteilte Stichprobenvariable.} Sei $\theta\in\Theta=\nz$ und gelte
         \[
             \pe_\theta(X_i=k) = \frac{\theta^k}{k!}e^{-\theta} \qquad \text{für alle } k\in\nz_0 \cdot
         \]
-        Dann ist der Bias des Schätzers $t$ gegeben durch
+        Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
         \[
             \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \theta\in\Theta ,
         \]
         weil $X_1,\dots,X_n$ identisch verteilt sind.
         Wir schätzen mit $t$ den Erwartungswert $\ET[X_1]=\theta$.
-        Der Schätzer ist erwartungstreu.
+        Der \gls{Schätzer} ist erwartungstreu.
     \end{enumerate}
 \end{bsp}
 
 Wir können auch Funktionen des Parameters schätzen.
 Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
 
-\begin{bsp}\textbf{Schätzer für die Varianz} \txc{(Skript 26)} \\
-    Seien $X_1,\dots,X_n$ unabhängige \gls{Stichprobenvariable}\footnote{Wir nehmen nicht an, dass die Stichprobenvariablen Bernoulli-Variable sind.} und $t$ ein Schätzer für den Erwartungswert, der durch
+\begin{bsp}\textbf{\gls{Schätzer} für die Varianz} \txc{(Skript 26)} \\
+    Seien $X_1,\dots,X_n$ unabhängige \gls{Stichprobenvariable}\footnote{Wir nehmen nicht an, dass die Stichprobenvariablen \gls{Bernoulli-Variable} sind.} und $t$ ein \gls{Schätzer} für den Erwartungswert, der durch
     \[
         t(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\mathcal X
     \]
@@ -1139,7 +1148,7 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
     \]
     zu wählen.
 
-    Ist dieser Schätzer erwartungstreu?
+    Ist dieser \gls{Schätzer} erwartungstreu?
 
     Wir können uns die (Schreib-)Arbeit etwas erleichtern, wenn wir annehmen, dass $\ET[X_i]=0$ gilt.
     Diese Annahme bedeutet keine Einschränkung der Allgemeingültigkeit des herzuleitenden Resultats, wie wir mittels einer Nullergänzung leicht sehen:
@@ -1168,13 +1177,13 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
     \[
         \ET\big[s^2(X)\big] = \left(1-\frac1n\right)\mathrm{Var}_\theta(X_1) \cdot
     \]
-    Wir sehen somit, dass $s^2$ \emph{kein} erwartungstreuer Schätzer der Varianz ist.
+    Wir sehen somit, dass $s^2$ \emph{kein} erwartungstreuer \gls{Schätzer} der Varianz ist.
     Wir sehen aber auch, dass der Unterschied nur im Vorfaktor $1-\frac1n$ liegt.
-    Wenn wir $s^2$ mit $\frac{n}{n-1}$ multiplizieren, erhalten wir einen erwartungstreuen Schätzer.
+    Wenn wir $s^2$ mit $\frac{n}{n-1}$ multiplizieren, erhalten wir einen erwartungstreuen \gls{Schätzer}.
     In der Tat definiert
     \[
         \widehat\sigma^2(x) = \frac{1}{n-1}\sum_{i=1}^n (x_i-\bar x)^2 \qquad \text{für alle } x\in\mathcal X
     \]
-    einen erwartungstreuen Schätzer für die Varianz, wenn der Erwartungswert unbekannt ist und daher durch den Schätzer $\bar x$ ersetzt werden muss.
+    einen erwartungstreuen \gls{Schätzer} für die Varianz, wenn der Erwartungswert unbekannt ist und daher durch den \gls{Schätzer} $\bar x$ ersetzt werden muss.
 \end{bsp}
 
