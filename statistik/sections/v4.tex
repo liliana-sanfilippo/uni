@@ -25,13 +25,9 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
     \end{itemize}
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%
-% Verteilung %
-%%%%%%%%%%%%%%%%%%%%%
-
 \section{Die Verteilung einer Zufallsvariablen}\label{sec:die-verteilung-einer-zufallsvariablen}
 \begin{bsp}
-    \textbf{n-faches Werfen einer fairen Münze} \txc{(2025)}  \\
+    \textbf{n-faches Werfen einer fairen Münze} \label{bsp:n-faches-Werfen-einer-fairen-Münze} \txc{(2025)}  \\
     \[
         \glssymbol{eraum} _n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = \left(\frac{1}{2}\right)^n \faoio \txt{(Gleichverteilung)}
     \]
@@ -52,6 +48,10 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
     \]
 \end{bsp}
 
+%%%%%%%%%%%%%%%%%%%%%
+% ZV %
+%%%%%%%%%%%%%%%%%%%%%
+
 \begin{defi}
     \label{def:zv}
     \textbf{\gls{zv}} \txc{(2025)}  \\
@@ -61,7 +61,47 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
     \]
     eine $E$-wertige \gls{zv}.
 \end{defi}
+
+% TODO definition e-wertig und erklärung e-wertig
+
 \komm{\defirefman{zv}: \gls{zv} ist keine Variable: Es ist eine Zuordnungsvorschrift der Stochastik, welche jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zuordnet. Also das Ergebnis eines Zufallsexperiments.}
+
+\begin{bem}   \txc{(Skript 26 - Bemerkung 3.3.)}  \\
+Ist der Ereignisraum $\eraum$ abzählbar, so ist eine Zufallsvariable nichts anderes als eine Abbildung, die auf
+dem $\eraum$ des Wahrscheinlichkeitsraums definiert ist. Ist $\eraum \subseteq \rz_d$, kommen eigentlich noch
+Messbarkeitsfragen hinzu, die wir im Rahmen dieser Vorlesung jedoch ignorieren wollen.
+
+Wie wir bereits in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} gesehen haben, ist es praktisch,
+Ereignisse mit Hilfe von Zufallsvariablen auszudrücken. Wenn uns nur Ereignisse interessieren, die durch ein und dieselbe Zufallsvariable
+ausgedrückt werden können, so können wir sogar noch einen Schritt weitergehen und einen neuen
+Wahrscheinlichkeitsraum einführen, der nur noch solche Ereignisse kennt. Die folgende Definition ist
+ein erster Schritt in diese Richtung.
+\end{bem}
+
+\begin{defi}
+    \textbf{Bild- und Wertebereich einer Zufallsvariablen} \txc{(Skript 26 - Definition 3.4.)}  \\
+    Sei $X : \eraum \rightarrow E$ eine E-wertige Zufallsvariable auf einem Wahrscheinlichkeitsraum $\wraum$. Dann
+    heißt E der Wertebereich von X, und
+\[
+    X(\eraum) = {X(\ele) : \ele \in \eraum}
+\]
+    der Bildbereich von X.
+\end{defi}
+
+\begin{bem}   \txc{(Skript 26 - Bemerkung 3.5.)}  \\
+Es gilt stets $X(Ω) ⊆ E$. Der Bildbereich ist die kleinstmögliche Menge, die alle Werte enthält,
+die X annehmen kann.
+
+st Sn wie in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} die Anzahl der Erfolge in einem
+Zufallsexperiment der Länge $n \in \nz$,
+so können wir Sn auffassen als Abbildung von $\eraum$ nach $E = \nz_0$, aber auch als Abbildung
+nach $E = \{0, 1, . . . , n\}$ oder gar nach $E = \rz$. Unabhängig davon, wie wir den Wertebereich E
+wählen, gilt für den Bildbereich stets $X(\eraum) = \{0, 1, . . . , n\}$.
+\end{bem}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Verteilung %
+%%%%%%%%%%%%%%%%%%%%%
 
 \begin{defi}
     \label{def:verteilung-zv}
@@ -74,6 +114,16 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
 \end{defi}
 \komm{\defirefman{verteilung-zv}: Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also
 \textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
+
+\begin{bsp} \textbf{Münzwurf} \txc{(Skript 26 - Beispiel 3.7.)}  \\
+% TODO
+    todo
+\end{bsp}
+
+\begin{bem}  \txc{(Skript 26 - Bemerkung 3.8.)}  \\
+   todo  % TODO
+\end{bem}
+
 \begin{lem} \txc{(2025)} \\
 Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
 
