@@ -1,0 +1,191 @@
+%! Author = lili
+%! Date = 7/13/26
+
+\chapter{Tutorium 13.07.2026}\label{ch:tutorium-13.07.2026}
+
+
+\section{PÜ 2.6.4}\label{sec:pu-2.6.4}
+Ein Politiker fällt wiederholt durch fragwürdige Äußerungen auf.
+Während er bei der letzten
+Wahl noch 30\% der Stimmen erhalten hat, geht sein Wahlkampfteam mittlerweile davon aus,
+daß dieser Wert gesunken ist.
+Der Politiker widerspricht dem vehement.
+
+In einer Stichprobe werden 200 Personen befragt.
+45 Personen sprechen sich weiterhin für den
+Politiker aus.
+
+\begin{auf}
+    \subsubsection*{Läßt sich die Hypothese, daß sich die Unterstützung der Wähler für den Politiker nicht verändert
+    hat, halten? Verwenden Sie einen geeigneten Hypothesentest zum Signifikanzniveau von 5\%.}
+    \paragraph{Parameter (Tutor):}
+    $H_0 = \theta \in \Theta_0 = \left\{  \frac{3}{10} \right\}$ und
+    $H_A = \theta \in \Theta_A = \left[ 0, \frac{3}{10}  \right)$.
+    Man muss dann einen Hypothesen\gls{Hypothesentest} mit \gls{Signifikanzniveau} $\alpha = 0,05$.
+    \paragraph{Modell dahinter (extra Info für Kontext, noch von der Aufgabe gefordert):}
+    \begin{itemize}
+        \item Stichprobenraum: $\Chi = \{0,1\}^n$ mit $n = 200$
+        \begin{itemize}
+            \item Jedes $\x in \Chi$ ist ein n-fach unabhängig wiederholtes Bernoulli-Experiment
+        \end{itemize}
+        \item $\Theta = \left[ 0,1 \right] \leftarrow$ ``Zustimmung''
+        \item $P = \{ \pe_{\theta} : \theta \in \Theta \}$, wobei
+        \begin{itemize}
+            \item $\pe_{\theta}$ durch die \gls{wfk} $\wfk_{\theta}$ mit $\wfk_{\theta}(x) = \theta^{\sumEN x_i} (1-\theta)^{n - \sumEN x_i}, \quad \forall x \in \Chi$ gegeben ist.
+        \end{itemize}
+        \item Konkrete Stichprobe: $\tilde x \in \Chi $ mit $\sumEN \tilde x_i = 45$
+        \item $n = 200$
+        \item Stichprobenvariablen:
+        \begin{itemize}
+            \item $X = (X_1, ..., X_n)$ mit $\{X_i\}^n_{i=1}$ unabhängig identisch verteilt
+            \item $X_i \sim Ber()$
+        \end{itemize}
+    \end{itemize}
+    \paragraph{Weitere Lösung:}
+    % Teststatistik
+    \[
+        t : \Chi \rightarrow \{0, ..., n\}
+    \]
+    Möglich:
+    \[
+        t(x) = n \ol{x} = \sumEN x_i
+    \]
+    \[
+        t(x) = n - n \ol{x} = n - \sumEN x_i
+    \]
+    ABER: $ t(x) = n \ol{x} = \sumEN x_i$ dann wöre das bei Zustimmung irgendwie sehr groß, also nehmen wir:
+    \[
+        t(x) = n - n \ol{x} = n - \sumEN x_i
+    \]
+    deshalb
+    % p-Wert & Test + E
+    \begin{align*}
+        p(x) & = sup_{\theta \in \Theta_0} \pe_{\theta}(t(X) \geq t(x)) \\
+        % ja, erst großen, dann kleines x
+        & = \pe_{\frac{3}{10}} (t(X) \geq t(x)) \\
+        & = \pe_{\frac{3}{10}} (n - \sumEN X_i \geq n - \sumEN x_i) \\
+        & = \pe_{\frac{3}{10}} (\sumEN X_i \leq \underbrace{ \sumEN x_i}_{n \ol{x}}) \\
+    \end{align*}
+    $\phi(x) = 1 \Rightarrow H_0$ wird verworfen
+    \txc{(Die konkrete Stichprobe soll 1 sein, wenn wir unsere Stichprobe verwerfen. )}
+    \[
+        \phi(x) = \begin{cases}
+                      1, & p(x) \leq \alpha \\ % nicht signifikant
+                      0, & sonst
+        \end{cases} = \mathbb{1}_{[0, \alpha]}
+    \]
+    % Durchführung
+    Betrachte $p(\tilde x) = \pe_{\frac{3}{10}} (\sumEN X_i \leq 45)$
+    % Erfolgsparameter 3/10, man geht davon aus alle dier Vernoulli Experimente haben den gleichen Erfolgsparameter
+    \begin{align*}
+        \sumEN X_i \sim Bin(n, \frac{3}{10}) & = Bin_{200, \frac{3}{10}}(\{0, ..., 45\}) \\
+        & = \sum^{45}_{i = 1} \binom{n}{1} \left( \frac{3}{10} \right)^i \left( \frac{7}{10} \right)^{n-i} \\
+        & \approx 0,011 & Taschenrechner
+    \end{align*}
+    \[
+        \Rightarrow \phi(\tilde x) % konkrete stichprobe
+        = \mathbb{1}_{[0, 0.05]} (p(\tilde x)) % Indikatorfunktion
+        = \mathbb{1}_{[0, \alpha]} (0,011) = 1
+    \]
+    % Schlussforlgerung
+    $H_0$ muss verworfen werden.
+\end{auf}
+
+Ablauf so einer Aufgabenlösung:
+\begin{enumerate}
+    \item Hypothese aufstellen
+    \item Signifikanzniveau festlegen
+    \item Teststatistik aufstellen
+    \item  p-Wert und Test + Entscheidungsregel
+    \item ``Durchführung'' / Auswertung der Stichprobe
+    \item Schlussfolgerung
+\end{enumerate}
+
+Hier umgesetzt als:
+\begin{enumerate}
+    \item Hypothese aufstellen
+    \begin{itemize}
+        \item $H_0 = \theta \in \Theta_0 = \left\{  \frac{3}{10} \right\}$ (Punkthypothese, keine Veränderung)
+        \item $H_A = \theta \in \Theta_A = \left[ 0, \frac{3}{10}  \right)$ (Alternative Hypothese, negative
+        Veränderung)
+    \end{itemize}
+    \item Signifikanzniveau festlegen
+    \item Teststatistik aufstellen
+    \item p-Wert und Test + Entscheidungsregel
+    \item ``Durchführung'' / Auswertung der Stichprobe
+    \item Schlussfolgerung
+\end{enumerate}
+
+Zusatz des Tutors:
+\begin{mytable}
+    \begin{tabular}{ccccc}
+        k = & 45 & 46 & 47 & 48 & 49 \\
+        $\pe_{\frac{3}{10}} (\sumEN X_i \leq k)$ & 0,011 & 0,017 & 0,025 & 0,036 & 0,056 \\
+    \end{tabular}
+    \caption{Ab 49 Zustimmungen hätte man die Hypothese nicht verwefen müssen - ``48 und kleiner'' ist unser Verwerfungsbereich}
+\end{mytable}
+
+% TODO konkrete Stickprobe vs. Stichproben
+% TODO Arten von Hypothesen
+\section{PÜ 2.6.5}
+Beantworten Sie die folgenden Fragen zur Theorie der Hypothesentests. Eine Begründung Ihrer
+Antworten ist nicht nötig.
+\begin{auf}
+    \subsubsection*{Ein Fehler erster Art tritt ein, wenn ...}
+    \paragraph{Lösung:} wir H0 verwerfen, wenn H0 wahr ist (Definition \gls{Fehler erster Art})
+\end{auf}
+Anmerkung: Fehler zweiter Art ist wir verwerfen H0 nicht, obwohl H0 falsch ist (wir H0 akzeptieren, wenn H0 falsch ist)
+
+\komm{Es KANN passieren, dass Definitionen abgefragt werden in der Klausur (in Form von Multiple Choice oder speziellen Fragen). Oder man einen Hypothesentest aufstellen muss.}
+
+\begin{auf}
+    \subsubsection*{Wenn eine Hypothese zum Signifikanzniveau 0.6 verworfen wird, dann ...}
+    \paragraph{Herleitung:}
+    Entspricht ja
+   \[
+       \phi(x) = \begin{cases}
+                     1, & p(x) \leq 0.6 \\ % nicht signifikant
+                     0, & sonst
+       \end{cases} = \mathbb{1}_{[0, 0.6]}
+   \]
+    Muss nicht für jedes Alpha verworfen werden, daher auch nicht für 0,5.
+    \paragraph{Lösung:} kann es der Fall sein, dass sie zum Signifikanzniveau 0.5 verworfen wird
+\end{auf}
+
+\begin{auf}
+    \subsubsection*{Der p-Wert eines Hypothesentests gibt folgendes an:}
+    \paragraph{Lösung:} Das kleinste Signifikanzniveau für das Verwerfen der Hypothese H0 (per Definition, denn wenn
+    wir eine konkrete Stichprobe haben (also p(x festhalten)) und das Signifikanzniveau danach aussuchen, dann kann
+    das SN nicht kleiner als p(x) sein??)
+\end{auf}
+
+% evtl. kann man Statistik auf Lücke lernen...
+
+\begin{auf}
+    \subsubsection*{Ordnen Sie die folgenden Schritte gemäß der korrekten Durchführung eines Hypothesentests}
+    \paragraph{Lösung:}
+    \begin{enumerate}
+        \item Wahl von Hypothese und Alternative
+        \item Wahl des Signifikanzniveaus
+        \item Wahl der Teststatistik
+        \item Wahl der Entscheidungsregel
+        \item Auswertung der Stichprobe
+        \item Schlussfolgerung
+    \end{enumerate}
+\end{auf}
+
+\section{Besprechung ÜB 2.5.1}
+Wir nehmen in dieser Aufgabe an, daß unsere Stichprobe von einem n-mal unabhängig wieder-
+holten Bernoulli-Experiment mit unbekannter Erfolgswahrscheinlichkeit $\theta \in (0, 1)$ stammt.
+
+Wir wissen aus der Vorlesung, daß das arithmetische Mittel der Stichprobenwerte ein erwartungstreuer Schätzer für $\theta$ ist.
+
+\[
+
+\]
+
+\begin{auf}
+    \subsubsection*{Begründen Sie, warum t so definiert ein Schätzer für die Varianz $\theta(1- \theta)$ ist.}
+    Siehe Bild TODO % TODO Bild
+    \subsubsection*{Ist dieser Schätzer erwartungstreu?}
+\end{auf}
