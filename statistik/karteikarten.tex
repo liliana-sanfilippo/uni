@@ -6,6 +6,104 @@
     type=dinge
 }
 
+%% 5
+
+\newglossaryentry{def_unabhaengigkeit_zwei_ereignisse}{
+    name={Wann heißen zwei Ereignisse $A, B \subseteq \Omega$ (stochastisch) unabhängig?},
+description={Wenn $P(A \cap B) = P(A) \cdot P(B)$ gilt. Intuition: Das Wissen um das Eintreten von $A$ ändert nichts an der eingeschätzten Wahrscheinlichkeit von $B$ (und umgekehrt).},
+type=dinge
+}
+
+\newglossaryentry{def_unabhaengigkeit_aequivalente_formulierung}{
+name={Wie hängt die Definition der Unabhängigkeit von $A$ und $B$ mit bedingten Wahrscheinlichkeiten zusammen?},
+description={$P(A\cap B) = P(A)\cdot P(B)$ ist äquivalent zu $P(B\mid A) = P(B)$ und zu $P(A\mid B) = P(A)$ (jeweils sofern $P(A)>0$ bzw.\ $P(B)>0$). Das Eintreten des einen Ereignisses ändert also die bedingte Wahrscheinlichkeit des anderen nicht.},
+type=dinge
+}
+
+\newglossaryentry{beo_unabhaengig_ungleich_disjunkt}{
+name={Sind unabhängige Ereignisse dasselbe wie disjunkte Ereignisse?},
+description={Nein! Unabhängigkeit $\neq$ Disjunktheit. Disjunkte Ereignisse ($A\cap B=\emptyset$) sind nur dann unabhängig, wenn zusätzlich $P(A)=0$ oder $P(B)=0$ gilt, denn $0 = P(\emptyset) = P(A\cap B) = P(A)\cdot P(B)$ zwingt eines der beiden Produkte auf 0.},
+type=dinge
+}
+
+\newglossaryentry{beo_unabhaengigkeit_komplement}{
+name={Was folgt aus der Unabhängigkeit von $A$ und $B$ für die Komplemente?},
+description={$A,B$ unabhängig $\Leftrightarrow$ $A,B^c$ unabhängig $\Leftrightarrow$ $A^c,B^c$ unabhängig. Unabhängigkeit bleibt also erhalten, wenn man eines oder beide Ereignisse durch ihr Komplement ersetzt.},
+type=dinge
+}
+
+\newglossaryentry{beo_ereignis_unabhaengig_von_sich_selbst}{
+name={Kann ein Ereignis $A$ unabhängig von sich selbst sein?},
+description={Ja, genau dann wenn $P(A) \in \{0,1\}$. Denn $P(A) = P(A\cap A) = P(A)\cdot P(A) = P(A)^2$ gilt nur für $P(A) \in \{0,1\}$.},
+type=dinge
+}
+
+\newglossaryentry{def_unabhaengigkeit_n_ereignisse}{
+name={Wann heißen $n$ Ereignisse $A_1,\dots,A_n \subseteq \Omega$ unabhängig?},
+description={Wenn für alle $k=2,\dots,n$ und alle Auswahlen von $k$ verschiedenen Indizes $i_1,\dots,i_k \in \{1,\dots,n\}$ gilt: $P(A_{i_1}\cap\dots\cap A_{i_k}) = P(A_{i_1})\cdots P(A_{i_k})$. Es müssen also wirklich alle Paare, Tripel, usw.\ geprüft werden, nicht nur das Gesamtprodukt.},
+type=dinge
+}
+
+\newglossaryentry{bem_paarweise_unabhaengigkeit_reicht_nicht}{
+name={Reicht es, bei mehreren Ereignissen nur paarweise Unabhängigkeit zu prüfen?},
+description={Nein. Ereignisse können paarweise unabhängig sein, ohne insgesamt (d.h.\ für alle $k$-Tupel) unabhängig zu sein.},
+type=dinge
+}
+
+\newglossaryentry{bem_gesamtproduktformel_reicht_nicht}{
+name={Reicht es, bei mehreren Ereignissen nur die Gleichung $P(A_1\cap\dots\cap A_n)=P(A_1)\cdots P(A_n)$ zu prüfen?},
+description={Nein. Diese einzelne Gleichung für alle $n$ Ereignisse zusammen reicht nicht aus: Ereignisse können insgesamt diese Produktgleichung erfüllen, ohne (paarweise oder in kleineren Teilmengen) unabhängig zu sein.},
+type=dinge
+}
+
+\newglossaryentry{def_produktraum_unabhaengige_experimente_abzaehlbar}{
+name={Wie modelliert man die unabhängige Nacheinanderausführung von Zufallsexperimenten $(\Omega_1,P_1),\dots,(\Omega_n,P_n)$ mit abzählbaren $\Omega_i$?},
+description={Man bildet den Produktraum $\Omega = \Omega_1\times\dots\times\Omega_n$ mit Wahrscheinlichkeitsfunktion $p(\omega) = p_1(\omega_1)\cdots p_n(\omega_n)$ für $\omega=(\omega_1,\dots,\omega_n)\in\Omega$. Für $A_i\subseteq\Omega_i$ sind dann die "Zylinder-Ereignisse" $B_i = \Omega_1\times\dots\times A_i \times\dots\times\Omega_n$ (nur die $i$-te Koordinate liegt in $A_i$, Rest beliebig) unabhängig.},
+type=dinge
+}
+
+\newglossaryentry{def_produktraum_unabhaengige_experimente_nicht_abzaehlbar}{
+name={Wie definiert man $P$ auf dem Produktraum $\Omega=\Omega_1\times\dots\times\Omega_n$, wenn nicht alle $\Omega_i$ abzählbar sind?},
+description={Man definiert direkt $P(A_1\times\dots\times A_n) = P_1(A_1)\cdots P_n(A_n)$ für alle $A_i\subseteq\Omega_i$. Diese Formel kann generell als Definition verwendet werden und ist motiviert durch den abzählbaren Fall.},
+type=dinge
+}
+
+\newglossaryentry{def_einfaches_bernoulli_experiment}{
+name={Was ist ein einfaches Bernoulli-Experiment?},
+description={Ein Zufallsexperiment mit genau zwei möglichen Ausgängen: "Treffer" ($\omega=1$) oder "Niete" ($\omega=0$). Es gilt $\Omega_1=\{0,1\}$, $p_1(1)=p$, $p_1(0)=1-p$, wobei $p\in[0,1]$ die Erfolgswahrscheinlichkeit heißt.},
+type=dinge
+}
+
+\newglossaryentry{def_bernoulli_kette_laenge_n}{
+name={Was ist eine Bernoulli-Kette (Bernoulli-Experiment) der Länge $n$?},
+description={Die $n$-malige unabhängige Wiederholung desselben einfachen Bernoulli-Experiments. Modelliert durch $\Omega_n = \{0,1\}^n$ mit $p_n((\omega_1,\dots,\omega_n)) = p^{k}(1-p)^{n-k}$, wobei $k=\sum_{i=1}^n \omega_i$ die Anzahl der Erfolge ist.},
+type=dinge
+}
+
+\newglossaryentry{def_binomialverteilung}{
+name={Wie ist die Binomialverteilung definiert und welche Formel hat sie?},
+description={Für eine Bernoulli-Kette der Länge $n$ mit Erfolgswahrscheinlichkeit $p$ ist $b_{n,p}(k) := P(S_n=k) = \binom{n}{k}p^k(1-p)^{n-k}$ für $k\in\{0,\dots,n\}$ die Wahrscheinlichkeit für genau $k$ Erfolge (es gibt $\binom{n}{k}$ Möglichkeiten, die $k$ Erfolge auf die $n$ Stellen zu verteilen). Eine Zufallsvariable $X$ mit dieser Verteilung heißt binomialverteilt mit Parametern $n$ und $p$.},
+type=dinge
+}
+
+\newglossaryentry{bsp_erster_erfolg_im_n_ten_versuch}{
+name={Wie wahrscheinlich ist es, dass in einer Bernoulli-Kette der Länge $n$ der erste Erfolg erst im $n$-ten Versuch eintritt?},
+description={$P(A_n) = p(1-p)^{n-1}$, wobei $A_n = \{(0,\dots,0,1)\}$ das Ereignis "erst im letzten Versuch ein Treffer" ist. Dies motiviert die geometrische Verteilung.},
+type=dinge
+}
+
+\newglossaryentry{def_geometrische_verteilung}{
+name={Was ist die geometrische Verteilung mit Erfolgswahrscheinlichkeit $p$?},
+description={Die Verteilung der Wartezeit bis zum ersten Erfolg in einer unendlichen Folge unabhängiger Bernoulli-Experimente: $P(\text{erster Erfolg im } k\text{-ten Versuch}) = p(1-p)^{k-1}$ für $k=1,2,3,\dots$.},
+type=dinge
+}
+
+\newglossaryentry{def_unabhaengigkeit_zufallsvariablen}{
+name={Wann heißen zwei (oder mehr) Zufallsvariablen unabhängig?},
+description={Zufallsvariablen $X_1,\dots,X_n$ heißen unabhängig, wenn für alle (messbaren) Mengen $A_1,\dots,A_n$ gilt: $P(X_1\in A_1,\dots,X_n\in A_n) = P(X_1\in A_1)\cdots P(X_n\in A_n)$, d.h.\ die Ereignisse $\{X_1\in A_1\},\dots,\{X_n\in A_n\}$ sind im obigen Sinn unabhängig.},
+type=dinge
+}
+
 %% 3
 
 \newglossaryentry{def_komplement}{

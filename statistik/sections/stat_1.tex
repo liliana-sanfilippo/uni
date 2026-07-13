@@ -390,14 +390,14 @@ Wir verweisen diesbezüglich auf die Literatur.
     \[
         l(x_1+a,\dots,x_n+a) = l(x_1,\dots,x_n) + a \qquad \forall (x_1,\dots,x_n)\in\rz^n \ \forall a\in\rz \cdot
     \]
-    Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um $a$ äquivalent ist zum Verschieben des \gls{Lagema}ßes um $a$.
+    Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um $a$ äquivalent ist zum Verschieben des \gls{Lagemaß}es um $a$.
 \end{defi}
 
 \begin{bsp}\defirefman{lagemaß}
     \begin{itemize}
-        \item Das \emph{arithmetische Mittel} $\bar x = \frac{1}{n}\sum_{i=1}^n x_i$ der Stichprobe $x_1,\dots,x_n$ ist ein \gls{Lagema}ß.
-        \item Das \emph{geometrische Mittel} $\bar x_g = \sqrt[n]{x_1\cdots x_n}$ der Stichprobe $x_1,\dots,x_n$ ist \emph{kein} \gls{Lagema}ß.
-        \item Das \emph{harmonische Mittel} $\bar x_h = \dfrac{n}{\frac{1}{x_1}+\cdots+\frac{1}{x_n}}$ der Stichprobe $x_1,\dots,x_n$ ist \emph{kein} \gls{Lagema}ß.
+        \item Das \emph{arithmetische Mittel} $\bar x = \frac{1}{n}\sum_{i=1}^n x_i$ der Stichprobe $x_1,\dots,x_n$ ist ein \gls{Lagemaß}.
+        \item Das \emph{geometrische Mittel} $\bar x_g = \sqrt[n]{x_1\cdots x_n}$ der Stichprobe $x_1,\dots,x_n$ ist \emph{kein} \gls{Lagemaß}.
+        \item Das \emph{harmonische Mittel} $\bar x_h = \dfrac{n}{\frac{1}{x_1}+\cdots+\frac{1}{x_n}}$ der Stichprobe $x_1,\dots,x_n$ ist \emph{kein} \gls{Lagemaß}.
     \end{itemize}
 
     Wir wollen diese Aussagen beweisen.
@@ -415,21 +415,21 @@ Wir verweisen diesbezüglich auf die Literatur.
     \noindent\textbf{Das geometrische Mittel $\bar x_g = \sqrt[n]{x_1\cdots x_n}$ ist kein Lagemaß:}
 
     Beachte zunächst, dass das geometrische Mittel nur für $x_1,\dots,x_n\geq 0$ sinnvoll definiert ist.
-    Auch wenn wir nur $x_1,\dots,x_n\geq 0$ und $a>0$ betrachten, erfüllt das geometrische Mittel nicht die Anforderung an ein \gls{Lagema}ß:
+    Auch wenn wir nur $x_1,\dots,x_n\geq 0$ und $a>0$ betrachten, erfüllt das geometrische Mittel nicht die Anforderung an ein \gls{Lagemaß}:
 
 Seien $n=2$ und $l_g(x_1,x_2)=\sqrt{x_1\cdot x_2}$.
-    Wäre $l_g$ ein \gls{Lagema}ß, so müsste gelten
+    Wäre $l_g$ ein \gls{Lagemaß}, so müsste gelten
     \[
         (*) \qquad l_g(x_1+a,x_2+a) = l_g(x_1,x_2)+a \qquad \forall (x_1,x_2)\in\rz^2 \ \forall a\in\rz \cdot
     \]
     Quadrieren beider Seiten zeigt, dass $(*)$ äquivalent ist zu $\sqrt{x_1\cdot x_2} = \frac{x_1+x_2}{2}$.
-Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagema}ß sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\rz^2$ gleich wären.
+Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagemaß} sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\rz^2$ gleich wären.
 
     \smallskip
     \noindent\textbf{Das harmonische Mittel $\bar x_h = \dfrac{n}{\frac1{x_1}+\cdots+\frac1{x_n}}$ ist kein Lagemaß:}
 
     Beachte zunächst, dass das harmonische Mittel nur für $x_1,\dots,x_n\neq 0$ sinnvoll definiert ist.
-    Selbst wenn wir nur $x_1,\dots,x_n>0$ und $a>0$ betrachten, erfüllt das harmonische Mittel nicht die Anforderung an ein \gls{Lagema}ß:
+    Selbst wenn wir nur $x_1,\dots,x_n>0$ und $a>0$ betrachten, erfüllt das harmonische Mittel nicht die Anforderung an ein \gls{Lagemaß}:
 
 Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     Die Wahl $x_1=1$, $x_2=2$ und $a=1$ zeigt
@@ -506,7 +506,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \item $a$ ist genau dann ein Modalwert, wenn keine andere Ausprägung in der Stichprobe häufiger auftritt als $a$.
     \item Der Modalwert ist in der Regel nicht eindeutig, siehe folgendes Beispiel.
     \item $H_n(a)\geq H_n(x_i)\ \forall i=1,\dots,n \iff H_n(a)\geq H_n(a_k)\ \forall k=1,\dots,s$.
-    \item Für quantitative \gls{Merkmal}e ist der Modalwert ein \gls{Lagema}ß.
+    \item Für quantitative \gls{Merkmal}e ist der Modalwert ein \gls{Lagemaß}.
 \end{enumerate}
 \end{bem}
 
@@ -581,7 +581,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
 
 \begin{satz}\textbf{Eigenschaften des Medians} \txc{(Skript 26)} \\
 \begin{enumerate}[label=(\alph*)]
-    \item Der Median ist ein \gls{Lagema}ß.
+    \item Der Median ist ein \gls{Lagemaß}.
     \item Der Median $x_{\mathrm{med}}$ erfüllt
     \[
         \sum_{\substack{k=1:\\ a_k\leq x_{\mathrm{med}}}}^s h_n(a_k) \geq \frac12
@@ -809,7 +809,7 @@ Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jew
 \begin{bem} \txc{(Skript 26)}
 \begin{enumerate}[label=(\alph*)]
     \item $x_{1/2} = x_{\mathrm{med}}$
-    \item Wie der Median ist auch das empirische $p$-Quantil ein robustes \gls{Lagema}ß.
+    \item Wie der Median ist auch das empirische $p$-Quantil ein robustes \gls{Lagemaß}.
 \end{enumerate}
 \end{bem}
 
