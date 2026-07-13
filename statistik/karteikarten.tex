@@ -8,6 +8,116 @@
 
 %% 5
 
+\newglossaryentry{bem_randverteilungen_legen_gemeinsame_nicht_fest}{
+    name={Legen die Randverteilungen von Zufallsvariablen deren gemeinsame Verteilung eindeutig fest?},
+    description={Nein, im Allgemeinen nicht. Zwei Zufallsvektoren können identische Randverteilungen haben, aber unterschiedliche gemeinsame Verteilungen (z.B.\ weil im einen Fall Unabhängigkeit vorliegt und im anderen nicht). Erst zusätzliche Information wie Unabhängigkeit legt die gemeinsame Verteilung eindeutig fest (vgl.\ Korollar zur Verteilungsfunktion).},
+    type=dinge
+}
+
+\newglossaryentry{def_unabhaengigkeit_zufallsvariablen_allgemein}{
+    name={Wie ist Unabhängigkeit von Zufallsvariablen $X_1,\dots,X_n$ allgemein (mit $X_i:\Omega\to E_i$) definiert?},
+description={$X_1,\dots,X_n$ heißen unabhängig, wenn für alle messbaren Mengen $B_i\subseteq E_i$ ($i=1,\dots,n$) die Ereignisse $\{X_1\in B_1\},\dots,\{X_n\in B_n\}$ (im Sinne der Unabhängigkeit von Ereignissen) unabhängig sind, d.h.\ $P(X_1\in B_1,\dots,X_n\in B_n) = P(X_1\in B_1)\cdots P(X_n\in B_n)$ für alle Wahlen von $B_1,\dots,B_n$.},
+type=dinge
+}
+
+\newglossaryentry{satz_charakterisierung_ueber_ereignisse}{
+name={Satz I: Wie lässt sich Unabhängigkeit von $X_1,\dots,X_n$ über einelementige Ereignisse charakterisieren?},
+description={$X_1,\dots,X_n$ unabhängig $\Leftrightarrow$ $\{X_1=x_1\},\dots,\{X_n=x_n\}$ sind unabhängig für alle $x_i\in E_i$ ($i=1,\dots,n$). Man muss also nicht beliebige messbare Mengen $B_i$ prüfen, sondern es genügt, einzelne Werte zu betrachten.},
+type=dinge
+}
+
+\newglossaryentry{satz_charakterisierung_ueber_produktform_abzaehlbar}{
+name={Satz II: Wie charakterisiert man Unabhängigkeit von $X_1,\dots,X_n$ mit abzählbaren Bildbereichen über die Produktform?},
+description={$X_1,\dots,X_n$ unabhängig $\Leftrightarrow$ $p_{X_1,\dots,X_n}((x_1,\dots,x_n)) = \prod_{i=1}^n p_{X_i}(x_i)$ für alle $(x_1,\dots,x_n)$, d.h.\ die gemeinsame Zähldichte zerfällt in das Produkt der Randdichten.},
+type=dinge
+}
+
+\newglossaryentry{kor_hinreichende_bedingung_unabhaengigkeit_abzaehlbar}{
+name={Welche einzelne Gleichung genügt, um Unabhängigkeit von $X_1,\dots,X_n$ mit abzählbarem Bildbereich zu zeigen?},
+description={Es genügt zu zeigen: $P(X_1=x_1,\dots,X_n=x_n) = P(X_1=x_1)\cdots P(X_n=x_n)$ für alle $x_i \in X_i(\Omega)$. Man muss NICHT zusätzlich Paare, Tripel etc.\ separat prüfen — die Produktform für alle $n$-Tupel gleichzeitig reicht hier aus.},
+type=dinge
+}
+
+\newglossaryentry{satz_charakterisierung_ueber_verteilungsfunktion}{
+name={Wie lässt sich Unabhängigkeit von $X_1,\dots,X_n$ über die (gemeinsame) Verteilungsfunktion charakterisieren?},
+description={$X_1,\dots,X_n$ unabhängig $\Leftrightarrow$ $P(X_1\le a_1,\dots,X_n\le a_n) = P(X_1\le a_1)\cdots P(X_n\le a_n) = F_{X_1}(a_1)\cdots F_{X_n}(a_n)$ für alle $a_1,\dots,a_n \in \mathbb{R}$. Diese Charakterisierung funktioniert unabhängig davon, ob die $X_i$ diskret sind oder eine Dichte haben.},
+type=dinge
+}
+
+\newglossaryentry{kor_gemeinsame_verteilung_eindeutig_durch_randverteilung}{
+name={Was folgt aus Unabhängigkeit von $X_1,\dots,X_n$ für die gemeinsame Verteilung?},
+description={Sind $X_1,\dots,X_n$ unabhängig, so ist ihre gemeinsame Verteilung eindeutig durch die Randverteilungen von $X_1,\dots,X_n$ bestimmt. Ohne Unabhängigkeit gilt das nicht (siehe Alex/Kim-Beispiel: gleiche Randverteilungen, verschiedene gemeinsame Verteilung).},
+type=dinge
+}
+
+\newglossaryentry{bem_kein_separates_pruefen_von_teilmengen_noetig}{
+name={Muss man bei der Anwendung des Produktform-Kriteriums $X_{i_1},\dots,X_{i_k}$ noch separat betrachten?},
+description={Nein. Gilt $P(X_1=x_1,\dots,X_n=x_n) = P(X_1=x_1)\cdots P(X_n=x_n)$ für alle $x_i$, so ist damit die Unabhängigkeit von $X_1,\dots,X_n$ bereits vollständig gezeigt — es ist nicht nötig, Teilkollektionen (Paare, Tripel, ...) separat zu prüfen.},
+type=dinge
+}
+
+\newglossaryentry{bem_zwei_anwendungen_produktform_kriterium}{
+name={Welche zwei Anwendungsrichtungen hat das Produktform-Kriterium für Unabhängigkeit?},
+description={(a) Beweisrichtung: Findet man die Produktform $p_{X_1,\dots,X_n} = \prod_i p_{X_i}$, so ist Unabhängigkeit gezeigt. (b) Konstruktionsrichtung: Sind die Randverteilungen der $X_i$ bekannt und sollen die $X_i$ unabhängig sein, so erhält man die gemeinsame Verteilung als Produkt der Randverteilungen: $p_{X_1,\dots,X_n}(x_1,\dots,x_n) = \prod_i p_{X_i}(x_i)$.},
+type=dinge
+}
+
+\newglossaryentry{satz_summe_unabhaengiger_poisson_verteilter_zv}{
+name={Was gilt für die Summe zweier unabhängiger, Poisson-verteilter Zufallsvariablen $X_1,X_2$ mit Parametern $\lambda_1,\lambda_2$?},
+description={$X_1+X_2$ ist wieder Poisson-verteilt, und zwar mit Parameter $\lambda_1+\lambda_2$. Beweisidee: $P(X_1+X_2=n) = \sum_{k=0}^n P(X_1=k)P(X_2=n-k)$ (Unabhängigkeit), Einsetzen der Poisson-Zähldichten und Anwenden des Binomischen Lehrsatzes liefert $\frac{(\lambda_1+\lambda_2)^n}{n!}e^{-(\lambda_1+\lambda_2)}$.},
+type=dinge
+}
+
+\newglossaryentry{satz_unabhaengigkeit_zv_mit_dichten}{
+name={Wie charakterisiert man Unabhängigkeit von $X_1,\dots,X_n$ mit Dichten $f_1,\dots,f_n$?},
+description={$X_1,\dots,X_n$ unabhängig $\Leftrightarrow$ die gemeinsame Dichte hat Produktform, d.h.\ $f(x_1,\dots,x_n) := f_1(x_1)\cdots f_n(x_n)$ ist eine gemeinsame Dichte von $X_1,\dots,X_n$.},
+type=dinge
+}
+
+\newglossaryentry{bem_existenz_gemeinsame_dichte_nicht_vorausgesetzt}{
+name={Muss die Existenz einer gemeinsamen Dichte bei Satz IV vorausgesetzt werden, und wie genau muss die Produktform gelten?},
+description={Nein, man setzt einfach $f(x_1,\dots,x_n):=f_1(x_1)\cdots f_n(x_n)$ und prüft, ob dies eine gemeinsame Dichte von $X_1,\dots,X_n$ ist. Eine Dichte ist nur "fast überall" eindeutig — die Produktform muss also nicht für jeden einzelnen Punkt gelten, es reicht, wenn sie auf einer Menge $M\subseteq\mathbb{R}^n$ gilt, deren Komplement abzählbar (bzw.\ vom Maß Null) ist.},
+type=dinge
+}
+
+\newglossaryentry{bem_widerlegen_von_unabhaengigkeit_dichte}{
+name={Reicht ein einzelner Punkt, an dem die Produktform der Dichte nicht gilt, um Unabhängigkeit zu widerlegen?},
+description={Nein. Um Unabhängigkeit über die Dichte zu widerlegen, braucht man eine Menge $D\subseteq\mathbb{R}^n$ mit positivem (Lebesgue-)Maß $|D|>0$, auf der die Produktform $f=f_1\cdots f_n$ nicht gilt — ein einzelner Punkt hat Maß Null. Einfacher ist es meist, stattdessen zu zeigen, dass die Produktform der Verteilungsfunktion $P(X_1\le a_1,\dots,X_n\le a_n)\neq\prod_i F_{X_i}(a_i)$ an einem einzigen Punkt $(a_1,\dots,a_n)$ verletzt ist — dort genügt bereits ein Punkt, da die Verteilungsfunktion (anders als die Dichte) punktweise eindeutig ist.},
+type=dinge
+}
+
+\newglossaryentry{def_quader_und_produktform_darauf}{
+name={Was ist ein "Quader" im Kontext der Verteilungsfunktion, und was bedeutet "Produktform auf Quadern"?},
+description={Ein Quader ist eine Menge der Form $(-\infty,a_1]\times\dots\times(-\infty,a_n]\subseteq\mathbb{R}^n$, dem Ereignis $\{X_1\le a_1,\dots,X_n\le a_n\}$ entsprechend. Sind $X_1,\dots,X_n$ unabhängig, so zerfällt $F_{X_1,\dots,X_n}(a_1,\dots,a_n)=P(X_1\le a_1,\dots,X_n\le a_n)$ in $\prod_i F_{X_i}(a_i)$ — man sagt, die Verteilungsfunktion hat Produktform auf Quadern. Um Nicht-Unabhängigkeit zu zeigen, genügt es, einen Quader zu finden, für den diese Produktform verletzt ist.},
+type=dinge
+}
+
+\newglossaryentry{bem_produktform_direkt_ablesbar_ohne_randdichten}{
+name={Muss man bei einer gemeinsamen Dichte immer erst die Randdichten $f_X, f_Y$ berechnen, um Unabhängigkeit zu zeigen?},
+description={Nein. Lässt sich die gemeinsame Dichte bereits direkt als Produkt zweier Funktionen schreiben, von denen eine nur von $x$ und die andere nur von $y$ abhängt (und die jeweils zu einer Dichte normiert sind, d.h.\ Integral 1 ergeben), so sind diese Funktionen automatisch die Randdichten und die Unabhängigkeit folgt sofort aus der Faktorisierung — ohne die Randdichten separat auszurechnen.},
+type=dinge
+}
+
+\newglossaryentry{bem_gebietsgrenze_typische_ursache_fuer_abhaengigkeit}{
+name={Ein typisches Muster, an dem man Abhängigkeit bei Dichten erkennt: Was passiert, wenn der Träger der gemeinsamen Dichte kein Rechteck (Produktmenge) ist?},
+description={Hängt der Wertebereich einer Variable vom Wert der anderen ab (der Träger der gemeinsamen Dichte ist also keine Produktmenge $A\times B$, sondern z.B.\ ein Dreieck), so kann die gemeinsame Dichte nicht als Produkt zweier eindimensionaler Funktionen geschrieben werden: es gibt stets Punkte außerhalb des Trägers, an denen $f=0$ gilt, während $f_X(x)f_Y(y)>0$ wäre — die Zufallsvariablen sind dann nicht unabhängig.},
+type=dinge
+}
+
+\newglossaryentry{bem_unabhaengigkeit_globale_eigenschaft}{
+name={Warum genügt ein einziger Gegenpunkt/Gegenquader, um Unabhängigkeit zu widerlegen?},
+description={Weil Unabhängigkeit verlangt, dass die Produktformel für ALLE Argumente (alle $a_1,\dots,a_n$ bzw.\ – bei Dichten – auf einer Menge vollen Maßes) gilt. Findet man EINEN Punkt bzw. Quader, an dem die Gleichheit verletzt ist, ist die Allaussage widerlegt. Unabhängigkeit ist also eine globale Eigenschaft, und ein einziges Gegenbeispiel genügt, um sie zu zerstören.},
+type=dinge
+}
+
+\newglossaryentry{def_faltung}{
+name={Was versteht man unter der Faltung zweier unabhängiger Zufallsvariablen $X,Y$?},
+description={Die Verteilung der Summe $X+Y$ zweier unabhängiger Zufallsvariablen $X,Y$ heißt Faltung (der Verteilungen von $X$ und $Y$).},
+type=dinge
+}
+
+%% V4 alt
+
 \newglossaryentry{def_unabhaengigkeit_zwei_ereignisse}{
     name={Wann heißen zwei Ereignisse $A, B \subseteq \Omega$ (stochastisch) unabhängig?},
 description={Wenn $P(A \cap B) = P(A) \cdot P(B)$ gilt. Intuition: Das Wissen um das Eintreten von $A$ ändert nichts an der eingeschätzten Wahrscheinlichkeit von $B$ (und umgekehrt).},

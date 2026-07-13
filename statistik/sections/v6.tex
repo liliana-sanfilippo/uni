@@ -2,6 +2,7 @@
 %! Date = 4/27/26
 
 % TODO alte Folien noch einbauen
+% TODO deefi Randverteilung hier?
 
 \chapter{Unabhängigkeiten von \gls{zv}}\label{ch:unabhangigkeiten-von-zv}
 \untit{Vorlesung 23 Mai 2025 (V06 2025) und Vorlesung 22.05.2026 (V05 2026)}
@@ -69,7 +70,11 @@
 \end{bsp}
 Frage: müssen wir die Paare und Tripel wirklich prüfen?
 
+\karkar{bem_randverteilungen_legen_gemeinsame_nicht_fest}
 
+%%%%%%%%%%%%%%%%%%%%%
+% Unabhängigkeit ZV %
+%%%%%%%%%%%%%%%%%%%%%
 \begin{satz}  \txc{(2026)}
     Seien $X_1, \dots, X_n$ unabhängig $\Rightarrow \pe(X_1 \in B_1 , \dots , X_n \in B_n) =  \pe(X_1 \in B_1) \cdot \dots \cdot \pe(X_n \in B_n)$
 
@@ -222,6 +227,20 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 %    \pe(X_1 \in a_1, X_n \in a_n) = siehe bild (aber das zweite)
 %\]
 
+\karkar{def_unabhaengigkeit_zufallsvariablen_allgemein}
+\karkar{satz_charakterisierung_ueber_ereignisse}
+\karkar{satz_charakterisierung_ueber_produktform_abzaehlbar}
+\karkar{kor_hinreichende_bedingung_unabhaengigkeit_abzaehlbar}
+\karkar{satz_charakterisierung_ueber_verteilungsfunktion}
+\karkar{kor_gemeinsame_verteilung_eindeutig_durch_randverteilung}
+\karkar{bem_kein_separates_pruefen_von_teilmengen_noetig}
+\karkar{bem_zwei_anwendungen_produktform_kriterium}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% Poisson-Verteilte ZV %
+%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Poisson-Verteilte ZV}\label{subsec:poisson-verteilte-zv}
 
 %\begin{bsp}
@@ -260,7 +279,11 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     \end{align*}
 \end{satz}
 
+\karkar{satz_summe_unabhaengiger_poisson_verteilter_zv}
 
+%%%%%%%%%%%%%%%%%%%%%
+% Dichten ZV %
+%%%%%%%%%%%%%%%%%%%%%
 
 \section{\gls{zv} mit Dichten}\label{sec:zv-mit-dichten}
 
@@ -313,6 +336,12 @@ Es genügt, wenn sie fast überall gilt.}
 %    \]
 %\end{satz}
 
+\karkar{satz_unabhaengigkeit_zv_mit_dichten}
+\karkar{bem_existenz_gemeinsame_dichte_nicht_vorausgesetzt}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Widerlegen %
+%%%%%%%%%%%%%%%%%%%%%
 
 \section{Widerlegen von Unabhängigkeiten}\label{sec:widerlegen-von-unabhangigkeiten}
 \begin{bem}
@@ -477,11 +506,22 @@ Wenn Unabhängigkeit gilt, muss die Gleichung für \emph{alle} $(a, b)$ gelten. 
     "Unabhängigkeit ist eine globale Eigenschaft und ein Gegenbeispiel genügt, um sie zu zerstören."
 }
 
+\karkar{bem_widerlegen_von_unabhaengigkeit_dichte}
+\karkar{def_quader_und_produktform_darauf}
+\karkar{bem_produktform_direkt_ablesbar_ohne_randdichten}
+\karkar{bem_gebietsgrenze_typische_ursache_fuer_abhaengigkeit}
+\karkar{bem_unabhaengigkeit_globale_eigenschaft}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Faltung %
+%%%%%%%%%%%%%%%%%%%%%
 
 \begin{defi} \textbf{Faltung} \txc{(2026)} \\
     X, Y unabhängig \zv.
     Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen). \index{Faltung}
 \end{defi}
+
+\karkar{def_faltung}
 
 
 
