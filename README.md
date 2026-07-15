@@ -46,11 +46,11 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 29 | Fr, 17.07. | :black_square_button:   |                         | Mo, 13.07. | :construction:          | Fr, 17.07.     | :red_square:          |
 | KW 30 | Fr, 24.07. | :black_square_button:   |                         | Mo, 20.07. | :black_square_button:   | Fr, 24.07.     | :black_square_button: |
 
-| Abschnitt Skript | In Notizen            | 
-|------------------|-----------------------|
-| 1                | :white_check_mark:    |
-| 2                | :white_check_mark:    |
-| 3                | :black_square_button: |
+| Abschnitt Skript | In Notizen         | 
+|------------------|--------------------|
+| 1                | :white_check_mark: |
+| 2                | :white_check_mark: |
+| 3                | :white_check_mark: |
 
 ## MoBi 2 SoSe 2026
 
