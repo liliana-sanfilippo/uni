@@ -32,13 +32,13 @@ Remember that for $q \in N$, a \gls{qgram} is a string of length q.
 \defin{qgprof}
 \defin{qgdis}
 
-\begin{exa} \label{exa:example-1-1}
+\begin{bsp} \label{exa:example-1-1}
 Consider $\Sigma = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
 Using lexicographic order (AA, AB, BA, BB) among the \glspl{qgram}, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ 
 and $p_2(z) = (1, 1, 1, 0)$.
 Therefore, we obtain $d_2(x, y) = 2$ and $\dqugen_2(x, z) =0$ (although $x\neq z$).
 % Todo {Hier bsp. tabelle }
-\end{exa}
+\end{bsp}
 
 \begin{theo}
 The \gls{qgdis} $\dqu$ is a pseudo-metric.
@@ -68,7 +68,7 @@ $q$ rising, as shown in the Example \autoref{exa:example-1-2}.
 
 \komm{Was sind base-$\sigma$ numbers?}
 
-\begin{exa}  \label{exa:example-1-2}
+\begin{bsp}  \label{exa:example-1-2}
 Assume the alphabet $\Sigma = {A, C, G, T}$ and the alphabet encoding $\rf_{\Sigma}(A) = 0$,
 $\rf_{\Sigma}(C) = 1, \rf_{\Sigma}(G) = 2$, and $\rf_{\Sigma}(T) = 3$.
 For $q = 5$, the two different possibilities to rank the
@@ -94,7 +94,7 @@ For $q = 5$, the two different possibilities to rank the
         & =  0 + 12 + 0 + 64 + 512 = 588
     \end{align*}
 \end{itemize}
-\end{exa}
+\end{bsp}
 The first numbering of positions in (a) corresponds naturally to the ordering of positional number systems;
 in the decimal number 23, the first 2 has positional value (weight) $10^1 = 10$ whereas the 3 has the lower weight of $10^0 = 1$.
 For texts, however, the second numbering in (b) is more natural since we expect lower position numbers on the left side of higher position numbers.
@@ -115,7 +115,7 @@ Both methods work with integer division and remainder.
 The one for the falling ranking function uses a dynamic divisor and determines the characters of the \gls{qgram}
 based on the integer results, the other one for the rising ranking function uses a fixed divisor and determines the characters based on the remainder.
 
-\begin{exa}   \label{exa:example-1-3}
+\begin{bsp}   \label{exa:example-1-3}
     Unranking the rank values 198 and 588 from Example~\ref{exa:example-1-2}.
     \paragraph{(a)} Unranking for falling ranking function
     \begin{align*}
@@ -133,7 +133,7 @@ based on the integer results, the other one for the rising ranking function uses
     \frac{9}{4} = 2, & \quad  \text{R } 1 \rightarrow C \\
     \frac{2}{4} = 0, & \quad  \text{R } 2 \rightarrow G
 \end{align*}
-\end{exa}
+\end{bsp}
 
 \komm{
 To example \ref{exa:example-1-3}.

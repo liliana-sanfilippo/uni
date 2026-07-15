@@ -51,7 +51,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
 
 
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{figure}[H]
         \centering
@@ -152,8 +152,8 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
         \end{subfigure}
         \caption{Examples of \glspl{dbsg} for distinct sequences and $k$= 3.}\label{fig:example-dbgs-2-1}
     \end{figure}
-\end{exa}
-\begin{exa}
+\end{bsp}
+\begin{bsp}
     \textbf{Additional example from lecture}
     \begin{figure}[H]
         \centering
@@ -187,7 +187,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
         \end{tikzpicture}
         \caption{It could also be on big circle.}\label{fig:figure2}
     \end{figure}
-\end{exa}
+\end{bsp}
 
 \komm{
     Reminder that the edges are basically this: \\
@@ -224,7 +224,7 @@ In fact, there are more variants of de Bruijn graphs, and often they are also no
 Here we will discuss them and introduce a precise nomenclature.
 \deffin{origdb}
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{figure}[H]
         \centering
@@ -341,7 +341,7 @@ Here we will discuss them and introduce a precise nomenclature.
 
         \end{tikzpicture}\label{fig:figure4}
     \end{figure}
-\end{exa}
+\end{bsp}
 
 The \gls{dbsg} for a given sequence $s$ of dimension $k$is the one that we introduced in Definition~\ref{def:dbsg} It has several interesting properties (see Section~\ref{sec:definition-and-basic-properties}) and is used in various contexts in bioinformatics like genome assembly and pangenomics.
 
@@ -377,7 +377,7 @@ The \gls{dbsg} for a given sequence $s$ of dimension $k$is the one that we intro
 
 \noindent Therefore, one prefers to identify a $k$-mer $z$ with its reverse complement $\overleftarrow{z^{-1}}$
 and represent them by the same vertex in the graph:
-\begin{exa} \labsatz
+\begin{bsp} \labsatz
     \begin{tikzpicture}[
         node distance=2cm,
         every node/.style={circle},
@@ -401,7 +401,7 @@ and represent them by the same vertex in the graph:
         \draw[->, WildStrawberry] (ctgt) -- (taca);
 
     \end{tikzpicture}
-\end{exa}
+\end{bsp}
 
 \defin{bidbsg}
 
@@ -410,7 +410,7 @@ Such a non-branching path can be collapsed into a single vertex (representing a 
 
 \defin{comdbsg}
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{figure}[H]
         \centering
@@ -472,7 +472,7 @@ Such a non-branching path can be collapsed into a single vertex (representing a 
             \caption{}
         \end{subfigure}\label{fig:figure6}
     \end{figure}
-\end{exa}
+\end{bsp}
 
 \noindent An additional variant comes into play when the input sequences are partitioned into several groups, for example representing different genomes, and these groups shall also be distinguished in the de Bruijn graph.
 Then one assigns a color (usually a single bit indicating presence or absence) to each group.
@@ -480,7 +480,7 @@ A $k$-mer inherits this color, so that each $k$-mer gets assigned a color set, i
 
 \defin{coldbsg}
 
-\begin{exa}
+\begin{bsp}
     $\ $
     \begin{figure}[H]
         \centering
@@ -511,14 +511,14 @@ A $k$-mer inherits this color, so that each $k$-mer gets assigned a color set, i
 
         \end{tikzpicture}\label{fig:figure7}
     \end{figure}
-\end{exa}
+\end{bsp}
 
 \begin{prob}
      \Glspl{coldbsg} form a very powerful data structure, but their memory-efficient     implementation is not trivial.
          In fact, the main challenge is no longer the storage of the     $k$-mers (whose number is limited by $\sigma^k$ , see above), but the storage of the colors, which     may occupy several thousand bits per $k$-mer in case of large pangenomes. \\     log der alphabetgröße zur basis 2 ist wie viele bits man braucht zum codieren     k*2 bits für dbg, aber mit Farben muss man ja noch bits dran hängen, das ist groß und noch ungelöst, denn es ist     dann k*2 + \# datensätze
 \end{prob}
 
-\begin{exa}
+\begin{bsp}
     bsp zu bits: acg codiert als 000110 wenn \\
     \begin{tabular}{lll}
         A & 0 & 0 \\
@@ -526,7 +526,7 @@ A $k$-mer inherits this color, so that each $k$-mer gets assigned a color set, i
         G & 1 & 0 \\
         T & 1 & 1
     \end{tabular}
-\end{exa}
+\end{bsp}
 
 
 \section{Implementation of de Bruijn Graphs: Sets of $k$-mers}\label{sec:implementation-of-de-bruijn-graphs:-sets-of-k-mers}
