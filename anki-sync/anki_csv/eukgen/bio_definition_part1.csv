@@ -1,0 +1,295 @@
+Transposition,Einbau eines DNA-Segments an einen anderen Ort im Genom.
+Transposon,Transposable Element - eine mobile Nukleinsäuresequenz (Mobiles genetisches Element) mit der Fähigkeit zur Transposition
+Retrotransposon,"Ein Transposon, das über eine RNA-Form mobilisiert; das DNA-Element wird in RNA transkribiert und anschließend in DNA revers transkribiert, die an einer neuen Stelle im Genom inseriert wird. Es besitzt keine infektiöse (virale) Form."
+Telomerase,"Das Ribonukleoprotein-Enzym, das am Telomer sich wiederholende Einheiten aus einem Strang bildet, indem es einzelne Basen an das 3′-Ende der DNA anfügt, gemäß der Vorgabe einer RNA-Sequenz in der RNA-Komponente des Enzyms. (Lewin)"
+Replikon,"Replikationseinheit der Erbsubstanz, die einen Startpunkt der Replikation enthält und zur autonomen Replikation befähigt ist. (Allgemeine Genetik)"
+Topoisomerase,"Ein Enzym, das die Anzahl der Kreuzungspunkte der beiden Stränge in einem geschlossenen DNA-Molekül verändert. Dazu spaltet es die DNA, führt die DNA durch den Bruch und verbindet die DNA wieder miteinander. (Lewin)"
+essentielles Gen,Der ``Phänotyp'' einer Mutante mit einem Defekt in solchen Genen ist ``nicht lebensfähig'' (lethal). (Vorlesung 3)
+redundantes Gen,Der Phänotyp einer Mutante mit einem Defekt in solchen Genen ist nicht unterscheidbar vom Wildtyp. (Vorlesung 3)
+prozessierte Pseudogene,"Pseudogene, die durch reverse Transkription und Integration von mRNA-Transkripten entstehen."
+nicht-prozessierte Pseudogene,"Pseudogene, die durch unvollständige Duplikation oder Mutation der zweiten Kopie funktioneller Gene entstehen."
+Pseudogen,"Gene, die ihre Fähigkeit verloren haben, funktionsfähige Versionen der Polypeptide zu produzieren, für die sie ursprünglich kodierten. Die Gründe für ihre Inaktivität sind vielfältig: Die Defizite können bei der Transkription, der Translation oder bei beiden liegen. Sie können nicht funktionsfähig sein oder eine veränderte Funktion aufweisen, und die RNA-Produkte könnten regulatorische Funktionen erfüllen. (Lewin)"
+Superfamilie,"Eine Gruppe von Genen, die alle durch eine vermutete Abstammung von einem gemeinsamen Vorfahren miteinander verbunden sind, mittlerweile jedoch erhebliche Unterschiede aufweisen. (Lewin)"
+Genfamilie,"Eine Gruppe von Genen, die infolge von Genduplikationen verwandte oder identische Produkte kodieren. Nach dem ersten Duplikationsvorgang sind die beiden Kopien identisch, divergieren jedoch anschließend, da sich in ihnen unterschiedliche Mutationen ansammeln. Weitere Duplikationen und Divergenzen erweitern die Familie. (Lewin)"
+Alu-Element,"Eine von mehreren verstreuten, miteinander verwandten Sequenzen, die jeweils etwa 300 bp lang sind, im menschlichen Genom (Mitglieder der SINE-Familie). Die einzelnen Mitglieder weisen an beiden Enden Alu-Schnittstellen auf. (Lewin)"
+LINE,"Eine wichtige Klasse von Retrotransposons, die etwa 21\% des menschlichen Genoms ausmachen. (Lewin)"
+SINE,"Eine bedeutende Klasse kurzer (weniger als 500 bp) nicht-autonomer Retrotransposons, die etwa 13 \% des menschlichen Genoms einnehmen. (Lewin)"
+Restriktionskarte,"eine lineare Abfolge von Stellen auf der DNA, die durch definierte Abstände voneinander getrennt sind bzw. die Darstellung einer linearen Abfolge der Stellen, an denen bestimmte Restriktionsenzyme ihre Zielstellen finden. Wird ein DNA-Molekül mit einem geeigneten Restriktionsenzym geschnitten, wird es in einzelne, negativ geladene Fragmente gespalten. Diese Fragmente lassen sich anhand ihrer Größe durch Gelelektrophorese trennen. Durch die Analyse der Restriktionsfragmente der DNA ist es möglich, eine Karte des ursprünglichen Moleküls zu erstellen."
+Polygenie,Wenn ein einzelnes Merkmal von mehreren Genen beeinflusst wird. Bspw. durch Epistasie oder Kopplung
+mRNA,"Messenger-RNA; RNA, die die genetische Information von der DNA zu den Ribosomen überträgt und als Vorlage für die Proteinsynthese dient."
+Ribonukleoprotein,Ein Komplex aus RNA und Proteinen. Größere Komplexe werden manchmal als Ribonukleoprotein-Partikel bezeichnet. (Lewin)
+monocistronisch,nur für ein Polypeptid kodierend
+polycistronisch,Kodierend für mehrere Polypedtide
+Operon,"enetische Funktionseinheit bei des Zellkerns.Bakterien, die aus einer Gruppe von Genen besteht, die über einen gemeinsamen Promotor reguliert werden und eine gemeinsame mRNA (Messenger) produzieren, die für mehrere Proteine kodiert. (Allgemeine Genetik)"
+trans-Element,"Transkriptionsfaktoren (Proteine), die an die cis-Elemente binden"
+cis-Element,"regulatorische Elemente im Promotor, ``in'' der DNA"
+Nondisjunction,"Das fehlende Auseinanderweichen von zwei homologen Chromosomen bei der Meiose I oder das Nichttrennen von Schwesterchromatiden durch eine Störung der Anaphase während der Mitose, Meiose I oder der Meiose II."
+Aneuploidie,bweichung von der normalen Chromosomenzahl ganzer Chromosomensätze. (Allgemeine Genetik)
+Chromatin-Remodellierung,"Die dynamische Anpassung der Struktur des Erbguts bei Lebewesen mit Zellkern. Es wird beispielsweise die Zugänglichkeit der genomischen DNA variiert, wodurch die Genexpression kontrolliert werden kann. Dies wird durch kovalente Histonmodifikationen mithilfe spezifischer Enzyme (z. B. Histonacetyltransferasen [HATs], Deacetylasen, Methyltransferasen und Kinasen) und durch ATP-abhängige Chromatin-Remodelling-Komplexe, die Nukleosomen entweder verschieben, ausstoßen oder restrukturieren können, gewährleistet."
+Genkonversion,"nicht-reziproke Form der Rekombination innerhalb eines Gens, bei in der ein Allel in das homologe Allel umgewandelt wird."
+Chromatid,Einer der beiden Chromosomenstränge nach der Replikation des Chromosoms in der S-Phase des Zellzyklus
+Chromosom,"Fädige Chromatinstruktur im Zellkern, Träger des genetischen Materials (DNA). Vor einer Zellteilung besteht ein C. aus 2 parallelen Chromatiden (2-Chromatid-Chromo- som), die am Centromer miteinander verbunden sind."
+Minisatellit,"Abschnitte der DNA im Genom bezeichnet, die aus tandemartigen Wiederholungen einer kurzen (ca. 12–100 Nukleotiden langer) DNA-Sequenz bestehen.; 10–60bp"
+Randomly Amplified Polymorphic DNA,"Eine spezielle Form der Polymerase-Kettenreaktion. Es werden kurze Primer mit einer Länge von 8 bis 12 Nukleotiden verwendet, die zufällig erzeugt wurden. Aus genomischer DNA vervielfältigen sich dann nur DNA-Sequenzbereiche, die von der Sequenz des Primers eingeschlossen werden. Mit geeigneten Primern ergeben sich in der Elektrophorese individuelle Bandenmuster, die es erlauben, die Erbsubstanz unterschiedlicher Lebewesen zu vergleichen, ohne diese im Detail zu kennen. Es sind also keine aufwendigen Sequenzierungen erforderlich."
+Variable number tandem repeats,=Minisatellit
+Single Nucleotid Polymorphism,Unterschiede in einzelnen Nukleotiden
+Mikrosatellit,kurze wiederholende Abschnitte; 1–6bp; multi‐allelische polymorphe Marker;
+Short Tandem Repeat,"=Mikrosatellit, SSR"
+Restriktionsfragmentlängenpolymorphismus,"Die Tatsache, dass genomische DNA verschiedener Individuen unterschiedliche Schnittstellen für Restriktionsenzyme aufweist."
+SSR,"=Mikrosatellit, Minisatellit, Short Tandem Repeat"
+genetischer Marker,Eine erkennbare DNA-Variation an einer bestimmten Stelle im Genom
+dsRNA,"Doppelsträngige RNA (double-stranded RNA); entsteht z.\,B.\ bei Virusinfektionen, durch Transkription invertierter Repeats oder synthetisch. Wird von Dicer in siRNAs prozessiert und löst RNA-Interferenz aus. Wirkt als molekulares Gefahrensignal und aktiviert in Säugern zusätzlich angeborene Immunantworten"
+Endonuklease,"Enzym, das Phosphodiesterbindungen innerhalb eines Nukleinsäurestrangs spaltet (im Gegensatz zur Exonuklease, die vom Ende her abbaut)"
+Effektorkomplex,"Multimerer Proteinkomplex, der eine regulatorische RNA als Guide nutzt, um spezifische Zielmoleküle zu erkennen und funktionell zu beeinflussen. Im RNAi-Kontext: RISC mit AGO als Kernkomponente; im CRISPR-Kontext: Cas9/sgRNA-Komplex. Verbindet Sequenzspezifität (durch die RNA) mit katalytischer Aktivität (durch das Protein)."
+Guide-RNA,"Einzelsträngige RNA, die einen Effektorkomplex durch Basenpaarung zur komplementären Zielsequenz dirigiert. Im RNAi-Kontext: der in RISC geladene miRNA- oder siRNA-Strang; im CRISPR-Kontext: die sgRNA, die Cas9 zur Ziel-DNA leitet."
+prä-mRNA,"Unreifes, primäres RNA-Pol-II-Transkript im Zellkern vor der Prozessierung. Enthält Introns und Exons sowie nicht-translatierte Bereiche. Wird durch 5'-Capping, Spleißen (Entfernung der Introns) und 3'-Polyadenylierung zur reifen mRNA prozessiert, die anschließend ins Zytoplasma exportiert wird."
+lncRNA,"Long non-coding RNA; nicht-kodierende RNA $>$\,200\,nt ohne signifikantes offenes Leseraster. Reguliert Genexpression auf transkriptioneller (z.\,B.\ Chromatinremodellierung, Rekrutierung von PRC2), post-transkriptioneller und translationaler Ebene"
+Dicer,"Evolutionär konservierte RNase-III-Endonuklease, die lange doppelsträngige RNA (dsRNA) oder pre-miRNA in kurze 21--23\,nt-Fragmente mit charakteristischen 2-nt-3'-Überhängen prozessiert (siRNA bzw.\ miRNA (microRNA)). Das Produkt wird anschließend in den RISC-Komplex (RNA-induced silencing complex)-Komplex geladen."
+RISC-Komplex (RNA-induced silencing complex),"Effektorkomplex der RNA-Interferenz. Kernkomponente ist ein Argonaute-Protein (AGO), das einen einzelsträngigen Guide-RNA-Strang (siRNA oder miRNA (microRNA)) bindet und komplementäre Ziel-mRNA erkennt. Bei vollständiger Komplementarität erfolgt endonukleolytische Spaltung (Slicer-Aktivität von AGO2); bei partieller Komplementarität wird die Translation reprimiert oder die mRNA destabilisiert."
+Knockdown-Analyse,Methode der reversen Genetik zur funktionellen Analyse eines Gens durch gezielte Reduktion (nicht vollständige Elimination) seiner mRNA-Menge.
+pre-miRNA,"Ca.\ 60--70\,nt lange Haarnadel-RNA, die durch Drosha- Prozessierung aus der pri-miRNA entsteht. Wird durch Exportin-5 in das Zytoplasma transportiert und dort von Dicer zur reifen miRNA (microRNA) prozessiert."
+pri-miRNA,"Primäres RNA-Pol-II-Transkript, das eine oder mehrere Haarnadelstrukturen (Hairpins) enthält. Wird im Zellkern durch den Microprocessor-Komplex (Drosha\,+\,DGCR8) zur ca.\ 60--70\,nt langen pre-miRNA prozessiert."
+miRNA-miRNA* Duplex,"Kurzlebiges, ca.\ 21--23\,bp langes RNA-Duplex-Intermediat, das nach Dicer-Prozessierung der pre-miRNA entsteht. Der funktionelle Guide-Strang (miRNA (microRNA)) wird in RISC-Komplex (RNA-induced silencing complex) geladen; der komplementäre Passenger-Strang (miRNA (microRNA)*, auch miRNA-3p) wird meist degradiert. Die Strangauswahl erfolgt anhand der thermodynamischen Stabilität der Duplex-Enden: der Strang mit dem weniger stabilen 5'-Ende wird bevorzugt als Guide-Strang selektiert."
+Histon,"Kleine, basische Kernproteine (reich an Lysin und Arginin), die den Histonoktamer des Nukleosoms bilden."
+Silencing,"Sequenzspezifische Repression der Genexpression auf transkriptioneller (TGS) oder post-transkriptioneller Ebene (PTGS). Mechanismen umfassen Chromatinkondensation, DNA-Methylierung sowie gezielte Degradierung oder Translationshemmung spezifischer mRNA, z.\,B.\ durch RNA-Interferenz."
+RNA-Interferenz (RNAi),"Post-transkriptioneller Gen-Silencing-Mechanismus, bei dem kurze doppelsträngige RNAs (siRNA, miRNA (microRNA)) nach Prozessierung durch Dicer in den RISC-Komplex (RNA-induced silencing complex)-Komplex (RNA-induced silencing complex ) geladen werden. RISC-Komplex (RNA-induced silencing complex) erkennt komplementäre mRNA und bewirkt deren Degradierung (vollständige Komplementarität) oder Translationsrepression (partielle Komplementarität)."
+post-transkriptionelles Gene Silencing (PTGS),"Regulation der Genexpression auf mRNA-Ebene nach der Transkription; umfasst zwei Hauptmechanismen: (1) gezielte Degradierung spezifischer mRNA und (2) gezielte Inhibierung ihrer Translation. Wird u.\,a.\ durch RNA-Interferenz (siRNA, miRNA (microRNA)) vermittelt. Bedeutend für endogene Genregulation sowie als Werkzeug der reversen Genetik zur Analyse von Genfunktionen (Knockdown)."
+Euchromatin,"dekondensierte DNA (die aber immer noch an Nucleosomen gebunden ist); aktiv, hat transkribierte Regionen"
+Heterochromatin,"hochverpackte, nicht zugängliche DNA in Metaphasechromosomen oder selektiv kondensierten Genomabschnitten; ist Transkriptions-inaktiv und wird spät repliziert"
+Linker-DNA,"DNA-Abschnitt (10--80\,bp) zwischen zwei aufeinanderfolgenden Nukleosomen; frei zugänglich für Nukleasen (z.\,B.\ MNase) und Transkriptionsfaktoren. Wird durch Histon H1 stabilisiert und beim vollständigen MNase-Verdau als erstes abgebaut."
+Core-Nukleosom,"Minimale Nukleosomeneinheit nach Verdau der Linker-DNA: 147\,bp DNA, die 1{,}65-mal linkshändig um den Core-Oktamer gewickelt sind. Enthält kein Histon H1; entspricht dem nucleosome core particle (NCP) in der Kristallstruktur."
+Core-Oktamer,"Proteinkern des Nukleosoms aus acht Core-Histonen: ein (H3$_2$--H4$_2$)-Tetramer als zentrale Grundstruktur, flankiert von zwei H2A--H2B-Dimeren. Hoch symmetrisch aufgebaut mit pseudo-dyadischer Symmetrieachse."
+10-nm-Faser (Nukleosomenfilament),Erste Verdichtungsstufe des Chromatins; entspricht der Perlenketten-Struktur (``beads-on-a-string''): Nukleosomen sind durch Linker-DNA verbunden
+30-nm-Faser (30-nm Fibrille),Zweite Verdichtungsstufe durch Aufwindung der 10-nm-Faser zu einer kompakteren Helix Histon H1 ist für die Stabilisierung essentiell.
+Nukleosom,"Grundlegende Verpackungseinheit des eukaryotischen Chromatins: ca. 147\,bp DNA sind 1{,}65-mal linkshändig um einen Histonoktamer (je zwei Kopien von H2A, H2B, H3 und H4) gewickelt"
+Sigma-Faktor,"Unterheit der bakteriellen RNA-Polymerase, die die spezifische Erkennung von Promotorsequenzen ermöglicht und die Initiation der Transkription steuert."
+RBS,"Purinreiche Sequenz in prokaryotischen mRNA (Konsensus: 5'-AGGAGG-3'), die ca. 5--10\,nt upstream des Startcodons liegt und durch komplementäre Basenpaarung mit der 16S-rRNA die Ribosomenbindung vermittelt."
+Codon-Anticodon Wechselwirkung,Antiparallele Basenpaarung zwischen dem mRNA-Codon (5'$\to$3') und dem tRNA-Anticodon (3'$\to$5') an der A-Stelle des Ribosoms; bestimmt die Aminosäure-Zuordnung gemäß dem genetischen Code.
+Wobble-Position,"Dritte Codonposition (3'), an der nicht-Watson-Crick-Basenpaarungen toleriert werden. Ermöglicht einer tRNA die Erkennung mehrerer synonymer Codons (z.\,B. G\,:\,U-Paar)."
+Anticodon,"Drei Nucleotide an Position 34--36 der tRNA-Sequenz, die durch komplementäre Basenpaarung mit dem mRNA-Codon die korrekte Aminosäure in die Peptidkette einführen."
+Aminoacyl-tRNA-Synthetasen,"Enzyme, die unter ATP-Verbrauch eine Aminosäure kovalent an das 3'-CCA-Ende der zugehörigen tRNA knüpfen (Aminoacylierung). Gewährleisten die korrekte Codon-Aminosäure-Zuordnung (zweiter genetischer Code)."
+Pseudouridin,"Häufigste RNA-Modifikation ($\Psi$); C-glykosidische Umlagerung von Uridin, bei der C5 statt N1 die glykosidische Bindung trägt. Stabilisiert Sekundärstrukturen durch verbesserte Basenstapelung."
+Dihydrouridin,"Modifiziertes Uridin mit gesättigter C5--C6-Doppelbindung, vorwiegend in der D-Schleife der tRNA. Erhöht die Flexibilität der tRNA durch Destabilisierung der Stapelwechselwirkungen."
+Kleeblatt-Struktur,"Zweidimensionale Sekundärstruktur der tRNA mit vier Doppelstrang-Helices (Akzeptor-, D-, Anticodon- und T$\Psi$C-Arm) und drei Schleifen; Grundlage der L-förmigen 3D-Tertiärstruktur."
+Heterosom,"Geschlechtschromosom (Allosom), das sich strukturell oder im Replikationsverhalten vom Autosomensatz unterscheidet"
+Autosom,"Nicht-geschlechtsbestimmendes Chromosom; beim Menschen 22 homologe Paare, die in beiden Geschlechtern identisch vorliegen."
+Centimorgan,"Genetische Karteneinheit; entspricht 1\,\% Rekombinationsfrequenz zwischen zwei Loci. Näherungsweise: 1\, cM $\approx$ 1\,Mb beim Menschen."
+Zwei-Chromatid-Chromosom,"Repliziertes Chromosom, das aus zwei genetisch identischen Schwesterchromatiden besteht, die am Centromer durch Cohesin zusammengehalten werden; entsteht nach der S-Phase."
+Mutagenese,Entstehung oder gezielte Herbeiführung von Mutationen im Erbgut durch endogene (Replikationsfehler) oder exogene Einwirkung (Mutagene).
+physikalische Mutagenese,"Mutationsauslösung durch energiereiche Strahlung: ionisierende Strahlung (Röntgen, $\gamma$) verursacht Strangbrüche und Basenmodifikationen; UV-Licht induziert Pyrimidin-Dimere."
+chemische Mutagenese,Mutationsauslösung durch chemische Agenzien
+Codon,"Basentriplett in der mRNA, das für eine bestimmte Aminosäure oder ein Stop-Signal während der Translation codiert."
+Aminoacyl-tRNA,"Mit einer spezifischen Aminosäure beladene tRNA, die durch Aminoacyl-tRNA-Synthetasen erzeugt wird und die Aminosäure während der Translation zum Ribosom transportiert."
+Allel,variant form of a gene
+gen,unit of hereditary information
+Synapsis,Paarung homologer Chromosomen
+Chiasma,Die cytologisch sichtbare Folge von Crossover- Ereignissen.
+Crossover,"Das Ereignis, welches zum Austausch genetischen Materials zwischen Chromosomen führt (und dessen Resultat man genetisch verfolgen kann)"
+RNA,"Ribonukleinsäure; ein meist einzelsträngiges Nukleinsäuremolekül, das aus Ribonukleotiden besteht und zentrale Funktionen in der Genexpression, Katalyse und Regulation übernimmt."
+Spleißosom,"Organell (Großer Ribonukleoprotein-Komplex aus snRNA und Proteinen), das das Spleißen der prä-mRNA katalysiert, indem Introns entfernt und Exons miteinander verknüpft werden."
+Nukleolus,"Struktur im Zellkern, in der die rRNA-Synthese und der Zusammenbau der ribosomalen Untereinheiten stattfindet; bildet sich an den Nukleolus-Organisator-Regionen (NORs)."
+regulatorische RNA,"Sammelbegriff für nicht-kodierende RNAs, die die Genexpression auf Transkriptions-, posttranskriptioneller oder translationaler Ebene regulieren, z. B. miRNA (microRNA), siRNA oder lncRNA."
+Poly-A-Schwanz,"Posttranskriptionelle Modifikation am 3'-Ende eukaryotischer mRNA, bestehend aus einer Kette von Adenin-Nukleotiden, die Stabilität, Export aus dem Zellkern und Translationseffizienz erhöht."
+snRNA,Small nuclear RNA; Bestandteil des Spleißosoms und an der Prozessierung von prä-mRNA durch Spleißen beteiligt.
+sncRNA,"Small non-coding RNA; Sammelbegriff für kurze nicht-kodierende RNAs, die regulatorische Funktionen in der Genexpression übernehmen."
+siRNA,"Small interfering RNA; kurze regulatorische RNA (ca. 21–24 Nukleotide), die durch RNA-Interferenz spezifische mRNA abbaut oder deren Translation hemmt."
+RNA-Polymerase,"Enzym, das RNA anhand einer DNA- (oder RNA-) Matrize synthetisiert. In Eukaryoten existieren mehrere Typen (Pol I–III), die unterschiedliche RNA-Klassen transkribieren."
+RNA-Polymerase IV,"Pflanzenspezifische RNA-Polymerase, die an der Bildung von siRNAs und der RNA-gerichteten DNA-Methylierung beteiligt ist."
+Replikation,"Prozess der Verdopplung der DNA vor der Zellteilung, bei dem eine identische Kopie des Genoms durch DNA-abhängige DNA-Polymerasen synthetisiert wird."
+reverse Transkription,"Synthese von DNA aus einer RNA-Matrize durch das Enzym Reverse Transkriptase, typisch für Retroviren und bestimmte mobile genetische Elemente."
+mtDNA,"Mitochondriale DNA; ringförmiges Genom der Mitochondrien, das für einen Teil der mitochondrialen Proteine sowie rRNAs und tRNA kodiert."
+nDNA,Nukleäre DNA; die im Zellkern lokalisierte Hauptform des eukaryotischen Genoms.
+cpDNA,"Chloroplasten-DNA; ringförmiges Genom der Chloroplasten, das für Gene der Photosynthese sowie eigene rRNAs und tRNA kodiert."
+miRNA (microRNA),"MicroRNA; kurze regulatorische RNA (ca. 20–22 Nukleotide), die durch Basenpaarung mit Ziel-mRNA deren Translation hemmt oder deren Abbau fördert."
+ncRNA,"Non-coding RNA; Sammelbegriff für alle RNAs, die nicht in Proteine übersetzt werden, aber strukturelle, katalytische oder regulatorische Funktionen besitzen."
+rRNA,"Ribosomale RNA; struktureller und katalytischer Bestandteil der Ribosomen, der maßgeblich an der Peptidbindung während der Translation beteiligt ist."
+Spleißen,Entfernen der Introns
+Exon,Für RNA und Protein kodierender Ab- schnitt eines gespaltenen Gens. Bleibt beim Verspleißen erhalten
+Intron,"Abschnitt eines gespaltenen Gens, der beider Reifung der RNA (Verspleißen) herausgeschnitten und demzufolge nicht in Protein übersetzt wird"
+hnRNA,"RNA-Klasse heterogener Größe, die im Kern lokalisiert ist und zu der vor allem die Vorläufer der mRNA gehören, die im Kern in unreifer Form als Primärtranskripte vorliegen"
+Primärtranskript,"Das unmittelbare Produkt der Transkription eines Gens. Bei eukaryotischen proteincodierenden Genen entspricht es der prä-mRNA (hnRNA) und wird durch Prozessierungsschritte wie 5'-Capping, Spleißen und Polyadenylierung zur reifen mRNA verarbeitet."
+RNA-Polymerase V,ranskribiert ``intergenic long ncRNA''
+Protein-Kinase,"Enzym, das Proteine durch Übertragung einer Phosphatgruppe (meist von ATP auf Serin-, Threonin- oder Tyrosinreste) phosphoryliert und dadurch deren Aktivität, Interaktionen oder Lokalisation reguliert."
+Helikase,"Enzym, das Nukleinsäure-Doppelstränge (DNA oder RNA) unter ATP-Verbrauch entwinden und trennen kann, z. B. während Replikation oder Transkription."
+RNA-Polymerase II,"Im Nukleoplasma lokalisierte RNA-Polymerase, die die Synthese der 5S‑rRNAs, tRNA, snRNA und weiterer kleiner RNAs katalysiert"
+RNA-Polymerase III,"Im Nukleoplasma lokalisierte RNA-Polymerase, die für die Synthese der mRNA bzw. ihrer Vorläufer, die hnRNA, sowie miRNA (microRNA) zuständig ist"
+RNA-Polymerase I,"Im Nukleolus lokalisierte RNA-Polymerase, die für die Synthese der rRNAs (außer der 5S‑rRNA) verantwortlich ist"
+Transkription,Die Synthese von RNA anhand einer DNA-Matrize
+Translation,Proteinsynthese an einer RNA-Matrize mittels Ribosomen
+Syntenie,Physikalische Ko-Lokalisierung von genetischen Loci (Reihenfolge von Loci) auf äquivalenten Chromosomen verschiedener Spezies
+tRNA,"NA-Moleküle, die wäh- rend der Translation spezifische Aminosäuren zu den Ribosomen transportieren"
+Orthologie,"Gene in unterschiedlichen Arten, die von einer gemeinsamen Sequenz abstammen. Sie können die gleiche Funktion haben, müssen es aber nicht."
+Paralogie,"homologe Gene in einer Art, die durch Duplikation entstanden sind"
+Homologie,Ähnlichkeit biologischer Strukturen oder Sequenzen aufgrund gemeinsamer evolutionärer Abstammung
+Open Reading Frame (ORF),"Leserahmen einer mRNA, der zwischen Startcodon (AUG) und Stopcodon liegt und die Information für die Proteinsequenz enthält."
+Interaktom,Gesamtheit aller Protein-Protein-Interaktionen
+Proteom,"Gesamtheit aller Proteine in einer Zelle, Gewebe, Organismus unter geg. Bedingungen (abh. von mRNA und Proteinmenge, -stabilität, -modifikationen)"
+Transkriptom,"Gesamtheit aller (auf RNA-Ebene) exprimierten Gene Gesamtheit aller (auf RNA-Ebene) exprimierten Gene (inkl. mRNA, tRNA, rRNA, ncRNA, miRNA (microRNA), ...)"
+Genom,"Alle Erbinformationen (DNA-Sequenzen, Gene), inkl. der aus bspw. den Mitochondrien."
+nucleares Genom,Die Erbinformationen aus dem Zellkern.
+Plastom,Die Erbinformationen aus den Chlorpolasten; das Chlorpolasten-Genom
+Chondrom,Die Erbinformationen aus den Mitochondrien; das Mitochondrien-Genom
+Chaperone,"ATPase, die die korrekte Faltung neu‐synthetisierter oder fehlgefalteter Proteine erleichtert"
+Signal-Peptidase,"Proteinspaltendes Enzym (Protease), die an der Membran des Endoplasmatischen Retikulums (ER) innerhalb der Zelle lokalisiert sind. Erkennt spezielle Aminosäuresequenzen (Signalsequenzen) innerhalb eines Proteins. Sie spaltet im Lumen des ER das Signalpeptid von der restlichen Polypeptidkette ab"
+Translocon,"Proteinkanal in biologischen Membranen, dessen Funktion darin besteht, Polypeptide durch die Membran zu transportieren oder sie in die Lipid-Doppelschicht einzubetten"
+Signal Recognition Particle,"Ribonukleoprotein, das am cotranslationalen Transport von Proteinen in das endoplasmatische Retikulum (ER) von Eukaryoten und die Plasmamembran von Prokaryoten beteiligt ist"
+FG-Repeat,"kleine hydrophobe Segmente, die lange Abschnitte hydrophiler Aminosäuren unterbrechen. Diese flexiblen Abschnitte bilden entfaltete oder ungeordnete Segmente ohne feste Struktur.[6] Sie bilden ein Kettengeflecht, durch das kleinere Moleküle diffundieren können, das jedoch große hydrophile Makromoleküle ausschließt. Diese großen Moleküle können eine Kernpore nur passieren, wenn sie von einem Signalmolekül begleitet werden, das vorübergehend mit dem FG-Wiederholungssegment eines Nukleoporins interagiert"
+Nukleoporin,"Eine Proteinfamilie, aus der der Kernporenkomplex aufgabaut ist"
+N-terminus,Aminogruppe am Anfang eines Proteins
+guanine nucleotude exchange factor,"Proteine oder Proteindomänen, die monomere GTPasen aktivieren, indem sie die Freisetzung von Guanosindiphosphat (GDP) anregen, um die Bindung von Guanosintriphosphat (GTP) zu ermöglichen"
+GTPase-activating protein,"Eine Familie von regulatorischen Proteinen, deren Mitglieder an aktivierte G-Proteine binden und deren GTPase-Aktivität stimulieren können, wodurch der Signalweg beendet wird"
+G-Protein,"Eine Familie von Proteinen, die innerhalb von Zellen als molekulare Schalter fungieren und an der Weiterleitung von Signalen von verschiedenen Reizen außerhalb der Zelle in ihr Inneres beteiligt sind. Ihre Aktivität wird durch Faktoren reguliert, die ihre Fähigkeit steuern, an Guanosintriphosphat (GTP) zu binden und dieses zu Guanosindiphosphat (GDP) zu hydrolysieren. Wenn sie an GTP gebunden sind, befinden sie sich im ``Ein''-Zustand, und wenn sie an GDP gebunden sind, befinden sie sich im ``Aus''-Zustand. Sie gehören zur größeren Gruppe von Enzymen, die als GTPasen bezeichnet werden."
+Antisense-Technologie,"Methode zur post-transkriptionellen Genexpressionsregulation durch einzelsträngige Antisense-Oligonukleotide (ASO), die komplementär zur Ziel-mRNA sind. Mechanismen: (1) sterische Blockierung der Translation, (2) RNase-H-vermittelte Degradierung des RNA:DNA-Hybrids. Im Gegensatz zu RNAi kein RISC-Komplex nötig; wichtiges Werkzeug für Knockdown-Analysen und therapeutische Anwendungen."
+transcriptional gene silencing,epigenetische Mechanismen der Transkriptionsregulation
+Elongationsfaktor (eEF),"Proteinfaktoren der eukaryotischen Translation, die den Ablauf der Elongation im Ribosom steuern, insbesondere die Anlieferung von Aminoacyl-tRNAs, die Peptidbindung und die Translokation des Ribosoms entlang der mRNA."
+Peptidbindung,"Kovalente Bindung zwischen der Carboxylgruppe einer Aminosäure und der Aminogruppe einer anderen, die während der Translation im Ribosom gebildet wird."
+CPSF (Cleavage and Polyadenylation Specificity Factor),"Proteinkomplex, der die 3'-Endprozessierung eukaryotischer prä-mRNA erkennt und die Spaltung am Polyadenylierungssignal sowie die anschließende Polyadenylierung initiiert."
+Hairpin-Struktur (RNA),"Sekundärstruktur der RNA, bei der sich eine einzelsträngige RNA durch intramolekulare Basenpaarung zu einer Schleifenstruktur (Stem-Loop) faltet; häufig an der Regulation und Prozessierung beteiligt."
+Carboxyterminale Domäne (CTD),"Wiederholte Heptapeptid-Sequenz am C-Terminus der RNA-Polymerase II, die durch Phosphorylierung die Rekrutierung von Prozessierungsfaktoren und den Übergang von Initiation zu Elongation steuert."
+Chromatin,"sichtbares ``Fadengerüst'' im Zellkern; Komplex aus DNA und Proteinen (vor allem Histonen), der das genetische Material in eukaryotischen Zellen organisiert und dessen Zugänglichkeit für Transkription und andere Prozesse reguliert."
+in vitro,"Experimentelle Bedingungen außerhalb eines lebenden Organismus, z. B. in einem Reagenzglas oder unter definierten Laborbedingungen."
+in vivo,Vorgänge innerhalb eines lebenden Organismus unter physiologischen Bedingungen.
+Enhancer,"Distales regulatorisches DNA-Element, das die Transkriptionsrate eines Gens erhöhen kann, indem es mit Promotorregionen über DNA-Schleifen interagiert."
+Promotor,"DNA-Region vor einem Gen, die die Bindung der RNA-Polymerase und der Transkriptionsfaktoren ermöglicht und den Startpunkt der Transkription festlegt."
+Silencer,"Distales regulatorisches DNA-Element, das die Transkription eines Gens durch Bindung repressiver Transkriptionsfaktoren hemmt."
+5S-rRNA,"Bestandteil der ribosomalen RNA der großen ribosomalen Untereinheit, der in Eukaryoten durch RNA-Polymerase III transkribiert wird."
+Poly(A)-Polymerase,"Enzym, das nach der Transkriptionsspaltung am 3'-Ende eukaryotischer prä-mRNA eine Poly(A)-Sequenz synthetisiert, indem es Adenosinreste ohne DNA-Matrize anfügt."
+PABP (Poly(A)-binding protein),"Protein, das an den Poly(A)-Schwanz eukaryotischer mRNA bindet, diese stabilisiert, den Abbau hemmt und die Translationseffizienz erhöht."
+Deadenylierung,"Enzymatischer Prozess der schrittweisen Verkürzung des Poly(A)-Schwanzes eukaryotischer mRNA, der häufig den Beginn des mRNA-Abbaus einleitet."
+mRNA-Prozessierung,"Gesamtheit der posttranskriptionellen Modifikationen eukaryotischer prä-mRNA, einschließlich 5'-Capping, Spleißen und Polyadenylierung, die zur reifen mRNA führen."
+Prä-Initiationskomplex,"Multiproteinkomplex aus RNA-Polymerase II und allgemeinen Transkriptionsfaktoren (TFIID, TFIIA, TFIIB, TFIIF, TFIIE, TFIIH), der sich am Core-Promotor bildet und die Initiation der Transkription ermöglicht."
+basale Transkription,"Minimale Transkriptionsaktivität eines Gens, die allein durch den Core-Promotor, die allgemeinen Transkriptionsfaktoren und die RNA-Polymerase erreicht wird, ohne zusätzliche regulatorische Aktivatoren oder Repressoren."
+UAS (Upstream Activating Sequence),"Regulatorische DNA-Sequenz stromaufwärts eines Promotors, an die Aktivatorproteine binden und dadurch die Transkription fördern. Besonders gut charakterisiert in Hefen."
+URS (Upstream Repressing Sequence),"Regulatorische DNA-Sequenz stromaufwärts eines Promotors, an die Repressorproteine binden und dadurch die Transkription hemmen."
+Response Element (RE),"Spezifische regulatorische DNA-Sequenz, an die bestimmte Transkriptionsfaktoren als Antwort auf zelluläre Signale binden und so die Genexpression regulieren. Beispiele sind das Estrogen Response Element (ERE) oder das Glucocorticoid Response Element (GRE)."
+Downstream Promoter Element (DPE),"Core-Promotorelement der RNA-Polymerase II, das stromabwärts des Transkriptionsstarts liegt und insbesondere bei TATA-losen Promotoren zur Initiation der Transkription beiträgt."
+BRE (TFIIB Recognition Element),"Core-Promotorelement, das von dem allgemeinen Transkriptionsfaktor TFIIB erkannt wird und die Bildung des Präinitiationskomplexes unterstützt."
+MTE (Motif Ten Element),"Core-Promotorelement der RNA-Polymerase II, das stromabwärts des Transkriptionsstarts liegt und mit dem Initiator-Element (INR) und dem DPE zusammenwirken kann."
+Terminationsfaktor,"Protein oder Proteinkomplex, der die Beendigung der Transkription vermittelt, indem er die RNA-Polymerase vom DNA-Template und das RNA-Transkript freisetzt."
+Release-Faktor,"Protein, das während der Translation ein Stoppcodon erkennt und die Freisetzung der neu synthetisierten Polypeptidkette aus dem Ribosom auslöst."
+TBP (TATA-box binding protein),"Protein des TFIID-Komplexes, das an die TATA-Box bindet und die Bildung des Präinitiationskomplexes für die Transkription einleitet."
+Initiator-Element (INR),"Kernelement des RNA-Polymerase-II-Core-Promotors, das den Transkriptionsstart (+1) überlappt und die Initiation der Transkription unterstützt"
+interner Promotor,"Promotor, dessen regulatorische Sequenzen innerhalb des transkribierten Gens liegen"
+CAAT-Box,"Konserviertes regulatorisches Promotorelement eukaryotischer Gene, das die Effizienz der Transkription beeinflusst"
+GC-Box,"GC-reiches regulatorisches Promotorelement, das Bindestellen für spezifische Transkriptionsfaktoren enthält"
+Core-Promotor,"Minimaler DNA-Abschnitt eines Promotors, der für die Initiation der Transkription erforderlich ist"
+Upstream Control Element,"Regulatorisches Promotorelement der RNA-Polymerase I, das stromaufwärts des Transkriptionsstarts liegt und die Transkription aktiviert"
+TATA-Box,"AT-reiche Promotorsequenz eukaryotischer Gene, meist etwa 25 Basenpaare vor dem Transkriptionsstart"
+Polyadenylierungssignal,"Sequenz im 3'-UTR eukaryotischer prä-mRNA (meist AAUAAA), die die Spaltung der RNA und anschließende Polyadenylierung durch die Poly(A)-Polymerase auslöst."
+Trailer,"3'-nicht-translatierter Bereich (3'-UTR) einer mRNA, der nach dem Stoppcodon liegt und regulatorische Sequenzen wie das Polyadenylierungssignal enthalten kann."
+Leader,"5'-nicht-translatierter Bereich (5'-UTR) einer mRNA, der vor dem Startcodon liegt und an der Regulation von Translation und Stabilität beteiligt ist."
+Cap-Struktur,"Modifizierte 5'-Endstruktur eukaryotischer mRNA (7-Methylguanosin-Kappe), die die mRNA vor Abbau schützt, den Export aus dem Zellkern ermöglicht und die Translation initiiert."
+Konsensus-Promotor,"Idealisierte DNA-Sequenz, die aus der Auswertung vieler Promotoren abgeleitet wird und die am häufigsten vorkommenden Basen an jeder Position darstellt."
+Nukleolusorganisatorregion,"Chromosomale DNA-Region, die rRNA-Gene enthält und als Organisationszentrum für den Nukleolus dient, wo die rRNA-Synthese und Ribosomenassemblierung stattfinden."
+rDNA,Enthält Gene für die für rRNA (rRNA-Gene)
+RNA-dependent RNA polymerase (RDRP),"RNA-abhängige RNA-Polymerase, die RNA als Matrize verwendet, um neue RNA-Stränge zu synthetisieren. Kommt z. B. bei RNA-Viren und in bestimmten RNA-Interferenz-Systemen (z. B. siRNA-Verstärkung bei Pflanzen) vor."
+DNA-abhängige RNA-Polymerase,"Enzym, das RNA anhand einer DNA-Matrize synthetisiert. In Eukaryoten existieren drei Haupttypen (RNA-Polymerase I, II und III), die jeweils unterschiedliche Klassen von Genen transkribieren."
+nicht-kodogener Strang,"DNA-Strang, der die gleiche Basensequenz wie die transkribierte mRNA (bis auf Uracil statt Thymin) besitzt und nicht als Vorlage für die RNA-Synthese dient; auch Plus-Strang oder codierender Strang genannt."
+Matrizenstrang,"DNA-Strang, der als Vorlage (Template-Strang) für die Transkription dient und komplementär zur entstehenden mRNA ist; auch Antisense-, kodogener oder Template-Strang genannt."
+Endosymbionten-Hypothese,"Hypothese, dass Eukaryoten aus einer Endosymbiose prokaryotischer Vorläuferorganismen hervorgegangen sind. Demnach sind chemo- und phototrophe Bakterien von Archaeen aufgenommen worden, in denen sie sich zu Zellorganellen ihrer Wirtszellen entwickelt haben, darunter Mitochondrien und Plastiden."
+paternale Vererbung,Vererbung genetischer Information über den väterlichen Elternteil
+maternale Vererbung,Vererbung genetischer Information über den mütterlichen Elternteil
+extranukleäre Vererbung,"Vererbung genetischer Information außerhalb des Zellkerns, insbesondere über mitochondriale oder plastidäre DNA"
+``ab initio''-Genvorhersage,"Computergestützte Vorhersage von Genen allein anhand der genomischen DNA-Sequenz und charakteristischer Sequenzmerkmale wie Start- und Stopcodons, Spleißsignalen, offenen Leserahmen oder Codon-Nutzung, ohne experimentelle Vergleichsdaten zu verwenden"
+extrinsische Genvorhersage,"Methode der Genvorhersage, bei der externe biologische Informationen wie cDNA-, RNA-Seq-, EST- oder Proteinsequenzen verwendet werden, um Gene in einem Genom zu identifizieren und ihre Struktur zu bestimmen"
+intrinsische Genvorhersage,"Methode der Genvorhersage, die ausschließlich interne Merkmale der DNA-Sequenz wie offene Leserahmen, Spleißstellen, Promotoren oder statistische Eigenschaften codierender Regionen nutzt"
+Vergleich von verwandten Genomen,"Wissenschaftsgebiet, das Ähnlichkeiten und Unterschiede zwischen DNA-Sequenzen, Genen, der Genreihenfolge, regulatorischen Sequenzen und anderen genomischen Merkmalen untersucht, um festzustellen, wie Organismen miteinander verwandt sind."
+genetischer Marker,"Ein Gen oder eine DNA-Sequenz mit bekannter Position auf einem Chromosom, das bzw. die zur Identifizierung von Individuen oder Arten verwendet werden kann"
+zentrales Dogma,"Wenn (sequenzielle) Information einmal in ein Protein übersetzt wurde, kann sie dort nicht wieder herausgelangen"
+Diplohaplont,"Bei diesen Organismen können Mitosen sowohl in der diploiden als auch in der haploiden Phase stattfinden: es entstehen zwei unterschiedlich aussehende Organismen, ein haploider und ein diploider Organismus"
+diploid,Auftreten von 2 homologen (mütterlichen und väterlichen) Chromosomensätzen (2 n) in den Kernen somatischer (2) Zellen
+haploid,Auftreten von nur einem Chromosomensatz (1 n) in den Zellkernen
+Reduktionsteilung,"Zellteilung, bei der vor der Teilung zu einer Verrringerung (Halbierung) des Chromosomensatzes kommt"
+Schwesterchromatide,Durch identi- sche Verdopplung (Replikation) eines Chromosoms entstandene Chromatiden
+Cohesin,"Proteinkomplexe, an deren Aufbau u.a. die sog. SMC-Proteine Proteine beteiligt sind. Haben nicht nur in der Mitose eine wichtige Funktion, sie sind darüber hinaus auch an der homologen Rekombination in der Meiose und an der Ausbildung von Chromatinschleifen im Interphase‐Zellkern beteiligt"
+Mikrotubuli,Röhrenförmige Elemente des Zytoskeletts bei Eukaryonten. Durchmesser: 24 nm
+Zentriole,"Zentralkörperchen; in der Nähe des Zellkerns gelegenes, meist paarweise (als Diplosom) vorkommendes Organell. Organisationszentrum für die Spindel. Die beiden Z.en sind rechtwinklig zueinander angeordnet, entsprechen in ihrem Aufbau den Basalkörpern von Zilien und Flagellen und sind wechselseitig in diese umwandelbar. Sind sind nur elektronen- mikroskopisch sichtbar."
+Spindel,"Spindelförmige Anordnung von Mikrotubuli, die bei der Kernteilung die Chromosomen zu den beiden Spindelpolen (Zentriolen) transportieren."
+Telomer,Die Enden der Chromosomen
+Centromer,Spindelfaseransatzstelle (Spindel) der Chromosomen.
+Kinetochor,"Mehrschichtiger Proteinkomplex am Centromer eines Chromosoms, der sich in der späten Prophase von Kernteilungen bildet"
+Karyotyp,Vollständiger Satz von Metaphase- chromosomen
+Pleiotropie,Vielfache Wirkung eines bestimmten Gens
+Polygene Vererbung,siehe Polygenie
+Multiple Allele,verschiedene Mutationsstufen ein und desselben Gens
+Kopplung,"Assoziation von Genen auf dem gleichen Chromosom, die zur gemeinsamen Vererbung der entsprechenden Merkmale führt"
+Rückkreuzung,"Von einer Rückkreuzung spricht man, wenn schon einer der beiden Eltern für beide rezessiven Allele homozygot war; allgemein nennt man diesen Kreuzungstyp Testkreuzung."
+z-Form,Linksgängige Doppelhelix
+b-Form,"Rechtsgängige doppelsträngige DNA-Doppelhelix, die im Vergleich zur A-Form entspannter ist und deren Nukleinbasen orthogonal zur Helixachse ausgerichtet sind. Sie ist die unter physiologischen Bedingungen typisch vorliegende Form doppelsträngiger DNA, z. B. bei Chromosomen in Zellen"
+a-Form,"Rechtsgängige doppelsträngige DNA-Doppelhelix, die im Vergleich zur B-Form kompakter ist und deren Nukleinbasen nicht orthogonal zur Helixachse ausgerichtet sind. Sie ist die bei niedriger Feuchtigkeit vorliegende Form doppelsträngiger DNA, z. B. bei getrockneter DNA oder DNA-Kristallen"
+Nukleotid,"Baustein der Nucleinsäuren, der aus einem Nucleosid und einer daran gebundenen Phosphatgruppe besteht"
+Nukleosid,"Bausteine der Nukleinsäuren, die aus je einer Purin- oder Pyrimidinbase und einem Ribose- oder Desoxyribosezucker bestehen"
+Wildtyp,In der Natur auftretende genetische Normalform des Genotyps und Phänotyps
+Mutante,Ein durch eine Mutation neu entstandenes Merkmal
+Phänotyp,Erscheinungsbild eines Organismus
+Genotyp,Gesamtheit der Erbanlagen (der in DNA kodierten genetischen Information) eines Organismus
+"asexuelle Fortpflanzung (vegetative, ungeschlechtliche)","Erzeugung von Nachkommen, die identisch zu den Eltern sind. Die genetisch identischen Nachkommen stellen einen Klon dar. (Ausnahme: Mutationen)"
+Flavonoide,Eine Art von Farbstoffen.
+Gentik,"Die Wissenschaft, die sich mit den Gesetzen der Vererbung und der Variabilität der Organismen beschäftigt."
+"sexuelle Fortpflanzung (generative, geschlechtliche)","Erzeugung von Nachkommen, die eine Neukombination der Gene/Allele der Eltern tragen. Es entstehen individuelle und einzigartige Nachkommen."
+Vererbung,Weitergabe von Merkmalen (z.B. Augenfarbe) an die nachfolgende Generation
+Variabilität,"Unterschiede der Nachkommen gegenüber ihren Eltern, auch Unterschiede der Mitglieder einer Population untereinander"
+Transmembran-Domäne,"Hydrophober Proteinabschnitt, der eine Zellmembran durchspannt und meist als Alpha-Helix vorliegt. Membranproteine können eine oder mehrere solcher Domänen besitzen."
+GTPase Ran,"Kleines G-Protein, das zwischen einer GTP- und einer GDP-gebundenen Form wechselt und dadurch als molekularer Schalter für den Kern-Zytoplasma-Transport dient. RanGTP ist im Zellkern angereichert, RanGDP im Zytoplasma, wodurch die Richtung des Transports durch NPCs festgelegt wird."
+Kernporenkomplex,"Großer Proteinkomplex in der Kernhülle, der den selektiven Transport von Molekülen zwischen Zellkern und Zytoplasma ermöglicht."
+snRNP,"Komplex aus kleiner nukleärer RNA (snRNA) und Proteinen. Hauptbestandteil des Spleißosoms, katalysiert das Spleißen von prä-mRNA."
+hRNP,"Komplex aus heterogener nukleärer RNA (prä-mRNA) und Proteinen. Bindet naszierende Transkripte und ist an Prozessierung, Stabilität und Export der RNA beteiligt."
+mRNP,Komplex aus reifer mRNA und gebundenen Proteinen. In dieser Form wird die mRNA aus dem Kern exportiert und im Zytoplasma transportiert und translatiert.
+Nuclear Localization Signal,"Kurze, meist basische Aminosäuresequenz in einem Protein, die von Importinen erkannt wird und den Kernimport über NPCs vermittelt."
+Nuclear Export Signal,"Kurze, meist leucinreiche Aminosäuresequenz, die von Exportinen (z. B. CRM1) erkannt wird und den Export eines Proteins aus dem Zellkern vermittelt."
+translocon on the inner chloroplast membrane,"Proteinkomplex in der inneren Chloroplastenmembran, der gemeinsam mit TOC den Import kernkodierter Proteine in den Chloroplasten vermittelt."
+translocon on the outer chloroplast membrane,"Proteinkomplex in der äußeren Chloroplastenmembran, erkennt Transitpeptide kernkodierter Vorläuferproteine und leitet sie an TIC weiter."
+"translocator of the
+inner (mitochondrial)
+membrane","Proteinkomplex in der inneren Mitochondrienmembran, importiert kernkodierte Vorläuferproteine in die mitochondriale Matrix oder inseriert sie in die Innenmembran."
+"translocator of the
+outer (mitochondrial)
+membrane","Proteinkomplex in der äußeren Mitochondrienmembran, erste Erkennungs- und Translokationsstelle für kernkodierte mitochondriale Vorläuferproteine."
+spontane Mutation,"Mutation, die ohne äußeren mutagenen Einfluss entsteht, z. B. durch Replikationsfehler oder tautomere Basenverschiebung."
+induzierte Mutation,"Mutation, die durch äußere Einflüsse wie Chemikalien, Strahlung oder andere Mutagene verursacht wird."
+basale Mutationsrate,"Häufigkeit, mit der spontane Mutationen pro Gen oder Genom und Generation ohne zusätzliche mutagene Einwirkung auftreten."
+Rekombinationsfrequenz,Anteil rekombinanter Nachkommen an der Gesamtzahl der Nachkommen einer Kreuzung. Maß für den genetischen Abstand zweier Loci.
+Kolinearität,Übereinstimmung der linearen Reihenfolge von Genen auf der DNA mit der Reihenfolge der genetischen Kopplungskarte beziehungsweise mit der Aminosäurereihenfolge im codierten Protein.
+Excisionsreparatur,"DNA-Reparaturmechanismus, bei dem ein geschädigter DNA-Abschnitt herausgeschnitten und anhand des komplementären Strangs neu synthetisiert wird (Basen- oder Nukleotidexcisionsreparatur)."
+Photoreparatur,"Lichtabhängiger Reparaturmechanismus, bei dem das Enzym Photolyase UV-induzierte Pyrimidindimere unter Einwirkung von sichtbarem Licht direkt spaltet."
+Interkalation,Einlagerung planarer Moleküle zwischen benachbarte Basenpaare der DNA-Doppelhelix. Verzerrt die Helix und kann zu Leserasterverschiebungen bei der Replikation führen.
+Diplont,"Organismus, dessen vorherrschende Lebensform diploid ist. Die haploide Phase beschränkt sich auf die Gameten."
+Haplont,"Organismus, dessen vorherrschende Lebensform haploid ist. Nur die Zygote ist diploid und durchläuft sofort eine Meiose."
+Schwesterchromosom,todo
+oriC,"Replikationsursprung des bakteriellen Chromosoms (z. B. bei E. coli), Startpunkt der bidirektionalen DNA-Replikation."
+bidirektionale Replikation,"Replikationsmodus, bei dem sich von einem Replikationsursprung aus zwei Replikationsgabeln in entgegengesetzte Richtungen bewegen."
+konservative Replikation,"Widerlegtes Replikationsmodell, nach dem der gesamte elterliche Doppelstrang erhalten bleibt und eine komplett neue Tochterdoppelhelix entsteht."
+diskontinuierliche Replikation,"Replikationsmodus, bei dem mindestens ein Strang, der Folgestrang, diskontinuierlich in kurzen Okazaki-Fragmenten synthetisiert wird."
+semikonservative Replikation,"Tatsächlicher Replikationsmodus der DNA, bei dem jede Tochter-Doppelhelix aus einem alten Matrizenstrang und einem neu synthetisierten Strang besteht (Meselson-Stahl-Experiment)."
+$c_0 t$-Analyse,"Methode zur Bestimmung der Reassoziationskinetik denaturierter DNA. Anhand der C0t-Kurve lassen sich Anteile repetitiver, mittelrepetitiver und einzigartiger DNA-Sequenzen im Genom abschätzen."
+Epistasie,"Wechselwirkung zwischen Genen an unterschiedlichen Loci, bei der die Ausprägung eines Gens durch ein oder mehrere andere Gene maskiert oder verändert wird."
+Umwelteinfluss auf den Phänotyp,"Modifikation der Ausprägung eines Genotyps durch äußere Umweltfaktoren, z. B. Temperatur oder Ernährung, sodass derselbe Genotyp unterschiedliche Phänotypen hervorbringen kann."
+Zweifaktor-Kreuzung,"Kreuzungsexperiment, bei dem gleichzeitig die Vererbung zweier Merkmale (zwei Genorte) verfolgt wird, dient z. B. der Prüfung auf unabhängige Vererbung nach Mendel."
+Punnett-Schema,Tabellarisches Schema zur systematischen Darstellung aller möglichen Gameten-Kombinationen einer Kreuzung und der daraus resultierenden Genotyp- und Phänotypverhältnisse.
+Merkmalsform,"Konkrete Ausprägung eines Merkmals, entspricht dem Phänotyp, der durch ein bestimmtes Allel oder eine Allelkombination bedingt wird."
+Händigkeit,"Chiralität eines Moleküls, beschreibt ob es in einer links- oder rechtsdrehenden Form vorliegt, relevant z. B. bei Zuckern und Aminosäuren."
+Purin,Stickstoffhaltige Base mit bicyclischem Ringsystem. Zu den Purinen zählen Adenin und Guanin.
+GTPase,"Enzym, das GTP zu GDP und anorganischem Phosphat hydrolysiert und dadurch als molekularer Schalter in Signaltransduktion und Transportprozessen fungiert."
+Pyrimidin,"Stickstoffhaltige Base mit monocyclischem Ringsystem. Zu den Pyrimidinen zählen Cytosin, Thymin und Uracil."
+Kopplungsgruppe,"Gruppe von Genen, die auf demselben Chromosom liegen und daher tendenziell gemeinsam vererbt werden, da sie seltener durch Rekombination getrennt werden."
+Alu-Repeats,"Familie kurzer, etwa 300 bp langer repetitiver DNA-Sequenzen (SINEs), die im menschlichen Genom in sehr hoher Kopienzahl vorkommen."
+SMC-Proteine,"Familie chromosomaler ATPasen (Structural Maintenance of Chromosomes), beteiligt an Chromosomenkondensation, Schwesterchromatidkohäsion und DNA-Reparatur, z. B. Condensin und Cohesin."
+Chromosomen-Abberation,"Strukturelle oder numerische Veränderung von Chromosomen gegenüber dem Normalzustand, z. B. Deletion, Duplikation, Inversion, Translokation oder Aneuploidie."
+X-Chromosom,"Eines der beiden Geschlechtschromosomen bei Säugetieren, bei Frauen in zwei Kopien (XX), bei Männern in einer Kopie (XY) vorhanden."
+Tetrade,"Gruppe der vier haploiden Zellen (Sporen), die aus einer Meiose einer diploiden Zelle hervorgehen."
+MYB,"Familie von Transkriptionsfaktoren mit charakteristischer MYB-DNA-Bindedomäne, reguliert unter anderem Zelldifferenzierung und Sekundärstoffwechsel in Pflanzen."
+DNA binding domain,"Proteindomäne eines Transkriptionsfaktors, die sequenzspezifisch an DNA bindet und dadurch die Genregulation vermittelt."
+bHLH Domäne,"DNA-Bindedomäne von Transkriptionsfaktoren, bestehend aus einer basischen Region zur DNA-Bindung und zwei Alpha-Helices, die die Dimerisierung mit einem weiteren bHLH-Protein ermöglichen."
+bZIP Domäne,"DNA-Bindedomäne von Transkriptionsfaktoren, bestehend aus einer basischen Region zur DNA-Bindung und einem Leucin-Zipper-Motiv, das die Dimerisierung zweier Untereinheiten vermittelt."
+Tetradenanalyse,"Genetische Methode, bei der die vier Produkte einer einzelnen Meiose gemeinsam analysiert werden, um Kopplung, Rekombination oder Genkonversion nachzuweisen, vor allem bei Pilzen wie Neurospora."
+co-dominant,"Vererbungsmuster, bei dem beide Allele eines heterozygoten Genotyps gleichzeitig und vollständig im Phänotyp exprimiert werden, ohne dass eines das andere maskiert."
+Hardy-Weinberg Gesetz,"Populationsgenetisches Modell, das beschreibt, unter welchen Idealbedingungen (keine Selektion, Mutation, Migration, zufällige Paarung) Allel- und Genotypfrequenzen in einer Population über Generationen konstant bleiben."
+X-Chromosom Inaktivierung,"Prozess bei weiblichen Säugetieren, bei dem eines der beiden X-Chromosomen pro Zelle zufällig und stabil inaktiviert wird, um die Gendosis im Vergleich zu männlichen Individuen auszugleichen."
+300 nm Fibrille,"Höhere Verpackungsebene des Chromatins, bei der die 30-nm-Chromatinfaser durch Ausbildung von Schleifen weiter zu einer etwa 300 nm dicken Struktur kondensiert wird."
+Chromatinschleife,"Schleifenförmige Struktur, in der Chromatinfasern an ein Proteingerüst (Scaffold) verankert werden. Ermöglicht die Kondensation des Chromatins auf höhere Verpackungsebenen."
+DNA-Fingerabdruck,"Individuenspezifisches Muster, das durch Analyse hochvariabler, repetitiver DNA-Abschnitte (z. B. VNTRs, STRs) entsteht und zur Identifizierung von Personen genutzt wird."
+simple-sequence length polymorphism (SSLP),"Kurzer, in der Länge variabler, sich wiederholender DNA-Abschnitt (z. B. Mikrosatellit), dessen Längenpolymorphismus als genetischer Marker genutzt wird."
+Out of Africa - Hypothese,"Hypothese, dass die Gattung Homo ihren Ursprung in Afrika hatte („Wiege der Menschheit“) und dass sich deren Angehörige von dort über die ganze Welt verbreiteten"
+exon shuffling,"Die Hypothese, das Gene durch Rekombination von verschiedenen Exons evolviert sind, und die frühen Exons für einzelne funktionelle Protein-Domänen kodieren."
+“introns first” hypothesis,Gene für Proteine oder für (katalytisch aktive) RNAs sind wahrscheinlich in einer Form mit Introns entstanden.
+“introns late” model,"Die frühen Gene enthielten keine Introns, sondern die Introns sind erst später in der Evolution in einige Gene aufgenommen worden."
