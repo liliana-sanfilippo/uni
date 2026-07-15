@@ -15,8 +15,8 @@
         evolutionär älter &
         Endosymbionten-Theorie (Organellen, ausgeprägte Kompartimentierung) \\
 
-        Genorganisation in Operons (polycistronische mRNA) &
-        Genomorganisation in Genen (i.d.R.\ monocistronische mRNA) \\
+        Genorganisation in \gls{operon}s (\gls{polycistronisch}e \gls{mrna}) &
+        Genomorganisation in Genen (i.d.R.\ \gls{monocistronisch}e \gls{mrna}) \\
 
         Genexpression: Promotor/Operator &
         komplexe Genexpression (RNA Pol-II) \\
@@ -40,7 +40,7 @@
 \karkar{cistronisch}
 
 \section{Gene}\label{sec:gene}
-Jedes Chromosom besteht aus einem einzigen, langen DNA-Molekül,
+Jedes \gls{chromosom} besteht aus einem einzigen, langen DNA-Molekül,
 in dem sich die Sequenzen der einzelnen Gene befinden.
 
 % TODO Allg. Genetik S 43 Bild für Chromosomenaufbau
@@ -53,7 +53,7 @@ es bei einem diploiden Individuum im Allgemeinen bis zu zwei Allele pro Lokus gi
     kann eine Population viele Allele eines einzelnen Gens aufweisen.}{\cite{lewins}}
 
 %Gene sind linear auf Chromosomen angeordnet.
-Ein Chromosom enthält viele Gene.
+Ein \gls{chromosom} enthält viele Gene.
 
 \paragraph{Was ist ein Gen?}
 Naive Annahme:
@@ -66,9 +66,11 @@ Differenzierter könnte man sagen:
     Ein Gen umfasst den gesamten Bereich auf der DNA, der zur Erstellung
     einer (m)RNA notwendig ist, einschliesslich der regulatorischen Regionen.
 \end{center}
-Das passt ``so halb'' für Prokaryoten, bei denen Gene oft hinter Operons liegen und daher durch das Operon an einem
+Das passt ``so halb'' für Prokaryoten, bei denen Gene oft hinter \gls{operon}s liegen und daher durch das
+\gls{operon} an
+einem
 Stück transkribiert wird.
-Es entsteht eine mRNA, aber diese kann immer noch für mehrere Proteine kodieren.
+Es entsteht eine \gls{mrna}, aber diese kann immer noch für mehrere Proteine kodieren.
 
 Für Eukaryoten passt es nicht.
 Denn es bezieht nicht ein, dass bei Eukaryoten Gene ``ineinander'' liegen können.
@@ -104,7 +106,7 @@ Genomgröße.}{\cite{lewins}}
 
 \begin{itemize}
     \item Restriktionskartierung (Beispiel: DNA Tumorviren, etwa Adenovirus-2)
-    \item BAC-Contigs (Beispiel: Physikalische Karte von Arabidopsis thaliana)
+    \item \gls{bac}-\gls{contig}s (Beispiel: Physikalische Karte von Arabidopsis thaliana)
     \item genetische Karten (Kopplungsgruppen, Rekombinations-Distanz (cM))
     \item Sequenzierung
 \end{itemize}
@@ -113,11 +115,11 @@ Genomgröße.}{\cite{lewins}}
 
 \subsection{Kartierung mittels Restriktionsfragmentanalyse (Restriktionskartierung)}\label{subsec:kartierung-mittels-restriktionsfragmentanalyse-(restriktionskartierung)}
 Die DNA wird mit verschiedenen Restriktionsenzymen – einzeln und paarweise – verdaut, im Agarosegel getrennt
-und die resultierenden Fragmentgrößen bestimmt. Die einzelnen Fragmente müssen dann kombiniert werden.
+und die resultierenden Fragmentgrößen bestimmt.
+Die einzelnen Fragmente müssen dann kombiniert werden.
 \cite{muelhardt2013}
 
-\defin{restriktionskarte}
-\ausschnitt{Die Karte zeigt die Stellen, an denen
+\defin{restriktionskarte}~\ausschnitt{Die Karte zeigt die Stellen, an denen
 bestimmte Restriktionsenzyme die DNA spalten. Die DNA wird in eine
 Reihe von Bereichen definierter Länge unterteilt, die zwischen den Stellen liegen,
     die von den Restriktionsenzymen erkannt werden. Eine Restriktionskarte lässt sich
@@ -139,14 +141,15 @@ Reihe von Bereichen definierter Länge unterteilt, die zwischen den Stellen lieg
 
 \subsection{Genetische Karten}\label{subsec:genetische-karten}
 \begin{prinz}
-    Gene, die nahe beieinander auf einem Chromosom liegen, werden meist gemeinsam vererbt. \\
-    Während der Meiose können homologe Chromosomen Stücke austauschen (Crossing-over). Je weiter zwei Gene auseinander
-    liegen, desto häufiger passiert ein Crossing-over zwischen ihnen. Je näher sie liegen, desto seltener werden sie
+    Gene, die nahe beieinander auf einem \gls{chromosom} liegen, werden meist gemeinsam vererbt. \\
+    Während der Meiose können homologe \gls{chromosom}en Stücke austauschen (Crossing-over).
+    Je weiter zwei Gene auseinander
+    liegen, desto häufiger passiert ein Crossing-over zwischen ihnen.
+    Je näher sie liegen, desto seltener werden sie
     getrennt vererbt. \\
     Man kann die Rekombinationsfrequenzen zwischen vielen \glspl{genet-marker} messen und so eine Karte erstellen. \chatti
 \end{prinz}
-\defin{kopplung}
-\ausschnitt{Der Schlüssel zum Verständnis der Anordnung von Genen in
+\defin{kopplung}~\ausschnitt{Der Schlüssel zum Verständnis der Anordnung von Genen in
 Chromosomen war die Entdeckung der genetischen Kopplung – der
 Tendenz, dass Gene auf demselben Chromosom in der Nachkommenschaft
 zusammenbleiben, anstatt sich unabhängig voneinander zu verteilen, wie es
@@ -156,8 +159,7 @@ Mendels Gesetz vorhersagt. Nachdem die Rekombinationseinheit (Neuordnung)
     zwischen Loci ist proportional zum physikalischen Abstand zwischen den
     Loci.}{\cite{lewins}}
 \defin{genet-marker}
-\defin{kopplungskarte}
-\ausschnitt{Eine Kopplungskarte zeigt den Abstand
+\defin{kopplungskarte}~\ausschnitt{Eine Kopplungskarte zeigt den Abstand
 zwischen Loci in Einheiten, die auf Rekombinationshäufigkeiten basieren; sie ist
 durch ihre Abhängigkeit von der Beobachtung von Rekombinationen
 zwischen variablen Markern begrenzt, die entweder direkt sichtbar sind (z. B.
@@ -168,9 +170,7 @@ mit Restriktionsenzymen in Fragmente geschnitten wird und die
 physikalischen Abstände – ausgedrückt als DNA-Länge in Basenpaaren
     (bestimmt durch die Wanderung auf einem elektrophoretischen Gel) – zwischen den
     Schnittstellen gemessen werden.}{\cite{lewins}}
-\frage{wiecmkarte}
-
-\ausschnitt{Klassische Kopplungskarten
+\frage{wiecmkarte}~\ausschnitt{Klassische Kopplungskarten
 von Eukaryoten können zwar die Reihenfolge der Gene bestimmen, lassen sich jedoch nicht die
 Positionen variabler Stellen innerhalb eines Gens ermitteln.}{\cite{lewins}}
 
@@ -203,13 +203,13 @@ Es gibt drei Wege:
 
 \begin{bsp}
     Zu \autoref{def:ab-initio} \\
-    Annotation: Beispiel Folien % TODO F 63
+    \gls{annotation}: Beispiel Folien % TODO F 63
 \end{bsp}
 
 \defin{comparative-genomics}
 \begin{bsp}
     Zu \autoref{def:comparative-genomics} \\
-    Annotation: mittels Syntänie % TODO F 64
+    \gls{annotation}: mittels Syntänie % TODO F 64
 \end{bsp}
 
 \begin{bsp}
@@ -219,7 +219,7 @@ Es gibt drei Wege:
 
 \begin{bsp}
     Zu \autoref{def:comparative-genomics} \\
-    Annotation an Hand von Konservierung
+    \gls{annotation} an Hand von Konservierung
     der CDS eukaryotischer Gene % TODO F 65
 \end{bsp}
 
@@ -245,8 +245,7 @@ Organellenkompartiment (Mitochondrium oder Chloroplast) transkribiert und transl
     in dem sie auch vorkommen. Im Gegensatz dazu werden nukleäre Gene
     im Rahmen der zytoplasmatischen Proteinsynthese exprimiert.}{\cite{lewins}}
 \defin{extranukleaer}
-\dein{biparentalSegregation}
-\ausschnitt{Die Genome der Organellen kodieren einige, jedoch nicht alle
+\defin{biparentalSegregation}~\ausschnitt{Die Genome der Organellen kodieren einige, jedoch nicht alle
 Proteine, die in der Organelle verwendet werden. \\
 Die meisten Organellengenome liegen in Form eines einzelnen ringförmigen
 DNA-Moleküls mit einer einzigartigen Sequenz vor.
@@ -262,7 +261,8 @@ als repetitive Sequenz betrachtet werden kann.}{\cite{lewins}}
 \defin{plastom}
 Die Organisation der \gls{cpdna} ist konserviert.
 
-Durch die \gls{mtdna} wissen wir, dass in Organellen und Kern unterschiedliche chemische Bedingungen herrschen. Es
+Durch die \gls{mtdna} wissen wir, dass in Organellen und Kern unterschiedliche chemische Bedingungen herrschen.
+Es
 findet in Organellen keine Rekombination zwischen elterlichen Genomen statt und es herrschen andere unterschiedliche
 Mutationsrate durch andere Replikation.
 In Mitochondrien von Säugern liegt eine höhere Mutationsrate vor als im Kern.
@@ -277,7 +277,8 @@ Pflanzen einer somatischen Segregation unterliegen.}{\cite{lewins}}
 \hypothese{outofafrica}
 
 Auch werden nicht alle Gene nach den klassischen Mendel-Regeln vererbt.
-Organelle Vererben bspw. nach:
+Organelle Vererben bspw.
+nach:
 \begin{itemize}
     \item \gls{exVer}
     \item \gls{patVer}
@@ -287,9 +288,7 @@ Es existieren auch viele Übergangsformen zwischen den
 beiden oben genannten Extremen.
 
 %  ausflug Endosymbionten-Hypothese F 74-75 https://de.wikipedia.org/wiki/Endosymbiontentheorie
-\hypothese{endosymbionten}
-
-\ausschnitt{Sowohl Mitochondrien als auch Chloroplasten stammen von
+\hypothese{endosymbionten}~\ausschnitt{Sowohl Mitochondrien als auch Chloroplasten stammen von
 bakteriellen Vorfahren ab.
 Die meisten Gene der mitochondrialen und chloroplastischen
 Genome wurden im Laufe der
