@@ -78,7 +78,7 @@ def parse_glossary(tex):
             "key": key,
             "name": fields.get("name", key),
             "description": fields.get("description", ""),
-            "type": fields.get("type", "default")
+            "type": fields.get("type", "deff")
         })
 
         pos = end + 1
