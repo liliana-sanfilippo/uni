@@ -8,37 +8,283 @@
 
 \section{Kontrollebenen der Regulation}\label{sec:kontrollebenen-der-regulation}
 % TODO F 11
+Die Genregulation (bezogen auf RNA) kann auf mehreren aufeinanderfolgenden
+Ebenen ansetzen:
+
+\begin{gather*}
+    \text{Chromatin in aktiven Status}
+    \to \text{Initiation der Transkription}
+    \to \text{Elongation \& Prozessierung}\\
+    \to \text{Transport ins Cytoplasma}
+    \to \text{Stabilitätskontrolle (Degradierung, miRNA \dots)}
+    \to \text{Translation}\\
+\end{gather*}
+
 
 \section{Spleißen}\label{sec:spleien}
 % TODO F 12 - 32
+Die meisten eukaryotischen Primärtranskripte enthalten \gls{intron}s. Die
+\gls{hnrna} (Primärtranskript) wird im Kern gereift: Capping,
+End-Modifikation, Spleißen; erst danach erfolgt der Export der reifen \gls{mrna} ins
+Cytoplasma.
+Nachgewiesen wurden \gls{intron}s ursprünglich über
+RNA--DNA-Hybridisierungsexperimente (R-Loops), z.\,B.\ im 7.700\,bp großen
+Ovalbumin-Gen des Huhns, in dem die \gls{intron}s als ungepaarte Schleifen
+sichtbar werden.
 
-\subsection{Nucleäres Spleißen}\label{subsec:nucleares-spleien}
+\paragraph{Begriffsprägung.} Walter Gilbert schlug 1978 die Begriffe \gls{intron} (intragene Region)
+und \gls{exon} (exprimierte Region) vor.
+Nobelpreis für Chemie 1980 (mit
+P.\ Berg und F.\ Sanger).
+
+\subsection{Nukleares Spleißen}\label{subsec:nucleares-spleien}
+Ablauf: Transkription $\to$ End-Modifikation (Cap am 5\textquotesingle-Ende,
+Poly(A) am 3\textquotesingle-Ende) $\to$ Splicing (Exon-Intron-Grenzen werden
+gebrochen, Exons verknüpft) $\to$ Transport $\to$ Translation.
+
+\paragraph{Keine freie RNA.} Nukleäre \gls{prämrna} liegt nie nackt vor,
+sondern ist mit Proteinen besetzt (EM-Aufnahmen aus \emph{Drosophila}). Diese
+Protein-RNA-Komplexe heißen \gls{hnrnp} (heterogene nukleäre
+Ribonukleoproteine).
+Viele RNA-bindende Proteine (z.\,B.\ hnRNP\,C) tragen die
+charakteristische, aus $\beta$-Faltblättern aufgebaute Bindedomäne
+\gls{rrm}.
 
 \begin{figure}[H]
-    % TODO F 18 - 19
-    \caption{Vergleich: Prozessierung der rRNA}
+    \centering
+    %  F 18 - 19
+    % \includegraphics[width=0.9\linewidth]{rrna_prozessierung}
+    \caption{Vergleich: Prozessierung der rRNA. Pol-I-Primärtranskripte der
+    rDNA (45S) enthalten 18S-, 5,8S- und 28S-rRNA, getrennt durch
+    \gls{spacer} (transkribierte Spacer zwischen den rRNAs;
+    nicht-transkribierte Spacer mit Spacer-Promotoren und Enhancern). Die
+    Prozessierung im Nukleolus besteht aus einer Abfolge endonukleolytischer
+    Spaltungen und exonukleolytischem Trimmen; schon während der
+    Reifung werden Nukleotide modifiziert (Beteiligung von \gls{snorna}s an
+    beiden Prozessen). Die 5S rRNA wird von eigenen Transkriptionseinheiten
+    transkribiert.}\label{fig:figure12}
 \end{figure}
 
 
 \subsection{splice sites}\label{subsec:splice-sites}
+An den Exon-Intron-Grenzen liegen konservierte Konsensus-Sequenzen:
+
+\[
+    \underbrace{(\text{A/C})\text{AG}}_{\text{Exon }n}
+    \bigm| \text{GT(A/C)} \dots (\text{C/T})\text{AG} \bigm|
+    \underbrace{\text{G(G/T)}}_{\text{Exon }n{+}1}
+\]
+
+Konserviert sind v.\,a.\ die \emph{Intron-Grenzen}: \gls{gtag} (auf RNA-Ebene
+korrekter GU-AG-Regel).
+Kanonische Spleißstellen (major/U2-Typ,
+GT-AG) machen ca.\ 98\,\% aus; daneben gibt es non-canonical
+splice sites (GC-AG $\approx$1\,\%, AT-AC $\approx$0,1\,\%; minor/U12-Typ
+$\sim$0,5\,\% der Introns).
+Vollständige Signale bestehen aus
+5\textquotesingle-Spleißstelle, \gls{verzweigungsstelle},
+\gls{polypyrimidin} und 3\textquotesingle-Spleißstelle.
+Im Prinzip kann jede
+5\textquotesingle- mit jeder 3\textquotesingle-Spleißstelle kombiniert werden;
+der Spleißapparat funktioniert artübergreifend.
 
 \subsection{Lariat-Struktur}\label{subsec:lariat-struktur}
+Das herausgeschnittene Intron wird als \gls{lariat} (Lasso) freigesetzt: Nach
+Schnitt an der 5\textquotesingle-Spleißstelle bildet das 5\textquotesingle-G des
+Introns über eine 5\textquotesingle{}--2\textquotesingle-Bindung eine Verzweigung
+zum 2\textquotesingle-OH des Adenosins der Verzweigungsstelle.
+Nach Schnitt an
+der 3\textquotesingle-Spleißstelle werden die Exons verknüpft; das Intron wird
+als Lariat entlassen und anschließend debranched.
 
 \subsection{Ablauf}\label{subsec:ablauf}
+Das Spleißen erfolgt als \gls{transesterifizierung} in zwei Schritten:
+\begin{enumerate}
+    \item \textbf{1.\ Schritt:} Das 2\textquotesingle-OH des
+    Verzweigungs-Adenosins greift die 5\textquotesingle-Spleißstelle an $\to$
+    Öffnung der 5\textquotesingle-Spleißstelle und Bildung der Verzweigung
+    (Lariat).
+    \item \textbf{2.\ Schritt:} Das freie 3\textquotesingle-OH von Exon\,1
+    greift die 3\textquotesingle-Spleißstelle an $\to$ Öffnung der
+    3\textquotesingle-Spleißstelle und Verknüpfung der Exons.
+\end{enumerate}
 
+\paragraph{Reihenfolge des Spleißens.} Sie ist nicht zufällig: Bei einem Gen mit
+7 \gls{intron}s (z.\,B.\ 5,6\,kb Gen $\to$ 1,1\,kb \gls{mrna}) gäbe es bei rein
+zufälliger Entfernung mehr als 300 mögliche Zwischenstufen; tatsächlich werden
+definierte Intermediate beobachtet.
 
 \section{Das Spleißosom}\label{sec:das-spleiosom}
 % TODO F 33 - 37
+
+Das \gls{spleißosom} ist eine weitere Riboprotein-Nanomaschine.
+Es setzt sich
+massenmäßig zusammen aus 5 \gls{snrna}s ($\sim$27\,\%), $\sim$41 Proteinen in
+den snRNPs ($\sim$18\,\%), $\sim$70 Spleißfaktoren ($\sim$38\,\%) und $\sim$30
+weiteren Proteinen ($\sim$17\,\%).
+
+\paragraph{snRNAs und snRNPs (Snurps).} Ein \gls{snrnp} besteht aus
+einer snRNA und mehreren Proteinen; das Spleißosom besteht aus mehreren
+\gls{snrnp}s und weiteren Proteinen (Sequenzkonservierung besonders hoch in
+Hefe).
+
+\paragraph{Dynamik / landmarks.} Assoziation von snRNPs, Umbau der
+Interaktionen (RNA-RNA, RNA-Protein, Protein-Protein) und Dissoziation von
+Faktoren:
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        Komplex & snRNP & Funktion \\
+        \midrule
+        E & U1 & bindet 5\textquotesingle-Spleißstelle (commitment) \\
+        A & U2 & bindet Verzweigungsstelle (ATP-abhängig) \\
+        B1 & U4/U6, U5 & Beitritt des Tri-snRNPs (alle Komponenten) \\
+        B2 & U1 ab, U6 & U6 bindet 5\textquotesingle-Spleißstelle \\
+        & U4 ab & U6 frei für Interaktion mit U2 (kat.\ Zentrum) \\
+        C1 & U6/U2 & 1.\ Transesterifizierung, Lariat gebildet \\
+        C2 & U5 & bindet 3\textquotesingle-Spleißstelle, Exons ligiert \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+Anschließend wird die gespleißte RNA freigesetzt.
+
+\paragraph{Findung der Bindungsstellen.} Introns umfassen
+$10^3$--$10^4$\,nt, Exons $\sim$200\,nt.
+Die Zuordnung zusammengehöriger
+Spleißstellen (Intron-Definition / Exon-Definition, s.u.) ist nicht vollständig
+aufgeklärt und wird beim alternativen Spleißen reguliert.
+hnRNP-Komplexe und
+SR-Proteine strukturieren dabei die \gls{prämrna}.
+
+\paragraph{Vergleich Assembly.} snRNPs und Ribosomen werden analog assembliert:
+Import der Proteine, Zusammenbau im Kern bzw.\ Nukleolus und Export der fertigen
+Partikel durch die Kernpore (F\,42).
+
 
 \section{Intron- und Exon-Erkennung}\label{sec:intron--und-exon-erkennung}
 % TODO F 38 - 40
 % 3.4 Organization of Interrupted Genes Can Be Conserved
 
+Man unterscheidet zwei Erkennungsmodi:
+\begin{itemize}
+    \item \gls{introndefinition}: Interaktionen \emph{über das Intron} hinweg
+    (typisch für kurze Introns).
+    \item \gls{exondefinition}: Interaktionen \emph{über das Exon} hinweg,
+    danach Umschalten (switch) zu Intron-überspannenden Interaktionen
+    für das kanonische lineare Spleißen.
+    Beteiligt: SR-Proteine, U2AF65/35, BBP\@.
+\end{itemize}
+
+\paragraph{Unified mechanism (Li et al., 2019).} Cryo-EM-Strukturen des
+Hefe-E-Komplexes zeigen, dass dasselbe Spleißosom über ein Exon assemblieren
+und dann so remodellieren kann, dass es ein Intron überspannt (kanonisches
+Spleißen; Back-splicing hier ausgeklammert).
+
+\paragraph{Update (Rogalska et al., 2023).} Basenpaarungen zwischen Branchpoint
+(BP) und 5\textquotesingle-Spleißstelle mit den snRNP-Komplexen (U2 bzw.\ U1)
+sind entscheidend für die Definition der Intron-Exon-Grenzen.
+Unterstützt durch
+U2AF2 (bindet PPT) und U2AF1 (bindet 3\textquotesingle-ss).
+Regulatorische
+Elemente -- intronische/exonische Spleiß-Enhancer (ISE/ESE) und -Silencer
+(ISS/ESS) -- werden von SR-Proteinen, \gls{hnrnp}s sowie RBM-/CELF-Proteinen
+erkannt, die die Assoziation von U1/U2-snRNPs fördern oder hemmen.
+
+
 \section{Alternatives Spleißen}\label{sec:alternatives-spleien}
 % TODO F 43 - 48
+
+Beim \gls{altspleissen} werden verschiedene Kombinationen von
+Spleißstellen ausgewählt (blaue = fixierte Exons, rosa = variable Exons):
+Intron-Retention, alternative 5\textquotesingle{}- bzw.\ 3\textquotesingle{}-
+Spleißstellen, Exon-Inclusion/-Skipping, sich gegenseitig ausschließende Exons,
+kombinatorische Exon-Auswahl, alternativer Promotor/Spleißen sowie alternative
+Polyadenylierung/Spleißen.
+Bei hoher RNA-Seq-Abdeckung sind Spleißvarianten
+leicht nachweisbar; offen ist die Abgrenzung aktive Auswahl vs.\
+einfacher Fehler (Exkurs: RACE).
+
+
+\paragraph{Wichtige Sonderfälle.}
+\begin{itemize}
+    \item \gls{selbstspleissen}: Das Intron ist ein \gls{ribozym}
+    (Tetrahymena, Mitochondrien, Chloroplasten, Schleimpilze, Phage T4, Hefe).
+    Man unterscheidet \gls{gruppeiintron}s (externes Guanosin-3\textquotesingle
+    -OH als Cofaktor, kein Lariat) und \gls{gruppeiiintron}s
+    (2\textquotesingle-OH-Angriff, Lariat -- mechanistisch wie das nukleäre
+    Spleißosom).
+    \item \gls{transspleissen}: Verknüpfung von Exons aus getrennten
+    Molekülen (normal nur \emph{cis}); in Trypanosomen wird ein 37-Basen-Leader
+    (Mini-Exon) über ein Y-förmiges Intermediat angehängt.
+    Trans-Spleißen ist auch möglich, wenn Introns komplementäre Sequenzen
+    enthalten.
+    \item \textbf{tRNA-Spleißen}: Introns in tRNAs werden durch einen
+    \emph{anderen} Mechanismus entfernt -- über Nuklease, Faltung und Ligase
+    (Phosphodiesterase öffnet den zyklischen Phosphatring, Kinase
+    phosphoryliert das 5\textquotesingle-OH-Ende), \emph{nicht} über
+    Transesterifizierung.
+\end{itemize}
 
 \section{Spleißen und Krankheiten}\label{sec:spleien-und-krankheiten}
 % TODO F 41
 
-\section{RNA - Editierung}\label{sec:rna---editierung}
+Spleißen ist krankheitsrelevant: Bei der \gls{thalassaemie} (Mangel an
+Hämoglobin nach der Geburt) kann eine Punktmutation im $\beta$-Globin-Intron
+einen falschen Spleißort aktivieren.
+Dadurch wird die \gls{prämrna}
+fehlprozessiert (verändertes Leseraster, vorzeitiges Stopcodon).
+Weitere
+Mutationstypen mit ähnlichen Folgen sind Promotor-, Nonsense-, Leseraster-,
+Insertions-/Deletions- und Poly(A)-Mutationen.
+
+
+\section{RNA - Editierung}\label{sec:rna-editierung}
 % TODO F 50 - 56
+
+Die \gls{rnaediting} ist eine post-transkriptionale Änderung der
+RNA-Sequenz: Man kann von der DNA-Sequenz nicht immer die richtige
+Proteinsequenz ableiten.
+Sie ist häufig in Mitochondrien (Vertebraten),
+Plastiden (Pflanzen) und Trypanosomen, kommt aber auch in normalen
+Säugetier-Transkripten vor.
+
+\paragraph{Basenumwandlung durch \gls{deaminase}n.}
+\begin{itemize}
+    \item Cytidin $\to$ Uracil (Cytidin-Deaminase)
+    \item Adenosin $\to$ Inosin (Adenosin-Deaminase)
+\end{itemize}
+
+\paragraph{Beispiel \emph{ApoB}.} Das Apolipoprotein-B-Gen (29 Exons) wird durch
+APOBEC (ApoB editing enzyme complex) editiert (C\,$\to$\,U): Codon 2153 CAA (Gln) wird zu UAA (Stop).
+Leber-\gls{mrna} kodiert ein Protein aus 4563 Resten, Darm-\gls{mrna} bricht bei 2153 ab
+-- verschiedene Proteine aus demselben Gen.
+
+\paragraph{Beispiel \emph{GluR-B}.} Editierung der \gls{mrna} des Glutamat-Rezeptors
+erfordert eine spezielle Sekundärstruktur (Intron paart mit Exon); Änderung
+A\,$\to$\,I\@.
+
+\paragraph{Organellen.} In Plastiden (und Mitochondrien) treten häufig
+C\,$\to$\,U-Austausche (Deaminierungen) auf, die z.\,B.\ Ser-\ zu Leu- oder
+Trp-Codons umwandeln und so die evolvierte Proteinsequenz erst
+herstellen.
+Extrembeispiel: im Lycophyten \emph{Isoetes engelmannii}
+(Brachsenkräuter, Tracheophyta) verändern 1782 Editierungspositionen 1406
+Codon-Identitäten in mitochondrialen \gls{mrna}s.
+
+\paragraph{Editierung mittels \gls{guiderna}.} Bei Trypanosomen/Leishmania
+(z.\,B.\ mitochondriales Cytochrom-b-Gen) gibt eine guide RNA durch Basenpaarung
+die Positionen von \textbf{U-Insertionen und -Deletionen} vor; ausgeführt von
+einem Enzymkomplex aus \gls{endonuklease}, Uridyltransferase und Ligase.
+In
+\emph{Trypanosoma brucei} (Erreger der afrikanischen Schlafkrankheit) werden so
+umfangreiche U-Insertionen/-Deletionen vorgenommen.
+
+\begin{itemize}
+    \item Eukaryotische \gls{mrna} wird aus \gls{prämrna} prozessiert: 5\textquotesingle
+    Cap, Spleißen, Polyadenylierung.
+    \item \gls{mrna}-Prozessierung ist eng mit dem \gls{mrna}-Export aus dem Kern verbunden.
+    \item Beim Spleißen unterscheidet man: nukleäre \gls{mrna}, Gruppe-I-Introns
+    (self splicing), Gruppe-II-Introns (self splicing) und tRNAs.
+    \item Beim Spleißen nukleärer \gls{mrna} sind snRNPs beteiligt (Spleißosom).
+    \item RNA editing bewirkt eine post-transkriptionelle Änderung der \gls{mrna}.
+\end{itemize}
