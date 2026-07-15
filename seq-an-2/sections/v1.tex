@@ -22,8 +22,8 @@ Edit distances emphasize the correct order of the characters in a string.
 If, however, a large block of a text is moved somewhere else (e.g.\ two paragraphs of a text are exchanged), the
 \gls{edis} will be high, although from a certain standpoint, the texts are still quite similar.
 A more appropriate notion of distance can be defined in several ways.
-Here we introduce the \gls{qgdis} $\dq$, which is actually a pseudo-metric: There exist strings
-$x \neq y$ with $\dq(x, y) = 0$.
+Here we introduce the \gls{qgdis} $\dqu$, which is actually a pseudo-metric: There exist strings
+$x \neq y$ with $\dqu(x, y) = 0$.
 
 Remember that for $q \in N$, a \gls{qgram} is a string of length q.
 \txc{Wir reden hier über überlappende \gls{qgram}me!}
@@ -36,12 +36,12 @@ Remember that for $q \in N$, a \gls{qgram} is a string of length q.
 Consider $\Sigma = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
 Using lexicographic order (AA, AB, BA, BB) among the \glspl{qgram}, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ 
 and $p_2(z) = (1, 1, 1, 0)$.
-Therefore, we obtain $d_2(x, y) = 2$ and $\dqgen_2(x, z) =0$ (although $x\neq z$).
+Therefore, we obtain $d_2(x, y) = 2$ and $\dqugen_2(x, z) =0$ (although $x\neq z$).
 % Todo {Hier bsp. tabelle }
 \end{exa}
 
 \begin{theo}
-The \gls{qgdis} $\dq$ is a pseudo-metric.
+The \gls{qgdis} $\dqu$ is a pseudo-metric.
 \paragraph{Proof.} It fulfills nonnegativity, symmetry and the triangle inequality (exercise). 
 \end{theo}
 
@@ -176,7 +176,7 @@ If m and
 n are large, there are many (even very differently looking) strings with the same letter
 counts, which would all have distance zero from each other.
 
-If on the other hand $q = m \leq n$, and $m \approx n$, the distance $\dq$ \txc{(\gls{qgdis})} between the strings is always
+If on the other hand $q = m \leq n$, and $m \approx n$, the distance $\dqu$ \txc{(\gls{qgdis})} between the strings is always
 close to $n - m$, which does not give us a good resolution either.
 Also, the \gls{qgprof} of both strings is extremely sparse in these cases.
 % TODO wie würde das aussehen und sich auswirken?
@@ -255,7 +255,7 @@ and divisions can be implemented by bit shifting operators, e.g.\ in the second 
 It is \txc{allegedly} easy to see that the \gls{qgram} corresponding to a ranking value can be obtained in O(q)
 time for both unranking methods.
 
-Now, to compute $\dq (x, y)$ for $x \in \Sigma^m$ and $y \in \Sigma^n$,
+Now, to compute $\dqu (x, y)$ for $x \in \Sigma^m$ and $y \in \Sigma^n$,
 \begin{enumerate}
     \item initialize integer array $p_q [ 0 \dots \sigma^q -1]$ with zeroes
     \item for each $i \in [1, m − q + 1]$, increment $p_q[\rf(x[i \cdot i + q − 1])]$
@@ -291,10 +291,10 @@ If $q = O(\log(m+n))$, we can still achieve $O(m + n)$ time using hashing.
 
 \subsection{Relation to the Edit Distance}\label{subsec:relation-to-the-edit-distance2}
 
-While the \gls{qgdis} $\dq$ has its own applications in the comparison of sequences
+While the \gls{qgdis} $\dqu$ has its own applications in the comparison of sequences
 that have undergone block movements, it also has a weak connection to the unit cost edit
 distance d.
-Recall that we can have a high \gls{edis} even though $\dq (x, y) = 0$.
+Recall that we can have a high \gls{edis} even though $\dqu (x, y) = 0$.
 On the other hand, a single edit operation changes up to $q$ \glspl{qgram}.
 Generally, one can show the following relationship.
 
@@ -303,17 +303,17 @@ Generally, one can show the following relationship.
     Let d denote the standard unit cost \gls{edis}.
     Then
     \[
-        \frac{\dq(x,y)}{2q} \leq d(x,y).
+        \frac{\dqu(x,y)}{2q} \leq d(x,y).
     \]
     \paragraph{Proof.}
     Each edit operation locally affects up to $q$ \glspl{qgram}.
     Each changed \gls{qgram} can
-    cause a change of up to 2 in $\dq$, as the occurrence count of one \gls{qgram} decreases, the
+    cause a change of up to 2 in $\dqu$, as the occurrence count of one \gls{qgram} decreases, the
     other increases.
     Therefore, each edit operation can lead to an increase of $2q$ of the \gls{qgram}
     distance in the worst case (e.g.\ consider AAAAAAAAAAA vs.
     AABAABAABAA with \gls{edis}
-    3, $q = 3$, and, as can be verified, $\dqgen_3 = 18$).
+    3, $q = 3$, and, as can be verified, $\dqugen_3 = 18$).
 
     How this relationship can be used productively in order to speed up the computation of
     the \gls{edis} will be discussed in Section~\ref{sec:the-maximal-matches-distance}.
