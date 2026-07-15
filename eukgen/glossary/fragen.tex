@@ -7,6 +7,167 @@
     type=frage
 }
 
+
+\newglossaryentry{ethidiumbromid}{
+    name={Wozu dient Ethidiumbromid und warum ist Vorsicht noetig?},
+    description={Ethidiumbromid interkaliert zwischen die Basenpaare der DNA und fluoresziert unter UV-Licht orange -> macht DNA-Banden im Gel sichtbar. Weil es in die DNA interkaliert, ist es potentiell mutagen -> blaue Nitril-Handschuhe, getrennte Entsorgung},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{pcrprinzip}{
+    name={Prinzip und drei Schritte der PCR},
+    description={Exponentielle in-vitro-Vermehrung eines DNA-Abschnitts. Zyklus aus drei Schritten: (1) Denaturierung (ca. 94 Grad C, Doppelstrang trennen), (2) Annealing (Primer-Anlagerung, Temperatur abhaengig von Primer-Tm), (3) Elongation (ca. 72 Grad C, Taq-Polymerase synthetisiert den neuen Strang). Nach n Zyklen ca. 2 hoch n Kopien. Benoetigt: Template, zwei Primer, dNTPs, Puffer (Mg2+), thermostabile Polymerase},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{annealingtemp}{
+    name={Was ist die Annealing-Temperatur und wovon haengt sie ab?},
+    description={Temperatur, bei der die Primer an die Matrize binden. Sie richtet sich nach der Schmelztemperatur (Tm) der Primer (Laenge, GC-Gehalt). Zu niedrig -> unspezifische Bindung/Nebenprodukte; zu hoch -> Primer binden nicht, kein Produkt. Meist wenige Grad unter der Primer-Tm gewaehlt (im Skript 56--60 Grad C)},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{homohetero}{
+    name={Homozygot / heterozygot und dominant / rezessiv},
+    description={Homozygot = beide Allele eines Locus gleich; heterozygot = zwei verschiedene Allele. Dominant = Allel praegt sich schon heterozygot phaenotypisch aus; rezessiv = Phaenotyp nur homozygot sichtbar. Die meisten Mutationen sind rezessiv -> veraenderter Phaenotyp erst im homozygoten Zustand (relevant fuer Versuch 1)},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{cmdefinition}{
+    name={Was ist ein centiMorgan (cM)?},
+    description={Einheit des genetischen Abstands: 1 cM entspricht einer Rekombinationsfrequenz von 1 Prozent zwischen zwei Loci. Der genetische Abstand ist nur bei kleinen Distanzen etwa proportional zum physikalischen Abstand; bei grossen Distanzen unterschaetzt die RF die wahre Distanz (Mehrfach-Crossover), daher Kartierungsfunktionen/Korrekturfaktoren},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{35spromotor}{
+    name={Warum der CaMV-35S-Promotor als Positivkontrolle?},
+    description={Der 35S-Promotor aus dem Blumenkohlmosaikvirus (CaMV) ist in Pflanzenzellen nahezu konstitutiv und stark aktiv (nicht gewebespezifisch). Als proCaMV35S-uidA-Fusion faerbt daher fast der gesamte Keimling blau -> zeigt, dass Faerbeprotokoll und Nachweis funktionieren, unabhaengig von gewebespezifischer Regulation},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{faellung}{
+    name={Warum Isopropanol/Ethanol bei der Nukleinsaeure-Faellung?},
+    description={Alkohol (Isopropanol/Ethanol) entzieht der DNA/RNA die Hydrathuelle; zusammen mit Salz (Neutralisierung der negativen Phosphatladungen) faellt die Nukleinsaeure aus und kann abzentrifugiert werden. 70-prozentiger Ethanol im Waschschritt entfernt Salze, ohne die Nukleinsaeure wieder zu loesen. Isopropanol faellt effizienter (weniger Volumen), Ethanol wird zum Waschen bevorzugt},
+    symbol={neu},
+    type=frage
+}
+
+%% eingebaut
+
+\newglossaryentry{kartierungsansaetze}{
+    name={Wie findet man sich in so viel DNA zurecht? (4 Ansaetze)},
+    description={(1) Restriktionskartierung (z.B. DNA-Tumorviren, Adenovirus-2). (2) BAC-Contigs (z.B. physikalische Karte von A. thaliana). (3) Genetische Karten (Kopplungsgruppen, Rekombinationsdistanz in cM). (4) Sequenzierung.},
+    type=frage
+}
+
+\newglossaryentry{proteomgroesse}{
+    name={Wie lässt sich die Mindestgroesse des Proteoms abschätzen?},
+    description={Die Mindestgroesse des Proteoms laesst sich aus der Anzahl der verschiedenen Gentypen (einzigartige Gene + Genfamilien) abschaetzen.},
+    type=frage
+}
+
+\newglossaryentry{aktinkontrolle}{
+    name={Wozu die Aktin2-Kontrolle in der RT-PCR?},
+    description={Aktin2 ist ein Housekeeping-Gen (konstitutiv, ueberall exprimiert). Eine Bande belegt, dass die cDNA-Synthese funktioniert hat und amplifizierbar ist. Fehlt das Zielgen (MYB12/MYB111), Aktin2 ist aber vorhanden, so ist das Fehlen echt und kein technischer Artefakt. Dient auch als grobe Abgleichung der eingesetzten cDNA-Menge},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{od260}{
+    name={RNA-Konzentration aus OD260 berechnen; A260/A280-Quotient},
+    description={Es gilt: 1 OD260 = 40 ug/ml RNA (bei dsDNA 50 ug/ml). Konzentration = OD260 x 40 ug/ml x Verduennungsfaktor. Reinheit ueber Quotient A260/A280: RNA rein ca. 2,0; DNA rein ca. 1,8; deutlich niedriger -> Protein-/Phenolkontamination},
+    symbol={neu},
+    type=frage
+}
+
+
+\newglossaryentry{markertypen}{
+    name={Unterschied DFLP/InDel-Marker und CAPS-Marker},
+    description={DFLP/InDel-Marker: zwei Genotypen liefern mit demselben Primerpaar unterschiedlich lange PCR-Produkte (durch interne Insertion/Deletion) -> direkt am Gel unterscheidbar (z.B. TT5: Col 408 bp, Ler 456 bp). CAPS-Marker (=PCR-RFLP): die PCR-Produkte sind gleich lang, unterscheiden sich aber in einer Restriktionsschnittstelle (oft durch Punktmutation) -> erst nach Verdau am Gel unterscheidbar (z.B. TT3: AflII schneidet nur Col -> 630+450 bp, Ler bleibt 1,1 kb)},
+    symbol={neu},
+    type=frage
+}
+
+
+\newglossaryentry{segregation}{
+    name={Was bedeutet Segregation / segregierende Population / F2?},
+    description={Segregation = Aufspaltung der Allele in der Nachkommenschaft nach den Mendelschen Regeln. Kreuzt man genetisch verschiedene Eltern (P), ist die F1 uniform heterozygot; die F2 (Selbstung der F1) spaltet in verschiedene Genotypen auf (z.B. 1 : 2 : 1 fuer L : H : C je Locus). Nur in einer solchen segregierenden Population lassen sich Marker/Phaenotypen auf Kopplung untersuchen},
+    symbol={neu},
+    type=frage
+}
+
+
+\newglossaryentry{myb12myb111}{
+    name={Rolle von MYB12 und MYB111 -- Verknuepfung von GUS, RT-PCR und HPTLC},
+    description={MYB12 und MYB111 sind flavonol-spezifische R2R3-MYB-Aktivatoren. MYB12 ist v.a. in der Wurzel aktiv, MYB111 v.a. in den Keimblaettern. Das erklaert die konsistenten Ergebnisse ueber die Versuche: GUS (proMYB12 blau in Wurzel, proMYB111 blau in Kotyledonen), RT-PCR (MYB12-cDNA in Wurzel, MYB111-cDNA in Kotyledonen) und HPTLC (gewebespezifische Flavonolmuster)},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{rnaalspcr}{
+    name={Warum kann RNA nicht direkt als PCR-Template dienen? Wozu DNase-Verdau?},
+    description={Die DNA-Polymerase (Taq) benoetigt DNA als Matrize -> RNA muss erst durch reverse Transkription in cDNA umgeschrieben werden. DNase-Verdau vor der RT entfernt kontaminierende genomische DNA; sonst wuerde die PCR auch von genomischer DNA amplifizieren und ein Transkript vortaeuschen (bzw. das Ergebnis verfaelschen)},
+    symbol={neu},
+    type=frage
+}
+
+
+\newglossaryentry{genotypphaenotyp}{
+    name={Ziel von Versuch 1: Genotyp mit Phaenotyp korrelieren -- Prinzip erklaeren},
+    description={Eine segregierende Population (CRISPR/Cas9-Linie) enthaelt WT-, hetero- und homozygot mutierte Individuen. Per PCR wird der Genotyp am Locus bestimmt (Allelkombination); parallel wird der Phaenotyp dokumentiert. Da die meisten Mutationen rezessiv sind, tritt der veraenderte Phaenotyp nur homozygot auf. Ziel: zeigen, dass ein bestimmter Genotyp mit einem beobachteten Phaenotyp korreliert},
+    type=frage
+}
+
+
+\newglossaryentry{vorwaertsrueckwaerts}{
+    name={Unterschied Vorwaerts- und Rueckwaertsgenetik},
+    description={Vorwaertsgenetik (forward): vom Phaenotyp zum Gen. Zuerst werden Mutanten mit gestoertem Prozess isoliert (z.B. EMS-Mutagenese, Versuch 5), dann das betroffene Gen identifiziert. Rueckwaertsgenetik (reverse): vom Gen zum Phaenotyp. Eine bekannte Sequenz wird gezielt mutiert (z.B. T-DNA/CRISPR, Versuch 1) und die Auswirkung auf den Phaenotyp untersucht},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{crispr}{
+    name={Wie funktioniert CRISPR/Cas9 zur gezielten Mutagenese?},
+    description={Eine guide-RNA (gRNA) lenkt die Cas9-Nuklease sequenzspezifisch zur Zielstelle im Genom; Cas9 setzt dort einen Doppelstrangbruch. Die fehleranfaellige Reparatur (NHEJ) fuehrt haeufig zu kleinen Insertionen/Deletionen, die das Zielgen zerstoeren. Cas9 und gRNA werden hier ueber eine T-DNA aus A. tumefaciens stabil ins Genom eingebracht},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{arabidopsismodell}{
+    name={Warum ist Arabidopsis thaliana ein Modellorganismus?},
+    description={Kleines Genom (ca. 125 Mb, 5 Chromosomen, ca. 27000 Gene), kurze Generationszeit, klein und platzsparend, hohe Samenzahl, Selbstbestaeubung (Zwitterblueten) -> rezessive Mutationen werden homozygot, einfache Transformation ueber Agrobacterium, sehr gute genetische/genomische Ressourcen},
+    symbol={neu},
+    type=frage
+}
+
+
+\newglossaryentry{kontrollenpcr}{
+    name={Warum Positiv- und Negativkontrolle bei der PCR?},
+    description={Positivkontrolle (Primerpaar fuer ein unabhaengiges Gen, hier S4/S7): zeigt, dass die praeparierte DNA amplifizierbar ist -- ohne Bande waere ein Negativergebnis nicht interpretierbar (DNA-Qualitaet vs. echtes Fehlen). Negativkontrolle (Ansatz ohne DNA, nur H2O): deckt Kontaminationen des Mastermix auf -- eine Bande hier entwertet das Experiment},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{gelelektrophorese}{
+    name={Prinzip der Agarose-Gelelektrophorese},
+    description={DNA ist durch die Phosphatgruppen negativ geladen und wandert im elektrischen Feld zur Anode (Pluspol). Die Agarosematrix wirkt als Molekularsieb: kleine Fragmente wandern schneller/weiter als grosse. Ein Groessenstandard (Leiter) erlaubt die Groessenbestimmung. Sichtbarmachung mit Ethidiumbromid, das zwischen die Basen interkaliert und unter UV fluoresziert},
+    symbol={neu},
+    type=frage
+}
+
+\newglossaryentry{ncoicaps}{
+    name={Nachweis der Mutation im Zielgen ueber NcoI -- Prinzip},
+    description={Das WT-Allel enthaelt eine NcoI-Erkennungssequenz; durch die Mutagenese ist diese wahrscheinlich zerstoert. Man spaltet das PCR-Produkt mit NcoI: WT-Produkt wird geschnitten (mehrere kleinere Fragmente), mutiertes Produkt bleibt ungeschnitten (eine grosse Bande). Heterozygot = beide Muster. Dies ist ein CAPS-Prinzip},
+    symbol={neu},
+    type=frage
+}
+
+
 \newglossaryentry{hardyweinbergregel}{
     name={Was besagt die Hardy-Weinberg-Regel?},
     description={Dass sich die Allel- und Genotypfrequenzen in einer diploiden, sich sexuell fortpflanzenden Population
@@ -14,7 +175,6 @@
     unendlich große Population (keine Gendrift) und zufällige Paarung (Panmixie)},
     type=frage
 }
-% noch nutzen
 
 \newglossaryentry{wenngenaus}{
     name={Wenn ein Gen ``ausgeschaltet'' wird (Null-Allel), ergibt sich dann ein
@@ -204,3 +364,234 @@
     description={eine funktionelle DNA-Einheit zur Erzeugung funktioneller RNA-Produkte},
     type=frage
 }
+
+
+
+\newglossaryentry{wieinterrupted}{
+    name={Warum ist ein unterbrochenes ("interrupted") Gen laenger als sein reifes RNA-Produkt? Was gilt fuer Reihenfolge und Abstaende der Exons?},
+    description={Weil es zusaetzlich Introns enthaelt, die aus der reifen RNA herausgespleisst werden. Die Exons erscheinen in der RNA in derselben Reihenfolge wie in der DNA (kolinear), aber die Abstaende entlang des Gens entsprechen nicht den Abstaenden entlang der mRNA bzw. des Polypeptids -- die Introns "strecken" das Gen.},
+    type=dinge
+}
+
+
+\newglossaryentry{exondomaene}{
+    name={Wie haengen Exons oft mit Proteindomaenen zusammen (Stichwort Exon-Shuffling, bZIP)?},
+    description={Exons kodieren haeufig fuer einzelne Protein(sub)domaenen; Introns liegen dann oft an Domaenengrenzen. Durch Exon-Shuffling koennen solche Domaenen-Exons zu neuen Genen kombiniert werden. Beispiel: bZIP-Domaenen.},
+    type=dinge
+}
+
+\newglossaryentry{mutationintrons}{
+    name={Welche Auswirkungen haben Mutationen in Introns in der Regel?},
+    description={Meist keine (stille Mutationen), da Introns herausgespleisst werden. Ausnahmen: Mutationen an den Spleiss-Stellen (5'-GT, 3'-AG), am Verzweigungspunkt (branch point) oder in intronischen regulatorischen/Enhancer-Elementen koennen das Spleissen bzw. die Regulation stoeren.},
+    type=dinge
+}
+
+%-
+
+\newglossaryentry{genfamilienkomplexitaet}{
+    name={Warum ist bei mehrzelligen Eukaryoten die Anzahl der Genfamilien evtl. ein besserer Komplexitaetsindikator als die reine Genzahl?},
+    description={Viele Gene gehoeren zu Familien verwandter Mitglieder (oft $\geq$10). Die Zahl der unterschiedlichen Familien (= Zahl verschiedener Genarten/Funktionen) spiegelt die funktionelle Vielfalt und damit die Komplexitaet besser wider als die bloasse Gesamtzahl der Gene.},
+    type=dinge
+}
+
+\newglossaryentry{transposoneigenschaften}{
+    name={Welche Rolle spielen Transposons in der (maessig) repetitiven DNA?},
+    description={Sie bilden einen wesentlichen Teil der maessig repetitiven DNA.},
+    type=dinge
+}
+
+\newglossaryentry{groessekomplexitaet}{
+    name={Korreliert die Genomgroesse mit der morphologischen Komplexitaet?},
+    description={Bei niederen Eukaryoten ja, bei hoeheren Eukaryoten nicht.},
+    type=dinge
+}
+
+\newglossaryentry{groessegenzahl}{
+    name={Wie stark korreliert die Genomgroesse mit der Genanzahl bei Pro- vs. Eukaryoten?},
+    description={Bei Prokaryoten eng/proportional. Bei Eukaryoten schwaecher: einzellige Eukaryoten liegen im Groessenbereich der groessten Bakteriengenome; Mehrzeller haben mehr Gene, aber die Genzahl korreliert schlecht mit der Genomgroesse.},
+    type=dinge
+}
+
+\newglossaryentry{genartenproteom}{
+    name={Wie schaetzt man die Anzahl der "Genarten" und die Mindestgroesse des Proteoms ab?},
+    description={Genarten $\approx$ Anzahl einzigartiger Gene + Anzahl der Genfamilien. Aus der Zahl der Genarten laesst sich die Mindestgroesse des Proteoms abschaetzen.},
+type=dinge
+}
+
+\newglossaryentry{codinganteil}{
+name={Welcher Anteil des Genoms kodiert tatsaechlich fuer Proteine (z.B. beim Menschen)?},
+description={Nur ein kleiner Anteil (beim Menschen ca. 1--2 \% kodierende Sequenz). Der Grossteil ist nicht-kodierend: regulatorische Bereiche, Introns und repetitive DNA/Transposons.},
+type=dinge
+}
+
+\newglossaryentry{mindestgenkomplexitaet}{
+name={Wie haengt die Mindestanzahl benoetigter Gene mit der Komplexitaet zusammen?},
+description={Die Mindestzahl an Genen, die ein Organismus braucht, steigt mit seiner Komplexitaet.},
+type=dinge
+}
+
+\newglossaryentry{warumnichtimmer}{
+name={Warum steigt die Genzahl nicht immer/proportional mit der Komplexitaet des Organismus?},
+description={Weil mehr Funktion pro Gen moeglich ist: durch alternatives Spleissen, posttranslationale Modifikationen und kombinatorische Genregulation, sowie durch die Bedeutung nicht-kodierender regulatorischer DNA. Komplexitaet entsteht also nicht allein durch mehr Gene.},
+type=dinge
+}
+
+%
+
+\newglossaryentry{syntenienutzen}{
+name={Wozu nutzt man die Konservierung von Syntenie in der vergleichenden Genomik?},
+description={Zur Etablierung von Orthologie zwischen genomischen Regionen und als Hinweis auf funktionell wichtige Zusammenhaenge zwischen Genen: eine konservierte Genanordnung deutet auf gemeinsame Herkunft bzw. Funktion hin.},
+type=dinge
+}
+
+\newglossaryentry{genomgroesseunterschiede}{
+name={Worauf sind Genomgroessenunterschiede zwischen (nah) verwandten Arten hauptsaechlich zurueckzufuehren -- und worauf nicht?},
+description={Hauptsaechlich auf repetitive Sequenzen und Transposons (TEs). In der Regel NICHT auf deutlich unterschiedliche Genzahlen.},
+type=dinge
+}
+
+\newglossaryentry{genelage}{
+name={Liegen Gene in repetitiver oder nicht-repetitiver DNA? Wie werden Transposons behandelt?},
+description={Gene liegen meist (aber nicht ausschliesslich) in nicht-repetitiver DNA. Transposons werden getrennt von Genen annotiert und gezaehlt, obwohl man auch in ihnen Promotor-/CDS-Regionen findet.},
+type=dinge
+}
+%-
+\newglossaryentry{repetitivanteilmensch}{
+name={Wie gross ist der repetitive Anteil des menschlichen Genoms, und welches Mass spiegelt die Komplexitaet besser wider als die Genomgroesse?},
+description={Fast 50 \% des menschlichen Genoms sind repetitiv (Grossteil Transposon-Sequenzen). Die meisten Strukturgene liegen in nicht-repetitiver DNA. Die Menge der nicht-repetitiven DNA spiegelt die Komplexitaet besser wider als die Gesamtgroesse des Genoms.},
+type=dinge
+}
+
+\newglossaryentry{reassoziationinterpret}{
+name={Wie unterscheiden sich hoch-repetitive und Einzelkopie-Sequenzen in der Reassoziationskinetik?},
+description={Hoch-repetitive Sequenzen lagern sich schnell zusammen (niedriger $C_0t$-Wert), Einzelkopiesequenzen nur langsam (hoher $C_0t$). Bei Viren/Bakterien sind die Reassoziationskurven einfach, bei vielzelligen Organismen komplex (mit mittel- und hochrepetitiven Anteilen).},
+type=dinge
+}
+
+\newglossaryentry{c0tvariablen}{
+name={Wofuer stehen $C$, $C_0$ und $C_0t$ in der Reassoziationskinetik?},
+description={$C$ = Konzentration einzelstraengiger DNA (ssDNA) zum Messzeitpunkt; $C_0$ = ssDNA-Konzentration zum Zeitpunkt 0 (vor Beginn der Reassoziation); $C_0t$ = $C_0$ mal Zeit in Sekunden.},
+type=dinge
+}
+
+\newglossaryentry{c0tfiltration}{
+name={Wozu dient die $C_0t$-Filtration in der Genomsequenzierung?},
+description={Zur Anreicherung des einzigartigen, gen-reichen Anteils, indem die schnell reassoziierenden repetitiven Sequenzen abgetrennt werden -- das erleichtert Sequenzierung und Genfindung.},
+type=dinge
+}
+
+\newglossaryentry{sinevsline}{
+name={Wodurch unterscheiden sich SINEs und LINEs, und wie vermehren sie sich?},
+description={SINEs = short, LINEs = long interspersed nuclear elements; beide sind mittel-repetitiv. Sie transponieren ueber ein RNA-Zwischenprodukt (Retrotransposons, "copy-and-paste").},
+type=dinge
+}
+
+\newglossaryentry{alusine}{
+name={Was ist Alu: Klasse, Genomanteil, Vermehrung, Namensherkunft?},
+description={Ein SINE; macht ca. 10 \% des humanen Genoms aus. Vermehrung ueber Pol-III-Transkripte (der Promotor liegt im Repeat). Der Name stammt von einer "Bande" mit AluI-Schnittstelle.},
+type=dinge
+}
+
+\newglossaryentry{satellitenname}{
+name={Warum die Bezeichnung Satelliten-DNA?},
+description={Nach Zentrifugation im CsCl-Dichtegradienten trennt sich (z.B. Maus-)DNA in eine Hauptbande und zusaetzliche "Satelliten"-Bande(n) -- daher der Name.},
+type=dinge
+}
+
+\newglossaryentry{mikrosatellitengenotyp}{
+name={Wofuer werden Mikrosatelliten verwendet und wie weist man sie nach?},
+description={Zur Genotypisierung. Nachweis ueber PCR mit locus-spezifischen Primern und direkte Auftrennung der Amplifikate im Gel (Fragmentlaengen). Klassisch auch: Restriktion genomischer DNA, Gelauftrennung, Transfer auf Membran (Blot).},
+type=dinge
+}
+
+% -
+
+%% v3 noch einbauen
+
+\newglossaryentry{globinexonstruktur}{
+name={Welche gemeinsame Exon-Intron-Struktur haben alle Globin-Gene und was folgt daraus? Wo liegt die Haem-Bindedomaene?},
+description={Drei Exons und zwei Introns -- ein Hinweis darauf, dass sie von einem einzigen Vorlaeufergen abstammen. Die mittlere Domaene (mittleres Exon) ist die Haem-Bindedomaene.},
+type=dinge
+}
+
+\newglossaryentry{globinevolution}{
+name={Wie sind die verschiedenen Globingene evolutionaer auseinander hervorgegangen, und wie rekonstruiert man ihre Geschichte?},
+description={Durch Genduplikationen, Transpositionen und Mutationen. Aus den Aminosaeure-Aenderungen laesst sich ein Stammbaum erstellen und die Entstehung der menschlichen Globingene nachverfolgen.},
+type=dinge
+}
+
+\newglossaryentry{myoglobinvergleich}{
+name={Was zeigt der Vergleich der Myoglobin- und Globin-Genstruktur ueber das Alter der Drei-Exon-Struktur?},
+description={Das einzige menschliche Myoglobin-Gen hat im Wesentlichen dieselbe Struktur wie die Globingene. Die konservierte Drei-Exon-Struktur ist daher aelter als der gemeinsame Vorfahr von Myoglobin- und Globin-Genen.},
+type=dinge
+}
+
+\newglossaryentry{globinclusterexpression}{
+name={Wodurch zeichnen sich die $\alpha$- und $\beta$-Globin-Gencluster hinsichtlich Expression aus?},
+description={Sie liegen als Cluster verwandter Gene vor, die zu unterschiedlichen Zeitpunkten (embryonal/adult) und in unterschiedlichen Geweben exprimiert werden; sie sind mit einer Vielzahl regulatorischer Elemente assoziiert.},
+type=dinge
+}
+
+\newglossaryentry{pseudogeneentstehung}{
+name={Warum bieten Genfamilien ideale Voraussetzungen fuer die Entstehung von (nicht-prozessierten) Pseudogenen?},
+description={Bei vollstaendiger Duplikation eines Gens (samt Regulationsbereichen) gibt es voruebergehend zwei funktionsfaehige Kopien. Inaktivierende Mutationen in einer Kopie unterliegen nicht zwangslaeufig negativer Selektion -- diese Kopie kann Mutationen ansammeln und zum Pseudogen ($\varphi$) werden. Die mehreren Pseudogene der Globinfamilie belegen dies.},
+type=dinge
+}
+
+
+\newglossaryentry{redundantgeneerhalt}{
+name={Warum bleiben scheinbar "redundante" Gene evolutionaer erhalten? Nenne mehrere Gruende},
+description={Ein Gen bleibt erhalten, solange es keinen selektiven Nachteil bringt bzw. unter bestimmten Bedingungen einen -- auch kleinen -- Vorteil bietet. Gruende: Redundanz/Robustheit kann selbst ein Vorteil sein; Gene koennen mehrere Aufgaben haben; Gene werden nicht aktiv entfernt (eine eliminierende Mutation muesste sich erst durchsetzen); bei Diploiden bleiben rezessive Mutationen ueber viele Generationen heterozygot verborgen; teils Analytik-Artefakt: ein fehlender sichtbarer Phaenotyp bedeutet nicht Funktionslosigkeit.},
+type=dinge
+}
+
+\newglossaryentry{richtungdnspolymerasen}{
+name={In welche Richtung arbeiten DNA-Polymerasen?},
+description={DNA-Polymerasen verlaengern nur freie 3'-OH-Enden (5'->3'); die Replikation verlaeuft bidirektional.},
+type=dinge
+}
+
+\newglossaryentry{supercoiltopoisomerase}{
+name={Warum und wodurch muss die DNA vor der Replikation veraendert werden?},
+description={Superspiralisierte (supergewickelte) DNA muss abschnittsweise entspannt werden, beginnend am Replikationsursprung, denn Replikation kann nur an der entspannten, nicht an supergewickelter DNA stattfinden. Dies bewirkt die Topoisomerase.},
+type=dinge
+}
+
+\newglossaryentry{sphasereplikonsreihenfolge}{
+name={In welcher Zellzyklusphase findet die Replikation statt, und welche Replikons replizieren zuerst?},
+description={In der S-Phase. Replikons im Euchromatin bzw. nahe aktiver Gene beginnen frueher mit der Replikation, solche im Heterochromatin bzw. nahe inaktiver Gene spaeter.},
+type=dinge
+}
+
+\newglossaryentry{replikonende}{
+name={Was ist am Ende eines Replikons und nach der Termination der Replikation erforderlich?},
+description={Verbindungs- und/oder Terminationsreaktionen. Nach der Termination muessen die duplizierten Chromosomen voneinander getrennt werden, was eine Manipulation der DNA-Struktur hoeherer Ordnung erfordert.},
+type=dinge
+}
+
+\newglossaryentry{endreplikationsproblem}{
+name={Was ist das End-Replikationsproblem und warum verkuerzen sich Telomere?},
+description={Die normale DNA-Polymerase kann das 3'-Ende des Folgestrangs nicht vollstaendig replizieren (nach Entfernen des letzten RNA-Primers fehlt ein Ansatzpunkt). Dadurch verlieren lineare Chromosomen bei jeder Zellteilung an Telomerlaenge.},
+type=dinge
+}
+
+\newglossaryentry{telomerkritisch}{
+name={Was passiert, wenn Telomere ein kritisches Minimum (ca. 4 kbp) unterschreiten, und welche Bedeutung hat das?},
+description={Die Zelle kann sich nicht mehr teilen; es folgt Apoptose (programmierter Zelltod) oder Seneszenz (permanenter Wachstumsstopp). Diese begrenzte Teilungsfaehigkeit gilt als Mechanismus zur Tumorunterdrueckung. Nicht-immortalisierte Zelllinien altern in Kultur entsprechend.},
+type=dinge
+}
+
+\newglossaryentry{telomerasemechanismus}{
+name={Wie verlaengert die Telomerase die Telomere (Mechanismus)?},
+description={Sie nutzt das 3'-OH-Ende des G+T-reichen Strangs als Primer. Ihre RNA-Komponente enthaelt eine Sequenz, die mit den C+A-reichen Repeats paart und als Template dient; eine Proteinuntereinheit (reverse Transkriptase) synthetisiert daran die G+T-reiche Sequenz.},
+type=dinge
+}
+
+\newglossaryentry{telomerschutz}{
+name={Wie schuetzen Telomere die Chromosomenenden?},
+description={Sie verstecken die Enden strukturell (T-loop) und markieren sie mit Schutzproteinen (Shelterin), sodass die Enden nicht als DNA-Schaden (Doppelstrangbruch) erkannt werden.},
+type=dinge
+}
+
+
+

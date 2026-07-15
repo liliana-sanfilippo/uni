@@ -134,22 +134,21 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 ## Eukaryotengenetik SoSe 2026
 
-| Woche | Vorlesung (Do) | In Notizen (Do)         | In Karteikarten (Do) | Vorlesung (Mi) | In Notizen (Mi)       | In Karteikarten (Mi) |
-|-------|----------------|-------------------------|----------------------|----------------|-----------------------|----------------------|
-| KW 16 | Do, 16.04.     | :ballot_box_with_check: |                      | --             | --                    | --                   |
-| KW 17 | Do, 23.04.     | :ballot_box_with_check: |                      | --             | --                    | --                   |
-| KW 18 | Do, 30.04.     | :ballot_box_with_check: |                      | --             | --                    | --                   |
-| KW 19 | Do, 07.05.     | :construction:          |                      | --             | --                    | --                   |
-| KW 20 | --             | --                      |                      | --             | --                    | --                   |
-| KW 21 | Do, 21.05.     | :construction:          |                      | --             | --                    | --                   |
-| KW 22 | Do, 28.05.     | :construction:          |                      | --             | --                    | --                   |
-| KW 23 | --             | --                      | --                   | Mi, 03.06.     | :construction:        | --                   | 
-| KW 24 | --             | --                      |                      | Mi, 10.06.     | :construction:        |                      |
-| KW 25 | --             | --                      |                      | Mi, 17.06.     | :red_square:          |                      |
-| KW 26 | --             | --                      |                      | Mi, 24.06.     | :red_square:          |                      |
-| KW 27 | --             | --                      |                      | Mi, 01.07.     | :red_square:          |                      |
-| KW 28 | --             | --                      |                      | Mi, 08.07.     | :red_square:          |                      |
-| KW 29 | --             | --                      |                      | Mi, 15.07.     | :black_square_button: |                      |
-| KW 30 | --             | --                      |                      | Mi, 22.07.     | :black_square_button: |                      |
+| Woche | Vorlesung (Do) | In Notizen (Do)         | In Karteikarten (Do) | Vorlesung (Mi) | In Notizen (Mi) | In Karteikarten (Mi) |
+|-------|----------------|-------------------------|----------------------|----------------|-----------------|----------------------|
+| KW 16 | Do, 16.04.     | :ballot_box_with_check: |                      | --             | --              | --                   |
+| KW 17 | Do, 23.04.     | :ballot_box_with_check: |                      | --             | --              | --                   |
+| KW 18 | Do, 30.04.     | :ballot_box_with_check: |                      | --             | --              | --                   |
+| KW 19 | Do, 07.05.     | :construction:          |                      | --             | --              | --                   |
+| KW 20 | --             | --                      |                      | --             | --              | --                   |
+| KW 21 | Do, 21.05.     | :construction:          |                      | --             | --              | --                   |
+| KW 22 | Do, 28.05.     | :construction:          |                      | --             | --              | --                   |
+| KW 23 | --             | --                      | --                   | Mi, 03.06.     | :construction:  | --                   | 
+| KW 24 | --             | --                      |                      | Mi, 10.06.     | :construction:  |                      |
+| KW 25 | --             | --                      |                      | Mi, 17.06.     | :construction:  |                      |
+| KW 26 | --             | --                      |                      | Mi, 24.06.     | :construction:  |                      |
+| KW 27 | --             | --                      |                      | Mi, 01.07.     | :red_square:    |                      |
+| KW 28 | --             | --                      |                      | Mi, 08.07.     | :red_square:    |                      |
+| KW 29 | --             | --                      |                      | Mi, 15.07.     | :red_square:    |                      |
 
 * Aufgaben in Statistik bewerten danach, was für Konzepte und Sätze man anwenden muss
