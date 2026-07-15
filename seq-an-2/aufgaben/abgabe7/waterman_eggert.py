@@ -31,39 +31,41 @@ def get_used_diagonals(traceback: List[List[Traceback]], start_coordinate: Tuple
     #print("## start_coordinate: " + str(start_coordinate))
     #print("## traceback[13][10]: " + str(traceback[13][10]))
     while True:
-        result.insert(0, (i, j))
-        #print("## result: " + str(result))
-        #print("## traceback[i][j]: " + str(traceback[i][j]))
-        if traceback[i][j] == Traceback.TB_DIAG:
+        if traceback[i][j] == Traceback.TB_ALIGNMENT_START:
+            break
+        elif traceback[i][j] == Traceback.TB_DIAG:
+            result.insert(0, (i,j))
             (i, j) = (i - 1, j - 1)
         elif traceback[i][j] == Traceback.TB_UP:
             i = i - 1
         elif traceback[i][j] == Traceback.TB_LEFT: j = j - 1
-
-        elif traceback[i][j] == Traceback.TB_ALIGNMENT_START:
-            break
         else:
             raise NotImplementedError
     return result
 
-def get_alignment(traceback: List[List[Traceback]], start_coordinate: Tuple[int, int]) -> List[Tuple[str, str]]:
+def get_alignment(traceback: List[List[Traceback]], start_coordinate: Tuple[int, int],  a: str, b: str) -> List[Tuple[
+    str, str]]:
     # TODO: trace back the alignment from the start coordinate to Traceback.TB_ALIGNMENT_START and return the full alignment
     i = start_coordinate[0]
     j = start_coordinate[1]
     result: List[Tuple[str, str]] = []
     while True:
         #print(print("(i,j): " + str((i,j))))
-        result.insert(0, (i, j))
+        align_tupel: Tuple[str, str]
         if traceback[i][j] == Traceback.TB_DIAG:
             (i, j) = (i - 1, j - 1)
+            align_tupel = (a[i - 1], b[i - 1])
         elif traceback[i][j] == Traceback.TB_UP:
             i = i - 1
-        elif traceback[i][j] == Traceback.TB_LEFT: j = j - 1
-
+            align_tupel = (a[i - 1], "-")
+        elif traceback[i][j] == Traceback.TB_LEFT:
+            j = j - 1
+            align_tupel = ("-", b[i - 1])
         elif traceback[i][j] == Traceback.TB_ALIGNMENT_START:
             break
         else:
             raise NotImplementedError
+        result.insert(0, align_tupel)
     return result
 
 
@@ -77,11 +79,11 @@ def local_align(a: str, b: str, score_scheme: Dict[str, Dict[str, float]] = SIMP
     traceback = [[Traceback.TB_ALIGNMENT_START] * (len_b + 1) for _ in range(len_a + 1)]
     # Initialize first column (transform a -> empty string)
     for i in range(len_a + 1):
-        dp[i][0] = i * gap_score
+        dp[i][0] = 0
 
     # Initialize first row (transform empty string -> b)
     for j in range(len_b + 1):
-        dp[0][j] = j * gap_score
+        dp[0][j] = 0
 
     # TODO: Fill the dynamic programming matrix, make sure to not use any forbidden diagonal steps
     max_value = 0
@@ -92,8 +94,8 @@ def local_align(a: str, b: str, score_scheme: Dict[str, Dict[str, float]] = SIMP
                 dp[i][j] = 0
             else:
                 diag = dp[i - 1][j - 1] + score_scheme[a[i-1]][b[j-1]]
-                up = dp[i - 1][j] - gap_score
-                left = dp[i][j - 1] - gap_score
+                up = dp[i - 1][j] + gap_score
+                left = dp[i][j - 1] + gap_score
 
                 erg = max(0, int(diag), int(up), int(left))
                 #print("Erg: " + str(erg))
@@ -108,37 +110,32 @@ def local_align(a: str, b: str, score_scheme: Dict[str, Dict[str, float]] = SIMP
                     traceback[i][j] = Traceback.TB_UP
                 elif (erg == left):
                     traceback[i][j] = Traceback.TB_LEFT
-                else:
-                    raise NotImplementedError
+                elif (erg == 0):
+                    traceback[i][j] = Traceback.TB_ALIGNMENT_START
+
+
     print("max_value: " + str(max_value))
     print("start_coordinate: " + str(start_coordinate))
     # TODO: use get_used_diagonals to find which diagonals are used in the optimal alignment
     used_diagonals = get_used_diagonals(traceback, start_coordinate)
     print("used_diagonals: " + str(used_diagonals))
     # TODO: use get_alignment to get the alignment and combine the result to a WEResult object
-    num_alignment = get_alignment(traceback, start_coordinate)
-    alignment: List[Tuple[str, str]] = []
-    for item in num_alignment:
-        i: int = int(item[0])
-        j: int = int(item[1])
-        new_item = (a[i-1],b[j-1])
-        alignment.append(new_item)
+    alignment = get_alignment(traceback, start_coordinate, a, b)
     print("alignment: " + str(alignment))
 
     we_res =  WEResult(max_value, alignment, used_diagonals)
     return we_res
 
-def waterman_eggert(a: str, b: str, top_n=1) -> List[WEResult]:
+def waterman_eggert(a: str, b: str, top_n=3) -> List[WEResult]:
     results: List[WEResult] = []
+    forbidden_diagonals = []
     for i in range(top_n):
         print(i)
         # TODO: calculate the best top_n local alignments without diagonal re-use using the local alignment function
-        if i > 0:
-            forbidden_diagonals = results[i-1].used_diagonals
-        else:
-            forbidden_diagonals = []
         print(forbidden_diagonals)
-        results.append(local_align(a,b, SIMPLE_SCORE_SCHEME, -7.0, forbidden_diagonals))
+        runde = (local_align(a,b, SIMPLE_SCORE_SCHEME, -7.0, forbidden_diagonals))
+        forbidden_diagonals.extend(runde.used_diagonals)
+        results.append(runde)
     return results
 
 
