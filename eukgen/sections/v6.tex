@@ -87,7 +87,6 @@ TODO F 24--26
 % TODO F 28, 42 - 46
 Als Begleiterscheinungen von Transpositionen kann es kommen zu:
 \begin{itemize}
-    \item \textbf{epigenetischen Änderungen}
     \item \textbf{genetischen Änderungen}:
     \begin{itemize}
         \item Verursachung von defekten Allelen (``cis-acting effects'')
@@ -95,7 +94,14 @@ Als Begleiterscheinungen von Transpositionen kann es kommen zu:
         \item AEs können durch Verlust von Funktionen zu nAEs werden
         \item nAE kann nicht in trans aktivieren, aber selber aus trans aktiviert werden
     \end{itemize}
+    \item \textbf{epigenetischen Änderungen}:
+    \begin{itemize}
+        \item Einfluss der DNA-Methylierung: Transposition fast immer kurz nach einer Replikation
+        (wenn DNA-Abschnitte hemi-methyliert sind)
+    \end{itemize}
 \end{itemize}
+
+\defin{hemi_methylierung}
 
 \lewin{Die sporadischen Aktivitäten eines Transposons scheinen ein
 etwas vages Ziel für die natürliche Selektion darzustellen. Diese Sichtweise hat
@@ -113,7 +119,7 @@ im Genom verkehrt.}
 Hüllproteine erworben haben – also das Gegenteil der zuvor angenommenen Beziehung.}
 
 \subsubsection{Aufbau}
-% TODO F 32 - 33
+%  F 32 - 33
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{images/retroviren/retrovirus}
@@ -127,65 +133,65 @@ Hüllproteine erworben haben – also das Gegenteil der zuvor angenommenen Bezie
 \end{figure}
 
 \subsubsection{Stadien und retroviraler Lebenszyklus}
-% TODO F 34 - 37
+% F 34 - 37
 % F 31
 \begin{figure}[H]
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt1}
         \caption{}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt2}
         \caption{}
     \end{subfigure}
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt3}
         \caption{}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt4}
         \caption{}
     \end{subfigure}
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt5}
         \caption{}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt6}
         \caption{}
     \end{subfigure}
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt7}
         \caption{}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt9}
         \caption{}
     \end{subfigure}
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/schritt9}
         \caption{}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/retroviren/ende}
         \caption{}
     \end{subfigure}
-    \caption{}
+    \caption{}\label{fig:figure12}
 \end{figure}
 
 \begin{center}
@@ -194,19 +200,220 @@ Hüllproteine erworben haben – also das Gegenteil der zuvor angenommenen Bezie
 \end{center}
 Problem: Erhaltung der Länge der Enden
 
+\paragraph{Reverse Transkription - Minusstrang-Synthese und erster Sprung:}
+Ausgangspunkt ist die \textbf{Plus-Strang-RNA}, die das Retrovirus mitbringt.
+Ihre Struktur ist entscheidend für den gesamten Ablauf:
+\[
+    5'\; \underbrace{\text{R}}_{\text{repeat}} - \text{U5} -
+    \dots \text{codierender Bereich} \dots - \text{U3} -
+    \underbrace{\text{R}}_{\text{repeat}} \;3'
+\]
+
+\begin{enumerate}
+    \item Eine zelluläre \textbf{trna} lagert sich als \gls{primer} an die
+    Bindestelle (PBS) auf der retroviralen RNA an.
+    \item Die \textbf{Reverse Transkriptase} beginnt die Synthese des
+    \textbf{Minusstrang-DNA}.
+    \item Das Enzym erreicht das Ende des Templates und erzeugt die
+    \textbf{strong stop minus strand DNA} -- ein kurzes DNA-Stück, das nur
+    R und U5 umfasst.
+    \item Die \textbf{RNase\,H}-Aktivität baut die 5$'$-terminale Region des
+    RNA-Stranges ab und legt so ein neues 3$'$-Ende der DNA frei.
+    \item \textbf{First jump:} Die einzelsträngige R-Region der neuen DNA paart
+    mit dem 3$'$-Terminus derselben oder einer zweiten retroviralen RNA.
+    Genau hier liegt die Funktion der terminalen Repeats.
+    \item Die Reverse Transkriptase setzt die Minusstrang-Synthese fort.
+\end{enumerate}
+
+
+\paragraph{Reverse Transkription - Plusstrang-Synthese und zweiter Sprung:}
+
+\begin{enumerate}
+    \item Der \textbf{tRNA-Primer wird entfernt}.
+    \item Die RNA wird abgebaut; es bleiben \textbf{Fragmente als Primer} für die
+    DNA-Synthese (Polypurintrakt).
+    \item Die \textbf{strong stop plus strand DNA} wird synthetisiert.
+    \item \textbf{Second jump:} Die Plusstrang-DNA wird an das andere Ende des
+    Minusstranges transferiert.
+    \item Die \textbf{Plusstrang-Synthese wird vervollständigt}.
+    \item Der \textbf{Minusstrang wird vervollständigt}.
+\end{enumerate}
+
+Ergebnis ist ein doppelsträngiges DNA-Molekül, das an beiden Enden eine
+identische \textbf{LTR} (U3--R--U5) trägt.
+
+\begin{bem}
+Die LTRs sind \emph{nicht} im RNA-Genom vorhanden, sondern entstehen erst
+\emph{durch} den Mechanismus der reversen Transkription mit ihren zwei Sprüngen.
+Die RNA beginnt mit R--U5 und endet mit U3--R; die DNA trägt beidseits
+U3--R--U5. Das ist eine klassische Prüfungsfrage.
+\end{bem}
+
+\paragraph{Integration der (c)DNA:}
+Die Integration wird von der \textbf{Integrase} katalysiert und läuft in drei
+Schritten ab:
+
+\begin{enumerate}
+    \item Die Integrase erzeugt an beiden LTRs \textbf{um zwei Basen
+    zurückgesetzte 3$'$-Enden} (two base-recessed 3$'$ ends).
+    \item Die Integrase erzeugt in der Ziel-DNA \textbf{versetzte
+    Einzelstrangbrüche} (staggered ends) mit freien 5$'$-Enden.
+    \item Die zurückgesetzten 3$'$-Enden der LTR werden mit den versetzten
+    5$'$-Enden des Targets \textbf{verknüpft}.
+\end{enumerate}
+
+Die verbleibenden Einzelstranglücken werden von zellulären Enzymen gefüllt und
+ligiert. Weil die Schnitte in der Ziel-DNA versetzt liegen, wird die
+dazwischenliegende Sequenz \emph{verdoppelt}: es entstehen die charakteristischen
+\textbf{target site duplications} (Zielsequenzverdopplungen), die das
+integrierte Element flankieren.
+
+\begin{bem}
+    Die Länge der Zielsequenzverdopplung ist elementtypisch und dient als
+    diagnostisches Merkmal: LTR-Retrotransposons 4--6\,bp, non-LTR-Retroposons und
+    SINEs 7--21\,bp.
+\end{bem}
+
 \subsubsection{Typen}
-% TODO F 38
+% F 38
+\defin{line}
+\defin{sine}
+\begin{mytable}
+    \begin{tabular}{@{}p{0.16\linewidth}p{0.24\linewidth}p{0.24\linewidth}p{0.24\linewidth}@{}}
+        \hline
+        & \textbf{LTR-Retrotransposons} & \textbf{non-LTR-Retroposons} & \textbf{SINEs} \\
+        \midrule
+        Typische Vertreter
+        & \emph{Ty} (\emph{S.\,cerevisiae}), \emph{copia} (\emph{D.\,melanogaster})
+        & L1 (Mensch); B1, B2, ID, B4 (Maus)
+        & SINEs (Säuger), Pseudogene von Pol\,III-Transkripten \\ \\
+        Termini
+        & Long terminal repeats
+        & keine Repeats
+        & keine Repeats \\ \\
+        Target repeats
+        & 4--6\,bp
+        & 7--21\,bp
+        & 7--21\,bp \\ \\
+        Enzymaktivitäten
+        & Reverse Transkriptase und/oder Integrase
+        & Reverse Transkriptase / Endonuclease
+        & keine (bzw. keine, die für Transposon-Produkte codieren) \\ \\
+        Organisation
+        & kann Introns enthalten (entfernt in subgenomischer mRNA)
+        & ein oder zwei ununterbrochene ORFs
+        & keine Introns \\
+        \hline
+    \end{tabular}
+\end{mytable}
+
+\begin{bem}
+    Entscheidendes Abgrenzungskriterium ist nicht die Länge, sondern die
+    Autonomie: LINEs bringen ihre eigene Maschinerie mit, SINEs
+    parasitieren an dieser. Beide vermehren sich über ein RNA-Intermediat
+    (copy-and-paste) und hinterlassen daher Kopien, ohne dass das Original
+    verschwindet.
+\end{bem}
 
 \subsubsection{Funktion}
-% TODO F 39
+% F 39
+
+Der Vergleich der Elementstrukturen zeigt die evolutionäre Verwandtschaft:
+
+\begin{itemize}
+    \item \textbf{Retrovirus:} LTR -- \emph{gag} -- \emph{pol} -- \emph{int} --
+    \emph{env} -- LTR
+    \item \textbf{Ty} (Hefe): LTR -- \emph{TyA} -- \emph{TyB} -- LTR, mit
+    Homologien zu \emph{gag}, \emph{pol} und \emph{int}
+    \item \textbf{Copia} (\emph{Drosophila}): LTR -- ORF -- LTR, ebenfalls mit
+    \emph{gag}-, \emph{pol}- und \emph{int}-Homologien
+    \item \textbf{LINES:} ORF1 -- ORF2, \emph{ohne} LTRs, mit
+    \emph{pol}-Homologie
+\end{itemize}
+
+\begin{bem}
+    LTR-Retrotransposons und Retroviren unterscheiden sich im
+    Wesentlichen durch das Vorhandensein bzw. Fehlen von \emph{env}. Ohne
+    \emph{env}-Hüllprotein bleibt das Element intrazellulär, es ist ein
+    Transposon. Mit \emph{env} kann es Zellen verlassen und andere infizieren,
+    es ist ein Virus. Die Grenze zwischen Transposon und Virus ist damit fliessend.
+\end{bem}
 
 \begin{bsp}
     Repetitive DNA im Humangenom / TE-Gehalt von 248 Säugetier GSeq-Assemblies
-        % TODO F 40 - 41
+       \begin{mytable}
+           \begin{tabular}{@{}llrrr@{}}
+               \toprule
+               \textbf{Element} & \textbf{Organisation} & \textbf{Länge (kb)}
+               & \textbf{Anzahl} & \textbf{Anteil} \\
+               \midrule
+               Retrovirus / LTR-Retrotransposon & LTR--\emph{gag}--\emph{pol}--(\emph{env})--LTR
+               & 1--11 & 450.000 & 8\,\% \\
+               LINEs (autonom), z.\,B. L1 & ORF1--(\emph{pol})--(A)$_n$
+               & 6--8 & 850.000 & 17\,\% \\
+               SINEs (nicht autonom), z.\,B. \emph{Alu} & (A)$_n$
+               & $<$0,3 & 1.500.000 & 15\,\% \\
+               DNA-Transposon & Transposase
+               & 2--3 & 300.000 & 3\,\% \\
+               \midrule
+               \multicolumn{4}{@{}l}{\textbf{Summe transponierbare Elemente}} & \textbf{ca. 43\,\%} \\
+               \bottomrule
+           \end{tabular}
+           \caption{Transponierbare Elemente im Humangenom.}
+       \end{mytable}
 \end{bsp}
 
-\section{Methoden der DNA-Übertragung}\label{sec:methoden-der-dna-ubertragung}
+\begin{bem}
+    Der grösste Teil des Humangenoms besteht aus Transposons. Auffällig ist das
+    Verhältnis von Anzahl zu Anteil: \emph{Alu}-Elemente sind mit 1,5 Millionen
+    Kopien die zahlreichsten, machen wegen ihrer geringen Länge aber weniger
+    Genomanteil aus als die nur 850.000 LINEs. Zahlenmerkhilfe: 8 -- 17 -- 15 -- 3.
+\end{bem}
+
+\begin{bsp}
+    \textbf{TE-Gehalt von 248 Säugetier-Genomassemblies} \\
+    Zentrale Aussage: Die meisten Säugetier-Genomassemblies zeigen praktisch
+    keine jüngere Akkumulation von DNA- und RC-Transposons
+    (RC: 240 von 248 Säugern unter 0,1\,\%; DNA: 210 von 248 unter 0,1\,\%). Die
+    Retroelemente -- insbesondere LINEs und SINEs -- sind dagegen weiterhin aktiv
+    und variieren stark zwischen den Arten.
+\end{bsp}
+
+\begin{bem}
+    DNA-Transposons sind in Säugern weitgehend stillgelegt, Retroelemente
+    nicht. Das passt zum Mechanismus: copy-and-paste über RNA erlaubt
+Vervielfältigung ohne Verlust des Originals, cut-and-paste nicht.
+\end{bem}
+
+% TODO kareikarten   \item Woher stammt der Primer für die reverse Transkription und wo lagert er sich an?
+%  \item Was ist \enquote{strong stop DNA} und warum entsteht sie?
+%  \item Erkläre den ersten und den zweiten Sprung. Warum sind sie notwendig?
+%  \item Die RNA hat die Struktur R--U5--\dots--U3--R, die DNA U3--R--U5 an beiden Enden. Erkläre den Übergang.
+%  \item Beschreibe die drei Schritte der Integrase-Reaktion. Wie entstehen die Zielsequenzverdopplungen?
+%  \item Grenze LTR-Retrotransposons, non-LTR-Retroposons und SINEs anhand von vier Kriterien ab.
+%  \item Was unterscheidet ein LTR-Retrotransposon von einem Retrovirus?
+%  \item Warum sind SINEs auf LINEs angewiesen?
+%  \item Nenne Anzahl und Genomanteil der vier TE-Klassen im Humangenom. Warum haben \emph{Alu}-Elemente die höchste Kopienzahl, aber nicht den höchsten Anteil?
+%  \item Warum akkumulieren DNA-Transposons in Säugern kaum noch, Retroelemente aber schon?
+
+\section{Transformation und T-DNA}\label{sec:transformation-und-t-dna}
+
+\subsection{Methoden der DNA-Übertragung}\label{subsec:methoden-der-dna-ubertragung}
 % TODO F 48
+\begin{mytable}
+    \begin{tabular}{|p{10cm}|l|l|}
+        \hline
+        \textbf{Methode} & \textbf{Säugetier} & \textbf{Pflanze} \\ \hline
+        Calciumphosphat/DEAE-
+        Dextran-Präzipitation & X & (X) \\
+        Lipofektion & X & \\
+        Mikroinjektion & X & X \\
+        Elektroporation & X & (X) \\
+        Biolistische Systeme & X & X \\
+        \underline{Biologischer Vektor} & \underline{X (Adeno-/Retrovirus)} & \underline{X (Ti-Plasmid/ T-DNA)}
+    \end{tabular}
+\end{mytable}
+
 
 \begin{bsp}
     A plant tumor of bacterial origin
