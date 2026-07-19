@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1155.6678"
+   height="629.85065"
+   version="1.1"
+   id="svg113"
+   sodipodi:docname="Gene_structure_eukaryote_2_annotated.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview113"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.2923281"
+     inkscape:cx="337.76253"
+     inkscape:cy="192.28863"
+     inkscape:window-width="1854"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg113">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="1155.6678"
+       height="629.85065"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs9">
+    <linearGradient
+       id="linearGradient156">
+      <stop
+         offset="0"
+         stop-color="#2c2c2c"
+         id="stop155"
+         style="stop-color:#ef58a0;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop156"
+         style="stop-color:#ff0000;stop-opacity:0.69411767;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient154">
+      <stop
+         offset="0"
+         stop-color="#2c2c2c"
+         id="stop153"
+         style="stop-color:#ef58a0;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop154"
+         style="stop-color:#ff0000;stop-opacity:0.69475818;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient148">
+      <stop
+         offset="0"
+         stop-color="#2c2c2c"
+         id="stop147"
+         style="stop-color:#ffc600;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop148"
+         style="stop-color:#ffc600;stop-opacity:0.52342463;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient146">
+      <stop
+         offset="0"
+         stop-color="#d80000"
+         id="stop144"
+         style="stop-color:#f49ec4;stop-opacity:1;" />
+      <stop
+         offset=".5"
+         stop-color="#eb0000"
+         stop-opacity=".5"
+         id="stop145" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop146" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient140">
+      <stop
+         offset="0"
+         stop-color="#2c2c2c"
+         id="stop139"
+         style="stop-color:#ef58a0;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop140"
+         style="stop-color:#ff0000;stop-opacity:0.69411767;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient138">
+      <stop
+         offset="0"
+         stop-color="#2c2c2c"
+         id="stop137"
+         style="stop-color:#ffc600;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop138"
+         style="stop-color:#ffc600;stop-opacity:0.52156866;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient134">
+      <stop
+         offset="0"
+         stop-color="#0000d6"
+         id="stop133"
+         style="stop-color:#00b0f0;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop134"
+         style="stop-color:#ff0000;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient128">
+      <stop
+         offset="0"
+         stop-color="#2c2c2c"
+         id="stop127"
+         style="stop-color:#ffc600;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop128"
+         style="stop-color:#ffc600;stop-opacity:0.52156866;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient116">
+      <stop
+         offset="0"
+         stop-color="#edf400"
+         id="stop115"
+         style="stop-color:#950e4f;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop116" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient114">
+      <stop
+         offset="0"
+         stop-color="#edf400"
+         id="stop113"
+         style="stop-color:#950e4f;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop114" />
+    </linearGradient>
+    <linearGradient
+       id="d">
+      <stop
+         offset="0"
+         stop-color="#edf400"
+         id="stop3"
+         style="stop-color:#950e4f;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="c">
+      <stop
+         offset="0"
+         stop-color="#0000d6"
+         id="stop5"
+         style="stop-color:#00b0f0;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="b">
+      <stop
+         offset="0"
+         stop-color="#d80000"
+         id="stop7"
+         style="stop-color:#ef58a0;stop-opacity:1;" />
+      <stop
+         offset=".5"
+         stop-color="#eb0000"
+         stop-opacity=".5"
+         id="stop8" />
+      <stop
+         offset="1"
+         stop-color="red"
+         stop-opacity="0"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient148"
+       id="e"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientTransform="matrix(0.20190608,0,0,-6.3696064,634.69881,7853.2447)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient146"
+       id="g"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient134"
+       id="h"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.07346118,0,0,-5.3451068,434.88894,6709.5778)" />
+    <linearGradient
+       xlink:href="#c"
+       id="i"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.08614311,0,0,-4.9705768,906.8958,6250.8684)" />
+    <linearGradient
+       xlink:href="#linearGradient114"
+       id="j"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24299894,0,0,-1.1202212,448.92294,1535.1624)" />
+    <linearGradient
+       xlink:href="#linearGradient116"
+       id="k"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientTransform="matrix(0.10674663,0,0,-1.1217885,200.12561,1537.0264)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#d"
+       id="l"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.1064005,0,0,-1.1217885,1128.7059,1537.0264)" />
+    <linearGradient
+       xlink:href="#b"
+       id="p"
+       x1="-394.965"
+       x2="-394.965"
+       y1="1214.3149"
+       y2="1165.515"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.3713575,0,0,-0.8676496,859.17594,1626.5524)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient128"
+       id="linearGradient135"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.05749562,0,0,-5.9691457,727.9186,7362.1795)"
+       x1="-394.965"
+       y1="1214.3149"
+       x2="-394.965"
+       y2="1165.515" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient138"
+       id="linearGradient136"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.2794287,0,0,-6.3807298,1021.4078,7866.6584)"
+       x1="-394.965"
+       y1="1214.3149"
+       x2="-394.965"
+       y2="1165.515" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient140"
+       id="linearGradient142"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.05449524,0,0,4.2138379,726.36499,-4731.7981)"
+       x1="-394.965"
+       y1="1214.3149"
+       x2="-394.965"
+       y2="1165.515" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient156"
+       id="linearGradient143"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.11557515,0,0,4.202714,628.47569,-4719.2803)"
+       x1="-394.965"
+       y1="1214.3149"
+       x2="-394.965"
+       y2="1165.515" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient154"
+       id="linearGradient144"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.19146683,0,0,-10.654843,953.11173,12680.145)"
+       x1="-394.965"
+       y1="1214.3149"
+       x2="-394.965"
+       y2="1165.515" />
+  </defs>
+  <g
+     id="g148"
+     inkscape:label="Exons"
+     inkscape:export-filename="eukgen.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"
+     transform="translate(-29.240065,46.716389)">
+    <path
+       fill="url(#e)"
+       d="M 468.84216,440.48817 V 52.014084 h 155.3959 V 440.48817 Z"
+       opacity="0.24"
+       id="path9"
+       style="fill:url(#e);stroke-width:2.18278" />
+    <path
+       fill="#a80"
+       d="m 468.40525,53.222534 h 155.86411 v -7.31 H 468.40608 Z"
+       id="path23-9"
+       style="fill:#ffc600;fill-opacity:1;stroke-width:0.912905" />
+    <path
+       fill="url(#e)"
+       d="M 680.68857,415.46694 V 51.416421 h 44.25118 V 415.46694 Z"
+       opacity="0.24"
+       id="path9-0"
+       style="fill:url(#linearGradient135);stroke-width:1.12759" />
+    <path
+       fill="#a80"
+       d="m 680.56415,52.624871 h 44.38451 v -7.31 h -44.38427 z"
+       id="path23-9-1"
+       style="fill:#ffc600;fill-opacity:1;stroke-width:0.487156" />
+    <path
+       fill="url(#e)"
+       d="M 791.8699,440.9567 V 51.804177 h 215.0607 V 440.9567 Z"
+       opacity="0.24"
+       id="path9-1"
+       style="fill:url(#linearGradient136);stroke-width:2.57009" />
+    <path
+       fill="#a80"
+       d="m 791.4621,53.012627 h 216.7132 v -7.31 H 791.46325 Z"
+       id="path23-9-2"
+       style="fill:#ffc600;fill-opacity:1;stroke-width:1.07645" />
+    <text
+       id="text81-8-9-5"
+       x="682.62549"
+       y="-32.145618"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741"><tspan
+         sodipodi:role="line"
+         x="682.62549"
+         y="-32.145618"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741"
+         id="tspan122-8-4">Exons</tspan></text>
+    <g
+       id="g137"
+       style="stroke-width:1.532;stroke-dasharray:none">
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="square"
+         stroke-linejoin="bevel"
+         stroke-width="3.16526"
+         d="M 552.63797,35.928197 708.2407,-28.284331 852.13582,38.066072"
+         id="path62-2-7"
+         sodipodi:nodetypes="ccc"
+         style="stroke-width:1.532;stroke-dasharray:none" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.532;stroke-dasharray:none;stroke-opacity:1"
+         d="m 708.18655,-27.483774 -0.31958,69.668172 v 0"
+         id="path137" />
+    </g>
+  </g>
+  <g
+     id="g137-9"
+     transform="matrix(1.0014156,0,0,-0.4154152,-35.762332,335.32428)"
+     style="display:inline;stroke-width:2.37526;stroke-dasharray:none"
+     inkscape:label="CDS">
+    <g
+       id="g156">
+      <path
+         fill="url(#e)"
+         d="m 533.53597,171.71211 v 256.31806 h 88.95177 V 171.71211 Z"
+         opacity="0.24"
+         id="path9-9-6-8"
+         style="fill:url(#linearGradient143);stroke-width:1.34145"
+         transform="matrix(0.9985864,0,0,-2.4072302,6.5130478,694.74562)" />
+      <path
+         fill="url(#e)"
+         d="M 681.59964,172.13985 V 429.13634 H 723.5416 V 172.13985 Z"
+         opacity="0.24"
+         id="path9-9-6"
+         style="fill:url(#linearGradient142);stroke-width:0.922354"
+         transform="matrix(0.9985864,0,0,-2.4072302,6.5130478,694.74562)" />
+      <path
+         fill="url(#e)"
+         d="M 795.83045,280.35974 V -369.46523 H 943.19184 V 280.35974 Z"
+         opacity="0.24"
+         id="path9-9-6-6"
+         style="fill:url(#linearGradient144);stroke-width:2.74916" />
+      <path
+         fill="#a80"
+         d="m 533.64073,267.70294 h 89.22075 v -7.31 H 533.6412 Z"
+         id="path23-9-6"
+         style="fill:#ef58a0;fill-opacity:1;stroke-width:0.690694"
+         transform="matrix(0.9985864,0,0,-2.4072302,6.5130478,694.74562)" />
+      <path
+         fill="#a80"
+         d="m 682.42935,268.01892 h 41.67078 v -7.31 h -41.67056 z"
+         id="path23-9-1-4"
+         style="fill:#ef58a0;fill-opacity:1;stroke-width:0.472028"
+         transform="matrix(0.9985864,0,0,-2.4072302,6.5130478,694.74562)" />
+      <text
+         id="text81-8-9"
+         x="621.0531"
+         y="322.33624"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741"
+         transform="matrix(0.9985864,0,0,-2.4072302,6.5130478,694.74562)"><tspan
+           sodipodi:role="line"
+           x="621.0531"
+           y="322.33624"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741"
+           id="tspan122-8">Coding Sequences</tspan></text>
+      <path
+         fill="#a80"
+         d="m 790.70275,267.50253 h 147.5703 v -7.31 H 790.70354 Z"
+         id="path23-9-2-2"
+         style="fill:#ef58a0;fill-opacity:1;stroke-width:0.888285"
+         transform="matrix(0.9985864,0,0,-2.4072302,6.5130478,694.74562)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-linecap="square"
+         stroke-linejoin="bevel"
+         stroke-width="3.16526"
+         d="M 552.63797,35.928197 708.2407,-28.284331 852.13582,38.066072"
+         id="path62-2-7-6"
+         sodipodi:nodetypes="ccc"
+         style="stroke-width:2.37526;stroke-dasharray:none" />
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.37526;stroke-dasharray:none;stroke-opacity:1"
+       d="m 708.18655,-27.483774 -0.31958,69.668172 v 0"
+       id="path137-0" />
+  </g>
+  <path
+     fill="url(#h)"
+     d="M 495.23392,489.10277 V 163.10471 h -56.53896 v 325.99806 z"
+     opacity="0.3"
+     id="path18"
+     style="fill:url(#h);stroke-width:0.626624" />
+  <path
+     fill="#090992"
+     d="m 495.23394,165.68839 h -56.539 v -7.32 h 56.539 z"
+     id="path19"
+     style="fill:#00b0f0;fill-opacity:1" />
+  <path
+     fill="url(#i)"
+     d="M 977.65844,466.26016 V 163.10468 h -66.29956 v 303.15548 z"
+     opacity="0.3"
+     id="path20"
+     style="fill:url(#i);stroke-width:0.654355" />
+  <path
+     fill="#090992"
+     d="m 977.70574,165.68839 h -66.3458 v -7.32 h 66.3468 z"
+     id="path21"
+     style="fill:#00b0f0;fill-opacity:1;stroke-width:1.00228" />
+  <path
+     fill="url(#j)"
+     d="m 249.31048,231.48256 v -68.32229 h 187.02268 v 68.32229 z"
+     opacity="0.3"
+     id="path22"
+     style="fill:url(#j);stroke-width:0.52174" />
+  <path
+     fill="#a80"
+     d="m 249.30994,165.74639 h 187.023 v -7.31 h -187.022 z"
+     id="path23"
+     style="fill:#ab0053;fill-opacity:1" />
+  <path
+     fill="url(#k)"
+     d="m 112.43791,231.52239 v -68.417 h 82.15743 v 68.417 z"
+     opacity="0.3"
+     id="path24"
+     style="fill:url(#k);stroke-width:0.994109" />
+  <path
+     fill="#a80"
+     d="m 112.43894,165.68839 h 82.157 v -7.32 h -82.157 z"
+     id="path25"
+     style="fill:#ab0053;fill-opacity:1" />
+  <path
+     fill="url(#l)"
+     d="m 1041.3028,231.52259 v -68.41788 h 81.8905 v 68.41788 z"
+     opacity="0.3"
+     id="path26"
+     style="fill:url(#l);stroke-width:0.345484" />
+  <path
+     fill="#a80"
+     d="m 1041.3019,165.68839 h 81.89 v -7.32 h -81.89 z"
+     id="path27"
+     style="fill:#ab0053;fill-opacity:1" />
+  <path
+     fill="#d9d9d9"
+     d="M 75.724935,244.17839 H 1155.6679 v -25.255 H 75.724935 Z"
+     id="path34" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="round"
+     stroke-width="1.532"
+     d="m 240.80994,231.55139 h 748.776"
+     id="path35" />
+  <path
+     fill="#d9d9d9"
+     d="m 443.12594,244.55939 h 533.612 v -26.017 h -533.612 z"
+     id="path36" />
+  <path
+     fill="#d9d9d9"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 579.21794,244.53539 h 192.284 v -25.969 h -192.284 z"
+     id="path37" />
+  <path
+     fill="#ffc000"
+     stroke="#000000"
+     stroke-width="1.531"
+     d="m 344.76194,244.53639 h 92.53 v -25.97 h -92.53 z"
+     id="path38"
+     style="fill:#950e4f;fill-opacity:1" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="round"
+     stroke-width="1.532"
+     d="m 102.45094,231.55139 h 102.134"
+     id="path39" />
+  <path
+     fill="#ffc000"
+     stroke="#000000"
+     stroke-width="1.531"
+     d="m 111.83594,244.53639 h 83.504 v -25.97 h -83.504 z"
+     id="path40"
+     style="fill:#950e4f;fill-opacity:1" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-dasharray="4.5958, 4.5958"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.532"
+     d="m 200.57394,231.55139 h 42.309"
+     id="path41" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-dasharray="4.5958, 4.5958"
+     stroke-dashoffset="3.37"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.532"
+     d="M 78.124935,231.55139 H 104.73294"
+     id="path42" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="round"
+     stroke-width="1.532"
+     d="m 1028.8949,231.55139 h 101.996"
+     id="path43" />
+  <path
+     fill="#ffc000"
+     stroke="#000000"
+     stroke-width="1.531"
+     d="m 1040.7879,244.56039 h 83.256 v -26.019 h -83.256 v 26.02 z"
+     id="path44"
+     style="fill:#950e4f;fill-opacity:1" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-dasharray="4.5958, 4.5958"
+     stroke-dashoffset="1.838"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.532"
+     d="m 1126.9579,231.55139 h 27.253"
+     id="path45" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-dasharray="4.5958, 4.5958"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.532"
+     d="m 987.67694,231.55139 h 45.23796"
+     id="path46" />
+  <path
+     fill="#ffc000"
+     stroke="#000000"
+     stroke-width="1.531"
+     d="m 249.10094,244.53639 h 94.259 v -25.97 h -94.258 v 25.97 z"
+     id="path47"
+     style="fill:#950e4f;fill-opacity:1" />
+  <path
+     fill="#404040"
+     d="m 977.18394,439.05639 h -213.815 z"
+     id="path53"
+     sodipodi:nodetypes="ccc" />
+  <path
+     fill="#d9d9d9"
+     d="m 443.12594,489.07439 h 533.612 v -26.017 h -533.612 z"
+     id="path54" />
+  <path
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 496.89494,489.05039 h 7.434 v -25.968 h -7.434 z"
+     id="path55" />
+  <path
+     stroke="#000000"
+     stroke-width="1.35"
+     d="m 910.42117,489.05038 h 7.43396 v -25.96916 h -7.43396 z"
+     id="path56" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.35"
+     d="m 960.23372,489.05052 h 17.84742 v -25.96803 h -17.84742 v 25.96916 z"
+     id="path57" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.35"
+     d="m 918.94102,489.05052 h 41.6481 v -25.96803 h -41.6481 z"
+     id="path58" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.292"
+     d="m 437.78592,489.03416 h 57.88532 v -25.93419 h -57.88532 v 25.93532 z"
+     id="path59" />
+  <path
+     fill="#d9d9d9"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 579.21794,489.05039 h 192.284 v -25.968 h -192.284 z"
+     id="path60" />
+  <path
+     fill="#d60000"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 762.50894,463.11939 h 120.548 v -12.947 l 25.893,25.894 -25.893,25.893 v -12.947 h -120.548 z m -110.371,25.931 h 41.472 v -25.968 h -41.472 z"
+     id="path61"
+     style="fill:#ef58a0;fill-opacity:1" />
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     stroke-width="1.532"
+     d="m 595.32494,489.47239 28.475,20.544 28.516,-20.566 m 42.227,0.021 33.493,19.577 33.493,-19.597"
+     id="path62" />
+  <path
+     fill="#d60000"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 504.44494,489.05039 h 90.243 v -25.968 h -90.243 z"
+     id="path63"
+     style="fill:#ef58a0;fill-opacity:1" />
+  <path
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 496.89494,244.53539 h 7.434 v -25.969 h -7.434 v 25.968 z"
+     id="path64" />
+  <path
+     stroke="#000000"
+     stroke-width="1.53148"
+     d="m 910.42117,244.53538 h 7.43396 v -25.96916 h -7.43396 z"
+     id="path65" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.53148"
+     d="m 960.23371,244.53552 h 17.84741 v -25.96803 h -17.84741 v 25.96916 z"
+     id="path66" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.53148"
+     d="m 918.94101,244.53552 h 41.64811 v -25.96803 h -41.64811 z"
+     id="path67" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.53188"
+     d="m 437.78592,244.56944 h 57.88532 v -26.03649 h -57.88532 v 26.03763 z"
+     id="path68" />
+  <path
+     fill="#d60000"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 762.50894,218.60439 h 120.548 v -12.948 l 25.893,25.894 -25.893,25.893 v -12.947 h -120.548 v -25.893 z m -110.371,25.931 h 41.472 v -25.969 h -41.472 z m -147.693,0 h 90.243 v -25.969 h -90.243 z"
+     id="path69"
+     style="fill:#ef58a0;fill-opacity:1" />
+  <path
+     fill="url(#p)"
+     d="m 554.12284,616.80782 v -52.91795 h 285.81307 v 52.91795 z"
+     opacity="0.3"
+     id="path70"
+     style="fill:url(#p);stroke-width:0.567634" />
+  <path
+     fill="#800000"
+     d="m 554.12294,570.93639 h 285.813 v -7.321 h -285.813 z"
+     id="path71"
+     style="fill:#ef58a0;fill-opacity:1" />
+  <path
+     fill="#585858"
+     stroke="#000000"
+     stroke-width="1.351"
+     d="M 908.49169,615.07123 H 1013.4618 V 589.14562 H 908.49169 Z"
+     id="path72" />
+  <path
+     fill="#616161"
+     stroke="#000000"
+     stroke-width="1.351"
+     d="m 488.18464,615.07105 h 7.43395 v -25.92674 h -7.43395 z"
+     id="path73" />
+  <path
+     fill="#d9d9d9"
+     d="m 495.46994,615.11639 h 412.518 v -26.017 h -412.518 z"
+     id="path74" />
+  <path
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 554.70794,615.09139 h 7.433 v -25.968 h -7.433 z"
+     id="path75" />
+  <path
+     stroke="#000000"
+     stroke-width="1.35"
+     d="m 840.88917,615.09238 h 7.43396 v -25.96916 h -7.43396 z"
+     id="path76" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.35"
+     d="m 890.70172,615.09152 h 17.8474 v -25.96803 h -17.8474 v 25.96916 z"
+     id="path77" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.35"
+     d="m 849.40902,615.09152 h 41.6481 v -25.96803 h -41.6481 z"
+     id="path78" />
+  <path
+     fill="#00b0f0"
+     stroke="#000000"
+     stroke-width="1.289"
+     d="m 495.59792,615.12644 h 57.88532 v -26.03649 h -57.88532 v 26.03763 z"
+     id="path79" />
+  <path
+     fill="#d60000"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 692.97694,589.16139 h 120.548 v -12.947 l 25.894,25.893 -25.894,25.894 v -12.947 h -120.548 z m -130.72,25.93 h 90.244 v -25.968 h -90.244 z"
+     id="path80"
+     style="fill:#ef58a0;fill-opacity:1" />
+  <path
+     fill="#d60000"
+     stroke="#000000"
+     stroke-width="1.532"
+     d="m 652.13794,615.09139 h 41.472 v -25.968 h -41.472 z"
+     id="path81"
+     style="fill:#ef58a0;fill-opacity:1" />
+  <text
+     id="text83"
+     x="346.65314"
+     y="208.49846"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan83"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Promoter</tspan></text>
+  <text
+     id="text83-0"
+     x="294.92587"
+     y="147.03412"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan83-8"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Promoter</tspan></text>
+  <text
+     id="text86"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="929.37994"
+     y="199.55139"><tspan
+       id="tspan86"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Terminator</tspan></text>
+  <g
+     id="g157"
+     inkscape:label="ORF"
+     transform="translate(-29.240065,46.716389)">
+    <path
+       fill="url(#g)"
+       d="m -821.454,1163.77 v 60.99 H -51.81 v -60.99 z"
+       opacity="0.3"
+       transform="matrix(0.53341086,0,0,-1.1213155,965.139,1489.507)"
+       id="path16"
+       style="fill:url(#g)" />
+    <path
+       fill="maroon"
+       d="m 526.966,119.204 h 410.536 v -7.552 H 526.966 Z"
+       id="path17"
+       style="fill:#f49ec4;fill-opacity:1" />
+    <text
+       id="text87"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="628.61847"
+       y="150.50066"><tspan
+         id="tspan87"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Open reading frame</tspan></text>
+  </g>
+  <text
+     id="text88"
+     inkscape:transform-center-x="2.0772596"
+     inkscape:transform-center-y="36.005832"
+     x="440.07068"
+     y="342.62521"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan88"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">5’UTR</tspan></text>
+  <text
+     id="text89"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="916.92993"
+     y="342.62473"><tspan
+       id="tspan89"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">3’UTR</tspan></text>
+  <text
+     id="text90"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="-232.92424"
+     y="496.62808"
+     transform="rotate(-92.241113)"><tspan
+       id="tspan90"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Start</tspan></text>
+  <text
+     transform="rotate(-91.46165)"
+     id="text91"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="-234.44592"
+     y="912.88312"><tspan
+       id="tspan91"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Stop</tspan></text>
+  <text
+     id="text92"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="1038.47"
+     y="124.91439"><tspan
+       id="tspan92"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Enhancer</tspan></text>
+  <text
+     id="text93"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="1040.366"
+     y="147.4464"><tspan
+       id="tspan93"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">/silencer</tspan></text>
+  <text
+     id="text97"
+     x="2.8119335"
+     y="468.55441"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan97"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Pre-</tspan></text>
+  <text
+     id="text98"
+     x="3.013937"
+     y="490.32339"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan98"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">mRNA</tspan></text>
+  <text
+     id="text100"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="10.828936"
+     y="242.45039"><tspan
+       id="tspan100"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">DNA</tspan></text>
+  <text
+     id="text101"
+     x="-1.8310642"
+     y="603.40533"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan101"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Mature</tspan></text>
+  <text
+     id="text103"
+     x="-1.630064"
+     y="624.61639"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan103"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">mRNA</tspan></text>
+  <text
+     id="text104"
+     x="365.70569"
+     y="188.52005"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan104"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Core</tspan></text>
+  <text
+     id="text105"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="257.71494"
+     y="199.40239"><tspan
+       id="tspan105"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Proximal</tspan></text>
+  <text
+     id="text105-4"
+     x="127.35005"
+     y="197.25153"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan105-7"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Distal</tspan></text>
+  <text
+     id="text105-4-8"
+     x="415.03494"
+     y="137.39729"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan105-7-1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">+1</tspan></text>
+  <text
+     id="text107"
+     x="594.48993"
+     y="456.4534"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan107"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Intron</tspan></text>
+  <text
+     id="text108"
+     x="699.51294"
+     y="456.4534"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan108"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Intron</tspan></text>
+  <text
+     id="text111"
+     x="592.94495"
+     y="554.6394"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan111"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Protein coding region</tspan></text>
+  <text
+     id="text112"
+     x="915.72992"
+     y="578.65637"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan112"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Poly-A tail</tspan></text>
+  <text
+     text-anchor="end"
+     id="text113"
+     x="518.55994"
+     y="578.65741"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan113"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">5'cap</tspan></text>
+  <text
+     id="text81-8"
+     x="110.26254"
+     y="147.54814"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741"><tspan
+       sodipodi:role="line"
+       id="tspan116"
+       x="110.26254"
+       y="147.54814"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741">Enhancer</tspan><tspan
+       sodipodi:role="line"
+       x="110.26254"
+       y="175.93564"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.09741"
+       id="tspan122" /></text>
+  <text
+     id="text105-3"
+     x="332.59973"
+     y="302.44818"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+       id="tspan105-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.71px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">TATA &amp; INR</tspan></text>
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     stroke-width="2.39934"
+     d="m 344.93322,247.6455 44.59615,32.17501 44.66036,-32.20947"
+     id="path62-2"
+     sodipodi:nodetypes="ccc"
+     style="stroke-width:1.532;stroke-dasharray:none" />
+  <path
+     style="fill:#ef58a0;fill-opacity:1;stroke-width:0.998;stroke-dasharray:none"
+     d="m 249.80514,339.60999 v 51.23907 z"
+     id="path131" />
+  <g
+     id="g133"
+     transform="matrix(0.55881431,0,0,0.55881431,358.46556,-16.413057)"
+     style="stroke:#000000;stroke-width:2.74152;stroke-dasharray:none;stroke-opacity:1">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.74152;stroke-dasharray:none;stroke-opacity:1"
+       d="m 142.63849,319.89797 v -33.23615 l 26.31195,0.69242 -11.07871,-15.23324 -1.38484,-1.38484"
+       id="path132" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.74152;stroke-dasharray:none;stroke-opacity:1"
+       d="m 170.33528,287.35424 -9.00145,13.8484"
+       id="path133" />
+  </g>
+</svg>
