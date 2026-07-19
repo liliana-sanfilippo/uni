@@ -36,7 +36,7 @@ Remember that for $q \in N$, a \gls{qgram} is a string of length q.
 Consider $\Sigma = {A, B}$, $x = ABAA$, $y = ABAB$, $z = AABA$, and $q = 2$.
 Using lexicographic order (AA, AB, BA, BB) among the \glspl{qgram}, we have $p_2(x) = (1, 1, 1, 0)$, $p_2(y) = (0, 2, 1, 0)$ 
 and $p_2(z) = (1, 1, 1, 0)$.
-Therefore, we obtain $d_2(x, y) = 2$ and $\dqugen_2(x, z) =0$ (although $x\neq z$).
+Therefore, we obtain $d_2(x, y) = 2$ and $\dqgen_2(x, z) =0$ (although $x\neq z$).
 % Todo {Hier bsp. tabelle }
 \end{bsp}
 
@@ -313,7 +313,7 @@ Generally, one can show the following relationship.
     Therefore, each edit operation can lead to an increase of $2q$ of the \gls{qgram}
     distance in the worst case (e.g.\ consider AAAAAAAAAAA vs.
     AABAABAABAA with \gls{edis}
-    3, $q = 3$, and, as can be verified, $\dqugen_3 = 18$).
+    3, $q = 3$, and, as can be verified, $\dqgen_3 = 18$).
 
     How this relationship can be used productively in order to speed up the computation of
     the \gls{edis} will be discussed in Section~\ref{sec:the-maximal-matches-distance}.
