@@ -146,7 +146,7 @@ Kleine RF $\to$ enge Kopplung; RF $\approx$ 50\,\% $\to$ ungekoppelt.
 \begin{tikzpicture}[
     node distance=3.5mm,
     every node/.style={font=\scriptsize},
-    enz/.style={midway,right,text=c3,font=\scriptsize\bfseries},
+    enz/.style={midway,right,font=\scriptsize\bfseries},
     ->,>={Stealth[length=2mm]}]
     \node (a) {p-Cumaroyl-CoA};
     \node (b) [below=of a] {Naringenin-Chalkon};
@@ -158,7 +158,7 @@ Kleine RF $\to$ enge Kopplung; RF $\approx$ 50\,\% $\to$ ungekoppelt.
     \draw (b) -- node[enz]{CHI (TT5)} (c);
     \draw (c) -- node[enz]{F3H (TT6)} (d);
     \draw (d) -- node[enz]{FLS} (e);
-    \draw (d.west) to[bend right=55] node[left,text=c3,font=\scriptsize\bfseries]{DFR (TT3)} (f.west);
+    \draw (d.west) to[bend right=55] node[left,font=\scriptsize\bfseries]{DFR (TT3)} (f.west);
 \end{tikzpicture}
 \vspace{2pt}
 
