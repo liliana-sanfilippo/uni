@@ -1,0 +1,269 @@
+% =====================================================================
+%  Karteikarten (Glossar-Einträge, type=dinge)
+%  Thema: Kontrollebenen der Regulation, Spleißen, Spleißosom,
+%         Intron-/Exon-Erkennung, alternatives Spleißen, RNA-Editierung
+%  Kapitel 19+ (Lewin's Genes II)
+%  Format: name = Frage (Vorderseite), description = Antwort (Rückseite)
+%
+%  Hinweis: KEINE reinen Definitionskarten für \defin{}-Begriffe
+%  (spleißen, hnrna, chiasma, hnrnp, spacer, lariat, spleißosom,
+%   altspleissen, selbstspleissen, transspleissen) -- diese sind bereits
+%   definiert und tauchen hier nur eingebettet in Mechanismus-,
+%   Vergleichs- und Anwendungsfragen auf.
+% =====================================================================
+
+% ---------------------------------------------------------------------
+%  Kontrollebenen der Regulation
+% ---------------------------------------------------------------------
+
+\newglossaryentry{kontrollebenen}{
+    name={Nenne die aufeinanderfolgenden Ebenen, auf denen die Genregulation (bezogen auf RNA) ansetzen kann},
+    description={1) Überführung des Chromatins in den aktiven Status. 2) Initiation der Transkription. 3) Elongation und Prozessierung. 4) Transport ins Cytoplasma. 5) Stabilitätskontrolle (Degradierung, miRNA usw.). 6) Translation.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Spleißen -- Grundlagen und Nachweis
+% ---------------------------------------------------------------------
+
+\newglossaryentry{reifungimkern}{
+    name={Welche Reifungsschritte durchläuft das Primärtranskript im Kern, und wann erfolgt der Export?},
+    description={Das Primärtranskript (hnRNA) wird im Kern gereift: Capping am 5'-Ende, End-Modifikation/Polyadenylierung am 3'-Ende und Spleißen. Erst nach dieser Prozessierung wird die reife mRNA ins Cytoplasma exportiert. Die mRNA-Prozessierung ist eng mit dem Export aus dem Kern verbunden.},
+    type=dinge
+}
+
+\newglossaryentry{intronsnachweis}{
+    name={Wie wurden Introns ursprünglich nachgewiesen? Nenne das klassische Beispiel},
+    description={Über RNA-DNA-Hybridisierungsexperimente (R-Loops): Hybridisiert man reife mRNA mit genomischer DNA, werden die Introns als ungepaarte Schleifen im Elektronenmikroskop sichtbar. Klassisches Beispiel: das 7.700 bp große Ovalbumin-Gen des Huhns.},
+    type=dinge
+}
+
+\newglossaryentry{keinefreierna}{
+    name={Liegt nukleäre prä-mRNA nackt vor? Wie heißen die Komplexe und welche Bindedomäne ist charakteristisch?},
+    description={Nein -- nukleäre prä-mRNA liegt nie nackt vor, sondern ist stets mit Proteinen besetzt (gezeigt in EM-Aufnahmen aus Drosophila). Diese Protein-RNA-Komplexe heißen hnRNP (heterogene nukleäre Ribonukleoproteine). Viele RNA-bindende Proteine (z.B. hnRNP C) tragen als charakteristische Bindedomäne das RRM (RNA recognition motif), das aus beta-Faltblättern aufgebaut ist.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Exkurs: rRNA-Prozessierung (Vergleich)
+% ---------------------------------------------------------------------
+
+\newglossaryentry{rrnaprozessierung}{
+    name={Wie läuft die Prozessierung der rRNA ab (Primärtranskript, Ort, Mechanismus, Beteiligte)?},
+    description={Das Pol-I-Primärtranskript der rDNA (45S) enthält die 18S-, 5,8S- und 28S-rRNA, getrennt durch Spacer. Die Prozessierung erfolgt im Nukleolus durch eine Abfolge endonukleolytischer Spaltungen und exonukleolytisches Trimmen; schon während der Reifung werden Nukleotide modifiziert. An beiden Prozessen sind snoRNAs beteiligt. Die 5S-rRNA wird von eigenen Transkriptionseinheiten (Pol III) transkribiert.},
+    type=dinge
+}
+
+\newglossaryentry{spacerarten}{
+    name={Welche Arten von Spacern gibt es in der rDNA-Transkriptionseinheit?},
+    description={Transkribierte Spacer, die zwischen den rRNAs liegen und mit-transkribiert, aber später entfernt werden; sowie nicht-transkribierte Spacer, die regulatorische Elemente wie Spacer-Promotoren und Enhancer enthalten.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Splice sites (Spleißstellen)
+% ---------------------------------------------------------------------
+
+\newglossaryentry{spleissstellenkonsensus}{
+    name={Wie lautet die Konsensussequenz an den Exon-Intron-Grenzen, und welche Teile sind besonders konserviert?},
+    description={(A/C)AG | GT(A/C) ... (C/T)AG | G(G/T), wobei die senkrechten Striche die Exon-Intron-Grenzen markieren. Besonders konserviert sind die Intron-Grenzen selbst: GT am 5'-Ende und AG am 3'-Ende des Introns (auf RNA-Ebene korrekter GU-AG). Diese GT-AG- bzw. GU-AG-Regel wird auch Jambon-Regel genannt.},
+    type=dinge
+}
+
+\newglossaryentry{haeufigstespleissstellen}{
+    name={Was sind die häufigsten Spleißstellen? Nenne die kanonischen und nicht-kanonischen Typen mit Anteilen},
+    description={Kanonisch (major bzw. U2-Typ): GT-AG mit ca. 98 \%. Nicht-kanonisch (non-canonical): GC-AG mit ca. 1 \% und AT-AC mit ca. 0,1 \%. Der minor bzw. U12-Typ macht etwa 0,5 \% der Introns aus.},
+    type=dinge
+}
+
+\newglossaryentry{vollstaendigesignale}{
+    name={Aus welchen vier Elementen besteht ein vollständiges Spleißsignal?},
+    description={5'-Spleißstelle (Donor), Verzweigungsstelle (branch point mit dem entscheidenden Adenosin), Polypyrimidin-Trakt und 3'-Spleißstelle (Akzeptor).},
+    type=dinge
+}
+
+\newglossaryentry{intronskombinieren}{
+    name={Wie können Spleißstellen kombiniert werden -- was muss man dabei beachten?},
+    description={Im Prinzip kann jede 5'-Spleißstelle mit jeder 3'-Spleißstelle kombiniert werden -- die Stellen sind nicht per se einander fest zugeordnet. Der Spleißapparat funktioniert zudem artübergreifend. Genau daraus folgt das zentrale Problem: die korrekte Zuordnung zusammengehöriger Spleißstellen muss aktiv gewährleistet werden (Intron-/Exon-Definition), und genau hier setzt die Regulation des alternativen Spleißens an.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Ablauf des Spleißens & Lariat
+% ---------------------------------------------------------------------
+
+\newglossaryentry{spleissenablauf}{
+    name={Wie läuft das nukleäre Spleißen ab? Beschreibe die zwei Transesterifizierungsschritte},
+    description={Das Spleißen erfolgt als Transesterifizierung in zwei Schritten. 1. Schritt: Das 2'-OH des Verzweigungs-Adenosins greift die 5'-Spleißstelle an -> die 5'-Spleißstelle wird geöffnet und die Verzweigung (Lariat) gebildet. 2. Schritt: Das freigewordene 3'-OH von Exon 1 greift die 3'-Spleißstelle an -> die 3'-Spleißstelle wird geöffnet und die beiden Exons werden miteinander verknüpft.},
+    type=dinge
+}
+
+\newglossaryentry{lariatbildung}{
+    name={Wie entsteht die Lariat-Struktur chemisch, und was geschieht anschließend damit?},
+    description={Nach dem Schnitt an der 5'-Spleißstelle bildet das 5'-G des Introns über eine ungewöhnliche 5'-2'-Bindung eine Verzweigung zum 2'-OH des Adenosins der Verzweigungsstelle. Nach dem Schnitt an der 3'-Spleißstelle werden die Exons verknüpft und das Intron als Lariat (Lasso) entlassen; es wird anschließend debranched (die Verzweigung aufgelöst) und abgebaut.},
+    type=dinge
+}
+
+\newglossaryentry{gesamtablaufnuklear}{
+    name={Nenne die Abfolge vom Gen bis zum Protein beim nukleären Spleißen},
+    description={Transkription -> End-Modifikation (Cap am 5'-Ende, Poly(A) am 3'-Ende) -> Splicing (Exon-Intron-Grenzen werden gebrochen, Exons verknüpft) -> Transport ins Cytoplasma -> Translation.},
+    type=dinge
+}
+
+\newglossaryentry{reihenfolgespleissen}{
+    name={Ist die Reihenfolge, in der Introns entfernt werden, zufällig? Woran erkennt man das?},
+    description={Nein. Bei einem Gen mit 7 Introns (z.B. 5,6 kb Gen -> 1,1 kb mRNA) gäbe es bei rein zufälliger Entfernung sehr viele mögliche Zwischenstufen. Tatsächlich beobachtet man aber nur definierte, wiederkehrende Intermediate -- die Introns werden also in einer bevorzugten, geordneten Reihenfolge entfernt.},
+    type=dinge
+}
+
+\newglossaryentry{warum300}{
+    name={Warum ergäben sich bei 7 Introns so viele (>300) mögliche Zwischenstufen?},
+    description={Weil sich die Möglichkeiten kombinatorisch aufsummieren: Jedes der 7 Introns kann bereits entfernt oder noch vorhanden sein, was 2 hoch 7 = 128 verschiedene Molekülzustände ergibt (126 echte Zwischenstufen ohne Start- und Endzustand). Zählt man zusätzlich die möglichen Reihenfolgen der Entfernung (Spleißwege) mit, kommt man auf 7! = 5040 Pfade. Kernaussage: Die Zahl möglicher Intermediate/Wege wächst exponentiell bzw. faktoriell -- beobachtet werden aber nur wenige definierte Intermediate.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Das Spleißosom
+% ---------------------------------------------------------------------
+
+\newglossaryentry{spleissosomzusammensetzung}{
+    name={Woraus setzt sich das Spleißosom massenmäßig zusammen?},
+    description={Es ist eine Riboprotein-Nanomaschine aus: 5 snRNAs (ca. 27 \%), ca. 41 Proteinen in den snRNPs (ca. 18 \%), ca. 70 Spleißfaktoren (ca. 38 \%) und ca. 30 weiteren Proteinen (ca. 17 \%).},
+    type=dinge
+}
+
+\newglossaryentry{snrnpaufbau}{
+    name={Was ist ein snRNP (Snurp) und wie verhält es sich zum Spleißosom?},
+    description={Ein snRNP besteht aus einer snRNA und mehreren Proteinen. Das Spleißosom setzt sich aus mehreren snRNPs (U1, U2, U4, U5, U6) und zahlreichen weiteren Proteinen zusammen. Die Sequenzkonservierung ist besonders hoch in Hefe.},
+    type=dinge
+}
+
+\newglossaryentry{spleissosomkomplexe}{
+    name={Nenne die Komplexe der Spleißosom-Assemblierung (E, A, B1, B2, C1, C2) mit beteiligtem snRNP und Funktion},
+    description={E: U1 bindet die 5'-Spleißstelle (commitment). A: U2 bindet die Verzweigungsstelle (ATP-abhängig). B1: Beitritt des Tri-snRNPs U4/U6 und U5 (alle Komponenten vorhanden). B2: U1 dissoziiert ab, U6 bindet die 5'-Spleißstelle; U4 dissoziiert ab, wodurch U6 frei wird für die Interaktion mit U2 (katalytisches Zentrum). C1: U6/U2 -- erste Transesterifizierung, Lariat wird gebildet. C2: U5 bindet die 3'-Spleißstelle, Exons werden ligiert. Anschließend wird die gespleißte RNA freigesetzt.},
+    type=dinge
+}
+
+\newglossaryentry{spleissosomdynamik}{
+    name={Was ist mit der Dynamik des Spleißosoms gemeint?},
+    description={Das Spleißosom ist kein starrer, vorgefertigter Komplex: Es assembliert schrittweise durch Assoziation von snRNPs, baut seine Interaktionen laufend um (RNA-RNA, RNA-Protein, Protein-Protein) und lässt Faktoren wieder dissoziieren (z.B. U1 und U4). Erst durch diesen Umbau entsteht das katalytische Zentrum aus U6/U2.},
+    type=dinge
+}
+
+\newglossaryentry{bindungsstellenfindung}{
+    name={Warum ist das Auffinden der richtigen Spleißstellen ein Problem (Größenverhältnisse)? Wer hilft dabei?},
+    description={Introns umfassen etwa 1.000 bis 10.000 nt, Exons dagegen nur ca. 200 nt -- die passenden Stellen liegen also weit auseinander und müssen aus sehr viel Sequenz herausgefunden werden. Die Zuordnung zusammengehöriger Spleißstellen (Intron- bzw. Exon-Definition) ist nicht vollständig aufgeklärt und wird beim alternativen Spleißen reguliert. hnRNP-Komplexe und SR-Proteine strukturieren dabei die prä-mRNA.},
+    type=dinge
+}
+
+\newglossaryentry{assemblyvergleich}{
+    name={Was haben snRNPs und Ribosomen bei ihrer Assemblierung gemeinsam?},
+    description={Beide werden analog assembliert: Import der Proteine in den Kern, Zusammenbau im Kern bzw. im Nukleolus und anschließender Export der fertigen Partikel durch die Kernpore.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Intron- und Exon-Erkennung
+% ---------------------------------------------------------------------
+
+\newglossaryentry{introndefexondef}{
+    name={Erkläre den Unterschied zwischen Intron-Definition und Exon-Definition},
+    description={Intron-Definition: Die Interaktionen der Spleißfaktoren erfolgen über das Intron hinweg -- typisch für kurze Introns. Exon-Definition: Die Interaktionen erfolgen zunächst über das Exon hinweg; danach erfolgt ein Umschalten (switch) zu Intron-überspannenden Interaktionen für das kanonische lineare Spleißen. Beteiligt sind SR-Proteine, U2AF65/35 und BBP.},
+    type=dinge
+}
+
+
+\newglossaryentry{regulatorischeelementespleissen}{
+    name={Welche regulatorischen Elemente steuern das Spleißen, und welche Proteine erkennen sie?},
+    description={Intronische und exonische Spleiß-Enhancer (ISE/ESE) sowie Spleiß-Silencer (ISS/ESS). Sie werden von SR-Proteinen, hnRNPs sowie RBM- und CELF-Proteinen erkannt, welche die Assoziation der U1-/U2-snRNPs entweder fördern oder hemmen.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Alternatives Spleißen
+% ---------------------------------------------------------------------
+
+\newglossaryentry{artenaltspleissen}{
+    name={Nenne die Arten (Muster) des alternativen Spleißens},
+    description={Intron-Retention; alternative 5'-Spleißstelle; alternative 3'-Spleißstelle; Exon-Inclusion bzw. Exon-Skipping; sich gegenseitig ausschließende (mutually exclusive) Exons; kombinatorische Exon-Auswahl; alternativer Promotor in Kombination mit Spleißen; alternative Polyadenylierung in Kombination mit Spleißen.},
+    type=dinge
+}
+
+\newglossaryentry{altspleissenbedeutung}{
+    name={Welche Bedeutung hat alternatives Spleißen, und welche offene Frage gibt es beim Nachweis?},
+    description={Durch Auswahl verschiedener Kombinationen von Spleißstellen entstehen aus einem Gen mehrere unterschiedliche mRNAs und damit Proteine -- ein wesentlicher Grund, warum die Proteinvielfalt die Genzahl übersteigt. Bei hoher RNA-Seq-Abdeckung sind Spleißvarianten leicht nachweisbar; offen bleibt jedoch die Abgrenzung zwischen aktiver, regulierter Auswahl und bloßem Spleißfehler (Rauschen).},
+    type=dinge
+}
+
+\newglossaryentry{spleissklassen}{
+    name={Welche Klassen des Spleißens unterscheidet man (nach Mechanismus)?},
+    description={Nukleäres mRNA-Spleißen (über das Spleißosom mit snRNPs), Gruppe-I-Introns (self splicing), Gruppe-II-Introns (self splicing) und das tRNA-Spleißen (enzymatisch, eigener Mechanismus).},
+    type=dinge
+}
+
+\newglossaryentry{trnaspleissen}{
+    name={Wodurch unterscheidet sich das tRNA-Spleißen mechanistisch vom nukleären mRNA-Spleißen?},
+    description={Introns in tRNAs werden NICHT über Transesterifizierung entfernt, sondern enzymatisch: über eine Nuklease (Schnitt), Faltung und eine Ligase. Eine Phosphodiesterase öffnet dabei den zyklischen Phosphatring und eine Kinase phosphoryliert das 5'-OH-Ende. Es ist also kein Spleißosom beteiligt.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Spleißen und Krankheiten
+% ---------------------------------------------------------------------
+
+\newglossaryentry{thalassaemiespleissen}{
+    name={Wie kann eine Spleißmutation zur Thalassämie führen?},
+    description={Bei der Thalassämie (Mangel an Hämoglobin nach der Geburt) kann eine Punktmutation im beta-Globin-Intron einen falschen Spleißort (kryptische Spleißstelle) aktivieren. Dadurch wird die prä-mRNA fehlprozessiert: es kommt zu einem veränderten Leseraster und einem vorzeitigen Stopcodon.},
+    type=dinge
+}
+
+\newglossaryentry{mutationstypen}{
+    name={Welche weiteren Mutationstypen können ähnliche Folgen haben wie eine Spleißmutation?},
+    description={Promotor-Mutationen, Nonsense-Mutationen, Leseraster-(Frameshift-)Mutationen, Insertions- und Deletionsmutationen sowie Poly(A)-Mutationen.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  RNA-Editierung
+% ---------------------------------------------------------------------
+
+\newglossaryentry{rnaeditingprinzip}{
+    name={Was ist RNA-Editierung und welche grundsätzliche Konsequenz hat sie? Wo kommt sie häufig vor?},
+    description={Eine post-transkriptionale Änderung der RNA-Sequenz. Konsequenz: Man kann aus der DNA-Sequenz nicht immer die richtige Proteinsequenz ableiten. Häufig in Mitochondrien (Vertebraten), Plastiden (Pflanzen) und Trypanosomen, sie kommt aber auch in normalen Säugetier-Transkripten vor.},
+    type=dinge
+}
+
+\newglossaryentry{deaminasen}{
+    name={Welche Basenumwandlungen bewirken Deaminasen bei der RNA-Editierung?},
+    description={Cytidin -> Uracil (durch Cytidin-Deaminase) und Adenosin -> Inosin (durch Adenosin-Deaminase). Inosin wird bei der Translation wie Guanosin gelesen.},
+    type=dinge
+}
+
+
+\newglossaryentry{glurb}{
+    name={Was ist am Beispiel GluR-B besonders?},
+    description={Die Editierung der mRNA des Glutamat-Rezeptors (Änderung A -> I) erfordert eine spezielle Sekundärstruktur: Das Intron paart mit dem Exon, wodurch die zu editierende Stelle erst erkannt wird.},
+    type=dinge
+}
+
+\newglossaryentry{organellenediting}{
+    name={Welche Rolle spielt die Editierung in Plastiden und Mitochondrien? Nenne das Extrembeispiel},
+    description={Dort treten häufig C -> U-Austausche (Deaminierungen) auf, die z.B. Ser-Codons zu Leu- oder Trp-Codons umwandeln und so die evolvierte, funktionsfähige Proteinsequenz erst herstellen. Extrembeispiel: Im Lycophyten Isoetes engelmannii (Brachsenkräuter) verändern 1782 Editierungspositionen 1406 Codon-Identitäten in mitochondrialen mRNAs.},
+    type=dinge
+}
+
+\newglossaryentry{guidernafrage}{
+    name={Wie funktioniert die Editierung mittels guide RNA (Trypanosomen)?},
+    description={Bei Trypanosomen/Leishmania (z.B. mitochondriales Cytochrom-b-Gen) gibt eine guide RNA durch Basenpaarung die Positionen von U-Insertionen und U-Deletionen vor. Ausgeführt wird dies von einem Enzymkomplex aus Endonuklease, Uridyltransferase und Ligase. In Trypanosoma brucei (Erreger der afrikanischen Schlafkrankheit) werden so sehr umfangreiche U-Insertionen/-Deletionen vorgenommen.},
+    type=dinge
+}
+
+% ---------------------------------------------------------------------
+%  Zusammenfassung
+% ---------------------------------------------------------------------
+
+\newglossaryentry{zusammenfassungrnaprozessierung}{
+    name={Fasse die wesentlichen Punkte der mRNA-Prozessierung zusammen},
+    description={Eukaryotische mRNA wird aus prä-mRNA prozessiert: 5'-Cap, Spleißen und Polyadenylierung. Die Prozessierung ist eng mit dem mRNA-Export aus dem Kern verbunden. Beim Spleißen unterscheidet man nukleäres mRNA-Spleißen, Gruppe-I- und Gruppe-II-Introns (jeweils self splicing) sowie tRNAs. Am Spleißen nukleärer mRNA sind snRNPs beteiligt (Spleißosom). RNA-Editierung bewirkt zusätzlich eine post-transkriptionelle Änderung der mRNA.},
+    type=dinge
+}
