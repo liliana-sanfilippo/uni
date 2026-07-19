@@ -14,11 +14,12 @@ jobs:
           persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: xu-cheng/latex-action@v2
+      - uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          latexmk_use_xelatex: true
           working_directory: eukgen
+          latexmk_use_xelatex: true
+          texlive_version: 2025
 
       - name: Copy PDF to docs
         run: |
