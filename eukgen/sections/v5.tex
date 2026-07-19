@@ -36,8 +36,8 @@ sichtbar werden.
 \defin{chiasma}
 
 \subsection{Nukleäres Spleißen}\label{subsec:nucleares-spleien}
-Ablauf: Transkription $\to$ End-Modifikation (Cap am 5\textquotesingle-Ende,
-Poly(A) am 3\textquotesingle-Ende) $\to$ Splicing (Exon-Intron-Grenzen werden
+Ablauf: Transkription $\to$ End-Modifikation (Cap am 5'-Ende,
+Poly(A) am 3'-Ende) $\to$ Splicing (Exon-Intron-Grenzen werden
 gebrochen, Exons verknüpft) $\to$ Transport $\to$ Translation.
 
 \begin{figure}[H]
@@ -83,41 +83,50 @@ An den Exon-Intron-Grenzen liegen konservierte Konsensus-Sequenzen:
 \]
 
 Konserviert sind v.\,a.\ die \emph{Intron-Grenzen}: \gls{gtag} (auf RNA-Ebene
-korrekter GU-AG-Regel).
+korrekter GU-AG- - auch Jambon-Regel genannt). \index{Regel!GU-AG} \index{Regel!GT-AG} \index{Regel!Jambon}
 Kanonische Spleißstellen (major/U2-Typ,
 GT-AG) machen ca.\ 98\,\% aus; daneben gibt es non-canonical
 splice sites (GC-AG $\approx$1\,\%, AT-AC $\approx$0,1\,\%; minor/U12-Typ
 $\sim$0,5\,\% der Introns).
 Vollständige Signale bestehen aus
-5\textquotesingle-Spleißstelle, \gls{verzweigungsstelle},
-\gls{polypyrimidin} und 3\textquotesingle-Spleißstelle.
+5'-Spleißstelle, \gls{verzweigungsstelle},
+\gls{polypyrimidin} und 3'-Spleißstelle.
+
+
 Im Prinzip kann jede
-5\textquotesingle- mit jeder 3\textquotesingle-Spleißstelle kombiniert werden;
+5'- mit jeder 3'-Spleißstelle kombiniert werden;
 der Spleißapparat funktioniert artübergreifend.
 
 % TODO Karteikarte Was sind die häufigsten Spleißstellen
+% TODO Karteikarte Wie können Introns kombiniert werden bzw. was muss man da wissen / beachten
 
 \subsection{Lariat-Struktur}\label{subsec:lariat-struktur}
 \defin{lariat}
 Das herausgeschnittene Intron wird als \gls{lariat} (Lasso) freigesetzt: Nach
-Schnitt an der 5\textquotesingle-Spleißstelle bildet das 5\textquotesingle-G des
-Introns über eine 5\textquotesingle{}--2\textquotesingle-Bindung eine Verzweigung
-zum 2\textquotesingle-OH des Adenosins der Verzweigungsstelle.
+Schnitt an der 5'-Spleißstelle bildet das 5'-G des
+Introns über eine 5'{}--2'-Bindung eine Verzweigung
+zum 2'-OH des Adenosins der Verzweigungsstelle.
 Nach Schnitt an
-der 3\textquotesingle-Spleißstelle werden die Exons verknüpft; das Intron wird
+der 3'-Spleißstelle werden die Exons verknüpft; das Intron wird
 als Lariat entlassen und anschließend debranched.
 
 \subsection{Ablauf}\label{subsec:ablauf}
 Das Spleißen erfolgt als \gls{transesterifizierung} in zwei Schritten:
 \begin{enumerate}
-    \item \textbf{1.\ Schritt:} Das 2\textquotesingle-OH des
-    Verzweigungs-Adenosins greift die 5\textquotesingle-Spleißstelle an $\to$
-    Öffnung der 5\textquotesingle-Spleißstelle und Bildung der Verzweigung
+    \item \textbf{1.\ Schritt:} Das 2'-OH des
+    Verzweigungs-Adenosins greift die 5'-Spleißstelle an $\to$
+    Öffnung der 5'-Spleißstelle und Bildung der Verzweigung
     (Lariat).
-    \item \textbf{2.\ Schritt:} Das freie 3\textquotesingle-OH von Exon\,1
-    greift die 3\textquotesingle-Spleißstelle an $\to$ Öffnung der
-    3\textquotesingle-Spleißstelle und Verknüpfung der Exons.
+    \item \textbf{2.\ Schritt:} Das freie 3'-OH von Exon\,1
+    greift die 3'-Spleißstelle an $\to$ Öffnung der
+    3'-Spleißstelle und Verknüpfung der Exons.
 \end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/splicing}
+    \caption{Sschritte des Spleißens. Bild von \href{https://www.novoprolabs.com/support/articles/rna-splicing-and-exon-trapping-202409211600.html}{https://www.novoprolabs.com}}\label{fig:splicing}
+\end{figure}
 
 \paragraph{Reihenfolge des Spleißens.} Sie ist nicht zufällig: Bei einem Gen mit
 7 \gls{intron}s (z.\,B.\ 5,6\,kb Gen $\to$ 1,1\,kb \gls{mrna}) gäbe es bei rein
@@ -146,13 +155,13 @@ Faktoren:
         \hline
         Komplex & snRNP & Funktion \\
         \hline
-        E & U1 & bindet 5\textquotesingle-Spleißstelle (commitment) \\
+        E & U1 & bindet 5'-Spleißstelle (commitment) \\
         A & U2 & bindet Verzweigungsstelle (ATP-abhängig) \\
         B1 & U4/U6, U5 & Beitritt des Tri-snRNPs (alle Komponenten) \\
-        B2 & U1 ab, U6 & U6 bindet 5\textquotesingle-Spleißstelle \\
+        B2 & U1 ab, U6 & U6 bindet 5'-Spleißstelle \\
         & U4 ab & U6 frei für Interaktion mit U2 (kat.\ Zentrum) \\
         C1 & U6/U2 & 1.\ Transesterifizierung, Lariat gebildet \\
-        C2 & U5 & bindet 3\textquotesingle-Spleißstelle, Exons ligiert \\
+        C2 & U5 & bindet 3'-Spleißstelle, Exons ligiert \\
         \hline
     \end{tabular}
 \end{center}
@@ -191,10 +200,10 @@ und dann so remodellieren kann, dass es ein Intron überspannt (kanonisches
 Spleißen; Back-splicing hier ausgeklammert).
 
 \paragraph{Update (Rogalska et al., 2023).} Basenpaarungen zwischen Branchpoint
-(BP) und 5\textquotesingle-Spleißstelle mit den snRNP-Komplexen (U2 bzw.\ U1)
+(BP) und 5'-Spleißstelle mit den snRNP-Komplexen (U2 bzw.\ U1)
 sind entscheidend für die Definition der Intron-Exon-Grenzen.
 Unterstützt durch
-U2AF2 (bindet PPT) und U2AF1 (bindet 3\textquotesingle-ss).
+U2AF2 (bindet PPT) und U2AF1 (bindet 3'-ss).
 Regulatorische
 Elemente -- intronische/exonische Spleiß-Enhancer (ISE/ESE) und -Silencer
 (ISS/ESS) -- werden von SR-Proteinen, \gls{hnrnp}s sowie RBM-/CELF-Proteinen
@@ -206,7 +215,7 @@ erkannt, die die Assoziation von U1/U2-snRNPs fördern oder hemmen.
 \defin{altspleissen}
 Beim \gls{altspleissen} werden verschiedene Kombinationen von
 Spleißstellen ausgewählt (blaue = fixierte Exons, rosa = variable Exons):
-Intron-Retention, alternative 5\textquotesingle{}- bzw.\ 3\textquotesingle{}-
+Intron-Retention, alternative 5'{}- bzw.\ 3'{}-
 Spleißstellen, Exon-Inclusion/-Skipping, sich gegenseitig ausschließende Exons,
 kombinatorische Exon-Auswahl, alternativer Promotor/Spleißen sowie alternative
 Polyadenylierung/Spleißen.
@@ -228,7 +237,7 @@ einfacher Fehler (Exkurs: RACE).
     \item \textbf{tRNA-Spleißen}: Introns in tRNAs werden durch einen
     \emph{anderen} Mechanismus entfernt -- über Nuklease, Faltung und Ligase
     (Phosphodiesterase öffnet den zyklischen Phosphatring, Kinase
-    phosphoryliert das 5\textquotesingle-OH-Ende), \emph{nicht} über
+    phosphoryliert das 5'-OH-Ende), \emph{nicht} über
     Transesterifizierung.
 \end{itemize}
 
@@ -287,7 +296,7 @@ In
 umfangreiche U-Insertionen/-Deletionen vorgenommen.
 
 \begin{itemize}
-    \item Eukaryotische \gls{mrna} wird aus \gls{prämrna} prozessiert: 5\textquotesingle
+    \item Eukaryotische \gls{mrna} wird aus \gls{prämrna} prozessiert: 5'
     Cap, Spleißen, Polyadenylierung.
     \item \gls{mrna}-Prozessierung ist eng mit dem \gls{mrna}-Export aus dem Kern verbunden.
     \item Beim Spleißen unterscheidet man: nukleäre \gls{mrna}, Gruppe-I-Introns
