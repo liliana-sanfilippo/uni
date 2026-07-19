@@ -23,22 +23,24 @@
 
 -------------- type=defi ---------------------------------
 
-\newglossaryentry{reversetranskriptase}{
+\newglossaryentry{ltr}{
 type=defi,
-name={Reverse Transkriptase},
-description={RNA-abhängige DNA-Polymerase der Retroviren und
-Retrotransposons. Synthetisiert ausgehend von einem tRNA-Primer den
-Minusstrang der DNA an der retroviralen RNA und besitzt zusätzlich eine
-RNase\,H-Aktivität, die den RNA-Anteil des Hybrids abbaut}
+name={LTR (Long Terminal Repeat)},
+description={Identische, aus U3--R--U5 aufgebaute Sequenzwiederholung an
+beiden Enden der integrierten proviralen DNA. Die LTRs sind im RNA-Genom
+nicht vorhanden, sondern entstehen erst durch den Mechanismus der reversen
+Transkription mit ihren zwei Sprüngen; sie enthalten Promotor- und
+Enhancer-Elemente}
 }
 
-\newglossaryentry{rnaseh}{
+\newglossaryentry{ltrretrotransposon}{
 type=defi,
-name={RNase H},
-description={Enzymaktivität der Reversen Transkriptase, die den RNA-Strang
-eines RNA-DNA-Hybrids abbaut. Sie legt das 3$'$-Ende der neu synthetisierten
-DNA frei und erzeugt die RNA-Fragmente, die später als Primer der
-Plusstrang-Synthese dienen}
+name={LTR-Retrotransposon},
+description={Retroposon mit langen terminalen Repeats, Reverser Transkriptase
+und/oder Integrase, das Introns enthalten kann (entfernt in subgenomischer
+mRNA) und 4--6\,bp Zielsequenzverdopplung erzeugt. Beispiele: Ty in
+\emph{S.\,cerevisiae}, copia in \emph{D.\,melanogaster}. Unterscheidet sich
+vom Retrovirus im Wesentlichen durch das fehlende \emph{env}-Gen}
 }
 
 \newglossaryentry{primer}{
@@ -50,56 +52,6 @@ retroviralen RNA anlagert und der Reversen Transkriptase das freie
 der Plusstrang-Synthese wieder entfernt}
 }
 
-
-\newglossaryentry{strongstop}{
-type=defi,
-name={Strong Stop DNA},
-description={Kurzes DNA-Produkt, das entsteht, wenn die Reverse Transkriptase
-das Ende des Templatestranges erreicht. Die strong stop minus strand DNA
-umfasst R und U5 und wird durch den ersten Sprung an das andere Ende
-transferiert; analog entsteht eine strong stop plus strand DNA}
-}
-
-\newglossaryentry{firstjump}{
-type=defi,
-name={First Jump / Second Jump},
-description={Die beiden Strangtransfers während der reversen Transkription.
-Im ersten Sprung paart die einzelsträngige R-Region der neu synthetisierten
-Minusstrang-DNA mit dem 3$'$-Terminus einer retroviralen RNA; im zweiten
-Sprung wird die Plusstrang-DNA an das andere Ende des Minusstranges
-transferiert. Erst dadurch entstehen die beidseitigen LTRs}
-}
-
-
-\newglossaryentry{rusdrei}{
-type=defi,
-name={R, U5, U3},
-description={Sequenzblöcke des retroviralen Genoms. R ist eine kurze
-Wiederholung an beiden RNA-Enden und ermöglicht die Strangtransfers;
-U5 (unique 5$'$) und U3 (unique 3$'$) sind jeweils nur an einem RNA-Ende
-vorhanden und finden sich nach der reversen Transkription in beiden LTRs
-wieder}
-}
-
-
-\newglossaryentry{integrase}{
-type=defi,
-name={Integrase},
-description={Vom \emph{pol}-Bereich codiertes Enzym, das die provirale DNA in
-das Wirtsgenom einbaut. Es erzeugt an den LTRs um zwei Basen
-zurückgesetzte 3$'$-Enden, schneidet die Ziel-DNA versetzt und verknüpft
-die LTR-3$'$-Enden mit den 5$'$-Enden des Targets}
-}
-
-\newglossaryentry{targetrepeat}{
-type=defi,
-name={Target Site Duplication},
-description={Kurze direkte Sequenzwiederholung, die das integrierte Element
-flankiert. Sie entsteht, weil die Ziel-DNA versetzt geschnitten und die
-dazwischenliegende Einzelstrangsequenz anschliessend aufgefüllt wird. Ihre
-Länge ist elementtypisch: 4--6\,bp bei LTR-Retrotransposons, 7--21\,bp bei
-non-LTR-Retroposons und SINEs}
-}
 
 \newglossaryentry{provirus}{
 type=defi,
