@@ -143,11 +143,11 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | -   | KW 20 | --             | --                      |                         | --             | --                  | --                   |
 | 5   | KW 21 | Do, 21.05.     | :ballot_box_with_check: | :construction:          | --             | --                  | --                   |
 | 6   | KW 22 | Do, 28.05.     | :construction:          |                         | --             | --                  | --                   |
-| 7   | KW 23 | --             | --                      | --                      | Mi, 03.06.     | :construction:      | --                   |
+| 7   | KW 23 | --             | --                      | --                      | Mi, 03.06.     | :construction:      |                      |
 | 8   | KW 24 | --             | --                      |                         | Mi, 10.06.     | :construction:      |                      |
 | 9   | KW 25 | --             | --                      |                         | Mi, 17.06.     | :construction:      |                      |
 | 10  | KW 26 | --             | --                      |                         | Mi, 24.06.     | :construction:      |                      |
-| 11  | KW 27 | --             | --                      |                         | Mi, 01.07.     | :red_square:        |                      |
+| 11  | KW 27 | --             | --                      |                         | Mi, 01.07.     | :construction:      |                      |
 | 12  | KW 28 | --             | --                      |                         | Mi, 08.07.     | :red_square:        |                      |
 
 * Aufgaben in Statistik bewerten danach, was für Konzepte und Sätze man anwenden muss
