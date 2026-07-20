@@ -232,7 +232,7 @@ Ihre Struktur ist entscheidend für den gesamten Ablauf:
     \item Die \textbf{\gls{reversetranskriptase}} beginnt die Synthese des
     \textbf{Minusstrang-DNA}.
     \item Das Enzym erreicht das Ende des Templates und erzeugt die
-    \textbf{strong stop minus strand DNA} -- ein kurzes DNA-Stück, das nur
+    \textbf{strong stop minus strand DNA}: ein kurzes DNA-Stück, das nur
     R und U5 umfasst.
     \item Die \textbf{\gls{rnaseh}}-Aktivität baut die 5$'$-terminale Region des
     RNA-Stranges ab und legt so ein neues 3$'$-Ende der DNA frei.
@@ -403,7 +403,7 @@ Der Vergleich der Elementstrukturen zeigt die evolutionäre Verwandtschaft:
     Zentrale Aussage: Die meisten Säugetier-Genomassemblies zeigen praktisch
     keine jüngere Akkumulation von DNA- und RC-Transposons
     (RC: 240 von 248 Säugern unter 0,1\,\%; DNA: 210 von 248 unter 0,1\,\%). Die
-    Retroelemente -- insbesondere \gls{line}s und \gls{sine}s -- sind dagegen weiterhin aktiv
+    Retroelemente, insbesondere \gls{line}s und \gls{sine}s, sind dagegen weiterhin aktiv
     und variieren stark zwischen den Arten.
 \end{bsp}
 
@@ -445,29 +445,347 @@ Der Vergleich der Elementstrukturen zeigt die evolutionäre Verwandtschaft:
 \end{mytable}
 
 
+% TODO F 49 - 51
+Erwin F. Smith und C.O. Townsend isolierten 1907 ein Bakterium aus
+Gallen von Gänseblümchen.
+Die Infektion gesunder Pflanzen mit diesem Bakterium
+löste erneut Gallen aus.
+
+\begin{bem}
+    Das Experiment ist eine saubere Anwendung der Kochschen Postulate auf eine
+    Pflanzenkrankheit: Isolierung des Erregers aus dem erkrankten Gewebe,
+    Reinkultur, Reinfektion einer gesunden Pflanze, Wiederauftreten des
+    identischen Krankheitsbildes.
+    Damit war erstmals gezeigt, dass ein
+    Tumor durch ein Bakterium ausgelöst werden kann.
+\end{bem}
+
+\begin{mytable}
+    \begin{tabular}{@{}lll@{}}
+        \hline
+        \textbf{Bakterium} & \textbf{Plasmid} & \textbf{Phänotyp} \\
+        \hline
+        \emph{Agrobacterium tumefaciens} & \textbf{Ti} (tumour inducing)
+        & Wurzelhalsgalle (crown gall) \\
+        \emph{Agrobacterium rhizogenes}  & \textbf{Ri} (root inducing)
+        & ``hairy roots'' \\
+        \hline
+    \end{tabular}
+\end{mytable}
+
 \begin{bsp}
-    A plant tumor of bacterial origin
-    % TODO F 49 - 51 
+    Die auf Folie 50 gezeigte Wurzelhalsgalle wurde durch ein
+    \textbf{Nopalin-Plasmid} hervorgerufen.
+    Der Begriff Transformation
+    meint hier zweierlei zugleich: die genetische Veränderung der Pflanzenzelle
+    und ihre tumoröse Entartung.
 \end{bsp}
 
 \subsection{T-DNA Transformation}\label{subsec:t-dna-transformation}
 % TODO F 52 - 53
+Der Infektionszyklus lässt sich in vier Schritte gliedern:
+
+\begin{enumerate}
+    \item \textbf{Signalwahrnehmung.} Verletzte Pflanzen scheiden phenolische
+    Signalstoffe aus, z.\,B. \textbf{Acetosyringon}.
+    Diese wirken
+    induzierend auf die \emph{vir}-Gene (Virulenzgene), die auf dem
+    Ti-Plasmid liegen.
+    \item \textbf{Transfer.} Die aktivierten \emph{vir}-Genprodukte übertragen
+    die \textbf{T-DNA} aus dem Ti-Plasmid in die Pflanzenzelle, wo sie ins
+    Kerngenom integriert.
+    \item \textbf{Tumorgenese.} Die transformierten Pflanzenzellen produzieren
+    \textbf{Auxine und Cytokinine}.
+    Pflanzenwuchsstoffe, die die
+    Tumorbildung bewirken.
+    \item \textbf{Opinverwertung.} Transformierte Zellen produzieren
+    \textbf{Opine}, die an die Umgebung abgegeben werden.
+    Diese werden von
+    \emph{Agrobacterium} aufgenommen und induzieren dort die Gene für ihren
+    eigenen Abbau und ihre Weiterverwertung.
+\end{enumerate}
+
+\begin{bem}
+    Das Bakterium zwingt die Pflanze, eine Nahrungsquelle
+    zu synthetisieren, die nur es selbst verwerten kann und gleichzeitig
+    das Gewebe zu vergrössern, das diese Nahrung produziert.
+    Man spricht von der ``genetischen Kolonisierung''.
+    Die Synthesegene (\emph{nos}, \emph{ocs})
+    liegen auf der T-DNA und werden von der Pflanze exprimiert; die
+    Katabolismusgene (\emph{noc}, \emph{occ}) bleiben auf dem Ti-Plasmid im
+    Bakterium.
+\end{bem}
+
 
 \subsubsection{Ti-Plasmide}
 % TODO F 54 - 55
 
+\paragraph{Grössen:} Ti-Plasmid ca.
+200\,kb, davon T-DNA ca.
+23\,kb.
+
+Regionen des Plasmids:
+\begin{itemize}
+    \item \textbf{T-DNA}, begrenzt von \textbf{LB} (left border) und \textbf{RB}
+    (right border).
+    Sie trägt:
+    \begin{itemize}
+        \item \emph{t1}, \emph{t2}, \emph{t3} -- Tumorinduktion
+        \item \emph{nos} -- Nopalinsynthese
+    \end{itemize}
+    \item \textbf{\emph{vir}-Region} -- Transfer der T-DNA
+    \item \textbf{\emph{tra}} -- bakterieller (konjugativer) Transfer
+    \item \textbf{\emph{noc}} -- Nopalinkatabolisierung
+\end{itemize}
+
+\begin{mytable}
+    \caption{Funktionen der Gene der Ti-Plasmide.}
+    \label{tab:tigene}
+    \begin{tabular}{@{}lll@{}}
+        \hline
+        \textbf{Locus} & \textbf{Funktion} & \textbf{Ti-Plasmid} \\
+        \hline
+        \emph{vir}  & DNA transfer into plant   & alle \\
+        \emph{shi}  & shoot induction           & alle \\
+        \emph{roi}  & root induction            & alle \\ \\
+        \emph{nos}  & nopaline synthesis        & Nopalin \\
+        \emph{noc}  & nopaline catabolism       & Nopalin \\
+        \emph{ocs}  & octopine synthesis        & Octopin \\
+        \emph{occ}  & octopine catabolism       & Octopin \\
+       \\
+        \emph{tra}  & bacterial transfer genes  & alle \\
+        \emph{Inc}  & incompatibility genes     & alle \\
+        \emph{oriV} & origin for replication    & alle \\
+        \hline
+    \end{tabular}
+\end{mytable}
+
+Ti-Plasmide werden nach dem synthetisierten Opin klassifiziert: es gibt
+Nopalin- und Octopin-Plasmide.
+Die Loci \emph{vir},
+\emph{shi}, \emph{roi}, \emph{tra}, \emph{Inc} und \emph{oriV} sind bei allen
+Typen vorhanden, die Opin-Loci dagegen typspezifisch.
+
+\begin{bem}
+    Merkhilfe für die Opin-Nomenklatur: Endung \textbf{-s} = \textbf{s}ynthesis,
+    Endung \textbf{-c} = \textbf{c}atabolism. \emph{nos}/\emph{noc} für Nopalin,
+    \emph{ocs}/\emph{occ} für Octopin.
+    Der \emph{nos}-Promotor ist übrigens bis
+    heute einer der meistgenutzten konstitutiven Promotoren in
+    Pflanzenexpressionsvektoren.
+\end{bem}
+%  Kreisdarstellung des Ti-Plasmids mit T-DNA (LB/RB), \emph{vir}, \emph{tra},
+%  \emph{noc} und der ausgeklappten T-DNA-Genkarte \emph{t1}--\emph{t2}--%
+%  \emph{t3}--\emph{nos} (Folie 54).
 \subsubsection{Ablauf}
 % TODO F 56 - 57, 61
+
+Vor dem eigentlichen Transfer muss das Bakterium an die Pflanzenzelle
+\textbf{adhärieren}.
+Dafür sind chromosomal codierte Gene zuständig:
+\textbf{\emph{chvA}, \emph{chvB}, \emph{pscA}} $\rightarrow$ Adhäsion der
+Bakterien an die Pflanzenzelle.
+
+\begin{bem}
+    Nicht alle für die Virulenz nötigen Gene liegen
+    auf dem Ti-Plasmid.
+    Die \emph{chv}-Gene (chromosomal virulence) liegen auf dem
+    Bakterienchromosom.
+    Deshalb reicht das Ti-Plasmid allein nicht aus, um ein
+    beliebiges Bakterium zum Pflanzenpathogen zu machen.
+\end{bem}
+
+\subsubsection*{Prozessierung im Bakterium}
+\begin{enumerate}
+    \item \textbf{VirD1} und \textbf{VirD2} erzeugen einen Einzelstrangbruch
+    (\emph{first nick}) an der \textbf{RB}.
+    Der Nick an der RB ist
+    \textbf{genau} positioniert.
+    \item \textbf{VirD2 wird kovalent am 5$'$-Ende der T-DNA gebunden} und bleibt
+    dort während des gesamten Transports.
+    \item DNA-Synthese verdrängt den T-Strang; ein \textbf{second nick} an der LB
+    beendet das Molekül.
+    \item \textbf{VirE2} (single strand binding protein) bedeckt den
+    einzelsträngigen T-Strang und schützt ihn.
+\end{enumerate}
+
+\subsubsection*{Transport und Integration}
+\begin{itemize}
+    \item Der \textbf{T-Komplex} besteht aus \textbf{VirD2, VirE2 und der T-DNA}.
+    \item Transfer in die Pflanzenzelle und Transport zum Zellkern.
+    \item \textbf{Integration ins Wirtsgenom mithilfe von Wirtsproteinen}:
+    \emph{Agrobacterium} bringt \emph{keine} eigene Integrase mit.
+\end{itemize}
+
+% Übersichtsschema Bakterium mit Ti-Plasmid und Bakterienchromosom neben der
+%  hexagonalen Pflanzenzelle mit Kern, Pfeil für den T-DNA-Transfer (Folie 56).
+
+
+\subsubsection*{Prozessierung im Bakterium}
+\begin{enumerate}
+    \item \textbf{VirD1} und \textbf{VirD2} erzeugen einen Einzelstrangbruch
+    (\emph{first nick}) an der \textbf{RB}.
+    Der Nick an der RB ist
+    \textbf{genau} positioniert.
+    \item \textbf{VirD2 wird kovalent am 5$'$-Ende der T-DNA gebunden} und bleibt
+    dort während des gesamten Transports.
+    \item DNA-Synthese verdrängt den T-Strang; ein \textbf{second nick} an der LB
+    beendet das Molekül.
+    \item \textbf{VirE2} (single strand binding protein) bedeckt den
+    einzelsträngigen T-Strang und schützt ihn.
+\end{enumerate}
+
+\subsubsection*{Transport und Integration}
+\begin{itemize}
+    \item Der \textbf{T-Komplex} besteht aus \textbf{VirD2, VirE2 und der T-DNA}.
+    \item Transfer in die Pflanzenzelle und Transport zum Zellkern.
+    \item \textbf{Integration ins Wirtsgenom mithilfe von Wirtsproteinen}:
+    \emph{Agrobacterium} bringt \emph{keine} eigene Integrase mit.
+\end{itemize}
+
+\begin{bem}
+    Retroviren codieren
+    eine eigene \gls{integrase} und erzeugen definierte
+    Zielsequenzverdopplungen. \emph{Agrobacterium} dagegen liefert den T-Strang nur
+    ab; die Integration übernimmt die pflanzliche
+    DNA-Reparaturmaschinerie.
+    Deshalb ist die T-DNA-Insertion
+    weitgehend zufällig verteilt und an den Enden unsauber
+    prozessiert, was für die Mutantenanalyse ein Vorteil (Zufallsverteilung),
+    für die präzise Manipulation ein Nachteil ist.
+\end{bem}
+
+\subsubsection*{Detaillierte Fassung nach Lacroix \& Citovsky (2019)}
+\begin{enumerate}
+    \item Pflanzliche und Umweltsignale (\textbf{AS} = Acetosyringon, Phenolics,
+    Monosaccharide, niedriges Phosphat, niedriger pH) aktivieren über
+    \textbf{ChvE}, \textbf{VirA/VirG} und \textbf{ChvG/ChvI} das bakterielle
+    Virulenzsystem: Induktion der \emph{vir}-Genexpression und Erzeugung der
+    einzelsträngigen T-DNA.
+    \item Die T-DNA bindet kovalent an \textbf{VirD2}; mehrere
+    \emph{vir}-codierte Effektorproteine (\textbf{VirD5, VirE2, VirE3,
+        VirF}) werden über das \textbf{VirB/VirD4-T4SS} (type IV secretion
+    system) aus der Bakterienzelle exportiert.
+    \item T-DNA und Effektorproteine gelangen in die Pflanzenzelle und werden
+    zum Zellkern dirigiert (\textbf{VIP1}, Importine).
+    \item Im Kern wird die T-DNA prozessiert (ssT-DNA $\to$ dsT-DNA, teils
+    zirkularisiert) und über Doppelstrangbrüche unter Beteiligung von
+    \textbf{Polymerase theta} in die chromosomale DNA integriert.
+\end{enumerate}
 
 \subsubsection{Struktur und Funktion der T-DNA Enden}
 % TODO F 58 - 59
 
+
+Zwei \textbf{imperfekte direct repeats} von je 25\,bp begrenzen die T-DNA:
+die \textbf{border sequences}: LB (left border) und RB (right border).
+
+\begin{mytable}\small
+\begin{tabular}{@{}ll@{}}
+    \hline
+    Left repeat  & \texttt{TGGCAGGATATATTGNNTGTAAAC} \\
+    Right repeat & \texttt{TGACAGGATATATTGNNGGTAAAC} \\
+    \hline
+\end{tabular}
+\end{mytable}
+
+
+Nach Transfer und Integration gilt:
+\begin{itemize}
+    \item Am rechten Ende bleiben nur noch \textbf{1--2\,bp des right repeat}
+    erhalten.
+    \item Am linken Ende liegt die Verbindungsstelle (junction) typischerweise
+    \textbf{weniger als 100\,bp} vom left repeat entfernt.
+\end{itemize}
+
+\begin{bem}
+    Die Asymmetrie ist mechanistisch begründet: Die RB ist der \emph{Startpunkt}
+    des Transfers und wird durch das kovalent gebundene VirD2 geschützt; die LB ist
+    der \emph{Endpunkt} und bleibt ungeschützt.
+    Daraus folgt auch die Regel für die
+    Vektorkonstruktion: Was nahe der RB liegt, wird am zuverlässigsten übertragen.
+\end{bem}
+
+\subsubsection{Pflanzengene für die Virulenz}\label{subsubsec:pflanzengene-fur-die-virulenz}
+\emph{Agrobacterium} hat \textbf{Pflanzengene für die eigene Virulenz
+vereinnahmt} (co-opted).
+Viele pflanzliche Genprodukte werden für die
+Transformation benötigt, unter anderem bei:
+\begin{itemize}
+    \item \textbf{Attachment}: Arabinogalactan-Protein (\emph{rat1}),
+    \emph{rat3}, CslA9 (\emph{rat4})
+    \item \textbf{Bewegung durch das Cytoplasma}: Actin und Kinesin
+    (\emph{rat4A})
+    \item \textbf{Kernimport}: Importin-$\alpha$ und Importin-$\beta$
+    (\emph{ratJ1}), VIP1
+    \item \textbf{Integration}: \gls{histon}e und chromatinmodifizierende Proteine
+    (\emph{rat5})
+\end{itemize}
+
 \subsubsection{Binäre Vektorsysteme}
 % TODO F 62
+\paragraph{T-DNA und \emph{vir}-Region müssen
+nicht auf demselben Molekül liegen}, da die \emph{vir}-Genprodukte
+\emph{in trans} wirken.
+Das System wird deshalb auf zwei Plasmide aufgeteilt:
+
+\begin{itemize}
+    \item[Helferplasmid] Ti-Plasmid ohne T-DNA in
+    \emph{A.\,tumefaciens}: enthält die \textbf{\emph{vir}}-Region und den
+    \emph{A.\,tumefaciens}-\emph{ori}, aber keine T-DNA mehr --
+    es ist \textbf{entwaffnet} (disarmed), die Onkogene sind entfernt.
+    \item[Binärvektor] Kleines, in \emph{E.\,coli} manipulierbares Plasmid mit
+    \textbf{modifizierter T-DNA} zwischen LB und RB. Darin:
+    \begin{itemize}
+        \item ein Selektionsgen (Gen\,S) mit Promotor P und Terminator T
+        \item das eingebrachte Transgen (Gen\,X) mit eigenem
+        P und T
+    \end{itemize}
+    Ausserhalb der Borders: \textbf{\emph{E.\,coli}-\emph{ori}} und ein
+    bakterieller Marker (z.\,B. \textbf{Kan\textsuperscript{R}}).
+\end{itemize}
+
+\begin{bem}
+    Es gibt \emph{zwei}
+    Selektionsebenen: die bakterielle Resistenz (Kan\textsuperscript{R}) selektiert
+    das Plasmid in \emph{E.\,coli} bzw.\ \emph{Agrobacterium}, das Selektionsgen
+    \emph{innerhalb} der Borders selektiert die transformierte \emph{Pflanze}.
+
+    Und nur was zwischen LB und RB liegt, wird übertragen.
+    Alles ausserhalb
+    bleibt im Bakterium.
+\end{bem}
 
 \subsubsection{Transformation von Arabidopsis}
 % TODO F 63 - 64
 
+Praktische Durchführung:
+\begin{enumerate}
+    \item \textbf{(Vakuum-)Infiltration} der blühenden Pflanze mit
+    \emph{Agrobacterium} als Vehikel für die zu übertragenden Gene
+    \item \textbf{Ernte der T1-Samen}
+    \item \textbf{Anzucht der T1-Pflanzen auf selektivem Medium}
+    \item Frequenz der transgenen Pflanzen: \textbf{bis ca. 5\,\%}
+    \item \textbf{Ernte der T2-Samen}
+\end{enumerate}
 
-%%
+\begin{bem}
+    Der grosse Vorteil gegenüber älteren Verfahren: \textbf{keine Gewebekultur und
+    keine Regeneration} nötig.
+    Transformiert werden die weiblichen
+    Gametophyten in der Blüte, das Transgen erscheint erst in der Folgegeneration.
+    Deshalb ist die geerntete T1-Saat ein Gemisch aus wenigen transgenen und vielen
+    nicht-transgenen Samen, die Selektion auf dem Medium ist unverzichtbar.
+    T1- Pflanzen sind in der Regel hemizygot für das Insert; erst in T2 tritt
+    Aufspaltung auf, was zugleich die Bestimmung der Insertionszahl erlaubt.
+\end{bem}
+
+
+\paragraph{Anwendungen} sind:
+\begin{itemize}
+    \item Mutantenanalyse (forward genetics)
+    \item Gentechnisch veränderte Pflanzen (GMO)
+\end{itemize}
+
+% TODO kartekarte T-DNA vs tRNA
 \kfrage{aktivtransposon}
