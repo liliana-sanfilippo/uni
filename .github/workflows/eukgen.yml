@@ -14,21 +14,13 @@ jobs:
           persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-          texlive-full \
-          biber
-
-      - name: Compile document
-        working-directory: eukgen
-        run: |
-          xelatex -interaction=nonstopmode main.tex
-          makeglossaries main
-          biber main
-          xelatex -interaction=nonstopmode main.tex
-          xelatex -interaction=nonstopmode main.tex
+      - uses: xu-cheng/latex-action@v3
+        with:
+            root_file: main.tex
+            working_directory: eukgen
+            latexmk_use_xelatex: true
+            texlive_version: 2025
+            latexmk_shell_escape: true
 
       - name: Copy PDF to docs
         run: |
