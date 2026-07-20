@@ -21,6 +21,17 @@ jobs:
           latexmk_use_xelatex: true
           texlive_version: 2025
 
+      - name: Run makeglossaries
+        working-directory: eukgen
+        run: makeglossaries main
+
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: eukgen
+          latexmk_use_xelatex: true
+          texlive_version: 2025
+
       - name: Copy PDF to docs
         run: |
           mkdir -p docs
