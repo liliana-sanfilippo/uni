@@ -3,6 +3,7 @@
 \untit{Kapitel 15 in Lewin's Genes II}
 % TODO unklar F 60, 65 - 71
 
+
 \section{Mobile genetische Elemente}\label{sec:mobile-genetische-elemente}
 
 \subsection{Transposonen}\label{subsec:transposonen}
@@ -74,7 +75,6 @@ Paste'' (\gls{replikative_transposition}) verbreiten.
     \text{DNA } \rightarrow \text{ RNA } \rightarrow \text{ DNA } \rightarrow \text{ Insertion}
 \]
 
-
 \subsubsection{Hybrid dysgenesis}
 % TODO F 24 - 26
 TODO F 24--26
@@ -132,6 +132,22 @@ Hüllproteine erworben haben – also das Gegenteil der zuvor angenommenen Bezie
     \includegraphics[width=0.7\linewidth]{images/retroviren/hi_virus}
     \caption{Schematischer Aufbau eines Retrovirus nahand des HI-Virus.}\label{fig:hi_virus}
 \end{figure}
+
+\begin{itemize}
+    \item[gag]
+    Kernproteine
+    (p15, p12, p30, p10)
+
+    \item[pol]
+    Protease,
+    Reverse Transkriptase,
+    RNase H,
+    Integrase
+
+    \item[env]
+    Hüllproteine
+    (gp70, p15E)
+\end{itemize}
 
 \subsubsection{Stadien und retroviraler Lebenszyklus}
 % F 34 - 37
@@ -226,7 +242,6 @@ Ihre Struktur ist entscheidend für den gesamten Ablauf:
     \item Die \gls{reversetranskriptase} setzt die Minusstrang-Synthese fort.
 \end{enumerate}
 
-
 \paragraph{Reverse Transkription - Plusstrang-Synthese und zweiter Sprung:}
 
 \begin{enumerate}
@@ -244,10 +259,10 @@ Ergebnis ist ein doppelsträngiges DNA-Molekül, das an beiden Enden eine
 identische \textbf{\gls{ltr}} (U3--R--U5) trägt.
 
 \begin{bem}
-Die \gls{ltr}s sind \emph{nicht} im RNA-Genom vorhanden, sondern entstehen erst
-\emph{durch} den Mechanismus der reversen Transkription mit ihren zwei Sprüngen.
-Die RNA beginnt mit R--U5 und endet mit U3--R; die DNA trägt beidseits
-U3--R--U5. Das ist eine klassische Prüfungsfrage.
+    Die \gls{ltr}s sind \emph{nicht} im RNA-Genom vorhanden, sondern entstehen erst
+    \emph{durch} den Mechanismus der reversen Transkription mit ihren zwei Sprüngen.
+    Die RNA beginnt mit R--U5 und endet mit U3--R; die DNA trägt beidseits
+    U3--R--U5. Das ist eine klassische Prüfungsfrage.
 \end{bem}
 
 \paragraph{Integration der (c)DNA:}
@@ -288,7 +303,8 @@ integrierte Element flankieren.
         Typische Vertreter
         & \emph{Ty} (\emph{S.\,cerevisiae}), \emph{copia} (\emph{D.\,melanogaster})
         & L1 (Mensch); B1, B2, ID, B4 (Maus)
-        & \gls{sine}s (Säuger), \gls{pseudogen}e von Pol\,III-Transkripten \\ \\
+        & \gls{sine}s (Säuger), \gls{pseudogen}e von Pol\,III-Transkripten
+        \\ \\
         Termini
         & Long terminal repeats
         & keine Repeats
@@ -349,26 +365,29 @@ Der Vergleich der Elementstrukturen zeigt die evolutionäre Verwandtschaft:
 
 \begin{bsp}
     Repetitive DNA im Humangenom / TE-Gehalt von 248 Säugetier GSeq-Assemblies
-       \begin{mytable}
-           \begin{tabular}{@{}llrrr@{}}
-               \hline
-               \textbf{Element} & \textbf{Organisation} & \textbf{Länge (kb)}
-               & \textbf{Anzahl} & \textbf{Anteil} \\
-               \hline
-               Retrovirus / \gls{ltrretrotransposon} & \gls{ltr}--\emph{gag}--\emph{pol}--(\emph{env})--\gls{ltr}
-               & 1--11 & 450.000 & 8\,\% \\
-               \gls{line}s (autonom), z.\,B. L1 & ORF1--(\emph{pol})--(A)$_n$
-               & 6--8 & 850.000 & 17\,\% \\
-               \gls{sine}s (nicht autonom), z.\,B. \emph{Alu} & (A)$_n$
-               & $<$0,3 & 1.500.000 & 15\,\% \\
-               DNA-Transposon & Transposase
-               & 2--3 & 300.000 & 3\,\% \\
-               \hline
-               \multicolumn{4}{@{}l}{\textbf{Summe transponierbare Elemente}} & \textbf{ca. 43\,\%} \\
-               \hline
-           \end{tabular}
-           \caption{Transponierbare Elemente im Humangenom.}
-       \end{mytable}
+    \begin{mytable}
+        \begin{tabular}{@{}llrrr@{}}
+            \hline
+            \textbf{Element} & \textbf{Organisation} & \textbf{Länge (kb)}
+            & \textbf{Anzahl} & \textbf{Anteil} \\
+            \hline
+            Retrovirus / \gls{ltrretrotransposon} & \gls{ltr}--\emph{gag}--\emph{pol}--(\emph{env})--\gls{ltr}
+            & 1--11
+            & 450.000
+            & 8\,\%
+            \\
+            \gls{line}s (autonom), z.\,B. L1 & ORF1--(\emph{pol})--(A)$_n$
+            & 6--8 & 850.000 & 17\,\% \\
+            \gls{sine}s (nicht autonom), z.\,B. \emph{Alu} & (A)$_n$
+            & $<$0,3 & 1.500.000 & 15\,\% \\
+            DNA-Transposon & Transposase
+            & 2--3 & 300.000 & 3\,\% \\
+            \hline
+            \multicolumn{4}{@{}l}{\textbf{Summe transponierbare Elemente}} & \textbf{ca. 43\,\%} \\
+            \hline
+        \end{tabular}
+        \caption{Transponierbare Elemente im Humangenom.}
+    \end{mytable}
 \end{bsp}
 
 \begin{bem}
@@ -392,7 +411,7 @@ Der Vergleich der Elementstrukturen zeigt die evolutionäre Verwandtschaft:
     DNA-Transposons sind in Säugern weitgehend stillgelegt, Retroelemente
     nicht.
     Das passt zum Mechanismus: copy-and-paste über RNA erlaubt
-Vervielfältigung ohne Verlust des Originals, cut-and-paste nicht.
+    Vervielfältigung ohne Verlust des Originals, cut-and-paste nicht.
 \end{bem}
 
 % TODO kareikarten   \item Woher stammt der Primer für die reverse Transkription und wo lagert er sich an?
@@ -406,6 +425,7 @@ Vervielfältigung ohne Verlust des Originals, cut-and-paste nicht.
 %  \item Nenne Anzahl und Genomanteil der vier TE-Klassen im Humangenom. Warum haben \emph{Alu}-Elemente die höchste Kopienzahl, aber nicht den höchsten Anteil?
 %  \item Warum akkumulieren DNA-Transposons in Säugern kaum noch, Retroelemente aber schon?
 
+
 \section{Transformation und T-DNA}\label{sec:transformation-und-t-dna}
 
 \subsection{Methoden der DNA-Übertragung}\label{subsec:methoden-der-dna-ubertragung}
@@ -413,13 +433,13 @@ Vervielfältigung ohne Verlust des Originals, cut-and-paste nicht.
 \begin{mytable}
     \begin{tabular}{|p{10cm}|l|l|}
         \hline
-        \textbf{Methode} & \textbf{Säugetier} & \textbf{Pflanze} \\ \hline
+        \textbf{Methode}                & \textbf{Säugetier}                & \textbf{Pflanze}                  \\ \hline
         Calciumphosphat/DEAE-
-        Dextran-Präzipitation & X & (X) \\
-        Lipofektion & X & \\
-        Mikroinjektion & X & X \\
-        Elektroporation & X & (X) \\
-        Biolistische Systeme & X & X \\
+        Dextran-Präzipitation           & X                                 & (X)                               \\
+        Lipofektion                     & X                                 &                                   \\
+        Mikroinjektion                  & X                                 & X                                 \\
+        Elektroporation                 & X                                 & (X)                               \\
+        Biolistische Systeme            & X                                 & X                                 \\
         \underline{Biologischer Vektor} & \underline{X (Adeno-/Retrovirus)} & \underline{X (Ti-Plasmid/ T-DNA)}
     \end{tabular}
 \end{mytable}
@@ -432,6 +452,7 @@ Vervielfältigung ohne Verlust des Originals, cut-and-paste nicht.
 
 \subsection{T-DNA Transformation}\label{subsec:t-dna-transformation}
 % TODO F 52 - 53
+
 \subsubsection{Ti-Plasmide}
 % TODO F 54 - 55
 

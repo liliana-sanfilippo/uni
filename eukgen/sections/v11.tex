@@ -5,88 +5,16 @@
 % 64 Folien
 
 
-\section{Zellzyklus}\label{sec:zellzyklus}
-
-\textbf{Zellzyklus (somatisch):} Zeitraum vom Ende einer Mitose bis zum Ende der nächsten.
-
-\begin{itemize}
-    \item \textbf{\gls{interphase}}: Zeitraum zwischen zwei Mitosen (G1 -- S -- G2)
-    \item \textbf{M-Phase}: eigentliche Zellteilung; Mitosestadien lichtmikroskopisch sichtbar
-    \item Typische Dauern (Säugerzelle):
-    \begin{itemize}
-        \item G1: 6--12 h (2n)
-        \item S: 6--8 h ($2n \rightarrow 4n$)
-        \item G2: 3--4 h (4n)
-        \item M: ca.
-        1 h
-    \end{itemize}
-    \item \textbf{G0}: Austritt aus dem Zellzyklus (reversibel: \emph{reactivation} oder unbefristet: \emph{indefinite withdrawal})
-\end{itemize}
-\defin{interp}
-
-% ABBILDUNG:
-% Kreisdiagramm des Zellzyklus mit G1/S/G2/M sowie G0-Abzweig,
-% einschließlich DNA-Gehalt (2n/4n) und Zeitangaben.
-
-\subsection{Checkpoints (Kontrollpunkte)}\label{subsec:checkpoints-(kontrollpunkte)}
-
-Kontrollschleifen, bei denen die Initiation eines Abschnitts von der erfolgreichen
-Beendigung des vorherigen Abschnitts abhängig ist.
-
-\begin{itemize}
-    \item Checkpoint for division (G1)
-    \item Checkpoints for DNA integrity (S)
-    \item Checkpoints for unreplicated DNA (G2)
-    \item Checkpoint for paired kinetochores (M)
-\end{itemize}
-
-% ABBILDUNG:
-% Schema ``basic cycle control'' vs. ``checkpoint controls''
-% entlang G1--S--G2--M.
-
-\subsection{RB1 im Zellzyklus}\label{subsec:rb1-im-zellzyklus}
-\defin{cyclin}
-\begin{itemize}
-    \item \textbf{Restriction Point}: Punkt in G1, an dem die Entscheidung zur Zellteilung fällt.
-    \item Das Protein \textbf{Rb} integriert Informationen über DNA-Schäden und Zellwachstum.
-    \item Rb bindet die \textbf{E2F}-Transkriptionsfaktoren, wodurch deren Zielgene inaktiv bleiben.
-    \item \gls{cyclin}/CDK-Komplexe
-    \begin{itemize}
-        \item \gls{cyclin} D1/CDK4
-        \item \gls{cyclin} D1/CDK6
-        \item \gls{cyclin} E/CDK2
-    \end{itemize}
-    phosphorylieren Rb. Dadurch wird E2F freigesetzt und der Zellzyklus kann fortgesetzt werden.
-\end{itemize}
-
-\subsection{Retinoblastom}\label{subsec:retinoblastom}
-
-Retinoblastom ist ein bösartiger Tumor der Netzhaut, der aus unreifen Netzhautzellen hervorgeht.
-
-\begin{itemize}
-    \item Beide \gls{allel}e des \textit{RB1}-\gls{gen}s müssen mutiert sein $\rightarrow$ auf Zellebene rezessiv.
-    \item Die erbliche, bilaterale Form erscheint phänotypisch dominant, da Träger heterozygot sind und das zweite \gls{wildtyp}-
-    \gls{allel} häufig somatisch mutiert.
-    \item Dieses Prinzip wird als \textbf{Zwei-Mutationen-Theorie} nach Knudson bezeichnet.
-    \item Das gleiche Prinzip gilt für die sporadische, unilaterale Form, bei der beide Mutationen somatisch entstehen.
-\end{itemize}
-
-% ABBILDUNG:
-% ``RB is a recessive disease'':
-% Darstellung der Genotypen RB+/RB+, RB+/RB- und RB-/RB-
-% mit entsprechender Tumorbildung.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \section{Das Humangenom cytogenetisch}\label{sec:das-humangenom-cytogenetisch}
+\defin{cytogenetik}
 
 \subsection{Karyotyp}\label{subsec:karyotyp}
+Der menschliche \gls{karyotyp} besteht aus 44 \gls{autosom}en und 2 Geschlechtschromosomen (\gls{heterosom}en),
+also 46 \gls{chromosom}en.
 
+Die exakte \gls{chromosom}enzahl des Menschen ist erst seit 1956 bekannt.
+\defin{ideogramm}
 \begin{itemize}
-    \item 44 \gls{autosom}en + 2 Geschlechtschromosomen (\gls{heterosom}en) = 46 \gls{chromosom}en.
-    \item Die exakte \gls{chromosom}enzahl des Menschen ist erst seit 1956 bekannt.
-    \item Ideogramme stellen \gls{chromosom}en schematisch dar und sind an den \gls{centromer}en ausgerichtet.
     \begin{itemize}
         \item kurzer Arm: \textbf{p}
         \item langer Arm: \textbf{q}
@@ -99,26 +27,25 @@ Retinoblastom ist ein bösartiger Tumor der Netzhaut, der aus unreifen Netzhautz
     \end{itemize}
 \end{itemize}
 
-% ABBILDUNG:
-% Ideogramme aller 24 \gls{chromosom}en sowie Metaphaseplatte und geordneter Karyotyp.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\linewidth]{images/idiogramm}
+    \caption{Transposon}\label{fig:idiogramm}
+\end{figure}
 
 \subsection{Bandenmuster}\label{subsec:bandenmuster}
-
+\defin{r_bande}
+\defin{q_g_bande}
 \begin{itemize}
     \item Seit 1970 werden \gls{chromosom}en systematisch anhand ihres Bandenmusters klassifiziert.
     \item ISCN = International Standard of Cytogenetic Nomenclature.
     \item Die Giemsa-Färbung reagiert auf:
     \begin{itemize}
         \item die Konformation des Chromatins,
-        \item den Replikationszeitpunkt.
-    \end{itemize}
-    \item Technisch erfolgt die Färbung nach Trypsinisierung der \gls{chromosom}en.
-    \item
-    \begin{itemize}
-        \item Q-/G-Banden: kondensierte, spät replizierende und genarme Bereiche.
-        \item R-Banden: offene, früh replizierende und genreiche Bereiche.
+        \item den Replikationszeitpunkt. (korreliert auch mit)
     \end{itemize}
 \end{itemize}
+Technisch erfolgt die Färbung nach Trypsinisierung der \gls{chromosom}en.
 
 % ABBILDUNG:
 % Metaphasechromosom mit Q-/R-Schleifen und Zuordnung
@@ -126,61 +53,53 @@ Retinoblastom ist ein bösartiger Tumor der Netzhaut, der aus unreifen Netzhautz
 
 \subsection{Nomenklatur eines Genorts}\label{subsec:nomenklatur-eines-genorts}
 
-Beispiel:
+\begin{bsp}
+    \[
+        \mathrm{Xq28}
+    \]
+    bedeutet:
+    \begin{itemize}
+        \item \gls{chromosom} X,
+        \item langer Arm (q),
+        \item Region 2,
+        \item Bande 8.
+    \end{itemize}
+\end{bsp}
 
-\[
-    \mathrm{Xq28}
-\]
-
-bedeutet:
-
-\begin{itemize}
-    \item \gls{chromosom} X,
-    \item langer Arm (q),
-    \item Region 2,
-    \item Bande 8.
-\end{itemize}
-
-\subsection{Beispiele X-chromosomaler Genorte}\label{subsec:beispiele-x-chromosomaler-genorte}
-
-\begin{mytable}
-    \begin{tabular}{|l|l|l|l|}
-        \hline
-        \textbf{Gen-Ort} & \textbf{Gen} & \textbf{Genprodukt}  & \textbf{Krankheit}          \\
-        \hline
-        Xp21             & DMD          & Dystrophin           & Duchenne-Muskeldystrophie   \\
-        Xq11.2--q12      & SMBA         & Androgen-Rezeptor    & Spinobulbäre Muskelatrophie \\
-        Xq26             & HPRT         & HGPRT                & Lesch-Nyhan-Syndrom         \\
-        Xq27             & F9           & Faktor IX            & Hämophilie B                \\
-        Xq27             & FRAA         & FMR1-Protein         & Fragiles-X-Syndrom          \\
-        Xq28             & F8C          & Faktor VIII          & Hämophilie A                \\
-        Xq28             & RCP, OCP     & Opsine (Sehpigmente) & Farbenblindheit             \\
-        \hline
-    \end{tabular}\label{tab:table9}
-\end{mytable}
+\begin{bsp}
+    \textbf{Nomenklatur für Genorte auf dem X-Chromosom}
+    \begin{mytable}
+        \begin{tabular}{|l|l|l|l|}
+            \hline
+            \textbf{Gen-Ort} & \textbf{Gen} & \textbf{Genprodukt}  & \textbf{Krankheit}          \\
+            \hline
+            Xp21             & DMD          & Dystrophin           & Duchenne-Muskeldystrophie   \\
+            Xq11.2--q12      & SMBA         & Androgen-Rezeptor    & Spinobulbäre Muskelatrophie \\
+            Xq26             & HPRT         & HGPRT                & Lesch-Nyhan-Syndrom         \\
+            Xq27             & F9           & Faktor IX            & Hämophilie B                \\
+            Xq27             & FRAA         & FMR1-Protein         & Fragiles-X-Syndrom          \\
+            Xq28             & F8C          & Faktor VIII          & Hämophilie A                \\
+            Xq28             & RCP, OCP     & Opsine (Sehpigmente) & Farbenblindheit             \\
+            \hline
+        \end{tabular}\label{tab:table9}
+    \end{mytable}
+\end{bsp}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Erbkrankheit Hämophilie}\label{sec:erbkrankheit-hamophilie}
-
-\subsection{Hämophilie A}\label{subsec:hamophilie-a}
-
+\defin{hämophilie_a}
 \begin{itemize}
-    \item Es fehlt der Gerinnungsfaktor VIII im Blut (\gls{gen} \textit{F8C}, Xq28).
-    \item Folge sind spontane, unkontrollierbare innere Blutungen.
     \item Weltweit sind mehr als 400\,000 Personen betroffen (WHO).
     \item Die Erkrankung betrifft nahezu ausschließlich Jungen und Männer.
     \item Inzidenz: etwa 15--20 von 100\,000 männlichen Neugeborenen.
     \item Vererbung: \textbf{X-chromosomal-rezessiver (geschlechtsgebundener) Erbgang}.
 \end{itemize}
-
-\subsection{Hämophilie B}\label{subsec:hamophilie-b}
-
+\defin{hämophilie_b}
 \begin{itemize}
     \item Seltener als Hämophilie A.
-    \item Ursache ist ein Mangel an Gerinnungsfaktor IX.
     \item Betroffenes Gen: \textit{F9} auf Xq27.
 \end{itemize}
 
@@ -249,25 +168,25 @@ Vater: X$^{h}$Y
 \begin{mytable}
     \begin{tabular}{|p{2cm}|p{12cm}|}
         \hline
-        \textbf{Jahr} & \textbf{Ereignis} \\
+        \textbf{Jahr} & \textbf{Ereignis}                                                                                                                                        \\
         \hline
-        1982 & Erste Sequenzdatenbanken (GenBank, EMBL).\\
-        1986 & Mullis entwickelt die PCR; Dulbecco initiiert das Humangenomprojekt.\\
-        1987 & Erste automatische DNA-Sequenzierung.\\
-        1988 & Gründung der Human Genome Organisation (HUGO).\\
-        1989 & Mukoviszidose-\gls{gen} identifiziert.\\
-        1990 & Start des Humangenomprojekts; 61 Erbkrankheitsgene bekannt.\\
-        1995 & \textit{Haemophilus influenzae}: erstes vollständig sequenziertes Bakteriengenom.\\
-        1996 & \textit{Methanococcus jannaschii}: erstes Archaeon; \textit{Saccharomyces cerevisiae}: erster Eukaryot.\\
-        1997 & Veröffentlichung des Hefegenoms in \textit{Nature}.\\
-        1998 & \textit{Caenorhabditis elegans}: erster Mehrzeller.\\
-        1999 & Humanes \gls{chromosom} 22 vollständig; Gründung von Celera Genomics.\\
-        2000 & \gls{genom} von \textit{Drosophila melanogaster}, \textit{Arabidopsis thaliana} und \gls{chromosom} 21; Veröffentlichung der gemeinsamen Draft Sequence.\\
-        2001 & Publikation der Draft-Sequenzen in \textit{Nature} und \textit{Science}.\\
-        2003 & Offizieller Abschluss des Humangenomprojekts.\\
-        2006 & Veröffentlichung des letzten vollständig sequenzierten \gls{chromosom}s (\gls{chromosom} 1).\\
-        2020 & Telomere-to-telomere-Assembly des \gls{x_chromosom}s.\\
-        2022 & T2T-CHM13: erste vollständig lückenlose humane \gls{genom}sequenz.\\
+        1982          & Erste Sequenzdatenbanken (GenBank, EMBL).                                                                                                                \\
+        1986          & Mullis entwickelt die PCR; Dulbecco initiiert das Humangenomprojekt.                                                                                     \\
+        1987          & Erste automatische DNA-Sequenzierung.                                                                                                                    \\
+        1988          & Gründung der Human Genome Organisation (HUGO).                                                                                                           \\
+        1989          & Mukoviszidose-\gls{gen} identifiziert.                                                                                                                   \\
+        1990          & Start des Humangenomprojekts; 61 Erbkrankheitsgene bekannt.                                                                                              \\
+        1995          & \textit{Haemophilus influenzae}: erstes vollständig sequenziertes Bakteriengenom.                                                                        \\
+        1996          & \textit{Methanococcus jannaschii}: erstes Archaeon; \textit{Saccharomyces cerevisiae}: erster Eukaryot.                                                  \\
+        1997          & Veröffentlichung des Hefegenoms in \textit{Nature}.                                                                                                      \\
+        1998          & \textit{Caenorhabditis elegans}: erster Mehrzeller.                                                                                                      \\
+        1999          & Humanes \gls{chromosom} 22 vollständig; Gründung von Celera Genomics.                                                                                    \\
+        2000          & \gls{genom} von \textit{Drosophila melanogaster}, \textit{Arabidopsis thaliana} und \gls{chromosom} 21; Veröffentlichung der gemeinsamen Draft Sequence. \\
+        2001          & Publikation der Draft-Sequenzen in \textit{Nature} und \textit{Science}.                                                                                 \\
+        2003          & Offizieller Abschluss des Humangenomprojekts.                                                                                                            \\
+        2006          & Veröffentlichung des letzten vollständig sequenzierten \gls{chromosom}s (\gls{chromosom} 1).                                                             \\
+        2020          & Telomere-to-telomere-Assembly des \gls{x_chromosom}s.                                                                                                    \\
+        2022          & T2T-CHM13: erste vollständig lückenlose humane \gls{genom}sequenz.                                                                                       \\
         \hline
     \end{tabular}
 \end{mytable}
@@ -379,11 +298,12 @@ T2T-CHM13:
 % Vergleich des Referenzgenoms 2001 mit T2T-CHM13
 % (Telomere, \gls{centromer}e, segmentale Duplikationen usw.).
 
-\paragraph{Merke}
+\begin{bem}
+    CHM13 stammt aus einer
+    \textbf{hydatidiformen Mole} und ist dadurch nahezu homozygot.
+    Dies erleichtert die Assemblierung erheblich.
+\end{bem}
 
-CHM13 stammt aus einer
-\textbf{hydatidiformen Mole} und ist dadurch nahezu homozygot.
-Dies erleichtert die Assemblierung erheblich.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -744,21 +664,16 @@ bleiben zahlreiche Fragen offen.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Onkogene}\label{sec:onkogene}
-
-\subsection{Kernaussagen}\label{subsec:kernaussagen}
-
-\begin{quote}
-    Onkogene sind modifizierte Varianten von im normalen \gls{genom}
-    vorhandenen \gls{gen}en (Proto-Onkogenen).
-\end{quote}
-
-\begin{quote}
-    Die zugrunde liegenden Veränderungen entstehen in der Regel
-    durch Mutationen auf DNA-Ebene.
-\end{quote}
+\defin{onkogen}
+\defin{proto_onkogen}
+Die zugrunde liegenden Veränderungen entstehen in der Regel
+durch Mutationen auf DNA-Ebene.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Der Weg zur Krebszelle}\label{subsec:der-weg-zur-krebszelle}
 
 Tumorzellen entstehen schrittweise.
@@ -811,47 +726,9 @@ Tumorzellen entstehen schrittweise.
 % "Cancers form by sequential changes"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Retroviren als Vehikel}\label{subsec:retroviren-als-vehikel}
 
-\subsubsection*{Aufbau eines Retrovirus}
-
-\[
-    \boxed{
-        \mathrm{LTR}
-        -
-        gag
-        -
-        pol
-        -
-        env
-        -
-        \mathrm{LTR}
-    }
-\]
-
-Retroviren besitzen ein RNA-\gls{genom},
-welches durch Reverse Transkriptase
-in DNA umgeschrieben wird.
-
-\paragraph{Genprodukte}
-
-\begin{description}
-
-    \item[gag]
-    Kernproteine
-    (p15, p12, p30, p10)
-
-    \item[pol]
-    Protease,
-    Reverse Transkriptase,
-    RNase H,
-    Integrase
-
-    \item[env]
-    Hüllproteine
-    (gp70, p15E)
-
-\end{description}
 
 \subsubsection*{Entstehung viraler Onkogene}
 
@@ -907,6 +784,7 @@ Mechanismus:
 % Transformation durch v-onc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Beispiele retroviraler Onkogene}\label{subsec:beispiele-retroviraler-onkogene}
 
 \begin{mytable}
@@ -915,52 +793,53 @@ Mechanismus:
         \textbf{Virus} &
         \textbf{Spezies} &
         \textbf{Tumor} &
-        \textbf{Onkogen}\\
+        \textbf{Onkogen} \\
         \hline
         Rous sarcoma virus &
         Huhn &
         Sarkom &
-        \textit{src}\\
+        \textit{src} \\
 
         Harvey murine sarcoma &
         Ratte &
         Sarkom, Erythroleukämie &
-        \textit{H-ras}\\
+        \textit{H-ras} \\
 
         Kirsten murine sarcoma &
         Ratte &
         Sarkom, Erythroleukämie &
-        \textit{K-ras}\\
+        \textit{K-ras} \\
 
         Simian sarcoma virus &
         Affe &
         Sarkom &
-        \textit{sis}\\
+        \textit{sis} \\
 
         Avian myelocytomatosis &
         Huhn &
         Karzinom, Sarkom, Myelocytom &
-        \textit{myc}\\
+        \textit{myc} \\
 
         Abelson leukemia virus &
         Maus &
         B-Zell-Lymphom &
-        \textit{abl}\\
+        \textit{abl} \\
 
         Avian erythroblastosis virus &
         Huhn &
         Erythroleukämie, Fibrosarkom &
-        \textit{erbB}, \textit{erbA}\\
+        \textit{erbB}, \textit{erbA} \\
 
         Avian myeloblastosis virus &
         Huhn &
         Myeloblastische Leukämie &
-        \textit{myb}\\
+        \textit{myb} \\
         \hline
     \end{tabular}
 \end{mytable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Aktivierungsmechanismen von Proto-Onkogenen}\label{subsec:aktivierungsmechanismen-von-proto-onkogenen}
 
 Proto-Onkogene können auf vier grundlegende Arten aktiviert werden.
@@ -979,6 +858,7 @@ Beispiel:
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection*{2. Insertionsmutagenese}
 
 Integration eines Retrovirus
@@ -1013,6 +893,7 @@ Möglichkeiten:
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection*{3. Chromosomale Translokation}
 
 Ein Proto-Onkogen gelangt
@@ -1045,6 +926,7 @@ In T-Zellen:
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection*{4. Genamplifikation}
 
 Mehrere Kopien eines Proto-Onkogens
@@ -1056,6 +938,7 @@ und damit zur Tumorentstehung.
 % sowie Translokation c-myc → IgH bzw. TcRα.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Onkogene in Signaltransduktionswegen}\label{subsec:onkogene-in-signaltransduktionswegen}
 
 Onkogene können auf allen Ebenen der Signaltransduktion auftreten.
@@ -1064,36 +947,40 @@ Onkogene können auf allen Ebenen der Signaltransduktion auftreten.
     \centering
     \begin{tabular}{p{3.8cm}p{5cm}p{4cm}}
         \hline
-        \textbf{Ebene} & \textbf{Beispiele} & \textbf{Funktion}\\
+        \textbf{Ebene} & \textbf{Beispiele} & \textbf{Funktion} \\
         \hline
         Sezernierte Proteine &
-        \textit{sis} (PDGF-B), \textit{KS/hst}, \textit{wnt1}, \textit{int2} &
-        Wachstumsfaktoren\\
+        \textit{sis} (PDGF-B), \textit{KS/hst}, \textit{wnt1}, \textit{int2}
+        &
+        Wachstumsfaktoren
+        \\
 
         Transmembranrezeptoren &
-        \textit{erbB}, \textit{erbB2}, \textit{erbB3}, \textit{fms}, \textit{kit}, \textit{mas} &
-        Rezeptor-Tyrosinkinasen\\
+        \textit{erbB}, \textit{erbB2}, \textit{erbB3}, \textit{fms}, \textit{kit}, \textit{mas}
+        &
+        Rezeptor-Tyrosinkinasen
+        \\
 
-        Membranassoziierte G-Proteine &
+        Membranassoziierte \gls{gprotein}e &
         \textit{ras}, \textit{gsp/gip} &
-        Signalweiterleitung\\
+        Signalweiterleitung \\
 
         Cytoplasmatische Tyrosinkinasen &
         \textit{src}, \textit{abl}, \textit{fps} &
-        Signalweiterleitung\\
+        Signalweiterleitung \\
 
         Serin/Threonin-Kinasen &
         \textit{raf}, \textit{mos} &
-        Signalweiterleitung\\
+        Signalweiterleitung \\
 
         Adapterproteine &
         \textit{crk}, \textit{vav} &
-        Regulation\\
+        Regulation \\
 
         Transkriptionsfaktoren &
         \textit{myc}, \textit{myb}, \textit{fos}, \textit{jun},
         \textit{rel}, \textit{erbA} &
-        Genregulation\\
+        Genregulation \\
         \hline
     \end{tabular}\label{tab:table10}
 \end{table}
@@ -1110,6 +997,7 @@ Onkogene können auf allen Ebenen der Signaltransduktion auftreten.
 % Übersicht der Onkogene in Signaltransduktionswegen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Mehrschrittmodell der Tumorentstehung}\label{subsec:mehrschrittmodell-der-tumorentstehung}
 
 \begin{itemize}
@@ -1135,87 +1023,85 @@ Typischer Ablauf:
     \text{Metastasierung}
 \]
 
-Grundprinzip:
+Jede Mutation mit Wachstumsvorteil führt zu einer klonalen Selektion.
 
-\begin{quote}
-    Jede Mutation mit Wachstumsvorteil führt zu einer klonalen Selektion.
-\end{quote}
 
 % ABBILDUNG:
 % Tumorevolution und Altersabhängigkeit der Krebsinzidenz.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Tumorsuppressorgen p53}\label{subsec:tumorsuppressorgen-p53}
 
-\subsubsection*{Funktion}
+\begin{bsp}
+    \subsection*{Tumorsuppressorgen p53}\label{subsec:tumorsuppressorgen-p53}
+    Wildtyp-p53 hemmt das Zellwachstum.
 
-Wildtyp-p53 hemmt das Zellwachstum.
+    Eigenschaften:
 
-Eigenschaften:
+    \begin{itemize}
+        \item Bindung an spezifische DNA-Sequenzen
+        \item Aktivierung bzw.
+        Repression von Zielgenen
+        \item Zellzyklusarrest nach DNA-Schäden
+        \item Einleitung der Apoptose
+    \end{itemize}
 
-\begin{itemize}
-    \item Bindung an spezifische DNA-Sequenzen
-    \item Aktivierung bzw.
-    Repression von Zielgenen
-    \item Zellzyklusarrest nach DNA-Schäden
-    \item Einleitung der Apoptose
-\end{itemize}
+    \subsubsection*{Folgen eines p53-Verlustes}
 
-\subsubsection*{Folgen eines p53-Verlustes}
+    \begin{itemize}
+        \item fehlende Aktivierung von Zielgenen
+        \item erhöhte DNA-Amplifikation
+        \item Ausbleiben des Zellzyklusarrests nach DNA-Schäden
+        \item unkontrollierte Zellproliferation
+    \end{itemize}
 
-\begin{itemize}
-    \item fehlende Aktivierung von Zielgenen
-    \item erhöhte DNA-Amplifikation
-    \item Ausbleiben des Zellzyklusarrests nach DNA-Schäden
-    \item unkontrollierte Zellproliferation
-\end{itemize}
+    \subsubsection*{Dominant-negativer Effekt}
 
-\subsubsection*{Dominant-negativer Effekt}
+    p53 bildet ein Tetramer.
 
-p53 bildet ein Tetramer.
+    Bereits eine mutierte Untereinheit kann den gesamten Komplex funktionsunfähig machen.
 
-Bereits eine mutierte Untereinheit kann den gesamten Komplex funktionsunfähig machen.
+    \subsubsection*{Domänen von p53}
 
-\subsubsection*{Domänen von p53}
+    \begin{itemize}
+        \item Transaktivierungsdomäne
+        \item Signaldomäne
+        \item DNA-Bindungsdomäne
+        \item Oligomerisierungsdomäne
+        \item C-terminale DNA-Bindungsregion
+    \end{itemize}
 
-\begin{itemize}
-    \item Transaktivierungsdomäne
-    \item Signaldomäne
-    \item DNA-Bindungsdomäne
-    \item Oligomerisierungsdomäne
-    \item C-terminale DNA-Bindungsregion
-\end{itemize}
-
-Mutationen konzentrieren sich überwiegend in der DNA-Bindungsdomäne.
+    Mutationen konzentrieren sich überwiegend in der DNA-Bindungsdomäne.
+\end{bsp}
 
 % ABBILDUNG:
 % WT-p53, fehlendes p53 und dominant-negatives p53.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Proto-Onkogene und Tumorsuppressorgene}\label{subsec:proto-onkogene-und-tumorsuppressorgene}
 
 \begin{mytable}
     \begin{tabular}{|l|l|l|}
         \hline
         & \textbf{Proto-Onkogen $\rightarrow$ Onkogen} &
-        \textbf{Tumorsuppressorgen}\\
+        \textbf{Tumorsuppressorgen} \\
         \hline
         Mutation &
         Gain of Function &
-        Loss of Function\\
+        Loss of Function \\
 
         zelluläre Wirkung &
         dominant &
-        rezessiv\\
+        rezessiv \\
 
         Analogie &
         Gaspedal klemmt &
-        Bremse ausgefallen\\
+        Bremse ausgefallen \\
 
         Beispiele &
         \textit{ras}, \textit{myc},
         \textit{src}, \textit{abl} &
-        \textit{RB1}, \textit{TP53}\\
+        \textit{RB1}, \textit{TP53} \\
         \hline
     \end{tabular}
 \end{mytable}
@@ -1225,6 +1111,7 @@ Ausnahme:
 Das mutierte p53 wirkt zusätzlich dominant-negativ.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Telomere und Telomerase}\label{subsec:telomere-und-telomerase}
 
 \begin{itemize}
@@ -1293,6 +1180,7 @@ Das mutierte p53 wirkt zusätzlich dominant-negativ.
 % \gls{telomerase}, TRF2 und Weg zur Immortalisierung.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Cancer Genomics}\label{subsec:cancer-genomics}
 
 Der Fokus der Krebsforschung hat sich von einzelnen Genen hin zu genomweiten Analysen verschoben.
