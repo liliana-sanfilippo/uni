@@ -8,7 +8,7 @@
    id="svg2"
    sodipodi:docname="mi_si_biogenese.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
-   inkscape:export-filename="mi_biogenese_pflanze_tiere.svg"
+   inkscape:export-filename="mi_si_biogenese.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,9 +27,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.50559071"
-     inkscape:cx="421.28939"
-     inkscape:cy="750.60715"
+     inkscape:zoom="0.50561677"
+     inkscape:cx="465.76778"
+     inkscape:cy="580.47916"
      inkscape:window-width="1854"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -313,6 +313,18 @@
          id="path3811-5"
          style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" />
     </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow2Mend-4-27-4-4-3"
+       style="overflow:visible">
+      <path
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)"
+         id="path3811-4-0-7-0-6"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" />
+    </marker>
   </defs>
   <rect
      style="fill:#bf1266;fill-opacity:0.1;fill-rule:evenodd;stroke:#730b3d;stroke-width:3.11396"
@@ -321,6 +333,20 @@
      height="96.886032"
      x="1.5569915"
      y="36.556984" />
+  <g
+     id="g2-5-0-0-6-2"
+     transform="matrix(0.99975466,0,0,1.2604879,258.88406,-54.327831)">
+    <text
+       x="381.26953"
+       y="118.21843"
+       id="text3888-1-2-6-8-9"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.5018px;line-height:135%;font-family:'DejaVu Sans';-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.569495"><tspan
+         x="381.26953"
+         y="118.21843"
+         id="tspan3890-8-6-1-9-1"
+         style="stroke-width:0.569495">Translation</tspan></text>
+  </g>
   <rect
      style="fill:#bf1266;fill-opacity:0.1;fill-rule:evenodd;stroke:#730b3d;stroke-width:3.11396"
      id="rect1-8-2-3-4"
@@ -351,13 +377,13 @@
      transform="matrix(0.92367174,0,0,1.0826357,-105.0273,5.0440582)"><tspan
        x="816.08679"
        y="1112.7861"
-       id="tspan17">Ziel-RNA <tspan
+       id="tspan2">Ziel-RNA <tspan
    style="font-weight:bold"
-   id="tspan16">nicht </tspan>identisch mit
+   id="tspan1">nicht </tspan>identisch mit
 </tspan><tspan
        x="816.08679"
        y="1145.0104"
-       id="tspan18">miRNA-Gen</tspan></text>
+       id="tspan3">miRNA-Gen</tspan></text>
   <text
      x="816.08679"
      y="1112.7861"
@@ -367,13 +393,13 @@
      transform="matrix(0.92367174,0,0,1.0826357,-724.78595,5.1740588)"><tspan
        x="816.08679"
        y="1112.7861"
-       id="tspan20">Ziel-RNA<tspan
+       id="tspan5">Ziel-RNA<tspan
    style="font-weight:bold"
-   id="tspan19"> </tspan>identisch mit
+   id="tspan4"> </tspan>identisch mit
 </tspan><tspan
        x="816.08679"
        y="1145.0104"
-       id="tspan21">siRNA-Vorläufer</tspan></text>
+       id="tspan6">siRNA-Vorläufer</tspan></text>
   <rect
      style="fill:#bf1266;fill-opacity:0.1;fill-rule:evenodd;stroke:#730b3d;stroke-width:3.11396"
      id="rect1-8-2"
@@ -1576,10 +1602,10 @@
      transform="matrix(1.0038868,0,0,1.0536668,-328.11322,637.47451)"><tspan
        x="346.09958"
        y="301.19531"
-       id="tspan22">Degradierung des </tspan><tspan
+       id="tspan7">Degradierung des </tspan><tspan
        x="346.09958"
        y="317.77899"
-       id="tspan23">sense-Strangs</tspan></text>
+       id="tspan8">sense-Strangs</tspan></text>
   <text
      x="929.974"
      y="314.2659"
@@ -1589,17 +1615,17 @@
      transform="matrix(0.55671862,0,0,0.71195237,-57.734182,721.61498)"><tspan
        x="929.974"
        y="314.2659"
-       id="tspan24">Komplexbildung<tspan
+       id="tspan9">Komplexbildung<tspan
    y="314.2659"
-   id="tspan25"> </tspan></tspan><tspan
+   id="tspan10"> </tspan></tspan><tspan
        x="929.974"
        y="340.11529"
-       id="tspan26">von RISC und<tspan
+       id="tspan11">von RISC und<tspan
    y="340.11529"
-   id="tspan27"> </tspan></tspan><tspan
+   id="tspan12"> </tspan></tspan><tspan
        x="929.974"
        y="365.96468"
-       id="tspan28">antisense-Strang</tspan></text>
+       id="tspan13">antisense-Strang</tspan></text>
   <path
      d="m 815.55634,940.92335 42.49772,52.2816"
      id="path5592-6"
@@ -1617,10 +1643,10 @@
      transform="matrix(1.0038868,0,0,1.0536668,191.65429,637.47449)"><tspan
        x="346.09958"
        y="301.19531"
-       id="tspan29">Degradierung des </tspan><tspan
+       id="tspan14">Degradierung des </tspan><tspan
        x="346.09958"
        y="317.77899"
-       id="tspan30">sense-Strangs</tspan></text>
+       id="tspan15">sense-Strangs</tspan></text>
   <text
      x="929.974"
      y="314.2659"
@@ -1630,17 +1656,17 @@
      transform="matrix(0.55671862,0,0,0.71195237,462.03333,721.61496)"><tspan
        x="929.974"
        y="314.2659"
-       id="tspan31">Komplexbildung<tspan
+       id="tspan16">Komplexbildung<tspan
    y="314.2659"
-   id="tspan32"> </tspan></tspan><tspan
+   id="tspan17"> </tspan></tspan><tspan
        x="929.974"
        y="340.11529"
-       id="tspan33">von RISC und<tspan
+       id="tspan18">von RISC und<tspan
    y="340.11529"
-   id="tspan34"> </tspan></tspan><tspan
+   id="tspan19"> </tspan></tspan><tspan
        x="929.974"
        y="365.96468"
-       id="tspan35">antisense-Strang</tspan></text>
+       id="tspan20">antisense-Strang</tspan></text>
   <text
      x="30.629074"
      y="659.88934"
@@ -1650,14 +1676,14 @@
      transform="matrix(0.93002077,0,0,1.1346285,-9.8296913,-55.741197)"><tspan
        x="30.629074"
        y="659.88934"
-       id="tspan37"><tspan
+       id="tspan22"><tspan
          style="line-height:85%"
-         id="tspan36">siRNA </tspan></tspan><tspan
+         id="tspan21">siRNA </tspan></tspan><tspan
        x="30.629074"
        y="682.55603"
-       id="tspan39"><tspan
+       id="tspan24"><tspan
          style="line-height:85%"
-         id="tspan38">Duplex(e)</tspan></tspan></text>
+         id="tspan23">Duplex(e)</tspan></tspan></text>
   <text
      x="247.84644"
      y="979.64056"
@@ -1667,10 +1693,10 @@
      transform="matrix(0.93002077,0,0,1.0752448,64.830372,65.147857)"><tspan
        x="247.84644"
        y="979.64056"
-       id="tspan40">RISC mit </tspan><tspan
+       id="tspan25">RISC mit </tspan><tspan
        x="247.84644"
        y="1006.6406"
-       id="tspan41">reifer siRNA</tspan></text>
+       id="tspan26">reifer siRNA</tspan></text>
   <text
      x="247.84644"
      y="979.64056"
@@ -1680,10 +1706,10 @@
      transform="matrix(0.93002077,0,0,1.0752448,601.46954,65.148258)"><tspan
        x="247.84644"
        y="979.64056"
-       id="tspan42">RISC mit </tspan><tspan
+       id="tspan27">RISC mit </tspan><tspan
        x="247.84644"
        y="1006.6406"
-       id="tspan43">reifer miRNA</tspan></text>
+       id="tspan28">reifer miRNA</tspan></text>
   <text
      x="247.84644"
      y="979.64056"
@@ -1693,7 +1719,7 @@
      transform="matrix(0.93002077,0,0,1.0752448,118.77605,-873.01155)"><tspan
        x="247.84644"
        y="979.64056"
-       id="tspan44">(long dsRNA)</tspan></text>
+       id="tspan29">(long dsRNA)</tspan></text>
   <g
      id="g19"
      transform="translate(0.03631274,397.18318)">
@@ -1836,6 +1862,10 @@
      d="m 774.899,230 v 57.24322"
      id="path5212-6-6-5-7"
      style="fill:none;stroke:#000000;stroke-width:2.04038;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-4-27-4-4)" />
+  <path
+     d="m 774.899,55.057 v 57.24322"
+     id="path5212-6-6-5-7-3"
+     style="fill:none;stroke:#000000;stroke-width:2.04038;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-4-27-4-4-3)" />
   <path
      d="m 774.899,405 v 57.24322"
      id="path5212-6-6-5-7-2"
@@ -2002,10 +2032,10 @@
      transform="matrix(0.89926189,0,0,1.1120231,29.432475,-55.665769)"><tspan
        x="621.01257"
        y="427.22253"
-       id="tspan45">Ran-GTP/ </tspan><tspan
+       id="tspan30">Ran-GTP/ </tspan><tspan
        x="621.01257"
        y="448.82255"
-       id="tspan46">Exportin</tspan></text>
+       id="tspan31">Exportin</tspan></text>
   <text
      x="864.81702"
      y="175.4801"
@@ -2037,14 +2067,14 @@
      transform="matrix(0.90423582,0,0,1.1641238,49.542134,-91.599172)"><tspan
        x="844.16449"
        y="677.08893"
-       id="tspan48"><tspan
+       id="tspan33"><tspan
          style="line-height:85%"
-         id="tspan47">miRNA*miRNA-</tspan></tspan><tspan
+         id="tspan32">miRNA*miRNA-</tspan></tspan><tspan
        x="844.16449"
        y="699.18149"
-       id="tspan50"><tspan
+       id="tspan35"><tspan
          style="line-height:85%"
-         id="tspan49">Duplex</tspan></tspan></text>
+         id="tspan34">Duplex</tspan></tspan></text>
   <text
      x="159.48373"
      y="22.850019"
