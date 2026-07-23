@@ -1,0 +1,17 @@
+Strukturen, die bei De Brujin graphen entstehen können
+
+rising und falling üben
+
+3: verstehen bis wann man jede Spalte berechnen muss!
+
+lokal und semi global und so unterschiede wo man anfangen kann und aufhören kann in Bezug auf die indices
+
+runs auf local minima bestimmen können
+
+Waterman Eggert:
+Ab wann Alignment neu berechnen? Ab der ersten Diagonale, die man gelöscht hat (dem ersten Match)
+
+Es beginnt das Alignment ab dem ersten Match.
+
+Man löscht nur matches raus, keine Indel-Beziehungen
+
