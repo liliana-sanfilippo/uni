@@ -20,18 +20,18 @@
     mit Gleichverteilung $\pe$. \\
     \textit{Zufallsvariable}
     \begin{itemize}
-        \item Alex notiert den zweifachen Münzwurf \\ $X : \eraum \rightarrow \eraum$mit $X = (X_1, X_2)$ wobei
-        $X_1((\ele_1, \ele_2)) = \ele_1$ und $X_2((\ele_1, \ele_2)) = \ele_2$ für alle $\oio$ \\ (das heißt,
-        $X$ ist die Identität auf $\eraum$)
+        \item Alex notiert den zweifachen Münzwurf \\ $\zvx : \eraum \rightarrow \eraum$ mit $\zvx = (\zvx_1, \zvx_2)$ wobei
+        $\zvx_1((\ele_1, \ele_2)) = \ele_1$ und $\zvx_2((\ele_1, \ele_2)) = \ele_2$ für alle $\oio$ \\ (das heißt,
+        $\zvx$ ist die Identität auf $\eraum$)
         \item Kim notiert nur den ersten Münzwurf \\ $Y : \eraum \rightarrow \eraum$mit $Y = (Y_1, Y_2)$ wobei
         $Y_1((\ele_1, \ele_2)) = \ele_1$ und $Y_2((\ele_1, \ele_2)) = Y_1((\ele_1, \ele_2)) = \ele_1$ für alle $\oio$
     \end{itemize}
     \begin{table}[H]
         \begin{tabular}{cccc}
-            $\wfk_X ((x_1, x_2))$ & $x_2 = 0$     & $x_2 = 1$     & $\wfk_{X_1}(x_1)$ \\
+            $\wfk_X ((x_1, x_2))$ & $x_2 = 0$     & $x_2 = 1$     & $\wfk_{\zvx_1}(x_1)$ \\
             $x_1 = 0$             & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{2}$     \\
             $x_1 = 1$             & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{2}$     \\
-            $\wfk_{X_2}(x_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
+            $\wfk_{\zvx_2}(x_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
         \end{tabular}
 
         \begin{tabular}{cccc}
@@ -41,29 +41,29 @@
             $\wfk_{Y_2}(y_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
         \end{tabular}\label{tab:table}
     \end{table}
-    Offensichtlich sind die Randverteilungen von $X$ und von $Y$ gleich, während die gemeinsame Verteilung
-    von $Y_1$ und $Y_2$ ist nicht dieselbe ist wie jene von $X_1$ und $X_2$.
+    Offensichtlich sind die Randverteilungen von $\zvx$ und von $Y$ gleich, während die gemeinsame Verteilung
+    von $Y_1$ und $Y_2$ ist nicht dieselbe ist wie jene von $\zvx_1$ und $\zvx_2$.
 \end{bsp}
 
 \begin{bsp}
     \textbf{n-mal würfeln mit fairem Würfel}  \txc{(2025)} \\
     $\eraum \{1,\dots,6\}^n, \quad \ele_i$ das Ereignis des i-ten Wurfs. $\pe$ gleichverteilt. \\
-    $X_i: \eraum \rightarrow \{1,\dots ,6 \}, \quad X_i(\ele) = \ele_i \quad \forall i \in \{1,\dots ,6 \}$ \\
-    z.z. $X_i, \dots, X_n$ unabhängig \\
+    $\zvx_i: \eraum \rightarrow \{1,\dots ,6 \}, \quad \zvx_i(\ele) = \ele_i \quad \forall i \in \{1,\dots ,6 \}$ \\
+    z.z. $\zvx_i, \dots, \zvx_n$ unabhängig \\
     \begin{align*}
-        \pe(X_1=k_1, ..., X_n= k_n) & \quad \text{ für } k_i \in \{1,..,6\} \\
+        \pe(\zvx_1=k_1, ..., \zvx_n= k_n) & \quad \text{ für } k_i \in \{1,..,6\} \\
         \pe(\{(k_1,..,K_n)\}) & = \frac{1}{6^n}\\
-        \pe(X_i = k_i)  & =
-        \pe(X_1\in \{1,..,6\}, ..., X_{i-1} \in \{1,..,6\}, X_i = k_i, X_{i+1} \in \{1,..,6\}, ..., X_n \in \{1,..,6\}) \\
+        \pe(\zvx_i = k_i)  & =
+        \pe(\zvx_1\in \{1,..,6\}, ..., \zvx_{i-1} \in \{1,..,6\}, \zvx_i = k_i, \zvx_{i+1} \in \{1,..,6\}, ..., \zvx_n \in \{1,..,6\}) \\
         & = \pe(\{1,..,6\}^{i-1} \times ...) \\
         & = \frac{6^{n-1}}{6^n}
         & = \frac{1}{6}
     \end{align*}
     \[
-        \pe(X_1 = k_1, ..., X_n = k_n)  = \pe(X_1 = k_1) \cdot \dots \cdot \pe(X_n = k_n)
+        \pe(\zvx_1 = k_1, ..., \zvx_n = k_n)  = \pe(\zvx_1 = k_1) \cdot \dots \cdot \pe(\zvx_n = k_n)
     \]
     \txo{! jetzt müssen wir noch prüfen: Paare, Tripel, ...}
-    Danach: $X_1, \dots, X_n$ bewiesenermaßen unabhängig \\
+    Danach: $\zvx_1, \dots, \zvx_n$ bewiesenermaßen unabhängig \\
     Beispielsweise:
     $\Rightarrow \{x_1 \in \{2,4,6\}, \dots, \{x_4 \leq 4\}\}$ unabhängig \\
     % über arrow "z.B."
@@ -76,20 +76,20 @@ Frage: müssen wir die Paare und Tripel wirklich prüfen?
 % Unabhängigkeit ZV %
 %%%%%%%%%%%%%%%%%%%%%
 \begin{satz}  \txc{(2026)}
-    Seien $X_1, \dots, X_n$ unabhängig $\Rightarrow \pe(X_1 \in B_1 , \dots , X_n \in B_n) =  \pe(X_1 \in B_1) \cdot \dots \cdot \pe(X_n \in B_n)$
+    Seien $\zvx_1, \dots, \zvx_n$ unabhängig $\Rightarrow \pe(\zvx_1 \in B_1 , \dots , \zvx_n \in B_n) =  \pe(\zvx_1 \in B_1) \cdot \dots \cdot \pe(\zvx_n \in B_n)$
 
-    \paragraph{Beweis.} Um zu zeigen, dass \[\pe(X_1 \in B_1, X_3 = B_3) = \pe(X_1 = B_3) \cdot \pe(X_3 = B_3)\]
+    \paragraph{Beweis.} Um zu zeigen, dass \[\pe(\zvx_1 \in B_1, \zvx_3 = B_3) = \pe(\zvx_1 = B_3) \cdot \pe(\zvx_3 = B_3)\]
     gilt, wählen wir
     \[B_2 = E_2, B_4 = E_4 , \dots, B_n = E_n\]
 
 \end{satz}
 \begin{defi}
     \textbf{Unabhängigkeit von Zufallsvariablen}  \txc{(2026)} \\
-    Auf einem Wahrscheinlichkeitsraum $\wraum$ seien Zufallsvariablen $X_1, .., X_n$ gegeben mit $X_i : \eraum E_i$ für
+    Auf einem Wahrscheinlichkeitsraum $\wraum$ seien Zufallsvariablen $\zvx_1, .., \zvx_n$ gegeben mit $\zvx_i : \eraum E_i$ für
     $i = 1, .., n$. \\
-    Die Zufallsvariablen $X_1, .., X_n$ heißen unabhängig, wenn die Ereignisse
+    Die Zufallsvariablen $\zvx_1, .., \zvx_n$ heißen unabhängig, wenn die Ereignisse
     \[
-        \{X_1 \in B\}, \dots , \{X_n \in B\}
+        \{\zvx_1 \in B\}, \dots , \{\zvx_n \in B\}
     \]
     für alle Wahlen von messbaren Mengen $B_i \subseteq E_i, i = 1, \dots, n$, unabhängig sind.
 \end{defi}
@@ -105,10 +105,10 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{satz}
     \label{satz:satz-i}
     \textbf{Satz I. - Charakterisierung über Ereignisse}  \txc{(2025)} \\
-    Seien $X_1, \dots, X_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); X_i$ sei $E_i$-wertig. \\
+    Seien $\zvx_1, \dots, \zvx_n$ \gls{zv} auf $(\glssymbol{eraum} , \pe); \zvx_i$ sei $E_i$-wertig. \\
     Dann
     \[
-        X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
+        \zvx_1, \dots, \zvx_n \text{ unabhängig } \Leftrightarrow \kl{\zvx_1 = x_1}, \dots, \kl{\zvx_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)
     \]
     \paragraph{Beweis.} \texttt{Siehe Folie 2 (2025)}
 \end{satz}
@@ -117,10 +117,10 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{satz}
     \label{satz:satz-ii}
     \textbf{Satz II.  - Neuformulierung von Satz I. / Charakterisierung über Produktform} \txc{(2025)}  \index{Produktform} \\
-    Haben $X_1, \dots, X_n$ abzählbare Werte-/Bildbereiche.
+    Haben $\zvx_1, \dots, \zvx_n$ abzählbare Werte-/Bildbereiche.
     Dann
     \[
-        X_1, \dots, X_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{X_1, \dots, X_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
+        \zvx_1, \dots, \zvx_n  \text{ unabhängig } \Leftrightarrow \glssymbol{wfk}_{\zvx_1, \dots, \zvx_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
     \]
 \end{satz}
 
@@ -128,12 +128,12 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{theo}
     \label{theo:unabhaengigkeit-zv-abzaehlbar}
     \textbf{Unabhängigkeit für Zufallsvariable mit abzählbarem Bildbereich}  \txc{(2026)}\\
-    Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $X_1, .., X_n$ mit abzählbarem Bildbereich gegeben.
-    Dann sind  $X_1, .., X_n$ genau dann unabhängig, wenn die Ereignisse
+    Auf einem \gls{wraum} $\wraum$ seinen \glspl{zv} $\zvx_1, .., \zvx_n$ mit abzählbarem Bildbereich gegeben.
+    Dann sind  $\zvx_1, .., \zvx_n$ genau dann unabhängig, wenn die Ereignisse
     \[
-        \{X_1 = x_1\}, \dots , \{X_n = x_n\}
+        \{\zvx_1 = x_1\}, \dots , \{\zvx_n = x_n\}
     \]
-    für alle $x_i \in X_i(\eraum), i = 1, .., n$ unabhängig sind.
+    für alle $x_i \in \zvx_i(\eraum), i = 1, .., n$ unabhängig sind.
 
     \paragraph{Beweis.} Siehe Skript S. 58.
 \end{theo}
@@ -141,19 +141,19 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \komm{
     Gemeinsam haben alle drei Formulierungen:
     \begin{center}
-        $X_1, .., X_n$ sind \glspl{zv} auf \gls{wraum} $\wraum$
+        $\zvx_1, .., \zvx_n$ sind \glspl{zv} auf \gls{wraum} $\wraum$
     \end{center}
     Verschieden formuliert sind:
     \begin{center}
-        ``haben abzählbare Werte-/Bildbereiche'' $\Leftrightarrow$ $X_i$ sei $E_i$-wertig
+        ``haben abzählbare Werte-/Bildbereiche'' $\Leftrightarrow$ $\zvx_i$ sei $E_i$-wertig
     \end{center}
     und
     \[
-        X_1, \dots, X_n \text{ unabhängig } \Leftrightarrow \overbrace{\underbrace{\kl{X_1 = x_1}, \dots, \kl{X_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)}_{
-            \glssymbol{wfk}_{X_1, \dots, X_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
+        \zvx_1, \dots, \zvx_n \text{ unabhängig } \Leftrightarrow \overbrace{\underbrace{\kl{\zvx_1 = x_1}, \dots, \kl{\zvx_n = x_n}  \text{ unabhängig } \forall x_i \in E_i (i=1, \dots, n)}_{
+            \glssymbol{wfk}_{\zvx_1, \dots, \zvx_n} ((x_1, \dots, x_n)) = \prod^n_{i=1} \glssymbol{wfk}_{x_i}(x_i)
         }}^{\text{wenn die Ereignisse }
-        \{X_1 = x_1\}, \dots , \{X_n = x_n\}
-        \text{ für alle } x_i \in X_i(\eraum), i = 1, .., n \text{  unabhängig sind.}}
+        \{\zvx_1 = x_1\}, \dots , \{\zvx_n = x_n\}
+        \text{ für alle } x_i \in \zvx_i(\eraum), i = 1, .., n \text{  unabhängig sind.}}
     \]
 }
 
@@ -162,21 +162,21 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
     \textbf{Konsequenz aus Satz \ref{satz:satz-ii}}  \txc{(2026)} \\
     Abzählbarer Bildbereich \\
     Es genügt
-    \[\pe(X_1 = x_1 , ..., X_n = x_n) = \pe (X_1 = x_1) \cdot \dots \cdot \pe(X_n = x_n) \forall x_i \in X_i(\eraum)\]
+    \[\pe(\zvx_1 = x_1 , ..., \zvx_n = x_n) = \pe (\zvx_1 = x_1) \cdot \dots \cdot \pe(\zvx_n = x_n) \forall x_i \in \zvx_i(\eraum)\]
     zu zeigen, um Unabhängigkeit
-    von $X_1, \dots X_n $ zu zeigen.
+    von $\zvx_1, \dots \zvx_n $ zu zeigen.
 \end{kor}
 
 % todo satz von tafel, insgesamt alles von der Tafel
 
 \begin{satz}
     \label{satz:charaktersierung-verteilungsfunktion}
-    \textbf{Charakterisierung über die Produktform der Verteilungsfunktion} \txc{(2026)} \\
-    $X_1, .., X_n$ unabhängig
+    \textbf{Charakterisierung über die Produktform der \gls{verteilungsfunktion_zv}} \txc{(2026)} \\
+    $\zvx_1, .., \zvx_n$ unabhängig
     \begin{align*}
-        \Leftrightarrow \pe ( X_1 \leq a_1 , ..., X_n \leq a_n ) & = \pe(X_1 \leq a_1) \cdot \dots \cdot
-        \pe(X_n \leq a_n) \\
-        & =  F_{X_1}(a_1) \cdot \dots \cdot F_{X_n}(a_n \quad \forall a_i \in \rz)
+        \Leftrightarrow \pe ( \zvx_1 \leq a_1 , ..., \zvx_n \leq a_n ) & = \pe(\zvx_1 \leq a_1) \cdot \dots \cdot
+        \pe(\zvx_n \leq a_n) \\
+        & =  F_{\zvx_1}(a_1) \cdot \dots \cdot F_{\zvx_n}(a_n \quad \forall a_i \in \rz)
     \end{align*}
     % Fehler? vermischung von F und \pe
 \end{satz}
@@ -184,11 +184,11 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{kor}
     \label{kor:unabh-gem-verteilung-eindeutig}
     \textbf{Konsequenz aus Satz \ref{satz:charaktersierung-verteilungsfunktion}}  \txc{(2025)}\\
-    $X_1, .., X_n$ unabhängig $\Leftrightarrow$ gemeinsame Verteilung eindeutig bestimmt durch (Rand-)Verteilungen von
-    $X_1, .., X_n$ \\
+    $\zvx_1, .., \zvx_n$ unabhängig $\Leftrightarrow$ gemeinsame \gls{verteilung} eindeutig bestimmt durch (Rand-)\gls{verteilung}en von
+    $\zvx_1, .., \zvx_n$ \\
     Aka.:
     \[
-        X_1, \dots, X_n  \text{ unabhängig } \Rightarrow \text{ gemeinsame Verteilung von } X_1, \dots, X_n \text{ eindeutig bestimmt durch die Randverteilung}
+        \zvx_1, \dots, \zvx_n  \text{ unabhängig } \Rightarrow \text{ gemeinsame \gls{verteilung} von } \zvx_1, \dots, \zvx_n \text{ eindeutig bestimmt durch die Randverteilung}
     \]
 \end{kor}
 
@@ -201,30 +201,30 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{bem}
     \textbf{Erinnerung an mathematisches Kriterium für Unabhängigkeit}  \txc{(2026)} \\
     Wie haben gesehen, dass Unabhängigkeit bereits gezeigt ist, wenn
-    $\pe(X_1 = x_1, \dots, X_n = x_n) = \pe(X_1 = x_1) \cdot .. \cdot \pe(X_n = x_n) \forall x_i \in E_i (i = 1, \dots, n)$ gilt.
+    $\pe(\zvx_1 = x_1, \dots, \zvx_n = x_n) = \pe(\zvx_1 = x_1) \cdot .. \cdot \pe(\zvx_n = x_n) \forall x_i \in E_i (i = 1, \dots, n)$ gilt.
     \txc{Wenn also die Produktform existiert.}
-    (Es ist nicht erforderlich $X_{i_1}, \dots, X_{i_k}$ separat zu betrachten.)
+    (Es ist nicht erforderlich $\zvx_{i_1}, \dots, \zvx_{i_k}$ separat zu betrachten.)
 \end{bem}
 
 \begin{bem}
     \textbf{Anwendung des mathematischen Kriteriums für Unabhängigkeit}  \txc{(2025)} \\
     \textbf{(a)} Wenn wir die Produktform finden: Beweis der Unabhängigkeit
-    \txc{Wenn man also zeigen kann $\pe_{X_1, \dots, X_n} = \prod_i \pe_{X_i}$ } \\
+    \txc{Wenn man also zeigen kann $\pe_{\zvx_1, \dots, \zvx_n} = \prod_i \pe_{\zvx_i}$ } \\
     \txc{Umkehridee:} \\
     \textbf{(b)} Gegeben
-    Verteilung der $X_i$: Wir nutzen die Produktform, um die gemeinsame Verteilung für unabhängig $X_i$
+    \gls{verteilung} der $\zvx_i$: Wir nutzen die Produktform, um die gemeinsame \gls{verteilung} für unabhängig $\zvx_i$
     zu bestimmen.\index{Produktform}
-    \txc{Also wenn die $X_i$ unabhängig sind und die Randverteilungen bekannt sind, dann kann man die gemeinsame Verteilung berechnen durch
+    \txc{Also wenn die $\zvx_i$ unabhängig sind und die Randverteilungen bekannt sind, dann kann man die gemeinsame \gls{verteilung} berechnen durch
         \[
-            \pe_{X_1, \dots, X_n} (x_1, .., x_n) = \prod_i \pe_{X_i}(x_i)
+            \pe_{\zvx_1, \dots, \zvx_n} (x_1, .., x_n) = \prod_i \pe_{\zvx_i}(x_i)
         \]
     }
 \end{bem}
 % Tafel:
-%$X_1, .., X_n$ mit Dichten, Unabhängigkeit
+%$\zvx_1, .., \zvx_n$ mit Dichten, Unabhängigkeit
 %dann
 %\[
-%    \pe(X_1 \in a_1, X_n \in a_n) = siehe bild (aber das zweite)
+%    \pe(\zvx_1 \in a_1, \zvx_n \in a_n) = siehe bild (aber das zweite)
 %\]
 
 \karkar{def_unabhaengigkeit_zufallsvariablen_allgemein}
@@ -244,34 +244,34 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \subsection{Poisson-Verteilte ZV}\label{subsec:poisson-verteilte-zv}
 
 %\begin{bsp}
-%    Verteilung der Summe von zwei unabhängigen, Poisson-verteilten \zv \\
-%    Seien $X_1, X_2$ unabhängig.
+%    \gls{verteilung} der Summe von zwei unabhängigen, Poisson-verteilten \zv \\
+%    Seien $\zvx_1, \zvx_2$ unabhängig.
 %    \[
-%        \mu_{x_1} (k) = \pe(X_1 = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \forall k \in \nz_0
+%        \mu_{x_1} (k) = \pe(\zvx_1 = k) = \frac{\lambda^k_1}{k!} e^{-\lambda_1} \quad \forall k \in \nz_0
 %    \]
 %    \[
-%        \mu_{x_2} (k) = \pe(X_2 = k) = \frac{\lambda^k_2}{k!} e^{-\lambda_2} \quad \forall k \in \nz_0
+%        \mu_{x_2} (k) = \pe(\zvx_2 = k) = \frac{\lambda^k_2}{k!} e^{-\lambda_2} \quad \forall k \in \nz_0
 %    \]
 %\end{bsp}
 
 \begin{satz}
     \textbf{Summe unabhängiger Poisson-verteilter \gls{zv} ist wieder Poisson-verteilt.}  \txc{(2025)}
     \\
-    Seien $X_1, X_2$ unabhängig und Poisson-verteilt mit
+    Seien $\zvx_1, \zvx_2$ unabhängig und Poisson-verteilt mit
     \begin{align*}
-        \glssymbol{wfk}_{x_1}(k) = \pe(X_1 = k) & = \frac{z_1^k}{k!} e^{-z_1} & (z_1 > 0) \forall k \in \mathbb{N}_0 \\
-        \glssymbol{wfk}_{x_2}(k) = \pe(X_2 = k) & = \frac{z_2^k}{k!} e^{-z_2} & (z_2 > 0) \forall k \in \mathbb{N}_0
+        \glssymbol{wfk}_{x_1}(k) = \pe(\zvx_1 = k) & = \frac{z_1^k}{k!} e^{-z_1} & (z_1 > 0) \forall k \in \mathbb{N}_0 \\
+        \glssymbol{wfk}_{x_2}(k) = \pe(\zvx_2 = k) & = \frac{z_2^k}{k!} e^{-z_2} & (z_2 > 0) \forall k \in \mathbb{N}_0
     \end{align*}
-    Dann gilt: $X_1 + X_2$ ist Poisson-Verteilt mit Parameter $z_1 + z_2$.
-    \komm{$X_1 + X_2$ nehmen beide wete aus $\nz_0$ an, also ist die Summe auch in $\nz_0$.}
+    Dann gilt: $\zvx_1 + \zvx_2$ ist Poisson-Verteilt mit Parameter $z_1 + z_2$.
+    \komm{$\zvx_1 + \zvx_2$ nehmen beide wete aus $\nz_0$ an, also ist die Summe auch in $\nz_0$.}
 
     \paragraph{Beweis.} \texttt{Siehe auch Folie 6--7 2025} \\
-    $X_1 + X_2$ ist poisson verteilt mit Parameter $z_1 + z_2 $
+    $\zvx_1 + \zvx_2$ ist poisson verteilt mit Parameter $z_1 + z_2 $
     \begin{align*}
-        \mu_{X_1 + X_2}(n) & = \pe(X_1 + X_2 = n) \quad \text{ für } n \in \nz_0 \\
-        & = \pe \big( \uplus^k_{k_1 = 0} \{ X_1 = k_1 , X_2 = n - k_1\} \big) \\
-        & = \sum^n_{k_1=0} \pe(X_1 = k_1, X_2 = n - k_1) \\
-        & = \sum^n_{k_1=0} \pe(X_1 = k_1) \pe(X_2 = n - k_1) & \text{da unabhängig} \\
+        \mu_{\zvx_1 + \zvx_2}(n) & = \pe(\zvx_1 + \zvx_2 = n) \quad \text{ für } n \in \nz_0 \\
+        & = \pe \big( \uplus^k_{k_1 = 0} \{ \zvx_1 = k_1 , \zvx_2 = n - k_1\} \big) \\
+        & = \sum^n_{k_1=0} \pe(\zvx_1 = k_1, \zvx_2 = n - k_1) \\
+        & = \sum^n_{k_1=0} \pe(\zvx_1 = k_1) \pe(\zvx_2 = n - k_1) & \text{da unabhängig} \\
         & = \sum^n_{k_1=0} \frac{z_1^{k_1}}{k_1 !} e^{-z_1} \frac{z_2^{n-k_1}}{(n-k_1)!} e^{-z_2} \\
         & = \sum^n_{k=0} \frac{n!}{k! (n-k)!} z_1^k z_2^{n-k} & \text{durch herausziehen von }
         \big[ \frac{1}{n!} e^{-(z_1 + z_2)} \big] \\
@@ -289,7 +289,7 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 
 \begin{satz}
     \textbf{Satz III.: Unabhängigkeiten von \gls{zv}} (mit und ohne Dichte)  \txc{(2025)} \\
-    Seien $X_1, \dots, X_n$ unabhängig $ \Leftrightarrow \pe(X_1 \leq a_1, \dots, X_n \leq a_n) = \pe(X_1 \leq a_1) \cdot \dots \cdot  \pe(X_n \leq a_n) = \mathcal{F}_{x_1}(a_1) \cdot \dots \cdot \mathcal{F}_{x_n}(a_n) \forall a_1, \dots, a_n \in \mathbb{R}$.
+    Seien $\zvx_1, \dots, \zvx_n$ unabhängig $ \Leftrightarrow \pe(\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n) = \pe(\zvx_1 \leq a_1) \cdot \dots \cdot  \pe(\zvx_n \leq a_n) = \mathcal{F}_{x_1}(a_1) \cdot \dots \cdot \mathcal{F}_{x_n}(a_n) \forall a_1, \dots, a_n \in \mathbb{R}$.
 
     \paragraph{Beweis.}
     \texttt{Siehe Folie 8}
@@ -299,16 +299,16 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 \begin{satz}
     \label{satz:satz-iv}
     \textbf{Satz IV.}   \txc{(2025, ergänzt 2026)}\\
-    $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$.
+    $\zvx_1, \dots, \zvx_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$.
     Dann gilt:
-    $X_1, \dots, X_n$ unabhängig $\Leftrightarrow$ gemeinsame \dichte hat Produktform $\Leftrightarrow$ $(x_1, \dots, x_n) \mapsto f((x_1, \dots, x_n)) \coloneqq  f_1(x_1)\cdot \dots \cdot f_n(x_n)$ eine gemeinsame Sichte von $X_1, \dots, X_n$ ist.
+    $\zvx_1, \dots, \zvx_n$ unabhängig $\Leftrightarrow$ gemeinsame \dichte hat Produktform $\Leftrightarrow$ $(x_1, \dots, x_n) \mapsto f((x_1, \dots, x_n)) \coloneqq  f_1(x_1)\cdot \dots \cdot f_n(x_n)$ eine gemeinsame Sichte von $\zvx_1, \dots, \zvx_n$ ist.
 \end{satz}
 
 \begin{bem}
     Zu Satz \autoref{satz:satz-iv} \txc{(2026)} \\
     \begin{itemize}
         \item Existenz der gem. \dichte ist nicht vorausgesetzt.
-        Gegeben $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$
+        Gegeben $\zvx_1, \dots, \zvx_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$
         \item Setze
         \begin{equation}
             \label{eq:gemdichte}
@@ -316,11 +316,11 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
             x_i \in
             \mathbb{R} (i=1, \dots, n)
         \end{equation}
-        Aussage des Satzes ist: $X_1, \dots, X_n$ unabhängig $\Leftrightarrow f$ gem. \dichte von $X_1, \dots, X_n$ ist
-        \item $X_1, \dots, X_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$.
+        Aussage des Satzes ist: $\zvx_1, \dots, \zvx_n$ unabhängig $\Leftrightarrow f$ gem. \dichte von $\zvx_1, \dots, \zvx_n$ ist
+        \item $\zvx_1, \dots, \zvx_n$ mit Dichten \index{Dichte} $f_1, \dots, f_n$.
         Modelliere unabhängige Experimente durch gemeinsame \dichte \eqref{eq:gemdichte}.
-        \item Gegen eine gem. \dichte $f$ für $X_1, \dots, X_n$ berechne Randdichten $f_{x_1}, \dots, f_{x_n}$. \\
-        Gilt Gleichung~\eqref{eq:gemdichte}? Falls ja: $X_1, \dots, X_n$ unabhängig.
+        \item Gegen eine gem. \dichte $f$ für $\zvx_1, \dots, \zvx_n$ berechne Randdichten $f_{x_1}, \dots, f_{x_n}$. \\
+        Gilt Gleichung~\eqref{eq:gemdichte}? Falls ja: $\zvx_1, \dots, \zvx_n$ unabhängig.
         Falls~\eqref{eq:gemdichte} für $(x_1, \dots, x_n)$ aus einer Menge $; \subseteq \mathbb{R}^n$ gilt mit $\mathbb{R}^n\backslash M$ abzählbar, dann gilt Unabhängigkeit
     \end{itemize}
 \end{bem}
@@ -329,10 +329,10 @@ Als erstes halten wir fest, dass es im diskreten Fall genügt, einelementige Men
 Es genügt, wenn sie fast überall gilt.}
 
 %\begin{satz} \textbf{für ZV mit Dichte (2026)}\\
-%$X_1, .., X_n$ ZV mit Dichten $f_1, .., f_n$.
+%$\zvx_1, .., \zvx_n$ ZV mit Dichten $f_1, .., f_n$.
 %Dann gilt
 %    \[
-%        X_1, .., X_n \Rightarrow \txo{"gemDichte hat produktform"} \Rightarrow  BOLD
+%        \zvx_1, .., \zvx_n \Rightarrow \txo{"gemDichte hat produktform"} \Rightarrow  BOLD
 %    \]
 %\end{satz}
 
@@ -348,43 +348,43 @@ Es genügt, wenn sie fast überall gilt.}
     \label{bem:widerlegen}
     Es genügt nicht einen Punkt zu finden, in dem~\eqref{eq:gemdichte} nicht gilt. \txc{(2025)} \\
     Wir brauchen eine Menge $D \subseteq \mathbb{R}^n$ mit $|D| = Z(D) > 0$, so dass~\eqref{eq:gemdichte} auf $D$ nicht gilt. \\
-    Einfacher: Zeigen, dass $\pe(X_1 \leq a_1, \dots, X_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$. \\
-    Zeigen Sie, dass die Produktform \textbf{nicht} gilt auf Quader oder verwenden Sie die (nicht geltende) Produktform der Verteilungsfunktion.
+    Einfacher: Zeigen, dass $\pe(\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$. \\
+    Zeigen Sie, dass die Produktform \textbf{nicht} gilt auf Quader oder verwenden Sie die (nicht geltende) Produktform der \gls{verteilungsfunktion_zv}.
 \end{bem}
 \komm{
     Zu Bemerkung \autoref{bem:widerlegen}: \\
-    $\pe(X_1 \leq a_1, \dots, X_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$ bedeutet, die gemeinsame Verteilungsfunktion faktorisiert nicht. Das ist gemeint mit ``verwenden Sie die (nicht geltende) Produktform der Verteilungsfunktion'', denn da
-    $F_{X_1, \dots, X_n}(a_1, \dots, a_n) = \pe(X_1 \leq a_1, \dots, X_n \leq a_n)$ gilt, ist das die Negation der Produktform der Verteilungsfunktion.
+    $\pe(\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n) \neq \prod^n_{i=1} F_{x_i} (a_i)$ bedeutet, die gemeinsame \gls{verteilungsfunktion_zv} faktorisiert nicht. Das ist gemeint mit ``verwenden Sie die (nicht geltende) Produktform der \gls{verteilungsfunktion_zv}'', denn da
+    $F_{\zvx_1, \dots, \zvx_n}(a_1, \dots, a_n) = \pe(\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n)$ gilt, ist das die Negation der Produktform der \gls{verteilungsfunktion_zv}.
 }
 \komm{
     Zu Bemerkung \autoref{bem:widerlegen}: \\
-    Die Produktform der Verteilungsfunktion wird auf sogenannten
+    Die Produktform der \gls{verteilungsfunktion_zv} wird auf sogenannten
     ``Quadern'' geprüft. Damit sind Mengen der Form
     \[
         (-\infty, a_1]\times\cdots\times(-\infty, a_n]
         \subseteq \mathbb{R}^n
     \]
     gemeint. \\
-    Für den Zufallsvektor $(X_1,\dots, X_n)$ entspricht ein solcher Quader dem Ereignis
+    Für den Zufallsvektor $(\zvx_1,\dots, \zvx_n)$ entspricht ein solcher Quader dem Ereignis
     \[
-        \{X_1\le a_1,\dots, X_n\le a_n\}.
+        \{\zvx_1\le a_1,\dots, \zvx_n\le a_n\}.
     \]
-    Die gemeinsame Verteilungsfunktion ist daher gerade
+    Die gemeinsame \gls{verteilungsfunktion_zv} ist daher gerade
     \[
-        F_{X_1,\dots, X_n}(a_1,\dots, a_n)
+        F_{\zvx_1,\dots, \zvx_n}(a_1,\dots, a_n)
         =
-         \pe(X_1\le a_1,\dots, X_n\le a_n).
+         \pe(\zvx_1\le a_1,\dots, \zvx_n\le a_n).
     \]
-    Sind $X_1,\dots, X_n$ unabhängig, so zerfällt diese Wahrscheinlichkeit in ein Produkt:
+    Sind $\zvx_1,\dots, \zvx_n$ unabhängig, so zerfällt diese Wahrscheinlichkeit in ein Produkt:
     \[
-         \pe(X_1\le a_1,\dots, X_n\le a_n)
+         \pe(\zvx_1\le a_1,\dots, \zvx_n\le a_n)
         =
-        \prod_{i=1}^n  \pe(X_i\le a_i)
+        \prod_{i=1}^n  \pe(\zvx_i\le a_i)
         =
-        \prod_{i=1}^n F_{X_i}(a_i).
+        \prod_{i=1}^n F_{\zvx_i}(a_i).
     \]
     Man sagt dann: \\
-    Die Verteilungsfunktion besitzt Produktform auf Quadern. \\
+    Die \gls{verteilungsfunktion_zv} besitzt Produktform auf Quadern. \\
     Um zu zeigen, dass Zufallsvariablen nicht unabhängig sind, genügt es daher,
     einen Quader zu finden, für den diese Produktform nicht gilt. \index{Produktform} \\
     \chatti
@@ -396,11 +396,11 @@ Es genügt, wenn sie fast überall gilt.}
 
 \begin{bsp}
     \textbf{uniform. verteilung auf Rechteck} \txc{(2026)} \\
-    Sei $(X, Y)$ ein zufälliger Punkt in $\rz$ (uniforme Verteilung)
+    Sei $(\zvx, Y)$ ein zufälliger Punkt in $\rz$ (uniforme Verteilung)
     \begin{figure}[H]
         \includegraphics[width=0.4\linewidth]{./images/viereck}\label{fig:figure2}
     \end{figure}
-    $(X, Y)$ hat (gem.) Dichte $f(x, y) = \chi_R (x, y) \frac{1}{a \cdot b} \quad \forall (x, y) \in \rz^2$
+    $(\zvx, Y)$ hat (gem.) Dichte $f(x, y) = \chi_R (x, y) \frac{1}{a \cdot b} \quad \forall (x, y) \in \rz^2$
     Randdichten:
     \begin{align*}
         f_X(x) = \chi_{[0, a]}(x) \in_0^b \underbrace{f(x, y)}_{\frac{1}{a \cdot b}} dy & = \frac{1}{a} \chi_{[0, a]}(x)\\
@@ -410,10 +410,10 @@ Es genügt, wenn sie fast überall gilt.}
     \end{align*}
     schlauer:
     \[
-        f(x, y) = \chi_{\rz} (x, y) \frac{1}{a \cot b} = \frac{1}{a} \underbrace{\chi_{[0, a]}(x) }_{\text{Randdichte von } X} \cdot \frac{1}{b} \underbrace{\chi_{[0, b]}(y) }_{\text{Randdichte von } Y}
+        f(x, y) = \chi_{\rz} (x, y) \frac{1}{a \cot b} = \frac{1}{a} \underbrace{\chi_{[0, a]}(x) }_{\text{Randdichte von } $\zvx$} \cdot \frac{1}{b} \underbrace{\chi_{[0, b]}(y) }_{\text{Randdichte von } Y}
     \]
     \txo{Wir müssen die Randdichten gar nicht berechnen!}
-    X, Y unabhängig
+    $\zvx, Y$ unabhängig
     \komm{wenn man sieht die Dichte zerfällt in x und y Argument muss man nicht integrieren, sondern nur schauen, dass die Funktionen (?) das richtige Gewicht haben. OK. Gerald fragen...} % TODO
 \end{bsp}
 
@@ -423,7 +423,7 @@ Es genügt, wenn sie fast überall gilt.}
     \begin{figure}[H]
         \includegraphics[width=0.3\linewidth]{./images/dreieck}\label{fig:dreieck}
     \end{figure}
-    Sei $(X, Y)$ ein zufälliger Punkt \txc{gleichverteilt} im Dreieck $D$. \\
+    Sei $(\zvx, Y)$ ein zufälliger Punkt \txc{gleichverteilt} im Dreieck $D$. \\
     \txc{Gleichverteilt bedeutet: Dichte ist konstant auf $D$ und 0 außerhalb.}
     \begin{align*}
         f(x, y) & = \frac{1}{|D|} \chi_D (x, y) \\
@@ -438,7 +438,7 @@ Es genügt, wenn sie fast überall gilt.}
         & = \chi_{[0,1]}(x) \int_{0}^{\txo{x}} 2 dy = 2 x  \chi_{[0,1]}(x) \\
         f_Y (y) & = \dots = 2(1-y)\chi_{[0,1]}(y)
     \end{align*}
-    Wenn $X, Y$ unabhängig \txc{wären, dann würde gelten}:
+    Wenn $\zvx, Y$ unabhängig \txc{wären, dann würde gelten}:
     \txc{\begin{equation}
              f(x, y) = f_X(x)\, f_Y(y)\label{eq:wenn-unabhaengig}
     \end{equation}}
@@ -455,11 +455,11 @@ Es genügt, wenn sie fast überall gilt.}
     Alternative:
     \txc{Statt Dichten zu vergleichen, kann man Unabhängigkeit auch testen über:
         \[
-             \pe(X\le a, Y\le b) \stackrel{?}{=} F_X(a)F_Y(b)
+             \pe(\zvx\le a, Y\le b) \stackrel{?}{=} \fxx(a)\fxy(b)
         \]}
-    Explizit: Berechne $F_X$ und $F_Y$, zeige, dass eis \textbf{einen} Punkt $(a, b) \in \rz^2$ gibt mit
+    Explizit: Berechne $\fxx$ und $\fxy$, zeige, dass eis \textbf{einen} Punkt $(a, b) \in \rz^2$ gibt mit
     \[
-        \pe(X \leq a, Y \leq b) \neq F_X(a) F_Y(b).
+        \pe(\zvx \leq a, Y \leq b) \neq \fxx(a) \fxy(b).
     \]
 \end{bsp}
 
@@ -474,9 +474,9 @@ Es genügt, wenn sie fast überall gilt.}
             \end{cases}
         \]
         \item $|D|$ = Fläche des Dreiecks (hier: $|D|=\tfrac12$)
-        \item $f(x, y)$ = gemeinsame Dichte von $(X, Y)$
-        \item $f_X(x)$ beschreibt die Verteilung von $X$ alleine
-        \item $f_Y(y)$ beschreibt die Verteilung von $Y$ alleine
+        \item $f(x, y)$ = gemeinsame Dichte von $(\zvx, Y)$
+        \item $f_X(x)$ beschreibt die \gls{verteilung} von $\zvx$ alleine
+        \item $f_Y(y)$ beschreibt die \gls{verteilung} von $Y$ alleine
     \end{itemize}
 }
 
@@ -490,7 +490,7 @@ Für $(x, y) \in [0,1]^2 \backslash D $ gilt $f(x, y) = 0$
     \[
         f_X(x) f_Y(y) = 4 x (1-y) \chi_{[0,1]^2}(x, y)
     \]
-    Denn wir haben ja oben ausgerechnet, dass $f_X (x) = 2 x  \chi_{[0,1]}(x)$ und $f_Y (y) = 2(1-y)\chi_{[0,1]}(y)$, INSOFERN $X$ und $Y$ unabhängig sind. \\
+    Denn wir haben ja oben ausgerechnet, dass $f_X (x) = 2 x  \chi_{[0,1]}(x)$ und $f_Y (y) = 2(1-y)\chi_{[0,1]}(y)$, INSOFERN $\zvx$ und $Y$ unabhängig sind. \\
     Weil aber $y<1$ gilt, muss $1-y>0$ sein, also
     \[
         \overbrace{ 4  \underbrace{x}_{> 0}  ( \underbrace{1-y}_{> 0} )}^{> 0}
@@ -517,8 +517,8 @@ Wenn Unabhängigkeit gilt, muss die Gleichung für \emph{alle} $(a, b)$ gelten. 
 %%%%%%%%%%%%%%%%%%%%%
 
 \begin{defi} \textbf{Faltung} \txc{(2026)} \\
-    X, Y unabhängig \zv.
-    Dann heißt die Verteilung der Summe \textbf{Faltung} (der Verteilungen). \index{Faltung}
+    $\zvx, Y$ unabhängig \zv.
+    Dann heißt die \gls{verteilung} der Summe \textbf{Faltung} (der \gls{verteilung}en). \index{Faltung}
 \end{defi}
 
 \karkar{def_faltung}

@@ -1,4 +1,4 @@
-%! Author = lili
+%! author = lili
 %! Date = 4/27/26
 
 % todo beispiele für abhängige ereignisse
@@ -11,68 +11,68 @@
 \section{Stochastische Unabhängigkeit von Ereignissen}\label{sec:stochastische-unabhangigkeit-von-ereignissen}
 Was bedeutet stochastische Unabhängigkeit?
 
-\paragraph{Intuition:} Zwei Ereignisse A und B sind unabhängig, wenn die Information des Eintretens des jeweils
+\paragraph{Intuition:} Zwei Ereignisse $\erga$ und $\ergb$ sind unabhängig, wenn die Information des Eintretens des jeweils
 einen keinen Einfluss darauf hat, als wie wahrscheinlich wir ein Eintreten auch des jeweils anderen einschätzen (
 Bspw.\ mehrmals hintereinander Würfeln).
 
-\paragraph{Formal:} Um A und B unabhängig zu nennen, sollten also gelten \txc{(2025)}
+\paragraph{Formal:} Um $\erga$ und $\ergb$ unabhängig zu nennen, sollten also gelten \txc{(2025)}
 \[
-    \pe(B|A) = \pe(B)
+    \pe(\ergb|\erga) = \pe(\ergb)
     \text{ und }
-    \pe(A|B) = \pe(A) \txo{\ = \frac{\pe(A \cap B)}{\pe(B)}}
+    \pe(\erga|\ergb) = \pe(\erga) \txo{\ = \frac{\pe(\erga \cap \ergb)}{\pe(\ergb)}}
 \]
-\txc{($\pe(A|B)$: die bedingte Wahrscheinlichkeit von A gegeben B.)}
+\txc{($\pe(\erga|\ergb)$: die bedingte Wahrscheinlichkeit von $\erga$ gegeben $B$.)}
 wobei jede dieser beiden Gleichungen äquivalent ist zu.
 \[
-    \pe(A \cap B) = \pe(A) \cdot \pe(B)
+    \pe(\erga \cap \ergb) = \pe(\erga) \cdot \pe(\ergb)
 \]
 
 Also
 \[
-    \pe(A|B) = \pe(A)  = \frac{\pe(A \cap B)}{\pe(B)} \Leftrightarrow \pe(A) \cdot \pe(B) = \pe(A \cap B)
+    \pe(\erga|\ergb) = \pe(\erga)  = \frac{\pe(\erga \cap \ergb)}{\pe(\ergb)} \Leftrightarrow \pe(\erga) \cdot \pe(\ergb) = \pe(\erga \cap \ergb)
 \]
 
 \txc{
-    $\pe(A \cap B)$: WS, dass A und B gleichzeitig eintreten}
+    $\pe(\erga \cap \ergb)$: \gls{ws}, dass $\erga$ und $\ergb$ gleichzeitig eintreten}
 
 %%%%%%%%%%%%%%%%%%%%%
 % Unabhängigkeit %
 %%%%%%%%%%%%%%%%%%%%%
 
 \begin{defi}
-    Zwei Ereignisse $A, B \subseteq \glssymbol{eraum} $ heißen unabhängig , wenn $\pe(A \cap B) = \pe(A) \cdot \pe(B)$.
+    Zwei Ereignisse $\erga, $\ergb$ \subseteq \eraum $ heißen unabhängig, wenn $\pe(\erga \cap \ergb) = \pe(\erga) \cdot \pe(\ergb)$.
 \end{defi}
 \begin{bsp}
 TODO
 \end{bsp}
 \begin{beo} \txc{(2025)} \\
 unabhängig $\neq$ disjunkt!
-    \noindent Also sind disjunkte Ereignisse unabhängig, wenn $0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B)$, also muss entweder $\pe(A)=0$ oder $\pe(B)=0$ sein (mindestens eines der Ereignisse WS Null haben):
+    \noindent Also sind disjunkte Ereignisse unabhängig, wenn $0 = \pe(\emptyset) = \pe(\erga \cap \ergb) = \pe(\erga) \cdot \pe(\ergb)$, also muss entweder $\pe(\erga)=0$ oder $\pe(\ergb)=0$ sein (mindestens eines der Ereignisse \gls{ws} Null haben):
     \[
-        0 = \pe(\emptyset) = \pe(A \cap B) = \pe(A) \cdot \pe(B) \Leftrightarrow \pe(A)=0 \text{ oder } \pe(B)=0
+        0 = \pe(\emptyset) = \pe(\erga \cap \ergb) = \pe(\erga) \cdot \pe(\ergb) \Leftrightarrow \pe(\erga)=0 \text{ oder } \pe(\ergb)=0
     \]
 \end{beo}
-\komm{disjunkte Ereignisse: $A \cap B = \emptyset \Rightarrow$ A und B können nicht gleichzeitig eintreten. \\
-unabhängige Ereignisse: $\pe(A \cap B) = \pe(A) \cdot \pe(B)$ \\
+\komm{disjunkte Ereignisse: $\erga \cap $\ergb$ = \emptyset \Rightarrow$ $\erga$ und $\ergb$ können nicht gleichzeitig eintreten. \\
+unabhängige Ereignisse: $\pe(\erga \cap \ergb) = \pe(\erga) \cdot \pe(\ergb)$ \\
 }
 \begin{beo} \txc{(2025)} \\
-Es gilt: A, B unabhängig $\Leftrightarrow$ $A, B^c$ unabhängig $\Leftrightarrow A^c, B^c$ unabhängig.
+Es gilt: $\erga$, $\ergb$ unabhängig $\Leftrightarrow$ $\erga, \ergb^c$ unabhängig $\Leftrightarrow \erga^c, \ergb^c$ unabhängig.
 
-    \paragraph{Beweis.} \txo{z.z. $\pe(A \cap B^c) = \pe(A) \cdot \pe(B^c)$} \\
+    \paragraph{Beweis.} \txo{z.z. $\pe(\erga \cap \ergb^c) = \pe(\erga) \cdot \pe(\ergb^c)$} \\
     \texttt{Siehe Folie 9}
 \end{beo}
 \begin{beo}
-    $A$ kann unabhängig von sich selbst sein. \txc{(2025)}
+    $\erga$ kann unabhängig von sich selbst sein. \txc{(2025)}
     \[
-        \pe(A) = \pe(A \cap A) = \pe(A) \cdot \pe(A) = \pe(A)^2 \Leftrightarrow \pe(A) \in \kl{0,1}
+        \pe(\erga) = \pe(\erga \cap \erga) = \pe(\erga) \cdot \pe(\erga) = \pe(\erga)^2 \Leftrightarrow \pe(\erga) \in \kl{0,1}
     \]
-    \txc{Umgangssprachlicher gesagt: $A$ kann unabhängig von sich selbst sein, wenn seine WS entweder 0 oder 1 ist.}
+    \txc{Umgangssprachlicher gesagt: $\erga$ kann unabhängig von sich selbst sein, wenn seine \gls{ws} entweder 0 oder 1 ist.}
 \end{beo}
 \begin{defi}
     Unabhängigkeit von $n$ Ereignissen. \txc{(2025)}  \\
-    Die Ereignisse $A_1 , \dots  , A_n \subseteq \glssymbol{eraum} $ heißen unabhängig, wenn
+    Die Ereignisse $\erga_1 , \dots  , \erga_n \subseteq \eraum $ heißen unabhängig, wenn
     \[
-        \pe(A_{i_1} \cap \dots \cap A_{i_k}) = \pe(A_{i_1}) \cdots \pe(A_{i_k})
+        \pe(\erga_{i_1} \cap \dots \cap \erga_{i_k}) = \pe(\erga_{i_1}) \cdots \pe(\erga_{i_k})
     \]
     für alle $k = 2, \dots  , n$ und alle Auswahlen von $k$ verschiedenen
     Indizes $i_1 , \dots  , i_k \in \{1, \dots  , n\}$. \txc{(Also alle Paare, Tripel, etc. prüfen.)}
@@ -85,33 +85,33 @@ Es genügt nicht, paarweise Unabhängigkeit zu prüfen!
     Sachen können paarweise unabhängig, aber nicht insgesamt unabhängig sein.
 \end{bem}
 \begin{bem}  \txc{(2025)}
-    Es genügt nicht, $\pe(A_1 \cap \dots  \cap A_n ) = \pe(A_1 ) \cdots \pe(A_n )$ zu prüfen.
+    Es genügt nicht, $\pe(\erga_1 \cap \dots  \cap \erga_n ) = \pe(\erga_1 ) \cdots \pe(\erga_n )$ zu prüfen.
     Es kann insgesamt unabhängig sein, aber nicht paarweise etc.\ unabhängig.
 \end{bem}
 
 
 \section{Unabhängige Nacheinanderausführung von Zufallsexperimenten}\label{sec:unabhangige-nacheinanderausfuhrung-von-zufallsexperimenten}
-\txc{(2025)} Sollen Zufallsexperimente $(\glssymbol{eraum} _1, \pe_1), \dots, (\glssymbol{eraum} _n, \pe_n)$
-unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\glssymbol{eraum} , \pe)$ mit
+\txc{(2025)} Sollen Zufallsexperimente $(\eraum _1, \pe_1), \dots, (\eraum _n, \pe_n)$
+unabhängig nacheinander ausgeführt werden, so modellieren wir dies mit dem W-Raum $(\eraum , \pe)$ mit
 \[
-    \glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n
+    \eraum  = \eraum _1 \times \dots \times \eraum _n
 \]
-und – im Fall, dass wir abzählbare $\glssymbol{eraum} _i$ haben –
+und – im Fall, dass wir abzählbare $\eraum _i$ haben –
 \[
-    \glssymbol{wfk}(\glssymbol{elementarereignis}) = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdots \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n) \forall \glssymbol{elementarereignis} = (\glssymbol{elementarereignis}_, \dots, \glssymbol{elementarereignis}_n) \in \glssymbol{eraum}
+    \wfk(\ele) = \wfk_1(\ele_1) \cdots \wfk_n(\ele_n) \forall \ele = (\ele_, \dots, \ele_n) \in \eraum
 \]
-Sind nämlich $A_1 \subseteq \glssymbol{eraum} _1 , \dots  , A_n \subseteq \glssymbol{eraum} _n$ , so sind bei dieser Wahl
+Sind nämlich $\erga_1 \subseteq \eraum _1 , \dots  , \erga_n \subseteq \eraum _n$ , so sind bei dieser Wahl
 \begin{align*}
-    B_1 & = A_1 \times \glssymbol{eraum} _2 \times \dots \glssymbol{eraum} _n \\
-    B_2 & = \glssymbol{eraum} _1 \times A_2 \times \glssymbol{eraum} _3 \times \dots \times \glssymbol{eraum} _n \\
+    \ergb_1 & = \erga_1 \times \eraum _2 \times \dots \eraum _n \\
+    \ergb_2 & = \eraum _1 \times \erga_2 \times \eraum _3 \times \dots \times \eraum _n \\
     \vdots & \\
-    B_n & = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _{n-1} \times A_n
+    \ergb_n & = \eraum _1 \times \dots \times \eraum _{n-1} \times \erga_n
 \end{align*}
-\txc{$B_1$ bedeutet: Im ersten Experiment tritt $A_1$ ein, die anderen sind egal. }
+\txc{$\ergb_1$ bedeutet: Im ersten Experiment tritt $\erga_1$ ein, die anderen sind egal. }
 unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \dots  , n}$ verschieden gilt:
 \begin{equation}
     \label{eq:omegaiabzaehlbar}
-    \oub{\pe(B_{i_1} \cap \dots \cap B_{i_k})}{ = A_1 \times A_2 \times \dots \times A_n} = \pe_{i_1} A_{i_1} \cdot \dots \cdot \pe_{i_k} A_{i_k} = \pe(B_{i_1}) \cdot \dots \cdot \pe(B_{i_k})
+    \oub{\pe(\ergb_{i_1} \cap \dots \cap \ergb_{i_k})}{ = \erga_1 \times \erga_2 \times \dots \times \erga_n} = \pe_{i_1} \erga_{i_1} \cdot \dots \cdot \pe_{i_k} \erga_{i_k} = \pe(\ergb_{i_1}) \cdot \dots \cdot \pe(\ergb_{i_k})
 \end{equation}
 
 \paragraph{Beweis.} \texttt{Selbstständig (siehe Hinweis Folie 20)}
@@ -120,20 +120,20 @@ unabhängig, denn für $k = 2, \dots  , n$ und $i_1 , \dots  , i_k \in \kl{1, \d
     \texttt{Folie 21}
 \end{bsp}
 
-\noindent Sind die $\glssymbol{eraum} _i$ nicht alle abzählbar, so definieren wir $\pe$ auf $\glssymbol{eraum}  = \glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n$
+\noindent Sind die $\eraum _i$ nicht alle abzählbar, so definieren wir $\pe$ auf $\eraum  = \eraum _1 \times \dots \times \eraum _n$
 \begin{equation}
     \label{eq:omegainichtabzaehlbar}
-    \pe(A_1 \times \dots \times A_n) = \pe_1(A_1) \cdot \dots \cdot \pe_n(A_n) \quad \forall A_i \subseteq \glssymbol{eraum} _i \forall i
+    \pe(\erga_1 \times \dots \times \erga_n) = \pe_1(\erga_1) \cdot \dots \cdot \pe_n(\erga_n) \quad \forall \erga_i \subseteq \eraum _i \forall i
 \end{equation}
 motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
 \begin{bem}  \txc{(2025)} \\
     Formel~\eqref{eq:omegainichtabzaehlbar} kann immer als Definition verendet werden.
-    Falls alle $\pe_i$ durch WS $\glssymbol{wfk}_i$ gegeben sind, folgt aus Formel~\eqref{eq:omegainichtabzaehlbar}:
+    Falls alle $\pe_i$ durch \gls{ws} $\wfk_i$ gegeben sind, folgt aus Formel~\eqref{eq:omegainichtabzaehlbar}:
     \begin{align*}
-        \glssymbol{wfk}((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) & = \pe(\kl{(\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)}) \\
-        & = \pe(\kl{\glssymbol{elementarereignis}_1} \times \kl{\glssymbol{elementarereignis}_2} \times \dots \times \kl{\glssymbol{elementarereignis}_n}) \\
-        &~\overset{(\ref{eq:omegainichtabzaehlbar})}{=} \pe_1(\kl{\glssymbol{elementarereignis}_1}) \cdot \pe_2(\kl{\glssymbol{elementarereignis}_2}) \cdot \dots \cdot \pe_n(\kl{\glssymbol{elementarereignis}_n}) \\
-        & = \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \glssymbol{wfk}_2 (\glssymbol{elementarereignis}_2) \cdot \dots \cdot \glssymbol{wfk}_n(\glssymbol{elementarereignis}_n)
+        \wfk((\ele_1, \dots, \ele_n)) & = \pe(\kl{(\ele_1, \dots, \ele_n)}) \\
+        & = \pe(\kl{\ele_1} \times \kl{\ele_2} \times \dots \times \kl{\ele_n}) \\
+        &~\overset{(\ref{eq:omegainichtabzaehlbar})}{=} \pe_1(\kl{\ele_1}) \cdot \pe_2(\kl{\ele_2}) \cdot \dots \cdot \pe_n(\kl{\ele_n}) \\
+        & = \wfk_1(\ele_1) \cdot \wfk_2 (\ele_2) \cdot \dots \cdot \wfk_n(\ele_n)
     \end{align*}
 \end{bem}
 
@@ -146,38 +146,39 @@ motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
 \begin{defi}
     \textbf{Einfaches \bernoulli }  \txc{(2025)} \\
     \txc{Ein \bernoulli  ist ein Zufallsexperiment mit genau zwei möglichen Ergebnissen: Einem ''Treffer'' oder einer ''Niete''.} \\
-    $\glssymbol{eraum} _1 = \kl{0,1}; \glssymbol{elementarereignis} = 1$ bedeutet Erfolg, $\glssymbol{elementarereignis} = 0$ bedeutet Misserfolg.  \\
-    $\glssymbol{wfk}_1(1) = p, \glssymbol{wfk}_1(0) = 1-p$ und dabei heißt $p \in [0,1]$ die Erfolgswahrscheinlichkeit.
+    $\eraum _1 = \kl{0,1}; \ele = 1$ bedeutet Erfolg, $\ele = 0$ bedeutet Misserfolg.  \\
+    $\wfk_1(1) = p, \wfk_1(0) = 1-p$ und dabei heißt $p \in [0,1]$ die Erfolgswahrscheinlichkeit.
 \end{defi}
 \begin{defi}
     \textbf{\bernoulli der Länge $n$} \\
     Wiederhole dasselbe einfache \bernoulli  $n$-mal unabhängig.
     \[
-        \glssymbol{eraum} _n = \kl{0,1}^n, \glssymbol{wfk}_n((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) = p^{\oob{^{\sum_{i=1}^n \glssymbol{elementarereignis}_i}}{=k}} \cdot (1 - p)^{n - \oob{^{\sum_{i=1}^n \glssymbol{elementarereignis}_i}}{=k}}
+        \eraum _n = \kl{0,1}^n, \wfk_n((\ele_1, \dots, \ele_n)) = p^{\oob{^{\sum_{i=1}^n \ele_i}}{=k}} \cdot (1 - p)^{n - \oob{^{\sum_{i=1}^n \ele_i}}{=k}}
     \]
     \txo{\begin{align*}
-             \glssymbol{eraum} _n & = \underbrace{\glssymbol{eraum} _1 \times \dots \times \glssymbol{eraum} _n}_{n-mal} \\
-             \glssymbol{wfk}_n((\glssymbol{elementarereignis}_1, \dots, \glssymbol{elementarereignis}_n)) &=  \glssymbol{wfk}_1(\glssymbol{elementarereignis}_1) \cdot \dots \cdot \glssymbol{wfk}_1(\glssymbol{elementarereignis}_n)
-             & \forall \glssymbol{elementarereignis} \in \glssymbol{eraum} _n \\
-             &=   p^{\sum_{i=1}^n \cdot \glssymbol{elementarereignis}_i} \cdot (1 - p)^{n - \sum_{i=1}^n \glssymbol{elementarereignis}_i }
+             \eraum _n & = \underbrace{\eraum _1 \times \dots \times \eraum _n}_{n-mal} \\
+             \wfk_n((\ele_1, \dots, \ele_n)) &=  \wfk_1(\ele_1) \cdot \dots \cdot \wfk_1(\ele_n)
+             & \forall \ele \in \eraum _n \\
+             &=   p^{\sum_{i=1}^n \cdot \ele_i} \cdot (1 - p)^{n - \sum_{i=1}^n \ele_i }
     \end{align*}
     }
 \end{defi}
 \begin{defi}
     \textbf{Binomialverteilung \index{Binomialverteilung}}  \txc{(2025)} \\
-    Suche WS für genau $k$ Erfolge in \bernoulli  der Länge $n$. \[
-                                                                     A_k = \kl{S_n = k} = \kl{(\glssymbol{elementarereignis}_1 , \dots  , \glssymbol{elementarereignis}_n ) \in \kl{0, 1}^n : \oub{\sum_{i=1}^n \glssymbol{elementarereignis}_i}{S_n(\glssymbol{elementarereignis})} = k }
+    Suche \gls{ws} für genau $k$ Erfolge in \bernoulli  der Länge $n$. \[
+                                                                     \erga_k = \kl{S_n = k} = \kl{(\ele_1 , \dots  , \ele_n ) \in \kl{0, 1}^n : \oub{\sum_{i=1}^n \ele_i}{S_n(\ele)} = k }
     \]
     $\binom{n}{k}$ Möglichkeiten, $k$ Einsen auf die $n$ Stellen zu verteilen.
     \[
-        \Rightarrow \glssymbol{binomv}(k) \coloneqq  \pe(A_k) = \binom{n}{k} p^k (1-p)^{n-k} \text{ für alle } k \in \kl{0,\dots,n}
+        \Rightarrow \glssymbol{binomv}(k) \coloneqq  \pe(\erga_k) = \binom{n}{k} p^k (1-p)^{n-k} \text{ für alle } k \in \kl{0,\dots,n}
     \]
-    $\glssymbol{binomv}(k)$ ist eine Wahrscheinlichkeitsfunktion auf $\glssymbol{eraum}  = \kl{0,\dots,n}$, denn
+    $\glssymbol{binomv}(k)$ ist eine Wahrscheinlichkeitsfunktion auf $\eraum  = \kl{0,\dots,n}$, denn
     \[
-        \sum^n_{k=0} \glssymbol{binomv}(k)  = \sum^n_{k=0} \pe(A_k) = \pe(\dot\cup^n_{k=0} A_k) = \pe(\kl{0,1}^n)= 1
+        \sum^n_{k=0} \glssymbol{binomv}(k)  = \sum^n_{k=0} \pe(\erga_k) = \pe(\dot\cup^n_{k=0} \erga_k) = \pe(\kl{0,1}^n)= 1
     \]
-    \glssymbol{binomv} heißt \binomv  mit den Parametern $n$ und $p$. \\ \\
-    Eine \gls{zv} $X$, deren Verteilung $\pe_X$ die $\glssymbol{binomv}$-Verteilung ist, heißt \textbf{binomialverteilt mit mit den Parametern $n$ und $p$}.
+    \glssymbol{binomv} heißt \binomv mit den Parametern $n$ und $p$. \\ \\
+    Eine \gls{zv} $X$, deren \gls{verteilung} $\pe_X$ die $\glssymbol{binomv}$-Verteilung ist, heißt
+    \textbf{binomialverteilt mit den Parametern $n$ und $p$}.
 \end{defi}
 \begin{bsp}
     Einfaches \bernoulli  \texttt{Siehe Folie 29}
@@ -191,7 +192,7 @@ motiviert durch Formel~\eqref{eq:omegaiabzaehlbar}.
 \begin{prob}
     Wie wahrscheinlich ist, dass in einem \bernoulli  der Länge n der erste Erfolg im n-ten Versuch eintritt?  \txc{(2025)}
     \[
-        A_n = \kl{(0,\dots,0,1)}, \quad \pe(A_n) \ \txo{ = \glssymbol{wfk}_n((0,\dots,0,1))} = p(1 - p)^{n-1}
+        \erga_n = \kl{(0,\dots,0,1)}, \quad \pe(\erga_n) \ \txo{ = \wfk_n((0,\dots,0,1))} = p(1 - p)^{n-1}
     \]
 \end{prob}
 
