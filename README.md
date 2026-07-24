@@ -34,7 +34,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 17 | Fr, 24.04. | :ballot_box_with_check:        | Rechnen mit Wahrscheinlichkeiten   | :ballot_box_with_check: | Mo, 20.04. | :red_square:            | Fr, 24.04.     | :red_square: |
 | KW 18 | --         | --                             |                                    | --                      | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     | :red_square: |
 | KW 19 | Fr, 08.05. | :construction:                 | ZV und ihre Verteilung             | :red_square:            | Mo, 04.05. | :construction:          | Fr, 08.05.     | :red_square: |
-| KW 20 | Fr, 15.05. | :construction: (teile fehlen)  | Unabhängigkeit von Ereignissen     | :red_square:            | Mo, 11.05. | :red_square:            | Fr, 15.05.     | :red_square: |
+| KW 20 | Fr, 15.05. | :ballot_box_with_check:        | Unabhängigkeit von Ereignissen     | :red_square:            | Mo, 11.05. | :red_square:            | Fr, 15.05.     | :red_square: |
 | KW 21 | Fr, 22.05. | :ballot_box_with_check:        | Unabhängigkeit von ZV              | :ballot_box_with_check: | Mo, 18.05. | :red_square:            | Fr, 22.05.     | :red_square: |
 | KW 22 | Fr, 29.05. | :construction: (glaube fertig) | Bedingte WS                        | :red_square:            | Mo, --     | --                      | Fr, 29.05.     | :red_square: |
 | KW 23 | Fr, 05.06. | :ballot_box_with_check:        | Erwartungswert und Varianz von ZV  | :ballot_box_with_check: | Mo, 01.06. | :construction:          | Fr, 05.06.     | :red_square: |

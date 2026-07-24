@@ -380,27 +380,29 @@ Wir können die Definition der uniformen Verteilung verallgemeinern.
         \item $\dcht  \geq 0 $
         \item $\dcht$ R-integrierbar, da \gls{stst}
         \orangenote{$g(x) = e^{-\alpha x}$ \\ $g'(x) = (-\alpha) e^{- \alpha x}$ (Produktregel)}
-        \item \texttt{???}:
-        \begin{align*}
-            \int_{-\infty}^{\infty} \dcht(x) dx & =   \int_{0}^{\infty} \dcht(x) dx  \\
-            & =   \int_{0}^{\infty} \alpha e^{-\alpha x} dx  \\
-            & = \underset{N \rightarrow \infty}{lim} \int^N_0 \alpha e ^{-\alpha x} dx \\
-            & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha x} \mid^N_{x=0}] \\
-            & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha N}
-            \txo{\underbrace{
-                \textcolor{black}{- ( -\txo{\underbrace{
-                    \textcolor{black}{e^{-\alpha \cdot 0}
-                    }}_{=1}}}
-            }_{=1}}
-            )] \\
-            & = 1 - \txo{
-                \underbrace{
-                    \textcolor{black}{\underset{N \rightarrow \infty}{lim} e ^{- \alpha N}}
-                }_{=1}
-            } \\
-            & = 1
-        \end{align*}
     \end{itemize}
+    Die folgende Rechnung zeigt sowohl die Existenz des uneigentlichen Riemann-
+    Integrals über $\rz$ als auch, daß die Normierungsbedingung erfüllt ist.
+    \begin{align*}
+        \int_{-\infty}^{\infty} \dcht(x) dx & =   \int_{0}^{\infty} \dcht(x) dx  \\
+        & =   \int_{0}^{\infty} \alpha e^{-\alpha x} dx  \\
+        & = \underset{N \rightarrow \infty}{lim} \int^N_0 \alpha e ^{-\alpha x} dx \\
+        & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha x} \mid^N_{x=0}] \\
+        & = \underset{N \rightarrow \infty}{lim} [-e ^{-\alpha N}
+        \txo{\underbrace{
+            \textcolor{black}{- ( -\txo{\underbrace{
+                \textcolor{black}{e^{-\alpha \cdot 0}
+                }}_{=1}}}
+        }_{=1}}
+        )] \\
+        & = 1 - \txo{
+            \underbrace{
+                \textcolor{black}{\underset{N \rightarrow \infty}{lim} e ^{- \alpha N}}
+            }_{=1}
+        } \\
+        & = 1
+    \end{align*}
+    % TODO da könnte man noch was aus dem 2026 skript hinzufügen, alternative rechnung
 \end{bem}
 
 
