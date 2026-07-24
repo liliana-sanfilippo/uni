@@ -28,23 +28,23 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 ## Statistik SoSe 2026
 
-| Woche | Vorlesung  | In Notizen                     | Thema                              | In Karteikarten         | Tutorium   | In Notizen              | Übung (Abgabe) | In Notizen            |
-|-------|------------|--------------------------------|------------------------------------|-------------------------|------------|-------------------------|----------------|-----------------------|
-| KW 16 | Fr, 17.04. | :white_check_mark:             | Modellieren zufälliger Ereignisse  | :ballot_box_with_check: | --         | --                      | --             | --                    |
-| KW 17 | Fr, 24.04. | :ballot_box_with_check:        | Rechnen mit Wahrscheinlichkeiten   | :ballot_box_with_check: | Mo, 20.04. | :red_square:            | Fr, 24.04.     | :red_square:          |
-| KW 18 | --         | --                             |                                    | --                      | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     | :red_square:          |
-| KW 19 | Fr, 08.05. | :construction:                 | ZV und ihre Verteilung             |                         | Mo, 04.05. | :construction:          | Fr, 08.05.     | :red_square:          |
-| KW 20 | Fr, 15.05. | :construction: (bsp fehlen)    | Unabhängigkeit von Ereignissen     |                         | Mo, 11.05. | :red_square:            | Fr, 15.05.     | :red_square:          |
-| KW 21 | Fr, 22.05. | :ballot_box_with_check:        | Unabhängigkeit von ZV              | :ballot_box_with_check: | Mo, 18.05. | :red_square:            | Fr, 22.05.     | :red_square:          |
-| KW 22 | Fr, 29.05. | :construction: (glaube fertig) | Bedingte WS                        |                         | Mo, --     | --                      | Fr, 29.05.     | :red_square:          |
-| KW 23 | Fr, 05.06. | :ballot_box_with_check:        | Erwartungswert und Varianz von ZV  | :ballot_box_with_check: | Mo, 01.06. | :construction:          | Fr, 05.06.     | :red_square:          |
-| KW 24 | Fr, 12.06. | :ballot_box_with_check:        | Grenzwertsätze                     | :ballot_box_with_check: | Mo, 08.06. | :red_square:            | Fr, 12.06.     | :red_square:          |
-| KW 25 | Fr, 19.06. | :ballot_box_with_check:        | Grenzwertsätze (Fortsetzung)       | :construction:          | Mo, 15.06. | :construction:          | Fr, 19.06.     | :red_square:          |
-| KW 26 | Fr, 26.06. | :construction: (anmerk fehlen) | Statistik                          |                         | Mo, 22.06. | :red_square:            | Fr, 26.06.     | :red_square:          |
-| KW 27 | Fr, 03.07. | :red_square:                   | Punktschätzer (Fortsetzung)        |                         | Mo, 29.06. | :red_square:            | Fr, 03.07.     | :red_square:          |
-| KW 28 | Fr, 10.07. | :red_square:                   | Testen von Hypothesen              |                         | Mo, 06.07. | :red_square:            | Fr, 10.07.     | :red_square:          |
-| KW 29 | Fr, 17.07. | :black_square_button:          |                                    |                         | Mo, 13.07. | :construction:          | Fr, 17.07.     | :red_square:          |
-| KW 30 | Fr, 24.07. | :black_square_button:          | Vorbereitung Klausur Statistikteil |                         | Mo, 20.07. | :black_square_button:   | Fr, 24.07.     | :black_square_button: |
+| Woche | Vorlesung  | In Notizen                     | Thema                              | In Karteikarten         | Tutorium   | In Notizen              | Übung (Abgabe) | In Notizen   |
+|-------|------------|--------------------------------|------------------------------------|-------------------------|------------|-------------------------|----------------|--------------|
+| KW 16 | Fr, 17.04. | :white_check_mark:             | Modellieren zufälliger Ereignisse  | :ballot_box_with_check: | --         | --                      | --             | --           |
+| KW 17 | Fr, 24.04. | :ballot_box_with_check:        | Rechnen mit Wahrscheinlichkeiten   | :ballot_box_with_check: | Mo, 20.04. | :red_square:            | Fr, 24.04.     | :red_square: |
+| KW 18 | --         | --                             |                                    | --                      | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     | :red_square: |
+| KW 19 | Fr, 08.05. | :construction:                 | ZV und ihre Verteilung             | :red_square:            | Mo, 04.05. | :construction:          | Fr, 08.05.     | :red_square: |
+| KW 20 | Fr, 15.05. | :construction: (bsp fehlen)    | Unabhängigkeit von Ereignissen     | :red_square:            | Mo, 11.05. | :red_square:            | Fr, 15.05.     | :red_square: |
+| KW 21 | Fr, 22.05. | :ballot_box_with_check:        | Unabhängigkeit von ZV              | :ballot_box_with_check: | Mo, 18.05. | :red_square:            | Fr, 22.05.     | :red_square: |
+| KW 22 | Fr, 29.05. | :construction: (glaube fertig) | Bedingte WS                        | :red_square:            | Mo, --     | --                      | Fr, 29.05.     | :red_square: |
+| KW 23 | Fr, 05.06. | :ballot_box_with_check:        | Erwartungswert und Varianz von ZV  | :ballot_box_with_check: | Mo, 01.06. | :construction:          | Fr, 05.06.     | :red_square: |
+| KW 24 | Fr, 12.06. | :ballot_box_with_check:        | Grenzwertsätze                     | :ballot_box_with_check: | Mo, 08.06. | :red_square:            | Fr, 12.06.     | :red_square: |
+| KW 25 | Fr, 19.06. | :ballot_box_with_check:        | Grenzwertsätze (Fortsetzung)       | :ballot_box_with_check: | Mo, 15.06. | :construction:          | Fr, 19.06.     | :red_square: |
+| KW 26 | Fr, 26.06. | :construction: (anmerk fehlen) | Statistik                          | :red_square:            | Mo, 22.06. | :red_square:            | Fr, 26.06.     | :red_square: |
+| KW 27 | Fr, 03.07. | :red_square:                   | Punktschätzer (Fortsetzung)        | :red_square:            | Mo, 29.06. | :red_square:            | Fr, 03.07.     | :red_square: |
+| KW 28 | Fr, 10.07. | :red_square:                   | Testen von Hypothesen              | :red_square:            | Mo, 06.07. | :red_square:            | Fr, 10.07.     | :red_square: |
+| KW 29 | Fr, 17.07. | :red_square:                   |                                    |                         | Mo, 13.07. | :construction:          | Fr, 17.07.     | :red_square: |
+| KW 30 | Fr, 24.07. | :red_square:                   | Vorbereitung Klausur Statistikteil | :red_square:            | Mo, 20.07. | :red_square:            | Fr, 24.07.     | :red_square: |
 
 | Abschnitt Skript | In Notizen         | 
 |------------------|--------------------|
