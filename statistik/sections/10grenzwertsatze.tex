@@ -8,9 +8,9 @@
 
 \section*{Lernziele}
 \begin{itemize}
-    \item Zentraler Grenzwertsatz:
+    \item \gls{zgws}:
     Aussage formulieren können and anwenden können
-    \item Poissonscher Grenzwertsatz:
+    \item \gls{pgws}:
     Aussage formulieren können and anwenden können
     \item Wann wird welche Approximation verwendet?
 \end{itemize}
@@ -50,12 +50,12 @@
     \]
     }
    \begin{itemize}
-       \item  Ist $c > 0$ nicht von n abhängig, so geht die Ws. mit $n \rightarrow \infty$ gegen Null
+       \item  Ist $c > 0$ nicht von n abhängig, so geht die \gls{ws} mit $n \rightarrow \infty$ gegen Null
        \txc{(c ist eine feste Konstante, hängt nicht von nn
        n ab)}
-       \item Ist $ 0 < c \ll \sqrt{n}$ , so geht die Ws. mit $n \rightarrow \infty$ immer noch gegen Null
+       \item Ist $ 0 < c \ll \sqrt{n}$ , so geht die \gls{ws} mit $n \rightarrow \infty$ immer noch gegen Null
        \txc{(c wächst, aber langsamer als $\sqrt{n}$)}
-       \item Relevanter Beitrag, d.h., Ws. größer als null, nur für $c \approx \sqrt{n}$ (oder größer)
+       \item Relevanter Beitrag, d.h., \gls{ws} größer als null, nur für $c \approx \sqrt{n}$ (oder größer)
        \txc{(c wächst in derselben Größenordnung wie $\sqrt{n}$))}
    \end{itemize}
     \txc{
@@ -74,7 +74,7 @@ Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Norm
 \karkar{bem_wachstumsordnung_c_relevanz}
 \karkar{bem_wann_normalapproximation_schlecht}
 
-\section{Vergleich Gesetz der großen Zahlen vs. Zentraler Grenzwertsatz}\label{sec:vergleich-gesetz-der-groen-zahlen-vs.-zentraler-grenzwertsatz}
+\section{Vergleich Gesetz der großen Zahlen vs. \gls{zgws}}\label{sec:vergleich-gesetz-der-groen-zahlen-vs.-zentraler-grenzwertsatz}
 
 \begin{beo}
     \textbf{Vergleich mit dem Gesetz der großen Zahlen} \txc{(2026)}
@@ -109,17 +109,17 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 % Merksatz für die Klausur:
 % Frage nach "existiert der Grenzwert / konvergiert es" → GGZ reicht
 % Frage nach "wie groß muss nn
-%n sein" oder "wie genau ist die Schätzung" oder "gib ein Konfidenzintervall an" → ZGWS ist gefragt, mit der Φ\Phi
+%n sein" oder "wie genau ist die Schätzung" oder "gib ein Konfidenzintervall an" → \gls{zgws} ist gefragt, mit der Φ\Phi
 %Φ-Tabelle
 
 \karkar{bem_ggz_vs_zgws_ordnung_epsilon}
 \karkar{bem_klausur_faustregel_ggz_oder_zgws}
 \karkar{bem_anwendungen_zgws_praxis}
 
-\section{Zentraler Grenzwertsatz}\label{sec:zentraler-grenzwertsatz}
+\section{\gls{zgws}}\label{sec:zentraler-grenzwertsatz}
 
 \begin{satz}
-    \textbf{Zentraler Grenzwertsatz} \textit{Verallgemeinerung des Satzes von de Moivre-Laplace} \txc{(2026)}  \\
+    \textbf{\gls{zgws}} \textit{Verallgemeinerung des Satzes von de Moivre-Laplace} \txc{(2026)}  \\
     Gegeben Zufallsvariablen $X_1, X_2, X_3, \dots$ auf einem Wahrscheinlichkeitsraum $\wraum$. \\
     Angenommen $X_1, X_2, X_3, \dots$ sind unabhängig und identisch verteilt und $\sigma^2 = \Var(X_i) \in (0, \infty)$ für alle i. \\
     (Beachte $ \Var(X_i)  < \infty \Rightarrow \E{X_i}$ ex.) \\
@@ -131,8 +131,8 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{satz}
 
 \begin{satz}
-    \textbf{Zentraler Grenzwertsatz für Bernoulli-Variablen} \txc{(2026)} \\
-    Sind die Zufallsvariablen $X_1, X_2, X_3, \dots$ unabhängige Bernoulli-Variablen, so
+    \textbf{\gls{zgws} für \gls{Bernoulli-Variable}n} \txc{(2026)} \\
+    Sind die Zufallsvariablen $X_1, X_2, X_3, \dots$ unabhängige \gls{Bernoulli-Variable}n, so
     gelten: $\mathcal{M} = \E{X_i} = p$ und $\sigma^2 = \Var(X_1) = pq$ mit $q = 1 - p$
     und es folgt
     \[
@@ -143,15 +143,15 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \begin{lem}
     \textbf{Bekannte Verallgemeinerungen} \txc{(2026)}
     \begin{itemize}
-        \item Die Voraussetzung der identischen Verteilung kann abgeschwächt werden (z.B.\ zur Lindeberg-Bedingung).
+        \item Die Voraussetzung der identischen \gls{verteilung} kann abgeschwächt werden (z.B.\ zur Lindeberg-Bedingung).
         \begin{itemize}
             \item
-            \txc{Also: man muss nicht verlangen, dass alle $X_i$ dieselbe  Verteilung haben. Zum Beispiel darf
+            \txc{Also: man muss nicht verlangen, dass alle $X_i$ dieselbe \gls{verteilung} haben. Zum Beispiel darf
                 $X_1$ normalverteilt sein, $X_2$ exponentialverteilt, $X_3$ wieder was anderes, solange sie noch unabhängig sind.
                 Damit der ZGWS trotzdem noch gilt, braucht man aber eine Ersatzbedingung, die dafür sorgt, dass keine einzelne Variable
                 die Summe zu stark dominiert. Das ist die Lindeberg-Bedingung.}
         \end{itemize}
-        \item Die Voraussetzung der Unabhängigkeit kann abgeschwächt werden (Zentraler Grenzwertsatz von Lindeberg-Feller).
+        \item Die Voraussetzung der Unabhängigkeit kann abgeschwächt werden (\gls{zgws} von Lindeberg-Feller).
         \begin{itemize}
             \item \txc{Es gibt Verallgemeinerungen des ZGWS für gewisse Arten von abhängigen Zufallsvariablen.
             Diese Verallgemeinerung erlaubt es, den ZGWS trotzdem anzuwenden, solange die Abhängigkeit nicht zu stark ist.}
@@ -162,7 +162,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 
 \begin{bsp}
     \textbf{Augensumme in 420 Würfen eines fairen Würfels} \txc{(2026)} \\
-    Wie groß ist die Ws., daß die Augensumme zwischen 1400 und 1550 liegt? \\
+    Wie groß ist die \gls{ws}, dass die Augensumme zwischen 1400 und 1550 liegt? \\
     \begin{itemize}
         \item $\eraum = \{1, \dots , 6\}^n$ mit $n = 420$
         \item $\pe$ Gleichverteilung auf $\eraum$
@@ -231,10 +231,10 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \karkar{satz_zgws_bernoulli_spezialfall}
 \karkar{lem_verallgemeinerungen_zgws}
 
-\section{Poissonscher Grenzwertsatz}\label{sec:poissonscher-grenzwertsatz}
+\section{\gls{pgws}}\label{sec:poissonscher-grenzwertsatz}
 
 \begin{satz}
-    \textbf{Poissonscher Grenzwertsatz} \textit{Approximationen der Binomialverteilung} \txc{(2026)} \\
+    \textbf{\gls{pgws}} \textit{Approximationen der Binomialverteilung} \txc{(2026)} \\
     Gilt $np_n \rightarrow \alpha > 0$ für $ n \rightarrow \infty$, so gilt für jedes feste $k \in \nz$
     \[
         \Binomv(k) \rightarrow \potm_{\alpha}(k) = \frac{\alpha^k}{k!} e^{- \alpha} \quad \text{ für } n \rightarrow \infty
@@ -271,7 +271,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \begin{bem}
     Die Poisson-Approximation ist gut, wenn n groß im Vergleich zu k ist ($n \gg k$) und p klein ist (
     $n \gg \alpha \coloneqq np$).
-    Das heißt insbesondere, daß die Erfolgswahrscheinlichkeit klein sein muss.
+    Das heißt insbesondere, dass die Erfolgswahrscheinlichkeit klein sein muss.
     % TODO für das untere auch karteikarte?
     Für derartige seltene Ereignisse verwenden wir $\pe (\sn = k) \approx \potm_{\alpha}(k)$ mit $\alpha \coloneqq np$.
 \end{bem}
@@ -283,7 +283,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     Wir betrachten ein Roulettespiel mit 36 ``Zahlen'' und einer ``Null''. \\
     Wir setzen immer auf eine bestimmte Zahl: p = 1/37 und wir tun dies n = 37 Mal.
     Das heißt, wir erwarten im Mittel einen Gewinn:$\alpha  = np = 1$. \\
-    Wie groß ist die Ws., $ 0 \times, 1 \times, 2 \times, \dots$ zu gewinnen?
+    Wie groß ist die \gls{ws}, $ 0 \times, 1 \times, 2 \times, \dots$ zu gewinnen?
     \begin{mytable}
         \begin{tabular}{ccc}
             k & $\Bnmv_{37,1/37}(k)$ & $\potm_1(k)$ \\
@@ -339,54 +339,54 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     \]
     Bei großer Zahl N von Quadraten gelten $N \nu \gg k$ und $N \nu \gg \oub{(N\nu)}{n}  \oub{\frac{1}{N}}{p_n} = \nu$. \\
     Poisson-Approximation zeigt $\Bnmv_{N\nu , 1/N}(k) \approx \potm_{\nu}(k)$. \\
-    Dies rechtfertigt, eine derartige Verteilung von Zellen oder Teilchen mit Hilfe der
-    Poisson-Verteilung zu modellieren.
+    Dies rechtfertigt, eine derartige \gls{verteilung} von Zellen oder Teilchen mit Hilfe der
+    \gls{poisson_verteilung} zu modellieren.
 \end{bsp}
 
 \begin{bsp}
     \textbf{Beispiel zur Poisson-Approximation: Im zeitlichen Verlauf eintreffende Rechenaufträge} \txc{(2026)} \\
     Im Schnitt $\alpha$ eintreffende Rechenaufträge pro
     Zeiteinheit (z.B.\ pro Stunde) \\
-    Ws., daß ein Auftrag eintrifft in einem sehr kleinen
+    \gls{ws}, dass ein Auftrag eintrifft in einem sehr kleinen
     Zeitfenster der Länge $\delta \ll 1$ sei näherungsweise $\alpha \delta$.
     ($\delta$ sehr klein, z.B.\ eine Millisekunde)). \\
     Wir zerlegen das Gesamtzeitintervall $[0, t)$ in N sehr kleine, disjunkte
     Teilintervalle der Länge $t/N$.
     (für ein festes t, z.B.\ 30 Minuten, 24 Stunden, drei Wochen, \ldots)
-    \[
-        \left[0, t) = \bigcup_{k=1}^N \left[  \frac{k-1}{N} \cdot t, \frac{k}{N} \cdot t \right)
-    \]
-    Ws., dass ein Auftrag eintrifft in einem bestimmten dieser Zeitfenster, ist
+   \begin{center}
+       $\left[0, t) = \bigcup_{k=1}^N [\frac{k-1}{N} \cdot t, \frac{k}{N} \cdot t \right)$
+   \end{center}
+    \gls{ws}, dass ein Auftrag eintrifft in einem bestimmten dieser Zeitfenster, ist
     näherungsweise $\alpha t / N$.
-    \paragraph{Annahmen:} Für großes N sind die Zeitfenster so klein, daß wir annehmen dürfen, daß in
-    jedem Fenster ein oder kein Auftrag eintrifft (d.h., wir schließen aus, daß mehr als ein Auftrag eintreffen kann)
+    \paragraph{Annahmen:} Für großes N sind die Zeitfenster so klein, dass wir annehmen dürfen, dass in
+    jedem Fenster ein oder kein Auftrag eintrifft (d.h., wir schließen aus, dass mehr als ein Auftrag eintreffen kann)
     .
     Ob ein Auftrag in einem bestimmten Fenster eintrifft, sei unabhängig vom
     Eintreffen von Aufträgen in allen anderen Zeitfenstern.
-    \paragraph{Modellierung:} Damit haben wir jedem Zeitfenster, d.h.\ jedem k, eine Bernoulli-Variable
+    \paragraph{Modellierung:} Damit haben wir jedem Zeitfenster, d.h.\ jedem k, eine \gls{Bernoulli-Variable}
     zugeordnet, die uns sagt, ob im zugehörigen Zeitfenster k ein Auftrag
     eintrifft.
-    Die Erfolgsws.
-    dieser Bernoulli-Variable ist $\alpha t / N$
-    \txc{(Also die Ws, dass ein Auftrag in einem bestimmten Zeitfenster eintritt)}.
+    Die Erfolgswahrscheinlichkeit.
+    dieser \gls{Bernoulli-Variable} ist $\alpha t / N$
+    \txc{(Also die \gls{ws}, dass ein Auftrag in einem bestimmten Zeitfenster eintritt)}.
     Die Anzahl der Aufträge, die im Intervall $[0, t)$ eintreffen, ist binomialverteilt
     mit Parametern N und $\alpha t / N$.
     \[
         \txo{ n = N, \quad p_n = \frac{\alpha t}{N}  = \alpha t \frac{1}{N}}
     \]
-    Für die Ws., insgesamt $\varphi$ Aufträge im Intervall $[0, t)$ zu haben, ergibt die
+    Für die \gls{ws}, insgesamt $\varphi$ Aufträge im Intervall $[0, t)$ zu haben, ergibt die
     Poisson-Approximation für große N:
     \[
         \Bnmv_{N, \alpha t / N}(\varphi) \approx \potm_{N \cdot \alpha t / N}(\varphi) = \potm_{\alpha t}(\varphi)
     \]
-    (Beachten Sie, daß wir in diesem Problem N beliebig groß machen dürfen.
+    (Beachten Sie, dass wir in diesem Problem N beliebig groß machen dürfen.
     Wir verwenden
     hier die beliebige Teilbarkeit der Zeit!) \\
     Wiederum rechtfertigt unsere Betrachtung, beim Modellieren derartiger Prozesse
-    generell die Poisson-Verteilung zu verwenden.
+    generell die \gls{poisson_verteilung} zu verwenden.
 \end{bsp}
 
-% TODO geneinsamkeite und unterschiede Normal- und Poisson-Approximation / Diskussion
+% TODO Gemeinsamkeiten und unterschiede Normal- und Poisson-Approximation / Diskussion
 
 \begin{lem}
     \textbf{Poisson-Approximation für Erfolgswahrscheinlichkeit p nahe 1} \txc{(2026)} \\
@@ -397,8 +397,8 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
         \item p nahe bei 1, d.h., q = 1 - p klein
     \end{itemize}
     Zusatzüberlegung erlaubt es, die Poisson-Approximation anzuwenden:
-    Tausche die Rollen von ``Erfolg'' und ``Mißerfolg'' (zähle Mißerfolge !)\\
-    $\tilde\sn = n - \sn$ zählt die Anzahl der ``Mißerfolge''  $\tilde\sn$ ist $\Bnmv_{n,q}$-verteilt. \\
+    Tausche die Rollen von ``Erfolg'' und ``Misserfolg'' (zähle Misserfolge !)\\
+    $\tilde\sn = n - \sn$ zählt die Anzahl der ``Misserfolge''  $\tilde\sn$ ist $\Bnmv_{n,q}$-verteilt. \\
     Sei $\tilde \alpha = \E{\tilde\sn} = nq$. \\
     Poisson-Approximation:
     \[
@@ -428,11 +428,11 @@ Aus jedem Ei entwickelt sich mit der WS $p = \frac{1}{200}$ ein Frosch.
     \[
         \wfk(\ele) = p^{\sumEN \ele_i} (1-p)^{n- \sumEN \ele_i}  \faoio
     \]
-    Annahme: Frösche entwickeln sich unabhängig voneinander mit gleicher Ws.
+    Annahme: Frösche entwickeln sich unabhängig voneinander mit gleicher \gls{ws}
 \end{auf}
 
 \begin{auf}
-    \subsubsection*{Zufallsvariable, die Anzahl der Frösche angbit, die Verteilung und ggf. Parameter}
+    \subsubsection*{Zufallsvariable, die Anzahl der Frösche angbit, die \gls{verteilung} und ggf. Parameter}
     $\sn: \eraum \rightarrow \{ 0, \dots, n \}$ und
     \[
         \sn(\ele) \coloneqq \sumEN \ele_i \faoio
@@ -462,7 +462,7 @@ Aus jedem Ei entwickelt sich mit der WS $p = \frac{1}{200}$ ein Frosch.
     \begin{align*}
         \pe(\sn \leq 2 ) & = \pe(\sn = 0) + \pe(\sn = 1) + \pe(\sn = 2) \\
         & \approx \left[  \frac{\alpha^0}{0!} e^{-\alpha} +  \frac{\alpha^1}{1!} e^{-\alpha} +  \frac{\alpha^2}{2!}
-                      e^{-\alpha}  \right] & Poiss.-Approx. \\
+                      e^{-\alpha}  \right] & Poisson-Approx. \\
         & = \left[  1+5 + \frac{25}{2} \right] e^{-\alpha} & * \\
         & =  \left[  1+5 + \frac{25}{2} \right] e^{-5} & ** \\
     \end{align*}
