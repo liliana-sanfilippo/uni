@@ -1,0 +1,279 @@
+% ===================================================================
+% Abschnitt "Grundgedanke" (Motivation)
+% ===================================================================
+
+\newglossaryentry{bem_verteilung_legt_stat_eigenschaften_fest}{
+    name={Wieso reicht es oft aus, nur die Verteilung einer Zufallsvariablen zu kennen?},
+    description={Weil alle Wahrscheinlichkeitsaussagen über $X$ (z.B.\ $P(X\in A)$) nur von der Verteilung $P_X$ abhängen, nicht vom konkreten Wahrscheinlichkeitsraum. Haben $X$ und $Y$ dieselbe Verteilung, so gilt $P(X\in A) = P_X(A) = P_Y(A) = P(Y\in A)$ für jedes $A$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Definition und Existenz des Erwartungswerts"
+% ===================================================================
+
+\newglossaryentry{def_erwartungswert_diskret}{
+    name={Wie ist der Erwartungswert einer Zufallsvariablen $X$ mit abzählbarem Bildbereich definiert, und wann existiert er?},
+    description={$E[X] = \sum_{x\in X(\Omega)} x\cdot P(X=x)$, sofern die Reihe absolut konvergiert, d.h.\ $\sum_{x\in X(\Omega)} |x|\cdot P(X=x) < \infty$. Nur dann sprechen wir von der Existenz des Erwartungswerts.},
+    type=dinge
+}
+
+\newglossaryentry{def_erwartungswert_dichte}{
+    name={Wie ist der Erwartungswert einer Zufallsvariablen $X$ mit Dichte $f$ definiert, und wann existiert er?},
+    description={$E[X] = \int_{-\infty}^{\infty} x\,f(x)\,dx$, sofern $\int_{-\infty}^{\infty} |x|\,f(x)\,dx < \infty$. Nur dann existiert der Erwartungswert.},
+    type=dinge
+}
+
+\newglossaryentry{bem_gerade_dichte_fallstrick}{
+    name={Warum ist bei einer geraden Dichtefunktion $f$ Vorsicht geboten, wenn man den Erwartungswert über symmetrische Integrationsgrenzen $\pm N$ berechnet?},
+    description={Für gerade Dichten gilt $\int_{-N}^{N} x\,f(x)\,dx = 0$ für jedes $N$ -- auch dann, wenn der Erwartungswert gar nicht existiert (weil das uneigentliche Integral nicht absolut konvergiert). Symmetrische Grenzen können Existenz also vortäuschen, wo keine vorliegt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_umordnung_und_summationsbereich_ew}{
+    name={Was garantiert die absolute Konvergenz der den Erwartungswert definierenden Reihe, und welche alternative Summationsform folgt daraus?},
+    description={Absolute Konvergenz erlaubt beliebiges Umsortieren der Summanden. Deshalb gilt $\sum_{x\in X(\Omega)} x\cdot P(X=x) = \sum_{\omega\in\Omega} X(\omega)\cdot P(\{\omega\})$, sofern eine der beiden Reihen absolut konvergiert -- man kann also wahlweise über die Werte von $X$ oder über die Elementarereignisse summieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_existenz_ew_spezialfaelle}{
+    name={In welchen zwei Spezialfällen ist die Existenz des Erwartungswerts automatisch gesichert bzw.\ einfacher zu prüfen?},
+    description={(1) Ist $\Omega$ oder $X(\Omega)$ endlich, existiert der Erwartungswert automatisch. (2) Nimmt $X$ nur nichtnegative Werte an ($X\ge 0$), fallen die Beträge weg: $\sum |x|P(X=x) = \sum x\,P(X=x)$ (analog fürs Integral) -- man kann also direkt mit der Berechnung beginnen, ohne getrennt Konvergenz nachzuweisen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Rechenregeln für den Erwartungswert" (Linearität, Transformation, Produkt)
+% ===================================================================
+
+\newglossaryentry{satz_linearitaet_erwartungswert}{
+    name={Wie lautet der Satz über die Linearität des Erwartungswerts?},
+    description={Existieren $E[X]$ und $E[Y]$, so existiert für $a,b\in\mathbb{R}$ auch $E[aX+bY]$, und es gilt $E[aX+bY] = a\,E[X] + b\,E[Y]$. Als Spezialfälle folgen $E[aX]=a\,E[X]$ und $E[X+Y]=E[X]+E[Y]$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_linearitaet_erspart_direkte_rechnung}{
+    name={Welchen praktischen Vorteil bietet die Linearität des Erwartungswerts bei Summen von Zufallsvariablen?},
+    description={Statt $E[X]$ für $X=X_1+\dots+X_n$ direkt über die (oft komplizierte) gemeinsame Verteilung zu berechnen, genügt es, die meist viel einfacheren Erwartungswerte der einzelnen $X_i$ zu bestimmen und zu addieren: $E[X]=\sum_i E[X_i]$. Das funktioniert auch OHNE Unabhängigkeit der $X_i$.},
+    type=dinge
+}
+
+\newglossaryentry{def_zusammengesetzte_zufallsvariable}{
+    name={Was versteht man unter einer aus $X$ zusammengesetzten Zufallsvariablen $Y=f(X)$?},
+    description={Ist $X:\Omega\to\mathbb{R}$ eine Zufallsvariable und $f:\mathbb{R}\to\mathbb{R}$ eine (messbare) Funktion, so ist $Y(\omega):=f(X(\omega))=(f\circ X)(\omega)$ wieder eine Zufallsvariable.},
+    type=dinge
+}
+
+\newglossaryentry{satz_transformationssatz_erwartungswert}{
+    name={Wie berechnet man $E[f(X)]$, ohne die Verteilung von $Y=f(X)$ explizit zu bestimmen?},
+    description={Sofern $E[Y]$ existiert, gilt $E[f(X)] = \sum_{x\in X(\Omega)} f(x)\cdot P(X=x)$ (diskreter Fall) bzw.\ $E[f(X)] = \int_{-\infty}^{\infty} f(x)\,f_X(x)\,dx$ (falls $X$ die Dichte $f_X$ hat). Man muss die Verteilung von $Y$ also nicht erst bestimmen.},
+    type=dinge
+}
+
+\newglossaryentry{frage_gilt_ew_produkt_gleich_produkt_ew}{
+    name={Gilt allgemein $E[XY]=E[X]\cdot E[Y]$ für beliebige Zufallsvariablen $X,Y$?},
+    description={Nein, im Allgemeinen nicht. Schon im einfachen Fall $Y=X$ kann $E[XY]\neq E[X]\cdot E[Y]$ gelten. Multiplikativität des Erwartungswerts benötigt eine Zusatzvoraussetzung -- siehe Satz (P).},
+    type=dinge
+}
+
+\newglossaryentry{satz_p_erwartungswert_produkt_unabhaengig}{
+    name={Unter welcher Voraussetzung gilt $E[XY]=E[X]\cdot E[Y]$? (Satz (P))},
+    description={Sind $X,Y$ unabhängige Zufallsvariablen mit existierendem Erwartungswert, so existiert auch $E[XY]$, und es gilt $E[XY]=E[X]\cdot E[Y]$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_satz_p_zum_widerlegen_unabhaengigkeit}{
+    name={Wie kann man Satz (P) nutzen, um zu zeigen, dass zwei Zufallsvariablen NICHT unabhängig sind?},
+    description={Per Kontraposition: Gilt $E[XY]\neq E[X]\cdot E[Y]$ (zerfällt der Erwartungswert des Produkts also nicht in das Produkt der einzelnen Erwartungswerte), so können $X$ und $Y$ nicht unabhängig sein.},
+    type=dinge
+}
+
+\newglossaryentry{bem_umkehrung_satz_p_gilt_nicht}{
+    name={Folgt aus $E[XY]=E[X]\cdot E[Y]$, dass $X$ und $Y$ unabhängig sind?},
+    description={Nein. Die Umkehrung von Satz (P) gilt nicht: Es gibt abhängige Zufallsvariablen $X,Y$, die dennoch $E[XY]=E[X]\cdot E[Y]$ erfüllen. Aus der Produktformel für Erwartungswerte kann man also nicht auf Unabhängigkeit schließen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_muss_nicht_existieren}{
+    name={Muss der Erwartungswert einer Zufallsvariablen $X$ immer existieren, selbst wenn $X\ge 0$ gilt?},
+    description={Nein. Es gibt Zufallsvariablen $X\ge 0$, bei denen die Reihe bzw.\ das Integral zur Definition von $E[X]$ divergiert (Stichwort: St.-Petersburg-Paradoxon). In solchen Fällen existiert kein endlicher Erwartungswert, und darauf aufbauende Begriffe (z.B.\ ein "fairer Einsatz") lassen sich nicht sinnvoll bestimmen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Erwartungswert und Varianz der wichtigsten Verteilungen"
+% ===================================================================
+
+\newglossaryentry{bem_ew_var_binomialverteilung}{
+    name={Wie lauten Erwartungswert und Varianz einer binomialverteilten Zufallsvariablen mit Parametern $n,p$?},
+    description={$E[X]=np$ und $\operatorname{Var}(X)=np(1-p)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_var_bernoulli}{
+    name={Wie lauten Erwartungswert und Varianz einer Bernoulli-verteilten Zufallsvariablen (Spezialfall $n=1$ der Binomialverteilung) mit Erfolgswahrscheinlichkeit $p$?},
+    description={$E[X]=p$ und $\operatorname{Var}(X)=p(1-p)$.},
+    type=dinge
+}
+
+\newglossaryentry{def_geometrische_verteilung_zaehldichte}{
+    name={Wie lautet die Zähldichte der geometrischen Verteilung mit Erfolgswahrscheinlichkeit $p$?},
+    description={$P(X=k) = p(1-p)^{k-1}$ für $k\in\mathbb{N}=\{1,2,3,\dots\}$ -- die Wahrscheinlichkeit, dass der erste Erfolg im $k$-ten Versuch eintritt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_var_geometrische_verteilung}{
+    name={Wie lauten Erwartungswert und Varianz einer geometrisch verteilten Zufallsvariablen mit Erfolgswahrscheinlichkeit $p$?},
+    description={$E[X]=\dfrac{1}{p}$ und $\operatorname{Var}(X)=\dfrac{1-p}{p^2}$.},
+    type=dinge
+}
+
+\newglossaryentry{def_poisson_verteilung}{
+    name={Wie ist die Poisson-Verteilung mit Parameter $\lambda>0$ definiert?},
+    description={$P(X=k) = \dfrac{\lambda^k}{k!}\,e^{-\lambda}$ für alle $k\in\mathbb{N}_0=\{0,1,2,\dots\}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_var_poisson_verteilung}{
+    name={Wie lauten Erwartungswert und Varianz einer Poisson-verteilten Zufallsvariablen mit Parameter $\lambda$?},
+    description={$E[X]=\lambda$ und $\operatorname{Var}(X)=\lambda$ -- Erwartungswert und Varianz stimmen bei der Poisson-Verteilung überein.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_var_uniform_diskret}{
+    name={Wie lauten Erwartungswert und Varianz einer auf $\{1,\dots,n\}$ gleichverteilten Zufallsvariablen?},
+    description={$E[X]=\dfrac{n+1}{2}$ und $\operatorname{Var}(X)=\dfrac{n^2-1}{12}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_var_uniform_stetig}{
+    name={Wie lauten Erwartungswert und Varianz einer auf $[a,b]$ gleichverteilten (stetigen) Zufallsvariablen?},
+    description={$E[X]=\dfrac{a+b}{2}$ und $\operatorname{Var}(X)=\dfrac{(b-a)^2}{12}$.},
+    type=dinge
+}
+
+\newglossaryentry{def_exponentialverteilung}{
+    name={Wie ist die Exponentialverteilung mit Parameter $\alpha>0$ definiert?},
+    description={Dichte $f(x) = \alpha\,e^{-\alpha x}\cdot\chi_{[0,\infty)}(x)$ für $x\in\mathbb{R}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ew_var_exponentialverteilung}{
+    name={Wie lauten Erwartungswert und Varianz einer exponentialverteilten Zufallsvariablen mit Parameter $\alpha$?},
+    description={$E[X]=\dfrac{1}{\alpha}$ und $\operatorname{Var}(X)=\dfrac{1}{\alpha^2}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_technik_binomial_ew_var_via_indikatoren}{
+    name={Wie berechnet man Erwartungswert und Varianz einer binomialverteilten Zufallsvariablen am elegantesten?},
+    description={Man stellt $X$ als Summe $X=\sum_{i=1}^n X_i$ unabhängiger Bernoulli-Indikatorvariablen dar ($X_i=1$ bei Erfolg im $i$-ten Versuch). Dann folgt $E[X]=\sum_i E[X_i]=np$ direkt aus der Linearität (auch ohne Unabhängigkeit), und $\operatorname{Var}(X)=\sum_i \operatorname{Var}(X_i)=np(1-p)$ folgt aus Satz (V)(c), da die $X_i$ unabhängig sind.},
+    type=dinge
+}
+
+\newglossaryentry{bem_technik_faktorielle_momente_varianz}{
+    name={Welcher Trick hilft, die Varianz zu berechnen, wenn $E[X^2]$ direkt schwer zu bestimmen ist (z.B.\ bei der Poisson-Verteilung)?},
+    description={Man nutzt $\operatorname{Var}(X) = E[X^2]-(E[X])^2 = E[X(X-1)] + E[X] - (E[X])^2$, da $E[X(X-1)]=E[X^2]-E[X]$. Der Ausdruck $E[X(X-1)]$ (ein sogenanntes faktorielles Moment) lässt sich bei manchen Verteilungen einfacher berechnen als $E[X^2]$ direkt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Varianz" (Definition, Momente, Eigenschaften)
+% ===================================================================
+
+\newglossaryentry{def_n_tes_moment}{
+    name={Was ist das $n$-te Moment einer Zufallsvariablen $X$?},
+    description={$E[X^n]$, sofern $E[|X|^n] < \infty$. Das 1.\ Moment ist der Erwartungswert.},
+    type=dinge
+}
+
+\newglossaryentry{def_n_tes_zentriertes_moment}{
+    name={Was ist das $n$-te zentrierte Moment einer Zufallsvariablen $X$?},
+    description={$E[(X-E[X])^n]$, sofern $E[|X|^n] < \infty$ (bzw.\ sofern es existiert).},
+    type=dinge
+}
+
+\newglossaryentry{def_varianz}{
+    name={Was ist die Varianz einer Zufallsvariablen $X$, und wie berechnet man sie im diskreten Fall bzw.\ bei einer Dichte?},
+    description={Die Varianz ist das 2.\ zentrierte Moment: $\operatorname{Var}(X) = E[(X-E[X])^2]$ (mittlere quadratische Abweichung vom Erwartungswert). Diskret: $\operatorname{Var}(X) = \sum_{x\in X(\Omega)} (x-E[X])^2\,P(X=x)$. Bei Dichte $f$: $\operatorname{Var}(X) = \int_{-\infty}^{\infty} (x-E[X])^2\,f(x)\,dx$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_varianz_nichtnegativ}{
+    name={Welches Vorzeichen hat die Varianz einer Zufallsvariablen stets?},
+    description={$\operatorname{Var}(X)\ge 0$, da sie als Erwartungswert eines Quadrats (also einer nichtnegativen Zufallsvariablen) definiert ist.},
+    type=dinge
+}
+
+\newglossaryentry{def_existenz_varianz}{
+    name={Wann sagt man, dass die Varianz einer Zufallsvariablen $X$ existiert?},
+    description={Wenn $\operatorname{Var}(X) = \sum_{x\in X(\Omega)} (x-E[X])^2\,P(X=x) < \infty$ (bzw.\ das entsprechende Integral bei einer Dichte endlich ist).},
+    type=dinge
+}
+
+\newglossaryentry{lem_technisches_lemma_ew_verschobenes_quadrat}{
+    name={Wie lautet das technische Lemma, das $E[(X-a)^2]$ mit der Varianz in Beziehung setzt?},
+    description={Für alle $a\in\mathbb{R}$ gilt $E[(X-a)^2] = \operatorname{Var}(X) + (E[X]-a)^2$.},
+    type=dinge
+}
+
+\newglossaryentry{folg_minimierungseigenschaft_varianz}{
+    name={Für welchen Wert $a$ wird $E[(X-a)^2]$ minimal, und wie groß ist dieses Minimum?},
+    description={$E[(X-a)^2]$ wird minimal für $a=E[X]$; in diesem Fall gilt $E[(X-a)^2] = \operatorname{Var}(X)$ (folgt direkt aus dem technischen Lemma, da der Term $(E[X]-a)^2$ dann verschwindet).},
+    type=dinge
+}
+
+\newglossaryentry{folg_verschiebungssatz_varianz}{
+    name={Wie lautet der "Verschiebungssatz" zur Berechnung der Varianz, und welche Ungleichung folgt daraus?},
+    description={Mit $a=0$ im technischen Lemma folgt $\operatorname{Var}(X) = E[X^2] - (E[X])^2$. Da $\operatorname{Var}(X)\ge 0$, folgt stets $(E[X])^2 \le E[X^2]$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Satz (V)": Rechenregeln für die Varianz
+% ===================================================================
+
+\newglossaryentry{def_kovarianz}{
+    name={Wie ist die Kovarianz zweier Zufallsvariablen $X,Y$ definiert?},
+    description={$\operatorname{Cov}(X,Y) := E[(X-E[X])(Y-E[Y])]$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_v_a_varianz_affine_transformation}{
+    name={Satz (V)(a): Wie verhält sich die Varianz unter einer affinen Transformation $aX+b$?},
+    description={$\operatorname{Var}(aX+b) = a^2\cdot\operatorname{Var}(X)$ -- die additive Konstante $b$ hat keinen Einfluss, da sie den Erwartungswert nur verschiebt.},
+    type=dinge
+}
+
+\newglossaryentry{satz_v_b_varianz_summe_allgemein}{
+    name={Satz (V)(b): Wie berechnet sich $\operatorname{Var}(X+Y)$ im Allgemeinen (ohne Unabhängigkeitsannahme)?},
+    description={$\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X,Y)$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_v_c_varianz_summe_unabhaengig}{
+    name={Satz (V)(c): Wie vereinfacht sich $\operatorname{Var}(X+Y)$, wenn $X$ und $Y$ unabhängig sind?},
+    description={$\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)$, da bei Unabhängigkeit $\operatorname{Cov}(X,Y)=0$ gilt (Satz (P), angewendet auf die ebenfalls unabhängigen $X-E[X]$ und $Y-E[Y]$).},
+    type=dinge
+}
+
+\newglossaryentry{satz_v_d_varianz_null_konstante}{
+    name={Satz (V)(d): Was bedeutet $\operatorname{Var}(X)=0$ für eine (diskrete) Zufallsvariable $X$?},
+    description={$\operatorname{Var}(X)=0$ gilt genau dann, wenn $X$ fast sicher konstant ist, d.h.\ es gibt ein $c\in\mathbb{R}$ (nämlich $c=E[X]$) mit $P(X=c)=1$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Dichte von X^2" (gegen Ende des Kapitels)
+% ===================================================================
+
+\newglossaryentry{satz_dichte_von_x_quadrat}{
+    name={Wie berechnet man die Dichte von $X^2$, wenn $X$ die Dichte $f_X$ hat?},
+    description={$f_{X^2}(y) = \dfrac{1}{2\sqrt{y}}\big[f_X(\sqrt{y}) + f_X(-\sqrt{y})\big]$ für $y>0$, und $f_{X^2}(y)=0$ für $y\le 0$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ex2_direkt_ueber_dichte_von_x}{
+    name={Muss man erst die Dichte von $X^2$ bestimmen, um $E[X^2]$ zu berechnen?},
+    description={Nein. Es gilt direkt $E[X^2] = \int_{-\infty}^{\infty} x^2\,f_X(x)\,dx$ -- man kann $E[X^2]$ also unmittelbar über die (ursprüngliche) Dichte von $X$ berechnen, ohne den Umweg über die Dichte von $X^2$. Dies ist ein Spezialfall des Transformationssatzes für $E[f(X)]$ mit $f(x)=x^2$.},
+    type=dinge
+}

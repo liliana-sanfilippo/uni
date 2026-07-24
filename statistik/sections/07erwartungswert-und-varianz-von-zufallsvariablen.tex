@@ -34,6 +34,9 @@
     \item Markov-Ungleichung kennen und anwenden können
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%
+% Grundgedanke
+%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Grundgedanke} \txc{(2025)}
 Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir können Wahrscheinlichkeiten
@@ -66,7 +69,7 @@ Siehe \txc{(2026)}
         \qquad
         n \in \nz.
     \]
-    % TODO gloss für geom verteilung
+    % TODO gloss entry für geom verteilung
 
     \item \textbf{Poisson-Verteilung:}
     \[
@@ -181,6 +184,14 @@ Dies führt uns in die Statistik (später).
 
 \end{bsp}
 
+\karkar{bem_verteilung_legt_stat_eigenschaften_fest}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Definition und Existenz des Erwartungswerts
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Definition und Existenz des Erwartungswerts}
+
 \begin{defi} \txc{(2025)}
     Der \Gls{ew} einer \zv $X$ mit abzählbarem Bildbereich $X(\eraum) \in \rz$ ist gegeben durch
     \[
@@ -222,6 +233,18 @@ Dies führt uns in die Statistik (später).
         \intinfs |x| \dcht (x) \dx = \intinfs x \dcht (x) \dx \txc{ = \int^{\infty}_0 x \dcht (x) \dx }
     \]
 \end{bem}
+
+\karkar{def_erwartungswert_diskret}
+\karkar{def_erwartungswert_dichte}
+\karkar{bem_gerade_dichte_fallstrick}
+\karkar{bem_umordnung_und_summationsbereich_ew}
+\karkar{bem_existenz_ew_spezialfaelle}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Erwartungswerte der wichtigsten Verteilungen
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\subsection{Erwartungswerte der wichtigsten Verteilungen}
 
 \begin{bsp}
     \textbf{Erwartungswert der Poisson-Verteilung} \txc{(2026)}  \\
@@ -334,6 +357,12 @@ Dies führt uns in die Statistik (später).
         \end{align*}
     }
 \end{bsp}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Rechenregeln für den Erwartungswert
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Rechenregeln für den Erwartungswert}
 
 \begin{satz}
     \textbf{Der Erwartungswert ist linear} \txc{(2026)} \\ % 2026 13
@@ -541,8 +570,10 @@ Dies führt uns in die Statistik (später).
     Der Erwartungswert existiert also nicht.
     Ein fairer Einsatz kann nicht bestimmt werden.
 \end{bsp}
+
+
 \begin{er} \txc{(2026)} \\
-    Aus Satz (E), d.h.\ der Linearität des Erwartungswerts, folgen: % TODO Satz E
+    Aus Satz (E), d.h.\ der Linearität des Erwartungswerts, folgen: % TODO Satz E verlinken
     \[
         \E{aX}= a \E{X} \text{ und } \E{X + Y } = \E{X} + \E{Y}
     \]
@@ -665,12 +696,12 @@ Es gibt Zufallsvariablen \(X,Y\) mit
             \sum_{x\neq 0}
             xy \pe(X=x) \pe(Y=y)
             &=
-            \big(
+            \big\left(
                     \sum_{y\neq 0} y \pe(Y=y)
-                    \big)
-            \big(
+                    \big\right)
+            \big\left(
                     \sum_{x\neq 0} x \pe(X=x)
-                    \big)
+                    \big\right)
             &=
             \E{X} \cdot \E{Y}
         \end{aligned}
@@ -865,6 +896,23 @@ Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
     Mit $f(x) = x^2$
 \end{bsp}
 
+\karkar{satz_linearitaet_erwartungswert}
+\karkar{bem_linearitaet_erspart_direkte_rechnung}
+\karkar{def_zusammengesetzte_zufallsvariable}
+\karkar{satz_transformationssatz_erwartungswert}
+\karkar{frage_gilt_ew_produkt_gleich_produkt_ew}
+\karkar{satz_p_erwartungswert_produkt_unabhaengig}
+\karkar{bem_satz_p_zum_widerlegen_unabhaengigkeit}
+\karkar{bem_umkehrung_satz_p_gilt_nicht}
+\karkar{bem_ew_muss_nicht_existieren}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Varianz
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Varianz}
+
 \begin{defi}
     \textbf{n-tes Moment von X} \txc{(2026)}  \\
     Für $n \in \nz $ heißt $\E{X^n}$ das erste n-te Moment von $X$, insofern $\E{|X|^n} < \infty$.
@@ -873,8 +921,9 @@ Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
 \end{defi}
 \begin{defi} \txc{(2026)}
 $\E{ ( X -  \E{X} )^n } $ heißt das n-te zentrierte Moment von $X$.
-    Es existiert, wenn $\E{|X|^n} < \infty$. \\
+Es existiert, wenn $\E{|X|^n} < \infty$. \\
 \end{defi}
+
 \begin{defi} \txc{(2026)}
 Die Varianz von $X$ ist das 2 zentrierte Moment, d.h.
     \[
@@ -1050,6 +1099,21 @@ $\Var(X) \geq 0$
     Es gilt daher stets $(\E{X})^2 \le \E{X^2}$.
 \end{folg}
 
+\karkar{def_n_tes_moment}
+\karkar{def_n_tes_zentriertes_moment}
+\karkar{def_varianz}
+\karkar{bem_varianz_nichtnegativ}
+\karkar{def_existenz_varianz}
+\karkar{lem_technisches_lemma_ew_verschobenes_quadrat}
+\karkar{folg_minimierungseigenschaft_varianz}
+\karkar{folg_verschiebungssatz_varianz}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Rechenregeln für die Varianz
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Rechenregeln für die Varianz}
+
 \begin{satz}
     \textbf{Satz (V)} \label{satz:satz-v} \txc{(2026)}  \\
     Seien X, Y diskrete\txc{(?)}) Zufallsvariablen mit existierendem Erwartungswert, $a,b \in \rz$.
@@ -1096,8 +1160,21 @@ $\Var(X) \geq 0$
     \txo{Kann nicht gelten, wenn f Dichte hat}
 \end{satz}
 
+\karkar{def_kovarianz}
+\karkar{satz_v_a_varianz_affine_transformation}
+\karkar{satz_v_b_varianz_summe_allgemein}
+\karkar{satz_v_c_varianz_summe_unabhaengig}
+\karkar{satz_v_d_varianz_null_konstante
+}
 % TODO F 82 Was sol ldas mit dem herumkritzeln?
 % TODO Auf welchen regeln diese Übergänge basieren
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Varianzen der wichtigsten Verteilungen
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\subsection{Varianzen der wichtigsten Verteilungen}
 
 \begin{bsp}
     \textbf{Binomialverteilte Zufallsvariable $S_n$ mit Parametern n und p} \txc{(2026)}  \\
@@ -1134,7 +1211,7 @@ $\Var(X) \geq 0$
         = np
     \]
 
-    nach Satz (E). % TODO Satz E
+    nach Satz (E). % TODO Satz E verlinken
 \end{bsp}
 
 Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Satz (V) (\ref{satz: satz-v})
@@ -1213,14 +1290,67 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
         & = \frac{2}{\alpha^2}
     \end{align*}
     \[
-        \Var(X) = \E{X^2} - \E{X}^2 =  \frac{2}{\alpha^2} - \big( \frac{1}{\alpha} \big)^2 =  \frac{1}{\alpha^2}
+        \Var(X) = \E{X^2} - \E{X}^2 =  \frac{2}{\alpha^2} - \big\left( \frac{1}{\alpha} \big\right)^2 =  \frac{1}{\alpha^2}
     \]
 \end{bsp}
 
 \untit{Ende der Vorlesung vom 5. Juni 2026}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dichte von X^2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{satz} \txc{(2026)}
-TODO F 98--100 % TODO F 98 - 100
+    Sei $f_X$ eine Dichte der Zufallsvariablen X . Dann gelten:
+\begin{itemize}
+    \item[(a)] Die Zufallsvariable $X^2$ hat die Dichte
+    \[
+        f_{X^2} (y) = \begin{cases}
+                          \frac{1}{2 \sqrt{y}} \left[ f_X \left(\sqrt{y}\right) + f_X  \left(-\sqrt{y}\right) \right] & y > 0 \\
+                          0 & sonst
+        \end{cases}
+    \]
+    \item[(b)] \( \E{X^2} = \intinfs x^2 f_X(x) \dx  \)
+\end{itemize}
+\paragraph{Beweis (a).}
+    Für $y \leq 0$ $F_{X^2} (y) = \pe (X^2 \leq y ) = 0$. \\
+    Sei nun $y > 0$.
+    Die Substitution $x = \sqrt{z}$ zeigt:
+    \begin{align*}
+        F_{X^2}(y) & = \pe (X^2 \leq y) \\
+        & = \pe (- \sqrt{y} < X \leq \sqrt{y}) \\
+        & = \int_0^{\sqrt{y}} f_X(x) \dx + \int^0_{-\sqrt{y}} f_X(x) \dx \\
+        & = \int_0^{\sqrt{y}} f_X(x) \dx + \int_0^{\sqrt{y}} f_X(- x) \dx \\
+        \int_0^{y} \frac{1}{2 \sqrt{z}} \left[  f_X (\sqrt{z}) + f_X (-\sqrt{z}) \right] dz
+    \end{align*}
+\paragraph{Beweis (b).}
+Die Definition des Erwartungswerts und die Substitutionen $y = x ^2$ sowie
+$z = -x$, die die Substitutionen in Teil (a) rückgängig machen, zeigen
+\begin{align*}
+    \E{X^2} & = \intinfs y f_{X^2} (y) dy \\
+    & = \int_{0}^{\infty} \frac{y}{2\sqrt{y}}  \left[  f_X (\sqrt{y}) + f_X (-\sqrt{y}) \right] dy \\
+    & = \int_{0}^{\infty} \frac{x}{2} \left[  f_X (\sqrt{y}) + f_X (-\sqrt{y}) \right] 2x \dx  \\
+    & = \int_{0}^{\infty} x^2 f_X (x) \dx + \int^0_{-\infty}  z^2 f_X(z) dz \\
+    & = \intinfs x^2 f_X (x) \dx
+\end{align*}
 \end{satz}
+
+\karkar{satz_dichte_von_x_quadrat}
+\karkar{bem_ex2_direkt_ueber_dichte_von_x}
+
+\section*{Karteikarten Erwartungswert und Varianz der wichtigsten Verteilungen}
+\karkar{bem_ew_var_binomialverteilung}
+\karkar{bem_ew_var_bernoulli}
+\karkar{def_geometrische_verteilung_zaehldichte}
+\karkar{bem_ew_var_geometrische_verteilung}
+\karkar{def_poisson_verteilung}
+\karkar{bem_ew_var_poisson_verteilung}
+\karkar{bem_ew_var_uniform_diskret}
+\karkar{bem_ew_var_uniform_stetig}
+\karkar{def_exponentialverteilung}
+\karkar{bem_ew_var_exponentialverteilung}
+\karkar{bem_technik_binomial_ew_var_via_indikatoren}
+\karkar{bem_technik_faktorielle_momente_varianz}
+
 
 % Ab F 101 ist es einfach eine versehentliche Wdh der früheren Folien

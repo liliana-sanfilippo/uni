@@ -116,7 +116,7 @@
 
 \begin{satz}
     \textbf{Schwaches Gesetz der großen Zahlen} \txc{(2025)}
-    % TODO \texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)} a ber die aus 2026 stehen da
+    % \texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)} a ber die aus 2026 stehen da
 
     \paragraph{Gegeben} Zufallsvariablen $X_1, X_2, X_3, \dots$ auf einem $\wraum$.
     Dabei muss die Verteilung der $X_i$ nicht identisch sein.
@@ -269,12 +269,12 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     Bernoulli-Experiment mit Erfolgswahrscheinlichkeit \ma{p \in (0, 1)}. \\
     Dann gilt für jede Wahl von Konstanten \ma{a, b} mit \ma{- \infty < a < b < \infty}:
     \begin{equation}
-        \limnin \pe( a < \frac{\sn - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx \txo{ \ =
+        \limnin \pe( a < \frac{\sn - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{\txc{-}x^2 / 2} \dx \txo{ \ =
             \intab \varphi(x) \dx}\label{eq:equation2}
     \end{equation}
     Dabei verstehen wir die rechte Seite als Riemann-Integral \ma{\intab \varphi(x) \dx} mit
     \begin{equation}
-        \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{x^2 / 2}\label{eq:equation3}
+        \varphi(x) =  \frac{1}{\sqrt{2\pi}}   e^{\txc{-}x^2 / 2}\label{eq:equation3}
     \end{equation}
     \txo{
         Standartisieren: $X$ ist ZV mit existierender Varianz.\\
@@ -295,10 +295,10 @@ n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinli
 }
 \begin{bem}
     \textbf{Zu Satz \ref{satz:Moivre-Laplace}} \txc{(2025)} \\
-    $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{x^2 / 2}$ heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}
+    $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{\txc{-}x^2 / 2}$ heißt Dichte der Standardnormalverteilung \index{Dichte der Standardnormalverteilung}
     . \\
     Die Stammfunktion \begin{equation}
-                          \vfkt(y) = \int_{- \infty}^y \varphi(x) \dx \txc{ = \int_{- \infty}^y  \frac{1}{\sqrt{2\pi}} e^{x^2 / 2} \dx  }  \label{eq:equation4}
+                          \vfkt(y) = \int_{- \infty}^y \varphi(x) \dx \txc{ = \int_{- \infty}^y  \frac{1}{\sqrt{2\pi}} e^{\txc{-}x^2 / 2} \dx  }  \label{eq:equation4}
     \end{equation}
     ist die Verteilungsfunktion der Standardnormalverteilung.
     \index{Verteilungsfunktion der Standardnormalverteilung} \index{Standardnormalverteilung}. \\
@@ -418,7 +418,7 @@ n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinli
     \[
         a = \frac{\lceil \frac{3n}{10} \rceil - 1 - np}{\sqrt{npq}} \approx -9.38 \quad und \quad  b = \frac{\lfloor \frac{7n}{10} \rfloor - 1 - np}{\sqrt{npq}} \approx 0.77
     \]
-    % todo \texttt{Mehr Folie 38 bis 45}
+    % todo \texttt{Mehr Folie 38 bis 45} 2025 ??
 \end{bsp}
 
 Das Resultat wirft einige Fragen auf:
