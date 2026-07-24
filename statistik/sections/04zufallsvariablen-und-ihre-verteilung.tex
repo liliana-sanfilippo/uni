@@ -751,7 +751,7 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     \[
         \renewcommand{\arraystretch}{1.6}
         \begin{array}{c|cccc|c}
-            \wfk_Z((x,y)) & y = 0 & y = 1 & y = 2 & y = 3 & \wfk_\zvx(x) \\ \hline
+            \wfk_Z((x,y)) & y = 0 & y = 1 & y = 2 & y = 3 & \wfk_X(x) \\ \hline
             x = 0 & \bigl(\tfrac46\bigr)^3 & 3\,\tfrac16\bigl(\tfrac46\bigr)^2
             & 3\,\bigl(\tfrac16\bigr)^2\tfrac46 & \bigl(\tfrac16\bigr)^3
             & \bigl(\tfrac56\bigr)^3 \\
@@ -761,7 +761,7 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
             x = 2 & 3\,\bigl(\tfrac16\bigr)^2\tfrac46 & 3\,\bigl(\tfrac16\bigr)^3 & 0 & 0
             & 3\,\bigl(\tfrac16\bigr)^2\tfrac56 \\
             x = 3 & \bigl(\tfrac16\bigr)^3 & 0 & 0 & 0 & \bigl(\tfrac16\bigr)^3 \\ \hline
-            \wfk_\zvy(y) & \bigl(\tfrac56\bigr)^3 & 3\,\tfrac16\bigl(\tfrac56\bigr)^2
+            \wfk_Y(y) & \bigl(\tfrac56\bigr)^3 & 3\,\tfrac16\bigl(\tfrac56\bigr)^2
             & 3\,\bigl(\tfrac16\bigr)^2\tfrac56 & \bigl(\tfrac16\bigr)^3 & 1
         \end{array}
     \]
@@ -808,7 +808,7 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     \[
         \wfk_{\zvx_k}(x) = \sum_{u_1 \in E_1} \cdots \sum_{u_{k-1} \in E_{k-1}}
         \sum_{u_{k+1} \in E_{k+1}} \cdots \sum_{u_n \in E_n}
-        \wfk_\zvx(u_1, \dots, u_{k-1}, x, u_{k+1}, \dots, u_n) \qquad \forall\, x \in E_k.
+        \wfk_X(u_1, \dots, u_{k-1}, x, u_{k+1}, \dots, u_n) \qquad \forall\, x \in E_k.
     \]
     \begin{proof}
         Um die Notation übersichtlich halten zu können, führen wir den Beweis für $n = 3$ und
@@ -816,10 +816,10 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
         die Werte von $\zvy = \zvx_2$ und $z = u_3$.
         Aus der Definition von $\wfk_X$ folgt, dass
         \[
-            \wfk_\zvy(y) = \pe(\zvy = y) = \pe(\zvx \in E_1, \zvy = y, \zvy \in E_3)
-            = \sum_{x \in E_1} \sum_{z \in E_3} \wfk_\zvx(x,y,z) \qquad \forall\, y \in E_2 ,
+            \wfk_Y(y) = \pe(\zvy = y) = \pe(\zvx \in E_1, \zvy = y, \zvy \in E_3)
+            = \sum_{x \in E_1} \sum_{z \in E_3} \wfk_X(x,y,z) \qquad \forall\, y \in E_2 ,
         \]
-        also gilt $\wfk_\zvy(y) = \sum_{x \in E_1} \sum_{z \in E_3} \wfk_\zvx(x,y,z)$ für alle
+        also gilt $\wfk_Y(y) = \sum_{x \in E_1} \sum_{z \in E_3} \wfk_X(x,y,z)$ für alle
         $y \in E_2$.
     \end{proof}
 \end{lem}
@@ -971,9 +971,9 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
         Damit folgt
         \[
             \pe(\zvx \leq a) = \int_{-\infty}^{a} \left( \int_{-\infty}^{\infty} f(x,y) dy
-            \right) dx = \int_{-\infty}^{a} f_\zvx(x) dx
+            \right) dx = \int_{-\infty}^{a} f_X(x) dx
         \]
-        mit $f_\zvx(x) = \int_{-\infty}^{\infty} f(x,y) dy$.
+        mit $f_X(x) = \int_{-\infty}^{\infty} f(x,y) dy$.
         Da $a \in \mathbb{R}$ beliebig war,
         folgt, dass $f_X$ eine Dichte von $\zvx$ ist.
 
