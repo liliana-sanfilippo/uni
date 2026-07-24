@@ -26,10 +26,9 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
 \end{itemize}
 
 \section{Die Verteilung einer Zufallsvariablen}\label{sec:die-verteilung-einer-zufallsvariablen}
-\begin{bsp}
-    \textbf{n-faches Werfen einer fairen Münze} \label{bsp:n-faches-Werfen-einer-fairen-Münze} \txc{(2025)}  \\
+\begin{bsp}[n-faches Werfen einer fairen Münze]\label{bsp:n-faches-Werfen-einer-fairen-Münze} \txc{(2025)}  \\
     \[
-        \glssymbol{eraum} _n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = \left(\frac{1}{2}\right)^n \faoio \txt{(Gleichverteilung)}
+        \glssymbol{eraum}_n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = \left(\frac{1}{2}\right)^n \faoio \txt{(Gleichverteilung)}
     \]
     $\glssymbol{elementarereignis}_i = 1$ bedeute ``Kopf'' \\
     Falls es uns interessiert, wie oft ``Kopf'' fällt:
@@ -68,19 +67,23 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
 
 \begin{bem}   \txc{(Skript 26 - Bemerkung 3.3.)}  \\
 Ist der Ereignisraum $\eraum$ abzählbar, so ist eine Zufallsvariable nichts anderes als eine Abbildung, die auf
-dem $\eraum$ des Wahrscheinlichkeitsraums definiert ist. Ist $\eraum \subseteq \rz_d$, kommen eigentlich noch
+dem $\eraum$ des Wahrscheinlichkeitsraums definiert ist.
+Ist $\eraum \subseteq \rz_d$, kommen eigentlich noch
 Messbarkeitsfragen hinzu, die wir im Rahmen dieser Vorlesung jedoch ignorieren wollen.
 
 Wie wir bereits in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} gesehen haben, ist es praktisch,
-Ereignisse mit Hilfe von Zufallsvariablen auszudrücken. Wenn uns nur Ereignisse interessieren, die durch ein und dieselbe Zufallsvariable
+Ereignisse mit Hilfe von Zufallsvariablen auszudrücken.
+Wenn uns nur Ereignisse interessieren, die durch ein und dieselbe Zufallsvariable
 ausgedrückt werden können, so können wir sogar noch einen Schritt weitergehen und einen neuen
-Wahrscheinlichkeitsraum einführen, der nur noch solche Ereignisse kennt. Die folgende Definition ist
+Wahrscheinlichkeitsraum einführen, der nur noch solche Ereignisse kennt.
+Die folgende Definition ist
 ein erster Schritt in diese Richtung.
 \end{bem}
 
 \begin{defi}
     \textbf{Bild- und Wertebereich einer Zufallsvariablen} \txc{(Skript 26 - Definition 3.4.)}  \\
-    Sei $\zvx : \eraum \rightarrow E$ eine E-wertige Zufallsvariable auf einem Wahrscheinlichkeitsraum $\wraum$. Dann
+    Sei $\zvx : \eraum \rightarrow E$ eine E-wertige Zufallsvariable auf einem Wahrscheinlichkeitsraum $\wraum$.
+    Dann
     heißt E der Wertebereich von $\zvx$, und
 \[
     \zvx(\eraum) = {\zvx(\ele) : \ele \in \eraum}
@@ -89,23 +92,23 @@ ein erster Schritt in diese Richtung.
 \end{defi}
 
 \begin{bem}   \txc{(Skript 26 - Bemerkung 3.5.)}  \\
-Es gilt stets $\zvx(\eraum) \subseteq E$. Der Bildbereich ist die kleinstmögliche Menge, die alle Werte enthält,
+Es gilt stets $\zvx(\eraum) \subseteq E$.
+Der Bildbereich ist die kleinstmögliche Menge, die alle Werte enthält,
 die $\zvx$ annehmen kann.
 
 st Sn wie in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} die Anzahl der Erfolge in einem
 Zufallsexperiment der Länge $n \in \nz$,
 so können wir Sn auffassen als Abbildung von $\eraum$ nach $E = \nz_0$, aber auch als Abbildung
-nach $E = \{0, 1, . . . , n\}$ oder gar nach $E = \rz$. Unabhängig davon, wie wir den Wertebereich E
-wählen, gilt für den Bildbereich stets $\zvx(\eraum) = \{0, 1, . . . , n\}$.
+nach $E = \{0, 1, \dots , n\}$ oder gar nach $E = \rz$.
+Unabhängig davon, wie wir den Wertebereich E
+wählen, gilt für den Bildbereich stets $\zvx(\eraum) = \{0, 1, \dots , n\}$.
 \end{bem}
 
 %%%%%%%%%%%%%%%%%%%%%
 % Verteilung %
 %%%%%%%%%%%%%%%%%%%%%
 
-\begin{defi}
-    \label{def:verteilung-zv}
-    \textbf{Verteilung einer \gls{zv}} \txc{(2025)}  \\
+\begin{defi}[Verteilung einer \gls{zv}] \label{def:verteilung-zv} \txc{(2025)}  \\
     Sei $\zvx$ eine $E$-wertige \gls{zv} auf $\wraum$
     \[
         \pe_{\zvx}(B) \coloneqq  \pe(\kl{\oio : \zvx(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(\zvx \in B)}{Kurzschreibweise}
@@ -115,18 +118,39 @@ wählen, gilt für den Bildbereich stets $\zvx(\eraum) = \{0, 1, . . . , n\}$.
 \komm{\defirefman{verteilung-zv}: Die Verteilung von $\zvx$ beschreibt, wie die Werte von $\zvx$ verteilt sind, also
 \textbf{wie wahrscheinlich verschiedene Ergebnisse von $\zvx$ sind}.}
 
-\begin{bsp} \textbf{Münzwurf} \txc{(Skript 26 - Beispiel 3.7.)}  \\
-% TODO
-    todo
+\begin{bsp}[Fortsetzung Münzwurf]\label{bsp:n-faches-Werfen-einer-fairen-Münze-2}  \txc{(Skript 26 - Beispiel 3.7.)}  \\
+Die Zufallsvariable $\sn$ aus Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} hat den Bildbereich $\sn(\eraum_n)  = \{0, ... , n\}$.
+Für $k \in \sn(\eraum_n)$ gilt
+    \[
+\pe_{\sn}(\{k\}) = \pe_n (\{\ele \in \eraum_n : \sn (\ele) \in \{k\}\}) = \pe_n \left(  \left\{ \ele \in \eraum_n  : \sumEN \ele_i = k \right\} \right) = \binom{n}{k}2^n
+    \]
+    weil $\pe_n$ die Gleichverteilung auf $\eraum_n = \{0,1\}^n$ ist und es $\binom{n}{k}$ viele Elementarereignisse $\ele \in \eraum_n$ gibt, für die $\sn (\ele) = k$ gilt.
+
+    Ist $B \subseteq \sn(\eraum_n)$, so folgt mit den Rechenregeln für Wahrscheinlichkeiten, dass:
+    \begin{align*}
+        \pe_{\sn}(B) & = \pe_n(\{\ele \in \eraum_n : \sn (\ele) \in B\}) \\
+        & = \pe_n \left(  \left\{ \ele \in \eraum_n  : \sumEN \ele_i \in B \right\} \right) \\
+        & = \pe_n \left( \uplus_{k \in B} \left\{ \ele \in \eraum_n  : \sumEN \ele_i = k  \right\} \right) \\
+        & = \sum_{k \in B} \pe_n \left( \left\{ \ele \in \eraum_n  : \sumEN \ele_i = k  \right\} \right) \\
+        & = \sum_{k \in B} \binom{n}{k}2^n
+    \end{align*}
 \end{bsp}
 
 \begin{bem}  \txc{(Skript 26 - Bemerkung 3.8.)}  \\
-   todo  % TODO
+In Definition \autoref{def:verteilung-zv} wird behauptet, dass die Abbildung $\pe_{\zvx}$ , die auf den meßbaren
+Teilmengen von E definiert ist und Werte in $[0, 1]$ annimmt, tatsächlich ein Wahrscheinlichkeitsmaß ist.
+Das müssen wir natürlich zeigen.
+Wir werden uns das Leben aber ein wenig leichter machen, und den Beweis nur in
+dem Fall führen, in dem $\pe$ durch eine Wahrscheinlichkeitsfunktion $\wfk$ gegeben ist.
+
+In diesem Fall entfällt auch die Notwendigkeit zu prüfen, ob eine Menge $\B \subseteq E$ messbar ist, denn
+wenn $\eraum$ eine abzählbare Menge ist, dann kann die Zufallsvariable $\zvx$, die auf $\eraum$ definiert ist, ebenfalls
+nur abzählbar viele Werte annehmen.
 \end{bem}
 
 \begin{lem} \txc{(2025)} \\
-Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_{\zvx}$ ein \gls{wmaß}.
-
+Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_{\zvx}$ (aus Definition \autoref{def:verteilung-zv})
+ein \gls{wmaß}.
     \paragraph{Beweis.}
     \[
         \glssymbol{wfk}_{\zvx} (e) = \pe_{\zvx}(\kl{e}) = \txc{\pe(\zvx \in \kl{e}) = } \pe(\zvx=e) = \sum_{\substack{\oio \\ \zvx(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}(e) \geq 0
@@ -143,7 +167,23 @@ $(E, \pe_{\zvx})$ ist ein Wahrscheinlichkeitsraum.
 \end{kor}
 
 \begin{bsp} \txc{(Skript 26 - Beispiel 3.11.)}  \\
-todo  % TODO
+Im Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} und der Fortsetzung
+\autoref{bsp:n-faches-Werfen-einer-fairen-Münze-2} erhalten wir als neuen, induzierten \gls{wraum}, je nach Wahl des
+Wertebereichs
+    \begin{itemize}
+        \item[(a)] $( \{0, ..., n\}, \pe_{\sn} )$, wobei das Wahrscheinlichkeitsmaß $\pe_{\sn}$ gegeben ist durch
+        die \gls{wfk} $\{0, ..., n\} \ni k \mapsto \binom{n}{k} 2^{-n}$,
+        \item[(b)] $( \nz_0, \pe_{\sn} )$, wobei das Wahrscheinlichkeitsmaß $\pe_{\sn}$ gegeben ist durch
+        die \gls{wfk}
+        \[
+                \nz_0 \ni k \mapsto \begin{cases}
+                                        \binom{n}{k} 2^{-n}, & \forall k \in \{0, ..., n\} \\ 0 & sonst
+                \end{cases}
+        \]
+    \end{itemize}
+    Im folgenden wollen wir die Notation etwas vereinfachen, damit wir für Ereignisse, die durch eine
+    Zufallsvariable ausgedrückt werden, nicht immer wieder mühsam $\{\ele \in \eraum : \zvx(\ele) \in ... \}$ schreiben
+müssen.
 \end{bsp}
 
 \section{Notationen}\label{sec:notationen} \txc{(2025)}
@@ -162,8 +202,24 @@ Falls $B$ ein Intervall ist:
     Dann heißt $E$ der Wertebereich und $\zvx(\glssymbol{eraum} )\coloneqq  \kl{\zvx(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
 \end{defi}
 
-\begin{lem} \txc{(Skript 26 - Lemma 3.13.)}  \\
-todo  % TODO
+\begin{lem}[Existenz einer Zufallsvariablen mit vorgegebener Verteilung)] \txc{(Skript 26 - Lemma 3.13.)}  \\
+Sei $(\tilde\eraum, \tilde\pe)$ ein beliebiger Wahrscheinlichkeitsraum. Dann existieren ein Wahrscheinlichkeitsraum $\wraum$ und eine \gls{zv} $\zvx$ auf $\wraum$
+derart, dass die Verteilung von $\zvx$ das vorgegebene Wahrscheinlichkeitsmaß $\tilde\pe$ ist. d.h. es gilt $\pe_{\zvx} = \tilde\pe$.
+    \paragraph{Beweis.}
+Der Beweis ist verwirrend einfach. Wir können nämlich einfach folgende Wahl treffen:
+    \[
+        \eraum = \tilde\eraum, \quad \pe = \tilde\pe, \quad \zvx(\ele) = \ele \faoio
+    \]
+Dann gilt für jede messbare Menge $B \subseteq \eraum$:
+    \[
+        \pe_{\zvx}(B) = \pe(\{ \oio: \zvx(\ele) \in B \}) = \pe(B) = \tilde\pe(B)
+    \]
+Dabei haben wir verwendet, dass $\zvx$ als Abbildung die Identität auf $\eraum$ ist und daher
+    \[
+        \{ \oio: \zvx(\ele) \in B \} = B
+    \]
+    gilt.
+    Da $B \subseteq \eraum$  beliebig war, haben wir gezeigt, dass $\pe = \tilde\pe$ gilt.
 \end{lem}
 
 \begin{bsp} \defirefman{wert-bild-e} \txc{(2025)}
@@ -212,12 +268,14 @@ Dann heißt die Funktion $\fxx : \rz \rightarrow [0,1]$, die gegeben ist durch
 \end{defi}
 
 \begin{bem}
-    Achtung, Verwechslungsgefahr! Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ und Verteilungsfunktion $\fxx$ sind ver-
+    Achtung, Verwechslungsgefahr!
+    Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ und Verteilungsfunktion $\fxx$ sind ver-
     schiedene Konzepte!
 \end{bem}
 
 \begin{bsp}[Fortsetzung des Münzwurf-Beispiels] \txc{(Skript 26 - Beispiel 3.15.)}  \\
-Wir werfen nun unsere faire Münze fünfmal, das heißt, wir betrachten die Zufallsvariable $\zvs_5$. Die
+Wir werfen nun unsere faire Münze fünfmal, das heißt, wir betrachten die Zufallsvariable $\zvs_5$.
+Die
 zugehörige Verteilungsfunktion ist gegeben durch
 \[
     \fx_{\zvs_5}(x)
@@ -297,7 +355,8 @@ zugehörige Verteilungsfunktion ist gegeben durch
 \end{bsp}
 
 \begin{lem}[Eigenschaften von Verteilungsfunktionen I: allgemeine Eigenschaften] \txc{(Skript 26 - Lemma 3.17.)}  \\
-Sei $\fxx$ eine \gls{verteilungsfunktion_zv}. Dann gelten:
+Sei $\fxx$ eine \gls{verteilungsfunktion_zv}.
+Dann gelten:
     \begin{itemize}
         \item $\fxx$ ist monoton wachsend
         \item $\fxx$ ist rechtsstetig, d.h.: Für jedes $x_0 \in \rz$ und jede Folge $(x_n)_{n \in \nz}$ mit $x_n \searrow x_0$ gilt $\limnin \fxx (x_n) = \fxx (x_0)$
