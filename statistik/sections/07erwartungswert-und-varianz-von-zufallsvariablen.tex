@@ -5,7 +5,7 @@
 
 
 \chapter{Erwartungswert und Varianz von Zufallsvariablen}\label{ch:erwartungswert-und-varianz-von-zufallsvariablen}
-\untit{Vorlesung 30. Mai 2025 (V07 2025) und 05. Juni 2026 (V07 2026)}
+\untit{Vorlesung 30. Mai 2025 (V07 2025)und 05. Juni 2026 (V07 2026)}
 
 
 \section*{Lernziele}
@@ -25,8 +25,8 @@
 \subsection*{Wissen}
 \begin{itemize}
     \item Existenz des Erwartungswerts prüfen können.
-    \item Spezialfall: \(X(\eraum)\) ist eine endliche Menge (insbesondere erfüllt, wenn \(\eraum\) endlich ist).
-    \item Spezialfall: \(X \geq 0\).
+    \item Spezialfall: \(\zvx (\eraum)\)ist eine endliche Menge (insbesondere erfüllt, wenn \(\eraum\)endlich ist).
+    \item Spezialfall: \(\zvx  \geq 0\).
     \item Erwartungswerte berechnen können.
     \item Erwartungswert und Varianz für die wichtigsten Verteilungen kennen
     \item Erwartungswert von Produkten zum Widerlegen von Unabhängigkeit
@@ -39,12 +39,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Grundgedanke} \txc{(2025)}
-Die Verteilung charakterisiert eine \Gls{zv} $X$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir können Wahrscheinlichkeiten
-berechnen wie z.B. $\pe(X \geq 2)$, und diese Wahrscheinlichkeiten hängen nur von der
+Die Verteilung charakterisiert eine \Gls{zv} $\zvx$ eindeutig (Im Sinne ihrer statistischen Eigenschaften: Wir können Wahrscheinlichkeiten
+berechnen wie z.B. $\pe(\zvx  \geq 2)$, und diese Wahrscheinlichkeiten hängen nur von der
 Verteilung ab, nicht von der Wahl des Wahrscheinlichkeitsraums $\wraum$.). \\
-Sind $X$ und $Y$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
+Sind $\zvx$ und $\zvy$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \[
-    \pe(X \in A) = \pe_X(A) = \pe_Y(A) = \pe(Y \in A)
+    \pe(\zvx  \in A)= \pe_\zvx(A)= \pe_\zvy(A)= \pe(\zvy \in A)
 \]
 für jedes $A$. \\
 Es ist nicht immer klar, welche Verteilung zu einem sinnvollen Modell führt.
@@ -85,7 +85,7 @@ Siehe \txc{(2026)}
         f(x)
         =
         \ele e^{-\lambda x}\,
-        \chi_{[0,\infty)}(x),
+        \chaf_{[0,\infty)}(x),
         \qquad
         x \in \rz.
     \]
@@ -105,7 +105,7 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Ansteckungen} \txc{(2026)}
     \begin{itemize}
-        \item Die \textbf{Basisreproduktionszahl} \(R_0\) gibt an, wie viele Personen
+        \item Die \textbf{Basisreproduktionszahl} \(R_0\)gibt an, wie viele Personen
         eine infizierte Person im Mittel ansteckt, wenn es in der Bevölkerung keine
         Immunität gibt.
         Gemäß RKI gilt:
@@ -126,7 +126,7 @@ Dies führt uns in die Statistik (später).
         Bevölkerungsgröße.
         Die \emph{7-Tage-Inzidenz} gibt beispielsweise an,
         wie viele neu infizierte Personen es in den vergangenen sieben Tagen
-        pro \(100\,000\) Einwohner gegeben hat.
+        pro \(100\,000\)Einwohner gegeben hat.
     \end{itemize}
 \end{bsp}
 
@@ -140,19 +140,19 @@ Dies führt uns in die Statistik (später).
 
     Die Zufallsvariable
     \[
-        X : \eraum \to \rz,
+         \zvx: \eraum \to \rz,
         \qquad
-        X(\ele)=\ele,
+        \zvx(\ele)=\ele,
     \]
     besitzt das Bild
     \[
-        X(\eraum)=\{1,\dots,6\}\subseteq\rz.
+        \zvx(\eraum)=\{1,\dots,6\}\subseteq\rz.
     \]
 
     Für einen fairen Würfel ist der Erwartungswert die mittlere Augenzahl, also das
     arithmetische Mittel:
     \[
-        E[X]
+        \E{\zvx }
         =
         \frac{1+2+3+4+5+6}{6}
         =
@@ -172,15 +172,15 @@ Dies führt uns in die Statistik (später).
         \item 6 Euro, falls $2, \cdots , 6$ gewürfelt
         \item \(
         \eraum = \{1,\dots,6\}
-        \) mit Gleichverteilung \(\pe\).
+        \)mit Gleichverteilung \(\pe\).
     \end{itemize}
     \glssymbol{eraum} = $\kl{1, \dots, 6}$ mit Gleichverteilung \pe  \\
-    Die Auszahlung wird beschrieben durch die \Gls{zv} $Y$ mit
+    Die Auszahlung wird beschrieben durch die \Gls{zv} $\zvy$ mit
     \[
-        Y(\glssymbol{elementarereignis}) = k \cdot \chi_{\kl{1}}(\ele) + 6 \cdot \chi_{\kl{2, \dots, 6}}(\ele) \quad \faoio
+        \zvy(\ele)= k \cdot \chaf_{\kl{1}}(\ele)+ 6 \cdot \chaf_{\kl{2, \dots, 6}}(\ele)\quad \faoio
     \]
     Erwartete Auszahlung als arithmetisches Mittel:
-    \mab{\E{Y} = \sum_{\oio} Y(\ele) \glssymbol{wfk}(\ele) = \frac{k+ 5 \cdot 6}{6} = 6 \cdot \frac{5}{6} + k \cdot \frac{1}{6}  = 6 \cdot \pe(Y=6) + k \cdot \pe(Y=k) = \sum_{I\in Y(\glssymbol{eraum})} I \cdot \pe(Y=I)}
+    \mab{\E{\zvy} = \sum_{\oio} \zvy(\ele)\glssymbol{wfk}(\ele)= \frac{k+ 5 \cdot 6}{6} = 6 \cdot \frac{5}{6} + k \cdot \frac{1}{6}  = 6 \cdot \pe(\zvy=6)+ k \cdot \pe(\zvy=k)= \sum_{I\in \zvy(\glssymbol{eraum})} I \cdot \pe(\zvy=I)}
 
 \end{bsp}
 
@@ -193,18 +193,18 @@ Dies führt uns in die Statistik (später).
 \section{Definition und Existenz des Erwartungswerts}
 
 \begin{defi} \txc{(2025)}
-    Der \Gls{ew} einer \zv $X$ mit abzählbarem Bildbereich $X(\eraum) \in \rz$ ist gegeben durch
+    Der \Gls{ew} einer \zv $\zvx$ mit abzählbarem Bildbereich $\zvx(\eraum)\in \rz$ ist gegeben durch
     \[
-        \E{X} = \mathbb{E} X = \sum_{x\in X(\eraum)} x \cdot \pe (X=x)
+        \E{\zvx } = \mathbb{E} \zvx = \sum_{x\in \zvx(\eraum)} x \cdot \pe (\zvx =x)
     \]
-    insofern die Reihe \glsverb{abskonv}, also \ma{ \sum_{x\in X(\eraum)} |x| \cdot \pe (X=x) < \infty}. \\
+    insofern die Reihe \glsverb{abskonv}, also \ma{ \sum_{x\in \zvx(\eraum)} |x| \cdot \pe (\zvx =x)< \infty}. \\
     Wir sprechen in diesem Fall von der Existenz des \Gls{ew}s. \\ \newline
-    Der \Gls{ew} einer \zv $X$ mit einer \dichte \glssymbol{dichte} ist gegeben durch
-    \mab{\E X = \int_{- \infty}^{\infty} x \glssymbol{dichte}(x) \dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glssymbol{dichte}(x) \dx }
-    insofern \ma{\int_{- \infty}^{\infty} |x| \glssymbol{dichte}(x) \dx < \infty}. \\
+    Der \Gls{ew} einer \zv $\zvx$ mit einer \dichte \glssymbol{dichte} ist gegeben durch
+    \mab{\E \zvx = \int_{- \infty}^{\infty} x \glssymbol{dichte}(x)\dx = \lim_{N \rightarrow \infty} \int_{-N}^{N} x \glssymbol{dichte}(x)\dx }
+    insofern \ma{\int_{- \infty}^{\infty} |x| \glssymbol{dichte}(x)\dx < \infty}. \\
     Wir sprechen in diesem Fall von der Existenz des Erwartungswerts.
 
-    \paragraph{Hinweis:} Für \glspl{dichte} \dcht, die gerade Funktionen sind, gilt \(\int_{-N}^N x \dcht (x) \dx = 0\) für
+    \paragraph{Hinweis:} Für \glspl{dichte} \dcht, die gerade Funktionen sind, gilt \(\int_{-N}^N x \dcht (x)\dx = 0\)für
     alle N, auch wenn der Erwartungswert ggf.
     gar nicht existiert.
 \end{defi}
@@ -214,23 +214,23 @@ Dies führt uns in die Statistik (später).
     dass wir die Summanden beliebig umsortieren dürfen.
     Es gilt daher
     \[
-        \txo{\E{X} \overset{Def.}{=}} \sum_{x\in X(\eraum)} x \pe(X=x) = \sum_{x\in \eraum} X(\ele) \wfk(\ele)
+        \txo{\E{\zvx } \overset{Def.}{=}} \sum_{x\in \zvx(\eraum)} x \pe(\zvx =x)= \sum_{x\in \eraum} \zvx(\ele)\wfk(\ele)
     \]
     sofern eine der Reihen absolut konvergent ist.
     (Vgl.
     obiges Bsp.
     mit dem Spiel.)
 
-    Wenn $\eraum$ oder $X(\eraum)$ endlich ist, so existiert der Erwartungswert automatisch.
+    Wenn $\eraum$ oder $\zvx(\eraum)$ endlich ist, so existiert der Erwartungswert automatisch.
 
-    Nimmt X nur nichtnegative Werte an, können wir einfach anfangen, den
+    Nimmt $\zvx$ nur nichtnegative Werte an, können wir einfach anfangen, den
     Erwartungswert auszurechnen, weil
     \[
-        \sumxinXO  |x| \pe(X=x) = \sumxinXO x \pe(X=x)
+        \sumxinXO  |x| \pe(\zvx =x)= \sumxinXO x \pe(\zvx =x)
     \]
     bzw.
     \[
-        \intinfs |x| \dcht (x) \dx = \intinfs x \dcht (x) \dx \txc{ = \int^{\infty}_0 x \dcht (x) \dx }
+        \intinfs |x| \dcht (x)\dx = \intinfs x \dcht (x)\dx \txc{ = \int^{\infty}_0 x \dcht (x)\dx }
     \]
 \end{bem}
 
@@ -248,14 +248,14 @@ Dies führt uns in die Statistik (später).
 
 \begin{bsp}
     \textbf{Erwartungswert der Poisson-Verteilung} \txc{(2026)}  \\
-    X Poisson-verteilt, d.h., es existiert ein $\lambda > 0$ mit
+    $\zvx$ Poisson-verteilt, d.h., es existiert ein $\lambda > 0$ mit
     \[
-        \wfk_X(k) = \pe (X=k) = \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
+        \wfk_\zvx(k)= \pe (\zvx =k)= \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat: \\
-    (Wir verwenden in dieser Argumentation, dass X nur nichtnegative Werte hat, d.h., $X \geq 0$.)
+    (Wir verwenden in dieser Argumentation, dass $\zvx$ nur nichtnegative Werte hat, d.h., $\zvx \geq 0$.)
     \begin{align*}
-        \E{X} & \overset{\txo{*1}}{=} \sum^{\infty}_{k=0} k \pe(X=k) \\
+        \E{\zvx } & \overset{\txo{*1}}{=} \sum^{\infty}_{k=0} k \pe(\zvx =k)\\
         & \overset{\txo{*2}}{=}  \sum^{\infty}_{k=0} \frac{\lambda^k}{k!} e^{-\lambda} \\
         & = \sum^{\infty}_{\txr{k=1}} \txg{k} \cdot \frac{\txb{\lambda^k}}{\txg{k!}} e^{-\lambda} \\
         & = \txb{\lambda}   \sum^{\infty}_{\txr{k=1}}  \frac{\txb{\lambda^{k-1}}}{\txg{(k-1)!}} e^{-\lambda} \\
@@ -269,8 +269,8 @@ Dies führt uns in die Statistik (später).
     \end{align*}
     \txo{
         \begin{align*}
-            *1 & \quad X(\eraum) = \nz_0 \\
-            *2 & \quad \pe(X=k) = \wfk_X(k) = \dots
+            *1 & \quad \zvx(\eraum)= \nz_0 \\
+            *2 & \quad \pe(\zvx =k)= \wfk_\zvx(k)= \dots
         \end{align*}
     }
 \end{bsp}
@@ -279,23 +279,23 @@ Dies führt uns in die Statistik (später).
     \textbf{Erwartungswert der geometrischen Verteilung} \txc{(2026)}  \\
     Wie lange müssen wir im Mittel warten, bis der erste Erfolg eintritt?
     (Zum Beispiel bis zur ersten Sechs beim Werfen eines fairen Würfels?
-    – Raten Sie!) \\
-    X geometrisch verteilt mit Erfolgswahrscheinlichkeit \(p \in (0,1)\), d.h.,
+    – Raten Sie!)\\
+    $\zvx$ geometrisch verteilt mit Erfolgswahrscheinlichkeit \(p \in (0,1)\), d.h.,
     \[
-        \wfk_X(k) = \pe (X=k) = p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
+        \wfk_\zvx(k)= \pe (\zvx =k)= p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
     \]
-    Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, dass $X \geq 0$)).
+    Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, dass $\zvx \geq 0$)).
     \txo{
         \[
-            h(x) = x^k \Rightarrow h'(x) = k x^{k-1}
+            h(x)= x^k \Rightarrow h'(x)= k x^{k-1}
         \]
     }
     \begin{align*}
-        \E{X}&  \overset{\txo{*1}}{=}   \sum^{\infty}_{k=1} \txr{k} p(1-p)^{\txr{k-1}} \\
-        & =  p  \sum^{\infty}_{k=1} \big( \frac{d}{dx} x^{\txr{k}} \big) \big|_{x=1-p} \\
-        &  \overset{\txo{*2}}{=}  p  \frac{d}{dx}   \sum^{\infty}_{\txg{k=1}} \big(x^{\txr{k}} \big) \big|_{x=1-p} \\
-        & = p  \frac{d}{dx}   \sum^{\infty}_{\txg{k=0}} \big(x^{k} \big) \big|_{x=1-p} \\
-        & = p  \frac{d}{dx}  \big( \frac{1}{1-x} \big) \big|_{x=1-p} \\
+        \E{\zvx }&  \overset{\txo{*1}}{=}   \sum^{\infty}_{k=1} \txr{k} p(1-p)^{\txr{k-1}} \\
+        & =  p  \sum^{\infty}_{k=1} \big(\frac{d}{dx} x^{\txr{k}} \big)\big|_{x=1-p} \\
+        &  \overset{\txo{*2}}{=}  p  \frac{d}{dx}   \sum^{\infty}_{\txg{k=1}} \big(x^{\txr{k}} \big)\big|_{x=1-p} \\
+        & = p  \frac{d}{dx}   \sum^{\infty}_{\txg{k=0}} \big(x^{k} \big)\big|_{x=1-p} \\
+        & = p  \frac{d}{dx}  \big(\frac{1}{1-x} \big)\big|_{x=1-p} \\
         & = p  \frac{1}{(1-x)^2}  \big|_{x=1-p} \\
         & = \frac{1}{p}
     \end{align*}
@@ -311,19 +311,19 @@ Dies führt uns in die Statistik (später).
 \begin{bsp}
     \textbf{Erwartungswert der uniformen Verteilung auf [a, b]} \txc{(2026)}  \\
     (Raten.
-    – Warum ist der Erwartungswert (a + b)/2 ?) \\
+    – Warum ist der Erwartungswert (a + b)/2 ?)\\
     Der Erwartungswert existiert, weil\ldots
     \txc{
-        Denn: Zu prüfen ist: \(\intinfs |x| \dcht (x) \dx < \infty  \) für $\dcht(x) = \frac{1}{b-a} \chi_{[a, b]}(x)$. \\
-        Hier ist $\dcht(x) = 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
+        Denn: Zu prüfen ist: \(\intinfs |x| \dcht (x)\dx < \infty  \)für $\dcht(x)= \frac{1}{b-a} \chaf_{[a, b]}(x)$. \\
+        Hier ist $\dcht(x)= 0$ außerhalb eines kompakten Intervalls (abgeschlossen und beschränkt).
         \[
-            \intinfs |x| \dcht(x) \dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{\max\{|a|, |b|\}}{b-a} \dx = \max\{|a|, |b|\} \cdot 1 < \infty
+            \intinfs |x| \dcht(x)\dx = \intab \frac{|x|}{b-a} \dx \leq \intab \frac{\max\{|a|, |b|\}}{b-a} \dx = \max\{|a|, |b|\} \cdot 1 < \infty
         \]
     }
     \ldots f stetig ist auf dem kompakten Intervall [a, b]
     und f = 0 außerhalb des Intervalls [a, b] gilt.
     \[
-        \E{X} = \intab x \frac{1}{b-a} \dx = \frac{1}{2(b-a)} x^2 |^b_{x=a} = \frac{b^2 - a^2}{2(b-a)} = \oub{\frac{a+b}{2}}{*}
+        \E{\zvx } = \intab x \frac{1}{b-a} \dx = \frac{1}{2(b-a)} x^2 |^b_{x=a} = \frac{b^2 - a^2}{2(b-a)} = \oub{\frac{a+b}{2}}{*}
     \]
     \txo{* Mittelpunkt des Intervalls} \\
     \txo{
@@ -335,24 +335,24 @@ Dies führt uns in die Statistik (später).
     \txo{
         Erinnerung:}
     \[
-        \txo{ F(x) \coloneqq - e^{-\alpha x}, \quad F'(x) \coloneqq \alpha e^{-\alpha x}, \quad \E{X} = \frac{1}{\alpha}}
+        \txo{ F(x)\coloneqq - e^{-\alpha x}, \quad F'(x)\coloneqq \alpha e^{-\alpha x}, \quad \E{\zvx } = \frac{1}{\alpha}}
     \]
 
     Der Erwartungswert existiert genau dann, wenn die folgende Berechnung einen
-    endlichen Wert ergibt (was der Fall ist, wir verwenden wieder, dass $X \geq 0$):
+    endlichen Wert ergibt (was der Fall ist, wir verwenden wieder, dass $\zvx \geq 0$):
     \begin{align*}
-        \E{X} & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
+        \E{\zvx } & = \int^{\infty}_0 \underbrace{x}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
         & = - \lim_{N \rightarrow \infty} \oub{x e^{- \alpha x}}{=0} |^N_{x=0} +  \int^{\infty}_0 \oub{1 \cdot  e^{- \alpha
-        x} }{=f(x) \cdot \frac{1}{\alpha}} \dx \\
-        & = 0 + \frac{1}{\alpha} \oub{\intinfs \dcht(x) \dx }{=1} \\
+        x} }{=f(x)\cdot \frac{1}{\alpha}} \dx \\
+        & = 0 + \frac{1}{\alpha} \oub{\intinfs \dcht(x)\dx }{=1} \\
         & = \frac{1}{\alpha}^{\txo{*}}
     \end{align*}
     \txc{
         \begin{align*}
-            * \dcht(x) & = \alpha e^{- \alpha x} \chi_{[0,\infty)}(x) \\
+            * \dcht(x)& = \alpha e^{- \alpha x} \chaf_{[0,\infty)}(x)\\
             \Rightarrow \int_0^{\infty} e^{- \alpha x} \dx
             & = \frac{1}{\alpha} \int_0^{\infty} \alpha e^{- \alpha x} \dx \\
-            & = \frac{1}{\alpha}  \intinfs \dcht(x) \dx \\
+            & = \frac{1}{\alpha}  \intinfs \dcht(x)\dx \\
             & = \frac{1}{\alpha}
         \end{align*}
     }
@@ -366,28 +366,28 @@ Dies führt uns in die Statistik (später).
 
 \begin{satz}
     \textbf{Der Erwartungswert ist linear} \txc{(2026)} \\ % 2026 13
-    Geg. \glspl{zv} $X : \eraum \rightarrow \rz $ und  $Y : \eraum \rightarrow \rz $auf $\wraum$; Konstanten $a,b \in \rz$. \\
-    Annahme: $\E{X}$ und $\E{Y}$ existieren. \\
-    Dann gelten $aX + bY$ ist ebenfalls eine Zufallsvariable.
-    Der Erwartungswert von $aX + bY$ existiert und berechnet sich als
+    Geg. \glspl{zv} $\zvx: \eraum \rightarrow \rz $ und  $\zvy: \eraum \rightarrow \rz $auf $\wraum$; Konstanten $a,b \in \rz$. \\
+    Annahme: $\E{\zvx }$ und $\E{\zvy}$ existieren. \\
+    Dann gelten $a \zvx + b \zvy$ ist ebenfalls eine Zufallsvariable.
+    Der Erwartungswert von $a \zvx + b \zvy$ existiert und berechnet sich als
     \[
-        \E{aX + bY} = a\E{X} + b\E{Y}
+        \E{a \zvx + b \zvy} = a\E{\zvx } + b\E{\zvy}
     \]
 
     \paragraph{Beweis (für Zufallsvariable mit abzählbarem Bildbereich)}
-    Nehmen wir zunächst an, der Erwartungswert von $aX + bY$ existiert.
+    Nehmen wir zunächst an, der Erwartungswert von $a \zvx + b \zvy$ existiert.
     Dann dürfen alle Reihen beliebig umsortiert werden:
     \begin{align*}
-        \E{aX + bY} & = \sum_{\oio} [aX(\ele) + bY(\ele)] \wfk(\ele) \\
-        & = a \sum_{\oio} X(\ele) \wfk(ele) + \sum_{\oio} Y(\ele) \wfk(ele) \\
-        & = a\E{X} + b\E{Y}
+        \E{a \zvx + b \zvy} & = \sum_{\oio} [a\zvx(\ele)+ b\zvy(\ele)] \wfk(\ele)\\
+        & = a \sum_{\oio} \zvx(\ele)\wfk(ele)+ \sum_{\oio} \zvy(\ele)\wfk(ele)\\
+        & = a\E{\zvx } + b\E{\zvy}
     \end{align*}
     Eine analoge Rechnung mit Betragszeichen und Abschätzungen zeigt die
     Existenz des Erwartungswerts:
     \[
-        \sum_{\oio} \oub{ | aX(\ele) + bY(\ele)| }{\leq |a| |X(\ele)| + |b| |Y(\ele)|} \wfk(\ele) \leq |a| \oub{\sum_{\oio} |X(\ele)| \wfk(\ele)}{< \infty\ unab.\ Ver.} + |b|  \oub{\sum_{\oio} |Y(\ele)| \wfk(\ele)}{< \infty\ unab.\ Ver.} < \infty
+        \sum_{\oio} \oub{ | a\zvx(\ele)+ b\zvy(\ele)| }{\leq |a| |\zvx(\ele)| + |b| |\zvy(\ele)|} \wfk(\ele)\leq |a| \oub{\sum_{\oio} |\zvx(\ele)| \wfk(\ele)}{< \infty\ unab.\ Ver.} + |b|  \oub{\sum_{\oio} |\zvy(\ele)| \wfk(\ele)}{< \infty\ unab.\ Ver.} < \infty
     \]
-    da nach Voraussetzung $\E{X}$ und $\E{Y}$ existieren.
+    da nach Voraussetzung $\E{\zvx }$ und $\E{\zvy}$ existieren.
 \end{satz}
 
 \begin{bsp}
@@ -397,36 +397,36 @@ Dies führt uns in die Statistik (später).
     \]
     mit Gleichverteilung \(P\).
 
-    Für \(i=1,\dots,n\) sei
+    Für \(i=1,\dots,n\)sei
     \[
-        X_i(\ele)=\ele_i,
+        \zvx_i(\ele)=\ele_i,
     \]
     wobei \(\ele=(\ele_1,\dots,\ele_n)\in\eraum\).
 
     Die Zufallsvariable
     \[
-        X=\sum_{i=1}^{n} X_i
+        \zvx=\sum_{i=1}^{n} \zvx_i
     \]
-    beschreibt die Augensumme \txo{(Und $X_i$ das Ergebnis des i-ten Wurfs)}.
+    beschreibt die Augensumme \txo{(Und $\zvx_i$ das Ergebnis des i-ten Wurfs)}.
 
     \textbf{Berechnung der erwarteten Augensumme für zweimaliges Würfeln(\(n=2\)):}
 
     Direkt über die Verteilung:
     \[
-        E[X]
+        \E{\zvx }
         =
         \sum_{i=2}^{12}
-        i \, \pe(X_1+X_2=i) = \dots
+        i \, \pe(\zvx _1+\zvx_2=i)= \dots
     \]
     was etwas aufwendig ist.
 
     Alternativ:
     \[
         \begin{aligned}
-            E[X]
+            \E{\zvx }
             &=
             \sum_{\ele\in\eraum}
-            \bigl(X_1(\ele)+X_2(\ele)\bigr)\,\wfk(\ele) \\
+            \bigl(\zvx _1(\ele)+\zvx_2(\ele)\bigr)\,\wfk(\ele)\\
             &=
             \frac{1}{36}
             \sum_{\ele_1, \ele_2=1}^{6} [\ele_1 + \ele_2] \\
@@ -434,7 +434,7 @@ Dies führt uns in die Statistik (später).
             \frac{1}{36}
             \sum_{\ele_1=1}^{6}
             \sum_{\ele_2=1}^{6}
-            (\ele_1+\ele_2) \\
+            (\ele_1+\ele_2)\\
             &=
             \frac{1}{36}
             \left[
@@ -454,9 +454,9 @@ Dies führt uns in die Statistik (später).
 
     Mit der Linearität des Erwartungswertes erhält man sofort:
     \[
-        E[X]
+        \E{\zvx }
         =
-        E[X_1]+E[X_2]
+        \E{\zvx _1}+\E{\zvx _2}
         =
         2\cdot 3,5
         =
@@ -465,30 +465,30 @@ Dies führt uns in die Statistik (später).
 
     Dies verallgemeinert sich unmittelbar auf \(n\)-maliges Würfeln:
     \[
-        E[X]
+        \E{\zvx }
         =
-        E[X_1+\cdots+X_n]
+        \E{\zvx _1+\cdots+\zvx_n}
         =
-        E[X_1]+\cdots+E[X_n]
+        \E{\zvx _1} + \cdots+ \E{\zvx _n}
         =
         n\cdot\frac{7}{2}.
     \]
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Binomialverteilung} \txo{$\E{X} = n \cdot p$} \txc{(2026)}  \\
+    \textbf{Binomialverteilung} \txo{$\E{\zvx } = n \cdot p$} \txc{(2026)}  \\
     \txo{
-        $X(\eraum) = \{ 0,\dots, n\}, \quad \# X(\eraum) = n+1 < \infty$}
+        $\zvx(\eraum)= \{ 0,\dots, n\}, \quad \# \zvx(\eraum)= n+1 < \infty$}
     \begin{itemize}
-        \item \(X\) sei binomialverteilt mit den Parametern \(n\) und \(p\).
-        \item Der Erwartungswert$^{\txo{*}}$ von \(X\) existiert, da der Bildbereich von \(X\)
+        \item \(\zvx \)sei binomialverteilt mit den Parametern \(n\)und \(p\).
+        \item Der Erwartungswert$^{\txo{*}}$ von \(\zvx \)existiert, da der Bildbereich von \(\zvx \)
         endlich ist.
     \end{itemize}
     \txo{erwartete Anzahl an Erfolgen in einem n-fach unabhängig wiederholten Bernoulli-Experiment}
 
     \paragraph{1. Versuch} (mit binomischer Formel und etwas Geschick)
     \[
-        \E{X} = \sum^n_{k=0} k \oub{\binom{n}{k} p^k (1-p)^{n-k}}{=\pe(X=x)} = \dots
+        \E{\zvx } = \sum^n_{k=0} k \oub{\binom{n}{k} p^k (1-p)^{n-k}}{=\pe(\zvx =x)} = \dots
     \]
 
     \paragraph{2. Versuch}
@@ -499,29 +499,29 @@ Dies führt uns in die Statistik (später).
 
     Die Anzahl der Erfolge lässt sich darstellen als
     \[
-        X=\sum_{i=1}^{n} X_i,
+        \zvx=\sum_{i=1}^{n} \zvx_i,
     \]
     wobei
     \[
-        X_i(\ele)=\ele_i.
+        \zvx_i(\ele)=\ele_i.
     \]
 
     Für jede Indikatorvariable gilt
     \[
-        E[X_i]
+        \E{\zvx _i}
         =
-        0\cdot \pe(X_i=0)
+        0\cdot \pe(\zvx _i=0)
         +
-        1\cdot \pe(X_i=1)
+        1\cdot \pe(\zvx _i=1)
         =
         p.
     \]
 
     Mit der Linearität des Erwartungswertes folgt unmittelbar:
     \[
-        E[X]
+        \E{\zvx }
         =
-        \sum_{i=1}^{n} \oub{E[X_i]}{=p}
+        \sum_{i=1}^{n} \oub{\E{\zvx _i}}{=p}
         =
         \sum_{i=1}^{n} p
         =
@@ -533,7 +533,7 @@ Dies führt uns in die Statistik (später).
     \textbf{St. Petersburger Paradoxon (Erwartungswert muss nicht existieren)} \txc{(2026)} \\
     Ein Casino möchte folgendes Spiel anbieten:
     Eine faire Münze wird geworfen, bis zum ersten Mal Kopf erscheint.
-    Passiert dies beim n-ten Wurf, so sei die Auszahlung $X = 2^n$
+    Passiert dies beim n-ten Wurf, so sei die Auszahlung $\zvx = 2^n$
     \[
         \eraum=\nz,
         \qquad
@@ -541,12 +541,12 @@ Dies führt uns in die Statistik (später).
         \qquad
         p=\frac12.
     \]
-    Die Zufallsvariable $X:\eraum\to\rz$ sei definiert durch $ X(n)=2^n$ \txo{(Ausazhlung)} für alle $n\in\eraum$
+    Die Zufallsvariable $\zvx:\eraum\to\rz$ sei definiert durch $ \zvx(n)=2^n$ \txo{(Ausazhlung)} für alle $n\in\eraum$
 
     \[
-        \wfk_X(2^n)
+        \wfk_\zvx(2^n)
         =
-        \pe( \oub{X=2^n}{\text{Kopf erstmalig im n-ten Wurf}} )
+        \pe(\oub{\zvx =2^n}{\text{Kopf erstmalig im n-ten Wurf}})
         =
         \wfk(n)
         =
@@ -556,16 +556,16 @@ Dies führt uns in die Statistik (später).
         \qquad
         n\in \eraum = \nz.
     \]
-    \txo{$\wfk(n) = \left(\frac{1}{2}\right)^n = 2^{-n} \quad \forall n \in \eraum = \nz$} \\
+    \txo{$\wfk(n)= \left(\frac{1}{2}\right)^n = 2^{-n} \quad \forall n \in \eraum = \nz$} \\
     Was wäre ein fairer Einsatz für dieses Spiel?
-    (Wir nennen den Einsatz fair, wenn der Einsatz gleich der erwarteten Auszahlung ist.) \\
-    Wir suchen also $\E{X}$
+    (Wir nennen den Einsatz fair, wenn der Einsatz gleich der erwarteten Auszahlung ist.)\\
+    Wir suchen also $\E{\zvx }$
 
-    \txo{$X \geq 0$, EW existiert genau dann, wenn Rechnung endliches Ergebnis hat}
+    \txo{$\zvx \geq 0$, EW existiert genau dann, wenn Rechnung endliches Ergebnis hat}
 
     Nun ist jedoch
     \[
-        \sum_{n=1}^{\infty} 2^n \pe(X=2^n) = \sum_{n=1}^{\infty} 2^n \wfk_X(2^n) = \sum_{n=1}^{\infty} 2^n 2^{-n} = \sum_{n=1}^{\infty} 1 = \infty
+        \sum_{n=1}^{\infty} 2^n \pe(\zvx =2^n)= \sum_{n=1}^{\infty} 2^n \wfk_\zvx(2^n)= \sum_{n=1}^{\infty} 2^n 2^{-n} = \sum_{n=1}^{\infty} 1 = \infty
     \]
     Der Erwartungswert existiert also nicht.
     Ein fairer Einsatz kann nicht bestimmt werden.
@@ -575,44 +575,44 @@ Dies führt uns in die Statistik (später).
 \begin{er} \txc{(2026)} \\
     Aus Satz (E), d.h.\ der Linearität des Erwartungswerts, folgen: % TODO Satz E verlinken
     \[
-        \E{aX}= a \E{X} \text{ und } \E{X + Y } = \E{X} + \E{Y}
+        \E{a \zvx}= a \E{\zvx } \text{ und } \E{\zvx  + \zvy } = \E{\zvx } + \E{\zvy}
     \]
-    für $a \in \rz$ und $\rz$-wertige X und Y mit existierendem Erwartungswert
+    für $a \in \rz$ und $\rz$-wertige $\zvx$ und $\zvy$ mit existierendem Erwartungswert
 \end{er}
 
 \begin{fr} \txc{(2026)}
-Gilt auch \(\E{XY}  = \E{X}  \E{Y}\)? \\
-    \txo{Spezialfall $X=Y$: $\E{E^2} = (\E{X})^2$. \\ Gilt das?
+Gilt auch \(\E{\zvx \zvy}  = \E{\zvx }  \E{\zvy}\)? \\
+    \txo{Spezialfall $\zvx=\zvy$: $\E{E^2} = (\E{\zvx })^2$. \\ Gilt das?
     }
 \end{fr}
 \begin{bsp} \txc{(2026)}
-Es gibt Zufallsvariablen \(X,Y\) mit
+Es gibt Zufallsvariablen \(\zvx ,\zvy\)mit
     \[
-        \E{X\cdot Y} \neq \E{X}\cdot\E{Y}.
+        \E{\zvx \cdot \zvy} \neq \E{\zvx }\cdot\E{\zvy}.
     \]
 
     Wähle
     \[
-        \pe(X=+1)=\pe(X=-1)=\frac{1}{2}
+        \pe(\zvx =+1)=\pe(\zvx =-1)=\frac{1}{2}
     \]
     und
     \[
-        Y=X.
+        \zvy=\zvx.
     \]
 
     Dann gilt
     \[
-        \E{X}
+        \E{\zvx }
         =
-        \E{Y}
+        \E{\zvy}
         =
         0
     \]
     und
     \[
-        \E{XY}
+        \E{\zvx \zvy}
         =
-        \E{X^2}
+        \E{\zvx ^2}
         =
         \E{1}
         =
@@ -624,85 +624,85 @@ Es gibt Zufallsvariablen \(X,Y\) mit
     \textbf{Satz (P)} \txc{(2026)}  \\
     Seien
     \[
-        X:\eraum\to\mathbb{R}
+        \zvx:\eraum\to\mathbb{R}
         \quad\text{und}\quad
-        Y:\eraum\to\mathbb{R}
+        \zvy:\eraum\to\mathbb{R}
     \]
     zwei unabhängige Zufallsvariablen, deren Erwartungswerte existieren.
 
-    Dann existiert auch der Erwartungswert von \(X\cdot Y\), und es gilt
+    Dann existiert auch der Erwartungswert von \(\zvx \cdot \zvy\), und es gilt
     \[
-        \E{X\cdot Y}
+        \E{\zvx \cdot \zvy}
         =
-        \E{X}\cdot\E{Y}.
+        \E{\zvx }\cdot\E{\zvy}.
     \]
 
     \paragraph{Beweis.}
 
     \paragraph{Schritt 1:}
-    Wir nehmen zunächst an, dass der Erwartungswert von \(X\cdot Y\) existiert.
+    Wir nehmen zunächst an, dass der Erwartungswert von \(\zvx \cdot \zvy\)existiert.
 
     Wir beginnen mit der folgenden Darstellung.
-    Für \(z\neq 0\) gilt: \txo{(xy = z)}
+    Für \(z\neq 0\)gilt: \txo{(xy = z)}
     \[
         \begin{aligned}
-            \pe(XY=z)
+            \pe(\zvx \zvy =z)
             & \overset{\txo{*}}{=}
             \sum_{y\neq 0}
-            \pe(XY=z\mid Y=y)\,\pe(Y=y)
+            \pe(\zvx \zvy =z\mid \zvy =y)\,\pe(\zvy=y)
             \\
             &=
             \sum_{y\neq 0}
-            P\left(X=\frac{z}{y}\mid Y=y\right)
-            \pe(Y=y)
+            P\left(\zvx =\frac{z}{y}\mid \zvy =y\right)
+            \pe(\zvy=y)
             \\
             &=
             \sum_{y\neq 0}
-            P\left(X=\frac{z}{y}\right)
-            \pe(Y=y),
+            P\left(\zvx =\frac{z}{y}\right)
+            \pe(\zvy=y),
         \end{aligned}
     \]
-    da \(X\) und \(Y\) unabhängig sind.
+    da \(\zvx \)und \(\zvy\)unabhängig sind.
     \[
         \txo{
-            \pe(X \cdot X = z) = \sum_{y \in Y(\eraum)} \pe(X \cdot Y = z, Y = y) \overset{z \neq 0}{=} \sum_{y \in Y(\eraum), y \neq 0} \pe(X \cdot Y = z| Y = y) \cdot \pe(Y=y)
+            \pe(\zvx  \cdot \zvx = z)= \sum_{y \in \zvy(\eraum)} \pe(\zvx  \cdot \zvy = z, \zvy = y)\overset{z \neq 0}{=} \sum_{y \in \zvy(\eraum), y \neq 0} \pe(\zvx  \cdot \zvy = z| \zvy = y)\cdot \pe(\zvy=y)
         }
     \]
     Aus
     \[
-        \pe(XY=z)
+        \pe(\zvx \zvy =z)
         =
         \sum_{y\neq 0}
-        P\left(X=\frac{z}{y}\right)
-        \pe(Y=y),
+        P\left(\zvx =\frac{z}{y}\right)
+        \pe(\zvy=y),
         \qquad z\neq 0,
     \]
     folgt
     \begin{align*}
-        \E{XY}
+        \E{\zvx \zvy}
         &=
-        \sum_{z\in XY(\eraum)\txo{, z \neq 0}}
-        z\,\pe(XY=z)
+        \sum_{z\in \zvx\zvy(\eraum)\txo{, z \neq 0}}
+        z\,\pe(\zvx \zvy =z)
         \\
         &=
         \sum_{z\neq 0}
         \sum_{y\neq 0}
         \frac{z}{y}\,y\,
-        P\left(X=\frac{z}{y}\right)
-        \pe(Y=y) \\
+        P\left(\zvx =\frac{z}{y}\right)
+        \pe(\zvy=y)\\
         &=
         \sum_{y\neq 0}
         \sum_{x\neq 0}
-        xy \pe(X=x) \pe(Y=y) \\
+        xy \pe(\zvx =x)\pe(\zvy=y)\\
         &=
         \left(
-                \sum_{y\neq 0} y \pe(Y=y)
+                \sum_{y\neq 0} y \pe(\zvy=y)
                 \right)
         \left(
-                \sum_{x\neq 0} x \pe(X=x)
-                \right) \\
+                \sum_{x\neq 0} x \pe(\zvx =x)
+                \right)\\
         &=
-        \E{X} \cdot \E{Y}
+        \E{\zvx } \cdot \E{\zvy}
     \end{align*}
 
     \paragraph{Schritt 2:} Eine analoge Rechnung zeigt die Existenz des Erwartungswerts:
@@ -710,37 +710,37 @@ Es gibt Zufallsvariablen \(X,Y\) mit
 \begin{satz}
     \textbf{Kurzfassung Satz (P)} \txc{(2026)}
     \[
-        X,Y \text{ unabhängig mit ex. EW}
+        \zvx,\zvy \text{ unabhängig mit ex. EW}
         \;\Longrightarrow\;
-        \E{XY}
+        \E{\zvx \zvy}
         =
-        \E{X}\,\E{Y}.
+        \E{\zvx }\,\E{\zvy}.
     \]
 \end{satz}
 
 \begin{bsp} \txc{(2026)}
 \[
-        \E{X\cdot Y}
+        \E{\zvx \cdot \zvy}
         =
-        \E{X}\cdot\E{Y}
+        \E{\zvx }\cdot\E{\zvy}
     \]
-    impliziert nicht, dass \(X\) und \(Y\) unabhängig sind.
+    impliziert nicht, dass \(\zvx \)und \(\zvy\)unabhängig sind.
 
     \begin{itemize}
-        \item Definiere Hilfszufallsvariablen \(X_1\) und \(Y_1\), unabhängig mit
+        \item Definiere Hilfszufallsvariablen \(\zvx _1\)und \(\zvy_1\), unabhängig mit
         \[
-            \pe(X_1=0)=\pe(X_1=1)=\frac12
+            \pe(\zvx _1=0)=\pe(\zvx _1=1)=\frac12
         \]
         und
         \[
-            \pe(Y_1=0)=\pe(Y_1=1)=\frac12.
+            \pe(\zvy_1=0)=\pe(\zvy_1=1)=\frac12.
         \]
 
         \item Setze
         \[
-            X\coloneqq X_1+Y_1,
+            \zvx\coloneqq \zvx_1+\zvy_1,
             \qquad
-            Y\coloneqq|X_1-Y_1|.
+            \zvy\coloneqq|\zvx_1-\zvy_1|.
         \]
     \end{itemize}
 
@@ -749,43 +749,43 @@ Es gibt Zufallsvariablen \(X,Y\) mit
     \begin{itemize}
         \item Bildbereiche:
         \[
-            X(\eraum)=\{0,1,2\},
+            \zvx(\eraum)=\{0,1,2\},
             \qquad
-            Y(\eraum)=\{0,1\}.
+            \zvy(\eraum)=\{0,1\}.
         \]
 
         \item
         \[
-            Y=0
+            \zvy =0
             \iff
-            X_1=Y_1
+            \zvx_1=\zvy_1
             \iff
-            X\in\{0,2\}.
+            \zvx\in\{0,2\}.
         \]
 
         \item
         \[
-            Y=1
+            \zvy =1
             \iff
-            X_1\neq Y_1
+            \zvx_1\neq \zvy_1
             \iff
-            X=1.
+            \zvx =1.
         \]
     \end{itemize}
 
-    \paragraph{\(X\) und \(Y\) sind nicht unabhängig.}
+    \paragraph{\(\zvx \)und \(\zvy\)sind nicht unabhängig.}
 
     \[
-        \pe(X=1,Y=0)=0,
+        \pe(\zvx =1,\zvy =0)=0,
     \]
     da
     \[
-        \{X=1,Y=0\}=\varnothing.
+        \{\zvx =1,\zvy =0\}=\varnothing.
     \]
 
     Andererseits gilt
     \[
-        \pe(X=1)
+        \pe(\zvx =1)
         =
         2\cdot\frac14
         >
@@ -793,27 +793,27 @@ Es gibt Zufallsvariablen \(X,Y\) mit
     \]
     und
     \[
-        \pe(Y=0)
+        \pe(\zvy=0)
         =
         2\cdot\frac14
         >
         0.
     \]
 
-    \paragraph{Dennoch gilt \(\E{XY}=\E{X}\E{Y}\).}
+    \paragraph{Dennoch gilt \(\E{\zvx \zvy}=\E{\zvx }\E{\zvy}\).}
 
     \[
         \begin{aligned}
-            \E{XY}
+            \E{\zvx \zvy}
             &=
-            0\cdot \pe(XY=0)
+            0\cdot \pe(\zvx \zvy =0)
             +
-            1\cdot \pe(XY=1)
+            1\cdot \pe(\zvx \zvy =1)
             +
-            2\cdot \pe(XY=2)
+            2\cdot \pe(\zvx \zvy =2)
             \\
             &=
-            0+\pe(X=1)+0
+            0+\pe(\zvx =1)+0
             \\
             &=
             \frac12.
@@ -823,12 +823,12 @@ Es gibt Zufallsvariablen \(X,Y\) mit
     Außerdem
     \[
         \begin{aligned}
-            \E{X}\,\E{Y}
+            \E{\zvx }\,\E{\zvy}
             &=
-            (\E{X_1}+\E{Y_1})\,\pe(Y=1)
+            (\E{\zvx _1}+\E{\zvy_1})\,\pe(\zvy=1)
             \\
             &=
-            2\,\E{X_1}\,\pe(X=1)
+            2\,\E{\zvx _1}\,\pe(\zvx =1)
             \\
             &=
             2\cdot\frac12\cdot\frac12
@@ -850,48 +850,48 @@ Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
 
 \begin{defi}
     \textbf{Zusammengesetzte Zufallsvariablen} \txc{(2026)}  \\
-    Eine Zufallsvariable $X: \eraum \rightarrow \rz$ und eine \txo{messbare} Funktion $f: \rz \rightarrow \rz$ können
+    Eine Zufallsvariable $\zvx: \eraum \rightarrow \rz$ und eine \txo{messbare} Funktion $f: \rz \rightarrow \rz$ können
     zusammengesetzt werden zu einer neuen Zufallsvariablen:
     \[
-        Y(\ele) = (f \circ X)(\ele) = f(X(\ele))
+        \zvy(\ele)= (f \circ  \zvx)(\ele)= f(\zvx (\ele))
     \]
     \txo{
-        $Y(\ele) = f(X(\ele)) \quad \forall \ele$
+        $\zvy(\ele)= f(\zvx (\ele))\quad \forall \ele$
     }
 \end{defi}
 
 \begin{satz}
     \label{satz:7-4} \txc{(2026)} \\
-    Sofern der Erwartungswert $\E{Y}$ existiert, gilt
+    Sofern der Erwartungswert $\E{\zvy}$ existiert, gilt
     \[
-        \E{Y} = \sum_{x \in X(\eraum)} f(x) \pe(X=x)
+        \E{\zvy} = \sum_{x \in \zvx(\eraum)} f(x)\pe(\zvx =x)
     \]
     \txo{
-        bzw., falls X Dichte d hat und EW von $Y$ gleich $f(x)$ existiert
+        bzw., falls $\zvx$ Dichte d hat und EW von $\zvy$ gleich $f(x)$ existiert
     }
     \[
         \txo{
-            \E{Y} = \intinfs f(x) d(x) \dx
+            \E{\zvy} = \intinfs f(x)d(x)\dx
         }
     \]
 
     \paragraph{Beweis.}
     \begin{align*}
-        \E{Y} & =   \sum_{y \in Y(\eraum)} y \pe(Y=y) \\
-        & =   \sum_{y \in Y(\eraum)} y  \sum_{x \in X(\eraum): f(x) = y\txo{*}} \pe(X=x) \\
-        & =   \sum_{y \in Y(\eraum)}   \sum_{x \in X(\eraum): f(x) = y} \oub{y}{=f(x)} \pe(X=x) \\
-        & =\sum_{y \in Y(\eraum)}   \sum_{x \in X(\eraum): f(x) = y} f(x) \pe(X=x) \\
-        & = \sum_{x \in X(\eraum)} f(x) \pe(X=x) \\
+        \E{\zvy} & =   \sum_{y \in \zvy(\eraum)} y \pe(\zvy=y)\\
+        & =   \sum_{y \in \zvy(\eraum)} y  \sum_{x \in \zvx(\eraum): f(x)= y\txo{*}} \pe(\zvx =x)\\
+        & =   \sum_{y \in \zvy(\eraum)}   \sum_{x \in \zvx(\eraum): f(x)= y} \oub{y}{=f(x)} \pe(\zvx =x)\\
+        & =\sum_{y \in \zvy(\eraum)}   \sum_{x \in \zvx(\eraum): f(x)= y} f(x)\pe(\zvx =x)\\
+        & = \sum_{x \in \zvx(\eraum)} f(x)\pe(\zvx =x)\\
         & \txo{= \E{f(x)}}
     \end{align*}
     \[
-        \txo{*  Y=y \Leftrightarrow f(x) = y, \quad \pe(Y=y) = \sum_{x \in X(\eraum): f(x) = y} \pe(X=x)}
+        \txo{*  \zvy =y \Leftrightarrow f(x)= y, \quad \pe(\zvy=y)= \sum_{x \in \zvx(\eraum): f(x)= y} \pe(\zvx =x)}
     \]
 \end{satz}
 
 \begin{bsp}
     Zu Satz~\ref{satz:7-4}. \\
-    Mit $f(x) = x^2$
+    Mit $f(x)= x^2$
 \end{bsp}
 
 \karkar{satz_linearitaet_erwartungswert}
@@ -912,189 +912,189 @@ Der Satz kann nicht nur zum Berechnen von Erwartungswerten von Produkten
 \section{Varianz}
 
 \begin{defi}
-    \textbf{n-tes Moment von X} \txc{(2026)}  \\
-    Für $n \in \nz $ heißt $\E{X^n}$ das erste n-te Moment von $X$, insofern $\E{|X|^n} < \infty$.
+    \textbf{n-tes Moment von $\zvx$} \txc{(2026)}  \\
+    Für $n \in \nz $ heißt $\E{\zvx ^n}$ das erste n-te Moment von $\zvx$, insofern $\E{|\zvx|^n} < \infty$.
     (Erwartungswert ist das 1.
     Moment)
 \end{defi}
 \begin{defi} \txc{(2026)}
-$\E{ ( X -  \E{X} )^n } $ heißt das n-te zentrierte Moment von $X$.
-Es existiert, wenn $\E{|X|^n} < \infty$. \\
+$\E{ (\zvx -  \E{\zvx })^n } $ heißt das n-te zentrierte Moment von $\zvx$.
+Es existiert, wenn $\E{|\zvx|^n} < \infty$. \\
 \end{defi}
 
 \begin{defi} \txc{(2026)}
-Die Varianz von $X$ ist das 2 zentrierte Moment, d.h.
+Die Varianz von $\zvx$ ist das 2 zentrierte Moment, d.h.
     \[
-        Var(X) = \E{ ( X -  \E{X} )^2 }
+        Var(\zvx)= \E{ (\zvx -  \E{\zvx })^2 }
     \]
     \txo{(mittlere quadratische Abweichung)} \\
-    Die Varianz von $X$ existiert, wenn $Var(X) < \infty$. \\
-    Die Varianz einer Zufallsvariable X mit existierendem Erwartungswert ist gegeben
+    Die Varianz von $\zvx$ existiert, wenn $Var(\zvx)< \infty$. \\
+    Die Varianz einer Zufallsvariable $\zvx$ mit existierendem Erwartungswert ist gegeben
     durch
     \[
-        Var(X) = \E{ ( X -  \E{X} )^2 } = \sum_{x\in X(\eraum)} (x - \E{X})^2 \pe(X=x)
+        Var(\zvx)= \E{ (\zvx -  \E{\zvx })^2 } = \sum_{x\in \zvx(\eraum)} (x - \E{\zvx })^2 \pe(\zvx =x)
     \]
     (gewichtete quadratische Abweichung vom Erwartungswert)
     \txo{bzw.}
     \[
-        \txo{\Var(X) = \intinfs \underbrace{ (x - \E{X})^2 }{=f(x)} d(x) \dx }
+        \txo{\Var(\zvx)= \intinfs \underbrace{ (x - \E{\zvx })^2 }{=f(x)} d(x)\dx }
     \]
 \end{defi}
 
 \begin{bem} \txc{(2026)}
-$\Var(X) \geq 0$
+$\Var(\zvx)\geq 0$
 \end{bem}
 
 \begin{defi}
     \textbf{Existierende Varianz} \txc{(2025)}  \\
     Wir sagen, dass die Varianz existiert, wenn
     \[
-        \Var(X) = \sum_{x\in X(\eraum)} (x - \E{X})^2 \pe(X=x) < \infty
+        \Var(\zvx)= \sum_{x\in \zvx(\eraum)} (x - \E{\zvx })^2 \pe(\zvx =x)< \infty
     \]
     \txo{bzw.}
     \[
-        \txo{ \intinfs (x - \E{X})^2 d(x) \dx < \infty }
+        \txo{ \intinfs (x - \E{\zvx })^2 d(x)\dx < \infty }
     \]
 \end{defi}
 
 \begin{bsp}
     \textbf{Bsp.} \txc{(2026)} \\
 
-    Seien \(X, Y\) Zufallsvariablen mit
+    Seien \(\zvx , \zvy\)Zufallsvariablen mit
     \[
-        \pe(X=+1)=\frac{1}{2}=\pe(X=-1)
+        \pe(\zvx =+1)=\frac{1}{2}=\pe(\zvx =-1)
     \]
     und
     \[
-        Y=100\cdot X.
+        \zvy =100\cdot \zvx.
     \]
 
     \textbf{Anhand des Erwartungswertes: kein Unterschied!}
 
     \[
-        \E{X}
-        =1\cdot \pe(X=1)+(-1)\cdot \pe(X=-1)
+        \E{\zvx }
+        =1\cdot \pe(\zvx =1)+(-1)\cdot \pe(\zvx =-1)
         =1\cdot\frac{1}{2}-1\cdot\frac{1}{2}
         =0.
     \]
 
-    Da \(Y=100X\) gilt,
+    Da \(\zvy=100 \zvx\)gilt,
 
     \[
-        \E{Y}=100\cdot \E{X}=0.
+        \E{\zvy}=100\cdot \E{\zvx }=0.
     \]
     \textbf{Die Varianz zeigt den Unterschied:}
 
-    da \(\E{X}=0\),
+    da \(\E{\zvx }=0\),
 
     \[
-        \operatorname{Var}(X)
-        =\E{(X- \oub{\E{X}}{=0} )^{2}}
-        =\E{ \oub{X^{2}}{1} }
+         \Var(\zvx)
+        =\E{(\zvx - \oub{\E{\zvx }}{=0})^{2}}
+        =\E{ \oub{ \zvx^{2}}{1} }
         = \E{1}
         = 1
     \]
 
-    Wegen \(X\in\{-1,1\}\) ist
+    Wegen \(\zvx \in\{-1,1\}\)ist
 
     \[
-        X^{2}=1,
+         \zvx^{2}=1,
     \]
 
     also
 
     \[
-        \operatorname{Var}(X)
+         \Var(\zvx)
         =\E{1}
         =1.
     \]
 
-    Ebenso gilt wegen \(\E{Y}=0\),
+    Ebenso gilt wegen \(\E{\zvy}=0\),
 
     \[
-        \operatorname{Var}(Y)
-        =\E{(Y-\E{Y})^{2}}
-        =\E{Y^2}
-        =\E{(100X)^{2}}
+         \Var(\zvy)
+        =\E{(\zvy-\E{\zvy})^{2}}
+        =\E{\zvy^2}
+        =\E{(100 \zvx)^{2}}
     \]
 
     Damit folgt
 
     \[
-        \operatorname{Var}(Y)
-        =\E{100^{2}X^{2}}
-        =100^{2}\E{X^{2}}
+         \Var(\zvy)
+        =\E{100^{2} \zvx^{2}}
+        =100^{2}\E{\zvx ^{2}}
         =100^{2}.
     \]
 \end{bsp}
 
 \begin{bsp}
     \textbf{Bernoulli-Variable (Spezialfall der Binomialverteilung mit n = 1)} \txc{(2026)}  \\
-    Zufallsvariable X mit $\pe(X = +1) = p = 1 - \pe(X=0)$ für Erfolgswahrscheinlichkeit $p \in [0,1]$ und $\E{X} = p$
+    Zufallsvariable $\zvx$ mit $\pe(\zvx  = +1)= p = 1 - \pe(\zvx =0)$ für Erfolgswahrscheinlichkeit $p \in [0,1]$ und $\E{\zvx } = p$
     . \\
-    \txc{$\Var(X)$ existiert, da}
+    \txc{$\Var(\zvx)$ existiert, da}
     \begin{align*}
-        \txo{\Var(X)} & \txo{= \sum_{x\in X(\eraum)}  (x - \E{X})^2 \pe(X=x)} \\
+        \txo{\Var(\zvx)} & \txo{= \sum_{x\in \zvx(\eraum)}  (x - \E{\zvx })^2 \pe(\zvx =x)} \\
         &
-        \txo{ = (0 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=0)}{=1-p} + (1 - \underbrace{\E{X}}{=p})^2  \underbrace{\pe(X=1)}{=p}} \\
-        & \txo{ = p^2 (1-p) + (1-p)^2 p } \\
-        & \txo{= p(1-p) [p+(1-p)]} \\
-        & \txo{= p(1-p) < \infty}
+        \txo{ = (0 - \underbrace{\E{\zvx }}{=p})^2  \underbrace{\pe(\zvx =0)}{=1-p} + (1 - \underbrace{\E{\zvx }}{=p})^2  \underbrace{\pe(\zvx =1)}{=p}} \\
+        & \txo{ = p^2 (1-p)+ (1-p)^2 p } \\
+        & \txo{= p(1-p)[p+(1-p)]} \\
+        & \txo{= p(1-p)< \infty}
     \end{align*}
     \begin{align*}
-        \Var(X)
-        & = (1 - \E{X})^2 p + (0 - \E{X})^2 (1 - p) \\
-        & = (1 - p)^2 p + p^2 (1 - p) \\
+        \Var(\zvx)
+        & = (1 - \E{\zvx })^2 p + (0 - \E{\zvx })^2 (1 - p)\\
+        & = (1 - p)^2 p + p^2 (1 - p)\\
         & = p(1 - p)
     \end{align*}
 \end{bsp}
 
 \begin{bsp}
     \textbf{gleichverteilte Zufallsvariable auf \{1,..,n\}} \txc{(2026)}  \\
-    Zufallsvariable X mit $\pe(X = k) = \frac{1}{n} \text{ für } k = 1, \dots, n$
+    Zufallsvariable $\zvx$ mit $\pe(\zvx  = k)= \frac{1}{n} \text{ für } k = 1, \dots, n$
 
     \[
-        \E{X}
+        \E{\zvx }
         = \sum_{k=1}^{n} k \cdot \frac{1}{n}
         = \frac{n(n+1)}{2n}
         = \frac{n+1}{2}
     \]
     und
     \[
-        \Var(X) = \frac{n^2 - 1}{12}
+        \Var(\zvx)= \frac{n^2 - 1}{12}
     \]
     weil
     \begin{align*}
-        \Var(X)
-        &= \frac{1}{n} \sum_{k=1}^{n} (k - \E{X})^2 \\
-        &= \frac{1}{n} \sum_{k=1}^{n} \left( k^2 - 2k\E{X} + \E{X}^2\right) \\
-        &= \frac{1}{n} \sum_{k=1}^{n} k^2 - 2\E{X} \cdot \oub{\frac{1}{n} \sum_{k=1}^{n} k}{=\E{X}} + \E{X}^2 \\
-        &= \frac{(n+1)(2n+1)}{6} - \E{X}^2 \\
+        \Var(\zvx)
+        &= \frac{1}{n} \sum_{k=1}^{n} (k - \E{\zvx })^2 \\
+        &= \frac{1}{n} \sum_{k=1}^{n} \left(k^2 - 2k\E{\zvx } + \E{\zvx }^2\right)\\
+        &= \frac{1}{n} \sum_{k=1}^{n} k^2 - 2\E{\zvx } \cdot \oub{\frac{1}{n} \sum_{k=1}^{n} k}{=\E{\zvx }} + \E{\zvx }^2 \\
+        &= \frac{(n+1)(2n+1)}{6} - \E{\zvx }^2 \\
         &= \frac{n^2 - 1}{12}
     \end{align*}
 \end{bsp}
 
 \begin{lem}
     \textbf{Technisches Lemma} \txc{(2026)}  \\
-    Für alle $a \in \rz$ gilt $\E{(X - a)^2} = \Var(X) + (\E{X} - a)^2$
+    Für alle $a \in \rz$ gilt $\E{(\zvx  - a)^2} = \Var(\zvx)+ (\E{\zvx } - a)^2$
 
     \paragraph{Beweis} TODO F 76 % TODO
 \end{lem}
 
 \begin{folg}
     \textbf{Folgerung I} \txc{(2026)}  \\
-    $a \Leftrightarrow \E{(X - a)^2}$ wird minimal für $a = \E{X}$.
+    $a \Leftrightarrow \E{(\zvx  - a)^2}$ wird minimal für $a = \E{\zvx }$.
 
-    In diesem Fall ist $\E{(X - a)^2} = \Var(X)$ per Definition der Varianz.
+    In diesem Fall ist $\E{(\zvx  - a)^2} = \Var(\zvx)$ per Definition der Varianz.
 \end{folg}
 
 \begin{folg}
     \textbf{Folgerung II und wichtige Rechenregel} \txc{(2026)}  \\
     Die Wahl a = 0 zeigt
     \[
-        \txo{0 \leq } \Var(X) = \E{X^2} - (\E{X})^2
+        \txo{0 \leq } \Var(\zvx)= \E{\zvx ^2} - (\E{\zvx })^2
     \]
-    Es gilt daher stets $(\E{X})^2 \le \E{X^2}$.
+    Es gilt daher stets $(\E{\zvx })^2 \le \E{\zvx ^2}$.
 \end{folg}
 
 \karkar{def_n_tes_moment}
@@ -1114,46 +1114,46 @@ $\Var(X) \geq 0$
 
 \begin{satz}
     \textbf{Satz (V)} \label{satz:satz-v} \txc{(2026)}  \\
-    Seien X, Y diskrete\txc{(?)}) Zufallsvariablen mit existierendem Erwartungswert, $a,b \in \rz$.
+    Seien $\zvx, \zvy$ diskrete\txc{(?)})Zufallsvariablen mit existierendem Erwartungswert, $a,b \in \rz$.
 
-    \paragraph{(a)} $\Var(aX+b) = a^2 \Var(X)$
+    \paragraph{(a)} $\Var(a \zvx+b)= a^2 \Var(\zvx)$
 
     \begin{align*}
-        \txo{\Var(aX+b)} & \txo{ \E{ (aX+b - \E{aX+b} )^2 } } \\
-        & \txo{ \E{ (a (X-\E{X}  ))^2 } } \\
-        & \txo{ a^2 \E{(X- \E{X} )^2} } \\
-        & \txo{= a^2 \Var(X)}
+        \txo{\Var(a \zvx+b)} & \txo{ \E{ (a \zvx+b - \E{a \zvx+b})^2 } } \\
+        & \txo{ \E{ (a (\zvx -\E{\zvx }))^2 } } \\
+        & \txo{ a^2 \E{(\zvx - \E{\zvx })^2} } \\
+        & \txo{= a^2 \Var(\zvx)}
     \end{align*}
 
 
-    \paragraph{(b)} $\Var(X + Y ) = \Var(X ) + \Var(Y ) + 2 \Cov(X , Y )$ mit Kovarianz
-    $\Cov(X,Y) \coloneqq \E{(X-\E{X}) (Y-\E{Y})}$.
+    \paragraph{(b)} $\Var(\zvx  + \zvy)= \Var(\zvx)+ \Var(\zvy)+ 2 \Cov(\zvx  , \zvy)$ mit Kovarianz
+    $\Cov(\zvx ,\zvy)\coloneqq \E{(\zvx -\E{\zvx })(\zvy-\E{\zvy})}$.
     \begin{align*}
-        \txo{\Var(X + Y )} & \txo{= \E{ ( (X+Y) - \E{(X+Y)} )^2 } } \\
-        & \txo{= \E{ (X-\E{X})^2 }  + 2 \E{ (X-\E{X}) (Y-\E{Y}) } + \E{(Y-\E{Y})^2}  } \\
-        & \txo{  \Var(X ) + \Var(Y ) + 2 \Cov(X , Y ) }
+        \txo{\Var(\zvx  + \zvy)} & \txo{= \E{ ((\zvx +\zvy)- \E{(\zvx +\zvy)})^2 } } \\
+        & \txo{= \E{ (\zvx -\E{\zvx })^2 }  + 2 \E{ (\zvx -\E{\zvx })(\zvy-\E{\zvy})} + \E{(\zvy-\E{\zvy})^2}  } \\
+        & \txo{  \Var(\zvx)+ \Var(\zvy)+ 2 \Cov(\zvx  , \zvy)}
     \end{align*}
 
-    \paragraph{(c)} X und Y unabhängig $\Rightarrow \Var(X + Y ) = \Var(X ) + \Var(Y )$.
+    \paragraph{(c)} $\zvx$ und $\zvy$ unabhängig $\Rightarrow \Var(\zvx  + \zvy)= \Var(\zvx)+ \Var(\zvy)$.
     \begin{align*}
-        \txo{\text{X und Y unabhängig}} & \txo{\Rightarrow X-\E{X}, Y-\E{Y}\ unabh.} \\
-        &  \txo{\Cov(X,Y)} & \txo{= \E{(X-\E{X}) (Y-\E{Y})}} \\
-        & & \txo{ \overset{(P)}{=}  \E{X-\E{X}} \E{Y-\E{Y}}} \\
+        \txo{\text{$\zvx$ und $\zvy$ unabhängig}} & \txo{\Rightarrow \zvx-\E{\zvx }, \zvy-\E{\zvy}\ unabh.} \\
+        &  \txo{\Cov(\zvx ,\zvy)} & \txo{= \E{(\zvx -\E{\zvx })(\zvy-\E{\zvy})}} \\
+        & & \txo{ \overset{(P)}{=}  \E{\zvx -\E{\zvx }} \E{\zvy-\E{\zvy}}} \\
         & & \txo{=0}
     \end{align*}
 
     \paragraph{(d)} Für diskrete Zufallsvariablen gilt: \\
-    $\Var(X ) = 0 \Rightarrow$ Es existiert eine Konstante c mit $\pe(X=c) = 1$. \\
-    $c = \E{X}$
+    $\Var(\zvx)= 0 \Rightarrow$ Es existiert eine Konstante c mit $\pe(\zvx =c)= 1$. \\
+    $c = \E{\zvx }$
 
-    \paragraph{Beweis für (a) bis (c):} Verwende $\Var(Z ) = \E{(Z- \E{Z})^2}$ und die Rechenregeln für den EW\@.
+    \paragraph{Beweis für (a)bis (c):} Verwende $\Var(Z)= \E{(Z- \E{Z})^2}$ und die Rechenregeln für den EW\@.
 
-    \paragraph{Beweis für (d):} $0 = \Var(X) = \E{(X- \E{X})^2} = \sum_{x\in X(\eraum)} (x- \E{X})^2 \pe(X=x)$. \\
-    Alle Summanden sind $\geq 0$, folglich impliziert $\pe(X=x) > 0$ sofort $x = \E{X}$
+    \paragraph{Beweis für (d):} $0 = \Var(\zvx)= \E{(\zvx - \E{\zvx })^2} = \sum_{x\in \zvx(\eraum)} (x- \E{\zvx })^2 \pe(\zvx =x)$. \\
+    Alle Summanden sind $\geq 0$, folglich impliziert $\pe(\zvx =x)> 0$ sofort $x = \E{\zvx }$
     \txc{, da die Summe nicht 0 sein könnte, wenn ein Summand nicht 0 wäre.
-    Also muss jedes $(x- \E{X})^2 \pe(X=x)$ sein und wenn $\pe(X=x) > 0$, muss also $(x- \E{X})^2 = 0$ sein, also muss $x- \E{X} = 0$ sein, also $x = \E{X}$}.
+    Also muss jedes $(x- \E{\zvx })^2 \pe(\zvx =x)$ sein und wenn $\pe(\zvx =x)> 0$, muss also $(x- \E{\zvx })^2 = 0$ sein, also muss $x- \E{\zvx } = 0$ sein, also $x = \E{\zvx }$}.
 
-    Damit ist gezeigt, dass $\pe(X=\E{X}) = 1$\txc{, da jedes $x \in X$ gleich $\E{X}$ ist}.
+    Damit ist gezeigt, dass $\pe(\zvx =\E{\zvx })= 1$\txc{, da jedes $x \in \zvx$ gleich $\E{\zvx }$ ist}.
 
     \txo{Kann nicht gelten, wenn f Dichte hat}
 \end{satz}
@@ -1184,54 +1184,54 @@ $\Var(X) \geq 0$
     \]
     Darstellung:
     \[
-        S_n = \sum_{i=1}^{n} X_i
+        S_n = \sum_{i=1}^{n} \zvx_i
     \]
     mit
     \[
-        X_i(\ele) = \ele_i
+        \zvx_i(\ele)= \ele_i
         \quad \text{für alle } \ele \in \eraum.
     \]
 
-    Dabei sind die $X_i$ unabhängig mit
+    Dabei sind die $\zvx_i$ unabhängig mit
     \[
-        \pe(X_i = 1) = p
+        \pe(\zvx _i = 1)= p
     \]
     und
     \[
-        \pe(X_i = 0) = 1-p = q
+        \pe(\zvx _i = 0)= 1-p = q
     \]
     für alle $i$.
 
     \[
-        \E{X}
-        = \sum_{i=1}^{n} \E{X_i}
+        \E{\zvx }
+        = \sum_{i=1}^{n} \E{\zvx _i}
         = np
     \]
 
     nach Satz (E). % TODO Satz E verlinken
 \end{bsp}
 
-Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Satz (V) (\ref{satz: satz-v})
+Unter Verwendung der Unabhängigkeit der $\zvx_i$ folgt ohne weitere Arbeit aus Satz (V)(\ref{satz: satz-v})
 \[
-    \Var(X) = \sum^n_{i=1} \oub{\Var(X_i)}{=pq} = npq
+    \Var(\zvx)= \sum^n_{i=1} \oub{\Var(\zvx _i)}{=pq} = npq
 \]
 
 \begin{bsp}
-    \textbf{Poisson-verteilte Zufallsvariable X mit Parameter $\lambda > 0$} \txc{(2026)}
+    \textbf{Poisson-verteilte Zufallsvariable $\zvx$ mit Parameter $\lambda > 0$} \txc{(2026)}
     \[
-        \E{X} = \lambda = \Var(X)
+        \E{\zvx } = \lambda = \Var(\zvx)
     \]
     Trick:
     \[
-        \Var(X) = \E{X^2} - (\E{X})^2 = \E{X(X-1)} + \E{X} - (\E{X})^2
+        \Var(\zvx)= \E{\zvx ^2} - (\E{\zvx })^2 = \E{\zvx (\zvx -1)} + \E{\zvx } - (\E{\zvx })^2
     \]
     Wir wissen bereits:
     \[
-        \E{X} = \lambda \quad und \quad  (\E{X})^2 = \lambda^2
+        \E{\zvx } = \lambda \quad und \quad  (\E{\zvx })^2 = \lambda^2
     \]
     Die Behauptung folgt daher aus
     \[
-        \E{X(X-1)}
+        \E{\zvx (\zvx -1)}
         = \sum_{k=2}^{\infty} k(k-1)\,\frac{\lambda^k}{k!} e^{-\lambda}
         = \lambda^2 \sum_{l=0}^{\infty} \frac{\lambda^l}{l!} e^{-\lambda}
         = \lambda^2
@@ -1239,36 +1239,36 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 
     und damit
     \[
-        \Var(X)
-        = \E{X(X-1)} + \E{X} - (\E{X})^2
+        \Var(\zvx)
+        = \E{\zvx (\zvx -1)} + \E{\zvx } - (\E{\zvx })^2
         = \lambda^2 + \lambda - \lambda^2
         = \lambda
     \]
 \end{bsp}
 
 \begin{bsp}
-    \textbf{geometrisch verteilte Zufallsvariable X mit Erfolgswahrscheinlichkeit p} \txc{(2026)}  \\
+    \textbf{geometrisch verteilte Zufallsvariable $\zvx$ mit Erfolgswahrscheinlichkeit p} \txc{(2026)}  \\
     \[
-        \E{X} = \frac{1}{p} \quad und \quad \Var(X) = \frac{1-p}{p^2}
+        \E{\zvx } = \frac{1}{p} \quad und \quad \Var(\zvx)= \frac{1-p}{p^2}
     \]
     \txo{(Nicht auswendig lernen)}
 \end{bsp}
 
 \begin{bsp}
-    \textbf{auf [a, b] uniform verteilte Zufallsvariable X} \txc{(2026)}  \\
+    \textbf{auf [a, b] uniform verteilte Zufallsvariable $\zvx$} \txc{(2026)}  \\
     Dann ist
     \[
-        \E{X} = \frac{a + b}{2}
+        \E{\zvx } = \frac{a + b}{2}
     \]
     und
     \begin{align*}
-        \E{X^2}&  = \intab x^2 \frac{1}{b - a} \dx \\
+        \E{\zvx ^2}&  = \intab x^2 \frac{1}{b - a} \dx \\
         &= \frac{1}{3(b - a)} \ x^3 \Big|_{x=a}^b \\
         &= \frac{b^3 - a^3}{3(b - a)} \\
         &= \frac{1}{3}(a^2 + ab + b^2)
     \end{align*}
     \[
-        \Var(X) = \E{X^2} - (\E{X})^2
+        \Var(\zvx)= \E{\zvx ^2} - (\E{\zvx })^2
         = \frac{a^2 + ab + b^2}{3} - \frac{a^2 + 2ab + b^2}{4}
         = \frac{(a - b)^2}{12}^{\txo{*}}
     \]
@@ -1276,59 +1276,59 @@ Unter Verwendung der Unabhängigkeit der $X_i$ folgt ohne weitere Arbeit aus Sat
 \end{bsp}
 
 \begin{bsp}
-    \textbf{Exponentialverteilte Zufallsvariable X} \txc{(2026)}
+    \textbf{Exponentialverteilte Zufallsvariable $\zvx$} \txc{(2026)}
     \[
-        \E{X} = \frac{1}{\alpha}
+        \E{\zvx } = \frac{1}{\alpha}
     \]
     \begin{align*}
-        \E{X^2}  & = \int^{\infty}_0 \underbrace{x^2}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
+        \E{\zvx ^2}  & = \int^{\infty}_0 \underbrace{x^2}_{\downarrow} \underbrace{\alpha e^{- \alpha x}}_{\uparrow} \dx \\
         & = - \lim_{N \rightarrow \infty} x^2 e^{- \alpha x} \Big|_{x=0}^N + 2 \int_0^{\infty} x e^{- \alpha x} \dx \\
-        & = 0 + \frac{2}{\alpha} \E{X} \\
+        & = 0 + \frac{2}{\alpha} \E{\zvx } \\
         & = \frac{2}{\alpha^2}
     \end{align*}
     \[
-        \Var(X) = \E{X^2} - \E{X}^2 =  \frac{2}{\alpha^2} - \left( \frac{1}{\alpha} \right)^2 =  \frac{1}{\alpha^2}
+        \Var(\zvx)= \E{\zvx ^2} - \E{\zvx }^2 =  \frac{2}{\alpha^2} - \left(\frac{1}{\alpha} \right)^2 =  \frac{1}{\alpha^2}
     \]
 \end{bsp}
 
 \untit{Ende der Vorlesung vom 5. Juni 2026}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dichte von X^2
+% Dichte von  \zvx^2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{satz} \txc{(2026)}
-    Sei $f_X$ eine Dichte der Zufallsvariablen X . Dann gelten:
+    Sei $f_X$ eine Dichte der Zufallsvariablen $\zvx$ . Dann gelten:
 \begin{itemize}
-    \item[(a)] Die Zufallsvariable $X^2$ hat die Dichte
+    \item[(a)] Die Zufallsvariable $\zvx^2$ hat die Dichte
     \[
-        f_{X^2} (y) = \begin{cases}
-                          \frac{1}{2 \sqrt{y}} \left[ f_X \left(\sqrt{y}\right) + f_X  \left(-\sqrt{y}\right) \right] & y > 0 \\
+        f_{ \zvx^2} (y)= \begin{cases}
+                          \frac{1}{2 \sqrt{y}} \left[ f_X \left(\sqrt{y}\right)+ f_X  \left(-\sqrt{y}\right)\right] & y > 0 \\
                           0 & sonst
         \end{cases}
     \]
-    \item[(b)] \( \E{X^2} = \intinfs x^2 f_X(x) \dx  \)
+    \item[(b)] \(\E{\zvx ^2} = \intinfs x^2 f_\zvx(x)\dx  \)
 \end{itemize}
 \paragraph{Beweis (a).}
-    Für $y \leq 0$ $F_{X^2} (y) = \pe (X^2 \leq y ) = 0$. \\
+    Für $y \leq 0$ $F_{ \zvx^2} (y)= \pe (\zvx ^2 \leq y)= 0$. \\
     Sei nun $y > 0$.
     Die Substitution $x = \sqrt{z}$ zeigt:
     \begin{align*}
-        F_{X^2}(y) & = \pe (X^2 \leq y) \\
-        & = \pe (- \sqrt{y} < X \leq \sqrt{y}) \\
-        & = \int_0^{\sqrt{y}} f_X(x) \dx + \int^0_{-\sqrt{y}} f_X(x) \dx \\
-        & = \int_0^{\sqrt{y}} f_X(x) \dx + \int_0^{\sqrt{y}} f_X(- x) \dx \\
-        \int_0^{y} \frac{1}{2 \sqrt{z}} \left[  f_X (\sqrt{z}) + f_X (-\sqrt{z}) \right] dz
+        F_{ \zvx^2}(y)& = \pe (\zvx ^2 \leq y)\\
+        & = \pe (- \sqrt{y} < \zvx \leq \sqrt{y})\\
+        & = \int_0^{\sqrt{y}} f_\zvx(x)\dx + \int^0_{-\sqrt{y}} f_\zvx(x)\dx \\
+        & = \int_0^{\sqrt{y}} f_\zvx(x)\dx + \int_0^{\sqrt{y}} f_\zvx(- x)\dx \\
+        \int_0^{y} \frac{1}{2 \sqrt{z}} \left[  f_X (\sqrt{z})+ f_X (-\sqrt{z})\right] dz
     \end{align*}
 \paragraph{Beweis (b).}
 Die Definition des Erwartungswerts und die Substitutionen $y = x ^2$ sowie
-$z = -x$, die die Substitutionen in Teil (a) rückgängig machen, zeigen
+$z = -x$, die die Substitutionen in Teil (a)rückgängig machen, zeigen
 \begin{align*}
-    \E{X^2} & = \intinfs y f_{X^2} (y) dy \\
-    & = \int_{0}^{\infty} \frac{y}{2\sqrt{y}}  \left[  f_X (\sqrt{y}) + f_X (-\sqrt{y}) \right] dy \\
-    & = \int_{0}^{\infty} \frac{x}{2} \left[  f_X (\sqrt{y}) + f_X (-\sqrt{y}) \right] 2x \dx  \\
-    & = \int_{0}^{\infty} x^2 f_X (x) \dx + \int^0_{-\infty}  z^2 f_X(z) dz \\
-    & = \intinfs x^2 f_X (x) \dx
+    \E{\zvx ^2} & = \intinfs y f_{ \zvx^2} (y)dy \\
+    & = \int_{0}^{\infty} \frac{y}{2\sqrt{y}}  \left[  f_X (\sqrt{y})+ f_X (-\sqrt{y})\right] dy \\
+    & = \int_{0}^{\infty} \frac{x}{2} \left[  f_X (\sqrt{y})+ f_X (-\sqrt{y})\right] 2x \dx  \\
+    & = \int_{0}^{\infty} x^2 f_X (x)\dx + \int^0_{-\infty}  z^2 f_\zvx(z)dz \\
+    & = \intinfs x^2 f_X (x)\dx
 \end{align*}
 \end{satz}
 

@@ -20,11 +20,12 @@
     mit Gleichverteilung $\pe$. \\
     \textit{Zufallsvariable}
     \begin{itemize}
-        \item Alex notiert den zweifachen Münzwurf \\ $\zvx : \eraum \rightarrow \eraum$ mit $\zvx = (\zvx_1, \zvx_2)$ wobei
+        \item Alex notiert den zweifachen Münzwurf \\ $\zvx : \eraum \rightarrow \eraum\ $ mit
+        $\zvx = (\zvx_1, \zvx_2)$ wobei
         $\zvx_1((\ele_1, \ele_2)) = \ele_1$ und $\zvx_2((\ele_1, \ele_2)) = \ele_2$ für alle $\oio$ \\ (das heißt,
         $\zvx$ ist die Identität auf $\eraum$)
-        \item Kim notiert nur den ersten Münzwurf \\ $Y : \eraum \rightarrow \eraum$mit $Y = (Y_1, Y_2)$ wobei
-        $Y_1((\ele_1, \ele_2)) = \ele_1$ und $Y_2((\ele_1, \ele_2)) = Y_1((\ele_1, \ele_2)) = \ele_1$ für alle $\oio$
+        \item Kim notiert nur den ersten Münzwurf \\ $\zvy : \eraum \rightarrow \eraum\ $ mit $\zvy = (\zvy_1, \zvy_2)$ wobei
+        $\zvy_1((\ele_1, \ele_2)) = \ele_1$ und $\zvy_2((\ele_1, \ele_2)) = \zvy_1((\ele_1, \ele_2)) = \ele_1$ für alle $\oio$
     \end{itemize}
     \begin{table}[H]
         \begin{tabular}{cccc}
@@ -35,14 +36,14 @@
         \end{tabular}
 
         \begin{tabular}{cccc}
-            $\wfk_Y ((y_1, y_2))$ & $y_2 = 0$     & $y_2 = 1$     & $\wfk_{Y_1}(y_1)$ \\
+            $\wfk_Y ((y_1, y_2))$ & $y_2 = 0$     & $y_2 = 1$     & $\wfk_{\zvy_1}(y_1)$ \\
             $y_1 = 0$             & $\frac{1}{2}$ & 0             & $\frac{1}{2}$     \\
             $y_1 = 1$             & 0             & $\frac{1}{2}$ & $\frac{1}{2}$     \\
-            $\wfk_{Y_2}(y_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
+            $\wfk_{\zvy_2}(y_2)$     & $\frac{1}{2}$ & $\frac{1}{2}$ & 1
         \end{tabular}\label{tab:table}
     \end{table}
-    Offensichtlich sind die Randverteilungen von $\zvx$ und von $Y$ gleich, während die gemeinsame Verteilung
-    von $Y_1$ und $Y_2$ ist nicht dieselbe ist wie jene von $\zvx_1$ und $\zvx_2$.
+    Offensichtlich sind die Randverteilungen von $\zvx$ und von $\zvy$ gleich, während die gemeinsame Verteilung
+    von $\zvy_1$ und $\zvy_2$ ist nicht dieselbe ist wie jene von $\zvx_1$ und $\zvx_2$.
 \end{bsp}
 
 \begin{bsp}
@@ -396,24 +397,24 @@ Es genügt, wenn sie fast überall gilt.}
 
 \begin{bsp}
     \textbf{uniform. verteilung auf Rechteck} \txc{(2026)} \\
-    Sei $(\zvx, Y)$ ein zufälliger Punkt in $\rz$ (uniforme Verteilung)
+    Sei $(\zvx, \zvy)$ ein zufälliger Punkt in $\rz$ (uniforme Verteilung)
     \begin{figure}[H]
         \includegraphics[width=0.4\linewidth]{./images/viereck}\label{fig:figure2}
     \end{figure}
-    $(\zvx, Y)$ hat (gem.) Dichte $f(x, y) = \chi_R (x, y) \frac{1}{a \cdot b} \quad \forall (x, y) \in \rz^2$
+    $(\zvx, \zvy)$ hat (gem.) Dichte $f(x, y) = \chaf_R (x, y) \frac{1}{a \cdot b} \quad \forall (x, y) \in \rz^2$
     Randdichten:
     \begin{align*}
-        f_X(x) = \chi_{[0, a]}(x) \in_0^b \underbrace{f(x, y)}_{\frac{1}{a \cdot b}} dy & = \frac{1}{a} \chi_{[0, a]}(x)\\
-        f_Y(y) & = \frac{1}{b} \chi_{[0, b]}(y)\\
-        f(x, y)&  = \chi_{[0, a] \times [0, b]}(x, y)  \frac{1}{a \cot b} \\
+        f_X(x) = \chaf_{[0, a]}(x) \in_0^b \underbrace{f(x, y)}_{\frac{1}{a \cdot b}} dy & = \frac{1}{a} \chaf_{[0, a]}(x)\\
+        f_Y(y) & = \frac{1}{b} \chaf_{[0, b]}(y)\\
+        f(x, y)&  = \chaf_{[0, a] \times [0, b]}(x, y)  \frac{1}{a \cot b} \\
         & = f_X(x) f_Y(y)
     \end{align*}
     schlauer:
     \[
-        f(x, y) = \chi_{\rz} (x, y) \frac{1}{a \cot b} = \frac{1}{a} \underbrace{\chi_{[0, a]}(x) }_{\text{Randdichte von } $\zvx$} \cdot \frac{1}{b} \underbrace{\chi_{[0, b]}(y) }_{\text{Randdichte von } Y}
+        f(x, y) = \chaf_{\rz} (x, y) \frac{1}{a \cot b} = \frac{1}{a} \underbrace{\chaf_{[0, a]}(x) }_{\text{Randdichte von } \zvx} \cdot \frac{1}{b} \underbrace{\chaf_{[0, b]}(y) }_{\text{Randdichte von } \zvy}
     \]
     \txo{Wir müssen die Randdichten gar nicht berechnen!}
-    $\zvx, Y$ unabhängig
+    $\zvx, \zvy$ unabhängig
     \komm{wenn man sieht die Dichte zerfällt in x und y Argument muss man nicht integrieren, sondern nur schauen, dass die Funktionen (?) das richtige Gewicht haben. OK. Gerald fragen...} % TODO
 \end{bsp}
 
@@ -423,30 +424,30 @@ Es genügt, wenn sie fast überall gilt.}
     \begin{figure}[H]
         \includegraphics[width=0.3\linewidth]{./images/dreieck}\label{fig:dreieck}
     \end{figure}
-    Sei $(\zvx, Y)$ ein zufälliger Punkt \txc{gleichverteilt} im Dreieck $D$. \\
+    Sei $(\zvx, \zvy)$ ein zufälliger Punkt \txc{gleichverteilt} im Dreieck $D$. \\
     \txc{Gleichverteilt bedeutet: Dichte ist konstant auf $D$ und 0 außerhalb.}
     \begin{align*}
-        f(x, y) & = \frac{1}{|D|} \chi_D (x, y) \\
-        & = 2 \chi_D(x, y) \\
+        f(x, y) & = \frac{1}{|D|} \chaf_D (x, y) \\
+        & = 2 \chaf_D(x, y) \\
         & = \begin{cases}
                 2 & 0 \leq y \leq x \leq 1 \\ 0 & sonst
         \end{cases}
     \end{align*}
     Randdichten: \txc{(Man ``integriert die andere Variable weg'')})
     \begin{align*}
-        f_X (x) & = \chi_{[0,1]}(x) \int_{- \infty}^{\infty} f(x, y) dy \\
-        & = \chi_{[0,1]}(x) \int_{0}^{\txo{x}} 2 dy = 2 x  \chi_{[0,1]}(x) \\
-        f_Y (y) & = \dots = 2(1-y)\chi_{[0,1]}(y)
+        f_X (x) & = \chaf_{[0,1]}(x) \int_{- \infty}^{\infty} f(x, y) dy \\
+        & = \chaf_{[0,1]}(x) \int_{0}^{\txo{x}} 2 dy = 2 x  \chaf_{[0,1]}(x) \\
+        f_Y (y) & = \dots = 2(1-y)\chaf_{[0,1]}(y)
     \end{align*}
-    Wenn $\zvx, Y$ unabhängig \txc{wären, dann würde gelten}:
+    Wenn $\zvx, \zvy$ unabhängig \txc{wären, dann würde gelten}:
     \txc{\begin{equation}
              f(x, y) = f_X(x)\, f_Y(y)\label{eq:wenn-unabhaengig}
     \end{equation}}
     \txc{Einsetzen ergibt:}
     \begin{align*}
-        f(x, y) & = 2 \cdot \chi_D(x, y) \\
+        f(x, y) & = 2 \cdot \chaf_D(x, y) \\
         & \overset{?}{=} f_X(x) f_Y(y) \\
-        & = 2x 2 (1-y) \chi_{[0,1]}(x, y)
+        & = 2x 2 (1-y) \chaf_{[0,1]}(x, y)
     \end{align*}
     Wir sehen:
     Für $(x, y) \in [0,1]^2 \backslash D $ gilt $f(x, y) = 0$, also
@@ -455,28 +456,28 @@ Es genügt, wenn sie fast überall gilt.}
     Alternative:
     \txc{Statt Dichten zu vergleichen, kann man Unabhängigkeit auch testen über:
         \[
-             \pe(\zvx\le a, Y\le b) \stackrel{?}{=} \fxx(a)\fxy(b)
+             \pe(\zvx\le a, \zvy\le b) \stackrel{?}{=} \fxx(a)\fxy(b)
         \]}
     Explizit: Berechne $\fxx$ und $\fxy$, zeige, dass eis \textbf{einen} Punkt $(a, b) \in \rz^2$ gibt mit
     \[
-        \pe(\zvx \leq a, Y \leq b) \neq \fxx(a) \fxy(b).
+        \pe(\zvx \leq a, \zvy \leq b) \neq \fxx(a) \fxy(b).
     \]
 \end{bsp}
 
 \komm{Symbole und Terme in Beispiel \autoref{bsp:dreieck}
     \begin{itemize}
-        \item $\chi_D(x, y)$ = Indikatorfunktion:
+        \item $\chaf_D(x, y)$ = Indikatorfunktion:
         \[
-            \chi_D(x, y)=
+            \chaf_D(x, y)=
             \begin{cases}
                 1 & (x, y)\in D \\
                 0 & \text{sonst}
             \end{cases}
         \]
         \item $|D|$ = Fläche des Dreiecks (hier: $|D|=\tfrac12$)
-        \item $f(x, y)$ = gemeinsame Dichte von $(\zvx, Y)$
+        \item $f(x, y)$ = gemeinsame Dichte von $(\zvx, \zvy)$
         \item $f_X(x)$ beschreibt die \gls{verteilung} von $\zvx$ alleine
-        \item $f_Y(y)$ beschreibt die \gls{verteilung} von $Y$ alleine
+        \item $f_Y(y)$ beschreibt die \gls{verteilung} von $\zvy$ alleine
     \end{itemize}
 }
 
@@ -488,15 +489,16 @@ Für $(x, y) \in [0,1]^2 \backslash D $ gilt $f(x, y) = 0$
     $y$ kann 1 sein (analog äußerster Randpunkt von ``außerhalb des Dreiecks''). Aber da es Randpunkte sind, haben sie keinen Einfluss auf die Dichte, denn Punkte haben keine Fläche und somit keine relevante ``Menge''. Also kann man diese Punkte
     wegignorieren und einfach sagen $x > 0$ und $y < 1$. Und wenn man das annimmt, dann erhält man:
     \[
-        f_X(x) f_Y(y) = 4 x (1-y) \chi_{[0,1]^2}(x, y)
+        f_X(x) f_Y(y) = 4 x (1-y) \chaf_{[0,1]^2}(x, y)
     \]
-    Denn wir haben ja oben ausgerechnet, dass $f_X (x) = 2 x  \chi_{[0,1]}(x)$ und $f_Y (y) = 2(1-y)\chi_{[0,1]}(y)$, INSOFERN $\zvx$ und $Y$ unabhängig sind. \\
+    Denn wir haben ja oben ausgerechnet, dass $f_X (x) = 2 x  \chaf_{[0,1]}(x)$ und $f_Y (y) = 2(1-y)\chaf_{[0,1]}(y)$, INSOFERN $\zvx$ und $\zvy$ unabhängig sind. \\
     Weil aber $y<1$ gilt, muss $1-y>0$ sein, also
     \[
         \overbrace{ 4  \underbrace{x}_{> 0}  ( \underbrace{1-y}_{> 0} )}^{> 0}
     \]
     Das ist dann ein Widerspruch damit, dass jeder Punkt außerhalb des Dreiecks $f(x, y) = 0$ hat. Wir haben einen Punkt außerhalb des Dreiecks betrachtet, und der hatte
-    $f_X(x) f_Y(y) > 0$. Also $ f(x, y) \neq f_X(x) f_Y(y)$, was äauivalet ist zu ``X und Y sind NICHT unabhängig''.
+    $f_X(x) f_Y(y) > 0$. Also $ f(x, y) \neq f_X(x) f_Y(y)$, was äauivalet ist zu ``$\zvx$ und
+    $\zvy$ sind NICHT unabhängig''.
 }
 
 \komm{Zu Beispiel \autoref{bsp:dreieck} \\
@@ -517,7 +519,7 @@ Wenn Unabhängigkeit gilt, muss die Gleichung für \emph{alle} $(a, b)$ gelten. 
 %%%%%%%%%%%%%%%%%%%%%
 
 \begin{defi} \textbf{Faltung} \txc{(2026)} \\
-    $\zvx, Y$ unabhängig \zv.
+    $\zvx, \zvy$ unabhängig \zv.
     Dann heißt die \gls{verteilung} der Summe \textbf{Faltung} (der \gls{verteilung}en). \index{Faltung}
 \end{defi}
 
