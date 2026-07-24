@@ -4,6 +4,7 @@
 
 \chapter{Grenzwertsätze}\label{ch:grenzwertsatze}
 \untit{Vorlesung 13. Juni 2025 (V09 2025) und 12. Juni 2026 (V08 2026)} % und 08 bzw 12 Juni in 2026
+\section{Markoffsche und Tschebyscheffsche Ungleichung}
 \begin{satz}
     \textbf{Markoffsche Ungleichung} \txc{(2026)} \\
     %  F 2
@@ -114,6 +115,14 @@
     Da wir abgeschätzt haben, ist dieses $N$ möglicherweise nicht das minimale.
 \end{bsp}
 
+\karkar{satz_markoffsche_ungleichung}
+\karkar{satz_tschebyscheffsche_ungleichung}
+\karkar{bem_nutzen_tschebyscheff_ungleichung}
+\karkar{bem_tschebyscheff_ungleichung_scharf}
+\karkar{bem_technik_tschebyscheff_stichprobengroesse}
+
+\section{Schwaches Gesetz der großen Zahlen}
+
 \begin{satz}
     \textbf{Schwaches Gesetz der großen Zahlen} \txc{(2025)}
     % \texttt{Hier fehlen Voraussetzungen (siehe Folie 3 25)} a ber die aus 2026 stehen da
@@ -175,6 +184,13 @@ Ist $\sn$ binomialverteilt mit Parametern $n$ und $p$, so gelten
     \mab{\E{\sn} = np}
     \mab{\Var(\sn) = npq}
 \end{er}
+
+\karkar{satz_schwaches_gesetz_der_grossen_zahlen}
+\karkar{bem_unabhaengigkeit_impliziert_unkorreliertheit}
+\karkar{bem_erwartungswert_arithmetisches_mittel}
+\karkar{bem_anwendung_lln_schaetzung_erfolgswahrscheinlichkeit}
+
+\section{Lokaler zentraler Grenzwertsatz und Stirlingsche Formel}
 
 \begin{satz}
     \textbf{Lokaler zentraler Gesetzwertsatz} \txc{(2025)} \\
@@ -262,9 +278,16 @@ Ist $\sn$ binomialverteilt mit Parametern $n$ und $p$, so gelten
 Wie groß ist die Ws., zwischen 150 und 250 Sechsen zu werfen?
 Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
 
-\begin{satz}
+\karkar{def_standardisierte_groesse_x_k_n}
+\karkar{satz_lokaler_zentraler_grenzwertsatz}
+\karkar{satz_stirlingsche_formel}
+\karkar{satz_stirlingsche_formel_mit_fehlerabschaetzung}
+
+\section{Satz von de Moivre-Laplace und die Standardnormalverteilung}
+
+\begin{satz}[Satz von de Moivre-Laplace]
     \label{satz:Moivre-Laplace}
-    \textbf{Satz von de Moivre-Laplace} \textit{(Spezialfall des zentralen Grenzwertsatzes)} \txc{(2025)}\\
+ \textit{(Spezialfall des zentralen Grenzwertsatzes)} \txc{(2025)}\\
     Sei \ma{\sn} die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten
     Bernoulli-Experiment mit Erfolgswahrscheinlichkeit \ma{p \in (0, 1)}. \\
     Dann gilt für jede Wahl von Konstanten \ma{a, b} mit \ma{- \infty < a < b < \infty}:
@@ -289,7 +312,7 @@ Wie groß ist die Ws., mindestens 250 Sechsen zu werfen?
     \paragraph{Beweis.}
     \texttt{Siehe Folie 23. 2025} % TODO
 \end{satz}
-\komm{ Zu Satz \ref{satz:Moivre-Laplace} \\
+\komm{Zu Satz \autoref{satz:Moivre-Laplace} \\
     Der Satz von de Moivre-Laplace macht eine Aussage über einen Grenzwert. Das bedeutet: Wenn man
 n tatsächlich gegen unendlich gehen lässt, dann konvergiert diese Wahrscheinlichkeit exakt gegen $\vfkt(b) - \vfkt(a)$ n der Praxis hast du aber nie $n = \infty$.
 }
@@ -445,6 +468,15 @@ Das Resultat wirft einige Fragen auf:
     $\frac{1}{n}\sn \le 70\%$ nur eine kleine Abweichung vom Grenzwert
     zulässt und somit restriktiver ist.}
 
+\karkar{def_standardisierung_zufallsvariable}
+\karkar{satz_moivre_laplace}
+\karkar{def_dichte_standardnormalverteilung}
+\karkar{def_verteilungsfunktion_standardnormalverteilung}
+\karkar{bem_rechenregeln_standardnormalverteilung_grenzwerte}
+\karkar{bem_symmetrie_standardnormalverteilung}
+
+\subsection{Anwendungstechniken zum Satz von de Moivre-Laplace}
+
 \begin{fr}
     Die exakte Rechnung ergab $\pe(A_n) \approx 0.80$ (Genauer $\pe(\erga_n) \approx 0.804486$).
     \textbf{Warum finden wir mit dem Satz von de Moivre-Laplace nur $pe(A_n) \approx 0.78$?}
@@ -515,3 +547,10 @@ Das Resultat wirft einige Fragen auf:
         \vfkt\left(\frac{-1-np}{\sqrt{npq}}\right) \approx 0 \quad und \quad \frac{n-np}{\sqrt{npq}} \approx 1
     \]
 \end{bem}
+
+\karkar{bem_technik_ganzzahligkeit_bei_diskretisierung}
+\karkar{def_stetigkeitskorrektur}
+\karkar{bem_technik_einseitige_schranke_kuenstliche_grenze}
+\karkar{bem_allgemeine_formel_obere_grenzwahrscheinlichkeit}
+\karkar{bem_allgemeine_formel_untere_grenzwahrscheinlichkeit}
+\karkar{bem_interpretation_vernachlaessigbare_grenze}

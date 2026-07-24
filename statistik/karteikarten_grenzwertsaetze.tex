@@ -1,0 +1,170 @@
+
+% ===================================================================
+% Abschnitt "Markoffsche und Tschebyscheffsche Ungleichung"
+% ===================================================================
+
+\newglossaryentry{satz_markoffsche_ungleichung}{
+    name={Wie lautet die Markoffsche Ungleichung?},
+    description={Existiert $E[|X|^k]$ für ein $k\in\mathbb{N}$, so existiert auch $E[X]$, und für alle $h>0$ gilt $P(|X-E[X]|\ge h) \le \dfrac{E[|X-E[X]|^k]}{h^k}$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_tschebyscheffsche_ungleichung}{
+    name={Wie lautet die Tschebyscheffsche Ungleichung (Spezialfall $k=2$ der Markoffschen Ungleichung)?},
+    description={Für eine Zufallsvariable $X$, deren Erwartungswert und Varianz existieren, gilt für alle $h>0$: $P(|X-E[X]|\ge h) \le \dfrac{\operatorname{Var}(X)}{h^2}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_nutzen_tschebyscheff_ungleichung}{
+    name={Warum ist die Tschebyscheffsche Ungleichung praktisch nützlich?},
+    description={Sie liefert eine universelle obere Schranke für die Wahrscheinlichkeit, dass $X$ um mindestens $h$ vom Erwartungswert abweicht -- und das, obwohl man dafür nur Erwartungswert und Varianz von $X$ kennen muss, nicht die vollständige Verteilung.},
+    type=dinge
+}
+
+\newglossaryentry{bem_tschebyscheff_ungleichung_scharf}{
+    name={Kann die Tschebyscheffsche Ungleichung im Allgemeinen verbessert werden?},
+    description={Nein. Es gibt Zufallsvariablen, für die für ein bestimmtes $h$ in der Ungleichung Gleichheit gilt (die Schranke $\operatorname{Var}(X)/h^2$ also exakt erreicht wird). Die Ungleichung ist somit scharf und kann nicht universell verbessert werden -- für andere Werte von $h$ kann dieselbe Schranke aber sehr grob sein.},
+    type=dinge
+}
+
+\newglossaryentry{bem_technik_tschebyscheff_stichprobengroesse}{
+    name={Wie nutzt man die Tschebyscheffsche Ungleichung, um eine Mindestanzahl $N$ von Versuchswiederholungen zu bestimmen, sodass die relative Häufigkeit mit vorgegebener Sicherheit nur wenig vom wahren Parameter abweicht?},
+    description={Man modelliert $S_N$ als binomialverteilt mit Parametern $N,p$, nutzt $E[S_N/N]=p$ und $\operatorname{Var}(S_N/N)=pq/N$, und schätzt $P(|S_N/N - p|\ge\varepsilon) \le \dfrac{pq}{N\varepsilon^2}$ ab. Man wählt dann $N$ so groß, dass diese obere Schranke kleiner/gleich der gewünschten (kleinen) Fehlerwahrscheinlichkeit ist.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Schwaches Gesetz der großen Zahlen"
+% ===================================================================
+
+\newglossaryentry{satz_schwaches_gesetz_der_grossen_zahlen}{
+    name={Wie lautet das Schwache Gesetz der großen Zahlen, und welche Voraussetzungen benötigt es?},
+    description={Seien $X_1,X_2,\dots$ Zufallsvariablen (nicht notwendig identisch verteilt) mit $S_n=\sum_{i=1}^n X_i$. Voraussetzungen: alle $E[X_i]$ existieren und sind gleich ($=E[X_1]$); es gibt $C>0$ mit $\operatorname{Var}(X_i)\le C$ für alle $i$; die $X_i$ sind paarweise unkorreliert ($\operatorname{Cov}(X_i,X_j)=0$ für $i\neq j$). Dann gilt für jedes $\varepsilon>0$: $\lim_{n\to\infty} P\!\left(\left|\tfrac1n S_n - E[X_1]\right| \ge \varepsilon\right) = 0$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_unabhaengigkeit_impliziert_unkorreliertheit}{
+    name={In welcher Beziehung stehen Unabhängigkeit, paarweise Unabhängigkeit und paarweise Unkorreliertheit?},
+    description={Unabhängigkeit $\Rightarrow$ paarweise Unabhängigkeit $\Rightarrow$ paarweise Unkorreliertheit. Die Umkehrungen gelten im Allgemeinen nicht.},
+    type=dinge
+}
+
+\newglossaryentry{bem_erwartungswert_arithmetisches_mittel}{
+    name={Wie verhält sich $E[\tfrac1n S_n]$ zu $E[X_1]$ im Kontext des schwachen Gesetzes der großen Zahlen?},
+    description={$E[\tfrac1n S_n] = E[X_1]$ (unter den Voraussetzungen des schwachen Gesetzes der großen Zahlen, insbesondere gleicher Erwartungswerte aller $X_i$).},
+    type=dinge
+}
+
+\newglossaryentry{bem_anwendung_lln_schaetzung_erfolgswahrscheinlichkeit}{
+    name={Wozu kann man das Schwache Gesetz der großen Zahlen nutzen, wenn man eine unbekannte Erfolgswahrscheinlichkeit $p$ schätzen möchte?},
+    description={Ist $S_n$ die Anzahl der Erfolge in $n$ unabhängig wiederholten Bernoulli-Experimenten mit unbekanntem Parameter $p$, so konvergiert die relative Häufigkeit $\tfrac1n S_n$ im Sinne des Gesetzes der großen Zahlen gegen $p$: Die Wahrscheinlichkeit, dass sie um mindestens $\varepsilon$ von $p$ abweicht, geht gegen 0. Man kann $\tfrac1n S_n$ also als Schätzer für $p$ verwenden.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Lokaler zentraler Grenzwertsatz und Stirlingsche Formel"
+% ===================================================================
+
+\newglossaryentry{def_standardisierte_groesse_x_k_n}{
+    name={Wie ist die standardisierte Größe $x_k^{(n)}$ definiert, die beim lokalen zentralen Grenzwertsatz auftritt?},
+    description={$x_k^{(n)} := \dfrac{k-np}{\sqrt{npq}}$ für $k=0,\dots,n$ -- der Abstand von $k$ zum Erwartungswert $np$ der Binomialverteilung, gemessen in Einheiten der Standardabweichung $\sqrt{npq}$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_lokaler_zentraler_grenzwertsatz}{
+    name={Wie lautet der lokale zentrale Grenzwertsatz für die Binomialverteilung?},
+    description={Für jede Konstante $L>0$ gilt $B_{n,p}(k) \sim \dfrac{1}{\sqrt{2\pi npq}}\, e^{-(x_k^{(n)})^2/2}$ gleichmäßig für alle $k$ mit $|x_k^{(n)}|\le L$, wobei $f(n)\sim g(n) :\Leftrightarrow \lim_{n\to\infty} f(n)/g(n)=1$. Die Binomialwahrscheinlichkeit wird für großes $n$ also durch die Dichte der Standardnormalverteilung approximiert.},
+    type=dinge
+}
+
+\newglossaryentry{satz_stirlingsche_formel}{
+    name={Wie lautet die Stirlingsche Formel zur Approximation von $n!$ für große $n$?},
+    description={$n! \sim \sqrt{2\pi n}\,\left(\dfrac{n}{e}\right)^n$ für große $n$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_stirlingsche_formel_mit_fehlerabschaetzung}{
+    name={Wie lautet die Stirlingsche Formel mit expliziter Fehlerabschätzung?},
+    description={$1 \le \dfrac{n!}{\sqrt{2\pi n}\,(n/e)^n} \le 1+\dfrac{1}{11n}$. Die Approximation verwendet die untere Schranke; der relative Fehler ist von der Ordnung $\tfrac1n$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Satz von de Moivre-Laplace und Standardnormalverteilung"
+% ===================================================================
+
+\newglossaryentry{def_standardisierung_zufallsvariable}{
+    name={Wie standardisiert man eine Zufallsvariable $X$ mit existierender Varianz, und welche Eigenschaften hat die standardisierte Größe?},
+    description={$Y := \dfrac{X-E[X]}{\sqrt{\operatorname{Var}(X)}}$. Es gilt stets $E[Y]=0$ und $\operatorname{Var}(Y)=1$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_moivre_laplace}{
+    name={Wie lautet der Satz von de Moivre-Laplace?},
+    description={Sei $S_n$ die Anzahl der Erfolge in einem $n$-fach unabhängig wiederholten Bernoulli-Experiment mit Erfolgswahrscheinlichkeit $p\in(0,1)$, $q=1-p$. Dann gilt für alle Konstanten $-\infty<a<b<\infty$: $\lim_{n\to\infty} P\!\left(a < \dfrac{S_n-np}{\sqrt{npq}} \le b\right) = \displaystyle\int_a^b \varphi(x)\,dx$, wobei $\varphi(x)=\tfrac{1}{\sqrt{2\pi}}e^{-x^2/2}$ die Dichte der Standardnormalverteilung ist.},
+    type=dinge
+}
+
+\newglossaryentry{def_dichte_standardnormalverteilung}{
+    name={Was ist die Dichte $\varphi$ der Standardnormalverteilung, und wie wird ihr Graph anschaulich genannt?},
+    description={$\varphi(x) = \dfrac{1}{\sqrt{2\pi}}\, e^{-x^2/2}$. Der Graph von $\varphi$ ist die berühmte Gaußsche Glockenkurve.},
+    type=dinge
+}
+
+\newglossaryentry{def_verteilungsfunktion_standardnormalverteilung}{
+    name={Wie ist die Verteilungsfunktion $\Phi$ der Standardnormalverteilung definiert?},
+    description={$\Phi(y) = \displaystyle\int_{-\infty}^{y} \varphi(x)\,dx$, die Stammfunktion von $\varphi$. $\Phi(y)$ entspricht der Fläche unter der Glockenkurve von $-\infty$ bis $y$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_rechenregeln_standardnormalverteilung_grenzwerte}{
+    name={Welche Grenzwerte gelten für die Dichte und Verteilungsfunktion der Standardnormalverteilung?},
+    description={$\displaystyle\int_{-\infty}^{\infty}\varphi(x)\,dx = 1$ sowie $\Phi(y)\to 0$ für $y\to-\infty$ und $\Phi(y)\to 1$ für $y\to\infty$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_symmetrie_standardnormalverteilung}{
+    name={Welche Symmetrieeigenschaften hat die Standardnormalverteilung?},
+    description={Da $\varphi$ eine gerade Funktion ist, gilt $\Phi(0)=\tfrac12$ sowie $\Phi(z) = 1-\Phi(-z)$ für alle $z\in\mathbb{R}$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Anwendungstechniken zum Satz von de Moivre-Laplace"
+% ===================================================================
+
+\newglossaryentry{bem_technik_ganzzahligkeit_bei_diskretisierung}{
+    name={Worauf muss man achten, wenn man den Satz von de Moivre-Laplace auf ein Ereignis wie $\{c_1 \le S_n \le c_2\}$ mit ganzzahligem $S_n$ anwendet?},
+    description={Der Satz ist für halboffene Intervalle der Form $a < \tfrac{S_n-np}{\sqrt{npq}} \le b$ formuliert. Da $S_n$ nur ganzzahlige Werte annimmt, muss man $\{c_1 \le S_n \le c_2\}$ zunächst als die identische Menge $\{c_1 - 1 < S_n \le c_2\}$ umschreiben, bevor man standardisiert und den Satz anwendet.},
+    type=dinge
+}
+
+\newglossaryentry{def_stetigkeitskorrektur}{
+    name={Was ist die Stetigkeitskorrektur, und wozu dient sie?},
+    description={Bei der Approximation von Wahrscheinlichkeiten für eine diskrete (ganzzahlige) Zufallsvariable $S_n$ durch die stetige Standardnormalverteilung verschiebt man die Intervallgrenzen zusätzlich um $\pm\tfrac12$ (z.B.\ wird $\{c_1 \le S_n \le c_2\}$ zu $\{c_1-\tfrac12 < S_n \le c_2+\tfrac12\}$), um die Diskretisierung besser zu berücksichtigen. Dies verbessert die Approximation häufig, aber nicht immer.},
+    type=dinge
+}
+
+\newglossaryentry{bem_technik_einseitige_schranke_kuenstliche_grenze}{
+    name={Wie geht man vor, wenn man mit dem Satz von de Moivre-Laplace die Wahrscheinlichkeit eines einseitig beschränkten Ereignisses wie $\{S_n \ge c\}$ approximieren möchte, obwohl der Satz beidseitige Schranken $a<\cdot\le b$ voraussetzt?},
+    description={Man ergänzt künstlich eine triviale obere Schranke, z.B.\ $S_n \le n$ (da $S_n$ ohnehin nicht größer als $n$ sein kann), schreibt also $\{S_n\ge c\} = \{c-1 < S_n \le n\}$, und wendet den Satz auf dieses beidseitig beschränkte Intervall an.},
+    type=dinge
+}
+
+\newglossaryentry{bem_allgemeine_formel_obere_grenzwahrscheinlichkeit}{
+    name={Welche Näherungsformel ergibt sich (bei Anwendbarkeit des Satzes von de Moivre-Laplace) für $P(S_n > c)$?},
+    description={$P(S_n > c) \approx 1 - \Phi\!\left(\dfrac{c-np}{\sqrt{npq}}\right)$ für großes $n$ (da die obere Standardisierungsgrenze gegen $\infty$ strebt und $\Phi$ dort gegen 1 geht).},
+    type=dinge
+}
+
+\newglossaryentry{bem_allgemeine_formel_untere_grenzwahrscheinlichkeit}{
+    name={Welche Näherungsformel ergibt sich für $P(S_n \le d)$?},
+    description={$P(S_n \le d) \approx \Phi\!\left(\dfrac{d-np}{\sqrt{npq}}\right)$ für großes $n$ (da die untere Standardisierungsgrenze gegen $-\infty$ strebt und $\Phi$ dort gegen 0 geht).},
+    type=dinge
+}
+
+\newglossaryentry{bem_interpretation_vernachlaessigbare_grenze}{
+    name={Warum trägt eine Intervallgrenze bei einer Anwendung des Satzes von de Moivre-Laplace manchmal praktisch nicht zur approximierten Wahrscheinlichkeit bei?},
+    description={Wenn diese Grenze nach Standardisierung sehr weit von 0 entfernt liegt, ist der zugehörige $\Phi$-Wert bereits extrem nah an 0 oder 1. Das passt zum Gesetz der großen Zahlen: Liegt eine Grenze weit von der durch $p$ vorgegebenen typischen relativen Häufigkeit entfernt, wird sie für wachsendes $n$ so gut wie nie unter- bzw.\ überschritten, während eine Grenze nahe am typischen Bereich noch deutlich ins Gewicht fällt.},
+    type=dinge
+}

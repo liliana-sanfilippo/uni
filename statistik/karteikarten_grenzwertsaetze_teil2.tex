@@ -1,0 +1,106 @@
+
+% ===================================================================
+% Abschnitt: Ergänzung zum Satz von de Moivre-Laplace
+% ===================================================================
+
+\newglossaryentry{kor_moivre_laplace_symmetrisches_intervall}{
+    name={Welche Näherungsformel ergibt sich aus dem Satz von de Moivre-Laplace für ein symmetrisches Intervall $P(np-c < S_n \le np+c)$?},
+    description={$P(np-c < S_n \le np+c) \approx 2\Phi\!\left(\dfrac{c}{\sqrt{npq}}\right) - 1$ für großes $n$. Dies folgt aus dem Satz von de Moivre-Laplace mit $a=-c/\sqrt{npq}$, $b=c/\sqrt{npq}$ und der Symmetrie $\Phi(-z)=1-\Phi(z)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wachstumsordnung_c_relevanz}{
+    name={Wie hängt das asymptotische Verhalten von $P(np-c<S_n\le np+c)$ von der Wachstumsordnung der Konstante $c=c(n)$ ab?},
+    description={Ist $c>0$ fest (unabhängig von $n$), geht die Wahrscheinlichkeit für $n\to\infty$ gegen 0. Wächst $c$ zwar mit $n$, aber langsamer als $\sqrt n$ (d.h.\ $0<c\ll\sqrt n$), geht die Wahrscheinlichkeit ebenfalls gegen 0. Erst wenn $c$ in derselben Größenordnung wie $\sqrt n$ wächst (oder schneller), ergibt sich ein relevanter, positiver Beitrag.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wann_normalapproximation_schlecht}{
+    name={Wann ist die Normalapproximation (Satz von de Moivre-Laplace) für die Binomialverteilung schlecht, und was tut man dann stattdessen?},
+    description={Ist $npq$ zu klein, ist die Normalapproximation schlecht. Man sollte dann entweder exakt mit der Binomialverteilung rechnen oder -- falls zusätzlich $p$ sehr klein ist -- die Poisson-Approximation verwenden.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Vergleich Gesetz der großen Zahlen vs. Zentraler Grenzwertsatz
+% ===================================================================
+
+\newglossaryentry{bem_ggz_vs_zgws_ordnung_epsilon}{
+    name={Wie hängt es von der Größenordnung der betrachteten Abweichung $\epsilon$ ab, ob das Gesetz der großen Zahlen oder der Satz von de Moivre-Laplace/Zentrale Grenzwertsatz das Verhalten von $P(|\tfrac1n S_n - E[X_1]|\ge\epsilon)$ beschreibt?},
+    description={Ist $\epsilon$ von konstanter Ordnung (unabhängig von $n$), beschreibt das Gesetz der großen Zahlen das Verhalten (die Wahrscheinlichkeit geht gegen 0, ohne quantitative Aussage über die Geschwindigkeit). Ist $\epsilon$ dagegen von der Ordnung $\tfrac{1}{\sqrt n}$ (skaliert mit der Stichprobengröße), liefert der Satz von de Moivre-Laplace/Zentrale Grenzwertsatz eine quantitative Näherung mit einem nicht-trivialen Grenzwert.},
+    type=dinge
+}
+
+\newglossaryentry{bem_klausur_faustregel_ggz_oder_zgws}{
+    name={Klausur-Faustregel: Woran erkennt man, ob eine Aufgabe das Gesetz der großen Zahlen oder den Zentralen Grenzwertsatz (Satz von de Moivre-Laplace) erfordert?},
+    description={Wird nur gefragt, ob ein Grenzwert existiert bzw.\ etwas konvergiert, reicht das Gesetz der großen Zahlen. Wird dagegen gefragt, wie groß $n$ sein muss, wie genau eine Schätzung ist, oder soll ein Konfidenzintervall angegeben werden, ist der Zentrale Grenzwertsatz gefragt (mit der $\Phi$-Tabelle).},
+    type=dinge
+}
+
+\newglossaryentry{bem_anwendungen_zgws_praxis}{
+    name={Wofür wird der Zentrale Grenzwertsatz (bzw.\ der Satz von de Moivre-Laplace) in der Praxis typischerweise verwendet?},
+    description={Zum Bestimmen benötigter Stichprobengrößen, zur Angabe von Konfidenzintervallen, zur Fehlerabschätzung bei Simulationen/Monte-Carlo-Methoden sowie in der Qualitätskontrolle bzw.\ bei Fehlerraten.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Zentraler Grenzwertsatz
+% ===================================================================
+
+\newglossaryentry{satz_zentraler_grenzwertsatz}{
+    name={Wie lautet der Zentrale Grenzwertsatz (Verallgemeinerung des Satzes von de Moivre-Laplace)?},
+    description={Seien $X_1,X_2,\dots$ unabhängig und identisch verteilt mit $\sigma^2=\operatorname{Var}(X_i)\in(0,\infty)$ und $\mu=E[X_i]$ für alle $i$, sowie $S_n=\sum_{i=1}^n X_i$. Dann gilt für alle $-\infty<a<b<\infty$: $\displaystyle\lim_{n\to\infty} P\!\left(a<\frac{S_n-n\mu}{\sqrt{n\sigma^2}}\le b\right) = \Phi(b)-\Phi(a)$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_zgws_bernoulli_spezialfall}{
+    name={Wie spezialisiert sich der Zentrale Grenzwertsatz auf unabhängige Bernoulli-Variablen, und wie heißt dieser Spezialfall?},
+    description={Für unabhängige Bernoulli-Variablen $X_i$ mit $\mu=E[X_i]=p$ und $\sigma^2=\operatorname{Var}(X_i)=pq$ ($q=1-p$) ergibt sich $\lim_{n\to\infty} P\!\left(a<\frac{S_n-np}{\sqrt{npq}}\le b\right)=\Phi(b)-\Phi(a)$ -- das ist genau der Satz von de Moivre-Laplace.},
+    type=dinge
+}
+
+\newglossaryentry{lem_verallgemeinerungen_zgws}{
+    name={Welche Voraussetzungen des Zentralen Grenzwertsatzes können abgeschwächt werden, und welche sind notwendig?},
+    description={Die Voraussetzung identischer Verteilung kann abgeschwächt werden (z.B.\ zur Lindeberg-Bedingung, die verhindert, dass eine einzelne Variable die Summe dominiert). Die Unabhängigkeitsvoraussetzung kann ebenfalls abgeschwächt werden (Zentraler Grenzwertsatz von Lindeberg-Feller, für bestimmte Arten schwacher Abhängigkeit). Die Voraussetzungen $\sigma^2>0$ und $\sigma^2<\infty$ sind dagegen notwendig.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Poissonscher Grenzwertsatz
+% ===================================================================
+
+\newglossaryentry{satz_poissonscher_grenzwertsatz}{
+    name={Wie lautet der Poissonsche Grenzwertsatz (Poisson-Approximation der Binomialverteilung)?},
+    description={Gilt $np_n\to\alpha>0$ für $n\to\infty$, so gilt für jedes feste $k\in\mathbb{N}_0$: $B_{n,p_n}(k) \to P_\alpha(k) = \dfrac{\alpha^k}{k!}e^{-\alpha}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_guete_poisson_approximation}{
+    name={Wie gut ist die Poisson-Approximation quantitativ, wenn $S_n$ binomialverteilt mit Parametern $n,p_n$ und $Z_{np_n}$ Poisson-verteilt mit Parameter $np_n$ ist?},
+    description={Es gilt $\sup_{C\subseteq\mathbb{N}_0} |P(S_n\in C) - P(Z_{np_n}\in C)| \le 2np_n^2$. Gilt zusätzlich $np_n\to\alpha$, so ist diese Schranke für jede Konstante $K>2$ und $n$ groß genug durch $K\alpha p_n$ beschränkt, was für $n\to\infty$ gegen 0 geht.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wann_poisson_approximation_gut}{
+    name={Unter welchen Bedingungen ist die Poisson-Approximation der Binomialverteilung gut?},
+    description={Wenn $n$ groß im Vergleich zu $k$ ist ($n\gg k$) und $p$ klein ist, genauer $n \gg \alpha:=np$. Insbesondere muss die Erfolgswahrscheinlichkeit klein sein -- die Approximation eignet sich also für seltene Ereignisse: $P(S_n=k)\approx P_\alpha(k)$ mit $\alpha:=np$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_allgemeines_modellierungsprinzip_poisson}{
+    name={Welches allgemeine Modellierungsprinzip rechtfertigt die Poisson-Verteilung als Modell für Zählungen seltener, über viele Einheiten (Raum oder Zeit) verteilter Ereignisse?},
+    description={Verteilt man eine Gesamtheit potenzieller Ereignisse unabhängig auf sehr viele kleine Einheiten (z.B.\ Rasterquadrate oder kurze Zeitintervalle), sodass jede einzelne Einheit nur mit kleiner Wahrscheinlichkeit ein Ereignis enthält, so ist die Gesamtzahl der Ereignisse binomialverteilt mit großem $n$ und kleinem $p$ -- und damit nach dem Poissonschen Grenzwertsatz näherungsweise Poisson-verteilt mit Parameter $\alpha=np$.},
+    type=dinge
+}
+
+\newglossaryentry{lem_poisson_approximation_p_nahe_1}{
+    name={Wie kann man die Poisson-Approximation anwenden, wenn die Erfolgswahrscheinlichkeit $p$ nahe bei 1 liegt (statt nahe bei 0)?},
+    description={Man vertauscht die Rollen von Erfolg und Misserfolg und zählt stattdessen die Misserfolge: $\tilde S_n := n-S_n$ ist $B_{n,q}$-verteilt mit $q=1-p$ klein, also gut durch Poisson mit Parameter $\tilde\alpha=nq$ approximierbar. Zurückübersetzt ergibt sich $P(S_n=k) = P(\tilde S_n = n-k) \approx P_{nq}(n-k) = \dfrac{(nq)^{n-k}}{(n-k)!}e^{-nq}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_keine_ausmultiplikation_bei_parametern}{
+    name={Welchen praktischen Rechentipp sollte man bei Approximationen der Binomialverteilung (Normal- oder Poisson-Approximation) beachten?},
+    description={Man sollte Ausdrücke mit den Parametern $n$ und $p$ möglichst lange symbolisch stehen lassen und diese erst so spät wie möglich durch ihre konkreten Zahlenwerte ersetzen, statt frühzeitig auszumultiplizieren -- das vereinfacht die Rechnung und vermeidet Fehler.},
+    type=dinge
+}
