@@ -140,7 +140,7 @@
 \DefineBoxEnv{hypo}{bemf}{breakable}
 
 \newcommand{\hypothese}[1]{%
-    \begin{hypo}\label{def:#1}
+    \begin{hypo}\label{hypo:#1}
     \textbf{\gls*{#1}}\\
     \glsdesc*{#1}
     \end{hypo}
@@ -153,7 +153,7 @@
 
 
 \newcommand{\model}[1]{%
-    \begin{mode}\label{def:#1}
+    \begin{mode}\label{model:#1}
     \textbf{\gls*{#1}}\\
     \glsdesc*{#1}
     \end{mode}
@@ -175,7 +175,7 @@
 \DefineBoxEnv{theori}{bemf}{breakable}
 
 \newcommand{\theorie}[1]{%
-    \begin{theori}\label{def:#1}
+    \begin{theori}\label{theo:#1}
     \textbf{\gls*{#1}}\\
     \glsdesc*{#1}
     \end{theori}
@@ -198,26 +198,22 @@
 \DefineBoxEnv{konv}{defif}{breakable}
 
 \newcommand{\defin}[1]{%
-    \begin{defi}\label{def:#1}
-    \textbf{\gls*{#1}}\\
+    \begin{defi}[\gls*{#1}]\label{def:#1}
     \glsdesc*{#1}.
     \end{defi}
 }
 \newcommand{\definstat}[1]{%
-    \begin{defi}\label{def:#1}
-    \textbf{\gls*{#1}} \txc{(Skript 26)}\\
+    \begin{defi}[\gls*{#1}]\label{def:#1} \txc{(Skript 26)}\\
     \glsdesc*{#1}.
     \end{defi}
 }
 \newcommand{\deffin}[1]{%
-    \begin{defi}\label{def:#1}
-    \textbf{\glsentryfirst{#1}}\\
+    \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
     \glsdesc*{#1}
     \end{defi}
 }
 \newcommand{\deffinS}[1]{%
-    \begin{defi}\label{def:#1}
-    \textbf{\glsentryfirst{#1}}\\
+    \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
     \glsdesc*{#1} \\
     Schreibweise: \glssymbol*{#1}
     \end{defi}
