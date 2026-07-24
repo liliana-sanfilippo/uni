@@ -38,7 +38,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 | KW 21 | Fr, 22.05. | :ballot_box_with_check:        | Unabhängigkeit von ZV              | :ballot_box_with_check: | Mo, 18.05. | :red_square:            | Fr, 22.05.     | :red_square:          |
 | KW 22 | Fr, 29.05. | :construction: (glaube fertig) | Bedingte WS                        |                         | Mo, --     | --                      | Fr, 29.05.     | :red_square:          |
 | KW 23 | Fr, 05.06. | :ballot_box_with_check:        | Erwartungswert und Varianz von ZV  | :ballot_box_with_check: | Mo, 01.06. | :construction:          | Fr, 05.06.     | :red_square:          |
-| KW 24 | Fr, 12.06. | :ballot_box_with_check:        | Grenzwertsätze                     | :construction:          | Mo, 08.06. | :red_square:            | Fr, 12.06.     | :red_square:          |
+| KW 24 | Fr, 12.06. | :ballot_box_with_check:        | Grenzwertsätze                     | :ballot_box_with_check: | Mo, 08.06. | :red_square:            | Fr, 12.06.     | :red_square:          |
 | KW 25 | Fr, 19.06. | :ballot_box_with_check:        | Grenzwertsätze (Fortsetzung)       | :construction:          | Mo, 15.06. | :construction:          | Fr, 19.06.     | :red_square:          |
 | KW 26 | Fr, 26.06. | :construction: (anmerk fehlen) | Statistik                          |                         | Mo, 22.06. | :red_square:            | Fr, 26.06.     | :red_square:          |
 | KW 27 | Fr, 03.07. | :red_square:                   | Punktschätzer (Fortsetzung)        |                         | Mo, 29.06. | :red_square:            | Fr, 03.07.     | :red_square:          |
