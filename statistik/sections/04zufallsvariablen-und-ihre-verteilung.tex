@@ -529,7 +529,7 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunkti
     existiert derart, dass
     \begin{equation}
         \label{eq:dichte-vf}
-        \pex\bigl((-\infty, x]\bigr) = \pe(\zvx \leqslant x) = \int_{-\infty}^{x} f(u) \dd u
+        \pex\bigl((-\infty, x]\bigr) = \pe(\zvx \leq x) = \int_{-\infty}^{x} f(u) du
         \qquad \forall\, x \in \mathbb{R}.
     \end{equation}
 \end{defi}
@@ -560,26 +560,26 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunkti
         \item Als erstes betrachten wir $x < a$.
         Für alle $u < a$ gilt $f(u) = 0$, woraus
         \[
-            \fxx(x) = \int_{-\infty}^{x} f(u) \dd u = \int_{-\infty}^{x} 0 \dd u = 0
+            \fxx(x) = \int_{-\infty}^{x} f(u) du = \int_{-\infty}^{x} 0 du = 0
         \]
         folgt.
-        \item Sei nun $a \leqslant x \leqslant b$.
+        \item Sei nun $a \leq x \leq b$.
         Wir teilen das $\fxx(x)$ definierende Integral auf
         in ein Integral bis $a$ und ein weiteres Integral von $a$ bis $x$:
         \[
-            \fxx(x) = \int_{-\infty}^{a} f(u) \dd u + \int_{a}^{x} f(u) \dd u
-            = \fxx(a) + \int_{a}^{x} \frac{1}{b-a} \dd u.
+            \fxx(x) = \int_{-\infty}^{a} f(u) du + \int_{a}^{x} f(u) du
+            = \fxx(a) + \int_{a}^{x} \frac{1}{b-a} du.
         \]
         Wir haben den ersten Summanden $\fxx(a) = 0$ bereits berechnet.
         Daher folgt
         \[
-            \fxx(x) = \int_{a}^{x} \frac{1}{b-a} \dd u = \frac{x-a}{b-a}.
+            \fxx(x) = \int_{a}^{x} \frac{1}{b-a} du = \frac{x-a}{b-a}.
         \]
         \item Es bleibt der Fall $x > b$ zu betrachten.
         Einerseits können wir wieder das Integral
         aufspalten, diesmal bei $b$, und erhalten
         \[
-            \fxx(x) = \int_{-\infty}^{b} f(u) \dd u + \int_{b}^{x} f(u) \dd u = \fxx(b) + 0 = 1.
+            \fxx(x) = \int_{-\infty}^{b} f(u) du + \int_{b}^{x} f(u) du = \fxx(b) + 0 = 1.
         \]
         Andererseits können wir auch schlau argumentieren: $\fxx$ ist monoton wachsend.
         Daraus folgt,
@@ -592,7 +592,7 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunkti
         \fxx(x) =
         \begin{cases}
             0                 & \text{für } x < a ,\\
-            \dfrac{x-a}{b-a}  & \text{für } a \leqslant x \leqslant b ,\\
+            \dfrac{x-a}{b-a}  & \text{für } a \leq x \leq b ,\\
             1                 & \text{für } x > b.
         \end{cases}
     \]
@@ -613,19 +613,19 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunkti
     Parameter $\alpha$} ist.
     Wir wollen nun die \gls{verteilungsfunktion_zv} $\fxx$ von $\zvx$ bestimmen.
     \begin{itemize}
-        \item Als erstes betrachten wir $x \leqslant 0$.
-        Für alle $u \leqslant 0$ gilt $f(u) = 0$,
+        \item Als erstes betrachten wir $x \leq 0$.
+        Für alle $u \leq 0$ gilt $f(u) = 0$,
         woraus wieder
         \[
-            \fxx(x) = \int_{-\infty}^{x} f(u) \dd u = 0
+            \fxx(x) = \int_{-\infty}^{x} f(u) du = 0
         \]
         folgt.
         \item Sei nun $x > 0$.
         Wir teilen wieder das $\fxx(x)$ definierende Integral auf, diesmal in
         ein Integral bis $0$ und ein weiteres Integral von $0$ bis $x$:
         \[
-            \fxx(x) = \fxx(0) + \int_{0}^{x} \alpha \eu^{-\alpha u} \dd u
-            = \int_{0}^{x} \alpha \eu^{-\alpha u} \dd u.
+            \fxx(x) = \fxx(0) + \int_{0}^{x} \alpha \eu^{-\alpha u} du
+            = \int_{0}^{x} \alpha \eu^{-\alpha u} du.
         \]
         Der Integrand $h(u) = \alpha \eu^{-\alpha u}$ besitzt die Stammfunktion
         $H(u) = -\eu^{-\alpha u}$.
@@ -638,7 +638,7 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunkti
     \[
         \fxx(x) =
         \begin{cases}
-            0                      & \text{für } x \leqslant 0 ,\\
+            0                      & \text{für } x \leq 0 ,\\
             1 - \eu^{-\alpha x}    & \text{für } x > 0.
         \end{cases}
     \]
@@ -646,18 +646,18 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunkti
 
 \begin{lem}[Rechnen mit \gls{verteilungsfunktion_zv}en II: \gls{zv} mit Dichte]
     \txc{(Skript 26 - Lemma 3.25.)}  \\
-    Sei $-\infty < a \leqslant b < \infty$.
+    Sei $-\infty < a \leq b < \infty$.
     Für die \gls{verteilungsfunktion_zv} einer \gls{zv}n $\zvx$
     mit Dichte $f$ gelten neben der definierenden Gleichheit (siehe (b)) auch die folgenden
     Rechenregeln.
     \begin{enumerate}[label=(\alph*)]
-        \item $\pe(a < \zvx \leqslant b) = \displaystyle\int_{a}^{b} f(x) \dd x = \fxx(b) - \fxx(a)$,
-        \item $\pe(\zvx \leqslant b) = \displaystyle\int_{-\infty}^{b} f(x) \dd x = \fxx(b)$,
-        \item $\pe(\zvx > a) = \displaystyle\int_{a}^{\infty} f(x) \dd x = 1 - \fxx(a)$,
+        \item $\pe(a < \zvx \leq b) = \displaystyle\int_{a}^{b} f(x) dx = \fxx(b) - \fxx(a)$,
+        \item $\pe(\zvx \leq b) = \displaystyle\int_{-\infty}^{b} f(x) dx = \fxx(b)$,
+        \item $\pe(\zvx > a) = \displaystyle\int_{a}^{\infty} f(x) dx = 1 - \fxx(a)$,
         \item \begin{align*}
-                  \pe(a \leqslant \zvx < b) = \pe(a < \zvx \leqslant b) = \pe(a \leqslant \zvx \leqslant b)
+                  \pe(a \leq \zvx < b) = \pe(a < \zvx \leq b) = \pe(a \leq \zvx \leq b)
                   &= \pe(a < \zvx < b) = \fxx(b) - \fxx(a) ,\\
-                  \pe(\zvx \leqslant b) &= \pe(\zvx < b) = \fxx(b) ,\\
+                  \pe(\zvx \leq b) &= \pe(\zvx < b) = \fxx(b) ,\\
                   \pe(\zvx > a) &= \pe(\zvx \geqslant a) = 1 - \fxx(a).
         \end{align*}
     \end{enumerate}
@@ -695,9 +695,9 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     \textbf{Indikatorfunktion bzw. charakteristische Funktion} \txc{(Skript 26 - Defintion 3.27.)}  \\
     Sei $\eraum \neq \emptyset$ eine beliebige Menge.
     Für eine Teilmenge $B \subseteq \eraum$ heißt
-    die Abbildung $\chi_B \colon \eraum \to \{0,1\}$, die gegeben ist durch
+    die Abbildung $\chaf_B \colon \eraum \to \{0,1\}$, die gegeben ist durch
     \[
-        \chi_B(\ele) =
+        \chaf_B(\ele) =
         \begin{cases}
             1 & \text{für } \ele \in B ,\\
             0 & \text{für } \ele \notin B ,
@@ -711,16 +711,16 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     \txc{(Skript 26 - Beispiel 3.28.)}  \\
     Robin und Uli würfeln dreimal mit einem fairen Würfel.
     Robin gewinnt jedes Mal einen Euro, wenn
-    eine \emph{Eins} fällt, während Uli einen Euro gewinnt, wenn eine \emph{Sechs} fällt.
+    eine Eins fällt, während Uli einen Euro gewinnt, wenn eine Sechs fällt.
 
     Wir modellieren das dreimalige Würfeln wie üblich mit $\eraum = \{1, \dots, 6\}^3$ und der
     Gleichverteilung $\pe$ auf $\eraum$.
     Die folgenden beiden \gls{zv}n beschreiben den
     Gewinn von Robin und jenen von Uli:
     \begin{align*}
-        \zvx(\ele) &= \sum_{i=1}^{3} \chi_{\{1\}}(\ele_i) \quad \forall\, \ele \in \eraum
+        \zvx(\ele) &= \sum_{i=1}^{3} \chaf_{\{1\}}(\ele_i) \quad \forall\, \ele \in \eraum
         && \text{(Robins Gewinn)}\\
-        \zvy(\ele) &= \sum_{i=1}^{3} \chi_{\{6\}}(\ele_i) \quad \forall\, \ele \in \eraum
+        \zvy(\ele) &= \sum_{i=1}^{3} \chaf_{\{6\}}(\ele_i) \quad \forall\, \ele \in \eraum
         && \text{(Ulis Gewinn)}
     \end{align*}
     Wir wollen beides gleichzeitig beschreiben.
@@ -847,28 +847,28 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     Zum ``Aufwärmen'' beginnen wir damit, die Inhalte von Quadrat und Dreieck formal zu
     berechnen:
     \begin{align*}
-        |Q| &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_Q(x,y) \dd x \dd y
-        = \int_{0}^{1} \left( \int_{0}^{1} 1 \dd x \right) \dd y = \int_{0}^{1} 1 \dd y = 1 ,\\
-        |D| &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_D(x,y) \dd x \dd y
-        = \int_{0}^{1} \left( \int_{y}^{1} 1 \dd x \right) \dd y
-        = \int_{0}^{1} (1-y) \dd y = 1 - \frac12 = \frac12.
+        |Q| &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chaf_Q(x,y) dx dy
+        = \int_{0}^{1} \left( \int_{0}^{1} 1 dx \right) dy = \int_{0}^{1} 1 dy = 1 ,\\
+        |D| &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chaf_D(x,y) dx dy
+        = \int_{0}^{1} \left( \int_{y}^{1} 1 dx \right) dy
+        = \int_{0}^{1} (1-y) dy = 1 - \frac12 = \frac12.
     \end{align*}
     Dabei haben wir in der Berechnung des Inhalts des Dreiecks beim zweiten Gleichheitszeichen die
     Indikatorfunktion ersetzt durch das Einsetzen der Integralgrenzen, die die Indikatorfunktion
     vorschreibt.
     Um im Dreieck $D$ zu sein, müssen zwei Bedingungen erfüllt sein: Einerseits muss
-    $x,y \in [0,1]$ gelten, andererseits muss auch $y \leqslant x$ gelten.
+    $x,y \in [0,1]$ gelten, andererseits muss auch $y \leq x$ gelten.
     Da das äußere Integral die
     Integrationsvariable $y$ hat, fordern wir dort nur, dass $y \in [0,1]$ gilt, was zum Integral
-    $\int_0^1 \dots \dd y$ führt.
+    $\int_0^1 \dots dy$ führt.
     (Die Grenzen des äußeren Integrals dürfen nicht von $x$ abhängen!)
     Das innere Integral hängt nun von $y$ ab.
     Wir behandeln $y \in [0,1]$ wie einen Parameter, wenn
     wir das innere Integral berechnen.
     Das innere Integral hat $x$ als Integrationsvariable, und $x$
-    muss $x \in [0,1]$ sowie $y \leqslant x$ erfüllen.
+    muss $x \in [0,1]$ sowie $y \leq x$ erfüllen.
     Wir fassen diese beiden Bedingungen zusammen
-    und erhalten ein Integral der Form $\int_y^1 \dots \dd x$.
+    und erhalten ein Integral der Form $\int_y^1 \dots dx$.
     Schließlich rechnen wir erst das
     innere Integral (als Funktion des Parameters $y$) und dann das äußere Integral aus.
 
@@ -877,17 +877,17 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     Das Vertauschen ist möglich, weil die Indikatorfunktion
     eine messbare, nicht negative Funktion ist:
     \[
-        |D| = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_D(x,y) \dd x \dd y
-        = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_D(x,y) \dd y \dd x
-        = \int_{0}^{1} \left( \int_{0}^{x} 1 \dd y \right) \dd x
-        = \int_{0}^{1} x \dd x = \frac12.
+        |D| = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chaf_D(x,y) dx dy
+        = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chaf_D(x,y) dy dx
+        = \int_{0}^{1} \left( \int_{0}^{x} 1 dy \right) dx
+        = \int_{0}^{1} x dx = \frac12.
     \]
     Da wir mit der uniformen \gls{verteilung} auf dem Quadrat arbeiten, gilt, wie erwartet,
     \[
         \pe(D) = \frac{\displaystyle\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
-            \chi_D(x,y) \dd x \dd y}
+            \chaf_D(x,y) dx dy}
         {\displaystyle\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
-            \chi_Q(x,y) \dd x \dd y}
+            \chaf_Q(x,y) dx dy}
         = \frac12.
     \]
 \end{bsp}
@@ -900,28 +900,28 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
         Dichte}, falls $f$ Riemann-integrierbar ist und die Normierungsbedingung
         \[
             \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f(x_1, \dots, x_n)
-            \dd x_1 \dots \dd x_n = 1
+            dx_1 \dots dx_n = 1
         \]
         erfüllt ist.
         \item Eine $n$-dimensionale Dichte $f$ heißt \emph{gemeinsame Dichte der \gls{zv}n
             $\zvx_1, \dots, \zvx_n$}, wobei jedes $\zvx_i$ eine $E_i$-wertige \gls{zv} auf demselben
         Wahrscheinlichkeitsraum $(\eraum, \pe)$ ist, wenn
         \[
-            \pe(\zvx_1 \leqslant a_1, \dots, \zvx_n \leqslant a_n)
+            \pe(\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n)
             = \int_{-\infty}^{a_n} \cdots \int_{-\infty}^{a_1} f(x_1, \dots, x_n)
-            \dd x_1 \dots \dd x_n
+            dx_1 \dots dx_n
             \quad \forall\, a_1 \in E_1, \dots, a_n \in E_n
         \]
         gilt.
     \end{enumerate}
-    Dabei verstehen wir unter $\{\zvx_1 \leqslant a_1, \dots, \zvx_n \leqslant a_n\}$ das Ereignis, dass
+    Dabei verstehen wir unter $\{\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n\}$ das Ereignis, dass
     alle $n$ Bedingungen simultan erfüllt sind, das heißt,
     \begin{align*}
-        \{\zvx_1 \leqslant a_1, \dots, \zvx_n \leqslant a_n\}
-        &= \{\ele \in \eraum \colon \zvx_1(\ele) \leqslant a_1 \text{ und } \dots \text{ und }
-        \zvx_n(\ele) \leqslant a_n\}\\
-        &= \{\zvx_1 \leqslant a_1\} \cap \dots \cap \{\zvx_n \leqslant a_n\}\\
-        &= \bigcap_{i=1}^{n} \{\zvx_i \leqslant a_i\}.
+        \{\zvx_1 \leq a_1, \dots, \zvx_n \leq a_n\}
+        &= \{\ele \in \eraum \colon \zvx_1(\ele) \leq a_1 \text{ und } \dots \text{ und }
+        \zvx_n(\ele) \leq a_n\}\\
+        &= \{\zvx_1 \leq a_1\} \cap \dots \cap \{\zvx_n \leq a_n\}\\
+        &= \bigcap_{i=1}^{n} \{\zvx_i \leq a_i\}.
     \end{align*}
 \end{defi}
 
@@ -933,7 +933,7 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     Dann heißt die Funktion
     $f \colon \mathbb{R}^n \to [0,\infty)$, die durch
     \[
-        f(x_1, \dots, x_n) = \frac{1}{|C|} \chi_C\bigl((x_1, \dots, x_n)\bigr) =
+        f(x_1, \dots, x_n) = \frac{1}{|C|} \chaf_C\bigl((x_1, \dots, x_n)\bigr) =
         \begin{cases}
             \frac{1}{|C|} & \text{für } (x_1, \dots, x_n) \in C ,\\
             0             & \text{sonst,}
@@ -943,7 +943,7 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     definiert ist, \emph{Dichte der uniformen \gls{verteilung} auf $C$}.
 \end{defi}
 
-\begin{lem}[Berechnen von Randdichten]
+\begin{lem}[Berechnen von Randdichten]\label{lem:berechnen-randdichten}
     \txc{(Skript 26 - Lemma 3.35.)}  \\
     Sei $f \colon \mathbb{R}^n \to [0,\infty)$ eine $n$-dimensionale Dichte der gemeinsamen
     \gls{verteilung} der \gls{zv}n $\zvx_1, \dots, \zvx_n$.
@@ -952,7 +952,7 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
     \[
         f_k(x) = \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty}
         f(u_1, \dots, u_{k-1}, x, u_{k+1}, \dots, u_n)
-        \dd x_1 \dots \dd x_{k-1} \dd x_{k+1} \dots \dd x_n \qquad \forall\, x \in \mathbb{R} ,
+        dx_1 \dots dx_{k-1} dx_{k+1} \dots dx_n \qquad \forall\, x \in \mathbb{R} ,
     \]
     eine Dichte der \gls{zv}n $\zvx_k$.
     \begin{proof}
@@ -961,19 +961,19 @@ Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
         Wir schreiben $\zvx = \zvx_1$, $\zvy = \zvx_2$ sowie $x = x_1$ und $y = x_2$.
         Für beliebiges $a \in \mathbb{R}$ gilt
         \begin{align*}
-            \pe(\zvx \leqslant a) &= \pe(\zvx \leqslant a, \zvy \in \mathbb{R})\\
+            \pe(\zvx \leq a) &= \pe(\zvx \leq a, \zvy \in \mathbb{R})\\
             &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
-            f(x,y) \chi_{(-\infty,a]}(x) \dd x \dd y\\
-            &= \int_{-\infty}^{\infty} \int_{-\infty}^{a} f(x,y) \dd x \dd y.
+            f(x,y) \chaf_{(-\infty,a]}(x) dx dy\\
+            &= \int_{-\infty}^{\infty} \int_{-\infty}^{a} f(x,y) dx dy.
         \end{align*}
         Da $f$ eine nichtnegative, messbare Funktion ist, dürfen wir die Integrationsreihenfolge
         vertauschen.
         Damit folgt
         \[
-            \pe(\zvx \leqslant a) = \int_{-\infty}^{a} \left( \int_{-\infty}^{\infty} f(x,y) \dd y
-            \right) \dd x = \int_{-\infty}^{a} f_\zvx(x) \dd x
+            \pe(\zvx \leq a) = \int_{-\infty}^{a} \left( \int_{-\infty}^{\infty} f(x,y) dy
+            \right) dx = \int_{-\infty}^{a} f_\zvx(x) dx
         \]
-        mit $f_\zvx(x) = \int_{-\infty}^{\infty} f(x,y) \dd y$.
+        mit $f_\zvx(x) = \int_{-\infty}^{\infty} f(x,y) dy$.
         Da $a \in \mathbb{R}$ beliebig war,
         folgt, dass $f_X$ eine Dichte von $\zvx$ ist.
 
@@ -989,7 +989,7 @@ aus der gemeinsamen \gls{verteilung} von $(\zvx_1, \dots, \zvx_n)$, indem wir di
 \begin{defi}
     \textbf{Randdichte}
     \txc{(Skript 26 - Defintion 3.36.)}  \\
-    Die Dichte $f_k$ von $\zvx_k$ gemäß Lemma 3.35 nennen wir \emph{$k$-te Randdichte von
+    Die Dichte $f_k$ von $\zvx_k$ gemäß Lemma \autoref{lem:berechnen-randdichten} nennen wir \emph{$k$-te Randdichte von
         $(\zvx_1, \dots, \zvx_n)$}.
 \end{defi}
 
