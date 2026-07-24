@@ -1,12 +1,12 @@
 %! Author = lili
 %! Date = 4/27/26
 
-% TODO Skript Kapitel 3
+% Skript Kapitel 3
 
 
-\chapter{Zufallsvariablen und ihre Verteilung}\label{ch:zufallsvariablen-und-ihre-verteilung}
+\chapter{\gls{zv}n und ihre \gls{verteilung}}\label{ch:zufallsvariablen-und-ihre-verteilung}
 \untit{Vorlesung 09.05.2025 (V04 2025)}
-Zufallsvariablen ermöglichen es uns nicht nur, Ereignisse übersichtlicher darzustellen, sondern sind auch
+\gls{zv}n ermöglichen es uns nicht nur, Ereignisse übersichtlicher darzustellen, sondern sind auch
 das optimale Werkzeug, um in systematischer Weise von einem \gls{wraum} mit vielen
 Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
 
@@ -15,22 +15,22 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
 \begin{itemize}
     \item Konzepte
     \begin{itemize}
-        \item Zufallsvariablen als Abbildung und ihre Verteilung als \gls{wmaß}
-        \item Verteilungsfunktion
-        \item gemeinsame Verteilung von Zufallsvariablen, Randverteilung, Randdichte
+        \item \gls{zv}n als Abbildung und ihre \gls{verteilung} als \gls{wmaß}
+        \item \gls{verteilungsfunktion_zv}
+        \item gemeinsame \gls{verteilung} von \gls{zv}n, Randverteilung, Randdichte
     \end{itemize}
     \item Fakten
     \begin{itemize}
-        \item Eigenschaften von Verteilungsfunktionen
-        \item Die gemeinsame Verteilung bestimmt die Randverteilungen.
+        \item Eigenschaften von \gls{verteilungsfunktion_zv}en
+        \item Die gemeinsame \gls{verteilung} bestimmt die Randverteilungen.
         \item Die Umkehrung ist im allgemeinen falsch.
     \end{itemize}
 \end{itemize}
 
 
-\section{Die Verteilung einer Zufallsvariablen}\label{sec:die-verteilung-einer-zufallsvariablen}
+\section{Die \gls{verteilung} einer \gls{zv}n}\label{sec:die-verteilung-einer-zufallsvariablen}
 \begin{bsp}[n-faches Werfen einer fairen Münze]
-    \label{bsp:n-faches-Werfen-einer-fairen-Münze} \txc{(2025)}  \\
+    \label{bsp:n-faches-Werfen-einer-fairen-Muenze} \txc{(2025)}  \\
     \[
         \glssymbol{eraum}_n = \kl{0,1}^n, \quad \glssymbol{wfk}_n (\kl{\glssymbol{elementarereignis}}) = \left(\frac{1}{2}\right)^n \faoio \txt{(Gleichverteilung)}
     \]
@@ -55,9 +55,8 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
 % ZV %
 %%%%%%%%%%%%%%%%%%%%%
 
-\begin{defi}
-    \label{def:zv}
-    \textbf{\gls{zv}} \txc{(2025)}  \\
+\begin{defi}[\gls{zv}]
+    \label{def:zv}\txc{(2025)}  \\
     Für einen \gls{wraum} $\wraum$ und eine Menge $E \neq \emptyset$ nennen wir eine messbare Abbildung
     \[
         \zvx: \glssymbol{eraum}  \rightarrow E
@@ -71,23 +70,22 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
 
 \begin{bem}
     \txc{(Skript 26 - Bemerkung 3.3.)}  \\
-    Ist der Ereignisraum $\eraum$ abzählbar, so ist eine Zufallsvariable nichts anderes als eine Abbildung, die auf
+    Ist der Ereignisraum $\eraum$ abzählbar, so ist eine \gls{zv} nichts anderes als eine Abbildung, die auf
     dem $\eraum$ des \gls{wraum}s definiert ist.
     Ist $\eraum \subseteq \rz_d$, kommen eigentlich noch
     Messbarkeitsfragen hinzu, die wir im Rahmen dieser Vorlesung jedoch ignorieren wollen.
 
-    Wie wir bereits in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} gesehen haben, ist es praktisch,
-    Ereignisse mit Hilfe von Zufallsvariablen auszudrücken.
-    Wenn uns nur Ereignisse interessieren, die durch ein und dieselbe Zufallsvariable
+    Wie wir bereits in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Muenze} gesehen haben, ist es praktisch,
+    Ereignisse mit Hilfe von \gls{zv}n auszudrücken.
+    Wenn uns nur Ereignisse interessieren, die durch ein und dieselbe \gls{zv}
     ausgedrückt werden können, so können wir sogar noch einen Schritt weitergehen und einen neuen
     \gls{wraum} einführen, der nur noch solche Ereignisse kennt.
     Die folgende Definition ist
     ein erster Schritt in diese Richtung.
 \end{bem}
 
-\begin{defi}
-    \textbf{Bild- und Wertebereich einer Zufallsvariablen} \txc{(Skript 26 - Definition 3.4.)}  \\
-    Sei $\zvx : \eraum \rightarrow E$ eine E-wertige Zufallsvariable auf einem \gls{wraum} $\wraum$.
+\begin{defi}[Bild- und Wertebereich einer \gls{zv}n] \txc{(Skript 26 - Definition 3.4.)}  \\
+    Sei $\zvx : \eraum \rightarrow E$ eine E-wertige \gls{zv} auf einem \gls{wraum} $\wraum$.
     Dann
     heißt E der Wertebereich von $\zvx$, und
     \[
@@ -102,7 +100,7 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
     Der Bildbereich ist die kleinstmögliche Menge, die alle Werte enthält,
     die $\zvx$ annehmen kann.
 
-    st Sn wie in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} die Anzahl der Erfolge in einem
+    st Sn wie in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Muenze} die Anzahl der Erfolge in einem
     Zufallsexperiment der Länge $n \in \nz$,
     so können wir Sn auffassen als Abbildung von $\eraum$ nach $E = \nz_0$, aber auch als Abbildung
     nach $E = \{0, 1, \dots , n\}$ oder gar nach $E = \rz$.
@@ -111,23 +109,23 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
 \end{bem}
 
 %%%%%%%%%%%%%%%%%%%%%
-% Verteilung %
+% \gls{verteilung} %
 %%%%%%%%%%%%%%%%%%%%%
 
-\begin{defi}[Verteilung einer \gls{zv}]
+\begin{defi}[\gls{verteilung} einer \gls{zv}]
     \label{def:verteilung-zv} \txc{(2025)}  \\
     Sei $\zvx$ eine $E$-wertige \gls{zv} auf $\wraum$
     \[
         \pex(B) \coloneqq  \pe(\kl{\oio : \zvx(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(\zvx \in B)}{Kurzschreibweise}
     \]
-    Das \gls{wmaß} $\pex$ auf $E$ heißt Verteilung von $\zvx$.
+    Das \gls{wmaß} $\pex$ auf $E$ heißt \gls{verteilung} von $\zvx$.
 \end{defi}
-\komm{\defirefman{verteilung-zv}: Die Verteilung von $\zvx$ beschreibt, wie die Werte von $\zvx$ verteilt sind, also
+\komm{\defirefman{verteilung-zv}: Die \gls{verteilung} von $\zvx$ beschreibt, wie die Werte von $\zvx$ verteilt sind, also
 \textbf{wie wahrscheinlich verschiedene Ergebnisse von $\zvx$ sind}.}
 
 \begin{bsp}[Fortsetzung Münzwurf]
-    \label{bsp:n-faches-Werfen-einer-fairen-Münze-2}  \txc{(Skript 26 - Beispiel 3.7.)}  \\
-    Die Zufallsvariable $\sn$ aus Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} hat den Bildbereich $\sn(\eraum_n)  = \{0, \dots , n\}$.
+    \label{bsp:n-faches-Werfen-einer-fairen-Muenze-2}  \txc{(Skript 26 - Beispiel 3.7.)}  \\
+    Die \gls{zv} $\sn$ aus Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Muenze} hat den Bildbereich $\sn(\eraum_n)  = \{0, \dots , n\}$.
     Für $k \in \sn(\eraum_n)$ gilt
     \[
         \pe_{\sn}(\{k\}) = \pe_n (\{\ele \in \eraum_n : \sn (\ele) \in \{k\}\}) = \pe_n \left(  \left\{ \ele \in \eraum_n : \sumEN \ele_i = k \right\} \right) = \binom{n}{k}2^n
@@ -144,7 +142,7 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
     \end{align*}
 \end{bsp}
 
-\begin{bem}[Sprunghöhen der Verteilungsfunktion]
+\begin{bem}[Sprunghöhen der \gls{verteilungsfunktion_zv}]
     \txc{(Skript 26 - Bemerkung 3.8.)}  \\
     In Definition \autoref{def:verteilung-zv} wird behauptet, dass die Abbildung $\pex$, die auf den messbaren
     Teilmengen von E definiert ist und Werte in $[0, 1]$ annimmt, tatsächlich ein \gls{wmaß} ist.
@@ -153,7 +151,7 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
     dem Fall führen, in dem $\pe$ durch eine Wahrscheinlichkeitsfunktion $\wfk$ gegeben ist.
 
     In diesem Fall entfällt auch die Notwendigkeit zu prüfen, ob eine Menge $B \subseteq E$ messbar ist, denn
-    wenn $\eraum$ eine abzählbare Menge ist, dann kann die Zufallsvariable $\zvx$, die auf $\eraum$ definiert ist, ebenfalls
+    wenn $\eraum$ eine abzählbare Menge ist, dann kann die \gls{zv} $\zvx$, die auf $\eraum$ definiert ist, ebenfalls
     nur abzählbar viele Werte annehmen.
 \end{bem}
 
@@ -180,8 +178,8 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
 
 \begin{bsp}
     \txc{(Skript 26 - Beispiel 3.11.)}  \\
-    Im Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} und der Fortsetzung
-    \autoref{bsp:n-faches-Werfen-einer-fairen-Münze-2} erhalten wir als neuen, induzierten \gls{wraum}, je nach Wahl des
+    Im Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Muenze} und der Fortsetzung
+    \autoref{bsp:n-faches-Werfen-einer-fairen-Muenze-2} erhalten wir als neuen, induzierten \gls{wraum}, je nach Wahl des
     Wertebereichs
     \begin{itemize}
         \item[(a)] $( \{0, \dots, n\}, \pe_{\sn} )$, wobei das \gls{wmaß} $\pe_{\sn}$ gegeben ist durch
@@ -195,7 +193,7 @@ Elementarereignissen zu einem kleineren \gls{wraum} zu wechseln.
         \]
     \end{itemize}
     Im folgenden wollen wir die Notation etwas vereinfachen, damit wir für Ereignisse, die durch eine
-    Zufallsvariable ausgedrückt werden, nicht immer wieder mühsam $\{\ele \in \eraum : \zvx(\ele) \in \dots \}$ schreiben
+    \gls{zv} ausgedrückt werden, nicht immer wieder mühsam $\{\ele \in \eraum : \zvx(\ele) \in \dots \}$ schreiben
     müssen.
 \end{bsp}
 
@@ -217,12 +215,12 @@ Falls $B$ ein Intervall ist:
     Dann heißt $E$ der Wertebereich und $\zvx(\glssymbol{eraum} )\coloneqq  \kl{\zvx(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
 \end{defi}
 
-\begin{lem}[Existenz einer Zufallsvariablen mit vorgegebener Verteilung)]
+\begin{lem}[Existenz einer \gls{zv}n mit vorgegebener \gls{verteilung})]
     \txc{(Skript 26 - Lemma 3.13.)}  \\
     Sei $(\tilde\eraum, \tilde\pe)$ ein beliebiger \gls{wraum}.
     Dann existieren ein \gls{wraum} $\wraum$ und eine \gls{zv} $\zvx$ auf $\wraum$
-    derart, dass die Verteilung von $\zvx$ das vorgegebene \gls{wmaß} $\tilde\pe$ ist.
-    d.h. es gilt $\pex = \tilde\pe$.
+    derart, dass die \gls{verteilung} von $\zvx$ das vorgegebene \gls{wmaß} $\tilde\pe$ ist.
+    d.h.\ es gilt $\pex = \tilde\pe$.
 
     \paragraph{Beweis.}
     Der Beweis ist verwirrend einfach.
@@ -263,7 +261,7 @@ Falls $B$ ein Intervall ist:
 
 \begin{bem}
     \defirefman{wert-bild-e} \txc{(2025)}  \\
-    Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
+    Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren \gls{verteilung} genau dieses \gls{wmaß} ist. \\
     \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
     $\zvx: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
     \begin{align*}
@@ -275,11 +273,11 @@ Falls $B$ ein Intervall ist:
     \[
         \pagebreak(\zvx \in B) = \pe(\oub{\kl{\oio: \zvx(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
     \]
-    $\Rightarrow \zvx$ hat Verteilung $\tilde\pe$
+    $\Rightarrow \zvx$ hat \gls{verteilung} $\tilde\pe$
 \end{bem}
 
-\komm{Zu jedem \gls{wmaß} auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
-aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
+\komm{Zu jedem \gls{wmaß} auf einem Messraum existiert eine \gls{zv}, die genau dieses Maß als \gls{verteilung} hat. \\
+aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese \gls{verteilung} als Ergebnis hat.}
 
 \begin{defi}[\gls{verteilungsfunktion_zv}]
     \txc{(Skript 26 - Definition 3.14.)}  \\
@@ -293,15 +291,15 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
 
 \begin{bem}
     Achtung, Verwechslungsgefahr!
-    Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ und Verteilungsfunktion $\fxx$ sind ver-
+    Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ und \gls{verteilungsfunktion_zv} $\fxx$ sind ver-
     schiedene Konzepte!
 \end{bem}
 
 \begin{bsp}[Fortsetzung des Münzwurf-Beispiels]
     \txc{(Skript 26 - Beispiel 3.15.)}  \\
-    Wir werfen nun unsere faire Münze fünfmal, das heißt, wir betrachten die Zufallsvariable $\zvs_5$.
+    Wir werfen nun unsere faire Münze fünfmal, das heißt, wir betrachten die \gls{zv} $\zvs_5$.
     Die
-    zugehörige Verteilungsfunktion ist gegeben durch
+    zugehörige \gls{verteilungsfunktion_zv} ist gegeben durch
     \[
         \fx_{\zvs_5}(x)
         =
@@ -379,7 +377,7 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
     \]
 \end{bsp}
 
-\begin{lem}[Eigenschaften von Verteilungsfunktionen I: allgemeine Eigenschaften]
+\begin{lem}[Eigenschaften von \gls{verteilungsfunktion_zv}en I: allgemeine Eigenschaften]
     \txc{(Skript 26 - Lemma 3.17.)}  \\
     Sei $\fxx$ eine \gls{verteilungsfunktion_zv}.
     Dann gelten:
@@ -390,10 +388,10 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
     \end{itemize}
 \end{lem}
 
-\begin{lem}[Rechnen mit Verteilungsfunktionen I: allgemeine Rechenregeln]
+\begin{lem}[Rechnen mit \gls{verteilungsfunktion_zv}en I: allgemeine Rechenregeln]
     \txc{(Skript 26 - Lemma 3.17.)}  \\
     Sei $- \infty < a \leq b < \infty$.
-    Für die Verteilungsfunktion einer Zufallsvariablen $\zvx$ gelten neben der definierenden Gleichheit (siehe (b)) auch
+    Für die \gls{verteilungsfunktion_zv} einer \gls{zv}n $\zvx$ gelten neben der definierenden Gleichheit (siehe (b)) auch
     die folgenden Rechenregeln:
     \begin{itemize}
         \item \( \pe (a < \zvx \leq b) = \fxx (b) - \fxx (a)\)
@@ -403,11 +401,11 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
 \end{lem}
 
 
-\section{Zufallsvariablen mit abzählbarem Bildbereich}\label{sec:zufallsvariablen-mit-abzahlbarem-bildbereich}
+\section{\gls{zv}n mit abzählbarem Bildbereich}\label{sec:zufallsvariablen-mit-abzahlbarem-bildbereich}
 
 %\paragraph{Hier fehlt was} % TODO
 
-\begin{bsp}[Beispiel Geometrische Verteilung]
+\begin{bsp}[Beispiel Geometrische \gls{verteilung}]
     \txc{(Skript 26 - Beispiel 3.18.)}  \\
     Wir werfen eine faire Münze bis das erste Mal Kopf fällt.
     In einem ersten Schritt begrenzen wir die Anzahl der Versuche und werfen maximal n-mal.
@@ -417,7 +415,7 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
     \]
     Dabei bedeute $\ele_i = 1$, dass im i-ten Wurf Kopf fällt.
 
-    Die einelementige Menge $A_n = \{( 0, 0, ..., 0,1 )\} \subseteq \eraum_n$ beschreibt das Ereignis, dass im n-ten Wurf
+    Die einelementige Menge $A_n = \{( 0, 0,..., 0,1 )\} \subseteq \eraum_n$ beschreibt das Ereignis, dass im n-ten Wurf
     das erste Mal Kopf fällt.
     Es gilt $\pe_n(A_n) = \wfk_n(( 0, 0, \dots, 0,1 )) = 2^{-n}$.
 
@@ -444,50 +442,51 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
         \sum_{k=1}^{\infty} \wfk(k) = \frac{1}{2} \frac{1}{1- \frac{1}{2}} = 1
     \]
     Damit haben wir gezeigt, dass $\wfk$ eine Wahrscheinlichkeitsfunktion auf $\eraum = \nz$ ist. %, siehe Abbildung3.2.
-    Eine N-wertige Zufallsvariable $\zvx$, deren Verteilung durch $\wfk_{\zvx} = \wfk$ gegeben ist, nennen wir
+    Eine N-wertige \gls{zv} $\zvx$, deren \gls{verteilung} durch $\wfk_{\zvx} = \wfk$ gegeben ist, nennen wir
     geometrisch verteilt.
 
     Der Bildbereich von $\zvx$ ist also $\nz$.
-    Wir berechnen die Verteilungfunktion $\fxx$ folgendermaßen:
+    Wir berechnen die \gls{verteilung}funktion $\fxx$ folgendermaßen:
     \begin{align*}
-                \pe(\zvx \le x)
-                =
-                0,
-                \text{für } x < 1,
-                \fxx(k)
-                =
-                \pe(\zvx \le k)
-                =
-                \sum_{i=1}^{k}\wfk_{\zvx}(i)
-                =
-                \sum_{i=1}^{k}2^{-i}
-                =
-                1-\frac{1}{2^k},
-                &
-                \text{für } k\in\nz,
-               \\
-                \fxx(x)
-                =
-                \pe(\zvx \le x)
-                =
-                \pe(\zvx \le \lfloor x\rfloor)
-                =
-                \fxx(\lfloor x\rfloor)
-                =
-                1-\frac{1}{2^{\lfloor x\rfloor}},
-                &
-                \text{für } x\in[1,\infty)\setminus\nz.
+        \pe(\zvx \le x)
+        =
+        0,
+        \text{für } x < 1,
+        \fxx(k)
+        =
+        \pe(\zvx \le k)
+        =
+        \sum_{i=1}^{k}\wfk_{\zvx}(i)
+        =
+        \sum_{i=1}^{k}2^{-i}
+        =
+        1-\frac{1}{2^k},
+        &
+        \text{für } k\in\nz,
+        \\
+        \fxx(x)
+        =
+        \pe(\zvx \le x)
+        =
+        \pe(\zvx \le \lfloor x\rfloor)
+        =
+        \fxx(\lfloor x\rfloor)
+        =
+        1-\frac{1}{2^{\lfloor x\rfloor}},
+        &
+        \text{für } x\in[1,\infty)\setminus\nz.
     \end{align*}
 \end{bsp}
 
 % TODO $\wfk_{\zvx}$ definieren
 
-\begin{bem}[Sprunghöhen der Verteilungsfunktion]
+\begin{bem}[Sprunghöhen der \gls{verteilungsfunktion_zv}]
     \txc{(Skript 26 - Bemerkung 3.19.)}  \\
-    Am Beispiel der geometrischen Verteilung sehen wir in Abbildung 3.2 \txc{(siehe Skript 2026)}, dass die Sprunghöhen
-    der Verteilungsfunktion den Werten der Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ entsprechen. Das ist kein Zufall.
+    Am Beispiel der geometrischen \gls{verteilung} sehen wir in Abbildung 3.2 \txc{(siehe Skript 2026)}, dass die Sprunghöhen
+    der \gls{verteilungsfunktion_zv} den Werten der Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ entsprechen.
+    Das ist kein Zufall.
     Nimmt
-    eine Zufallsvariable $\zvx$ nur abzählbar viele Werte $x_1, x_2, . . .$ an, so gilt stets
+    eine \gls{zv} $\zvx$ nur abzählbar viele Werte $x_1, x_2,\dots$ an, so gilt stets
     \begin{align*}
         \wfk_{\zvx}(x_i) ) & = \pe(\zvx = x_i) \\
         & = \pe(\zvx \leq x_i) - \pe(\zvx \le x_i) \\
@@ -503,10 +502,10 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
     \end{align*}
 \end{bem}
 
-Wir ergänzen nun unser Lemma über die Eigenschaften von Verteilungsfunktionen um eine Aussage
-über diskrete Zufallsvariablen.
+Wir ergänzen nun unser Lemma über die Eigenschaften von \gls{verteilungsfunktion_zv}en um eine Aussage
+über diskrete \gls{zv}n.
 
-\begin{lem}[Eigenschaften von Verteilungsfunktionen II: diskrete Zufallsvariable]
+\begin{lem}[Eigenschaften von \gls{verteilungsfunktion_zv}en II: diskrete \gls{zv}]
     \txc{(Skript 26 - Lemma 3.20.)}  \\
     Sei $\fxx$ eine \gls{verteilungsfunktion_zv}.
     Dann gelten:
@@ -514,104 +513,484 @@ Wir ergänzen nun unser Lemma über die Eigenschaften von Verteilungsfunktionen 
         \item $\fxx$ ist monoton wachsend
         \item $\fxx$ ist rechtsstetig, d.h.: Für jedes $x_0 \in \rz$ und jede Folge $(x_n)_{n \in \nz}$ mit $x_n \searrow x_0$ gilt $\limnin \fxx (x_n) = \fxx (x_0)$
         \item $\lim_{x \rightarrow - \infty} \fxx =(x) = 0$ und $\limnin \fxx (x) = 1$
-        \item Nimmt die Zufallsvariable $\zvx$ nur abzählbare viele Werte an, so ist $\fxx$ stückweise konstant.
+        \item Nimmt die \gls{zv} $\zvx$ nur abzählbare viele Werte an, so ist $\fxx$ stückweise konstant.
     \end{itemize}
 \end{lem}
 
 
-\section{Zufallsvariablen mit Dichte}\label{sec:zufallsvariablen-mit-dichte}
-\begin{defi}[\dichte einer \gls{zv}] \txc{(Skript 26 - Definition 3.21.)}  \\
-todo  % TODO
+\section{\gls{zv}n mit Dichte}\label{sec:zufallsvariablen-mit-dichte}
+
+\begin{defi}[\dichte einer \gls{zv}]
+    \txc{(Skript 26 - Definition 3.21.)}  \\
+    Seien $(\eraum, \pe)$ ein Wahrscheinlichkeitsraum und $\zvx \colon \eraum \to \mathbb{R}$ eine
+    $\mathbb{R}$-wertige \gls{zv}.
+    Wir sagen, dass die \gls{zv} $\zvx$
+    \emph{absolutstetig mit Dichte $f$} ist, wenn eine Dichte $f \colon \mathbb{R} \to [0,\infty)$
+    existiert derart, dass
+    \begin{equation}
+        \label{eq:dichte-vf}
+        \pex\bigl((-\infty, x]\bigr) = \pe(\zvx \leqslant x) = \int_{-\infty}^{x} f(u) \dd u
+        \qquad \forall\, x \in \mathbb{R}.
+    \end{equation}
 \end{defi}
 
 \begin{bem}
     \txc{(Skript 26 - Bemerkung 3.22.)}  \\
-    todo  % TODO
-    % Umgekehrt können wir natürlich Gleichung 3.1 verwenden, um zu einer gegebenen Dichte f eine Zufallsvariable X zu
-    %konstruieren, deren Verteilung PX die Dichte f hat
+    Umgekehrt können wir natürlich~\eqref{eq:dichte-vf} verwenden, um zu einer gegebenen Dichte $f$
+    eine \gls{zv} $\zvx$ zu konstruieren, deren \gls{verteilung} $\pex$ die Dichte $f$ hat.
+
+    Ohne Beweis merken wir an dieser Stelle an, dass~\eqref{eq:dichte-vf} das
+    Wahrscheinlichkeitsmaß $\pex$ eindeutig festlegt.
 \end{bem}
 
-\begin{bsp}
+\begin{bsp}[Uniform verteilte \gls{zv}n]
     \txc{(Skript 26 - Beispiel 3.23.)}  \\
-    todo  % TODO
+    Sei $f$ die Dichte der uniformen \gls{verteilung} auf einem Intervall $[a,b]$, das heißt, es gelte
+    \[
+        f(x) =
+        \begin{cases}
+            \frac{1}{b-a} & \text{für } x \in [a,b] ,\\
+            0             & \text{sonst.}
+        \end{cases}
+    \]
+    Sei $\zvx$ eine \gls{zv} mit Dichte $f$.
+    Wir sagen, dass $\zvx$ \emph{uniform verteilt} ist.
+    Wir wollen nun für diese \gls{zv} die \gls{verteilungsfunktion_zv} $\fxx$ berechnen.
+    \begin{itemize}
+        \item Als erstes betrachten wir $x < a$.
+        Für alle $u < a$ gilt $f(u) = 0$, woraus
+        \[
+            \fxx(x) = \int_{-\infty}^{x} f(u) \dd u = \int_{-\infty}^{x} 0 \dd u = 0
+        \]
+        folgt.
+        \item Sei nun $a \leqslant x \leqslant b$.
+        Wir teilen das $\fxx(x)$ definierende Integral auf
+        in ein Integral bis $a$ und ein weiteres Integral von $a$ bis $x$:
+        \[
+            \fxx(x) = \int_{-\infty}^{a} f(u) \dd u + \int_{a}^{x} f(u) \dd u
+            = \fxx(a) + \int_{a}^{x} \frac{1}{b-a} \dd u.
+        \]
+        Wir haben den ersten Summanden $\fxx(a) = 0$ bereits berechnet.
+        Daher folgt
+        \[
+            \fxx(x) = \int_{a}^{x} \frac{1}{b-a} \dd u = \frac{x-a}{b-a}.
+        \]
+        \item Es bleibt der Fall $x > b$ zu betrachten.
+        Einerseits können wir wieder das Integral
+        aufspalten, diesmal bei $b$, und erhalten
+        \[
+            \fxx(x) = \int_{-\infty}^{b} f(u) \dd u + \int_{b}^{x} f(u) \dd u = \fxx(b) + 0 = 1.
+        \]
+        Andererseits können wir auch schlau argumentieren: $\fxx$ ist monoton wachsend.
+        Daraus folgt,
+        dass $\fxx(x) \geqslant \fxx(b) = 1$ gelten muss.
+        Da eine \gls{verteilungsfunktion_zv} durch $1$
+        beschränkt ist, folgt bereits $\fxx(x) = 1$ für alle $x \geqslant b$.
+    \end{itemize}
+    Somit gilt
+    \[
+        \fxx(x) =
+        \begin{cases}
+            0                 & \text{für } x < a ,\\
+            \dfrac{x-a}{b-a}  & \text{für } a \leqslant x \leqslant b ,\\
+            1                 & \text{für } x > b.
+        \end{cases}
+    \]
 \end{bsp}
 
-\begin{bsp}
+\begin{bsp}[Exponentialverteilte \gls{zv}n]
     \txc{(Skript 26 - Beispiel 3.24.)}  \\
-    todo  % TODO
+    Sei $f$ die Dichte der Exponentialverteilung mit Parameter $\alpha > 0$, das heißt, es gelte
+    \[
+        f(x) =
+        \begin{cases}
+            \alpha \eu^{-\alpha x} & \text{für } x > 0 ,\\
+            0                      & \text{sonst.}
+        \end{cases}
+    \]
+    Sei $\zvx$ eine \gls{zv} mit Dichte $f$.
+    Wir sagen, dass $\zvx$ \emph{exponentialverteilt mit
+    Parameter $\alpha$} ist.
+    Wir wollen nun die \gls{verteilungsfunktion_zv} $\fxx$ von $\zvx$ bestimmen.
+    \begin{itemize}
+        \item Als erstes betrachten wir $x \leqslant 0$.
+        Für alle $u \leqslant 0$ gilt $f(u) = 0$,
+        woraus wieder
+        \[
+            \fxx(x) = \int_{-\infty}^{x} f(u) \dd u = 0
+        \]
+        folgt.
+        \item Sei nun $x > 0$.
+        Wir teilen wieder das $\fxx(x)$ definierende Integral auf, diesmal in
+        ein Integral bis $0$ und ein weiteres Integral von $0$ bis $x$:
+        \[
+            \fxx(x) = \fxx(0) + \int_{0}^{x} \alpha \eu^{-\alpha u} \dd u
+            = \int_{0}^{x} \alpha \eu^{-\alpha u} \dd u.
+        \]
+        Der Integrand $h(u) = \alpha \eu^{-\alpha u}$ besitzt die Stammfunktion
+        $H(u) = -\eu^{-\alpha u}$.
+        Daher folgt
+        \[
+            \fxx(x) = H(u)\big|_{u=0}^{x} = 1 - \eu^{-\alpha x}.
+        \]
+    \end{itemize}
+    Somit gilt
+    \[
+        \fxx(x) =
+        \begin{cases}
+            0                      & \text{für } x \leqslant 0 ,\\
+            1 - \eu^{-\alpha x}    & \text{für } x > 0.
+        \end{cases}
+    \]
 \end{bsp}
 
-\begin{lem}
+\begin{lem}[Rechnen mit \gls{verteilungsfunktion_zv}en II: \gls{zv} mit Dichte]
     \txc{(Skript 26 - Lemma 3.25.)}  \\
-    todo  % TODO
+    Sei $-\infty < a \leqslant b < \infty$.
+    Für die \gls{verteilungsfunktion_zv} einer \gls{zv}n $\zvx$
+    mit Dichte $f$ gelten neben der definierenden Gleichheit (siehe (b)) auch die folgenden
+    Rechenregeln.
+    \begin{enumerate}[label=(\alph*)]
+        \item $\pe(a < \zvx \leqslant b) = \displaystyle\int_{a}^{b} f(x) \dd x = \fxx(b) - \fxx(a)$,
+        \item $\pe(\zvx \leqslant b) = \displaystyle\int_{-\infty}^{b} f(x) \dd x = \fxx(b)$,
+        \item $\pe(\zvx > a) = \displaystyle\int_{a}^{\infty} f(x) \dd x = 1 - \fxx(a)$,
+        \item \begin{align*}
+                  \pe(a \leqslant \zvx < b) = \pe(a < \zvx \leqslant b) = \pe(a \leqslant \zvx \leqslant b)
+                  &= \pe(a < \zvx < b) = \fxx(b) - \fxx(a) ,\\
+                  \pe(\zvx \leqslant b) &= \pe(\zvx < b) = \fxx(b) ,\\
+                  \pe(\zvx > a) &= \pe(\zvx \geqslant a) = 1 - \fxx(a).
+        \end{align*}
+    \end{enumerate}
 \end{lem}
 
-\begin{lem}
+\begin{lem}[Eigenschaften von \gls{verteilungsfunktion_zv}en: finale Version]
     \txc{(Skript 26 - Lemma 3.26.)}  \\
-    todo  % TODO
+    Sei $\fxx$ eine \gls{verteilungsfunktion_zv}.
+    Dann gelten:
+    \begin{enumerate}[label=(\alph*)]
+        \item $\fxx$ ist monoton wachsend.
+        \item $\fxx$ ist rechtsstetig, d.h.: Für jedes $x_0 \in \mathbb{R}$ und jede Folge
+        $(x_n)_{n \in \mathbb{N}}$ mit $x_n \searrow x_0$ gilt
+        $\lim_{n \to \infty} \fxx(x_n) = \fxx(x_0)$.
+        \item $\lim_{x \to -\infty} \fxx(x) = 0$ und $\lim_{x \to \infty} \fxx(x) = 1$.
+        \item Nimmt die \gls{zv} $\zvx$ nur abzählbar viele Werte an, so ist $\fxx$ stückweise
+        konstant.
+        \item Hat $\zvx$ eine Dichte, so ist $\fxx$ eine stetige Funktion.
+        \item Hat $\zvx$ eine Dichte $f$ und ist $f$ stetig in einem Punkt $a \in \mathbb{R}$, so gilt
+        $f(a) = \fxx'(a)$.
+    \end{enumerate}
 \end{lem}
 
 
-\section{Mehrdimensionale Zufallsvariablen und ihre gemein-
-same Verteilung: Abzählbare Bildbereiche}\label{sec:mehrdimensionale-zufallsvariablen-und-ihre-gemein-
-same-verteilung:-abzahlbare-bildbereiche}
+\section{Mehrdimensionale \gls{zv}n und ihre gemeinsame \gls{verteilung}: Abzählbare Bildbereiche}
+\label{sec:mehrdim-zv-abzaehlbar}
+
+Für das folgende Beispiel ist die sogenannte charakteristische Funktion, die Ihnen bereits im Kontext
+der \emph{Analysis} begegnet ist, nützlich.
+Im Rahmen dieser Vorlesung werden wir stattdessen von
+einer \emph{Indikatorfunktion} sprechen, weil der Begriff \emph{charakteristische Funktion} im
+Bereich der Wahrscheinlichkeitstheorie eine andere Bedeutung hat.
 
 \begin{defi}
     \textbf{Indikatorfunktion bzw. charakteristische Funktion} \txc{(Skript 26 - Defintion 3.27.)}  \\
-    todo  % TODO
+    Sei $\eraum \neq \emptyset$ eine beliebige Menge.
+    Für eine Teilmenge $B \subseteq \eraum$ heißt
+    die Abbildung $\chi_B \colon \eraum \to \{0,1\}$, die gegeben ist durch
+    \[
+        \chi_B(\ele) =
+        \begin{cases}
+            1 & \text{für } \ele \in B ,\\
+            0 & \text{für } \ele \notin B ,
+        \end{cases}
+    \]
+    die \emph{Indikatorfunktion} bzw.
+    die \emph{charakteristische Funktion der Menge $B$}.
 \end{defi}
 
-\begin{bsp}
+\begin{bsp}[Robin und Uli würfeln \dots]
     \txc{(Skript 26 - Beispiel 3.28.)}  \\
-    todo  % TODO
+    Robin und Uli würfeln dreimal mit einem fairen Würfel.
+    Robin gewinnt jedes Mal einen Euro, wenn
+    eine \emph{Eins} fällt, während Uli einen Euro gewinnt, wenn eine \emph{Sechs} fällt.
+
+    Wir modellieren das dreimalige Würfeln wie üblich mit $\eraum = \{1, \dots, 6\}^3$ und der
+    Gleichverteilung $\pe$ auf $\eraum$.
+    Die folgenden beiden \gls{zv}n beschreiben den
+    Gewinn von Robin und jenen von Uli:
+    \begin{align*}
+        \zvx(\ele) &= \sum_{i=1}^{3} \chi_{\{1\}}(\ele_i) \quad \forall\, \ele \in \eraum
+        && \text{(Robins Gewinn)}\\
+        \zvy(\ele) &= \sum_{i=1}^{3} \chi_{\{6\}}(\ele_i) \quad \forall\, \ele \in \eraum
+        && \text{(Ulis Gewinn)}
+    \end{align*}
+    Wir wollen beides gleichzeitig beschreiben.
+    Daher sei $\zvy = (\zvx,\zvy)$.
+    Die neue \gls{zv} $\zvy$
+    hat den Wertebereich $\{0,1,2,3\}^2$.\footnote{Offensichtlich gilt in diesem Fall, dass der
+    Bildbereich $\zvy(\eraum)$ eine echte Teilmenge von $\{0,1,2,3\}^2$ ist, weil es u.a.\ nicht
+    möglich ist, dass sowohl Robin als auch Uli zweimal gewinnen.} Da der Wertebereich von $\zvy$
+    zweidimensional ist, bietet es sich an, die Wahrscheinlichkeitsfunktion $\wfk_Z$ der \gls{verteilung}
+    von $\zvy$ in Tabellenform anzugeben.
+
+    Die Zeilensummen ergeben die \gls{verteilung} von $\zvx$.
+    So gilt zum Beispiel, dass
+    \[
+        \pe(\zvx = 2) = \sum_{j=1}^{3} \pe(\zvx = 2, \zvy = j) = \sum_{j=1}^{3} \wfk_Z\bigl((2,j)\bigr)
+        = 3 \Bigl(\tfrac16\Bigr)^2 \tfrac46 + 3 \Bigl(\tfrac16\Bigr)^3 + 0 + 0
+        = \frac{15}{6^3} = 3 \Bigl(\tfrac16\Bigr)^2 \tfrac56.
+    \]
+    Rechts erkennen wir die Wahrscheinlichkeit, dass Robin in drei Runden zweimal gewinnt, wenn Uli
+    gar nicht mitspielt.
+    Ebenso ergeben die Spaltensummen die \gls{verteilung} von $\zvy$, und es gilt zum
+    Beispiel, dass
+    \[
+        \pe(\zvy = 1) = \sum_{i=1}^{3} \pe(\zvx = i, \zvy = 1) = \sum_{i=1}^{3} \wfk_Z\bigl((i,1)\bigr)
+        = \dots = \frac{75}{6^3}.
+    \]
+    Es bietet sich an, die Tabelle um die \gls{verteilung}en von $\zvx$ und $\zvy$ zu ergänzen:
+    \[
+        \renewcommand{\arraystretch}{1.6}
+        \begin{array}{c|cccc|c}
+            \wfk_Z((x,y)) & y = 0 & y = 1 & y = 2 & y = 3 & \wfk_\zvx(x) \\ \hline
+            x = 0 & \bigl(\tfrac46\bigr)^3 & 3\,\tfrac16\bigl(\tfrac46\bigr)^2
+            & 3\,\bigl(\tfrac16\bigr)^2\tfrac46 & \bigl(\tfrac16\bigr)^3
+            & \bigl(\tfrac56\bigr)^3 \\
+            x = 1 & 3\,\tfrac16\bigl(\tfrac46\bigr)^2 & 3!\,\bigl(\tfrac16\bigr)^2\tfrac46
+            & 3\,\bigl(\tfrac16\bigr)^3 & 0
+            & 3\,\tfrac16\bigl(\tfrac56\bigr)^2 \\
+            x = 2 & 3\,\bigl(\tfrac16\bigr)^2\tfrac46 & 3\,\bigl(\tfrac16\bigr)^3 & 0 & 0
+            & 3\,\bigl(\tfrac16\bigr)^2\tfrac56 \\
+            x = 3 & \bigl(\tfrac16\bigr)^3 & 0 & 0 & 0 & \bigl(\tfrac16\bigr)^3 \\ \hline
+            \wfk_\zvy(y) & \bigl(\tfrac56\bigr)^3 & 3\,\tfrac16\bigl(\tfrac56\bigr)^2
+            & 3\,\bigl(\tfrac16\bigr)^2\tfrac56 & \bigl(\tfrac16\bigr)^3 & 1
+        \end{array}
+    \]
+    Unten rechts sehen wir die Kontrolle: Die Summe über alle Felder im Inneren der Tabelle muss $1$
+    betragen, genau wie die Summen der am Rand vermerkten Zeilen- bzw.\ Spaltensummen.
 \end{bsp}
 
 \begin{defi}
-    \textbf{Gemeinsame Verteilung und Randverteilung von Zufallsvariablen} \txc{(Skript 26 - Defintion 3.29.)}  \\
-    todo  % TODO
+    \textbf{Gemeinsame \gls{verteilung} und Randverteilung von \gls{zv}n}
+    \txc{(Skript 26 - Defintion 3.29.)}  \\
+    Sei $(\eraum, \pe)$ ein Wahrscheinlichkeitsraum.
+    \begin{enumerate}[label=(\alph*)]
+        \item Seien $\zvx_1, \dots, \zvx_n$ \gls{zv}n, die auf $\eraum$ definiert sind.
+        Dann heißt
+        die \gls{verteilung} der $n$-dimensionalen \gls{zv}n $\zvx = (\zvx_1, \dots, \zvx_n)$ die
+        \emph{gemeinsame \gls{verteilung} der \gls{zv}n $\zvx_1, \dots, \zvx_n$}.
+        \item Ist andersherum eine $n$-dimensionale \gls{zv} $\zvx = (\zvx_1, \dots, \zvx_n)$ auf
+        $\eraum$ gegeben, so heißt die \gls{verteilung} von $\zvx_i$ die \emph{$i$-te Randverteilung von $\zvx$}.
+    \end{enumerate}
 \end{defi}
 
-\begin{bem}
+\begin{bem}[Warnung!]
     \txc{(Skript 26 - Bemerkung 3.30.)}  \\
-    todo  % TODO
+    Wir haben bereits in Beispiel 3.28 gesehen, wie wir aus einer gemeinsamen \gls{verteilung} von
+    \gls{zv}n die Randverteilungen ausrechnen können.
+    Leider gilt die Umkehrung nicht!
+    Wir
+    werden dies in einer der kommenden Vorlesungen genauer analysieren.
+
+    Das Berechnen einer Randverteilung aus der gemeinsamen \gls{verteilung} von \gls{zv}n
+    funktioniert im Fall von \gls{zv}n mit abzählbarem Bildbereich durch
+    ``heraus summieren'' der restlichen Variablen.
 \end{bem}
 
-\begin{lem}
+\begin{lem}[Bestimmen von Randverteilungen für \gls{zv}n mit abzählbarem Bildbereich]
     \txc{(Skript 26 - Lemma 3.31.)}  \\
-    todo  % TODO
+    Seien $(\eraum, \pe)$ ein Wahrscheinlichkeitsraum und $\zvx_1, \dots, \zvx_n$ \gls{zv}n auf
+    $(\eraum, \pe)$.
+    Dabei sei jedes $\zvx_i$ eine $E_i$-wertige \gls{zv}.
+    Ist $\wfk_X$ die
+    Wahrscheinlichkeitsfunktion der gemeinsamen \gls{verteilung} der \gls{zv}n $\zvx_1, \dots, \zvx_n$,
+    so ist für jedes $k \in \{1, \dots, n\}$ die Wahrscheinlichkeitsfunktion $\wfk_{\zvx_k}$ von $\zvx_k$
+    gegeben durch
+    \[
+        \wfk_{\zvx_k}(x) = \sum_{u_1 \in E_1} \cdots \sum_{u_{k-1} \in E_{k-1}}
+        \sum_{u_{k+1} \in E_{k+1}} \cdots \sum_{u_n \in E_n}
+        \wfk_\zvx(u_1, \dots, u_{k-1}, x, u_{k+1}, \dots, u_n) \qquad \forall\, x \in E_k.
+    \]
+    \begin{proof}
+        Um die Notation übersichtlich halten zu können, führen wir den Beweis für $n = 3$ und
+        $k = 2$ und schreiben $\zvx = \zvx_1$, $\zvy = \zvx_2$, $\zvy = \zvx_3$ und entsprechend $x = u_1$, $y$ für
+        die Werte von $\zvy = \zvx_2$ und $z = u_3$.
+        Aus der Definition von $\wfk_X$ folgt, dass
+        \[
+            \wfk_\zvy(y) = \pe(\zvy = y) = \pe(\zvx \in E_1, \zvy = y, \zvy \in E_3)
+            = \sum_{x \in E_1} \sum_{z \in E_3} \wfk_\zvx(x,y,z) \qquad \forall\, y \in E_2 ,
+        \]
+        also gilt $\wfk_\zvy(y) = \sum_{x \in E_1} \sum_{z \in E_3} \wfk_\zvx(x,y,z)$ für alle
+        $y \in E_2$.
+    \end{proof}
 \end{lem}
 
 
-\section{Mehrdimensionale Zufallsvariablen und ihre gemein-
-same Verteilung: Dichten}\label{sec:mehrdimensionale-zufallsvariablen-und-ihre-gemein-
-same-verteilung:-dichten}
+\section{Mehrdimensionale \gls{zv}n und ihre gemeinsame \gls{verteilung}: Dichten}
+\label{sec:mehrdim-zv-dichten}
 
-\begin{bsp}
+\txc{VL vom 15. Mai 2026}
+
+\begin{bsp}[Zufällige Punkte im Quadrat]
     \txc{(Skript 26 - Beispiel 3.32.)}  \\
-    todo  % TODO
+    \emph{Wie groß ist die Wahrscheinlichkeit, dass ein im Einheitsquadrat $Q$ zufällig gewählter
+    Punkt im Dreieck $D$ unter der Winkelhalbierenden liegt?}
+
+    Das Quadrat $Q$ und das Dreieck $D$ sind gegeben durch
+    \begin{align*}
+        Q &= [0,1] \times [0,1] = \{(x,y) \in \mathbb{R}^2 \colon 0 \leq x \leq 1,\ 0 \leq y \leq 1\},\\
+        D &= \{(x,y) \in Q \colon y \leq x\}.
+    \end{align*}
+    Intuitiv würden wir erwarten, dass $\pe(D) = \frac{|D|}{|Q|} = \frac12$ gilt, das heißt, wir
+    erwarten, dass sich die Wahrscheinlichkeit als Verhältnis der Inhalte von Dreieck und Quadrat
+    ergibt.
+
+    Zum ``Aufwärmen'' beginnen wir damit, die Inhalte von Quadrat und Dreieck formal zu
+    berechnen:
+    \begin{align*}
+        |Q| &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_Q(x,y) \dd x \dd y
+        = \int_{0}^{1} \left( \int_{0}^{1} 1 \dd x \right) \dd y = \int_{0}^{1} 1 \dd y = 1 ,\\
+        |D| &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_D(x,y) \dd x \dd y
+        = \int_{0}^{1} \left( \int_{y}^{1} 1 \dd x \right) \dd y
+        = \int_{0}^{1} (1-y) \dd y = 1 - \frac12 = \frac12.
+    \end{align*}
+    Dabei haben wir in der Berechnung des Inhalts des Dreiecks beim zweiten Gleichheitszeichen die
+    Indikatorfunktion ersetzt durch das Einsetzen der Integralgrenzen, die die Indikatorfunktion
+    vorschreibt.
+    Um im Dreieck $D$ zu sein, müssen zwei Bedingungen erfüllt sein: Einerseits muss
+    $x,y \in [0,1]$ gelten, andererseits muss auch $y \leqslant x$ gelten.
+    Da das äußere Integral die
+    Integrationsvariable $y$ hat, fordern wir dort nur, dass $y \in [0,1]$ gilt, was zum Integral
+    $\int_0^1 \dots \dd y$ führt.
+    (Die Grenzen des äußeren Integrals dürfen nicht von $x$ abhängen!)
+    Das innere Integral hängt nun von $y$ ab.
+    Wir behandeln $y \in [0,1]$ wie einen Parameter, wenn
+    wir das innere Integral berechnen.
+    Das innere Integral hat $x$ als Integrationsvariable, und $x$
+    muss $x \in [0,1]$ sowie $y \leqslant x$ erfüllen.
+    Wir fassen diese beiden Bedingungen zusammen
+    und erhalten ein Integral der Form $\int_y^1 \dots \dd x$.
+    Schließlich rechnen wir erst das
+    innere Integral (als Funktion des Parameters $y$) und dann das äußere Integral aus.
+
+    Alternativ können wir die Rechnung für den Inhalt des Dreiecks durch Vertauschen der
+    Integrationsreihenfolge vereinfachen.
+    Das Vertauschen ist möglich, weil die Indikatorfunktion
+    eine messbare, nicht negative Funktion ist:
+    \[
+        |D| = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_D(x,y) \dd x \dd y
+        = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \chi_D(x,y) \dd y \dd x
+        = \int_{0}^{1} \left( \int_{0}^{x} 1 \dd y \right) \dd x
+        = \int_{0}^{1} x \dd x = \frac12.
+    \]
+    Da wir mit der uniformen \gls{verteilung} auf dem Quadrat arbeiten, gilt, wie erwartet,
+    \[
+        \pe(D) = \frac{\displaystyle\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
+            \chi_D(x,y) \dd x \dd y}
+        {\displaystyle\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
+            \chi_Q(x,y) \dd x \dd y}
+        = \frac12.
+    \]
 \end{bsp}
 
 \begin{defi}
     \textbf{Mehrdimensionale Dichten}
     \txc{(Skript 26 - Defintion 3.33.)}  \\
-    todo  % TODO
+    \begin{enumerate}[label=(\alph*)]
+        \item Eine Funktion $f \colon \mathbb{R}^n \to [0,\infty)$ heißt \emph{$n$-dimensionale
+        Dichte}, falls $f$ Riemann-integrierbar ist und die Normierungsbedingung
+        \[
+            \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f(x_1, \dots, x_n)
+            \dd x_1 \dots \dd x_n = 1
+        \]
+        erfüllt ist.
+        \item Eine $n$-dimensionale Dichte $f$ heißt \emph{gemeinsame Dichte der \gls{zv}n
+            $\zvx_1, \dots, \zvx_n$}, wobei jedes $\zvx_i$ eine $E_i$-wertige \gls{zv} auf demselben
+        Wahrscheinlichkeitsraum $(\eraum, \pe)$ ist, wenn
+        \[
+            \pe(\zvx_1 \leqslant a_1, \dots, \zvx_n \leqslant a_n)
+            = \int_{-\infty}^{a_n} \cdots \int_{-\infty}^{a_1} f(x_1, \dots, x_n)
+            \dd x_1 \dots \dd x_n
+            \quad \forall\, a_1 \in E_1, \dots, a_n \in E_n
+        \]
+        gilt.
+    \end{enumerate}
+    Dabei verstehen wir unter $\{\zvx_1 \leqslant a_1, \dots, \zvx_n \leqslant a_n\}$ das Ereignis, dass
+    alle $n$ Bedingungen simultan erfüllt sind, das heißt,
+    \begin{align*}
+        \{\zvx_1 \leqslant a_1, \dots, \zvx_n \leqslant a_n\}
+        &= \{\ele \in \eraum \colon \zvx_1(\ele) \leqslant a_1 \text{ und } \dots \text{ und }
+        \zvx_n(\ele) \leqslant a_n\}\\
+        &= \{\zvx_1 \leqslant a_1\} \cap \dots \cap \{\zvx_n \leqslant a_n\}\\
+        &= \bigcap_{i=1}^{n} \{\zvx_i \leqslant a_i\}.
+    \end{align*}
 \end{defi}
 
 \begin{defi}
-    \textbf{uniforme Verteilung}
+    \textbf{uniforme \gls{verteilung}}
     \txc{(Skript 26 - Defintion 3.34.)}  \\
-    todo  % TODO
+    Sei $C \subset \mathbb{R}^n$ eine messbare Menge in $\mathbb{R}^n$ mit endlichem Inhalt, das
+    heißt, es gelte $|C| = \lambda^n(C) < \infty$.
+    Dann heißt die Funktion
+    $f \colon \mathbb{R}^n \to [0,\infty)$, die durch
+    \[
+        f(x_1, \dots, x_n) = \frac{1}{|C|} \chi_C\bigl((x_1, \dots, x_n)\bigr) =
+        \begin{cases}
+            \frac{1}{|C|} & \text{für } (x_1, \dots, x_n) \in C ,\\
+            0             & \text{sonst,}
+        \end{cases}
+        \qquad \forall\, (x_1, \dots, x_n) \in \mathbb{R}^n
+    \]
+    definiert ist, \emph{Dichte der uniformen \gls{verteilung} auf $C$}.
 \end{defi}
 
-\begin{lem}
+\begin{lem}[Berechnen von Randdichten]
     \txc{(Skript 26 - Lemma 3.35.)}  \\
-    todo  % TODO
+    Sei $f \colon \mathbb{R}^n \to [0,\infty)$ eine $n$-dimensionale Dichte der gemeinsamen
+    \gls{verteilung} der \gls{zv}n $\zvx_1, \dots, \zvx_n$.
+    Für $k \in \{1, \dots, n\}$ ist die Funktion
+    $f_k \colon \mathbb{R} \to [0,\infty)$, gegeben durch
+    \[
+        f_k(x) = \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty}
+        f(u_1, \dots, u_{k-1}, x, u_{k+1}, \dots, u_n)
+        \dd x_1 \dots \dd x_{k-1} \dd x_{k+1} \dots \dd x_n \qquad \forall\, x \in \mathbb{R} ,
+    \]
+    eine Dichte der \gls{zv}n $\zvx_k$.
+    \begin{proof}
+        Um von einer übersichtlicheren Notation profitieren zu können, führen wir den Beweis nur für
+        $n = 2$ und $k = 1$.
+        Wir schreiben $\zvx = \zvx_1$, $\zvy = \zvx_2$ sowie $x = x_1$ und $y = x_2$.
+        Für beliebiges $a \in \mathbb{R}$ gilt
+        \begin{align*}
+            \pe(\zvx \leqslant a) &= \pe(\zvx \leqslant a, \zvy \in \mathbb{R})\\
+            &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
+            f(x,y) \chi_{(-\infty,a]}(x) \dd x \dd y\\
+            &= \int_{-\infty}^{\infty} \int_{-\infty}^{a} f(x,y) \dd x \dd y.
+        \end{align*}
+        Da $f$ eine nichtnegative, messbare Funktion ist, dürfen wir die Integrationsreihenfolge
+        vertauschen.
+        Damit folgt
+        \[
+            \pe(\zvx \leqslant a) = \int_{-\infty}^{a} \left( \int_{-\infty}^{\infty} f(x,y) \dd y
+            \right) \dd x = \int_{-\infty}^{a} f_\zvx(x) \dd x
+        \]
+        mit $f_\zvx(x) = \int_{-\infty}^{\infty} f(x,y) \dd y$.
+        Da $a \in \mathbb{R}$ beliebig war,
+        folgt, dass $f_X$ eine Dichte von $\zvx$ ist.
+
+        \emph{Es ist eine gute Übung für Sie, entlang der Schritte dieses Beweises den Beweis für
+            $n = 3$ und $k = 2$ selbständig zu führen.}
+    \end{proof}
 \end{lem}
+
+Im Vergleich zum Fall von Wahrscheinlichkeitsfunktionen erhalten wir hier die \gls{verteilung} von $\zvx_k$
+aus der gemeinsamen \gls{verteilung} von $(\zvx_1, \dots, \zvx_n)$, indem wir die restlichen Variablen
+``heraus integrieren'' anstelle von ``heraus summieren''.
 
 \begin{defi}
     \textbf{Randdichte}
-    \txc{(Skript 26 - Defintion 3.34.)}  \\
-    todo  % TODO
+    \txc{(Skript 26 - Defintion 3.36.)}  \\
+    Die Dichte $f_k$ von $\zvx_k$ gemäß Lemma 3.35 nennen wir \emph{$k$-te Randdichte von
+        $(\zvx_1, \dots, \zvx_n)$}.
 \end{defi}
 
 % TODO Beispielaufgaben
