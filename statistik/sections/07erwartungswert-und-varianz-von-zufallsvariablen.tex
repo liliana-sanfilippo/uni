@@ -44,7 +44,7 @@ berechnen wie z.B. $\pe(\zvx  \geq 2)$, und diese Wahrscheinlichkeiten hängen n
 Verteilung ab, nicht von der Wahl des Wahrscheinlichkeitsraums $\wraum$.). \\
 Sind $\zvx$ und $\zvy$ zwei \Glspl{zv} \un{mit derselben Verteilung}, so gilt
 \[
-    \pe(\zvx  \in A)= \pe_\zvx(A)= \pe_\zvy(A)= \pe(\zvy \in A)
+    \pe(\zvx  \in A)= \pex(A)= \pey(A)= \pe(\zvy \in A)
 \]
 für jedes $A$. \\
 Es ist nicht immer klar, welche Verteilung zu einem sinnvollen Modell führt.
@@ -250,7 +250,7 @@ Dies führt uns in die Statistik (später).
     \textbf{Erwartungswert der Poisson-Verteilung} \txc{(2026)}  \\
     $\zvx$ Poisson-verteilt, d.h., es existiert ein $\lambda > 0$ mit
     \[
-        \wfk_\zvx(k)= \pe (\zvx =k)= \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
+        \wfk_{\zvx}(k)= \pe (\zvx =k)= \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat: \\
     (Wir verwenden in dieser Argumentation, dass $\zvx$ nur nichtnegative Werte hat, d.h., $\zvx \geq 0$.)
@@ -270,7 +270,7 @@ Dies führt uns in die Statistik (später).
     \txo{
         \begin{align*}
             *1 & \quad \zvx(\eraum)= \nz_0 \\
-            *2 & \quad \pe(\zvx =k)= \wfk_\zvx(k)= \dots
+            *2 & \quad \pe(\zvx =k)= \wfk_{\zvx}(k)= \dots
         \end{align*}
     }
 \end{bsp}
@@ -282,7 +282,7 @@ Dies führt uns in die Statistik (später).
     – Raten Sie!)\\
     $\zvx$ geometrisch verteilt mit Erfolgswahrscheinlichkeit \(p \in (0,1)\), d.h.,
     \[
-        \wfk_\zvx(k)= \pe (\zvx =k)= p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
+        \wfk_{\zvx}(k)= \pe (\zvx =k)= p(1-p)^{k-1} \quad \text{für alle } k \in \nz_0 = \{0, 1, 2, 3, \dots \}
     \]
     Der Erwartungswert existiert, weil die folgende Rechnung ein endliches Ergebnis hat (Wir verwenden wieder, dass $\zvx \geq 0$)).
     \txo{
@@ -544,7 +544,7 @@ Dies führt uns in die Statistik (später).
     Die Zufallsvariable $\zvx:\eraum\to\rz$ sei definiert durch $ \zvx(n)=2^n$ \txo{(Ausazhlung)} für alle $n\in\eraum$
 
     \[
-        \wfk_\zvx(2^n)
+        \wfk_{\zvx}(2^n)
         =
         \pe(\oub{\zvx =2^n}{\text{Kopf erstmalig im n-ten Wurf}})
         =
@@ -565,7 +565,7 @@ Dies führt uns in die Statistik (später).
 
     Nun ist jedoch
     \[
-        \sum_{n=1}^{\infty} 2^n \pe(\zvx =2^n)= \sum_{n=1}^{\infty} 2^n \wfk_\zvx(2^n)= \sum_{n=1}^{\infty} 2^n 2^{-n} = \sum_{n=1}^{\infty} 1 = \infty
+        \sum_{n=1}^{\infty} 2^n \pe(\zvx =2^n)= \sum_{n=1}^{\infty} 2^n \wfk_{\zvx}(2^n)= \sum_{n=1}^{\infty} 2^n 2^{-n} = \sum_{n=1}^{\infty} 1 = \infty
     \]
     Der Erwartungswert existiert also nicht.
     Ein fairer Einsatz kann nicht bestimmt werden.
@@ -1307,7 +1307,7 @@ Unter Verwendung der Unabhängigkeit der $\zvx_i$ folgt ohne weitere Arbeit aus 
                           0 & sonst
         \end{cases}
     \]
-    \item[(b)] \(\E{\zvx ^2} = \intinfs x^2 f_\zvx(x)\dx  \)
+    \item[(b)] \(\E{\zvx ^2} = \intinfs x^2 f_{\zvx}(x)\dx  \)
 \end{itemize}
 \paragraph{Beweis (a).}
     Für $y \leq 0$ $F_{ \zvx^2} (y)= \pe (\zvx ^2 \leq y)= 0$. \\
@@ -1316,8 +1316,8 @@ Unter Verwendung der Unabhängigkeit der $\zvx_i$ folgt ohne weitere Arbeit aus 
     \begin{align*}
         F_{ \zvx^2}(y)& = \pe (\zvx ^2 \leq y)\\
         & = \pe (- \sqrt{y} < \zvx \leq \sqrt{y})\\
-        & = \int_0^{\sqrt{y}} f_\zvx(x)\dx + \int^0_{-\sqrt{y}} f_\zvx(x)\dx \\
-        & = \int_0^{\sqrt{y}} f_\zvx(x)\dx + \int_0^{\sqrt{y}} f_\zvx(- x)\dx \\
+        & = \int_0^{\sqrt{y}} f_{\zvx}(x)\dx + \int^0_{-\sqrt{y}} f_{\zvx}(x)\dx \\
+        & = \int_0^{\sqrt{y}} f_{\zvx}(x)\dx + \int_0^{\sqrt{y}} f_{\zvx}(- x)\dx \\
         \int_0^{y} \frac{1}{2 \sqrt{z}} \left[  f_X (\sqrt{z})+ f_X (-\sqrt{z})\right] dz
     \end{align*}
 \paragraph{Beweis (b).}
@@ -1327,7 +1327,7 @@ $z = -x$, die die Substitutionen in Teil (a)rückgängig machen, zeigen
     \E{\zvx ^2} & = \intinfs y f_{ \zvx^2} (y)dy \\
     & = \int_{0}^{\infty} \frac{y}{2\sqrt{y}}  \left[  f_X (\sqrt{y})+ f_X (-\sqrt{y})\right] dy \\
     & = \int_{0}^{\infty} \frac{x}{2} \left[  f_X (\sqrt{y})+ f_X (-\sqrt{y})\right] 2x \dx  \\
-    & = \int_{0}^{\infty} x^2 f_X (x)\dx + \int^0_{-\infty}  z^2 f_\zvx(z)dz \\
+    & = \int_{0}^{\infty} x^2 f_X (x)\dx + \int^0_{-\infty}  z^2 f_{\zvx}(z)dz \\
     & = \intinfs x^2 f_X (x)\dx
 \end{align*}
 \end{satz}
