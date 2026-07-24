@@ -66,95 +66,95 @@
 
 \newglossaryentry{StichprobeN}{
     name={Stichprobe vom Umfang $n$},
-    description={Eine Teilmenge der Größe $n$, die zufällig aus der \gls{Grundgesamtheit} gewählt wurde},
-    type=defi
+description={Eine Teilmenge der Größe $n$, die zufällig aus der \gls{Grundgesamtheit} gewählt wurde},
+type=defi
 }
 
 \newglossaryentry{Urliste}{
-    name={Urliste},
-    description={Die erhobenen Daten, d.h., die Elemente der Stichprobe zusammen mit ihren
-    Merkmalsausprägungen},
-    type=defi
+name={Urliste},
+description={Die erhobenen Daten, d.h., die Elemente der Stichprobe zusammen mit ihren
+Merkmalsausprägungen},
+type=defi
 }
 
 \newglossaryentry{Ausprägung}{
-    name={Ausprägung},
-    description={todo},
-    type=defi
+name={Ausprägung},
+description={todo},
+type=defi
 }
 
 \newglossaryentry{Grundgesamtheit}{
-    first={Grundgesamtheit / Population},
-    name={Grundgesamtheit},
-    description={Die Menge aller Merkmalsträger, über die eine Aussage getroffen werden soll},
-    type=defi
+first={Grundgesamtheit / Population},
+name={Grundgesamtheit},
+description={Die Menge aller Merkmalsträger, über die eine Aussage getroffen werden soll},
+type=defi
 }
 
 \newglossaryentry{Versuchseinheit}{
-    name={Versuchseinheit},
-    description={todo},
-    type=defi
+name={Versuchseinheit},
+description={todo},
+type=defi
 }
 
 \newglossaryentry{Merkmal}{
-    name={Merkmal},
-    description={ zu untersuchende Größe (ein- oder mehrdimensional, vgl.\ Farbe mit dem Tripel (Alter, Größe, Gewicht))},
-    type=defi
+name={Merkmal},
+description={ zu untersuchende Größe (ein- oder mehrdimensional, vgl.\ Farbe mit dem Tripel (Alter, Größe, Gewicht))},
+type=defi
 }
 
 \newglossaryentry{Datenerhebung}{
-    name={Datenerhebung},
-    description={Feststellen der Werte von Merkmalen an ausgewählten Versuchseinheiten},
-    type=defi
+name={Datenerhebung},
+description={Feststellen der Werte von Merkmalen an ausgewählten Versuchseinheiten},
+type=defi
 }
 
 \newglossaryentry{Hypothesentest}{
-    name={Hypothesentest},
-    description={todo},
-    type=defi
+name={Hypothesentest},
+description={todo},
+type=defi
 }
 
 \newglossaryentry{Hypothese}{
-    name={Hypothese},
-    description={todo},
-    type=defi
+name={Hypothese},
+description={todo},
+type=defi
 }
 \newglossaryentry{Fehler erster Art}{
-    name={Fehler erster Art},
-    description={todo},
-    type=defi
+name={Fehler erster Art},
+description={todo},
+type=defi
 }
 
 \newglossaryentry{Punkthypothese}{
-    name={Punkthypothese},
-    description={todo},
-    type=defi
+name={Punkthypothese},
+description={todo},
+type=defi
 }
 
 
 \newglossaryentry{Teststatistik}{
-    name={Teststatistik},
-    description={todo},
-    type=defi
+name={Teststatistik},
+description={todo},
+type=defi
 }
 
 
 \newglossaryentry{Signifikanzniveau}{
-    name={Signifikanzniveau},
-    description={todo},
-    type=defi
+name={Signifikanzniveau},
+description={todo},
+type=defi
 }
 
 \newglossaryentry{Stichprobenraum}{
-    name={Stichprobenraum},
-    description={todo},
-    type=defi
+name={Stichprobenraum},
+description={todo},
+type=defi
 }
 
 \newglossaryentry{Stichprobenvariable}{
-    name={Stichprobenvariable},
-    description={todo},
-    type=defi
+name={Stichprobenvariable},
+description={todo},
+type=defi
 }
 
 
@@ -162,40 +162,55 @@
 \newacronym{ws}{WS}{Wahrscheinlichkeiten}
 \newacronym{bws}{B-WS}{Bedingte Wahrscheinlichkeit}
 
-\newacronym{zv}{ZV}{Zufallsvariable}
+
+\newglossaryentry{zv}{
+name={Zufallsvariable},
+description={X},
+symbol={Y},
+plural={Z},
+formB={S}
+}
 
 \newglossaryentry{zweidimensionaledichte}{
-    name={zweidimensionale Dichte},
-    description ={todo}
+name={zweidimensionale Dichte},
+description ={todo}
 }
 
 \newglossaryentry{stst}{
-    name={stückweise stetig},
-    description ={Eine Funktion \(f \colon [a,b] \to \mathbb{R}\) heißt \emph{stückweise stetig}, wenn es eine Zerlegung
-    \[
-        a = x_0 < x_1 < \cdots < x_n = b
-    \]
-    gibt, sodass \(f\) auf jedem offenen Teilintervall
-    \[
-        (x_{i-1},x_i), \quad i=1,\dots,n,
-    \]
-    stetig ist und an den Zerlegungspunkten die einseitigen Grenzwerte
-    \[
-        \lim_{x \to x_i^-} f(x)
-        \quad \text{und} \quad
-        \lim_{x \to x_i^+} f(x)
-    \]
-    jeweils existieren und endlich sind.}
+name={stückweise stetig},
+description ={Eine Funktion \(f \colon [a,b] \to \mathbb{R}\) heißt \emph{stückweise stetig}, wenn es eine Zerlegung
+\[
+a = x_0 < x_1 < \cdots < x_n = b
+\]
+gibt, sodass \(f\) auf jedem offenen Teilintervall
+\[
+(x_{i-1},x_i), \quad i=1,\dots,n,
+\]
+stetig ist und an den Zerlegungspunkten die einseitigen Grenzwerte
+\[
+\lim_{x \to x_i^-} f(x)
+\quad \text{und} \quad
+\lim_{x \to x_i^+} f(x)
+\]
+jeweils existieren und endlich sind.}
+}
+\newglossaryentry{verteilungsfunktion_zv}{
+first={Verteilungsfunktion einer Zufallsvariablen}
+name={Verteilungsfunktion},
+symbol={\ensuremath{F}},
+plural={\ensuremath{F_X}},
+description ={todo}
 }
 
+
 \newglossaryentry{vfkt}{
-    name={Verteilungsfunktion der Standardnormalverteilung},
-    symbol={\ensuremath{\Phi}},
-    description ={\ensuremath{ \int_{- \infty}^y  \frac{1}{\sqrt{2\pi}} e^{x^2 / 2} \dx }}
+name={Verteilungsfunktion der Standardnormalverteilung},
+symbol={\ensuremath{\Phi}},
+description ={\ensuremath{ \int_{- \infty}^y  \frac{1}{\sqrt{2\pi}} e^{x^2 / 2} \dx }}
 }
 
 \newglossaryentry{npq}{
-    name={Standardabweichung von $S_n$},
+name={Standardabweichung von $S_n$},
 symbol={\ensuremath{\sqrt{npq}}},
 description ={todo}
 }

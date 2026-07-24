@@ -57,7 +57,7 @@ Elementarereignissen zu einem kleineren Wahrscheinlichkeitsraum zu wechseln.
     \textbf{\gls{zv}} \txc{(2025)}  \\
     Für einen \gls{wraum} $\wraum$ und eine Menge $E \neq \emptyset$ nennen wir eine messbare Abbildung
     \[
-        X: \glssymbol{eraum}  \rightarrow E
+        \zvx: \glssymbol{eraum}  \rightarrow E
     \]
     eine $E$-wertige \gls{zv}.
 \end{defi}
@@ -80,23 +80,23 @@ ein erster Schritt in diese Richtung.
 
 \begin{defi}
     \textbf{Bild- und Wertebereich einer Zufallsvariablen} \txc{(Skript 26 - Definition 3.4.)}  \\
-    Sei $X : \eraum \rightarrow E$ eine E-wertige Zufallsvariable auf einem Wahrscheinlichkeitsraum $\wraum$. Dann
-    heißt E der Wertebereich von X, und
+    Sei $\zvx : \eraum \rightarrow E$ eine E-wertige Zufallsvariable auf einem Wahrscheinlichkeitsraum $\wraum$. Dann
+    heißt E der Wertebereich von $\zvx$, und
 \[
-    X(\eraum) = {X(\ele) : \ele \in \eraum}
+    \zvx(\eraum) = {\zvx(\ele) : \ele \in \eraum}
 \]
-    der Bildbereich von X.
+    der Bildbereich von $\zvx$.
 \end{defi}
 
 \begin{bem}   \txc{(Skript 26 - Bemerkung 3.5.)}  \\
-Es gilt stets $X(Ω) ⊆ E$. Der Bildbereich ist die kleinstmögliche Menge, die alle Werte enthält,
-die X annehmen kann.
+Es gilt stets $\zvx(\eraum) \subseteq E$. Der Bildbereich ist die kleinstmögliche Menge, die alle Werte enthält,
+die $\zvx$ annehmen kann.
 
 st Sn wie in Beispiel \autoref{bsp:n-faches-Werfen-einer-fairen-Münze} die Anzahl der Erfolge in einem
 Zufallsexperiment der Länge $n \in \nz$,
 so können wir Sn auffassen als Abbildung von $\eraum$ nach $E = \nz_0$, aber auch als Abbildung
 nach $E = \{0, 1, . . . , n\}$ oder gar nach $E = \rz$. Unabhängig davon, wie wir den Wertebereich E
-wählen, gilt für den Bildbereich stets $X(\eraum) = \{0, 1, . . . , n\}$.
+wählen, gilt für den Bildbereich stets $\zvx(\eraum) = \{0, 1, . . . , n\}$.
 \end{bem}
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -106,14 +106,14 @@ wählen, gilt für den Bildbereich stets $X(\eraum) = \{0, 1, . . . , n\}$.
 \begin{defi}
     \label{def:verteilung-zv}
     \textbf{Verteilung einer \gls{zv}} \txc{(2025)}  \\
-    Sei $X$ eine $E$-wertige \gls{zv} auf $\wraum$
+    Sei $\zvx$ eine $E$-wertige \gls{zv} auf $\wraum$
     \[
-        \pe_X(B) \coloneqq  \pe(\kl{\oio : X(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(X \in B)}{Kurzschreibweise}
+        \pe_{\zvx}(B) \coloneqq  \pe(\kl{\oio : \zvx(\glssymbol{elementarereignis}) \in B}) \quad \forall \txt{messbaren } B \subset E = \oub{\pe(\zvx \in B)}{Kurzschreibweise}
     \]
-    Das \gls{wmaß} $\pe_X$ auf $E$ heißt Verteilung von $X$.
+    Das \gls{wmaß} $\pe_{\zvx}$ auf $E$ heißt Verteilung von $\zvx$.
 \end{defi}
-\komm{\defirefman{verteilung-zv}: Die Verteilung von X beschreibt, wie die Werte von X verteilt sind, also
-\textbf{wie wahrscheinlich verschiedene Ergebnisse von X sind}.}
+\komm{\defirefman{verteilung-zv}: Die Verteilung von $\zvx$ beschreibt, wie die Werte von $\zvx$ verteilt sind, also
+\textbf{wie wahrscheinlich verschiedene Ergebnisse von $\zvx$ sind}.}
 
 \begin{bsp} \textbf{Münzwurf} \txc{(Skript 26 - Beispiel 3.7.)}  \\
 % TODO
@@ -125,21 +125,21 @@ wählen, gilt für den Bildbereich stets $X(\eraum) = \{0, 1, . . . , n\}$.
 \end{bem}
 
 \begin{lem} \txc{(2025)} \\
-Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_X$ ein \gls{wmaß}.
+Ist $\glssymbol{eraum} $ abzählbar und $\pe$ durch die \gls{wfk} $\glssymbol{wfk}$ gegeben, so ist $\pe_{\zvx}$ ein \gls{wmaß}.
 
     \paragraph{Beweis.}
     \[
-        \glssymbol{wfk}_X (e) = \pe_X(\kl{e}) = \txc{\pe(X \in \kl{e}) = } \pe(X=e) = \sum_{\substack{\oio \\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}(e) \geq 0
+        \glssymbol{wfk}_{\zvx} (e) = \pe_{\zvx}(\kl{e}) = \txc{\pe(\zvx \in \kl{e}) = } \pe(\zvx=e) = \sum_{\substack{\oio \\ \zvx(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}(e) \geq 0
     \]
     z.z.\ Normierung
     \[
-        \sum_{e \in E} \glssymbol{wfk}_X (e) = \sum_{e \in E} \sum_{\substack{\oio :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) =  \sum_{\substack{\oio \\ e \in E :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}  (\glssymbol{elementarereignis}) = \sum_{\substack{\oio :\\ X(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) = \sum_{\oio} \glssymbol{wfk} (\glssymbol{elementarereignis}) = 1
+        \sum_{e \in E} \glssymbol{wfk}_{\zvx} (e) = \sum_{e \in E} \sum_{\substack{\oio :\\ \zvx(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) =  \sum_{\substack{\oio \\ e \in E :\\ \zvx(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk}  (\glssymbol{elementarereignis}) = \sum_{\substack{\oio :\\ \zvx(\glssymbol{elementarereignis}) = e}} \glssymbol{wfk} (\glssymbol{elementarereignis}) = \sum_{\oio} \glssymbol{wfk} (\glssymbol{elementarereignis}) = 1
     \]
     \txc{(Ausführlicher auf Seite 31 im Skript 26)}
 \end{lem}
 
 \begin{kor} \textbf{Induzierter Wahrscheinlichkeitsraum} \txc{(Skript 26 - Korollar 3.10.)}  \\
-$(E, \pe_X)$ ist ein Wahrscheinlichkeitsraum.
+$(E, \pe_{\zvx})$ ist ein Wahrscheinlichkeitsraum.
 \end{kor}
 
 \begin{bsp} \txc{(Skript 26 - Beispiel 3.11.)}  \\
@@ -148,18 +148,18 @@ todo  % TODO
 
 \section{Notationen}\label{sec:notationen} \txc{(2025)}
 \[
-    \pe(X \in B) = \pe(\kl{\oio: X(\glssymbol{elementarereignis}) \in B})
+    \pe(\zvx \in B) = \pe(\kl{\oio: \zvx(\glssymbol{elementarereignis}) \in B})
 \]
 Falls $B$ ein Intervall ist:
 \[
-    \pe(X \geq b), \quad \pe(a < X \leq b) , \dots
+    \pe(\zvx \geq b), \quad \pe(a < \zvx \leq b) , \dots
 \]
 \begin{defi} \textbf{Wertebereich} \txc{(2025)}  \label{def:wert-bild-e} \\
     Geg.:
     \[
-        X: \glssymbol{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
+        \zvx: \glssymbol{eraum}  \rightarrow E \txt{\gls{zv} auf } \wraum
     \]
-    Dann heißt $E$ der Wertebereich und $X(\glssymbol{eraum} )\coloneqq  \kl{X(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
+    Dann heißt $E$ der Wertebereich und $\zvx(\glssymbol{eraum} )\coloneqq  \kl{\zvx(\glssymbol{elementarereignis}): \oio}$ heißt Bildbereich.
 \end{defi}
 
 \begin{lem} \txc{(Skript 26 - Lemma 3.13.)}  \\
@@ -178,44 +178,142 @@ todo  % TODO
 \end{bsp}
 
 \begin{bem} \defirefman{wert-bild-e} \txc{(2025)}  \\
-    $X(\glssymbol{eraum} ) \subset E$ gilt immer.
+    $\zvx(\glssymbol{eraum} ) \subset E$ gilt immer.
 \end{bem}
 
-\komm{Denn $X(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
+\komm{Denn $\zvx(\glssymbol{eraum} ) $ ist ein $\oio$ und jedes \glssymbol{elementarereignis} ist ein Element aus $E$.}
 
 \begin{bem} \defirefman{wert-bild-e} \txc{(2025)}  \\
     Gegeben ist ein \gls{wmaß} auf $\tilde {\glssymbol{eraum}}$, so existiert eine \gls{zv}, deren Verteilung genau dieses \gls{wmaß} ist. \\
     \noindent Sei $(\tilde {\glssymbol{eraum}} , \tilde\pe)$ ein beliebiger \gls{wraum}. \\
-    $X: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
+    $\zvx: \glssymbol{eraum}  \rightarrow \tilde{\glssymbol{eraum}} $ definiert durch:
     \begin{align*}
     {\glssymbol{eraum}}
         & \coloneqq  \tilde{\glssymbol{eraum}}  \\
         \pe&\coloneqq  \tilde\pe\\
-        X(\glssymbol{elementarereignis}) & = \glssymbol{elementarereignis} \txt{Identität} \faoio
+        \zvx(\glssymbol{elementarereignis}) & = \glssymbol{elementarereignis} \txt{Identität} \faoio
     \end{align*}
     \[
-        \pagebreak(X \in B) = \pe(\oub{\kl{\oio: X(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
+        \pagebreak(\zvx \in B) = \pe(\oub{\kl{\oio: \zvx(\glssymbol{elementarereignis}) \in B}}{=B}) = \pe(B) = \tilde \pe(B)
     \]
-    $\Rightarrow X$ hat Verteilung $\tilde\pe$
+    $\Rightarrow \zvx$ hat Verteilung $\tilde\pe$
 \end{bem}
 
 \komm{Zu jedem Wahrscheinlichkeitsmaß auf einem Messraum existiert eine Zufallsvariable, die genau dieses Maß als Verteilung hat. \\
 aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexperiment konstruieren, das diese Verteilung als Ergebnis hat.}
 
-\begin{defi} \txc{(Skript 26 - Definition 3.14.)}  \\
-todo  % TODO
+\begin{defi}[\gls{verteilungsfunktion_zv}] \txc{(Skript 26 - Definition 3.14.)}  \\
+Seien $\wraum$ ein \gls{wraum} und $\zvx : \eraum \rightarrow \rz$ eine $\rz$-wertige \gls{zv}.
+Dann heißt die Funktion $\fxx : \rz \rightarrow [0,1]$, die gegeben ist durch
+    \[
+        \fxx(x) = \pe(\zvx \leq x) = \pe_{\zvx}((-\infty,x]) \quad \forall x \in \rz
+    \]
+    die \gls{verteilungsfunktion_zv}.
 \end{defi}
 
-\begin{bsp} \txc{(Skript 26 - Beispiel 3.15.)}  \\
-todo  % TODO
+\begin{bem}
+    Achtung, Verwechslungsgefahr! Wahrscheinlichkeitsfunktion $\wfk_{\zvx}$ und Verteilungsfunktion $\fxx$ sind ver-
+    schiedene Konzepte!
+\end{bem}
+
+\begin{bsp}[Fortsetzung des Münzwurf-Beispiels] \txc{(Skript 26 - Beispiel 3.15.)}  \\
+Wir werfen nun unsere faire Münze fünfmal, das heißt, wir betrachten die Zufallsvariable $\zvs_5$. Die
+zugehörige Verteilungsfunktion ist gegeben durch
+\[
+    \fx_{\zvs_5}(x)
+    =
+    \pe(\zvs_5 \le x)
+    =
+    \begin{cases}
+        0,
+        &
+        \text{für } x < 0,
+        \\[0.5em]
+        \pe(\zvs_5 \le 0)
+        =
+        \wfk_{\zvs_5}(0)
+        =
+        2^{-5}
+        =
+        \frac{1}{32},
+        &
+        \text{für } 0 \le x < 1,
+        \\[0.5em]
+        \pe(\zvs_5 \le 1)
+        =
+        \wfk_{\zvs_5}(0)
+        +
+        \wfk_{\zvs_5}(1)
+        =
+        2^{-5}
+        +
+        \binom{5}{1}2^{-5}
+        =
+        \frac{6}{32},
+        &
+        \text{für } 1 \le x < 2,
+        \\[0.5em]
+        \pe(\zvs_5 \le 2)
+        =
+        \sum_{i=0}^{2}\wfk_{\zvs_5}(i)
+        =
+        \fx_{\zvs_5}(1)
+        +
+        \wfk_{\zvs_5}(2)
+        =
+        \frac{1}{2},
+        &
+        \text{für } 2 \le x < 3,
+        \\[0.5em]
+        \pe(\zvs_5 \le 3)
+        =
+        \sum_{i=0}^{3}\wfk_{\zvs_5}(i)
+        =
+        \fx_{\zvs_5}(2)
+        +
+        \wfk_{\zvs_5}(3)
+        =
+        \frac{26}{32},
+        &
+        \text{für } 3 \le x < 4,
+        \\[0.5em]
+        \pe(\zvs_5 \le 4)
+        =
+        \sum_{i=0}^{4}\wfk_{\zvs_5}(i)
+        =
+        \fx_{\zvs_5}(3)
+        +
+        \wfk_{\zvs_5}(4)
+        =
+        \frac{31}{32},
+        &
+        \text{für } 4 \le x < 5,
+        \\[0.5em]
+        1,
+        &
+        \text{für } x \ge 5.
+    \end{cases}
+\]
 \end{bsp}
 
-\begin{lem} \txc{(Skript 26 - Lemma 3.17.)}  \\
-todo  % TODO
+\begin{lem}[Eigenschaften von Verteilungsfunktionen I: allgemeine Eigenschaften] \txc{(Skript 26 - Lemma 3.17.)}  \\
+Sei $\fxx$ eine \gls{verteilungsfunktion_zv}. Dann gelten:
+    \begin{itemize}
+        \item $\fxx$ ist monoton wachsend
+        \item $\fxx$ ist rechtsstetig, d.h.: Für jedes $x_0 \in \rz$ und jede Folge $(x_n)_{n \in \nz}$ mit $x_n \searrow x_0$ gilt $\limnin \fxx (x_n) = \fxx (x_0)$
+        \item $\lim_{x \rightarrow - \infty} \fxx =(x) = 0$ und $\limnin \fxx (x) = 1$
+    \end{itemize}
 \end{lem}
 
-\begin{lem} \txc{(Skript 26 - Lemma 3.17.)}  \\
-todo  % TODO
+\begin{lem}[Rechnen mit Verteilungsfunktionen I: allgemeine Rechenregeln] \txc{(Skript 26 - Lemma 3.17.)}  \\
+Sei $- \infty < a \leq b < \infty$.
+Für die Verteilungsfunktion einer Zufallsvariablen $\zvx$ gelten neben der definierenden Gleichheit (siehe (b)) auch
+die folgenden Rechenregeln:
+    \begin{itemize}
+        \item \( \pe (a < \zvx \leq b) 0 fxx (b) - \fxx (a)\)
+        \item \(\pe(\zvx \leq b) = \fxx (b)\)
+        \item \(\pe(\zvx > a) = 1 - \fxx(a)\)
+    \end{itemize}
 \end{lem}
 
 \section{Zufallsvariablen mit abzählbarem Bildbereich}\label{sec:zufallsvariablen-mit-abzahlbarem-bildbereich}
