@@ -232,7 +232,7 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
     \]
 \end{bsp}
 
-\begin{defi}\textbf{\gls{Häufigkeitsverteilung}} \txc{(Skript 26)} \\
+\begin{defi}[\gls{Häufigkeitsverteilung}] \txc{(Skript 26)} \\
     Gegeben: Stichprobe $x_1,\dots,x_n$; \gls{Merkmal} $X$ mit genau $s$ möglichen Ausprägungen $a_1,\dots,a_s$.
     \begin{enumerate}[label=(\alph*)]
         \item \textbf{Absolute Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
@@ -367,12 +367,12 @@ Schweinchen haben wir u.a.\ folgende Möglichkeiten der graphischen Darstellung:
     \end{figure}
 
     Wenn als Alter zum Beispiel nur Werte im Bereich 18--67 auftreten können, sollte die Breite der Randbalken angepasst werden (schmalere Klassen ``18--19'' und ``65--67'').
-
-    \begin{bem}[Restklasse]
-        Sollte es Ausreißer in den Daten geben (z.B.\ einen Berufstätigen im Alter von 91 Jahren), so wird eine Restklasse gebildet.
-        Für diese wird kein Balken gezeichnet, sondern nur vermerkt, wie viele Elemente sie hat.
-    \end{bem}
 \end{bsp}
+
+\begin{bem}[Restklasse]
+    Sollte es Ausreißer in den Daten geben (z.B.\ einen Berufstätigen im Alter von 91 Jahren), so wird eine Restklasse gebildet.
+    Für diese wird kein Balken gezeichnet, sondern nur vermerkt, wie viele Elemente sie hat.
+\end{bem}
 
 Es gibt weitere übliche Darstellungen wie das Stamm-Blatt-Diagramm oder den Box-Plot.
 Wir verweisen diesbezüglich auf die Literatur.
@@ -551,8 +551,8 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \[
         x_{\mathrm{med}} =
         \begin{cases}
-            x_{(\frac{n+1}{2})} & \text{falls } n \text{ ungerade ist,}\\[1ex]
-            \dfrac12\left[x_{(\frac n2)} + x_{(\frac n2+1)}\right] & \text{falls } n \text{ gerade ist.}
+            x_{\left(\frac{n+1}{2}\right)} & \text{falls } n \text{ ungerade ist,}\\[1ex]
+            \dfrac12\left[x_{\left(\frac n2\right)} + x_{\left(\frac n2+1\right)}\right] & \text{falls } n \text{ gerade ist.}
         \end{cases}
     \]
 \end{defi}
@@ -597,7 +597,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
     \item \textbf{Minimierungseigenschaft:}
     \[
-        \sum_{i=1}^n |x_i-c| \to \min \qquad \text{für ein } c\in\left[x_{(\lfloor\frac{n+1}2\rfloor)}, x_{(\lceil\frac{n+1}2\rceil)}\right] \cdot
+        \sum_{i=1}^n |x_i-c| \to \min \qquad \text{für ein } c\in\left[x_{\left(\lfloor\frac{n+1}2\rfloor\right)}, x_{\left(\lceil\frac{n+1}2\rceil\right)}\right] \cdot
     \]
 \end{enumerate}
 \paragraph{Beweis.}
@@ -614,20 +614,20 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
             = \frac1n \#\{i\in\{1,\dots,n\}: x_{(i)}\leq x_{\mathrm{med}}\} \cdot
         \]
 
-        \textbf{1.\ Fall: $n$ ungerade.} Für ungerade $n$ ist $x_{\mathrm{med}}=x_{(\frac{n+1}2)}$, und daher
+        \textbf{1.\ Fall: $n$ ungerade.} Für ungerade $n$ ist $x_{\mathrm{med}}=x_{\left(\frac{n+1}2\right)}$, und daher
         \[
             \#\{i\in\{1,\dots,n\}: x_{(i)}\leq x_{\mathrm{med}}\} \geq \frac{n+1}{2} \geq \frac n2 ,
         \]
-        weil mindestens die $\frac{n+1}2$ Elemente $x_{(1)}\leq\cdots\leq x_{(\frac{n+1}2)}$ in der Menge sind.
+        weil mindestens die $\frac{n+1}2$ Elemente $x_{(1)}\leq\cdots\leq x_{\left(\frac{n+1}2\right)}$ in der Menge sind.
         Daraus folgt die Behauptung.
 
         Beispiel: $n=5$, geordnete Stichprobe $1,1,2,2,5$ (Augenzahl beim Würfeln).
         Es ist $x_{\mathrm{med}}=x_{(3)}=2$, und
         $\frac15\#\{i: x_{(i)}\leq 2\} = \frac45\geq\frac12$, ebenso $\sum_{k: a_k\leq x_{\mathrm{med}}} h_5(a_k) = h_5(1)+h_5(2)=\frac25+\frac25=\frac45\geq\frac12$.
 
-        \textbf{2.\ Fall: $n$ gerade.} Für gerade $n$ ist $x_{\mathrm{med}}=\frac12[x_{(\frac n2)}+x_{(\frac n2+1)}]\geq x_{(\frac n2)}$, weil $x_{(\frac n2+1)}\geq x_{(\frac n2)}$.
+        \textbf{2.\ Fall: $n$ gerade.} Für gerade $n$ ist $x_{\mathrm{med}}=\frac12\left[x_{\left(\frac n2\right)}+x_{\left(\frac n2+1\right)}\right]\geq x_{\left(\frac n2\right)}$, weil $x_{\left(\frac n2+1\right)}\geq x_{\left(\frac n2\right)}$.
         Daher gilt
-        $\#\{i: x_{(i)}\leq x_{\mathrm{med}}\}\geq \frac n2$, weil mindestens die $\frac n2$ Elemente $x_{(1)}\leq\cdots\leq x_{(\frac n2)}$ in der Menge sind.
+        $\#\{i: x_{(i)}\leq x_{\mathrm{med}}\}\geq \frac n2$, weil mindestens die $\frac n2$ Elemente $x_{(1)}\leq\cdots\leq x_{\left(\frac n2\right)}$ in der Menge sind.
 
         Beispiel: $n=6$, geordnete Stichprobe $1,1,1,2,2,5$.
         Es ist $x_{\mathrm{med}}=\frac12[x_{(3)}+x_{(4)}]=\frac32$, und
@@ -639,15 +639,15 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
 
         \textbf{1.\ Fall: $n$ ungerade.} Für ungerade $n$ ist $\frac n2\notin\nz$.
         Daher müssen sogar $\#\{i: x_{(i)}\leq a\}\geq\frac{n+1}2$ und $\#\{i: x_{(i)}\geq a\}\geq\frac{n+1}2$ gelten.
-        Folglich ergibt sich durch Abzählen von unten bzw.\ oben, dass $x_{(1)}\leq\cdots\leq x_{(\frac{n+1}2)}\leq a$ und $x_{(n)}\geq\cdots\geq x_{(\frac{n+1}2)}\geq a$ gelten.
-        Damit haben wir sogar $x_{\mathrm{med}}=x_{(\frac{n+1}2)}=a$ gezeigt.
+        Folglich ergibt sich durch Abzählen von unten bzw.\ oben, dass $x_{(1)}\leq\cdots\leq x_{\left(\frac{n+1}2\right)}\leq a$ und $x_{(n)}\geq\cdots\geq x_{\left(\frac{n+1}2\right)}\geq a$ gelten.
+        Damit haben wir sogar $x_{\mathrm{med}}=x_{\left(\frac{n+1}2\right)}=a$ gezeigt.
 
         Beispiel: $n=5$, geordnete Stichprobe $1,1,2,2,5$.
         Es gilt $h_5(1)=\frac25<\frac12$, aber $h_5(1)+h_5(2)\geq\frac12$; ebenso von oben betrachtet muss $a=2$ gelten.
 
         \textbf{2.\ Fall: $n$ gerade.} Für gerade $n$ wissen wir nur $\#\{i: x_{(i)}\leq a\}\geq\frac n2$ und $\#\{i: x_{(i)}\geq a\}\geq\frac n2$.
-        Wieder ergibt sich $x_{(1)}\leq\cdots\leq x_{(\frac n2)}\leq a$ und $x_{(n)}\geq\cdots\geq x_{(\frac n2+1)}\geq a$.
-        Damit haben wir $x_{(\frac n2)}\leq a\leq x_{(\frac n2+1)}$ gezeigt.
+        Wieder ergibt sich $x_{(1)}\leq\cdots\leq x_{\left(\frac n2\right)}\leq a$ und $x_{(n)}\geq\cdots\geq x_{\left(\frac n2+1\right)}\geq a$.
+        Damit haben wir $x_{\left(\frac n2\right)}\leq a\leq x_{\left(\frac n2+1\right)}$ gezeigt.
 
         Beispiel: $n=6$, geordnete Stichprobe $1,1,1,2,2,5$.
         Es gilt $h_6(1)\geq\frac12$, also muss $a\geq1$ gelten; von oben betrachtet muss $a\leq2$ gelten.
