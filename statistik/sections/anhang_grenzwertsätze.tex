@@ -1,0 +1,234 @@
+%! Author = lili
+%! Date = 7/24/26
+
+\subsection{Zusammenhang Poissonscher Grenzwertsatz, Zentraler Grenzwertsatz, Satz von de Moivre-Laplace und Gesetz der großen Zahlen}\label{subsec:zusammenhang-poissonscher-grenzwertsatz-zentraler-grenzwertsatz-satz-von-de-moivre-laplace-und-gesetz-der-groen-zahlen}
+\index{Gesetz der großen Zahlen} \index{Poissonscher Grenzwertsatz} \index{Moivre-Laplace}
+\index{Zentraler Grenzwertsatz}
+
+\begin{mytable}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Satz} & \textbf{Fragestellung} & \textbf{Ergebnis} \\
+        \hline
+        Gesetz der großen Zahlen & Konvergiert der Durchschnitt? &
+        Der Stichprobenmittelwert nähert sich dem Erwartungswert. \\
+        \hline
+        Zentraler Grenzwertsatz &
+        Wie schwanken Summen bzw. Mittelwerte? &
+        Die normierte Summe wird asymptotisch normalverteilt. \\
+        \hline
+        Satz von de Moivre-Laplace &
+        Spezialfall des ZGWS &
+        Die Binomialverteilung wird durch eine Normalverteilung angenähert. \\
+        \hline
+        Poissonscher Grenzwertsatz &
+        Seltene Ereignisse &
+        Die Binomialverteilung wird durch eine Poissonverteilung angenähert. \\
+        \hline
+    \end{tabular}
+\end{mytable}
+
+
+\subsubsection*{Gesetz der großen Zahlen}
+
+Seien $X_1,\dots,X_n$ unabhängige und identisch verteilte Zufallsvariablen mit Erwartungswert $\wfk$. Dann gilt
+
+\[
+    \overline{X}_n=\frac1n\sum_{i=1}^n X_i.
+\]
+
+Nach dem (schwachen) Gesetz der großen Zahlen gilt
+
+\[
+    \overline{X}_n \xrightarrow{P} \wfk.
+\]
+
+Beim starken Gesetz der großen Zahlen gilt sogar
+
+\[
+    \overline{X}_n \xrightarrow{\text{f.s.}} \wfk.
+\]
+
+\paragraph{Interpretation:}
+
+Mit wachsender Stichprobengröße nähert sich der Stichprobenmittelwert immer stärker dem Erwartungswert an.
+
+Das Gesetz der großen Zahlen macht jedoch keine Aussage darüber, wie groß die zufälligen Abweichungen sind oder wie diese verteilt sind.
+
+\subsubsection*{Zentraler Grenzwertsatz}
+
+Unter denselben Voraussetzungen sowie einer endlichen Varianz $\sigma^2$ gilt
+
+\[
+    \frac{\sum_{i=1}^n X_i-n\mu}{\sigma\sqrt n}
+    \Longrightarrow N(0,1).
+\]
+
+Äquivalent für den Stichprobenmittelwert:
+
+\[
+    \frac{\overline X_n-\mu}{\sigma/\sqrt n}
+    \Longrightarrow N(0,1).
+\]
+
+\paragraph{Interpretation}
+
+Die zufälligen Abweichungen des Mittelwertes vom Erwartungswert sind für große Stichproben näherungsweise normalverteilt.
+
+Der Zentrale Grenzwertsatz liefert somit deutlich mehr Information als das Gesetz der großen Zahlen.
+
+
+\subsubsection*{Zusammenhang zwischen GGZ und ZGWS}
+
+Der Zentrale Grenzwertsatz zeigt, dass
+
+\[
+    \overline X_n-\mu
+    =
+    O\!\left(\frac1{\sqrt n}\right).
+\]
+
+Da
+
+\[
+    \frac1{\sqrt n}\longrightarrow 0,
+\]
+
+folgt daraus unmittelbar die Aussage des schwachen Gesetzes der großen Zahlen.
+
+Anschaulich gilt:
+
+\begin{itemize}
+    \item Das Gesetz der großen Zahlen beschreibt, dass der Fehler gegen Null verschwindet.
+    \item Der Zentrale Grenzwertsatz beschreibt zusätzlich die Verteilung dieses Fehlers.
+\end{itemize}
+
+
+\subsubsection*{Satz von de Moivre-Laplace}
+
+Sei
+
+\[
+    X_n\sim\operatorname{Bin}(n,p).
+\]
+
+Dann gilt
+
+\[
+    \frac{X_n-np}{\sqrt{np(1-p)}}
+    \Longrightarrow N(0,1).
+\]
+
+Der Satz von de Moivre-Laplace ist somit ein Spezialfall des Zentralen Grenzwertsatzes für Bernoulli-Zufallsvariablen.
+
+Er liefert die Approximation
+
+\[
+    \operatorname{Bin}(n,p)
+    \approx
+    N(np,np(1-p)).
+\]
+
+Diese Approximation ist insbesondere geeignet, wenn
+
+\begin{itemize}
+    \item $n$ groß ist,
+    \item $p$ weder sehr klein noch sehr groß ist.
+\end{itemize}
+
+\subsubsection*{Poissonscher Grenzwertsatz}
+
+Betrachte nun
+
+\[
+    X_n\sim\operatorname{Bin}(n,p_n),
+\]
+
+wobei
+
+\[
+    p_n\longrightarrow 0,
+    \qquad
+    np_n\longrightarrow\lambda.
+\]
+
+Dann gilt
+
+\[
+    X_n
+    \Longrightarrow
+    \operatorname{Pois}(\lambda).
+\]
+
+Hier wird die Binomialverteilung nicht durch eine Normalverteilung, sondern durch eine Poissonverteilung angenähert.
+
+Diese Approximation eignet sich insbesondere für seltene Ereignisse, beispielsweise:
+
+\begin{itemize}
+    \item Defekte Bauteile,
+    \item Verkehrsunfälle,
+    \item Druckfehler.
+\end{itemize}
+
+\subsubsection*{Verhältnis zwischen de Moivre-Laplace und Poissonschem Grenzwertsatz}
+
+Beide Grenzwertsätze gehen von der Binomialverteilung aus, betrachten jedoch unterschiedliche Grenzfälle.
+
+\[
+    \boxed{
+        \begin{array}{ccc}
+            \operatorname{Bin}(n,p)
+            & &
+            \operatorname{Bin}(n,p_n)
+            \\[0.3cm]
+            p=\text{konstant}
+            &&
+            p_n\to0,\;np_n\to\lambda
+            \\[0.3cm]
+            \Downarrow
+            &&
+            \Downarrow
+            \\[0.3cm]
+            N(np,np(1-p))
+            &&
+            \operatorname{Pois}(\lambda)
+        \end{array}
+    }
+\]
+
+\subsubsection*{Gesamtübersicht}
+
+\[
+    \boxed{
+        \begin{array}{c}
+            \text{Beliebige i.i.d. Zufallsvariablen}
+            \\[0.4cm]
+            \Downarrow
+            \\[0.4cm]
+            \text{Gesetz der großen Zahlen}
+            \\
+            \overline X_n\to\mu
+            \\[0.5cm]
+            \Downarrow
+            \\[0.5cm]
+            \text{Zentraler Grenzwertsatz}
+            \\
+            \dfrac{\overline X_n-\mu}{\sigma/\sqrt n}
+            \Longrightarrow N(0,1)
+            \\[0.5cm]
+            \Downarrow
+            \\[0.5cm]
+            \text{de Moivre-Laplace}
+            \\
+            \text{(Spezialfall für Bernoulli- bzw. Binomialverteilungen)}
+        \end{array}
+    }
+\]
+
+\paragraph{Merksätze}
+\begin{itemize}
+    \item \textbf{Gesetz der großen Zahlen:} Der Stichprobenmittelwert konvergiert gegen den Erwartungswert.
+    \item \textbf{Zentraler Grenzwertsatz:} Die normierten Abweichungen vom Erwartungswert sind asymptotisch normalverteilt.
+    \item \textbf{de Moivre-Laplace:} Spezialfall des Zentralen Grenzwertsatzes für Binomialverteilungen.
+    \item \textbf{Poissonscher Grenzwertsatz:} Spezialfall für seltene Ereignisse mit $p\to0$ und $np\to\lambda$; die Grenzverteilung ist eine Poissonverteilung.
+\end{itemize}

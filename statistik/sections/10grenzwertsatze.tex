@@ -23,14 +23,14 @@
     Erfolgswahrscheinlichkeit $p \in (0,1)$. \\
     Dann gilt für jede Wahl von Konstanten a, b mit $- \infty < a < b < \infty$
     \[
-        \lim_{n \rightarrow \infty} \pe \big( a < \frac{\sn - np}{\sqrt{npq}} \leq b \big) = \frac{1}{\sqrt{2 \pi}} \intab e^{-x^{2} / 2} dx
+        \lim_{n \rightarrow \infty} \pe \big\left( a < \frac{\sn - np}{\sqrt{npq}} \leq b \big\right) = \frac{1}{\sqrt{2 \pi}} \intab e^{-x^{2} / 2} dx
     \]
     Für große n folgt insbesondere, dass
     \[
         \pe(np - c < \sn \leq np +c ) \approx
         \txc{\int^{c / \sqrt{npq}}_{-c / \sqrt{npq}} \underbrace{ \frac{1}{\sqrt{2 \pi}} e^{-x^{2} / 2}}_{\vfktname} dx =}
         \frac{1}{\sqrt{2 \pi}} \int^{c / \sqrt{npq}}_{-c / \sqrt{npq}} e^{-x^{2} / 2} dx
-        = 2 \vfkt (\frac{c}{\sqrt{npq}}) -1
+        = 2 \vfkt \left(\frac{c}{\sqrt{npq}}\right) -1
     \]
     \txc{
         Das folgt direkt aus dem allgemeinen Satz, wenn man die Konstanten a und b passend wählt. \\
@@ -53,7 +53,7 @@
        \item  Ist $c > 0$ nicht von n abhängig, so geht die Ws. mit $n \rightarrow \infty$ gegen Null
        \txc{(c ist eine feste Konstante, hängt nicht von nn
        n ab)}
-       \item Ist $ 0 < c << \sqrt{n}$ , so geht die Ws. mit $n \rightarrow \infty$ immer noch gegen Null
+       \item Ist $ 0 < c \ll \sqrt{n}$ , so geht die Ws. mit $n \rightarrow \infty$ immer noch gegen Null
        \txc{(c wächst, aber langsamer als $\sqrt{n}$)}
        \item Relevanter Beitrag, d.h., Ws. größer als null, nur für $c \approx \sqrt{n}$ (oder größer)
        \txc{(c wächst in derselben Größenordnung wie $\sqrt{n}$))}
@@ -74,7 +74,7 @@ Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Norm
 \karkar{bem_wachstumsordnung_c_relevanz}
 \karkar{bem_wann_normalapproximation_schlecht}
 
-\section{Vergleich Gesetz der großen Zahlen vs. Zentraler Grenzwertsatz}
+\section{Vergleich Gesetz der großen Zahlen vs. Zentraler Grenzwertsatz}\label{sec:vergleich-gesetz-der-groen-zahlen-vs.-zentraler-grenzwertsatz}
 
 \begin{beo}
     \textbf{Vergleich mit dem Gesetz der großen Zahlen} \txc{(2026)}
@@ -86,11 +86,11 @@ Zu \nameref{er:mlp}: Die Liste ist relevant, denn ist npq zu klein, ist die Norm
     \txc{
     Gesetz der großen Zahlen:
     \[
-        \lim_{n \rightarrow \infty} \pe(\mid \frac{1}{n} \sn - \E{X_1} \mid \geq \epsilon) = 0 \quad \forall \epsilon > 0
+        \lim_{n \rightarrow \infty} \pe\left(\mid \frac{1}{n} \sn - \E{X_1} \mid \geq \epsilon\right) = 0 \quad \forall \epsilon > 0
     \]
     und Satz von de Moivre-Laplace
     \[
-        \limnin \pe( a < \frac{\sn - np}{\sqrt{npq}} \leq b) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx =
+        \limnin \pe\left( a < \frac{\sn - np}{\sqrt{npq}} \leq b\right) = \frac{1}{\sqrt{2\pi}} \intab e^{x^2 / 2} \dx =
             \intab \varphi(x) \dx
     \]
     }
@@ -116,12 +116,12 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \karkar{bem_klausur_faustregel_ggz_oder_zgws}
 \karkar{bem_anwendungen_zgws_praxis}
 
-\section{Zentraler Grenzwertsatz}
+\section{Zentraler Grenzwertsatz}\label{sec:zentraler-grenzwertsatz}
 
 \begin{satz}
     \textbf{Zentraler Grenzwertsatz} \textit{Verallgemeinerung des Satzes von de Moivre-Laplace} \txc{(2026)}  \\
-    Gegeben Zufallsvariablen $X_1, X_2, X_3, ...$ auf einem Wahrscheinlichkeitsraum $\wraum$. \\
-    Angenommen $X_1, X_2, X_3, ...$ sind unabhängig und identisch verteilt und $\sigma^2 = \Var(X_i) \in (0, \infty)$ für alle i. \\
+    Gegeben Zufallsvariablen $X_1, X_2, X_3, \dots$ auf einem Wahrscheinlichkeitsraum $\wraum$. \\
+    Angenommen $X_1, X_2, X_3, \dots$ sind unabhängig und identisch verteilt und $\sigma^2 = \Var(X_i) \in (0, \infty)$ für alle i. \\
     (Beachte $ \Var(X_i)  < \infty \Rightarrow \E{X_i}$ ex.) \\
     Dabei ist $\sn = \sumEN X_i$ und $\mathcal{M} = \E{X_i}$. \\
     Dann gilt:
@@ -132,7 +132,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 
 \begin{satz}
     \textbf{Zentraler Grenzwertsatz für Bernoulli-Variablen} \txc{(2026)} \\
-    Sind die Zufallsvariablen $X_1, X_2, X_3, ...$ unabhängige Bernoulli-Variablen, so
+    Sind die Zufallsvariablen $X_1, X_2, X_3, \dots$ unabhängige Bernoulli-Variablen, so
     gelten: $\mathcal{M} = \E{X_i} = p$ und $\sigma^2 = \Var(X_1) = pq$ mit $q = 1 - p$
     und es folgt
     \[
@@ -143,7 +143,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \begin{lem}
     \textbf{Bekannte Verallgemeinerungen} \txc{(2026)}
     \begin{itemize}
-        \item Die Voraussetzung der identischen Verteilung kann abgeschwächt werden (z.B. zur Lindeberg-Bedingung).
+        \item Die Voraussetzung der identischen Verteilung kann abgeschwächt werden (z.B.\ zur Lindeberg-Bedingung).
         \begin{itemize}
             \item
             \txc{Also: man muss nicht verlangen, dass alle $X_i$ dieselbe  Verteilung haben. Zum Beispiel darf
@@ -164,9 +164,9 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     \textbf{Augensumme in 420 Würfen eines fairen Würfels} \txc{(2026)} \\
     Wie groß ist die Ws., daß die Augensumme zwischen 1400 und 1550 liegt? \\
     \begin{itemize}
-        \item $\eraum = \{1, ... , 6\}^n$ mit $n = 420$
+        \item $\eraum = \{1, \dots , 6\}^n$ mit $n = 420$
         \item $\pe$ Gleichverteilung auf $\eraum$
-        \item $X_i(\ele) = \ele_i$ für $i = 1, . . . , n$ sind unabhängige, identisch verteilte ZV
+        \item $X_i(\ele) = \ele_i$ für $i = 1, \dots , n$ sind unabhängige, identisch verteilte ZV
         \item $\mathcal{M} = \E{X_i} = \frac{7}{2}$ und $\sigma^2 = \Var(X_i) = \frac{35}{12}$
         \item $\sn (\ele) = \sumEN X_i(\ele)$ ist die Augensumme in n Würfen
     \end{itemize}
@@ -223,7 +223,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
         \hfill
         \begin{subfigure}[t]{0.24\textwidth}
             \includegraphics[width=\linewidth]{images/gauß_v10/n100}
-        \end{subfigure}
+        \end{subfigure}\label{fig:figure11}
     \end{figure}
 \end{bsp}
 
@@ -231,7 +231,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \karkar{satz_zgws_bernoulli_spezialfall}
 \karkar{lem_verallgemeinerungen_zgws}
 
-\section{Poissonscher Grenzwertsatz}
+\section{Poissonscher Grenzwertsatz}\label{sec:poissonscher-grenzwertsatz}
 
 \begin{satz}
     \textbf{Poissonscher Grenzwertsatz} \textit{Approximationen der Binomialverteilung} \txc{(2026)} \\
@@ -239,11 +239,12 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     \[
         \Binomv(k) \rightarrow \potm_{\alpha}(k) = \frac{\alpha^k}{k!} e^{- \alpha} \quad \text{ für } n \rightarrow \infty
     \]
-    \paragraph{Beweis.} Sei k fest und  $np_n \rightarrow \alpha > 0$ für $ n \rightarrow \infty$. Daraus folgt
+    \paragraph{Beweis.} Sei k fest und  $np_n \rightarrow \alpha > 0$ für $ n \rightarrow \infty$.
+    Daraus folgt
     insbesondere: $p_n \rightarrow 0$ für $ n \rightarrow \infty$.
     \begin{align*}
         \Binomv(k) & = \binom{n}{k} p_n^k (1-p_n)^{n-k} \\
-        & = \frac{n(n - 1) . . . (n - k + 1)}{k!}  p_n^k (1-p_n)^{n-k} \\
+        & = \frac{n(n - 1) ... (n - k + 1)}{k!}  p_n^k (1-p_n)^{n-k} \\
         & = \oub{1 \cdot  (1  - \frac{1}{n}) \cdots  (1  - \frac{k-1}{n})}{\rightarrow 1} \oub{\frac{(np_n)^k}{k!}}{
             \rightarrow \frac{\alpha^k}{k!}} \oub{\left(  1 - \frac{np_n}{n} \right)^n }{\overset{*}{\rightarrow} e^{
             -\alpha}} \oub{\left( 1-p_n \right)^{-k}}{\rightarrow 1} \\
@@ -268,11 +269,11 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \end{bem}
 
 \begin{bem}
-    Die Poisson-Approximation ist gut, wenn n groß im Vergleich zu k ist ($n >> k$) und p klein ist (
-    $n >> \alpha := np$).
+    Die Poisson-Approximation ist gut, wenn n groß im Vergleich zu k ist ($n \gg k$) und p klein ist (
+    $n \gg \alpha \coloneqq np$).
     Das heißt insbesondere, daß die Erfolgswahrscheinlichkeit klein sein muss.
     % TODO für das untere auch karteikarte?
-    Für derartige seltene Ereignisse verwenden wir $\pe (\sn = k) \approx \potm_{\alpha}(k)$ mit $\alpha := np$.
+    Für derartige seltene Ereignisse verwenden wir $\pe (\sn = k) \approx \potm_{\alpha}(k)$ mit $\alpha \coloneqq np$.
 \end{bem}
 
 \karkar{wann_poisson}
@@ -282,7 +283,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     Wir betrachten ein Roulettespiel mit 36 ``Zahlen'' und einer ``Null''. \\
     Wir setzen immer auf eine bestimmte Zahl: p = 1/37 und wir tun dies n = 37 Mal.
     Das heißt, wir erwarten im Mittel einen Gewinn:$\alpha  = np = 1$. \\
-    Wie groß ist die Ws., $ 0 \times, 1 \times, 2 \times, ...$ zu gewinnen?
+    Wie groß ist die Ws., $ 0 \times, 1 \times, 2 \times, \dots$ zu gewinnen?
     \begin{mytable}
         \begin{tabular}{ccc}
             k & $\Bnmv_{37,1/37}(k)$ & $\potm_1(k)$ \\
@@ -318,7 +319,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     \end{mytable}
     Hier wurde $\alpha$ gewählt als die mittlere Anzahl an Toten pro (Corps-)Jahr:
     \[
-        \alpha = (1 · 65 + 2 · 22 + 3 · 3 + 1 · 4)/200 = 0, 61
+        \alpha = (1 \cdot 65 + 2 \cdot 22 + 3 \cdot 3 + 1 \cdot 4)/200 = 0, 61
     \]
 \end{bsp}
 
@@ -336,7 +337,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
         \end{cases}
         }
     \]
-    Bei großer Zahl N von Quadraten gelten $N \nu >> k$ und $N \nu >> \oub{(N\nu)}{n}  \oub{\frac{1}{N}}{p_n} = \nu$. \\
+    Bei großer Zahl N von Quadraten gelten $N \nu \gg k$ und $N \nu \gg \oub{(N\nu)}{n}  \oub{\frac{1}{N}}{p_n} = \nu$. \\
     Poisson-Approximation zeigt $\Bnmv_{N\nu , 1/N}(k) \approx \potm_{\nu}(k)$. \\
     Dies rechtfertigt, eine derartige Verteilung von Zellen oder Teilchen mit Hilfe der
     Poisson-Verteilung zu modellieren.
@@ -345,25 +346,28 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
 \begin{bsp}
     \textbf{Beispiel zur Poisson-Approximation: Im zeitlichen Verlauf eintreffende Rechenaufträge} \txc{(2026)} \\
     Im Schnitt $\alpha$ eintreffende Rechenaufträge pro
-    Zeiteinheit (z.B. pro Stunde) \\
+    Zeiteinheit (z.B.\ pro Stunde) \\
     Ws., daß ein Auftrag eintrifft in einem sehr kleinen
-    Zeitfenster der Länge $\delta << 1$ sei näherungsweise $\alpha \delta$.
-    ($\delta$ sehr klein, z.B. eine Millisekunde)). \\
+    Zeitfenster der Länge $\delta \ll 1$ sei näherungsweise $\alpha \delta$.
+    ($\delta$ sehr klein, z.B.\ eine Millisekunde)). \\
     Wir zerlegen das Gesamtzeitintervall $[0, t)$ in N sehr kleine, disjunkte
-    Teilintervalle der Länge $t/N$. (für ein festes t, z.B. 30 Minuten, 24 Stunden, drei Wochen, . . . )
+    Teilintervalle der Länge $t/N$.
+    (für ein festes t, z.B.\ 30 Minuten, 24 Stunden, drei Wochen, \ldots)
     \[
-        [0, t) = \bigcup_{k=1}^N \left[  \frac{k-1}{N} \cdot t, \frac{k}{N} \cdot t \right)
-    \]
+        \left[0, t) = \bigcup_{k=1}^N \left[  \frac{k-1}{N} \cdot t, \frac{k}{N} \cdot t \right)
+    \right]
     Ws., dass ein Auftrag eintrifft in einem bestimmten dieser Zeitfenster, ist
     näherungsweise $\alpha t / N$.
     \paragraph{Annahmen:} Für großes N sind die Zeitfenster so klein, daß wir annehmen dürfen, daß in
     jedem Fenster ein oder kein Auftrag eintrifft (d.h., wir schließen aus, daß mehr als ein Auftrag eintreffen kann)
-    . Ob ein Auftrag in einem bestimmten Fenster eintrifft, sei unabhängig vom
+    .
+    Ob ein Auftrag in einem bestimmten Fenster eintrifft, sei unabhängig vom
     Eintreffen von Aufträgen in allen anderen Zeitfenstern.
-    \paragraph{Modellierung:} Damit haben wir jedem Zeitfenster, d.h. jedem k, eine Bernoulli-Variable
+    \paragraph{Modellierung:} Damit haben wir jedem Zeitfenster, d.h.\ jedem k, eine Bernoulli-Variable
     zugeordnet, die uns sagt, ob im zugehörigen Zeitfenster k ein Auftrag
     eintrifft.
-    Die Erfolgsws. dieser Bernoulli-Variable ist $\alpha t / N$
+    Die Erfolgsws.
+    dieser Bernoulli-Variable ist $\alpha t / N$
     \txc{(Also die Ws, dass ein Auftrag in einem bestimmten Zeitfenster eintritt)}.
     Die Anzahl der Aufträge, die im Intervall $[0, t)$ eintreffen, ist binomialverteilt
     mit Parametern N und $\alpha t / N$.
@@ -375,7 +379,8 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
     \[
         \Bnmv_{N, \alpha t / N}(\varphi) \approx \potm_{N \cdot \alpha t / N}(\varphi) = \potm_{\alpha t}(\varphi)
     \]
-    (Beachten Sie, daß wir in diesem Problem N beliebig groß machen dürfen. Wir verwenden
+    (Beachten Sie, daß wir in diesem Problem N beliebig groß machen dürfen.
+    Wir verwenden
     hier die beliebige Teilbarkeit der Zeit!) \\
     Wiederum rechtfertigt unsere Betrachtung, beim Modellieren derartiger Prozesse
     generell die Poisson-Verteilung zu verwenden.
@@ -412,7 +417,7 @@ Bneutz man für Stichprobengröße bestimmen, Konfidenzintervalle, Fehlerabschä
         \txc{\pe(\sn = k) = \pe( (n - \sn) = n - k) = \Bnmv_{n,q}(n - k) \approx \potm_{nq}(n - k) = \frac{(nq)^{(n-k)}}{(n - k)!} e^{-nq}}
     \]
 \end{lem}
-\subsection{Beispielaufgabe Laubfrosch} \txc{(2026)} \\
+\subsection*{Beispielaufgabe Laubfrosch}\label{subsec:beispielaufgabe-laubfrosch} \txc{(2026)} \\
 Ein Laubfrosch legt $n = 1000$ Eier.
 Aus jedem Ei entwickelt sich mit der WS $p = \frac{1}{200}$ ein Frosch.
 \begin{auf}
@@ -428,9 +433,9 @@ Aus jedem Ei entwickelt sich mit der WS $p = \frac{1}{200}$ ein Frosch.
 
 \begin{auf}
     \subsubsection*{Zufallsvariable, die Anzahl der Frösche angbit, die Verteilung und ggf. Parameter}
-    $\sn: \eraum \rightarrow \{ 0, ..., n \}$ und
+    $\sn: \eraum \rightarrow \{ 0, \dots, n \}$ und
     \[
-        \sn(\ele) := \sumEN \ele_i \faoio
+        \sn(\ele) \coloneqq \sumEN \ele_i \faoio
     \]
     Als Anzahl von Erfolgen in unabhängig wiederholten Bernoulli-Experimenten ist $\sn$ binomialverteilt mit
     Paramatern n und p.
@@ -446,7 +451,7 @@ Aus jedem Ei entwickelt sich mit der WS $p = \frac{1}{200}$ ein Frosch.
     \]
     und
     \[
-        \Var(\sn) = np (1-p) = 5 \cdot (1 - \frac{1}{200}) = 5 \cdot \frac{199}{200} = \frac{199}{40}
+        \Var(\sn) = np (1-p) = 5 \cdot \left(1 - \frac{1}{200}\right) = 5 \cdot \frac{199}{200} = \frac{199}{40}
     \]
 \end{auf}
 
@@ -480,5 +485,8 @@ Aus jedem Ei entwickelt sich mit der WS $p = \frac{1}{200}$ ein Frosch.
 \karkar{lem_poisson_approximation_p_nahe_1}
 \karkar{bem_keine_ausmultiplikation_bei_parametern}
 
+
+\paragraph{Siehe auch}
+\nameref{subsec:zusammenhang-poissonscher-grenzwertsatz-zentraler-grenzwertsatz-satz-von-de-moivre-laplace-und-gesetz-der-groen-zahlen} auf Seite~\pageref{subsec:zusammenhang-poissonscher-grenzwertsatz-zentraler-grenzwertsatz-satz-von-de-moivre-laplace-und-gesetz-der-groen-zahlen}.
 
 
