@@ -678,34 +678,32 @@ Es gibt Zufallsvariablen \(X,Y\) mit
         \qquad z\neq 0,
     \]
     folgt
-    \[
-        \begin{aligned}
-            \E{XY}
-            &=
-            \sum_{z\in XY(\eraum)\txo{, z \neq 0}}
-            z\,\pe(XY=z)
-            \\
-            &=
-            \sum_{z\neq 0}
-            \sum_{y\neq 0}
-            \frac{z}{y}\,y\,
-            P\left(X=\frac{z}{y}\right)
-            \pe(Y=y)
-            &=
-            \sum_{y\neq 0}
-            \sum_{x\neq 0}
-            xy \pe(X=x) \pe(Y=y)
-            &=
-            \big\left(
-                    \sum_{y\neq 0} y \pe(Y=y)
-                    \big\right)
-            \big\left(
-                    \sum_{x\neq 0} x \pe(X=x)
-                    \big\right)
-            &=
-            \E{X} \cdot \E{Y}
-        \end{aligned}
-    \]
+    \begin{align*}
+        \E{XY}
+        &=
+        \sum_{z\in XY(\eraum)\txo{, z \neq 0}}
+        z\,\pe(XY=z)
+        \\
+        &=
+        \sum_{z\neq 0}
+        \sum_{y\neq 0}
+        \frac{z}{y}\,y\,
+        P\left(X=\frac{z}{y}\right)
+        \pe(Y=y) \\
+        &=
+        \sum_{y\neq 0}
+        \sum_{x\neq 0}
+        xy \pe(X=x) \pe(Y=y) \\
+        &=
+        \big\left(
+                \sum_{y\neq 0} y \pe(Y=y)
+                \big\right)
+        \big\left(
+                \sum_{x\neq 0} x \pe(X=x)
+                \big\right) \\
+        &=
+        \E{X} \cdot \E{Y}
+    \end{align*}
 
     \paragraph{Schritt 2:} Eine analoge Rechnung zeigt die Existenz des Erwartungswerts:
 \end{satz}
