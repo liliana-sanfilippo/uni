@@ -149,7 +149,7 @@
 
 \begin{bsp}[\gls{Merkmal}e treten in verschiedenen Ausprägungen auf] \txc{(Skript 26)}
     \begin{mytable}
-        \begin{tabular}{lll}
+        \begin{tabular}{|l|l| p{8cm}|}
             \hline
             \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Ausprägung} \\
             \hline
@@ -391,6 +391,25 @@ Wir verweisen diesbezüglich auf die Literatur.
     Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um $a$ äquivalent ist zum Verschieben des \gls{Lagemaß}es um $a$.
 \end{defi}
 
+
+\begin{kom}[Andere Definitionen von Lagemaß]
+    \paragraph{Wikipedia:}  Ein Lagemaß oder Lageparameter ist in der Stochastik eine Kennzahl der Verteilung einer Zufallsvariable beziehungsweise
+    eines Wahrscheinlichkeitsmaßes.
+    Anschaulich ist es die Aufgabe eines Lagemaßes, den ``typischen'' Wert einer Zufallsvariable anzugeben.
+
+
+   \paragraph{\href{https://bjoernwalther.com/lagemasse-in-der-statistik/}{Björn Walther}:} Lagemaße (auch Lageparameter) sind Kennzahlen, die
+   im Rahmen der deskriptiven Statistik genutzt werden.
+    Sie treffen eine Aussage über die zentrale Tendenz von Variablen im Datensatz.
+    Mit ihnen ist also erkennbar, wo in der Stichprobe die ``Musik spielt''.
+    
+    \paragraph{\href{https://welt-der-bwl.de/Lagema%C3%9Fe}{Welt der BWL}:} Lagemaße der Statistik – auch Maße der zentralen Tendenz genannt – geben an, was in einer Datenmenge das Zentrum bzw. der Schwerpunkt ist, zum Beispiel der häufigste Wert oder der Durchschnitt.
+
+    \paragraph{\href{https://studyflix.de/statistik/deskriptive-statistik-1052}{studyflix}} Lageparameter geben die zentrale Tendenz des Datensatzes an.
+    Konkret wird also untersucht, ob die gemessenen Werte eher groß oder klein sind.
+    Bei einer Umfrage kann man beispielsweise ermitteln, ob eher jüngere oder ältere Menschen befragt wurden.
+\end{kom}
+
 \begin{bsp}[\defirefman{lagemaß}]
     \begin{itemize}
         \item Das \emph{arithmetische Mittel} $\bar x = \frac{1}{n}\sum_{i=1}^n x_i$ der Stichprobe $x_1,\dots,x_n$ ist ein \gls{Lagemaß}.
@@ -398,10 +417,10 @@ Wir verweisen diesbezüglich auf die Literatur.
         \item Das \emph{harmonische Mittel} $\bar x_h = \dfrac{n}{\frac{1}{x_1}+\cdots+\frac{1}{x_n}}$ der Stichprobe $x_1,\dots,x_n$ ist \emph{kein} \gls{Lagemaß}.
     \end{itemize}
 
-    Wir wollen diese Aussagen beweisen.
+    \noindent Wir wollen diese Aussagen beweisen.
 
     \smallskip
-    \noindent\textbf{Das arithmetische Mittel $\bar x=\frac{1}{n}\sum_{i=1}^n x_i$ ist ein Lagemaß:}
+    \paragraph{Beweis - Das arithmetische Mittel $\bar x=\frac{1}{n}\sum_{i=1}^n x_i$ ist ein Lagemaß:}
 
     Sei $l_{\mathrm{arith}}(x_1,\dots,x_n) = \frac1n\sum_{i=1}^n x_i$.
     Dann gilt für alle $(x_1,\dots,x_n)\in\rz^n$ und alle $a\in\rz$
@@ -410,7 +429,7 @@ Wir verweisen diesbezüglich auf die Literatur.
     \]
 
     \smallskip
-    \noindent\textbf{Das geometrische Mittel $\bar x_g = \sqrt[n]{x_1\cdots x_n}$ ist kein Lagemaß:}
+    \paragraph{Beweis - Das geometrische Mittel $\bar x_g = \sqrt[n]{x_1\cdots x_n}$ ist kein Lagemaß:}
 
     Beachte zunächst, dass das geometrische Mittel nur für $x_1,\dots,x_n\geq 0$ sinnvoll definiert ist.
     Auch wenn wir nur $x_1,\dots,x_n\geq 0$ und $a>0$ betrachten, erfüllt das geometrische Mittel nicht die Anforderung an ein \gls{Lagemaß}:
@@ -424,7 +443,7 @@ Seien $n=2$ und $l_g(x_1,x_2)=\sqrt{x_1\cdot x_2}$.
 Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagemaß} sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\rz^2$ gleich wären.
 
     \smallskip
-    \noindent\textbf{Das harmonische Mittel $\bar x_h = \dfrac{n}{\frac1{x_1}+\cdots+\frac1{x_n}}$ ist kein Lagemaß:}
+    \paragraph{Beweis - Das harmonische Mittel $\bar x_h = \dfrac{n}{\frac1{x_1}+\cdots+\frac1{x_n}}$ ist kein Lagemaß:}
 
     Beachte zunächst, dass das harmonische Mittel nur für $x_1,\dots,x_n\neq 0$ sinnvoll definiert ist.
     Selbst wenn wir nur $x_1,\dots,x_n>0$ und $a>0$ betrachten, erfüllt das harmonische Mittel nicht die Anforderung an ein \gls{Lagemaß}:
@@ -459,7 +478,12 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
 
 \begin{satz}[Eigenschaften des arithmetischen Mittels]  \txc{(Skript 26)} \\
 \begin{enumerate}[label=(\alph*)]
-    \item \textbf{Schwerpunkteigenschaft:} $\displaystyle\sum_{i=1}^n (x_i-\bar x) = 0$
+    \item \textbf{Schwerpunkteigenschaft:}
+    \txc{Die Schwerpunkteigenschaft (auch Nulleigenschaft genannt) besagt, dass die Summe der scheinbaren Fehler bzw. die Summe der Abweichungen aller beobachteten Messwerte vom arithmetischen Mittel gleich Null ist. Also:}
+    % https://de.wikipedia.org/wiki/Arithmetisches_Mittel
+    \[
+        \sum_{i=1}^n (x_i-\bar x) = 0
+    \]
     \item \textbf{Minimierungseigenschaft:} $\displaystyle\sum_{i=1}^n (x_i-c)^2 \to \min$ für $c=\bar x$.
 
     Das arithmetische Mittel minimiert die quadratische Abweichung der Stichprobenwerte von einer Konstanten $c\in\rz$:
@@ -497,6 +521,8 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \[
         H_n(a) \geq H_n(x_i) \qquad \forall i=1,\dots,n \cdot
     \]
+    \txc{Also wenn die Ausprägung $a$ die größte Häufigkeit hat. Also der Modalwert der Wert, der in der Stichprobe am häufigsten vorkommt.}
+    % https://de.wikipedia.org/wiki/Modus_(Statistik)
 \end{defi}
 
 \begin{bem}   \txc{(Skript 26)} \\
@@ -511,6 +537,8 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
 \begin{defi}[Unimodal] \txc{(Skript 26)} \\
     Wir schreiben $x_{\mathrm{mod}}$ für den Modalwert einer Stichprobe, sofern dieser eindeutig bestimmt ist.
     In diesem Fall heißen die Häufigkeitsverteilungen $H_n$ und $h_n$ \emph{unimodal}.
+
+    \txc{Umgangssprachlich: Unimodalität bedeutet, dass es nur einen einzigen Höchstwert (Modalwert / Modus) gibt.}
 \end{defi}
 
 \begin{bsp}[Würfeln]  \txc{(Skript 26)} \\
@@ -593,7 +621,7 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \]
     so folgt $x_{(\lceil n/2\rceil)} \leq a \leq x_{(\lceil n/2\rceil+1)}$.
     Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
-    \item \textbf{Minimierungseigenschaft:}
+    \item \textbf{Minimierungseigenschaft:} \txc{Der Median minimiert die absoluten Abweichungen}
     \[
         \sum_{i=1}^n |x_i-c| \to \min \qquad \text{für ein } c\in\left[x_{\left(\lfloor\frac{n+1}2\rfloor\right)}, x_{\left(\lceil\frac{n+1}2\rceil\right)}\right] \cdot
     \]
@@ -653,6 +681,19 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \end{enumerate}
 \end{satz}
 
+\komm{Zu \autoref{satz:median_eigenschaften} (c):
+$\sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12$ bedeutet mindestens die Hälfte aller Beobachtungen liegt links von a oder genau bei a.
+
+$\sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12$ bedeutet mindestens die Hälfte aller Beobachtungen liegt rechts von a oder genau bei a.
+
+    $x_{(\lceil n/2\rceil)} \leq a \leq x_{(\lceil n/2\rceil+1)}$ ist einfach der Median.
+
+Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Median.
+
+``Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.'' bedeuet, dass der Median keiner von den Beobachteten Werten sein muss.
+    Sondern bspw. auch dazwischen liegen kann.
+}
+
 \begin{bsp}[Würfeln] \txc{(Skript 26)} \\
     \begin{mytable}
         \begin{minipage}{0.48\textwidth}
@@ -695,6 +736,27 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \]
     Anschaulich bedeutet das, dass ein Verschieben der Werte der Stichprobe um ein $a$ den Wert eines \gls{Streumaß}es nicht verändert.
 \end{defi}
+
+\begin{kom}[Andere Definitionen von Streumaß]
+    \paragraph{Wikipedia:} Streuungsmaße, auch Dispersionsmaße (lateinisch dispersio „Zerstreuung“, von dispergere 
+    „verteilen, ausbreiten, zerstreuen“) oder Streuungsparameter genannt, fassen in der deskriptiven Statistik 
+    verschiedene Maßzahlen zusammen, die die Streubreite von Beobachtungswerten beziehungsweise einer 
+    Häufigkeitsverteilung um einen geeigneten Lageparameter herum beschreiben.
+    
+    \paragraph{\href{https://welt-der-bwl.de/Streuungsmaße}{Welt der BWL}:} Streuungsmaße in der Statistik geben an, wie stark die einzelnen Datenwerte oder Messwerte streuen,
+    das heißt, wie weit sie zum Beispiel von einem berechneten Mittelwert oder auch von einem Vorgabewert nach oben und unten abweichen.
+\end{kom}
+
+\begin{kom}[Warum braucht man Streumaße?]
+    ``Die Frage, wie weit Daten um den Mittelwert streuen – ob sie sich eng darum drängen oder weit davon entfernt
+    sind – lässt der Durchschnitt unbeantwortet. Das bedeutet, dass sich eine Verteilung durch die bloße Angabe von
+    einem oder mehreren Mittelwerten nur unzureichend beschreiben lässt.
+
+    Deshalb werden Streuungsmaße genutzt, um die Variabilität eines Merkmals darzustellen.''
+
+    (\href{https://www.destatis.de/DE/Service/Statistik-Campus/E-Learning/Modul16/streuungsmasse.html}{eLearning-Modul 16 - Streuungsmaße des statistischen Bundesamts})
+    % https://www.destatis.de/DE/Service/Statistik-Campus/E-Learning/Modul16/streuungsmasse.html
+\end{kom}
 
 \begin{bsp}[Ein ganzer Zoo an \gls{Streumaß}en] \txc{(Skript 26)} \\
     Im Folgenden dient uns zur Illustration stets die (geordnete) Stichprobe $1,1,2,2,2,3,4,4,4,6$ der Länge $n=10$.
