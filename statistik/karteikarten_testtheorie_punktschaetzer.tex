@@ -1,0 +1,230 @@
+
+% ===================================================================
+% Abschnitt "Annahme" und statistisches Modell
+% ===================================================================
+
+\newglossaryentry{bem_grundannahme_stichprobe}{
+    name={Welche Grundannahme trifft man in der schließenden Statistik über das Zustandekommen einer Stichprobe $x_1,\dots,x_n$?},
+    description={Man nimmt an, dass es einen Wahrscheinlichkeitsraum, unabhängige identisch verteilte Zufallsvariablen $X_1,\dots,X_n$ und ein $\omega\in\Omega$ gibt, sodass $(x_1,\dots,x_n)=(X_1(\omega),\dots,X_n(\omega))$ gilt -- die Stichprobe ist also die Realisierung von $n$ unabhängig wiederholten, identisch verteilten Zufallsexperimenten.},
+    type=dinge
+}
+
+\newglossaryentry{def_stichprobenvariable}{
+    name={Was sind die Stichprobenvariablen $X_1,\dots,X_n$?},
+    description={Die zugrundeliegenden Zufallsvariablen, deren Realisierung die Stichprobe liefert -- sie modellieren das (unabhängig wiederholte) Zufallsexperiment, aus dem die Daten stammen.},
+    type=dinge
+}
+
+\newglossaryentry{def_stichprobe_formal}{
+    name={Was ist eine Stichprobe (formal, als Realisierung)?},
+    description={Für ein gegebenes $\omega\in\Omega$ ist die Stichprobe $x=(x_1,\dots,x_n)=(X_1(\omega),\dots,X_n(\omega))=X(\omega)$ -- also der konkret beobachtete Wert der Stichprobenvariablen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_unterschied_stichprobe_stichprobenvariable}{
+    name={Was ist der wesentliche Unterschied zwischen den Stichprobenvariablen $X_1,\dots,X_n$ und einer Stichprobe $x_1,\dots,x_n$?},
+    description={Die Stichprobenvariablen sind Zufallsvariablen (zufällig, vor der Erhebung); eine Stichprobe ist eine konkrete, feste Realisierung dieser Zufallsvariablen -- die tatsächlich beobachteten Zahlenwerte.},
+    type=dinge
+}
+
+\newglossaryentry{def_stichprobenraum}{
+    name={Was ist der Stichprobenraum $\mathcal{X}$?},
+    description={Der Bildbereich $\mathcal{X}=X(\Omega)$ der $n$-dimensionalen Zufallsvariablen $X=(X_1,\dots,X_n)$ -- die Menge aller möglichen Stichproben bei gegebenem Experiment.},
+    type=dinge
+}
+
+\newglossaryentry{def_statistisches_modell}{
+    name={Was ist ein statistisches Modell?},
+    description={Eine Familie $\{P_\theta : \theta\in\Theta\}$ von Wahrscheinlichkeitsmaßen auf dem Stichprobenraum, welche die möglichen Verteilungen von $X=(X_1,\dots,X_n)$ beschreibt.},
+    type=dinge
+}
+
+\newglossaryentry{def_parameterraum_und_parameter}{
+    name={Was sind Parameterraum $\Theta$ und Parameter $\theta$?},
+    description={In einem statistischen Modell $\{P_\theta:\theta\in\Theta\}$ heißt $\Theta$ der Parameterraum, und jedes $\theta\in\Theta$ heißt Parameter -- er indiziert, welches konkrete Wahrscheinlichkeitsmaß aus der Modellfamilie vorliegt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_parameterraum_einschraenkung}{
+    name={Muss der Parameterraum $\Theta$ bei Bernoulli-Stichprobenvariablen immer ganz $[0,1]$ sein?},
+    description={Nein. Hat man Grund zur Annahme, dass gewisse Werte der Erfolgswahrscheinlichkeit ausgeschlossen werden können, darf $\Theta$ auch als echte Teilmenge von $[0,1]$ gewählt werden.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Punktschätzer" -- Grundbegriffe
+% ===================================================================
+
+\newglossaryentry{bem_drei_arten_von_resultaten}{
+    name={Welche drei Arten von Resultaten kann man anhand einer Stichprobe über den Parameter gewinnen?},
+    description={Punktschätzer (ein einzelner Wert $\theta$ bzw.\ $g(\theta)$), Bereichsschätzer (eine Teilmenge von $\Theta$) und Hypothesentest (eine Ja-Nein-Entscheidung über eine Hypothese zum Parameter).},
+    type=dinge
+}
+
+\newglossaryentry{def_schaetzer_fuer_theta}{
+    name={Wie ist ein Schätzer für den Parameter $\theta$ definiert?},
+    description={Eine Abbildung $t:\mathcal{X}\to\Theta$ vom Stichprobenraum in den Parameterraum. Auch die Zufallsvariable $T=t(X)$ wird Schätzer genannt.},
+    type=dinge
+}
+
+\newglossaryentry{def_schaetzung}{
+    name={Was ist eine Schätzung (im Unterschied zum Schätzer)?},
+    description={Die Realisierung $t(x)$ des Schätzers für eine konkrete Stichprobe $x$ -- der Zahlenwert, den man erhält, wenn man die Rechenvorschrift $t$ auf die beobachteten Daten anwendet.},
+    type=dinge
+}
+
+\newglossaryentry{bem_unterschied_schaetzer_schaetzung}{
+    name={Was ist der wesentliche Unterschied zwischen einem Schätzer und einer Schätzung?},
+    description={Ein Schätzer ist eine Rechenvorschrift/Funktion, die jeder möglichen Stichprobe einen Parameterwert zuordnet; eine Schätzung ist das konkrete Ergebnis dieser Rechenvorschrift für eine tatsächlich beobachtete Stichprobe.},
+    type=dinge
+}
+
+\newglossaryentry{def_schaetzer_fuer_g_theta}{
+    name={Wie verallgemeinert sich der Schätzerbegriff auf eine Funktion $g(\theta)$ des Parameters?},
+    description={Für eine Abbildung $g:\Theta\to\Gamma$ ist ein Schätzer für $g(\theta)$ eine Abbildung $t:\mathcal{X}\to\Gamma$ (bzw.\ die Zufallsvariable $T=t(X)$). Der Schätzer für $\theta$ selbst ist der Spezialfall $\Gamma=\Theta$, $g=\mathrm{id}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_schaetzer_koennen_schlecht_sein}{
+    name={Schließt die Definition eines Schätzers offensichtlich unsinnige Wahlen aus?},
+    description={Nein. Formal ist jede Abbildung $t:\mathcal{X}\to\Theta$ ein zulässiger Schätzer -- selbst eine konstante Funktion, die jede Stichprobe ignoriert. Man braucht daher zusätzliche Gütekriterien, um sinnvolle von unsinnigen Schätzern zu unterscheiden.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Kriterien zur Beurteilung von Punktschätzern": Bias und Risiko
+% ===================================================================
+
+\newglossaryentry{def_bias}{
+    name={Wie ist der Bias eines Schätzers $t$ für $g(\theta)$ definiert?},
+    description={$\mathrm{bias}_t(\theta) = E_\theta[T] - g(\theta)$ für alle $\theta\in\Theta$, wobei $E_\theta$ der Erwartungswert bezüglich $P_\theta$ ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bias_intuition}{
+    name={Was misst der Bias eines Schätzers anschaulich?},
+    description={Die systematische Verzerrung des Schätzers: Um wie viel der Erwartungswert des Schätzers (im Mittel über viele Wiederholungen) vom wahren Wert $g(\theta)$ abweicht.},
+    type=dinge
+}
+
+\newglossaryentry{def_erwartungstreue}{
+    name={Wann heißt ein Schätzer erwartungstreu?},
+    description={Wenn $\mathrm{bias}_t(\theta)=0$ für alle $\theta\in\Theta$ gilt, d.h.\ wenn der Erwartungswert des Schätzers stets mit dem wahren Wert $g(\theta)$ übereinstimmt.},
+    type=dinge
+}
+
+\newglossaryentry{def_risiko}{
+    name={Wie ist das Risiko $R(\theta,t)$ eines Schätzers $t$ im Punkt $\theta$ definiert?},
+    description={$R(\theta,t) = E_\theta\big[(T-g(\theta))^2\big]$ -- die erwartete quadratische Abweichung des Schätzers vom wahren Wert $g(\theta)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_risiko_intuition}{
+    name={Was misst das Risiko eines Schätzers anschaulich, im Unterschied zum Bias?},
+    description={Das Risiko fasst systematische Verzerrung (Bias) und zufällige Schwankung (Varianz) des Schätzers in einer einzigen Zahl zusammen -- es misst, wie weit der Schätzer im quadratischen Mittel vom wahren Wert entfernt liegt, egal ob durch Verzerrung oder Streuung.},
+    type=dinge
+}
+
+\newglossaryentry{def_risikofunktion}{
+    name={Was ist die Risikofunktion eines Schätzers?},
+    description={Die Abbildung $\theta\mapsto R(\theta,t)$, die für jeden möglichen Parameterwert das Risiko des Schätzers angibt.},
+    type=dinge
+}
+
+\newglossaryentry{def_mindestens_so_gut}{
+    name={Wann heißt ein Schätzer $t_1$ mindestens so gut wie ein Schätzer $t_2$ (für dieselbe Größe $g(\theta)$)?},
+    description={Wenn $R(\theta,t_1) \le R(\theta,t_2)$ für alle $\theta\in\Theta$ gilt.},
+    type=dinge
+}
+
+\newglossaryentry{def_besser_als}{
+    name={Wann heißt ein Schätzer $t_1$ besser als ein Schätzer $t_2$?},
+    description={Wenn $t_1$ mindestens so gut ist wie $t_2$ und es zusätzlich ein $\theta\in\Theta$ mit $R(\theta,t_1) < R(\theta,t_2)$ gibt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Rechenregeln für Bias und Risiko"
+% ===================================================================
+
+\newglossaryentry{lem_erwartungstreue_aequivalent}{
+    name={Wie lässt sich Erwartungstreue eines Schätzers $t$ äquivalent charakterisieren?},
+    description={$t$ ist genau dann erwartungstreu, wenn $E_\theta[T] = g(\theta)$ für alle $\theta\in\Theta$ gilt.},
+    type=dinge
+}
+
+\newglossaryentry{lem_bias_varianz_zerlegung}{
+    name={Wie zerlegt sich das Risiko $R(\theta,t)$ allgemein in Bias und Varianz?},
+    description={$R(\theta,t) = (\mathrm{bias}_t(\theta))^2 + \mathrm{Var}_\theta(T)$ -- das Risiko ist die Summe aus quadriertem Bias und Varianz des Schätzers (Bias-Varianz-Zerlegung).},
+    type=dinge
+}
+
+\newglossaryentry{lem_risiko_erwartungstreuer_schaetzer}{
+    name={Wie vereinfacht sich das Risiko, wenn der Schätzer erwartungstreu ist?},
+    description={$R(\theta,t) = \mathrm{Var}_\theta(T)$ -- bei Erwartungstreue ist das Risiko genau die Varianz des Schätzers, der Bias-Term entfällt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Anwendungen": Schätzer für Erwartungswert und Varianz
+% ===================================================================
+
+\newglossaryentry{bem_stichprobenmittel_erwartungstreu_bernoulli}{
+    name={Ist das arithmetische Mittel $\bar x$ ein erwartungstreuer Schätzer für die Erfolgswahrscheinlichkeit $\theta$ bei unabhängigen Bernoulli-Stichprobenvariablen?},
+    description={Ja, $\mathrm{bias}(\theta)=0$ für alle $\theta\in[0,1]$, da $E_\theta[X_i]=\theta$ für alle $i$ gilt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_risiko_stichprobenmittel_bernoulli}{
+    name={Wie groß ist das Risiko des arithmetischen Mittels als Schätzer der Erfolgswahrscheinlichkeit bei Bernoulli-Stichprobenvariablen?},
+    description={$R(\theta,t) = \dfrac{\theta(1-\theta)}{n}$ (da der Schätzer erwartungstreu ist, entspricht das Risiko der Varianz $\mathrm{Var}_\theta(\bar X)=\frac1n\mathrm{Var}_\theta(X_1)$).},
+    type=dinge
+}
+
+\newglossaryentry{bem_technik_gleichmaessige_risikoschranke}{
+    name={Wie erhält man aus $R(\theta,t)=\frac{\theta(1-\theta)}{n}$ eine vom unbekannten $\theta$ unabhängige obere Schranke für das Risiko?},
+    description={Man maximiert $\theta(1-\theta)$ über $\theta\in[0,1]$; das Maximum liegt bei $\theta=\frac12$ mit Wert $\frac14$. Damit folgt die gleichmäßige Schranke $R(\theta,t)\le\frac{1}{4n}$ für alle $\theta\in[0,1]$ -- man erhält also eine Risikoschranke, ohne den wahren Parameter zu kennen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_mehr_daten_i_a_besserer_schaetzer}{
+    name={Ist es i.\,A.\ sinnvoll, möglichst viele Stichprobenwerte in einen Schätzer einzubeziehen, statt nur einen Teil zu verwenden?},
+    description={Ja. Ein Schätzer, der weniger unabhängige Beobachtungen einbezieht, hat i.d.R.\ eine größere Varianz und damit ein mindestens so hohes (oft höheres) Risiko als ein Schätzer, der alle verfügbaren Stichprobendaten nutzt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_stichprobenmittel_erwartungstreu_allgemein}{
+    name={Ist das arithmetische Mittel $\bar X$ allgemein (für beliebige i.i.d.\ Stichprobenvariablen mit existierendem Erwartungswert) ein erwartungstreuer Schätzer des Erwartungswerts?},
+    description={Ja. Da $X_1,\dots,X_n$ identisch verteilt sind, gilt stets $E\left[\frac1n\sum_i X_i\right] = E[X_1]$ -- unabhängig von der konkreten zugrundeliegenden Verteilung.},
+    type=dinge
+}
+
+\newglossaryentry{bem_technik_obda_erwartungswert_null}{
+    name={Welchen Rechentrick nutzt man oft bei Bias-/Varianzrechnungen für Schätzer, um die Rechnung zu vereinfachen?},
+    description={Man darf o.B.d.A.\ annehmen, dass $E[X_i]=0$ gilt, da $X_i - \bar X$ (und damit alle daraus abgeleiteten Größen wie $s^2$) nur von den zentrierten Variablen $X_i-E[X_i]$ abhängt, nicht vom tatsächlichen Wert des Erwartungswerts selbst.},
+    type=dinge
+}
+
+\newglossaryentry{bem_naive_stichprobenvarianz_nicht_erwartungstreu}{
+    name={Ist die naive Stichprobenvarianz $s^2(x)=\frac1n\sum_i(x_i-\bar x)^2$ ein erwartungstreuer Schätzer der wahren Varianz?},
+    description={Nein. Es gilt $E[s^2(X)] = \left(1-\frac1n\right)\mathrm{Var}_\theta(X_1)$ -- der naive Schätzer unterschätzt die Varianz systematisch.},
+    type=dinge
+}
+
+\newglossaryentry{bem_intuition_warum_naive_varianz_unterschaetzt}{
+    name={Warum unterschätzt die naive Stichprobenvarianz die wahre Varianz systematisch?},
+    description={Weil der unbekannte Erwartungswert durch das Stichprobenmittel $\bar x$ ersetzt wird, das selbst aus denselben Daten berechnet ist und sich ihnen "besser anpasst" als der wahre Erwartungswert. Die beobachteten quadratischen Abweichungen vom Stichprobenmittel sind daher im Mittel kleiner als die Abweichungen vom wahren Erwartungswert.},
+    type=dinge
+}
+
+\newglossaryentry{def_korrigierte_stichprobenvarianz}{
+    name={Wie lautet der erwartungstreue ("korrigierte") Schätzer für die Varianz?},
+    description={$\widehat\sigma^2(x) = \dfrac{1}{n-1}\sum_{i=1}^n (x_i-\bar x)^2$ (Bessel-Korrektur: Vorfaktor $\frac{1}{n-1}$ statt $\frac1n$).},
+    type=dinge
+}
+
+\newglossaryentry{bem_bessel_korrektur_herkunft}{
+    name={Woher kommt der Korrekturfaktor $\frac{n}{n-1}$ bei der erwartungstreuen Stichprobenvarianz?},
+    description={Aus $E[s^2(X)] = \left(1-\frac1n\right)\mathrm{Var}_\theta(X_1) = \frac{n-1}{n}\mathrm{Var}_\theta(X_1)$: Multipliziert man den naiven Schätzer $s^2$ mit $\frac{n}{n-1}$, verschwindet der Verzerrungsfaktor und man erhält einen erwartungstreuen Schätzer.},
+    type=dinge
+}

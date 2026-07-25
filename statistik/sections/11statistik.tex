@@ -174,7 +174,6 @@
     Für qualitative \gls{Merkmal}e unterscheiden wir zwischen \emph{ordinalen} \gls{Merkmal}en bzw.\ \emph{Rangmerkmalen} einerseits und \emph{nominalen} \gls{Merkmal}en andererseits.
     Rangmerkmale weisen im Gegensatz zu nominalen \gls{Merkmal}en eine natürliche Ordnung auf (vgl.\ untergewichtig, normal, übergewichtig mit weiß, braun, rosa, schwarz).
 \end{defi}
-% TODO welche arten von merkmalen gibt es?
 
 \definstat{Grundgesamtheit}
 
@@ -236,16 +235,19 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
     \txc{(Skript 26)} \\
     Gegeben: Stichprobe $x_1,\dots,x_n$; \gls{Merkmal} $X$ mit genau $s$ möglichen Ausprägungen $a_1,\dots,a_s$.
     \begin{enumerate}[label=(\alph*)]
-        \item \textbf{Absolute Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
+        \item \textbf{Absolute Häufigkeit} \txc{= Anzahl} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$
+        \txc{(Wie viele der Werte sind gleich $a$)}:
         \[
             H_n(a_i) = \#\{j\in\{1,\dots,n\} : x_j = a_i\}
         \]
         \item \textbf{Absolute empirische \gls{Häufigkeitsverteilung}} der Stichprobe $x_1,\dots,x_n$:
-        Abbildung $H_n : \{a_1,\dots,a_s\}\to\{0,\dots,n\}$ mit $a_i\mapsto H_n(a_i)$ für $i=1,\dots,s$.
-        \item \textbf{Relative Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
+        Abbildung $H_n : \{a_1,\dots,a_s\}\to\{0,\dots,n\}$ mit $a_i\mapsto H_n(a_i)$ für $i=1,\dots,s$. \\
+        \txc{(Gibt an, wie oft jeder beobachtete Wert in der Stichprobe vorkommt.)}
+        \item \textbf{Relative Häufigkeit} \txc{= Anteil} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
         \[
             h_n(a_i) = \frac{1}{n} H_n(a_i)
         \]
+        \txc{Gibt also an, welchen Anteil der Stichprobe ein bestimmter Wert ausmacht.}
         \item \textbf{Relative \gls{Häufigkeitsverteilung}} der Stichprobe $x_1,\dots,x_n$:
         Abbildung $h_n : \{a_1,\dots,a_s\}\to\left\{\frac{k}{n} : k\in\{0,\dots,n\}\right\}$ mit $a_i\mapsto h_n(a_i)$ für $i=1,\dots,s$.
     \end{enumerate}
@@ -285,11 +287,15 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
 \karkar{def_stichprobe_stat}
 \karkar{def_urliste_stat}
 \karkar{def_arten_von_merkmalen}
+\karkar{def_arten_von_merkmalen_1}
+\karkar{def_arten_von_merkmalen_2}
 \karkar{def_absolute_haeufigkeit}
 \karkar{def_relative_haeufigkeit}
-\karkar{bem_summe_haeufigkeiten}
-\karkar{bem_wahl_der_darstellung}
+%\karkar{bem_summe_haeufigkeiten}
+%\karkar{bem_wahl_der_darstellung}
 \karkar{bem_restklasse_bei_ausreissern}
+
+\karkar{bem_uebersicht_lagemasse}
 
 \subsection{Graphische Darstellungen eindimensionaler Daten}\label{subsec:graphische-darstellungen-eindimensionaler-daten}
 
@@ -763,7 +769,7 @@ Wir verweisen diesbezüglich auf die Literatur.
 \karkar{bem_eigenschaften_modalwert}
 \karkar{def_unimodal}
 \karkar{def_median}
-\karkar{satz_median_ist_lagemass}
+%\karkar{satz_median_ist_lagemass}
 \karkar{satz_median_haelfte_eigenschaft}
 \karkar{satz_median_charakterisierung}
 \karkar{satz_median_minimierungseigenschaft}
@@ -1028,17 +1034,33 @@ beträgt.
 \karkar{bem_wozu_streumasse}
 \karkar{def_streumass}
 \karkar{def_spannweite}
+\karkar{def_spannweite_1}
 \karkar{def_medianabweichung}
+\karkar{def_medianabweichung_1}
+\karkar{bem_umgangssprachlich_medianabweichung}
 \karkar{def_mittlere_absolute_abweichung_vom_median}
+\karkar{def_mittlere_absolute_abweichung_vom_median_1}
+\karkar{bem_umgangssprachlich_mittlere_abweichung_median}
 
 \karkar{def_mittlere_absolute_abweichung_vom_mittel}
+\karkar{def_mittlere_absolute_abweichung_vom_mittel_1}
+\karkar{bem_umgangssprachlich_mittlere_abweichung_mittel}
 \karkar{def_stichprobenvarianz}
+\karkar{def_stichprobenvarianz_1}
+\karkar{bem_umgangssprachlich_stichprobenvarianz}
 \karkar{def_standardabweichung}
+\karkar{bem_umgangssprachlich_standardabweichung}
 \karkar{satz_steinersche_formel}
 \karkar{satz_streumasse_via_haeufigkeitsverteilung}
+\karkar{satz_streumasse_via_haeufigkeitsverteilung_1}
 
 \karkar{def_empirisches_p_quantil}
+\karkar{bem_umgangssprachlich_p_quantil}
 \karkar{bem_quantil_eigenschaften}
 \karkar{satz_charakterisierung_p_quantil}
 \karkar{def_p_quantilsabstand}
+\karkar{def_p_quantilsabstand_1}
+\karkar{bem_umgangssprachlich_p_quantilsabstand}
 \karkar{lem_p_quantilsabstand_ist_streumass}
+
+\karkar{bem_uebersicht_robuste_streumasse}

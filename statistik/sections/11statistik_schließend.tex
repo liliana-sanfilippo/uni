@@ -88,12 +88,22 @@ Wir werden die Theorie jeweils am Beispiel von \gls{Bernoulli-Variable}n illustr
     Wenn wir Grund haben anzunehmen, dass für die Erfolgswahrscheinlichkeit gewisse Werte ausgeschlossen werden können, so kann $\praum$ auch als echte Teilmenge von $[0,1]$ gewählt werden.
 \end{bsp}
 
+\karkar{bem_grundannahme_stichprobe}
+\karkar{def_stichprobenvariable}
+\karkar{def_stichprobe_formal}
+\karkar{bem_unterschied_stichprobe_stichprobenvariable}
+\karkar{def_stichprobenraum}
+\karkar{def_statistisches_modell}
+\karkar{def_parameterraum_und_parameter}
+\karkar{bem_parameterraum_einschraenkung}
+
 Unser Ziel ist es nun, systematisch aus Stichproben Schlüsse zu ziehen über die dem Zufallsexperiment zugrunde liegende Wahrscheinlichkeitsverteilung.
 Konkreter heißt das: Wir nehmen an, dass wir die \gls{verteilung} der \gls{Stichprobenvariable}n bis auf den oder die
 \gls{param} der \gls{verteilung} kennen, und wollen nun anhand einer Stichprobe die \gls{param} der \gls{verteilung} bestmöglich schätzen.
 Im Fall von \gls{Bernoulli-Variable}n heißt das, dass wir die Erfolgswahrscheinlichkeit $\param$ schätzen wollen.
 Im Folgenden werden wir auch andere Kennzahlen der Wahrscheinlichkeitsverteilung wie Erwartungswert oder Varianz schätzen.
 
+\section{Punktschätzer}
 Grundsätzlich gibt es verschiedene Typen von Resultaten, die wir anhand einer Stichprobe gewinnen können:
 \begin{enumerate}
     \item \textbf{\gls{Punktschätzer}:} Resultat ist ein Wert $\param$ oder $g(\param)$ mit $\param\in\praum$
@@ -152,6 +162,15 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     Dies wirft die Frage auf, wann ein \gls{Schätzer} ein guter \gls{Schätzer} ist.
     Wir benötigen Kriterien, um \gls{Schätzer} systematisch beurteilen zu können.
 \end{bsp}
+
+\karkar{bem_drei_arten_von_resultaten}
+\karkar{def_schaetzer_fuer_theta}
+\karkar{def_schaetzung}
+\karkar{bem_unterschied_schaetzer_schaetzung}
+\karkar{def_schaetzer_fuer_g_theta}
+\karkar{bem_schaetzer_koennen_schlecht_sein}
+
+\subsection{Kriterien zur Beurteilung von Punktschätzern}
 
 \begin{defi}[Kriterien zur Beurteilung von \gls{Punktschätzer}n]
     \txc{(Skript 26)} \\
@@ -232,6 +251,17 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     \end{enumerate}
 \end{bsp}
 
+\karkar{def_bias}
+\karkar{bem_bias_intuition}
+\karkar{def_erwartungstreue}
+\karkar{def_risiko}
+\karkar{bem_risiko_intuition}
+\karkar{def_risikofunktion}
+\karkar{def_mindestens_so_gut}
+\karkar{def_besser_als}
+
+\subsubsection*{Rechenregeln für Bias und Risiko}
+
 \begin{lem}
     \textbf{Rechenregeln für \gls{bias} und Risiko} \txc{(Skript 26)} \\
     Sei $\schatzer$ ein \gls{Schätzer} für $g(\param)$.
@@ -254,6 +284,12 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
         \item Folgt direkt aus der Definition der Erwartungstreue. \qedhere
     \end{enumerate}
 \end{lem}
+
+\karkar{lem_erwartungstreue_aequivalent}
+\karkar{lem_bias_varianz_zerlegung}
+\karkar{lem_risiko_erwartungstreuer_schaetzer}
+
+\subsubsection*{Anwendung}
 
 Bisher haben wir ausschließlich den \gls{param} geschätzt, der im Spezialfall der \gls{Bernoulli-Variable}n mit dem Erwartungswert zusammenfällt.
 Im allgemeinen Fall, wenn die \gls{Stichprobenvariable}n möglicherweise eine andere \gls{verteilung} haben, dient das
@@ -365,3 +401,17 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
     \]
     einen erwartungstreuen \gls{Schätzer} für die Varianz, wenn der Erwartungswert unbekannt ist und daher durch den \gls{Schätzer} $\bar x$ ersetzt werden muss.
 \end{bsp}
+
+\karkar{bem_stichprobenmittel_erwartungstreu_bernoulli}
+\karkar{bem_risiko_stichprobenmittel_bernoulli}
+\karkar{bem_technik_gleichmaessige_risikoschranke}
+
+\karkar{bem_mehr_daten_i_a_besserer_schaetzer}
+\karkar{bem_stichprobenmittel_erwartungstreu_allgemein}
+\karkar{bem_technik_obda_erwartungswert_null}
+
+\karkar{bem_naive_stichprobenvarianz_nicht_erwartungstreu}
+\karkar{bem_intuition_warum_naive_varianz_unterschaetzt}
+\karkar{def_korrigierte_stichprobenvarianz}
+
+\karkar{bem_bessel_korrektur_herkunft}
