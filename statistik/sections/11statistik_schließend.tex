@@ -133,7 +133,8 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
 
 \begin{bsp}[\gls{Schätzer} können absurd schlecht sein]
     \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ haben wir den \gls{Stichprobenraum} $\spr=\{0,1\}^n$ sowie den \gls{praum} $\praum=[0,1]$.
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ haben wir den
+    \gls{Stichprobenraum} $\spr=\{0,1\}^n$ sowie den \gls{praum} $\praum=[0,1]$.
     Gemäß Definition ist die Abbildung
     \begin{center}
         $\schatzer:\spr\to\praum$ mit $\schatzer(x)=\frac12$ für alle $x\in\spr$
@@ -141,7 +142,8 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     eine zulässige Wahl für einen \gls{Schätzer} der Erfolgswahrscheinlichkeit.
     Offensichtlich ist diese, nicht von der Stichprobe abhängige Wahl nicht sinnvoll.
 
-    Motiviert durch das Gesetz der großen Zahlen und die Tatsache, dass für \gls{Bernoulli-Variable} der Erwartungswert der Erfolgswahrscheinlichkeit entspricht, vermuten wir, dass das arithmetische Mittel der Stichprobenwerte
+    Motiviert durch das Gesetz der großen Zahlen und die Tatsache, dass für \gls{Bernoulli-Variable} der
+    Erwartungswert der Erfolgswahrscheinlichkeit entspricht, vermuten wir, dass das arithmetische Mittel der Stichprobenwerte
     \[
         \schatzer(x)=\frac1n\sum_{i=1}^n x_i
     \]
@@ -153,7 +155,10 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
 
 \begin{defi}[Kriterien zur Beurteilung von \gls{Punktschätzer}n]
     \txc{(Skript 26)} \\
-    Gegeben seien ein statistisches Modell der Form $\pefam=\{\pe_{\param}:\param\in\praum\}$, eine Abbildung $g:\praum\to\Gamma$, sowie ein \gls{Schätzer} $\schatzer:\spr\to\Gamma$ für $g(\param)$.\footnote{Der Fall, dass wir mit einem \gls{Schätzer} für den \gls{param} $\param$ selbst arbeiten, entspricht der Wahl $\Gamma=\praum$ und $g(x)=x$ für alle $x\in\spr$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
+    Gegeben seien ein statistisches Modell der Form $\pefam=\{\pe_{\param}:\param\in\praum\}$, eine
+    Abbildung $g:\praum\to\Gamma$, sowie ein \gls{Schätzer} $\schatzer:\spr\to\Gamma$ für $g(\param)$.
+    \footnote{Der Fall, dass wir mit einem \gls{Schätzer} für den \gls{param} $\param$ selbst arbeiten,
+        entspricht der Wahl $\Gamma=\praum$ und $g(x)=x$ für alle $x\in\spr$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
 
     \begin{enumerate}[label=(\alph*)]
         \item Der \emph{\gls{bias}} des \gls{Schätzer}s $\schatzer$ ist definiert als
@@ -162,19 +167,23 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
         \]
         Dabei sei $\ET$ der Erwartungswert, der mit dem Wahrscheinlichkeitsmaß $\pe_{\param}$ definiert ist.
         \item Der \gls{Schätzer} $\schatzer$ heißt \emph{erwartungstreu}, wenn $\bias\schatzer(\param)=0$ für alle $\param\in\praum$ gilt.
-        \item Das \emph{Risiko} des \gls{Schätzer}s $\schatzer$ im Punkt $\param\in\praum$ ist definiert als die erwartete quadratische Abweichung des \gls{Schätzer}s von $g(\param)$, das heißt,
+        \item Das \emph{Risiko} des \gls{Schätzer}s $\schatzer$ im Punkt $\param\in\praum$ ist definiert als die
+        erwartete quadratische Abweichung des \gls{Schätzer}s von $g(\param)$, das heißt,
         \[
             R(\param,\schatzer) = \ET\big[(T-g(\param))^2\big] \cdot
         \]
         \item Die \emph{Risikofunktion} des \gls{Schätzer}s $\schatzer$ ist definiert als die Abbildung $\param\mapsto R(\param,\schatzer)$.
-        \item Sind $\schatzer_1,t_2:\spr\to\Gamma$ zwei \gls{Schätzer} für $g(\param)$, so sagen wir, dass $\schatzer_1$ \emph{mindestens so gut} ist wie $\schatzer_2$, wenn $R(\param,t_1)\leq R(\param,t_2)$ für alle $\param\in\praum$ gilt.
-        Gilt zusätzlich, dass es ein $\param\in\praum$ gibt mit $R(\param,t_1)<R(\param,t_2)$, so sagen wir, dass $\schatzer_1$ \emph{besser} als $\schatzer_2$ ist.
+        \item Sind $\schatzer_1,t_2:\spr\to\Gamma$ zwei \gls{Schätzer} für $g(\param)$, so sagen wir, dass
+        $\schatzer_1$ \emph{mindestens so gut} ist wie $\schatzer_2$, wenn $R(\param,t_1)\leq R(\param,t_2)$ für alle $\param\in\praum$ gilt.
+        Gilt zusätzlich, dass es ein $\param\in\praum$ gibt mit $R(\param,t_1)<R(\param,t_2)$, so sagen wir, dass $\schatzer_1$ \emph{besser}
+        \item als $\schatzer_2$ ist.
     \end{enumerate}
 \end{defi}
 
 \begin{bsp}
     \textbf{Das arithmetische Mittel als \gls{Schätzer} im Fall von \gls{Bernoulli-Variable}n} \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ erhalten wir folgende Ergebnisse für den \gls{Schätzer} $\schatzer$ mit
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ erhalten wir folgende
+    Ergebnisse für den \gls{Schätzer} $\schatzer$ mit
     \[
         \schatzer(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\{0,1\}^n ,
     \]
@@ -189,7 +198,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
         \item Daher ist der \gls{Schätzer} $\schatzer$ erwartungstreu.
         \item Das Risiko des \gls{Schätzer}s $\schatzer$ im Punkt $\param\in\praum$ ergibt sich zu
         \[
-            R(\param,\schatzer) = \ET\left[\lef\schatzer(\frac1n\sum_{i=1}^n X_i - \param\righ\schatzer)^2\right] = \mathrm{Var}_\param\lef\schatzer(\frac1n\sum_{i=1}^n X_i\righ\schatzer) = \frac1n\,\mathrm{Var}_\param(X_1) = \frac{\param(1-\param)}{n} \cdot
+            R(\param,\schatzer) = \ET\left[\left(\frac1n\sum_{i=1}^n X_i - \param\right)^2\right] = \mathrm{Var}_\param\left(\frac1n\sum_{i=1}^n X_i\right) = \frac1n\,\mathrm{Var}_\param(X_1) = \frac{\param(1-\param)}{n} \cdot
         \]
 
         Auch für unbekanntes $\param\in\praum=[0,1]$ können wir eine von $\param$ unabhängige obere Schranke an das Risiko bestimmen.
@@ -215,7 +224,8 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
             \tilde \schatzer(x) = \frac{x_1+x_n}{2} \qquad \text{für alle } x\in\{0,1\}^n ,
         \]
         das heißt, wir sind ``faul'' und verwenden nur den ersten und den letzten Stichprobenwert.
-        Das Risiko von $\tilde t$ in $\param$ ist gegeben durch $R(\param,\tilde \schatzer) = \dfrac{\param(1-\param)}{2}$ (dieselbe Rechnung wie für $\schatzer$, nur diesmal mit Stichprobengröße $2$).
+        Das Risiko von $\tilde t$ in $\param$ ist gegeben durch $R(\param,\tilde \schatzer) = \dfrac{\param(1-\param)}{2}$
+        \item (dieselbe Rechnung wie für $\schatzer$, nur diesmal mit Stichprobengröße $2$).
 
         Wir haben das -- keineswegs überraschende -- Ergebnis, dass $\schatzer$ mindestens so gut ist wie $\tilde t$, sofern $n\geq2$.
         Für $n>2$ haben wir sogar, dass $\schatzer$ besser als $\tilde t$ ist.
@@ -303,7 +313,9 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
 
 \begin{bsp}
     \textbf{\gls{Schätzer} für die Varianz} \txc{(Skript 26)} \\
-    Seien $X_1,\dots,X_n$ unabhängige \gls{Stichprobenvariable}\footnote{Wir nehmen nicht an, dass die Stichprobenvariablen \gls{Bernoulli-Variable} sind.} und $\schatzer$ ein \gls{Schätzer} für den Erwartungswert, der durch
+    Seien $X_1,\dots,X_n$ unabhängige \gls{Stichprobenvariable}
+    \footnote{Wir nehmen nicht an, dass die Stichprobenvariablen \gls{Bernoulli-Variable} sind.} und
+    $\schatzer$ ein \gls{Schätzer} für den Erwartungswert, der durch
     \[
         \schatzer(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\spr
     \]
@@ -311,7 +323,7 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
 
     Eine naheliegende Idee ist es, analog zur Stichprobenvarianz, die Abbildung $s^2$ mit
     \[
-        s^2(x) = \frac1n\sum_{i=1}^n (x_i-\bar x)^2 = \frac1n\sum_{i=1}^n \lef\schatzer(x_i - \frac1n\sum_{j=1}^n x_j\righ\schatzer)^2 \qquad \text{für alle } x\in\spr
+        s^2(x) = \frac1n\sum_{i=1}^n (x_i-\bar x)^2 = \frac1n\sum_{i=1}^n \left(x_i - \frac1n\sum_{j=1}^n x_j\right)^2 \qquad \text{für alle } x\in\spr
     \]
     zu wählen.
 
@@ -320,8 +332,8 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
     Wir können uns die (Schreib-)Arbeit etwas erleichtern, wenn wir annehmen, dass $\ET[X_i]=0$ gilt.
     Diese Annahme bedeutet keine Einschränkung der Allgemeingültigkeit des herzuleitenden Resultats, wie wir mittels einer Nullergänzung leicht sehen:
     \begin{align*}
-        X_i - \schatzer(X) &= (X_i-\ET[X_i]) + \lef\schatzer(\ET[X_1] - \frac1n\sum_{i=1}^n X_i\righ\schatzer) \\
-        &= (X_i-\ET[X_i]) - \lef\schatzer(\frac1n\sum_{i=1}^n (X_i-\ET[X_i])\righ\schatzer) \\
+        X_i - \schatzer(X) &= (X_i-\ET[X_i]) + \left(\ET[X_1] - \frac1n\sum_{i=1}^n X_i\right) \\
+        &= (X_i-\ET[X_i]) - \left(\frac1n\sum_{i=1}^n (X_i-\ET[X_i])\right) \\
         &= (X_i-\ET[X_i]) - t\big((X_1-\ET[X_1],\dots,X_n-\ET[X_n])\big) \cdot
     \end{align*}
     Das heißt, $X_i-\schatzer(X)$ hängt nicht vom Erwartungswert der \gls{Stichprobenvariable}n ab.
@@ -342,7 +354,7 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
     \]
     Da wir angenommen haben, dass $\ET[X_1]=0$ gilt, folgt
     \[
-        \ET\big[s^2(X)\big] = \lef\schatzer(1-\frac1n\righ\schatzer)\mathrm{Var}_\param(X_1) \cdot
+        \ET\big[s^2(X)\big] = \left(1-\frac1n\right)\mathrm{Var}_\param(X_1) \cdot
     \]
     Wir sehen somit, dass $s^2$ \emph{kein} erwartungstreuer \gls{Schätzer} der Varianz ist.
     Wir sehen aber auch, dass der Unterschied nur im Vorfaktor $1-\frac1n$ liegt.
