@@ -123,6 +123,19 @@ def clean_latex(text):
     # Mehrere Leerzeichen
     text = re.sub(r"\s+", " ", text)
 
+    text = re.sub(
+        r'(?<!\\)\$([^$]+?)(?<!\\)\$',
+        r'\\(\1\\)',
+        text
+    )
+
+    text = re.sub(
+        r'\\\[(.*?)\\\]',
+        r'\\[\1\\]',
+        text,
+        flags=re.DOTALL
+    )
+
     return text.strip()
 
 
@@ -154,6 +167,13 @@ def main():
 
     # Referenzen auflösen
     for entry in entries:
+        entry["name"] = resolve_glossary_refs(
+            entry["name"],
+            glossary
+        )
+        entry["name"] = clean_latex(
+            entry["name"]
+        )
         entry["description"] = resolve_glossary_refs(
             entry["description"],
             glossary
