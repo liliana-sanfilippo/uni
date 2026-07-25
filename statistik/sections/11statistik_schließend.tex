@@ -39,7 +39,7 @@ Wir werden die Theorie jeweils am Beispiel von \gls{Bernoulli-Variable}n illustr
     \begin{itemize}
         \item Ereignisraum $\eraum=\{0,1\}^n$
         \item unbekannte Erfolgswahrscheinlichkeit $\theta\in[0,1]$
-        \item Wahrscheinlichkeitsfunktion $\wfk_\theta(\ele) = \theta^{\sum_{i=1}^n \ele_i}(1-\theta)^{n-\sum_{i=1}^n\ele_i}$ für alle $\ele\in\eraum$
+        \item Wahrscheinlichkeitsfunktion $\wfk_{\theta}(\ele) = \theta^{\sum_{i=1}^n \ele_i}(1-\theta)^{n-\sum_{i=1}^n\ele_i}$ für alle $\ele\in\eraum$
         \item $X_i:\eraum\to\{0,1\}$ mit $X_i(\ele)=\ele_i$ für alle $\ele\in\eraum$ und alle $i\in\{1,\dots,n\}$
     \end{itemize}
 \end{bsp}
@@ -79,9 +79,9 @@ Wir werden die Theorie jeweils am Beispiel von \gls{Bernoulli-Variable}n illustr
 
 \begin{bsp}[\gls{Bernoulli-Variable}]
     \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\pefam = \{\pe_{\param}:\param\in\praum\}$, wobei wir im Allgemeinen $\praum=[0,1]$ wählen und $\pe_{\param}$ durch die Wahrscheinlichkeitsfunktion $\wfk_\param$ mit
+    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\pefam = \{\pe_{\param}:\param\in\praum\}$, wobei wir im Allgemeinen $\praum=[0,1]$ wählen und $\pe_{\param}$ durch die Wahrscheinlichkeitsfunktion $\wfk_{\param}$ mit
     \[
-        \wfk_\param(\ele) = \param^{\sum_{i=1}^n\ele_i}(1-\param)^{n-\sum_{i=1}^n\ele_i} \qquad \text{für alle } \ele\in\eraum
+        \wfk_{\param}(\ele) = \param^{\sum_{i=1}^n\ele_i}(1-\param)^{n-\sum_{i=1}^n\ele_i} \qquad \text{für alle } \ele\in\eraum
     \]
     gegeben ist.
 
@@ -217,7 +217,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
         \item Daher ist der \gls{Schätzer} $\schatzer$ erwartungstreu.
         \item Das Risiko des \gls{Schätzer}s $\schatzer$ im Punkt $\param\in\praum$ ergibt sich zu
         \[
-            R(\param,\schatzer) = \ET\left[\left(\frac1n\sum_{i=1}^n X_i - \param\right)^2\right] = \mathrm{Var}_\param\left(\frac1n\sum_{i=1}^n X_i\right) = \frac1n\,\mathrm{Var}_\param(X_1) = \frac{\param(1-\param)}{n} \cdot
+            R(\param,\schatzer) = \ET\left[\left(\frac1n\sum_{i=1}^n X_i - \param\right)^2\right] = \mathrm{Var}_{\param}\left(\frac1n\sum_{i=1}^n X_i\right) = \frac1n\,\mathrm{Var}_{\param}(X_1) = \frac{\param(1-\param)}{n} \cdot
         \]
 
         Auch für unbekanntes $\param\in\praum=[0,1]$ können wir eine von $\param$ unabhängige obere Schranke an das Risiko bestimmen.
@@ -268,8 +268,8 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     Dann gelten:
     \begin{enumerate}[label=(\alph*)]
         \item Der \gls{Schätzer} $\schatzer$ ist genau dann erwartungstreu, wenn $\ET[T]=g(\param)$ für alle $\param\in\praum$ gilt.
-        \item $R(\param,\schatzer) = (\bias\schatzer(\param))^2 + \mathrm{Var}_\param(T)$
-        \item Ist $\schatzer$ erwartungstreu, so gilt $R(\param,\schatzer) = \mathrm{Var}_\param(T)$.
+        \item $R(\param,\schatzer) = (\bias\schatzer(\param))^2 + \mathrm{Var}_{\param}(T)$
+        \item Ist $\schatzer$ erwartungstreu, so gilt $R(\param,\schatzer) = \mathrm{Var}_{\param}(T)$.
     \end{enumerate}
 
     \paragraph{Beweis.}
@@ -279,7 +279,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
         \begin{align*}
             R(\param,\schatzer) &= \ET\big[(T-g(\param))^2\big] = \ET\Big[\big((T-\ET[T])+(\ET[T]-g(\param))\big)^2\Big] \\
             &= \ET\big[(T-\ET[T])^2\big] + 2\big(\ET[T]-g(\param)\big)\,\ET\big[T-\ET[T]\big] + \big(\ET[T]-g(\param)\big)^2 \\
-            &= \mathrm{Var}_\param(T) + (\bias\schatzer(\param))^2 \cdot
+            &= \mathrm{Var}_{\param}(T) + (\bias\schatzer(\param))^2 \cdot
         \end{align*}
         \item Folgt direkt aus der Definition der Erwartungstreue. \qedhere
     \end{enumerate}
@@ -390,7 +390,7 @@ Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
     \]
     Da wir angenommen haben, dass $\ET[X_1]=0$ gilt, folgt
     \[
-        \ET\big[s^2(X)\big] = \left(1-\frac1n\right)\mathrm{Var}_\param(X_1) \cdot
+        \ET\big[s^2(X)\big] = \left(1-\frac1n\right)\mathrm{Var}_{\param}(X_1) \cdot
     \]
     Wir sehen somit, dass $s^2$ \emph{kein} erwartungstreuer \gls{Schätzer} der Varianz ist.
     Wir sehen aber auch, dass der Unterschied nur im Vorfaktor $1-\frac1n$ liegt.
