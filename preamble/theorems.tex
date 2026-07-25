@@ -88,8 +88,11 @@
 
 \newtheorem{reg}{Regel}[chapter]
 \DefineBoxEnv{reg}{Thistle}{breakable}
+\newtheorem{freg}{Faustregel}[chapter]
+\DefineBoxEnv{freg}{RoyalBlue}{breakable}
 \newtheorem{regen}{Rule}[chapter]
 \DefineBoxEnv{regen}{Thistle}{breakable}
+\newcommand{\faustregel}[1]{\begin{freg} #1\end{freg}}
 
 
 %% AUFGABE / EXERCISE
@@ -113,6 +116,10 @@
 \newtheorem{kom}{
     \iflanguage{ngerman}{Kommentar}{Comment}
 }[chapter]
+
+\newtheorem{warn}{Warnung}[chapter]
+\DefineBoxEnv{warn}{RedViolet}{breakable}
+\newcommand{\warnung}[1]{\begin{warn}\small\textbf{Achtung:} #1\end{warn}}
 
 %% SATZ
 
