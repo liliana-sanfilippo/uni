@@ -1,0 +1,255 @@
+%% on Clauder erstellt und von mir überarbeitet
+% ===================================================================
+% Abschnitt "Daten, Häufigkeitsverteilungen und ihre Darstellung"
+% ===================================================================
+
+\newglossaryentry{def_merkmal_stat}{
+    name={Was ist ein Merkmal im Kontext der beschreibenden Statistik?},
+    description={Eine Eigenschaft, die an einer Versuchseinheit erhoben bzw.\ gemessen wird (z.B.\ Lage, Farbe, Alter, Größe). Ein Merkmal tritt in verschiedenen Ausprägungen auf.},
+    type=dinge
+}
+
+\newglossaryentry{def_grundgesamtheit_stat_1}{
+    name={Was ist die Grundgesamtheit?},
+    description={Die Grundgesamtheit ist die Gesamtheit aller Versuchseinheiten, über die im Rahmen einer Datenerhebung eine Aussage getroffen werden soll.},
+    type=dinge
+}
+
+\newglossaryentry{def_grundgesamtheit_stat_2}{
+    name={Warum muss die Grundgesamtheit sorgfältig definiert werden?},
+    description={Da sie je nach Merkmal und Fragestellung unterschiedlich abgegrenzt ist.},
+    type=dinge
+}
+
+\newglossaryentry{def_stichprobe_stat}{
+    name={Was ist eine Stichprobe, und warum wird meist sie statt der gesamten Grundgesamtheit ausgewertet?},
+    description={Eine Stichprobe ist eine (in der Regel kleinere) Teilmenge von $n$ Versuchseinheiten aus der Grundgesamtheit.
+    Man wertet sie aus, weil die vollständige Grundgesamtheit oft zu groß ist.
+    Der Begriff "Stichprobe" wird üblicherweise sowohl für die gewählten Versuchseinheiten als auch für die zugehörigen Merkmalsausprägungen verwendet.},
+    type=dinge
+}
+
+\newglossaryentry{def_urliste_stat}{
+    name={Was ist eine Urliste?},
+    description={Die Liste der ursprünglich (in Erhebungsreihenfolge, unsortiert) erfassten Daten einer Stichprobe, typischerweise dargestellt als Paare (Index/Versuchseinheit, Merkmalsausprägung).},
+    type=dinge
+}
+
+\newglossaryentry{def_arten_von_merkmalen}{
+    name={Welche Arten von Merkmalen unterscheidet man?},
+    description={Quantitative Merkmale (z.B.\ Alter in Jahren oder Größe) und qualitative Merkmale (z.B.\ untergewichtig/normal/übergewichtig oder Farbe).},
+    type=dinge
+}
+
+\newglossaryentry{def_arten_von_merkmalen_1}{
+    name={Welche Arten von quantitative Merkmalen unterscheidet man?},
+    description={Diskret (z.B.\ Alter in Jahren) und stetig (z.B.\ Größe). Qualitative Merkmale unterteilt man in
+    \emph{ordinale} Merkmale/Rangmerkmale mit natürlicher Ordnung (z.B.\ untergewichtig/normal/übergewichtig) und \emph{nominale} Merkmale ohne natürliche Ordnung (z.B.\ Farbe).},
+    type=dinge
+}
+
+\newglossaryentry{def_arten_von_merkmalen_2}{
+    name={Welche Arten von qualitativen Merkmalen unterscheidet man?},
+    description={Quantitative Merkmale unterteilt man in \emph{diskret} (z.B.\ Alter in Jahren) und \emph{stetig} (z.B.\ Größe). Qualitative Merkmale unterteilt man in \emph{ordinale} Merkmale/Rangmerkmale mit natürlicher Ordnung (z.B.\ untergewichtig/normal/übergewichtig) und \emph{nominale} Merkmale ohne natürliche Ordnung (z.B.\ Farbe).},
+    type=dinge
+}
+
+\newglossaryentry{def_absolute_haeufigkeit}{
+    name={Wie ist die absolute Häufigkeit $H_n(a_i)$ einer Ausprägung $a_i$ in einer Stichprobe $x_1,\dots,x_n$ definiert?},
+    description={$H_n(a_i) = \#\{j\in\{1,\dots,n\}: x_j=a_i\}$ -- die Anzahl der Stichprobenwerte, die gleich $a_i$ sind.},
+    type=dinge
+}
+
+\newglossaryentry{def_relative_haeufigkeit}{
+    name={Wie ist die relative Häufigkeit $h_n(a_i)$ einer Ausprägung $a_i$ definiert?},
+    description={$h_n(a_i) = \dfrac1n H_n(a_i)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_summe_haeufigkeiten}{
+    name={Welche Summeneigenschaften gelten für die absoluten bzw.\ relativen Häufigkeiten aller Ausprägungen $a_1,\dots,a_s$?},
+    description={$H_n(a_1)+\dots+H_n(a_s) = n$ und $h_n(a_1)+\dots+h_n(a_s) = 1$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wahl_der_darstellung}{
+    name={Wann sind Kreis- bzw.\ Balkendiagramm für die Darstellung einer Häufigkeitsverteilung ungeeignet, und was verwendet man stattdessen?},
+    description={Bei sehr vielen verschiedenen Ausprägungen (z.B.\ bei einem quasi-stetigen Merkmal wie Alter in Jahren) werden Kreis- und Balkendiagramme unübersichtlich. Stattdessen bildet man Klassen (Wertebereiche) und stellt die Häufigkeiten pro Klasse in einem Histogramm dar.},
+    type=dinge
+}
+
+\newglossaryentry{bem_restklasse_bei_ausreissern}{
+    name={Wie geht man bei der Bildung von Histogramm-Klassen mit Ausreißern in den Daten um?},
+    description={Man bildet für die Ausreißer eine Restklasse. Für diese wird kein eigener Balken gezeichnet, sondern nur vermerkt, wie viele Elemente sie enthält.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Empirische Häufigkeitsverteilungen und ihre Lagemaße"
+% ===================================================================
+
+\newglossaryentry{def_lagemass}{
+    name={Wie ist ein Lagemaß formal definiert?},
+    description={Eine Funktion $l:\mathbb{R}^n\to\mathbb{R}$ heißt Lagemaß, wenn $l(x_1+a,\dots,x_n+a) = l(x_1,\dots,x_n)+a$ für alle $(x_1,\dots,x_n)\in\mathbb{R}^n$ und alle $a\in\mathbb{R}$ gilt (Translationsäquivarianz): Verschiebt man alle Stichprobenwerte um $a$, verschiebt sich auch der Wert des Lagemaßes um $a$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_welche_mittel_sind_lagemasse}{
+    name={Welche der drei klassischen Mittelwerte (arithmetisches, geometrisches, harmonisches Mittel) sind Lagemaße im formalen Sinn?},
+    description={Nur das arithmetische Mittel ist ein Lagemaß. Geometrisches Mittel und harmonisches Mittel sind KEINE Lagemaße -- sie erfüllen die Translationsäquivarianz-Eigenschaft $l(x+a)=l(x)+a$ im Allgemeinen nicht.},
+    type=dinge
+}
+
+\newglossaryentry{satz_schwerpunkteigenschaft_arith_mittel}{
+    name={Wie lautet die Schwerpunkteigenschaft (Nulleigenschaft) des arithmetischen Mittels?},
+    description={$\sum_{i=1}^n (x_i-\bar x) = 0$ -- die Summe der Abweichungen aller Werte vom arithmetischen Mittel ist stets Null.},
+    type=dinge
+}
+
+\newglossaryentry{satz_minimierungseigenschaft_arith_mittel}{
+    name={Wie lautet die Minimierungseigenschaft des arithmetischen Mittels?},
+    description={Das arithmetische Mittel minimiert die quadratische Abweichung der Stichprobenwerte von einer Konstanten: $\sum_{i=1}^n (x_i-\bar x)^2 = \inf_{c\in\mathbb{R}} \sum_{i=1}^n (x_i-c)^2$, d.h.\ $\sum_{i=1}^n(x_i-c)^2$ wird minimal für $c=\bar x$.},
+    type=dinge
+}
+
+\newglossaryentry{def_modalwert}{
+    name={Wie ist der Modalwert (Modus) einer Stichprobe definiert?},
+    description={Eine Ausprägung $a$ heißt Modalwert/Modus des Merkmals $X$, wenn $H_n(a) \ge H_n(x_i)$ für alle $i=1,\dots,n$ gilt -- also wenn $a$ die Ausprägung mit der größten Häufigkeit in der Stichprobe ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_eigenschaften_modalwert}{
+    name={Welche Eigenschaften hat der Modalwert (Definitionsbereich, Eindeutigkeit, Lagemaß-Eigenschaft)?},
+    description={Der Modalwert ist auch für nominale Merkmale definiert (er benötigt keine Ordnung). Er ist in der Regel nicht eindeutig bestimmt. Für quantitative Merkmale ist der Modalwert ein Lagemaß.},
+    type=dinge
+}
+
+\newglossaryentry{def_unimodal}{
+    name={Wann heißt eine Häufigkeitsverteilung unimodal?},
+    description={Wenn der Modalwert $x_{\mathrm{mod}}$ eindeutig bestimmt ist, d.h.\ es gibt nur eine einzige Ausprägung mit maximaler Häufigkeit.},
+    type=dinge
+}
+
+\newglossaryentry{def_median}{
+    name={Wie ist der Median (Zentralwert) $x_{\mathrm{med}}$ einer Stichprobe $x_1,\dots,x_n$ definiert?},
+    description={Mit der geordneten Stichprobe $x_{(1)}\le\dots\le x_{(n)}$: $x_{\mathrm{med}} = x_{\left(\frac{n+1}{2}\right)}$ falls $n$ ungerade, und $x_{\mathrm{med}} = \frac12\left[x_{(n/2)}+x_{(n/2+1)}\right]$ falls $n$ gerade.},
+    type=dinge
+}
+
+\newglossaryentry{satz_median_ist_lagemass}{
+    name={Ist der Median ein Lagemaß?},
+    description={Ja, der Median ist ein Lagemaß.},
+    type=dinge
+}
+
+\newglossaryentry{satz_median_haelfte_eigenschaft}{
+    name={Welche "Halbierungseigenschaft" erfüllt der Median bezüglich der relativen Häufigkeiten?},
+    description={$\sum_{k: a_k\le x_{\mathrm{med}}} h_n(a_k) \ge \tfrac12$ und $\sum_{k: a_k\ge x_{\mathrm{med}}} h_n(a_k) \ge \tfrac12$ -- mindestens die Hälfte der Stichprobenwerte ist kleiner-gleich, und mindestens die Hälfte ist größer-gleich dem Median.},
+    type=dinge
+}
+
+\newglossaryentry{satz_median_charakterisierung}{
+    name={Wie lässt sich der Median durch die Halbierungseigenschaft eindeutig charakterisieren (auch wenn $a$ selbst kein beobachteter Wert ist)?},
+    description={Erfüllt ein $a\in\mathbb{R}$ die beiden Ungleichungen $\sum_{k:a_k\le a} h_n(a_k)\ge\tfrac12$ und $\sum_{k:a_k\ge a} h_n(a_k)\ge\tfrac12$, so folgt $x_{(\lceil n/2\rceil)} \le a \le x_{(\lceil n/2\rceil+1)}$. $a$ muss dabei keine tatsächlich beobachtete Ausprägung sein.},
+    type=dinge
+}
+
+\newglossaryentry{satz_median_minimierungseigenschaft}{
+    name={Welche Minimierungseigenschaft besitzt der Median?},
+    description={Der Median minimiert die Summe der absoluten Abweichungen: $\sum_{i=1}^n |x_i-c| \to \min$ für $c$ im Intervall $\left[x_{\left(\lfloor\frac{n+1}{2}\rfloor\right)}, x_{\left(\lceil\frac{n+1}{2}\rceil\right)}\right]$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Empirische Häufigkeitsverteilungen und ihre Streumaße"
+% ===================================================================
+
+\newglossaryentry{bem_wozu_streumasse}{
+    name={Wozu benötigt man Streumaße zusätzlich zu Lagemaßen?},
+    description={Lagemaße beschreiben nur die zentrale Tendenz einer Verteilung, sagen aber nichts darüber aus, wie stark die Daten um diesen zentralen Wert streuen. Streumaße erfassen diese Variabilität/Streubreite der Beobachtungswerte.},
+    type=dinge
+}
+
+\newglossaryentry{def_streumass}{
+    name={Wie ist ein Streumaß formal definiert?},
+    description={Eine Funktion $s:\mathbb{R}^n\to\mathbb{R}$ heißt Streumaß, wenn $s(x_1+a,\dots,x_n+a) = s(x_1,\dots,x_n)$ für alle $(x_1,\dots,x_n)\in\mathbb{R}^n$ und alle $a\in\mathbb{R}$ gilt (Translationsinvarianz): Verschiebt man alle Stichprobenwerte um $a$, ändert sich der Wert des Streumaßes nicht.},
+    type=dinge
+}
+
+\newglossaryentry{def_spannweite}{
+    name={Wie ist die Spannweite einer Stichprobe definiert, und ist sie robust gegenüber Ausreißern?},
+    description={Spannweite $= x_{\max}-x_{\min} = x_{(n)}-x_{(1)}$. Sie ist ein Streumaß, aber NICHT robust gegenüber Ausreißern.},
+    type=dinge
+}
+
+\newglossaryentry{def_medianabweichung}{
+    name={Wie ist die Medianabweichung definiert, und ist sie robust gegenüber Ausreißern?},
+    description={Man bildet die Hilfsstichprobe $y_i=|x_i-x_{\mathrm{med}}|$; die Medianabweichung ist der Median $y_{\mathrm{med}}$ dieser Hilfsstichprobe ("Median der absoluten Abweichungen vom Median"). Sie ist robust gegenüber Ausreißern.},
+    type=dinge
+}
+
+\newglossaryentry{def_mittlere_absolute_abweichung_vom_median}{
+    name={Wie ist die mittlere absolute Abweichung vom Median definiert, und ist sie robust?},
+    description={$\bar s = \dfrac1n\sum_{i=1}^n |x_i-x_{\mathrm{med}}|$ (arithmetisches Mittel der Hilfsstichprobe $y_i=|x_i-x_{\mathrm{med}}|$). Sie ist NICHT robust gegenüber Ausreißern -- obwohl der Median selbst robust ist.},
+    type=dinge
+}
+
+\newglossaryentry{def_mittlere_absolute_abweichung_vom_mittel}{
+    name={Wie ist die mittlere absolute Abweichung vom arithmetischen Mittel definiert, und ist sie robust?},
+    description={$\dfrac1n\sum_{i=1}^n |x_i-\bar x|$. Sie ist NICHT robust gegenüber Ausreißern.},
+    type=dinge
+}
+
+\newglossaryentry{def_stichprobenvarianz}{
+    name={Wie ist die (Stichproben-)Varianz $s^2$ definiert, und ist sie robust gegenüber Ausreißern?},
+    description={$s^2 = \dfrac1n\sum_{i=1}^n (x_i-\bar x)^2$ -- die mittlere quadratische Abweichung vom arithmetischen Mittel. Sie ist NICHT robust gegenüber Ausreißern.},
+    type=dinge
+}
+
+\newglossaryentry{def_standardabweichung}{
+    name={Wie ist die (Stichproben-)Standardabweichung definiert?},
+    description={$s = \sqrt{s^2}$, die Wurzel der Stichprobenvarianz. Sie ist ebenfalls nicht robust gegenüber Ausreißern (da $s^2$ es nicht ist).},
+    type=dinge
+}
+
+\newglossaryentry{satz_steinersche_formel}{
+    name={Wie lautet die Steinersche Formel zur (oft einfacheren) Berechnung der Stichprobenvarianz?},
+    description={$s^2 = \dfrac1n\sum_{i=1}^n x_i^2 - \bar x^2 = \dfrac1n\sum_{i=1}^n x_i^2 - \left(\dfrac1n\sum_{i=1}^n x_i\right)^2$.},
+    type=dinge
+}
+
+\newglossaryentry{satz_streumasse_via_haeufigkeitsverteilung}{
+    name={Wie lassen sich $\bar s$ (mittlere absolute Abweichung vom Median) und $s^2$ (Varianz) mithilfe der Häufigkeitsverteilung statt der Rohdaten berechnen?},
+    description={$\bar s = \dfrac1n\sum_{k=1}^s |a_k-x_{\mathrm{med}}|\,H_n(a_k) = \sum_{k=1}^s |a_k-x_{\mathrm{med}}|\,h_n(a_k)$ und $s^2 = \dfrac1n\sum_{k=1}^s (a_k-\bar x)^2\,H_n(a_k) = \sum_{k=1}^s (a_k-\bar x)^2\,h_n(a_k)$ -- man summiert über die $s$ verschiedenen Ausprägungen statt über alle $n$ Beobachtungen.},
+    type=dinge
+}
+
+\newglossaryentry{def_empirisches_p_quantil}{
+    name={Wie ist das empirische $p$-Quantil $x_p$ definiert?},
+    description={Für $p\in(0,1)$: $x_p = x_{(\lceil np\rceil)}$ falls $np\notin\mathbb{N}$, und $x_p = \dfrac12\left[x_{(np)}+x_{(np+1)}\right]$ falls $np\in\mathbb{N}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_quantil_eigenschaften}{
+    name={Wie hängt das $p$-Quantil mit dem Median zusammen, und welche Lagemaß-Eigenschaft hat es?},
+    description={$x_{1/2} = x_{\mathrm{med}}$. Wie der Median ist auch das empirische $p$-Quantil ein robustes Lagemaß.},
+    type=dinge
+}
+
+\newglossaryentry{satz_charakterisierung_p_quantil}{
+    name={Wie lässt sich das $p$-Quantil analog zum Median charakterisieren?},
+    description={Das $p$-Quantil erfüllt $\sum_{k:a_k\le x_p} h_n(a_k)\ge p$ und $\sum_{k:a_k\ge x_p} h_n(a_k)\ge 1-p$ -- mindestens $100p\%$ der Werte sind kleiner-gleich, mindestens $100(1-p)\%$ größer-gleich $x_p$. Umgekehrt: Erfüllt ein $a$ diese beiden Ungleichungen (für gegebenes $p$), so liegt $a$ zwischen $x_{(\lceil np\rceil)}$ und $x_{(\lceil np\rceil+1)}$; $a$ muss dabei keine beobachtete Ausprägung sein.},
+    type=dinge
+}
+
+\newglossaryentry{def_p_quantilsabstand}{
+    name={Was ist der $p$-Quantilsabstand, und wie heißt der Spezialfall $p=1/4$?},
+    description={Für $p\in(0,\tfrac12)$ ist der $p$-Quantilsabstand definiert als $x_{1-p}-x_p$. Der Fall $p=1/4$ heißt Quartilsabstand.},
+    type=dinge
+}
+
+\newglossaryentry{lem_p_quantilsabstand_ist_streumass}{
+    name={Ist der $p$-Quantilsabstand ein Streumaß?},
+    description={Ja, der $p$-Quantilsabstand ist ein Streumaß (erfüllt die Translationsinvarianz-Eigenschaft $s(x+a)=s(x)$).},
+    type=dinge
+}
