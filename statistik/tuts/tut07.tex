@@ -2,6 +2,7 @@
 %! Date = 6/1/26
 
 \chapter{Tutorium 01.06.2026}\label{ch:tutorium-01.06.2026}
+\untit{Präsenzaufgaben 1.6: Bedingte Wahrscheinlichkeiten \hfill 1.--5.\ Juni 2026}
 \section{PÜ 1.6.4.}\label{sec:pu-1.6.4.}
 Auf einem Tisch stehen zwei Urnen.
 \begin{itemize}
@@ -17,11 +18,11 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
     Kugeln aus Urne $U_Z$.
 \end{itemize}
 \begin{auf}
-    \subsection*{(a) Geben Sie einen geeigneten Ereignisraum $\Omega$ an, mit dem Sie die folgenden Aufgabenteile
+    \subsection*{(a) Geben Sie einen geeigneten Ereignisraum $\eraum$ an, mit dem Sie die folgenden Aufgabenteile
     bearbeiten können.}
-    \paragraph{Meine Lösung:} $\Omega = \{k,z\} \times \{s, w\}^2 $, wobei $\omega = (k, s, w)$ bedeutet, dass aus
+    \paragraph{Meine Lösung:} $\eraum = \{k,z\} \times \{s, w\}^2 $, wobei $\omega = (k, s, w)$ bedeutet, dass aus
     der Urne $U_K$ erst eine schwarze und dann eine weiße Kugel gezogen wurde.
-    \paragraph{Tutor Lösung:} $\Omega = \{k,z\} \times \{s, w\}^2$ mit der Bemerkung, dass $\pe((k,s,s)) = \pe(z,w,w) = 0$.
+    \paragraph{Tutor Lösung:} $\eraum = \{k,z\} \times \{s, w\}^2$ mit der Bemerkung, dass $\pe((k,s,s)) = \pe(z,w,w) = 0$.
     Die Bemerkung muss nicht dazu.
     Dabei ist $\{k,z\}$ der Münzwurf und $\{s, w\}^2$ das Ziehen zweier Kugeln.
 
@@ -30,7 +31,7 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
 \end{auf}
 
 \begin{auf}
-    \subsubsection*{(b) Definieren Sie jene Ereignisse als Teilmengen von $\Omega$, die Sie benötigen, um die folgenden
+    \subsubsection*{(b) Definieren Sie jene Ereignisse als Teilmengen von $\eraum$, die Sie benötigen, um die folgenden
     Aufgabenteile bearbeiten zu können.}
     \paragraph{Meine Lösung:}
     \begin{align*}
@@ -58,9 +59,9 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
     der Ereignisse aus (b).}
     \paragraph{Meine Lösung:}
     \begin{align*}
-        P(U_Z) = P(U_K) & = \frac{1}{2} \\
-        P(S_0 \mid U_K) & = \frac{2}{3} \cdot \frac{1}{2} = \frac{2}{6} \\
-        P(S_0 \mid U_K) & = 0
+        \pe(U_Z) = \pe(U_K) & = \frac{1}{2} \\
+        \pe(S_0 \mid U_K) & = \frac{2}{3} \cdot \frac{1}{2} = \frac{2}{6} \\
+        \pe(S_0 \mid U_K) & = 0
     \end{align*}
     (Nicht weiter gemacht)
     \paragraph{Tutor Lösung:}
@@ -95,6 +96,86 @@ Mavi wirft eine faire Münze, um sich zwischen den beiden Urnen zu entscheiden.
         & = \frac{3}{5}
     \end{align*}
 \end{auf}
+
+\section{PÜ 1.6.5.}
+Es seien ein Wahrscheinlichkeitsraum $(\eraum,\wfk)$ sowie Ereignisse
+$A, B, C, D \subseteq \eraum$ gegeben. Außerdem seien $\pe(A\mid D)$ sowie
+$\pe(B\mid D)$ bekannt.
+
+\begin{auf}[Berechnen Sie die folgenden Wahrscheinlichkeiten,
+    indem Sie diese durch die bedingten Wahrscheinlichkeiten $\pe(A\mid D)$ sowie
+    $\pe(B\mid D)$ ausdrücken.]
+    Genügen diese beiden Werte? Falls nein, so geben Sie
+    an, welche weiteren (bedingten oder totalen) Wahrscheinlichkeiten erforderlich
+    sind zur Lösung der Aufgabe.
+    \begin{enumerate}
+        \item $\pe(A \cap B \mid D)$;
+        \item $\pe(A^c \mid D)$;
+        \item $\pe(A \cup B \mid D)$.
+    \end{enumerate}
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+Betrachten Sie die Gleichung
+\[
+    \pe(C \mid A \cap B) = \pe(C \mid A) + \pe(C \mid B).
+\]
+
+\begin{auf}[Zeigen Sie, dass diese Gleichung in der Regel falsch ist, indem Sie
+einen konkreten Wahrscheinlichkeitsraum $(\eraum,\wfk)$ sowie Ereignisse
+$A, B, C \subseteq \eraum$ wählen und zeigen, dass die Gleichung für diese
+Wahl nicht stimmt.]
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+\begin{auf}[Geben Sie auch ein Beispiel an, für das die Gleichung gilt.]
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+\section{PÜ 1.6.6.}
+In einer Urne befinden sich insgesamt $210$ Kugeln, die mit Sternchen dekoriert sind.
+Für jedes $k \in \{1,\dots,20\}$ gibt es $k$ Kugeln, die genau $k$ Sternchen tragen,
+d.h.\ in der Urne sind
+\begin{itemize}
+    \item $1$ Kugel mit $1$ Sternchen,
+    \item $2$ Kugeln mit $2$ Sternchen,
+    \item $3$ Kugeln mit $3$ Sternchen,
+    \item $\dots$
+    \item $20$ Kugeln mit $20$ Sternchen.
+\end{itemize}
+Es werden nacheinander -- ohne Zurücklegen -- zwei Kugeln aus dieser Urne gezogen.
+\begin{auf}[Geben Sie einen geeigneten Ereignisraum $\eraum$ an, mit dem Sie die folgenden
+Aufgabenteile bearbeiten können.]
+    Wir betrachten die folgenden Ereignisse:
+    \begin{itemize}
+        \item $A$: Die zweite gezogene Kugel trägt genau $1$ Sternchen.
+        \item $B_k$: Die erste gezogene Kugel trägt genau $k$ Sternchen.
+    \end{itemize}
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+\begin{auf}[Bestimmen Sie für jedes $k \in \{1,\dots,20\}$ die Wahrscheinlichkeit
+$\pe(B_k)$.]
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+\begin{auf}[Bestimmen Sie für jedes $k \in \{1,\dots,20\}$ die bedingte Wahrscheinlichkeit
+$\pe(A \mid B_k)$.]
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+\begin{auf}[Geben Sie einen mathematischen Ausdruck an für die Wahrscheinlichkeit
+$\pe(A)$, und berechnen Sie $\pe(A)$.]
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+
+\begin{auf}[Berechnen Sie die bedingte Wahrscheinlichkeit $\pe(B_2 \mid A)$. Was bedeutet
+diese Wahrscheinlichkeit anschaulich im Kontext der Aufgabe?]
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
+\end{auf}
+\emph{Hinweis:} $\sum_{k=1}^{20} k = 210$.
+
+
 
 \section{Besprechung ÜB 1.5.1}\label{sec:besprechung-ub-1.5.1}
 Seien $X,Y$ ZVs mit gemeinsamer Dichte f:
