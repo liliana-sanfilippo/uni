@@ -182,10 +182,10 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     \begin{enumerate}[label=(\alph*)]
         \item Der \emph{\gls{bias}} des \gls{Schätzer}s $\schatzer$ ist definiert als
         \[
-            \bias\schatzer(\param) = \ET[T] - g(\param) = \ET[\schatzer((X_1,\dots,X_n))] - g(\param) \qquad \text{für alle } \param\in\praum \cdot
+            \biast(\param) = \ET[T] - g(\param) = \ET[\schatzer((X_1,\dots,X_n))] - g(\param) \qquad \text{für alle } \param\in\praum \cdot
         \]
         Dabei sei $\ET$ der Erwartungswert, der mit dem Wahrscheinlichkeitsmaß $\pe_{\param}$ definiert ist.
-        \item Der \gls{Schätzer} $\schatzer$ heißt \emph{erwartungstreu}, wenn $\bias\schatzer(\param)=0$ für alle $\param\in\praum$ gilt.
+        \item Der \gls{Schätzer} $\schatzer$ heißt \emph{erwartungstreu}, wenn $\biast(\param)=0$ für alle $\param\in\praum$ gilt.
         \item Das \emph{Risiko} des \gls{Schätzer}s $\schatzer$ im Punkt $\param\in\praum$ ist definiert als die
         erwartete quadratische Abweichung des \gls{Schätzer}s von $g(\param)$, das heißt,
         \[
@@ -211,7 +211,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     \begin{enumerate}[label=(\alph*)]
         \item Der \gls{bias} des \gls{Schätzer}s $\schatzer$ ist
         \[
-            \bias\schatzer(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \param = \frac1n\sum_{i=1}^n \ET[X_i] - \param = 0 \qquad \text{für alle } \param\in\praum ,
+            \biast(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \param = \frac1n\sum_{i=1}^n \ET[X_i] - \param = 0 \qquad \text{für alle } \param\in\praum ,
         \]
         weil für die \gls{Bernoulli-Variable}n $\ET[X_i]=\param$ gilt.
         \item Daher ist der \gls{Schätzer} $\schatzer$ erwartungstreu.
@@ -268,7 +268,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
     Dann gelten:
     \begin{enumerate}[label=(\alph*)]
         \item Der \gls{Schätzer} $\schatzer$ ist genau dann erwartungstreu, wenn $\ET[T]=g(\param)$ für alle $\param\in\praum$ gilt.
-        \item $R(\param,\schatzer) = (\bias\schatzer(\param))^2 + \mathrm{Var}_{\param}(T)$
+        \item $R(\param,\schatzer) = (\biast(\param))^2 + \mathrm{Var}_{\param}(T)$
         \item Ist $\schatzer$ erwartungstreu, so gilt $R(\param,\schatzer) = \mathrm{Var}_{\param}(T)$.
     \end{enumerate}
 
@@ -279,7 +279,7 @@ Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
         \begin{align*}
             R(\param,\schatzer) &= \ET\big[(T-g(\param))^2\big] = \ET\Big[\big((T-\ET[T])+(\ET[T]-g(\param))\big)^2\Big] \\
             &= \ET\big[(T-\ET[T])^2\big] + 2\big(\ET[T]-g(\param)\big)\,\ET\big[T-\ET[T]\big] + \big(\ET[T]-g(\param)\big)^2 \\
-            &= \mathrm{Var}_{\param}(T) + (\bias\schatzer(\param))^2 \cdot
+            &= \mathrm{Var}_{\param}(T) + (\biast(\param))^2 \cdot
         \end{align*}
         \item Folgt direkt aus der Definition der Erwartungstreue. \qedhere
     \end{enumerate}
@@ -312,7 +312,7 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
         \]
         Dann ist der \gls{bias} des \gls{Schätzer}s $\schatzer$ gegeben durch
         \[
-            \bias\schatzer(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \E{X_1} = \frac1n\sum_{i=1}^n \ET[X_i] - \E{X_1} = 0 \qquad \text{für alle } \param\in\praum ,
+            \biast(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \E{X_1} = \frac1n\sum_{i=1}^n \ET[X_i] - \E{X_1} = 0 \qquad \text{für alle } \param\in\praum ,
         \]
         weil $X_1,\dots,X_n$ identisch verteilt sind.
         Wir schätzen mit $\schatzer$ den Erwartungswert $\E{X_1}=\frac1\param$.
@@ -324,7 +324,7 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
         \]
         Dann ist der \gls{bias} des \gls{Schätzer}s $\schatzer$ gegeben durch
         \[
-            \bias\schatzer(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \param\in\praum ,
+            \biast(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \param\in\praum ,
         \]
         weil $X_1,\dots,X_n$ identisch verteilt sind.
         Wir schätzen mit $\schatzer$ den Erwartungswert $\ET[X_1]=\frac{\param+1}{2}$.
@@ -336,7 +336,7 @@ Der allgemeine Fall verbleibt als Hausaufgabe.
         \]
         Dann ist der \gls{bias} des \gls{Schätzer}s $\schatzer$ gegeben durch
         \[
-            \bias\schatzer(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \param\in\praum ,
+            \biast(\param) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \param\in\praum ,
         \]
         weil $X_1,\dots,X_n$ identisch verteilt sind.
         Wir schätzen mit $\schatzer$ den Erwartungswert $\ET[X_1]=\param$.
