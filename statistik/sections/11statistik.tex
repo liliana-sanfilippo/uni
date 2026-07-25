@@ -1,8 +1,10 @@
 %! Author = lili
 %! Date = 7/3/26
 
+
 \chapter{Statistik}\label{ch:statistik}
 % S 1-28 im Statistik Skript
+
 
 \section{Daten, Häufigkeitsverteilungen und ihre Darstellung in der beschreibenden Statistik}\label{sec:daten-haufigkeitsverteilungen-und-ihre-darstellung-in-der-beschreibenden-statistik}
 
@@ -15,28 +17,30 @@
 
 \definstat{Datenerhebung}
 
-\begin{bsp}[Beispiel Datenerhebung] \txc{(Skript 26)}
-   \begin{mytable}
-       \begin{tabular}{ll}
-           \hline
-           \textbf{Versuchseinheit} & \textbf{Merkmal} \\
-           \hline
-           Schweinchen & Lage (beim Schweinewürfeln) \\
-           Schweinchen & Farbe (beim Ziehen aus Beutel) \\
-           Studierende & erster Buchstabe vom Vornamen \\
-           & Geburtstag \\
-           & Abiturnote \\
-           Schüler     & Alter in Jahren \\
-           & Größe \\
-           & Gewicht \\
-           \hline
-       \end{tabular}
-   \end{mytable}
+\begin{bsp}[Beispiel Datenerhebung]
+    \txc{(Skript 26)}
+    \begin{mytable}
+        \begin{tabular}{ll}
+            \hline
+            \textbf{Versuchseinheit} & \textbf{Merkmal}               \\
+            \hline
+            Schweinchen              & Lage (beim Schweinewürfeln)    \\
+            Schweinchen              & Farbe (beim Ziehen aus Beutel) \\
+            Studierende              & erster Buchstabe vom Vornamen  \\
+            & Geburtstag                     \\
+            & Abiturnote                     \\
+            Schüler                  & Alter in Jahren                \\
+            & Größe                          \\
+            & Gewicht                        \\
+            \hline
+        \end{tabular}
+    \end{mytable}
 \end{bsp}
 
 \definstat{Merkmal}
 
-\begin{bsp}[Schweinewürfeln]\txc{(Skript 26)} \\
+\begin{bsp}[Schweinewürfeln]
+    \txc{(Skript 26)} \\
     Fünf bis sieben Elementarereignisse (abhängig von Problemstellung):
 
     \begin{itemize}
@@ -58,7 +62,6 @@
     Wir betrachten die folgenden sechs Elementarereignisse:
     \emph{Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt}.
 
-
     \paragraph{Modell}
     \[
         \eraum = \{\text{Suhle}, \text{Haxe}, \text{Schnauze}, \text{Backe}, \text{Faul-mit-Punkt}, \text{Faul-ohne-Punkt}\}
@@ -72,14 +75,14 @@
             \hline
             \textbf{Elementarereignis} & \textbf{Anzahl} & \textbf{relative Häufigkeit} \\
             \hline
-            Suhle            & 59  & $\tfrac{59}{166}$ \\
-            Haxe              & 10  & $\tfrac{10}{166}$ \\
-            Schnauze          & 3   & $\tfrac{3}{166}$ \\
-            Backe             & 2   & $\tfrac{2}{166}$ \\
-            Faul-mit-Punkt    & 46  & $\tfrac{46}{166}$ \\
-            Faul-ohne-Punkt   & 46  & $\tfrac{46}{166}$ \\
+            Suhle                      & 59              & $\tfrac{59}{166}$            \\
+            Haxe                       & 10              & $\tfrac{10}{166}$            \\
+            Schnauze                   & 3               & $\tfrac{3}{166}$             \\
+            Backe                      & 2               & $\tfrac{2}{166}$             \\
+            Faul-mit-Punkt             & 46              & $\tfrac{46}{166}$            \\
+            Faul-ohne-Punkt            & 46              & $\tfrac{46}{166}$            \\
             \hline
-            $\sum$            & $166$ & $1$ \\
+            $\sum$                     & $166$           & $1$                          \\
             \hline
         \end{tabular}
     \end{mytable}
@@ -105,7 +108,7 @@
                 35.5/Suhle, 6.0/Haxe, 1.8/Schnauze, 1.2/Backe, 27.7/Faul-mit-Punkt, 27.7/Faul-ohne-Punkt
             }
         \end{tikzpicture}
-       \caption{ Kreisdiagramm --- Experiment vom 14.01.2026 ($n=166$)}
+        \caption{ Kreisdiagramm --- Experiment vom 14.01.2026 ($n=166$)}
     \end{subfigure}\label{fig:figure4}
 \end{figure}
 
@@ -147,26 +150,28 @@
 \end{figure}
 
 
-\begin{bsp}[\gls{Merkmal}e treten in verschiedenen Ausprägungen auf] \txc{(Skript 26)}
+\begin{bsp}[\gls{Merkmal}e treten in verschiedenen Ausprägungen auf]
+    \txc{(Skript 26)}
     \begin{mytable}
         \begin{tabular}{|l|l| p{8cm}|}
             \hline
-            \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Ausprägung} \\
+            \textbf{Versuchseinheit} & \textbf{Merkmal}              & \textbf{Ausprägung}                                           \\
             \hline
-            Schweinchen & Lage & Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt \\
-            Schweinchen & Farbe & weiß, braun, rosa, schwarz \\
-            Studierende & erster Buchstabe vom Vornamen & A,\dots,Z \\
-            & Geburtstag & $1,\dots,365$ \\
-            & Abiturnote & $x/10$ mit $x\in\{10,\dots,40\}$ \\
-            Schüler     & Alter in Jahren & $n\in\nz$ \\
-            & Größe & $l\in(0,\infty)$ \\
-            & Gewicht & untergewichtig, normal, übergewichtig \\
+            Schweinchen              & Lage                          & Suhle, Haxe, Schnauze, Backe, Faul-mit-Punkt, Faul-ohne-Punkt \\
+            Schweinchen              & Farbe                         & weiß, braun, rosa, schwarz                                    \\
+            Studierende              & erster Buchstabe vom Vornamen & A,\dots,Z                                                     \\
+            & Geburtstag                    & $1,\dots,365$                                                 \\
+            & Abiturnote                    & $x/10$ mit $x\in\{10,\dots,40\}$                              \\
+            Schüler                  & Alter in Jahren               & $n\in\nz$                                                     \\
+            & Größe                         & $l\in(0,\infty)$                                              \\
+            & Gewicht                       & untergewichtig, normal, übergewichtig                         \\
             \hline
         \end{tabular}
     \end{mytable}
 \end{bsp}
 
-\begin{defi}[Arten von Merkmalen]\txc{(Skript 26)} \\
+\begin{defi}[Arten von Merkmalen]
+    \txc{(Skript 26)} \\
     Für quantitative \gls{Merkmal}e unterscheiden wir zwischen \emph{diskreten} und \emph{stetigen} \gls{Merkmal}en (vgl.\ Alter in Jahren mit Größe).
 
     Für qualitative \gls{Merkmal}e unterscheiden wir zwischen \emph{ordinalen} \gls{Merkmal}en bzw.\ \emph{Rangmerkmalen} einerseits und \emph{nominalen} \gls{Merkmal}en andererseits.
@@ -181,16 +186,16 @@ Die \gls{Grundgesamtheit} muss bei jeder \gls{Datenerhebung} sorgfältig definie
 \begin{mytable}
     \begin{tabular}{lll}
         \hline
-        \textbf{Versuchseinheit} & \textbf{Merkmal} & \textbf{Grundgesamtheit} \\
+        \textbf{Versuchseinheit} & \textbf{Merkmal}              & \textbf{Grundgesamtheit}                      \\
         \hline
-        Schweinchen & Lage & alle vorhandenen Schweinchen nach dem Würfeln \\
-        Schweinchen & Farbe & alle Schweinchen im Beutel \\
-        Studierende & erster Buchstabe vom Vornamen & alle Studierenden im Hörsaal \\
-        & Geburtstag & \\
-        & Abiturnote & \\
-        Schüler     & Alter in Jahren & alle Schüler einer Jahrgangsstufe \\
-        & Größe & \\
-        & Gewicht & \\
+        Schweinchen              & Lage                          & alle vorhandenen Schweinchen nach dem Würfeln \\
+        Schweinchen              & Farbe                         & alle Schweinchen im Beutel                    \\
+        Studierende              & erster Buchstabe vom Vornamen & alle Studierenden im Hörsaal                  \\
+        & Geburtstag                    &                                               \\
+        & Abiturnote                    &                                               \\
+        Schüler                  & Alter in Jahren               & alle Schüler einer Jahrgangsstufe             \\
+        & Größe                         &                                               \\
+        & Gewicht                       &                                               \\
         \hline
     \end{tabular}
 \end{mytable}
@@ -206,20 +211,21 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
 \definstat{Urliste}
 
 
-\begin{bsp}  \txc{(Skript 26)} \\
+\begin{bsp}
+    \txc{(Skript 26)} \\
     \begin{mytable}
         \begin{tabular}{ll}
             \hline
             \textbf{Versuchseinheit} & \textbf{Merkmalsausprägung} \\
             \hline
-            Schweinchen 1 & Suhle \\
-            Schweinchen 2 & Schnauze \\
-            Schweinchen 3 & Faul-mit-Punkt \\
-            Schweinchen 4 & Haxe \\
-            Schweinchen 5 & Backe \\
-            Schweinchen 6 & Haxe \\
-            Schweinchen 7 & Suhle \\
-            Schweinchen 8 & Suhle \\
+            Schweinchen 1            & Suhle                       \\
+            Schweinchen 2            & Schnauze                    \\
+            Schweinchen 3            & Faul-mit-Punkt              \\
+            Schweinchen 4            & Haxe                        \\
+            Schweinchen 5            & Backe                       \\
+            Schweinchen 6            & Haxe                        \\
+            Schweinchen 7            & Suhle                       \\
+            Schweinchen 8            & Suhle                       \\
             \hline
         \end{tabular}
     \end{mytable}
@@ -230,7 +236,8 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
     \]
 \end{bsp}
 
-\begin{defi}[\gls{Häufigkeitsverteilung}] \txc{(Skript 26)} \\
+\begin{defi}[\gls{Häufigkeitsverteilung}]
+    \txc{(Skript 26)} \\
     Gegeben: Stichprobe $x_1,\dots,x_n$; \gls{Merkmal} $X$ mit genau $s$ möglichen Ausprägungen $a_1,\dots,a_s$.
     \begin{enumerate}[label=(\alph*)]
         \item \textbf{Absolute Häufigkeit} der Ausprägung $a_i$ in der Stichprobe $x_1,\dots,x_n$:
@@ -254,7 +261,8 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
     \]
 \end{bem}
 
-\begin{bsp}[Werfen von acht Schweinchen]\label{bsp:acht-schweinchen}  \txc{(Skript 26)} \\
+\begin{bsp}[Werfen von acht Schweinchen]
+    \label{bsp:acht-schweinchen}  \txc{(Skript 26)} \\
     Stichprobe: Suhle, Schnauze, Faul-mit-Punkt, Haxe, Backe, Haxe, Suhle, Suhle
 
     bzw.\ Urliste: $(1,\text{Suhle}),(2,\text{Schnauze}),(3,\text{Faul-mit-Punkt}),(4,\text{Haxe}),(5,\text{Backe}),(6,\text{Haxe}),(7,\text{Suhle}),(8,\text{Suhle})$
@@ -264,12 +272,12 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
             \hline
             \textbf{Merkmalsausprägung} & $H_n(a_i)$ & $h_n(a_i)$ \\
             \hline
-            Suhle             & 3 & $3/8$ \\
-            Haxe              & 2 & $1/4$ \\
-            Schnauze          & 1 & $1/8$ \\
-            Backe             & 1 & $1/8$ \\
-            Faul-mit-Punkt    & 1 & $1/8$ \\
-            Faul-ohne-Punkt   & 0 & $0$ \\
+            Suhle                       & 3          & $3/8$      \\
+            Haxe                        & 2          & $1/4$      \\
+            Schnauze                    & 1          & $1/8$      \\
+            Backe                       & 1          & $1/8$      \\
+            Faul-mit-Punkt              & 1          & $1/8$      \\
+            Faul-ohne-Punkt             & 0          & $0$        \\
             \hline
         \end{tabular}
     \end{mytable}
@@ -281,7 +289,8 @@ für die Stichprobe aus der \gls{Grundgesamtheit} gewählt werden, und den zu de
 Für den kleinen Datensatz (Beispiel \autoref{bsp:acht-schweinchen}) und den großen Datensatz (aus der Vorlesung vom 14.01.2026) mit den
 Schweinchen haben wir u.a.\ folgende Möglichkeiten der graphischen Darstellung: Kreis- bzw.\ Tortendiagramm sowie Stab- bzw.\ Balkendiagramm (siehe Abbildungen oben).
 
-\begin{bsp}[Alter von Berufstätigen] \txc{(Skript 26)}
+\begin{bsp}[Alter von Berufstätigen]
+    \txc{(Skript 26)}
     \[
         \begin{array}{l}
             21, 22, 24, 28, 28, 28, 32, 32, 33, 35,\\
@@ -302,17 +311,17 @@ Schweinchen haben wir u.a.\ folgende Möglichkeiten der graphischen Darstellung:
         \small
         \begin{tabular}{l*{20}{c}}
             \hline
-            Alter & 18&19&20&21&22&23&24&25&26&27&28&29&30&31&32&33&34&35&36&37\\
+            Alter & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 \\
             Anz.
-             & 0&0&0&1&1&0&2&1&1&4&4&1&0&4&3&3&2&5&5&7\\
+            & 0  & 0  & 0  & 1  & 1  & 0  & 2  & 1  & 1  & 4  & 4  & 1  & 0  & 4  & 3  & 3  & 2  & 5  & 5  & 7  \\
             \hline
-            Alter & 38&39&40&41&42&43&44&45&46&47&48&49&50&51&52&53&54&55&56&57\\
+            Alter & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 & 56 & 57 \\
             Anz.
-             & 2&4&2&5&3&2&1&3&1&4&3&3&0&0&3&3&2&3&1&1\\
+            & 2  & 4  & 2  & 5  & 3  & 2  & 1  & 3  & 1  & 4  & 3  & 3  & 0  & 0  & 3  & 3  & 2  & 3  & 1  & 1  \\
             \hline
-            Alter & 58&59&60&61&62&63&64&65&66&67& & & & & & & & & & \\
+            Alter & 58 & 59 & 60 & 61 & 62 & 63 & 64 & 65 & 66 & 67 &    &    &    &    &    &    &    &    &    &    \\
             Anz.
-             & 1&0&2&1&0&0&1&5&0&0& & & & & & & & & &\\
+            & 1  & 0  & 2  & 1  & 0  & 0  & 1  & 5  & 0  & 0  &    &    &    &    &    &    &    &    &    &    \\
             \hline
         \end{tabular}
     \end{mytable}
@@ -344,22 +353,23 @@ Schweinchen haben wir u.a.\ folgende Möglichkeiten der graphischen Darstellung:
             \hline
             Alter & $\leq 19$ & 20--24 & 25--29 & 30--34 & 35--39 & 40--44 & 45--49 & 50--54 & 55--59 & 60--64 & $\geq 65$ \\
             Anz.
-             & 0 & 4 & 11 & 12 & 23 & 13 & 14 & 8 & 6 & 4 & 5 \\
+            & 0         & 4      & 11     & 12     & 23     & 13     & 14     & 8      & 6      & 4      & 5         \\
             \hline
         \end{tabular}
     \end{mytable}
 
     \begin{figure}[H]
         \begin{tikzpicture}
-            \begin{axis}[
-            ybar, width=13cm, height=5.5cm, ymin=0,
-            symbolic x coords={$\leq$19,20-24,25-29,30-34,35-39,40-44,45-49,50-54,55-59,60-64,$\geq$65},
-            xtick=data, x tick label style={font=\scriptsize},
-            bar width=22pt
-            ]
-            \addplot+[fill=teal!50] coordinates {
-                ($\leq$19,0) (20-24,4) (25-29,11) (30-34,12) (35-39,23) (40-44,13) (45-49,14) (50-54,8) (55-59,6) (60-64,4) ($\geq$65,5)
-            };
+            \begin{axis}
+                [
+                ybar, width=13cm, height=5.5cm, ymin=0,
+                symbolic x coords={$\leq$19,20-24,25-29,30-34,35-39,40-44,45-49,50-54,55-59,60-64,$\geq$65},
+                xtick=data, x tick label style={font=\scriptsize},
+                bar width=22pt
+                ]
+                \addplot+[fill=teal!50] coordinates {
+                    ($\leq$19,0) (20-24,4) (25-29,11) (30-34,12) (35-39,23) (40-44,13) (45-49,14) (50-54,8) (55-59,6) (60-64,4) ($\geq$65,5)
+                };
             \end{axis}
         \end{tikzpicture}\label{fig:figure9}
     \end{figure}
@@ -382,7 +392,8 @@ Wir verweisen diesbezüglich auf die Literatur.
 
 \noindent \textbf{Gegeben:} Stichprobe $x_1,\dots,x_n$ eines eindimensionalen \gls{Merkmal}s $X$.
 
-\begin{defi}[\gls{Lagemaß}]\label{def:lagemaß}  \txc{(Skript 26)} \\
+\begin{defi}[\gls{Lagemaß}]
+    \label{def:lagemaß}  \txc{(Skript 26)} \\
     Sei $X$ ein quantitatives \gls{Merkmal}.
     Eine Funktion $l:\rz^n\to\rz$, $(x_1,\dots,x_n)\mapsto l(x_1,\dots,x_n)$, heißt \emph{Lagemaß}, wenn
     \[
@@ -398,14 +409,20 @@ Wir verweisen diesbezüglich auf die Literatur.
     Anschaulich ist es die Aufgabe eines Lagemaßes, den ``typischen'' Wert einer Zufallsvariable anzugeben.
 
 
-   \paragraph{\href{https://bjoernwalther.com/lagemasse-in-der-statistik/}{Björn Walther}:} Lagemaße (auch Lageparameter) sind Kennzahlen, die
-   im Rahmen der deskriptiven Statistik genutzt werden.
+    % \href{https://bjoernwalther.com/lagemasse-in-der-statistik/}{Björn Walther}
+
+    \paragraph{Björn Walther:} Lagemaße (auch Lageparameter) sind Kennzahlen, die
+    im Rahmen der deskriptiven Statistik genutzt werden.
     Sie treffen eine Aussage über die zentrale Tendenz von Variablen im Datensatz.
     Mit ihnen ist also erkennbar, wo in der Stichprobe die ``Musik spielt''.
-    
-    \paragraph{\href{https://welt-der-bwl.de/Lagema%C3%9Fe}{Welt der BWL}:} Lagemaße der Statistik – auch Maße der zentralen Tendenz genannt – geben an, was in einer Datenmenge das Zentrum bzw. der Schwerpunkt ist, zum Beispiel der häufigste Wert oder der Durchschnitt.
 
-    \paragraph{\href{https://studyflix.de/statistik/deskriptive-statistik-1052}{studyflix}} Lageparameter geben die zentrale Tendenz des Datensatzes an.
+    % \href{https://welt-der-bwl.de/Lagema%C3%9Fe}{Welt der BWL}
+
+    \paragraph{Welt der BWL:} Lagemaße der Statistik – auch Maße der zentralen Tendenz genannt – geben an, was in einer Datenmenge das Zentrum bzw. der Schwerpunkt ist, zum Beispiel der häufigste Wert oder der Durchschnitt.
+
+    % \href{https://studyflix.de/statistik/deskriptive-statistik-1052}{studyflix}
+
+    \paragraph{studyflix} Lageparameter geben die zentrale Tendenz des Datensatzes an.
     Konkret wird also untersucht, ob die gemessenen Werte eher groß oder klein sind.
     Bei einer Umfrage kann man beispielsweise ermitteln, ob eher jüngere oder ältere Menschen befragt wurden.
 \end{kom}
@@ -420,6 +437,7 @@ Wir verweisen diesbezüglich auf die Literatur.
     \noindent Wir wollen diese Aussagen beweisen.
 
     \smallskip
+
     \paragraph{Beweis - Das arithmetische Mittel $\bar x=\frac{1}{n}\sum_{i=1}^n x_i$ ist ein Lagemaß:}
 
     Sei $l_{\mathrm{arith}}(x_1,\dots,x_n) = \frac1n\sum_{i=1}^n x_i$.
@@ -429,26 +447,28 @@ Wir verweisen diesbezüglich auf die Literatur.
     \]
 
     \smallskip
+
     \paragraph{Beweis - Das geometrische Mittel $\bar x_g = \sqrt[n]{x_1\cdots x_n}$ ist kein Lagemaß:}
 
     Beachte zunächst, dass das geometrische Mittel nur für $x_1,\dots,x_n\geq 0$ sinnvoll definiert ist.
     Auch wenn wir nur $x_1,\dots,x_n\geq 0$ und $a>0$ betrachten, erfüllt das geometrische Mittel nicht die Anforderung an ein \gls{Lagemaß}:
 
-Seien $n=2$ und $l_g(x_1,x_2)=\sqrt{x_1\cdot x_2}$.
+    Seien $n=2$ und $l_g(x_1,x_2)=\sqrt{x_1\cdot x_2}$.
     Wäre $l_g$ ein \gls{Lagemaß}, so müsste gelten
     \[
         (*) \qquad l_g(x_1+a,x_2+a) = l_g(x_1,x_2)+a \qquad \forall (x_1,x_2)\in\rz^2 \ \forall a\in\rz \cdot
     \]
     Quadrieren beider Seiten zeigt, dass $(*)$ äquivalent ist zu $\sqrt{x_1\cdot x_2} = \frac{x_1+x_2}{2}$.
-Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagemaß} sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\rz^2$ gleich wären.
+    Das heißt, dass das geometrische Mittel nur dann ein \gls{Lagemaß} sein kann, wenn arithmetisches und geometrisches Mittel für alle $(x_1,x_2)\in\rz^2$ gleich wären.
 
     \smallskip
+
     \paragraph{Beweis - Das harmonische Mittel $\bar x_h = \dfrac{n}{\frac1{x_1}+\cdots+\frac1{x_n}}$ ist kein Lagemaß:}
 
     Beachte zunächst, dass das harmonische Mittel nur für $x_1,\dots,x_n\neq 0$ sinnvoll definiert ist.
     Selbst wenn wir nur $x_1,\dots,x_n>0$ und $a>0$ betrachten, erfüllt das harmonische Mittel nicht die Anforderung an ein \gls{Lagemaß}:
 
-Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
+    Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     Die Wahl $x_1=1$, $x_2=2$ und $a=1$ zeigt
     \[
         l_h(x_1+a,x_2+a) = \frac{2}{\frac1{1+1}+\frac1{2+1}} = \frac{12}{5}
@@ -458,7 +478,8 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     also $l_h(x_1+a,x_2+a)\neq l_h(x_1,x_2)+a$.
 \end{bsp}
 
-\begin{bsp}[10$\times$ Würfeln]  \txc{(Skript 26)} \\
+\begin{bsp}[10$\times$ Würfeln]
+    \txc{(Skript 26)} \\
     Stichprobe $6,2,5,4,1,6,5,4,5,4$ der Länge $n=10$.
 
     \begin{figure}[H]
@@ -476,46 +497,49 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \end{itemize}
 \end{bsp}
 
-\begin{satz}[Eigenschaften des arithmetischen Mittels]  \txc{(Skript 26)} \\
-\begin{enumerate}[label=(\alph*)]
-    \item \textbf{Schwerpunkteigenschaft:}
-    \txc{Die Schwerpunkteigenschaft (auch Nulleigenschaft genannt) besagt, dass die Summe der scheinbaren Fehler bzw. die Summe der Abweichungen aller beobachteten Messwerte vom arithmetischen Mittel gleich Null ist. Also:}
-    % https://de.wikipedia.org/wiki/Arithmetisches_Mittel
-    \[
-        \sum_{i=1}^n (x_i-\bar x) = 0
-    \]
-    \item \textbf{Minimierungseigenschaft:} $\displaystyle\sum_{i=1}^n (x_i-c)^2 \to \min$ für $c=\bar x$.
+\begin{satz}[Eigenschaften des arithmetischen Mittels]
+    \txc{(Skript 26)} \\
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Schwerpunkteigenschaft:}
+        \txc{Die Schwerpunkteigenschaft (auch Nulleigenschaft genannt) besagt, dass die Summe der scheinbaren Fehler bzw. die Summe der Abweichungen aller beobachteten Messwerte vom arithmetischen Mittel gleich Null ist. Also:}
+        % https://de.wikipedia.org/wiki/Arithmetisches_Mittel
+        \[
+            \sum_{i=1}^n (x_i-\bar x) = 0
+        \]
+        \item \textbf{Minimierungseigenschaft:} $\displaystyle\sum_{i=1}^n (x_i-c)^2 \to \min$ für $c=\bar x$.
 
-    Das arithmetische Mittel minimiert die quadratische Abweichung der Stichprobenwerte von einer Konstanten $c\in\rz$:
-    \[
-        \sum_{i=1}^n (x_i-\bar x)^2 = \inf_{c\in\rz} \sum_{i=1}^n (x_i-c)^2
-    \]
-\end{enumerate}
-\paragraph{Beweis.}
-\begin{enumerate}[label=(\alph*)]
-    \item Linearität der Summe und die Definition von $\bar x$ zeigen, dass
-    \[
-        \sum_{i=1}^n (x_i-\bar x) = \sum_{i=1}^n x_i - \sum_{i=1}^n \bar x = \sum_{i=1}^n x_i - n\cdot\frac1n\sum_{i=1}^n x_i = 0 \cdot
-    \]
-    \item Eine Nullergänzung und Ausquadrieren zeigen, dass
-    \[
-        \sum_{i=1}^n (x_i-c)^2 = \sum_{i=1}^n \big[(x_i-\bar x)+(\bar x-c)\big]^2 = \sum_{i=1}^n (x_i-\bar x)^2 + 2(\bar x-c)\sum_{i=1}^n (x_i-\bar x) + n(\bar x-c)^2 \cdot
-    \]
-    Der erste Summand auf der rechten Seite hängt nicht von $c$ ab.
-    Der zweite Summand ist gleich Null aufgrund der Schwerpunkteigenschaft.
-    Der dritte Summand ist stets nichtnegativ und gleich Null genau dann, wenn $c=\bar x$ ist.
-    Somit wird
-    \[
-        \sum_{i=1}^n (x_i-c)^2 = \sum_{i=1}^n (x_i-\bar x)^2 + n(\bar x-c)^2
-    \]
-    minimal für $c=\bar x$ mit Wert $\sum_{i=1}^n (x_i-\bar x)^2$. \qedhere
-\end{enumerate}
+        Das arithmetische Mittel minimiert die quadratische Abweichung der Stichprobenwerte von einer Konstanten $c\in\rz$:
+        \[
+            \sum_{i=1}^n (x_i-\bar x)^2 = \inf_{c\in\rz} \sum_{i=1}^n (x_i-c)^2
+        \]
+    \end{enumerate}
+
+    \paragraph{Beweis.}
+    \begin{enumerate}[label=(\alph*)]
+        \item Linearität der Summe und die Definition von $\bar x$ zeigen, dass
+        \[
+            \sum_{i=1}^n (x_i-\bar x) = \sum_{i=1}^n x_i - \sum_{i=1}^n \bar x = \sum_{i=1}^n x_i - n\cdot\frac1n\sum_{i=1}^n x_i = 0 \cdot
+        \]
+        \item Eine Nullergänzung und Ausquadrieren zeigen, dass
+        \[
+            \sum_{i=1}^n (x_i-c)^2 = \sum_{i=1}^n \big[(x_i-\bar x)+(\bar x-c)\big]^2 = \sum_{i=1}^n (x_i-\bar x)^2 + 2(\bar x-c)\sum_{i=1}^n (x_i-\bar x) + n(\bar x-c)^2 \cdot
+        \]
+        Der erste Summand auf der rechten Seite hängt nicht von $c$ ab.
+        Der zweite Summand ist gleich Null aufgrund der Schwerpunkteigenschaft.
+        Der dritte Summand ist stets nichtnegativ und gleich Null genau dann, wenn $c=\bar x$ ist.
+        Somit wird
+        \[
+            \sum_{i=1}^n (x_i-c)^2 = \sum_{i=1}^n (x_i-\bar x)^2 + n(\bar x-c)^2
+        \]
+        minimal für $c=\bar x$ mit Wert $\sum_{i=1}^n (x_i-\bar x)^2$. \qedhere
+    \end{enumerate}
 \end{satz}
 
 
 
 
-\begin{defi}[Modalwert / Modus] \txc{(Skript 26)} \\
+\begin{defi}[Modalwert / Modus]
+    \txc{(Skript 26)} \\
     Sei $X$ ein beliebiges eindimensionales \gls{Merkmal} ($X$ kann nominal sein) mit Ausprägungen $a_1,\dots,a_s$.
     Eine Ausprägung $a$ des \gls{Merkmal}s $X$ heißt \emph{Modalwert} oder \emph{Modus}, wenn
     \[
@@ -525,23 +549,26 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     % https://de.wikipedia.org/wiki/Modus_(Statistik)
 \end{defi}
 
-\begin{bem}   \txc{(Skript 26)} \\
-\begin{enumerate}[label=(\alph*)]
-    \item $a$ ist genau dann ein Modalwert, wenn keine andere Ausprägung in der Stichprobe häufiger auftritt als $a$.
-    \item Der Modalwert ist in der Regel nicht eindeutig, siehe folgendes Beispiel.
-    \item $H_n(a)\geq H_n(x_i)\ \forall i=1,\dots,n \iff H_n(a)\geq H_n(a_k)\ \forall k=1,\dots,s$.
-    \item Für quantitative \gls{Merkmal}e ist der Modalwert ein \gls{Lagemaß}.
-\end{enumerate}
+\begin{bem}
+    \txc{(Skript 26)} \\
+    \begin{enumerate}[label=(\alph*)]
+        \item $a$ ist genau dann ein Modalwert, wenn keine andere Ausprägung in der Stichprobe häufiger auftritt als $a$.
+        \item Der Modalwert ist in der Regel nicht eindeutig, siehe folgendes Beispiel.
+        \item $H_n(a)\geq H_n(x_i)\ \forall i=1,\dots,n \iff H_n(a)\geq H_n(a_k)\ \forall k=1,\dots,s$.
+        \item Für quantitative \gls{Merkmal}e ist der Modalwert ein \gls{Lagemaß}.
+    \end{enumerate}
 \end{bem}
 
-\begin{defi}[Unimodal] \txc{(Skript 26)} \\
+\begin{defi}[Unimodal]
+    \txc{(Skript 26)} \\
     Wir schreiben $x_{\mathrm{mod}}$ für den Modalwert einer Stichprobe, sofern dieser eindeutig bestimmt ist.
     In diesem Fall heißen die Häufigkeitsverteilungen $H_n$ und $h_n$ \emph{unimodal}.
 
     \txc{Umgangssprachlich: Unimodalität bedeutet, dass es nur einen einzigen Höchstwert (Modalwert / Modus) gibt.}
 \end{defi}
 
-\begin{bsp}[Würfeln]  \txc{(Skript 26)} \\
+\begin{bsp}[Würfeln]
+    \txc{(Skript 26)} \\
     \begin{figure}[H]
         \begin{subfigure}[t]{0.48\textwidth}
             \centering
@@ -567,7 +594,8 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \end{figure}
 \end{bsp}
 
-\begin{defi}[Median / Zentralwert] \txc{(Skript 26)} \\
+\begin{defi}[Median / Zentralwert]
+    \txc{(Skript 26)} \\
     Sei $X$ ein quantitatives \gls{Merkmal}.
     Ist die Stichprobe $x_1,\dots,x_n$ gegeben, so schreiben wir $x_{(1)},\dots,x_{(n)}$ für die \emph{geordnete Stichprobe}, d.h.\ es gelten
     \[
@@ -583,7 +611,8 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \]
 \end{defi}
 
-\begin{bsp}[Würfeln]  \txc{(Skript 26)} \\
+\begin{bsp}[Würfeln]
+    \txc{(Skript 26)} \\
     \begin{mytable}
         \begin{minipage}{0.48\textwidth}
             \centering
@@ -605,28 +634,30 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
     \end{mytable}
 \end{bsp}
 
-\begin{satz}[Eigenschaften des Medians]\label{satz:median_eigenschaften} \txc{(Skript 26)} \\
-\begin{enumerate}[label=(\alph*)]
-    \item Der Median ist ein \gls{Lagemaß}.
-    \item Der Median $x_{\mathrm{med}}$ erfüllt
-    \[
-        \sum_{\substack{k=1:\\ a_k\leq x_{\mathrm{med}}}}^s h_n(a_k) \geq \frac12
-        \qquad\text{und}\qquad
-        \sum_{\substack{k=1:\\ a_k\geq x_{\mathrm{med}}}}^s h_n(a_k) \geq \frac12 \cdot
-    \]
-    Das heißt, mindestens die Hälfte der Werte in der Stichprobe sind kleiner oder gleich dem Wert des Medians und mindestens die Hälfte der Werte in der Stichprobe sind größer oder gleich dem Wert des Medians.
-    \item Gelten
-    \[
-        \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12 \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12 \qquad\text{für ein } a\in\rz ,
-    \]
-    so folgt $x_{(\lceil n/2\rceil)} \leq a \leq x_{(\lceil n/2\rceil+1)}$.
-    Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
-    \item \textbf{Minimierungseigenschaft:} \txc{Der Median minimiert die absoluten Abweichungen}
-    \[
-        \sum_{i=1}^n |x_i-c| \to \min \qquad \text{für ein } c\in\left[x_{\left(\lfloor\frac{n+1}2\rfloor\right)}, x_{\left(\lceil\frac{n+1}2\rceil\right)}\right] \cdot
-    \]
-\end{enumerate}
-\paragraph{Beweis.}
+\begin{satz}[Eigenschaften des Medians]
+    \label{satz:median_eigenschaften} \txc{(Skript 26)} \\
+    \begin{enumerate}[label=(\alph*)]
+        \item Der Median ist ein \gls{Lagemaß}.
+        \item Der Median $x_{\mathrm{med}}$ erfüllt
+        \[
+            \sum_{\substack{k=1:\\ a_k\leq x_{\mathrm{med}}}}^s h_n(a_k) \geq \frac12
+            \qquad\text{und}\qquad
+            \sum_{\substack{k=1:\\ a_k\geq x_{\mathrm{med}}}}^s h_n(a_k) \geq \frac12 \cdot
+        \]
+        Das heißt, mindestens die Hälfte der Werte in der Stichprobe sind kleiner oder gleich dem Wert des Medians und mindestens die Hälfte der Werte in der Stichprobe sind größer oder gleich dem Wert des Medians.
+        \item Gelten
+        \[
+            \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12 \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12 \qquad\text{für ein } a\in\rz ,
+        \]
+        so folgt $x_{(\lceil n/2\rceil)} \leq a \leq x_{(\lceil n/2\rceil+1)}$.
+        Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
+        \item \textbf{Minimierungseigenschaft:} \txc{Der Median minimiert die absoluten Abweichungen}
+        \[
+            \sum_{i=1}^n |x_i-c| \to \min \qquad \text{für ein } c\in\left[x_{\left(\lfloor\frac{n+1}2\rfloor\right)}, x_{\left(\lceil\frac{n+1}2\rceil\right)}\right] \cdot
+        \]
+    \end{enumerate}
+
+    \paragraph{Beweis.}
     \begin{enumerate}[label=(\alph*)]
         \item Können Sie diese Aussage selbst beweisen?
         \item Zu zeigen ist, dass der Median $\sum_{k=1: a_k\leq x_{\mathrm{med}}}^s h_n(a_k)\geq\frac12$ und $\sum_{k=1: a_k\geq x_{\mathrm{med}}}^s h_n(a_k)\geq\frac12$ erfüllt.
@@ -682,19 +713,20 @@ Seien $n=2$ und $l_h(x_1,x_2) = \dfrac{2}{1/x_1+1/x_2}$.
 \end{satz}
 
 \komm{Zu \autoref{satz:median_eigenschaften} (c):
-$\sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12$ bedeutet mindestens die Hälfte aller Beobachtungen liegt links von a oder genau bei a.
+    $\sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq\frac12$ bedeutet mindestens die Hälfte aller Beobachtungen liegt links von a oder genau bei a.
 
-$\sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12$ bedeutet mindestens die Hälfte aller Beobachtungen liegt rechts von a oder genau bei a.
+    $\sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq\frac12$ bedeutet mindestens die Hälfte aller Beobachtungen liegt rechts von a oder genau bei a.
 
     $x_{(\lceil n/2\rceil)} \leq a \leq x_{(\lceil n/2\rceil+1)}$ ist einfach der Median.
 
-Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Median.
+    Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Median.
 
-``Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.'' bedeuet, dass der Median keiner von den Beobachteten Werten sein muss.
+    ``Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.'' bedeuet, dass der Median keiner von den Beobachteten Werten sein muss.
     Sondern bspw. auch dazwischen liegen kann.
 }
 
-\begin{bsp}[Würfeln] \txc{(Skript 26)} \\
+\begin{bsp}[Würfeln]
+    \txc{(Skript 26)} \\
     \begin{mytable}
         \begin{minipage}{0.48\textwidth}
             geordnete Stichprobe $1,2,4,4,4,5,5,5,6,6$, $n=10$, $x_{\mathrm{med}}=4.5$
@@ -718,6 +750,7 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
     \end{mytable}
 \end{bsp}
 
+
 \section{Empirische Häufigkeitsverteilungen und ihre \gls{Streumaß}e}\label{sec:empirische-haufigkeitsverteilungen-und-ihre-streumae}
 
 \noindent \textbf{Ziel:} Charakterisierung von Häufigkeitsverteilungen durch Kennzahlen (Fortsetzung).
@@ -729,7 +762,8 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
     \item geordnete Stichprobe $x_{(1)},\dots,x_{(n)}$
 \end{itemize}
 
-\begin{defi}[\gls{Streumaß}] \txc{(Skript 26)} \\
+\begin{defi}[\gls{Streumaß}]
+    \txc{(Skript 26)} \\
     Eine Funktion $s:\rz^n\to\rz$, $(x_1,\dots,x_n)\mapsto s(x_1,\dots,x_n)$, heißt \emph{\gls{Streumaß}}, wenn
     \[
         s(x_1+a,\dots,x_n+a) = s(x_1,\dots,x_n) \qquad \forall (x_1,\dots,x_n)\in\rz^n \ \forall a\in\rz \cdot
@@ -738,12 +772,15 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
 \end{defi}
 
 \begin{kom}[Andere Definitionen von Streumaß]
-    \paragraph{Wikipedia:} Streuungsmaße, auch Dispersionsmaße (lateinisch dispersio „Zerstreuung“, von dispergere 
-    „verteilen, ausbreiten, zerstreuen“) oder Streuungsparameter genannt, fassen in der deskriptiven Statistik 
-    verschiedene Maßzahlen zusammen, die die Streubreite von Beobachtungswerten beziehungsweise einer 
+    \paragraph{Wikipedia:} Streuungsmaße, auch Dispersionsmaße (lateinisch dispersio „Zerstreuung“, von dispergere
+    „verteilen, ausbreiten, zerstreuen“) oder Streuungsparameter genannt, fassen in der deskriptiven Statistik
+    verschiedene Maßzahlen zusammen, die die Streubreite von Beobachtungswerten beziehungsweise einer
     Häufigkeitsverteilung um einen geeigneten Lageparameter herum beschreiben.
-    
-    \paragraph{\href{https://welt-der-bwl.de/Streuungsmaße}{Welt der BWL}:} Streuungsmaße in der Statistik geben an, wie stark die einzelnen Datenwerte oder Messwerte streuen,
+
+    % \href{https://welt-der-bwl.de/Streuungsmaße}{Welt der BWL}:
+
+    \paragraph{Welt der BWL:} Streuungsmaße in der Statistik geben an, wie stark die einzelnen Datenwerte oder
+    Messwerte streuen,
     das heißt, wie weit sie zum Beispiel von einem berechneten Mittelwert oder auch von einem Vorgabewert nach oben und unten abweichen.
 \end{kom}
 
@@ -754,11 +791,12 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
 
     Deshalb werden Streuungsmaße genutzt, um die Variabilität eines Merkmals darzustellen.''
 
-    (\href{https://www.destatis.de/DE/Service/Statistik-Campus/E-Learning/Modul16/streuungsmasse.html}{eLearning-Modul 16 - Streuungsmaße des statistischen Bundesamts})
+    (eLearning-Modul 16 - Streuungsmaße des statistischen Bundesamts)
     % https://www.destatis.de/DE/Service/Statistik-Campus/E-Learning/Modul16/streuungsmasse.html
 \end{kom}
 
-\begin{bsp}[Ein ganzer Zoo an \gls{Streumaß}en] \txc{(Skript 26)} \\
+\begin{bsp}[Ein ganzer Zoo an \gls{Streumaß}en]
+    \txc{(Skript 26)} \\
     Im Folgenden dient uns zur Illustration stets die (geordnete) Stichprobe $1,1,2,2,2,3,4,4,4,6$ der Länge $n=10$.
     Wir können uns die Stichprobe vorstellen als das Ergebnis von 10-maligem Würfeln.
 
@@ -770,8 +808,15 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
         \item Die \emph{Medianabweichung} ist der ``Median der absoluten Abweichung vom Median'' und wird folgendermaßen definiert: Wir bilden zunächst eine neue Stichprobe $y_1,\dots,y_n$ mit $y_i = |x_i-x_{\mathrm{med}}|$.
         Die Medianabweichung der ursprünglichen Stichprobe $x_1,\dots,x_n$ ist der Median $y_{\mathrm{med}}$ der neuen Stichprobe (robust gegenüber Ausreißern).
 
-        Im Beispiel: Es ist $x_{\mathrm{med}}=2.5$, und die geordnete Stichprobe $y_{(1)},\dots,y_{(10)}$ ergibt sich folglich als $0.5,0.5,0.5,0.5,1.5,1.5,1.5,1.5,1.5,3.5$ mit Median $y_{\mathrm{med}}=1.5$.
+        Im Beispiel: Es ist $x_{\mathrm{med}}=2.5$, und die geordnete Stichprobe $y_{(1)},\dots,y_{(10)}$ ergibt
+        sich folglich als \\ $0.5,0.5,0.5,0.5 , 1.5,1.5 , 1.5,1.5 , 1.5,3.5$ mit Median $y_{\mathrm{med}}=1.5$.
 
+        \begin{tabular}{rrrrrrrrrrr}
+            \color{Fuchsia}
+            originale Werte 1 & 1 & 2 & 2 & 2 & 3 & 4 & 4 & 4 & 6 \\
+            neue Stichprobe & 0.5 & 0.5 & 0.5 & 0.5 & 1.5 & 1.5 & 1.5 & 1.5 & 1.5 & 3.5  \\
+            (orig. Wert - 1.5)
+        \end{tabular}  \color{black}
         \item Die \emph{mittlere absolute Abweichung vom Median} ist definiert durch das arithmetische Mittel der Hilfsstichprobe $y_1,\dots,y_n$ mit $y_i=|x_i-x_{\mathrm{med}}|$:
         \[
             \bar s = \frac1n\sum_{i=1}^n |x_i-x_{\mathrm{med}}| = \frac1n\sum_{i=1}^n y_i = \bar y
@@ -781,6 +826,13 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
         Haben wir dagegen mit $x_3=100$ einen Ausreißer, so ist weiterhin $x_{\mathrm{med}}=0$, denn der Median ist robust, aber es gilt $\bar s = 100/3$.)
 
         Im Beispiel: $\bar s = \bar y = 1.3$.
+        \[
+            \txc{ 0.5+0.5+0.5+0.5+1.5+1.5+1.5+1.5+1.5+3.5 = 13 }
+        \]
+        \txc{und}
+        \[
+            \txc{13 / 10 = 1.3}
+        \]
 
         \item Die \emph{mittlere absolute Abweichung vom arithmetischen Mittel} ist definiert als
         \[
@@ -790,7 +842,8 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
         Dann ist auch $|\bar x|\leq\varepsilon$, und es folgt $\frac1n\sum_{i=1}^n|x_i-\bar x|\leq2\varepsilon$.
         Haben wir dagegen einen Ausreißer $x_{100}=10\,000$, während $|x_1|,\dots,|x_{99}|=0$, so ist $\bar x=100$ und $\frac1n\sum_{i=1}^n|x_i-\bar x|=198$.)
 
-        Im Beispiel: $\bar x = 29/10 = 2.9$ und $\bar s = \frac{1}{10}\sum_{i=1}^n |x_i-2.9| = 1.3$.
+        Im Beispiel: $\bar x = \txc{(1+1+2+2+2+3+4+4+4+6) / 10 =} 29/10 = 2.9$ und
+        $\bar s = \frac{1}{10}\sum_{i=1}^n |x_i-2.9| = 1.3$.
 
         \item Die \emph{mittlere quadratische Abweichung vom arithmetischen Mittel} oder (Stichproben-)\emph{Varianz} ist definiert als
         \[
@@ -799,56 +852,74 @@ Also wenn ein Wert $a$ diese beiden bedingungen erfüllt, ist er einfach der Med
         (nicht robust gegenüber Ausreißern; verwenden Sie das Beispiel aus (d)).
 
         Im Beispiel: $\bar x=29/10=2.9$ und
-        \[
-            s^2 = \frac{1}{10}\Big[(1-2.9)^2+(1-2.9)^2+(2-2.9)^2+(2-2.9)^2+(2-2.9)^2+(3-2.9)^2+(4-2.9)^2+(4-2.9)^2+(4-2.9)^2+(6-2.9)^2\Big] = \dots
-        \]
+        \begin{align*}
+            s^2 = \frac{1}{10}
+            \Big[(1-2.9)^2+(1-2.9)^2+(2-2.9)^2+(2-2.9)^2+(2-2.9)^2+(3-2.9)^2+(4-2.9)^2+(4-2.9)^2+(4-2.9)^2+(6-2.9)^2\Big] \\
+            & \txc{=\frac{1}{10}
+            \Big[(-1.9)^2+(-1.9)^2+(-0.9)^2+(-0.9)^2+(-0.9)^2+(0.1)^2+(1.1)^2+(1.1)^2+(1.1)^2+(3.1)^2\Big] } \\
+            & \txc{=\frac{1}{10}
+            \Big[3.61+3.61+0.81+0.81+0.81+0.01+1.21+1.21+1.21+9.61\Big] } \\
+            & \txc{=\frac{1}{10} 22.9} \\
+            & \txc{= 2.29}
+        \end{align*}
         Der folgende Satz wird uns eine bessere Methode zeigen, die Stichprobenvarianz in diesem Fall zu berechnen.
 
-        \item Die \emph{Standardabweichung} ist definiert als $s=\sqrt{s^2}$ (nicht robust gegenüber Ausreißern, da die Stichprobenvarianz nicht robust ist).
+        \item Die \emph{Standardabweichung} ist definiert als $s=\sqrt{s^2}$ (nicht robust gegenüber Ausreißern, da
+        die Stichprobenvarianz nicht robust ist). \\
+        \txc{Im Beispiel: $s=\sqrt{s^2} = \sqrt{2.29} \approx 1.513$}
     \end{enumerate}
-
-    Beweisen Sie als Hausaufgabe, dass es sich jeweils um \gls{Streumaß}e handelt.
 \end{bsp}
 
-\begin{satz}[Berechnen der (Stichproben-)Varianz / Steinersche Formel]\label{satz:steinersche-formel}
-\txc{(Skript 26)} \\
+\begin{satz}[Berechnen der (Stichproben-)Varianz / Steinersche Formel]
+    \label{satz:steinersche-formel}
+    \txc{(Skript 26)} \\
     \[
         s^2 = \frac1n\sum_{i=1}^n x_i^2 - \bar x^2 = \frac1n\sum_{i=1}^n x_i^2 - \left(\frac1n\sum_{i=1}^n x_i\right)^2
     \]
-    \paragraph{Beweis.} Beweisen Sie dieses Resultat selbständig.
+
+    \paragraph{Beweis.} ``Beweisen Sie dieses Resultat selbständig.''
 \end{satz}
 
-\begin{bsp} \txc{(Skript 26)}
+\begin{bsp}
+    \txc{(Skript 26)}
     Für die (geordnete) Stichprobe $1,1,2,2,2,3,4,4,4,6$ der Länge $n=10$ gilt
-    \[
-        s^2 = \frac{1}{10}\left[1^2+1^2+2^2+2^2+2^2+3^2+4^2+4^2+4^2+6^2\right] - 2.9^2 = \dots
-    \]
+    \begin{align*}
+        s^2 & = \frac{1}{10}\left[1^2+1^2+2^2+2^2+2^2+3^2+4^2+4^2+4^2+6^2\right] - 2.9^2 \\
+        & \txc{= \frac{1}{10}\left[1+1+4+4+4+9+16+16+16+36\right] - 5.2441 } \\
+        & \txc{= \frac{1}{10}\left[ 107 \right] - 5.2441 } \\
+        & \txc{= 10.7 - 5.2441 } \\
+        & \txc{= 5.4559 }
+    \end{align*}
 \end{bsp}
 
-\begin{satz}[Berechnen von $\bar s$ und $s^2$ mittels der Häufigkeitsverteilung] \txc{(Skript 26)} \\
-\begin{enumerate}[label=(\alph*)]
-    \item $\displaystyle \bar s = \frac1n\sum_{k=1}^s |a_k-x_{\mathrm{med}}|\, H_n(a_k) = \sum_{k=1}^s |a_k-x_{\mathrm{med}}|\, h_n(a_k)$
-    \item $\displaystyle s^2 = \frac1n\sum_{k=1}^s [a_k-\bar x]^2\, H_n(a_k) = \sum_{k=1}^s [a_k-\bar x]^2\, h_n(a_k)$
-\end{enumerate}
+\begin{satz}[Berechnen von $\bar s$ und $s^2$ mittels der Häufigkeitsverteilung]
+    \txc{(Skript 26)} \\
+    \begin{enumerate}[label=(\alph*)]
+        \item $\displaystyle \bar s = \frac1n\sum_{k=1}^s |a_k-x_{\mathrm{med}}|\, H_n(a_k) = \sum_{k=1}^s |a_k-x_{\mathrm{med}}|\, h_n(a_k)$
+        \item $\displaystyle s^2 = \frac1n\sum_{k=1}^s [a_k-\bar x]^2\, H_n(a_k) = \sum_{k=1}^s [a_k-\bar x]^2\, h_n(a_k)$
+    \end{enumerate}
+
     \paragraph{Beweis.}   \[
                               \bar s = \frac1n\sum_{i=1}^n |x_i-x_{\mathrm{med}}| = \frac1n\sum_{k=1}^s \sum_{\substack{i=1:\\ x_i=a_k}}^n |x_i-x_{\mathrm{med}}| = \frac1n\sum_{k=1}^s |a_k-x_{\mathrm{med}}|\,H_n(a_k) = \sum_{k=1}^s |a_k-x_{\mathrm{med}}|\,h_n(a_k)
-\]
-sowie
-\[
-    s^2 = \frac1n\sum_{i=1}^n [x_i-\bar x]^2 = \frac1n\sum_{k=1}^s \sum_{\substack{i=1:\\ x_i=a_k}}^n [x_i-\bar x]^2 = \frac1n\sum_{k=1}^s [a_k-\bar x]^2\,H_n(a_k) = \sum_{k=1}^s [a_k-\bar x]^2\,h_n(a_k) \cdot
-\]
-In beiden Rechnungen haben wir verwendet, dass für gegebenes $k$ in der inneren Summe $\sum_{i=1:x_i=a_k}^n \dots$ die jeweiligen Summanden $|x_i-x_{\mathrm{med}}|=|a_k-x_{\mathrm{med}}|$ bzw.\ $[x_i-\bar x]^2 = [a_k-\bar x]^2$ konstant sind.
-Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jeweils $H_n(a_k)$.
+    \]
+    sowie
+    \[
+        s^2 = \frac1n\sum_{i=1}^n [x_i-\bar x]^2 = \frac1n\sum_{k=1}^s \sum_{\substack{i=1:\\ x_i=a_k}}^n [x_i-\bar x]^2 = \frac1n\sum_{k=1}^s [a_k-\bar x]^2\,H_n(a_k) = \sum_{k=1}^s [a_k-\bar x]^2\,h_n(a_k) \cdot
+    \]
+    In beiden Rechnungen haben wir verwendet, dass für gegebenes $k$ in der inneren Summe $\sum_{i=1:x_i=a_k}^n \dots$ die jeweiligen Summanden $|x_i-x_{\mathrm{med}}|=|a_k-x_{\mathrm{med}}|$ bzw.\ $[x_i-\bar x]^2 = [a_k-\bar x]^2$ konstant sind.
+    Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jeweils $H_n(a_k)$.
 \end{satz}
 
-\begin{bsp} \txc{(Skript 26)} \\
+\begin{bsp}
+    \txc{(Skript 26)} \\
     Für die geordnete Stichprobe $1,1,2,2,2,3,4,4,4,6$ der Länge $n=10$ gilt
     \[
         s^2 = \frac{1}{10}\Big[2\cdot(1-2.9)^2 + 3\cdot(2-2.9)^2 + (3-2.9)^2 + 3\cdot(4-2.9)^2 + (6-2.9)^2\Big] \approx 2.9 \cdot
     \]
 \end{bsp}
 
-\begin{defi}[Empirisches $p$-Quantil] \txc{(Skript 26)} \\
+\begin{defi}[Empirisches $p$-Quantil]
+    \txc{(Skript 26)} \\
     Sei $p\in(0,1)$.
     Dann heißt
     \[
@@ -861,14 +932,31 @@ Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jew
     \emph{empirisches $p$-Quantil}.
 \end{defi}
 
-\begin{bem} \txc{(Skript 26)}
-\begin{enumerate}[label=(\alph*)]
-    \item $x_{1/2} = x_{\mathrm{med}}$
-    \item Wie der Median ist auch das empirische $p$-Quantil ein robustes \gls{Lagemaß}.
-\end{enumerate}
+\begin{kom}[Andere Definitionen von empirisches $p$-Quantil]
+    \paragraph{Wikipedia:} Ein empirisches (p-)Quantil, auch Stichprobenquantil oder kurz Quantil (von lat. quantillus
+    für wie wenig?) genannt, ist in der Statistik eine Kennzahl einer Stichprobe.
+    Für jede Zahl p zwischen 0 und 1 teilt – vereinfacht dargestellt – ein empirisches p-Quantil die
+    Stichprobe so, dass ein Anteil der Stichprobe von p kleiner als das empirische p-Quantil ist und ein Anteil von 1 −
+    p der Stichprobe größer als das empirische p-Quantil ist;
+
+    % https://studyflix.de/statistik/quantile-1040
+    \paragraph{studyflix:} Quantile gehören zu den Lagemaßen der Statistik.
+    Sie teilen eine bestimmte Menge an Daten so ein, dass ein Teil p kleiner oder gleich und der andere Teil 1-p größer oder gleich dem Quantil ist.
+
+    \paragraph{Spektrum.de:} innerhalb der Mathematischen Statistik verwendeter Begriff für eine Größe, die eine
+    geordnete Stichprobe so zerlegt, daß eine gewissen Anzahl der Daten kleiner als sie selbst ist.
+\end{kom}
+
+\begin{bem}
+    \txc{(Skript 26)}
+    \begin{enumerate}[label=(\alph*)]
+        \item $x_{1/2} = x_{\mathrm{med}}$
+        \item Wie der Median ist auch das empirische $p$-Quantil ein robustes \gls{Lagemaß}.
+    \end{enumerate}
 \end{bem}
 
-\begin{bsp}[10$\times$ Würfeln] \txc{(Skript 26)} \\
+\begin{bsp}[10$\times$ Würfeln]
+    \txc{(Skript 26)} \\
     Geordnete Stichprobe: $1,1,2,2,2,3,4,4,4,6$, $n=10$.
     \begin{itemize}
         \item $p=1/2$: $np=5\in\nz$ und $x_{1/2}=x_{\mathrm{med}}=\frac12[x_{(5)}+x_{(6)}]=\frac12[2+3]=\frac52=2.5$
@@ -877,25 +965,27 @@ Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jew
     \end{itemize}
 \end{bsp}
 
-\begin{satz}[Charakterisierung des $p$-Quantils] \txc{(Skript 26)}
-\begin{enumerate}[label=(\alph*)]
-    \item Das $p$-Quantil $x_p$ erfüllt
-    \[
-        \sum_{\substack{k=1:\\ a_k\leq x_p}}^s h_n(a_k) \geq p \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq x_p}}^s h_n(a_k) \geq 1-p \cdot
-    \]
-    Das heißt, mindestens $100\,p\,\%$ der Werte in der Stichprobe sind kleiner oder gleich dem Wert des $p$-Quantils und mindestens $100\,(1-p)\,\%$ der Werte in der Stichprobe sind größer oder gleich dem Wert des $p$-Quantils.
-    \item Gelten
-    \[
-        \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq p \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq 1-p \qquad\text{für ein } a\in\rz ,
-    \]
-    so folgt $x_{(\lceil np\rceil)}\leq a\leq x_{(\lceil np\rceil+1)}$.
-    Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
+\begin{satz}[Charakterisierung des $p$-Quantils]
+    \txc{(Skript 26)}
+    \begin{enumerate}[label=(\alph*)]
+        \item Das $p$-Quantil $x_p$ erfüllt
+        \[
+            \sum_{\substack{k=1:\\ a_k\leq x_p}}^s h_n(a_k) \geq p \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq x_p}}^s h_n(a_k) \geq 1-p \cdot
+        \]
+        Das heißt, mindestens $100\,p\,\%$ der Werte in der Stichprobe sind kleiner oder gleich dem Wert des $p$-Quantils und mindestens $100\,(1-p)\,\%$ der Werte in der Stichprobe sind größer oder gleich dem Wert des $p$-Quantils.
+        \item Gelten
+        \[
+            \sum_{\substack{k=1:\\ a_k\leq a}}^s h_n(a_k)\geq p \qquad\text{und}\qquad \sum_{\substack{k=1:\\ a_k\geq a}}^s h_n(a_k)\geq 1-p \qquad\text{für ein } a\in\rz ,
+        \]
+        so folgt $x_{(\lceil np\rceil)}\leq a\leq x_{(\lceil np\rceil+1)}$.
+        Dabei muss $a$ keine Ausprägung des \gls{Merkmal}s $X$ sein.
 
-    Wir wissen sogar, dass $x_{(np)}\leq a\leq x_{(np+1)}$ für $np\in\nz$ gilt, sowie $a=x_{(\lceil np\rceil)}$ sonst.
-\end{enumerate}
+        Wir wissen sogar, dass $x_{(np)}\leq a\leq x_{(np+1)}$ für $np\in\nz$ gilt, sowie $a=x_{(\lceil np\rceil)}$ sonst.
+    \end{enumerate}
 \end{satz}
 
-\begin{defi}[$p$-Quantilsabstand] \txc{(Skript 26)} \\
+\begin{defi}[$p$-Quantilsabstand]
+    \txc{(Skript 26)} \\
     Sei $p\in(0,\tfrac12)$.
     Wir nennen $x_{1-p}-x_p$ den \emph{$p$-Quantilsabstand}.
     Der $1/4$-\gls{Quantilsabstand} wird auch \emph{Quartilsabstand} genannt.
@@ -903,7 +993,8 @@ Daher müssen wir nur die Anzahl der Summanden bestimmen, und diese beträgt jew
 
 Zeigen Sie das folgende Lemma als Hausaufgabe.
 
-\begin{lem}[$p$-\gls{Quantilsabstand} als \gls{Streumaß}] \txc{(Skript 26)} \\
+\begin{lem}[$p$-\gls{Quantilsabstand} als \gls{Streumaß}]
+    \txc{(Skript 26)} \\
     Der $p$-\gls{Quantilsabstand} ist ein \gls{Streumaß}.
 \end{lem}
 
@@ -915,330 +1006,4 @@ beträgt.
 
 \bigskip
 \noindent\textit{Zur Unterhaltung:} \url{https://mathwithbaddrawings.com/2016/07/13/why-not-to-trust-statistics}
-
-\chapter{Schließende Statistik: Testtheorie I}\label{ch:schlieende-statistik:-testtheorie-i}
-
-\noindent \textbf{Ziel:} Schließen von einer Stichprobe auf Verteilungsparameter.
-
-\section*{Annahme}
-Im Folgenden nehmen wir stets an, dass eine Stichprobe $x_1,\dots,x_n$ vorliegt, von der wir annehmen können, dass
-sie aus Werten besteht, die von einem $n$-fach unabhängig wiederholten Zufallsexperiment stammen.
-
-Das heißt, wir nehmen an, dass es einen Wahrscheinlichkeitsraum $\wraum$, unabhängige, identisch verteilte, $\rz$
--wertige Zufallsvariablen $X_1,\dots,X_n$ und ein $\ele\in\eraum$ gibt derart, dass
-\[
-    (x_1,\dots,x_n) = (X_1(\ele),\dots,X_n(\ele)) \cdot
-\]
-Wir werden die Theorie jeweils am Beispiel von \gls{Bernoulli-Variable}n illustrieren.
-
-\begin{bsp}[Fragestellung im Fall von \gls{Bernoulli-Variable}n] \txc{(Skript 26)} \\
-    Die $n$ unabhängigen \gls{Bernoulli-Variable}n können wir als Modell verstehen für das Werfen einer (nicht
-unbedingt fairen) Münze, für das Werfen einer Reißzwecke oder auch für einen Spezialfall des Werfens unserer
-Schweinchen: Beim Werfen der Schweinchen in der Vorlesung haben wir die Schweinchen 166-mal geworfen.
-    Wenn wir nur jene Würfe als Erfolg gezählt hätten, in denen ein Schweinchen auf der Schnauze gelandet ist, so
-wäre dies ein Bernoulli-Experiment gewesen.
-    Wir können jedoch auch im Nachhinein die anderen Resultate ignorieren und unser Experiment als reines
-Bernoulli-Experiment betrachten, wenn uns nur eine der möglichen Positionen interessiert.
-
-    All diesen Situationen ist gemein, dass wir die tatsächliche Erfolgswahrscheinlichkeit nicht kennen und auch
-kein Symmetrieargument verwenden können, um diese zu bestimmen.
-    Wir arbeiten daher zunächst mit einem Parameter, der in der Statistik üblicherweise mit $\theta$ bezeichnet wird
-und die Rolle der Erfolgswahrscheinlichkeit übernimmt.
-
-    Im Fall von \gls{Bernoulli-Variable}n ist das Modell für das Zufallsexperiment also gegeben durch
-    \begin{itemize}
-        \item Ereignisraum $\eraum=\{0,1\}^n$
-        \item unbekannte Erfolgswahrscheinlichkeit $\theta\in[0,1]$
-        \item Wahrscheinlichkeitsfunktion $\wfk_\theta(\ele) = \theta^{\sum_{i=1}^n \ele_i}(1-\theta)^{n-\sum_{i=1}^n\ele_i}$ für alle $\ele\in\eraum$
-        \item $X_i:\eraum\to\{0,1\}$ mit $X_i(\ele)=\ele_i$ für alle $\ele\in\eraum$ und alle $i\in\{1,\dots,n\}$
-    \end{itemize}
-\end{bsp}
-
-\begin{defi}[Stichprobe, Stichprobenvariable und Stichprobenraum] \txc{(Skript 26)}
-\begin{enumerate}[label=(\alph*)]
-    \item Die Zufallsvariablen $X_1,\dots,X_n$ heißen \emph{Stichprobenvariable}.
-    \item Eine Realisation
-    \[
-        x = (x_1,\dots,x_n) = (X_1(\ele),\dots,X_n(\ele)) = X(\ele)
-    \]
-    für ein gegebenes $\ele\in\eraum$ heißt \emph{Stichprobe}.
-    \item Der Bildbereich $\mathcal{X} = X(\eraum) = (X_1,\dots,X_n)(\eraum)$ der $n$-dimensionalen Zufallsvariablen $X$ heißt \emph{Stichprobenraum}.
-    Der \gls{Stichprobenraum} $\mathcal X$ ist die Menge aller möglichen Stichproben (bei gegebenem Experiment).
-\end{enumerate}
-\end{defi}
-
-\begin{bsp}[\gls{Bernoulli-Variable}]\txc{(Skript 26)} \\
-    Im Fall von \gls{Bernoulli-Variable}n erfüllen die unabhängigen \gls{Stichprobenvariable}n $X_1,\dots,X_n$
-    \[
-        \pe_{\theta}(X_i=1)=\theta \qquad\text{und}\qquad \pe_{\theta}(X_i=0)=1-\theta \qquad \forall i\in\{1,\dots,n\} \cdot
-    \]
-    Ist $n=3$ und $\ele\in\eraum$ zum Beispiel gegeben durch $\ele=(0,0,1)$, so ergibt sich die Stichprobe zu $x=(x_1,x_2,x_3)=(X_1(\ele),X_2(\ele),X_3(\ele))=(0,0,1)$, weil die \gls{Stichprobenvariable}n in diesem Fall die Projektionen von $\eraum$ auf die einzelnen Komponenten sind.
-
-    Der \gls{Stichprobenraum} ist $\mathcal X = X(\eraum) = \{0,1\}^3$.
-\end{bsp}
-
-\begin{defi}[Statistisches Modell] \txc{(Skript 26)} \\
-    Ein \emph{statistisches Modell} für ein gegebenes Zufallsexperiment ist eine Familie $\mathcal P$ von Wahrscheinlichkeitsmaßen $P$ auf dem \gls{Stichprobenraum} $\mathcal X$, wobei die Wahrscheinlichkeitsmaße $P\in\mathcal P$ die möglichen Verteilungen von $X=(X_1,\dots,X_n)$ beschreiben.
-
-    Gilt $\mathcal P = \{\pe_{\theta} : \theta\in\Theta\}$, so heißt $\Theta$ der \emph{Parameterraum} und $\theta\in\Theta$ heißt \emph{Parameter}.
-\end{defi}
-
-\begin{bsp}[\gls{Bernoulli-Variable}] \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ ist das zugehörige statistische Modell gegeben durch $\mathcal P = \{\pe_{\theta}:\theta\in\Theta\}$, wobei wir im Allgemeinen $\Theta=[0,1]$ wählen und $\pe_{\theta}$ durch die Wahrscheinlichkeitsfunktion $\wfk_\theta$ mit
-    \[
-        \wfk_\theta(\ele) = \theta^{\sum_{i=1}^n\ele_i}(1-\theta)^{n-\sum_{i=1}^n\ele_i} \qquad \text{für alle } \ele\in\eraum
-    \]
-    gegeben ist.
-
-    Wenn wir Grund haben anzunehmen, dass für die Erfolgswahrscheinlichkeit gewisse Werte ausgeschlossen werden können, so kann $\Theta$ auch als echte Teilmenge von $[0,1]$ gewählt werden.
-\end{bsp}
-
-Unser Ziel ist es nun, systematisch aus Stichproben Schlüsse zu ziehen über die dem Zufallsexperiment zugrunde liegende Wahrscheinlichkeitsverteilung.
-Konkreter heißt das: Wir nehmen an, dass wir die Verteilung der \gls{Stichprobenvariable}n bis auf den oder die
-Parameter der Verteilung kennen, und wollen nun anhand einer Stichprobe die Parameter der Verteilung bestmöglich schätzen.
-Im Fall von \gls{Bernoulli-Variable}n heißt das, dass wir die Erfolgswahrscheinlichkeit $\theta$ schätzen wollen.
-Im Folgenden werden wir auch andere Kennzahlen der Wahrscheinlichkeitsverteilung wie Erwartungswert oder Varianz schätzen.
-
-Grundsätzlich gibt es verschiedene Typen von Resultaten, die wir anhand einer Stichprobe gewinnen können:
-\begin{enumerate}
-    \item \textbf{\gls{Punktschätzer}:} Resultat ist ein Wert $\theta$ oder $g(\theta)$ mit $\theta\in\Theta$
-    \item \textbf{\gls{Bereichsschätzer}:} Resultat ist eine Teilmenge von $\Theta$
-    \item \textbf{\gls{Hypothesentest}:} Resultat ist eine Ja-Nein-Entscheidung über eine den Parameter betreffende \gls{Hypothese}
-\end{enumerate}
-Wir befassen uns in diesem Kapitel mit \gls{Punktschätzer}n.
-
-\begin{defi}[\gls{Punktschätzer}] \txc{(Skript 26)} \\
-    Sei ein statistisches Modell der Form $\mathcal P=\{\pe_{\theta}:\theta\in\Theta\}$ gegeben.
-    \begin{enumerate}[label=(\alph*)]
-        \item Ein \emph{\gls{Schätzer}} für $\theta\in\Theta$ ist eine Abbildung $t:\mathcal X\to\Theta$.
-        Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen \gls{Schätzer} für $\theta\in\Theta$.
-        Eine Realisierung $t(x)=t((x_1,\dots,x_n))$ bzw.\ $T(\ele)$ heißt \emph{Schätzung} für $\theta$.
-        \item Sei zusätzlich eine Abbildung $g:\Theta\to\Gamma$ gegeben.
-        Ein \emph{\gls{Schätzer}} für $g(\theta)$ ist eine Abbildung $t:\mathcal X\to\Gamma$.
-        Wir nennen auch die Zufallsvariable $T=t(X)=t((X_1,\dots,X_n))$ einen \gls{Schätzer} für $g(\theta)$.
-        Eine Realisierung $t(x)=t((x_1,\dots,x_n))$ bzw.\ $T(\ele)$ heißt \emph{Schätzung} für $g(\theta)$.
-    \end{enumerate}
-    Wir werden uns zunächst auf \gls{Schätzer} für $\theta$ konzentrieren und später auf \gls{Schätzer} für $g(\theta)$ zurückkommen.
-\end{defi}
-
-\begin{bem}[Unterschied zwischen \gls{Schätzer} und Schätzung für $\theta$]
-    \begin{mytable}
-        \begin{tabular}{ll}
-            \hline
-            \textbf{\gls{Schätzer} (Funktion)} & \textbf{Schätzung (Funktionswert)} \\
-            \hline
-            Rechenvorschrift $t:\mathcal X\to\Theta$; & Ergebnis $t(x)$ der Auswertung \\
-            ordnet jeder Stichprobe einen & der Rechenvorschrift für eine \\
-            Parameterwert zu & konkrete Stichprobe \\
-            \hline
-        \end{tabular}
-    \end{mytable}
-\end{bem}
-
-\begin{bsp}[\gls{Schätzer} können absurd schlecht sein] \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ haben wir den \gls{Stichprobenraum} $\mathcal X=\{0,1\}^n$ sowie den Parameterraum $\Theta=[0,1]$.
-    Gemäß Definition ist die Abbildung $t:\mathcal X\to\Theta$ mit $t(x)=\frac12$ für alle $x\in\mathcal X$ eine zulässige Wahl für einen \gls{Schätzer} der Erfolgswahrscheinlichkeit.
-    Offensichtlich ist diese, nicht von der Stichprobe abhängige Wahl nicht sinnvoll.
-
-    Motiviert durch das Gesetz der großen Zahlen und die Tatsache, dass für \gls{Bernoulli-Variable} der Erwartungswert der Erfolgswahrscheinlichkeit entspricht, vermuten wir, dass das arithmetische Mittel der Stichprobenwerte $t(x)=\frac1n\sum_{i=1}^n x_i$ eine klügere Wahl sein sollte.
-
-    Dies wirft die Frage auf, wann ein \gls{Schätzer} ein guter \gls{Schätzer} ist.
-    Wir benötigen Kriterien, um \gls{Schätzer} systematisch beurteilen zu können.
-\end{bsp}
-
-\begin{defi}[Kriterien zur Beurteilung von \gls{Punktschätzer}n] \txc{(Skript 26)} \\
-    Gegeben seien ein statistisches Modell der Form $\mathcal P=\{\pe_{\theta}:\theta\in\Theta\}$, eine Abbildung $g:\Theta\to\Gamma$, sowie ein \gls{Schätzer} $t:\mathcal X\to\Gamma$ für $g(\theta)$.\footnote{Der Fall, dass wir mit einem \gls{Schätzer} für den Parameter $\theta$ selbst arbeiten, entspricht der Wahl $\Gamma=\Theta$ und $g(x)=x$ für alle $x\in\mathcal X$. Wir müssen daher die beiden Fälle nicht unterscheiden.}
-
-    \begin{enumerate}[label=(\alph*)]
-        \item Der \emph{Bias} des \gls{Schätzer}s $t$ ist definiert als
-        \[
-            \mathrm{Bias}_t(\theta) = \ET[T] - g(\theta) = \ET[t((X_1,\dots,X_n))] - g(\theta) \qquad \text{für alle } \theta\in\Theta \cdot
-        \]
-        Dabei sei $\ET$ der Erwartungswert, der mit dem Wahrscheinlichkeitsmaß $\pe_{\theta}$ definiert ist.
-        \item Der \gls{Schätzer} $t$ heißt \emph{erwartungstreu}, wenn $\mathrm{Bias}_t(\theta)=0$ für alle $\theta\in\Theta$ gilt.
-        \item Das \emph{Risiko} des \gls{Schätzer}s $t$ im Punkt $\theta\in\Theta$ ist definiert als die erwartete quadratische Abweichung des \gls{Schätzer}s von $g(\theta)$, das heißt,
-        \[
-            R(\theta,t) = \ET\big[(T-g(\theta))^2\big] \cdot
-        \]
-        \item Die \emph{Risikofunktion} des \gls{Schätzer}s $t$ ist definiert als die Abbildung $\theta\mapsto R(\theta,t)$.
-        \item Sind $t_1,t_2:\mathcal X\to\Gamma$ zwei \gls{Schätzer} für $g(\theta)$, so sagen wir, dass $t_1$ \emph{mindestens so gut} ist wie $t_2$, wenn $R(\theta,t_1)\leq R(\theta,t_2)$ für alle $\theta\in\Theta$ gilt.
-        Gilt zusätzlich, dass es ein $\theta\in\Theta$ gibt mit $R(\theta,t_1)<R(\theta,t_2)$, so sagen wir, dass $t_1$ \emph{besser} als $t_2$ ist.
-    \end{enumerate}
-\end{defi}
-
-\begin{bsp}\textbf{Das arithmetische Mittel als \gls{Schätzer} im Fall von \gls{Bernoulli-Variable}n} \txc{(Skript 26)} \\
-    Im Fall von unabhängigen \gls{Bernoulli-Variable}n als \gls{Stichprobenvariable} $X_1,\dots,X_n$ erhalten wir folgende Ergebnisse für den \gls{Schätzer} $t$ mit
-    \[
-        t(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\{0,1\}^n ,
-    \]
-    den wir verwenden wollen, um den Parameter $\theta$, d.h.\ die Erfolgswahrscheinlichkeit, zu schätzen.
-
-    \begin{enumerate}[label=(\alph*)]
-        \item Der Bias des \gls{Schätzer}s $t$ ist
-        \[
-            \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \theta = \frac1n\sum_{i=1}^n \ET[X_i] - \theta = 0 \qquad \text{für alle } \theta\in\Theta ,
-        \]
-        weil für die \gls{Bernoulli-Variable}n $\ET[X_i]=\theta$ gilt.
-        \item Daher ist der \gls{Schätzer} $t$ erwartungstreu.
-        \item Das Risiko des \gls{Schätzer}s $t$ im Punkt $\theta\in\Theta$ ergibt sich zu
-        \[
-            R(\theta,t) = \ET\left[\left(\frac1n\sum_{i=1}^n X_i - \theta\right)^2\right] = \mathrm{Var}_\theta\left(\frac1n\sum_{i=1}^n X_i\right) = \frac1n\,\mathrm{Var}_\theta(X_1) = \frac{\theta(1-\theta)}{n} \cdot
-        \]
-
-        Auch für unbekanntes $\theta\in\Theta=[0,1]$ können wir eine von $\theta$ unabhängige obere Schranke an das Risiko bestimmen.
-        Die Abbildung $\theta\mapsto\theta(1-\theta)$ wird maximal in $\theta=\frac12$ mit Wert $\frac14$.
-        Daher gilt
-        \[
-            R(\theta,t) = \frac{\theta(1-\theta)}{n} \leq \frac{1}{4n} \qquad \text{für alle } \theta\in\Theta \cdot
-        \]
-
-        \begin{figure}[H]
-            \begin{tikzpicture}
-                \begin{axis}[width=7cm,height=5cm,domain=0:1,samples=100,xlabel={$\theta$},ylabel={$\theta(1-\theta)$},ymin=0]
-                \addplot[thick,blue] {x*(1-x)};
-                \end{axis}
-            \end{tikzpicture}\label{fig:figure6}
-        \end{figure}
-
-        \item Die \gls{Risikofunktion} des \gls{Schätzer}s $t$ ist gegeben durch die Abbildung $\theta\mapsto\dfrac{\theta(1-\theta)}{n}$.
-        \item Wir wollen nun den \gls{Schätzer} $t$ mit einem anderen \gls{Schätzer} vergleichen.
-        Sei der \gls{Schätzer} $\tilde t$ gegeben durch
-        \[
-            \tilde t(x) = \frac{x_1+x_n}{2} \qquad \text{für alle } x\in\{0,1\}^n ,
-        \]
-        das heißt, wir sind ``faul'' und verwenden nur den ersten und den letzten Stichprobenwert.
-        Das Risiko von $\tilde t$ in $\theta$ ist gegeben durch $R(\theta,\tilde t) = \dfrac{\theta(1-\theta)}{2}$ (dieselbe Rechnung wie für $t$, nur diesmal mit Stichprobengröße $2$).
-
-        Wir haben das -- keineswegs überraschende -- Ergebnis, dass $t$ mindestens so gut ist wie $\tilde t$, sofern $n\geq2$.
-        Für $n>2$ haben wir sogar, dass $t$ besser als $\tilde t$ ist.
-    \end{enumerate}
-\end{bsp}
-
-\begin{lem}\textbf{Rechenregeln für Bias und Risiko} \txc{(Skript 26)} \\
-    Sei $t$ ein \gls{Schätzer} für $g(\theta)$.
-    Dann gelten:
-    \begin{enumerate}[label=(\alph*)]
-        \item Der \gls{Schätzer} $t$ ist genau dann erwartungstreu, wenn $\ET[T]=g(\theta)$ für alle $\theta\in\Theta$ gilt.
-        \item $R(\theta,t) = (\mathrm{Bias}_t(\theta))^2 + \mathrm{Var}_\theta(T)$
-        \item Ist $t$ erwartungstreu, so gilt $R(\theta,t) = \mathrm{Var}_\theta(T)$.
-    \end{enumerate}
-    \paragraph{Beweis.}
-\begin{enumerate}[label=(\alph*)]
-    \item Folgt direkt aus der Definition des Bias und der Erwartungstreue.
-    \item Aus der Definition von Bias und Risiko folgt mit Hilfe einer Nullergänzung, dass
-    \begin{align*}
-        R(\theta,t) &= \ET\big[(T-g(\theta))^2\big] = \ET\Big[\big((T-\ET[T])+(\ET[T]-g(\theta))\big)^2\Big] \\
-        &= \ET\big[(T-\ET[T])^2\big] + 2\big(\ET[T]-g(\theta)\big)\,\ET\big[T-\ET[T]\big] + \big(\ET[T]-g(\theta)\big)^2 \\
-        &= \mathrm{Var}_\theta(T) + (\mathrm{Bias}_t(\theta))^2 \cdot
-    \end{align*}
-    \item Folgt direkt aus der Definition der Erwartungstreue. \qedhere
-\end{enumerate}
-\end{lem}
-
-Bisher haben wir ausschließlich den Parameter geschätzt, der im Spezialfall der \gls{Bernoulli-Variable}n mit dem Erwartungswert zusammenfällt.
-Im allgemeinen Fall, wenn die \gls{Stichprobenvariable}n möglicherweise eine andere Verteilung haben, dient das
-arithmetische Mittel als \gls{Schätzer} für den Erwartungswert.
-Wir sehen uns als Nächstes ein paar Beispiele an.
-Der allgemeine Fall verbleibt als Hausaufgabe.
-
-\begin{bsp}\textbf{Das arithmetische Mittel als \gls{Schätzer} des Erwartungswerts} \txc{(Skript 26)} \\
-    Seien $X_1,\dots,X_n$ \gls{Stichprobenvariable} und $t$ ein \gls{Schätzer} für den Erwartungswert, der durch
-    \[
-        t(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\mathcal X
-    \]
-    definiert ist.
-
-    \begin{enumerate}[label=(\alph*)]
-        \item \textbf{Geometrisch verteilte Stichprobenvariable.} Sei $\theta\in\Theta=[0,1]$ und gelte
-        \[
-            \pe_{\theta}(X_i=k) = (1-\theta)^{k-1}\theta \qquad \text{für alle } k\in\nz \cdot
-        \]
-        Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
-        \[
-            \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \E[X_1] = \frac1n\sum_{i=1}^n \ET[X_i] - \E[X_1] = 0 \qquad \text{für alle } \theta\in\Theta ,
-        \]
-        weil $X_1,\dots,X_n$ identisch verteilt sind.
-        Wir schätzen mit $t$ den Erwartungswert $\E[X_1]=\frac1\theta$.
-        Der \gls{Schätzer} ist erwartungstreu.
-
-        \item \textbf{Gleichverteilte Stichprobenvariable.} Sei $\theta\in\Theta=\nz$ und gelte
-        \[
-            \pe_{\theta}(X_i=k) = \frac1\theta \qquad \text{für alle } k\in\{1,\dots,\theta\} \cdot
-        \]
-        Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
-        \[
-            \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \theta\in\Theta ,
-        \]
-        weil $X_1,\dots,X_n$ identisch verteilt sind.
-        Wir schätzen mit $t$ den Erwartungswert $\ET[X_1]=\frac{\theta+1}{2}$.
-        Der \gls{Schätzer} ist erwartungstreu.
-
-        \item \textbf{Poisson-verteilte Stichprobenvariable.} Sei $\theta\in\Theta=\nz$ und gelte
-        \[
-            \pe_{\theta}(X_i=k) = \frac{\theta^k}{k!}e^{-\theta} \qquad \text{für alle } k\in\nz_0 \cdot
-        \]
-        Dann ist der Bias des \gls{Schätzer}s $t$ gegeben durch
-        \[
-            \mathrm{Bias}_t(\theta) = \ET\left[\frac1n\sum_{i=1}^n X_i\right] - \ET[X_1] = 0 \qquad \text{für alle } \theta\in\Theta ,
-        \]
-        weil $X_1,\dots,X_n$ identisch verteilt sind.
-        Wir schätzen mit $t$ den Erwartungswert $\ET[X_1]=\theta$.
-        Der \gls{Schätzer} ist erwartungstreu.
-    \end{enumerate}
-\end{bsp}
-
-Wir können auch Funktionen des Parameters schätzen.
-Wir betrachten hier exemplarisch die Varianz als eine solche Funktion.
-
-\begin{bsp}\textbf{\gls{Schätzer} für die Varianz} \txc{(Skript 26)} \\
-    Seien $X_1,\dots,X_n$ unabhängige \gls{Stichprobenvariable}\footnote{Wir nehmen nicht an, dass die Stichprobenvariablen \gls{Bernoulli-Variable} sind.} und $t$ ein \gls{Schätzer} für den Erwartungswert, der durch
-    \[
-        t(x) = \bar x = \frac1n\sum_{i=1}^n x_i \qquad \text{für alle } x\in\mathcal X
-    \]
-    definiert ist.
-
-    Eine naheliegende Idee ist es, analog zur Stichprobenvarianz, die Abbildung $s^2$ mit
-    \[
-        s^2(x) = \frac1n\sum_{i=1}^n (x_i-\bar x)^2 = \frac1n\sum_{i=1}^n \left(x_i - \frac1n\sum_{j=1}^n x_j\right)^2 \qquad \text{für alle } x\in\mathcal X
-    \]
-    zu wählen.
-
-    Ist dieser \gls{Schätzer} erwartungstreu?
-
-    Wir können uns die (Schreib-)Arbeit etwas erleichtern, wenn wir annehmen, dass $\ET[X_i]=0$ gilt.
-    Diese Annahme bedeutet keine Einschränkung der Allgemeingültigkeit des herzuleitenden Resultats, wie wir mittels einer Nullergänzung leicht sehen:
-    \begin{align*}
-        X_i - t(X) &= (X_i-\ET[X_i]) + \left(\ET[X_1] - \frac1n\sum_{i=1}^n X_i\right) \\
-        &= (X_i-\ET[X_i]) - \left(\frac1n\sum_{i=1}^n (X_i-\ET[X_i])\right) \\
-        &= (X_i-\ET[X_i]) - t\big((X_1-\ET[X_1],\dots,X_n-\ET[X_n])\big) \cdot
-    \end{align*}
-    Das heißt, $X_i-t(X)$ hängt nicht vom Erwartungswert der \gls{Stichprobenvariable}n ab.
-
-    Im Folgenden nehmen wir also an, dass $\ET[X_i]=0$ gilt.
-    Umschreiben zeigt:
-    \[
-        s^2(X) = \frac1n\sum_{i=1}^n\Big[X_i^2 - 2X_i t(X) + (t(X))^2\Big] = \frac1n\sum_{i=1}^n X_i^2 - 2(t(X))^2 + (t(X))^2 = \frac1n\sum_{i=1}^n X_i^2 - (t(X))^2 \cdot
-    \]
-    Daher gilt
-    \[
-        \ET\big[s^2(X)\big] = \frac1n\sum_{i=1}^n \ET[X_i^2] - \ET\big[(t(X))^2\big] = \ET[X_1^2] - \ET\big[(t(X))^2\big] = \ET[X_1^2] - \frac{1}{n^2}\sum_{i,j=1}^n \ET[X_i X_j] \cdot
-    \]
-    Für $i\neq j$ gilt aufgrund der Unabhängigkeit von $X_i$ und $X_j$, dass $\ET[X_i X_j] = \ET[X_i]\,\ET[X_j] = 0$.
-    Daher bleiben von der Doppelsumme nur die Diagonalterme, das heißt,
-    \[
-        \ET\big[s^2(X)\big] = \ET[X_1^2] - \frac{1}{n^2}\sum_{i=1}^n \ET[X_i^2] = \ET[X_1^2] - \frac1n\ET[X_1^2] \cdot
-    \]
-    Da wir angenommen haben, dass $\ET[X_1]=0$ gilt, folgt
-    \[
-        \ET\big[s^2(X)\big] = \left(1-\frac1n\right)\mathrm{Var}_\theta(X_1) \cdot
-    \]
-    Wir sehen somit, dass $s^2$ \emph{kein} erwartungstreuer \gls{Schätzer} der Varianz ist.
-    Wir sehen aber auch, dass der Unterschied nur im Vorfaktor $1-\frac1n$ liegt.
-    Wenn wir $s^2$ mit $\frac{n}{n-1}$ multiplizieren, erhalten wir einen erwartungstreuen \gls{Schätzer}.
-    In der Tat definiert
-    \[
-        \widehat\sigma^2(x) = \frac{1}{n-1}\sum_{i=1}^n (x_i-\bar x)^2 \qquad \text{für alle } x\in\mathcal X
-    \]
-    einen erwartungstreuen \gls{Schätzer} für die Varianz, wenn der Erwartungswert unbekannt ist und daher durch den \gls{Schätzer} $\bar x$ ersetzt werden muss.
-\end{bsp}
 
