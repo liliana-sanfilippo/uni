@@ -1,3 +1,300 @@
-%! Author = lili
-%! Date = 7/25/26
+%! Author = lili (Transkription)
+%! Date = 3/7/26
 
+\untit{Vorlesung 3. Juli 2026}
+
+\section{Punktschätzer für den Erwartungswert: Rückblick}\label{sec:punktschaetzer-rueckblick-juli}
+
+\txc{(2026)} Grundsätzlich ist $\bar X = \frac1n\sum_{i=1}^n X_i$ ein \gls{Schätzer}, der leicht zu berechnen ist.
+Was schätzt $\bar X$? Grundsätzlich ist $\bar X$ ein erwartungstreuer \gls{Schätzer} für den EW.
+Wir haben in den letzten Vorlesungen sowohl Beispiele gesehen, bei denen der \gls{param}, den wir eigentlich
+schätzen wollen, gleich dem EW ist, als auch Beispiele, bei denen der \gls{param} aus dem EW ausgerechnet werden
+kann.
+
+\begin{bsp}
+    \txc{(2026)} \\
+    Wenn die Stichprobenvariablen $X_1,\dots,X_n$ Poisson-verteilt sind mit Parameter $\lambda>0$, so gilt
+    \[
+        \lambda = \E{X_1} \cdot
+    \]
+    Wenn die Stichprobenvariablen $X_1,\dots,X_n$ exponentialverteilt sind mit Parameter $\alpha>0$, gilt dagegen
+    \[
+        \alpha = \frac{1}{\E{X_1}} \cdot
+    \]
+\end{bsp}
+
+Es ist nicht immer möglich, den \gls{param} einer Verteilung aus dem EW zu berechnen.
+
+\begin{bsp}
+    \txc{(2026)} \\
+    Seien die Stichprobenvariablen gleichverteilt auf $\{-\theta,\dots,\theta\}$, $\theta\in\nz$, $\theta>0$.
+    Dann
+    gilt stets
+    \[
+        \E{X_i} = 0 \cdot
+    \]
+\end{bsp}
+\komm{
+    Hier könnten wir statt des EW die Varianz schätzen (die Stichprobenvariablen sind ja identisch verteilt).
+    Das führt zur Frage: Wie schätzen wir Varianzen?
+}
+
+\section{Wiederholung: Schätzer für die Varianz}\label{sec:varianzschaetzer-wiederholung}
+
+\txc{(2026)}
+\paragraph{Notation.}
+Stichprobe: $\bar x = \dfrac1n\sum_{i=1}^n x_i$. \\
+Stichprobenvariable: $\bar X = \dfrac1n\sum_{i=1}^n X_i$ ist erwartungstreu.
+
+Wir dürfen annehmen, dass $\E{X_i}=0$ gilt \txo{(o.\,B.\,d.\,A., siehe letzte Vorlesung: eine Nullergänzung zeigt,
+    dass $X_i - \bar X$ nicht vom tatsächlichen Erwartungswert der $X_i$ abhängt)}.
+
+\begin{er}
+    \txc{(2026)} \\
+    Der naive Schätzer $s^2(x) = \dfrac1n\sum_{i=1}^n (x_i-\bar x)^2$ ist \emph{nicht} erwartungstreu:
+    \[
+        \E{s^2(X)} = \left(1-\frac1n\right) \Var(X_1) \cdot
+    \]
+    Der korrigierte Schätzer
+    \[
+        \widehat\sigma^2(x) = \frac{1}{n-1}\sum_{i=1}^n (x_i-\bar x)^2
+    \]
+    ist erwartungstreu ($s^2$ mit dem Faktor $\frac{n}{n-1}$ multipliziert).
+\end{er}
+
+Wenn der Erwartungswert bekannt ist, können wir den naiven Ansatz im Prinzip verwenden.
+Wir müssen $\bar x$ durch
+den EW ersetzen.
+
+\begin{satz}
+    \txc{(2026)} \\
+    \textbf{Schätzer für die Varianz bei bekanntem EW $\wfk$:}
+    \[
+        \frac1n \sum_{i=1}^n (x_i-\wfk)^2
+    \]
+    ist tatsächlich erwartungstreu.
+\end{satz}
+
+\begin{bsp}
+    \txc{(2026)} \\
+    \textbf{Illustration mit simulierten Daten (Mathematica).}
+\end{bsp}
+\komm{
+    In der Vorlesung wurde dies an einem Beispiel mit $n=100$ unabhängig identisch verteilten Stichproben aus
+    einer Exponentialverteilung mit Parameter $\alpha=2$ illustriert (zwei unabhängige Durchläufe mit
+    unterschiedlichem Seed). Berechnet wurden jeweils: der Schätzer für den EW ($\bar x$), der Schätzer für die
+    Varianz bei unbekanntem EW ($\widehat\sigma^2$, Nenner $n-1$), sowie -- im zweiten Durchlauf -- zusätzlich der
+    Schätzer für die Varianz bei bekanntem EW $\wfk=1/\alpha$ (Nenner $n$) zum Vergleich mit $\bar x^{\,2}$. In
+    beiden Durchläufen lagen die Schätzwerte nahe, aber nicht exakt bei den wahren Werten $1/\alpha=0.5$ bzw.\
+    $1/\alpha^2=0.25$ -- die genauen Zahlenwerte aus der Mitschrift ließen sich aus der Quelle nicht zuverlässig
+    rekonstruieren.
+}
+
+\section{Übergang: die Normalverteilung}\label{sec:normalverteilung-uebergang}
+
+\txc{(2026)} Um zu verstehen, wie ein Schätzer für eine Varianz sinnvoll sein kann, wollen wir uns als Beispiel
+die Normalverteilung ansehen, die sich von unseren bisherigen Beispielen dadurch unterscheidet, dass sie durch
+zwei Parameter beschrieben wird.
+
+\begin{defi}
+    \textbf{Dichte der Normalverteilung} \txc{(2026)} \\
+    Für $\wfk\in\rz$, $\sigma^2>0$ ist die Dichte der Normalverteilung gegeben durch
+    \[
+        \varphi_{\wfk,\sigma^2}(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x-\wfk)^2}{2\sigma^2} \right)
+        \qquad \forall\, x\in\rz \cdot
+    \]
+    Für $\wfk=0,\ \sigma^2=1$ ist dies die \textbf{Dichte der Standardnormalverteilung}
+    \[
+        \varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \qquad \forall\, x\in\rz \cdot
+    \]
+\end{defi}
+
+\begin{satz}
+    \textbf{Fakten} \txc{(2026)} \\
+    Ist $X$ eine \gls{zv} mit Dichte $\varphi_{\wfk,\sigma^2}$, so gelten
+    \[
+        \E{X} = \wfk \qquad \text{und} \qquad \Var(X) = \sigma^2 \cdot
+    \]
+    Daher sprechen wir bei $\varphi_{\wfk,\sigma^2}$ von der Dichte einer Normalverteilung mit EW $\wfk$ und
+    Varianz $\sigma^2$.
+\end{satz}
+
+\begin{bsp}
+    \txc{(2026)} \\
+    \textbf{Illustration mit simulierten Daten (Mathematica).}
+\end{bsp}
+\komm{
+    Auch hier zeigte die Vorlesung ein Beispiel mit $n=100$ i.i.d.\ Stichproben, diesmal aus $N(\wfk=20,\sigma^2=1)$.
+    Berechnet wurden der Schätzer für den EW, der Schätzer für die Varianz bei unbekanntem EW ($\widehat\sigma^2$)
+    sowie der Schätzer bei bekanntem EW $\wfk=20$ zum Vergleich. Die konkreten Zahlenwerte waren in der
+    Quelle nicht zuverlässig lesbar.
+}
+
+\section{Bereichsschätzer: Konfidenzintervalle}\label{sec:bereichsschaetzer-konfidenzintervalle}
+
+\txc{(2026)} Die Beispiele zeigen, dass der geschätzte Parameter in der Regel nicht der wahre Parameter ist.
+
+\paragraph{Idee.} Wir suchen ein Intervall, so dass wir mit vorgegebener \gls{ws} sagen können, dass der Parameter
+in diesem Intervall liegt.
+
+\subsection*{Erste Überlegungen}
+
+Sei $Z\sim N(0,1)$ standardnormalverteilt.
+Suche $c$ derart, dass
+\[
+    \alpha \geq \pe(|Z|>c)
+\]
+für ein gegebenes $\alpha\in(0,1)$.
+\[
+    \alpha \geq \pe(|Z|>c) \Leftrightarrow \alpha \geq \Phi(-c) + (1-\Phi(c)) = 2(1-\Phi(c)) \Leftrightarrow \Phi(c) \geq
+    1 - \frac\alpha2 \cdot
+\]
+Als Verteilungsfunktion ist $c\mapsto\Phi(c)$ monoton wachsend.
+Wir können daher das kleinste $c$ mit
+$\Phi(c)\geq 1-\frac\alpha2$ bestimmen -- verwende eine Tabelle, um dieses $c$ zu finden.
+
+\begin{defi}
+    \txc{(2026)} \\
+    Das kleinste $c$ mit $\Phi(c) \geq 1-\frac\alpha2$ heißt das \textbf{$(1-\alpha/2)$-Quantil der
+    Standardnormalverteilung}, geschrieben $c = z_{1-\alpha/2}$.
+\end{defi}
+
+\begin{bsp}
+    \txc{(2026)} \\
+    $\alpha = 0.05$: $\Leftrightarrow \Phi(c) \geq 0.975$ (Tabelle) $\approx c = z_{0.975} \approx 1.96$.
+\end{bsp}
+
+\subsection*{Vorgehen für die einfache Normalverteilung}
+
+Sei $X\sim N(\wfk,\sigma^2)$ (mit bekanntem $\sigma^2$). Dann können wir $X$ mit Hilfe von $Z\sim N(0,1)$
+darstellen als
+\[
+    X = \wfk + \sigma Z \cdot
+\]
+Somit gilt
+\[
+    \pe(\wfk \in [X-\sigma c,\ X+\sigma c]) = \pe(|Z|\leq c) \geq 1-\alpha \cdot
+\]
+Insbesondere:
+\[
+    \pe(\wfk \in [X-1.96\,\sigma,\ X+1.96\,\sigma]) \geq 0.95 \cdot
+\]
+
+\subsection*{Allgemein}
+
+Seien nun $X_1,\dots,X_n$ u.i.v.\ Stichprobenvariable, $X_i \sim N(\wfk,\sigma^2)$.
+
+\begin{satz}
+    \textbf{Summe unabhängiger normalverteilter \gls{zv}} \txc{(2026)} \\
+    Die Summe unabhängiger normalverteilter \gls{zv} ist wieder normalverteilt.
+    Die Parameter addieren sich:
+    \[
+        \sum_{i=1}^n X_i \sim N(n\wfk,\ n\sigma^2) \cdot
+    \]
+    Folglich
+    \[
+        \bar X \sim N\!\left(\wfk,\ \frac{\sigma^2}{n}\right) \cdot
+    \]
+\end{satz}
+
+Damit gilt für das \textbf{Konfidenzintervall für $\wfk$ bei bekanntem $\sigma^2$}:
+\begin{equation}
+    \label{eq:ki-bekannte-varianz}
+    \pe\!\left( \wfk \in \left[ \bar X - \sigma\sqrt{\tfrac1n}\, c,\ \ \bar X + \sigma\sqrt{\tfrac1n}\, c \right]
+    \right) \geq 1-\alpha \cdot
+\end{equation}
+Mit wachsender Stichprobengröße $n$ wird das Intervall kleiner.
+
+\subsection*{Verwendung für Versuchsplanung}
+
+Wie viele Werte sollte meine Stichprobe haben, damit das Intervall eine vorgegebene Größe nicht überschreitet?
+\komm{
+    D.\,h.\ konkret: Ist eine maximale Halbbreite $d$ vorgegeben, so löst man $\sigma\sqrt{1/n}\,c \leq d$ nach $n$
+    auf und erhält $n \geq \left(\dfrac{\sigma c}{d}\right)^2$.
+}
+
+\begin{defi}
+    \textbf{\gls{Konfidenzintervall}} \label{defi:konfidenzintervall} \txc{(2026)} \\
+    Sei $\theta$ der wahre \gls{param} der \gls{verteilung}.
+    Seien $U,V$ Funktionen von $X_1,\dots,X_n$ (also
+    Funktionen von $\eraum$ nach $\rz$). Wenn
+    \[
+        \pe_{\theta}\big( \theta \in [U,V] \big) \geq 1-\alpha \qquad \forall\, \theta
+    \]
+    gilt, dann heißt $[U,V]$ ein \textbf{Konfidenzintervall} (oder \textbf{Vertrauensintervall}) für den
+    unbekannten Parameter $\theta$ zum \textbf{Konfidenzniveau} $1-\alpha$.
+\end{defi}
+
+\subsection*{Konfidenzintervalle in Standardsituationen}
+
+\paragraph{Stichprobe aus einer Normalverteilung mit bekannter Varianz $\sigma^2$.}
+Das Konfidenzintervall für den Erwartungswert ist gegeben durch
+\[
+    \left[\ \bar X - \sigma\sqrt{\tfrac1n}\, c,\ \ \bar X + \sigma\sqrt{\tfrac1n}\, c\ \right]
+\]
+mit $c$ dem Quantil der Standardnormalverteilung.
+
+\paragraph{Stichprobe aus einer Normalverteilung mit unbekannter Varianz.}
+In diesem Fall müssen wir auch die Varianz schätzen.
+Daher gilt: Das Konfidenzintervall für den Erwartungswert ist
+gegeben durch
+\[
+    \left[\ \bar X - \widehat\sigma\sqrt{\tfrac1n}\, t_{n-1,1-\alpha/2},\ \ \bar X + \widehat\sigma\sqrt{\tfrac1n}\,
+        t_{n-1,1-\alpha/2}\ \right]
+\]
+Dabei ist $\widehat\sigma^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^n (x_i-\bar x)^2$ der Schätzer der Varianz, und
+$t_{n-1,1-\alpha/2}$ das $(1-\alpha/2)$-Quantil der sogenannten \textbf{Studentschen $t$-Verteilung} mit $n-1$
+Freiheitsgraden.
+
+\begin{defi}
+    \textbf{Studentsche $t$-Verteilung} \label{defi:studentsche-t-verteilung} \txc{(2026)} \\
+    Die Studentsche $t$-Verteilung mit $n-1$ Freiheitsgraden ist die Verteilung der \gls{zv}
+    \[
+        T = \frac{\bar X - \wfk}{\widehat\sigma / \sqrt n} \cdot
+    \]
+    Diese \gls{zv} hat eine Dichte, und ihre Verteilungsfunktion ist gegeben durch das Integral über diese Dichte.
+    Die Normierungskonstante der Dichte kann durch die Gamma-Funktion ausgedrückt werden.
+\end{defi}
+\komm{
+    Die genaue Dichteformel über die Gamma-Funktion war in der vorliegenden Quelle nicht zuverlässig
+    rekonstruierbar und wurde deshalb bewusst weggelassen -- bei Bedarf bitte im Original-Skript nachschlagen.
+}
+
+Wie bei der Normalverteilung sind wir für die Werte der Verteilungsfunktion auf eine Tabelle angewiesen.
+\komm{
+    Die Vorlesung zeigte hierzu Dichte-Plots der $t$-Verteilung für verschiedene Freiheitsgrade (u.\,a.\ 2, 3, 5,
+    10, 30) im Vergleich zur Standardnormalverteilung: Für $n\to\infty$ nähert sich die $t$-Verteilung erkennbar
+    der Standardnormalverteilung an.
+}
+
+\subsection*{Konfidenzintervall für eine Bernoulli-verteilte Stichprobe}
+
+Wenn der Erwartungswert zugleich die Erfolgswahrscheinlichkeit geschätzt werden soll, dann kennen wir die Varianz
+nicht direkt.
+Wir nutzen $\bar X$ als Schätzer für den EW und $\widehat\sigma^2$ als Schätzer für die Varianz.
+
+\begin{er}
+    \txc{(2026), Hausaufgabe} \\
+    Es gilt näherungsweise
+    \[
+        \widehat\sigma^2 \approx \bar X (1-\bar X)
+    \]
+    für große $n$.
+\end{er}
+
+Mit der Normalapproximation ergibt sich das Konfidenzintervall für die Erfolgswahrscheinlichkeit wie im Fall der
+unbekannten Varianz.
+Für große $n$ kann $t_{n-1,1-\alpha/2}$ durch $z_{1-\alpha/2}$ approximiert werden (die
+$t$-Verteilung nähert sich für große $n$ der Standardnormalverteilung an; siehe Bilder oben).
+
+Damit finden wir:
+\begin{equation}
+    \label{eq:ki-bernoulli}
+    \left[\ \bar X - \sqrt{\tfrac{\widehat\sigma^2}{n}}\, z_{1-\alpha/2},\ \ \bar X + \sqrt{\tfrac{\widehat\sigma^2}
+    {n}}\, z_{1-\alpha/2}\ \right] \cdot
+\end{equation}
+
+\komm{
+    In den Hausaufgaben werden derartige Konfidenzintervalle (approximativ via $t$-Verteilung bzw.\ via
+    Normalverteilung, sowie exakt) miteinander verglichen.
+}

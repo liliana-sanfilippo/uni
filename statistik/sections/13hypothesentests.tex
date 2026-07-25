@@ -1,3 +1,463 @@
-%! Author = lili
-%! Date = 7/25/26
+%! Author = lili (Transkription)
+%! Date = 10/7/26
 
+\chapter{Testen von Hypothesen}\label{ch:testen-von-hypothesen}
+\untit{Vorlesung 10. Juli 2026}
+
+\txc{(2026)} \textbf{Ziel:} Verwende Daten, um zu entscheiden, ob eine zuvor formulierte Annahme über die
+\gls{verteilung} bestätigt werden kann.
+Ein \textbf{statistischer Test} ist ein Verfahren dafür.
+
+\section{Abstrakte Formulierung für das Vorgehen}\label{sec:abstrakte-formulierung-hypothesentest}
+
+\begin{itemize}
+    \item Ereignisraum $\eraum$
+    \item Stichprobenraum $\spr$ (bei Stichprobenlänge $n$)
+    \item Parameterraum $\praum$
+    \item statistisches Modell $\pefam = \{\pe_{\param} : \param\in\praum\}$, gegeben durch Wahrscheinlichkeitsfunktion
+    $\wfk_{\param}$ oder Dichte $f_{\param}$
+    \item Stichprobenvariable $X_1,\dots,X_n : \eraum \to \spr$, $X(\ele) = (X_1(\ele),\dots,X_n(\ele))$
+    \item Stichprobe $x = (x_1,\dots,x_n) \in \spr$
+    \item Hypothese: $\param \in H_0$
+    \item Alternative: $\param \in H_A$, mit $H_0 \cap H_A = \emptyset$ ($H_0 \cup H_A = \praum$ nicht notwendig)
+    \item Teststatistik
+    \item Test
+    \item Entscheidungsregel
+\end{itemize}
+
+\begin{bsp}
+    \textbf{Mensa} \txc{(2026)} \\
+    20\% der Studierenden sind mit dem alten Mensa-Konzept unzufrieden.
+    Es wird ein neues Konzept eingeführt.
+    Nach einer Woche werden 20 Studierende befragt; 8 davon sind unzufrieden.
+
+    \paragraph{Frage.} Wird das neue Angebot als schlechter empfunden -- oder ist unsere Stichprobe nicht
+    repräsentativ?
+
+    \paragraph{Modell.}
+    \[
+        \eraum = \{0,1\}^{n}, \qquad n = 20,
+    \]
+    ($\ele_i=1$: $i$-te Person unzufrieden).
+    \[
+        \praum = [0,1], \qquad \wfk_{\param}(\ele) = \param^{\sum_{i=1}^n \ele_i} (1-\param)^{n-\sum_{i=1}^n
+        \ele_i} \cdot
+    \]
+    Stichprobenvariable $X_i$: Bernoulli-Variable, unter $\param$ gilt $\pe_{\param}(X_i=1)=\param$
+    ($i$-te Person unzufrieden).
+\end{bsp}
+
+\section{Wahl der Hypothesen}\label{sec:wahl-der-hypothesen}
+
+\txc{(2026)} So wählen wir die Hypothesen, dass die \textbf{Nichtablehnung} (Nicht-Verwerfen) das Ziel ist.
+
+Die Mensabetreiber wollen sich daran erfreuen, dass die Studierenden mit dem neuen Konzept zufriedener sind.
+Daher
+ist das Ziel, zu widerlegen, dass der Anteil Unzufriedener gleich geblieben ist:
+\[
+    H_0 : \param = 0.2 \quad \text{(Unzufriedenanteil unverändert)}
+\]
+\[
+    H_A : \param < 0.2 \quad \text{(kleiner)}
+\]
+
+Skeptische Vertreter der Studierenden dagegen würden anders vorgehen.
+Sie wollen ebenfalls widerlegen, dass der
+Anteil Unzufriedener gleich geblieben ist -- aber sie werden den Vergleich mit einer \emph{größeren} Zahl
+Unzufriedener ziehen wollen:
+\[
+    H_0 : \param = 0.2 \quad \text{(unverändert)}
+\]
+\[
+    H_A : \param > 0.2 \quad \text{(größer)}
+\]
+
+\begin{defi}
+    \textbf{Neyman--Pearson-Formulierung der Testtheorie} \label{defi:neyman-pearson} \txc{(2026)} \\
+    Sei $\pefam = \{\pe_{\param} : \param \in \praum\}$ ein statistisches Modell.
+    Gegeben $H_0, H_A \subseteq \praum$
+    mit $H_0 \cap H_A = \emptyset$.
+    \begin{itemize}
+        \item Hypothese: $\param \in H_0$
+        \item Alternative: $\param \in H_A$
+    \end{itemize}
+    Das Entscheidungsproblem $H_0$ gegen $H_A$ heißt \textbf{Testproblem}. $H_0$ heißt \textbf{Nullhypothese}.
+\end{defi}
+
+\paragraph{Sprechweise.} Ist $H_0$ einelementig wie in unserem Mensa-Beispiel, so heißt die Hypothese
+\textbf{einfach}.
+Andernfalls heißt sie \textbf{zusammengesetzt}.
+Wir sprechen genauso von einer einfachen oder
+einer zusammengesetzten Alternative.
+Im Mensa-Beispiel ist die Alternative zusammengesetzt.
+
+Grundsätzlich wollen wir die Nullhypothese \textbf{konservativ} wählen: Sie ist in der Regel das Gegenteil von dem
+vermuteten Zusammenhang, den wir aufgrund der Beobachtungen rechtfertigen wollen.
+Wird nun in unserem
+Hypothesentest die Nullhypothese abgelehnt, so können wir den Zusammenhang als \textbf{statistisch signifikant}
+betrachten.
+
+\section{Teststatistik}\label{sec:teststatistik}
+
+\txc{(2026)} Analog zum Punktschätzer führen wir nun eine Abbildung ein, die die vorhandenen Daten in eine Zahl
+verwandelt.
+
+\begin{defi}
+    \textbf{Teststatistik} \txc{(2026)} \\
+    Eine Abbildung $T : \spr \to \rz$ heißt \textbf{Teststatistik}.
+    Wähle $T$ so, dass \emph{große} Werte von
+    $T(x)$ dafür sprechen, dass wir eine unter $H_0$ \textbf{atypische} Stichprobe sehen.
+\end{defi}
+
+\begin{bsp}
+    \textbf{Mensa (Fortsetzung)} \txc{(2026)} \\
+    Viele Unzufriedene in der Stichprobe $x$ bedeuten insbesondere, dass $\bar x = \frac1n\sum_{i=1}^n x_i$ groß
+    ist.
+
+    Beim Vergleich von $\param=0.2$ (unter $H_0$) zu $\param \in H_A$, d.\,h.\ $\param < 0.2$ (Mensabetreiber),
+    sind große Werte von $\bar x$ für $\param=0.2$ eher untypisch für die Alternative.
+    Daher ist $\bar X$ keine
+    geeignete Teststatistik für den Test $H_0$ gegen $H_A$ in diesem Fall.
+    Wir wählen stattdessen
+    \[
+        \widetilde T = 1 - \bar X \cdot
+    \]
+    Die Wahl $\widetilde T$ entspricht einem Tausch von $0$ für Zufriedene und $1$ für Unzufriedene in der
+    Interpretation von $\ele \in \{0,1\}^n$, hin zu $1$ für Zufriedene und $0$ für Unzufriedene.
+
+    Die Studierendenvertreter dagegen wählen $T = \bar X$, weil im Vergleich zwischen $\param=0.2$ (unter $H_0$)
+    und $\widetilde\param \in H_A$, d.\,h.\ $\param > 0.2$, große Werte von $T$ gegen die Nullhypothese sprechen.
+\end{bsp}
+
+\begin{defi}
+    \textbf{$p$-Wert} \label{defi:p-wert} \txc{(2026)} \\
+    \[
+        p(x) = \sup_{\param \in H_0} \pe_{\param}\big( T(X) \geq T(x) \big) \cdot
+    \]
+    Der $p$-Wert drückt aus, wie wahrscheinlich es unter der Nullhypothese \emph{maximal} ist, dass die
+    theoretische Teststatistik $T(X)$ mindestens so groß ist wie die Teststatistik, ausgewertet in der Stichprobe
+    $x$.
+    So wie wir die Teststatistik wählen, erwarten wir einen \textbf{kleinen} $p$-Wert.
+\end{defi}
+
+\begin{bsp}
+    \textbf{Mensa (Fortsetzung)} \txc{(2026)} \\
+    Für den Mensabetreiber-Test ergab sich ein $p$-Wert nahe $1$ -- das ist absurd groß, sollte uns aber nicht
+    wundern, denn statt weniger sind in der Stichprobe \emph{mehr} Unzufriedene als unter $H_0$ erwartet.
+
+    Für den Studierendenvertreter-Test ergab sich dagegen ein kleiner $p$-Wert: Unter der Nullhypothese ist es im
+    Vergleich zur Alternativhypothese sehr unwahrscheinlich, so viele Unzufriedene anzutreffen.
+    Dies spricht dafür,
+    dass die Nullhypothese abgelehnt werden sollte.
+    Beweist also nicht die Gültigkeit der Alternative.
+\end{bsp}
+\komm{
+    Die konkreten $p$-Werte selbst waren in der vorliegenden Quelle nicht zuverlässig lesbar und wurden daher hier
+    nicht wiedergegeben.
+}
+
+\section{Test, Signifikanzniveau, Verwerfungsbereich}\label{sec:test-signifikanzniveau-verwerfungsbereich}
+
+\begin{defi}
+    \textbf{Test} \txc{(2026)} \\
+    Ein \textbf{Test} ist eine Abbildung $\varphi : \spr \to \{0,1\}$. $\varphi(x)=1$ bedeutet: Hypothese $H_0$ ist
+    zu verwerfen. $\varphi(x)=0$ bedeutet: $H_0$ wird nicht verworfen.
+\end{defi}
+
+\begin{defi}
+    \textbf{Signifikanzniveau} \txc{(2026)} \\
+    Das Signifikanzniveau eines Tests $\varphi$ ist die Zahl
+    \[
+        \sup_{\param \in H_0} \pe_{\param}\big( \varphi(X) = 1 \big),
+    \]
+    d.\,h.\ die maximale Wahrscheinlichkeit, dass der Test unter $H_0$ verwirft.
+\end{defi}
+
+\begin{bsp}
+    \textbf{Mensa (Fortsetzung)} \txc{(2026)} \\
+    Für den Mensabetreiber-Test ist $\varphi$ per Konstruktion ein Test zum Niveau $\alpha \in (0,1)$.
+    Für
+    $\alpha=0.05$ verwirft der Test $H_0$ \emph{nicht}: Die Mensabetreiber können nicht behaupten, dass sich die
+    Zufriedenheit verbessert hat.
+    Alles andere wäre auch absurd.
+
+    Für den Studierendenvertreter-Test verwirft $\varphi$ die Nullhypothese zum Niveau $\alpha=0.05$ -- und
+    tatsächlich für jedes hinreichend große Niveau.
+    Das neue Konzept der Mensa darf als signifikant angesehen
+    werden für die gewachsene Unzufriedenheit.
+\end{bsp}
+
+Der $p$-Wert enthält mehr Information als das Niveau eines Tests.
+Gute Statistik gibt den $p$-Wert an.
+
+\begin{bem}
+    \textbf{Verwerfungsbereich} \txc{(2026)} \\
+    \[
+        C_\alpha = \{ x \in \spr : \varphi(x)=1 \}
+    \]
+    ist die Menge aller Stichproben, für die der Test $\varphi$ die Nullhypothese verwirft.
+
+    Wir könnten daher auch $C_\alpha$ bestimmen und anschließend prüfen, ob unsere Stichprobe in $C_\alpha$ liegt.
+\end{bem}
+
+\begin{bsp}
+    \textbf{Mensa (Fortsetzung), $\alpha=0.05$} \txc{(2026)} \\
+    Hätte die Stichprobe eine (in der Quelle nicht mehr sicher lesbare) kleinere Anzahl Unzufriedener ergeben, so
+    hätten auch die Studierendenvertreter ihre Hypothese $H_0$ nicht verwerfen können.
+\end{bsp}
+
+\begin{defi}
+    \textbf{Fehler 1.\ und 2.\ Art} \txc{(2026)} \\
+    \begin{itemize}
+        \item \textbf{Fehler 1.\ Art:} Eine gültige Hypothese wird verworfen.
+        D.\,h.\ $\param \in H_0$ und
+        $\varphi(X)=1$.
+        \item \textbf{Fehler 2.\ Art:} Eine ungültige Hypothese wird nicht verworfen.
+        D.\,h.\ $\param \in H_A$ und
+        $\varphi(X)=0$.
+    \end{itemize}
+\end{defi}
+
+\begin{bem}
+    \txc{(2026)} \\
+    Die Wahrscheinlichkeit für einen Fehler 1.\ Art ist beschränkt durch das Signifikanzniveau des Tests.
+\end{bem}
+
+\paragraph{Ziel.} Finde, zu gegebenem Signifikanzniveau $\alpha$, einen Test derart, dass sein
+Signifikanzniveau den vorgegebenen Wert nicht überschreitet.
+Idealerweise ist auch die Wahrscheinlichkeit für einen
+Fehler 2.\ Art nicht zu groß.
+
+\begin{bsp}
+    \textbf{Mensa, Studierendenvertreter} \txc{(2026)} \\
+    Test zum Niveau $\alpha=0.05$.
+    Wir könnten stattdessen eine andere Entscheidungsregel wählen, um die
+    Wahrscheinlichkeit für einen Fehler 2.\ Art zu reduzieren -- allerdings nur um den Preis, dass die
+    Wahrscheinlichkeit für einen Fehler 1.\ Art (bzw.\ das Signifikanzniveau) größer wird.
+\end{bsp}
+\komm{
+    Die Vorlesung berechnete an dieser Stelle die konkrete Fehlerwahrscheinlichkeit 1.\ Art sowie die
+    Fehlerwahrscheinlichkeit 2.\ Art als Funktion von $\param$ (letztere geht gegen $0$ für $\param\to1$ und gegen
+    $1-\alpha$ für $\param\to0.2$). Die genauen Zwischenwerte waren in der Quelle nicht zuverlässig lesbar.
+}
+
+\section{Vorgehen bei einem Hypothesentest}\label{sec:vorgehen-hypothesentest}
+
+\txc{(2026)}
+\begin{enumerate}
+    \item statistisches Modell / Verteilungsannahme
+    \item Hypothese und Alternative formulieren
+    \item Signifikanzniveau wählen
+    \item Teststatistik konstruieren
+    \item Entscheidungsregel festlegen
+    \item Test zum gewählten Signifikanzniveau, Stichprobe einsetzen
+    \item Schlussfolgerung und $p$-Wert angeben
+\end{enumerate}
+
+\begin{bem}
+    \textbf{Asymmetrie} \txc{(2026)} \\
+    \begin{itemize}
+        \item $\varphi(x)=1$: $H_0$ verwerfen.
+        \item $\varphi(x)=0$: $H_0$ nicht verwerfen -- \textbf{keine Aussage über die Alternative}.
+    \end{itemize}
+    Die Entscheidung \emph{für} eine Hypothese wäre weniger sicher als die Entscheidung \emph{gegen} eine
+    Hypothese.
+    ``Nicht verwerfen'' bedeutet nur, dass die Stichprobe es nicht erlaubt, die Hypothese mit
+    hinreichender Sicherheit zu verwerfen.
+\end{bem}
+
+\section{Begleitbeispiel: Geburtenstatistik}\label{sec:begleitbeispiel-geburtenstatistik}
+
+Das folgende Beispiel soll uns als Begleitung an die allgemeine Testtheorie dienen, nachdem wir am Mensa-Beispiel
+die Grundlage der Testtheorie gesehen haben.
+
+\begin{bsp}
+    \textbf{Geburtenstatistik} \txc{(2026)} \\
+    Geburtenstatistik aus der Schweiz, 1950--1970.
+    Naiverweise wird oft angenommen, dass die Hälfte aller
+    geborenen Kinder Jungen sind.
+    Dies sei unsere Nullhypothese.
+    Glauben die Daten, diese Hypothese zu verwerfen?
+    Signifikanzniveau $\alpha=0.01$.
+    \[
+        H_0 : \param = \frac12 \qquad \text{gegen} \qquad H_A : \param \ne \frac12 \cdot
+    \]
+
+    Unter $H_0$ gilt für jedes geborene Kind: $\pe(\text{Junge}) = \param = \frac12$. $X_i$ ($i=1,\dots,n$) mit
+    $X_i=1$, falls das $i$-te Kind ein Junge ist, ist eine Bernoulli-Variable mit $\param = \E{X_i}$,
+    \[
+        \Var(X_i) = \param(1-\param) \cdot
+    \]
+    $S_n = \sum_{i=1}^n X_i$: Anzahl der geborenen Jungen.
+
+    \paragraph{Wir suchen eine Teststatistik, bei der große Werte unter $H_0$ atypisch sind.}
+
+    \textit{Idee:} Unter $H_0$ sollte $\left|\frac1n S_n - \param_0\right|$ klein sein, weil nach dem Gesetz der
+    großen Zahlen $\frac1n S_n$ für großes $n$ nahe an $\param$ sein wird.
+    Außerdem wollen wir vom zentralen
+    Grenzwertsatz profitieren:
+    \[
+        \sqrt{\frac{n}{\param_0(1-\param_0)}} \left( \frac1n S_n - \param_0 \right)
+    \]
+    ist für große $n$ näherungsweise standardnormalverteilt.
+    Wir wählen daher
+    \[
+        T(x) = \sqrt{\frac{n}{\param_0(1-\param_0)}}\ \left| \frac{S_n}{n} - \param_0 \right|
+    \]
+    als Teststatistik.
+
+    \paragraph{Test zum Signifikanzniveau $\alpha=0.01$.}
+    \[
+        \varphi(x) = \begin{cases}
+                         1 & \text{falls } T(x) \geq z_{1-\alpha/2} \\
+                         0 & \text{sonst}
+        \end{cases}
+    \]
+    ($z_{1-\alpha/2}$: $(1-\alpha/2)$-Quantil der $N(0,1)$-Verteilung).
+    Verwerfungsbereich: $|T| > z_{1-\alpha/2}$.
+
+    Unter $H_0$ ($\param=\frac12$) ergab die Auswertung für die tatsächliche Stichprobe $\varphi(x)=1$: $H_0$
+    muss verworfen werden.
+
+    Der in diesem Beispiel durchgeführte Test ist ein \textbf{zweiseitiger Gauß-Test}.
+\end{bsp}
+\komm{
+    Die genauen Zahlenwerte (Stichprobengröße, Anzahl Jungen, konkreter Wert von $T(x)$) waren in der Quelle
+    nicht zuverlässig lesbar und wurden daher nicht übernommen.
+}
+
+Wir unterscheiden:
+\begin{itemize}
+    \item \textbf{einseitige} Tests wie im Mensa-Beispiel, mit $\param\in H_0$ und $\param\in H_A \Leftrightarrow
+    \param < \param_0$ (linksseitig) bzw.\ $\param \in H_A \Leftrightarrow \param > \param_0$ (rechtsseitig);
+    \item \textbf{zweiseitige} Tests wie im Geburten-Beispiel, wenn $\param\in H_0$ und $\param \ne \param_0$.
+\end{itemize}
+
+Im Folgenden befassen wir uns mit Tests, die Hypothesen zum Erwartungswert betreffen.
+Seien $X_1,\dots,X_n$
+u.i.v.\ Stichprobenvariable.
+
+\section{Einfacher Gauß-Test}\label{sec:einfacher-gausstest}
+
+Anwendbar für $X_1,\dots,X_n$ normalverteilt mit unter $H_0$ bekannter Varianz $\sigma^2$.
+
+Wir wenden diesen Test wie im Geburten-Beispiel auch bei Bernoulli-verteilten $X_1,\dots,X_n$ an, bei großem $n$.
+Unter $H_0$ kennen wir $\param_0$ und damit auch die Varianz $\sigma^2 = \param_0(1-\param_0)$.
+
+\subsection*{a) Zweiseitiger Test}
+
+\[
+    H_0 : \wfk = \wfk_0 \qquad \text{gegen} \qquad H_A : \wfk \ne \wfk_0 \cdot
+\]
+Teststatistik wie im Geburten-Beispiel:
+\[
+    T(x) = \sqrt n\, \frac{\bar x - \wfk_0}{\sigma} \cdot
+\]
+$T(X)$ ist bei normalverteilten Stichprobenvariablen der Betrag einer standardnormalverteilten \gls{zv}.
+Bei
+Bernoulli-verteilter Stichprobenvariable ist $T$ nur \emph{näherungsweise} der Betrag einer
+standardnormalverteilten \gls{zv}.
+
+Für den Test $\varphi$ zum Signifikanzniveau $\alpha$ wählen wir
+\[
+    \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \geq z_{1-\alpha/2} \\ 0 & \text{sonst} \end{cases}
+\]
+Verwerfungsbereich: $|T| > z_{1-\alpha/2}$.
+
+\subsection*{b) Einseitiger Test -- Anpassungen}
+
+Im Fall $\param \leq H_0\ (\param_0)$, $\param > H_A$:
+\[
+    \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \geq z_{1-\alpha} \\ 0 & \text{sonst} \end{cases}
+    \qquad \text{mit } T(x) = \sqrt n\, \frac{\bar x - \param_0}{\sigma} \cdot
+\]
+Verwerfungsbereich: $T > z_{1-\alpha}$.
+
+Im Fall $\param \geq H_0$, $\param < H_A$:
+\[
+    \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \leq -z_{1-\alpha} \\ 0 & \text{sonst} \end{cases}
+\]
+Verwerfungsbereich: $T < -z_{1-\alpha}$.
+
+\section{Einfacher $t$-Test}\label{sec:einfacher-t-test}
+
+Anwendbar für $X_1,\dots,X_n$ normalverteilt mit unbekannter Varianz $\sigma^2$.
+
+Das Vorgehen ist analog zum einfachen Gauß-Test.
+Nun müssen wir in der Teststatistik die Varianz durch ihren
+Schätzer $\widehat\sigma^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^n (x_i-\bar x)^2$ ersetzen und folglich mit den
+Quantilen der $t$-Verteilung arbeiten.
+
+\subsection*{a) Zweiseitiger Test}
+
+\[
+    H_0 : \wfk = \wfk_0 \qquad \text{gegen} \qquad H_A : \wfk \ne \wfk_0 \cdot
+\]
+Teststatistik:
+\[
+    T(x) = \sqrt n\, \frac{\bar x - \wfk_0}{\widehat\sigma} \cdot
+\]
+$T(X)$ ist der Betrag einer $t$-verteilten \gls{zv} mit $n-1$ Freiheitsgraden.
+
+Für den Test zum Signifikanzniveau $\alpha$ wählen wir
+\[
+    \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \geq t_{n-1,1-\alpha/2} \\ 0 & \text{sonst} \end{cases}
+\]
+
+\subsection*{b) Einseitiger Test}
+
+Analog zum Gauß-Test, mit $\sigma$ ersetzt durch $\widehat\sigma$ und $z_{1-\alpha}$ ersetzt durch
+$t_{n-1,1-\alpha}$.
+
+\section{Zwei-Stichprobentests}\label{sec:zwei-stichprobentests}
+
+\subsection*{1.\ Fall: Separate Stichproben}
+
+\begin{bsp}
+    \txc{(2026)} \\
+    Stellen Sie sich vor, wir messen bei $n$ Personen jeweils die Länge beider Beine.
+    Uns interessiert, ob es
+    einen systematischen Unterschied gibt.
+
+    Wir haben 2 $n$-dimensionale Stichprobenvariable $(X_i,Y_i)$, wobei in unserem Beispiel $x_i$ die Länge des
+    rechten und $y_i$ die Länge des linken Beins sei.
+
+    Wir nehmen an, dass $(X_1,Y_1),\dots,(X_n,Y_n)$ unabhängig sind.
+    Aber wir dürfen \emph{nicht} annehmen, dass
+    $X_i$ und $Y_i$ (selbst, innerhalb einer Person) unabhängig sind.
+\end{bsp}
+
+$D_i := X_i - Y_i$ sind unabhängig, weil $(X_1,Y_1),\dots,(X_n,Y_n)$ unabhängig sind. $D_1,\dots,D_n$ u.i.v.,
+$D_i$ normalverteilt (Annahme) mit Erwartungswert $\wfk$ und unbekannter Varianz.
+
+\subsection*{a) Zweiseitiger Test}
+
+\[
+    H_0 : \wfk = 0 \qquad \text{gegen} \qquad H_A : \wfk \ne 0 \cdot
+\]
+Unter $H_0$ ist $D_i$ normalverteilt mit $\E{D_i}=0$ und unbekannter Varianz.
+Wir wissen: $T = \sqrt n\,
+\dfrac{\bar D}{\widehat\sigma}$ ist $t$-verteilt mit $n-1$ Freiheitsgraden.
+Dabei haben wir
+\[
+    \bar D = \frac1n \sum_{i=1}^n (x_i-y_i), \qquad \widehat\sigma^2 = \frac{1}{n-1} \sum_{i=1}^n (d_i-\bar d)^2
+\]
+gesetzt.
+\[
+    \varphi(y,x) = \begin{cases}
+                       1 & \text{falls } \left| \sqrt n\, \dfrac{\bar D}{\widehat\sigma} \right| \geq t_{n-1,1-\alpha/2} \\
+                       0 & \text{sonst}
+    \end{cases}
+\]
+
+\subsection*{b) Einseitige Tests}
+
+Analog: für $\param \leq H_0\ (0)$, $\param > H_A$:
+\[
+    \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \geq t_{n-1,1-\alpha} \\ 0 & \text{sonst} \end{cases}
+    \qquad \text{mit } T(x) = \sqrt n\, \frac{\bar D}{\widehat\sigma} \cdot
+\]
+Für $\param \geq H_0$, $\param < H_A$:
+\[
+    \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \leq -t_{n-1,1-\alpha} \\ 0 & \text{sonst} \end{cases}
+\]
