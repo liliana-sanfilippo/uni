@@ -13,17 +13,17 @@ kann.
 
 \begin{bsp}
     \txc{(2026)} \\
-    Wenn die Stichprobenvariablen $X_1,\dots,X_n$ Poisson-verteilt sind mit Parameter $\lambda>0$, so gilt
+    Wenn die Stichprobenvariablen $X_1,\dots,X_n$ Poisson-verteilt sind mit \gls{param} $\lambda>0$, so gilt
     \[
         \lambda = \E{X_1} \cdot
     \]
-    Wenn die Stichprobenvariablen $X_1,\dots,X_n$ exponentialverteilt sind mit Parameter $\alpha>0$, gilt dagegen
+    Wenn die Stichprobenvariablen $X_1,\dots,X_n$ exponentialverteilt sind mit \gls{param} $\alpha>0$, gilt dagegen
     \[
         \alpha = \frac{1}{\E{X_1}} \cdot
     \]
 \end{bsp}
 
-Es ist nicht immer möglich, den \gls{param} einer Verteilung aus dem EW zu berechnen.
+Es ist nicht immer möglich, den \gls{param} einer \gls{verteilung} aus dem EW zu berechnen.
 
 \begin{bsp}
     \txc{(2026)} \\
@@ -81,7 +81,7 @@ den EW ersetzen.
 \end{bsp}
 \komm{
     In der Vorlesung wurde dies an einem Beispiel mit $n=100$ unabhängig identisch verteilten Stichproben aus
-    einer Exponentialverteilung mit Parameter $\alpha=2$ illustriert (zwei unabhängige Durchläufe mit
+    einer Exponentialverteilung mit \gls{param} $\alpha=2$ illustriert (zwei unabhängige Durchläufe mit
     unterschiedlichem Seed). Berechnet wurden jeweils: der Schätzer für den EW ($\bar x$), der Schätzer für die
     Varianz bei unbekanntem EW ($\widehat\sigma^2$, Nenner $n-1$), sowie -- im zweiten Durchlauf -- zusätzlich der
     Schätzer für die Varianz bei bekanntem EW $\wfk=1/\alpha$ (Nenner $n$) zum Vergleich mit $\bar x^{\,2}$. In
@@ -94,7 +94,7 @@ den EW ersetzen.
 
 \txc{(2026)} Um zu verstehen, wie ein Schätzer für eine Varianz sinnvoll sein kann, wollen wir uns als Beispiel
 die Normalverteilung ansehen, die sich von unseren bisherigen Beispielen dadurch unterscheidet, dass sie durch
-zwei Parameter beschrieben wird.
+zwei \gls{param} beschrieben wird.
 
 \begin{defi}
     \textbf{Dichte der Normalverteilung} \txc{(2026)} \\
@@ -132,9 +132,9 @@ zwei Parameter beschrieben wird.
 
 \section{Bereichsschätzer: Konfidenzintervalle}\label{sec:bereichsschaetzer-konfidenzintervalle}
 
-\txc{(2026)} Die Beispiele zeigen, dass der geschätzte Parameter in der Regel nicht der wahre Parameter ist.
+\txc{(2026)} Die Beispiele zeigen, dass der geschätzte \gls{param} in der Regel nicht der wahre \gls{param} ist.
 
-\paragraph{Idee.} Wir suchen ein Intervall, so dass wir mit vorgegebener \gls{ws} sagen können, dass der Parameter
+\paragraph{Idee.} Wir suchen ein Intervall, so dass wir mit vorgegebener \gls{ws} sagen können, dass der \gls{param}
 in diesem Intervall liegt.
 
 \subsection*{Erste Überlegungen}
@@ -149,7 +149,7 @@ für ein gegebenes $\alpha\in(0,1)$.
     \alpha \geq \pe(|Z|>c) \Leftrightarrow \alpha \geq \Phi(-c) + (1-\Phi(c)) = 2(1-\Phi(c)) \Leftrightarrow \Phi(c) \geq
     1 - \frac\alpha2 \cdot
 \]
-Als Verteilungsfunktion ist $c\mapsto\Phi(c)$ monoton wachsend.
+Als \gls{verteilung}sfunktion ist $c\mapsto\Phi(c)$ monoton wachsend.
 Wir können daher das kleinste $c$ mit
 $\Phi(c)\geq 1-\frac\alpha2$ bestimmen -- verwende eine Tabelle, um dieses $c$ zu finden.
 
@@ -187,7 +187,7 @@ Seien nun $X_1,\dots,X_n$ u.i.v.\ Stichprobenvariable, $X_i \sim N(\wfk,\sigma^2
 \begin{satz}
     \textbf{Summe unabhängiger normalverteilter \gls{zv}} \txc{(2026)} \\
     Die Summe unabhängiger normalverteilter \gls{zv} ist wieder normalverteilt.
-    Die Parameter addieren sich:
+    Die \gls{param} addieren sich:
     \[
         \sum_{i=1}^n X_i \sim N(n\wfk,\ n\sigma^2) \cdot
     \]
@@ -222,7 +222,7 @@ Wie viele Werte sollte meine Stichprobe haben, damit das Intervall eine vorgegeb
         \pe_{\theta}\big( \theta \in [U,V] \big) \geq 1-\alpha \qquad \forall\, \theta
     \]
     gilt, dann heißt $[U,V]$ ein \textbf{Konfidenzintervall} (oder \textbf{Vertrauensintervall}) für den
-    unbekannten Parameter $\theta$ zum \textbf{Konfidenzniveau} $1-\alpha$.
+    unbekannten \gls{param} $\theta$ zum \textbf{Konfidenzniveau} $1-\alpha$.
 \end{defi}
 
 \subsection*{Konfidenzintervalle in Standardsituationen}
@@ -243,16 +243,16 @@ gegeben durch
         t_{n-1,1-\alpha/2}\ \right]
 \]
 Dabei ist $\widehat\sigma^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^n (x_i-\bar x)^2$ der Schätzer der Varianz, und
-$t_{n-1,1-\alpha/2}$ das $(1-\alpha/2)$-Quantil der sogenannten \textbf{Studentschen $t$-Verteilung} mit $n-1$
+$t_{n-1,1-\alpha/2}$ das $(1-\alpha/2)$-Quantil der sogenannten \textbf{Studentschen $t$-\gls{verteilung}} mit $n-1$
 Freiheitsgraden.
 
 \begin{defi}
-    \textbf{Studentsche $t$-Verteilung} \label{defi:studentsche-t-verteilung} \txc{(2026)} \\
-    Die Studentsche $t$-Verteilung mit $n-1$ Freiheitsgraden ist die Verteilung der \gls{zv}
+    \textbf{Studentsche $t$-\gls{verteilung}} \label{defi:studentsche-t-verteilung} \txc{(2026)} \\
+    Die Studentsche $t$-\gls{verteilung} mit $n-1$ Freiheitsgraden ist die \gls{verteilung} der \gls{zv}
     \[
         T = \frac{\bar X - \wfk}{\widehat\sigma / \sqrt n} \cdot
     \]
-    Diese \gls{zv} hat eine Dichte, und ihre Verteilungsfunktion ist gegeben durch das Integral über diese Dichte.
+    Diese \gls{zv} hat eine Dichte, und ihre \gls{verteilung}sfunktion ist gegeben durch das Integral über diese Dichte.
     Die Normierungskonstante der Dichte kann durch die Gamma-Funktion ausgedrückt werden.
 \end{defi}
 \komm{
@@ -260,10 +260,10 @@ Freiheitsgraden.
     rekonstruierbar und wurde deshalb bewusst weggelassen -- bei Bedarf bitte im Original-Skript nachschlagen.
 }
 
-Wie bei der Normalverteilung sind wir für die Werte der Verteilungsfunktion auf eine Tabelle angewiesen.
+Wie bei der Normalverteilung sind wir für die Werte der \gls{verteilung}sfunktion auf eine Tabelle angewiesen.
 \komm{
-    Die Vorlesung zeigte hierzu Dichte-Plots der $t$-Verteilung für verschiedene Freiheitsgrade (u.\,a.\ 2, 3, 5,
-    10, 30) im Vergleich zur Standardnormalverteilung: Für $n\to\infty$ nähert sich die $t$-Verteilung erkennbar
+    Die Vorlesung zeigte hierzu Dichte-Plots der $t$-\gls{verteilung} für verschiedene Freiheitsgrade (u.\,a.\ 2, 3, 5,
+    10, 30) im Vergleich zur Standardnormalverteilung: Für $n\to\infty$ nähert sich die $t$-\gls{verteilung} erkennbar
     der Standardnormalverteilung an.
 }
 
@@ -285,7 +285,7 @@ Wir nutzen $\bar X$ als Schätzer für den EW und $\widehat\sigma^2$ als Schätz
 Mit der Normalapproximation ergibt sich das Konfidenzintervall für die Erfolgswahrscheinlichkeit wie im Fall der
 unbekannten Varianz.
 Für große $n$ kann $t_{n-1,1-\alpha/2}$ durch $z_{1-\alpha/2}$ approximiert werden (die
-$t$-Verteilung nähert sich für große $n$ der Standardnormalverteilung an; siehe Bilder oben).
+$t$-\gls{verteilung} nähert sich für große $n$ der Standardnormalverteilung an; siehe Bilder oben).
 
 Damit finden wir:
 \begin{equation}
@@ -295,6 +295,6 @@ Damit finden wir:
 \end{equation}
 
 \komm{
-    In den Hausaufgaben werden derartige Konfidenzintervalle (approximativ via $t$-Verteilung bzw.\ via
+    In den Hausaufgaben werden derartige Konfidenzintervalle (approximativ via $t$-\gls{verteilung} bzw.\ via
     Normalverteilung, sowie exakt) miteinander verglichen.
 }

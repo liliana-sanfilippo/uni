@@ -119,6 +119,9 @@ def clean_latex(text):
 
     # Geschütztes Leerzeichen
     text = text.replace("~", " ")
+    text = text.replace("--", "-")
+    text = text.replace("``", "''")
+    text = text.replace(".\ ", " ")
 
     # Mehrere Leerzeichen
     text = re.sub(r"\s+", " ", text)
