@@ -47,6 +47,9 @@ Ein \textbf{statistischer Test} ist ein Verfahren dafür.
     ($i$-te Person unzufrieden).
 \end{bsp}
 
+\karkar{bem_ziel_statistischer_test}
+\karkar{bem_bestandteile_testtheorie_vokabular}
+
 \section{Wahl der Hypothesen}\label{sec:wahl-der-hypothesen}
 
 \txc{(2026)} So wählen wir die Hypothesen, dass die \textbf{Nichtablehnung} (Nicht-Verwerfen) das Ziel ist.
@@ -96,6 +99,12 @@ vermuteten Zusammenhang, den wir aufgrund der Beobachtungen rechtfertigen wollen
 Wird nun in unserem
 Hypothesentest die Nullhypothese abgelehnt, so können wir den Zusammenhang als \textbf{statistisch signifikant}
 betrachten.
+
+\karkar{bem_gleiche_h0_verschiedene_ha}
+\karkar{def_testproblem_neyman_pearson}
+\karkar{bem_muss_h0_und_ha_ganz_theta_abdecken}
+\karkar{def_einfache_zusammengesetzte_hypothese}
+\karkar{bem_wahl_nullhypothese_konservativ}
 
 \section{Teststatistik}\label{sec:teststatistik}
 
@@ -156,6 +165,11 @@ verwandelt.
     nicht wiedergegeben.
 }
 
+\karkar{def_teststatistik_th}
+\karkar{bem_wahl_teststatistik_haengt_von_alternative_ab}
+\karkar{def_p_wert_th}
+\karkar{bem_p_wert_intuition_th}
+
 \section{Test, Signifikanzniveau, Verwerfungsbereich}\label{sec:test-signifikanzniveau-verwerfungsbereich}
 
 \begin{defi}
@@ -206,6 +220,11 @@ Gute Statistik gibt den $p$-Wert an.
     hätten auch die Studierendenvertreter ihre Hypothese $H_0$ nicht verwerfen können.
 \end{bsp}
 
+\karkar{def_test_abbildung}
+\karkar{def_signifikanzniveau_th}
+\karkar{bem_p_wert_mehr_information_als_niveau}
+\karkar{def_verwerfungsbereich_th}
+
 \begin{defi}
     \textbf{Fehler 1.\ und 2.\ Art} \txc{(2026)} \\
     \begin{itemize}
@@ -241,6 +260,12 @@ Fehler 2.\ Art nicht zu groß.
     $1-\alpha$ für $\param\to0.2$). Die genauen Zwischenwerte waren in der Quelle nicht zuverlässig lesbar.
 }
 
+\karkar{def_fehler_1_art}
+\karkar{def_fehler_2_art}
+\karkar{bem_fehler_1_art_beschraenkt_durch_niveau}
+\karkar{bem_ziel_testkonstruktion}
+\karkar{bem_tradeoff_fehler_1_2_art}
+
 \section{Vorgehen bei einem Hypothesentest}\label{sec:vorgehen-hypothesentest}
 
 \txc{(2026)}
@@ -266,7 +291,10 @@ Fehler 2.\ Art nicht zu groß.
     hinreichender Sicherheit zu verwerfen.
 \end{bem}
 
-\section{Begleitbeispiel: Geburtenstatistik}\label{sec:begleitbeispiel-geburtenstatistik}
+\karkar{bem_rezept_hypothesentest}
+\karkar{bem_asymmetrie_testentscheidung}
+
+\section*{Begleitbeispiel: Geburtenstatistik}\label{sec:begleitbeispiel-geburtenstatistik}
 
 Das folgende Beispiel soll uns als Begleitung an die allgemeine Testtheorie dienen, nachdem wir am Mensa-Beispiel
 die Grundlage der Testtheorie gesehen haben.
@@ -337,6 +365,10 @@ Im Folgenden befassen wir uns mit Tests, die Hypothesen zum Erwartungswert betre
 Seien $X_1,\dots,X_n$
 u.i.v.\ Stichprobenvariable.
 
+\karkar{bem_konstruktion_teststatistik_ggz_zgws}
+%\karkar{bem_geburtenbeispiel_typ}
+\karkar{bem_einseitig_vs_zweiseitig_unterscheidung}
+
 \section{Einfacher Gauß-Test}\label{sec:einfacher-gausstest}
 
 Anwendbar für $X_1,\dots,X_n$ normalverteilt mit unter $H_0$ bekannter Varianz $\sigma^2$.
@@ -379,6 +411,13 @@ Im Fall $\param \geq H_0$, $\param < H_A$:
 \]
 Verwerfungsbereich: $T < -z_{1-\alpha}$.
 
+\karkar{bem_gauss_test_voraussetzung}
+\karkar{bem_gauss_test_bei_bernoulli}
+\karkar{formel_teststatistik_gauss_test}
+\karkar{bem_verteilung_teststatistik_gauss_normal_vs_bernoulli}
+\karkar{formel_gauss_test_zweiseitig}
+\karkar{formel_gauss_test_einseitig}
+
 \section{Einfacher $t$-Test}\label{sec:einfacher-t-test}
 
 Anwendbar für $X_1,\dots,X_n$ normalverteilt mit unbekannter Varianz $\sigma^2$.
@@ -408,6 +447,11 @@ Für den Test zum Signifikanzniveau $\alpha$ wählen wir
 
 Analog zum Gauß-Test, mit $\sigma$ ersetzt durch $\widehat\sigma$ und $z_{1-\alpha}$ ersetzt durch
 $t_{n-1,1-\alpha}$.
+
+\karkar{bem_t_test_voraussetzung}
+\karkar{bem_t_test_vorgehen_analogie}
+\karkar{formel_teststatistik_t_test}
+\karkar{formel_t_test_entscheidungsregeln}
 
 \section{Zwei-Stichprobentests}\label{sec:zwei-stichprobentests}
 
@@ -461,3 +505,7 @@ Für $\param \geq H_0$, $\param < H_A$:
 \[
     \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \leq -t_{n-1,1-\alpha} \\ 0 & \text{sonst} \end{cases}
 \]
+
+\karkar{bem_zwei_stichproben_situation}
+\karkar{bem_differenzentrick}
+\karkar{formel_gepaarter_t_test_zweiseitig}
