@@ -1,0 +1,144 @@
+
+% ===================================================================
+% Abschnitt: Grundlagen der bedingten Wahrscheinlichkeit
+% ===================================================================
+
+\newglossaryentry{notation_maechtigkeit_bed_ws}{
+    name={Was bedeutet die Notation $|A|$ bzw.\ $\#A$?},
+    description={Die Anzahl der Elemente der Menge $A$ (Mächtigkeit von $A$).},
+    type=dinge
+}
+
+\newglossaryentry{def_bedingte_wahrscheinlichkeit}{
+    name={Wie ist die bedingte Wahrscheinlichkeit $P(A\mid B)$ definiert?},
+    description={$P(A\mid B) = \dfrac{P(A\cap B)}{P(B)}$ falls $P(B)>0$, und $P(A\mid B):=0$ falls $P(B)=0$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bedingte_ws_intuition}{
+    name={Was bedeutet $P(A\mid B)$ anschaulich?},
+    description={Die Wahrscheinlichkeit von $A$, wenn man bereits weiß, dass $B$ eingetreten ist -- man beschränkt den Wahrscheinlichkeitsraum gedanklich auf $B$ und fragt, wie wahrscheinlich der in $B$ liegende Teil von $A$ darin ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bedingte_ws_bei_dichte}{
+    name={Wie muss man die Definition der bedingten Wahrscheinlichkeit interpretieren, wenn $P$ durch eine Dichte gegeben ist?},
+    description={Man muss die Definition über Integrale interpretieren, statt über Summen bzw.\ Abzählen.},
+    type=dinge
+}
+
+\newglossaryentry{beo_bedingte_ws_bei_gleichverteilung}{
+    name={Wie vereinfacht sich $P(A\mid B)$ bei Gleichverteilung auf einem endlichen Ereignisraum?},
+    description={$P(A\mid B) = \dfrac{|A\cap B|}{|B|}$ -- die bedingte Wahrscheinlichkeit ist der relative Anteil von $A$ in $B$.},
+    type=dinge
+}
+
+\newglossaryentry{fr_bedingte_ws_immer_groesser}{
+    name={Gilt immer $P(A\mid B) > P(A)$, sobald man auf ein Ereignis $B$ bedingt?},
+    description={Nein. Sowohl $P(A\mid B) > P(A)$ als auch $P(A\mid B) < P(A)$ sind möglich -- Bedingen kann eine Wahrscheinlichkeit sowohl erhöhen als auch verringern, je nachdem wie $A$ und $B$ zusammenhängen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_zusammenhang_unabhaengigkeit_bedingte_ws}{
+    name={Wie lässt sich die Unabhängigkeit zweier Ereignisse $A,B$ mit Hilfe der bedingten Wahrscheinlichkeit charakterisieren?},
+    description={$A,B$ sind unabhängig genau dann, wenn $P(A\mid B)=P(A)$ gilt (für $P(B)>0$) -- das Wissen um $B$ ändert dann die Einschätzung von $A$ nicht. Äquivalent dazu ist $P(A\cap B)=P(A)\cdot P(B)$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Rechenregeln für bedingte Wahrscheinlichkeiten
+% ===================================================================
+
+\newglossaryentry{reg_bedingte_ws_ist_wahrscheinlichkeitsmass}{
+    name={Ist die Abbildung $A\mapsto P(A\mid B)$ (für festes $B$ mit $P(B)>0$) selbst ein Wahrscheinlichkeitsmaß?},
+    description={Ja. Damit gelten alle bekannten Rechenregeln für Wahrscheinlichkeiten auch für bedingte Wahrscheinlichkeiten bei festem $B$, z.\,B.\ $P(A^c\mid B)=1-P(A\mid B)$ und Additivität für disjunkte Ereignisse.},
+    type=dinge
+}
+
+\newglossaryentry{achtung_bedingte_ws_zweites_argument_kein_mass}{
+    name={Ist die Abbildung $B\mapsto P(A\mid B)$ (für festes $A$) ein Wahrscheinlichkeitsmaß?},
+    description={Nein! Im zweiten Argument ist die bedingte Wahrscheinlichkeit KEIN Wahrscheinlichkeitsmaß -- im Allgemeinen gilt weder $P(A\mid B)=1-P(A\mid B^c)$ noch Additivität bei disjunkter Zerlegung von $B$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Gedächtnislosigkeit der Exponentialverteilung
+% ===================================================================
+
+\newglossaryentry{satz_gedaechtnislosigkeit_exponentialverteilung}{
+    name={Wie lautet die Gedächtnislosigkeits-Eigenschaft der Exponentialverteilung?},
+    description={Für $X$ exponentialverteilt mit Parameter $z>0$ gilt für alle $s,t\ge 0$: $P(X> t+s \mid X> s) = P(X> t)$ -- die bedingte Wahrscheinlichkeit einer weiteren Wartezeit $t$ hängt nicht davon ab, wie lange $s$ bereits gewartet wurde.},
+    type=dinge
+}
+
+\newglossaryentry{bem_gedaechtnislosigkeit_intuition}{
+    name={Was bedeutet Gedächtnislosigkeit einer Wartezeitverteilung anschaulich?},
+    description={Das "Gedächtnis" der bereits verstrichenen Wartezeit spielt keine Rolle: Egal wie lange man schon gewartet hat, die Wahrscheinlichkeit, noch mindestens eine bestimmte Zeit länger warten zu müssen, ist immer dieselbe wie zu Beginn.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Sukzessives Bedingen
+% ===================================================================
+
+\newglossaryentry{reg_multiplikationssatz_zwei_ereignisse}{
+    name={Wie lautet der Multiplikationssatz für zwei Ereignisse (aus der Definition der bedingten Wahrscheinlichkeit)?},
+    description={$P(A\cap B) = P(A\mid B)\,P(B)$ für alle $A,B\subseteq\Omega$ (die Formel gilt auch für $P(B)=0$, da dann beide Seiten $0$ sind).},
+    type=dinge
+}
+
+\newglossaryentry{reg_sukzessives_bedingen_allgemein}{
+    name={Wie lautet die allgemeine Formel für sukzessives Bedingen (Kettenregel) für $n$ Ereignisse?},
+    description={$P(A_1\cap\dots\cap A_n) = P(A_n\mid A_1\cap\dots\cap A_{n-1})\cdots P(A_2\mid A_1)\,P(A_1)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_sukzessives_bedingen_intuition}{
+    name={Welche anschauliche Idee steckt hinter der Kettenregel für sukzessives Bedingen?},
+    description={Man zerlegt die Wahrscheinlichkeit eines gleichzeitigen Eintretens mehrerer Ereignisse in eine Abfolge: erst die Wahrscheinlichkeit des ersten Ereignisses, dann die bedingte Wahrscheinlichkeit des zweiten gegeben das erste, dann die des dritten gegeben die ersten beiden usw. -- wie beim schrittweisen Ziehen ohne Zurücklegen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Formel von der totalen Wahrscheinlichkeit
+% ===================================================================
+
+\newglossaryentry{def_formel_totale_wahrscheinlichkeit}{
+    name={Wie lautet die Formel von der totalen Wahrscheinlichkeit?},
+    description={Ist $B_1,B_2,\dots$ eine (abzählbare) Partition von $\Omega$ (paarweise disjunkt, Vereinigung $=\Omega$), so gilt für jedes Ereignis $A$: $P(A) = \sum_i P(A\mid B_i)\,P(B_i)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_totale_ws_intuition}{
+    name={Was leistet die Formel von der totalen Wahrscheinlichkeit anschaulich?},
+    description={Sie erlaubt, die "absolute" Wahrscheinlichkeit eines Ereignisses $A$ zu berechnen, indem man alle möglichen Szenarien (die Partition $B_i$) durchgeht, in jedem Szenario die bedingte Wahrscheinlichkeit von $A$ bestimmt, und diese mit der Wahrscheinlichkeit des jeweiligen Szenarios gewichtet aufsummiert.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Satz von Bayes
+% ===================================================================
+
+\newglossaryentry{satz_bayes_einfache_version}{
+    name={Wie lautet die einfache Version des Satzes von Bayes?},
+    description={Für $A,B\subseteq\Omega$ mit $P(B)>0$: $P(A\mid B) = P(B\mid A)\cdot\dfrac{P(A)}{P(B)}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bayes_intuition}{
+    name={Wozu dient der Satz von Bayes anschaulich?},
+    description={Er erlaubt es, eine bedingte Wahrscheinlichkeit "umzukehren": Aus $P(B\mid A)$ (und den unbedingten Wahrscheinlichkeiten $P(A)$, $P(B)$) lässt sich $P(A\mid B)$ berechnen, ohne dass diese Größe direkt gegeben sein muss.},
+    type=dinge
+}
+
+\newglossaryentry{satz_bayes_allgemeine_version}{
+    name={Wie lautet die allgemeine Version des Satzes von Bayes?},
+    description={Ist $B_1,B_2,\dots$ eine Partition von $\Omega$ und $P(A)>0$, so gilt für jedes $i$: $P(B_i\mid A) = \dfrac{P(A\mid B_i)\,P(B_i)}{\sum_j P(A\mid B_j)\,P(B_j)}$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bayes_allgemein_herleitung}{
+    name={Wie lässt sich die allgemeine Bayes-Formel aus der einfachen Version herleiten?},
+    description={Man kombiniert die einfache Bayes-Formel $P(B_i\mid A)=P(A\mid B_i)\frac{P(B_i)}{P(A)}$ mit der Formel von der totalen Wahrscheinlichkeit, um den Nenner $P(A)$ durch $\sum_j P(A\mid B_j)P(B_j)$ zu ersetzen.},
+    type=dinge
+}

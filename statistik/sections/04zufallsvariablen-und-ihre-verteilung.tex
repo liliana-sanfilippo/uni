@@ -489,14 +489,14 @@ aka. Für jede vorgegebene Wahrscheinlichkeitsverteilung kann man ein Zufallsexp
     eine \gls{zv} $\zvx$ nur abzählbar viele Werte $x_1, x_2,\dots$ an, so gilt stets
     \begin{align*}
         \wfk_{\zvx}(x_i) ) & = \pe(\zvx = x_i) \\
-        & = \pe(\zvx \leq x_i) - \pe(\zvx \le x_i) \\
+        & = \pe(\zvx \leq x_i) - \pe(\zvx < x_i) \\
         & = \pe(\zvx \leq x_i) - \pe(\zvx \leq x_{i-1}) \\
         & = \fxx (x_i) - \fxx(x_{i-1}) & \forall i \geq 2
     \end{align*}
     sowie
     \begin{align*}
         \wfk_{\zvx}(x_1) ) & = \pe(\zvx = x_1) \\
-        & = \pe(\zvx \leq x_1) - \pe(\zvx \le x_1) \\
+        & = \pe(\zvx \leq x_1) - \pe(\zvx < x_1) \\
         & = \fxx(x_1) - 0 \\
         & = \fxx(x_1)
     \end{align*}

@@ -1,0 +1,220 @@
+% Karteikarten zu Kapitel: "Zufallsvariablen und ihre Verteilung"
+% Jede Karte fragt bewusst nur EINE Sache ab. Beispiele (Münzwurf, geometrische Verteilung,
+% Robin und Uli, Punkte im Quadrat/Dreieck) wurden NICHT direkt übernommen; ihre Kernaussagen
+% bzw. die dahinterstehenden allgemeinen Techniken stecken in den entsprechenden Karten.
+
+% ===================================================================
+% Abschnitt "Die Verteilung einer Zufallsvariablen"
+% ===================================================================
+
+\newglossaryentry{def_zufallsvariable}{
+    name={Wie ist eine (E-wertige) Zufallsvariable definiert?},
+    description={Für einen Wahrscheinlichkeitsraum $(\Omega,P)$ und eine Menge $E\neq\emptyset$ ist eine $E$-wertige Zufallsvariable eine messbare Abbildung $X:\Omega\to E$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_zv_ist_keine_variable}{
+    name={Warum ist die Bezeichnung "Zufallsvariable" etwas irreführend?},
+    description={Eine Zufallsvariable ist keine Variable im algebraischen Sinn, sondern eine Zuordnungsvorschrift: Sie ordnet jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zu.},
+    type=dinge
+}
+
+\newglossaryentry{bem_zv_bei_abzaehlbarem_omega}{
+    name={Was vereinfacht sich an der Definition einer Zufallsvariablen, wenn der Ereignisraum $\Omega$ abzählbar ist?},
+    description={Dann ist eine Zufallsvariable einfach eine beliebige Abbildung auf $\Omega$ -- Messbarkeitsfragen (die bei überabzählbarem $\Omega\subseteq\mathbb R^d$ eine Rolle spielen) entfallen.},
+    type=dinge
+}
+
+\newglossaryentry{def_bild_wertebereich}{
+    name={Was ist der Unterschied zwischen Wertebereich und Bildbereich einer Zufallsvariablen $X:\Omega\to E$?},
+    description={$E$ heißt der Wertebereich (die Zielmenge). $X(\Omega)=\{X(\omega):\omega\in\Omega\}$ heißt der Bildbereich (die Menge der tatsächlich angenommenen Werte).},
+    type=dinge
+}
+
+\newglossaryentry{bem_bildbereich_kleinstmoeglich}{
+    name={In welchem Verhältnis stehen Bildbereich und Wertebereich einer Zufallsvariablen zueinander?},
+    description={Es gilt stets $X(\Omega)\subseteq E$; der Bildbereich ist die kleinstmögliche Menge, die alle von $X$ tatsächlich angenommenen Werte enthält -- unabhängig davon, wie groß man den Wertebereich $E$ wählt.},
+    type=dinge
+}
+
+\newglossaryentry{def_verteilung_einer_zv}{
+    name={Wie ist die Verteilung $P_X$ einer $E$-wertigen Zufallsvariablen $X$ definiert?},
+    description={$P_X(B) := P(\{\omega:X(\omega)\in B\}) = P(X\in B)$ für alle messbaren $B\subseteq E$. $P_X$ ist ein Wahrscheinlichkeitsmaß auf $E$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_verteilung_intuition}{
+    name={Was beschreibt die Verteilung einer Zufallsvariablen anschaulich?},
+    description={Wie die Werte von $X$ verteilt sind, also wie wahrscheinlich verschiedene Ergebnisse von $X$ sind.},
+    type=dinge
+}
+
+\newglossaryentry{lem_px_ist_wahrscheinlichkeitsmass}{
+    name={Unter welcher Voraussetzung ist $P_X$ nachweislich ein Wahrscheinlichkeitsmaß, und wie lautet die Kernidee des Beweises?},
+    description={Ist $\Omega$ abzählbar und $P$ durch eine Wahrscheinlichkeitsfunktion $p$ gegeben, so ist $P_X$ ein Wahrscheinlichkeitsmaß. Kernidee: $p_X(e)=P(X=e)=\sum_{\omega:X(\omega)=e} p(\omega) \ge 0$, und die Summe aller $p_X(e)$ über $e\in E$ ergibt wieder $\sum_\omega p(\omega)=1$, da jedes $\omega$ genau einem Wert $X(\omega)$ zugeordnet wird.},
+    type=dinge
+}
+
+\newglossaryentry{kor_induzierter_wahrscheinlichkeitsraum}{
+    name={Was besagt das Korollar über den "induzierten Wahrscheinlichkeitsraum"?},
+    description={$(E,P_X)$ ist selbst ein Wahrscheinlichkeitsraum -- man kann also von $\Omega$ zu einem neuen, oft kleineren bzw.\ einfacheren Wahrscheinlichkeitsraum wechseln, der nur noch die durch $X$ ausgedrückten Ereignisse kennt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Notationen"
+% ===================================================================
+
+\newglossaryentry{lem_existenz_zv_mit_vorgegebener_verteilung}{
+    name={Existiert zu jedem beliebigen Wahrscheinlichkeitsmaß eine Zufallsvariable, die genau dieses Maß als Verteilung hat?},
+    description={Ja: Zu jedem Wahrscheinlichkeitsraum $(\tilde\Omega,\tilde P)$ existieren ein Wahrscheinlichkeitsraum und eine Zufallsvariable $X$ darauf, deren Verteilung genau $\tilde P$ ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_beweisidee_existenz_zv}{
+    name={Wie lautet die (einfache) Beweisidee für die Existenz einer Zufallsvariablen mit vorgegebener Verteilung?},
+    description={Man wählt $\Omega:=\tilde\Omega$, $P:=\tilde P$ und $X$ als die Identität, $X(\omega)=\omega$. Dann gilt für jede messbare Menge $B$: $\{\omega:X(\omega)\in B\}=B$, also $P_X(B)=P(B)=\tilde P(B)$.},
+    type=dinge
+}
+
+\newglossaryentry{def_verteilungsfunktion}{
+    name={Wie ist die Verteilungsfunktion $F_X$ einer reellwertigen Zufallsvariablen $X$ definiert?},
+    description={$F_X(x) = P(X\le x) = P_X((-\infty,x])$ für alle $x\in\mathbb R$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_verwechslungsgefahr_wfk_verteilungsfunktion}{
+    name={Welche zwei Konzepte sollte man bei einer Zufallsvariablen nicht verwechseln?},
+    description={Die Wahrscheinlichkeitsfunktion $p_X$ (definiert für einzelne Werte, nur bei abzählbarem Bildbereich sinnvoll) und die Verteilungsfunktion $F_X$ (definiert als kumulative Wahrscheinlichkeit $P(X\le x)$, für jede reellwertige ZV) sind verschiedene Konzepte.},
+    type=dinge
+}
+
+\newglossaryentry{lem_eigenschaften_verteilungsfunktion_allgemein}{
+    name={Welche drei grundlegenden Eigenschaften hat jede Verteilungsfunktion $F_X$?},
+    description={(1) $F_X$ ist monoton wachsend, (2) $F_X$ ist rechtsstetig, (3) $\lim_{x\to-\infty}F_X(x)=0$ und $\lim_{x\to\infty}F_X(x)=1$.},
+    type=dinge
+}
+
+\newglossaryentry{lem_rechenregeln_verteilungsfunktion_allgemein}{
+    name={Welche Rechenregeln erlauben es, Wahrscheinlichkeiten von Intervallen mit Hilfe der Verteilungsfunktion auszudrücken?},
+    description={$P(a<X\le b)=F_X(b)-F_X(a)$, $P(X\le b)=F_X(b)$, $P(X>a)=1-F_X(a)$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Zufallsvariablen mit abzählbarem Bildbereich"
+% ===================================================================
+
+\newglossaryentry{bem_sprunghoehen_verteilungsfunktion}{
+    name={Wie hängen die Sprunghöhen der Verteilungsfunktion einer Zufallsvariablen mit abzählbarem Bildbereich mit ihrer Wahrscheinlichkeitsfunktion zusammen?},
+    description={Nimmt $X$ nur abzählbar viele Werte $x_1,x_2,\dots$ an, so gilt $p_X(x_i)=F_X(x_i)-F_X(x_{i-1})$ für $i\ge2$ (und $p_X(x_1)=F_X(x_1)$) -- die Sprunghöhen der Verteilungsfunktion entsprechen genau den Werten der Wahrscheinlichkeitsfunktion.},
+    type=dinge
+}
+
+\newglossaryentry{lem_eigenschaften_verteilungsfunktion_diskret}{
+    name={Welche zusätzliche Eigenschaft hat die Verteilungsfunktion, wenn die Zufallsvariable nur abzählbar viele Werte annimmt?},
+    description={$F_X$ ist stückweise konstant.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Zufallsvariablen mit Dichte"
+% ===================================================================
+
+\newglossaryentry{def_dichte_einer_zv}{
+    name={Wann heißt eine reellwertige Zufallsvariable $X$ absolutstetig mit Dichte $f$?},
+    description={Wenn eine Funktion $f:\mathbb R\to[0,\infty)$ existiert mit $F_X(x) = P(X\le x) = \int_{-\infty}^x f(u)\,du$ für alle $x\in\mathbb R$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dichte_legt_verteilung_eindeutig_fest}{
+    name={Legt die definierende Gleichung einer Dichte das zugehörige Wahrscheinlichkeitsmaß $P_X$ eindeutig fest, und funktioniert die Konstruktion auch umgekehrt?},
+    description={Ja: Die Gleichung legt $P_X$ eindeutig fest. Umgekehrt kann man zu jeder gegebenen Dichte $f$ auch eine Zufallsvariable konstruieren, deren Verteilung genau die Dichte $f$ hat.},
+    type=dinge
+}
+
+\newglossaryentry{formel_verteilungsfunktion_uniform}{
+    name={Wie lautet die Verteilungsfunktion einer auf $[a,b]$ uniform verteilten Zufallsvariablen?},
+    description={$F_X(x)=0$ für $x<a$; $F_X(x)=\dfrac{x-a}{b-a}$ für $a\le x\le b$; $F_X(x)=1$ für $x>b$.},
+    type=dinge
+}
+
+\newglossaryentry{formel_verteilungsfunktion_exponential}{
+    name={Wie lautet die Verteilungsfunktion einer exponentialverteilten Zufallsvariablen mit Parameter $\alpha$?},
+    description={$F_X(x)=0$ für $x\le0$; $F_X(x)=1-e^{-\alpha x}$ für $x>0$.},
+    type=dinge
+}
+
+\newglossaryentry{lem_rechenregeln_verteilungsfunktion_dichte}{
+    name={Welche Besonderheit gilt bei den Rechenregeln für die Verteilungsfunktion, wenn die Zufallsvariable eine Dichte hat?},
+    description={Da $P(X=a)=0$ für jedes einzelne $a$ gilt, macht es keinen Unterschied, ob Intervallgrenzen ein- oder ausgeschlossen werden: $P(a\le X<b)=P(a<X\le b)=P(a\le X\le b)=P(a<X<b)=F_X(b)-F_X(a)$, ebenso $P(X\le b)=P(X<b)$ und $P(X>a)=P(X\ge a)$.},
+    type=dinge
+}
+
+\newglossaryentry{lem_eigenschaften_verteilungsfunktion_final_dichte}{
+    name={Welche zwei zusätzlichen Eigenschaften hat die Verteilungsfunktion, wenn die Zufallsvariable eine Dichte besitzt?},
+    description={(1) $F_X$ ist eine stetige Funktion. (2) Ist die Dichte $f$ zusätzlich stetig in einem Punkt $a$, so gilt $f(a)=F_X'(a)$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Mehrdimensionale Zufallsvariablen: Abzählbare Bildbereiche"
+% ===================================================================
+
+\newglossaryentry{def_indikatorfunktion}{
+    name={Wie ist die Indikatorfunktion (charakteristische Funktion) $\chi_B$ einer Menge $B\subseteq\Omega$ definiert?},
+    description={$\chi_B(\omega)=1$ falls $\omega\in B$, und $\chi_B(\omega)=0$ falls $\omega\notin B$.},
+    type=dinge
+}
+
+\newglossaryentry{def_gemeinsame_verteilung_randverteilung}{
+    name={Was versteht man unter der gemeinsamen Verteilung mehrerer Zufallsvariablen, und was unter einer Randverteilung?},
+    description={Die Verteilung der $n$-dimensionalen Zufallsvariable $X=(X_1,\dots,X_n)$ heißt gemeinsame Verteilung von $X_1,\dots,X_n$. Umgekehrt heißt, ausgehend von einer gegebenen $n$-dimensionalen Zufallsvariable, die Verteilung von $X_i$ die $i$-te Randverteilung.},
+    type=dinge
+}
+
+\newglossaryentry{lem_randverteilung_diskret_formel}{
+    name={Wie berechnet man die Wahrscheinlichkeitsfunktion einer einzelnen Randverteilung $X_k$ aus der gemeinsamen Wahrscheinlichkeitsfunktion $p_X$ im abzählbaren Fall?},
+    description={Durch "Heraussummieren" der übrigen Variablen: $p_{X_k}(x) = \sum_{u_1}\cdots\sum_{u_{k-1}}\sum_{u_{k+1}}\cdots\sum_{u_n} p_X(u_1,\dots,u_{k-1},x,u_{k+1},\dots,u_n)$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt "Mehrdimensionale Zufallsvariablen: Dichten"
+% ===================================================================
+
+\newglossaryentry{bem_technik_vertauschen_integrationsreihenfolge}{
+    name={Wann darf man bei der Berechnung eines mehrdimensionalen Integrals (z.\,B.\ eines Flächeninhalts oder einer Wahrscheinlichkeit) die Integrationsreihenfolge vertauschen?},
+    description={Wenn der Integrand eine nichtnegative, messbare Funktion ist (z.\,B.\ eine Indikatorfunktion oder eine Dichte) -- dann liefert das Vertauschen der Integrationsreihenfolge stets dasselbe Ergebnis.},
+    type=dinge
+}
+
+\newglossaryentry{def_mehrdimensionale_dichte}{
+    name={Wann heißt eine Funktion $f:\mathbb R^n\to[0,\infty)$ eine $n$-dimensionale Dichte?},
+    description={Wenn $f$ Riemann-integrierbar ist und $\int_{-\infty}^\infty\cdots\int_{-\infty}^\infty f(x_1,\dots,x_n)\,dx_1\dots dx_n=1$ gilt (Normierungsbedingung).},
+    type=dinge
+}
+
+\newglossaryentry{def_gemeinsame_dichte}{
+    name={Wann heißt eine $n$-dimensionale Dichte $f$ die gemeinsame Dichte der Zufallsvariablen $X_1,\dots,X_n$?},
+    description={Wenn $P(X_1\le a_1,\dots,X_n\le a_n) = \int_{-\infty}^{a_n}\cdots\int_{-\infty}^{a_1} f(x_1,\dots,x_n)\,dx_1\dots dx_n$ für alle $a_1,\dots,a_n$ gilt.},
+    type=dinge
+}
+
+\newglossaryentry{def_uniforme_verteilung_mehrdimensional}{
+    name={Wie ist die Dichte der uniformen Verteilung auf einer messbaren Menge $C\subseteq\mathbb R^n$ mit endlichem Inhalt $|C|$ definiert?},
+    description={$f(x_1,\dots,x_n) = \dfrac{1}{|C|}\,\chi_C(x_1,\dots,x_n)$ -- also konstant $\frac{1}{|C|}$ auf $C$ und $0$ außerhalb.},
+    type=dinge
+}
+
+\newglossaryentry{lem_randdichte_formel}{
+    name={Wie berechnet man die Randdichte $f_k$ der Zufallsvariablen $X_k$ aus einer gemeinsamen Dichte $f$ von $X_1,\dots,X_n$?},
+    description={Durch "Herausintegrieren" der übrigen Variablen: $f_k(x) = \int_{-\infty}^\infty\cdots\int_{-\infty}^\infty f(u_1,\dots,u_{k-1},x,u_{k+1},\dots,u_n)\,du_1\dots du_{k-1}\,du_{k+1}\dots du_n$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_analogie_summieren_integrieren}{
+    name={Welche Analogie besteht zwischen der Berechnung von Randverteilungen im diskreten Fall und im Fall mit Dichten?},
+    description={Im diskreten Fall erhält man die Randverteilung durch "Heraussummieren" der restlichen Variablen, im Fall mit Dichten durch "Herausintegrieren" der restlichen Variablen -- Summation wird durch Integration ersetzt.},
+    type=dinge
+}
