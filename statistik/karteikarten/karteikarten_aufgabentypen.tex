@@ -4,71 +4,71 @@
 
 % ------------------------- DEFINITIONEN -------------------------------
 
-\newglossaryentry{def_laplace}{
+\newglossaryentry{def_aufgabentyp_laplace}{
 name={Was ist ein Laplace-Raum?},
 description={\textbf{Endlich + gleichwahrscheinlich.} $\mathbb{P}(A)=\dfrac{\#A}{\#\Om}=\dfrac{\text{günstige}}{\text{mögliche}}$. Nur zulässig, wenn alle Elementarergebnisse dieselbe Wahrscheinlichkeit haben.}}
 
-\newglossaryentry{def_dichte_2}{
+\newglossaryentry{def_aufgabentyp_dichte}{
 name={Welche Eigenschaften definieren eine Dichte $f$?},
 description={\textbf{$f\ge 0$ und $\int_{-\infty}^{\infty} f = 1$.} Dann $\mathbb{P}((a,b])=\int_a^b f(x)\,dx$ und $\mathbb{P}(\{a\})=0$ für jeden Punkt.}}
 
-\newglossaryentry{def_vf}{
+\newglossaryentry{def_aufgabentyp_vf}{
 name={Was ist die Verteilungsfunktion $F_X$?},
 description={\textbf{$F_X(t)=\mathbb{P}(X\le t)$.} Monoton wachsend, rechtsstetig, mit $F(-\infty)=0$, $F(\infty)=1$. Diskret: Treppenfunktion mit Sprunghöhe $\mathbb{P}(X=x)$. Stetig: $f=F'$.}}
 
-\newglossaryentry{def_ew}{
+\newglossaryentry{def_aufgabentyp_ew}{
 name={Was ist der Erwartungswert?},
 description={\textbf{Der ``Schwerpunkt'' der Verteilung.} Diskret $\mathbb{E}[X]=\sum_x x\,\mathbb{P}(X=x)$, stetig $\mathbb{E}[X]=\int x\,f(x)\,dx$.}}
 
-\newglossaryentry{def_var}{
+\newglossaryentry{def_aufgabentyp_var}{
 name={Was ist die Varianz?},
 description={\textbf{Mittlere quadratische Abweichung vom Erwartungswert.} $\operatorname{Var}(X)=\mathbb{E}[(X-\mathbb{E} X)^2]=\mathbb{E}[X^2]-\mathbb{E}[X]^2\ge 0$.}}
 
-\newglossaryentry{def_unabh_e}{
+\newglossaryentry{def_aufgabentyp_unabh_e}{
 name={Wann sind zwei Ereignisse $A,B$ unabhängig?},
 description={\textbf{$\mathbb{P}(A\cap B)=\mathbb{P}(A)\,\mathbb{P}(B)$.} Für $A_1,\dots,A_m$ ``gemeinsam unabhängig'': die Produktregel muss für \emph{jede} Teilmenge der Indizes gelten.}}
 
-\newglossaryentry{def_unabh_zv}{
+\newglossaryentry{def_aufgabentyp_unabh_zv}{
 name={Wann sind zwei Zufallsvariablen $X,Y$ unabhängig?},
 description={\textbf{Die gemeinsame zerfällt ins Produkt der Rand.} $F_{X,Y}(x,y)=F_X(x)F_Y(y)$ bzw. $f_{X,Y}(x,y)=f_X(x)f_Y(y)$ für alle $x,y$.}}
 
-\newglossaryentry{def_bedingt}{
+\newglossaryentry{def_aufgabentyp_bedingt}{
 name={Was ist die bedingte Wahrscheinlichkeit $\mathbb{P}(A\mid B)$?},
 description={\textbf{$\mathbb{P}(A\mid B)=\dfrac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$} für $\mathbb{P}(B)>0$. ``Wahrscheinlichkeit von $A$, wenn $B$ bereits eingetreten ist.''}}
 
-\newglossaryentry{def_totale}{
+\newglossaryentry{def_aufgabentyp_totale}{
 name={Satz von der totalen Wahrscheinlichkeit?},
 description={\textbf{Zerlegung $B_1,\dots,B_n$ von $\Omega$:} $\mathbb{P}(A)=\sum_i \mathbb{P}(A\mid B_i)\,\mathbb{P}(B_i)$.}}
 
-\newglossaryentry{def_bayes}{
+\newglossaryentry{def_aufgabentyp_bayes}{
 name={Satz von Bayes?},
 description={\textbf{Dreht die Bedingung um.} $\mathbb{P}(B_k\mid A)=\dfrac{\mathbb{P}(A\mid B_k)\,\mathbb{P}(B_k)}{\sum_i \mathbb{P}(A\mid B_i)\,\mathbb{P}(B_i)}$.}}
 
-\newglossaryentry{def_rand}{
+\newglossaryentry{def_aufgabentyp_rand}{
 name={Was ist eine Randverteilung?},
 description={\textbf{Aus der gemeinsamen ``herausgesummt''.} $\mathbb{P}(X=x)=\sum_y \mathbb{P}(X=x,Y=y)$ -- in der Tabelle die Zeilen- bzw. Spaltensummen.}}
 
-\newglossaryentry{def_erwtreu}{
+\newglossaryentry{def_aufgabentyp_erwtreu}{
 name={Was ist ein erwartungstreuer Schätzer?},
 description={\textbf{Im Mittel richtig.} $t$ ist erwartungstreu für $\theta$, falls $\mathbb{E}_\theta[t(X)]=\theta$ für alle $\theta$. Beispiel: $\bar X$ für den Erwartungswert.}}
 
-\newglossaryentry{def_risiko}{
+\newglossaryentry{def_aufgabentyp_risiko}{
 name={Was ist das Risiko (MSE) eines Schätzers?},
 description={\textbf{$R(t)=\mathbb{E}[(t-\theta)^2]=\operatorname{Var}(t)+\text{Bias}(t)^2$.} Bei Erwartungstreue ist $\text{Bias}=0$, also $R=\operatorname{Var}(t)$.}}
 
-\newglossaryentry{def_ki}{
+\newglossaryentry{def_aufgabentyp_ki}{
 name={Was ist ein Konfidenzintervall zum Niveau $1-\alpha$?},
 description={\textbf{Ein \emph{zufälliges} Intervall $J_n$}, das den festen (unbekannten) Parameter mit Wahrscheinlichkeit $\ge 1-\alpha$ überdeckt: $\mathbb{P}_p(p\in J_n)\ge 1-\alpha$.}}
 
-\newglossaryentry{def_fehler}{
+\newglossaryentry{def_aufgabentyp_fehler}{
 name={Fehler 1.\ Art vs.\ Fehler 2.\ Art?},
 description={\textbf{1.\ Art:} $H_0$ verwerfen, obwohl $H_0$ wahr ist (Wahrscheinlichkeit $\le\alpha$).\\ \textbf{2.\ Art:} $H_0$ beibehalten, obwohl $H_0$ falsch ist.}}
 
-\newglossaryentry{def_pwert}{
+\newglossaryentry{def_aufgabentyp_pwert}{
 name={Was ist der $p$-Wert?},
 description={\textbf{Das kleinste Signifikanzniveau}, bei dem $H_0$ gerade noch verworfen wird. Kleiner $p$-Wert = stärkere Evidenz gegen $H_0$.}}
 
-\newglossaryentry{def_fixpunkt}{
+\newglossaryentry{def_aufgabentyp_fixpunkt}{
 name={Fixpunkt einer Permutation / Derangement?},
 description={\textbf{Fixpunkt:} Stelle $l$ mit $\omega(l)=l$.\\ \textbf{Derangement:} fixpunktfreie Permutation, Anzahl $D_n=n!\sum_{j=0}^n\frac{(-1)^j}{j!}$.}}
 
