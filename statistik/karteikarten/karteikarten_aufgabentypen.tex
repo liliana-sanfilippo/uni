@@ -1,0 +1,1174 @@
+% =====================================================================
+%  KARTEN
+% =====================================================================
+
+% ------------------------- DEFINITIONEN -------------------------------
+\newglossaryentry{def_wraum}{
+    name={Woraus besteht ein Wahrscheinlichkeitsraum $(\Omega,\mathbb{P})$?},
+description={\textbf{Drei Bausteine.} Ergebnismenge $\Omega$, eine $\sigma$-Algebra $\mathcal A$ von Ereignissen und ein Wahrscheinlichkeitsmaß $\mathbb{P}$ mit $\mathbb{P}(\Om)=1$, $\mathbb{P}\ge 0$ und $\sigma$-Additivität.}}
+
+\newglossaryentry{def_laplace}{
+name={Was ist ein Laplace-Raum?},
+description={\textbf{Endlich + gleichwahrscheinlich.} $\mathbb{P}(A)=\dfrac{\#A}{\#\Om}=\dfrac{\text{günstige}}{\text{mögliche}}$. Nur zulässig, wenn alle Elementarergebnisse dieselbe Wahrscheinlichkeit haben.}}
+
+\newglossaryentry{def_dichte}{
+name={Welche Eigenschaften definieren eine Dichte $f$?},
+description={\textbf{$f\ge 0$ und $\int_{-\infty}^{\infty} f = 1$.} Dann $\mathbb{P}((a,b])=\int_a^b f(x)\,dx$ und $\mathbb{P}(\{a\})=0$ für jeden Punkt.}}
+
+\newglossaryentry{def_vf}{
+name={Was ist die Verteilungsfunktion $F_X$?},
+description={\textbf{$F_X(t)=\mathbb{P}(X\le t)$.} Monoton wachsend, rechtsstetig, mit $F(-\infty)=0$, $F(\infty)=1$. Diskret: Treppenfunktion mit Sprunghöhe $\mathbb{P}(X=x)$. Stetig: $f=F'$.}}
+
+\newglossaryentry{def_ew}{
+name={Was ist der Erwartungswert?},
+description={\textbf{Der ``Schwerpunkt'' der Verteilung.} Diskret $\mathbb{E}[X]=\sum_x x\,\mathbb{P}(X=x)$, stetig $\mathbb{E}[X]=\int x\,f(x)\,dx$.}}
+
+\newglossaryentry{def_var}{
+name={Was ist die Varianz?},
+description={\textbf{Mittlere quadratische Abweichung vom Erwartungswert.} $\operatorname{Var}(X)=\mathbb{E}[(X-\mathbb{E} X)^2]=\mathbb{E}[X^2]-\mathbb{E}[X]^2\ge 0$.}}
+
+\newglossaryentry{def_unabh_e}{
+name={Wann sind zwei Ereignisse $A,B$ unabhängig?},
+description={\textbf{$\mathbb{P}(A\cap B)=\mathbb{P}(A)\,\mathbb{P}(B)$.} Für $A_1,\dots,A_m$ ``gemeinsam unabhängig'': die Produktregel muss für \emph{jede} Teilmenge der Indizes gelten.}}
+
+\newglossaryentry{def_unabh_zv}{
+name={Wann sind zwei Zufallsvariablen $X,Y$ unabhängig?},
+description={\textbf{Die gemeinsame zerfällt ins Produkt der Rand.} $F_{X,Y}(x,y)=F_X(x)F_Y(y)$ bzw. $f_{X,Y}(x,y)=f_X(x)f_Y(y)$ für alle $x,y$.}}
+
+\newglossaryentry{def_bedingt}{
+name={Was ist die bedingte Wahrscheinlichkeit $\mathbb{P}(A\mid B)$?},
+description={\textbf{$\mathbb{P}(A\mid B)=\dfrac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$} für $\mathbb{P}(B)>0$. ``Wahrscheinlichkeit von $A$, wenn $B$ bereits eingetreten ist.''}}
+
+\newglossaryentry{def_totale}{
+name={Satz von der totalen Wahrscheinlichkeit?},
+description={\textbf{Zerlegung $B_1,\dots,B_n$ von $\Omega$:} $\mathbb{P}(A)=\sum_i \mathbb{P}(A\mid B_i)\,\mathbb{P}(B_i)$.}}
+
+\newglossaryentry{def_bayes}{
+name={Satz von Bayes?},
+description={\textbf{Dreht die Bedingung um.} $\mathbb{P}(B_k\mid A)=\dfrac{\mathbb{P}(A\mid B_k)\,\mathbb{P}(B_k)}{\sum_i \mathbb{P}(A\mid B_i)\,\mathbb{P}(B_i)}$.}}
+
+\newglossaryentry{def_rand}{
+name={Was ist eine Randverteilung?},
+description={\textbf{Aus der gemeinsamen ``herausgesummt''.} $\mathbb{P}(X=x)=\sum_y \mathbb{P}(X=x,Y=y)$ -- in der Tabelle die Zeilen- bzw. Spaltensummen.}}
+
+\newglossaryentry{def_erwtreu}{
+name={Was ist ein erwartungstreuer Schätzer?},
+description={\textbf{Im Mittel richtig.} $t$ ist erwartungstreu für $\theta$, falls $\mathbb{E}_\theta[t(X)]=\theta$ für alle $\theta$. Beispiel: $\bar X$ für den Erwartungswert.}}
+
+\newglossaryentry{def_risiko}{
+name={Was ist das Risiko (MSE) eines Schätzers?},
+description={\textbf{$R(t)=\mathbb{E}[(t-\theta)^2]=\operatorname{Var}(t)+\text{Bias}(t)^2$.} Bei Erwartungstreue ist $\text{Bias}=0$, also $R=\operatorname{Var}(t)$.}}
+
+\newglossaryentry{def_ki}{
+name={Was ist ein Konfidenzintervall zum Niveau $1-\alpha$?},
+description={\textbf{Ein \emph{zufälliges} Intervall $J_n$}, das den festen (unbekannten) Parameter mit Wahrscheinlichkeit $\ge 1-\alpha$ überdeckt: $\mathbb{P}_p(p\in J_n)\ge 1-\alpha$.}}
+
+\newglossaryentry{def_fehler}{
+name={Fehler 1.\ Art vs.\ Fehler 2.\ Art?},
+description={\textbf{1.\ Art:} $H_0$ verwerfen, obwohl $H_0$ wahr ist (Wahrscheinlichkeit $\le\alpha$).\\ \textbf{2.\ Art:} $H_0$ beibehalten, obwohl $H_0$ falsch ist.}}
+
+\newglossaryentry{def_pwert}{
+name={Was ist der $p$-Wert?},
+description={\textbf{Das kleinste Signifikanzniveau}, bei dem $H_0$ gerade noch verworfen wird. Kleiner $p$-Wert = stärkere Evidenz gegen $H_0$.}}
+
+\newglossaryentry{def_fixpunkt}{
+name={Fixpunkt einer Permutation / Derangement?},
+description={\textbf{Fixpunkt:} Stelle $l$ mit $\omega(l)=l$.\\ \textbf{Derangement:} fixpunktfreie Permutation, Anzahl $D_n=n!\sum_{j=0}^n\frac{(-1)^j}{j!}$.}}
+
+% ------------------------- FORMELN ------------------------------------
+\newglossaryentry{form_lintrafo}{
+name={$\mathbb{E}$ und $\operatorname{Var}$ unter linearer Transformation $aX+b$?},
+description={$\mathbb{E}[aX+b]=a\,\mathbb{E}[X]+b$ \quad und\quad $\operatorname{Var}(aX+b)=a^2\,\operatorname{Var}(X)$.\\ \textbf{Merke:} $b$ fällt in der Varianz weg, $a$ wird quadriert.}}
+
+\newglossaryentry{form_varsumme}{
+name={Varianz einer Summe $X+Y$?},
+description={$\mathbb{E}[X+Y]=\mathbb{E} X+\mathbb{E} Y$ (\emph{immer}). Aber $\operatorname{Var}(X+Y)=\operatorname{Var} X+\operatorname{Var} Y$ \textbf{nur, wenn unkorreliert/unabhängig}, sonst $+\,2\operatorname{Cov}(X,Y)$.}}
+
+\newglossaryentry{form_binom}{
+name={Binomialverteilung $\mathrm{Bin}(n,p)$?},
+description={$\mathbb{P}(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$, \quad $\mathbb{E}[X]=np$, \quad $\operatorname{Var}(X)=np(1-p)$.\\ \textbf{Einsatz:} Anzahl Erfolge bei $n$ unabhängigen Versuchen.}}
+
+\newglossaryentry{form_geom}{
+name={Geometrische Verteilung (Wartezeit)?},
+description={Zählung ab $1$: $\mathbb{P}(X=k)=(1-p)^{k-1}p$, \quad $\mathbb{E}[X]=\dfrac1p$, \quad $\operatorname{Var}(X)=\dfrac{1-p}{p^2}$.\\ \textbf{Einsatz:} Nummer des ersten Erfolgs.}}
+
+\newglossaryentry{form_poisson}{
+name={Poissonverteilung $\mathrm{Poi}(\lambda)$?},
+description={$\mathbb{P}(X=k)=e^{-\lambda}\dfrac{\lambda^k}{k!}$, \quad $\mathbb{E}[X]=\operatorname{Var}(X)=\lambda$.\\ \textbf{Einsatz:} seltene Ereignisse; Approximation von $\mathrm{Bin}(n,p)$ mit $\lambda=np$.}}
+
+\newglossaryentry{form_gleich}{
+name={Stetige Gleichverteilung auf $[a,b]$?},
+description={$f=\dfrac{1}{b-a}\mathbf 1_{[a,b]}$, \quad $\mathbb{E}[X]=\dfrac{a+b}{2}$, \quad $\operatorname{Var}(X)=\dfrac{(b-a)^2}{12}$.}}
+
+\newglossaryentry{form_dml}{
+name={Satz von de Moivre--Laplace?},
+description={Für $S_n\sim\mathrm{Bin}(n,p)$, $\mu=np$, $\sigma=\sqrt{np(1-p)}$:\\ $\mathbb{P}(a\le S_n\le b)\approx\Phi\!\big(\frac{b+\frac12-\mu}{\sigma}\big)-\Phi\!\big(\frac{a-\frac12-\mu}{\sigma}\big)$. \quad \textbf{Stetigkeitskorrektur $\pm\frac12$!}}}
+
+\newglossaryentry{form_tscheby}{
+name={Tschebyscheffsche Ungleichung?},
+description={$\mathbb{P}(|X-\mathbb{E} X|\ge\varepsilon)\le\dfrac{\operatorname{Var}(X)}{\varepsilon^2}$. Liefert nur eine (meist grobe) obere Schranke -- ohne Kenntnis der genauen Verteilung.}}
+
+\newglossaryentry{form_ki}{
+name={Konfidenzintervall für einen Anteil $p$?},
+description={$\hat p=\frac{S_n}{n}$, Niveau $1-\alpha$: $J_n=\hat p\pm z_{1-\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$, \quad $z_{0{,}975}\approx 1{,}96$.}}
+
+\newglossaryentry{form_teststat}{
+name={Teststatistik: einseitiger Anteilstest?},
+description={$H_0:p=p_0$. Unter $H_0$: $Z=\dfrac{S_n-np_0}{\sqrt{np_0(1-p_0)}}\approx\mathcal N(0,1)$. Verwerfe bei $H_1:p<p_0$, falls $Z<-z_{1-\alpha}$ (bei $\alpha=0{,}05$: $-1{,}645$).}}
+
+\newglossaryentry{form_abzählen}{
+name={Abzählen: die vier Grundfälle (aus $n$ ziehe $k$)?},
+description={geordnet, mit Zurücklegen: $n^k$.\\ geordnet, ohne: $\frac{n!}{(n-k)!}$.\\ ungeordnet, ohne: $\binom{n}{k}$.\\ ungeordnet, mit: $\binom{n+k-1}{k}$.}}
+
+\newglossaryentry{form_fixpunkt}{
+name={Permutation von $n$: genau $k$ Fixpunkte?},
+description={$\mathbb{P}(\text{genau }k)=\dfrac{1}{k!}\displaystyle\sum_{j=0}^{n-k}\dfrac{(-1)^j}{j!}\;\xrightarrow{n\to\infty}\;\dfrac{e^{-1}}{k!}$. \quad Zusammenhang $\mathbb{P}(B_k)=\mathbb{P}(C_k)-\mathbb{P}(C_{k+1})$.}}
+
+\newglossaryentry{form_riskmittel}{
+name={Risiko des Stichprobenmittels $\bar X$?},
+description={$R(\bar X)=\operatorname{Var}(\bar X)=\dfrac{\operatorname{Var}(X_1)}{n}\;\xrightarrow{n\to\infty}\;0$. Nutzt Unabhängigkeit (Varianz der Summe = Summe der Varianzen) $\Rightarrow$ konsistent.}}
+
+% ------------------------- SZENARIEN ----------------------------------
+\newglossaryentry{szen_poisson}{
+name={Jedes 50.\ Bauteil defekt, 300 getestet -- $\mathbb{P}(\text{genau }3)$? Welcher Ansatz?},
+description={\textbf{Poisson-Approximation.} $n$ gro\ss, $p=\frac1{50}$ klein $\Rightarrow$ $\lambda=np=6$. $\mathbb{P}(X=3)\approx e^{-6}\frac{6^3}{3!}$. (Exakt: $\mathrm{Bin}(300,\frac1{50})$.)}}
+
+\newglossaryentry{szen_ueberbuch}{
+name={526 Sitze, 10\,\% No-Show, max.\ Tickets bei $\le 5\%$ Überbuchung? Welcher Ansatz?},
+description={\textbf{Binomial + de Moivre--Laplace.} Erscheinende $\sim\mathrm{Bin}(n,0{,}9)$. Löse $\mathbb{P}(\text{Erscheinende}>526)\le 0{,}05$ mit Normalapprox.\ und $z_{0{,}95}\approx1{,}645$ nach $n$ auf, dann \emph{abrunden}.}}
+
+\newglossaryentry{szen_wartezeit}{
+name={Würfle, bis Augensumme dreier Würfel zuerst $5$ ist -- Verteilung der Wurfnummer?},
+description={\textbf{Geometrische Verteilung} mit $p=\mathbb{P}(\text{Summe}=5)$. Wurfnummer $\tau\sim\mathrm{Geom}(p)$, also $\mathbb{E}[\tau]=\frac1p$, $\operatorname{Var}(\tau)=\frac{1-p}{p^2}$. Grundraum abzählbar unendlich.}}
+
+\newglossaryentry{szen_bayes}{
+name={Zwei Urnen, Münze wählt; gegeben ``mind.\ eine schwarze Kugel'' -- welche Urne?},
+description={\textbf{Satz von Bayes} (mit totaler Wahrscheinlichkeit). Vorwärts $\mathbb{P}(\text{schwarz}\mid\text{Urne})$ ist gegeben, gesucht ist rückwärts $\mathbb{P}(\text{Urne}\mid\text{schwarz})$.}}
+
+\newglossaryentry{szen_punkt}{
+name={Zahl rein zufällig aus $[0,1]$ -- $\mathbb{P}(\text{Zahl}=\frac17)$?},
+description={\textbf{$=0$.} Bei stetiger Verteilung hat jeder einzelne Punkt Wahrscheinlichkeit $0$. ``Höchstens $\frac1{100}$ entfernt'' wäre dagegen ein Intervall der Länge $\frac{2}{100}$.}}
+
+\newglossaryentry{szen_dreieck}{
+name={Gemeinsame Dichte auf $\{0\le x\le y\le 1\}$ -- sind $X,Y$ unabhängig?},
+description={\textbf{Nein.} Der Träger ist ein Dreieck, kein Rechteck (Produktmenge). Der Wertebereich von $X$ hängt von $Y$ ab $\Rightarrow$ die Dichte faktorisiert \emph{nicht}, auch wenn $f$ wie ein Produkt aussieht.}}
+
+\newglossaryentry{szen_tscheby}{
+name={Zeige $b_n\to 0$ (Anteil höchstens 20\,\% rot unter $n$ Käufen)? Welches Werkzeug?},
+description={\textbf{Tschebyscheff / schwaches GGZ.} $\hat p_n\to p=0{,}25$; die Wahrscheinlichkeit, um $\ge 0{,}05$ danebenzuliegen, ist $\le\frac{p(1-p)}{n\cdot 0{,}05^2}\to 0$. Auch $b_{200}<b_{20}$ folgt aus Monotonie.}}
+
+\newglossaryentry{szen_ki}{
+name={45 von 200 dafür; Konfidenzintervall zum Niveau $0{,}975$? Welcher Ansatz?},
+description={\textbf{Wald-KI für den Anteil.} $\hat p=\frac{45}{200}=0{,}225$, $J=\hat p\pm z_{0{,}9875}\sqrt{\frac{\hat p(1-\hat p)}{200}}$. Niveau $0{,}975\Rightarrow\alpha=0{,}025\Rightarrow$ Quantil $z_{1-\alpha/2}$.}}
+
+\newglossaryentry{szen_test}{
+name={Früher 30\,\%, jetzt 45/200 -- ``gesunken?'' bei $\alpha=5\%$? Welcher Test?},
+description={\textbf{Einseitiger Anteilstest.} $H_0:p=0{,}30$ gegen $H_1:p<0{,}30$. Kritischer Wert $-z_{1-\alpha}=-1{,}645$ (nicht $-z_{1-\alpha/2}$!). $Z=\frac{45-60}{\sqrt{200\cdot0{,}3\cdot0{,}7}}$ auswerten.}}
+
+\newglossaryentry{szen_muenze}{
+name={Faire Münze $n$-mal -- $\mathbb{P}(\text{mindestens einmal Kopf})$? Trick?},
+description={\textbf{Gegenereignis.} $1-\mathbb{P}(\text{nie Kopf})=1-\left(\frac12\right)^n$. ``Mindestens einmal'' fast immer über das Komplement rechnen.}}
+
+\newglossaryentry{szen_mitzuruck}{
+name={Zwei Kugeln \emph{mit} Zurücklegen -- gemeinsame Verteilung von $X_1,X_2$?},
+description={\textbf{Produkt der Randverteilungen.} Mit Zurücklegen sind $X_1,X_2$ unabhängig und identisch gleichverteilt $\Rightarrow$ $\mathbb{P}(X_1=i,X_2=j)=\frac19$. (Ohne Zurücklegen \emph{nicht}.)}}
+
+\newglossaryentry{szen_cafe}{
+name={Zwei Personen, uniforme Ankunft 12--13 Uhr, je 15 min da -- treffen sie sich?},
+description={\textbf{Geometrische Wahrscheinlichkeit (Fläche).} $\mathbb{P}(|X-Y|\le\frac14)$ als Flächenanteil im Einheitsquadrat. Über 200 Tage dann $\mathrm{Bin}(200,\,p_{\text{Treffen}})$ + de Moivre--Laplace.}}
+
+\newglossaryentry{szen_perm}{
+name={Zufällige Permutation von 4 Zahlen -- $\mathbb{P}(\text{genau 2 Fixpunkte})$? Wie zählen?},
+description={\textbf{Kombinatorik + Derangement.} Fixpunkte wählen: $\binom{4}{2}=6$; die übrigen 2 fixpunktfrei: $D_2=1$. Also $\#B_2=6$, $\mathbb{P}=\frac{6}{4!}=\frac14$.}}
+
+\newglossaryentry{szen_buch}{
+name={Buch mit Druckfehlern, zufälliges Kapitel -- $\mathbb{P}(10\text{ Fehler})$? Welcher Ansatz?},
+description={\textbf{Poisson-Approximation je Kapitel.} Fehlerzahl $\approx\mathrm{Poi}(\lambda)$ mit dem jeweiligen Kapitel-$\lambda$ (Grund- + eingefügte Fehler); über die zufällige Kapitelwahl mitteln (totale Wahrscheinlichkeit).}}
+
+% ------------------------- FALLSTRICKE --------------------------------
+\newglossaryentry{fall_paarweise}{
+name={Warum reicht paarweise Unabhängigkeit nicht?},
+description={\textbf{Paarweise $\ne$ gemeinsam.} $A,B,C$ können paarweise unabhängig sein, ohne dass $\mathbb{P}(A\cap B\cap C)=\mathbb{P}(A)\mathbb{P}(B)\mathbb{P}(C)$ gilt. Für ``gemeinsam'' alle Teilmengen prüfen, inkl.\ Tripel.}}
+
+\newglossaryentry{fall_stetigkorr}{
+name={Häufigster Fehler bei de Moivre--Laplace?},
+description={\textbf{Stetigkeitskorrektur vergessen.} Diskret $\to$ stetig: bei ``$\le$'' die $+\frac12$, bei ``$\ge$'' die $-\frac12$ addieren. Ohne Korrektur wird das Ergebnis systematisch verfälscht.}}
+
+\newglossaryentry{fall_lintrafo}{
+name={$Y=-2X+4$ -- was passiert mit $\mathbb{E}$ und $\operatorname{Var}$?},
+description={\textbf{$b$ weg, $a$ quadriert.} $\mathbb{E}[Y]=-2\mathbb{E}[X]+4$, aber $\operatorname{Var}(Y)=(-2)^2\operatorname{Var}(X)=4\operatorname{Var}(X)$. Der Summand $+4$ verschwindet in der Varianz.}}
+
+\newglossaryentry{fall_integral}{
+name={Stetige Verteilung: $\mathbb{P}([1,\infty))$ bei Träger $[0,1]$?},
+description={\textbf{$=0$.} Nur der Punkt $\{1\}$ liegt im Träger, und der hat Maß $0$. Integrationsgrenzen immer auf $\{f>0\}$ beschränken; offene vs.\ geschlossene Grenzen sind bei stetigen Verteilungen egal.}}
+
+\newglossaryentry{fall_geom}{
+name={Geometrische Verteilung -- welche Konvention?},
+description={\textbf{Ab 1 oder ab 0?} ``Nummer des Wurfs bis zum 1.\ Erfolg'' $\Rightarrow$ ab 1, $\mathbb{E}=\frac1p$. ``Anzahl Fehlversuche davor'' $\Rightarrow$ ab 0, $\mathbb{E}=\frac{1-p}{p}$. Aufgabentext genau lesen.}}
+
+\newglossaryentry{fall_kifest}{
+name={Konfidenzintervall -- was ist zufällig, was fest?},
+description={\textbf{Parameter fest, Intervall zufällig.} $p$ ist unbekannt aber fix; $J_n$ schwankt mit der Stichprobe. Und: Niveau von $1-\alpha$ auf $1-\alpha/2$ erhöhen verdoppelt die Länge \emph{nicht} (Quantil wächst nichtlinear).}}
+
+\newglossaryentry{fall_einseitig}{
+name={Einseitig vs.\ zweiseitig -- welcher kritische Wert?},
+description={\textbf{Richtung an der Alternative ausrichten.} ``gesunken/gestiegen'' $\Rightarrow$ einseitig, Schranke $z_{1-\alpha}$. ``verändert'' $\Rightarrow$ zweiseitig, $z_{1-\alpha/2}$. Verwechslung halbiert/verdoppelt fälschlich das Fehlerniveau.}}
+
+\newglossaryentry{fall_h0}{
+name={``$H_0$ nicht verworfen'' -- heißt das $H_0$ ist bewiesen?},
+description={\textbf{Nein.} Nicht-Verwerfen bedeutet nur: kein hinreichender Widerspruch bei diesem $\alpha$. Ein Test kann $H_0$ stützen, aber nie beweisen.}}
+
+\newglossaryentry{fall_max}{
+name={Sind $\max\{X,Y\}$ und $\max\{X,Z\}$ unabhängig ($X,Y,Z$ unabh.)?},
+description={\textbf{Nein.} Beide enthalten dasselbe $X$ -- geteilte Variablen zerstören Unabhängigkeit. Dagegen sind $\max\{X,Y\}$ und $Z$ (disjunkte Gruppen) sehr wohl unabhängig.}}
+
+\newglossaryentry{fall_augensumme}{
+name={Augensumme dreier Würfel -- ist das ein Laplace-Raum?},
+description={\textbf{Nur auf der Ebene $\{1,\dots,6\}^3$, nicht auf der Summe.} Die 216 Tripel sind gleichwahrscheinlich, die Summenwerte aber nicht. Also im Grundraum zählen.}}
+
+\newglossaryentry{fall_ohnezuruck}{
+name={Ohne Zurücklegen -- was ändert sich?},
+description={\textbf{Ziehungen werden abhängig.} $\mathbb{P}(A\mid B_k)$ hängt vom Ergebnis des ersten Zugs ab; die gemeinsame Verteilung faktorisiert nicht. Bayes/totale Wahrscheinlichkeit statt einfacher Produkte.}}
+
+\newglossaryentry{fall_bedaddieren}{
+name={$\mathbb{P}(C\mid A\cup B)=\mathbb{P}(C\mid A)+\mathbb{P}(C\mid B)$ -- richtig?},
+description={\textbf{Im Allgemeinen falsch.} Bedingte Wahrscheinlichkeiten addieren sich so nicht. Und $\mathbb{P}(A\cap B\mid D)$ lässt sich \emph{nicht} allein aus $\mathbb{P}(A\mid D)$ und $\mathbb{P}(B\mid D)$ bestimmen -- Zusatzinfo nötig.}}
+
+
+% #####################################################################
+% ##  A) WANN BENUTZE ICH WAS?  (Entscheidungskarten)                ##
+% #####################################################################
+
+
+\newglossaryentry{wann_exp_vs_geom}{
+name={Wann Exponential-, wann geometrische Verteilung?},
+description={\textbf{Stetig vs.\ diskret.} Kontinuierliche Wartezeit / Lebensdauer (Minuten, Stunden) $\Rightarrow$ \emph{Exponential}$(\lambda)$, $\mathbb E=\tfrac1\lambda$. Anzahl von Versuchen bis zum ersten Erfolg (ganzzahlig) $\Rightarrow$ \emph{geometrisch}$(p)$, $\mathbb E=\tfrac1p$. Beide sind gedaechtnislos.}
+}
+
+\newglossaryentry{wann_faltung}{
+name={Wann die Faltung (Summenformel) benutzen?},
+description={\textbf{Wenn die Verteilung einer Summe unabhaengiger Variablen gesucht ist.} ,,Dichte von $X+Y$``, ,,insgesamt hoechstens $c$``. Formel $f_{X+Y}(z)=\int f_X(x)f_Y(z-x)\,dx$; alternativ $\mathbb P(X+Y\le c)$ als Doppelintegral im Dreieck $\{x+y\le c\}$.}
+}
+
+\newglossaryentry{wann_stetigkeit_mass}{
+name={Wann die Stetigkeit von Massen einsetzen?},
+description={\textbf{Bei $\lim_n \mathbb P(A_n)$ fuer eine monotone Mengenfolge.} $A_n\uparrow A$ oder $A_n\downarrow A$ $\Rightarrow$ $\mathbb P(A_n)\to\mathbb P(A)$. Nuetzlich, um ohne explizite Dichte zu argumentieren.}
+}
+
+\newglossaryentry{wann_inkl_exkl}{
+name={Wann das Ein-/Ausschlussprinzip benutzen?},
+description={\textbf{Bei ,,mindestens eine`` mehrerer sich ueberschneidender Eigenschaften.} Teilbarkeit durch mehrere Zahlen, mindestens ein Fixpunkt, Vereinigung mehrerer Ereignisse: Ueberschneidungen mit alternierenden Vorzeichen korrigieren.}
+}
+
+\newglossaryentry{wann_indikator}{
+name={Wann Indikatorvariablen und Linearitaet nutzen?},
+description={\textbf{Bei ,,erwartete Anzahl von \dots``.} Zaehlgroesse als Summe von Indikatoren $S=\sum \mathbf 1_{E_i}$ schreiben; dann $\mathbb E[S]=\sum \mathbb P(E_i)$ -- funktioniert \emph{auch bei Abhaengigkeit} der $E_i$.}
+}
+
+\newglossaryentry{wann_gausstest_ttest}{
+name={Wann Gauss-Test, wann $t$-Test?},
+description={\textbf{An der Varianz entscheiden.} Daten normalverteilt und Varianz $\sigma^2$ \emph{bekannt} $\Rightarrow$ \emph{Gauss-Test} ($z$-Quantil). Varianz \emph{unbekannt}, aus der Stichprobe geschaetzt $\Rightarrow$ \emph{$t$-Test} mit $t_{n-1}$-Quantil.}
+}
+
+\newglossaryentry{wann_gepaart}{
+name={Wann gepaarter vs.\ Zwei-Stichproben-Test?},
+description={\textbf{Verbunden vs.\ getrennt.} Zwei Messungen an \emph{derselben} Einheit (linke/rechte Hand, vorher/nachher) $\Rightarrow$ \emph{gepaarter} Test auf den Differenzen. Zwei \emph{unabhaengige} Gruppen $\Rightarrow$ Zwei-Stichproben-Test.}
+}
+
+
+\newglossaryentry{wann_wraum}{
+  name={Wann welchen Wahrscheinlichkeitsraum $(\Omega,\mathbb P)$ wählen?},
+  description={\textbf{Nach der Struktur des Experiments.}
+  Endlich \& symmetrisch (``fair'', ``rein zufällig'', endlich viele Ausgänge) $\Rightarrow$ \emph{Laplace-Raum}, $\mathbb P(A)=\#A/\#\Omega$.\\
+  ``Wiederhole, bis \dots'' / Wartezeit $\Rightarrow$ \emph{abzählbar unendlicher} Raum $\Omega=\mathbb N$.\\
+  Kontinuierlicher Bereich (``uniform aus Intervall/Gebiet'') $\Rightarrow$ \emph{überabzählbar}, $\mathbb P=$
+Länge/Fläche/Volumen des Ereignisses.}
+}
+
+\newglossaryentry{wann_verteilung}{
+  name={Wann welche (diskrete) Verteilung? -- Verteilung erkennen},
+  description={\textbf{An der Frage ablesen.}
+  Ein einzelner Ja/Nein-Versuch $\Rightarrow$ \emph{Bernoulli}.\\
+  Feste Zahl $n$ unabhängiger Versuche, Anzahl Erfolge $\Rightarrow$ \emph{Binomial}$(n,p)$.\\
+  ``Nummer bis zum ersten Erfolg'' $\Rightarrow$ \emph{Geometrisch}$(p)$.\\
+  Seltene Ereignisse bzw.\ $n$ gross \& $p$ klein $\Rightarrow$ \emph{Poisson}$(\lambda)$, $\lambda=np$.\\
+  Gleichwahrscheinliche Werte $\Rightarrow$ \emph{Gleichverteilung}.}
+}
+
+\newglossaryentry{wann_approx}{
+  name={Wann welche Approximation? (Poisson vs.\ Normal vs.\ Tschebyscheff)},
+  description={\textbf{Die zentrale Entscheidung in den Grenzwertsätzen.}
+  $n$ gross, $p$ \emph{klein}, $np=\lambda$ moderat $\Rightarrow$ \emph{Poisson}.\\
+  $n$ gross, $np(1-p)$ gross (p nicht extrem) $\Rightarrow$ \emph{Normal / de Moivre--Laplace} (mit Stetigkeitskorrektur).\\
+  Nur eine \emph{Schranke} ohne Verteilungsdetails gesucht $\Rightarrow$ \emph{Tschebyscheff}.}
+}
+
+\newglossaryentry{wann_bayes}{
+  name={Wann Bayes, wann totale Wahrscheinlichkeit?},
+  description={\textbf{Zweistufiges Experiment} (erst Ursache $B_i$ wählen, dann Beobachtung $A$).
+  Vorwärts $\mathbb P(A\mid B_i)$ ist gegeben, gesucht ist $\mathbb P(A)$ $\Rightarrow$ \emph{totale Wahrscheinlichkeit}.\\
+  Rueckwärts $\mathbb P(B_k\mid A)$ gesucht (``aus welcher Ursache?'') $\Rightarrow$ \emph{Satz von Bayes}.}
+}
+
+\newglossaryentry{wann_gegenereignis}{
+  name={Wann ueber das Gegenereignis rechnen?},
+  description={\textbf{Bei ``mindestens'' und ``höchstens''.} ``Mindestens einmal'' ist meist leichter als $1-\mathbb P(\text{nie})$. Allgemein $\mathbb P(A)=1-\mathbb P(A^c)$, wenn das Komplement weniger Fälle hat.}
+}
+
+\newglossaryentry{wann_kombinatorik}{
+  name={Wann welcher Kombinatorik-Fall? (aus $n$ ziehe $k$)},
+  description={\textbf{Zwei Fragen: Reihenfolge? Zuruecklegen?}
+  geordnet + mit Zuruecklegen $\Rightarrow n^k$;\\
+  geordnet + ohne $\Rightarrow \frac{n!}{(n-k)!}$;\\
+  ungeordnet + ohne $\Rightarrow \binom{n}{k}$;\\
+  ungeordnet + mit $\Rightarrow \binom{n+k-1}{k}$.}
+}
+
+\newglossaryentry{wann_test}{
+  name={Wann einseitiger, wann zweiseitiger Test?},
+  description={\textbf{An der Alternative ablesen.} Vermutung mit Richtung (``gesunken'', ``grösser als'') $\Rightarrow$ \emph{einseitig}, kritischer Wert $z_{1-\alpha}$.\\
+  Nur ``verändert / anders'' $\Rightarrow$ \emph{zweiseitig}, $z_{1-\alpha/2}$.}
+}
+
+\newglossaryentry{wann_stetigkorr}{
+  name={Wann Stetigkeitskorrektur $\pm\frac12$ verwenden?},
+  description={\textbf{Immer bei Normalapproximation einer diskreten Grösse} (z.\,B.\ Binomial via de Moivre--Laplace). Bei ``$\le b$'' die Grenze auf $b+\frac12$, bei ``$\ge a$'' auf $a-\frac12$ setzen.}
+}
+
+\newglossaryentry{wann_mitohne}{
+  name={Wann macht ``mit'' vs.\ ``ohne Zuruecklegen'' einen Unterschied?},
+  description={\textbf{Immer.} Mit Zuruecklegen $\Rightarrow$ Ziehungen \emph{unabhängig}, Produkt/Binomial.\\
+  Ohne Zuruecklegen $\Rightarrow$ \emph{abhängig}, bedingte Wahrscheinlichkeiten / Bayes, keine einfachen Produkte.}
+}
+
+\newglossaryentry{wann_rand}{
+  name={Wann und wie bildet man eine Randverteilung/Randdichte?},
+  description={\textbf{Wenn aus der gemeinsamen Verteilung eine einzelne Variable gesucht ist.}
+  Diskret: ueber die andere Variable \emph{aufsummieren}, $\mathbb P(X=x)=\sum_y \mathbb P(X=x,Y=y)$.\\
+  Stetig: ueber die andere Variable \emph{integrieren}, $f_X(x)=\int f_{X,Y}(x,y)\,dy$.}
+}
+
+
+% #####################################################################
+% ##  B) WAHRSCHEINLICHKEITSRäuME MODELLIEREN                       ##
+% #####################################################################
+
+\newglossaryentry{wraum_begriff}{
+  name={Woraus besteht ein Wahrscheinlichkeitsraum $(\Omega,\mathbb P)$?},
+  description={\textbf{Drei Bausteine.} Ergebnismenge $\Omega$, eine $\sigma$-Algebra $\mathcal A$ von Ereignissen und ein Wahrscheinlichkeitsmass $\mathbb P$ mit $\mathbb P(\Omega)=1$, $\mathbb P\ge 0$ und $\sigma$-Additivität.}
+}
+
+\newglossaryentry{wraum_laplace}{
+  name={Was ist ein Laplace-Raum und wann gilt er?},
+  description={\textbf{Endlich + gleichwahrscheinlich.} $\mathbb P(A)=\dfrac{\#A}{\#\Omega}=\dfrac{\text{guenstige}}{\text{mögliche}}$. Nur zulässig, wenn \emph{alle} Elementarergebnisse dieselbe Wahrscheinlichkeit haben.}
+}
+
+\newglossaryentry{wraum_diskret}{
+  name={Wie modelliert man eine Wartezeit (``wiederhole bis \dots'')?},
+  description={\textbf{Abzählbar unendlicher Raum} $\Omega=\mathbb N$ (oder $\mathbb N_0$) mit $\mathbb P(\{k\})=p_k$, $\sum_k p_k=1$. Oft geometrisch verteilt. Derselbe Sachverhalt lässt sich fein (ganze Folge) oder grob (nur Endergebnis) modellieren.}
+}
+
+\newglossaryentry{wraum_stetig}{
+  name={Wie modelliert man ``rein zufällig aus einem Intervall/Gebiet''?},
+  description={\textbf{Ueberabzählbarer Raum} $\Omega\subseteq\mathbb R^d$ mit $\mathbb P(A)=\int_A f$. Gleichverteilung: $f=\frac{1}{\text{Vol}(\Omega)}\mathbf 1_\Omega$, also $\mathbb P=$ Länge/Fläche/Volumen des Ereignisses geteilt durch die des Grundgebiets. Einzelpunkte haben Wahrscheinlichkeit $0$.}
+}
+
+
+% #####################################################################
+% ##  C) KOMBINATORIK & PERMUTATIONEN                                ##
+% #####################################################################
+
+\newglossaryentry{komb_grundfälle}{
+  name={Die vier Grundfälle des Abzählens (aus $n$ ziehe $k$)?},
+  description={geordnet, mit Zuruecklegen: $n^k$.\\
+  geordnet, ohne: $\dfrac{n!}{(n-k)!}$.\\
+  ungeordnet, ohne: $\binom{n}{k}$.\\
+  ungeordnet, mit: $\binom{n+k-1}{k}$.}
+}
+
+\newglossaryentry{komb_permutation}{
+  name={Wie viele Permutationen von $n$ Zahlen gibt es?},
+  description={\textbf{$\#\{\text{Bijektionen}\}=n!$}. Eine Permutation ordnet jeder Stelle genau eine Zahl bijektiv zu; ein \emph{Fixpunkt} ist eine Stelle $l$ mit $\omega(l)=l$.}
+}
+
+\newglossaryentry{komb_fixpunkt}{
+  name={Wahrscheinlichkeit, dass eine zufällige Permutation von $n$ genau $k$ Fixpunkte hat?},
+  description={$\mathbb P(\text{genau }k)=\dfrac{1}{k!}\displaystyle\sum_{j=0}^{n-k}\dfrac{(-1)^j}{j!}\;\xrightarrow{n\to\infty}\;\dfrac{e^{-1}}{k!}$. Herleitung ueber Inklusion-Exklusion mit $A_l=\{\omega(l)=l\}$.}
+}
+
+\newglossaryentry{komb_ck_bk}{
+  name={Unterschied ``mindestens $k$'' ($C_k$) und ``genau $k$'' ($B_k$)?},
+  description={\textbf{Nicht dasselbe.} $C_k=$ mindestens $k$ Fixpunkte, $B_k=$ genau $k$. Zusammenhang: $\mathbb P(B_k)=\mathbb P(C_k)-\mathbb P(C_{k+1})$.}
+}
+
+\newglossaryentry{komb_derangement}{
+  name={Was ist ein Derangement?},
+  description={\textbf{Fixpunktfreie Permutation.} Anzahl $D_n=n!\displaystyle\sum_{j=0}^n\dfrac{(-1)^j}{j!}$; z.\,B.\ $D_2=1$, $D_3=2$. Brauchbar beim Zählen von ``genau $k$ Fixpunkte'': $\binom{n}{k}\,D_{n-k}$.}
+}
+
+
+% #####################################################################
+% ##  D) DICHTEN (stetige Verteilungen)                              ##
+% #####################################################################
+
+\newglossaryentry{dichte_eigenschaften}{
+  name={Welche Eigenschaften definieren eine Dichte $f$?},
+  description={\textbf{$f\ge 0$ und $\int_{-\infty}^{\infty} f = 1$.} Die Normierungskonstante $c$ bestimmt man aus $\int_{\text{Träger}} c\,g = 1$, also $c=\big(\int g\big)^{-1}$.}
+}
+
+\newglossaryentry{dichte_wahrsch}{
+  name={Wie berechnet man Wahrscheinlichkeiten aus einer Dichte?},
+  description={$\mathbb P((a,b])=\int_a^b f(x)\,dx$, integriert nur ueber den Träger $\{f>0\}$. Fuer stetige Verteilungen ist $\mathbb P(\{a\})=0$; offene vs.\ geschlossene Grenzen sind egal.}
+}
+
+\newglossaryentry{dichte_vf}{
+  name={Verteilungsfunktion aus einer Dichte?},
+  description={$F(x)=\mathbb P(X\le x)=\int_{-\infty}^x f(t)\,dt$, und umgekehrt $f=F'$. Stueckweise integrieren: unterhalb des Trägers $0$, oberhalb $1$.}
+}
+
+\newglossaryentry{dichte_randdichte}{
+  name={Randdichte aus einer gemeinsamen Dichte $f_{X,Y}$?},
+  description={\textbf{Ueber die andere Variable integrieren.} $f_X(x)=\int f_{X,Y}(x,y)\,dy$, $f_Y(y)=\int f_{X,Y}(x,y)\,dx$. Auf die von der jeweiligen Variablen abhängigen Integrationsgrenzen achten (z.\,B.\ bei Träger $\{0\le x\le y\le 1\}$).}
+}
+
+\newglossaryentry{dichte_pxy}{
+  name={Wie berechnet man $\mathbb P(X>Y)$ bei gemeinsamer Dichte?},
+  description={\textbf{Doppelintegral ueber das passende Gebiet.} $\mathbb P(X>Y)=\iint_{\{x>y\}} f_{X,Y}(x,y)\,dx\,dy$; Grenzen aus der Schnittmenge von Träger und $\{x>y\}$ ablesen.}
+}
+
+
+% #####################################################################
+% ##  E) ZUFALLSVARIABLEN & VERTEILUNG                               ##
+% #####################################################################
+
+\newglossaryentry{zv_verteilung}{
+  name={Was ist die Verteilung einer diskreten Zufallsvariablen?},
+  description={\textbf{Die Zuordnung $x\mapsto\mathbb P(X=x)$} (als Tabelle), mit $\sum_x \mathbb P(X=x)=1$. Sie beschreibt, mit welcher Wahrscheinlichkeit $X$ welchen Wert annimmt.}
+}
+
+\newglossaryentry{zv_vf}{
+  name={Was ist die Verteilungsfunktion $F_X$?},
+  description={\textbf{$F_X(t)=\mathbb P(X\le t)$.} Monoton wachsend, rechtsstetig, $F(-\infty)=0$, $F(\infty)=1$. Diskret: Treppenfunktion mit Sprunghöhe $\mathbb P(X=x)$. Stetig: $f=F'$.}
+}
+
+\newglossaryentry{zv_gemeinsam}{
+  name={Was ist die gemeinsame Verteilung von $X$ und $Y$?},
+  description={\textbf{$\mathbb P(X=x,\,Y=y)$} fuer alle Wertepaare (als Matrix). Die Randverteilungen sind die Zeilen- bzw.\ Spaltensummen: $\mathbb P(X=x)=\sum_y \mathbb P(X=x,Y=y)$.}
+}
+
+\newglossaryentry{zv_werte_bild}{
+  name={Wertebereich vs.\ Bildbereich einer Zufallsvariablen?},
+  description={\textbf{Verwechslungsgefahr.} \emph{Wertebereich} = zulässige Argumente; \emph{Bildbereich} $X(\Omega)$ = tatsächlich angenommene Werte. Beispiel: kleinere zweier Zahlen aus $\{1,2,3\}$ hat Bildbereich $\{1,2\}$.}
+}
+
+
+% #####################################################################
+% ##  F) UNABHänGIGKEIT                                             ##
+% #####################################################################
+
+\newglossaryentry{unabh_ereignis}{
+  name={Wann sind zwei Ereignisse $A,B$ unabhängig?},
+  description={\textbf{$\mathbb P(A\cap B)=\mathbb P(A)\,\mathbb P(B)$.} Fuer $A_1,\dots,A_m$ ``gemeinsam unabhängig'' muss die Produktregel fuer \emph{jede} Teilmenge der Indizes gelten.}
+}
+
+\newglossaryentry{unabh_paarweise}{
+  name={Reicht paarweise Unabhängigkeit fuer gemeinsame?},
+  description={\textbf{Nein.} $A,B,C$ können paarweise unabhängig sein, ohne dass $\mathbb P(A\cap B\cap C)=\mathbb P(A)\mathbb P(B)\mathbb P(C)$ gilt. Daher bei drei Ereignissen zusätzlich das Tripel pruefen.}
+}
+
+\newglossaryentry{unabh_zv}{
+  name={Wann sind zwei Zufallsvariablen $X,Y$ unabhängig?},
+  description={\textbf{Wenn die gemeinsame faktorisiert:} $F_{X,Y}(x,y)=F_X(x)F_Y(y)$ bzw.\ $f_{X,Y}(x,y)=f_X(x)f_Y(y)$ fuer alle $x,y$ -- \emph{und} der Träger ein Rechteck (Produktmenge) ist.}
+}
+
+\newglossaryentry{unabh_träger}{
+  name={Warum bedeutet ein ``schräger'' Träger Abhängigkeit?},
+  description={\textbf{Beispiel $\{0\le x\le y\le 1\}$.} Der zulässige Bereich von $X$ hängt vom Wert von $Y$ ab; die Dichte faktorisiert dann \emph{nicht}, auch wenn $f$ wie ein Produkt aussieht $\Rightarrow$ $X,Y$ nicht unabhängig.}
+}
+
+\newglossaryentry{unabh_funktionen}{
+  name={Bleiben Funktionen unabhängiger Zufallsvariablen unabhängig?},
+  description={\textbf{Ja, bei disjunkten Variablengruppen.} Sind $X,Y,Z$ unabhängig, so sind $\max\{X,Y\}$ und $Z$ unabhängig. \emph{Aber} $\max\{X,Y\}$ und $\max\{X,Z\}$ nicht -- sie teilen sich $X$.}
+}
+
+
+% #####################################################################
+% ##  G) BEDINGTE WAHRSCHEINLICHKEIT & BAYES                         ##
+% #####################################################################
+
+\newglossaryentry{bed_definition}{
+  name={Was ist die bedingte Wahrscheinlichkeit $\mathbb P(A\mid B)$?},
+  description={\textbf{$\mathbb P(A\mid B)=\dfrac{\mathbb P(A\cap B)}{\mathbb P(B)}$} fuer $\mathbb P(B)>0$. ``Wahrscheinlichkeit von $A$, wenn $B$ bereits eingetreten ist.''}
+}
+
+\newglossaryentry{bed_totale}{
+  name={Satz von der totalen Wahrscheinlichkeit?},
+  description={\textbf{Zerlegung $B_1,\dots,B_n$ von $\Omega$:} $\mathbb P(A)=\sum_i \mathbb P(A\mid B_i)\,\mathbb P(B_i)$. Nuetzlich, wenn $A$ von einer vorgelagerten Ursache $B_i$ abhängt.}
+}
+
+\newglossaryentry{bed_bayes}{
+  name={Satz von Bayes?},
+  description={\textbf{Dreht die Bedingung um.} $\mathbb P(B_k\mid A)=\dfrac{\mathbb P(A\mid B_k)\,\mathbb P(B_k)}{\sum_i \mathbb P(A\mid B_i)\,\mathbb P(B_i)}$. Aus ``Wirkung gegeben Ursache'' wird ``Ursache gegeben Wirkung''.}
+}
+
+\newglossaryentry{bed_regeln}{
+  name={Rechenregeln fuer bedingte Wahrscheinlichkeiten (gegeben $D$)?},
+  description={$\mathbb P(A^c\mid D)=1-\mathbb P(A\mid D)$;\\
+  $\mathbb P(A\cup B\mid D)=\mathbb P(A\mid D)+\mathbb P(B\mid D)-\mathbb P(A\cap B\mid D)$.\\
+  \textbf{Aber:} $\mathbb P(A\cap B\mid D)$ folgt \emph{nicht} allein aus $\mathbb P(A\mid D)$ und $\mathbb P(B\mid D)$ -- Zusatzinfo nötig.}
+}
+
+\newglossaryentry{bed_falschadd}{
+  name={Gilt $\mathbb P(C\mid A\cup B)=\mathbb P(C\mid A)+\mathbb P(C\mid B)$?},
+  description={\textbf{Im Allgemeinen nein.} Bedingte Wahrscheinlichkeiten addieren sich so nicht; ein Gegenbeispiel findet man leicht mit einem kleinen Laplace-Raum.}
+}
+
+
+% #####################################################################
+% ##  H) ERWARTUNGSWERT & VARIANZ                                    ##
+% #####################################################################
+
+\newglossaryentry{ev_erwartung}{
+  name={Was ist der Erwartungswert und wie berechnet man ihn?},
+  description={\textbf{Der ``Schwerpunkt'' der Verteilung.} Diskret $\mathbb E[X]=\sum_x x\,\mathbb P(X=x)$, stetig $\mathbb E[X]=\int x\,f(x)\,dx$. Bei endlichem Bildbereich existiert er stets.}
+}
+
+\newglossaryentry{ev_varianz}{
+  name={Was ist die Varianz und wie berechnet man sie?},
+  description={\textbf{Mittlere quadratische Abweichung.} $\mathrm{Var}(X)=\mathbb E[(X-\mathbb E X)^2]=\mathbb E[X^2]-\mathbb E[X]^2\ge 0$. Praktisch fast immer ueber $\mathbb E[X^2]-\mathbb E[X]^2$.}
+}
+
+\newglossaryentry{ev_linear}{
+  name={$\mathbb E$ und $\mathrm{Var}$ unter linearer Transformation $aX+b$?},
+  description={$\mathbb E[aX+b]=a\,\mathbb E[X]+b$ \quad und\quad $\mathrm{Var}(aX+b)=a^2\,\mathrm{Var}(X)$. \textbf{Merke:} $b$ fällt in der Varianz weg, $a$ wird quadriert (z.\,B.\ $Y=-2X+4$: $\mathrm{Var}(Y)=4\,\mathrm{Var}(X)$).}
+}
+
+\newglossaryentry{ev_summe}{
+  name={$\mathbb E$ und $\mathrm{Var}$ einer Summe $X+Y$?},
+  description={$\mathbb E[X+Y]=\mathbb E X+\mathbb E Y$ (\emph{immer}, ohne Voraussetzung). Aber $\mathrm{Var}(X+Y)=\mathrm{Var}X+\mathrm{Var}Y$ \textbf{nur, wenn unkorreliert/unabhängig}, sonst $+\,2\,\mathrm{Cov}(X,Y)$.}
+}
+
+\newglossaryentry{ev_ztrafo}{
+  name={Erwartungswert von $Z=2X+Y$ aus gemeinsamer Verteilung?},
+  description={\textbf{Linearität genuegt} (keine Unabhängigkeit nötig): $\mathbb E[Z]=2\,\mathbb E[X]+\mathbb E[Y]$. Fuer $\mathrm{Var}(Z)$ dagegen die Kovarianz beachten. $\mathbb E[X],\mathbb E[Y]$ aus den Randverteilungen.}
+}
+
+
+% #####################################################################
+% ##  I) VERTEILUNGEN (Steckbriefe)                                  ##
+% #####################################################################
+
+\newglossaryentry{vt_bernoulli}{
+  name={Bernoulliverteilung $\mathrm{Ber}(p)$?},
+  description={Einzelner Ja/Nein-Versuch: $\mathbb P(1)=p$, $\mathbb P(0)=1-p$. $\mathbb E[X]=p$, $\mathrm{Var}(X)=p(1-p)$. Baustein der Binomialverteilung.}
+}
+
+\newglossaryentry{vt_binomial}{
+  name={Binomialverteilung $\mathrm{Bin}(n,p)$?},
+  description={Anzahl Erfolge bei $n$ unabhängigen Versuchen: $\mathbb P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$. $\mathbb E[X]=np$, $\mathrm{Var}(X)=np(1-p)$.}
+}
+
+\newglossaryentry{vt_geometrisch}{
+  name={Geometrische Verteilung $\mathrm{Geom}(p)$?},
+  description={Nummer des ersten Erfolgs (Zählung ab $1$): $\mathbb P(X=k)=(1-p)^{k-1}p$. $\mathbb E[X]=\dfrac1p$, $\mathrm{Var}(X)=\dfrac{1-p}{p^2}$.}
+}
+
+\newglossaryentry{vt_poisson}{
+  name={Poissonverteilung $\mathrm{Poi}(\lambda)$?},
+  description={Seltene Ereignisse: $\mathbb P(X=k)=e^{-\lambda}\dfrac{\lambda^k}{k!}$. $\mathbb E[X]=\mathrm{Var}(X)=\lambda$. Approximiert $\mathrm{Bin}(n,p)$ mit $\lambda=np$ bei grossem $n$, kleinem $p$.}
+}
+
+\newglossaryentry{vt_gleich_diskret}{
+  name={Diskrete Gleichverteilung auf $n$ Werten?},
+  description={Jeder Wert gleich wahrscheinlich: $\mathbb P(X=x_i)=\frac1n$. Beispiel fairer Wuerfel. $\mathbb E[X]=$ Mittel der Werte.}
+}
+
+\newglossaryentry{vt_gleich_stetig}{
+  name={Stetige Gleichverteilung auf $[a,b]$?},
+  description={$f=\dfrac{1}{b-a}\mathbf 1_{[a,b]}$. $\mathbb E[X]=\dfrac{a+b}{2}$, $\mathrm{Var}(X)=\dfrac{(b-a)^2}{12}$. Modell fuer ``rein zufällig aus $[a,b]$''.}
+}
+
+\newglossaryentry{vt_normal}{
+  name={Normalverteilung $\mathcal N(\mu,\sigma^2)$?},
+  description={$f(x)=\dfrac{1}{\sqrt{2\pi}\,\sigma}e^{-(x-\mu)^2/2\sigma^2}$. $\mathbb E[X]=\mu$, $\mathrm{Var}(X)=\sigma^2$. Grenzverteilung in den Grenzwertsätzen; Standardnormal $\Phi$ tabelliert.}
+}
+
+
+% #####################################################################
+% ##  J) GRENZWERTSätzE & APPROXIMATIONEN                           ##
+% #####################################################################
+
+\newglossaryentry{gw_poissonapprox}{
+  name={Poisson-Approximation der Binomialverteilung?},
+  description={\textbf{$n$ gross, $p$ klein.} $\mathrm{Bin}(n,p)\approx\mathrm{Poi}(\lambda)$ mit $\lambda=np$: $\mathbb P(X=k)\approx e^{-\lambda}\dfrac{\lambda^k}{k!}$. Fuer seltene Ereignisse (Defekte, Druckfehler).}
+}
+
+\newglossaryentry{gw_dml}{
+  name={Satz von de Moivre--Laplace (Normalapproximation)?},
+  description={Fuer $S_n\sim\mathrm{Bin}(n,p)$, $\mu=np$, $\sigma=\sqrt{np(1-p)}$:\\
+  $\mathbb P(a\le S_n\le b)\approx\Phi\!\big(\frac{b+\frac12-\mu}{\sigma}\big)-\Phi\!\big(\frac{a-\frac12-\mu}{\sigma}\big)$. \textbf{Stetigkeitskorrektur $\pm\frac12$ nicht vergessen.}}
+}
+
+\newglossaryentry{gw_tscheby}{
+  name={Tschebyscheffsche Ungleichung?},
+  description={$\mathbb P(|X-\mathbb E X|\ge\varepsilon)\le\dfrac{\mathrm{Var}(X)}{\varepsilon^2}$, und $\mathbb P(X\ge k\,\mathbb E X)\le\dfrac{\mathrm{Var}(X)}{(k-1)^2\mathbb E[X]^2}$. Liefert nur eine (meist grobe) obere Schranke ohne Verteilungskenntnis.}
+}
+
+\newglossaryentry{gw_ggz}{
+  name={Schwaches Gesetz der grossen Zahlen (per Tschebyscheff)?},
+  description={\textbf{Das Stichprobenmittel konzentriert sich.} Fuer i.i.d.\ $X_i$ mit endlicher Varianz gilt $\mathbb P(|\bar X_n-\mu|\ge\varepsilon)\le\frac{\mathrm{Var}(X_1)}{n\varepsilon^2}\to 0$. Damit z.\,B.\ $b_n\to 0$ und Monotonie $b_{200}<b_{20}$.}
+}
+
+
+% #####################################################################
+% ##  K) STATISTIK: SCHätzER                                        ##
+% #####################################################################
+
+\newglossaryentry{st_erwtreu}{
+  name={Was ist ein erwartungstreuer Schätzer?},
+  description={\textbf{Im Mittel richtig.} $t$ ist erwartungstreu fuer $\theta$, falls $\mathbb E_\theta[t(X)]=\theta$ fuer alle $\theta$. Das Stichprobenmittel $\bar X=\frac1n\sum X_i$ ist erwartungstreu fuer $\mathbb E[X_1]$.}
+}
+
+\newglossaryentry{st_risiko}{
+  name={Was ist das Risiko (mittlerer quadratischer Fehler) eines Schätzers?},
+  description={$R(t)=\mathbb E[(t-\theta)^2]=\mathrm{Var}(t)+\mathrm{Bias}(t)^2$. Bei Erwartungstreue ist $\mathrm{Bias}=0$, also $R=\mathrm{Var}(t)$.}
+}
+
+\newglossaryentry{st_risiko_mittel}{
+  name={Risiko und Konsistenz des Stichprobenmittels $\bar X$?},
+  description={$R(\bar X)=\mathrm{Var}(\bar X)=\dfrac{\mathrm{Var}(X_1)}{n}\;\xrightarrow{n\to\infty}\;0$. Nutzt Unabhängigkeit (Varianz der Summe = Summe der Varianzen) $\Rightarrow$ der Schätzer ist konsistent.}
+}
+
+
+% #####################################################################
+% ##  L) DESKRIPTIVE STATISTIK                                       ##
+% #####################################################################
+
+\newglossaryentry{desk_lage}{
+  name={Lagemasse: Mittel, Median, Modus?},
+  description={\textbf{Arithm.\ Mittel} $\bar x=\frac1n\sum x_i$.\\
+  \textbf{Median} = mittlerer Wert der \emph{sortierten} Daten (bei geradem $n$ das Mittel der beiden mittleren).\\
+  \textbf{Modus} = häufigster Wert.}
+}
+
+\newglossaryentry{desk_streuung}{
+  name={Streuungsmasse: Spannweite, mittlere abs.\ Abweichung, Varianz, SD?},
+  description={\textbf{Spannweite} $=\max-\min$.\\
+  \textbf{Mittlere abs.\ Abweichung vom Median} $=\frac1n\sum|x_i-\tilde x|$.\\
+  \textbf{Varianz} $s^2=\frac1n\sum(x_i-\bar x)^2$, \textbf{Standardabweichung} $s=\sqrt{s^2}$. (Konvention $\frac1n$ vs.\ $\frac1{n-1}$ pruefen.)}
+}
+
+\newglossaryentry{desk_verschiebung}{
+  name={Wie wirkt eine additive Konstante $c$ auf Kennzahlen?},
+  description={\textbf{Lagemasse verschieben sich, Streuungsmasse bleiben.}
+  $\overline{x+c}=\bar x+c$, $\ \widetilde{x+c}=\tilde x+c$,\\
+  aber $s^2_{x+c}=s^2_x$ (Varianz, SD und Spannweite unverändert).}
+}
+
+
+% #####################################################################
+% ##  M) KONFIDENZINTERVALLE                                         ##
+% #####################################################################
+
+\newglossaryentry{ki_begriff}{
+  name={Was ist ein Konfidenzintervall zum Niveau $1-\alpha$?},
+  description={\textbf{Ein \emph{zufälliges} Intervall $J_n$}, das den festen (unbekannten) Parameter $p$ mit Wahrscheinlichkeit $\ge 1-\alpha$ ueberdeckt: $\mathbb P_p(p\in J_n)\ge 1-\alpha$. Der Parameter ist fix, das Intervall schwankt mit der Stichprobe.}
+}
+
+\newglossaryentry{ki_anteil}{
+  name={Konfidenzintervall fuer einen Anteil $p$ (Wald)?},
+  description={$\hat p=\frac{S_n}{n}$, Niveau $1-\alpha$: $J_n=\hat p\pm z_{1-\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$. Beispiel $z_{0{,}975}\approx 1{,}96$. Achtung: aus dem Niveau erst $\alpha$, dann das Quantil $z_{1-\alpha/2}$ bestimmen.}
+}
+
+\newglossaryentry{ki_länge}{
+  name={Verdoppelt ein höheres Niveau die Intervalllänge?},
+  description={\textbf{Nein.} Die Länge wächst mit dem Quantil $z_{1-\alpha/2}$, und das ist \emph{nichtlinear} im Niveau. Ein Intervall zu $1-\alpha/2$ ist \emph{nicht} doppelt so lang wie eines zu $1-\alpha$.}
+}
+
+
+% #####################################################################
+% ##  N) HYPOTHESENTESTS                                             ##
+% #####################################################################
+
+\newglossaryentry{ht_ablauf}{
+  name={Korrekte Reihenfolge der Schritte eines Hypothesentests?},
+  description={\textbf{(1)} Hypothese \& Alternative $\to$ \textbf{(2)} Teststatistik $\to$ \textbf{(3)} Signifikanzniveau $\to$ \textbf{(4)} Entscheidungsregel / Verwerfungsbereich $\to$ \textbf{(5)} Stichprobe auswerten $\to$ \textbf{(6)} Schlussfolgerung.}
+}
+
+\newglossaryentry{ht_anteilstest}{
+  name={Einseitiger Anteilstest -- Teststatistik und Regel?},
+  description={$H_0:p=p_0$ gegen $H_1:p<p_0$. Unter $H_0$: $Z=\dfrac{S_n-np_0}{\sqrt{np_0(1-p_0)}}\approx\mathcal N(0,1)$. Verwerfe, falls $Z<-z_{1-\alpha}$ (bei $\alpha=0{,}05$: $-1{,}645$).}
+}
+
+\newglossaryentry{ht_fehler}{
+  name={Fehler 1.\ Art vs.\ Fehler 2.\ Art?},
+  description={\textbf{1.\ Art:} $H_0$ verwerfen, obwohl $H_0$ wahr ist (Wahrscheinlichkeit $\le\alpha$).\\
+  \textbf{2.\ Art:} $H_0$ beibehalten, obwohl $H_0$ falsch ist.}
+}
+
+\newglossaryentry{ht_pwert}{
+  name={Was ist der $p$-Wert?},
+  description={\textbf{Das kleinste Signifikanzniveau}, bei dem $H_0$ gerade noch verworfen wird. Kleiner $p$-Wert = stärkere Evidenz gegen $H_0$. Verwerfen bei grossem $\alpha$ erzwingt \emph{nicht} das Verwerfen bei kleinerem $\alpha$.}
+}
+
+\newglossaryentry{ht_nichtverwerfen}{
+  name={Heisst ``$H_0$ nicht verworfen'' dasselbe wie ``$H_0$ bewiesen''?},
+  description={\textbf{Nein.} Nicht-Verwerfen bedeutet nur: kein hinreichender Widerspruch bei diesem $\alpha$. Ein Test kann $H_0$ stuetzen, aber nie beweisen.}
+}
+
+
+% #####################################################################
+% ##  O) SZENARIEN  --  ANSATZ GESUCHT!                              ##
+% #####################################################################
+
+\newglossaryentry{sz_ziffer}{
+  name={Szenario -- Ansatz gesucht: Eine Zahl wird rein zufällig aus $[0,1]$ gezogen; wie modelliert man ``erste Nachkommastelle ungerade''?},
+  description={\textbf{Ansatz:} Stetige Gleichverteilung auf $[0,1]$ (Längenmass). Die erste Nachkommastelle ist diskret gleichverteilt auf $\{0,\dots,9\}$; ``ungerade'' sind $5$ von $10$ Ziffern $\Rightarrow$ Wahrscheinlichkeit $\frac12$. Einzelne exakte Zahl hat Wahrscheinlichkeit $0$.}
+}
+
+\newglossaryentry{sz_wartezeit}{
+  name={Szenario -- Ansatz gesucht: Wuerfeln bis zum ersten Nicht-Sechser; wie modelliert man die Gesamtzahl vorgerueckter Felder?},
+  description={\textbf{Ansatz:} Abzählbar unendlicher Wahrscheinlichkeitsraum; die Zahl der Sechser vor dem Stopp ist geometrisch verteilt. Grob- oder Feinmodell möglich; interessierende Grösse (Summe) muss messbar bleiben.}
+}
+
+\newglossaryentry{sz_permutation}{
+  name={Szenario -- Ansatz gesucht: Zufällige Permutation von $4$ Zahlen; wie bestimmt man $\mathbb P(\text{genau 2 Fixpunkte})$?},
+  description={\textbf{Ansatz:} Laplace-Raum ueber den $4!=24$ Permutationen. Zwei Fixpunkte wählen $\binom{4}{2}=6$, Rest fixpunktfrei $D_2=1$ $\Rightarrow$ $\#B_2=6$, also $\mathbb P=\frac{6}{24}=\frac14$.}
+}
+
+\newglossaryentry{sz_muenze}{
+  name={Szenario -- Ansatz gesucht: Faire Muenze $n$-mal; wie berechnet man $\mathbb P(\text{mindestens einmal Kopf})$?},
+  description={\textbf{Ansatz:} Gegenereignis im Laplace-Produktraum $\{K,Z\}^n$: $1-\mathbb P(\text{nie Kopf})=1-\left(\frac12\right)^n$.}
+}
+
+\newglossaryentry{sz_mitzuruck}{
+  name={Szenario -- Ansatz gesucht: Zwei Kugeln \emph{mit} Zuruecklegen aus $\{1,2,3\}$; wie sieht die gemeinsame Verteilung von $X_1,X_2$ aus?},
+  description={\textbf{Ansatz:} Mit Zuruecklegen sind $X_1,X_2$ unabhängig und identisch gleichverteilt $\Rightarrow$ gemeinsame Verteilung ist das Produkt der Randverteilungen, $\mathbb P(X_1=i,X_2=j)=\frac19$.}
+}
+
+\newglossaryentry{sz_wuerfel20}{
+  name={Szenario -- Ansatz gesucht: Ein Wuerfel wird $20$-mal geworfen; wie prueft man Unabhängigkeit von Ereignissen wie ``alle gleich'' oder ``grösste Zahl $>4$''?},
+  description={\textbf{Ansatz:} Laplace-Produktraum $\{1,\dots,6\}^{20}$. Wahrscheinlichkeiten ueber Abzählen/Gegenereignis; Unabhängigkeit ueber $\mathbb P(A\cap B)=\mathbb P(A)\mathbb P(B)$ pruefen, bei drei Ereignissen zusätzlich das Tripel.}
+}
+
+\newglossaryentry{sz_uniform2d}{
+  name={Szenario -- Ansatz gesucht: $(X,Y)$ uniform auf einer Menge $A\subseteq\mathbb R^2$; wie zeigt man, dass $X$ uniform auf $[0,1]$ ist?},
+  description={\textbf{Ansatz:} Randdichte durch Integrieren ueber $y$ bestimmen, $f_X(x)=\int f_{X,Y}(x,y)\,dy$. Fuer Unabhängigkeit von $\{X\in C\},\{Y\in D\}$ Gegenbeispiel-Mengen ueber die Form von $A$ konstruieren.}
+}
+
+\newglossaryentry{sz_dichtec}{
+  name={Szenario -- Ansatz gesucht: Gegeben $f(x)=3cx^2(1-x)$ auf $[0,1]$; wie bestimmt man $c$ und danach Wahrscheinlichkeiten?},
+  description={\textbf{Ansatz:} Normierung $\int_0^1 f=1$ nach $c$ auflösen. Wahrscheinlichkeiten als Integrale ueber den Träger; $\mathbb P(\{a\})=0$, und Bereiche ausserhalb $[0,1]$ liefern $0$.}
+}
+
+\newglossaryentry{sz_gemeinsamedichte}{
+  name={Szenario -- Ansatz gesucht: Gemeinsame Dichte $f(x,y)=c\,e^{-(x+y/2)}$ auf $\{0\le x\le y\le 1\}$; wie geht man Randdichten, Unabhängigkeit, $\mathbb P(X>Y)$ an?},
+  description={\textbf{Ansatz:} $c$ ueber das Doppelintegral $=1$; Randdichten durch Integrieren ueber die jeweils andere Variable (Grenzen aus dem Dreieck!); Unabhängigkeit scheitert am nicht-rechteckigen Träger; $\mathbb P(X>Y)$ ueber das Gebiet $\{x>y\}\cap$ Träger.}
+}
+
+\newglossaryentry{sz_bayesurne}{
+  name={Szenario -- Ansatz gesucht: Muenze wählt eine von zwei Urnen, dann Ziehen ohne Zuruecklegen; gegeben ``mind.\ eine schwarze Kugel'' -- aus welcher Urne?},
+  description={\textbf{Ansatz:} Totale Wahrscheinlichkeit fuer $\mathbb P(\text{schwarz})$, dann Bayes fuer $\mathbb P(\text{Urne}\mid\text{schwarz})$. ``Ohne Zuruecklegen'' $\Rightarrow$ bedingte Wahrscheinlichkeiten innerhalb einer Urne.}
+}
+
+\newglossaryentry{sz_sternchen}{
+  name={Szenario -- Ansatz gesucht: Urne mit $k$ Kugeln zu je $k$ Sternchen ($k=1,\dots,20$), zwei ziehen ohne Zuruecklegen; wie bestimmt man $\mathbb P(A)$ und $\mathbb P(B_2\mid A)$?},
+  description={\textbf{Ansatz:} $\mathbb P(B_k)=\frac{k}{210}$; bedingte $\mathbb P(A\mid B_k)$ nach dem ersten Zug; $\mathbb P(A)$ ueber totale Wahrscheinlichkeit $\sum_k \mathbb P(A\mid B_k)\mathbb P(B_k)$; $\mathbb P(B_2\mid A)$ ueber Bayes.}
+}
+
+\newglossaryentry{sz_gemeinsametabelle}{
+  name={Szenario -- Ansatz gesucht: Gemeinsame Verteilungstabelle mit Unbekannter $c$ und $Z=2X+Y$; wie bestimmt man $c$, $\mathbb E[Z]$, $\mathbb P(Z>0)$?},
+  description={\textbf{Ansatz:} $c$ aus ``Summe aller Wahrscheinlichkeiten $=1$''. Randverteilungen als Zeilen-/Spaltensummen $\Rightarrow$ $\mathbb E[X],\mathbb E[Y]$, dann $\mathbb E[Z]=2\mathbb E X+\mathbb E Y$. $\mathbb P(Z>0)$ ueber die zutreffenden Tabellenzellen aufsummieren.}
+}
+
+\newglossaryentry{sz_dichteev}{
+  name={Szenario -- Ansatz gesucht: $X$ hat Dichte $f$ auf $[0,1]$; wie berechnet man $\mathbb E[X]$, $\mathrm{Var}(X)$ und die von $-4X-1$?},
+  description={\textbf{Ansatz:} $\mathbb E[X]=\int x f$, $\mathbb E[X^2]=\int x^2 f$, $\mathrm{Var}=\mathbb E[X^2]-\mathbb E[X]^2$. Fuer $-4X-1$ die Regeln $\mathbb E[aX+b]=a\mathbb E X+b$ und $\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$. Existenz wegen beschränktem Träger.}
+}
+
+\newglossaryentry{sz_diskretev}{
+  name={Szenario -- Ansatz gesucht: Diskrete $X$ mit Parameter $p$ in den Wahrscheinlichkeiten; wie bestimmt man zulässige $p$, $\mathbb E[X]$, $\mathrm{Var}(X)$?},
+  description={\textbf{Ansatz:} Zulässige $p$ aus ``alle Wahrscheinlichkeiten $\ge 0$ und Summe $=1$''. Dann $\mathbb E[X]=\sum x\,\mathbb P(X=x)$ und $\mathrm{Var}=\mathbb E[X^2]-\mathbb E[X]^2$; fuer $Y=aX+b$ die linearen Regeln.}
+}
+
+\newglossaryentry{sz_defekt}{
+  name={Szenario -- Ansatz gesucht: Jedes $50.$ Bauteil ist defekt, $300$ werden getestet; wie berechnet man $\mathbb P(\text{genau 3 defekt})$?},
+  description={\textbf{Ansatz:} Poisson-Approximation, da $n=300$ gross und $p=\frac1{50}$ klein: $\lambda=np=6$, $\mathbb P(X=3)\approx e^{-6}\frac{6^3}{3!}$. (Exakt wäre $\mathrm{Bin}(300,\frac1{50})$.)}
+}
+
+\newglossaryentry{sz_druckfehler}{
+  name={Szenario -- Ansatz gesucht: Buch mit Druckfehlern, pro Kapitel unterschiedlich viele; wie bestimmt man $\mathbb P(10\text{ Fehler})$ in einem zufällig gewählten Kapitel?},
+  description={\textbf{Ansatz:} Fehlerzahl je Kapitel $\approx$ Poisson mit kapitelweisem $\lambda$ (Grund- plus eingefuegte Fehler); ueber die zufällige Kapitelwahl mit totaler Wahrscheinlichkeit mitteln.}
+}
+
+\newglossaryentry{sz_ueberbuchung}{
+  name={Szenario -- Ansatz gesucht: $526$ Sitze, $10\%$ No-Show; wie viele Tickets darf man höchstens verkaufen, damit die Ueberbuchung $\le 5\%$ bleibt?},
+  description={\textbf{Ansatz:} Erscheinende $\sim\mathrm{Bin}(n,0{,}9)$. Ungleichung $\mathbb P(\text{Erscheinende}>526)\le 0{,}05$ mit de Moivre--Laplace (Stetigkeitskorrektur) und $z_{0{,}95}\approx 1{,}645$ nach $n$ auflösen, Ergebnis abrunden.}
+}
+
+\newglossaryentry{sz_augensumme}{
+  name={Szenario -- Ansatz gesucht: Wuerfle wiederholt, bis die Augensumme dreier Wuerfel zum ersten Mal $5$ ist; welche Verteilung hat die Wurfnummer?},
+  description={\textbf{Ansatz:} Erst $p=\mathbb P(\text{Summe}=5)$ ueber Abzählen in $\{1,\dots,6\}^3$. Die Wurfnummer $\tau$ ist geometrisch, $\mathbb E[\tau]=\frac1p$, $\mathrm{Var}(\tau)=\frac{1-p}{p^2}$; obere Schranken fuer $\tau\ge k\mathbb E[\tau]$ per Tschebyscheff.}
+}
+
+\newglossaryentry{sz_cafe}{
+  name={Szenario -- Ansatz gesucht: Zwei Personen kommen uniform zwischen 12--13 Uhr und bleiben je 15 min; wie bestimmt man die Treffwahrscheinlichkeit und die erwartete Trefferzahl im Jahr?},
+  description={\textbf{Ansatz:} Treffwahrscheinlichkeit als Flächenanteil $\{|X-Y|\le\frac14\}$ im Einheitsquadrat (geometrische Wahrscheinlichkeit). Ueber $200$ Tage $\mathrm{Bin}(200,p)$: erwartete Zahl $200p$, Bereichswahrscheinlichkeiten via de Moivre--Laplace.}
+}
+
+\newglossaryentry{sz_gummi}{
+  name={Szenario -- Ansatz gesucht: $25\%$ der Bärchen sind rot; wie zeigt man, dass $b_n$ (höchstens $20\%$ rot unter $n$) gegen $0$ geht?},
+  description={\textbf{Ansatz:} Tschebyscheff / schwaches Gesetz grosser Zahlen. $\hat p_n\to 0{,}25$; die Wahrscheinlichkeit, um $\ge 0{,}05$ danebenzuliegen, ist $\le\frac{p(1-p)}{n\cdot 0{,}05^2}\to 0$. Daraus folgt auch $b_{200}<b_{20}$.}
+}
+
+\newglossaryentry{sz_schätzer}{
+  name={Szenario -- Ansatz gesucht: i.i.d.\ Stichprobe $X_1,\dots,X_n$; wie zeigt man Erwartungstreue und berechnet das Risiko des Mittelwertschätzers?},
+  description={\textbf{Ansatz:} $\mathbb E[\bar X]=\mathbb E[X_1]$ (Linearität) $\Rightarrow$ erwartungstreu. Risiko $=\mathrm{Var}(\bar X)=\frac{\mathrm{Var}(X_1)}{n}\to 0$ (Unabhängigkeit). Keine Bernoulli-Annahme nötig.}
+}
+
+\newglossaryentry{sz_deskriptiv}{
+  name={Szenario -- Ansatz gesucht: Punktzahlen einer kleinen Klausur; wie berechnet man Mittel, Median, Modus, Streuung und den Effekt von ``$+3$ Punkte fuer alle''?},
+  description={\textbf{Ansatz:} Deskriptive Kennzahlen (Daten sortieren fuer den Median). Bei $+c$: Mittel und Median $+c$, aber Varianz, SD und Spannweite unverändert.}
+}
+
+\newglossaryentry{sz_ki}{
+  name={Szenario -- Ansatz gesucht: $45$ von $200$ Befragten sind dafuer; wie bestimmt man ein Konfidenzintervall zum Niveau $0{,}975$?},
+  description={\textbf{Ansatz:} Wald-Intervall fuer den Anteil. $\hat p=\frac{45}{200}=0{,}225$; aus dem Niveau $\alpha=0{,}025$, Quantil $z_{1-\alpha/2}$; $J=\hat p\pm z_{1-\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{200}}$.}
+}
+
+\newglossaryentry{sz_test}{
+  name={Szenario -- Ansatz gesucht: Frueher $30\%$ Zustimmung, jetzt $45$ von $200$; ist die Unterstuetzung gesunken (Niveau $5\%$)?},
+  description={\textbf{Ansatz:} Einseitiger Anteilstest. $H_0:p=0{,}30$ gegen $H_1:p<0{,}30$; $Z=\frac{45-60}{\sqrt{200\cdot 0{,}3\cdot 0{,}7}}$; verwerfen, falls $Z<-z_{1-\alpha}=-1{,}645$.}
+}
+
+
+% #####################################################################
+% ##  P) FALLSTRICKE                                                 ##
+% #####################################################################
+
+\newglossaryentry{fall_laplace}{
+  name={Fallstrick: Ist die Augensumme dreier Wuerfel Laplace-verteilt?},
+  description={\textbf{Nein -- nur die Tripel sind es.} Die $216$ Ergebnisse in $\{1,\dots,6\}^3$ sind gleichwahrscheinlich, die Summenwerte aber nicht. Deshalb im Grundraum zählen, nicht auf der Summenebene.}
+}
+
+\newglossaryentry{fall_punkt}{
+  name={Fallstrick: Wahrscheinlichkeit eines einzelnen Punktes bei stetiger Verteilung?},
+  description={\textbf{Immer $0$.} ``Die Zahl ist exakt $\frac17$'' hat Wahrscheinlichkeit $0$; ''höchstens $\frac
+1{100}$ entfernt'' dagegen ist ein Intervall der Länge $\frac{2}{100}$.}
+}
+
+\newglossaryentry{fall_integralgrenzen}{
+  name={Fallstrick: $\mathbb P([1,\infty))$ bei Dichte mit Träger $[0,1]$?},
+  description={\textbf{$=0$.} Nur der Punkt $\{1\}$ liegt im Träger und hat Mass $0$. Integrationsgrenzen stets auf $\{f>0\}$ beschränken.}
+}
+
+\newglossaryentry{fall_varlinear}{
+  name={Fallstrick: Was passiert mit $\mathrm{Var}$ bei $Y=aX+b$?},
+  description={\textbf{$b$ fällt weg, $a$ wird quadriert.} $\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$. Der additive Term hat keinen Einfluss auf die Streuung.}
+}
+
+\newglossaryentry{fall_geomkonvention}{
+  name={Fallstrick: Geometrische Verteilung -- ab $0$ oder ab $1$?},
+  description={\textbf{Auf die Zählung achten.} ``Nummer des Versuchs bis zum 1.\ Erfolg'' $\Rightarrow$ ab $1$, $\mathbb E=\frac1p$. ``Anzahl Fehlversuche davor'' $\Rightarrow$ ab $0$, $\mathbb E=\frac{1-p}{p}$.}
+}
+
+\newglossaryentry{fall_stetigkorr}{
+  name={Fallstrick: Häufigster Fehler bei de Moivre--Laplace?},
+  description={\textbf{Stetigkeitskorrektur vergessen.} Diskret $\to$ stetig: bei ``$\le$'' die $+\frac12$, bei ``$\ge$'' die $-\frac12$ addieren, sonst systematischer Fehler.}
+}
+
+\newglossaryentry{fall_einseitig}{
+  name={Fallstrick: Ein- vs.\ zweiseitiger Test -- welcher kritische Wert?},
+  description={\textbf{Richtung an der Alternative ausrichten.} ``gesunken/gestiegen'' $\Rightarrow$ einseitig, $z_{1-\alpha}$; ``verändert'' $\Rightarrow$ zweiseitig, $z_{1-\alpha/2}$. Verwechslung verzerrt das Fehlerniveau.}
+}
+
+\newglossaryentry{fall_kifest}{
+  name={Fallstrick: Was ist beim Konfidenzintervall zufällig?},
+  description={\textbf{Der Parameter ist fest, das Intervall zufällig.} $p$ ist unbekannt aber fix; $J_n$ schwankt mit der Stichprobe. Aussage: $\mathbb P_p(p\in J_n)\ge 1-\alpha$.}
+}
+
+\newglossaryentry{fall_h0}{
+  name={Fallstrick: Bedeutet ``$H_0$ nicht verworfen'' Beweis von $H_0$?},
+  description={\textbf{Nein.} Es heisst nur: kein hinreichender Widerspruch bei diesem $\alpha$. Ein Test beweist $H_0$ nie.}
+}
+
+\newglossaryentry{fall_maxgeteilt}{
+  name={Fallstrick: Sind $\max\{X,Y\}$ und $\max\{X,Z\}$ unabhängig?},
+  description={\textbf{Nein}, obwohl $X,Y,Z$ unabhängig sind -- beide enthalten dasselbe $X$. Geteilte Variablen zerstören Unabhängigkeit; $\max\{X,Y\}$ und $Z$ dagegen sind unabhängig.}
+}
+
+\newglossaryentry{fall_ohnezuruck}{
+  name={Fallstrick: Was ändert sich beim Ziehen ohne Zuruecklegen?},
+  description={\textbf{Die Ziehungen werden abhängig.} $\mathbb P(A\mid B_k)$ hängt vom ersten Zug ab; die gemeinsame Verteilung faktorisiert nicht. Bedingte Wahrscheinlichkeit / Bayes statt Produkten.}
+}
+
+\newglossaryentry{fall_bedaddieren}{
+  name={Fallstrick: Darf man bedingte Wahrscheinlichkeiten einfach addieren?},
+  description={\textbf{Nein.} $\mathbb P(C\mid A\cup B)\ne\mathbb P(C\mid A)+\mathbb P(C\mid B)$ im Allgemeinen, und $\mathbb P(A\cap B\mid D)$ folgt nicht allein aus $\mathbb P(A\mid D)$ und $\mathbb P(B\mid D)$.}
+}
+
+
+
+% #####################################################################
+% ##  NEUE VERTEILUNGEN & KONZEPTE                                   ##
+% #####################################################################
+
+\newglossaryentry{vt_exponential}{
+name={Exponentialverteilung $\mathrm{Exp}(\lambda)$?},
+description={Kontinuierliche Wartezeit: $f(x)=\lambda e^{-\lambda x}$ ($x\ge 0$), $F(x)=1-e^{-\lambda x}$, $\mathbb P(X>t)=e^{-\lambda t}$. $\mathbb E[X]=\tfrac1\lambda$, $\mathrm{Var}(X)=\tfrac1{\lambda^2}$.}
+}
+
+\newglossaryentry{exp_gedaechtnis}{
+name={Gedaechtnislosigkeit der Exponentialverteilung?},
+description={\textbf{$\mathbb P(X>t+s\mid X>s)=\mathbb P(X>t)$.} Bereits verstrichene Wartezeit ,,zaehlt nicht``. Die Exponentialverteilung ist die einzige stetige Verteilung mit dieser Eigenschaft.}
+}
+
+\newglossaryentry{faltung_formel}{
+name={Faltungsformel: Dichte einer Summe unabhaengiger Variablen?},
+description={\textbf{$f_{X+Y}(z)=\int_{-\infty}^{\infty} f_X(x)\,f_Y(z-x)\,dx$} (setzt Unabhaengigkeit voraus). Fuer $\mathbb P(X+Y\le c)$ ueber das Gebiet $\{x+y\le c\}\cap$ Traeger integrieren.}
+}
+
+\newglossaryentry{summe_exp}{
+name={Summe von $n$ unabhaengigen $\mathrm{Exp}(\lambda)$?},
+description={\textbf{Erlang-/Gamma-verteilt:} $f_{S_n}(z)=\dfrac{\lambda^n z^{n-1}}{(n-1)!}e^{-\lambda z}$ ($z\ge 0$). Fuer $n=2$: $f(z)=\lambda^2 z\,e^{-\lambda z}$.}
+}
+
+\newglossaryentry{rechenregeln_w}{
+name={Rechenregeln fuer Wahrscheinlichkeiten (ohne konkreten Raum)?},
+description={$\mathbb P(A^c)=1-\mathbb P(A)$; Monotonie $A\subseteq B\Rightarrow\mathbb P(A)\le\mathbb P(B)$; $\mathbb P(A\cup B)=\mathbb P(A)+\mathbb P(B)-\mathbb P(A\cap B)$; Subadditivitaet $\mathbb P(A\cup B)\le\mathbb P(A)+\mathbb P(B)$.}
+}
+
+\newglossaryentry{bonferroni}{
+name={Fréchet-/Bonferroni-Schranken fuer $\mathbb P(A\cap B)$?},
+description={\textbf{$\max\{0,\mathbb P(A)+\mathbb P(B)-1\}\le\mathbb P(A\cap B)\le\min\{\mathbb P(A),\mathbb P(B)\}$.} Damit z.\,B.\ $\mathbb P(A\setminus B)\le 1-\mathbb P(B)$. Nuetzlich, um Schranken ohne Modell zu finden.}
+}
+
+\newglossaryentry{stetigkeit_mass}{
+name={Stetigkeit von Wahrscheinlichkeitsmassen?},
+description={\textbf{Fuer monotone Mengenfolgen.} $A_n\uparrow A\Rightarrow\mathbb P(A_n)\to\mathbb P(A)$ (von unten); $A_n\downarrow A\Rightarrow\mathbb P(A_n)\to\mathbb P(A)$ (von oben). Beispiel $[1,2-\tfrac1n]\uparrow[1,2)$.}
+}
+
+\newglossaryentry{inkl_exkl}{
+name={Ein-/Ausschlussprinzip fuer drei Ereignisse?},
+description={$\mathbb P(A\cup B\cup C)=\mathbb P(A)+\mathbb P(B)+\mathbb P(C)-\mathbb P(A\cap B)-\mathbb P(A\cap C)-\mathbb P(B\cap C)+\mathbb P(A\cap B\cap C)$. Bei Teilbarkeit: $\#\{k\le n: d\mid k\}=\lfloor n/d\rfloor$, Schnitt via $\mathrm{kgV}$.}
+}
+
+\newglossaryentry{maxmin_vf}{
+name={Verteilungsfunktion von $\max$ und $\min$ unabhaengiger Variablen?},
+description={\textbf{$\mathbb P(\max_i X_i\le x)=\prod_i F_i(x)$}, \textbf{$\mathbb P(\min_i X_i\le x)=1-\prod_i(1-F_i(x))$}. Das Minimum von $n$ unabhaengigen $\mathrm{Exp}(\lambda)$ ist $\mathrm{Exp}(n\lambda)$.}
+}
+
+\newglossaryentry{min_exp}{
+name={Warum ist $\min$ unabhaengiger Exponentialvariablen wieder exponentiell?},
+description={\textbf{Ueber das Gegenereignis.} $\mathbb P(\min_i T_i>t)=\prod_i \mathbb P(T_i>t)=\prod_i e^{-\lambda_i t}=e^{-(\sum\lambda_i)t}$, also $\min_i T_i\sim\mathrm{Exp}(\sum_i\lambda_i)$.}
+}
+
+\newglossaryentry{indikator_linear}{
+name={Indikatorvariablen und Linearitaet des Erwartungswerts?},
+description={\textbf{$\mathbb E[\mathbf 1_E]=\mathbb P(E)$.} Zaehlgroesse $S=\sum_i \mathbf 1_{E_i}$ $\Rightarrow$ $\mathbb E[S]=\sum_i \mathbb P(E_i)$ -- gilt \emph{immer}, auch bei abhaengigen $E_i$. Beispiel: erwartete Fixpunktzahl $=N\cdot\tfrac1N=1$.}
+}
+
+\newglossaryentry{gemischte_vf}{
+name={Was ist eine gemischte Verteilung (Spruenge und Dichte)?},
+description={\textbf{Verteilungsfunktion mit Spruengen \emph{und} stetig steigenden Teilen.} Sprunghoehe an $x$ $=\mathbb P(X=x)>0$; auf stetigen Stuecken $f_X=F_X'$. $\mathbb P(a<X\le b)=F(b)-F(a)$ am Graphen ablesen.}
+}
+
+
+% #####################################################################
+% ##  STATISTIK: NEUE KARTEN                                         ##
+% #####################################################################
+
+\newglossaryentry{desk_quantile}{
+name={Quantile, Quartile, Quartilabstand?},
+description={\textbf{$p$-Quantil $x_p$}: kleinster Wert, unter dem Anteil $\ge p$ der sortierten Daten liegt. Quartile $Q_1=x_{0.25}$, $Q_2=$ Median, $Q_3=x_{0.75}$. \textbf{Quartilabstand} (IQR) $=Q_3-Q_1$; $p$-Quantilabstand $=x_{1-p}-x_p$.}
+}
+
+\newglossaryentry{desk_robust}{
+name={Robustheit: Median/Quartile vs.\ Mittel/Varianz?},
+description={\textbf{Median und Quartile sind robust.} Werden wenige Werte extrem veraendert, bleibt der Median fast gleich, das arithmetische Mittel kann stark ausschlagen. Fuer ausreisserbehaftete Daten robuste Masse bevorzugen.}
+}
+
+\newglossaryentry{streumass_eigenschaften}{
+name={Welche Eigenschaften machen $s$ zu einem Streumass?},
+description={\textbf{Vier Eigenschaften.} $s\ge 0$; translationsinvariant $s(x+c)=s(x)$; homogen $s(a\,x)=|a|\,s(x)$; $s=0$ genau bei konstanten Daten. So zeigt man, dass Spannweite, IQR, Medianabweichung usw.\ Streumasse sind.}
+}
+
+\newglossaryentry{bias}{
+name={Was ist der Bias eines Schaetzers?},
+description={\textbf{$\mathrm{Bias}(t)=\mathbb E_\theta[t(X)]-\theta$.} Null bei Erwartungstreue. Zusammen mit der Varianz: Risiko $R=\mathrm{Var}(t)+\mathrm{Bias}(t)^2$.}
+}
+
+\newglossaryentry{schaetzer_vergleich}{
+name={Wie vergleicht man zwei Schaetzer?},
+description={\textbf{Ueber das Risiko.} $t_1$ ist mindestens so gut wie $t_2$, falls $R(\theta,t_1)\le R(\theta,t_2)$ fuer alle $\theta$. Erwartungstreu $\ne$ risikominimal -- ein leicht verzerrter Schaetzer kann kleineres Risiko haben.}
+}
+
+\newglossaryentry{gausstest}{
+name={Gauss-Test (Erwartungswert, Varianz bekannt)?},
+description={Normalverteilte $X_i$, $\sigma^2$ bekannt, $H_0:\mu=\mu_0$: $Z=\dfrac{\bar X-\mu_0}{\sigma/\sqrt n}\sim\mathcal N(0,1)$. Zweiseitig verwerfen bei $|Z|>z_{1-\alpha/2}$, einseitig bei $Z<-z_{1-\alpha}$ bzw.\ $Z>z_{1-\alpha}$.}
+}
+
+\newglossaryentry{ttest}{
+name={$t$-Test / KI bei unbekannter Varianz?},
+description={$S^2=\tfrac1{n-1}\sum(X_i-\bar X)^2$, $T=\dfrac{\bar X-\mu_0}{S/\sqrt n}\sim t_{n-1}$ unter $H_0$. Konfidenzintervall $\bar X\pm t_{n-1,1-\alpha/2}\,\tfrac{S}{\sqrt n}$. Quantile aus der $t_{n-1}$-Verteilung.}
+}
+
+\newglossaryentry{gepaarter_test}{
+name={Gepaarter Test (verbundene Stichproben)?},
+description={\textbf{Auf den Differenzen testen.} Fuer Paare $(X_i,Y_i)$ bilde $D_i=X_i-Y_i$ und teste $H_0:\mu_D=0$ mit einem Ein-Stichproben-$t$-Test. ,,staerker/hoeher`` $\Rightarrow$ einseitig $H_1:\mu_D>0$.}
+}
+
+\newglossaryentry{zwei_anteile}{
+name={Zwei-Stichproben-Anteilstest?},
+description={Unter $H_0:p_1=p_2$ gepoolt $\hat p=\tfrac{X_1+X_2}{n_1+n_2}$ und $Z=\dfrac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p)\left(\tfrac1{n_1}+\tfrac1{n_2}\right)}}\approx\mathcal N(0,1)$. Richtung der Alternative beachten.}
+}
+
+\newglossaryentry{ki_schnitt}{
+name={Ergibt der Schnitt zweier Konfidenzintervalle wieder eines?},
+description={\textbf{Vorsicht mit den Niveaus.} Schneidet man zwei Intervalle zum Niveau $1-\alpha/2$, so ueberdeckt der Schnitt mit Wahrscheinlichkeit $\ge 1-\alpha$ (Bonferroni: $\mathbb P(\text{beide})\ge 1-2\cdot\tfrac\alpha2$). Also ein KI zum Niveau $1-\alpha$.}
+}
+
+
+% #####################################################################
+% ##  SZENARIEN  --  ANSATZ GESUCHT!  (Hausaufgaben)                 ##
+% #####################################################################
+
+\newglossaryentry{sz_bus}{
+name={Szenario -- Ansatz gesucht: Wartezeit $X\sim\mathrm{Exp}(\tfrac15)$ und Fahrzeit $Y\sim\mathrm{Exp}(\tfrac15)$ unabhaengig; wie bestimmt man $\mathbb P(X>10)$ und $\mathbb P(X+Y\le 20)$?},
+description={\textbf{Ansatz:} Exponentialverteilung, $\mathbb P(X>10)=e^{-10/5}=e^{-2}$. Fuer die Summe Faltung: $X+Y$ ist Erlang$(2,\tfrac15)$; $\mathbb P(X+Y\le 20)$ ueber die Erlang-Verteilungsfunktion bzw.\ das Doppelintegral im Dreieck $\{x+y\le 20\}$.}
+}
+
+\newglossaryentry{sz_system}{
+name={Szenario -- Ansatz gesucht: System funktioniert, solange $K_1,K_2$ \emph{oder} $K_3,K_4$ laufen (Lebensdauern $\mathrm{Exp}(\lambda)$); wie berechnet man $\mathbb P(X\le t)$?},
+description={\textbf{Ansatz:} $X=\max\{\min(T_1,T_2),\min(T_3,T_4)\}$. Jedes $\min$ ist $\mathrm{Exp}(2\lambda)$; die beiden Minima sind unabhaengig (disjunkte Gruppen); dann $\mathbb P(X\le t)=\big(1-e^{-2\lambda t}\big)^2$ ueber die $\max$-Formel.}
+}
+
+\newglossaryentry{sz_muenzen3}{
+name={Szenario -- Ansatz gesucht: Drei Muenzen (zwei fair, eine mit $p\ne\tfrac12$), zufaellig gewaehlt und geworfen; wie bestimmt man $\mathbb P(\text{Muenze fair}\mid\text{Kopf})$?},
+description={\textbf{Ansatz:} Totale Wahrscheinlichkeit fuer $\mathbb P(\text{Kopf})$ (Zerlegung nach gewaehlter Muenze), dann Bayes fuer $\mathbb P(\text{fair}\mid\text{Kopf})$.}
+}
+
+\newglossaryentry{sz_geschenke}{
+name={Szenario -- Ansatz gesucht: $N$ Freundinnen verteilen Geschenke zufaellig; wie bestimmt man $\mathbb P(\text{mind.\ eine bekommt ihr eigenes})$ und die erwartete Anzahl?},
+description={\textbf{Ansatz:} Permutationen/Fixpunkte. $\mathbb P(\text{mind.\ ein Fixpunkt})=1-\tfrac{D_N}{N!}\to 1-e^{-1}$. Erwartete Anzahl ueber Indikatoren: $\mathbb E[S_N]=\sum_i \mathbb P(X_i=1)=N\cdot\tfrac1N=1$.}
+}
+
+\newglossaryentry{sz_multiplechoice}{
+name={Szenario -- Ansatz gesucht: $4K$ Ja/Nein-Fragen, jede unabhaengig mit $60\%$ richtig; wie bestimmt man $\mathbb P(\text{mind.\ }2K\text{ richtig})$?},
+description={\textbf{Ansatz:} Binomialverteilung $S\sim\mathrm{Bin}(4K,0{,}6)$; $\mathbb P(S\ge 2K)=\sum_{j\ge 2K}\binom{4K}{j}0{,}6^j0{,}4^{4K-j}$. Fuer grosse $K$ ggf.\ Normalapproximation.}
+}
+
+\newglossaryentry{sz_glaeser}{
+name={Szenario -- Ansatz gesucht: Eins von $1000$ Glaesern ist B-Ware; fuer $k$ Glaeser $\mathbb P(\text{mind.\ eins B-Ware})$ -- welche Naeherung?},
+description={\textbf{Ansatz:} Gegenereignis $1-\mathbb P(\text{keins})$. Poisson-Approximation ($\lambda=k/1000$, klein) meist besser als Normal, da $p$ sehr klein ist; exakt via Binomial vergleichen.}
+}
+
+\newglossaryentry{sz_zucker}{
+name={Szenario -- Ansatz gesucht: Fuellgewicht $\sim\mathcal N(\mu,\sigma^2)$ mit $\sigma$ bekannt; wie gross muss $\mu$ sein, damit mit $\ge 95\%$ ein Mindestgewicht erreicht wird?},
+description={\textbf{Ansatz:} Normalverteilung, Quantil. $\mathbb P(Z\ge g)=\Phi\!\big(\tfrac{\mu-g}{\sigma}\big)\ge 0{,}95$ nach $\mu$ aufloesen: $\mu\ge g+z_{0{,}95}\,\sigma$ mit $z_{0{,}95}\approx 1{,}645$.}
+}
+
+\newglossaryentry{sz_zug}{
+name={Szenario -- Ansatz gesucht: $70$ Fahrgaeste wuerfeln bis zur ersten $6$; wie bestimmt man $\mathbb P(5\le \bar Z\le 8)$ fuer die mittlere Wurfzahl?},
+description={\textbf{Ansatz:} Jedes $X_i\sim\mathrm{Geom}(\tfrac16)$ mit $\mathbb E=6$, $\mathrm{Var}=30$. Fuer $\bar Z=\tfrac1{70}\sum X_i$ zentraler Grenzwertsatz: standardisieren mit $\mathbb E=6$, $\mathrm{Var}=\tfrac{30}{70}$ und mit $\Phi$ approximieren.}
+}
+
+\newglossaryentry{sz_gummi162}{
+name={Szenario -- Ansatz gesucht: Tuete mit $162$ Baerchen, $\tfrac13$ rot; wie bestimmt man $\mathbb P(40\le S\le 69)$?},
+description={\textbf{Ansatz:} $S\sim\mathrm{Bin}(162,\tfrac13)$, $\mu=54$, $\sigma=\sqrt{162\cdot\tfrac13\cdot\tfrac23}=6$. de Moivre--Laplace \emph{mit} Stetigkeitskorrektur: $\Phi\!\big(\tfrac{69+0{,}5-54}{6}\big)-\Phi\!\big(\tfrac{40-0{,}5-54}{6}\big)$.}
+}
+
+\newglossaryentry{sz_pasch}{
+name={Szenario -- Ansatz gesucht: Pasch-Spiel (Auszahlung = Augensumme bei Pasch); wie bestimmt man den fairen Einsatz und die Rundenzahl fuer ,,kein Verlust mit $90\%$``?},
+description={\textbf{Ansatz:} Fairer Einsatz $=\mathbb E[\text{Auszahlung}]$. Fuer die Rundenzahl Tschebyscheff-\emph{untere} Schranke: $\mathbb P(\text{kein Verlust})\ge 1-\tfrac{\mathrm{Var}}{n\,\varepsilon^2}$ nach $n$ aufloesen.}
+}
+
+\newglossaryentry{sz_gluecksrad_haeuf}{
+name={Szenario -- Ansatz gesucht: Gluecksrad mit vier Feldern, $N$-mal gedreht; wie gross muss $N$ sein, damit die relative Haeufigkeit der ,,3`` mit $\ge\tfrac{24}{25}$ nahe $\tfrac14$ liegt?},
+description={\textbf{Ansatz:} Zwei Wege. Tschebyscheff: $\mathbb P(|\hat p-\tfrac14|\ge\varepsilon)\le\tfrac{p(1-p)}{N\varepsilon^2}$ nach $N$ aufloesen. Genauer: de Moivre--Laplace mit $\Phi$. Der CLT-Weg liefert ein kleineres noetiges $N$.}
+}
+
+\newglossaryentry{sz_mehl}{
+name={Szenario -- Ansatz gesucht: $10$ Mehlpaeckchen, Fuellgewicht normalverteilt mit \emph{bekannter} Varianz; wie testet man ,,mittlere Fuellmenge $=1$\,kg``?},
+description={\textbf{Ansatz:} Gauss-Test (Varianz bekannt). $Z=\tfrac{\bar X-1000}{\sigma/\sqrt{10}}$. ,,$=1$\,kg`` $\Rightarrow$ zweiseitig ($|Z|>z_{1-\alpha/2}$); ,,mindestens/hoechstens`` $\Rightarrow$ einseitig.}
+}
+
+\newglossaryentry{sz_kugel}{
+name={Szenario -- Ansatz gesucht: Acht Personen stossen mit dominanter und nicht-dominanter Hand; wie testet man, ob die dominante Hand staerker ist?},
+description={\textbf{Ansatz:} Gepaarter Test. Differenzen $D_i=(\text{dominant})_i-(\text{nicht})_i$; teste $H_0:\mu_D=0$ gegen $H_1:\mu_D>0$ einseitig mit $t$-Test auf den $D_i$.}
+}
+
+\newglossaryentry{sz_schweinchen}{
+name={Szenario -- Ansatz gesucht: $59$ von $166$ vs.\ $506$ von $1813$ ,,Suhle``; wie testet man, ob die schraege Tischplatte \emph{nicht} haeufiger ,,Suhle`` erzeugt?},
+description={\textbf{Ansatz:} Zwei-Stichproben-Anteilstest. Gepoolt $\hat p=\tfrac{59+506}{166+1813}$; $Z=\tfrac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p)(1/n_1+1/n_2)}}$; einseitig gegen ,,haeufiger``.}
+}
+
+\newglossaryentry{sz_beton}{
+name={Szenario -- Ansatz gesucht: $30$ Druckfestigkeiten; wie bestimmt man Lage-/Streumasse und wie robust ist der Median?},
+description={\textbf{Ansatz:} Deskriptive Statistik (Daten sortieren): Mittel, Median, Modus, Quartile, IQR, Medianabweichung, MAD. Robustheit: werden wenige Werte verzehnfacht, aendert sich der Median kaum -- obere Grenze ueber die Position im sortierten Datensatz.}
+}
+
+\newglossaryentry{sz_dichte_lim}{
+name={Szenario -- Ansatz gesucht: $A_n=[1,2-\tfrac1n]$ und $A=\bigcup_n A_n$; wie zeigt man $\lim_n \mathbb P(A_n)=\mathbb P(A)$?},
+description={\textbf{Ansatz:} $A_n\uparrow A=[1,2)$; per Stetigkeit von unten folgt $\mathbb P(A_n)\to\mathbb P(A)$. Alternativ direkt ueber die Dichte integrieren und den Grenzwert bilden.}
+}
+
+\newglossaryentry{sz_teilbar}{
+name={Szenario -- Ansatz gesucht: Eine Kugel aus $\{1,\dots,99\}$; wie bestimmt man $\mathbb P(\text{durch }2,3\text{ oder }5\text{ teilbar})$?},
+description={\textbf{Ansatz:} Ein-/Ausschlussprinzip mit $\#\{k\le 99: d\mid k\}=\lfloor 99/d\rfloor$; Schnitte ueber das kleinste gemeinsame Vielfache (z.\,B.\ $\lfloor 99/6\rfloor$ fuer ,,durch 2 und 3``).}
+}
+
+\newglossaryentry{sz_vfgraph}{
+name={Szenario -- Ansatz gesucht: Eine Verteilungsfunktion ist als Graph gegeben; ist die Verteilung diskret, stetig oder gemischt?},
+description={\textbf{Ansatz:} Spruenge ablesen $\Rightarrow$ diskrete Anteile $\mathbb P(X=x)=$ Sprunghoehe; stetig steigende Stuecke $\Rightarrow$ Dichte $f=F'$. $\mathbb P(a<X\le b)=F(b)-F(a)$; bei Spruengen sind offene/geschlossene Grenzen relevant.}
+}
+
+\newglossaryentry{sz_ziehen_ohne}{
+name={Szenario -- Ansatz gesucht: Zwei Kugeln \emph{ohne} Zuruecklegen aus $\{1,2,3\}$, $Y=\max$, $Z=\min$; wie bestimmt man die gemeinsame Verteilung?},
+description={\textbf{Ansatz:} Laplace ueber die geordneten Ziehungen ohne Wiederholung; gemeinsame Verteilung als Tabelle. Wegen ,,ohne Zuruecklegen`` sind die Ziehungen \emph{abhaengig}; $Y$ und $Z$ faktorisieren nicht.}
+}
+
+\newglossaryentry{sz_schaetzer_geom}{
+name={Szenario -- Ansatz gesucht: Vergleich von arithmetischem $t_1$ und geometrischem $t_2=\sqrt{x_1x_2}$ Mittel (Bernoulli); welcher ist besser?},
+description={\textbf{Ansatz:} Bias und Risiko. Fuer $x_i\in\{0,1\}$ ist $t_2=x_1x_2$ mit $\mathbb E[t_2]=\theta^2$ (verzerrt); $t_1$ ist erwartungstreu. Ueber $R=\mathrm{Var}+\mathrm{Bias}^2$ vergleichen.}
+}
+
+
+% #####################################################################
+% ##  NEUE FALLSTRICKE                                               ##
+% #####################################################################
+
+\newglossaryentry{fall_expparam}{
+name={Fallstrick: Parameter-Konvention der Exponentialverteilung?},
+description={\textbf{$\lambda$ ist die Rate, nicht der Mittelwert.} ,,Parameter $\tfrac15$`` bedeutet $\lambda=\tfrac15$ und $\mathbb E[X]=\tfrac1\lambda=5$. $\mathbb P(X>t)=e^{-\lambda t}$, Traeger $[0,\infty)$.}
+}
+
+\newglossaryentry{fall_gemischt}{
+name={Fallstrick: Verteilungsfunktion mit Sprung -- rein stetig?},
+description={\textbf{Nein, gemischt.} Ein Sprung bedeutet $\mathbb P(X=x)=$ Sprunghoehe $>0$; dort sind offene/geschlossene Grenzen \emph{nicht} egal. Nur sprungfreie, stetig steigende VF haben eine reine Dichte.}
+}
+
+\newglossaryentry{fall_linear_abh}{
+name={Fallstrick: Gilt Linearitaet des Erwartungswerts nur bei Unabhaengigkeit?},
+description={\textbf{Nein -- $\mathbb E$ ist immer linear.} $\mathbb E[\sum X_i]=\sum\mathbb E[X_i]$ auch bei \emph{abhaengigen} $X_i$ (z.\,B.\ Fixpunkt-Indikatoren). Nur $\mathrm{Var}(\sum X_i)$ braucht Unabhaengigkeit/Unkorreliertheit.}
+}
+
+\newglossaryentry{fall_phatbias}{
+name={Fallstrick: Ist $\hat p(1-\hat p)$ erwartungstreu fuer $p(1-p)$?},
+description={\textbf{Nein.} $\mathbb E[\hat p(1-\hat p)]=(1-\tfrac1n)\,p(1-p)$ -- systematisch zu klein, also verzerrt (aber asymptotisch erwartungstreu).}
+}
+
+\newglossaryentry{fall_gauss_t}{
+name={Fallstrick: Gauss- oder $t$-Test -- worauf achten?},
+description={\textbf{Auf die Varianz.} Ist $\sigma^2$ \emph{gegeben/bekannt}, Gauss-Test mit $z$-Quantil. Wird $\sigma^2$ aus der Stichprobe \emph{geschaetzt}, $t$-Test mit $t_{n-1}$-Quantil. Verwechslung liefert falsche kritische Werte.}
+}
+
+\newglossaryentry{fall_gepaart}{
+name={Fallstrick: Gepaarte Daten wie zwei unabhaengige Stichproben behandeln?},
+description={\textbf{Fehler.} Verbundene Paare (dieselbe Person zweimal) muessen ueber \emph{Differenzen} $D_i$ getestet werden. Das entfernt die personenbedingte Streuung; ein Zwei-Stichproben-Test waere hier ungueltig.}
+}
+
+\newglossaryentry{fall_traeger_rechteck}{
+name={Fallstrick: Faktorisierende Dichte -- reicht das fuer Unabhaengigkeit?},
+description={\textbf{Nur mit Rechteck-Traeger.} Bei Traeger $[0,1]\times[0,\infty)$ (Produktmenge) folgt aus $f=f_X\cdot f_Y$ Unabhaengigkeit; bei ,,schraegem`` Traeger $\{0\le x\le y\}$ nicht -- immer erst den Traeger pruefen.}
+}
