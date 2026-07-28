@@ -869,40 +869,13 @@ Länge/Fläche/Volumen des Ereignisses.}
   description={\textbf{Auf die Zählung achten.} ``Nummer des Versuchs bis zum 1.\ Erfolg'' $\Rightarrow$ ab $1$, $\mathbb E=\frac1p$. ``Anzahl Fehlversuche davor'' $\Rightarrow$ ab $0$, $\mathbb E=\frac{1-p}{p}$.}
 }
 
-\newglossaryentry{fall_stetigkorr}{
-  name={Fallstrick: Häufigster Fehler bei de Moivre--Laplace?},
-  description={\textbf{Stetigkeitskorrektur vergessen.} Diskret $\to$ stetig: bei ``$\le$'' die $+\frac12$, bei ``$\ge$'' die $-\frac12$ addieren, sonst systematischer Fehler.}
-}
 
-\newglossaryentry{fall_einseitig}{
-  name={Fallstrick: Ein- vs.\ zweiseitiger Test -- welcher kritische Wert?},
-  description={\textbf{Richtung an der Alternative ausrichten.} ``gesunken/gestiegen'' $\Rightarrow$ einseitig, $z_{1-\alpha}$; ``verändert'' $\Rightarrow$ zweiseitig, $z_{1-\alpha/2}$. Verwechslung verzerrt das Fehlerniveau.}
-}
-
-\newglossaryentry{fall_kifest}{
-  name={Fallstrick: Was ist beim Konfidenzintervall zufällig?},
-  description={\textbf{Der Parameter ist fest, das Intervall zufällig.} $p$ ist unbekannt aber fix; $J_n$ schwankt mit der Stichprobe. Aussage: $\mathbb P_p(p\in J_n)\ge 1-\alpha$.}
-}
-
-\newglossaryentry{fall_h0}{
-  name={Fallstrick: Bedeutet ``$H_0$ nicht verworfen'' Beweis von $H_0$?},
-  description={\textbf{Nein.} Es heisst nur: kein hinreichender Widerspruch bei diesem $\alpha$. Ein Test beweist $H_0$ nie.}
-}
 
 \newglossaryentry{fall_maxgeteilt}{
   name={Fallstrick: Sind $\max\{X,Y\}$ und $\max\{X,Z\}$ unabhängig?},
   description={\textbf{Nein}, obwohl $X,Y,Z$ unabhängig sind -- beide enthalten dasselbe $X$. Geteilte Variablen zerstören Unabhängigkeit; $\max\{X,Y\}$ und $Z$ dagegen sind unabhängig.}
 }
 
-\newglossaryentry{fall_ohnezuruck}{
-  name={Fallstrick: Was ändert sich beim Ziehen ohne Zuruecklegen?},
-  description={\textbf{Die Ziehungen werden abhängig.} $\mathbb P(A\mid B_k)$ hängt vom ersten Zug ab; die gemeinsame Verteilung faktorisiert nicht. Bedingte Wahrscheinlichkeit / Bayes statt Produkten.}
-}
-
-\newglossaryentry{fall_bedaddieren}{
-  name={Fallstrick: Darf man bedingte Wahrscheinlichkeiten einfach addieren?},
-  description={\textbf{Nein.} $\mathbb P(C\mid A\cup B)\ne\mathbb P(C\mid A)+\mathbb P(C\mid B)$ im Allgemeinen, und $\mathbb P(A\cap B\mid D)$ folgt nicht allein aus $\mathbb P(A\mid D)$ und $\mathbb P(B\mid D)$.}
-}
 
 
 
