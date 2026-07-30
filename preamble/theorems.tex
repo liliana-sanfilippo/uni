@@ -225,8 +225,10 @@
 }
 \newcommand{\definSB}[1]{%
     \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
-    \glsdesc*{#1}
-    \glsB*{#1}
+    \glsF*{#1}
+    \begin{equation}\label{eq:#1}
+        \glsB*{#1}
+    \end{equation}
     \end{defi}
 }
 \newcommand{\deffinS}[1]{%
