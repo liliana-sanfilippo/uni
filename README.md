@@ -116,7 +116,7 @@ https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 | Woche | Vorlesung  | In Notizen              | In Karteikarten | Übung      | In Notizen            | Abgabe     | In Notizen            |
 |-------|------------|-------------------------|-----------------|------------|-----------------------|------------|-----------------------|
-| KW 16 | Do, 16.04. | :ballot_box_with_check: |                 | Do, 16.04. |                       | Do, 30.04. |                       |
+| KW 16 | Do, 16.04. | :ballot_box_with_check: | :construction:  | Do, 16.04. |                       | Do, 30.04. |                       |
 | KW 17 | Do, 23.04. | :ballot_box_with_check: |                 | Do, 23.04. |                       | Do, 07.05. |                       |
 | KW 18 | Do, 30.04. | :ballot_box_with_check: |                 | --         | --                    | Do, 14.05. |                       |
 | KW 19 | Do, 07.05. | :ballot_box_with_check: |                 | Do, 07.05. |                       | Do, 21.05. |                       |
