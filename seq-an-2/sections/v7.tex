@@ -1,2 +1,85 @@
 %! Author = lili
 %! Date = 6/15/26
+
+
+\begin{algorithm}
+    \caption{Smith-Waterman Darstellung nach Skript}
+    \begin{algorithmic}
+        \Statex \textbf{Sequences to be aligned:} $A=a_{1}a_{2}\dots a_{n}$ and $B=b_{1}b_{2}\dotsb_{m}$
+        \Statex \textbf{score(x,y):} Similarity score of $x$ and $y$
+        \Statex \textbf{Gap cost:} $\gamma$
+        \State $S(0,0) \gets 0$
+        \For{$i \gets 1$ to $n$}
+            \State $S(i,0) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $m$}
+            \State $S(0,j) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $n$}
+            \For{$i \gets 1$ to $n$}
+                \State $S(i,j) \gets max \begin{cases}
+                                             S(0, 0) & = 0  (\text{leeres Suffix}) \\
+                                             S(i - 1, j - 1) + score(x[i], y[j]) & = \text{links oben + sim score} ( \text{(Mis-)Match} ) \\
+                                             S(i - 1, j) - \gamma & = \text{oben} ( \text{Deletion}) \\
+                                             S(i, j - 1) - \gamma & = \text{links} ( \text{Insertion})
+                \end{cases}$
+            \EndFor
+        \EndFor
+        \State Traceback
+    \end{algorithmic}\label{alg:smith_waterman}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Smith-Waterman Darstellung angepasst}
+    \begin{algorithmic}
+        \Statex \textbf{Sequences to be aligned:} $A=a_{1}a_{2}\dots a_{n}$ and $B=b_{1}b_{2}\dotsb_{m}$
+        \Statex \textbf{s(x,y):} Similarity score of $x$ and $y$
+        \State $S(0,0) \gets 0$
+        \For{$i \gets 1$ to $n$}
+            \State $S(i,0) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $m$}
+            \State $S(0,j) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $n$}
+            \For{$i \gets 1$ to $n$}
+                \State $S(i,j) \gets max \begin{cases}
+                                             0   \\
+                                             S(i - 1, j - 1) + s(x[i], y[j])  \\
+                                             S(i - 1, j) - s(x[i], --)  \\
+                                             S(i, j - 1) - s(--, y[j])
+                \end{cases}$
+            \EndFor
+        \EndFor
+        \State Traceback
+    \end{algorithmic}\label{alg:smith_waterman_angepasst}
+\end{algorithm}
+
+\newpage
+
+
+\begin{algorithm}
+    \caption{ONE(!) suboptimal Alignment through Waterman-Eggert}
+    \begin{algorithmic}
+        \Statex \textbf{Input $S$:} matrix calculated by Smith-Waterman
+        \State Take the calculated matrix from Smith-Waterman and set all cells that contribute to the optimal alignmnent to 0.
+        \State $i_start \gets $ start row
+        \For{$i \gets i_start$ to $n$}
+            \For{$j \gets 1$ to $m$}
+                \If{(i, j) belongs to optimal aligmnent}
+                    \State $S(i,j) = 0$
+                \Else
+                    \State $S(i,j) \gets max \begin{cases}
+                                                 0   \\
+                                                 S(i - 1, j - 1) + s(x[i], y[j])  \\
+                                                 S(i - 1, j) - s(x[i], --)  \\
+                                                 S(i, j - 1) - s(--, y[j])
+                    \end{cases}$
+                \EndIf
+            \EndFor
+        \EndFor
+    \end{algorithmic}\label{alg:waterman_eggert}
+\end{algorithm}
+
+To calculate the k best non-overlapping alignments, repeat the above k times while inputing the result matrix of the previous run.

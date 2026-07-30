@@ -2,64 +2,7 @@
 %! Date = 7/30/26
 
 
-\section{Smith-Waterman Algorithm}
-
-\begin{algorithm}
-    \caption{Smith-Waterman Darstellung nach Skript}
-    \begin{algorithmic}
-        \Statex \textbf{Sequences to be aligned:} $A=a_{1}a_{2}...a_{n}$ and $B=b_{1}b_{2}...b_{m}$
-        \Statex \textbf{score(x,y):} Similarity score of $x$ and $y$
-        \Statex \textbf{Gap cost:} $\gamma$
-        \State $S(0,0) \gets 0$
-        \For{$i \gets 1$ to $n$}
-            \State $S(i,0) \gets 0$
-        \EndFor
-        \For{$j \gets 1$ to $m$}
-            \State $S(0,j) \gets 0$
-        \EndFor
-        \For{$j \gets 1$ to $n$}
-            \For{$i \gets 1$ to $n$}
-                \State $S(i,j) \gets max \begin{cases}
-                                             S(0, 0) & = 0  (\text{leeres Suffix}) \\
-                                             S(i - 1, j - 1) + score(x[i], y[j]) & = \text{links oben + sim score} ( \text{(Mis-)Match} ) \\
-                                             S(i - 1, j) - \gamma & = \text{oben} ( \text{Deletion}) \\
-                                             S(i, j - 1) - \gamma & = \text{links} ( \text{Insertion})
-                \end{cases}$
-            \EndFor
-        \EndFor
-        \State Traceback
-    \end{algorithmic}
-\end{algorithm}
-
-
-\begin{algorithm}
-    \caption{Smith-Waterman Darstellung angepasst}
-    \begin{algorithmic}
-        \Statex \textbf{Sequences to be aligned:} $A=a_{1}a_{2}...a_{n}$ and $B=b_{1}b_{2}...b_{m}$
-        \Statex \textbf{s(x,y):} Similarity score of $x$ and $y$
-        \State $S(0,0) \gets 0$
-        \For{$i \gets 1$ to $n$}
-            \State $S(i,0) \gets 0$
-        \EndFor
-        \For{$j \gets 1$ to $m$}
-            \State $S(0,j) \gets 0$
-        \EndFor
-        \For{$j \gets 1$ to $n$}
-            \For{$i \gets 1$ to $n$}
-                \State $S(i,j) \gets max \begin{cases}
-                                             0   \\
-                                             S(i - 1, j - 1) + s(x[i], y[j])  \\
-                                             S(i - 1, j) - s(x[i], --)  \\
-                                             S(i, j - 1) - s(--, y[j])
-                \end{cases}$
-            \EndFor
-        \EndFor
-        \State Traceback
-    \end{algorithmic}
-\end{algorithm}
-
-\newpage
-\subsection{Smith-Waterman example}
+\section{Smith-Waterman example}
 \subsubsection*{Input}
 \begin{multicols}{2}
     \begin{algorithmic}

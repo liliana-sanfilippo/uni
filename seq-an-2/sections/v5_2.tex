@@ -12,3 +12,36 @@ TODO
 
 \section{The Nussinov Algorithm}\label{sec:the-nussinov-algorithm}
 Example calculation for GGUCCA on page~\pageref{sec:nussinov-example}.
+
+\begin{algorithm}
+    \caption{Nussinov Algorithm}
+    \begin{algorithmic}[1]
+        \Statex \textbf{Input:} RNA sequence $s = s[1 \dots n]$, scoring function for basepairs, minimum number $\delta$ of unpaired bases in a hairpin loop
+
+        \Statex \textbf{Output:} Maximal score $M(i,j)$ for a simple secondary structure of each substring $s[i \dots j]$ and traceback indicators $T(i,j)$ indicating which case leads to the optimum
+
+        \For{$i \gets 2$ to $n$}
+            \State $M(i,i-1) \gets 0$
+            \State $T(i,i-1) \gets \text{``init''}$ \Comment{$\epsilon$ (unpaired)}
+        \EndFor
+
+        \For{$d \gets 0$ to $\delta$}
+            \For{$i \gets 1$ to $n-d$}
+                \State $M(i,i+d) \gets 0$
+                \State $T(i,i+d) \gets \text{``unpaired''}$
+                \Comment{$.S$ and/or $S.$ (case 1 or 2)}
+            \EndFor
+        \EndFor
+
+        \For{$d \gets \delta+1$ to $n-1$}
+            \For{$i \gets 1$ to $n-d$}
+                \State Compute $M(i,i+d)$ according to the recurrence
+                \State Store the maximizing case in $T(i,i+d)$
+                \Comment{cases 1--3; or case 4 with maximizing $k$}
+            \EndFor
+        \EndFor
+
+        \State Report score $M(1,n)$
+        \State Start traceback with $T(1,n)$
+    \end{algorithmic}\label{alg:nussinov}
+\end{algorithm}

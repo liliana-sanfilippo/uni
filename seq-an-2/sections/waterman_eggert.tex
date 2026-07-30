@@ -2,34 +2,7 @@
 %! Date = 7/30/26
 
 
-\section{Waterman-Eggert Algorithm}
-
-\begin{algorithm}
-    \caption{ONE(!) suboptimal Alignment through Waterman-Eggert}
-    \begin{algorithmic}
-        \Statex \textbf{Input $S$:} matrix calculated by Smith-Waterman
-        \State Take the calculated matrix from Smith-Waterman and set all cells that contribute to the optimal alignmnent to 0.
-        \State $i_start \gets $ start row
-        \For{$i \gets i_start$ to $n$}
-            \For{$j \gets 1$ to $m$}
-                \If{(i, j) belongs to optimal aligmnent}
-                    \State $S(i,j) = 0$
-                \Else
-                    \State $S(i,j) \gets max \begin{cases}
-                                                 0   \\
-                                                 S(i - 1, j - 1) + s(x[i], y[j])  \\
-                                                 S(i - 1, j) - s(x[i], --)  \\
-                                                 S(i, j - 1) - s(--, y[j])
-                    \end{cases}$
-                \EndIf
-            \EndFor
-        \EndFor
-    \end{algorithmic}
-\end{algorithm}
-
-To calculate the k best non-overlapping alignments, repeat the above k times while inputing the result matrix of the previous run.
-
-\subsection{Waterman-Eggert Example}
+\section{Waterman-Eggert Example}
 
 \subsubsection*{Input}
 \begin{figure}[H]
