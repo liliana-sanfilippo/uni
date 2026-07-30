@@ -155,6 +155,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
 
 \begin{bsp}
     % TODO beschriftungen
+    $\ $
     \begin{figure}[H]
         \begin{subfigure}[t]{0.3\textwidth}
             \begin{tikzpicture}[
@@ -236,6 +237,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
 
 
 \begin{bsp}[Additional example from lecture]
+    $\ $
     \begin{figure}[H]
         \centering
         \begin{tikzpicture}[
@@ -312,8 +314,8 @@ Man kann nicht unterscheiden, ob man zuerst die obere oder untere Kante der Schl
     \begin{figure}[H]
         \begin{tikzpicture}[>=Stealth,node distance=15mm,
             every node/.style={font=\ttfamily\small},
-            kn/.style={draw,rounded corners=2pt,fill=lemf,minimum width=9mm,minimum height=6mm,inner sep=2pt},
-            e1/.style={->,thick,lemf},
+            kn/.style={draw,rounded corners=2pt,fill=satzf,minimum width=9mm,minimum height=6mm,inner sep=2pt},
+            e1/.style={->,thick,satzf},
             e2/.style={->,thick,sectionf}]
             \node[kn] (TAA) at (0,1.8) {TAA};
             \node[kn] (AAT) at (0,0)   {AAT};
@@ -329,7 +331,7 @@ Man kann nicht unterscheiden, ob man zuerst die obere oder untere Kante der Schl
             \draw[e2] (CAT) -- (ATA);
             \draw[e2] (ATA) -- (TAG);
             \draw[e2] (TAG) -- (AGA);
-            \node[lemf,font=\small\bfseries] at (7.7,1.4) {\texttt{AATAATC}};
+            \node[satzf,font=\small\bfseries] at (7.7,1.4) {\texttt{AATAATC}};
             \node[sectionf,font=\small\bfseries] at (7.7,0.9) {\texttt{CATAGA}};
         \end{tikzpicture}\label{fig:figure30}
     \end{figure}
