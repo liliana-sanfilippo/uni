@@ -130,9 +130,11 @@ type=defi
 name={q-gram distance},
 description={
 The q-gram distance of $x \in \sum^m$ and $y \in \sum^n$ is defined for $1 \leq q \leq min\{m, n\}$ as
-\[d_q(x, y) := \sum_{z\in\sum^q}
+\begin{equation}\label{eq:qgdis_formel}
+d_q(x, y) := \sum_{z\in\sum^q}
 |p_q(x)_z - p_q(y)_z |
-\]},
+\end{equation}
+},
 type=defi,
 symbol={\ensuremath{d_q}},
 altsymbol={d}
