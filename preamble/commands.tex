@@ -18,12 +18,12 @@
 
 
 \newcommand{\komm}[1]{
-    \begin{kom}
+    \begin{kom} \color{komf}
     #1
     \end{kom}
 }
 \newcommand{\txc}[1]{
-    \textcolor{Fuchsia}{#1}
+    \textcolor{komf}{#1}
 }
 \newcommand{\txo}[1]{
     \textcolor{Orange}{#1}
@@ -383,5 +383,9 @@
 }
 
 \newcommand{\listeq}[1]{
-    \gls*{#1} (page \pageref{eq:#1}) \[ \glssymbol*{#1} \]
+    \textbf{\Gls*{#1}} (page \pageref{eq:#1}) \[ \glssymbol*{#1} \]
+}
+
+\newcommand{\alguebeersichtzeile}[1]{
+    \textbf{\Gls*{#1}} &  \glsdesc*{#1} & \glsB{#1}
 }

@@ -209,22 +209,28 @@
 \DefineBoxEnv{konv}{defif}{breakable}
 
 \newcommand{\defin}[1]{%
-    \begin{defi}[\gls*{#1}]\label{def:#1}
+    \begin{defi}[\Gls*{#1}]\label{def:#1}
     \glsdesc*{#1}.
     \end{defi}
 }
 \newcommand{\definstat}[1]{%
-    \begin{defi}[\gls*{#1}]\label{def:#1} \txc{(Skript 26)}\\
+    \begin{defi}[\Gls*{#1}]\label{def:#1} \txc{(Skript 26)}\\
     \glsdesc*{#1}.
     \end{defi}
 }
 \newcommand{\deffin}[1]{%
-    \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
+    \begin{defi}[\Glsentryfirst*{#1}]\label{def:#1}
     \glsdesc*{#1}
     \end{defi}
 }
-\newcommand{\deffinS}[1]{%
+\newcommand{\definSB}[1]{%
     \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
+    \glsdesc*{#1}
+    \glsB*{#1}
+    \end{defi}
+}
+\newcommand{\deffinS}[1]{%
+    \begin{defi}[\Glsentryfirst*{#1}]\label{def:#1}
     \glsdesc*{#1} \\
     Schreibweise: \glssymbol*{#1}
     \end{defi}
