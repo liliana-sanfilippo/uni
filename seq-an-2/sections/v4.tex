@@ -25,4 +25,95 @@ always reconstruct the whole substring and its starting position by backtracing.
 
 \deffin{k_approximate_matches}
 
-\section{Sellers' Algorithm}
+\section{Sellers' Algorithm}\label{sec:sellers'-algorithm}
+For a change in style, here we present an explicit formulation of an algorithm that solves
+the problem not as a recurrence, but in pseudo-code notation.
+Algorithm 1 is known as
+Sellers’ algorithm (Sellers, 1980).
+Of course, it corresponds to the Universal Alignment
+Algorithm variant discussed in the “Sequence Analysis 1” class for semi-global alignment,
+except that we do not look at the final vertex vE to find the best match, but look at all
+the vertices in the last row to identify all matches with $D(m, j) \leq k for 0 \leq j \leq n$.
+
+Looking closely at Algorithm~\ref{alg:sellers}, we see that each iteration $j = 1, \dots, n$ transforms the
+previous column $C_{j-1} \coloneqq D(\cdot, j - 1)$ of the edit matrix into the current column $C_j \coloneqq
+D(\cdot, j)$, based on character $y[j]$.
+Starting with $C_0$, Sellers’ algorithm effectively consists of
+repeatedly computing $C_j$ from $C_j_{-1}$ and the next text character $y[j]$, for each $j = 1, \dots, n$.
+
+\begin{algorithm}[h]
+    \begin{algorithmic}
+        todo
+    \end{algorithmic}\label{alg:sellers}
+\end{algorithm}
+
+Some remarks about Sellers’ algorithm:
+
+\paragraph{Since we only report end positions and costs,} there is no need to store back pointers
+and the entire alignment matrix D in Algorithm~\ref{alg:sellers}.
+The current and the previous
+column suffice.
+This decreases the space requirement to O(m), where m is the (short)
+pattern length.
+We still need to store the text, which is O(n), however this need not
+necessarily be in memory.
+
+\paragraph{If we have a very good match} with cost $< k$ at position $j$, the neighboring positions will also match with cost $\leq k$.
+To avoid this redundancy, it makes sense to
+post-process the output and only look for runs of local minima.
+Without formally defining it, if $k = 3$ and the respective costs at positions $j - 2, \dots, j + 4$ are
+$(3, 2, 1, 1, 2, 2, 3)$, the original algorithm will report all of these positions.
+In most
+applications, however, we are only interested in the locally minimal value 1, which
+occurs as a run of length 2.
+So it would make sense to report the run interval and
+the minimum cost as $([j, j + 1], 1)$.
+
+\begin{notte}
+    Note that at no time in the algorithm we need to know the exact value of $C_j (m)$ as
+    long as we can be sure that it exceeds k and therefore will not be reported.
+\end{notte}
+
+\section{Ukkonen’s Cutoff Algorithm}\label{sec:ukkonens-cutoff-algorithm}
+The last of the above three observations leads to a considerable improvement of Sellers’
+algorithm: If we know that in column $j$ all values after a certain index $\lei_j$ exceed $k$, we do
+not need to compute them (e.g.\ we could assume that they are all equal to $\infty$ or $k + 1$).
+The following definition captures this formally.
+
+\deffin{last essential index}
+
+The last essential index $\lei_j$ of column $C_j$ is $\lei_j \coloneqq \lei (C_j ) = \max\{i | C_j (i) \leq k\}$.
+From
+the definition it is clear that we cannot miss any k-approximate matches if we do not
+compute the cells below the last essential index.
+
+To set this in operation, the last essential index $\lei_0$ of the 0-th column is easily found,
+because the scores increase monotonically from 0 to $m \cdot \gamma$.
+The other columns, however,
+are not necessarily monotone!
+Therefore, as we move column-by-column through the
+matrix, we have to make sure that we can efficiently find the last essential index of the
+next column, given the previous column.
+Consider the effects of the $C_{j-1}$-entries below
+the last essential index on the next column $C_j$.
+Since $C_{j-1} (i) > k$ for all $i > \lei_j-1$ and
+costs are non-negative, these cells provide candidate values $> k for C_j (i)$ for $i > \lei_{j-1}+ 1$
+which therefore do not need to be considered during the minimization.
+The only chance
+that such $C_j (i)$ remain bounded by $k$ is vertically, i.e., if $C_j (i) = C_j (i - 1) + \gamma$.
+As soon
+as $C_j (i) > k$ for some $i > \lei_{j-1}+ 1$, we know that the last essential index $\lei_j$ of $C_j$ occurs
+before that $i$.
+Algorithm~\ref{alg:ukkonen} shows the details.
+
+\begin{algorithm}[h]
+    \begin{algorithmic}
+        todo
+    \end{algorithmic}\label{alg:ukkonen}
+\end{algorithm}
+
+\begin{bsp}
+    TODO S 19
+\end{bsp}
+
+\section{Search Schemes and Bidirectional Indices}\label{sec:search-schemes-and-bidirectional-indices}

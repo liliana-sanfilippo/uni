@@ -29,8 +29,7 @@ at index $i$, $1 \leq i \leq |s| -k +1$:
 
 
 \section{Words with the same ( $k+1$ )-mer Profile}\label{sec:words-with-the-same-k-1-mer-profile}
-Motivated by the fact that the \gls{qgdis} does not satisfy the identity property of a metric (see Section~
-\ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same \gls{qgprof}, we want to determine
+Motivated by the fact that the \gls{qgdis} does not satisfy the identity property of a metric (see Section~\ref{sec:the-q-gram-distance}) because there can be distinct sequences with the same \gls{qgprof}, we want to determine
 whether for a given sequence $s$ and integer $k$ there are other sequences that are distinct but have the same ( $k+1$ )-mer profile as $s$.
 And, if there are, how many? \\ \newline
 
@@ -177,7 +176,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
                 \draw[->] (tga) to (gat);
                 \draw[->] (gat) to (att);
 
-                \node (text) at (2,6) {x = GATTGAT and k = 3}
+                \node (text) at (2,6) {x = GATTGAT and k = 3};
             \end{tikzpicture}
             \caption{}
         \end{subfigure}
@@ -202,7 +201,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
                 \draw[->] (tg) to (ga);
                 \draw[->] (ga) to (at);
                 \draw[->] (ga) to[bend right=20] (at);
-                \node (text) at (2,6) {x = GATTGAT and k = 2}
+                \node (text) at (2,6) {x = GATTGAT and k = 2};
             \end{tikzpicture}
             \caption{}
         \end{subfigure}
@@ -228,10 +227,10 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
                 \draw[->] (g) to (a);
                 \draw[->] (g) to[bend right=20] (a);
                 \draw[->] (t) to[loop left] (t);
-                \node (text) at (2,6) {x = GATTGAT and k = 1}
+                \node (text) at (2,6) {x = GATTGAT and k = 1};
             \end{tikzpicture}
         \end{subfigure}
-        \caption{De Bruijn subgraphs for the same sequence but with k varying from 3 to 1.}
+        \caption{De Bruijn subgraphs for the same sequence but with k varying from 3 to 1.}\label{fig:figure31}
     \end{figure}
 \end{bsp}
 
@@ -305,7 +304,8 @@ Man kann nicht unterscheiden, ob man zuerst die obere oder untere Kante der Schl
     \seq{AATAATC}: 3-Mere \seq{AAT,ATA,TAA,AAT,ATC} $\Rightarrow$ Kanten
     \seq{AAT}$\to$\seq{ATA}$\to$\seq{TAA}$\to$\seq{AAT}$\to$\seq{ATC}.\\
     \seq{CATAGA}: 3-Mere \seq{CAT,ATA,TAG,AGA} $\Rightarrow$ Kanten
-    \seq{CAT}$\to$\seq{ATA}$\to$\seq{TAG}$\to$\seq{AGA}. Gemeinsamer Knoten: \seq{ATA}.
+    \seq{CAT}$\to$\seq{ATA}$\to$\seq{TAG}$\to$\seq{AGA}.
+    Gemeinsamer Knoten: \seq{ATA}.
 
     \medskip
     \begin{figure}[H]
@@ -330,7 +330,7 @@ Man kann nicht unterscheiden, ob man zuerst die obere oder untere Kante der Schl
             \draw[e2] (TAG) -- (AGA);
             \node[lemf,font=\small\bfseries] at (7.7,1.4) {\seq{AATAATC}};
             \node[sectionf,font=\small\bfseries] at (7.7,0.9) {\seq{CATAGA}};
-        \end{tikzpicture}
+        \end{tikzpicture}\label{fig:figure30}
     \end{figure}
 \end{bsp}
 
