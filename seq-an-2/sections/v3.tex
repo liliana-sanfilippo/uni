@@ -300,12 +300,13 @@ Man kann nicht unterscheiden, ob man zuerst die obere oder untere Kante der Schl
     If $\dbg(s, k)$ is acyclic, it has a single Eulerian path, and no sequence t exists that is distinct but has the same ($k + 1$)-mer profile as $s$.     \komm{Auf deutsch: \# worte mit gleichen ($k+1$ )-mer Profil wie $s$ = \# Euler-Pfade in \dbg(s,k)}
 \end{theo}
 
+
 \begin{bsp}[Beispiel von Blatt 8]
-    \seq{AATAATC}: 3-Mere \seq{AAT,ATA,TAA,AAT,ATC} $\Rightarrow$ Kanten
-    \seq{AAT}$\to$\seq{ATA}$\to$\seq{TAA}$\to$\seq{AAT}$\to$\seq{ATC}.\\
-    \seq{CATAGA}: 3-Mere \seq{CAT,ATA,TAG,AGA} $\Rightarrow$ Kanten
-    \seq{CAT}$\to$\seq{ATA}$\to$\seq{TAG}$\to$\seq{AGA}.
-    Gemeinsamer Knoten: \seq{ATA}.
+    \texttt{AATAATC}: 3-Mere \texttt{AAT,ATA,TAA,AAT,ATC} $\Rightarrow$ Kanten
+    \texttt{AAT}$\to$\texttt{ATA}$\to$\texttt{TAA}$\to$\texttt{AAT}$\to$\texttt{ATC}.\\
+    \texttt{CATAGA}: 3-Mere \texttt{CAT,ATA,TAG,AGA} $\Rightarrow$ Kanten
+    \texttt{CAT}$\to$\texttt{ATA}$\to$\texttt{TAG}$\to$\texttt{AGA}.
+    Gemeinsamer Knoten: \texttt{ATA}.
 
     \medskip
     \begin{figure}[H]
@@ -328,8 +329,8 @@ Man kann nicht unterscheiden, ob man zuerst die obere oder untere Kante der Schl
             \draw[e2] (CAT) -- (ATA);
             \draw[e2] (ATA) -- (TAG);
             \draw[e2] (TAG) -- (AGA);
-            \node[lemf,font=\small\bfseries] at (7.7,1.4) {\seq{AATAATC}};
-            \node[sectionf,font=\small\bfseries] at (7.7,0.9) {\seq{CATAGA}};
+            \node[lemf,font=\small\bfseries] at (7.7,1.4) {\texttt{AATAATC}};
+            \node[sectionf,font=\small\bfseries] at (7.7,0.9) {\texttt{CATAGA}};
         \end{tikzpicture}\label{fig:figure30}
     \end{figure}
 \end{bsp}
