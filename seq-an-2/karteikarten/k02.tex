@@ -1,0 +1,198 @@
+%! Author = lili
+%! Date = 7/30/26
+
+% ===================================================================
+% Abschnitt: Motivation und Partitionierung
+% ===================================================================
+
+\newglossaryentry{bem_idee_mmdis}{
+    name={Welche Grundidee steckt hinter der Maximal-Matches-Distanz?},
+    description={Wie gut lässt sich eine Sequenz $x$ aus wenigen, langen Teilstücken einer anderen Sequenz $y$ zusammensetzen? Wenige lange "Matches" deuten auf Ähnlichkeit hin, viele kurze Matches auf Unähnlichkeit.},
+    type=dinge
+}
+
+\newglossaryentry{def_partition_einer_sequenz}{
+    name={Wie ist eine Partition $P$ von $x$ bezüglich $y$ formal definiert?},
+description={Schreibt man $x=z_0b_1z_1b_2\dots z_{l-1}b_lz_l$ mit (ggf.\ leeren) Teilstrings $z_i$ und einzelnen Zeichen $b_i$, so ist $P=(z_0,\langle b_1\rangle,z_1,\dots,\langle b_l\rangle,z_l)$ eine Partition von $x$ bezüglich $y$, wenn jedes $z_i$ ein Teilstring von $y$ ist.},
+type=dinge
+}
+
+\newglossaryentry{def_groesse_einer_partition}{
+name={Wie ist die Größe $|P|$ einer Partition definiert?},
+description={Als die Anzahl $l$ der trennenden Einzelzeichen $b_i$.},
+type=dinge
+}
+
+\newglossaryentry{bem_kuerzeste_partition}{
+name={Wann existiert eine Partition der Größe $0$?},
+description={Wenn $x$ selbst ein Teilstring von $y$ ist -- dann ist $P_0=(x)$ die kürzeste Partition mit $|P_0|=0$.},
+type=dinge
+}
+
+\newglossaryentry{bem_laengste_partition}{
+name={Existiert immer eine Partition maximaler Größe $m=|x|$, und wie sieht sie aus?},
+description={Ja, sie existiert immer (selbst wenn $y=\varepsilon$): $P_m=(\varepsilon,\langle x[1]\rangle,\varepsilon,\langle x[2]\rangle,\dots,\langle x[m]\rangle,\varepsilon)$, bei der jedes Zeichen einzeln als Trenner fungiert.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Definition der Maximal-Matches-Distanz
+% ===================================================================
+
+\newglossaryentry{def_mmdis_final}{
+name={Wie ist die Maximal-Matches-Distanz $\delta(x\|y)$ definiert?},
+description={$\delta(x\|y) := \min\{|P| : P \text{ ist eine Partition von } x \text{ bezüglich } y\}$ -- die minimale Größe über alle Partitionen von $x$ bezüglich $y$.},
+type=dinge
+}
+
+\newglossaryentry{bem_speicherplatz_mmdis}{
+name={Wie groß ist der zusätzliche Speicherplatzbedarf zur Berechnung der Maximal-Matches-Distanz (über die Eingabe hinaus)?},
+description={Kein nennenswerter zusätzlicher Speicherplatz jenseits der für die Berechnung genutzten Datenstruktur (Suffixbaum von $y$).},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Effiziente Berechnung (Greedy-Partitionierung)
+% ===================================================================
+
+\newglossaryentry{bem_greedy_strategie_partitionierung}{
+name={Mit welcher Strategie findet man effizient eine Partition minimaler Größe?},
+description={Mit einer Greedy-Strategie: Man deckt $x$ beginnend an der ersten Position mit einem möglichst langen Match ab, der noch Teilstring von $y$ ist, und wiederholt dies für den Rest von $x$.},
+type=dinge
+}
+
+\newglossaryentry{def_links_rechts_partition}{
+name={Wie ist die Links-Rechts-Partition ($P_{LR}$) von $x$ bezüglich $y$ charakterisiert?},
+description={Durch die Bedingung, dass für jedes $i\in[1,\ell]$ die Verkettung $z_{i-1}b_i$ \emph{kein} Teilstring von $y$ ist -- man verlängert also jedes Stück $z_{i-1}$ so weit wie möglich, bis das nächste Zeichen die Teilstring-Eigenschaft zerstören würde.},
+type=dinge
+}
+
+\newglossaryentry{def_rechts_links_partition}{
+name={Wie ist die Rechts-Links-Partition ($P_{RL}$) von $x$ bezüglich $y$ charakterisiert, im Unterschied zur Links-Rechts-Partition?},
+description={Durch die Bedingung, dass für jedes $i\in[1,\ell]$ die Verkettung $b_iz_i$ \emph{kein} Teilstring von $y$ ist -- hier wird von rechts her jedes Stück $z_i$ so weit wie möglich nach links ausgedehnt.},
+type=dinge
+}
+
+\newglossaryentry{satz_ltr_rtl_partition_minimal}{
+name={Welche Beziehung besteht zwischen Links-Rechts-Partition, Rechts-Links-Partition und der Maximal-Matches-Distanz?},
+description={Beide Partitionen haben minimale Größe, und diese Größe ist genau die Maximal-Matches-Distanz: $|P_{LR}(x,y)| = |P_{RL}(x,y)| = \delta(x\|y)$.},
+type=dinge
+}
+
+\newglossaryentry{satz_laufzeit_mmdis}{
+name={In welcher Zeit lässt sich die Maximal-Matches-Distanz $\delta(x\|y)$ berechnen, und welche Datenstruktur macht das möglich?},
+description={In $O(|x|+|y|)$ Zeit, unter Verwendung des Suffixbaums von $y$ (mit dem sich der längste an einer Position $i$ in $x$ beginnende, in $y$ vorkommende Teilstring in $O(|z|)$ Zeit finden lässt).},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Zusammenhang mit der Editierdistanz
+% ===================================================================
+
+\newglossaryentry{satz_mmdis_untere_schranke_edis}{
+name={Welche Ungleichung stellt einen Zusammenhang zwischen Maximal-Matches-Distanz und Editierdistanz her?},
+description={$\delta(x\|y) \le d(x,y)$ -- die Maximal-Matches-Distanz ist eine untere Schranke für die (Unit-Cost-)Editierdistanz.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Maximal Matches Metric
+% ===================================================================
+
+\newglossaryentry{bem_mmdis_nicht_symmetrisch}{
+name={Ist die Maximal-Matches-Distanz symmetrisch, und wann ist sie gleich $0$?},
+description={Nein, $\delta$ ist nicht symmetrisch. $\delta(x\|y)=0$ gilt genau dann, wenn $x$ ein Teilstring von $y$ ist -- das ist im Allgemeinen nicht äquivalent dazu, dass $y$ ein Teilstring von $x$ ist.},
+type=dinge
+}
+
+\newglossaryentry{bem_warum_mmdis_keine_metrik}{
+name={Warum ist die Bezeichnung "Maximal-Matches-Distanz" etwas irreführend?},
+description={Weil $\delta$ mangels Symmetrie gar keine Metrik im mathematischen Sinn ist.},
+type=dinge
+}
+
+\newglossaryentry{def_symmetrisierte_mmdis_metrik}{
+name={Wie lässt sich aus der asymmetrischen Maximal-Matches-Distanz eine echte, symmetrische Metrik konstruieren?},
+description={$d_\|(x,y) := \log(\delta(x\|y)+1) + \log(\delta(y\|x)+1)$; diese Funktion ist eine Metrik auf $\Sigma^*$.},
+type=dinge
+}
+
+\newglossaryentry{achtung_mmdis_heuristik_nicht_exakt}{
+name={Ist die Maximal-Matches-Distanz eine exakte Alternative zur Editierdistanz?},
+description={Nein -- sie ist eine untere-Schranke-Heuristik für die Editierdistanz, keine exakte Distanz. Nach Vorverarbeitung von $y$ (Suffixbaum) läuft die Zerlegung von $x$ in $O(|x|)$ Zeit.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Filtration for Edit Distance -- Motivation und Grundbegriffe
+% ===================================================================
+
+\newglossaryentry{bem_warum_dp_algorithmus_trotzdem_langsam}{
+name={Warum kann der quadratische DP-Algorithmus für die Editierdistanz trotz polynomieller Laufzeit in der Praxis als langsam gelten?},
+description={Weil bei langen Sequenzen sowohl die quadratische Zeit- als auch die quadratische Speicherplatzkomplexität in der Praxis erhebliche Probleme verursachen können.},
+type=dinge
+}
+
+\newglossaryentry{def_datenbanksuche_problem}{
+name={Wie lautet das typische Datenbanksuche-Problem, das die Motivation für Filtration liefert?},
+description={Gegeben eine Datenbank $X=\{x_1,\dots,x_k\}$, eine Anfragesequenz $y$ und ein Schwellenwert $t\ge0$: Finde alle $x\in X$ mit $\text{edis}(x,y)\le t$.},
+type=dinge
+}
+
+\newglossaryentry{bem_naive_loesung_datenbanksuche_laufzeit}{
+name={Welche Laufzeit hat die naive Lösung des Datenbanksuche-Problems, bei der $y$ nacheinander mit jeder Sequenz verglichen wird?},
+description={$O(k\cdot mn)$, wobei $m$ eine obere Schranke für die Länge der Datenbanksequenzen und $n=|y|$ ist.},
+type=dinge
+}
+
+\newglossaryentry{def_filter}{
+name={Was ist ein Filter im Kontext der Sequenzsuche?},
+description={Ein schnelles Screening-Verfahren, das garantiert, dass alle tatsächlich relevanten Sequenzen (mit $\text{edis}(x,y)\le t$) unter den verbleibenden Kandidaten sind -- ein Filter darf also keine echten Treffer verwerfen.},
+type=dinge
+}
+
+\newglossaryentry{bem_zweistufiges_verfahren_filtration_verifikation}{
+name={Wie ist das zweistufige Verfahren aus Filtration und Verifikation aufgebaut?},
+description={Zuerst werden in einem schnellen Filtrationsschritt Kandidaten identifiziert, die eine Chance haben, Treffer zu sein. Danach werden diese Kandidaten im (meist langsameren) Verifikationsschritt mit der exakten Methode überprüft.},
+type=dinge
+}
+
+\newglossaryentry{bem_wann_filtration_sinnvoll}{
+name={Wann ist Filtration überhaupt sinnvoll?},
+description={Nur wenn das im Filtrationsschritt verwendete Verfahren eine geringere Zeitkomplexität hat als das im Verifikationsschritt verwendete Verfahren.},
+type=dinge
+}
+
+\newglossaryentry{bem_mehrere_filter_kombinieren}{
+name={Wie kombiniert man mehrere Filter miteinander?},
+description={Man wendet zunächst alle Filter an und führt die teure Verifikation nur noch für diejenigen Elemente durch, die alle Filter passiert haben.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Konkrete Filter
+% ===================================================================
+
+\newglossaryentry{bem_filter_qgram_distanz}{
+name={Wie lautet das konkrete Filterkriterium mit Hilfe der $q$-Gramm-Distanz?},
+description={Eine Datenbanksequenz $x$ kann verworfen werden, sobald $d_q(x,y)/(2q) > t$ gilt (folgt aus der Ungleichung $d_q(x,y)/(2q)\le d(x,y)$).},
+type=dinge
+}
+
+\newglossaryentry{bem_qgram_filter_schwaeche}{
+name={Wann kann der $q$-Gramm-Distanz-Filter einen falschen Kandidaten (False Positive) durchlassen?},
+description={Wenn sich die Sequenzen hauptsächlich durch Blockverschiebungen unterscheiden: Dann ist die Editierdistanz meist hoch, während die $q$-Gramm-Distanz trotzdem niedrig bleiben kann.},
+type=dinge
+}
+
+\newglossaryentry{bem_filter_mmdis}{
+name={Wie lautet das konkrete Filterkriterium mit Hilfe der Maximal-Matches-Distanz, und warum kann man es in beide Richtungen anwenden?},
+description={Eine Sequenz $x$ kann verworfen werden, sobald $\delta(x\|y)>t$ oder $\delta(y\|x)>t$ gilt. Da die Editierdistanz symmetrisch ist, $\delta$ selbst aber nicht, kann man die asymmetrische untere Schranke in beiden Richtungen prüfen und beide Bedingungen als Filter nutzen.},
+type=dinge
+}
+
+\newglossaryentry{bem_unterscheidungsmerkmal_filter_vs_heuristik}{
+name={Was unterscheidet einen echten Filter von einer bloßen Heuristik zur Abschätzung der Editierdistanz?},
+description={Ein Filter darf per Definition nie einen echten Treffer verwerfen (keine falschen Negativen). Eine Heuristik (wie BLAST) liegt zwar meist nahe am wahren Ergebnis, garantiert aber nicht, dass kein echter Treffer übersehen wird.},
+type=dinge
+}

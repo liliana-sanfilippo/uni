@@ -1,0 +1,294 @@
+%! Author = lili
+%! Date = 7/30/26
+
+% ===================================================================
+% Abschnitt: Alignment-/Editierdistanz (Grundlagen, Wiederholung)
+% ===================================================================
+
+\newglossaryentry{def_alignment_distance_qg}{
+    name={Wie ist die Alignment-Distanz (Editierdistanz) zweier Sequenzen $x,y\in\Sigma^*$ definiert?},
+description={$d(x,y) := \min\{cost(A) : A\in\mathcal A^* \text{ ist ein Alignment von } x \text{ und } y\}$ -- die minimalen Kosten über alle möglichen Alignments.},
+type=dinge
+}
+
+\newglossaryentry{def_alignment_kosten}{
+name={Wie berechnen sich die Kosten eines Alignments $A=(A_1,\dots,A_n)$?},
+description={$cost(A) = \sum_{i=1}^n cost(A_i)$ -- die Summe der Kosten aller Spalten des Alignments.},
+type=dinge
+}
+
+\newglossaryentry{bem_kosten_einzelspalte_unit_cost}{
+name={Wie sind im einfachsten (Unit-Cost-)Fall die Kosten einer einzelnen Alignment-Spalte $A_i=\binom{a_i}{b_i}$ definiert?},
+description={$0$ bei einer Match-Spalte ($a_i=b_i$), und $1$ bei einer Mismatch-Spalte ($a_i\neq b_i$) oder einer Indel-Spalte ($a_i=-$ oder $b_i=-$).},
+type=dinge
+}
+
+\newglossaryentry{bem_alignment_problem_komplexitaet}{
+name={Mit welcher Laufzeit lässt sich das Alignment-Problem (Editierdistanz + optimales Alignment) für zwei Strings der Längen $m,n$ lösen?},
+description={In $O(mn)$ Zeit mittels eines einfachen, eleganten dynamischen Programmierungs-Algorithmus.},
+type=dinge
+}
+
+\newglossaryentry{bem_grenzen_editierdistanz}{
+name={In welcher Situation ist die Editierdistanz kein gutes Ähnlichkeitsmaß, obwohl die Texte intuitiv ähnlich sind?},
+description={Wenn ein großer Textblock verschoben wird (z.\,B.\ zwei Absätze werden vertauscht) -- die Editierdistanz kann dann hoch sein, obwohl die Texte aus anderer Sicht noch sehr ähnlich sind, da sie stark auf die korrekte Reihenfolge der Zeichen achtet.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Die q-Gramm-Distanz -- Grundbegriffe
+% ===================================================================
+
+\newglossaryentry{def_qgram}{
+name={Was ist ein $q$-Gramm?},
+description={Ein String der Länge $q$ (für ein gegebenes $q\in\mathbb N$). Betrachtet werden stets überlappende $q$-Gramme.},
+type=dinge
+}
+
+\newglossaryentry{def_occurrence_count}{
+name={Wie ist die Occurrence Count (Vorkommenshäufigkeit) $Occ(x,z)$ eines $q$-Gramms $z$ in einem String $x\in\Sigma^m$ definiert?},
+description={$Occ(x,z) := |\{i\in[1,m-q+1] : x[i\dots i+q-1]=z\}|$ -- die Anzahl der Startpositionen, an denen $z$ als Teilwort in $x$ vorkommt.},
+type=dinge
+}
+
+\newglossaryentry{def_qgram_profil}{
+name={Was ist das $q$-Gramm-Profil $p_q(x)$ eines Strings $x$?},
+description={Ein $\sigma^q$-elementiger Vektor $p_q(x)=(p_q(x)_z)_{z\in\Sigma^q}$, indiziert durch alle möglichen $q$-Gramme, mit $p_q(x)_z := Occ(x,z)$ -- die geordnete Liste, wie oft jedes mögliche $q$-Gramm in $x$ vorkommt.},
+type=dinge
+}
+
+\newglossaryentry{def_qgram_distanz}{
+name={Wie ist die $q$-Gramm-Distanz $d_q(x,y)$ zweier Strings $x\in\Sigma^m$, $y\in\Sigma^n$ definiert?},
+description={$d_q(x,y) := \sum_{z\in\Sigma^q} |p_q(x)_z - p_q(y)_z|$ für $1\le q\le\min\{m,n\}$ -- die Summe der absoluten Differenzen der $q$-Gramm-Häufigkeiten.},
+type=dinge
+}
+
+\newglossaryentry{bem_qgram_distanz_umgangssprachlich}{
+name={Wie lässt sich die $q$-Gramm-Distanz umgangssprachlich beschreiben?},
+description={Man zählt für jedes mögliche Länge-$q$-Teilwort, wie oft es in $x$ bzw.\ in $y$ vorkommt, bildet jeweils die Differenz dieser Häufigkeiten, und summiert die Beträge dieser Differenzen über alle möglichen $q$-Gramme auf.},
+type=dinge
+}
+
+\newglossaryentry{bem_qgram_distanz_pseudometrik}{
+name={Ist die $q$-Gramm-Distanz eine echte Metrik?},
+description={Nein, nur eine Pseudometrik: Es gibt Strings $x\neq y$ mit $d_q(x,y)=0$.},
+type=dinge
+}
+
+\newglossaryentry{satz_qgram_distanz_pseudometrik_eigenschaften}{
+name={Welche Eigenschaften erfüllt die $q$-Gramm-Distanz, die sie zu einer Pseudometrik machen?},
+description={Nichtnegativität, Symmetrie und die Dreiecksungleichung -- aber nicht die Eigenschaft "$d_q(x,y)=0 \Rightarrow x=y$".},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Praktische Berechnung -- Ranking und Unranking
+% ===================================================================
+
+\newglossaryentry{bem_dichtes_profil_als_array}{
+name={Wann ist es sinnvoll, das $q$-Gramm-Profil eines Strings als Array zu implementieren?},
+description={Wenn das Profil dicht ("dense") ist, d.\,h.\ nicht überwiegend aus Nullen besteht.},
+type=dinge
+}
+
+\newglossaryentry{def_ranking_funktion}{
+name={Wie ist eine Ranking-Funktion für eine endliche Menge $\mathcal X$ definiert?},
+description={Eine bijektive Funktion $r:\mathcal X \to [0,|\mathcal X|-1]$ -- sie ordnet jedem Element von $\mathcal X$ eindeutig eine Zahl im Bereich $0,\dots,|\mathcal X|-1$ zu.},
+type=dinge
+}
+
+\newglossaryentry{bem_warum_bis_x_minus_1}{
+name={Warum geht der Wertebereich einer Ranking-Funktion bis $|\mathcal X|-1$ und nicht bis $|\mathcal X|$?},
+description={Weil die Nummerierung bei $0$ beginnt (0-indiziert) -- eine Menge mit $|\mathcal X|$ Elementen wird so bijektiv auf die $|\mathcal X|$ Zahlen $0,1,\dots,|\mathcal X|-1$ abgebildet.},
+type=dinge
+}
+
+\newglossaryentry{def_unranking_funktion}{
+name={Was ist eine Unranking-Funktion?},
+description={Die Umkehrfunktion einer Ranking-Funktion.},
+type=dinge
+}
+
+\newglossaryentry{bem_alphabet_encoding}{
+name={Was ist die Alphabet-Encoding-Ranking-Funktion $r_\Sigma$?},
+description={Eine Ranking-Funktion auf den einzelnen Zeichen des Alphabets $\Sigma$: Sie ordnet jedem Buchstaben eine eindeutige Zahl zwischen $0$ und $\sigma-1$ zu ($\sigma=|\Sigma|$) und bildet die Grundlage, um daraus eine Ranking-Funktion für ganze $q$-Gramme zu konstruieren.},
+type=dinge
+}
+
+\newglossaryentry{formel_falling_ranking}{
+name={Wie lautet die Formel der fallenden Ranking-Funktion für ein $q$-Gramm $z$?},
+description={$r(z) = \sum_{i=1}^q r_\Sigma(z[i])\cdot\sigma^{q-i}$.},
+type=dinge
+}
+
+\newglossaryentry{formel_rising_ranking}{
+name={Wie lautet die Formel der steigenden Ranking-Funktion für ein $q$-Gramm $z$?},
+description={$r(z) = \sum_{i=1}^q r_\Sigma(z[i])\cdot\sigma^{i-1}$.},
+type=dinge
+}
+
+\newglossaryentry{bem_unterschied_falling_rising_intuition}{
+name={Worin unterscheiden sich fallende und steigende Ranking-Funktion inhaltlich, und welche ist für Texte natürlicher?},
+description={Bei der fallenden Funktion hat die erste Position das höchste Gewicht $\sigma^{q-1}$ (wie bei Stellenwertsystemen, z.\,B.\ bei der Dezimalzahl 23 hat die 2 das höhere Gewicht). Bei der steigenden Funktion hat die letzte Position das höchste Gewicht. Für Texte ist die steigende Variante natürlicher, da wir erwarten, dass niedrigere Positionsnummern links von höheren stehen.},
+type=dinge
+}
+
+\newglossaryentry{bem_falling_unranking_prinzip}{
+name={Nach welchem Prinzip arbeitet die Unranking-Methode für die fallende Ranking-Funktion?},
+description={Mit einem sich ändernden (dynamischen) Divisor: In jeder Iteration wird durch eine fallende Potenz von $\sigma$ geteilt; das Ergebnis der Division (nicht der Rest) bestimmt das jeweilige Zeichen, der Rest ist Startwert der nächsten Iteration.},
+type=dinge
+}
+
+\newglossaryentry{bem_rising_unranking_prinzip}{
+name={Nach welchem Prinzip arbeitet die Unranking-Methode für die steigende Ranking-Funktion?},
+description={Mit einem festen Divisor $\sigma$: In jeder Iteration wird durch $\sigma$ geteilt; der Rest der Division (nicht das Ergebnis) bestimmt das jeweilige Zeichen, und das Ergebnis der Division ist Startwert der nächsten Iteration.},
+type=dinge
+}
+
+\newglossaryentry{bem_laufzeit_ranking_unranking}{
+name={In welcher Zeit lassen sich Ranking und Unranking eines $q$-Gramms jeweils durchführen?},
+description={Beide in $O(q)$ Zeit.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Wahl von q
+% ===================================================================
+
+\newglossaryentry{bem_problem_q_zu_klein}{
+name={Welches Problem tritt auf, wenn man $q=1$ wählt?},
+description={Man addiert dann lediglich die Differenzen der einzelnen Buchstabenhäufigkeiten. Bei großen $m,n$ gibt es viele, auch sehr unterschiedlich aussehende Strings mit denselben Buchstabenhäufigkeiten, die dadurch alle Distanz $0$ zueinander hätten -- schlechte Auflösung.},
+type=dinge
+}
+
+\newglossaryentry{bem_problem_q_zu_gross}{
+name={Welches Problem tritt auf, wenn man $q$ zu groß wählt (z.\,B.\ $q=m\le n$ mit $m\approx n$)?},
+description={Die Distanz $d_q$ liegt dann fast immer nahe bei $n-m$, was ebenfalls keine gute Auflösung liefert; zudem wird das $q$-Gramm-Profil extrem dünn besetzt (sparse).},
+type=dinge
+}
+
+\newglossaryentry{bem_zielkriterium_wahl_q}{
+name={Nach welchem Kriterium sollte $q$ gewählt werden?},
+description={So, dass jedes $q$-Gramm im Mittel etwa einmal (bzw.\ mindestens $c\ge1$ mal) vorkommt.},
+type=dinge
+}
+
+\newglossaryentry{bem_wahrscheinlichkeit_qgram_an_fester_position}{
+name={Wie groß ist bei angenommener Gleichverteilung der Buchstaben die Wahrscheinlichkeit, dass ein festes $q$-Gramm $z$ an einer festen Position beginnt?},
+description={$1/\sigma^q$.},
+type=dinge
+}
+
+\newglossaryentry{bem_warum_nicht_1_durch_sigma}{
+name={Warum ist diese Wahrscheinlichkeit nicht einfach $1/\sigma$?},
+description={Weil nicht nur der erste, sondern alle $q$ Buchstaben des $q$-Gramms an den jeweils richtigen Positionen stehen müssen. Da jeder Buchstabe unabhängig mit Wahrscheinlichkeit $1/\sigma$ an seiner Position steht, multiplizieren sich die Wahrscheinlichkeiten der $q$ Positionen zu $(1/\sigma)^q$.},
+type=dinge
+}
+
+\newglossaryentry{formel_erwartete_vorkommenszahl}{
+name={Wie lautet die erwartete Anzahl an Vorkommen eines festen $q$-Gramms in einem String $x$ der Länge $m$?},
+description={$\dfrac{m-q+1}{\sigma^q}$ (da es $m-q+1$ mögliche Startpositionen gibt).},
+type=dinge
+}
+
+\newglossaryentry{formel_wahl_von_q}{
+name={Wie lautet die Formel zur Wahl von $q$, damit jedes $q$-Gramm im Erwartungswert mindestens $c$-mal vorkommt?},
+description={$q = \left\lfloor \dfrac{\log(m)-\log(c)}{\log(\sigma)} \right\rfloor$.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Effizienz
+% ===================================================================
+
+\newglossaryentry{bem_rolling_update_o1}{
+name={Welche besondere Effizienzeigenschaft haben beide Ranking-Funktionen, wenn ein Fenster der Länge $q$ über einen Text geschoben wird?},
+description={Der Rang des $q$-Gramms lässt sich in $O(1)$ Zeit aktualisieren, statt ihn komplett neu in $O(q)$ Zeit zu berechnen (Rolling-Hash-Prinzip).},
+type=dinge
+}
+
+\newglossaryentry{formel_update_falling_ranking}{
+name={Wie lautet die Update-Formel für die fallende Ranking-Funktion, wenn das Fenster von $au$ zu $ub$ verschoben wird?},
+description={$r(ub) = \big(r(au) \bmod \sigma^{q-1}\big)\cdot\sigma + r_\Sigma(b)$.},
+type=dinge
+}
+
+\newglossaryentry{formel_update_rising_ranking}{
+name={Wie lautet die Update-Formel für die steigende Ranking-Funktion, wenn das Fenster von $au$ zu $ub$ verschoben wird?},
+description={$r(ub) = \left\lfloor \dfrac{r(au)}{\sigma}\right\rfloor + r_\Sigma(b)\cdot\sigma^{q-1}$.},
+type=dinge
+}
+
+\newglossaryentry{bem_rising_update_effizienter}{
+name={Warum ist die Update-Formel der steigenden Ranking-Funktion in der Praxis oft effizienter als die der fallenden?},
+description={Sie kommt ohne Modulo-Operation aus und benötigt nur eine ganzzahlige Division (sowie ggf.\ einen Tabellenzugriff für $r_\Sigma(b)\cdot\sigma^{q-1}$) -- das ist i.\,d.\,R.\ schneller als eine Modulo-Operation.},
+type=dinge
+}
+
+\newglossaryentry{bem_bitshift_trick}{
+name={Welcher Trick beschleunigt die Ranking-Updates zusätzlich, wenn $\sigma=2^k$ eine Zweierpotenz ist?},
+description={Multiplikationen und Divisionen mit $\sigma$ lassen sich durch Bit-Shift-Operationen ersetzen (z.\,B.\ wird eine Division durch $\sigma$ zu einem Rechts-Shift um $k$ Bits).},
+type=dinge
+}
+
+\newglossaryentry{bem_gesamtlaufzeit_qgram_distanz_algorithmus}{
+name={Wie lautet die Gesamtlaufzeit des Standardalgorithmus zur Berechnung von $d_q(x,y)$, und woraus setzt sie sich zusammen?},
+description={$O(\sigma^q + m + n)$: $O(\sigma^q)$ für Initialisierung und finales Aufsummieren des Profil-Arrays, sowie $O(m)$ bzw.\ $O(n)$ für das (inkrementelle) Zählen der $q$-Gramme in $x$ bzw.\ $y$.},
+type=dinge
+}
+
+\newglossaryentry{bem_gesamtlaufzeit_mit_guter_q_wahl}{
+name={Welche Gesamtlaufzeit ergibt sich, wenn $q$ gemäß der empfohlenen Formel gewählt wird (und $m\le n$)?},
+description={$O(n)$ -- die Wahl von $q$ sorgt dafür, dass $\sigma^q$ in der Größenordnung von $m/c$ bleibt, sodass die Gesamtlaufzeit linear in der Eingabelänge ist.},
+type=dinge
+}
+
+\newglossaryentry{bem_grosses_q_hashing_statt_array}{
+name={Wie geht man vor, wenn $q$ vergleichsweise groß ist und ein volles Array $p_q$ zu viel Speicher benötigen würde?},
+description={Man verwendet eine Datenstruktur (z.\,B.\ Hashing), die nur die von Null verschiedenen Einträge von $p_q$ speichert. Ist $q=O(\log(m+n))$, lässt sich so weiterhin $O(m+n)$ Zeit erreichen.},
+type=dinge
+}
+
+\newglossaryentry{bem_speicherplatz_qgram_profil}{
+name={Wie groß ist der Speicherplatzbedarf, um das $q$-Gramm-Profil als Array zu speichern?},
+description={$O(\sigma^q)$ (gleichbedeutend mit $O(\#q\text{-Gramme})$) -- das Array benötigt einen Eintrag für jedes der $\sigma^q$ möglichen $q$-Gramme.},
+type=dinge
+}
+
+\newglossaryentry{bem_speicherplatz_rankfun}{
+name={Wie groß ist der zusätzliche Speicherplatzbedarf einer Ranking-Funktion selbst (z.\,B.\ der fallenden oder steigenden)?},
+description={Kein nennenswerter zusätzlicher Speicherplatz -- die Berechnung erfolgt direkt über die Formel, ohne eine Hilfsstruktur aufzubauen.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Zusammenhang mit der Editierdistanz
+% ===================================================================
+
+\newglossaryentry{satz_zusammenhang_qgram_edit_distanz}{
+name={Welche Ungleichung stellt einen Zusammenhang zwischen $q$-Gramm-Distanz und Editierdistanz her?},
+description={$\dfrac{d_q(x,y)}{2q} \le d(x,y)$.},
+type=dinge
+}
+
+\newglossaryentry{bem_beweisidee_zusammenhang_qgram_edit}{
+name={Wie lautet die Beweisidee für die Ungleichung $\frac{d_q(x,y)}{2q}\le d(x,y)$?},
+description={Jede Editieroperation beeinflusst lokal bis zu $q$ verschiedene $q$-Gramme. Jedes veränderte $q$-Gramm kann die $q$-Gramm-Distanz um bis zu $2$ verändern (die Häufigkeit des einen $q$-Gramms sinkt, die eines anderen steigt). Daher kann jede Editieroperation die $q$-Gramm-Distanz im schlimmsten Fall um bis zu $2q$ erhöhen.},
+type=dinge
+}
+
+\newglossaryentry{bem_nutzen_zusammenhang_qgram_edit}{
+name={Wozu ist die Ungleichung zwischen $q$-Gramm- und Editierdistanz praktisch nützlich?},
+description={Sie erlaubt es, die schnelle $q$-Gramm-Distanz als Filter zu verwenden, um die Berechnung der teuren Editierdistanz zu beschleunigen -- z.\,B.\ um wenig ähnliche Kandidatenpaare vorab auszuschließen.},
+type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Weitere Definition aus dem Glossar (nur teilweise im Text behandelt)
+% ===================================================================
+
+\newglossaryentry{def_maximal_matches_distanz}{
+name={Wie ist die Maximal-Matches-Distanz $\delta(x\|y)$ definiert?},
+description={$\delta(x\|y) := \min\{|P| : P \text{ ist eine Partition von } x \text{ bezüglich } y\}$ -- die minimale Anzahl an Teilstücken, in die man $x$ zerlegen kann, wobei jedes Teilstück auch in $y$ vorkommt.},
+type=dinge
+}

@@ -1,0 +1,62 @@
+%! Author = lili
+%! Date = 7/30/26
+
+
+\newglossaryentry{origdb}{
+    name={de Bruijn graph},
+    first={original de Bruijn graph of dimension k over a finite alphabet $\Sigma$ of size $\sigma$},
+description={The graph that contains one vertex for each k-mer (and therefore $\sigma^k$ vertices) and a
+directed edge for each overlap of length k − 1 (and therefore $\sigma^{k+1}$ edges)},
+type=defi
+}
+
+\newglossaryentry{dimension}{
+name={dimension of a \gls{dbsg}},
+description={The positive integer $\leq |s|$ in a $DBG(s, k) = (V, E)$},
+type=defi
+}
+
+\newglossaryentry{dbsg}{
+name={de Bruijn subgraph},
+first={de Bruijn subgraph $DBG(s, k) = (V, E)$ for a given sequence s of dimension k ()},
+description={The de Bruijn subgraph $DBG(s, k) = (V, E)$ for a given sequence s of dimension k (positive
+integer $\leq |s|$) is a directed multigraph whose vertices V correspond to the
+distinct k-mers of $s, s_{k,1}, \cdots, s_{k,|s|-k+1}$, and whose edges are derived from the (k + 1)-mers
+of s as follows: Let a (k + 1)-mer of s be denoted as $s[i \dots i + k] = aub$, where a and b
+are symbols and $|u| = k - 1$, then a directed edge is contained in E, linking vertex au to
+vertex ub.},
+type=defi,
+symbol={DBG}
+}
+
+\newglossaryentry{eup}{
+name={eulerian path},
+description={},
+type=defi,
+symbol={\ensuremath{p_s}},
+altsymbol={\ensuremath{p_t}}
+}
+
+
+\newglossaryentry{bidbsg}{
+name={bidirected de Bruijn subgraph},
+%description={The graph resulting from identifying a k-mer with its reverse complement and represent them by the same
+%vertex in the graph},
+description={Erweitert den klassischen de-Bruijn-Graphen, indem jedes $k$-Mer mit
+seinem Reverse-Komplement identifiziert wird. Beide Sequenzen werden somit durch denselben Knoten repräsentiert. Diese Darstellung berücksichtigt, dass bei DNA-Sequenzierungen häufig nicht bekannt ist, von welchem Strang der DNA-Doppelhelix ein Read stammt. Die übrige Struktur des de-Bruijn-Graphen, insbesondere die Definition der Kanten, bleibt unverändert.},
+type=defi
+}
+
+
+\newglossaryentry{comdbsg}{
+name={compacted de Bruijn subgraph},
+description={Entsteht durch das Zusammenfassen nicht verzweigender Pfade eines de-Bruijn-Graphen. Besitzt eine Folge
+aufeinanderfolgender Knoten jeweils genau einen Nachfolger und einen Vorgänger (mit Ausnahme der Endknoten), so wird diese zu einem einzelnen Knoten, einem sogenannten \textit{Unitig}, zusammengefasst. Dieser repräsentiert ein längeres Teilstück der ursprünglichen Sequenz. Durch diese Kompaktierung werden Speicherbedarf und häufig auch die Laufzeit nachfolgender Algorithmen reduziert, ohne dass die wesentliche Struktur des Graphen verloren geht.},
+type=defi
+}
+
+\newglossaryentry{coldbsg}{
+name={colored de Bruijn subgraph},
+description={Erweitert den de-Bruijn-Graphen um Informationen über die Herkunft der $k$-Mere. Hierzu werden die Eingabesequenzen in mehrere Gruppen, beispielsweise verschiedene Genome oder Datensätze, unterteilt. Jeder Gruppe wird eine Farbe zugewiesen. Ein Knoten erhält die Menge aller Farben der Gruppen, in denen das entsprechende $k$-Mer vorkommt. Dadurch lässt sich nachvollziehen, in welchen Sequenzmengen ein $k$-Mer enthalten ist. Colored de-Bruijn-Graphen eignen sich insbesondere für den Vergleich mehrerer Genome, erfordern jedoch aufgrund der Speicherung der Farbinformationen deutlich mehr Speicher als klassische de-Bruijn-Graphen.},
+type=defi
+}
