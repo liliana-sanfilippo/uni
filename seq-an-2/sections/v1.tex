@@ -76,7 +76,7 @@ i-th \gls{qgram} in some arbitrary but fixed (e.g.\ lexicographic) order.
 % TODO Karteikarte unterschied der ranking Funktionen
 
 Of course, we are interested in an efficient (un-)ranking algorithm for the set of all \glspl{qgram} over $\Sigma$.
-A classical one is to first define a \gls{rankfun} $\rf_{\Sigma}$ on the characters (alphabet encoding) and then
+A classical one is to first define a \gls{rankfun} $\rfs$ on the characters (alphabet encoding) and then
 extend it to a \gls{rankfun} $\rf$ on the \glspl{qgram} by interpreting them as base-$\sigma$ numbers.
 There are two possibilities to number the positions of a \gls{qgram}: From $q$ to 1 falling or from 1 to
 $q$ rising, as shown in the Example \autoref{exa:example-1-2}.
@@ -84,28 +84,28 @@ $q$ rising, as shown in the Example \autoref{exa:example-1-2}.
 \komm{Was sind base-$\sigma$ numbers?} % TODO
 
 \begin{bsp}  \label{exa:example-1-2}
-Assume the alphabet $\Sigma = {A, C, G, T}$ and the alphabet encoding $\rf_{\Sigma}(A) = 0$,
-$\rf_{\Sigma}(C) = 1, \rf_{\Sigma}(G) = 2$, and $\rf_{\Sigma}(T) = 3$.
+Assume the alphabet $\Sigma = {A, C, G, T}$ and the alphabet encoding $\rfs(A) = 0$,
+$\rfs(C) = 1, \rfs(G) = 2$, and $\rfs(T) = 3$.
 For $q = 5$, the two different possibilities to rank the
 \gls{qgram} $z = $ \texttt{ATACG} are:
 \begin{itemize}
     \item[(a)] Falling ranking
     \begin{align*}
-        \rf(ATACG) & = \underbrace{\rf_{\Sigma}(z[1]) \cdot \sigma^4}_{0\cdot 4^4} +
-        \underbrace{\rf_{\Sigma}(z[2]) \cdot \sigma^3}_{3\cdot 4^3} +
-        \underbrace{\rf_{\Sigma}(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
-        \underbrace{\rf_{\Sigma}(z[4]) \cdot \sigma^1}_{1\cdot 4^1}+
-        \underbrace{\rf_{\Sigma}(z[5]) \cdot \sigma^0}_{2\cdot 4^0} \\
+        \rf(ATACG) & = \underbrace{\rfs(z[1]) \cdot \sigma^4}_{0\cdot 4^4} +
+        \underbrace{\rfs(z[2]) \cdot \sigma^3}_{3\cdot 4^3} +
+        \underbrace{\rfs(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
+        \underbrace{\rfs(z[4]) \cdot \sigma^1}_{1\cdot 4^1}+
+        \underbrace{\rfs(z[5]) \cdot \sigma^0}_{2\cdot 4^0} \\
         & = 0 + 192 + 0 + 4 + 2 = 198
     \end{align*}
     \item[(b)] Rising ranking
     \begin{align*}
         \rf(ATACG) & =
-        \underbrace{\rf_{\Sigma}(z[1]) \cdot \sigma^0}_{0\cdot 4^0} +
-        \underbrace{\rf_{\Sigma}(z[2]) \cdot \sigma^1}_{3\cdot 4^1} +
-        \underbrace{\rf_{\Sigma}(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
-        \underbrace{\rf_{\Sigma}(z[4]) \cdot \sigma^3}_{1\cdot 4^3}+
-        \underbrace{\rf_{\Sigma}(z[5]) \cdot \sigma^4}_{2\cdot 4^4} \\
+        \underbrace{\rfs(z[1]) \cdot \sigma^0}_{0\cdot 4^0} +
+        \underbrace{\rfs(z[2]) \cdot \sigma^1}_{3\cdot 4^1} +
+        \underbrace{\rfs(z[3]) \cdot \sigma^2}_{0\cdot 4^2}+
+        \underbrace{\rfs(z[4]) \cdot \sigma^3}_{1\cdot 4^3}+
+        \underbrace{\rfs(z[5]) \cdot \sigma^4}_{2\cdot 4^4} \\
         & =  0 + 12 + 0 + 64 + 512 = 588
     \end{align*}
 \end{itemize}
@@ -151,7 +151,7 @@ To example \ref{exa:example-1-3}.
 \[
     \frac{198}{4^4} = 0, \quad  \text{R } 198 \rightarrow A
 \]
-Because $\frac{198}{4^4} = \frac{198}{256} \approx \un{0},77$ which means the rest (R) ist 198, since $198 - 0 = 198$. We decode it into A, since we are using the result of the fraction to find the letters: $\rf_{\Sigma}(A) = 0$.
+Because $\frac{198}{4^4} = \frac{198}{256} \approx \un{0},77$ which means the rest (R) ist 198, since $198 - 0 = 198$. We decode it into A, since we are using the result of the fraction to find the letters: $\rfs(A) = 0$.
 \[
     \frac{588}{4} = 147, \quad  \text{R } 0 \rightarrow A
 \]
@@ -163,7 +163,7 @@ Each iteration takes a starting value r and determines the corresponding charact
 The starting value for the first iteration is the rank of the \gls{qgram}.
 In iteration i in the unranking method \eqref{eq:falling_unranking}, for $1 \leq i \leq q$, the starting value $r$
 is divided by $\sigma^{q-i}$.
-The integer result c of the division determines the decoded character as described by $\rf_{\Sigma}$ of the used ranking
+The integer result c of the division determines the decoded character as described by $\rfs$ of the used ranking
 function.
 The remainder r' of the division serves as starting value for the next iteration.
 
@@ -239,20 +239,20 @@ above.
 $Let j = r(au)$.
 For the falling ranking function we compute:
 \[
-    \text{(a) } \rf(ub) = (j \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\Sigma} (b),
+    \text{(a) } \rf(ub) = (j \mod \sigma^{q-1} ) \cdot \sigma + \rfs (b),
 \]
 \txc{Or without using j:
 \[
-    \text{(a) } \rf(ub) = (\rf(au) \mod \sigma^{q-1} ) \cdot \sigma + \rf_{\Sigma} (b),
+    \text{(a) } \rf(ub) = (\rf(au) \mod \sigma^{q-1} ) \cdot \sigma + \rfs (b),
 \]
 }
 and for the rising ranking function:
 \[
-    \text{(b) }  \rf(zb) = \lfloor \frac{j}{\sigma} \rfloor + f (b), \quad \text{where } f (b) = \rf_{\Sigma} (b) \cdot \sigma^{q-1}.
+    \text{(b) }  \rf(zb) = \lfloor \frac{j}{\sigma} \rfloor + f (b), \quad \text{where } f (b) = \rfs (b) \cdot \sigma^{q-1}.
 \]
 \txc{Or without using j an f:
     \[
-        \text{(b) }  \rf(zb) = \lfloor \frac{\rf(au)}{\sigma} \rfloor +  \rf_{\Sigma} (b) \cdot \sigma^{q-1}.
+        \text{(b) }  \rf(zb) = \lfloor \frac{\rf(au)}{\sigma} \rfloor +  \rfs (b) \cdot \sigma^{q-1}.
     \]
 }
 
