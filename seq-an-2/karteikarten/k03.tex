@@ -1,0 +1,218 @@
+
+% ===================================================================
+% Abschnitt: Terminologie
+% ===================================================================
+
+\newglossaryentry{bem_qgram_kmer_terminologie}{
+    name={Was ist der Unterschied zwischen den Begriffen "q-Gramm" und "$k$-mer"?},
+    description={Inhaltlich keiner -- es sind äquivalente Begriffe für kurze (Teil-)Strings einer bestimmten Länge. "q-Gramm" stammt aus der Informatik-Literatur, "$k$-mer" aus der biologischen/bioinformatischen Literatur.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Definition und Grundeigenschaften des De-Bruijn-Subgraphen
+% ===================================================================
+
+\newglossaryentry{bem_anzahl_kmere_in_sequenz}{
+    name={Wie viele $k$-mere hat eine Sequenz der Länge $n$?},
+    description={$n-k+1$.},
+    type=dinge
+}
+
+\newglossaryentry{def_dbsg_final}{
+    name={Wie ist der De-Bruijn-Subgraph $DBG(s,k)=(V,E)$ für eine Sequenz $s$ definiert?},
+    description={Die Knotenmenge $V$ entspricht den verschiedenen $k$-meren von $s$. Für jedes $(k+1)$-mer $s[i\dots i+k]=aub$ von $s$ (mit $|u|=k-1$) gibt es eine gerichtete Kante von Knoten $au$ zu Knoten $ub$.},
+    type=dinge
+}
+
+\newglossaryentry{def_dimension_dbsg}{
+    name={Was ist die Dimension eines De-Bruijn-Subgraphen $DBG(s,k)$?},
+    description={Die positive ganze Zahl $k\le|s|$, die die Länge der als Knoten verwendeten $k$-mere angibt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dbsg_multigraph}{
+    name={Warum ist der De-Bruijn-Subgraph ein Multigraph?},
+    description={Kommt dasselbe $(k+1)$-mer mehrfach (sagen wir $m$-mal) in $s$ vor, entstehen $m$ parallele Kanten zwischen denselben beiden Knoten.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dbsg_eulerpfad_existenz}{
+    name={Existiert in jedem De-Bruijn-Subgraphen ein Eulerpfad?},
+    description={Ja: Für jeden De-Bruijn-Subgraphen existiert immer mindestens ein Eulerpfad -- er entspricht direkt der Knotenfolge $s_{k,1},s_{k,2},\dots,s_{k,|s|-k+1}$ der ursprünglichen Sequenz.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Wörter mit gleichem (k+1)-mer-Profil
+% ===================================================================
+
+\newglossaryentry{bem_motivation_gleiches_profil}{
+    name={Was motiviert die Frage nach Sequenzen mit gleichem $(k+1)$-mer-Profil?},
+    description={Die $q$-Gramm-Distanz erfüllt nicht die Identitätseigenschaft einer Metrik, da es verschiedene Sequenzen mit demselben $q$-Gramm-Profil geben kann. Man möchte verstehen, für welche $s$ und $k$ solche "Kollisionen" auftreten und wie viele es gibt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_trivialer_fall_k_gleich_0}{
+    name={Warum ist der Fall $k=0$ (Frage nach Sequenzen mit gleichem 1-mer-Profil) trivial?},
+    description={Jede Permutation der Symbole von $s$ liefert eine von $s$ verschiedene Sequenz $t$ mit demselben 1-mer-Profil (denselben Buchstabenhäufigkeiten).},
+    type=dinge
+}
+
+\newglossaryentry{bem_eigenschaften_dbsg_fuer_eulerpfad}{
+    name={Welche Grapheneigenschaften hat $DBG(s,k)$, die die Existenz von Eulerpfaden garantieren?},
+    description={$DBG(s,k)$ ist zusammenhängend und balanciert -- die klassischen Voraussetzungen für die Existenz eines Eulerpfads.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bijektion_eulerpfade_sequenzen}{
+    name={In welcher Beziehung stehen die Eulerpfade in $DBG(s,k)$ und die Sequenzen mit demselben $(k+1)$-mer-Profil wie $s$?},
+    description={Es besteht eine Eins-zu-eins-Korrespondenz: Jeder Eulerpfad in $DBG(s,k)$ entspricht genau einer Sequenz mit demselben $(k+1)$-mer-Profil wie $s$, und umgekehrt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_kreis_notwendig_nicht_hinreichend}{
+    name={Ist das Vorhandensein eines Kreises in $DBG(s,k)$ hinreichend dafür, dass es eine andere Sequenz mit demselben $(k+1)$-mer-Profil gibt?},
+    description={Nein, nur notwendig, nicht hinreichend: $DBG(s,k)$ kann einen oder mehrere Kreise enthalten und trotzdem nur einen einzigen Eulerpfad besitzen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_pfad_ueber_knoten_nicht_kanten}{
+    name={Warum führt ein Kreis in $DBG(s,k)$ nicht automatisch zu mehreren unterscheidbaren Eulerpfaden?},
+    description={Weil ein Pfad durch seine Knotenfolge definiert ist, nicht durch die Reihenfolge der Kanten. Durchläuft man einen Kreis in unterschiedlicher Kantenreihenfolge, die resultierende Knotenfolge aber ist dieselbe, entsteht dieselbe (und damit keine neue) Sequenz.},
+    type=dinge
+}
+
+\newglossaryentry{satz_anzahl_sequenzen_gleiches_profil}{
+    name={Wie lautet der Satz über die Anzahl der Sequenzen mit gleichem $(k+1)$-mer-Profil wie $s$?},
+    description={Diese Anzahl entspricht genau der Anzahl der verschiedenen Eulerpfade in $DBG(s,k)$. Ist $DBG(s,k)$ azyklisch, gibt es genau einen Eulerpfad, und es existiert keine von $s$ verschiedene Sequenz mit demselben $(k+1)$-mer-Profil.},
+    type=dinge
+}
+
+\newglossaryentry{achtung_konvention_knoten_kanten}{
+    name={Welche Konvention gilt hier für Knoten und Kanten eines De-Bruijn-Subgraphen, und warum ist Vorsicht geboten?},
+    description={Knoten $=k$-mere, Kanten $=(k+1)$-mere. Andere Bücher setzen dagegen Knoten $=(k-1)$-mere, Kanten $=k$-mere -- man muss also immer die jeweils verwendete Konvention prüfen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_kanten_als_multiset}{
+    name={Als was muss man die Kanten eines De-Bruijn-(Sub-)Graphen aus Sicht von Eulerpfaden bzw.\ Assembly auffassen?},
+    description={Als Multiset -- mehrfaches Vorkommen einer Kante (bzw.\ eines $(k+1)$-mers) zählt und muss auch mehrfach durchlaufen werden.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Varianten von De-Bruijn-Graphen
+% ===================================================================
+
+\newglossaryentry{bem_terminologie_verwirrung_dbg_dbsg}{
+    name={Warum ist bei der Bezeichnung "de Bruijn graph" in der Literatur Vorsicht geboten?},
+    description={Der Begriff wird nicht einheitlich verwendet: Oft meint man eigentlich einen De-Bruijn-\emph{Sub}graphen (für eine gegebene Sequenz), nennt ihn aber verkürzt "de Bruijn graph".},
+    type=dinge
+}
+
+\newglossaryentry{def_original_dbg}{
+    name={Wie ist der originale De-Bruijn-Graph der Dimension $k$ über einem Alphabet $\Sigma$ der Größe $\sigma$ definiert?},
+    description={Der Graph mit genau einem Knoten für jedes mögliche $k$-mer (also $\sigma^k$ Knoten) und einer gerichteten Kante für jeden Überlapp der Länge $k-1$ (also $\sigma^{k+1}$ Kanten) -- er enthält ALLE möglichen $k$-mere, nicht nur die einer bestimmten Sequenz.},
+    type=dinge
+}
+
+\newglossaryentry{bem_unterschied_original_dbg_dbsg}{
+    name={Worin unterscheidet sich der originale De-Bruijn-Graph vom De-Bruijn-Subgraphen einer Sequenz $s$?},
+    description={Der originale De-Bruijn-Graph enthält Knoten und Kanten für ALLE möglichen $k$-mere bzw.\ $(k+1)$-mere über $\Sigma$, unabhängig von einer konkreten Sequenz. Der De-Bruijn-Subgraph $DBG(s,k)$ enthält dagegen nur die tatsächlich in $s$ vorkommenden Knoten/Kanten -- er ist ein (i.\,d.\,R.\ echter) Teilgraph des originalen De-Bruijn-Graphen.},
+    type=dinge
+}
+
+\newglossaryentry{def_bidirected_dbsg}{
+    name={Was ist ein bidirektionaler De-Bruijn-Subgraph, und wodurch ist er motiviert?},
+    description={Ein De-Bruijn-Subgraph, bei dem jedes $k$-mer mit seinem Reverse-Komplement identifiziert wird (beide werden durch denselben Knoten repräsentiert). Motivation: Bei DNA-Sequenzierung ist oft nicht bekannt, von welchem Strang der Doppelhelix ein Read stammt.},
+    type=dinge
+}
+
+\newglossaryentry{def_compacted_dbsg}{
+    name={Was ist ein kompaktierter De-Bruijn-Subgraph, und was ist ein Unitig?},
+    description={Er entsteht, indem nicht verzweigende Pfade (Knotenfolgen mit jeweils genau einem Vorgänger und Nachfolger) zu einem einzelnen Knoten zusammengefasst werden. Dieser zusammengefasste Knoten, der ein längeres Teilstück der Sequenz repräsentiert, heißt Unitig.},
+    type=dinge
+}
+
+\newglossaryentry{bem_vorteil_compacted_dbsg}{
+    name={Welchen Vorteil bietet die Kompaktierung eines De-Bruijn-Subgraphen zu Unitigs?},
+    description={Sie reduziert den Speicherbedarf und oft auch die Laufzeit nachfolgender Algorithmen, ohne die wesentliche Struktur des Graphen zu verlieren.},
+    type=dinge
+}
+
+\newglossaryentry{def_colored_dbsg}{
+    name={Was ist ein gefärbter (colored) De-Bruijn-Subgraph?},
+    description={Ein De-Bruijn-Subgraph, bei dem die Eingabesequenzen in Gruppen (z.\,B.\ verschiedene Genome) unterteilt sind; jeder Gruppe wird eine Farbe zugewiesen, und jeder Knoten ($k$-mer) erhält die Menge aller Farben der Gruppen, in denen er vorkommt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_herausforderung_colored_dbsg}{
+    name={Was ist die zentrale Herausforderung bei der speichereffizienten Implementierung gefärbter De-Bruijn-Subgraphen?},
+    description={Nicht mehr die Speicherung der $k$-mere selbst (begrenzt durch $\sigma^k$), sondern die Speicherung der Farbinformationen -- diese können bei großen Pangenomen mehrere tausend Bits pro $k$-mer belegen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bitkodierung_dna_kmere}{
+    name={Wie viele Bits benötigt man, um ein DNA-$k$-mer zu kodieren, und wie ändert sich das bei gefärbten Graphen?},
+    description={$k\cdot 2$ Bits (da $\log_2(4)=2$ Bits pro Buchstabe genügen). Bei gefärbten Graphen kommen zusätzlich Bits für die Farbinformation hinzu, insgesamt also $k\cdot2 + \#\text{Datensätze}$ Bits.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Implementierung -- Sets von k-meren (Bloom-Filter)
+% ===================================================================
+
+\newglossaryentry{bem_kanten_nicht_explizit_speichern}{
+    name={Welche Beobachtung erlaubt es, beim De-Bruijn-Subgraphen auf die explizite Speicherung der Kanten zu verzichten?},
+    description={Hat man einen schnellen Test, ob ein bestimmtes $k$-mer im Graphen als Knoten vorhanden ist, so kann man beim Übergang von $au$ zu $ub$ einfach testen, ob $ub$ ein Knoten ist -- ist der Test erfolgreich, existiert die Kante implizit, sonst nicht.},
+    type=dinge
+}
+
+\newglossaryentry{bem_nachfolger_finden_sigma_tests}{
+    name={Wie findet man alle möglichen Nachfolger eines Knotens $au$, ohne die Kanten explizit zu speichern?},
+    description={Man führt $\sigma$ Tests durch, einen für jedes mögliche letzte Zeichen $c$ des neuen, überlappenden $k$-mers $uc$ -- bei kleinen Alphabeten (wie DNA) ist das wenig Aufwand.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bloom_filter_idee}{
+    name={Was ist die Grundidee eines Bloom-Filters?},
+    description={Ein großes Bit-Array $B$ der Länge $m$ (alle Bits zunächst $F$) zusammen mit $h$ verschiedenen Hashfunktionen $f_1,\dots,f_h$, die $k$-mere (bzw.\ deren Ränge) auf Positionen in $[0,m-1]$ abbilden. Zum Speichern eines $k$-mers werden alle $h$ zugehörigen Bits auf $T$ gesetzt.},
+    type=dinge
+}
+
+\newglossaryentry{formel_bloom_filter_speichern}{
+    name={Wie speichert man ein $k$-mer mit Rang $r$ in einem Bloom-Filter?},
+    description={$B[f_1(r)] = B[f_2(r)] = \dots = B[f_h(r)] = T$.},
+    type=dinge
+}
+
+\newglossaryentry{formel_bloom_filter_test}{
+    name={Wie testet man, ob ein $k$-mer mit Rang $r$ "wahrscheinlich" im Bloom-Filter enthalten ist?},
+    description={$\text{probably-contains}(B,r) = B[f_1(r)] \land B[f_2(r)] \land \dots \land B[f_h(r)]$ -- nur wenn ALLE zugehörigen Bits gesetzt sind, gilt der Test als (wahrscheinlich) positiv.},
+    type=dinge
+}
+
+\newglossaryentry{bem_beispiel_hashfunktion_bloom}{
+    name={Wie könnte eine einfache Hashfunktion für einen Bloom-Filter aussehen?},
+    description={$f_i(r) = (r^{i+1} \gg k) \bmod m$, wobei $\gg k$ eine $k$-fache Bit-Verschiebung nach rechts bezeichnet.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wann_false_positive_bloom}{
+    name={Wann meldet ein Bloom-Filter ein $k$-mer fälschlicherweise als enthalten (False Positive)?},
+    description={Nur wenn für JEDEN der $h$ Hashwerte ein jeweils anderes, tatsächlich gespeichertes $k$-mer mit irgendeiner Hashfunktion denselben Wert erzeugt und damit das entsprechende Bit bereits auf $T$ gesetzt hat -- alle $h$ Positionen müssten also durch andere Elemente belegt sein.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_probably_contains}{
+    name={Warum heißt die Testfunktion eines Bloom-Filters "probably-contains" und nicht einfach "contains"?},
+    description={Weil False Positives möglich (wenn auch bei moderater Füllung unwahrscheinlich) sind: Der Test kann fälschlich "enthalten" melden, obwohl das Element nie gespeichert wurde. Ein tatsächlich gespeichertes Element wird dagegen nie fälschlich als "nicht enthalten" gemeldet (keine False Negatives).},
+    type=dinge
+}
+
+\newglossaryentry{bem_bloom_filter_exakt_machen}{
+    name={Kann man einen Bloom-Filter in bestimmten Anwendungen exakt machen?},
+    description={Ja: Mit zusätzlichen Techniken zur gezielten Behandlung von False Positives lässt sich in manchen Anwendungen erreichen, dass diese das Ergebnis nicht verfälschen -- der Bloom-Filter wird dann effektiv exakt.},
+    type=dinge
+}
