@@ -74,7 +74,9 @@ name={ranking function},
 description={A bijective function $r: \mathcal{X} \rightarrow [0, |\mathcal{X}|-1]$ for a finite set $\mathcal{X}$},
 type=defi,
 symbol={\ensuremath{r}},
-nominative={$O(q)$}
+nominative={$O(q)$},
+accusative={Aufgabe TODO},
+genitive={-}
 }
 
 \newglossaryentry{unrankfun}{
@@ -128,11 +130,15 @@ the number},
 type=defi
 }
 
-
+% TODO oder m+n Zeit wenn q groß ist ???
 \newglossaryentry{qgprof}{
 name={q-gram profile},
 description={Let $\sigma = |\sum|$. The q-gram profile of x is a $\sigma^q$-element vector $p_q(x) := (p_q(x)_z)_{z\in\sum^q}$, indexed by all q-grams, defined by $p_q(x)_z := Occ(x, z)$},
-type=defi
+type=defi,
+nominative={$O(\#q-grams + m + n)$ or $O(n)$ if m $\leq$ n and $q = \Bigg\lfloor \frac{\log(m) − \log(
+c)}{\log(\sigma)} \Bigg\rfloor$},
+accusative={Aufgabe},
+genitive={$O(\#q-grams)$}
 }
 
 \newglossaryentry{qgdis}{

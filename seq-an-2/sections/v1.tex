@@ -30,6 +30,7 @@ Remember that for $q \in N$, a \gls{qgram} is a string of length q.
 
 \definSB{occurrence count}
 \defin{qgprof}
+\komm{Also eine geordnete Liste davon, wie oft ein q-gram in einem Wort vorkam.}
 \definSB{qgdis}
 
 \komm{
@@ -277,6 +278,7 @@ Now, to compute $\dqu (x, y)$ for $x \in \Sigma^m$ and $y \in \Sigma^n$,
 Explanation of the steps and complexites.
 \begin{table}[H]
     \centering
+    \color{linkf}
     \begin{tabular}{c p{5cm}c p{5cm}}
         & \textbf{Step} & \textbf{Complexity} & \textbf{Because...} \\
         1. & Initialise empty array  &  $O(\sigma^q)$ & the array has $\sigma^q$ entries \\
@@ -292,7 +294,7 @@ Leading to:
 }
 
 This procedure \txc{very} obviously takes $O(\sigma^q + m + n)$ time.
-If $m \leq n$ and q is as suggested above, this is $O(n)$ time overall.
+If $m \leq n$ and q is as suggested above \txc{$\left( q = \Bigg\lfloor \frac{\log(m) − \log(c)}{\log(\sigma)} \Bigg\rfloor = \log(\sigma) \cdot \frac{m}{c} \right)$}, this is $O(n)$ time overall.
 The space complexity is $O(\sigma^q)$ to store the array $p_q$.
 
 If q is comparatively large, it does not make sense to maintain a full array.

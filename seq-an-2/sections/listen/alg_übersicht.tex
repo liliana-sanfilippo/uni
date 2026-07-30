@@ -2,8 +2,28 @@
 %! Date = 7/30/26
 
 \begin{mytable}
-    \begin{tabular}{ccc}
-        \textbf{Name} & \textbf{Aufgabe} & \textbf{Laufzeit} \\
+    \begin{tabular}{p{2cm}}
+        \textbf{Name} & \textbf{Aufgabe} & \textbf{Laufzeit} &  \textbf{Speicherplatz} \\
         \alguebeersichtzeile{test_alg} \\
+        \alguebeersichtzeile{rankfun} \\
+        \alguebeersichtzeile{qgprof} \\
     \end{tabular}
 \end{mytable}
+
+\subsection{Detailed time complexities}
+
+\begin{mytable}
+    \begin{tabular}{p{5cm} c p{5cm}}
+        \textbf{Aspect} & \textbf{Complexity} & \textbf{Because...} \\
+         Initialise empty array of q-gram profile  &  $O(\#entries)$ & 1 step per entry (= q-gram) \\
+          Count \glspl{qgram} in string $x$ of length $m$ (create q-gram profile of $x$) & $O(m)$ & compute hash of
+        first
+        \gls{qgram} in $O(m)$,
+        then use rolling hash to update in $O(1)$ for each remaining position \\
+          Initialize q-gram distance variable & $O(1)$ & trivial \\
+          Summarize something (e.g. absolute differences for the occurrence counts) & $ O(\#entries)$ & Iteration
+        through entries, 1 step per entry
+    \end{tabular}
+\end{mytable}
+
+%\subsection{Detailed space complexities}
