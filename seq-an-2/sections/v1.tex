@@ -18,6 +18,13 @@ Then we have:
 % TODO \txc{Hier das über die Block moves einfügen.}
 
 \section{The \gls{qgram} Distance}\label{sec:the-q-gram-distance}
+\begin{idee}
+    Die q-Gramm-Distanz vergleicht zwei Strings nicht zeichenweise, sondern über die
+    Häufigkeiten aller Länge-$q$-Teilwörter.
+    Sie ist sehr schnell ($O(n)$) und dient als
+    Filter für die (teure) Editdistanz.
+\end{idee}
+
 Edit distances emphasize the correct order of the characters in a string.
 If, however, a large block of a text is moved somewhere else (e.g.\ two paragraphs of a text are exchanged), the
 \gls{edis} will be high, although from a certain standpoint, the texts are still quite similar.
@@ -334,9 +341,11 @@ Generally, one can show the following relationship.
 %\subsection{The Maximal Matches Metric}
 \txc{Notiz}
 
-\begin{zsmf}
-        Die q-Gramm-Distanz vergleicht zwei Strings nicht zeichenweise, sondern über die
-        Häufigkeiten aller Länge-$q$-Teilwörter.
-        Sie ist sehr schnell ($O(n)$) und dient als
-        Filter für die (teure) Editdistanz.
-\end{zsmf}
+\warnung{ $\ $
+\begin{itemize}
+    \item \textbf{Pseudometrik!} $d_q(s,t)=0 \not\Rightarrow s=t$. Verschiedene Strings können dasselbe
+    q-Gramm-Profil haben (z.\,B.\ Anagramme von q-Grammen). Nur eine Richtung der Metrik-Axiome gilt strikt.
+    \item \textbf{rising vs.\ falling} innerhalb einer Aufgabe konsistent halten -- sonst passen Rank und Un-Rank nicht zusammen.
+    \item Rand: ein String mit $\abs{s}<q$ hat keine q-Gramme.
+\end{itemize}
+}

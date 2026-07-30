@@ -1,0 +1,36 @@
+%! Author = lili
+%! Date = 7/30/26
+
+\newglossaryentry{mmdis}{
+    name={maximal matches distance},
+    first={maximal matches distance to $x$ from $y$},
+description={$\delta (x||y) := min\{|P | : P$ is a partition of $x$  with respect to $y\}$ },
+type=defi,
+symbol={\ensuremath{\delta}},
+nominative={$O(|x| + |y|)$},
+accusative={-todo},
+genitive={-}
+}
+
+
+\newglossaryentry{ltrpartition}{
+name={left-to-right partition},
+first={left-to-right partition of $x$ with respect to $y$},
+description={$Plr (x, y) = (z_0 , \langle b_1 \rangle , z_1 , \langle b_2 \rangle , . . . , z_{\ell−1} , \langle
+b_{\ell} \rangle , z_{\ell} )$ of $x$ with respect to $y$ is the
+partition defined by the condition that for all $i \in [1, \ell], z_{i−1} b_i$ is not a
+substring of $y$.},
+symbol={\ensuremath{P_{LR}}},
+type=defi
+}
+
+\newglossaryentry{rtlpartition}{
+name={right-to-left partition},
+first={right-to-left partition of $x$ with respect to $y$},
+description={$Prl (x, y) = (z_0 , \langle b_1 \rangle , z_1 , . . . , \langle b_{\ell−1} \rangle , z_{\ell
+−1} , \langle b_{\ell} \rangle , z_{\ell} )$ of
+$x$ with respect to $y$ is the partition defined by the condition that for all $i \in [1, \ell], b_i z_i$ is
+not a substring of $y$.},
+symbol={\ensuremath{P_{RL}}},
+type=defi
+}

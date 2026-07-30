@@ -1,0 +1,439 @@
+%! Author = lili
+%! Date = 7/30/26
+
+
+\section{Smith-Waterman Algorithm}
+
+\begin{algorithm}
+    \caption{Smith-Waterman Darstellung nach Skript}
+    \begin{algorithmic}
+        \Statex \textbf{Sequences to be aligned:} $A=a_{1}a_{2}...a_{n}$ and $B=b_{1}b_{2}...b_{m}$
+        \Statex \textbf{score(x,y):} Similarity score of $x$ and $y$
+        \Statex \textbf{Gap cost:} $\gamma$
+        \State $S(0,0) \gets 0$
+        \For{$i \gets 1$ to $n$}
+            \State $S(i,0) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $m$}
+            \State $S(0,j) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $n$}
+            \For{$i \gets 1$ to $n$}
+                \State $S(i,j) \gets max \begin{cases}
+                                             S(0, 0) & = 0  (\text{leeres Suffix}) \\
+                                             S(i - 1, j - 1) + score(x[i], y[j]) & = \text{links oben + sim score} ( \text{(Mis-)Match} ) \\
+                                             S(i - 1, j) - \gamma & = \text{oben} ( \text{Deletion}) \\
+                                             S(i, j - 1) - \gamma & = \text{links} ( \text{Insertion})
+                \end{cases}$
+            \EndFor
+        \EndFor
+        \State Traceback
+    \end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Smith-Waterman Darstellung angepasst}
+    \begin{algorithmic}
+        \Statex \textbf{Sequences to be aligned:} $A=a_{1}a_{2}...a_{n}$ and $B=b_{1}b_{2}...b_{m}$
+        \Statex \textbf{s(x,y):} Similarity score of $x$ and $y$
+        \State $S(0,0) \gets 0$
+        \For{$i \gets 1$ to $n$}
+            \State $S(i,0) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $m$}
+            \State $S(0,j) \gets 0$
+        \EndFor
+        \For{$j \gets 1$ to $n$}
+            \For{$i \gets 1$ to $n$}
+                \State $S(i,j) \gets max \begin{cases}
+                                             0   \\
+                                             S(i - 1, j - 1) + s(x[i], y[j])  \\
+                                             S(i - 1, j) - s(x[i], --)  \\
+                                             S(i, j - 1) - s(--, y[j])
+                \end{cases}$
+            \EndFor
+        \EndFor
+        \State Traceback
+    \end{algorithmic}
+\end{algorithm}
+
+\newpage
+\subsection{Smith-Waterman example}
+\subsubsection*{Input}
+\begin{multicols}{2}
+    \begin{algorithmic}
+        \Statex \textbf{Sequences to be aligned:} $A=GTAA$ and $B=GCTA$
+    \end{algorithmic}
+
+    Außerdem:
+    \begin{itemize}
+        \item  Gap: $s(x,-) = s(-,x) = -1$
+        \item Match: $ s(x,y) = 3$ mit $x = y$
+        \item Mismatch: $s(x,y) = 1$ mit $x \neq y$
+    \end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & & & & &  \\ \hline
+            G& & & & & \\ \hline
+            T& & & & &  \\ \hline
+            A& & & & &  \\ \hline
+            A& & & & &  \\ \hline
+        \end{tabular}
+        \caption{Matrix before the start of the algorithm.}
+        \label{fig:beforestart}
+    \end{figure}
+\end{multicols}
+
+
+\subsubsection*{Initialisation - (0,0)}
+\begin{multicols}{2}
+    $S(0,0) \gets 0$
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & \newn{0} & & & &  \\ \hline
+            G& & & & & \\ \hline
+            T& & & & &  \\ \hline
+            A& & & & &  \\ \hline
+            A& & & & &  \\ \hline
+        \end{tabular}
+        \caption{.}
+        \label{fig:ini0}
+    \end{figure}
+\end{multicols}
+
+\subsubsection*{Initialisation - first loop}
+\begin{multicols}{2}
+    \begin{algorithmic}
+        \For{$i \gets 0$ to $n$}
+            \State $S(i,0) \gets 0$
+        \EndFor
+    \end{algorithmic}
+
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0& & & &  \\ \hline
+            G&\newn{0} & & & & \\ \hline
+            T&\newn{0} & & & &  \\ \hline
+            A&\newn{0} & & & &  \\ \hline
+            A&\newn{0} & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:ini1}
+    \end{figure}
+\end{multicols}
+
+\subsubsection*{Initialisation - second loop}
+\begin{multicols}{2}
+    \begin{algorithmic}
+        \For{$j \gets 0$ to $m$}
+            \State $S(0,j) \gets 0$
+        \EndFor
+    \end{algorithmic}
+
+
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&\newn{0} &\newn{0} &\newn{0} &\newn{0}  \\ \hline
+            G&0 & & & & \\ \hline
+            T&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:ini2}
+    \end{figure}
+\end{multicols}
+
+\subsubsection*{Main step - Calculation}
+\begin{algorithmic}
+    \For{$j \gets 1$ to $n$}
+        \For{$i \gets 1$ to $n$}
+            \State $S(i,j) \gets
+            \max
+            \begin{cases}S(i-1,j-1)   & +  s(a_i,b_j)    \\
+            S(i-1,j)      & + s(a_i,-)      \\
+            S(i,j-1)		& + s(-,b_j)      \\
+            0
+            \end{cases}
+            =\max
+            \begin{cases}
+                S(i-1,j-1)& + \phantom{--}3 \phantom{-} a_i = b_j\\
+                S(i-1,j-1)& + \phantom{-}1 \phantom{--} a_i \neq b_j\\
+                S(i-1,j)& + -1 \phantom{-} b_j = -\\
+                S(i,j-1)& + -1 \phantom{-} a_i = -\\
+                0
+            \end{cases}$
+        \EndFor
+    \EndFor
+\end{algorithmic}
+
+\paragraph{j = 1, i = 1:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(1,1) & = \max
+        \begin{cases}
+            S(0,0)& + 3 = 3\\
+            S(0,1)& + -1 = -1 \\
+            S(1,0)& + -1 = -1 \\
+            0
+        \end{cases} = 3
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & \newn{3} & & & \\ \hline
+            T&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{j = 2, i = 1:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(1,2) & = \max
+        \begin{cases}
+            S(0,1)& + \phantom{-}1 \phantom{--} = 1\\
+            S(0,2)& + -1 \phantom{-} = -1 \\
+            S(1,1)& + -1 \phantom{-} = 3-1= 2\\
+            0
+        \end{cases} \quad  = 2
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & \newn{2} & & \\ \hline
+            T&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{j = 3, i = 1:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(1,3) & = \max
+        \begin{cases}
+            S(0,2)& + \phantom{-}1 \phantom{--} = 1\\
+            S(0,3)& + -1 \phantom{-} = -1 \\
+            S(1,2)& + -1 \phantom{-} = 2-1= 1\\
+            0
+        \end{cases} \quad  = 1
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & \newn{1} & \\ \hline
+            T&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{j = 4, i = 1:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(1,4) & = \max
+        \begin{cases}
+            S(0,3)& + \phantom{-}1 \phantom{--} = 1\\
+            S(0,4)& + -1 \phantom{-} = -1 \\
+            S(1,3)& + -1 \phantom{-} = 1-1= 0\\
+            0
+        \end{cases} \quad  = 1
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & 1 & \newn{1} \\ \hline
+            T&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{j = 1, i = 2:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(2,1) & = \max
+        \begin{cases}
+            S(1,0)& + \phantom{-} 0+1 = 1 \\
+            S(1,1)& + -1 = 3-1 = 2 \\
+            S(2,0)& + -1 = 0-1 = -1\\
+            0
+        \end{cases} \quad  = 2
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & 1 & 1 \\ \hline
+            T&0 & \newn{2} & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\newpage
+
+\paragraph{j = 2, i = 2:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(2,2) & = \max
+        \begin{cases}
+            S(1,1)& + \phantom{-} 3+1 = 4 \\
+            S(1,2)& + -1 = 2-1 = 1 \\
+            S(2,1)& + -1 = 1-1 = 1\\
+            0
+        \end{cases} \quad  = 4
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & 1 & 1 \\ \hline
+            T&0 & 2 & \newn{4} & &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{j = 2, i = 3:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(2,3) & = \max
+        \begin{cases}
+            S(1,2)& + \phantom{-} 2+3 = 5 \\
+            S(1,3)& + -1 = 1-1 = 0 \\
+            S(2,2)& + -1 = 4-1 = 3\\
+            0
+        \end{cases} \quad  = 5
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & 1 & 1 \\ \hline
+            T&0 & 2 & 4 & \newn{5} &  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{j = 2, i = 4:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(2,4) & = \max
+        \begin{cases}
+            S(1,3)& + \phantom{-} 1+1 = 2 \\
+            S(1,4)& + -1 = 1-1 = 0 \\
+            S(2,3)& + -1 = 5-1 = 4\\
+            0
+        \end{cases} \quad  = 4
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & 1 & 1 \\ \hline
+            T&0 & 2 & 4 & 5 & \newn{4}  \\ \hline
+            A&0 & & & &  \\ \hline
+            A&0 & & & &  \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\paragraph{Continue like that...}
+
+\paragraph{j = 2, i = 4:}
+\begin{multicols}{2}
+    \begin{align*}
+        S(4,4) & = \max
+        \begin{cases}
+            S(3,3) + \phantom{--}3 & = 5 + 3 = 8\\
+            S(3,4) + -1 & = 8-1 = 7 \\
+            S(4,3) + -1 & = 4-1 = 3\\
+            0
+        \end{cases} \quad  = 8
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 3 & 2 & 1 & 1 \\ \hline
+            T&0 & 2 & 4 & 5 & 4 \\ \hline
+            A&0 & 1 & 3 & 5 & 8 \\ \hline
+            A&0 &1 &2 &4 &  \newn{8} \\ \hline
+        \end{tabular}
+
+        \label{fig:main1}
+    \end{figure}
+\end{multicols}
+
+\subsubsection*{Result}
+\begin{multicols}{2}
+    Score = 8 made up out of:
+    \begin{itemize}
+        \item Match G G
+        \item Mismatch C T
+        \item Mismatch T A
+        \item Match A A
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & \textcolor{blue}{3} & 2 & 1 & 1 \\ \hline
+            T&0 & 2 & \textcolor{blue}{4} & 5 & 4 \\ \hline
+            A&0 & 1 & 3 & \textcolor{blue}{5} & 8 \\ \hline
+            A&0 &1 &2 &4 & \textcolor{blue}{8}\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}

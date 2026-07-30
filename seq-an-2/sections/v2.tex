@@ -7,6 +7,14 @@
 Another notion of distance that admits large block movements is the \gls{mmdis}.
 It is based on the idea that we can cover a sequence $x$ with substrings of another
 sequence (and vice versa) that are interspersed with single characters.
+\begin{idee}
+    Wie gut lässt sich $s$ aus langen Stücken von $t$ zusammensetzen?
+    Wenige, lange
+    ``Matches'' $\Rightarrow$ ähnlich; viele kurze $\Rightarrow$ unähnlich.
+
+    Greedy von links, jeweils der
+    längste Teilstring, der in $t$ vorkommt.
+\end{idee}
 \paragraph{Partitioning a sequence.} Consider a sequence $x = z_0 b_1 z_1 b_2 \dots z_{l-1} b_l z_l$, with $|x| = m$,
 such that each $z_i$ is a (possibly empty) string (for $0 \leq i \leq l$) and each $b_i$ is a single
 character (for $1 \leq i \leq l$). The tuple 
@@ -38,8 +46,10 @@ $z_0 \coloneqq x[1 \dots k]$ is a substring of $y$, but $z_0 b_1 = x[1 \dots k +
 We apply the same strategy to the remainder of $x$, $x[k + 2 \dots m]$.
 
 \deffin{ltrpartition}
-
+\komm{Sie wird so gewählt, dass für jedes \(i \in [1,\ell]\) die Konkatenation \(z_{i-1}b_i\) kein Teilstring von \(y\) ist.
+Also: Die Blöcke werden beim Durchlaufen von \(x\) von links nach rechts genau an den Stellen getrennt, an denen das Anhängen des nächsten Zeichens dazu führen würde, dass der aktuelle Teilstring nicht mehr in \(y\) vorkommt.}
 \deffin{rtlpartition}
+\komm{Die Partition wird so gewählt, dass für jedes $i \in [1,\ell]$ die Konkatenation $b_i z_i$ kein Teilstring von $y$ ist.}
 
 \begin{theo} \label{thm:theorem-1-3}
     The \gls{ltrpartition} is a partition of minimal length, i.e.,
@@ -52,7 +62,7 @@ We apply the same strategy to the remainder of $x$, $x[k + 2 \dots m]$.
     \]
     \paragraph{Proof.} Skript S. 7 % TODO
 \end{theo}
-It is important to discuss how (and how fast) we can compute the size of a \deffin{ltrpartition}.
+It is important to discuss how (and how fast) we can compute the size of a \gls{ltrpartition}.
 In fact, because the longest common substring $z$ that starts at a given position
 $i$ in $x$ and occurs somewhere in $y$ can easily be found in $O(|z|)$ time using the suffix tree
 of $y$, we obtain the following result.
@@ -69,8 +79,8 @@ Like the \gls{qgdis}, also the \gls{mmdis} can be used to compute a
 lower bound of the \gls{edis}.
 
 \begin{theo} \label{thm:theorem-1-5}
-    Let $d(x, y)$ be the unit cost \gls{edis} between sequences $x$ and $y$.
-    Then $\mmsym(x||y) \leq d(x, y)$.
+    Let $\edis(x, y)$ be the unit cost \gls{edis} between sequences $x$ and $y$.
+    Then $\mmsym(x||y) \leq \edis(x, y)$.
     \paragraph{Proof.} Skript S. 8 % TODO
 \end{theo}
 
@@ -91,13 +101,20 @@ symmetric function that satisfies the triangular inequality and is a metric.
     \paragraph{Proof.} Skript S. 8 % TODO
 \end{theo}
 
+\warnung{
+    Die Distanz ist \textbf{asymmetrisch} definiert ($s$ zerlegt bzgl. $t$), je nach genauer
+    Skript-Definition wird noch symmetrisiert / mit einem Term normiert. Nach Preprocessing von $t$
+    läuft die Zerlegung von $s$ in $O(\abs s)$. Es ist eine \textbf{untere Schranke}-Heuristik für die
+    Editdistanz, keine exakte Distanz.
+}
+
 \section{Filtration for Edit Distance}\label{sec:filtration-for-edit-distance}
 Coming back to the \gls{edis}, while – given the fact that the search space (consisting
 of all pairwise alignments of $x$ and $y$) is of exponential size – the quadratic time dynamic
 programming solution can be considered very efficient, it can also be considered quite
 slow in practice when the sequences are long.
 Moreover, the quadratic space requirements
-(unless a space-saving technique is used that we will discuss in Chapter 6) can cause even
+(unless a space-saving technique is used that we will discuss in Chapter \ref{ch:pairwise-sequence-alignment-in-linear-space}) can cause even
 larger problems. % TODO chapter ref
 
 Now, remember that in many applications the goal of sequence comparison is not the
@@ -109,12 +126,12 @@ More formally:
 \begin{prob}
     Given a database $X = {x_1 , x_2 , \dots , x_k }$ of $k$ sequences $x_i \in \Sigma^*$,
     a query sequence $y \in \Sigma^*$ and a distance threshold $t \geq 0$, find all
-    sequences $x \in X$ such that $d(x, y) \leq t$.
+    sequences $x \in X$ such that $\edis(x, y) \leq t$.
 \end{prob}
 
 Clearly, a straightforward way to solve this problem is to compare $y$ to each sequence
 $x \in X$, one after the other.
-Whenever in such a comparison the distance $d(x, y)$ is smaller
+Whenever in such a comparison the distance $\edis(x, y)$ is smaller
 or equal to the threshold $t$, then the sequence $x$ is reported, otherwise it is discarded.
 This strategy clearly takes $O(k \cdot mn)$ time, where $m$ is an upper bound for the database
 sequence length and $n = |y|$.
@@ -123,7 +140,7 @@ However, since usually $t$ is small and many sequences in $x$ will be quite diss
 $y$,it may be possible to quickly screen the database and separate interesting candidates
 from irrelevant sequences, faster than computing the \gls{edis} for all of them.
 If such
-a screening procedure guarantees that all relevant sequences $x \in X$ with $d(x, y) \leq t$ are
+a screening procedure guarantees that all relevant sequences $x \in X$ with $\edis(x, y) \leq t$ are
 among the remaining candidates, it is called a filter.
 Generally, we thus have a two-step procedure.
 First, in a fast filtration step, candidates
@@ -155,8 +172,8 @@ filter.
 \paragraph{Filtration with the \gls{mmdis}.} As shown in Theorem~\ref{thm:theorem-1-5}, the maximal
 matches distance also gives us a bound for the unit cost \gls{edis}.
 In fact, since the
-\gls{edis} is symmetric, the filtration can even be used twice, once with $d(x||y)$ and
-once with $d(y||x)$.
+\gls{edis} is symmetric, the filtration can even be used twice, once with $\edis(x||y)$ and
+once with $\edis(y||x)$.
 This results in the following filter: For a given query sequence $y$ and edit
 distance threshold $t$, a database sequence $x \in X$ can be discarded whenever $\mmsym(x||y) >t$ or
 $\mmsym(y||x) > t$.
@@ -167,5 +184,5 @@ On the other hand, one can also develop heuristics that approximate the edit
 distance and are efficiently computable.
 Good heuristics (like BLAST) will be close to the
 true result with high probability; hence the error made by using them is small most of the
-time.
+time. \index{BLAST}
 There is no guarantee, though, that a true hit will not be missed.

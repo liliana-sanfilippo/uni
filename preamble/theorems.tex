@@ -123,7 +123,7 @@
 
 \newtheorem{warn}{Warnung}[chapter]
 \DefineBoxEnv{warn}{RedViolet}{breakable}
-\newcommand{\warnung}[1]{\begin{warn}\small\textbf{Achtung:} #1\end{warn}}
+\newcommand{\warnung}[1]{\begin{warn}[Achtung:] #1 \end{warn}}
 
 %% SATZ
 
@@ -219,12 +219,12 @@
     \end{defi}
 }
 \newcommand{\deffin}[1]{%
-    \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
+    \begin{defi}[\glsfirst*{#1}]\label{def:#1}
     \glsdesc*{#1}
     \end{defi}
 }
 \newcommand{\definSB}[1]{%
-    \begin{defi}[\glsentryfirst*{#1}]\label{def:#1}
+    \begin{defi}[\glsfirst*{#1}]\label{def:#1}
     \glsF*{#1}
     \begin{equation}\label{eq:#1}
         \glsB*{#1}
@@ -232,7 +232,7 @@
     \end{defi}
 }
 \newcommand{\deffinS}[1]{%
-    \begin{defi}[\Glsentryfirst*{#1}]\label{def:#1}
+    \begin{defi}[\glsfirst*{#1}]\label{def:#1}
     \glsdesc*{#1} \\
     Schreibweise: \glssymbol*{#1}
     \end{defi}

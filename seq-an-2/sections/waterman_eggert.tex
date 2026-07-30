@@ -1,0 +1,494 @@
+%! Author = lili
+%! Date = 7/30/26
+
+
+\section{Waterman-Eggert Algorithm}
+
+\begin{algorithm}
+    \caption{ONE(!) suboptimal Alignment through Waterman-Eggert}
+    \begin{algorithmic}
+        \Statex \textbf{Input $S$:} matrix calculated by Smith-Waterman
+        \State Take the calculated matrix from Smith-Waterman and set all cells that contribute to the optimal alignmnent to 0.
+        \State $i_start \gets $ start row
+        \For{$i \gets i_start$ to $n$}
+            \For{$j \gets 1$ to $m$}
+                \If{(i, j) belongs to optimal aligmnent}
+                    \State $S(i,j) = 0$
+                \Else
+                    \State $S(i,j) \gets max \begin{cases}
+                                                 0   \\
+                                                 S(i - 1, j - 1) + s(x[i], y[j])  \\
+                                                 S(i - 1, j) - s(x[i], --)  \\
+                                                 S(i, j - 1) - s(--, y[j])
+                    \end{cases}$
+                \EndIf
+            \EndFor
+        \EndFor
+    \end{algorithmic}
+\end{algorithm}
+
+To calculate the k best non-overlapping alignments, repeat the above k times while inputing the result matrix of the previous run.
+
+\subsection{Waterman-Eggert Example}
+
+\subsubsection*{Input}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c || c | c | c | c | c |}
+        i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+        & 0&0 &0 &0 &0  \\ \hline
+        G&0 & 3 & 2 & 1 & 1 \\ \hline
+        T&0 & 2 & 4 & 5 & 4 \\ \hline
+        A&0 & 1 & 3 & 5 & 8 \\ \hline
+        A&0 &1 &2 &4 & 8 \\ \hline
+    \end{tabular}
+    \label{fig:result}
+\end{figure}
+
+
+\subsubsection*{Take the calculated matrix from Smith-Waterman and set all cells that contribute to the optimal alignmnent to 0.}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c || c | c | c | c | c |}
+        i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+        & 0&0 &0 &0 &0  \\ \hline
+        G&0 & 0 & 2 & 1 & 1 \\ \hline
+        T&0 & 2 & 0 & 5 & 4 \\ \hline
+        A&0 & 1 & 3 & 0 & 8 \\ \hline
+        A&0 &1 &2 &4 & 0\\ \hline
+    \end{tabular}
+    \label{fig:result}
+\end{figure}
+
+\subsubsection*{Main part - calculation}
+$i_start \gets $ 1
+\begin{algorithmic}
+    \For{$i \gets i_start$ to $n$}
+        \For{$j \gets 1$ to $m$}
+            \If{(i, j) belongs to optimal aligmnent}
+                \State $S(i,j) = 0$
+            \Else
+                \State $S(i,j) \gets max \begin{cases}
+                                             0   \\
+                                             S(i - 1, j - 1) + s(x[i], y[j])  \\
+                                             S(i - 1, j) - s(x[i], --)  \\
+                                             S(i, j - 1) - s(--, y[j])
+                \end{cases}$
+            \EndIf
+        \EndFor
+    \EndFor
+\end{algorithmic}
+\paragraph{i = 1, j = 1:}
+\begin{multicols}{2}
+(1,1) belongs to optimal aligmnent, also $S(i - 1, j - 1) + s(x[i], y[j]) = 0$ bzw. dieser Weg darf nicht gegangen werden.
+
+Und über den Rest bekommt man auch maximal 0, da:
+\[
+    S(1,1) \gets max \begin{cases}
+                         0   \\
+                         S(0, 1) - 1 = 0-1 = -1  \\
+                         S(1, 0) - 1 = 0-1 = -1
+    \end{cases}
+\]
+\end{multicols}
+
+\paragraph{i = 1, j = 2:}
+\begin{multicols}{2}
+    \[
+        S(1,2) =
+        \max \begin{cases}
+                 S(0,1)& + \phantom{-} 1 =0+1 = 1 \\
+                 S(0,2)& + -1 = 0-1 = -1 \\
+                 S(1,1)& + -1 = 0-1 = -1\\
+                 0
+        \end{cases} \quad  = 1
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & \newn{1} & 1 & 1 \\ \hline
+            T&0 & 2 & 0 & 5 & 4 \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+
+\paragraph{i = 1, j = 3:}
+\begin{multicols}{2}
+    \[
+        S(1,3) =
+        \max \begin{cases}
+                 S(0,2)& + \phantom{-}1 = 0+1 = 1 \\
+                 S(0,3)& + -1 = 0-1 = -1 \\
+                 S(1,2)& + -1 = 1-1 = 0\\
+                 0
+        \end{cases} \quad  = 1
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 2 & 0 & 5 & 4 \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 1, j = 4:}
+\begin{multicols}{2}
+    \[
+        S(1,4) =
+        \max \begin{cases}
+                 S(0,3)& + \phantom{-} 1 =0+1 = 1 \\
+                 S(0,4)& + -1 = 0-1 = -1 \\
+                 S(1,3)& + -1 = 1-1 = 0\\
+                 0
+        \end{cases} \quad  = 1
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 2 & 0 & 5 & 4 \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+
+\paragraph{i = 2, j = 1:}
+\begin{multicols}{2}
+    \[
+        S(2,1) =
+        \max \begin{cases}
+                 S(1,0)& + \phantom{-}1 = 0+1 = 1 \\
+                 S(1,1)& + -1 = 0-1 = -1 \\
+                 S(2,0)& + -1 = 0-1 = -1\\
+                 0
+        \end{cases} \quad  = 1
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & \newn{1} & 0 & 5 & 4 \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 2, j = 2:}
+\begin{multicols}{2}
+(2,2) belongs to optimal aligmnent , also $S(i - 1, j - 1) + s(x[i], y[j]) = 0$ bzw. dieser Weg darf nicht gegangen werden.
+
+Und über den Rest bekommt man auch maximal 0, da:
+\[
+    S(2,2) \gets max \begin{cases}
+                         0   \\
+                         S(1, 2) - 1 = 0-1 = -1  \\
+                         S(2, 1) - 1 = 0-1 = -1
+    \end{cases}
+\]
+\end{multicols}
+
+\paragraph{i = 2, j = 3:}
+\begin{multicols}{2}
+    \[
+        S(2,3) =
+        \max \begin{cases}
+                 S(1,2)& + \phantom{-} 3 =1+3 = 4 \\
+                 S(1,3)& + -1 = 1-1 = 0 \\
+                 S(2,2)& + -1 = 0-1 = -1\\
+                 0
+        \end{cases} \quad  = 4
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & \newn{4} & 4 \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 2, j = 4:}
+\begin{multicols}{2}
+    \[
+        S(2,4) =
+        \max \begin{cases}
+                 S(1,3)& + \phantom{-}1 = 1+1 = 2 \\
+                 S(1,4)& + -1 = 1-1 = 0 \\
+                 S(2,3)& + -1 = 4-1 = 3\\
+                 0
+        \end{cases} \quad  = 3
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & \newn{3} \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+
+\paragraph{i = 3, j = 1:}
+\begin{multicols}{2}
+    \[
+        S(3,1) =
+        \max \begin{cases}
+                 S(2,0)& + \phantom{-} 1 =0+1 = 1 \\
+                 S(2,1)& + -1 = 1-1 = 0 \\
+                 S(3,0)& + -1 = 0-1 = -1\\
+                 0
+        \end{cases} \quad  = 1
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & 3 \\ \hline
+            A&0 & 1 & 3 & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 3, j = 2:}
+\begin{multicols}{2}
+    \[
+        S(3,2) =
+        \max \begin{cases}
+                 S(2,1)& + \phantom{-} 1 = 1+1 = 2 \\
+                 S(2,2)& + -1 = 1-1 = -1 \\
+                 S(3,1)& + -1 = 1-1 = 0\\
+                 0
+        \end{cases} \quad  = 2
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & 3 \\ \hline
+            A&0 & 1 & \newn{2} & 0 & 8 \\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+
+\paragraph{i = 3, j = 3:}
+\begin{multicols}{2}
+(3,3) belongs to optimal aligmnent $\Rightarrow S(3,3) = 0$
+
+Aber über den Rest bekommt man 3, da:
+\[
+    S(3,3) \gets max \begin{cases}
+                         0   \\
+                         S(2, 3) - 1 = 4-1 = 3  \\
+                         S(3, 2) - 1 = 2-1 = 1
+    \end{cases}
+\]
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c || c | c | c | c | c |}
+        i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+        & 0&0 &0 &0 &0  \\ \hline
+        G&0 & 0 & 1 & 1 & 1 \\ \hline
+        T&0 & 1 & 0 & 4 & 3 \\ \hline
+        A&0 & 1 & 2 & \newn{3} & 8\\ \hline
+        A&0 &1 &2 &4 & 0\\ \hline
+    \end{tabular}
+    \label{fig:result}
+\end{figure}
+\end{multicols}
+
+
+\paragraph{i = 3, j = 4:}
+\begin{multicols}{2}
+    \[
+        S(3,4) =
+        \max \begin{cases}
+                 S(2,3)& + \phantom{-} 3 = 4+3= 7 \\
+                 S(2,4)& + -1 = 3-1 = 2 \\
+                 S(3,3)& + -1 = 3-1 = 2\\
+                 0
+        \end{cases} \quad  = 7
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & 3 \\ \hline
+            A&0 & 1 & 2 & 3 & \newn{7}\\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+\paragraph{i = 4, j = 1:}
+\begin{multicols}{2}
+    \[
+        S(4,1) =
+        \max \begin{cases}
+                 S(3,0)& + \phantom{-} 1 = 0+1 = 1 \\
+                 S(3,1)& + -1 = 1-1 = 0 \\
+                 S(4,0)& + -1 = 0-1 = -1\\
+                 0
+        \end{cases} \quad  = 1
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & 3 \\ \hline
+            A&0 & 1 & 2 & 3 & 7\\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 4, j = 2:}
+\begin{multicols}{2}
+    \[
+        S(4,2) =
+        \max \begin{cases}
+                 S(3,1)& + \phantom{-}1 = 1+1 = 2 \\
+                 S(3,2)& + -1 = 2-1 = 1 \\
+                 S(4,1)& + -1 = 1-1 = 0\\
+                 0
+        \end{cases} \quad  = 2
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & 3 \\ \hline
+            A&0 & 1 & 2 & 3 & 7\\ \hline
+            A&0 &1 &2 &4 & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 4, j = 3:}
+\begin{multicols}{2}
+    \[
+        S(4,3) =
+        \max \begin{cases}
+                 S(3,2)& + \phantom{-} 2+1 = 3 \\
+                 S(3,3)& + -1 = 3-1 = 2 \\
+                 S(4,2)& + -1 = 2-1 = 1\\
+                 0
+        \end{cases} \quad  = 3
+    \]
+    \begin{figure}[H]
+        \centering
+        \begin{tabular}{c || c | c | c | c | c |}
+            i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+            & 0&0 &0 &0 &0  \\ \hline
+            G&0 & 0 & 1 & 1 & 1 \\ \hline
+            T&0 & 1 & 0 & 4 & 3 \\ \hline
+            A&0 & 1 & 2 & 3 & 7\\ \hline
+            A&0 &1 &2 & \newn{3} & 0\\ \hline
+        \end{tabular}
+        \label{fig:result}
+    \end{figure}
+\end{multicols}
+
+\paragraph{i = 4, j = 4:}
+\begin{multicols}{2}
+(4,4) belongs to optimal aligmnent
+
+Aber über den Rest bekommt man 6, da:
+\[
+    S(4,4) \gets max \begin{cases}
+                         0   \\
+                         S(3, 4) - 1 = 7-1 = 6  \\
+                         S(4, 3) - 1 = 3-1 = 2
+    \end{cases}
+\]
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c || c | c | c | c | c |}
+        i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+        & 0&0 &0 &0 &0  \\ \hline
+        G&0 & 0 & 1 & 1 & 1 \\ \hline
+        T&0 & 1 & 0 & 4 & 3 \\ \hline
+        A&0 & 1 & 2 & 3 & 7\\ \hline
+        A&0 &1 &2 & 3 & \newn{6} \\ \hline
+    \end{tabular}
+    \label{fig:result}
+\end{figure}
+
+\end{multicols}
+
+\subsubsection*{Result}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c || c | c | c | c | c |}
+        i $\backslash$ j & \phantom{G} & G & C & T &  A   \\ \hline \hline
+        & 0&0 &0 &0 &0  \\ \hline
+        G&0 & 0 & 1 & 1 & 1 \\ \hline
+        T&0 & 1 & 0 & 4 & 3 \\ \hline
+        A&0 & 1 & 2 & 3 & 7\\ \hline
+        A&0 &1 &2 & 3 & 6\\ \hline
+    \end{tabular}
+    \label{fig:result}
+\end{figure}
+
+
+
+\section{Links}
+\begin{itemize}
+    \item \url{https://www.compbio.dundee.ac.uk/papers/water/node5.html}
+    \item \url{https://w.wiki/ZAL}
+    \item \url{https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Smith-Waterman}
+\end{itemize}
+
+WARNUNG: man kann zwar bei eggert das erste Aligment nicht mehr nehmen, aber es könnte dort trtzdem noch ein Indel sein.
+
+% Siehe Foto, da müsste ganz unten rechts eine 4 sein.
