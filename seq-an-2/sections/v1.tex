@@ -102,15 +102,11 @@ in the decimal number 23, the first 2 has positional value (weight) $10^1 = 10$ 
 For texts, however, the second numbering in (b) is more natural since we expect lower position numbers on the left side of higher position numbers.
 
 In general, we see that $z \in \Sigma^q$ has rank
-\[
-(a): \rf(z) =
-\Sigma^q_{i=1}
-\rf_{\Sigma}
-(z[i]) \cdot \sigma^{q-i}, (b): \rf(z) =
-\Sigma^q_{i=1} 
-\rf_{\Sigma}
-(z[i]) \cdot \Sigma^{i-1}.
-\]
+\equat{falling_ranking}
+(falling) or
+\equat{rising_ranking}
+(rising).
+
 Whichever numbering system we use, we have to do it consistently. \\ \newline
 For each of the two ways to rank a \gls{qgram}, there is a corresponding unranking method.
 Both methods work with integer division and remainder.
