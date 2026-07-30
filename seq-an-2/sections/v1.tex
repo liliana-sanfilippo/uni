@@ -152,7 +152,8 @@ Because with the rising function we are using the rest to find the letters inste
 Both methods need q iterations and reconstruct the \gls{qgram} from the first position to the last.
 Each iteration takes a starting value r and determines the corresponding character of the \gls{qgram} while updating r for the next iteration.
 The starting value for the first iteration is the rank of the \gls{qgram}.
-In iteration i in the unranking method \eqref{eq:falling-unranking}, for $1 \leq i \leq q$, the starting value $r$ is divided by $\sigma^{q-i}$.
+In iteration i in the unranking method \eqref{eq:falling_unranking}, for $1 \leq i \leq q$, the starting value $r$
+is divided by $\sigma^{q-i}$.
 The integer result c of the division determines the decoded character as described by $\rf_{\Sigma}$ of the used ranking
 function.
 The remainder r' of the division serves as starting value for the next iteration.
@@ -321,3 +322,10 @@ Generally, one can show the following relationship.
 
 %\subsection{The Maximal Matches Metric}
 \txc{Notiz}
+
+\begin{zsmf}
+        Die q-Gramm-Distanz vergleicht zwei Strings nicht zeichenweise, sondern über die
+        Häufigkeiten aller Länge-$q$-Teilwörter.
+        Sie ist sehr schnell ($O(n)$) und dient als
+        Filter für die (teure) Editdistanz.
+\end{zsmf}
