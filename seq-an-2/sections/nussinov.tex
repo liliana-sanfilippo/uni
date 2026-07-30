@@ -18,40 +18,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & & \textcolor{red}{0} \\
-                     2 & \\
-                     3 & \\
-                     4 & \\
-                     5 & \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$              & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     &       & \textcolor{red}{0} &       &       &       &       \\
+                                 2     &       &                    &       &       &       &       \\
+                                 3     &       &                    &       &       &       &       \\
+                                 4     &       &                    &       &       &       &       \\
+                                 5     &       &                    &       &       &       &       \\
+                                 6     &       &                    &       &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(2,1) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & & \textcolor{red}{init} \\
-                        2 & \\
-                        3 & \\
-                        4 & \\
-                        5 & \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1 & & \textcolor{red}{init} \\
+                                    2     &       &       &       &       &       &       \\
+                                    3     &       &       &       &       &       &       \\
+                                    4     &       &       &       &       &       &       \\
+                                    5     &       &       &       &       &       &       \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(2,1) \gets \text{``init''}$ }
     \end{subfigure}
@@ -62,40 +59,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & & 0 \\
-                     2 & & & \textcolor{red}{0} \\
-                     3 & \\
-                     4 & \\
-                     5 & \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$              & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     &       & 0     &                    &       &       &       \\
+                                 2     &       &       & \textcolor{red}{0} &       &       &       \\
+                                 3     &       &       &                    &       &       &       \\
+                                 4     &       &       &                    &       &       &       \\
+                                 5     &       &       &                    &       &       &       \\
+                                 6     &       &       &                    &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(3,2) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & & init \\
-                        2 & & & \textcolor{red}{init} \\
-                        3 & \\
-                        4 & \\
-                        5 & \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$ & $G_2$ & $U_3$                 & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1     &       & init  &                       &       &       &       \\
+                                    2     &       &       & \textcolor{red}{init} &       &       &       \\
+                                    3     &       &       &                       &       &       &       \\
+                                    4     &       &       &                       &       &       &       \\
+                                    5     &       &       &                       &       &       &       \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(3,2) \gets \text{``init''}$ }
     \end{subfigure}
@@ -106,40 +100,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & & 0 \\
-                     2 & & & 0 \\
-                     3 & & & & \textcolor{red}{0} \\
-                     4 & \\
-                     5 & \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$              & $C_5$ & $A_6$ \\ \hline
+                                 1     &       & 0     &       &                    &       &       \\
+                                 2     &       &       & 0     &                    &       &       \\
+                                 3     &       &       &       & \textcolor{red}{0} &       &       \\
+                                 4     &       &       &       &                    &       &       \\
+                                 5     &       &       &       &                    &       &       \\
+                                 6     &       &       &       &                    &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(4,3) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & & init \\
-                        2 & & & init \\
-                        3 & & & & \textcolor{red}{init} \\
-                        4 & \\
-                        5 & \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1     &       & init  &       &       &       &       \\
+                                    2     &       &       & init  &       &       &       \\
+                                    3 & & & & \textcolor{red}{init} & \\
+                                    4     &       &       &       &       &       &       \\
+                                    5     &       &       &       &       &       &       \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(4,3) \gets \text{``init''}$ }
     \end{subfigure}
@@ -151,40 +142,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & & 0 \\
-                     2 & & & 0 \\
-                     3 & & & & 0 \\
-                     4 & & & & & \textcolor{red}{0} \\
-                     5 & \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$              & $A_6$ \\ \hline
+                                 1     &       & 0     &       &       &                    &       \\
+                                 2     &       &       & 0     &       &                    &       \\
+                                 3     &       &       &       & 0     &                    &       \\
+                                 4     &       &       &       &       & \textcolor{red}{0} &       \\
+                                 5     &       &       &       &       &                    &       \\
+                                 6     &       &       &       &       &                    &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(5,4) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & & init \\
-                        2 & & & init \\
-                        3 & & & & init \\
-                        4 & & & & & \textcolor{red}{init} \\
-                        5 & \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$                 & $A_6$ \\ \hline
+                                    1     &       & init  &       &       &                       &       \\
+                                    2     &       &       & init  &       &                       &       \\
+                                    3     &       &       &       & init  &                       &       \\
+                                    4     &       &       &       &       & \textcolor{red}{init} &       \\
+                                    5     &       &       &       &       &                       &       \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(5,4) \gets \text{``init''}$ }
     \end{subfigure}
@@ -196,40 +184,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$              \\ \hline
-                     1 & & 0 \\
-                     2 & & & 0 \\
-                     3 & & & & 0 \\
-                     4 & & & & & 0 \\
-                     5     &       &       &       &       &       & \textcolor{red}{0} \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$              \\ \hline
+                                 1     &       & 0     &       &       &       &                    \\
+                                 2     &       &       & 0     &       &       &                    \\
+                                 3     &       &       &       & 0     &       &                    \\
+                                 4     &       &       &       &       & 0     &                    \\
+                                 5     &       &       &       &       &       & \textcolor{red}{0} \\
+                                 6     &       &       &       &       &       &                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(6,5) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$                 \\ \hline
-                        1 & & init \\
-                        2 & & & init \\
-                        3 & & & & init \\
-                        4 & & & & & init \\
-                        5     &       &       &       &       &       & \textcolor{red}{init} \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$                 \\ \hline
+                                    1     &       & init  &       &       &       &                       \\
+                                    2     &       &       & init  &       &       &                       \\
+                                    3     &       &       &       & init  &       &                       \\
+                                    4     &       &       &       &       & init  &                       \\
+                                    5     &       &       &       &       &       & \textcolor{red}{init} \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(6,5) \gets \text{``init''}$ }
     \end{subfigure}
@@ -253,40 +238,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & \textcolor{red}{0} & 0 \\
-                     2 & & & 0 \\
-                     3 & & & & 0 \\
-                     4 & & & & & 0 \\
-                     5     &       &       &       &       &       & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$              & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     & \textcolor{red}{0} & 0     &       &       &       &       \\
+                                 2     &                    &       & 0     &       &       &       \\
+                                 3     &                    &       &       & 0     &       &       \\
+                                 4     &                    &       &       &       & 0     &       \\
+                                 5     &                    &       &       &       &       & 0     \\
+                                 6     &                    &       &       &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(1,1) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & \textcolor{red}{unpaired} & init \\
-                        2 & & & init \\
-                        3 & & & & init \\
-                        4 & & & & & init \\
-                        5     &       &       &       &       &       & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1 & \textcolor{red}{unpaired} & init \\
+                                    2     &       &       & init  &       &       &       \\
+                                    3     &       &       &       & init  &       &       \\
+                                    4     &       &       &       &       & init  &       \\
+                                    5     &       &       &       &       &       & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(1,1) \gets \text{``unpaired''}$ }
     \end{subfigure}
@@ -297,40 +279,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & & \textcolor{red}{0} & 0 \\
-                     3 & & & & 0 \\
-                     4 & & & & & 0 \\
-                     5     &       &       &       &       &       & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$              & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     & 0     & 0                  &       &       &       &       \\
+                                 2     &       & \textcolor{red}{0} & 0     &       &       &       \\
+                                 3     &       &                    &       & 0     &       &       \\
+                                 4     &       &                    &       &       & 0     &       \\
+                                 5     &       &                    &       &       &       & 0     \\
+                                 6     &       &                    &       &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(2,2) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & & \textcolor{red}{unpaired} & init \\
-                        3 & & & & init \\
-                        4 & & & & & init \\
-                        5     &       &       &       &       &       & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$    & $G_2$                     & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1     & unpaired & init                      &       &       &       &       \\
+                                    2     &          & \textcolor{red}{unpaired} & init  &       &       &       \\
+                                    3     &          &                           &       & init  &       &       \\
+                                    4     &          &                           &       &       & init  &       \\
+                                    5     &          &                           &       &       &       & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(2,2) \gets \text{``unpaired''}$ }
     \end{subfigure}
@@ -342,40 +321,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & & 0 & 0 \\
-                     3 & & & \textcolor{red}{0} & 0 \\
-                     4 & & & & & 0 \\
-                     5     &       &       &       &       &       & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$              & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     & 0     & 0     &                    &       &       &       \\
+                                 2     &       & 0     & 0                  &       &       &       \\
+                                 3     &       &       & \textcolor{red}{0} & 0     &       &       \\
+                                 4     &       &       &                    &       & 0     &       \\
+                                 5     &       &       &                    &       &       & 0     \\
+                                 6     &       &       &                    &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(3,3) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & & unpaired & init \\
-                        3 & & & \textcolor{red}{unpaired} & init \\
-                        4 & & & & & init \\
-                        5     &       &       &       &       &       & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$    & $G_2$    & $U_3$                     & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1     & unpaired & init     &                           &       &       &       \\
+                                    2     &          & unpaired & init                      &       &       &       \\
+                                    3     &          &          & \textcolor{red}{unpaired} & init  &       &       \\
+                                    4     &          &          &                           &       & init  &       \\
+                                    5     &          &          &                           &       &       & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(3,3) \gets \text{``unpaired''}$ }
     \end{subfigure}
@@ -387,40 +363,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & & 0 & 0 \\
-                     3 & & & 0 & 0 \\
-                     4 & & & & \textcolor{red}{0} & 0 \\
-                     5     &       &       &       &       &       & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$              & $C_5$ & $A_6$ \\ \hline
+                                 1     & 0     & 0     &       &                    &       &       \\
+                                 2     &       & 0     & 0     &                    &       &       \\
+                                 3     &       &       & 0     & 0                  &       &       \\
+                                 4     &       &       &       & \textcolor{red}{0} & 0     &       \\
+                                 5     &       &       &       &                    &       & 0     \\
+                                 6     &       &       &       &                    &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(4,4) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & & unpaired & init \\
-                        3 & & & unpaired & init \\
-                        4 & & & & \textcolor{red}{unpaired} & init \\
-                        5     &       &       &       &       &       & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$    & $G_2$    & $U_3$    & $C_4$                     & $C_5$ & $A_6$ \\ \hline
+                                    1     & unpaired & init     &          &                           &       &       \\
+                                    2     &          & unpaired & init     &                           &       &       \\
+                                    3     &          &          & unpaired & init                      &       &       \\
+                                    4     &          &          &          & \textcolor{red}{unpaired} & init  &       \\
+                                    5     &          &          &          &                           &       & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(4,4) \gets \text{``unpaired''}$ }
     \end{subfigure}
@@ -431,40 +404,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$              & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & & 0 & 0 \\
-                     3 & & & 0 & 0 \\
-                     4 & & & & 0 & 0 \\
-                     5     &       &       &       &       & \textcolor{red}{0} & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$              & $A_6$ \\ \hline
+                                 1     & 0     & 0     &       &       &                    &       \\
+                                 2     &       & 0     & 0     &       &                    &       \\
+                                 3     &       &       & 0     & 0     &                    &       \\
+                                 4     &       &       &       & 0     & 0                  &       \\
+                                 5     &       &       &       &       & \textcolor{red}{0} & 0     \\
+                                 6     &       &       &       &       &                    &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(5,5) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$                     & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & & unpaired & init \\
-                        3 & & & unpaired & init \\
-                        4 & & & & unpaired & init \\
-                        5     &       &       &       &       & \textcolor{red}{unpaired} & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$    & $G_2$    & $U_3$    & $C_4$    & $C_5$                     & $A_6$ \\ \hline
+                                    1     & unpaired & init     &          &          &                           &       \\
+                                    2     &          & unpaired & init     &          &                           &       \\
+                                    3     &          &          & unpaired & init     &                           &       \\
+                                    4     &          &          &          & unpaired & init                      &       \\
+                                    5     &          &          &          &          & \textcolor{red}{unpaired} & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(5,5) \gets \text{``unpaired''}$ }
     \end{subfigure}
@@ -478,40 +448,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & \textcolor{red}{0} & 0 & 0 \\
-                     3 & & & 0 & 0 \\
-                     4 & & & & 0 & 0 \\
-                     5     &       &       &       &       & 0     & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$              & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     & 0                  & 0     &       &       &       &       \\
+                                 2     & \textcolor{red}{0} & 0     & 0     &       &       &       \\
+                                 3     &                    &       & 0     & 0     &       &       \\
+                                 4     &                    &       &       & 0     & 0     &       \\
+                                 5     &                    &       &       &       & 0     & 0     \\
+                                 6     &                    &       &       &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(1,2) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & \textcolor{red}{unpaired} & unpaired & init \\
-                        3 & & & unpaired & init \\
-                        4 & & & & unpaired & init \\
-                        5     &       &       &       &       & unpaired & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$                     & $G_2$    & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                                    1     & unpaired                  & init     &          &          &          &       \\
+                                    2     & \textcolor{red}{unpaired} & unpaired & init     &          &          &       \\
+                                    3     &                           &          & unpaired & init     &          &       \\
+                                    4     &                           &          &          & unpaired & init     &       \\
+                                    5     &                           &          &          &          & unpaired & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(1,2) \gets \text{``unpaired''}$ }
     \end{subfigure}
@@ -524,40 +491,37 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
-        \scriptsize
-        \[
-            M =  \begin{tabular}{|c|c|c|c|c|c|c|}
-                     \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & 0 & 0 & 0 \\
-                     3 & & \textcolor{red}{1} & 0 & 0 \\
-                     4 & & & & 0 & 0 \\
-                     5     &       &       &       &       & 0     & 0     \\
-                     6 &
-                     \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        M =  \begin{tabular}{|c|c|c|c|c|c|c|}
+                                 \hline
+                                 j / i & $G_1$ & $G_2$              & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                 1     & 0     & 0                  &       &       &       &       \\
+                                 2     & 0     & 0                  & 0     &       &       &       \\
+                                 3     &       & \textcolor{red}{1} & 0     & 0     &       &       \\
+                                 4     &       &                    &       & 0     & 0     &       \\
+                                 5     &       &                    &       &       & 0     & 0     \\
+                                 6     &       &                    &       &       &       &       \\ \hline
+                        \end{tabular}
         \]
         \caption{$M(2,3) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
-        \scriptsize
-        \[
-            T =     \begin{tabular}{|c|c|c|c|c|c|c|}
-                        \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & & \textcolor{red}{case 3} & unpaired & init \\
-                        4 & & & & unpaired & init \\
-                        5     &       &       &       &       & unpaired & init  \\
-                        6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{unpaired}
-                        & \textcolor{white}{init}
-                        \\ \hline
-            \end{tabular}
+        \scriptsize \[
+                        T =     \begin{tabular}{|c|c|c|c|c|c|c|}
+                                    \hline
+                                    j / i & $G_1$    & $G_2$                   & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                                    1     & unpaired & init                    &          &          &          &       \\
+                                    2     & unpaired & unpaired                & init     &          &          &       \\
+                                    3     &          & \textcolor{red}{case 3} & unpaired & init     &          &       \\
+                                    4     &          &                         &          & unpaired & init     &       \\
+                                    5     &          &                         &          &          & unpaired & init  \\
+                                    6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{unpaired}
+                                    & \textcolor{white}{init}
+                                    \\ \hline
+                        \end{tabular}
         \]
         \caption{$T(2,3) \gets \text{case}$ }
     \end{subfigure}
@@ -570,32 +534,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & 0 & 0 & 0 \\
-                     3 & & 0 & 0 & 0 \\
-                     4 & & & \textcolor{red}{0} & 0 & 0 \\
-                     5     &       &       &       &       & 0     & 0     \\
-                     6 &
-                     \\ \hline
+                     j / i & $G_1$ & $G_2$ & $U_3$              & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                     1     & 0     & 0     &                    &       &       &       \\
+                     2     & 0     & 0     & 0                  &       &       &       \\
+                     3     &       & 0     & 0                  & 0     &       &       \\
+                     4     &       &       & \textcolor{red}{0} & 0     & 0     &       \\
+                     5     &       &       &                    &       & 0     & 0     \\
+                     6     &       &       &                    &       &       &       \\ \hline
             \end{tabular}
         \]
         \caption{$M(3,4) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & & unpaired & unpaired & init \\
-                        4 & & & \textcolor{red}{unpaired} & unpaired & init \\
-                        5     &       &       &       &       & unpaired & init  \\
+                        j / i & $G_1$    & $G_2$    & $U_3$                     & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired & init     &                           &          &          &       \\
+                        2     & unpaired & unpaired & init                      &          &          &       \\
+                        3     &          & unpaired & unpaired                  & init     &          &       \\
+                        4     &          &          & \textcolor{red}{unpaired} & unpaired & init     &       \\
+                        5     &          &          &                           &          & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         & \textcolor{white}{unpaired}
                         & \textcolor{white}{unpaired}
@@ -613,32 +578,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
                      j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$              & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & 0 & 0 & 0 \\
-                     3 & & 0 & 0 & 0 \\
-                     4 & & & 0 & 0 & 0 \\
+                     1     & 0     & 0     &       &                    &       &       \\
+                     2     & 0     & 0     & 0     &                    &       &       \\
+                     3     &       & 0     & 0     & 0                  &       &       \\
+                     4     &       &       & 0     & 0                  & 0     &       \\
                      5     &       &       &       & \textcolor{red}{0} & 0     & 0     \\
-                     6 &
-                     \\ \hline
+                     6     &       &       &       &                    &       &       \\ \hline
             \end{tabular}
         \]
         \caption{$M(4,5) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$                     & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & & unpaired & unpaired & init \\
-                        4 & & & unpaired & unpaired & init \\
-                        5     &       &       &       & \textcolor{red}{unpaired} & unpaired & init  \\
+                        j / i & $G_1$    & $G_2$    & $U_3$    & $C_4$                     & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired & init     &          &                           &          &       \\
+                        2     & unpaired & unpaired & init     &                           &          &       \\
+                        3     &          & unpaired & unpaired & init                      &          &       \\
+                        4     &          &          & unpaired & unpaired                  & init     &       \\
+                        5     &          &          &          & \textcolor{red}{unpaired} & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         & \textcolor{white}{unpaired}
                         & \textcolor{white}{unpaired}
@@ -656,32 +622,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 \\
-                     2 & 0 & 0 & 0 \\
-                     3 & & 0 & 0 & 0 \\
-                     4 & & & 0 & 0 & 0 \\
-                     5     &       &       &       & 0     & 0     & 0     \\
-                     6 & & & & & \textcolor{red}{0}
-                     \\ \hline
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$              & $A_6$ \\ \hline
+                     1     & 0     & 0     &       &       &                    &       \\
+                     2     & 0     & 0     & 0     &       &                    &       \\
+                     3     &       & 0     & 0     & 0     &                    &       \\
+                     4     &       &       & 0     & 0     & 0                  &       \\
+                     5     &       &       &       & 0     & 0                  & 0     \\
+                     6     &       &       &       &       & \textcolor{red}{0} &       \\ \hline
             \end{tabular}
         \]
         \caption{$M(5,6) \gets 0$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & & unpaired & unpaired & init \\
+                        j / i & $G_1$    & $G_2$    & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired & init     &          &          &          &       \\
+                        2     & unpaired & unpaired & init     &          &          &       \\
+                        3     &          & unpaired & unpaired & init     &          &       \\
                         4 & & & unpaired & unpaired & init \\
-                        5     &       &       &       & unpaired & unpaired & init  \\
+                        5     &          &          &          & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         & \textcolor{white}{unpaired}
                         & \textcolor{red}{unpaired}
@@ -729,32 +696,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 & \\
-                     2 & 0 & 0 & 0 \\
-                     3 & \textcolor{red}{1} & 0 & 0 & 0 \\
-                     4 & & & 0 & 0 & 0 \\
-                     5     &       &       &       & 0     & 0     & 0     \\
-                     6 & & & & & 0
-                     \\ \hline
+                     j / i & $G_1$              & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                     1     & 0                  & 0     &       &       &       &       \\
+                     2     & 0                  & 0     & 0     &       &       &       \\
+                     3     & \textcolor{red}{1} & 0     & 0     & 0     &       &       \\
+                     4     &                    &       & 0     & 0     & 0     &       \\
+                     5     &                    &       &       & 0     & 0     & 0     \\
+                     6     &                    &       &       &       & 0     &       \\ \hline
             \end{tabular}
         \]
         \caption{ Compute $M(1,3)$ according to the recurrence}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & \textcolor{red}{unpaired} & unpaired & unpaired & init \\
-                        4 & & & unpaired & unpaired & init \\
-                        5     &       &       &       & unpaired & unpaired & init  \\
+                        j / i & $G_1$                     & $G_2$    & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired                  & init     &          &          &          &       \\
+                        2     & unpaired                  & unpaired & init     &          &          &       \\
+                        3     & \textcolor{red}{unpaired} & unpaired & unpaired & init     &          &       \\
+                        4     &                           &          & unpaired & unpaired & init     &       \\
+                        5     &                           &          &          & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         &
                         & unpaired
@@ -791,32 +759,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 & \\
-                     2 & 0 & 0 & 0 \\
-                     3 & 1 & 0 & 0 & 0 \\
-                     4 & & \textcolor{red}{1} & 0 & 0 & 0 \\
-                     5     &       &       &       & 0     & 0     & 0     \\
-                     6 & & & & & 0
-                     \\ \hline
+                     j / i & $G_1$ & $G_2$              & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                     1     & 0     & 0                  &       &       &       &       \\
+                     2     & 0     & 0                  & 0     &       &       &       \\
+                     3     & 1     & 0                  & 0     & 0     &       &       \\
+                     4     &       & \textcolor{red}{1} & 0     & 0     & 0     &       \\
+                     5     &       &                    &       & 0     & 0     & 0     \\
+                     6     &       &                    &       &       & 0     &       \\ \hline
             \end{tabular}
         \]
         \caption{ Compute $M(2,4)$ according to the recurrence}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & case 3 & unpaired & unpaired & init \\
-                        4 & & \textcolor{red}{case 3} & unpaired & unpaired & init \\
-                        5     &       &       &       & unpaired & unpaired & init  \\
+                        j / i & $G_1$    & $G_2$                   & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired & init                    &          &          &          &       \\
+                        2     & unpaired & unpaired                & init     &          &          &       \\
+                        3     & case 3   & unpaired                & unpaired & init     &          &       \\
+                        4     &          & \textcolor{red}{case 3} & unpaired & unpaired & init     &       \\
+                        5     &          &                         &          & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         &
                         & unpaired
@@ -852,32 +821,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
                      j / i & $G_1$ & $G_2$ & $U_3$              & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 & \\
-                     2 & 0 & 0 & 0 \\
-                     3 & 1 & 0 & 0 & 0 \\
-                     4 & & 1 & 0 & 0 & 0 \\
+                     1     & 0     & 0     &                    &       &       &       \\
+                     2     & 0     & 0     & 0                  &       &       &       \\
+                     3     & 1     & 0     & 0                  & 0     &       &       \\
+                     4     &       & 1     & 0                  & 0     & 0     &       \\
                      5     &       &       & \textcolor{red}{0} & 0     & 0     & 0     \\
-                     6 & & & & & 0
-                     \\ \hline
+                     6     &       &       &                    &       & 0     &       \\ \hline
             \end{tabular}
         \]
         \caption{ Compute $M(3,5)$ according to the recurrence}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$                      & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & case 3 & unpaired & unpaired & init \\
-                        4 & & case 3 & unpaired & unpaired & init \\
-                        5     &       &       & \textcolor{red}{case 1-3 } & unpaired & unpaired & init  \\
+                        j / i & $G_1$    & $G_2$    & $U_3$                      & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired & init     &                            &          &          &       \\
+                        2     & unpaired & unpaired & init                       &          &          &       \\
+                        3     & case 3   & unpaired & unpaired                   & init     &          &       \\
+                        4     &          & case 3   & unpaired                   & unpaired & init     &       \\
+                        5     &          &          & \textcolor{red}{case 1-3 } & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         &
                         & unpaired
@@ -913,32 +883,33 @@
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 & \\
-                     2 & 0 & 0 & 0 \\
-                     3 & 1 & 0 & 0 & 0 \\
-                     4 & & 1 & 0 & 0 & 0 \\
-                     5     &       &       & 0     & 0     & 0     & 0     \\
-                     6 & & & & \textcolor{red}{0} & 0
-                     \\ \hline
+                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$              & $C_5$ & $A_6$ \\ \hline
+                     1     & 0     & 0     &       &                    &       &       \\
+                     2     & 0     & 0     & 0     &                    &       &       \\
+                     3     & 1     & 0     & 0     & 0                  &       &       \\
+                     4     &       & 1     & 0     & 0                  & 0     &       \\
+                     5     &       &       & 0     & 0                  & 0     & 0     \\
+                     6     &       &       &       & \textcolor{red}{0} & 0     &       \\ \hline
             \end{tabular}
         \]
         \caption{ Compute $M(4,6)$ according to the recurrence}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & case 3 & unpaired & unpaired & init \\
+                        j / i & $G_1$    & $G_2$    & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
+                        1     & unpaired & init     &          &          &          &       \\
+                        2     & unpaired & unpaired & init     &          &          &       \\
+                        3     & case 3   & unpaired & unpaired & init     &          &       \\
                         4 & & case 3 & unpaired & unpaired & init \\
-                        5     &       &       & case 1-3 & unpaired & unpaired & init  \\
+                        5     &          &          & case 1-3 & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         & \textcolor{red}{case 1-3 }
                         & unpaired
@@ -962,34 +933,34 @@ Resulting in:
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$              & $G_2$              & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 & \\
-                     2 & 0 & 0 & 0 \\
-                     3 & 1 & 0 & 0 & 0 \\
-                     4 & \textcolor{red}{1} & 1 & 0 & 0 & 0 \\
-                     5     & \textcolor{red}{2} & \textcolor{red}{1} & 0     & 0     & 0     & 0     \\
-                     6 & & \textcolor{red}{1} & \textcolor{red}{1} & 0 & 0
-                     \\ \hline
+                     j / i & $G_1$              & $G_2$              & $U_3$              & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                     1     & 0                  & 0                  &                    &       &       &       \\
+                     2     & 0                  & 0                  & 0                  &       &       &       \\
+                     3     & 1                  & 0                  & 0                  & 0     &       &       \\
+                     4     & \textcolor{red}{1} & 1                  & 0                  & 0     & 0     &       \\
+                     5     & \textcolor{red}{2} & \textcolor{red}{1} & 0                  & 0     & 0     & 0     \\
+                     6     &                    & \textcolor{red}{1} & \textcolor{red}{1} & 0     & 0     &       \\ \hline
             \end{tabular}
         \]
         \caption{ Compute $M(4,6)$ according to the recurrence}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & case 3 & unpaired & unpaired & init \\
-                        4 & -- & case 3 & unpaired & unpaired & init \\
-                        5     & --    & --    & case 1-3 & unpaired & unpaired & init  \\
-                        6 & \textcolor{white}{unpaired} & -- & -- & case 1-3 & unpaired & \textcolor{white}{init}
-                        \\ \hline
+                        j / i & $G_1$                       & $G_2$    & $U_3$    & $C_4$    & $C_5$    & $A_6$                   \\ \hline
+                        1     & unpaired                    & init     &          &          &          &                         \\
+                        2     & unpaired                    & unpaired & init     &          &          &                         \\
+                        3     & case 3                      & unpaired & unpaired & init     &          &                         \\
+                        4     & --                          & case 3   & unpaired & unpaired & init     &                         \\
+                        5     & --                          & --       & case 1-3 & unpaired & unpaired & init                    \\
+                        6     & \textcolor{white}{unpaired} & --       & --       & case 1-3 & unpaired & \textcolor{white}{init} \\ \hline
             \end{tabular}
         \]
         \caption{$T(4,6) \gets \text{case}$ }
@@ -1047,34 +1018,34 @@ Resulting in:
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
+        \scriptsize
         \[
             M =  \begin{tabular}{|c|c|c|c|c|c|c|}
                      \hline
-                     j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                     1 & 0 & 0 & \\
-                     2 & 0 & 0 & 0 \\
-                     3 & 1 & 0 & 0 & 0 \\
-                     4 & 1 & 1 & 0 & 0 & 0 \\
-                     5     & 2     & 1     & 0     & 0     & 0     & 0     \\
-                     6 & \textcolor{red}{2} & 1 & 1 & 0 & 0
-                     \\ \hline
+                     j / i & $G_1$              & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                     1     & 0                  & 0     &       &       &       &       \\
+                     2     & 0                  & 0     & 0     &       &       &       \\
+                     3     & 1                  & 0     & 0     & 0     &       &       \\
+                     4     & 1                  & 1     & 0     & 0     & 0     &       \\
+                     5     & 2                  & 1     & 0     & 0     & 0     & 0     \\
+                     6     & \textcolor{red}{2} & 1     & 1     & 0     & 0     &       \\ \hline
             \end{tabular}
         \]
         \caption{ Compute $M(4,6)$ according to the recurrence}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.65\textwidth}
+        \scriptsize
         \[
             T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                         \hline
-                        j / i & $G_1$ & $G_2$ & $U_3$    & $C_4$    & $C_5$    & $A_6$ \\ \hline
-                        1 & unpaired & init \\
-                        2 & unpaired & unpaired & init \\
-                        3 & case 3 & unpaired & unpaired & init \\
-                        4 & -- & case 3 & unpaired & unpaired & init \\
-                        5     & --    & --    & case 1-3 & unpaired & unpaired & init  \\
-                        6 & \textcolor{red}{case 3} & -- & -- & case 1-3 & unpaired & \textcolor{white}{init}
-                        \\ \hline
+                        j / i & $G_1$                   & $G_2$    & $U_3$    & $C_4$    & $C_5$    & $A_6$                   \\ \hline
+                        1     & unpaired                & init     &          &          &          &                         \\
+                        2     & unpaired                & unpaired & init     &          &          &                         \\
+                        3     & case 3                  & unpaired & unpaired & init     &          &                         \\
+                        4     & --                      & case 3   & unpaired & unpaired & init     &                         \\
+                        5     & --                      & --       & case 1-3 & unpaired & unpaired & init                    \\
+                        6     & \textcolor{red}{case 3} & --       & --       & case 1-3 & unpaired & \textcolor{white}{init} \\ \hline
             \end{tabular}
         \]
         \caption{$T(4,6) \gets \text{case}$ }
