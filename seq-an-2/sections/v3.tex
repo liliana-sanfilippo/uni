@@ -691,4 +691,6 @@ where $\land$ denotes logical AND. \\ \newline
 By the combination of several distinct hash functions, a $k$-mer $z$ (with $rank\ r = rank(z)$) will be reported as a false positive, although it has not been stored in the Bloom filter, only if all hash functions are involved in collisions, i.e., if for each of the $h$ hash values $f_i (r), 1 \leq i \leq h$, some other $k$-mer $z' \neq z$ produces with some hash function fi′ the same hash value $(f_i' (rank(z' )) = f_i (r))$ and therefore sets $B$ at this position to T. While this is quite unlikely in practice as long as the hash table is only moderately filled, it can not be completely avoided.
 Therefore the above function is called ``probably-contains'' and not ``contains''.
 There are some techniques to handle false positives in certain applications manually, so that they do not distort the result and the Bloom filter becomes exact.
-Details are omitted here.
+
+% TODO Other techniques to handle k-mer sets in practice.
+% TODO Software
