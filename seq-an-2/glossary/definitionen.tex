@@ -13,28 +13,28 @@
 \newglossaryentry{ltrpartition}{
     name={left-to-right partition},
     first={left-to-right partition of $x$ with respect to $y$},
-    description={},
-    symbol={\ensuremath{P_{LR}}}
-    type=defi
+description={},
+symbol={\ensuremath{P_{LR}}}
+type=defi
 }
 
 \newglossaryentry{rtlpartition}{
-    name={right-to-left partition},
-    first={right-to-left partition of $x$ with respect to $y$},
-    description={},
-    symbol={\ensuremath{P_{RL}}},
-    type=defi
+name={right-to-left partition},
+first={right-to-left partition of $x$ with respect to $y$},
+description={},
+symbol={\ensuremath{P_{RL}}},
+type=defi
 }
 
 \newglossaryentry{dimension}{
-    name={dimension of a \gls{dbsg}},
-    description={},
-    type=defi
+name={dimension of a \gls{dbsg}},
+description={},
+type=defi
 }
 
 \newglossaryentry{origdb}{
 name={de Bruijn graph},
-    first={original de Bruijn graph of dimension k over a finite alphabet $\Sigma$ of size $\sigma$},
+first={original de Bruijn graph of dimension k over a finite alphabet $\Sigma$ of size $\sigma$},
 description={The graph that contains one vertex for each k-mer (and therefore $\sigma^k$ vertices) and a
 directed edge for each overlap of length k − 1 (and therefore $\sigma^{k+1}$ edges)},
 type=defi
@@ -110,12 +110,13 @@ type=defi
 
 \newglossaryentry{occurrence count}{
 name={occurrence count},
-description={Let $x \in \sum^m$ and choose $q \in [1, m]$. The occurrence count of a q-gram $z \in \sum^q$ in x is
+description={Let $x \in \Sigma^m$ and choose $q \in [1, m]$. The occurrence count of a q-gram $z \in \Sigma^q$ in x is
 the number
-\[
-Occ(x, z) := |{i \in [1, m - q + 1] : x[i . . . i + q - 1] = z}|
-\]
+$Occ(x, z) := |{i \in [1, m - q + 1] : x[i . . . i + q - 1] = z}|$
 },
+formB={Occ(x, z) := |{i \in [1, m - q + 1] : x[i . . . i + q - 1] = z}|},
+formF={Let $x \in \Sigma^m$ and choose $q \in [1, m]$. The occurrence count of a q-gram $z \in \Sigma^q$ in x is
+the number},
 type=defi
 }
 
