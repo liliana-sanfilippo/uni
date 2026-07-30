@@ -25,6 +25,7 @@ always reconstruct the whole substring and its starting position by backtracing.
 
 \deffin{k_approximate_matches}
 
+
 \section{Sellers' Algorithm}\label{sec:sellers'-algorithm}
 For a change in style, here we present an explicit formulation of an algorithm that solves
 the problem not as a recurrence, but in pseudo-code notation.
@@ -74,6 +75,7 @@ the minimum cost as $([j, j + 1], 1)$.
     long as we can be sure that it exceeds k and therefore will not be reported.
 \end{notte}
 
+
 \section{Ukkonen’s Cutoff Algorithm}\label{sec:ukkonens-cutoff-algorithm}
 The last of the above three observations leads to a considerable improvement of Sellers’
 algorithm: If we know that in column $j$ all values after a certain index $\lei_j$ exceed $k$, we do
@@ -107,13 +109,202 @@ before that $i$.
 Algorithm~\ref{alg:ukkonen} shows the details.
 
 \begin{algorithm}[h]
+    \caption{Ukkonen's algorithm}
     \begin{algorithmic}
-        \Statex todo
+        \Statex \textbf{Input:} Pattern $x\in\Sigma^m$, Text $y\in\Sigma^n$, Schwellenwert $k\in\mathbb{N}_0$, Kostenfunktion mit Indel-Kosten $\gamma>0$
+        \Statex \textbf{Output:} Endpositionen $j$ mit $d(x,y')\le k$, wobei $y'=y[j'\ldots j]$ für ein $j'\le j$
+
+        \Comment{Initialize the $0$-th column of the alignment matrix}
+        \State $i_0^\ast \gets \min\{m,\lfloor k/\gamma\rfloor\}$
+
+        \For{$i \gets 0$ to $i_0^\ast$}
+            \State $C_0(i) \gets i\cdot\gamma$
+        \EndFor
+
+        \Comment{Process the matrix column by column}
+        \For{$j \gets 1$ to $n$}
+            \State $C_j(0) \gets 0$
+            \State $i_j^\ast \gets 0$
+            \State $i \gets 1$
+
+            \While{$i \le i_{j-1}^\ast$}
+                \State
+                \[
+                    C_j(i)\gets
+                    \min\left\{
+                            \begin{array}{l}
+                                C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),\\
+                                C_{j-1}(i)+\gamma,\\
+                                C_j(i-1)+\gamma
+                            \end{array}
+                    \right.
+                \]
+                \If{$C_j(i)\le k$}
+                    \State $i_j^\ast \gets i$
+                \EndIf
+                \State $i \gets i+1$
+            \EndWhile
+
+            \If{$i\le m$}
+                \State
+                \[
+                    C_j(i)\gets
+                    \min\left\{
+                            \begin{array}{l}
+                                C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),\\
+                                C_j(i-1)+\gamma
+                            \end{array}
+                    \right.
+                \]
+                \If{$C_j(i)\le k$}
+                    \State $i_j^\ast \gets i$
+                \EndIf
+                \State $i \gets i+1$
+
+                \While{$i\le m$ \textbf{and} $C_j(i-1)+\gamma\le k$}
+                    \State $C_j(i)\gets C_j(i-1)+\gamma$
+                    \If{$C_j(i)\le k$}
+                        \State $i_j^\ast \gets i$
+                    \EndIf
+                    \State $i \gets i+1$
+                \EndWhile
+            \EndIf
+
+            \If{$i_j^\ast = m$ \textbf{and} $C_j(m)\le k$}
+                \State \Return $(j,C_j(m))$
+            \EndIf
+        \EndFor
     \end{algorithmic}\label{alg:ukkonen}
 \end{algorithm}
 
 \begin{bsp}
-    TODO S 19
+    Let $x = \mathtt{AABB}$, $y = \mathtt{BABAABAABBABAA}$ and $k = 1$. The following table shows which
+    values are computed by Algorithm~2 considering unit cost. The last essential index in each column
+    is encircled. The $k$-approximate matches are underlined in the last row.
+
+    \begin{mytable}
+        \begin{tabular}{cc|ccccccccccccccc}
+            & $x\backslash y$ & $\epsilon$ & B & A & B & A & A & B & A & A & B & B & A & B & A & A \\
+            \hline
+            $i=0$ & $\epsilon$      & 0          & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            $i=1$ & A               & 1          & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+            $i=2$ & A               &            & 2 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 2 & 1 & 1 & 1 & 0 \\
+            $i=3$ & B               &            &   &   & 1 & 2 & 1 & 0 & 1 & 1 & 0 & 1 & 2 & 1 & 2 & 1 \\
+            $i=4$ & B               &            &   &   &   &   &   & 2 & 1 & 1 & 2 & 1 & 0 & 1 & 2 & 2 \\
+            & & & & \multicolumn{2}{c}{I} & \multicolumn{2}{c}{II} & \multicolumn{2}{c}{III} & & IV & & V &
+            &
+            &
+        \end{tabular}
+    \end{mytable}
+
+    Five exemplary alignments are shown below, one for each of the underlined positions.
+    \[
+        \begin{array}{ccccc}
+            \text{I} & \text{II} & \text{III} & \text{IV} & \text{V}\\[2pt]
+            \begin{array}{l}
+                \mathtt{AABB}\\ \mathtt{AAB\text{-}}
+            \end{array} &
+            \begin{array}{l}
+                \mathtt{AABB}\\ \mathtt{AABA}
+            \end{array} &
+            \begin{array}{l}
+                \mathtt{AABB}\\ \mathtt{AAB\text{-}}
+            \end{array} &
+            \begin{array}{l}
+                \mathtt{AABB}\\ \mathtt{AABB}
+            \end{array} &
+            \begin{array}{l}
+                \mathtt{AABB\text{-}}\\ \mathtt{AABBA}
+            \end{array}
+        \end{array}
+    \]
 \end{bsp}
 
+Sometimes, because it was first published by Ukkonen (1985), this algorithm is referred to as
+Ukkonen's cutoff algorithm, although it is more common to use this name if the cost function is
+standard unit cost. In that case, even further optimizations are possible, but we do not discuss
+the details here.
+
+
 \section{Search Schemes and Bidirectional Indices}\label{sec:search-schemes-and-bidirectional-indices}
+
+Assume we want to do approximate string matching with a text index, as a generalization of exact
+string matching that can be very efficiently solved with suffix trees, suffix arrays or the
+Burrows-Wheeler Transform (BWT), as we have seen. In principle one can use these data structures
+also for approximate matching, if the solution space of pattern alignments with all candidate
+substrings of the text is enumerated by backtracking. However, if this is done in a straight
+left-to-right (as with suffix trees) or right-to-left (as with the BWT) organization, it will be
+very inefficient already for small error threshold $k$. A better way is the use of \emph{search
+schemes} in combination with more flexible \emph{bidirectional indices} that we will study in this
+section.
+
+The general idea is that the pattern $x$ is divided into several non-overlapping parts
+$x_1, x_2, \ldots, x_p$. The search scheme (Kucherov et al., 2016) then formally consists of
+multiple searches, where a search is represented by the triple $S = (\pi, L, U)$. The permutation
+$\pi$ of $\{1,2,\ldots,p\}$ specifies the order in which the parts of the pattern are matched.
+$L$ and $U$ are arrays of size $p$ such that $L[i]$ and $U[i]$ denote lower and upper bounds of the
+number of errors after the first $i$ parts are matched (in the order specified by $\pi$).
+
+\defin{pigeonhole_principle}
+
+\paragraph{Pigeonhole search scheme.}
+A simple and very natural search scheme is the following: For error threshold $k$, split the pattern
+$x$ in $p = k+1$ parts $x_1, x_2, \ldots, x_{k+1}$, usually of roughly the same length. Clearly, if
+the whole pattern occurs in the text with at most $k$ errors, then at least one of the parts must
+match exactly in the corresponding text region. Therefore, the search scheme consists of $k+1$
+searches $S_1, S_2, \ldots, S_{k+1}$ where search $S_i$ first matches pattern part $x_i$ exactly,
+followed by a backtracking search to the left ($x_{i-1}, x_{i-2}, \ldots, x_1$) with not more than
+$k$ errors, and finally a backtracking search to the right ($x_{i+1}, x_{i+2}, \ldots, x_{k+1}$),
+with additional errors, until a total of $k$ is reached (or the pattern is exhausted).
+
+
+\begin{bsp}
+    Formally, for $k=4$ the pigeonhole principle search scheme $S = (S_1,\ldots,S_5)$ looks as follows:
+    \[
+        \begin{aligned}
+            S_1 &= (12345,\ 00000,\ 04444)\\
+            S_2 &= (21345,\ 00000,\ 04444)\\
+            S_3 &= (32145,\ 00000,\ 04444)\\
+            S_4 &= (43215,\ 00000,\ 04444)\\
+            S_5 &= (54321,\ 00000,\ 04444)
+        \end{aligned}
+    \]
+    Note that there may be redundant results that need to be filtered in a postprocessing step, for
+    example if more than one pattern part occurs in one match with no errors.
+\end{bsp}
+
+\deffin{minu}
+
+\paragraph{MinU search scheme.}
+Another example is the MinU search scheme (Renders et al., 2024). Its definition for $k=4$ is as
+follows:
+\[
+    \begin{aligned}
+        S_1 &= (12345,\ 00222,\ 02244)\\
+        S_2 &= (23145,\ 00000,\ 01244)\\
+        S_3 &= (32145,\ 01111,\ 01244)\\
+        S_4 &= (45321,\ 00003,\ 01444)\\
+        S_5 &= (54321,\ 01114,\ 01444)
+    \end{aligned}
+\]
+It is easy to see that MinU is more efficient, since the ranges $(L[i], U[i])$ grow slower than for
+the pigeonhole scheme. The main question is, though, whether it is \emph{lossless}, i.e., no
+approximate match with up to $k$ errors will be missed. This can be proven by showing that all
+possible error configurations $(e_1, e_2, \ldots, e_p)$ are covered, where $e_i$ is the number of
+errors in part $x_i$ and $e_1 + e_2 + \ldots + e_p \leq k$. This has been shown for the MinU scheme,
+although we will not go into details here.
+
+\deffin{bidirectional_indices}
+
+\paragraph{Bidirectional indices.}
+In order to combine search schemes with a text index, it is necessary that the search can be
+organized more flexibly than just left-to-right or just right-to-left. To this end, bidirectional
+text indices are very useful. They allow for extending a partial match either to the left or to the
+right, just as the search scheme requires. Several bidirectional indices have been developed over
+time, starting with affix trees (Stoye, 1995, 2000; Maaß, 2003) and affix arrays (Strothmann,
+2007), followed by the bidirectional BWT (Lam et al., 2009), the bidirectional wavelet index
+(Schnattinger et al., 2012), the br-index (Arakawa et al., 2022) and finally the bidirectional move
+index (Depuydt et al., 2025). Details go beyond the scope of these lecture notes.
+
+
+

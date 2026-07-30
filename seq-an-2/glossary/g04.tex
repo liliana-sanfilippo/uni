@@ -6,6 +6,7 @@
 
 \newglossaryentry{last essential index}{
     name={last essential index},
+    first={last essential index $i^*$ (for threshold $k$) of a column $C$},
     description={todo},
     type=defi
 }
@@ -13,7 +14,7 @@
 \newglossaryentry{k_approximate_matches}{
     name={k-approximate matches},
 first={k-approximate matches of x in y},
-    description={},
+    description={$i^\ast(C) := \max\{\, i \mid C(i) \le k \,\}$},
 symbol={\ensuremath{i^*}},
     type=defi
 }
@@ -23,6 +24,28 @@ symbol={\ensuremath{i^*}},
     description={todo},
     type=defi
 }
+
+\newglossaryentry{pigeonhole_principle}{
+name={pigeonhole principle search scheme},
+first={pigeonhole principle search scheme},
+description={Zerlegt das Muster $x$ bei Fehlerschwelle $k$ in $p=k+1$ Teile $x_1,\dots,x_{k+1}$. Da bei $\le k$ Fehlern mindestens ein Teil exakt vorkommen muss, besteht das Schema aus $k+1$ Suchen $S_i$: Teil $x_i$ exakt matchen, dann Backtracking nach links und rechts bis insgesamt $k$ Fehler erreicht sind},
+type=defi
+}
+
+\newglossaryentry{minu}{
+name={MinU search scheme},
+first={MinU search scheme},
+description={Search Scheme (Renders et al., 2024), dessen Fehlerbereiche $(L[i],U[i])$ langsamer wachsen als beim pigeonhole-Schema und das daher effizienter ist. Es ist \emph{lossless}, d.\,h.\ kein Match mit bis zu $k$ Fehlern wird verpasst (alle Fehlerkonfigurationen $(e_1,\dots,e_p)$ mit $\sum e_i \le k$ sind abgedeckt)},
+type=defi
+}
+
+\newglossaryentry{bidirectional_indices}{
+name={bidirectional indices},
+first={bidirectional text indices},
+description={Textindizes, die einen partiellen Match flexibel \emph{sowohl nach links als auch nach rechts} verlängern können, wie es Search Schemes erfordern. Beispiele: Affix-Bäume/-Arrays, bidirektionale BWT, bidirektionaler Wavelet-Index, br-index, bidirektionaler Move-Index},
+type=defi
+}
+
 
 
 

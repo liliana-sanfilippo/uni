@@ -1,0 +1,72 @@
+%! Author = lili
+%! Date = 7/30/26
+
+
+\newglossaryentry{transversion_transition_cost}{
+    name={transversion/transition cost},
+    first={transversion/transition cost},
+    description={Biologisch motivierte Kostenfunktion auf dem DNA-Alphabet: Purin/Purin- und Pyrimidin/Pyrimidin-Ersetzungen (Transitionen) kosten $1$, Purin/Pyrimidin-Ersetzungen (Transversionen) kosten $2$; oft mit Indel-Kosten $3$. Reflektiert, dass Transitionen wahrscheinlicher sind als Transversionen},
+    type=defi
+}
+
+\newglossaryentry{sensible_score_function}{
+    name={sensible score function},
+    first={sensible score function},
+    description={Funktion $\mathrm{score}:\mathcal A(\Sigma)\to\mathbb R$ mit $\mathrm{score}\!\left(\tbinom{a}{a}\right)\ge 0\ge \mathrm{score}\!\left(\tbinom{a}{-}\right)=\mathrm{score}\!\left(\tbinom{-}{a}\right)$, $\mathrm{score}\!\left(\tbinom{a}{a}\right)\ge\mathrm{score}\!\left(\tbinom{a}{c}\right)=\mathrm{score}\!\left(\tbinom{c}{a}\right)$ und $\mathrm{score}\!\left(\tbinom{a}{c}\right)\ge\mathrm{score}\!\left(\tbinom{a}{-}\right)+\mathrm{score}\!\left(\tbinom{-}{c}\right)$ (Symmetrie; Selbst-Ähnlichkeit maximal; Substitution besser als Deletion+Insertion)},
+    type=defi
+}
+
+\newglossaryentry{third_bits}{
+    name={third-bits},
+    first={third-bits},
+    description={Score-Einheit: Ein Score ist in \emph{bits}, wenn er per $\log_2(\cdot)$ gebildet wird; wird er zusätzlich mit dem Faktor $3$ multipliziert (und gerundet), erhält man Scores in third-bits},
+    symbol={\ensuremath{3\cdot\log_2(\cdot)}},
+    type=defi
+}
+
+\newglossaryentry{general_similarity_score}{
+    name={general similarity score},
+    first={general similarity score},
+    description={Allgemeine Ähnlichkeitsfunktion, bei der Matches positiv, Mismatches und Indels negativ bewertet werden -- im Gegensatz zu einem Distanzmodell, in dem ein Match stets Kosten $0$ hat. Nützlich insbesondere fürs lokale Alignment, wo Distanzfunktionen ungeeignet sind},
+    type=defi
+}
+
+\newglossaryentry{frequency_vector}{
+    name={frequency vector},
+    first={frequency vector},
+    description={Vektor $\pi=(\pi_a)_{a\in\Sigma}$ der natürlich vorkommenden Aminosäuren mit $\pi_a\ge 0$ für alle $a\in\Sigma$ und $\sum_{a\in\Sigma}\pi_a=1$. Für zwei zufällige Positionen ist die Wahrscheinlichkeit des geordneten Paares $(a,b)$ gleich $\pi_a\cdot\pi_b$},
+symbol={\ensuremath{\pi}},
+type=defi
+}
+
+\newglossaryentry{background_frequencies}{
+name={background frequencies},
+first={background frequencies},
+description={Die Einträge des frequency vector $\pi$; gewinnbar als Randverteilungen (Marginals) von $M_t$: $\pi_a=\sum_{b\in\Sigma}M_t(a,b)$ und $\pi_b=\sum_{a\in\Sigma}M_t(a,b)$ (wegen Symmetrie)},
+symbol={\ensuremath{\pi_a}},
+type=defi
+}
+
+\newglossaryentry{fixed_evolutionary_time_period}{
+name={fixed evolutionary time period},
+first={fixed evolutionary time period},
+description={Zeitraum $t$, über den die Ersetzung einzelner Aminosäuren verfolgt wird. $t$ ist so zu wählen, dass die Score-Matrix zum Problem passt: Für Sequenzen mit gemeinsamem Vorfahren vor $\approx t/2$ sollte eine aus Paaren mit Divergenz $t$ konstruierte Matrix genutzt werden},
+symbol={\ensuremath{t}},
+type=defi
+}
+
+\newglossaryentry{likelihood_ratio}{
+name={likelihood ratio},
+first={likelihood ratio},
+description={Verhältnis $M_t(a,b)/(\pi_a\cdot\pi_b)$, das die Wahrscheinlichkeit des Paares $(a,b)$ im Evolutionsmodell zu der im Zufallsmodell in Beziehung setzt. Werte $>1$ bedeuten Ähnlichkeit, Werte $<1$ Unähnlichkeit von $a$ und $b$},
+symbol={\ensuremath{M_t(a,b)/(\pi_a\pi_b)}},
+type=defi
+}
+
+\newglossaryentry{log_odds_score_matrix}{
+name={log-odds score matrix},
+first={log-odds score matrix},
+description={Additive Score-Matrix bzgl.\ Zeitraum $t$, definiert als Logarithmus der likelihood ratio: $\mathrm{score}_t(a,b):=\log\!\left(\frac{M_t(a,b)}{\pi_a\cdot\pi_b}\right)$. Wichtige Familien: PAM($t$) und BLOSUM($s$)},
+symbol={\ensuremath{\mathrm{score}_t(a,b)}},
+type=defi
+}
