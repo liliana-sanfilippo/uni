@@ -60,13 +60,15 @@ i-th \gls{qgram} in some arbitrary but fixed (e.g.\ lexicographic) order.
 
 \defin{unranking algorithm}
 
+% TODO Karteikarte unterschied der ranking Funktionen
+
 Of course, we are interested in an efficient (un-)ranking algorithm for the set of all \glspl{qgram} over $\Sigma$.
 A classical one is to first define a \gls{rankfun} $\rf_{\Sigma}$ on the characters (alphabet encoding) and then
 extend it to a \gls{rankfun} $\rf$ on the \glspl{qgram} by interpreting them as base-$\sigma$ numbers.
 There are two possibilities to number the positions of a \gls{qgram}: From $q$ to 1 falling or from 1 to
 $q$ rising, as shown in the Example \autoref{exa:example-1-2}.
 
-\komm{Was sind base-$\sigma$ numbers?}
+\komm{Was sind base-$\sigma$ numbers?} % TODO
 
 \begin{bsp}  \label{exa:example-1-2}
 Assume the alphabet $\Sigma = {A, C, G, T}$ and the alphabet encoding $\rf_{\Sigma}(A) = 0$,
@@ -150,20 +152,19 @@ Because with the rising function we are using the rest to find the letters inste
 Both methods need q iterations and reconstruct the \gls{qgram} from the first position to the last.
 Each iteration takes a starting value r and determines the corresponding character of the \gls{qgram} while updating r for the next iteration.
 The starting value for the first iteration is the rank of the \gls{qgram}.
-In iteration i in the unranking method (a), for $1 \leq i \leq q$, the starting value r is divided by $\sigma^{q-i}$.
+In iteration i in the unranking method \eqref{eq:falling-unranking}, for $1 \leq i \leq q$, the starting value $r$ is divided by $\sigma^{q-i}$.
 The integer result c of the division determines the decoded character as described by $\rf_{\Sigma}$ of the used ranking
 function.
 The remainder r' of the division serves as starting value for the next iteration.
-\[
-    \text{(a) } \frac{r}{\sigma^{q-1}} = c, \quad  \text{R } r'
-\]
+\begin{equation}\label{eq:falling-unranking}
+    \frac{r}{\sigma^{q-1}} = c, \quad  \text{R } r'
+\end{equation}
 
-In unranking method (b), the starting value r is always divided by $\sigma$.
+In unranking method \eqref{eq:rising-unranking}, the starting value r is always divided by $\sigma$.
 Here, the remainder c of the integer division decodes the corresponding character and the integer result r′ is the starting value for the next iteration.
 
-\[
-    \text{(b) } \frac{r}{\sigma} = r', \quad  \text{R } c
-\]
+\equat{rising_unranking}
+
 \subsection{Choice of q}\label{subsec:choice-of-q}
 
 In principle, we could use any $q \in [1, \min\{m, n\}]$
