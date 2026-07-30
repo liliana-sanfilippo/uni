@@ -39,7 +39,7 @@ Looking closely at Algorithm~\ref{alg:sellers}, we see that each iteration $j = 
 previous column $C_{j-1} \coloneqq D(\cdot, j - 1)$ of the edit matrix into the current column $C_j \coloneqq
 D(\cdot, j)$, based on character $y[j]$.
 Starting with $C_0$, Sellers’ algorithm effectively consists of
-repeatedly computing $C_j$ from $C_j_{-1}$ and the next text character $y[j]$, for each $j = 1, \dots, n$.
+repeatedly computing $C_j$ from $C_{j-1}$ and the next text character $y[j]$, for each $j = 1, \dots, n$.
 
 \begin{algorithm}[h]
     \begin{algorithmic}
