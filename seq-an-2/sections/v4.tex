@@ -37,28 +37,29 @@ Alignment Algorithm that can be used to find a best (highest score) alignment of
 
 \defin{approximate-string-matching-problem}
 
-In fact, it suffices to discover the ending positions j of the substrings y' because we can
-always reconstruct the whole substring and its starting position by backtracing.
-
+\skript{In fact, it suffices to discover the ending positions $j$ of the substrings $y'$ because we can
+always reconstruct the whole substring and its starting position by backtracing.}
 \deffin{k_approximate_matches}
 
 
 \section{Sellers' Algorithm}\label{sec:sellers-algorithm}
 \komm{Elaborate example on page~\pageref{sec:sellers-algorithm-example}.}
-For a change in style, here we present an explicit formulation of an algorithm that solves
+
+\skript{For a change in style, here we present an explicit formulation of an algorithm that solves
 the problem not as a recurrence, but in pseudo-code notation.
 Algorithm 1 is known as
 Sellers’ algorithm (Sellers, 1980).
 Of course, it corresponds to the Universal Alignment
 Algorithm variant discussed in the “Sequence Analysis 1” class for semi-global alignment,
-except that we do not look at the final vertex vE to find the best match, but look at all
-the vertices in the last row to identify all matches with $D(m, j) \leq k\  for\  0 \leq j \leq n$.
+    except that we do not look at the final vertex vE to find the best match, but look at all
+    the vertices in the last row to identify all matches with $D(m, j) \leq k\  for\  0 \leq j \leq n$.
 
-Looking closely at Algorithm~\ref{alg:sellers}, we see that each iteration $j = 1, \dots, n$ transforms the
-previous column $C_{j-1} \coloneqq D(\cdot, j - 1)$ of the edit matrix into the current column $C_j \coloneqq
-D(\cdot, j)$, based on character $y[j]$.
-Starting with $C_0$, Sellers’ algorithm effectively consists of
-repeatedly computing $C_j$ from $C_{j-1}$ and the next text character $y[j]$, for each $j = 1, \dots, n$.
+    Looking closely at Algorithm~\ref{alg:sellers}, we see that each iteration $j = 1, \dots, n$ transforms the
+    previous column $C_{j-1} \coloneqq D(\cdot, j - 1)$ of the edit matrix into the current column $C_j \coloneqq
+    D(\cdot, j)$, based on character $y[j]$.
+    Starting with $C_0$, Sellers’ algorithm effectively consists of
+    repeatedly computing $C_j$ from $C_{j-1}$ and the next text character $y[j]$, for each $j = 1, \dots, n$.
+}
 
 \begin{algorithm}[H]
     \begin{algorithmic}
@@ -118,29 +119,29 @@ Betrachtet man $TTACG$ und $ACG$, dann würde man bspw. bei Wagner-Fischer berec
     Deswegen darf es auch irgendwo im Text enden und man muss die ganze letzte Zeile betrachten (und schauen wo der höchste Wert ist) anstatt nur ganz rechts unten.
 }
 
-\paragraph{Since we only report end positions and costs,} there is no need to store back pointers
+\paragraph{Since we only report end positions and costs,} \skript{there is no need to store back pointers
 and the entire alignment matrix D in Algorithm~\ref{alg:sellers}.
 The current and the previous
 column suffice.
 This decreases the space requirement to O(m), where m is the (short)
-pattern length.
-We still need to store the text, which is O(n), however this need not
-necessarily be in memory.
+    pattern length.
+    We still need to store the text, which is O(n), however this need not
+    necessarily be in memory.}
 
-\paragraph{If we have a very good match} with cost $< k$ at position $j$, the neighboring positions will also match with cost $\leq k$.
+\paragraph{If we have a very good match} \skript{with cost $< k$ at position $j$, the neighboring positions will also match with cost $\leq k$.
 To avoid this redundancy, it makes sense to
 post-process the output and only look for runs of local minima.
 Without formally defining it, if $k = 3$ and the respective costs at positions $j - 2, \dots, j + 4$ are
-$(3, 2, 1, 1, 2, 2, 3)$, the original algorithm will report all of these positions.
-In most
-applications, however, we are only interested in the locally minimal value 1, which
-occurs as a run of length 2.
-So it would make sense to report the run interval and
-the minimum cost as $([j, j + 1], 1)$.
+    $(3, 2, 1, 1, 2, 2, 3)$, the original algorithm will report all of these positions.
+    In most
+    applications, however, we are only interested in the locally minimal value 1, which
+    occurs as a run of length 2.
+    So it would make sense to report the run interval and
+    the minimum cost as $([j, j + 1], 1)$.}
 
 \begin{notte}
-    Note that at no time in the algorithm we need to know the exact value of $C_j (m)$ as
-    long as we can be sure that it exceeds k and therefore will not be reported.
+    \skript{Note that at no time in the algorithm we need to know the exact value of $C_j (m)$ as
+    long as we can be sure that it exceeds k and therefore will not be reported.}
 \end{notte}
 
 \begin{bsp}[Beispielimplementierung Sellers]
@@ -291,10 +292,10 @@ fun sellers(pattern: String, text: String, costs: Costs, emptyStringSymbol: Char
 
 \komm{Elaborate example on page~\pageref{sec:ukkonens-algorithm-example}.}
 
-The last of the above three observations leads to a considerable improvement of Sellers'
+\skript{The last of the above three observations leads to a considerable improvement of Sellers'
 algorithm: If we know that in column $j$ all values after a certain index $\lei_j$ exceed $k$, we do
 not need to compute them (e.g.\ we could assume that they are all equal to $\infty$ or $k + 1$).
-The following definition captures this formally.
+The following definition captures this formally.}
 
 \deffin{last essential index}
 
@@ -318,29 +319,29 @@ The following definition captures this formally.
 \komm{Weiteres Beispiel/Visualisierung von last esential indoices unter Variation von k auf Seite
 \pageref{subsubsec:last-essential-indices-sellers}.}
 
-The last essential index $\lei_j$ of column $C_j$ is $\lei_j \coloneqq \lei (C_j ) = \max\{i | C_j (i) \leq k\}$.
+\skript{The last essential index $\lei_j$ of column $C_j$ is $\lei_j \coloneqq \lei (C_j ) = \max\{i | C_j (i) \leq k\}$.
 From
 the definition it is clear that we cannot miss any k-approximate matches if we do not
 compute the cells below the last essential index.
 
 To set this in operation, the last essential index $\lei_0$ of the 0-th column is easily found,
-because the scores increase monotonically from 0 to $m \cdot \gamma$.
-The other columns, however,
-are not necessarily monotone!
-Therefore, as we move column-by-column through the
-matrix, we have to make sure that we can efficiently find the last essential index of the
-next column, given the previous column.
-Consider the effects of the $C_{j-1}$-entries below
-the last essential index on the next column $C_j$.
-Since $C_{j-1} (i) > k$ for all $i > \lei_j-1$ and
-costs are non-negative, these cells provide candidate values $> k for C_j (i)$ for $i > \lei_{j-1}+ 1$
-which therefore do not need to be considered during the minimization.
-The only chance
-that such $C_j (i)$ remain bounded by $k$ is vertically, i.e., if $C_j (i) = C_j (i - 1) + \gamma$.
-As soon
-as $C_j (i) > k$ for some $i > \lei_{j-1}+ 1$, we know that the last essential index $\lei_j$ of $C_j$ occurs
-before that $i$.
-Algorithm~\ref{alg:ukkonen} shows the details.
+    because the scores increase monotonically from 0 to $m \cdot \gamma$.
+    The other columns, however,
+    are not necessarily monotone!
+    Therefore, as we move column-by-column through the
+    matrix, we have to make sure that we can efficiently find the last essential index of the
+    next column, given the previous column.
+    Consider the effects of the $C_{j-1}$-entries below
+    the last essential index on the next column $C_j$.
+    Since $C_{j-1} (i) > k$ for all $i > \lei_j-1$ and
+    costs are non-negative, these cells provide candidate values $> k for C_j (i)$ for $i > \lei_{j-1}+ 1$
+    which therefore do not need to be considered during the minimization.
+    The only chance
+    that such $C_j (i)$ remain bounded by $k$ is vertically, i.e., if $C_j (i) = C_j (i - 1) + \gamma$.
+    As soon
+    as $C_j (i) > k$ for some $i > \lei_{j-1}+ 1$, we know that the last essential index $\lei_j$ of $C_j$ occurs
+    before that $i$.
+    Algorithm~\ref{alg:ukkonen} shows the details.}
 
 \begin{algorithm}[H]
     \caption{Ukkonen's algorithm}
@@ -412,7 +413,7 @@ Algorithm~\ref{alg:ukkonen} shows the details.
     \end{algorithmic}\caption{Ukkonens cutoff algorithm}\label{alg:ukkonen}
 \end{algorithm}
 
-\begin{bsp}
+\begin{bsp}[Adapted from script]
     Let $x = \mathtt{AABB}$, $y = \mathtt{BABAABAABBABAA}$ and $k = 1$.
     The following table shows which values are computed by Algorithm \ref{alg:ukkonen} considering unit cost.
     The last essential index in each column is \txc{highlighted green-ish}.
@@ -457,52 +458,61 @@ Algorithm~\ref{alg:ukkonen} shows the details.
     \]
 \end{bsp}
 
-Sometimes, because it was first published by Ukkonen (1985), this algorithm is referred to as
+\skript{Sometimes, because it was first published by Ukkonen (1985), this algorithm is referred to as
 Ukkonen's cutoff algorithm, although it is more common to use this name if the cost function is
 standard unit cost.
-In that case, even further optimizations are possible, but we do not discuss the details here.
+In that case, even further optimizations are possible, but we do not discuss the details here.}
 
 \section{Vergleich von Sellers' und Ukkonen Cutoff}
 
 \begin{center}
-    \begin{tabular}{|p{3cm}|p{3cm}||p{5cm}|p{5cm}|} \hline
-    \textbf{Aspekt} & \textbf{Sellers} & \multicolumn{2}{l|}{ \textbf{Ukkonen}} \\ \hline \hline
-    \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Input}}  \\ \hline
-    \textit{Muster} & \multicolumn{3}{c|}{\boxii pattern $x \in \Sigma^m$} \\
-    \textit{Text} &  \multicolumn{3}{c|}{\boxii text $y \in \Sigma^n$} \\
-    \textit{Threshold} &  \multicolumn{3}{c|}{\boxii threshold $k \in N_0$} \\
-    \textit{Kosten} & \multicolumn{3}{c|}{\boxii sensible
-    cost function with indel cost $\gamma > 0$, defining an edit distance $d(\cdot, \cdot)$}  \\ \hline \hline
+    \begin{tabular}{|p{3cm}|p{3cm}||p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Aspekt} & \textbf{Sellers} & \multicolumn{2}{l|}{ \textbf{Ukkonen}} \\ \hline \hline
+        \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Input}} \\ \hline
+        \textit{Muster} & \multicolumn{3}{c|}{\boxii pattern $x \in \Sigma^m$} \\
+        \textit{Text} & \multicolumn{3}{c|}{\boxii text $y \in \Sigma^n$} \\
+        \textit{Threshold} & \multicolumn{3}{c|}{\boxii threshold $k \in N_0$} \\
+        \textit{Kosten} & \multicolumn{3}{c|}{\boxii sensible
+        cost function with indel cost $\gamma > 0$, defining an edit distance $d(\cdot, \cdot)$} \\ \hline \hline
 
-    \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Initialisierung 0-ter Spalte}}  \\ \hline
-    \textit{last essential index} & - & \multicolumn{2}{c|}{\boxi $i_0^\ast \gets \min\{m,\lfloor k/\gamma\rfloor\}$}\\
-    \textit{Range} &\boxiii For $i \gets 0, ..., \cct{m}$ & \multicolumn{2}{c|}{\boxiii For $i \gets 0$ to \cct{$i_0^\ast$}}     \\ \hline
-    \textit{Zuweisung} &  \multicolumn{3}{c|}{\boxii $C_0 (i) \gets i \cdot \gamma$}  \\ \hline \hline
+        \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Initialisierung 0-ter Spalte}}
+        \\ \hline
+        \textit{last essential index} & - & \multicolumn{2}{c|}{\boxi $i_0^\ast \gets \min\{m,\lfloor k/\gamma\rfloor\}$} \\
+        \textit{Range} & \boxiii For $i \gets 0, ..., \cct{m}$ & \multicolumn{2}{c|}{\boxiii For $i \gets 0$ to \cct{$i_0^\ast$}} \\ \hline
+        \textit{Zuweisung} & \multicolumn{3}{c|}{\boxii $C_0 (i) \gets i \cdot \gamma$} \\ \hline \hline
 
-    \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Spaltenweise Berechnung des Rests}}  \\ \hline
-    \textit{Range Spalten} & \multicolumn{3}{c|}{\boxii For $j \gets 1,...,n$} \\\hline \hline
-    &  \multicolumn{3}{c|}{\cellcolor{gray!50} \textbf{Initialisierung}} \\ \hline
-    \textit{Initialisiere Zelle 0} & \multicolumn{3}{c|}{\boxii $C_j(0) \gets 0$} \\  \hline
-    \textit{Initialisiere LEI 0} & - & \multicolumn{2}{c|}{\boxi $i_j^\ast \gets 0$} \\
+        \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Spaltenweise Berechnung des Rests}}
+        \\ \hline
+        \textit{Range Spalten} & \multicolumn{3}{c|}{\boxii For $j \gets 1,...,n$} \\\hline \hline
+        & \multicolumn{3}{c|}{\cellcolor{gray!50} \textbf{Initialisierung}} \\ \hline
+        \textit{Initialisiere Zelle 0} & \multicolumn{3}{c|}{\boxii $C_j(0) \gets 0$} \\  \hline
+        \textit{Initialisiere LEI 0} & - & \multicolumn{2}{c|}{\boxi $i_j^\ast \gets 0$} \\
 
-    \hline \hline
-    &  \multicolumn{3}{c|}{\cellcolor{gray!50}\textbf{Iteration Zeilen}} \\ \hline  \hline
-    & \cellcolor{gray!25} \textbf{Bis Ende}  & \cellcolor{gray!25} \textbf{1. Bis last essential index} & \cellcolor{gray!25}  \textbf{2. Falls nicht in letzter Zeile angekommen (If $i\le m$)} \\ \hline
-    \textit{LEI final} & - & -  & \boxi $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
-    C_j(i-1)+\gamma\}$  \\ \hline
-    \textit{Range Zeilen} & \ccr \textbf{For} $i \gets 1,...,m$ & \ccr   \textbf{While} $i \leq i_{j-1}^\ast$ mit $i \gets 1$; $i \gets i+1$ & \ccr  \textbf{While} $i\le m$ \textbf{and} $C_j(i-1)+\gamma\le k$ mit $i \gets 1$; $i \gets i+1$  \\
-    \hline
-    \textit{Zellenwert} & \multicolumn{2}{p{8.5cm}|}{\boxii $C_j (i) \gets min\{  C_{j-1}(i-1 + cost(x[i], y[j]) , \quad
-    C_{j-1}(i) + \gamma, \quad  C_j (i-1) + \gamma \}$} & \ccr $C_j(i)\gets C_j(i-1)+\gamma$  \\  \hline
-    \textit{Check/Update LEI} & - & \multicolumn{2}{c|}{If $C_j(i)\le k$ \boxi}  \\
-    & & \multicolumn{2}{c|}{\boxi $i_j^\ast \gets i$} \\
-    \hline \hline
-    \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Return}}  \\ \hline
-    \textit{Rückgabebedingung} & \ccr If $C_j(m) \leq k$ & \multicolumn{2}{c|}{\ccr $i_j^\ast = m$ \textbf{and} $C_j(m)\le k$} \\ \hline
-    \textit{Rückgabewert}  & \multicolumn{3}{c|}{\boxii $(j, C_j (m))$}  \\
-    \hline \hline
-    \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Output}}  \\ \hline
-    &  \multicolumn{3}{c|}{\boxii ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . .j]$ for some$j' \leq j$} \\ \hline
+        \hline \hline
+        & \multicolumn{3}{c|}{\cellcolor{gray!50}\textbf{Iteration Zeilen}} \\ \hline  \hline
+        & \cellcolor{gray!25} \textbf{Bis Ende} & \cellcolor{gray!25} \textbf{1. Bis last essential index}
+        & \cellcolor{gray!25}  \textbf{2. Falls nicht in letzter Zeile angekommen (If $i\le m$)}
+        \\ \hline
+        \textit{LEI final} & - & - & \boxi $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
+        C_j(i-1)+\gamma\}$ \\ \hline
+        \textit{Range Zeilen} & \ccr \textbf{For} $i \gets 1,...,m$   & \ccr   \textbf{While} $i \leq i_{j-1}^\ast$ mit $i \gets 1$; $i \gets i+1$
+        & \ccr  \textbf{While} $i\le m$ \textbf{and} $C_j(i-1)+\gamma\le k$ mit $i \gets 1$; $i \gets i+1$
+        \\
+        \hline
+        \textit{Zellenwert} & \multicolumn{2}{p{8.5cm}|}{\boxii $C_j (i) \gets min\{  C_{j-1}(i-1 + cost(x[i], y[j]) , \quad
+        C_{j-1}(i) + \gamma, \quad  C_j (i-1) + \gamma \}$}
+        & \ccr $C_j(i)\gets C_j(i-1)+\gamma$
+        \\  \hline
+        \textit{Check/Update LEI} & - & \multicolumn{2}{c|}{If $C_j(i)\le k$ \boxi} \\
+        & & \multicolumn{2}{c|}{\boxi $i_j^\ast \gets i$} \\
+        \hline \hline
+        \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Return}} \\ \hline
+        \textit{Rückgabebedingung} & \ccr If $C_j(m) \leq k$ & \multicolumn{2}{c|}{\ccr $i_j^\ast = m$ \textbf{and} $C_j(m)\le k$} \\ \hline
+        \textit{Rückgabewert} & \multicolumn{3}{c|}{\boxii $(j, C_j (m))$} \\
+        \hline \hline
+        \multicolumn{4}{|c|}{\cellcolor{gray}\color{white}\textbf{Output}} \\ \hline
+        & \multicolumn{3}{c|}{\boxii ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . .j]$ for some$j' \leq j$} \\ \hline
     \end{tabular}
 \end{center}
 
@@ -511,10 +521,16 @@ Dann würde einmal der LEI berechnet mit $C_j(i) \gets max \{  C_{j-1}(i-1)+\mat
 C_j(i-1)+\gamma\}$ udn dann geht es an die weiteren Indizes, wo nur noch die Indelkosten auf den Wert von oben drauf gerechnet werden.}
 
 
-
 \section{Search Schemes and Bidirectional Indices}\label{sec:search-schemes-and-bidirectional-indices}
 
-Assume we want to do approximate string matching with a text index, as a generalization of exact
+\begin{idee}
+    Approximate Matching über einem Index (FM-Index) statt über dem Text. Muster in $p$ Teile
+    splitten; jedem Teil eine untere/obere Fehlerschranke zuweisen; die Teile in einer festgelegten
+    Reihenfolge suchen und dabei mit einem bidirektionalen Index nach links und
+    rechts erweitern. So werden viele erfolglose Pfade früh abgeschnitten.
+\end{idee}
+
+\skript{Assume we want to do approximate string matching with a text index, as a generalization of exact
 string matching that can be very efficiently solved with suffix trees, suffix arrays or the
 Burrows-Wheeler Transform (BWT), as we have seen. In principle one can use these data structures
 also for approximate matching, if the solution space of pattern alignments with all candidate
@@ -525,26 +541,27 @@ schemes} in combination with more flexible \emph{bidirectional indices} that we 
 section.
 
 The general idea is that the pattern $x$ is divided into several non-overlapping parts
-$x_1, x_2, \ldots, x_p$. The search scheme (Kucherov et al., 2016) then formally consists of
-multiple searches, where a search is represented by the triple $S = (\pi, L, U)$. The permutation
-$\pi$ of $\{1,2,\ldots,p\}$ specifies the order in which the parts of the pattern are matched.
-$L$ and $U$ are arrays of size $p$ such that $L[i]$ and $U[i]$ denote lower and upper bounds of the
-number of errors after the first $i$ parts are matched (in the order specified by $\pi$).
-
+    $x_1, x_2, \ldots, x_p$. The search scheme (Kucherov et al., 2016) then formally consists of
+    multiple searches, where a search is represented by the triple $S = (\pi, L, U)$. The permutation
+    $\pi$ of $\{1,2,\ldots,p\}$ specifies the order in which the parts of the pattern are matched.
+    $L$ and $U$ are arrays of size $p$ such that $L[i]$ and $U[i]$ denote lower and upper bounds of the
+    number of errors after the first $i$ parts are matched (in the order specified by $\pi$).
+}
 \defin{pigeonhole_principle}
 
 \paragraph{Pigeonhole search scheme.}
-A simple and very natural search scheme is the following: For error threshold $k$, split the pattern
-$x$ in $p = k+1$ parts $x_1, x_2, \ldots, x_{k+1}$, usually of roughly the same length. Clearly, if
-the whole pattern occurs in the text with at most $k$ errors, then at least one of the parts must
-match exactly in the corresponding text region. Therefore, the search scheme consists of $k+1$
-searches $S_1, S_2, \ldots, S_{k+1}$ where search $S_i$ first matches pattern part $x_i$ exactly,
-followed by a backtracking search to the left ($x_{i-1}, x_{i-2}, \ldots, x_1$) with not more than
-$k$ errors, and finally a backtracking search to the right ($x_{i+1}, x_{i+2}, \ldots, x_{k+1}$),
-with additional errors, until a total of $k$ is reached (or the pattern is exhausted).
 
+\skript{A simple and very natural search scheme is the following: For error threshold $k$, split the pattern
+    $x$ in $p = k+1$ parts $x_1, x_2, \ldots, x_{k+1}$, usually of roughly the same length. Clearly, if
+    the whole pattern occurs in the text with at most $k$ errors, then at least one of the parts must
+    match exactly in the corresponding text region. Therefore, the search scheme consists of $k+1$
+    searches $S_1, S_2, \ldots, S_{k+1}$ where search $S_i$ first matches pattern part $x_i$ exactly,
+    followed by a backtracking search to the left ($x_{i-1}, x_{i-2}, \ldots, x_1$) with not more than
+    $k$ errors, and finally a backtracking search to the right ($x_{i+1}, x_{i+2}, \ldots, x_{k+1}$),
+    with additional errors, until a total of $k$ is reached (or the pattern is exhausted).
+}
 
-\begin{bsp}
+\begin{bsp}[From script]
     Formally, for $k=4$ the pigeonhole principle search scheme $S = (S_1,\ldots,S_5)$ looks as follows:
     \[
         \begin{aligned}
@@ -562,35 +579,35 @@ with additional errors, until a total of $k$ is reached (or the pattern is exhau
 \deffin{minu}
 
 \paragraph{MinU search scheme.}
-Another example is the MinU search scheme (Renders et al., 2024). Its definition for $k=4$ is as
+\skript{Another example is the MinU search scheme (Renders et al., 2024). Its definition for $k=4$ is as
 follows:
-\[
-    \begin{aligned}
-        S_1 &= (12345,\ 00222,\ 02244)\\
-        S_2 &= (23145,\ 00000,\ 01244)\\
-        S_3 &= (32145,\ 01111,\ 01244)\\
-        S_4 &= (45321,\ 00003,\ 01444)\\
-        S_5 &= (54321,\ 01114,\ 01444)
-    \end{aligned}
-\]
-It is easy to see that MinU is more efficient, since the ranges $(L[i], U[i])$ grow slower than for
-the pigeonhole scheme. The main question is, though, whether it is \emph{lossless}, i.e., no
-approximate match with up to $k$ errors will be missed. This can be proven by showing that all
-possible error configurations $(e_1, e_2, \ldots, e_p)$ are covered, where $e_i$ is the number of
-errors in part $x_i$ and $e_1 + e_2 + \ldots + e_p \leq k$. This has been shown for the MinU scheme,
-although we will not go into details here.
-
+    \[
+        \begin{aligned}
+            S_1 &= (12345,\ 00222,\ 02244)\\
+            S_2 &= (23145,\ 00000,\ 01244)\\
+            S_3 &= (32145,\ 01111,\ 01244)\\
+            S_4 &= (45321,\ 00003,\ 01444)\\
+            S_5 &= (54321,\ 01114,\ 01444)
+        \end{aligned}
+    \]
+    It is easy to see that MinU is more efficient, since the ranges $(L[i], U[i])$ grow slower than for
+    the pigeonhole scheme. The main question is, though, whether it is \emph{lossless}, i.e., no
+    approximate match with up to $k$ errors will be missed. This can be proven by showing that all
+    possible error configurations $(e_1, e_2, \ldots, e_p)$ are covered, where $e_i$ is the number of
+    errors in part $x_i$ and $e_1 + e_2 + \ldots + e_p \leq k$. This has been shown for the MinU scheme,
+    although we will not go into details here.
+}
 \deffin{bidirectional_indices}
 
 \paragraph{Bidirectional indices.}
-In order to combine search schemes with a text index, it is necessary that the search can be
+\skript{In order to combine search schemes with a text index, it is necessary that the search can be
 organized more flexibly than just left-to-right or just right-to-left. To this end, bidirectional
 text indices are very useful. They allow for extending a partial match either to the left or to the
 right, just as the search scheme requires. Several bidirectional indices have been developed over
 time, starting with affix trees (Stoye, 1995, 2000; Maaß, 2003) and affix arrays (Strothmann,
-2007), followed by the bidirectional BWT (Lam et al., 2009), the bidirectional wavelet index
-(Schnattinger et al., 2012), the br-index (Arakawa et al., 2022) and finally the bidirectional move
-index (Depuydt et al., 2025). Details go beyond the scope of these lecture notes.
+    2007), followed by the bidirectional BWT (Lam et al., 2009), the bidirectional wavelet index
+    (Schnattinger et al., 2012), the br-index (Arakawa et al., 2022) and finally the bidirectional move
+    index (Depuydt et al., 2025). Details go beyond the scope of these lecture notes.
 
-
+}
 

@@ -11,6 +11,7 @@
 \loadglsentries{glossary/g03.tex}
 \loadglsentries{glossary/g04.tex}
 \loadglsentries{glossary/g05.tex}
+\loadglsentries{glossary/g06.tex}
 \input{../preamble/commands}
 
 %% BIBTEX
@@ -23,8 +24,8 @@
 
 
 \newcommand{\skript}[1]{
-    ``#1'' \\
-    (aus \cite{seqan_skript})
+    ``#1''
+    \cite{seqan_skript}
 }
 
 \begin{document}
@@ -80,16 +81,16 @@
 \backmatter
 \pagenumbering{roman}
 \chapter{Backmatter}\label{ch:backmatter}
-
 \addcontentsline{toc}{section}{Definitionen}
 \printglossary[type=defi, title=Definitionen]
 
 %\addcontentsline{toc}{section}{Figures}
 %\listoffigures
-
+\newpage
 \section{List of equations}\label{sec:list-of-equations}
 \input{sections/listen/list_eq}
 
+\newpage
 \section{Algorithms}\label{sec:algorithms}
 \input{sections/listen/alg_übersicht}
 

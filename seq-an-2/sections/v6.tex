@@ -2,7 +2,131 @@
 %! Date = 6/15/26
 
 \section{The Forward-Backward Technique}
-TODO
+\skript{The following problem frequently arises as a sub-problem of more advanced alignment methods, that is
+why we discuss it beforehand in detail:}
+
+\begin{prob}[Advanced Alignment Problem]
+\skript{Given two sequences $x$ and $y$ of lengths $m$ and $n$, respectively, find their optimal global
+alignment under the condition that the alignment path passes through a given cell $(i_0, j_0)$ of the
+alignment matrix.}
+\end{prob}
+
+\skript{This is not a new problem at all! In fact, we can decompose it into two standard global alignment
+problems: Aligning the prefixes $x[1\ldots i_0]$ and $y[1\ldots j_0]$, and aligning the suffixes
+    $x[i_0+1\ldots m]$ and $y[j_0+1\ldots n]$. By combining the results of these two sub-problems in an
+    appropriate way, we obtain the minimally attainable total cost of all alignment paths that go through
+    $(i_0, j_0)$.
+
+    \paragraph{Total cost matrix.}
+    In fact, it is even possible to solve this problem for every point $(i,j)$ simultaneously. The
+    solution is called the \emph{forward-backward technique}. In addition to the usual alignment matrix
+    with alignment costs $D(i,j)$ (which record the minimally attainable cost for a prefix alignment), we
+    additionally define the \emph{reverse alignment matrix}: We exchange initial and final cell and
+    reverse the direction of all computations. Effectively, we are thus globally aligning the reversed
+    sequences. Hence, the associated alignment matrix $D^{\mathrm{rev}} = D^{\mathrm{rev}}(i,j)$ records
+    the best possible costs for the suffix alignments.}
+
+\definSB{total_cost_matrix}
+
+\begin{notte}
+    \skript{Note that $T(0,0) = T(m,n)$ is the optimal global alignment cost $d(x,y)$ (since all paths, in
+    particular the optimal ones, pass through $(0,0)$ and $(m,n)$), and so $T(i,j)\ge d(x,y)$ for all
+        $(i,j)$.}
+\end{notte}
+
+\skript{
+    The computation of the total cost matrix is particularly simple for additive alignment costs. Here
+    \[
+        T(i,j) = D(i,j) + D^{\mathrm{rev}}(i,j).
+    \]
+    Clearly matrices $D$, $D^{\mathrm{rev}}$, and thus $T$ can be computed in $O(mn)$ time.
+
+    For affine gap costs the computation of the total cost matrix is slightly more difficult: Here, the
+    cost of a concatenated alignment is not always the sum of the costs of the individual alignments
+    because gaps might be merged, so that the gap initiation penalty that is imposed twice in the two
+    separate alignments must be counted only once in the concatenated alignment. However, since the
+    efficient computation of affine gap costs with Gotoh's algorithm uses the two history matrices $V$ and
+    $H$, and we know that by definition the costs stored in these matrices refer to those alignments that
+    end with gaps, the total cost matrix for affine gap costs can also be computed in quadratic time if
+    the history matrices $V$ and $H$ and their reverse counterparts $V^{\mathrm{rev}}$ and
+    $H^{\mathrm{rev}}$ are given:
+    \[
+        T(i,j) = \min
+        \begin{cases}
+            D(i,j) + D^{\mathrm{rev}}(i,j)\\
+            V(i,j) + V^{\mathrm{rev}}(i,j) - d + e\\
+            H(i,j) + H^{\mathrm{rev}}(i,j) - d + e
+        \end{cases}
+    \]
+    where $d$ is the gap open cost and $e$ is the gap extension cost.
+
+    \paragraph{Additional cost matrix.}
+    For every $(i,j)$, we can now obtain the \emph{additional cost} $C(i,j)$ for passing through $(i,j)$,
+    compared to staying on an optimal alignment path.}
+
+\definSB{additional_cost_matrix}
+
+% todo By definition, if $(i,j)$ is on the path of an optimal alignment, this value is zero, otherwise it is
+%positive. %; see Figure~6.1.
+
+\skript{By definition, if $(i,j)$ is on the path of an optimal alignment, this value is zero, otherwise it is
+positive. %; see Figure~6.1.
+
+Again, for any additive alignment cost, where
+    $\mathrm{cost}(A++B) = \mathrm{cost}(A) + \mathrm{cost}(B)$, we have that
+    $C(i,j) = T(i,j) - d(x,y) = D(i,j) + D^{\mathrm{rev}}(i,j) - d(x,y)$. Since $T$ and $d(x,y)$ can be
+    computed in $O(mn)$ time, the additional cost matrix $C$ can be computed in $O(mn)$ time, too.
+}
+
+\begin{bsp}{Aus Skript}
+
+    Consider the sequences $x = \mathtt{CT}$ and $y = \mathtt{AGT}$. For unit cost, the edit matrix $D$ and
+    reverse edit matrix $D^{\mathrm{rev}}$, which is drawn in reverse direction, are:
+    \[
+        D:\quad
+        \begin{array}{c|cccc}
+            & \epsilon & \mathtt{A} & \mathtt{G} & \mathtt{T}\\\hline
+            \epsilon & 0 & 1 & 2 & 3\\
+            \mathtt{C} & 1 & 1 & 2 & 3\\
+            \mathtt{T} & 2 & 2 & 2 & 2
+        \end{array}
+        \qquad\qquad
+        D^{\mathrm{rev}}:\quad
+        \begin{array}{c|cccc}
+            & \mathtt{A} & \mathtt{G} & \mathtt{T} & \epsilon\\\hline
+            \mathtt{C} & 2 & 1 & 1 & 2\\
+            \mathtt{T} & 2 & 1 & 0 & 1\\
+            \epsilon & 3 & 2 & 1 & 0
+        \end{array}
+    \]
+    This results in the following additional cost matrix:
+    \[
+        C:\quad
+        \begin{array}{c|cccc}
+            & \epsilon & \mathtt{A} & \mathtt{G} & \mathtt{T}\\\hline
+            \epsilon & 0 & 0 & 1 & 3\\
+            \mathtt{C} & 1 & 0 & 0 & 2\\
+            \mathtt{T} & 3 & 2 & 1 & 0
+        \end{array}
+    \]
+    We see that the paths of the two optimal alignments
+    $A^{\mathrm{opt}}_1 = \left(\begin{smallmatrix}\mathtt{C}&\mathtt{-}&\mathtt{T}\\
+    \mathtt{A}&\mathtt{G}&\mathtt{T}\end{smallmatrix}\right)$ and
+    $A^{\mathrm{opt}}_2 = \left(\begin{smallmatrix}\mathtt{-}&\mathtt{C}&\mathtt{T}\\
+    \mathtt{A}&\mathtt{G}&\mathtt{T}\end{smallmatrix}\right)$ correspond to the two paths of $0$-entries in
+    $C$.
+\end{bsp}
+
+\skript{\paragraph{Applications.}
+The forward-backward technique is used, for example, in the following problems:
+    \begin{itemize}
+        \item linear-space alignment (Hirschberg technique, see Section~6.2),
+        \item discovering regions of slightly sub-optimal alignments (those cells where the score gap, resp.\
+        additional cost, remains below a small tolerance parameter),
+        \item computing regions for the Carrillo-Lipman heuristic for multiple sequence alignment (see
+        Section~8.2),
+        \item finding cut-points for divide-and-conquer multiple alignment (see Section~10.1).
+    \end{itemize}}
 
 \section{Hirschberg’s Algorithm}
 TODO

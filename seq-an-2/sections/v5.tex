@@ -4,15 +4,15 @@
 % Seite 23 - ??
 
 
-The unit cost edit distance simply counts certain differences between strings.
+\skript{The unit cost edit distance simply counts certain differences between strings.
 There is no inherent
 biological meaning behind this scheme.
 If we want to compare DNA or protein sequences, for example,
-biologically more meaningful distances should be used.
+    biologically more meaningful distances should be used.}
 
 \defin{transversion_transition_cost}
 
-The following is called the \emph{transversion/transition cost} on the DNA alphabet:
+\skript{The following is called the \emph{transversion/transition cost} on the DNA alphabet:
 \[
     \begin{array}{c|cccc}
         & \mathtt{A} & \mathtt{G} & \mathtt{C} & \mathtt{T}\\
@@ -38,15 +38,15 @@ many DNA bases must change minimally in a codon to transform one amino acid into
 A more sophisticated cost function for replacement of amino acids was calculated by W.\ Taylor
 according to the method described in Taylor and Jones (1993) and is shown in Table~4.1. (To
 completely define a distance function, we would also have to define the costs for insertions and
-deletions.)
+deletions.)}
 
 \begin{notte}
-    Note, however, that in a distance model a match has always zero cost,
-    $\mathrm{cost}\!\left(\begin{smallmatrix}
-                              a\\a
-    \end{smallmatrix}\right)=0$ for all $a\in\Sigma$.
-    This
-    restricts flexibility a little bit because any match is scored in the same way.
+  \skript{Note, however, that in a distance model a match has always zero cost,
+      $\mathrm{cost}\!\left(\begin{smallmatrix}
+                                a\\a
+      \end{smallmatrix}\right)=0$ for all $a\in\Sigma$.
+      This
+      restricts flexibility a little bit because any match is scored in the same way.}
 \end{notte}
 
 
@@ -81,20 +81,21 @@ deletions.)
 
 \section{Sensible Similarity Scores}\label{sec:sensible-similarity-scores}
 \defin{sensible_score_function}
-The concept of a metric is useful because it embodies the essential properties of our intuition
+
+\skript{The concept of a metric is useful because it embodies the essential properties of our intuition
 about distances.
 For example, if the triangle inequality is violated, we could find a shorter way
 from $x$ to $y$ via a detour over $z$, which is not intuitive.
 However, distances also have
 disadvantages, as we have seen in the discussion of local alignment, where distance functions are
-not useful.
+not useful.}
 
 \defin{general_similarity_score}
 
-Similarity scores, instead, where matches are scored positively, while mismatches and
+\skript{Similarity scores, instead, where matches are scored positively, while mismatches and
 indels receive negative scores, provide a useful alternative.
 Here we consider a general similarity
-score that should satisfy certain intuitive properties.
+score that should satisfy certain intuitive properties.}
 
 \begin{defi}
     A \emph{sensible score function} for columns in a pairwise alignment is a function
@@ -114,7 +115,7 @@ score that should satisfy certain intuitive properties.
     \]
 \end{defi}
 
-The first and second conditions impose symmetry and state that the similarity between $a$ and itself
+\skript{The first and second conditions impose symmetry and state that the similarity between $a$ and itself
 is always higher than between $a$ and anything else.
 In particular, insertions and deletions never
 score positively.
@@ -124,37 +125,41 @@ followed by an insertion.
 In general, it is a good idea to verify that a score function is sensible, like in the case of
 log-odds score matrices introduced in the next section.
 In other cases, one might deviate from this
-property for good reason, see Section~\ref{sec:non-symmetric-score-matrices}.
-
+property for good reason, see Section~\ref{sec:non-symmetric-score-matrices}.}
 
 \section{Log-Odds Score Matrices}\label{sec:log-odds-score-matrices}
 
+\begin{idee}
+    Scores sind keine Willkür, sondern Log-Odds: Wie viel wahrscheinlicher ist ein Alignment-Paar
+    $(a,b)$ unter dem \emph{Homologie-Modell} $M$ als unter dem Zufalls-Modell $R$?
+    Positiver Score $=$ eher homolog.
+\end{idee}
 
-Now it is time to discuss how we can define similarity scores for biological sequences from an
+\skript{Now it is time to discuss how we can define similarity scores for biological sequences from an
 evolutionary point of view; we focus on proteins and define a similarity function on the alphabet
-$\Sigma$ of $20$ amino acids.
+    $\Sigma$ of $20$ amino acids.
 
-The basic observation is that over evolutionary time-scales, in functional proteins two similar
-amino acids are replaced more frequently by each other than dissimilar amino acids.
-The twist is now
-to define similarity by observing how often one amino acid is replaced by another one in a given
-amount of time.
+    The basic observation is that over evolutionary time-scales, in functional proteins two similar
+    amino acids are replaced more frequently by each other than dissimilar amino acids.
+    The twist is now
+    to define similarity by observing how often one amino acid is replaced by another one in a given
+    amount of time.}
 
 \defin{frequency_vector}
 
-Let $\glssymbol{frequency_vector} = (\pi_a)_{a\in\Sigma}$ be the frequency vector, which means that $\pi_a\ge 0$ for all
-$a\in\Sigma$ and $\sum_{a\in\Sigma}\pi_a = 1$, of the naturally occurring amino acids.
-If we look at
-two random positions in two randomly selected proteins, the probability that we see the ordered pair
-$(a,b)$ is then $\pi_a\cdot\pi_b$.
-The entries of $\pi$ are also called \emph{background frequencies} of the amino acids.
+\skript{Let $\glssymbol{frequency_vector} = (\pi_a)_{a\in\Sigma}$ be the frequency vector, which means that $\pi_a\ge 0$ for all
+    $a\in\Sigma$ and $\sum_{a\in\Sigma}\pi_a = 1$, of the naturally occurring amino acids.
+    If we look at
+    two random positions in two randomly selected proteins, the probability that we see the ordered pair
+    $(a,b)$ is then $\pi_a\cdot\pi_b$.
+    The entries of $\pi$ are also called \emph{background frequencies} of the amino acids.}
 
 \defin{background_frequencies}
 
-Now assume that we can track the fate of individual amino acids over a fixed evolutionary time
-period $t$.
-
 \defin{fixed_evolutionary_time_period}
+
+\skript{Now assume that we can track the fate of individual amino acids over a fixed evolutionary time
+period $t$.
 
 Let $M_t(a,b)$ be the observed frequency table of homologous amino acid pairs where we
 observed $a$ at the beginning of the period and $b$ at the end of the period, such that
@@ -178,16 +183,16 @@ The second reason is that simply $a$ or $b$ could
 be frequent amino acids.
 To remove the second effect, we consider the so-called \emph{likelihood
 ratio} $M_t(a,b)/(\pi_a\cdot\pi_b)$, which relates the probability of the pair $(a,b)$ in an
-evolutionary model to its probability in a random model.
+evolutionary model to its probability in a random model.}
 
 \defin{likelihood_ratio}
 
-We declare that $a$ and $b$ are similar if
-this ratio exceeds $1$ and that they are dissimilar if this ratio is below $1$.
+\skript{We declare that $a$ and $b$ are similar if
+this ratio exceeds $1$ and that they are dissimilar if this ratio is below $1$.}
 
-\defin{log_odds_score_matrix}
 
-To obtain an additive
+
+\skript{To obtain an additive
 function, we take the logarithm and define the \emph{log-odds score matrix} with respect to time
 period $t$ by
 \[
@@ -196,7 +201,9 @@ period $t$ by
 The time parameter $t$ should be chosen in such a way that the score matrix is optimal for the
 problem at hand: If we want to compare two sequences whose most recent common ancestor existed, say,
 $530$ million years ago, then we should ideally use a score matrix constructed from sequence pairs
-with distance $t \approx 1060$ million years.
+with distance $t \approx 1060$ million years.}
+
+\defin{log_odds_score_matrix}
 
 \begin{bem}
     For convenience, scores are often scaled by a constant factor and then rounded to integers.
@@ -231,8 +238,7 @@ with distance $t \approx 1060$ million years.
 
 \section{Non-symmetric score matrices}\label{sec:non-symmetric-score-matrices}
 
-
-We usually demand that similarity functions and hence score matrices are symmetric.
+\skript{We usually demand that similarity functions and hence score matrices are symmetric.
 In some cases,
 however, there are good reasons to choose a non-symmetric similarity function.
 Often then, the
@@ -257,7 +263,7 @@ It follows that we should use
 or a rounded multiple thereof, so that now $\mathrm{score}(a,b)\ne\mathrm{score}(b,a)$ in general.
 Table~4.2 shows the SLIM161 matrix for transmembrane helices (Müller et al., 2001).
 The $161$ is
-the time parameter $t$ referring to the expected number of evolutionary events per $100$ positions.
+the time parameter $t$ referring to the expected number of evolutionary events per $100$ positions.}
 
 
 \begin{mytable}
@@ -293,7 +299,7 @@ the time parameter $t$ referring to the expected number of evolutionary events p
 \section{Position-Specific Scores}\label{sec:position-specific-scores}
 
 
-The match/mismatch score in all our alignment algorithms depends on a (sensible) similarity function
+\skript{The match/mismatch score in all our alignment algorithms depends on a (sensible) similarity function
 $\mathrm{score}$ as defined in Definition~4.1, often given by a log-odds score matrix.
 However, this
 does not need to be the case.
@@ -313,7 +319,7 @@ homology search by using a bipartite scoring scheme with a (non-symmetric) trans
 specific scoring matrix (such as SLIM) for the TM helices and a general-purpose scoring matrix (such
 as BLOSUM) for the remaining regions of the query protein; see Figure~4.1. As a consequence, the
 score of aligning $x[i]$ with $y[j]$ does not only depend on the amino acids $x[i]$ and $y[j]$
-themselves, but also on the position $i$ within the query sequence $x$. \cite{seqan_skript}
+themselves, but also on the position $i$ within the query sequence $x$.}
 
 %\begin{figure}[H]
 %    \centering

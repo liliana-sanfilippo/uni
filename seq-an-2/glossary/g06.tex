@@ -1,0 +1,26 @@
+%! Author = lili
+%! Date = 7/31/26
+
+\newglossaryentry{total_cost_matrix}{
+    name={total cost matrix},
+    first={total cost matrix for two sequences $x$ and $y$ of lengths $m$ and $n$},
+description={
+    $T(i,j) = \min\left\{ \mathrm{cost}(A ++ B) | \begin{array}{l} A \text{ is an alignment of the prefixes } x[1\ldots i] \text{ and } y[1\ldots j]\\
+B \text{ is an alignment of the suffixes } x[i+1\ldots m] \text{ and } y[j+1\ldots n] \end{array}\right\}$ where ``$+\!\!+$'' denotes concatenation of alignments.},
+type=defi,
+formB={T(i,j) = \min\left\{ \mathrm{cost}(A ++ B) | \begin{array}{l} A \text{ is an alignment of the prefixes } x[1\ldots i] \text{ and } y[1\ldots j]\\
+B \text{ is an alignment of the suffixes } x[i+1\ldots m] \text{ and } y[j+1\ldots n] \end{array}\right\}},
+formF={``$+\!\!+$'' denotes concatenation of alignments in the total cost matrix defined as:}
+}
+
+\newglossaryentry{additional_cost_matrix}{
+name={additional cost matrix},
+first={additional cost matrix for two sequences $x$ and $y$ of lengths $m$ and $n$},
+description={$C(i,j) = T(i,j) - d(x,y)$ where ``$+\!\!+$'' denotes concatenation of alignments.},
+type=defi,
+nominative={Laufzeit},
+accusative={Aufgabe},
+genitive={Speicherplatz},
+formB={C(i,j) = T(i,j) - d(x,y)},
+formF={$d(x,y)$ is the edit distance of sequences $x$ and $y$ for the additional cost matrix defined as:}
+}

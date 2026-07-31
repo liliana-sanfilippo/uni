@@ -7,7 +7,7 @@
 
 \paragraph{Input:} RNA sequence $s = GGUCCA$ (meaning $n = 6$), scoring function for base pairs, minimum number $\delta = 1$ of unpaired bases in a hairpin loop
 
-\subsection*{First loop} todo what does it
+\subsection*{First loop} %  todo what does it
 \begin{algorithmic}
     \For{$i \gets 2$ to $6$}
         \State $M(i,i-1) \gets 0$
@@ -37,12 +37,12 @@
         \scriptsize \[
                         T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                                     \hline
-                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                                    1 & & \textcolor{red}{init} \\
-                                    2     &       &       &       &       &       &       \\
-                                    3     &       &       &       &       &       &       \\
-                                    4     &       &       &       &       &       &       \\
-                                    5     &       &       &       &       &       &       \\
+                                    j / i & $G_1$ & $G_2$                 & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1     &       & \textcolor{red}{init} &       &       &       &       \\
+                                    2     &       &                       &       &       &       &       \\
+                                    3     &       &                       &       &       &       &       \\
+                                    4     &       &                       &       &       &       &       \\
+                                    5     &       &                       &       &       &       &       \\
                                     6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                                     & \textcolor{white}{unpaired}
                                     & \textcolor{white}{unpaired}
@@ -119,12 +119,12 @@
         \scriptsize \[
                         T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                                     \hline
-                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                                    1     &       & init  &       &       &       &       \\
-                                    2     &       &       & init  &       &       &       \\
-                                    3 & & & & \textcolor{red}{init} & \\
-                                    4     &       &       &       &       &       &       \\
-                                    5     &       &       &       &       &       &       \\
+                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$                 & $C_5$ & $A_6$ \\ \hline
+                                    1     &       & init  &       &                       &       &       \\
+                                    2     &       &       & init  &                       &       &       \\
+                                    3     &       &       &       & \textcolor{red}{init} &       &       \\
+                                    4     &       &       &       &                       &       &       \\
+                                    5     &       &       &       &                       &       &       \\
                                     6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                                     & \textcolor{white}{unpaired}
                                     & \textcolor{white}{unpaired}
@@ -257,12 +257,12 @@
         \scriptsize \[
                         T =     \begin{tabular}{|c|c|c|c|c|c|c|}
                                     \hline
-                                    j / i & $G_1$ & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
-                                    1 & \textcolor{red}{unpaired} & init \\
-                                    2     &       &       & init  &       &       &       \\
-                                    3     &       &       &       & init  &       &       \\
-                                    4     &       &       &       &       & init  &       \\
-                                    5     &       &       &       &       &       & init  \\
+                                    j / i & $G_1$                     & $G_2$ & $U_3$ & $C_4$ & $C_5$ & $A_6$ \\ \hline
+                                    1     & \textcolor{red}{unpaired} & init  &       &       &       &       \\
+                                    2     &                           &       & init  &       &       &       \\
+                                    3     &                           &       &       & init  &       &       \\
+                                    4     &                           &       &       &       & init  &       \\
+                                    5     &                           &       &       &       &       & init  \\
                                     6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                                     & \textcolor{white}{unpaired}
                                     & \textcolor{white}{unpaired}
@@ -647,7 +647,7 @@
                         1     & unpaired & init     &          &          &          &       \\
                         2     & unpaired & unpaired & init     &          &          &       \\
                         3     &          & unpaired & unpaired & init     &          &       \\
-                        4 & & & unpaired & unpaired & init \\
+                        4     &          &          & unpaired & unpaired & init     &       \\
                         5     &          &          &          & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         & \textcolor{white}{unpaired}
@@ -908,7 +908,7 @@
                         1     & unpaired & init     &          &          &          &       \\
                         2     & unpaired & unpaired & init     &          &          &       \\
                         3     & case 3   & unpaired & unpaired & init     &          &       \\
-                        4 & & case 3 & unpaired & unpaired & init \\
+                        4     &          & case 3   & unpaired & unpaired & init     &       \\
                         5     &          &          & case 1-3 & unpaired & unpaired & init  \\
                         6 & \textcolor{white}{unpaired} & \textcolor{white}{unpaired} & \textcolor{white}{unpaired}
                         & \textcolor{red}{case 1-3 }

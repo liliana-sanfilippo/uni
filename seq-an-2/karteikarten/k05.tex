@@ -1,0 +1,170 @@
+
+% ===================================================================
+% Abschnitt: Biologisch motivierte Kostenfunktionen
+% ===================================================================
+
+\newglossaryentry{bem_warum_biologisch_motivierte_kosten}{
+    name={Warum reicht die Unit-Cost-Editierdistanz oft nicht aus, um biologische Sequenzen sinnvoll zu vergleichen?},
+    description={Sie zählt nur bestimmte Unterschiede zwischen Strings ohne inhärente biologische Bedeutung -- für DNA- oder Proteinvergleiche sind biologisch aussagekräftigere Kostenfunktionen nötig.},
+    type=dinge
+}
+
+\newglossaryentry{def_transversion_transition_cost_final}{
+    name={Wie ist die Transversion/Transition-Kostenfunktion auf dem DNA-Alphabet definiert, und welche biologische Beobachtung spiegelt sie wider?},
+    description={Ersetzungen zwischen zwei Purinen (A,G) oder zwei Pyrimidinen (C,T) -- Transitionen -- kosten $1$; Ersetzungen zwischen einem Purin und einem Pyrimidin -- Transversionen -- kosten $2$ (oft mit Indel-Kosten $3$). Das spiegelt wider, dass Transitionen in der Evolution wahrscheinlicher sind als Transversionen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_purine_pyrimidine}{
+    name={Welche DNA-Basen sind Purine, welche sind Pyrimidine?},
+    description={Purine: A und G. Pyrimidine: C und T.},
+    type=dinge
+}
+
+\newglossaryentry{bem_aminosaeure_kosten_via_codon}{
+    name={Wie lässt sich eine einfache Kostenfunktion für den Austausch von Aminosäuren aus der DNA-Ebene ableiten?},
+    description={Man zählt, wie viele DNA-Basen in einem Codon minimal geändert werden müssen, um eine Aminosäure in eine andere umzuwandeln.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Sensible Score-Funktionen
+% ===================================================================
+
+\newglossaryentry{def_sensible_score_function_final}{
+    name={Welche drei Bedingungen muss eine "sensible score function" für Alignment-Spalten erfüllen?},
+    description={(1) $\mathrm{score}(\tbinom aa)\ge0\ge\mathrm{score}(\tbinom a-)=\mathrm{score}(\tbinom -a)$ für alle $a$; (2) $\mathrm{score}(\tbinom aa)\ge\mathrm{score}(\tbinom ac)=\mathrm{score}(\tbinom ca)$ für alle $a,c$; (3) $\mathrm{score}(\tbinom ac)\ge\mathrm{score}(\tbinom a-)+\mathrm{score}(\tbinom -c)$ für alle $a,c$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_intuition_bedingung_1_2_sensible_score}{
+    name={Was besagen die ersten beiden Bedingungen einer sensiblen Score-Funktion anschaulich?},
+    description={Sie fordern Symmetrie und dass die Ähnlichkeit eines Zeichens mit sich selbst stets mindestens so hoch bewertet wird wie mit einem anderen Zeichen; insbesondere erhalten Indels nie einen positiven Score.},
+    type=dinge
+}
+
+\newglossaryentry{bem_intuition_bedingung_3_sensible_score}{
+    name={Was besagt die dritte Bedingung einer sensiblen Score-Funktion anschaulich?},
+    description={Dass eine direkte Substitution stets mindestens so gut bewertet wird wie eine Deletion gefolgt von einer Insertion -- ein direkter Austausch ist gegenüber dem Umweg über zwei Indels nicht schlechter.},
+    type=dinge
+}
+
+\newglossaryentry{bem_einschraenkung_distanzmodell}{
+    name={Welche Einschränkung hat ein Distanzmodell im Vergleich zu einem allgemeinen Similarity-Score bezüglich der Bewertung von Matches?},
+    description={Im Distanzmodell hat ein Match stets Kosten $0$, unabhängig davon, um welches Zeichen es sich handelt -- alle Matches werden also gleich bewertet, was die Flexibilität einschränkt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Log-Odds Score-Matrizen
+% ===================================================================
+
+\newglossaryentry{bem_general_similarity_score_vs_distanz}{
+    name={Worin unterscheidet sich ein "general similarity score" von einem Distanzmodell, und wann ist das nützlich?},
+    description={Bei einem Similarity Score werden Matches positiv, Mismatches und Indels negativ bewertet (statt wie im Distanzmodell ein Match stets mit Kosten $0$). Das ist besonders beim lokalen Alignment nützlich, wo Distanzfunktionen ungeeignet sind.},
+    type=dinge
+}
+
+\newglossaryentry{bem_grundbeobachtung_evolutionaere_scores}{
+    name={Welche evolutionäre Grundbeobachtung motiviert die Konstruktion von Ähnlichkeits-Scores für Aminosäuren?},
+    description={Über evolutionäre Zeitskalen werden in funktionalen Proteinen ähnliche Aminosäuren häufiger gegeneinander ausgetauscht als unähnliche -- man kann Ähnlichkeit also daran ablesen, wie oft eine Aminosäure durch eine andere ersetzt wird.},
+    type=dinge
+}
+
+\newglossaryentry{def_frequency_vector_final}{
+    name={Was ist der Frequency Vector $\pi$ der Aminosäuren?},
+    description={Ein Vektor $\pi=(\pi_a)_{a\in\Sigma}$ mit $\pi_a\ge0$ und $\sum_a\pi_a=1$, der die natürlichen Häufigkeiten der Aminosäuren angibt. Für zwei zufällige Positionen in zwei zufälligen Proteinen ist die Wahrscheinlichkeit des Paares $(a,b)$ dann $\pi_a\cdot\pi_b$.},
+    type=dinge
+}
+
+\newglossaryentry{def_background_frequencies_final}{
+    name={Was sind die "background frequencies", und wie lassen sie sich aus $M_t$ gewinnen?},
+    description={Die Einträge $\pi_a$ des Frequency Vectors. Sie ergeben sich als Randverteilungen (Marginale) von $M_t$: $\pi_a=\sum_b M_t(a,b)$ (und wegen Symmetrie ebenso für $\pi_b$).},
+    type=dinge
+}
+
+\newglossaryentry{def_beobachtete_haeufigkeitstabelle_mt}{
+    name={Was beschreibt die Häufigkeitstabelle $M_t(a,b)$?},
+    description={Die beobachtete relative Häufigkeit homologer Aminosäurepaare, bei denen zu Beginn eines Evolutionszeitraums $t$ die Aminosäure $a$ und am Ende $b$ vorlag, mit $\sum_{a,b} M_t(a,b)=1$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_mt_symmetrisch}{
+    name={Warum wird $M_t$ als symmetrisch angenommen ($M_t(a,b)=M_t(b,a)$), obwohl Evolution gerichtet abläuft?},
+    description={Weil man den tatsächlichen evolutionären Verlauf einzelner Aminosäuren nicht direkt verfolgen kann -- man beobachtet nur zwei heutige Sequenzen, ohne deren jüngsten gemeinsamen Vorfahren zu kennen. Substitutionen und Identitäten werden daher in beide Richtungen gezählt.},
+    type=dinge
+}
+
+\newglossaryentry{def_likelihood_ratio_final}{
+    name={Wie ist die Likelihood Ratio definiert, und wie interpretiert man ihren Wert?},
+    description={$M_t(a,b)/(\pi_a\cdot\pi_b)$ -- sie setzt die Wahrscheinlichkeit des Paares $(a,b)$ im Evolutionsmodell zur Wahrscheinlichkeit im Zufallsmodell ins Verhältnis. Werte $>1$ bedeuten Ähnlichkeit, Werte $<1$ Unähnlichkeit von $a$ und $b$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_verhaeltnis_statt_mt_direkt}{
+    name={Warum betrachtet man das Verhältnis $M_t(a,b)/(\pi_a\pi_b)$, statt $M_t(a,b)$ direkt als Ähnlichkeitsmaß zu verwenden?},
+    description={Ein großer Wert $M_t(a,b)$ kann entweder daran liegen, dass $a$ und $b$ sich ähnlich sind, oder einfach daran, dass $a$ bzw.\ $b$ generell häufige Aminosäuren sind. Das Teilen durch $\pi_a\cdot\pi_b$ entfernt diesen zweiten (Häufigkeits-)Effekt.},
+    type=dinge
+}
+
+\newglossaryentry{def_log_odds_score_matrix_final}{
+    name={Wie ist die Log-Odds Score-Matrix bezüglich eines Zeitraums $t$ definiert?},
+    description={$\mathrm{score}_t(a,b) := \log\left(\dfrac{M_t(a,b)}{\pi_a\cdot\pi_b}\right)$ -- der Logarithmus der Likelihood Ratio.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_logarithmus}{
+    name={Warum wird bei der Log-Odds Score-Matrix der Logarithmus der Likelihood Ratio verwendet, statt die Ratio direkt zu nutzen?},
+    description={Um eine additive Funktion zu erhalten: Der Score eines gesamten Alignments soll sich als Summe der Spalten-Scores ergeben -- das gilt für die (multiplikativen) Wahrscheinlichkeits-Verhältnisse selbst nicht, wohl aber nach dem Logarithmieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wahl_des_zeitparameters_t}{
+    name={Wie sollte der Zeitparameter $t$ einer Log-Odds Score-Matrix gewählt werden?},
+    description={So, dass er zur erwarteten evolutionären Distanz der zu vergleichenden Sequenzen passt -- z.\,B.\ sollte für Sequenzen mit gemeinsamem Vorfahren vor $530$ Millionen Jahren idealerweise eine Matrix mit $t\approx1060$ Millionen Jahren (Summe beider Zweige zum Vorfahren) verwendet werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bit_und_third_bit_einheiten}{
+    name={Was bedeuten die Score-Einheiten "bit" und "third-bit"?},
+    description={Ein Score ist in "bits" angegeben, wenn er über $\log_2(\cdot)$ gebildet wurde. Wird er zusätzlich mit dem Faktor $3$ multipliziert (und gerundet), spricht man von "third-bits" -- diese Skalierung liefert bequemere, ganzzahlige Scores.},
+    type=dinge
+}
+
+\newglossaryentry{bem_pam_blosum}{
+    name={Welche zwei wichtigen Score-Matrix-Familien für Proteine werden genannt, und was unterscheidet ihre Parameter?},
+    description={PAM($t$) (Dayhoff et al., 1978) und BLOSUM($s$) (Henikoff und Henikoff, 1992). $t$ ist ein Divergenzzeit-Parameter, $s$ ein (invers zu $t$ korrelierter) Clustering-Ähnlichkeitsparameter. BLOSUM-Matrizen sind für Proteinvergleiche am weitesten verbreitet.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Nicht-symmetrische Score-Matrizen
+% ===================================================================
+
+\newglossaryentry{bem_wann_nichtsymmetrische_matrix_sinnvoll}{
+    name={Wann kann es sinnvoll sein, eine nicht-symmetrische Score-Matrix zu verwenden, obwohl $M_t$ selbst symmetrisch ist?},
+    description={Wenn Anfrage- und Datenbanksequenzen aus unterschiedlichen biologischen Kontexten mit unterschiedlichen Hintergrundhäufigkeiten stammen -- z.\,B.\ eine transmembrane Helix (hydrophob geprägte Verteilung $\tau$) gegen eine Datenbank "durchschnittlicher" Proteine (Hintergrundverteilung $\pi$).},
+    type=dinge
+}
+
+\newglossaryentry{formel_nichtsymmetrische_score_matrix}{
+    name={Wie verändert sich die Formel der Log-Odds Score-Matrix, wenn Anfrage- und Datenbank-Hintergrundhäufigkeiten unterschiedlich sind?},
+    description={$\mathrm{score}_t(a,b) := \log\left(\dfrac{M_t(a,b)}{\tau_a\cdot\pi_b}\right)$, wobei $\tau$ die Hintergrundhäufigkeiten der Anfragesequenz und $\pi$ die der Datenbank sind -- dadurch gilt i.\,A.\ $\mathrm{score}(a,b)\neq\mathrm{score}(b,a)$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Positionsspezifische Scores
+% ===================================================================
+
+\newglossaryentry{bem_grundidee_positionsspezifische_scores}{
+    name={Was ist die Grundidee positionsspezifischer Scores?},
+    description={Der Match/Mismatch-Score muss nicht nur von den verglichenen Zeichen abhängen, sondern kann auch direkt von der Position abhängen: Man ersetzt $\mathrm{score}(x[i],y[j])$ durch eine allgemeinere Funktion $\mathrm{score}(i,j)$, ohne dass sich der Alignment-Algorithmus selbst ändert.},
+    type=dinge
+}
+
+\newglossaryentry{bem_bipartite_scoring_scheme}{
+    name={Wie funktioniert das bipartite Scoring-Schema zur Erkennung entfernt verwandter Transmembranproteine?},
+    description={Je nachdem, ob eine Position $i$ der Anfragesequenz in einer Transmembranhelix liegt oder nicht, wird eine andere Scoring-Matrix verwendet: eine transmembran-spezifische (nicht-symmetrische) Matrix wie SLIM für TM-Helix-Positionen, und eine allgemeine Matrix wie BLOSUM für die übrigen Positionen.},
+    type=dinge
+}

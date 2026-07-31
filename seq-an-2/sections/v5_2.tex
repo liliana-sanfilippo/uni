@@ -2,7 +2,7 @@
 %! Date = 6/26/26
 
 \section{Introduction}\label{sec:introduction}
-RNA is in many ways similar to DNA, with a few important differences:
+\skript{RNA is in many ways similar to DNA, with a few important differences:
 \begin{itemize}
     \item Thymine (T) is replaced by uracil (U), so the RNA alphabet is
     $\Sigma_{\mathrm{RNA}} = \{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}$.
@@ -27,7 +27,7 @@ simply determines the intra-molecular basepairs. As with DNA, the Watson-Crick p
 $\{\mathtt{A}, \mathtt{U}\}$ and $\{\mathtt{C}, \mathtt{G}\}$ stabilize the molecule, but also the
 ``wobble pair'' $\{\mathtt{G}, \mathtt{U}\}$ adds structural stability. We now define this formally.
 
-Let $s\in\{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^n$ be an RNA sequence of length $n$.
+Let $s\in\{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^n$ be an RNA sequence of length $n$.}
 
 \begin{defi} % TODO
     An \emph{$s$-basepair} is a set of two different numbers $\{i,j\}\subset\{1,\ldots,n\}$ such that
@@ -47,7 +47,7 @@ Let $s\in\{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^n$ be an RNA sequenc
     \end{itemize}
 \end{defi}
 
-In other words, basepairs in a simple structure may not cross.
+\skript{In other words, basepairs in a simple structure may not cross.
 
 The restriction that basepairs may not cross is actually unrealistic, but it helps to keep several
 computational problems regarding RNA analysis of manageable complexity, as we shall see shortly.
@@ -77,7 +77,7 @@ represent paired bases:
 
 Another popular way to visualize a structure is by means of a \emph{mountain plot}: Starting with the
 dot-bracket representation, replace dots by \texttt{-} and brackets \texttt{()} by \texttt{/\char`\\},
-and use a second dimension. Another alternative is a \emph{circle plot};
+and use a second dimension. Another alternative is a \emph{circle plot};}
 
 % TODO BILDER
 
@@ -85,7 +85,7 @@ and use a second dimension. Another alternative is a \emph{circle plot};
 
 \section{The Optimization Problem}\label{sec:the-optimization-problem}
 
-Over time, an RNA molecule may assume several distinct structures. The more energetically stable a
+\skript{Over time, an RNA molecule may assume several distinct structures. The more energetically stable a
 structure is, the more likely the molecule will assume this structure. To make this precise, we need
 to define an energy model for all secondary structure elements. This can become quite complicated
 (the problem of predicting RNA structures could fill an entire course), so here we only consider a
@@ -95,29 +95,29 @@ count basepairs by assigning $+1$ to each pair, or we may take their relative st
 by assigning $\mathrm{score}(\{\mathtt{A},\mathtt{U}\}) := 2$,
 $\mathrm{score}(\{\mathtt{C},\mathtt{G}\}) := 3$, $\mathrm{score}(\{\mathtt{G},\mathtt{U}\}) := 1$, for
 example. On a sequence $s$ of length $n$, the score of a basepair $b = \{i,j\}$ is then defined as
-$\mathrm{score}(b) := \mathrm{score}(\{s[i], s[j]\})$.
+$\mathrm{score}(b) := \mathrm{score}(\{s[i], s[j]\})$.}
 
 
 \begin{prob}[Simple RNA Secondary Structure Prediction Problem]\label{prob:prediction_rna}
-    Let an RNA sequence $s$ of length $n$ be given, determine a simple structure $S^\ast$ on $s$ such that
+\skript{Let an RNA sequence $s$ of length $n$ be given, determine a simple structure $S^\ast$ on $s$ such that
     \[
         \mathrm{score}(S^\ast) = \max\{\mathrm{score}(S)\mid S \text{ is a simple structure on } s\},
     \]
     where $\mathrm{score}(S) := \sum_{b\in S}\mathrm{score}(b)$ is the sum of the base pair scores in the
-    structure $S$.
+    structure $S$.}
 \end{prob}
 
 
-Generally, the number of valid simple structures for a molecule of length $n$ is exponential in $n$,
+\skript{Generally, the number of valid simple structures for a molecule of length $n$ is exponential in $n$,
 so the most stable structure cannot be found in reasonable time by enumerating all possible
 structures. After a short digression to context free grammars, we present an efficient algorithm to
-solve the problem.
+solve the problem.}
 
 
 
 \section{Context-Free Grammars}\label{sec:context-free-grammars}
 
-From the above discussion of the dot-bracket notation, we may say that a (simple secondary) structure
+\skript{From the above discussion of the dot-bracket notation, we may say that a (simple secondary) structure
 is
 \begin{enumerate}\setcounter{enumi}{-1}
 \item either the empty structure,
@@ -129,7 +129,7 @@ constraint),
 \end{enumerate}
 
 We recall the notion of a \emph{context-free grammar} here to show that simple secondary structures
-allow a straightforward recursive description.
+allow a straightforward recursive description.}
 
 \begin{defi} % TODO
     A \emph{context-free grammar} (CFG) is a quadruple $G = (N, T, P, S)$, where
@@ -144,7 +144,7 @@ allow a straightforward recursive description.
 \end{defi}
 
 
-Ignoring basepair sequence and distance constraints, in the RNA structure setting, the terminal
+\skript{Ignoring basepair sequence and distance constraints, in the RNA structure setting, the terminal
 symbols are $T = \{\texttt{(}, \texttt{.}, \texttt{)}\}$ and $N = \{S\}$, where $S$ is also the start
 symbol and represents a secondary structure. The productions are formalized versions of the above
 rules, i.e.,
@@ -171,7 +171,7 @@ base at a previous position. We obtain the following non-ambiguous grammar:
     S \to \varepsilon \mid S\texttt{.} \mid S\texttt{(}S\texttt{)}
 \]
 where the vertical bar ($\mid$) denotes ``or'', i.e., it separates alternative right-hand sides of the
-production.
+production.}
 
 
 
@@ -180,7 +180,7 @@ production.
 \section{The Nussinov Algorithm}\label{sec:the-nussinov-algorithm}
 \komm{Example calculation for GGUCCA on page~\pageref{sec:nussinov-example}.}
 
-To solve Problem~\ref{prob:prediction_rna}, we now give a dynamic programming algorithm based on the structural description
+\skript{To solve Problem~\ref{prob:prediction_rna}, we now give a dynamic programming algorithm based on the structural description
 of simple secondary structures from the previous section. This algorithm is due to Nussinov and
 Jacobson (1980). We also take into account the distance and sequence constraints for basepairs.
 
@@ -222,7 +222,7 @@ build a better overall structure from them, which would contradict its optimalit
 The above recurrence has still to be developed into an algorithm. In order to evaluate $M(i,j)$, we
 need access to all entries $M(x,y)$ for which $[x,y]$ is a (strictly shorter) subinterval of $[i,j]$.
 This suggests to compute matrix $M$ in order of increasing $j-i$ values. The initialization for
-$j-i\le\delta$ is easily done. Then we proceed for increasing $d = j-i$, as in Algorithm~\ref{alg:nussinov}.
+$j-i\le\delta$ is easily done. Then we proceed for increasing $d = j-i$, as in Algorithm~\ref{alg:nussinov}.}
 
 
 \begin{algorithm}
@@ -259,7 +259,7 @@ $j-i\le\delta$ is easily done. Then we proceed for increasing $d = j-i$, as in A
 \end{algorithm}
 
 
-To find an optimal secondary structure (in addition to the optimal score), we also store traceback
+\skript{To find an optimal secondary structure (in addition to the optimal score), we also store traceback
 indicators in a second matrix $T$ that shows which of the production rules (and which value of $k$ for
 the $S\to SS$ rule) was used at each step. By following the traceback pointers backwards, we can build
 the dot-bracket representation of the secondary structure. For this, we start in cell $(1,n)$ and look
@@ -268,15 +268,40 @@ branches recursively into the two substructures, reconstructing each substructur
 Diagonals mean $S\to\texttt{(}S\texttt{)}$ and horizontal or vertical movement means
 $S\to S\texttt{.}\mid\texttt{.}S$. Note that when reaching the $\delta$-diagonals only horizontal and
 vertical movement is allowed. Finally, when we end in the lowest diagonal (below the $i=j$ diagonal)
-we have $S\to\varepsilon$.
+we have $S\to\varepsilon$.}
 
 
 \paragraph{Analysis.}
-The memory requirement for the whole procedure is obviously $O(n^2)$ and its time complexity is
+\skript{The memory requirement for the whole procedure is obviously $O(n^2)$ and its time complexity is
 $O(n^3)$.
 
 There exists a faster algorithm using the Four-Russians speedup yielding an
 $O\!\left(\frac{n^3}{\log n}\right)$ time algorithm (Frid and Gusfield, 2009), but this goes far beyond
-the scope of these lecture notes.
+the scope of these lecture notes.}
+
+\begin{bsp}[Aus Skript]
+    %The Nussinov matrix for the RNA sequence \texttt{GACUCGAGUU} is shown in Figure~5.3.
+    We use $\delta = 1$ and the scoring scheme: $\mathrm{score}(\mathtt{G},\mathtt{C}) = 3$,
+    $\mathrm{score}(\mathtt{A},\mathtt{U}) = 2$ and $\mathrm{score}(\mathtt{G},\mathtt{U}) = 1$.
+
+   % \begin{figure}[htbp]\centering
+   % \fbox{\parbox[c][3.6cm][c]{0.7\textwidth}{\centering\itshape
+   % [Figure 5.3: Nussinov matrix $M$ for \texttt{GACUCGAGUU} with $\delta=1$, solid and dashed traces of
+   % two optimal foldings.]\\ \normalfont\scriptsize(original traced-matrix figure -- insert image here)}}
+   % \caption{The Nussinov matrix $M$ for the RNA sequence \texttt{GACUCGAGUU}.}
+   % \end{figure}
+
+    There exist two distinct variants (indicated in solid and dashed traces) in which the given RNA
+    sequence can optimally fold under this basepair scoring scheme. The resulting dot-bracket notations
+    are \texttt{((.))((.))} and \texttt{((((..))))} for the solid and dashed variant, respectively.
+\end{bsp}
+
+\skript{When reaching the $\delta$-diagonals we could move vertically or horizontally which is possible in the
+ambiguous grammar. However, since in a hairpin loop a sequence of $S\to\texttt{.}S\mid S\texttt{.}$
+    will eventually end with $S\to\varepsilon$ no matter whether the \texttt{.} is put left or right, this
+    would lead to identical dot-bracket notations. Hence, we could also choose to allow \emph{only}
+    horizontal or \emph{only} vertical movement within the initialized $0$-diagonals as to simplify the
+    backtracing of all optimal dot-bracket notations (only 1 backtrace instead of 4 for the dashed
+    variant).}
 
 

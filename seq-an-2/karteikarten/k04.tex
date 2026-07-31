@@ -1,0 +1,178 @@
+
+% ===================================================================
+% Abschnitt: Approximate String Matching -- Grundlagen
+% ===================================================================
+
+\newglossaryentry{bem_motivation_approximate_matching}{
+    name={Welche Modifikation der semi-globalen Alignment-Berechnung erlaubt es, alle Vorkommen mit höchstens einer bestimmten Kostenschranke zu finden, statt nur das beste?},
+    description={Man besucht alle Vorgänger der Endzelle $v_E$ (bzw.\ bei kostenbasierter Formulierung alle Zellen der letzten Zeile) und prüft, welche der zugehörigen Lösungen das vorgegebene Kriterium erfüllen, statt nur die insgesamt beste Lösung zu extrahieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_kostenfunktion_annahmen}{
+    name={Welche Annahmen werden an die Kostenfunktion für das kostenbasierte Approximate-String-Matching gemacht?},
+    description={$cost(\binom{a}{a})=0$ (Match kostenlos), $cost(\binom{a}{b})>0$ für $a\neq b$ (Mismatch kostet etwas), und alle Indels haben dieselben Kosten $\gamma>0$.},
+    type=dinge
+}
+
+\newglossaryentry{def_approximate_string_matching_problem}{
+    name={Wie lässt sich das Approximate-String-Matching-Problem charakterisieren?},
+    description={Gegeben ein (kurzes) Muster $x$, ein (langer) Text $y$, eine Kostenfunktion und ein Schwellenwert $k$: Finde alle Endpositionen $j$ in $y$, für die ein Teilstring $y'$ von $y$ endend bei $j$ existiert mit $d(x,y')\le k$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_nur_endpositionen_noetig}{
+    name={Warum genügt es, nur die Endpositionen $j$ der Treffer zu bestimmen, statt auch die Startpositionen mitzuberechnen?},
+    description={Weil sich der gesamte Teilstring und seine Startposition durch Backtracing aus der Endposition rekonstruieren lassen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Sellers' Algorithmus
+% ===================================================================
+
+\newglossaryentry{bem_sellers_algorithmus_grundidee}{
+    name={Worin unterscheidet sich Sellers' Algorithmus konzeptionell vom Universal-Alignment-Algorithmus für semi-globales Alignment?},
+    description={Er ist im Prinzip identisch, betrachtet aber nicht nur die Endzelle $v_E$ zur Bestimmung des besten Treffers, sondern alle Zellen der letzten Zeile, um ALLE Treffer mit $D(m,j)\le k$ zu identifizieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_sellers_spaltenweise_berechnung}{
+    name={Wie funktioniert Sellers' Algorithmus auf einer hohen Abstraktionsebene?},
+    description={Er transformiert iterativ die vorherige Spalte $C_{j-1}$ der Editiermatrix in die aktuelle Spalte $C_j$, basierend auf dem Textzeichen $y[j]$, beginnend mit $C_0$, für $j=1,\dots,n$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_sellers_speicherplatz}{
+    name={Welchen Speicherplatzbedarf hat Sellers' Algorithmus, und warum?},
+    description={$O(m)$ (mit $m$ der Musterlänge), da nur die aktuelle und die vorherige Spalte gespeichert werden müssen -- Backpointer und die gesamte Editiermatrix $D$ werden nicht benötigt, weil nur Endpositionen und Kosten berichtet werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_sellers_redundanz_lokale_minima}{
+    name={Welches Redundanzproblem tritt bei Sellers' Algorithmus bei einem sehr guten Treffer auf, und wie geht man damit um?},
+    description={Liegt an Position $j$ ein Treffer mit Kosten $<k$ vor, matchen meist auch benachbarte Positionen mit Kosten $\le k$ -- der Algorithmus meldet dann viele redundante, benachbarte Treffer. In der Nachbearbeitung sucht man daher meist nur nach Läufen (Runs) lokaler Minima und berichtet das Intervall zusammen mit dem minimalen Kostenwert.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Ukkonens Cutoff-Algorithmus
+% ===================================================================
+
+\newglossaryentry{def_last_essential_index}{
+    name={Wie ist der "last essential index" $i^*$ (bzw.\ $lei_j$) einer Spalte $C_j$ definiert?},
+    description={$lei_j := \max\{i \mid C_j(i) \le k\}$ -- der größte Zeilenindex, an dem der Kostenwert der Spalte die Schwelle $k$ noch nicht überschreitet.},
+    type=dinge
+}
+
+\newglossaryentry{bem_idee_ukkonen_cutoff}{
+    name={Welche Grundidee ermöglicht die Beschleunigung von Sellers' Algorithmus durch Ukkonens Cutoff?},
+    description={Weiß man, dass alle Werte einer Spalte unterhalb des "last essential index" den Schwellenwert $k$ überschreiten, muss man diese Zellen gar nicht erst berechnen (man kann sie gedanklich als $\infty$ bzw.\ $k+1$ annehmen), ohne dabei $k$-approximative Treffer zu verpassen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_lei_nullte_spalte}{
+    name={Warum ist der "last essential index" der 0-ten Spalte $C_0$ leicht zu bestimmen?},
+    description={Weil die Kostenwerte in $C_0$ monoton von $0$ bis $m\cdot\gamma$ ansteigen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_spalten_nicht_monoton}{
+    name={Sind die Kostenwerte in den übrigen Spalten $C_j$ ($j\ge1$) ebenfalls monoton in $i$?},
+    description={Nein, im Allgemeinen nicht -- nur die 0-te Spalte ist garantiert monoton.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_werte_unterhalb_lei_ignorierbar}{
+    name={Warum können die Werte von $C_{j-1}$ unterhalb ihres "last essential index" bei der Berechnung von $C_j$ vernachlässigt werden?},
+    description={Da $C_{j-1}(i)>k$ für alle $i>lei_{j-1}$ und alle Kosten nichtnegativ sind, liefern diese Zellen nur Kandidatenwerte $>k$ für $C_j(i)$ mit $i>lei_{j-1}+1$. Die einzige Möglichkeit, dass $C_j(i)$ trotzdem $\le k$ bleibt, ist der rein vertikale Übergang $C_j(i)=C_j(i-1)+\gamma$.},
+    type=dinge
+}
+
+\newglossaryentry{formel_ukkonen_rekursion}{
+    name={Wie lautet die Rekursionsformel zur Berechnung von $C_j(i)$ in Ukkonens Algorithmus im regulären Bereich?},
+    description={$C_j(i) = \min\{C_{j-1}(i-1)+cost(x[i],y[j]),\ C_{j-1}(i)+\gamma,\ C_j(i-1)+\gamma\}$ -- die Standard-Editierdistanz-Rekursion (Diagonale, oben, links).},
+    type=dinge
+}
+
+\newglossaryentry{bem_ukkonen_sonderfall_grenze}{
+    name={Warum wird bei Ukkonens Algorithmus an der Stelle $i=lei_{j-1}+1$ eine Rekursion mit nur zwei statt drei Termen verwendet?},
+    description={Weil $C_{j-1}(i)$ an dieser Stelle nicht berechnet wurde (es lag unterhalb des vorherigen last essential index und wurde deshalb ausgelassen) -- daher entfällt der Term $C_{j-1}(i)+\gamma$, und man verwendet nur die Diagonale und den vertikalen Übergang.},
+    type=dinge
+}
+
+\newglossaryentry{bem_ukkonen_laufzeitgewinn}{
+    name={Wodurch ergibt sich der Laufzeitgewinn von Ukkonens Cutoff-Algorithmus gegenüber Sellers' Algorithmus?},
+    description={Pro Spalte müssen nur die Zellen bis zum "last essential index" der Vorgängerspalte (plus ggf.\ wenige zusätzliche Zellen durch den vertikalen Übergang) berechnet werden, statt aller $m$ Zellen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Search Schemes und bidirektionale Indizes
+% ===================================================================
+
+\newglossaryentry{bem_problem_naive_backtracking_suche}{
+    name={Warum ist eine naive, rein links-nach-rechts oder rechts-nach-links organisierte Backtracking-Suche mit einem Textindex für approximatives Matching ineffizient?},
+    description={Weil bereits bei kleinem Fehlerschwellenwert $k$ sehr viele Teilzweige der Suche erkundet werden müssen, wenn man die Fehler nur strikt in einer festen Richtung verteilen kann -- das führt schnell zu einem kombinatorisch explodierenden Suchraum.},
+    type=dinge
+}
+
+\newglossaryentry{bem_grundidee_search_schemes}{
+    name={Was ist die Grundidee von Search Schemes für approximatives Pattern-Matching mit einem Textindex?},
+    description={Das Muster $x$ wird in mehrere nicht überlappende Teile $x_1,\dots,x_p$ zerlegt, und mehrere Suchen mit unterschiedlicher Reihenfolge und unterschiedlichen Fehler-Ober-/Untergrenzen pro Teil werden durchgeführt, um den Suchraum gezielter einzugrenzen.},
+    type=dinge
+}
+
+\newglossaryentry{def_search_definition_tripel}{
+    name={Wie ist eine einzelne Suche $S$ innerhalb eines Search Schemes formal definiert?},
+    description={Als Tripel $S=(\pi,L,U)$: $\pi$ ist eine Permutation von $\{1,\dots,p\}$, die die Reihenfolge angibt, in der die Musterteile abgeglichen werden; $L[i]$ und $U[i]$ sind untere bzw.\ obere Schranken für die Anzahl erlaubter Fehler, nachdem die ersten $i$ Teile (in der durch $\pi$ vorgegebenen Reihenfolge) abgeglichen wurden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_pigeonhole_prinzip_grundidee}{
+    name={Auf welchem einfachen kombinatorischen Prinzip beruht das Pigeonhole-Search-Scheme?},
+    description={Zerlegt man das Muster bei Fehlerschwelle $k$ in $p=k+1$ Teile, so muss (nach dem Schubfachprinzip) bei höchstens $k$ Fehlern im Gesamtmuster mindestens einer der $k+1$ Teile exakt (fehlerfrei) im Text vorkommen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_pigeonhole_search_scheme_ablauf}{
+    name={Wie läuft eine einzelne Suche $S_i$ im Pigeonhole-Search-Scheme ab?},
+    description={Zunächst wird Musterteil $x_i$ exakt gematcht, anschließend erfolgt eine Backtracking-Suche nach links (über $x_{i-1},\dots,x_1$) und schließlich nach rechts (über $x_{i+1},\dots,x_{k+1}$), jeweils mit insgesamt höchstens $k$ Fehlern.},
+    type=dinge
+}
+
+\newglossaryentry{bem_pigeonhole_redundanz}{
+    name={Welches Problem kann beim Pigeonhole-Search-Scheme auftreten, und wie geht man damit um?},
+    description={Es können redundante Ergebnisse entstehen, z.\,B.\ wenn mehr als ein Musterteil fehlerfrei in einem Treffer vorkommt (mehrere Suchen $S_i$ finden dann denselben Treffer). Diese Redundanz muss in einem Nachbearbeitungsschritt herausgefiltert werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_minu_scheme_vorteil}{
+    name={Worin liegt der Effizienzvorteil des MinU-Search-Schemes gegenüber dem Pigeonhole-Scheme?},
+    description={Die Fehlerbereiche $(L[i],U[i])$ wachsen beim MinU-Scheme langsamer (enger) als beim Pigeonhole-Scheme, wodurch der durchsuchte Raum kleiner und die Suche effizienter wird.},
+    type=dinge
+}
+
+\newglossaryentry{def_lossless_search_scheme}{
+    name={Wann heißt ein Search Scheme "lossless" (verlustfrei)?},
+    description={Wenn garantiert kein approximativer Treffer mit bis zu $k$ Fehlern übersehen wird -- formal, wenn alle möglichen Fehlerkonfigurationen $(e_1,\dots,e_p)$ mit $\sum_i e_i \le k$ (wobei $e_i$ die Fehleranzahl in Teil $x_i$ ist) durch das Schema abgedeckt werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_minu_lossless_bewiesen}{
+    name={Ist das MinU-Scheme nachweislich lossless?},
+    description={Ja, dies wurde für das MinU-Scheme gezeigt (Beweis hier nicht im Detail behandelt).},
+    type=dinge
+}
+
+\newglossaryentry{def_bidirektionale_indizes}{
+    name={Was sind bidirektionale Textindizes, und wozu werden sie im Zusammenhang mit Search Schemes benötigt?},
+    description={Textindizes, die einen partiellen Match flexibel sowohl nach links als auch nach rechts erweitern können. Sie werden benötigt, weil Search Schemes je nach Suche $S_i$ und Permutation $\pi$ in beide Richtungen erweitern müssen, was mit einem rein links-nach-rechts (Suffixbaum) oder rechts-nach-links (BWT) organisierten Index nicht möglich ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_beispiele_bidirektionale_indizes}{
+    name={Welche Beispiele für bidirektionale Textindizes werden genannt?},
+    description={Affix-Bäume, Affix-Arrays, die bidirektionale BWT, der bidirektionale Wavelet-Index, der br-Index und der bidirektionale Move-Index.},
+    type=dinge
+}
