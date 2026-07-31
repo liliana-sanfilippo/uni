@@ -149,7 +149,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
                 \texttt{GATTAATTATTACA}.}
             \label{fig:example-dbgs-2-1-c}
         \end{subfigure}
-        \caption{Examples of \glspl{dbsg} for distinct sequences and $k$= 3.}\label{fig:example-dbgs-2-1}
+        \caption{Examples of \glspl{dbsg} for distinct sequences and $k$= 3 (Skript).}\label{fig:example-dbgs-2-1}
     \end{figure}
 \end{bsp}
 
@@ -231,7 +231,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
                 \node (text) at (2,6) {x = GATTGAT and k = 1};
             \end{tikzpicture}
         \end{subfigure}
-        \caption{De Bruijn subgraphs for the same sequence but with k varying from 3 to 1.}\label{fig:figure31}
+        \caption{De Bruijn subgraphs for the same sequence but with k varying from 3 to 1. (Skript)}\label{fig:figure31}
     \end{figure}
 \end{bsp}
 
@@ -268,7 +268,7 @@ Some examples are given in Figures~\ref{fig:example-dbgs-2-1} and % todo zweite 
             \draw[->] (aga) to[bend left=10] (gat);
 
         \end{tikzpicture}
-        \caption{It could also be on big circle.}\label{fig:figure2}
+        \caption{It could also be on big circle. (Vorlesung)}\label{fig:figure2}
     \end{figure}
 \end{bsp}
 
@@ -355,7 +355,7 @@ In fact, there are more variants of de Bruijn graphs, and often they are also no
 Here we will discuss them and introduce a precise nomenclature.
 \deffin{origdb}
 
-\begin{bsp}[for original de Bruijn graph]
+\begin{bsp}[for original de Bruijn graph (Vorlesung)]
     $\ $
     \begin{figure}[H]
         \centering
@@ -508,7 +508,7 @@ The \gls{dbsg} for a given sequence $s$ of dimension $k$is the one that we intro
 
 \noindent Therefore, one prefers to identify a $k$-mer $z$ with its reverse complement $\overleftarrow{z^{-1}}$
 and represent them by the same vertex in the graph:
-\begin{bsp}[reverse complement]
+\begin{bsp}[reverse complement (Vorlesung)]
     \labsatz
     \begin{tikzpicture}[
         node distance=2cm,
@@ -542,7 +542,7 @@ Such a non-branching path can be collapsed into a single vertex (representing a 
 
 \defin{comdbsg}
 
-\begin{bsp}[for compacted de Bruijn subgraph]
+\begin{bsp}[for compacted de Bruijn subgraph (Vorlesung)]
    $\ $
     \begin{figure}[H]
         \centering
@@ -612,7 +612,7 @@ A $k$-mer inherits this color, so that each $k$-mer gets assigned a color set, i
 
 \defin{coldbsg}
 
-\begin{bsp}[for colored de Bruijn subgraph]
+\begin{bsp}[for colored de Bruijn subgraph (Vorlesung)]
     $\ $
     \begin{figure}[H]
         \centering
@@ -650,7 +650,7 @@ A $k$-mer inherits this color, so that each $k$-mer gets assigned a color set, i
     In fact, the main challenge is no longer the storage of the     $k$-mers (whose number is limited by $\sigma^k$ , see above), but the storage of the colors, which may occupy several thousand bits per $k$-mer in case of large pangenomes. \\     log der alphabetgröße zur basis 2 ist wie viele bits man braucht zum codieren k*2 bits für dbg, aber mit Farben muss man ja noch bits dran hängen, das ist groß und noch ungelöst, denn es ist dann k*2 + \# datensätze
 \end{prob}
 
-\begin{bsp}[bsp zu bits]
+\begin{bsp}[bsp zu bits (Vorlesung)]
     acg codiert als 000110 wenn \\
     \begin{tabular}{lll}
         A & 0 & 0 \\

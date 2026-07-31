@@ -17,20 +17,23 @@
     letzte Zeile $\leq k$ $\Rightarrow$ Treffer (Darf überall im text enden).
 \end{idee}
 
-In the ``Sequence Analysis 1'' class, we have already discussed a variant of the Universal
+\skript{In the ``Sequence Analysis 1'' class, we have already discussed a variant of the Universal
 Alignment Algorithm that can be used to find a best (highest score) alignment of a (short)
-pattern x within a (long) text y: semi-global alignment.
-Often, we are interested in all matches with at least a certain score.
-A simple modification makes this possible: We just
-need to visit all predecessors of the final cell vE and check whether the corresponding
-solutions fulfill the given criterion.
-(In the case of semi-global alignment, these cells
-correspond to the last row of the alignment matrix.)
+    pattern x within a (long) text y: semi-global alignment.
+    Often, we are interested in all matches with at least a certain score.
+    A simple modification makes this possible: We just
+    need to visit all predecessors of the final cell vE and check whether the corresponding
+    solutions fulfill the given criterion.
+    (In the case of semi-global alignment, these cells
+    correspond to the last row of the alignment matrix.)
 
-In this section, we consider the cost-based formulation and therefore alignment matrix $D$.
-We assume that a sensible cost function cost: $\mathcal{A} \rightarrow \rz_0^+$ for alignment columns is given
-where $cost((\binom{a}{a})) = 0$, $cost((\binom{a}{b})) > 0$ for $a \neq b$ and all indels have the same cost $\gamma > 0$. \\
-Then we consider the following problem variant:
+    In this section, we consider the cost-based formulation and therefore alignment matrix $D$.
+    We assume that a sensible cost function cost: $\mathcal{A} \rightarrow \rz_0^+$ for alignment columns is given
+    where $cost((\binom{a}{a})) = 0$, $cost((\binom{a}{b})) > 0$ for $a \neq b$ and all indels have the same cost $\gamma > 0$. \\
+    Then we consider the following problem variant:
+}
+
+
 
 \defin{approximate-string-matching-problem}
 
@@ -57,7 +60,7 @@ D(\cdot, j)$, based on character $y[j]$.
 Starting with $C_0$, Sellers’ algorithm effectively consists of
 repeatedly computing $C_j$ from $C_{j-1}$ and the next text character $y[j]$, for each $j = 1, \dots, n$.
 
-\begin{algorithm}[h]
+\begin{algorithm}[H]
     \begin{algorithmic}
         \Statex \textbf{Input}: pattern $x \in \Sigma^m$, text $y \in \Sigma^n$ , threshold $k \in \nz_0$, sensible
         cost function with indel cost $\gamma > 0$, defining an edit distance $d(\cdot, \cdot)$
@@ -141,7 +144,7 @@ the minimum cost as $([j, j + 1], 1)$.
 \end{notte}
 
 \begin{bsp}[Beispielimplementierung Sellers]
-    Von Franzili~\cite{franzili2026_sellers}
+    Von Franzili~\cite{franzili2026_sellers} \scriptsize
     \begin{verbatim}
 /**
  * This function computes a distance matrix with the Seller's Algorithm.
@@ -198,59 +201,120 @@ fun sellers(pattern: String, text: String, costs: Costs, emptyStringSymbol: Char
         \scriptsize
         \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|}
             \hline
-            \textbf{Beschreibung} \textbf{Pseudocode} & \textbf{Implementierung} \\
-            Input Muster                                 & pattern $x \in \Sigma^m$                            & pattern: String \\
-            Input Text                                   & text $y \in \Sigma^n$                               &
-            text: String \\
-            Input cost Threshold                         & threshold $k \in \nz_0$                             & in
-            Kosten enthalten \\
-            Input cost function                          & sensible cost function with indel cost $\gamma > 0$ &
-            costs: Costs \\
-            Input edit distance                          & $d(\cdot, \cdot)$                                   & \\
+            \textbf{Beschreibung}            & \textbf{Pseudocode}      & \textbf{Implementierung}                                         \\
             \hline \hline
-            Length of pattern & m & val m = dMatrix.size \\
-            Length of text & n & val n = dMatrix[0].size \\
+            Input Muster                     & pattern $x \in \Sigma^m$ & pattern: String                                                  \\
+            Input Text & text $y \in \Sigma^n$ &
+            text: String \\
+            Input cost Threshold & threshold $k \in \nz_0$ & in
+            Kosten enthalten \\
+            Input cost function & sensible cost function with indel cost $\gamma > 0$ &
+            costs: Costs \\
+            Input edit distance              & $d(\cdot, \cdot)$        &                                                                  \\
+            \hline \hline
+            Length of pattern                & m                        & val m = dMatrix.size                                             \\
+            Length of text                   & n                        & val n = dMatrix[0].size                                          \\
             Epsilon/empty word column and row & assumed & ``Add a symbol to the beginning of the given words, that
             are not part of the alphabet'' \\
-            & & val patternE: String = addEmptyString(pattern, emptyStringSymbol \\
-            & 6 val textE: String = addEmptyString(text, emptyStringSymbol) \\
+            &                          & val patternE: String = addEmptyString(pattern, emptyStringSymbol \\
+            &                          & val textE: String = addEmptyString(text, emptyStringSymbol) \\
             (Empty) matrix & assumed & val dMatrix: Array$<$IntArray$>$ = Array(patternE.length) \{ IntArray(
             textE.length) \{ Int.MAX\_VALUE \} \} \\
             \hline \hline
-            Output &  ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . . j]$ for some $j' \leq j$ & val outputColumns \\
+            Output & ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . . j]$ for some $j' \leq j$
+            & val outputColumns
+            \\
             \hline \hline
             initialize the 0-th column of the alignment matrix & For $i \gets 0, ..., m$ do $C_0 (i) \gets i \cdot \gamma$
             & for (i in dMatrix.indices) \{ dMatrix[i][0] = i * costs.gap \}
             \\
-            proceed column-by-column                     & For $j \gets 1,...,n$                               & for (j in (1 until n))  \\
-            And initialize first row                     & $C_j(0) \gets 0$                                    & dMatrix[0][j] = 0\\
-            For each row in each column                  & For $i \gets 1,...,m$                               & for (i in (1 until m))\\
-            calculate the cost/recurrence & $C_j (i) = min \begin{cases} ... \end{cases}$ & min(min(diagonal, left), above) \\
+            proceed column-by-column         & For $j \gets 1,...,n$    & for (j in (1 until n))                                           \\
+            And initialize first row         & $C_j(0) \gets 0$         & dMatrix[0][j] = 0                                                \\
+            For each row in each column      & For $i \gets 1,...,m$    & for (i in (1 until m))                                           \\
+            \hline \hline
+            calculate the cost/recurrence & $C_j (i) = min \begin{cases}
+                                                               ...
+            \end{cases}$ & min(min(diagonal, left), above) \\
             Wert links oben + score/Kostenfunktion & $C_{j-1}(i-1) + cost(x[i], y[j])$ & val diagonal = dMatrix[i-1][j-1] + cost(patternE[i], textE[j],
             Costs(costs.threshold, costs.match, costs.mismatch, costs.gap)) \\
-            Wert links + Indel Kosten & $C_{j-1}(i) + \gamma $ & val left = dMatrix[i][j-1] + costs.gap \\
-            Wert oben + Indel Kosten & $C_j (i-1) + \gamma$ &  val above = dMatrix[i-1][j] + costs.gap \\
-            \hline
-            In case the threshold is reached             & If $C_j(m) \leq k$                                  & if (dMatrix[m-1][j] $<$= costs.threshold \\
-            report match ending at column j and its cost & report $(j, C_j (m))$                               &
-            outputColumns.add(Pair(j, dMatrix[m - 1][j])) \\ \hline
-            Ausgabe & assumed & return Pair(dMatrix, outputColumns) \\ \hline
+            Wert links + Indel Kosten        & $C_{j-1}(i) + \gamma $   & val left = dMatrix[i][j-1] + costs.gap                           \\
+            Wert oben + Indel Kosten         & $C_j (i-1) + \gamma$     & val above = dMatrix[i-1][j] + costs.gap                          \\
+            \hline \hline
+            In case the threshold is reached & If $C_j(m) \leq k$       & if (dMatrix[m-1][j] $<$= costs.threshold                         \\
+            report match ending at column j and its cost & report $(j, C_j (m))$ &
+            outputColumns.add(Pair(j, dMatrix[m - 1][j])) \\ \hline \hline
+            Ausgabe                          & assumed                  & return Pair(dMatrix, outputColumns)                              \\ \hline
         \end{tabular}
     \end{mytable}
 \end{erg}
 
 \begin{kom}[Zum Threshold $k$]
+    \color{linkf}
     Wenn $k=0$, werden nur exakte Matches erlaubt.
     Bei $k=1$ dementsprechend nur maximal ein fehler, etc.
 \end{kom}
 
+\begin{zsmf}
+    $N(i,j)=$ max.\ Basenpaare in $s_i\ldots s_j$;\quad Basis: $N(i,i)=N(i,i{-}1)=0$.
+    \[
+        N(i,j)=\max\begin{cases}
+                       N(i+1,\,j) & (i \text{ ungepaart})\\
+                       N(i,\,j-1) & (j \text{ ungepaart})\\
+                       N(i+1,\,j-1)+\text{score}(s_i,s_j) & (i,j \text{ paaren, falls } j-i>\delta)\\
+                       \displaystyle\max_{i<k<j}\ N(i,k)+N(k+1,j) & (\text{Bifurkation})
+        \end{cases}
+    \]
+    $\delta$ = min.\ Schleifenl\"ange (hier $\delta=1$): ein Paar $(i,j)$ nur, wenn $j-i>\delta$, also $j-i\ge2$.\\
+    \textbf{2-Regel-Form} (\"aquivalent): $N(i,j)=\max\bigl(N(i+1,j-1)+\text{score}(s_i,s_j),\ \max_{i\le k<j}N(i,k)+N(k+1,j)\bigr)$,\\
+    denn "`$i$/$j$ ungepaart"' steckt in der Bifurkation mit $k=i$ bzw.\ $N(i,i)=0$.
+\end{zsmf}
+
+\warnung{
+    $\ $
+    \begin{itemize}
+        \item \textbf{0.\ Zeile $=0$} (nicht $j\cdot\gamma$!). Das ist der Unterschied zum globalen Alignment und macht die Suche semi-global.
+        \item Es werden \textbf{alle} Endpositionen gemeldet, nicht nur das beste Match.
+        \item \textbf{Runs of local minima:} sehr gute Matches erzeugen mehrere benachbarte Treffer $\le k$.
+        Praxis: nur \textbf{lokale Minima} (Kostenketten $\dots,k,\,k\!-\!1,\,k,\dots$) melden, um Redundanz zu vermeiden.
+    \end{itemize}
+}
+
+
 \section{Ukkonen’s Cutoff Algorithm}\label{sec:ukkonens-cutoff-algorithm}
+
+\begin{idee}
+    Beschleunigung von Sellers: Zellen mit Wert $>k$ (weit unten in der Spalte) sind für das Ergebnis
+    irrelevant.
+    Man führt einen Last essential index $\ell$ mit und rechnet jede Spalte
+    nur bis $\ell$ (${}+1$). Erwartete Laufzeit $O(kn)$ statt $O(mn)$.
+\end{idee}
+
 The last of the above three observations leads to a considerable improvement of Sellers'
 algorithm: If we know that in column $j$ all values after a certain index $\lei_j$ exceed $k$, we do
 not need to compute them (e.g.\ we could assume that they are all equal to $\infty$ or $k + 1$).
 The following definition captures this formally.
 
 \deffin{last essential index}
+
+\begin{bsp}[Extrabeispiel - Visualisierung was man sich bei Ukkonen Cutoff spart]
+    Last essential indices for $k = 2$ highlighted green-ish und die Werte, die wir gar nicht erst hätten berechnen
+    müssen rötlich:
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|}
+            \hline
+            & j =        & 0          & 1     & 2     & 3     & 4     & 5     \\ \hline
+            & T          &            &       &       &       &       &       \\
+            P &            & $\epsilon$ & T     & T     & A     & C     & G     \\ \hline
+            & $\epsilon$ & 0          & 0     & 0     & 0     & 0     & 0     \\ \hline
+            & A          & 1          & 1     & 1     & 0     & 1     & 1     \\ \hline
+            & C          & \ccb2      & \ccb2 & \ccb2 & 1     & 0     & 1     \\ \hline
+            & G          & \ccr3      & \ccr3 & \ccr3 & \ccb2 & \ccb1 & \ccb0 \\ \hline
+        \end{tabular}
+    \end{center}
+\end{bsp}
+
+\komm{Weiteres Beispiel/Visualisierung von last esential indoices unter Variation von k auf Seite
+\pageref{subsubsec:last-essential-indices-sellers}.}
 
 The last essential index $\lei_j$ of column $C_j$ is $\lei_j \coloneqq \lei (C_j ) = \max\{i | C_j (i) \leq k\}$.
 From
@@ -276,7 +340,7 @@ as $C_j (i) > k$ for some $i > \lei_{j-1}+ 1$, we know that the last essential i
 before that $i$.
 Algorithm~\ref{alg:ukkonen} shows the details.
 
-\begin{algorithm}[h]
+\begin{algorithm}[H]
     \caption{Ukkonen's algorithm}
     \begin{algorithmic}
         \Statex \textbf{Input:} Pattern $x\in\Sigma^m$, Text $y\in\Sigma^n$, Schwellenwert $k\in\mathbb{N}_0$, Kostenfunktion mit Indel-Kosten $\gamma>0$
@@ -339,6 +403,7 @@ Algorithm~\ref{alg:ukkonen} shows the details.
             \EndIf
 
             \If{$i_j^\ast = m$ \textbf{and} $C_j(m)\le k$}
+                \Comment{report match ending at column j and its cost}
                 \State \Return $(j,C_j(m))$
             \EndIf
         \EndFor
@@ -392,8 +457,8 @@ Algorithm~\ref{alg:ukkonen} shows the details.
 
 Sometimes, because it was first published by Ukkonen (1985), this algorithm is referred to as
 Ukkonen's cutoff algorithm, although it is more common to use this name if the cost function is
-standard unit cost. In that case, even further optimizations are possible, but we do not discuss
-the details here.
+standard unit cost.
+In that case, even further optimizations are possible, but we do not discuss the details here.
 
 
 \section{Search Schemes and Bidirectional Indices}\label{sec:search-schemes-and-bidirectional-indices}
