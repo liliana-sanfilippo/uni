@@ -297,8 +297,8 @@ The following definition captures this formally.
 \deffin{last essential index}
 
 \begin{bsp}[Extrabeispiel - Visualisierung was man sich bei Ukkonen Cutoff spart]
-    Last essential indices for $k = 2$ highlighted green-ish und die Werte, die wir gar nicht erst hätten berechnen
-    müssen rötlich:
+    Last essential indices for $k = 2$ highlighted green-ish und die Werte, wo man sich durch Ukkonen Cutoff bei der
+    Berechnung etwas spart sind rötlich
     \begin{center}
         \begin{tabular}{|c c|c|c|c|c|c|c|}
             \hline
@@ -485,8 +485,8 @@ In that case, even further optimizations are possible, but we do not discuss the
 
     \hline \hline
     &  \multicolumn{3}{c|}{\cellcolor{gray!50}\textbf{Iteration Zeilen}} \\ \hline  \hline
-    & \cellcolor{gray!25} \textbf{Bis Ende}  & \cellcolor{gray!25} \textbf{1. Bis last essential index} & \cellcolor{gray!25}  \textbf{2. Falls nicht in letzter Zeile angekommen (If $i\le m$)} \\ \hline
-    \textit{Zellenwert} & - & -  & \boxi $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
+    & \cellcolor{gray!25} \textbf{Bis Ende}  & \cellcolor{gray!25} \textbf{1. Bis vor last essential index} & \cellcolor{gray!25}  \textbf{2. Falls nicht in letzter Zeile angekommen (If $i\le m$)} \\ \hline
+    \textit{LEI final} & - & -  & \boxi $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
     C_j(i-1)+\gamma\}$  \\ \hline
     \textit{Range Zeilen} & \ccr \textbf{For} $i \gets 1,...,m$ & \ccr   \textbf{While} $i \leq i_{j-1}^\ast$ mit $i \gets 1$; $i \gets i+1$ & \ccr  \textbf{While} $i\le m$ \textbf{and} $C_j(i-1)+\gamma\le k$ mit $i \gets 1$; $i \gets i+1$  \\
     \hline
@@ -503,6 +503,10 @@ In that case, even further optimizations are possible, but we do not discuss the
     &  \multicolumn{3}{c|}{\boxii ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . .j]$ for some$j' \leq j$} \\ \hline
     \end{tabular}
 \end{center}
+
+\komm{``Bis VOR last essential index'' und nicht ``Bis last essential index'', weil der lei zwar immer neu gesetzt wird (``geschoben'' wird) bis der errechnete Zellwert über dem Threshold liegt und man mit dem nächsten $i = i+1$ aus der while Schleife herausfliegt. \\
+Dann würde einmal der LEI berechnet mit $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
+C_j(i-1)+\gamma\}$ udn dann geht es an die weiteren Indizes, wo nur noch die Indelkosten auf den Wert von links drauf gerechnet werden.}
 
 
 
