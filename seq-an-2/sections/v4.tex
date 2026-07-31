@@ -3,6 +3,20 @@
 
 % S. 17 Bis Skript S. 22
 
+\begin{kom}
+    \zitat{In computer science, approximate string matching (often colloquially
+    referred to as fuzzy string searching) is the technique of finding strings that match a
+    pattern approximately (rather than exactly). The problem of approximate string matching is
+    typically divided into two sub-problems: finding approximate substring matches inside a given
+    string and finding dictionary strings that match the pattern approximately.}{\cite{string_matching}}
+\end{kom}
+
+\begin{idee}
+    Semi-globales Alignment: Finde alle Endpositionen $j$ im Text $y$, an denen das Muster $x$ mit
+    Editdistanz $\leq k$ endet. Trick: 0.\ Zeile $=0$ (Muster darf überall im Text starten),
+    letzte Zeile $\leq k$ $\Rightarrow$ Treffer (Darf überall im text enden).
+\end{idee}
+
 In the ``Sequence Analysis 1'' class, we have already discussed a variant of the Universal
 Alignment Algorithm that can be used to find a best (highest score) alignment of a (short)
 pattern x within a (long) text y: semi-global alignment.
@@ -26,7 +40,7 @@ always reconstruct the whole substring and its starting position by backtracing.
 \deffin{k_approximate_matches}
 
 
-\section{Sellers' Algorithm}\label{sec:sellers'-algorithm}
+\section{Sellers' Algorithm}\label{sec:sellers-algorithm}
 For a change in style, here we present an explicit formulation of an algorithm that solves
 the problem not as a recurrence, but in pseudo-code notation.
 Algorithm 1 is known as
@@ -44,11 +58,61 @@ repeatedly computing $C_j$ from $C_{j-1}$ and the next text character $y[j]$, fo
 
 \begin{algorithm}[h]
     \begin{algorithmic}
-        \Statex todo
+        \Statex \textbf{Input}: pattern $x \in \Sigma^m$, text $y \in \Sigma^n$ , threshold $k \in \nz_0$, sensible
+        cost function with indel cost $\gamma > 0$, defining an edit distance $d(\cdot, \cdot)$
+        \Statex \textbf{Output}: ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . . j]$ for some
+        $j' \leq j$
+        \Statex \textit{// initialize the 0-th column of the alignment matrix}
+        \For{$i \gets 0, ..., m$}
+            \State $C_0 (i) \gets i \cdot \gamma$
+        \EndFor
+        \Statex \textit{// proceed column-by-column}
+        \For{$j \gets 1,...,n$}
+            \State $C_j(0) \gets 0$
+            \For{$i \gets 1,...,m$}
+                \State $C_j (i) \gets min \begin{cases}
+                                          C_{j-1}(i-1 + cost(x[i], y[j]) \\
+                                          C_{j-1}(i) + \gamma \\ C_j (i-1) + \gamma
+                \end{cases}$
+            \EndFor
+            \If{$C_j(m) \leq k$}
+                \Statex \textit{//report match ending at column j and its cost}
+                \Statex \textbf{report} $(j, C_j (m))$
+            \EndIf
+        \EndFor
     \end{algorithmic}\label{alg:sellers}
 \end{algorithm}
 
-Some remarks about Sellers’ algorithm:
+\komm{
+Hier ist: Zeilen = pattern und
+    Spalten = text. Nicht wundern, einige Erklärungen machen das andersherum.
+}
+
+\komm{Die erste Spalte (``0-th column of the alignment matrix'') beinhaltet sozusagen die Kosten den Text des patterns bis zu der
+Stelle an einen leeren Text anzupassen.
+\[
+    \begin{array}{lr}
+        ``pattern'' &  Kosten \\
+        \epsilon &    0 \\
+        A     & 1 \\
+        AC  &   2 \\
+        ACG &    3 \\
+        ACGT  & 4
+    \end{array}
+\]
+Deswegen ja auch $C_0 (i) \gets i \cdot \gamma$, also $C_0(i) = i \cdot \gamma$.
+    Denn $\gamma$ ist die Kost für ein Indel und wenn man i viele Zeichen löschen will, muss man eben i-oft mal $\gamma$ bezahlen.
+}
+
+\komm{Wichtiger Unterschied zu anderen Algorithmen: Das Pattern darf an jeder beliebigen Position im Text beginnen!
+Deswegen ist die erste Zeile eine Nullzeile...sozusagen. Dann kann man mit Null Kosten jederzeit einsteigen und muss nicht für das Überspringen etwas bezahlen. \\
+Betrachtet man $TTACG$ und $ACG$, dann würde man bspw. bei Wagner-Fischer berechnen
+\[d(ACG,TTACG) = 2\]
+und bei Sellers würde man berechnen \[d(ACG,ACG)=0,\]
+weil man das ``$TT$'' einfach überspringen kann. \\
+Das liegt auch daran, dass Sellers eine andere Fragestellung als Wagner-Fischer verfolgt. Sellers will kein komplettes Alignment finden, nur ein ungefähres. \\
+Deswegen darf es auch irgendwo im Text enden und man muss die ganze letzte Zeile betrachten (und schauen wo der höchste Wert ist) anstatt nur ganz rechts unten.
+}
 
 \paragraph{Since we only report end positions and costs,} there is no need to store back pointers
 and the entire alignment matrix D in Algorithm~\ref{alg:sellers}.

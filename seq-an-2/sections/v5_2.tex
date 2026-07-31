@@ -2,16 +2,228 @@
 %! Date = 6/26/26
 
 \section{Introduction}\label{sec:introduction}
-TODO
+RNA is in many ways similar to DNA, with a few important differences:
+\begin{itemize}
+    \item Thymine (T) is replaced by uracil (U), so the RNA alphabet is
+    $\Sigma_{\mathrm{RNA}} = \{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}$.
+    \item The additional base pair $\{\mathtt{G}, \mathtt{U}\}$ can be formed.
+    \item RNA is less stable than DNA and more easily degraded.
+    \item RNA mostly occurs as a single-stranded molecule that forms secondary structures by base pairing.
+    \item While DNA is mainly the carrier of genetic information, RNA has a wide variety of tasks in the
+    cell, e.g.
+    \begin{itemize}
+        \item it acts as messenger (mRNA), transporting the transcribed genetic information,
+        \item it has regulatory functions,
+        \item it has structural tasks, e.g.\ in forming a part of the ribosome (rRNA),
+        \item it takes an active role in cellular processes, e.g.\ in the translation of mRNA to proteins,
+        by transferring amino acids (tRNA).
+    \end{itemize}
+\end{itemize}
+
+As with proteins, the three-dimensional structure of an RNA molecule is crucial in determining its
+function. Since 3D-structure is hard to determine, an intermediate structural level, the
+\emph{secondary structure}, is frequently considered. The secondary structure of an RNA molecule
+simply determines the intra-molecular basepairs. As with DNA, the Watson-Crick pairs
+$\{\mathtt{A}, \mathtt{U}\}$ and $\{\mathtt{C}, \mathtt{G}\}$ stabilize the molecule, but also the
+``wobble pair'' $\{\mathtt{G}, \mathtt{U}\}$ adds structural stability. We now define this formally.
+
+Let $s\in\{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^n$ be an RNA sequence of length $n$.
+
+\begin{defi} % TODO
+    An \emph{$s$-basepair} is a set of two different numbers $\{i,j\}\subset\{1,\ldots,n\}$ such that
+    $\{s[i], s[j]\}\in\{\{\mathtt{A},\mathtt{U}\},\{\mathtt{C},\mathtt{G}\},\{\mathtt{G},\mathtt{U}\}\}$.
+    Basepairs must bridge at least $\delta\ge 0$ positions (e.g.\ $\delta = 3$); to account for this, we
+    have the additional constraint $|i-j| > \delta$ for a basepair $\{i,j\}$.
+\end{defi}
+
+\begin{defi} % TODO
+    A \emph{simple structure} on $s$ is a set $S = \{b_1, b_2, \ldots, b_N\}$ of $s$-basepairs with
+    $N\ge 0$ and the following properties:
+    \begin{itemize}
+        \item Either $N\le 1$, or
+        \item if $N\ge 2$ and $\{i,j\}\in S$ and $\{k,l\}\in S$ are two different basepairs such that $i<j$
+        and $k<l$, then $i<k<l<j$ or $k<i<j<l$ (nested basepairs) or $i<j<k<l$ or $k<l<i<j$ (separated
+        basepairs).
+    \end{itemize}
+\end{defi}
+
+In other words, basepairs in a simple structure may not cross.
+
+The restriction that basepairs may not cross is actually unrealistic, but it helps to keep several
+computational problems regarding RNA analysis of manageable complexity, as we shall see shortly.
+
+With the above definition of a simple structure, we cover the following structural elements of RNA
+molecules: \emph{single-stranded RNA}, \emph{stem} or \emph{stacking region}, \emph{hairpin loop},
+\emph{bulge loop}, \emph{interior loop}, \emph{junction} or \emph{multi-loop};
+
+% TODO bilder heraussuchen
+
+
+Several more complex RNA interactions are \emph{not} covered, e.g.\ \emph{pseudoknot}, \emph{kissing
+hairpins}, \emph{hairpin-bulge contact}. This is not such a severe restriction, because these
+elements seem to be comparatively rare and can be considered separately at a later stage.
+
+We point out that all of the above structural elements can be rigorously defined in terms of sets of
+basepairs. For our purposes, an intuitive visual understanding of these elements is sufficient. There
+exist different ways to represent a simple structure in the computer. A popular way is the
+\emph{dot-bracket} notation, where dots represent unpaired bases and corresponding parentheses
+represent paired bases:
+
+\begin{center}\ttfamily
+5' AACGCUCCCAUAGAUUACCGUACAAAGUAGGGCGC 3'\\
+\phantom{5' }..(((.((..((...)).(.(...).)..))))).
+\end{center}
+
+
+Another popular way to visualize a structure is by means of a \emph{mountain plot}: Starting with the
+dot-bracket representation, replace dots by \texttt{-} and brackets \texttt{()} by \texttt{/\char`\\},
+and use a second dimension. Another alternative is a \emph{circle plot};
+
+% TODO BILDER
+
+
 
 \section{The Optimization Problem}\label{sec:the-optimization-problem}
-TODO
+
+Over time, an RNA molecule may assume several distinct structures. The more energetically stable a
+structure is, the more likely the molecule will assume this structure. To make this precise, we need
+to define an energy model for all secondary structure elements. This can become quite complicated
+(the problem of predicting RNA structures could fill an entire course), so here we only consider a
+drastically simplified version of the problem: We assign a score (that can be interpreted as
+``stability'' measure or negative free energy) to each basepair, depending on its type. We can simply
+count basepairs by assigning $+1$ to each pair, or we may take their relative stability into account
+by assigning $\mathrm{score}(\{\mathtt{A},\mathtt{U}\}) := 2$,
+$\mathrm{score}(\{\mathtt{C},\mathtt{G}\}) := 3$, $\mathrm{score}(\{\mathtt{G},\mathtt{U}\}) := 1$, for
+example. On a sequence $s$ of length $n$, the score of a basepair $b = \{i,j\}$ is then defined as
+$\mathrm{score}(b) := \mathrm{score}(\{s[i], s[j]\})$.
+
+
+\begin{prob}[Simple RNA Secondary Structure Prediction Problem]\label{prob:prediction_rna}
+    Let an RNA sequence $s$ of length $n$ be given, determine a simple structure $S^\ast$ on $s$ such that
+    \[
+        \mathrm{score}(S^\ast) = \max\{\mathrm{score}(S)\mid S \text{ is a simple structure on } s\},
+    \]
+    where $\mathrm{score}(S) := \sum_{b\in S}\mathrm{score}(b)$ is the sum of the base pair scores in the
+    structure $S$.
+\end{prob}
+
+
+Generally, the number of valid simple structures for a molecule of length $n$ is exponential in $n$,
+so the most stable structure cannot be found in reasonable time by enumerating all possible
+structures. After a short digression to context free grammars, we present an efficient algorithm to
+solve the problem.
+
+
 
 \section{Context-Free Grammars}\label{sec:context-free-grammars}
-TODO
+
+From the above discussion of the dot-bracket notation, we may say that a (simple secondary) structure
+is
+\begin{enumerate}\setcounter{enumi}{-1}
+\item either the empty structure,
+\item or an unpaired base, followed by a structure,
+\item or a structure, followed by an unpaired base,
+\item or an outer basepair (with a sequence constraint), enclosing a structure (with a minimum length
+constraint),
+\item or two consecutive structures.
+\end{enumerate}
+
+We recall the notion of a \emph{context-free grammar} here to show that simple secondary structures
+allow a straightforward recursive description.
+
+\begin{defi} % TODO
+    A \emph{context-free grammar} (CFG) is a quadruple $G = (N, T, P, S)$, where
+    \begin{itemize}
+        \item $N$ is a finite set of \emph{non-terminal symbols},
+        \item $T$ is a finite set of \emph{terminal symbols}, $N\cap T = \emptyset$,
+        \item $P$ is a finite subset of $N\times(N\cup T)^\ast$, the \emph{productions}, which are rules for
+        transforming a non-terminal symbol into a (possibly empty) sequence of terminal and non-terminal
+        symbols, and
+        \item $S\in N$ is the \emph{start symbol}.
+    \end{itemize}
+\end{defi}
+
+
+Ignoring basepair sequence and distance constraints, in the RNA structure setting, the terminal
+symbols are $T = \{\texttt{(}, \texttt{.}, \texttt{)}\}$ and $N = \{S\}$, where $S$ is also the start
+symbol and represents a secondary structure. The productions are formalized versions of the above
+rules, i.e.,
+\begin{enumerate}\setcounter{enumi}{-1}
+\item $S \to \varepsilon$, where $\varepsilon$ denotes the empty sequence,
+\item $S \to \texttt{.}S$
+\item $S \to S\texttt{.}$
+\item $S \to \texttt{(}S\texttt{)}$
+\item $S \to SS$
+\end{enumerate}
+
+
+Note that this context-free recursive description is only possible because we imposed the constraint
+that basepairs do not cross.
+
+Also note that this grammar is ambiguous: There are generally many ways to produce a given dot-bracket
+string from the start symbol $S$. For the Nussinov Algorithm in the next section, this ambiguity is
+not a problem. However, for other tasks, e.g.\ counting the number of possible structures, we need to
+consider a grammar that produces each structure in a unique way. We can argue as follows: Either the
+structure is empty, or it contains at least one base. In each nonempty RNA structure, look at the last
+base. Either it is unpaired and preceded by a (shorter) prefix structure, or it is paired with some
+base at a previous position. We obtain the following non-ambiguous grammar:
+\[
+    S \to \varepsilon \mid S\texttt{.} \mid S\texttt{(}S\texttt{)}
+\]
+where the vertical bar ($\mid$) denotes ``or'', i.e., it separates alternative right-hand sides of the
+production.
+
+
+
+
 
 \section{The Nussinov Algorithm}\label{sec:the-nussinov-algorithm}
-Example calculation for GGUCCA on page~\pageref{sec:nussinov-example}.
+\txc{Example calculation for GGUCCA on page~\pageref{sec:nussinov-example}.}
+
+To solve Problem~\ref{prob:prediction_rna}, we now give a dynamic programming algorithm based on the structural description
+of simple secondary structures from the previous section. This algorithm is due to Nussinov and
+Jacobson (1980). We also take into account the distance and sequence constraints for basepairs.
+
+
+In the previous section, we have seen how to build longer secondary structures from shorter ones that
+can be arbitrary substrings of the longer ones. As before, let
+$s\in\{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^n$ be an RNA sequence of length $n$. For
+$i\le j$, we define $M(i,j)$ as the solution to Problem~\ref{prob:prediction_rna} (i.e., maximally attainable score) for the
+string $s[i\ldots j]$.
+
+Since it is easy to find an optimal secondary structure of short sequences, let us start with those.
+\begin{itemize}
+    \item If $j-i\le\delta$ (in particular if $i=j$, and to avoid complications also if $i>j$), then
+    $M(i,j) = 0$, since no basepair is possible due to the length or distance constraints (case 0).
+    \item If $j-i>\delta$, then we can decompose the optimal structure according to one of the four cases.
+    In each case, the resulting substructures must also be the optimal ones. Thus
+    \[
+        M(i,j) = \max
+        \begin{cases}
+            M(i+1, j) & (\text{case 1: } S\to\texttt{.}S)\\
+            M(i, j-1) & (\text{case 2: } S\to S\texttt{.})\\
+            M(i+1, j-1) + \mu(i,j) & (\text{case 3: } S\to\texttt{(}S\texttt{)})\\
+            \max_{i+1<k<j}\{M(i, k-1) + M(k, j)\} & (\text{all cases 4: } S\to SS)
+        \end{cases}
+    \]
+    where $\mu(i,j) := \mathrm{score}(\{s[i], s[j]\}) > 0$ if $\{s[i], s[j]\}$ is a valid basepair, and
+    $\mu(i,j) := -\infty$ otherwise, excluding the possibility of any forbidden basepair $\{i,j\}$.
+\end{itemize}
+
+
+This recurrence states: To find an optimal structure for $s[i\ldots j]$, consider all possible
+decompositions according to the grammar and their respective scores, and evaluate which score for
+$s[i\ldots j]$ would result from each decomposition. Then pick the best one.
+
+This is possible because the composing elements of the optimal structure are themselves optimal. The
+proof is by contradiction: If they were not optimal and there existed better sub-structures, we could
+build a better overall structure from them, which would contradict its optimality.
+
+The above recurrence has still to be developed into an algorithm. In order to evaluate $M(i,j)$, we
+need access to all entries $M(x,y)$ for which $[x,y]$ is a (strictly shorter) subinterval of $[i,j]$.
+This suggests to compute matrix $M$ in order of increasing $j-i$ values. The initialization for
+$j-i\le\delta$ is easily done. Then we proceed for increasing $d = j-i$, as in Algorithm~\ref{alg:nussinov}.
+
 
 \begin{algorithm}
     \caption{Nussinov Algorithm}
@@ -45,3 +257,26 @@ Example calculation for GGUCCA on page~\pageref{sec:nussinov-example}.
         \State Start traceback with $T(1,n)$
     \end{algorithmic}\label{alg:nussinov}
 \end{algorithm}
+
+
+To find an optimal secondary structure (in addition to the optimal score), we also store traceback
+indicators in a second matrix $T$ that shows which of the production rules (and which value of $k$ for
+the $S\to SS$ rule) was used at each step. By following the traceback pointers backwards, we can build
+the dot-bracket representation of the secondary structure. For this, we start in cell $(1,n)$ and look
+at the recursion of the algorithm: When we follow a $S\to SS$ production traceback, the process
+branches recursively into the two substructures, reconstructing each substructure independently.
+Diagonals mean $S\to\texttt{(}S\texttt{)}$ and horizontal or vertical movement means
+$S\to S\texttt{.}\mid\texttt{.}S$. Note that when reaching the $\delta$-diagonals only horizontal and
+vertical movement is allowed. Finally, when we end in the lowest diagonal (below the $i=j$ diagonal)
+we have $S\to\varepsilon$.
+
+
+\paragraph{Analysis.}
+The memory requirement for the whole procedure is obviously $O(n^2)$ and its time complexity is
+$O(n^3)$.
+
+There exists a faster algorithm using the Four-Russians speedup yielding an
+$O\!\left(\frac{n^3}{\log n}\right)$ time algorithm (Frid and Gusfield, 2009), but this goes far beyond
+the scope of these lecture notes.
+
+
