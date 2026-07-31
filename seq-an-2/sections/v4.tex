@@ -289,6 +289,8 @@ fun sellers(pattern: String, text: String, costs: Costs, emptyStringSymbol: Char
     nur bis $\ell$ (${}+1$). Erwartete Laufzeit $O(kn)$ statt $O(mn)$.
 \end{idee}
 
+\komm{Elaborate example on page~\pageref{sec:ukkonens-algorithm-example}.}
+
 The last of the above three observations leads to a considerable improvement of Sellers'
 algorithm: If we know that in column $j$ all values after a certain index $\lei_j$ exceed $k$, we do
 not need to compute them (e.g.\ we could assume that they are all equal to $\infty$ or $k + 1$).
@@ -485,7 +487,7 @@ In that case, even further optimizations are possible, but we do not discuss the
 
     \hline \hline
     &  \multicolumn{3}{c|}{\cellcolor{gray!50}\textbf{Iteration Zeilen}} \\ \hline  \hline
-    & \cellcolor{gray!25} \textbf{Bis Ende}  & \cellcolor{gray!25} \textbf{1. Bis vor last essential index} & \cellcolor{gray!25}  \textbf{2. Falls nicht in letzter Zeile angekommen (If $i\le m$)} \\ \hline
+    & \cellcolor{gray!25} \textbf{Bis Ende}  & \cellcolor{gray!25} \textbf{1. Bis last essential index} & \cellcolor{gray!25}  \textbf{2. Falls nicht in letzter Zeile angekommen (If $i\le m$)} \\ \hline
     \textit{LEI final} & - & -  & \boxi $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
     C_j(i-1)+\gamma\}$  \\ \hline
     \textit{Range Zeilen} & \ccr \textbf{For} $i \gets 1,...,m$ & \ccr   \textbf{While} $i \leq i_{j-1}^\ast$ mit $i \gets 1$; $i \gets i+1$ & \ccr  \textbf{While} $i\le m$ \textbf{and} $C_j(i-1)+\gamma\le k$ mit $i \gets 1$; $i \gets i+1$  \\
@@ -504,9 +506,9 @@ In that case, even further optimizations are possible, but we do not discuss the
     \end{tabular}
 \end{center}
 
-\komm{``Bis VOR last essential index'' und nicht ``Bis last essential index'', weil der lei zwar immer neu gesetzt wird (``geschoben'' wird) bis der errechnete Zellwert über dem Threshold liegt und man mit dem nächsten $i = i+1$ aus der while Schleife herausfliegt. \\
+\komm{``Bis last essential index'' und nicht ``Bis VOR last essential index'', weil der lei zwar immer neu gesetzt wird (``geschoben'' wird) bis der errechnete Zellwert über dem Threshold liegt und man mit dem nächsten $i = i+1$ aus der while Schleife herausfliegt. der LEI ist dann der Index, vor dem man rausgeflogen ist.(?) \\
 Dann würde einmal der LEI berechnet mit $C_j(i) \gets max \{  C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),
-C_j(i-1)+\gamma\}$ udn dann geht es an die weiteren Indizes, wo nur noch die Indelkosten auf den Wert von links drauf gerechnet werden.}
+C_j(i-1)+\gamma\}$ udn dann geht es an die weiteren Indizes, wo nur noch die Indelkosten auf den Wert von oben drauf gerechnet werden.}
 
 
 

@@ -1,0 +1,1147 @@
+%! Author = lili
+%! Date = 7/31/26
+
+\section{Ukkonen's algorithm example}\label{sec:ukkonens-algorithm-example}
+
+\subsection*{Input}
+\begin{center}
+    \begin{tabular}{|p{5cm}|p{5cm}|p{6cm}|} \hline
+    \textbf{Was} & \textbf{Bezeichnung Pseudocode} &\textbf{Wert im Beispiel} \\ \hline
+    Pattern & $x \in \Sigma^m$ & ACG \\ \hline
+    Text &  $y \in \Sigma^n$ &   TTACG  \\\hline
+    threshold & $k \in N_0$ & 2 \\\hline
+    cost function with indel cost & $\gamma > 0$ und $cost(x[i], y[j])$ & $\gamma = 1$ und  \\ & &
+    $cost(x[i], y[j])=\begin{cases}
+                          0, & falls\ a=b \\ 1, & falls\ a \neq b
+    \end{cases}$
+    \\ \hline
+    defining an edit distance $d(\cdot, \cdot)$ &  $min \begin{cases}
+                                                            C_{j-1}(i-1 + cost(x[i], y[j]) \\
+                                                            C_{j-1}(i) + \gamma \\ C_j (i-1) + \gamma
+    \end{cases}$ & ergibt sich beim Berechnen \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Leere Matrix und ungesetzte Indizes}
+
+\begin{multicols}{2}
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &              &       &       &       &       &       \\ \hline
+        &    A   &              &       &       &       &       &       \\ \hline
+        &    C   &              &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = $
+        \item $i_1^\ast = $
+        \item $i_2^\ast = $
+        \item $i_3^\ast = $
+        \item $i_4^\ast = $
+        \item $i_5^\ast = $
+    \end{itemize}
+\end{multicols}
+
+\subsection*{Initialisierung}
+\subsubsection*{initialize the last essential index of column 0}
+$i_0^\ast = \min\{m,\lfloor k/\gamma\rfloor\} = \min\{3,\lfloor 2/ 1 \rfloor\} = 2$
+\begin{itemize}
+    \item $i_0^\ast = \cct{2}$
+    \item $i_1^\ast = $
+    \item $i_2^\ast = $
+    \item $i_3^\ast = $
+    \item $i_4^\ast = $
+    \item $i_5^\ast = $
+\end{itemize}
+
+\subsubsection*{initialize the 0-th column of the alignment matrix}
+\begin{multicols}{3}
+    \begin{algorithmic}
+        \For{$i \gets 0$ to $i_0^\ast$}
+            \State $C_0 (i) \gets i \cdot \gamma$
+        \EndFor
+    \end{algorithmic}
+    \columnbreak
+    Wird mit Einsetzen zu
+    \columnbreak
+    \begin{algorithmic}
+        \For{$i \gets 0$ to $2$}
+            \State $C_0 (i) \gets i $
+        \EndFor
+    \end{algorithmic}
+\end{multicols}
+%\noindent Da $i \cdot \gamma = i \cdot 1 = i$ und $m = 3$.
+
+\newpage
+
+\begin{multicols}{2}
+    \textbf{With} i = 0, \textbf{Set} $C_0(0) = 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &   \ccr0      &       &       &       &       &       \\ \hline
+        &    A   &              &       &       &       &       &       \\ \hline
+        &    C   &              &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+    \textbf{With} i = 1, \textbf{Set} $C_0(1) = 1$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &   0      &       &       &       &       &       \\ \hline
+        &    A   &       \ccr1       &       &       &       &       &       \\ \hline
+        &    C   &              &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+    \textbf{With} i = 2, \textbf{Set} $C_0(2) = 2$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &   0      &       &       &       &       &       \\ \hline
+        &    A   &      1       &       &       &       &       &       \\ \hline
+        &    C   &     \ccr2         &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+Fertig mit der Initialisierung.
+
+\newpage
+\section*{Spaltenweise Berechnung des Rests}
+
+
+\begin{multicols}{2}
+    \noindent \textbf{\underline{Der Pseudocode:}}
+    \begin{algorithmic}
+        \For{$j \gets 1$ to $n$}
+            \State $C_j(0) \gets 0$
+            \State $i_j^\ast \gets 0$
+            \State $i \gets 1$
+
+            \While{$i \le i_{j-1}^\ast$}
+                \State
+                \[
+                    C_j(i)\gets
+                    \min\left\{
+                            \begin{array}{l}
+                                C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),\\
+                                C_{j-1}(i)+\gamma,\\
+                                C_j(i-1)+\gamma
+                            \end{array}
+                    \right.
+                \]
+                \If{$C_j(i)\le k$}
+                    \State $i_j^\ast \gets i$
+                \EndIf
+                \State $i \gets i+1$
+            \EndWhile
+
+            \If{$i\le m$}
+                \State
+                \[
+                    C_j(i)\gets
+                    \min\left\{
+                            \begin{array}{l}
+                                C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),\\
+                                C_j(i-1)+\gamma
+                            \end{array}
+                    \right.
+                \]
+                \If{$C_j(i)\le k$}
+                    \State $i_j^\ast \gets i$
+                \EndIf
+                \State $i \gets i+1$
+
+                \While{$i\le m$ \textbf{and} $C_j(i-1)+\gamma\le k$}
+                    \State $C_j(i)\gets C_j(i-1)+\gamma$
+                    \If{$C_j(i)\le k$}
+                        \State $i_j^\ast \gets i$
+                    \EndIf
+                    \State $i \gets i+1$
+                \EndWhile
+            \EndIf
+
+            \If{$i_j^\ast = m$ \textbf{and} $C_j(m)\le k$}
+                \Comment{report match ending at column j and its cost}
+                \State \Return $(j,C_j(m))$
+            \EndIf
+        \EndFor
+    \end{algorithmic}
+    \columnbreak
+    \textbf{\underline{Wird mit Einsetzen zu:}}
+    \begin{algorithmic}
+        \For{$j \gets 1$ to $5$}
+            \State $C_j(0) \gets 0$
+            \State $i_j^\ast \gets 0$
+            \State $i \gets 1$
+
+            \While{$i \le i_{j-1}^\ast$}
+                \State
+                \[
+                    C_j(i)\gets
+                    \min\left\{
+                            \begin{array}{l}
+                                C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),\\
+                                C_{j-1}(i)+ 1,\\
+                                C_j(i-1)+ 1
+                            \end{array}
+                    \right.
+                \]
+                \If{$C_j(i)\le 2$}
+                    \State $i_j^\ast \gets i$
+                \EndIf
+                \State $i \gets i+1$
+            \EndWhile
+
+            \If{$i\le 3$}
+                \State
+                \[
+                    C_j(i)\gets
+                    \min\left\{
+                            \begin{array}{l}
+                                C_{j-1}(i-1)+\mathrm{cost}(x[i],y[j]),\\
+                                C_j(i-1)+ 1
+                            \end{array}
+                    \right.
+                \]
+                \If{$C_j(i)\le 2$}
+                    \State $i_j^\ast \gets i$
+                \EndIf
+                \State $i \gets i+1$
+
+                \While{$i\le 3$ \textbf{and} $C_j(i-1)+1\le 2$}
+                    \State $C_j(i)\gets C_j(i-1)+ 1$
+                    \If{$C_j(i)\le 2$}
+                        \State $i_j^\ast \gets i$
+                    \EndIf
+                    \State $i \gets i+1$
+                \EndWhile
+            \EndIf
+
+            \If{$i_j^\ast = 3$ \textbf{and} $C_j(3)\le 2$}
+                \State \Return $(j,C_j(3))$
+            \EndIf
+        \EndFor
+    \end{algorithmic}
+\end{multicols}
+
+\newpage
+
+\subsection*{Column $j = 1$}
+\begin{multicols}{2}
+
+    \begin{itemize}
+        \item \textbf{Set} $C_1(0) = 0$
+        \item \textbf{Set} $i_1^\ast = 0$
+        \item \textbf{Set} $i = 1$
+    \end{itemize}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &\ccr0  &       &       &       &       \\ \hline
+        &    A      &       1       &       &       &       &       &       \\ \hline
+        &    C      &   2           &       &       &       &       &       \\ \hline
+        &    G      &               &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = \cct{0} $
+        \item $i_2^\ast = $
+        \item $i_3^\ast = $
+        \item $i_4^\ast = $
+        \item $i_5^\ast = $
+    \end{itemize}
+\end{multicols}
+
+\subsubsection*{While-Schleife $i \le i_{0}^\ast$}
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{0}^\ast$''?} Ja, $1 \le 2$.
+    \begin{align*}
+        \cct{C_1(1)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{0}(0)} +\mathrm{cost}(x[1],y[1]) & = 0 + cost(A,T) & = 1 \\
+                    \texii{C_{0}(1)} + 1 & = 1 + 1 & = 2\\
+                    \texiii{C_1(0)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ & = 1
+    \end{align*}
+
+    \columnbreak
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&      \boxi 0       &\boxiii0      &       &       &       &       \\ \hline
+        &    A      &      \boxii 1       &   \ccr1    &       &       &       &       \\ \hline
+        &    C      &   2           &       &       &       &       &       \\ \hline
+        &    G      &               &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\vspace{0.5cm}
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_1(1)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_1^\ast \gets 1$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = \cct{1} $
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 2$
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{0}^\ast$''?} Ja, $2 \le 2$.
+    \begin{align*}
+        \cct{C_1(2)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{0}(1)} +\mathrm{cost}(x[2],y[1]) & = 1 + cost(C,T) & = 2 \\
+                    \texii{C_{0}(2)} + 1 & = 2 + 1 & = 3\\
+                    \texiii{C_1(1)} + 1 & = 1 + 1 & = 2
+                \end{array}
+        \right. \\ & = 2
+    \end{align*}
+
+    \columnbreak
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &      &       &       &       \\ \hline
+        &    A      &      \boxi 1       &   \boxiii1    &       &       &       &       \\ \hline
+        &    C      &  \boxii 2           &   \ccr2    &       &       &       &       \\ \hline
+        &    G      &               &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_1(2)\le k$''?} Ja, $2 \le 2$.
+    \paragraph{Also:} $i_1^\ast \gets 2$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = \cct{2} $
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 3$
+
+\paragraph{Greift ``While $i \le i_{0}^\ast$''?} Nein, $3 \not\le 2$.
+
+\subsubsection*{END WHILE}
+
+\newpage
+
+\subsubsection*{If-Bedingung $i\le m$}
+
+\paragraph{Greift ``$i\le m$''?} Ja, $3 \leq 3$.
+
+\begin{multicols}{2}
+    \begin{align*}
+        \cct{ C_1(3)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{0}(2)} +\mathrm{cost}(x[i],y[j]) & = 2 + cost(G,T) & = 3\\
+                    \texiii{C_1(2)} + 1 & = 2+2 & = 3
+                \end{array}
+        \right. \\  & = 3
+    \end{align*}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &      &       &       &       \\ \hline
+        &    A      &       1       &   1   &       &       &       &       \\ \hline
+        &    C      &   \boxi2           &   \boxiii2   &       &       &       &       \\ \hline
+        &    G      &               & \ccr3      &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+
+\end{multicols}
+
+\paragraph{Greift ``$C_1(3)\le 2$''?} Nein, $3\not\leq 2$
+
+\paragraph{i hochzählen:} $i = i + 1 = 4$
+
+\paragraph{Greift ``While $i \leq m$ and $C_1(3) + \gamma \leq k$''?} Nein, $4 \not\leq 3$
+
+\subsubsection*{Report If-Bedingung}
+
+\paragraph{Greift ``$i^*_1 = m = 3$ and $C_j(m) \leq k$''?} Nein, $i^*_1 = 2 \neq 3$
+
+\newpage
+
+\subsection*{Column $j = 2$}
+
+\begin{multicols}{2}
+
+    \begin{itemize}
+        \item \textbf{Set} $C_2(0) = 0$
+        \item \textbf{Set} $i_2^\ast = 0$
+        \item \textbf{Set} $i = 1$
+    \end{itemize}
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  \ccr0    &       &       &       \\ \hline
+        &    A      &       1       &   1   &       &       &       &       \\ \hline
+        &    C      &   2           &   2   &       &       &       &       \\ \hline
+        &    G      &               &3      &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = \cct{0}$
+        \item $i_3^\ast = $
+        \item $i_4^\ast = $
+        \item $i_5^\ast = $
+    \end{itemize}
+\end{multicols}
+
+\subsubsection*{While-Schleife $i \le i_{0}^\ast$}
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{1}^\ast$''?} Ja, $1 \le 2$.
+    \begin{align*}
+        \cct{C_2(1)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{1}(0)} +\mathrm{cost}(x[1],y[2]) & = 0 + cost(A,T) & = 1 \\
+                    \texii{C_{1}(1)} + 1 & = 1 + 1 & = 2\\
+                    \texiii{C_2(0)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ & = 1
+    \end{align*}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &\boxi0      &  \boxiii0    &       &       &       \\ \hline
+        &    A      &       1       &   \boxii1   &  \ccr1     &       &       &       \\ \hline
+        &    C      &   2           &   2   &       &       &       &       \\ \hline
+        &    G      &               &3      &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_2(1)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_2^\ast \gets 1$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = \cct{1} $
+    \end{itemize}
+\end{multicols}
+
+
+\paragraph{i hochzählen:} $i = i + 1 = 2$
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{1}^\ast$''?} Ja, $2 \le 2$.
+    \begin{align*}
+        \cct{C_2(2)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{1}(1)} +\mathrm{cost}(x[2],y[2]) & = 1 + cost(C,T) & = 2 \\
+                    \texii{C_{1}(2)} + 1 & = 2 + 1 & = 3\\
+                    \texiii{C_2(1)} + 1 & = 1 + 1 & = 2
+                \end{array}
+        \right. \\ & =  2
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    &       &       &       \\ \hline
+        &    A      &       1       &   \boxi1   &  \boxiii1     &       &       &       \\ \hline
+        &    C      &   2           &   \boxii2   &    \ccr2   &       &       &       \\ \hline
+        &    G      &               &3      &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+
+\end{multicols}
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_2(2)\le k$''?} Ja, $2 \le 2$.
+    \paragraph{Also:} $i_2^\ast \gets 2$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = \cct{2}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 3$
+
+\paragraph{Greift ``While $i \le i_{1}^\ast$''?} Nein, $3 \not\le 2$.
+
+\paragraph{END WHILE}
+
+\subsubsection*{If-Bedingung $i\le m$}
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$i\le m$''?} Ja, $3 \leq 3$.
+    \begin{align*}
+        \cct{ C_2(3)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{1}(2)} +\mathrm{cost}(x[3],y[2]) & = 2 + cost(G,T) & = 3\\
+                    \texiii{C_2(2)} + 1 & = 2+2 & = 3
+                \end{array}
+        \right. \\ & = 3
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    &       &       &       \\ \hline
+        &    A      &       1       &   1   &  1    &       &       &       \\ \hline
+        &    C      &   2           &   \boxi2   &    \boxiii2   &       &       &       \\ \hline
+        &    G      &               &3      &  \ccr3     &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\paragraph{Greift ``$C_2(3)\le 2$''?} Nein, $3\not\leq 2$
+
+\paragraph{i hochzählen:} $i = i + 1 = 4$
+
+
+\paragraph{Greift ``While $i \leq m$ and $C_2(3) + \gamma \leq k$''?} Nein, $4 \not\leq 3$
+
+\subsubsection*{Report If-Bedingung}
+
+\paragraph{Greift ``$i^*_2 = m = 3$ and $C_j(m) \leq k$''?} Nein, $i^*_2 = 2 \neq 3$
+
+\newpage
+
+\subsection*{Column $j = 3$}
+
+\begin{multicols}{2}
+
+    \begin{itemize}
+        \item \textbf{Set} $C_3(0) = 0$
+        \item \textbf{Set} $i_3^\ast = 0$
+        \item \textbf{Set} $i = 1$
+    \end{itemize}
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    &  \ccr0     &       &       \\ \hline
+        &    A      &       1       &   1   &  1    &       &       &       \\ \hline
+        &    C      &   2           &   2   &   2   &       &       &       \\ \hline
+        &    G      &               &3      &  3    &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2$
+        \item $i_3^\ast = \cct0 $
+        \item $i_4^\ast = $
+        \item $i_5^\ast = $
+    \end{itemize}
+\end{multicols}
+
+\subsubsection*{While-Schleife $i \le i_{0}^\ast$}
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{2}^\ast$''?} Ja, $1 \le 2$.
+
+    \begin{align*}
+        \cct{C_3(1)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{2}(0)} +\mathrm{cost}(x[1],y[3]) & = 0 + cost(A,A) & = 0 \\
+                    \texii{C_{2}(1)} + 1 & = 1 + 1 & = 2\\
+                    \texiii{C_3(0)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ &  = 0
+    \end{align*}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  \boxi0    &  \boxiii0     &       &       \\ \hline
+        &    A      &       1       &   1   &  \boxii1    &  \ccr0     &       &       \\ \hline
+        &    C      &   2           &   2   &   2   &       &       &       \\ \hline
+        &    G      &               &3      &  3    &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_3(1)\le k$''?} Ja, $0 \le 2$.
+    \paragraph{Also:} $i_3^\ast \gets 1$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2$
+        \item $i_3^\ast = \cct{1} $
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 2$
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{2}^\ast$''?} Ja, $2 \le 2$.
+    \begin{align*}
+        \cct{C_3(2)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{2}(1)} +\mathrm{cost}(x[2],y[3]) & = 1 + cost(C,A) & = 2 \\
+                    \texii{C_{2}(2)} + 1 & = 2 + 1 & = 3\\
+                    \texiii{C_3(1)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ &  = 1
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &       &       \\ \hline
+        &    A      &       1       &   1   &  \boxi1    &  \boxiii0     &       &       \\ \hline
+        &    C      &   2           &   2   &   \boxii2   &  \ccr1     &       &       \\ \hline
+        &    G      &               &3      &  3    &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+
+\end{multicols}
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_3(2)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_3^\ast \gets 2$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = \cct{2} $
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 3$
+
+
+\paragraph{Greift ``While $i \le i_{2}^\ast$''?} Nein, $3 \not\le 2$.
+
+\paragraph{END WHILE}
+
+\subsubsection*{If-Bedingung $i\le m$}
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$i\le m$''?} Ja, $3 \leq 3$.
+    \begin{align*}
+        \cct{ C_3(3)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{2}(2)} +\mathrm{cost}(x[3],y[2]) & = 2 + cost(G,A) & = 3\\
+                    \texiii{C_3(2)} + 1 & = 1+1 & = 2
+                \end{array}
+        \right. \\ & = 2
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &       &       \\ \hline
+        &    A      &       1       &   1   &  1    & 0     &       &       \\ \hline
+        &    C      &   2           &   2   &   \boxi2   &  \boxiii1     &       &       \\ \hline
+        &    G      &               &3      &  3    &  \ccr2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_3(3)\le 2$''?} Ja, $2 \leq 2$
+    \paragraph{Also:} $i^*_3 = i = 3$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = \cct{3} $
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 4$
+
+\paragraph{Greift ``While $i \leq m$ and $C_3(3) + \gamma \leq k$''?} Nein, $4 \not\leq 3$
+
+\subsubsection*{Report If-Bedingung}
+
+\paragraph{Greift ``$i^*_3 = m = 3$ and $C_3(m) \leq k$''?} Ja, $i^*_3 = 3$ und $C_3(3) = 2 \leq k = 2$.
+
+\paragraph{REPORT:} $(3, 2)$
+
+\newpage
+
+
+
+\subsection*{Column $j = 4$}
+
+\begin{multicols}{2}
+
+    \begin{itemize}
+        \item \textbf{Set} $C_4(0) = 0$
+        \item \textbf{Set} $i_4^\ast = 0$
+        \item \textbf{Set} $i = 1$
+    \end{itemize}
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &   \ccr0    &       \\ \hline
+        &    A      &       1       &   1   &  1    & 0     &       &       \\ \hline
+        &    C      &   2           &   2   &   2   &  1    &       &       \\ \hline
+        &    G      &               &3      &  3    & 2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2$
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = \cct0  $
+        \item $i_5^\ast = $
+    \end{itemize}
+\end{multicols}
+
+\subsubsection*{While-Schleife $i \le i_{0}^\ast$}
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{3}^\ast$''?} Ja, $1 \le 3$.
+    \begin{align*}
+        \cct{C_4(1)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{3}(0)} +\mathrm{cost}(x[1],y[4]) & = 0 + cost(A,C) & = 1 \\
+                    \texii{C_{3}(1)} + 1 & = 0 + 1 & = 1\\
+                    \texiii{C_4(0)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ &  = 1
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & \boxi0     &  \boxiii0    &       \\ \hline
+        &    A      &       1       &   1   &  1    & \boxii0     &  \ccr1     &       \\ \hline
+        &    C      &   2           &   2   &   2   &  1    &       &       \\ \hline
+        &    G      &               &3      &  3    & 2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_4(1)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_4^\ast \gets 1$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2$
+        \item $i_3^\ast = 3 $
+        \item $i_4^\ast = \cct{1}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 2$
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{3}^\ast$''?} Ja, $2 \le 3$.
+    \begin{align*}
+        \cct{C_4(2)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{3}(1)} +\mathrm{cost}(x[2],y[4]) & = 0 + cost(C,C) & = 0 \\
+                    \texii{C_{3}(2)} + 1 & = 1 + 1 & = 2\\
+                    \texiii{C_4(1)} + 1 & = 1 + 1 & = 2
+                \end{array}
+        \right. \\ &  = 0
+    \end{align*}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  0    &       \\ \hline
+        &    A      &       1       &   1   &  1    & \boxi0     &  \boxiii1     &       \\ \hline
+        &    C      &   2           &   2   &   2   &  \boxii1    &  \ccr0     &       \\ \hline
+        &    G      &               &3      &  3    & 2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_4(2)\le k$''?} Ja, $0 \le 2$.
+    \paragraph{Also:} $i_4^\ast \gets 2$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = \cct{2}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 3$
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{3}^\ast$''?} Ja, $3 \le 3$.
+    \begin{align*}
+        \cct{C_4(3)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{3}(2)} +\mathrm{cost}(x[3],y[4]) & = 1 + cost(G,C) & = 2 \\
+                    \texii{C_{3}(3)} + 1 & = 2 + 1 & = 3\\
+                    \texiii{C_4(2)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ &  = 1
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  0    &       \\ \hline
+        &    A      &       1       &   1   &  1    & 0     & 1     &       \\ \hline
+        &    C      &   2           &   2   &   2   &  \boxi1    &  \boxiii0     &       \\ \hline
+        &    G      &               &3      &  3    & \boxii2     &   \ccr1    &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_4(3)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_4^\ast \gets 3$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = \cct{3}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 4$
+
+\paragraph{Greift ``While $i \le i_{3}^\ast$''?} Nein, $4 \not\le 3$.
+
+\paragraph{END WHILE}
+
+\subsubsection*{If-Bedingung $i\le m$}
+
+\paragraph{Greift ``$i\le m$''?} Nein, $4 \not\leq 3$.
+
+\subsubsection*{Report If-Bedingung}
+
+\paragraph{Greift ``$i^*_4 = m = 3$ and $C_4(m) \leq k$''?} Ja, $i^*_4 = 3$ und $C_4(3) = 1 \leq k = 2$.
+
+\paragraph{REPORT:} $(4, 1)$
+
+\newpage
+
+
+
+\subsection*{Column $j = 5$}
+
+
+\begin{multicols}{2}
+
+    \begin{itemize}
+        \item \textbf{Set} $C_5(0) = 0$
+        \item \textbf{Set} $i_5^\ast = 0$
+        \item \textbf{Set} $i = 1$
+    \end{itemize}
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  0    &   \ccr0    \\ \hline
+        &    A      &       1       &   1   &  1    & 0     & 1     &       \\ \hline
+        &    C      &   2           &   2   &   2   &  1    & 0     &       \\ \hline
+        &    G      &               &3      &  3    & 2     &  1    &       \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2$
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = 3 $
+        \item $i_5^\ast = \cct0 $
+    \end{itemize}
+\end{multicols}
+
+
+\subsubsection*{While-Schleife $i \le i_{0}^\ast$}
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{4}^\ast$''?} Ja, $1 \le 3$.
+    \begin{align*}
+        \cct{C_5(1)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{4}(0)} +\mathrm{cost}(x[1],y[5]) & = 0 + cost(A,G) & = 1 \\
+                    \texii{C_{4}(1)} + 1 & = 1 + 1 & = 2\\
+                    \texiii{C_5(0)} + 1 & = 0 + 1 & = 1
+                \end{array}
+        \right. \\ &  = 1
+    \end{align*}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  \boxi0    &   \boxiii0    \\ \hline
+        &    A      &       1       &   1   &  1    & 0     & \boxii1     &  \ccr1     \\ \hline
+        &    C      &   2           &   2   &   2   &  1    & 0     &       \\ \hline
+        &    G      &               &3      &  3    & 2     &  1    &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_5(1)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_5^\ast \gets 1$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2$
+        \item $i_3^\ast = 3 $
+        \item $i_4^\ast = 3$
+        \item $i_5^\ast = \cct{1}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 2$
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{4}^\ast$''?} Ja, $2 \le 3$.
+    \begin{align*}
+        \cct{C_5(2)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{4}(1)} +\mathrm{cost}(x[2],y[5]) & = 1 + cost(C,G) & = 2 \\
+                    \texii{C_{4}(2)} + 1 & = 0 + 1 & = 1\\
+                    \texiii{C_5(1)} + 1 & = 1 + 1 & = 2
+                \end{array}
+        \right. \\ & = 1
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  0    &  0  \\ \hline
+        &    A      &       1       &   1   &  1    & 0     & \boxi1     &  \boxiii1     \\ \hline
+        &    C      &   2           &   2   &   2   &  1    & \boxii0     &    \ccr1   \\ \hline
+        &    G      &               &3      &  3    & 2     &  1    &       \\ \hline
+        \end{tabular}
+    \end{center}
+
+\end{multicols}
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_5(2)\le k$''?} Ja, $1 \le 2$.
+    \paragraph{Also:} $i_5^\ast \gets 2$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = 3$
+        \item $i_5^\ast = \cct{2}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 3$
+
+\begin{multicols}{2}
+    \paragraph{Greift ``While $i \le i_{4}^\ast$''?} Ja, $3 \le 3$.
+    \begin{align*}
+        \cct{C_5(3)} & =
+        \min\left\{
+                \begin{array}{lll}
+                    \texi{C_{4}(2)} +\mathrm{cost}(x[3],y[5]) & = 0 + cost(C,C) & = 0 \\
+                    \texii{C_{4}(3)} + 1 & = 1 + 1 & = 2\\
+                    \texiii{C_5(2)} + 1 & = 1 + 1 & = 2
+                \end{array}
+        \right. \\ &  = 1
+    \end{align*}
+
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  0    &  0  \\ \hline
+        &    A      &       1       &   1   &  1    & 0     & 1     &  1     \\ \hline
+        &    C      &   2           &   2   &   2   &  1    & \boxi0     &    \boxiii1   \\ \hline
+        &    G      &               &3      &  3    & 2     &  \boxii1    &  \ccr0     \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+    \paragraph{Greift ``$C_5(3)\le k$''?} Ja, $0 \le 2$.
+    \paragraph{Also:} $i_5^\ast \gets 3$
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = 3$
+        \item $i_5^\ast = \cct{3}$
+    \end{itemize}
+\end{multicols}
+
+\paragraph{i hochzählen:} $i = i + 1 = 4$
+
+
+\paragraph{Greift ``While $i \le i_{4}^\ast$''?} Nein, $4 \not\le 3$.
+
+\paragraph{END WHILE}
+
+\subsubsection*{If-Bedingung $i\le m$}
+
+\paragraph{Greift ``$i\le m$''?} Nein, $4 \not\leq 3$.
+
+\subsubsection*{Report If-Bedingung}
+
+\paragraph{Greift ``$i^*_5 = m = 3$ and $C_5(m) \leq k$''?} Ja, $i^*_5 = 3$ und $C_5(3) = 0 \leq k = 2$.
+
+\paragraph{REPORT:} $(5, 0)$
+
+\subsection*{Ergebnis}
+
+\begin{multicols}{2}
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =     &  0            &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T       &               &       &       &       &       &       \\
+        P   &       &  $\epsilon$   &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$&       0       &0      &  0    & 0     &  0    &  0  \\ \hline
+        &    A      &       1       &   1   &  1    & 0     & 1     &  1     \\ \hline
+        &    C      &   2           &   2   &   2   &  1    & 0     &    1   \\ \hline
+        &    G      &               &3      &  3    & 2     &  1    &  0     \\ \hline
+        \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{itemize}
+        \item $i_0^\ast = 2$
+        \item $i_1^\ast = 2 $
+        \item $i_2^\ast = 2 $
+        \item $i_3^\ast = 3$
+        \item $i_4^\ast = 3$
+        \item $i_5^\ast = 3$
+    \end{itemize}
+\end{multicols}
