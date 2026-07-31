@@ -41,6 +41,7 @@ always reconstruct the whole substring and its starting position by backtracing.
 
 
 \section{Sellers' Algorithm}\label{sec:sellers-algorithm}
+\komm{Elaborate example on page~\pageref{sec:sellers-algorithm-example}.}
 For a change in style, here we present an explicit formulation of an algorithm that solves
 the problem not as a recurrence, but in pseudo-code notation.
 Algorithm 1 is known as
@@ -71,7 +72,7 @@ repeatedly computing $C_j$ from $C_{j-1}$ and the next text character $y[j]$, fo
             \State $C_j(0) \gets 0$
             \For{$i \gets 1,...,m$}
                 \State $C_j (i) \gets min \begin{cases}
-                                              C_{j-1}(i-1 + cost(x[i], y[j]) \\
+                                              C_{j-1}(i-1) + cost(x[i], y[j]) \\
                                               C_{j-1}(i) + \gamma \\ C_j (i-1) + \gamma
                 \end{cases}$
             \EndFor
@@ -178,7 +179,8 @@ fun sellers(pattern: String, text: String, costs: Costs, emptyStringSymbol: Char
             val above     = dMatrix[i-1][j] + costs.gap
             dMatrix[i][j] = min(min(diagonal, left), above)
         }
-        // If we are in the last row and the costs are under the threshold, return this column and the costs
+        // If we are in the last row and the costs are under the threshold, return this column
+        // and the costs
         if (dMatrix[m-1][j] <= costs.threshold) {
             outputColumns.add(Pair(j, dMatrix[m - 1][j]))
         }
@@ -188,36 +190,62 @@ fun sellers(pattern: String, text: String, costs: Costs, emptyStringSymbol: Char
     return Pair(dMatrix, outputColumns)
 }
     \end{verbatim}
-    Vergleich mit dem Pseudocode:
+\end{bsp}
+
+\begin{erg}[Vergleich der Implementierung mit dem Pseudocode]
+    $\ $
     \begin{mytable}
+        \scriptsize
         \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|}
             \hline
             \textbf{Beschreibung} \textbf{Pseudocode} & \textbf{Implementierung} \\
-            Input Muster                                 & pattern $x \in \Sigma^m$                            & \\
-            Input Text                                   & text $y \in \Sigma^n$                               & \\
-            Input cost Threshold                         & threshold $k \in \nz_0$                             & \\
-            Input cost function                          & sensible cost function with indel cost $\gamma > 0$ & \\
-            Input edit distance                          & $d(\cdot, \cdot)$                                   & \\ \hline \hline
-            % ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . . j]$ for some $j' \leq j$
+            Input Muster                                 & pattern $x \in \Sigma^m$                            & pattern: String \\
+            Input Text                                   & text $y \in \Sigma^n$                               &
+            text: String \\
+            Input cost Threshold                         & threshold $k \in \nz_0$                             & in
+            Kosten enthalten \\
+            Input cost function                          & sensible cost function with indel cost $\gamma > 0$ &
+            costs: Costs \\
+            Input edit distance                          & $d(\cdot, \cdot)$                                   & \\
+            \hline \hline
+            Length of pattern & m & val m = dMatrix.size \\
+            Length of text & n & val n = dMatrix[0].size \\
+            Epsilon/empty word column and row & assumed & ``Add a symbol to the beginning of the given words, that
+            are not part of the alphabet'' \\
+            & & val patternE: String = addEmptyString(pattern, emptyStringSymbol \\
+            & 6 val textE: String = addEmptyString(text, emptyStringSymbol) \\
+            (Empty) matrix & assumed & val dMatrix: Array$<$IntArray$>$ = Array(patternE.length) \{ IntArray(
+            textE.length) \{ Int.MAX\_VALUE \} \} \\
+            \hline \hline
+            Output &  ending positions j such that $d(x, y' ) \leq k$ where $y' := y[j' . . . j]$ for some $j' \leq j$ & val outputColumns \\
+            \hline \hline
             initialize the 0-th column of the alignment matrix & For $i \gets 0, ..., m$ do $C_0 (i) \gets i \cdot \gamma$
-            &
+            & for (i in dMatrix.indices) \{ dMatrix[i][0] = i * costs.gap \}
             \\
-            proceed column-by-column                     & For $j \gets 1,...,n$                               & \\
-            And initialize first row                     & $C_j(0) \gets 0$                                    & \\
-            For each row in each column                  & For $i \gets 1,...,m$                               & \\
-            calculate the cost/recurrence & $C_j (i) \gets min \begin{cases}
-                                                                   C_{j-1}(i-1 + cost(x[i], y[j]) \\
-                                                                   C_{j-1}(i) + \gamma \\ C_j (i-1) + \gamma
-            \end{cases}$ & \\ \hline
-            In case the threshold is reached             & If $C_j(m) \leq k$                                  & \\
-            report match ending at column j and its cost & report $(j, C_j (m))$                               & \\ \hline
+            proceed column-by-column                     & For $j \gets 1,...,n$                               & for (j in (1 until n))  \\
+            And initialize first row                     & $C_j(0) \gets 0$                                    & dMatrix[0][j] = 0\\
+            For each row in each column                  & For $i \gets 1,...,m$                               & for (i in (1 until m))\\
+            calculate the cost/recurrence & $C_j (i) = min \begin{cases} ... \end{cases}$ & min(min(diagonal, left), above) \\
+            Wert links oben + score/Kostenfunktion & $C_{j-1}(i-1) + cost(x[i], y[j])$ & val diagonal = dMatrix[i-1][j-1] + cost(patternE[i], textE[j],
+            Costs(costs.threshold, costs.match, costs.mismatch, costs.gap)) \\
+            Wert links + Indel Kosten & $C_{j-1}(i) + \gamma $ & val left = dMatrix[i][j-1] + costs.gap \\
+            Wert oben + Indel Kosten & $C_j (i-1) + \gamma$ &  val above = dMatrix[i-1][j] + costs.gap \\
+            \hline
+            In case the threshold is reached             & If $C_j(m) \leq k$                                  & if (dMatrix[m-1][j] $<$= costs.threshold \\
+            report match ending at column j and its cost & report $(j, C_j (m))$                               &
+            outputColumns.add(Pair(j, dMatrix[m - 1][j])) \\ \hline
+            Ausgabe & assumed & return Pair(dMatrix, outputColumns) \\ \hline
         \end{tabular}
     \end{mytable}
-\end{bsp}
+\end{erg}
 
+\begin{kom}[Zum Threshold $k$]
+    Wenn $k=0$, werden nur exakte Matches erlaubt.
+    Bei $k=1$ dementsprechend nur maximal ein fehler, etc.
+\end{kom}
 
 \section{Ukkonen’s Cutoff Algorithm}\label{sec:ukkonens-cutoff-algorithm}
-The last of the above three observations leads to a considerable improvement of Sellers’
+The last of the above three observations leads to a considerable improvement of Sellers'
 algorithm: If we know that in column $j$ all values after a certain index $\lei_j$ exceed $k$, we do
 not need to compute them (e.g.\ we could assume that they are all equal to $\infty$ or $k + 1$).
 The following definition captures this formally.
@@ -320,7 +348,7 @@ Algorithm~\ref{alg:ukkonen} shows the details.
 \begin{bsp}
     Let $x = \mathtt{AABB}$, $y = \mathtt{BABAABAABBABAA}$ and $k = 1$.
     The following table shows which values are computed by Algorithm \ref{alg:ukkonen} considering unit cost.
-    The last essential index in each column is \txc{highlighted blue-ish}.
+    The last essential index in each column is \txc{highlighted green-ish}.
     The $k$-approximate matches are underlined in the last row.
 
     \begin{mytable}

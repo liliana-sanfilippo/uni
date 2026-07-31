@@ -1,0 +1,712 @@
+%! Author = lili
+%! Date = 7/31/26
+
+
+\section{Sellers' algorithm example}\label{sec:sellers-algorithm-example}
+
+\subsection*{Input}
+\begin{center}
+    \begin{tabular}{|p{5cm}|p{5cm}|p{6cm}|} \hline
+    \textbf{Was} & \textbf{Bezeichnung Pseudocode} &\textbf{Wert im Beispiel} \\ \hline
+    Pattern & $x \in \Sigma^m$ & ACG \\ \hline
+    Text &  $y \in \Sigma^n$ &   TTACG  \\\hline
+    threshold & $k \in N_0$ & 2 \\\hline
+    cost function with indel cost & $\gamma > 0$ und $cost(x[i], y[j])$ & $\gamma = 1$ und  \\ & &
+    $cost(x[i], y[j])=\begin{cases}
+                          0, & falls\ a=b \\ 1, & falls\ a \neq b
+    \end{cases}$
+    \\ \hline
+    defining an edit distance $d(\cdot, \cdot)$ &  $min \begin{cases}
+                                                            C_{j-1}(i-1 + cost(x[i], y[j]) \\
+                                                            C_{j-1}(i) + \gamma \\ C_j (i-1) + \gamma
+    \end{cases}$ & ergibt sich beim Berechnen \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Leere Matrix}
+
+\begin{center}
+    \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+    &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+    &   T    &              &       &       &       &       &       \\
+    P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+    & $\epsilon$ &              &       &       &       &       &       \\ \hline
+    &    A   &              &       &       &       &       &       \\ \hline
+    &    C   &              &       &       &       &       &       \\ \hline
+    &    G   &              &       &       &       &       &       \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{initialize the 0-th column of the alignment matrix}
+\begin{multicols}{3}
+    \begin{algorithmic}
+        \For{$i \gets 0, ..., m$}
+            \State $C_0 (i) \gets i \cdot \gamma$
+        \EndFor
+    \end{algorithmic}
+    \columnbreak
+    Wird mit Einsetzen zu
+    \columnbreak
+    \begin{algorithmic}
+        \For{$i \gets 0, ..., 3$}
+            \State $C_0 (i) \gets i $
+        \EndFor
+    \end{algorithmic}
+\end{multicols}
+\noindent Da $i \cdot \gamma = i \cdot 1 = i$ und $m = 3$.
+
+\begin{multicols}{2}
+    \textbf{With} i = 0, \textbf{Set} $C_0(0) = 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &   \ccr0      &       &       &       &       &       \\ \hline
+        &    A   &              &       &       &       &       &       \\ \hline
+        &    C   &              &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+    \textbf{With} i = 1, \textbf{Set} $C_0(1) = 1$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      &       &       &       &       &       \\ \hline
+        &    A   & \ccr1        &       &       &       &       &       \\ \hline
+        &    C   &              &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+    \textbf{With} i = 2, \textbf{Set} $C_0(2) = 2$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      &       &       &       &       &       \\ \hline
+        &    A   &     1        &       &       &       &       &       \\ \hline
+        &    C   & \ccr2        &       &       &       &       &       \\ \hline
+        &    G   &              &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+    \textbf{With} i = 3, \textbf{Set} $C_0(3) = 3$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      &       &       &       &       &       \\ \hline
+        &    A   &     1        &       &       &       &       &       \\ \hline
+        &    C   & 2            &       &       &       &       &       \\ \hline
+        &    G   & \ccr3        &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\subsection*{proceed column-by-column}
+
+\begin{multicols}{2}
+    \noindent \textbf{\underline{Der Pseudocode:}}
+    \begin{algorithmic}
+        \For{$j \gets 1,...,n$}
+            \State $C_j(0) \gets 0$
+            \For{$i \gets 1,...,m$}
+                \State $C_j (i) \gets min \begin{cases}
+                                              C_{j-1}(i-1) + cost(x[i], y[j]) \\
+                                              C_{j-1}(i) + \gamma \\ C_j (i-1) + \gamma
+                \end{cases}$
+            \EndFor
+            \If{$C_j(m) \leq k$}
+                \Statex \textbf{report} $(j, C_j (m))$
+            \EndIf
+        \EndFor
+    \end{algorithmic}
+    \columnbreak
+    \textbf{\underline{Wird mit Einsetzen zu:}}
+    \begin{algorithmic}
+        \For{$j \gets 1,...,5$}
+            \State $C_j(0) \gets 0$
+            \For{$i \gets 1,...,3$}
+                \State $C_j (i) \gets min \begin{cases}
+                                              C_{j-1}(i-1) + cost(x[i], y[j]) \\
+                                              C_{j-1}(i) + 1 \\ C_j (i-1) + 1
+                \end{cases}$
+            \EndFor
+            \If{$C_j(3) \leq 2$}
+                \Statex \textbf{report} $(j, C_j (3))$
+            \EndIf
+        \EndFor
+    \end{algorithmic}
+\end{multicols}
+
+\newpage
+\subsubsection*{Column $j = 1$}
+\begin{multicols}{2}
+    \textbf{Set} $C_1(0) \gets 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      &\ccr0  &       &       &       &       \\ \hline
+        &    A   &     1        &       &       &       &       &       \\ \hline
+        &    C   & 2            &       &       &       &       &       \\ \hline
+        &    G   & 3            &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+Then iterate through second loop (fill out rest of the column).
+\[
+    C_1(i) = min \begin{cases}
+                     C_{1-1}(i-1) + cost(x[i], y[1]) \\
+                     C_{1-1}(i) + 1 \\
+                     C_1(i-1) + 1
+    \end{cases} =  min \begin{cases}
+                           C_{0}(i-1) + cost(x[i], y[1]) \\
+                           C_{0}(i) + 1 \\
+                           C_1(i-1) + 1
+    \end{cases}
+\]
+
+\noindent \textbf{With $i = 1$:}
+\begin{multicols}{2}
+    $\cct{C_1(1)} = min \begin{cases}
+                            \texi{C_{0}(0)} + cost(x[1], y[1]) = 0 + cost(A,T) & = 1 \\
+                            \texii{C_{0}(1)} + 1 = 1+1 & = 2\\
+                            \texiii{C_1(0)} + 1 = 0 + 1 & = 1
+    \end{cases}$
+    = 1
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       \boxi0      & \boxiii0     &       &       &       &       \\ \hline
+        &    A   &     \boxii1        &  \ccr1&       &       &       &       \\ \hline
+        &    C   & 2            &       &       &       &       &       \\ \hline
+        &    G   & 3            &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\noindent \textbf{With $i = 2$:}
+\begin{multicols}{2}
+    $\cct{C_1(2)} = min \begin{cases}
+                            \texi{C_{0}(1)} + cost(x[2], y[1]) = 1 + cost(C,T) & = 2 \\
+                            \texii{C_{0}(2)} + 1 = 2+1 & = 3\\
+                            \texiii{C_1(2)} + 1 = 1 + 1 & = 2
+    \end{cases}$
+    = 2
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &       &       &       &       \\ \hline
+        &    A   &     \boxi1        &  \boxiii1    &       &       &       &       \\ \hline
+        &    C   & \boxii2            &  \ccr2&       &       &       &       \\ \hline
+        &    G   & 3            &       &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 3$:}
+\begin{multicols}{2}
+    $\cct{C_1(3)} = min \begin{cases}
+                            \texi{C_{0}(2)} + cost(x[3], y[1]) = 2 + cost(G,T) & = 3 \\
+                            \texii{C_{0}(3)} + 1 = 3+1 & = 4\\
+                            \texiii{C_1(3)} + 1 = 2 + 1 & = 3
+    \end{cases}$
+    = 3
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &       &       &       &       \\ \hline
+        &    A   &     1        &  1    &       &       &       &       \\ \hline
+        &    C   & \boxi2            &  \boxiii2&       &       &       &       \\ \hline
+        &    G   & \boxii3            &  \ccr3     &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+$C_1(3) \leq 2$? $C_1(3) = 3$, also Nein. Kein Report.
+
+\newpage
+\subsubsection*{Column $j = 2$}
+\begin{multicols}{2}
+    \textbf{Set} $C_2(0) \gets 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &\ccr0  &       &       &       \\ \hline
+        &    A   &     1        &  1    &       &       &       &       \\ \hline
+        &    C   & 2            &  2    &       &       &       &       \\ \hline
+        &    G   & 3            &   3   &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+Then iterate through second loop (fill out rest of the column).
+\[
+    C_2(i) = min \begin{cases}
+                     C_{2-1}(i-1) + cost(x[i], y[2]) \\
+                     C_{2-1}(i) + 1 \\
+                     C_2(i-1) + 1
+    \end{cases} =  min \begin{cases}
+                           C_{1}(i-1) + cost(x[i], y[2]) \\
+                           C_{1}(i) + 1 \\
+                           C_2(i-1) + 1
+    \end{cases}
+\]
+
+\noindent \textbf{With $i = 1$:}
+\begin{multicols}{2}
+    $\cct{C_2(1)} =  min \begin{cases}
+                             \texi{C_{1}(0)} + cost(x[1], y[2]) = 0+ cost(A,T) & = 1  \\
+                             \texii{C_{1}(1)} + 1 = 1 +1 & = 2 \\
+                             \texiii{C_2(0)} + 1 = 0+1 & = 1
+    \end{cases}$
+    = 1
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & \boxi0     &\boxiii0      &       &       &       \\ \hline
+        &    A   &     1        &  \boxii1    &   \ccr1    &       &       &       \\ \hline
+        &    C   & 2            &  2    &       &       &       &       \\ \hline
+        &    G   & 3            &    3  &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 2$:}
+\begin{multicols}{2}
+    $\cct{C_2(2)} =  min \begin{cases}
+                             \texi{C_{1}(1)} + cost(x[2], y[2]) = 1+ cost(C,T) & = 2  \\
+                             \texii{C_{1}(2)} + 1 = 2 +1 & = 3 \\
+                             \texiii{C_2(1)} + 1 = 1+1 & = 2
+    \end{cases}$
+    = 2
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      &       &       &       \\ \hline
+        &    A   &     1        &  \boxi1    &   \boxiii1   &       &       &       \\ \hline
+        &    C   & 2            &  \boxii2    &    \ccr2   &       &       &       \\ \hline
+        &    G   & 3            &   3    &       &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 3$:}
+\begin{multicols}{2}
+    $\cct{C_2(3)} =  min \begin{cases}
+                             \texi{C_{1}(2)} + cost(x[3], y[2]) = 2+ cost(G,T) & = 3  \\
+                             \texii{C_{1}(3)} + 1 = 3 +1 & = 4 \\
+                             \texiii{C_2(2)} + 1 = 2+1 & = 4
+    \end{cases}$
+    = 3
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      &       &       &       \\ \hline
+        &    A   &     1        &  1    &   1   &       &       &       \\ \hline
+        &    C   & 2            &  \boxi2    &    \boxiii2   &       &       &       \\ \hline
+        &    G   & 3            &   \boxii3    &  \ccr3     &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+$C_2(3) \leq 2$? $C_2(3) = 3$, also Nein. Kein Report.
+
+\newpage
+\subsubsection*{Column $j = 3$}
+\begin{multicols}{2}
+    \textbf{Set} $C_3(0) \gets 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      &  \ccr0     &       &       \\ \hline
+        &    A   &     1        &  1    &   1   &       &       &       \\ \hline
+        &    C   & 2            &  2    &   2   &       &       &       \\ \hline
+        &    G   & 3            &   3   & 3     &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+Then iterate through second loop (fill out rest of the column).
+\[
+    C_3(i) = min \begin{cases}
+                     C_{3-1}(i-1) + cost(x[i], y[3]) \\
+                     C_{3-1}(i) + 1 \\
+                     C_3(i-1) + 1
+    \end{cases} =  min \begin{cases}
+                           C_{2}(i-1) + cost(x[i], y[3]) \\
+                           C_{2}(i) + 1 \\
+                           C_3(i-1) + 1
+    \end{cases}
+\]
+
+
+\noindent \textbf{With $i = 1$:}
+\begin{multicols}{2}
+    $\cct{C_3(1)} =  min \begin{cases}
+                             \texi{C_{2}(0)} + cost(x[1], y[3]) = 0+ cost(A,A) & = 0  \\
+                             \texii{C_{2}(1)} + 1 = 1 +1 & = 2 \\
+                             \texiii{C_3(0)} + 1 = 0+1 & = 1
+    \end{cases}$
+    = 0
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &\boxi0      & \boxiii0     &       &       \\ \hline
+        &    A   &     1        &  1    &   \boxii1   &  \ccr0     &       &       \\ \hline
+        &    C   & 2            &  2    &   2   &       &       &       \\ \hline
+        &    G   & 3            &   3   & 3     &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 2$:}
+\begin{multicols}{2}
+    $\cct{C_3(2)} =  min \begin{cases}
+                             \texi{C_{2}(1)} + cost(x[2], y[3]) = 1+ cost(C,A) & = 2  \\
+                             \texii{C_{2}(2)} + 1 = 2 +1 & = 3 \\
+                             \texiii{C_3(1)} + 1 = 0+1 & = 1
+    \end{cases}$
+    = 1
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     &       &       \\ \hline
+        &    A   &     1        &  1    &   \boxi1   & \boxiii0     &       &       \\ \hline
+        &    C   & 2            &  2    &   \boxii2   & \ccr1      &       &       \\ \hline
+        &    G   & 3            &   3   & 3     &       &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\noindent \textbf{With $i = 3$:}
+\begin{multicols}{2}
+    $\cct{C_3(3)} =  min \begin{cases}
+                             \texi{C_{2}(2)} + cost(x[3], y[3]) = 2+ cost(G,A) & = 3  \\
+                             \texii{C_{2}(3)} + 1 = 3 +1 & = 4 \\
+                             \texiii{C_3(2)} + 1 = 1+1 & = 2
+    \end{cases}$
+    = 2
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     &       &       \\ \hline
+        &    A   &     1        &  1    &   1   & 0     &       &       \\ \hline
+        &    C   & 2            &  2    &   \boxi2   & \boxiii1      &       &       \\ \hline
+        &    G   & 3            &   3   & \boxii3     &  \ccr2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+$C_3(3) \leq 2$? $C_3(3) = 2$, also Ja. \textbf{Report $(j, C_j(m)) = (3, 2)$}
+
+\newpage
+\subsubsection*{Column $j = 4$}
+\begin{multicols}{2}
+    \textbf{Set} $C_4(0) \gets 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     &   \ccr0    &       \\ \hline
+        &    A   &     1        &  1    &   1   & 0     &       &       \\ \hline
+        &    C   & 2            &  2    &   2   & 1     &       &       \\ \hline
+        &    G   & 3            &   3   &3      & 2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+Then iterate through second loop (fill out rest of the column).
+\[
+    C_4(i) = min \begin{cases}
+                     C_{4-1}(i-1) + cost(x[i], y[4]) \\
+                     C_{4-1}(i) + 1 \\
+                     C_4(i-1) + 1
+    \end{cases} =  min \begin{cases}
+                           C_{3}(i-1) + cost(x[i], y[4]) \\
+                           C_{3}(i) + 1 \\
+                           C_4(i-1) + 1
+    \end{cases}
+\]
+
+
+
+\noindent \textbf{With $i = 1$:}
+\begin{multicols}{2}
+    $\cct{C_4(1)} =  min \begin{cases}
+                             \texi{C_{3}(0)} + cost(x[1], y[4]) = 0+ cost(A,C) & = 1  \\
+                             \texii{C_{3}(1)} + 1 = 0 +1 & = 1 \\
+                             \texiii{C_4(0)} + 1 = 0+1 & = 1
+    \end{cases}$
+    = 1
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & \boxi0     &   \boxiii0    &       \\ \hline
+        &    A   &     1        &  1    &   1   & \boxii0     & \ccr1       &       \\ \hline
+        &    C   & 2            &  2    &   2   & 1     &       &       \\ \hline
+        &    G   & 3            &   3   &3      & 2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 2$:}
+\begin{multicols}{2}
+    $\cct{C_4(2)} =  min \begin{cases}
+                             \texi{C_{3}(1)} + cost(x[2], y[4]) = 0+ cost(C,C) & = 0  \\
+                             \texii{C_{3}(2)} + 1 = 1 +1 & = 2 \\
+                             \texiii{C_4(1)} + 1 =  1 +1 & = 2
+    \end{cases}$
+    = 0
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     &  0    &       \\ \hline
+        &    A   &     1        &  1    &   1   & \boxi0     & \boxiii1       &       \\ \hline
+        &    C   & 2            &  2    &   2   & \boxii1     & \ccr0     &       \\ \hline
+        &    G   & 3            &   3   &3      & 2     &       &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+\noindent \textbf{With $i = 3$:}
+\begin{multicols}{2}
+    $\cct{C_4(3)} =  min \begin{cases}
+                             \texi{C_{3}(2)} + cost(x[3], y[4]) = 1+ cost(G,C) & = 2  \\
+                             \texii{C_{3}(3)} + 1 = 2 +1 & = 3 \\
+                             \texiii{C_4(2)} + 1 =  0 +1 & = 1
+    \end{cases}$
+    = 1
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     &  0    &       \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & 1       &       \\ \hline
+        &    C   & 2            &  2    &   2   & \boxi1     & \boxiii0     &       \\ \hline
+        &    G   & 3            &   3   &3      & \boxii2     & \ccr1      &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+$C_4(3) \leq 2$? $C_4(3) = 1$, also Ja. \textbf{Report $(j, C_j(m)) = (4, 1)$}
+
+\newpage
+\subsubsection*{Column $j = 5$}
+\begin{multicols}{2}
+    \textbf{Set} $C_5(0) \gets 0$
+
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     &  0    &  \ccr0     \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & 1     &       \\ \hline
+        &    C   & 2            &  2    &   2   & 1     & 0     &       \\ \hline
+        &    G   & 3            &   3   &3      & 2     & 1     &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+Then iterate through second loop (fill out rest of the column).
+\[
+    C_5(i) = min \begin{cases}
+                     C_{5-1}(i-1) + cost(x[i], y[5]) \\
+                     C_{5-1}(i) + 1 \\
+                     C_5(i-1) + 1
+    \end{cases} =  min \begin{cases}
+                           C_{4}(i-1) + cost(x[i], y[5]) \\
+                           C_{4}(i) + 1 \\
+                           C_5(i-1) + 1
+    \end{cases}
+\]
+
+
+
+
+\noindent \textbf{With $i = 1$:}
+\begin{multicols}{2}
+    $\cct{C_5(1)} =  min \begin{cases}
+                             \texi{C_{4}(0)} + cost(x[1], y[5]) = 0+ cost(A,G) & = 1  \\
+                             \texii{C_{4}(1)} + 1 = 1 +1 & = 2 \\
+                             \texiii{C_5(0)} + 1 = 0+1 & = 1
+    \end{cases}$
+    = 1
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     & \boxi0    &  \boxiii0     \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & \boxii1     &   \ccr1    \\ \hline
+        &    C   & 2            &  2    &   2   & 1     & 0     &       \\ \hline
+        &    G   & 3            &   3   &3      & 2     &1      &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 2$:}
+\begin{multicols}{2}
+    $\cct{C_5(2)} =  min \begin{cases}
+                             \texi{C_{4}(1)} + cost(x[2], y[5]) = 1 + cost(C,G) & = 2  \\
+                             \texii{C_{4}(2)} + 1 = 0 +1 & = 1 \\
+                             \texiii{C_5(1)} + 1 = 1+1 & = 2
+    \end{cases}$
+    = 1
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     & 0    &  0     \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & \boxi1     &   \boxiii1    \\ \hline
+        &    C   & 2            &  2    &   2   & 1     & \boxii0     &  \ccr1     \\ \hline
+        &    G   & 3            &   3   &3      & 2     &1      &       \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+\noindent \textbf{With $i = 3$:}
+\begin{multicols}{2}
+    $\cct{C_5(3)} =  min \begin{cases}
+                             \texi{C_{4}(2)} + cost(x[3], y[5]) = 0 + cost(G,G) & = 0  \\
+                             \texii{C_{4}(3)} + 1 = 1 +1 & = 2 \\
+                             \texiii{C_5(2)} + 1 = 1+1 & = 2
+    \end{cases}$
+    = 0
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     & 0    &  0     \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & 1     &   1    \\ \hline
+        &    C   & 2            &  2    &   2   & 1     & \boxi0     &  \boxiii1     \\ \hline
+        &    G   & 3            &   3   &3      & 2     &\boxii1      & \ccr0      \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+$C_5(3) \leq 2$? $C_5(3) = 0$, also Ja. \textbf{Report $(j, C_j(m)) = (5, 0)$}
+
+\newpage
+
+
+\begin{multicols}{2}
+    Ergebnis:
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     & 0     &  0     \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & 1     &   1    \\ \hline
+        &    C   & 2            &  2    &   2   & 1     & 0     &  1     \\ \hline
+        &    G   & 3            &   3   &3      & 2     &1      & 0      \\ \hline
+        \end{tabular}
+    \end{center}
+
+    Last essential indices for $k = 2$ highlighted:
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     & 0     &  0     \\ \hline
+        &    A   &     1        &  1    &   1   & 0     & 1     &   1    \\ \hline
+        &    C   & \ccb2            &  \ccb2    &   \ccb2   & 1     & 0     &  1     \\ \hline
+        &    G   & 3            &   3   &3      & \ccb2     &\ccb1      & \ccb0      \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
+
+
+Wir hätten k aber auch anders setzen können.
+
+\begin{multicols}{2}
+    Last essential indices for $k = 1$ highlighted:
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       0      & 0     &0      & 0     & 0     &  0     \\ \hline
+        &    A   &     \ccb1        &  \ccb1    &   \ccb1   & 0     & 1     &   1    \\ \hline
+        &    C   & 2            &  2    &   2   & \ccb1     & 0     &  1     \\ \hline
+        &    G   & 3            &   3   &3      & 2     &\ccb1      & \ccb0      \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \columnbreak
+
+    Last essential indices for $k = 0$ highlighted: (exaktes match)
+    \begin{center}
+        \begin{tabular}{|c c|c|c|c|c|c|c|} \hline
+        &   j =  &  0           &   1   &   2   &   3   &   4   &   5   \\ \hline
+        &   T    &              &       &       &       &       &       \\
+        P   &        &  $\epsilon$  &   T   &   T   &   A   &   C   &   G   \\ \hline
+        & $\epsilon$ &       \ccb0      & \ccb0     &\ccb0      & 0     & 0     &  0     \\ \hline
+        &    A   &     1        &  1    &   1   & \ccb0     & 1     &   1    \\ \hline
+        &    C   & 2            &  2    &   2   & 1     & \ccb0     &  1     \\ \hline
+        &    G   & 3            &   3   &3      & 2     &1      & \ccb0      \\ \hline
+        \end{tabular}
+    \end{center}
+\end{multicols}
