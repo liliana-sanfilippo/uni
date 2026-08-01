@@ -1,58 +1,150 @@
 
 \section{Klausurstruktur}
+
+\begin{mytable}
+    \begin{tabular}{@{}c l l@{}}
+        \toprule
+        \textbf{Aufg.} & \textbf{Thema} & \textbf{Kernkompetenz}\\
+        \midrule
+        1 & Sprachunterscheidung & Chomsky-Hierarchie, Pumping-Lemma, Grammatiken, RegExp\\
+        2 & Endliche Automaten & NEA/DEA, Potenzmengenkonstr., Abschluss-Konstruktionen\\
+        3 & Kontextfreie Gramm.\ \& LR/Kellerautomaten & Eindeutigkeit, LR-Parsing, Strukturbaum, CYK, PDA\\
+        4 & Probleme / Berechenbarkeit \& Reduktion & P, NP, $\le_p$, Reduktionen, Chomsky-Größen\\
+        5 & Multiple Choice & Querschnitt über den ganzen Stoff\\
+        \bottomrule
+    \end{tabular}
+\end{mytable}
+
 \subsection{Sprachunterscheidung}
-\subsubsection{Geben Sie eine kontextfreie Grammatik an, die genau eine gegebene Sprache erzeugt. (2017)}
+Zu einer Sprache $L$ entscheiden und beweisen, in welche Klasse sie fällt
+(regulär / nicht regulär, kontextfrei / nicht kontextfrei).
+Meist 3-4 Teilaufgaben, die die vier Beweisrichtungen kombinieren.
+\begin{bem}
+    Fast immer Varianten von $\{a^n b^m c^k \mid \text{lineare (Un-)Gleichung über } n,m,k\}$
+\end{bem}
 
-\subsubsection{Geben Sie eine rechtslineare Grammatik an, die genau eine gegebene Sprache L(G) $\cdot$ L(G') erzeugt. (2018)}
+\subsubsection{Vollständige Klassifikation (reg/nreg und cf/ncf) mit Beweis.}
+% \txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
 
-\subsubsection{Zeigen Sie, dass gegebene Sprache regulär ist, indem Sie einen regulären Ausdruck konstruieren. (2017, 2018)}
+Für jede Sprache beide Fragen beantworten:
+nicht regulär $\Rightarrow$ Pumping-Lemma (regulär); kontextfrei $\Rightarrow$ CFG/PDA;
+nicht kontextfrei $\Rightarrow$ Pumping-Lemma (kontextfrei).
 
-\subsubsection{Pumping Lemma benutzen. (2017)}
+\begin{itemize}
+    \item Ist die folgende Sprache regulär/nicht regulär, kontextfrei/nicht kontextfrei und warum:
+    \begin{itemize}
+        \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ul{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
+        \item
+        $\{ \ol{z}  \in \{\un{a}, \un{b}, \un{c}\}^* \mid Anzahl(\un{a}, \ol{z}) = Anzahl(\un{b}, \ol{z}) = Anzahl(\un{c}, \ol{z}) \}$ \txc{(NK2017)}
+        \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, m=k \}$ \txc{(HK2019)}
+        \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, m \geq n \geq k \}$ \txc{(HK2019)}
+        \item $\{(ab)^n \mid n \in \nz_0 \}$ \txc{(HK2019)}
+        \item $\{a^m b^n \mid m+n  k; m,n,k \in \nz_0 \}$ \txc{(NK2019)}
+        \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, m=n \}$ \txc{(NK2019)}
+        \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, m \leq n \leq k \}$ \txc{(NK2019)}
+        \item
+        $\{\ol{x} \in \{\un{a}, \un{b},\un{c} \}^* \mid Anzahl(\un{a},\ol{x})+Anzahl(\un{b},\ol{x}) \text{ ist gerade } \land Anzahl(\un{b},\ol{x}) +Anzahl(\un{c},\ol{x}) \text{ ist ungerade }  \}$ \txc{(PK2021)}
+        \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, n = m+k\}$ \txc{(PK2021)}
+        \item $\{ \ol{x} \in \{\un{a}, ..., \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
+    \end{itemize}
+    \item Ist die folgende Sprache regulär/nicht regulär, kontextfrei/nicht kontextfrei? Beweisen Sie Ihre
+    Antwort
+    \begin{itemize}
+        \item $\{\un{a}^n, \un{b}^m, \un{c}^k \mid n \leq m \leq k\}$ \txc{(PK2021)}
+        \item  $\{a^n b^m c^k \mid n,m,k \in \nz_0, n+m = k \}$ \txc{(PK2023)}
+        \item   $\{a^n b^m c^k \mid n,m,k \in \nz_0, n \leq m \} \cap \{ a^n b^m c^k \mid n,m,k \in \nz_{0}, m \leq k \}$
+        \txc{(PK2023)}
+        \item $\{ a^n b^m \mid n,m,k \in \nz_0, n+m = k, k > 5 \}$ \txc{(HK2023)}
+        \item $\{ a^m b^n c \mid n,m \in \nz_0, n \leq m\} \cap \{a^n b^m c^k \mid n,m,k \in \nz_0, n\leq m \}$ \txc{(HK2023)}
+        \item   $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = k \} \cap \{ a^m b^n c \mid n,m \in \nz_0 \}$ \txc{(PK2025)}
+        \item $\{a^{2025} b^{2025} c^k \mid k \in \nz_0, k \leq 2025 \}$ \txc{(PK2025)}
+    \end{itemize}
+\end{itemize}
 
-\subsubsection{Beweisen Sie durch die Angabe einer kontextfreien Grammatik, dass die gegebene Sprache kontextfrei ist. (2018)}
+\subsubsection{Nicht-Regularität mit dem Pumping-Lemma zeigen.} % \txc{2017H, 2017N, 2023P, 2023Z, 2025}
+Typische Sprachen: $\{a^n b^m c^k\mid n=m\}$, $\{a^{2n}b^{4n}\}$, $\{c^4a^nb^n\}$.
+Gefragt ist explizite Anwendung, das Gegenspieler-Schema muss also vollständig sein.
 
-\subsubsection{Zeigen Sie die (Nicht-)Kontextfreiheit und (Nicht-)Regularität einer Sprache. (2017, 2018)}
+\begin{itemize}
+    \item Zeigen Sie durch explizite Verwendung des Pumpinglemmas, dass die folgen-
+    de Sprache nicht regulär ist:
+    \begin{itemize}
+        \item $\{\un{a}^{2n}, \un{b}^{4n} \mid n \in \nz\}$ \txc{(HK2017)}
+        \item $\{ \un{c}^4, \un{a}^n, \un{b}^n \}$ \txc{(NK2017)}
+        \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = k \}$  \txc{(PK2023)}
+        \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = m \}$  \txc{(NK2023)}
+        \item $\{a^n b^k c^m \mid n,m,k \in \nz_0, n = k\}$ \txc{(PK2025)}
+    \end{itemize}
+\end{itemize}
 
-\subsubsection{Beweisen Sie die (Nicht-)Kontextfreiheit und (Nicht-)Regularität einer Sprache. (2019)}
+\subsubsection{Kontextfreiheit durch Angabe einer kontextfreien Grammatik zeigen.} % \txc{2017N, 2021, 2023P, 2023Z,2025}
+Für $L_1$ aus dem Pumping-Teil wird meist direkt danach die passende CFG verlangt.
 
-\subsection{Endliche Automaten}
+\begin{itemize}
+    \item Geben Sie eine explizite kontextfreie Grammatik für L1 (Teilaufgabe ...)) an.
+    \begin{itemize}
+        \item  $\{a^n b^k c^m \mid n,m,k \in \nz_0, n = k\}$ \txc{(PK2025)}
+        \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = k \}$  \txc{(PK2023)}
+        \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = m \}$  \txc{(NK2023)}
+    \end{itemize}
+\end{itemize}
 
-\subsubsection{Geben Sie einen DEA an für eine gegebene Sprache. (2017, 2018)}
 
-\subsubsection{Vervollständigen Sie einen NEA, der genau die gegebene Sprache erzeugen soll. (2019)}
+\subsubsection{Regularität durch regulären Ausdruck (oder DEA/rechtslin.\ Grammatik) zeigen.}% \txc{2017H, 2017N}
+z.\,B.\ $\{x\in\{a,b\}^*\mid \#_a(x)\text{ gerade}\}$ oder $\#_a+\#_b\ge 2$.
+Konstruktives Vorgehen: RegExp konkret hinschreiben.
 
-\subsubsection{Vervollständigen Sie den deterministischen Ersatzakzeptor. (2019)}
+\begin{itemize}
+    \item Zeigen Sie durch die Konstruktion eines regulären Ausdrucks, dass die folgende Sprache regulär ist
+    \begin{itemize}
+        \item $\{ \ol{x} \in \{\un{a}, \un{b}\}^* \mid Anzahl(\un{a}, \ol{x}) gerade \}$ \txc{(HK2017)}
+        \item
+        $\{ \ol{x}  \in \{\un{a}, \un{b}, \un{c}\}^* \mid Anzahl(\un{a}, \ol{x}) = Anzahl(\un{b}, \ol{x}) \geq 2 \}$
+        \txc{(NK2017)}
+    \end{itemize}
+\end{itemize}
 
-\subsubsection{Konstruieren sie einen DEA, der genau das Komplement der Sprache akzeptiert, die ein gegebener NEA akzeptiert. (2019)}
+\subsubsection{Schnitt/Vereinigung zweier Sprachen aka ``erst den Schnitt berechnen''.} % \txc{2023P, 2023Z, 2025}
+\begin{itemize}
+    \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ul{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
+    \item  $\{a^n b^m c^k \mid n,m,k \in \nz_0, n \leq m \} \cap \{ a^n b^m c^k \mid n,m,k \in \nz_{0}, m \leq k \}$
+    \txc{(PK2023)}
+    \item $\{ a^m b^n c \mid n,m \in \nz_0, n \leq m\} \cap \{a^n b^m c^k \mid n,m,k \in \nz_0, n\leq m \}$ \txc{(HK2023)}
+    \item   $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = k \} \cap \{ a^m b^n c \mid n,m \in \nz_0 \}$ \txc{(PK2025)}
+\end{itemize}
 
-\subsubsection{Konstruieren sie einen DEA, der genau L(G) $\cdot$ L(G') der Sprache akzeptiert, die ein gegebener NEA akzeptiert. (2019)}
 
-\subsubsection{Wandeln Sie durch Potenzmengenkonstruktion einen NEA in einen DEA um. (2017, 2018)}
+\subsubsection{Grammatik für Vereinigung/Konkatenation zweier Sprachen.}
+% \txc{2017H (CFG, $\cup$), 2017N (rechtslin., $\cdot$)}
+Allgemeine Konstruktion $G_\cup$ bzw.\ $G_\bullet$ aus zwei gegebenen Grammatiken angeben.
 
-\subsubsection{Wie kann man aus NEA A NEA A' machen? (2017, 2018)}
+\begin{itemize}
+    \item Seien $G$ und $G'$ rechtslineare Grammatiken. Geben Sie eine rechtslineare Grammetik $G_{\circ}$ an, die
+    genau $L(G) \circ L(G')$ erzeugt. \txc{(NK2017)}
+    \item Seien $G$ und $G'$ kontextfreie Grammatiken. Geben Sie eine kontextfreie Grammetik $G_{\cup}$ an, die
+    genau $L(G) \cup L(G')$ erzeugt. \txc{(HK2017)}
+\end{itemize}
 
-\subsection{Kontextfreie Grammatiken und LR Automaten}
+\subsubsection{Sprachen mit festen Schranken / endliche Sprachen.}
+% \txc{2017H ($|x|\le 42$), 2021 ($|x|=42n$), 2025 ($a^{2025}b^{2025}c^k,\,k\le 2025$)}
+Trickfrage: feste Exponenten bzw.\ obere Schranke $\Rightarrow$ die Sprache ist
+endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
 
-\subsubsection{Ist eine gegebene Grammatik eindeutig? (2017, 2018, 2019)}
+\begin{itemize}
+    \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ul{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
+    \item $\{ \ol{x} \in \{\un{a}, ..., \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
+    \item $\{a^{2025} b^{2025} c^k \mid k \in \nz_0, k \leq 2025 \}$ \txc{(PK2025)}
+\end{itemize}
 
-\subsubsection{Geben Sie die Regeln des zu dieser Grammatik gehörenden LR-Automaten an. (2017, 2018, 2019)}
+\begin{warn} $\ $
+\begin{itemize}
+    \item \textbf{Endlich $\Rightarrow$ regulär.} $a^{2025}b^{2025}c^{k},\,k\le2025$ hat nur endlich viele Wörter
+    $\Rightarrow$ regulär (und damit kontextfrei). Die festen $2025$ sind Konstanten, keine Variablen!
+    \item Das Pumping-Lemma ist \textbf{nur notwendig}, nicht hinreichend. Es beweist \emph{Nicht}-Regularität,
+    \textbf{niemals} Regularität.
+    \item ``Regulär $\Rightarrow$ auch kontextfrei'' nicht vergessen mit anzugeben, wenn nach beidem gefragt ist.
+    \item Beim Schnitt-Typ: Klasse \emph{nach} dem Schnitt bestimmen. $\{n=k\}\cap\{\dots\}$ erzwingt oft
+    $n=m=k$, was typischerweise \emph{nicht} kontextfrei ist.
+\end{itemize}
+\end{warn}
 
-\subsubsection{Geben Sie den Strukturbaum eines Wortes an. (2017, 2018, 2019)}
-
-\subsubsection{vervollständigen Sie einen kellerautomaten, der eine gegeben Sprache erkennen soll. (2019)}
-
-\subsubsection{Geben Sie die Rechnung des Kellerautomaten für ein gegebenes Wort an. (2019)}
-
-\subsubsection{Über Induktion zeigen, dass irgendetwas... (2017, 2018)}
-
-\subsection{Probleme / Berechenbarkeit und Reduktion}
-
-\subsubsection{Implikationen. (2017, 2018)}
-
-\subsubsection{Chomsky teilmengen zeigen. (2017)}
-
-\subsubsection{Teilmengenbeziehungen (2018)}
-
-\subsubsection{Welche der folgenden Vorschriften sind polynomielle reduktion? (2017, 2018)}
-
-\subsection{Multiple Choice}
