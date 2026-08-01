@@ -1,0 +1,190 @@
+
+% ===================================================================
+% Abschnitt: Einführung -- RNA und Sekundärstruktur
+% ===================================================================
+
+\newglossaryentry{bem_rna_unterschiede_zu_dna}{
+    name={Welche wichtigen Unterschiede gibt es zwischen RNA und DNA?},
+    description={RNA verwendet Uracil (U) statt Thymin (T) (Alphabet $\{A,C,G,U\}$), erlaubt zusätzlich das Basenpaar $\{G,U\}$, ist weniger stabil und leichter abbaubar als DNA, liegt meist einzelsträngig vor und bildet Sekundärstrukturen durch Basenpaarung, und übernimmt (anders als die primär informationstragende DNA) vielfältige zelluläre Aufgaben (mRNA, regulatorisch, strukturell wie rRNA, aktiv wie tRNA).},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_sekundaerstruktur_statt_3d}{
+    name={Warum betrachtet man bei RNA häufig die Sekundärstruktur statt der vollen 3D-Struktur?},
+    description={Weil die 3D-Struktur schwer zu bestimmen ist; die Sekundärstruktur (welche intramolekularen Basenpaare vorliegen) ist eine handhabbare Zwischenebene, die trotzdem viel über die Funktion aussagt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_watson_crick_und_wobble_paare}{
+    name={Welche Basenpaare stabilisieren eine RNA-Sekundärstruktur?},
+    description={Die Watson-Crick-Paare $\{A,U\}$ und $\{C,G\}$ sowie zusätzlich das "Wobble-Paar" $\{G,U\}$.},
+    type=dinge
+}
+
+\newglossaryentry{def_einfache_struktur}{
+    name={Was zeichnet eine "einfache Struktur" (simple structure) einer RNA-Sequenz aus?},
+    description={Eine Menge von Basenpaaren, bei der sich keine zwei Basenpaare kreuzen (überkreuzungsfrei). Diese Einschränkung ist biologisch nicht ganz realistisch, hält aber die algorithmische Komplexität handhabbar.},
+    type=dinge
+}
+
+\newglossaryentry{bem_nicht_abgedeckte_strukturelemente}{
+    name={Welche Art von RNA-Strukturelementen wird durch die Beschränkung auf einfache (überkreuzungsfreie) Strukturen NICHT erfasst?},
+    description={Komplexere Interaktionen wie Pseudoknoten, "kissing hairpins" oder Hairpin-Bulge-Kontakte -- diese sind vergleichsweise selten und können separat behandelt werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_strukturelemente_einfache_struktur}{
+    name={Welche Strukturelemente werden durch das Modell der einfachen Struktur abgedeckt?},
+    description={Einzelsträngige RNA, Stem/Stacking-Region, Hairpin-Loop, Bulge-Loop, Interior-Loop, sowie Junction/Multi-Loop.},
+    type=dinge
+}
+
+\newglossaryentry{def_dot_bracket_notation}{
+    name={Was ist die Dot-Bracket-Notation zur Darstellung einer RNA-Sekundärstruktur?},
+    description={Eine Darstellung, bei der Punkte ungepaarte Basen repräsentieren und zueinander passende Klammern gepaarte Basen anzeigen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_mountain_plot_circle_plot}{
+    name={Welche zwei weiteren Visualisierungsformen für RNA-Sekundärstrukturen gibt es neben der Dot-Bracket-Notation?},
+    description={Der Mountain Plot (Punkte werden zu "-", Klammern zu "/" bzw.\ "\textbackslash", in einer zweiten Dimension dargestellt) und der Circle Plot.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Das Optimierungsproblem
+% ===================================================================
+
+\newglossaryentry{bem_energiemodell_vereinfachung}{
+    name={Wie wird das komplexe Problem der RNA-Energieberechnung in diesem Kontext drastisch vereinfacht?},
+    description={Statt eines vollständigen Energiemodells wird jedem Basenpaar-Typ einfach ein Score (interpretierbar als Stabilitätsmaß bzw.\ negative freie Energie) zugewiesen -- entweder pauschal $+1$ pro Paar, oder differenziert nach Paartyp.},
+    type=dinge
+}
+
+\newglossaryentry{def_score_eines_basenpaares}{
+    name={Wie ist der Score eines Basenpaares $b=\{i,j\}$ in einer Sequenz $s$ definiert, und wie der Score einer ganzen Struktur $S$?},
+    description={$\mathrm{score}(b) := \mathrm{score}(\{s[i],s[j]\})$; der Score einer Struktur ist die Summe der Scores aller enthaltenen Basenpaare: $\mathrm{score}(S) := \sum_{b\in S} \mathrm{score}(b)$.},
+    type=dinge
+}
+
+\newglossaryentry{def_rna_sekundaerstruktur_vorhersage_problem}{
+    name={Wie lautet das (vereinfachte) RNA-Sekundärstruktur-Vorhersage-Problem?},
+    description={Gegeben eine RNA-Sequenz $s$ der Länge $n$, bestimme eine einfache Struktur $S^*$ auf $s$, die den Gesamtscore $\mathrm{score}(S)=\sum_{b\in S}\mathrm{score}(b)$ maximiert.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_nicht_alle_strukturen_enumerieren}{
+    name={Warum kann man die optimale Struktur nicht einfach durch Ausprobieren aller möglichen einfachen Strukturen finden?},
+    description={Die Anzahl gültiger einfacher Strukturen wächst exponentiell mit der Sequenzlänge $n$ -- eine vollständige Enumeration ist daher in vertretbarer Zeit nicht möglich.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Kontextfreie Grammatiken
+% ===================================================================
+
+\newglossaryentry{bem_rekursive_beschreibung_struktur}{
+    name={Aus welchen fünf Fällen lässt sich eine einfache Sekundärstruktur rekursiv zusammensetzen?},
+    description={(0) die leere Struktur, (1) eine ungepaarte Base gefolgt von einer Struktur, (2) eine Struktur gefolgt von einer ungepaarten Base, (3) ein äußeres Basenpaar, das eine kürzere Struktur umschließt, oder (4) zwei aufeinanderfolgende Strukturen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_cfg_moeglich}{
+    name={Warum ist überhaupt eine kontextfreie, rekursive Beschreibung von RNA-Sekundärstrukturen möglich?},
+    description={Nur weil die Einschränkung gilt, dass sich Basenpaare nicht überkreuzen dürfen -- ohne diese Einschränkung wäre keine einfache kontextfreie Grammatik für die Struktur möglich.},
+    type=dinge
+}
+
+\newglossaryentry{def_produktionsregeln_rna_grammatik}{
+    name={Wie lauten die Produktionsregeln der (mehrdeutigen) Grammatik für RNA-Sekundärstrukturen mit Startsymbol $S$?},
+    description={$S\to\varepsilon$; $S\to\texttt{.}S$; $S\to S\texttt{.}$; $S\to(S)$; $S\to SS$ (unter Ignorierung von Sequenz- und Abstandsbeschränkungen für Basenpaare).},
+    type=dinge
+}
+
+\newglossaryentry{bem_grammatik_mehrdeutig}{
+    name={Ist die Standard-Grammatik für RNA-Sekundärstrukturen eindeutig (unambiguous)?},
+    description={Nein, sie ist mehrdeutig -- es gibt i.\,A.\ mehrere Wege, einen gegebenen Dot-Bracket-String aus dem Startsymbol $S$ herzuleiten. Für den Nussinov-Algorithmus ist das kein Problem, wohl aber z.\,B.\ beim Abzählen der Anzahl möglicher Strukturen.},
+    type=dinge
+}
+
+\newglossaryentry{def_eindeutige_rna_grammatik}{
+    name={Wie lautet eine eindeutige (unambiguous) Grammatik für RNA-Sekundärstrukturen, und nach welcher Idee wurde sie konstruiert?},
+    description={$S \to \varepsilon \mid S\texttt{.} \mid S(S)$. Idee: Man betrachtet die letzte Base einer nichtleeren Struktur -- sie ist entweder ungepaart (gefolgt von einem kürzeren Präfix) oder mit einer früheren Position gepaart; dadurch entsteht für jede Struktur nur ein eindeutiger Herleitungsweg.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Der Nussinov-Algorithmus
+% ===================================================================
+
+\newglossaryentry{bem_nussinov_grundidee}{
+    name={Was ist die grundlegende algorithmische Idee des Nussinov-Algorithmus?},
+    description={Dynamische Programmierung: Man baut optimale Sekundärstrukturen längerer Teilsequenzen systematisch aus optimalen Strukturen kürzerer Teilsequenzen auf, basierend auf der rekursiven Struktur-Beschreibung (Grammatik) aus dem vorherigen Abschnitt.},
+    type=dinge
+}
+
+\newglossaryentry{def_m_i_j_nussinov}{
+    name={Was bezeichnet $M(i,j)$ im Nussinov-Algorithmus?},
+    description={Den maximal erreichbaren Score (die Lösung des Struktur-Vorhersage-Problems) für den Teilstring $s[i\dots j]$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_basisfall_nussinov}{
+    name={Wie ist $M(i,j)$ im Basisfall definiert, wenn $j-i\le\delta$ gilt?},
+    description={$M(i,j)=0$, da wegen der Längen-/Abstandsbeschränkung ($\delta$ = minimale Anzahl ungepaarter Basen im Hairpin-Loop) kein Basenpaar möglich ist.},
+    type=dinge
+}
+
+\newglossaryentry{formel_nussinov_rekursion}{
+    name={Wie lautet die Rekursion des Nussinov-Algorithmus für $j-i>\delta$?},
+    description={$M(i,j) = \max\big\{M(i{+}1,j),\ M(i,j{-}1),\ M(i{+}1,j{-}1)+\mu(i,j),\ \max_{i<k<j}\{M(i,k)+M(k{+}1,j)\}\big\}$, wobei $\mu(i,j)=\mathrm{score}(\{s[i],s[j]\})$ falls $\{s[i],s[j]\}$ ein gültiges Basenpaar ist, sonst $\mu(i,j)=-\infty$ (entspricht den vier Grammatik-Fällen: ungepaart links, ungepaart rechts, äußeres Paar, Zerlegung in zwei Strukturen).},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_rekursion_korrekt}{
+    name={Warum liefert die Nussinov-Rekursion (Kombination optimaler Teillösungen) tatsächlich die global optimale Struktur?},
+    description={Wegen des Optimalitätsprinzips: Die Bestandteile einer optimalen Struktur müssen selbst optimal sein. Beweis durch Widerspruch: Wären sie nicht optimal, könnte man aus besseren Teilstrukturen eine bessere Gesamtstruktur bauen -- Widerspruch zur Optimalität der Gesamtstruktur.},
+    type=dinge
+}
+
+\newglossaryentry{bem_berechnungsreihenfolge_nussinov}{
+    name={In welcher Reihenfolge muss die Matrix $M$ im Nussinov-Algorithmus berechnet werden, und warum?},
+    description={In aufsteigender Reihenfolge von $d=j-i$ (also nach Länge der Teilintervalle), da zur Berechnung von $M(i,j)$ alle Einträge $M(x,y)$ für echte Teilintervalle $[x,y]\subsetneq[i,j]$ bereits bekannt sein müssen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_traceback_nussinov}{
+    name={Wie wird beim Nussinov-Algorithmus die optimale Struktur (nicht nur ihr Score) rekonstruiert?},
+    description={Man speichert zusätzlich zu $M$ eine Traceback-Matrix $T$, die angibt, welche Produktionsregel (bzw.\ welches $k$ bei der $S\to SS$-Regel) an jeder Stelle zum Optimum geführt hat. Ausgehend von Zelle $(1,n)$ folgt man diesen Zeigern rückwärts, um die Dot-Bracket-Darstellung zu rekonstruieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_traceback_bewegungsrichtung_bedeutung}{
+    name={Wie sind die verschiedenen Bewegungsrichtungen beim Traceback im Nussinov-Algorithmus zu interpretieren?},
+    description={Diagonale Bewegung entspricht $S\to(S)$ (Basenpaar), horizontale oder vertikale Bewegung entspricht $S\to S.\mid.S$ (ungepaarte Base), und das Erreichen der untersten Diagonale (unterhalb $i=j$) entspricht $S\to\varepsilon$ (leere Struktur).},
+    type=dinge
+}
+
+\newglossaryentry{bem_komplexitaet_nussinov}{
+    name={Welchen Speicherplatz- und Zeitbedarf hat der Standard-Nussinov-Algorithmus?},
+    description={$O(n^2)$ Speicherplatz und $O(n^3)$ Zeit.},
+    type=dinge
+}
+
+\newglossaryentry{bem_four_russians_speedup}{
+    name={Auf welchen Wert lässt sich die Zeitkomplexität des Nussinov-Algorithmus mit dem "Four-Russians"-Speedup verbessern?},
+    description={Auf $O(n^3/\log n)$ (Frid und Gusfield, 2009).},
+    type=dinge
+}
+
+\newglossaryentry{bem_delta_diagonalen_ambiguitaet}{
+    name={Welche Vereinfachung kann man beim Traceback innerhalb der $\delta$-Diagonalen (Basisfall) vornehmen, um die Mehrdeutigkeit der Grammatik zu umgehen?},
+    description={Da in einem Hairpin-Loop eine Folge aus $S\to.S\mid S.$-Schritten ohnehin in $S\to\varepsilon$ endet und die resultierende Dot-Bracket-Notation unabhängig davon ist, ob der Punkt links oder rechts gesetzt wird, kann man sich beim Traceback innerhalb der $0$-Diagonalen auf NUR horizontale oder NUR vertikale Bewegung beschränken -- das vereinfacht das Backtracing, ohne Lösungen zu verlieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_mehrdeutige_optimale_faltung}{
+    name={Kann es zu einer RNA-Sequenz mehrere verschiedene Sekundärstrukturen mit demselben optimalen Score geben?},
+    description={Ja -- der Nussinov-Algorithmus liefert den optimalen Score eindeutig, aber es kann mehrere verschiedene Faltungen (Dot-Bracket-Strukturen) geben, die diesen optimalen Score erreichen; welche davon das Backtracing liefert, hängt von den getroffenen Tie-Breaking-Entscheidungen ab.},
+    type=dinge
+}
