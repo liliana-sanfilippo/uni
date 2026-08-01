@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hirschberg-Algorithmus – Visualisierung</title>
+<style>
+  :root{--kap:#950E4F;--kom:#14060D;--sec:#BF1266;--defi:#EF58A0;--bsp:#F49EC4;
+        --kmt:#8A7B84;--link:#A22F69;--bd:#E3CBD6;--hl:#F8CFE1;--ring:#FCE1EE;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--kom);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:20px;}
+  h1{color:var(--kap);font-size:22px;font-weight:600;margin:0 0 4px;}
+  .sub{color:var(--kmt);font-size:14px;margin:0 0 16px;}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px;}
+  label{font-size:13px;color:var(--sec);font-weight:500;}
+  input[type=text]{width:110px;padding:6px 8px;border:1px solid var(--bd);border-radius:6px;
+       font-family:monospace;text-transform:uppercase;letter-spacing:1px;font-size:14px;}
+  button{padding:6px 12px;border:1px solid var(--kap);background:#fff;color:var(--kap);
+       border-radius:6px;font-size:13px;cursor:pointer;}
+  button:hover{background:var(--ring);}
+  button.primary{background:var(--kap);color:#fff;}
+  .panel{border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin:14px 0;}
+  .panel.cur{border-color:var(--kap);box-shadow:0 0 0 2px var(--ring);}
+  .panelhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;}
+  .panelhead h2,.panelhead h3{margin:0;color:var(--kap);}
+  .panelhead h3{font-size:15px;font-weight:600;}
+  .panelhead h2{font-size:18px;}
+  .depthbadge{display:inline-block;background:var(--sec);color:#fff;border-radius:10px;
+       font-size:11px;padding:1px 8px;margin-right:6px;vertical-align:middle;}
+  .svgwrap{overflow-x:auto;}
+  .final{border:2px solid var(--kap);border-radius:12px;padding:12px 16px;margin:8px 0 22px;background:#FFF7FB;}
+  .legend{font-size:12px;color:var(--kmt);margin:6px 0 0;}
+</style>
+</head>
+<body>
+  <h1>Hirschberg-Algorithmus</h1>
+  <p class="sub">Lineare-Speicher-Version des globalen Alignments · Editierdistanz (Match 0, Mismatch/Lücke 1). Jeder Schritt ist eine einzelne, herunterladbare SVG-Grafik.</p>
+
+  <div class="controls">
+    <label>X</label><input id="sx" type="text" value="CACG">
+    <label>Y</label><input id="sy" type="text" value="GAG">
+    <button class="primary" id="load">Berechnen</button>
+    <button id="dlall">Alles als eine SVG ⬇</button>
+    <span style="flex:1"></span>
+    <button id="prev">‹ Schritt</button>
+    <button id="next">Schritt ›</button>
+    <button id="clear">Markierung aus</button>
+  </div>
+
+  <div id="final" class="final"></div>
+  <p class="legend">Pfeile = Herkunft eines Wertes. D: ↖ Zeichen/Zeichen, ↑ X-Lücke, ← Y-Lücke. D<sup>rev</sup> (rückwärts): ↘ ↓ →. Graue Zeilen sind für die jeweilige Richtung nicht nötig. Der Kringel in C markiert das Minimum der Mittelzeile = Schnittpunkt und Editierdistanz.</p>
+  <div id="steps"></div>
+
+<script>
+const COL={kap:'#950E4F',kom:'#14060D',sec:'#BF1266',defi:'#EF58A0',bsp:'#F49EC4',
+           kmt:'#8A7B84',bd:'#E3CBD6',hl:'#F8CFE1',ring:'#FCE1EE',gray:'#F1EAEE'};
+const FA={d:'\u2196',u:'\u2191',l:'\u2190'}, BA={d:'\u2198',D:'\u2193',R:'\u2192'};
+let X,Y,steps,path,editD,cur;
+
+/* ---------- DP ---------- */
+function nwMatrix(A,B){
+  const m=A.length,n=B.length,D=[],AR=[];
+  for(let i=0;i<=m;i++){D[i]=[];AR[i]=[];}
+  for(let i=0;i<=m;i++){D[i][0]=i;AR[i][0]=i>0?['u']:[];}
+  for(let j=0;j<=n;j++){D[0][j]=j;AR[0][j]=j>0?['l']:[];}
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++){
+    const c=A[i-1]===B[j-1]?0:1,dg=D[i-1][j-1]+c,up=D[i-1][j]+1,lf=D[i][j-1]+1,b=Math.min(dg,up,lf);
+    D[i][j]=b;const a=[];if(dg===b)a.push('d');if(up===b)a.push('u');if(lf===b)a.push('l');AR[i][j]=a;}
+  return {D,AR};
+}
+function nwSuffix(A,B){
+  const m=A.length,n=B.length,S=[],AR=[];
+  for(let i=0;i<=m;i++){S[i]=[];AR[i]=[];}
+  for(let i=0;i<=m;i++){S[i][n]=m-i;AR[i][n]=i<m?['D']:[];}
+  for(let j=0;j<=n;j++){S[m][j]=n-j;AR[m][j]=j<n?['R']:[];}
+  for(let i=m-1;i>=0;i--)for(let j=n-1;j>=0;j--){
+    const c=A[i]===B[j]?0:1,dg=S[i+1][j+1]+c,dn=S[i+1][j]+1,rt=S[i][j+1]+1,b=Math.min(dg,dn,rt);
+    S[i][j]=b;const a=[];if(dg===b)a.push('d');if(dn===b)a.push('D');if(rt===b)a.push('R');AR[i][j]=a;}
+  return {S,AR};
+}
+function nwPathFrom(D,A,B){
+  let i=A.length,j=B.length,p=[[i,j]];
+  while(i>0||j>0){
+    if(i>0&&j>0&&D[i][j]===D[i-1][j-1]+(A[i-1]===B[j-1]?0:1)){i--;j--;}
+    else if(i>0&&D[i][j]===D[i-1][j]+1)i--; else j--;
+    p.push([i,j]);}
+  return p.reverse();
+}
+function addPt(i,j){const p=path[path.length-1];if(!p||p[0]!==i||p[1]!==j)path.push([i,j]);}
+function hb(x,y,xo,yo,depth){
+  const m=x.length,n=y.length,step={depth,r0:xo,r1:xo+m,c0:yo,c1:yo+n,xc:x,yc:y};
+  if(m<=1||n<=1){step.type='base';const M=nwMatrix(x,y);step.M=M;
+    const loc=nwPathFrom(M.D,x,y);step.loc=loc;for(const [i,j] of loc)addPt(xo+i,yo+j);steps.push(step);return;}
+  step.type='split';const mid=Math.floor(m/2);
+  const F=nwMatrix(x,y),B=nwSuffix(x,y),C=[];
+  for(let i=0;i<=m;i++){C[i]=[];for(let j=0;j<=n;j++)C[i][j]=F.D[i][j]+B.S[i][j];}
+  let best=Infinity,ps=0;for(let j=0;j<=n;j++)if(C[mid][j]<best){best=C[mid][j];ps=j;}
+  Object.assign(step,{mid,F,B,C,ps,edit:best});steps.push(step);
+  hb(x.slice(0,mid),y.slice(0,ps),xo,yo,depth+1);
+  hb(x.slice(mid),y.slice(ps),xo+mid,yo+ps,depth+1);
+}
+
+/* ---------- SVG building blocks (return {w,h,s} relative to 0,0) ---------- */
+function tableG(title,colH,rowH,getCell){
+  const cw=40,chh=34,rHW=32,cHH=26,tH=22,R=rowH.length,Cn=colH.length,w=rHW+Cn*cw,h=tH+cHH+R*chh;
+  let s=`<text x="0" y="15" font-size="13" font-weight="600" fill="${COL.sec}">${title}</text>`;
+  const ox=rHW,oy=tH+cHH;
+  for(let j=0;j<Cn;j++) s+=`<text x="${ox+j*cw+cw/2}" y="${oy-9}" text-anchor="middle" font-size="12" font-family="monospace" fill="${COL.kmt}">${colH[j]}</text>`;
+  for(let i=0;i<R;i++) s+=`<text x="${rHW-7}" y="${oy+i*chh+chh/2+4}" text-anchor="middle" font-size="12" font-family="monospace" fill="${COL.kmt}">${rowH[i]}</text>`;
+  for(let i=0;i<R;i++)for(let j=0;j<Cn;j++){
+    const c=getCell(i,j),x=ox+j*cw,y=oy+i*chh;
+    const fill=c.circle?COL.ring:(c.hl?COL.hl:(c.gray?COL.gray:'#fff'));
+    s+=`<rect x="${x}" y="${y}" width="${cw}" height="${chh}" fill="${fill}" stroke="${COL.bd}" stroke-width="0.7"/>`;
+    const tc=c.gray?COL.kmt:(c.circle?COL.kap:COL.kom),fw=c.circle?'700':'400',hasA=c.arr&&c.arr.length;
+    s+=`<text x="${x+cw/2}" y="${y+(hasA?13:chh/2+4)}" text-anchor="middle" font-size="13" font-weight="${fw}" fill="${tc}" font-family="monospace">${c.v}</text>`;
+    if(hasA) s+=`<text x="${x+cw/2}" y="${y+chh-6}" text-anchor="middle" font-size="11" fill="${COL.kmt}">${c.arr.map(a=>c.map[a]).join('')}</text>`;
+    if(c.circle) s+=`<rect x="${x+3}" y="${y+3}" width="${cw-6}" height="${chh-6}" rx="4" fill="none" stroke="${COL.kap}" stroke-width="1.8"/>`;
+  }
+  return {w,h,s};
+}
+function gridG(cell,o){
+  const m=X.length,n=Y.length,mL=26,mT=20,gw=cell,gh=cell;
+  const px=j=>mL+j*gw,py=i=>mT+i*gh,w=mL+n*gw+14,h=mT+m*gh+12;
+  let s='';
+  for(let i=0;i<=m;i++) s+=`<line x1="${px(0)}" y1="${py(i)}" x2="${px(n)}" y2="${py(i)}" stroke="${COL.bd}" stroke-width="0.7"/>`;
+  for(let j=0;j<=n;j++) s+=`<line x1="${px(j)}" y1="${py(0)}" x2="${px(j)}" y2="${py(m)}" stroke="${COL.bd}" stroke-width="0.7"/>`;
+  s+=`<text x="${px(0)-7}" y="${mT-6}" font-size="11" fill="${COL.kmt}">ε</text>`;
+  for(let j=0;j<n;j++) s+=`<text x="${px(j)+gw/2}" y="${mT-7}" text-anchor="middle" font-size="12" font-family="monospace" fill="${COL.kmt}">${Y[j]}</text>`;
+  for(let i=0;i<m;i++) s+=`<text x="${mL-9}" y="${py(i)+gh/2+4}" text-anchor="middle" font-size="12" font-family="monospace" fill="${COL.kmt}">${X[i]}</text>`;
+  if(o.rect){const r=o.rect;
+    s+=`<rect x="${px(r.c0)}" y="${py(r.r0)}" width="${(r.c1-r.c0)*gw}" height="${(r.r1-r.r0)*gh}" fill="${COL.bsp}" fill-opacity="0.28" stroke="${COL.sec}" stroke-width="1"/>`;
+    if(r.mid!=null) s+=`<line x1="${px(r.c0)}" y1="${py(r.mid)}" x2="${px(r.c1)}" y2="${py(r.mid)}" stroke="${COL.sec}" stroke-width="1.4" stroke-dasharray="4 3"/>`;}
+  if(o.path&&o.path.length){let d='M '+o.path.map(([i,j])=>`${px(j)} ${py(i)}`).join(' L ');
+    s+=`<path d="${d}" fill="none" stroke="${COL.kap}" stroke-width="${o.bold?2.4:1.2}" stroke-linejoin="round" opacity="${o.bold?1:0.4}"/>`;}
+  (o.splits||[]).forEach(sp=>{
+  s+=`<circle
+    cx="${px(sp.c)}"
+    cy="${py(sp.r)}"
+    r="4.5"
+    fill="#fff"
+    stroke="${COL.kap}"
+    stroke-width="1.6"/>`;
+});
+  return {w,h,s};
+}
+function layout(blocks,maxW,gap){
+  let x=0,y=0,rowH=0,totW=0,placed=[];
+  for(const b of blocks){ if(x>0&&x+b.w>maxW){y+=rowH+gap;x=0;rowH=0;}
+    placed.push({x,y,b});x+=b.w+gap;rowH=Math.max(rowH,b.h);totW=Math.max(totW,x-gap);}
+  return {w:totW,h:y+rowH,placed};
+}
+function splitsUpTo(idx){
+    const o=[];
+
+    for(let t=0;t<=idx;t++){
+        const s=steps[t];
+
+        if(s.type==='split'){
+            o.push({
+                r: s.r0 + s.mid,
+                c: s.c0 + s.ps
+            });
+        }
+    }
+
+    return o;
+}
+/* ---------- one composite step (inner) ---------- */
+function stepInner(sp,idx){
+  const titleH=42,gap=18,maxW=900;
+  const mid=sp.type==='split'?sp.mid:null;
+  const blocks=[ gridG(22,{rect:{r0:sp.r0,r1:sp.r1,c0:sp.c0,c1:sp.c1,mid:mid!=null?sp.r0+mid:null},
+                            splits:splitsUpTo(idx),path:path,bold:false}) ];
+  if(sp.type==='split'){
+    const y=sp.yc.split(''),x=sp.xc.split(''),colF=['ε',...y],rowF=['ε',...x],colB=[...y,'ε'],rowB=[...x,'ε'];
+    blocks.push(tableG('D(i,j)',colF,rowF,(i,j)=>({v:sp.F.D[i][j],arr:sp.F.AR[i][j],map:FA,gray:i>mid,hl:i===mid})));
+    blocks.push(tableG('D^rev(i,j)',colB,rowB,(i,j)=>({v:sp.B.S[i][j],arr:sp.B.AR[i][j],map:BA,gray:i<mid,hl:i===mid})));
+    blocks.push(tableG('T(i,j) = D(i,j) + D^rev(i,j)',colF,rowF,(i,j)=>({v:sp.C[i][j],hl:i===mid,circle:(i===mid&&j===sp.ps)})));
+    blocks.push(tableG('T (Summe Mittelzeile)',colF.map((_,j)=>String(j)),['T'],(i,j)=>({v:sp.C[mid][j],hl:true,circle:(j===sp.ps)})));
+  } else {
+    const y=sp.yc.split(''),x=sp.xc.split(''),colF=['ε',...y],rowF=['ε',...x],ps=new Set(sp.loc.map(p=>p[0]+','+p[1]));
+    blocks.push(tableG('Basisfall D (direktes Alignment)',colF,rowF,(i,j)=>({v:sp.M.D[i][j],arr:sp.M.AR[i][j],map:FA,hl:ps.has(i+','+j)})));
+  }
+  const lay=layout(blocks,maxW,gap);
+  let s=`<text x="0" y="18" font-size="16" font-weight="700" fill="${COL.kap}">Schritt ${idx+1} · Ebene ${sp.depth} · ${sp.type==='split'?'Teilung':'Basisfall'}</text>`;
+  s+=`<text x="0" y="37" font-size="13" fill="${COL.kmt}">Rechteck X[${sp.r0}‥${sp.r1}] × Y[${sp.c0}‥${sp.c1}]</text>`;
+  lay.placed.forEach(p=>{s+=`<g transform="translate(${p.x},${titleH+p.y})">${p.b.s}</g>`;});
+  let cy=titleH+lay.h+22;
+  if(sp.type==='split'){
+    s+=`<text x="0" y="${cy}" font-size="13" fill="${COL.kom}">Minimum von T in Spalte p=${sp.ps} (Y-Position ${sp.c0+sp.ps}) → Schnittpunkt. Beide Hälften werden anschließend weiter berechnet.</text>`;
+    cy+=12; const lbl=`d(x,y) (Editierdistanz der Sequenzen) = ${sp.edit}`, bw=lbl.length*8+16;
+    s+=`<rect x="0" y="${cy}" width="${bw}" height="24" rx="6" fill="${COL.hl}" stroke="${COL.defi}"/>`;
+    s+=`<text x="8" y="${cy+16}" font-size="14" font-weight="700" fill="${COL.kap}">${lbl}</text>`;
+    cy+=30;
+  } else {
+    s+=`<text x="0" y="${cy}" font-size="13" fill="${COL.kom}">Eine Zeile/Spalte übrig – der Pfad (hervorgehoben) wird direkt abgelesen. Kosten = ${sp.M.D[sp.xc.length][sp.yc.length]}.</text>`;
+    cy+=10;
+  }
+  return {w:Math.max(lay.w,380),h:cy+8,s};
+}
+
+/* ---------- final overview (inner) ---------- */
+function alignmentLines(){
+  let a='',b='',mm='';
+  for(let t=1;t<path.length;t++){const [pi,pj]=path[t-1],[i,j]=path[t];
+    if(i===pi+1&&j===pj+1){a+=X[pi];b+=Y[pj];mm+=(X[pi]===Y[pj]?'|':' ');}
+    else if(i===pi+1){a+=X[pi];b+='-';mm+=' ';} else {a+='-';b+=Y[pj];mm+=' ';}}
+  return [a,mm,b];
+}
+function finalInner(){
+  const allSplits=steps.filter(s=>s.type==='split').map(s=>({r:s.r0+s.mid,c:s.c0+s.ps}));
+  const grid=gridG(38,{path:path,bold:true,splits:allSplits});
+  let s=`<text x="0" y="20" font-size="18" font-weight="700" fill="${COL.kap}">Gesamtübersicht – der komplette Weg</text>`;
+  s+=`<g transform="translate(0,32)">${grid.s}</g>`;
+  const aln=alignmentLines(),ax=grid.w+28,ay=52;
+  aln.forEach((l,k)=>{s+=`<text xml:space="preserve" x="${ax}" y="${ay+k*22}" font-family="monospace" font-size="16" fill="${COL.kom}">${l.replace(/ /g,'\u00a0')}</text>`;});
+  const cy=32+grid.h+24;
+  s+=`<text x="0" y="${cy}" font-size="14" fill="${COL.kom}">Gesamt-Editierdistanz </text>`;
+  s+=`<rect x="188" y="${cy-15}" width="${('C = '+editD).length*9+16}" height="22" rx="6" fill="${COL.hl}" stroke="${COL.defi}"/>`;
+  s+=`<text x="196" y="${cy}" font-size="14" font-weight="700" fill="${COL.kap}">C = ${editD}</text>`;
+  const w=Math.max(grid.w+28+aln[0].length*10, 360), h=cy+14;
+  return {w,h,s};
+}
+
+/* ---------- assemble + download ---------- */
+function rootSvg(w,h,inner){
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="max-width:100%;height:auto" font-family="sans-serif"><rect width="${w}" height="${h}" fill="#ffffff"/>${inner}</svg>`;
+}
+function download(name,svg){
+  const blob=new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n'+svg],{type:'image/svg+xml;charset=utf-8'});
+  const u=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);
+}
+function combinedSVG(){
+  const gap=34;let y=8,w=0,parts='';
+  const fin=finalInner();parts+=`<g transform="translate(12,${y})">${fin.s}</g>`;y+=fin.h+gap;w=Math.max(w,fin.w);
+  for(let i=0;i<steps.length;i++){const si=stepInner(steps[i],i);
+    parts+=`<line x1="12" y1="${y-gap/2}" x2="${w+12}" y2="${y-gap/2}" stroke="${COL.bd}"/>`;
+    parts+=`<g transform="translate(12,${y})">${si.s}</g>`;y+=si.h+gap;w=Math.max(w,si.w);}
+  return rootSvg(w+24,y,parts);
+}
+window.download=download;
+
+/* ---------- page render ---------- */
+window.stepSvgs=[]; window.finalSvg='';
+function renderFinal(){
+  let x=document.getElementById('sx').value
+    .toUpperCase()
+    .replace(/[^ACGTU]/g,'')
+    .slice(0,6);
+
+  let y=document.getElementById('sy').value
+    .toUpperCase()
+    .replace(/[^ACGTU]/g,'')
+    .slice(0,6);
+
+  const fi=finalInner();
+
+  window.finalSvg=rootSvg(
+    fi.w+16,
+    fi.h+8,
+    `<g transform="translate(8,4)">${fi.s}</g>`
+  );
+
+  document.getElementById('final').innerHTML=
+    `<div class="panelhead">
+       <h2>Gesamtübersicht</h2>
+       <button onclick="download('hirschberg_uebersicht_${x}_${y}.svg',window.finalSvg)">
+         Als SVG ⬇
+       </button>
+       <button onclick="downloadPng('hirschberg_uebersicht_${x}_${y}.png',window.finalSvg,2)">
+         Als PNG ⬇
+       </button>
+     </div>`+
+    `<div class="svgwrap">${window.finalSvg}</div>`;
+}
+
+function downloadPng(filename, svgString, scale = 2) {
+  const svgBlob = new Blob([svgString], {
+    type: 'image/svg+xml;charset=utf-8'
+  });
+
+  const url = URL.createObjectURL(svgBlob);
+  const img = new Image();
+
+  img.onload = function () {
+    const canvas = document.createElement('canvas');
+
+    canvas.width = img.naturalWidth * scale;
+    canvas.height = img.naturalHeight * scale;
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.scale(scale, scale);
+    ctx.drawImage(img, 0, 0);
+
+    URL.revokeObjectURL(url);
+
+    canvas.toBlob(function (blob) {
+      const pngUrl = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = pngUrl;
+      a.download = filename;
+      a.click();
+
+      URL.revokeObjectURL(pngUrl);
+    }, 'image/png');
+  };
+
+  img.src = url;
+}
+
+function renderSteps(){
+  window.stepSvgs=[];
+  let h='';
+   let x=document.getElementById('sx').value
+    .toUpperCase()
+    .replace(/[^ACGTU]/g,'')
+    .slice(0,6);
+
+  let y=document.getElementById('sy').value
+    .toUpperCase()
+    .replace(/[^ACGTU]/g,'')
+    .slice(0,6);
+
+  for(let i=0;i<steps.length;i++){
+    const si=stepInner(steps[i],i);
+
+    const svg=rootSvg(
+      si.w+16,
+      si.h+8,
+      `<g transform="translate(8,4)">${si.s}</g>`
+    );
+
+    window.stepSvgs[i]=svg;
+
+    h+=
+      `<div class="panel" id="st${i}">
+        <div class="panelhead">
+          <h3>
+            <span class="depthbadge">Ebene ${steps[i].depth}</span>
+            Schritt ${i+1} · ${steps[i].type==='split'?'Teilung':'Basisfall'}
+          </h3>
+
+          <button onclick="download(
+            'hirschberg_schritt_${i+1}.svg',
+            window.stepSvgs[${i}]
+          )">
+            Als SVG ⬇
+          </button>
+
+          <button onclick="downloadPng(
+            'hirschberg_${x}_${y}_schritt_${i+1}.png',
+            window.stepSvgs[${i}],
+            2
+          )">
+            Als PNG ⬇
+          </button>
+        </div>
+
+        <div class="svgwrap">${svg}</div>
+      </div>`;
+  }
+
+  document.getElementById('steps').innerHTML=h;
+}
+function highlight(){document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('cur',i===cur));
+  if(cur>=0){const el=document.getElementById('st'+cur);if(el)el.scrollIntoView({behavior:'smooth',block:'center'});}}
+function compute(){
+  let x=document.getElementById('sx').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,10);
+  let y=document.getElementById('sy').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,10);
+  if(x.length<2)x='AGTAC';if(y.length<2)y='ATCG';
+  document.getElementById('sx').value=x;document.getElementById('sy').value=y;
+  X=x;Y=y;steps=[];path=[];editD=nwMatrix(X,Y).D[X.length][Y.length];
+  hb(X,Y,0,0,0);cur=-1;renderFinal();renderSteps();highlight();
+}
+document.getElementById('load').onclick=compute;
+document.getElementById('dlall').onclick=()=>download('hirschberg_gesamt.svg',combinedSVG());
+document.getElementById('next').onclick=()=>{cur=Math.min(cur+1,steps.length-1);highlight();};
+document.getElementById('prev').onclick=()=>{cur=Math.max(cur-1,0);highlight();};
+document.getElementById('clear').onclick=()=>{cur=-1;highlight();};
+compute();
+</script>
+</body>
+</html>

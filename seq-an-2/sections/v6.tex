@@ -131,7 +131,7 @@ The forward-backward technique is used, for example, in the following problems:
     \end{itemize}}
 
 \section{Hirschberg’s Algorithm}\label{sec:hirschbergs-algorithm}
-\komm{Beispiel auf Seite \pageref{sec:hirschberg-example}.}
+\komm{Detailliertes Beispiel auf Seite \pageref{sec:hirschberg-example}.}
 \skript{
     We have seen that the \emph{optimal alignment cost} of two sequences $x$ and $y$ of lengths $m$ and
     $n$, respectively, as well as an \emph{optimal alignment} can be computed in $O(mn)$ time and $O(mn)$
@@ -207,6 +207,13 @@ The forward-backward technique is used, for example, in the following problems:
     \caption{Illustration of linear-space alignment.}\label{fig:figure32}
 \end{figure}
 
+\begin{bsp}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{images/hirschberg_uebersicht_CACG_GAG}
+        \caption{Tracing}\label{fig:hirschberg_uebersicht_CACG_GAG}
+    \end{figure}
+\end{bsp}
 
 \paragraph{Complexity analysis.} \skript{The space complexity is in $O(m+n)$ since all matrix computations can be performed row-wise using
 memory for two adjacent rows at most, and the final alignment has at most $m+n$ columns.
