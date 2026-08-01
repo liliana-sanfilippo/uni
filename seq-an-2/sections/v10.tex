@@ -1,6 +1,7 @@
 %! Author = lili
 %! Date = 8/1/26
 
+
 \section{Divide-and-Conquer Alignment}\label{sec:divide-and-conquer-alignment}
 \skript{In this section we present a heuristic for sum-of-pairs multiple sequence alignment that no longer
 gives any guarantee about the resulting alignment cost, although in practice it is often very good.
@@ -72,7 +73,8 @@ not necessarily optimal (see Example~\ref{bsp:multiple_additional_cost}). The co
 always multiple additional cost zero, nor is a cut with smallest possible additional cost necessarily
 optimal.}
 
-\begin{bsp}\label{bsp:multiple_additional_cost}
+\begin{bsp}
+    \label{bsp:multiple_additional_cost}
     \skript{
         Let $s_1 = \mathtt{CT}$, $s_2 = \mathtt{AGT}$, and $s_3 = \mathtt{G}$. Using unit cost edit distance, the
         three additional cost matrices are the following:
@@ -112,12 +114,18 @@ optimal.}
                 \varepsilon & \mathtt{G}
             \end{array}
             \to
-            \begin{pmatrix}\mathtt{C}\\\mathtt{A}\\\mathtt{-}\end{pmatrix}
+            \begin{pmatrix}
+                \mathtt{C}\\\mathtt{A}\\\mathtt{-}
+            \end{pmatrix}
             ++
-            \begin{pmatrix}\mathtt{-}&\mathtt{T}\\\mathtt{G}&\mathtt{T}\\\mathtt{G}&\mathtt{-}\end{pmatrix}
+            \begin{pmatrix}
+                \mathtt{-}&\mathtt{T}\\\mathtt{G}&\mathtt{T}\\\mathtt{G}&\mathtt{-}
+            \end{pmatrix}
             =
-            \begin{pmatrix}\mathtt{C}&\mathtt{-}&\mathtt{T}\\\mathtt{A}&\mathtt{G}&\mathtt{T}\\
-            \mathtt{-}&\mathtt{G}&\mathtt{-}\end{pmatrix}
+            \begin{pmatrix}
+                \mathtt{C}&\mathtt{-}&\mathtt{T}\\\mathtt{A}&\mathtt{G}&\mathtt{T}\\
+                \mathtt{-}&\mathtt{G}&\mathtt{-}
+            \end{pmatrix}
             \ \text{(SP-cost 7, not optimal).}
         \]
         But they might be optimal, as for the cut $(1,2,1)$:
@@ -128,12 +136,18 @@ optimal.}
                 \mathtt{G} & \varepsilon
             \end{array}
             \to
-            \begin{pmatrix}\mathtt{-}&\mathtt{C}\\\mathtt{A}&\mathtt{G}\\\mathtt{-}&\mathtt{G}\end{pmatrix}
+            \begin{pmatrix}
+                \mathtt{-}&\mathtt{C}\\\mathtt{A}&\mathtt{G}\\\mathtt{-}&\mathtt{G}
+            \end{pmatrix}
             ++
-            \begin{pmatrix}\mathtt{T}\\\mathtt{T}\\\mathtt{-}\end{pmatrix}
+            \begin{pmatrix}
+                \mathtt{T}\\\mathtt{T}\\\mathtt{-}
+            \end{pmatrix}
             =
-            \begin{pmatrix}\mathtt{-}&\mathtt{C}&\mathtt{T}\\\mathtt{A}&\mathtt{G}&\mathtt{T}\\
-            \mathtt{-}&\mathtt{G}&\mathtt{-}\end{pmatrix}
+            \begin{pmatrix}
+                \mathtt{-}&\mathtt{C}&\mathtt{T}\\\mathtt{A}&\mathtt{G}&\mathtt{T}\\
+                \mathtt{-}&\mathtt{G}&\mathtt{-}
+            \end{pmatrix}
             \ \text{(SP-cost 6, optimal).}
         \]}
 \end{bsp}
@@ -230,6 +244,7 @@ n^{k-1})$ time and uses $O(k^2 n^2)$ space.}
     An implementation of the divide-and-conquer alignment algorithm, plus further documentation, can be
     found at \url{https://bibiserv.cebitec.uni-bielefeld.de/dca}.}
 
+
 \section{Segment-Based Alignment}\label{sec:segment-based-alignment}
 \skript{The global multiple alignment methods mentioned so far, like the progressive methods or the
 simultaneous method DCA, have properties that are not necessarily desirable in all applications.
@@ -243,18 +258,20 @@ In particular, the alignment depends on many parameters, like the cost function 
 \begin{bsp}[Potential misalignment that may be caused by the choice of
 the affine gap penalties (Skript)]
     \[
-        A = \begin{pmatrix}\mathtt{A}&\mathtt{F}&\mathtt{A}&\mathtt{T}&\mathtt{C}&\mathtt{A}&\mathtt{T}&
-        \mathtt{C}&\mathtt{A}\\
-        \mathtt{A}&\mathtt{C}&\mathtt{A}&\mathtt{T}&\mathtt{-}&\mathtt{-}&\mathtt{-}&\mathtt{-}&\mathtt{A}
+        A = \begin{pmatrix}
+                \mathtt{A}&\mathtt{F}&\mathtt{A}&\mathtt{T}&\mathtt{C}&\mathtt{A}&\mathtt{T}&
+                \mathtt{C}&\mathtt{A}\\
+                \mathtt{A}&\mathtt{C}&\mathtt{A}&\mathtt{T}&\mathtt{-}&\mathtt{-}&\mathtt{-}&\mathtt{-}&\mathtt{A}
         \end{pmatrix}.
     \]
     If instead of individual positions, whole units of local similarities are compared and used to build a
     global multiple alignment, the result will depend much less on the particular alignment parameters, and
     instead reflect more the local similarities in the data, like in the following example:
     \[
-        A' = \begin{pmatrix}\mathtt{A}&\mathtt{F}&\mathtt{A}&\mathtt{T}&\mathtt{C}&\mathtt{A}&\mathtt{T}&
-        \mathtt{C}&\mathtt{A}\\
-        \mathtt{A}&\mathtt{-}&\mathtt{-}&\mathtt{-}&\mathtt{C}&\mathtt{A}&\mathtt{T}&\mathtt{-}&\mathtt{A}
+        A' = \begin{pmatrix}
+                 \mathtt{A}&\mathtt{F}&\mathtt{A}&\mathtt{T}&\mathtt{C}&\mathtt{A}&\mathtt{T}&
+                 \mathtt{C}&\mathtt{A}\\
+                 \mathtt{A}&\mathtt{-}&\mathtt{-}&\mathtt{-}&\mathtt{C}&\mathtt{A}&\mathtt{T}&\mathtt{-}&\mathtt{A}
         \end{pmatrix}.
     \]
     This is the idea of segment-based sequence alignment.
@@ -262,9 +279,9 @@ the affine gap penalties (Skript)]
 
 \subsection{Segment Identification}\label{subsec:segment-identification}
 \skript{The first step in a segment-based alignment approach is to identify the segments. There are different
-    possibilities to obtain segments.
+possibilities to obtain segments.
 
-    The possibly simplest strategy, followed by the program TWOALIGN (Abdedda\"im, 1997) is to use
+The possibly simplest strategy, followed by the program TWOALIGN (Abdedda\"im, 1997) is to use
     (suboptimal) local alignments like they are computed by the Smith-Waterman or Waterman-Eggert
     algorithms. A disadvantage of this approach is that the local alignment computation also requires the
     usual alignment parameters like score function and gap penalties.
@@ -275,14 +292,14 @@ the affine gap penalties (Skript)]
     followed in the DIALIGN method (Section~\ref{subsec:dialign}) is to use a statistical objective function that assigns
     the score $P_D(l_D, s_D)$ to a diagonal $D$ of length $l_D$ with $s_D$ matches.}
 
-    \definSB{p_value_diagonal}
+\definSB{p_value_diagonal}
 
-    where $p = 0.25$ for nucleotides and $p = 0.05$ for amino acids.
+where $p = 0.25$ for nucleotides and $p = 0.05$ for amino acids.
 
-    \definSB{weight_diagonal}
+\definSB{weight_diagonal}
 
 \skript{The time to compute all diagonals is $O(n^3)$, but this can be reduced to $O(n^2)$ if the maximal
-    length of a diagonal segment is bounded by a constant.}
+length of a diagonal segment is bounded by a constant.}
 
 \subsection{Segment Selection and Assembly}\label{subsec:segment-selection-and-assembly}
 
@@ -291,6 +308,61 @@ the affine gap penalties (Skript)]
     alignment, since they might be \emph{inconsistent}, i.e., the inclusion of some of the segments does not
     allow the inclusion of other segments into the alignment. In the case of two sequences, this is the
     case if and only if two segments ``cross'' as the two segments ``ON'' and ``ANA''.} % TODO  shown in Figure~10.4.
+
+\begin{figure}
+
+    \begin{tikzpicture}[
+        b/.style ={draw, minimum size=5.5mm, inner sep=0pt},
+        db/.style={b, dashed}]
+        \node at (-0.7,0){$s_1$};
+        \foreach \l [count=\i from 0] in {O,N}      {\node[db]  (a\i) at (\i*0.6,0){\l};}
+        \node  (a2) at (2*0.6,0){E};
+        \foreach \l [count=\i from 3] in {A,N,A}      {\node[b]  (a\i) at (\i*0.6,0){\l};}
+        \node (a6) at (6*0.6,0){C};
+        \foreach \l [count=\i from 7] in {O,N}      {\node[db] (a\i) at (\i*0.6,0){\l};}
+        \foreach \l [count=\i from 9] in {D,A}        {\node     (a\i) at (\i*0.6,0){\l};}
+        \node at (-0.7,-1.7){$s_2$};
+        \foreach \l [count=\j from 0] in {A,M,A}    {\node[b]  (b\j) at (\j*0.6+0.9,-1.7){\l};}
+        \node (b3) at (3*0.6+0.9,-1.7){Z};
+        \foreach \l [count=\j from 4] in {O,N}        {\node[db] (b\j) at (\j*0.6+0.9,-1.7){\l};}
+% Zuordnungen (durchgezogen = Match-Lauf ANA, gestrichelt = ON)
+        \draw[gray]        (a3.south) -- (b0.north);
+        \draw[gray]        (a4.south) -- (b1.north);
+        \draw[gray]        (a5.south) -- (b2.north);
+        \draw[gray,dashed] (a7.south) -- (b4.north);
+        \draw[gray,dashed] (a8.south) -- (b5.north);
+        \draw[gray,dashed] (a0.south) -- (b4.north);
+        \draw[gray,dashed] (a1.south) -- (b5.north);
+    \end{tikzpicture}
+    \space{1cm}
+    \begin{tikzpicture}[x=0.55cm, y=0.55cm, b/.style ={draw, minimum size=5.5mm, inner sep=0pt},
+        db/.style={b, dashed}]
+        % Spaltenkopf ONEANACONDA
+        \foreach \l [count=\i from 0] in {O,N}      {\node[db]  (a\i) at (\i,1){\l};}
+        \node  (a2) at (2,1){E};
+        \foreach \l [count=\i from 3] in {A,N,A}      {\node[b]  (a\i) at (\i,1){\l};}
+        \node (a6) at (6,1){C};
+        \foreach \l [count=\i from 7] in {O,N}      {\node[db] (a\i) at (\i,1){\l};}
+        \foreach \l [count=\i from 9] in {D,A}        {\node     (a\i) at (\i,1){\l};}
+        % Zeilenkopf AMAZON
+        \foreach \l [count=\j from 0] in {A,M,A} {\node[b] at (-1,-\j){\l};}
+        \node (b3) at (-1,-3){Z};
+        \foreach \l [count=\j from 4] in {O,N} {\node[db] at (-1,-\j){\l};}
+
+        %\foreach \l [count=\j from 0] in {A,M,A,Z,O,N}{\node at (-1,-\j*1){\l};}
+        % Rahmen
+        \draw (-0.5,0.5) rectangle (10.5,-5.5);
+        % Match-Block ANA (Spalten 3..5 x Zeilen 0..2) mit Diagonale
+        \draw (2.5,0.5) rectangle (5.5,-2.5);
+        \draw (2.5,0.5) -- (5.5,-2.5);
+        % ON unten rechts: zwei gestrichelte Kästchen, eines mit Diagonale
+        \draw[dashed] (6.5,-3.5) rectangle (8.5,-5.5);
+        \draw[dashed] (6.5,-3.5) -- (8.5,-5.5);
+        % ON links unten (gestrichelt, ohne Diagonale)
+        \draw[dashed] (-0.5,-3.5) rectangle (1.5,-5.5);
+    \end{tikzpicture}
+    \caption{Inconsistent pairwise alignment segments.}\label{fig:figure17}
+\end{figure}
 
 % TODO figure
 
