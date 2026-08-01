@@ -33,7 +33,7 @@ nicht kontextfrei $\Rightarrow$ Pumping-Lemma (kontextfrei).
 \begin{itemize}
     \item Ist die folgende Sprache regulär/nicht regulär, kontextfrei/nicht kontextfrei und warum:
     \begin{itemize}
-        \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ul{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
+        \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ol{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
         \item
         $\{ \ol{z}  \in \{\un{a}, \un{b}, \un{c}\}^* \mid Anzahl(\un{a}, \ol{z}) = Anzahl(\un{b}, \ol{z}) = Anzahl(\un{c}, \ol{z}) \}$ \txc{(NK2017)}
         \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, m=k \}$ \txc{(HK2019)}
@@ -106,7 +106,7 @@ Konstruktives Vorgehen: RegExp konkret hinschreiben.
 
 \subsubsection{Schnitt/Vereinigung zweier Sprachen aka ``erst den Schnitt berechnen''.} % \txc{2023P, 2023Z, 2025}
 \begin{itemize}
-    \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ul{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
+    \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ol{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
     \item  $\{a^n b^m c^k \mid n,m,k \in \nz_0, n \leq m \} \cap \{ a^n b^m c^k \mid n,m,k \in \nz_{0}, m \leq k \}$
     \txc{(PK2023)}
     \item $\{ a^m b^n c \mid n,m \in \nz_0, n \leq m\} \cap \{a^n b^m c^k \mid n,m,k \in \nz_0, n\leq m \}$ \txc{(HK2023)}
@@ -131,7 +131,7 @@ Trickfrage: feste Exponenten bzw.\ obere Schranke $\Rightarrow$ die Sprache ist
 endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
 
 \begin{itemize}
-    \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ul{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
+    \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ol{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
     \item $\{ \ol{x} \in \{\un{a}, ..., \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
     \item $\{a^{2025} b^{2025} c^k \mid k \in \nz_0, k \leq 2025 \}$ \txc{(PK2025)}
 \end{itemize}
@@ -140,11 +140,10 @@ endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
 \begin{itemize}
     \item \textbf{Endlich $\Rightarrow$ regulär.} $a^{2025}b^{2025}c^{k},\,k\le2025$ hat nur endlich viele Wörter
     $\Rightarrow$ regulär (und damit kontextfrei). Die festen $2025$ sind Konstanten, keine Variablen!
-    \item Das Pumping-Lemma ist \textbf{nur notwendig}, nicht hinreichend. Es beweist \emph{Nicht}-Regularität,
+    \item Das Pumping-Lemma ist \textbf{nur notwendig}, nicht hinreichend. Es beweist Nicht-Regularität,
     \textbf{niemals} Regularität.
-    \item ``Regulär $\Rightarrow$ auch kontextfrei'' nicht vergessen mit anzugeben, wenn nach beidem gefragt ist.
-    \item Beim Schnitt-Typ: Klasse \emph{nach} dem Schnitt bestimmen. $\{n=k\}\cap\{\dots\}$ erzwingt oft
-    $n=m=k$, was typischerweise \emph{nicht} kontextfrei ist.
+    \item ``Regulär $\Rightarrow$ nach dem Schnitt bestimmen. $\{n=k\}\cap\{\dots\}$ erzwingt oft
+    $n=m=k$, was typischerweise nicht kontextfrei ist.
 \end{itemize}
 \end{warn}
 
@@ -156,37 +155,129 @@ Nichtterminale $\to$ Zustände, ein zusätzlicher Finalzustand $f$ für Regeln $
 \begin{itemize}
     \item Geben Sie zu folgender rechtslinearer Grammatik einen äquivalenten NEA (als Diagramm) an:
     \begin{itemize}
-        \item \txc{(PK2021)}
-        \item \txc{(PK2023)}
-        \item \txc{(NK2023)}
-        \item \txc{(PK2025)}
+        \item $G=(\{S_0,S_1\},\{a,b,c\},\{S_0::=bS_0\mid aS_1\mid bS_1\mid a,\ S_1::=aS_0\mid b\},S_0)$ \txc{(PK2021)}
+        \item $G_1=(\{S_0,S_1\},\{a,b\},\{S_0::=aS_1\mid bS_0\mid bS_1\mid a,\ S_1::=aS_0\mid b\},S_0)$ \txc{(PK2023)}
+        \item $G:=(\{S_0,S_1,S_2,S_3\},\{a,b,c\},R,S_0)$ mit\\
+        $R:=\{S_0::=cS_0\mid c\mid aS_1\mid bS_1,\ S_1::=cS_1\mid aS_2\mid bS_2,\ S_2::=cS_2\mid aS_3\mid bS_3\mid a,\ S_3::=cS_3\mid c\}$ \txc{(NK2023)}
+        \item $G:=(\{S_0,S_1,S_2\},\{a,b,c\},R,S_0)$ mit\\
+        $R:=\{S_0::=aS_0\mid cS_0\mid aS_1,\ S_1::=cS_1\mid aS_2\mid bS_2,\ S_2::=aS_2\mid bS_2\mid a\mid b\}$ \txc{(PK2025)}
     \end{itemize}
     \item Betrachten Sie die rechtslineare Grammatik G. Vervollständigen Sie gemäß der Konstruktion in der Vorlesung
     folgenden NEA, der genau die Sprache erkennen soll, die die Grammatik erzeugt.
     \begin{itemize}
-        \item \txc{(HK2019)}
-        \item \txc{(NK2019)}
+        \item $G=(\{A_0,A_1,B_0,B_1\},\{a,b\},\{A_0::=aA_1\mid B_0,\ A_1::=aA_0\mid B_1\mid a,\ B_0::=bB_1\mid\eps,\ B_1::=bB_0\},A_0)$ \txc{(HK2019)}
+        \item $G=(\{A_0,A_1,B_0,B_1\},\{a,b\},\{A_0::=aA_1\mid B_0,\ A_1::=aA_0\mid B_1\mid a,\ B_0::=bB_1\mid\eps,\ B_1::=bB_0\},A_0)$ \txc{(NK2019)}
     \end{itemize}
     \item Geben Sie einen
 \end{itemize}
 
 \subsubsection{Potenzmengenkonstruktion NEA $\to$ DEA.}%\txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
-Fast jede Klausur... Mal als Diagramm, mal als Übergangstabelle. Müllzustand $\emptyset$ mitnehmen.
+Fast jede Klausur... Mal als Diagramm, mal als Übergangstabelle. Müllzustand $\emptyset$ mitnehmen. Zustände = Teilmengen
+
+\begin{itemize}
+    \item Geben Sie zu folgendem NEA einen DEA an (Tupel oder Diagramm bzw.\ vollständige Übergangstabelle),
+    der die gleiche Sprache akzeptiert.
+    \begin{itemize}
+        \item \txc{(HK2017)} NEA über $\{a,b\}$, \% Diagramm:\ $\Phi=\{q_0,q_1\}$, Start $q_0$;
+        $q_0\xrightarrow{b}q_0,\ q_0\xrightarrow{a,b}q_1,\ q_1\xrightarrow{a}q_1,\ q_1\xrightarrow{b}q_0$; $F=\{q_1\}$
+        \item \txc{(NK2017)} NEA über $\{a,b\}$, \% Diagramm:\ $\Phi=\{q_0,q_1\}$, Start $q_0$;
+        $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{b}q_1,\ q_1\xrightarrow{a,b}q_0$
+       % \; (alle Zustände der Konstruktion inkl.\ Müllzustand angeben)
+        \item \txc{(PK2021)} NEA über $\{a,b\}$, \% Diagramm:\ $\Phi=\{q_0,q_1,q_2\}$, Start $q_0$;
+        $q_0\xrightarrow{a}q_2,\ q_0\xrightarrow{a}q_1,\ q_1\xrightarrow{a}q_0,\ q_1\xrightarrow{a,b}q_2,\ q_2\xrightarrow{b}q_2$
+        %\; (nur erreichbare Zustände + Müllzustand nötig)
+        \item \txc{(PK2023)} DEA aus dem NEA von Teilaufgabe a) (Grammatik $G_1$)
+        \item \txc{(NK2023)} NEA $A$ über $\{a,b\}$, \% Diagramm:\ Start $q_0$;\\
+        $\Delta$: $\ \delta(\{q_0\},a)=\{q_1,q_2\},\ \delta(\{q_0\},b)=\{q_0\},\ \delta(\{q_1\},a)=\{q_0\},\ \delta(\{q_1\},b)=\{q_2\},\ \delta(\{q_2\},a)=\emptyset,\ \delta(\{q_2\},b)=\emptyset$;
+       % \; Übergangstabelle ergänzen, Start-/Finalzustände angeben
+        \item \txc{(PK2025)} DEA aus dem NEA von Teilaufgabe a) (6 Pkt., als Diagramm)
+    \end{itemize}
+\end{itemize}
 
 \subsubsection{DEA direkt für eine gegebene Sprache angeben.} %\txc{2017H, 2017N}
-z.\,B.\ ``$\#_a(x)$ ungerade'' oder ``$\#_a(x)\equiv 1 \pmod 4$'' -- Zähl-Automat modulo\,$k$.
+z.\,B.\ ``$\#_a(x)$ ungerade'' oder ``$\#_a(x)\equiv 1 \pmod 4$'' aka Zähl-Automat modulo\,$k$.
+\begin{itemize}
+    \item Geben Sie einen DEA (als Automatendiagramm) an für die Sprache:
+    \begin{itemize}
+        \item  $\{x\in\{a,b,c\}^*\mid \#_a(x)\text{ ist ungerade}\}$ \txc{(HK2017)}
+        \item  $\{x\in\{a,b\}^*\mid \#_a(x)\text{ ist mit Rest }1\text{ durch }4\text{ teilbar}\}$ \txc{(NK2017)}
+    \end{itemize}
+\end{itemize}
 
 \subsubsection{Komplement-Automat konstruieren.} % \txc{2019H, 2019N, 2021, 2023P}
-Finalzustände tauschen nur beim vollständigen DEA korrekt.
+Finalzustände tauschen nur beim vollständigen DEA korrekt!
+
+\begin{itemize}
+    \item Konstruieren Sie einen NEA $A_C$ (als Diagramm) mit $L(A_C)=L(A)^C$.
+    \begin{itemize}
+        \item $A$ \% Diagramm über $\{a,b,c\}$, $\Phi=\{q_0,q_1,q_2,q_3\}$, Start/Final $q_0$;
+        $q_0\xrightarrow{a,c}q_1,\ q_1\xrightarrow{a}q_0,\ q_1\xrightarrow{b}q_1,\ q_1\xrightarrow{c}q_2,\ q_0\xrightarrow{b}q_2,\ q_2\xrightarrow{c}q_1,\ q_2\xrightarrow{a}q_3,\ q_2\xrightarrow{b}q_2,\ q_3\xrightarrow{a,b,c}q_3$ \txc{(PK2021)}
+    \end{itemize}
+    \item Gegeben ein endlicher Automat $A=(\Phi,\Sigma,\Delta,q_0,F)$. Betrachte $A_C=(\Phi,\Sigma,\Delta,q_0,\Phi\setminus F)$.
+    Unter welcher Annahme gilt $L(A_C)=L(A)^C$? Warum ist diese Annahme notwendig? \txc{(PK2023)}
+    \item Gegeben ein DEA $A=(\Phi,\Sigma,\delta,q_0,F)$. Konstruieren Sie einen DEA (in Tupelnotation),
+    der genau das Komplement von $L(A)$ akzeptiert. Begründen Sie. \txc{(HK2019)} \txc{(NK2019)}
+\end{itemize}
+
 
 \subsubsection{Kleene-Stern $L(A)^*$ bzw.\ $L(A)\cdot\{a\}$ konstruieren.} %\txc{2017H, 2017N, 2019N, 2023P}
 $\varepsilon$-Kanten von Finalzuständen zurück zum (neuen) Start; neuer akzeptierender Startzustand.
 
 \subsubsection{Konkatenation $L(A_1)\cdot L(A_2)$ / Vereinigung $L(A_1)\cup L(A_2)$.}% \txc{2019H, 2023Z (Konkat.);2025 (Vereinig.)}
-Diagramm \emph{und} allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Phi_1\cap\Phi_2=\emptyset$).
+Diagramm und allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Phi_1\cap\Phi_2=\emptyset$).
+\begin{itemize}
+    \item Wie kann man allgemein zu einem NEA $A$ einen NEA $A'$ konstruieren mit $L(A')=(L(A))^*$?
+    Demonstrieren Sie das Vorgehen am NEA aus Teilaufgabe b). \txc{(HK2017)}
+    \item Wie kann man allgemein zu einem NEA $A$ einen NEA $A'$ konstruieren mit $L(A')=L(A)\cdot\{a\}$?
+    Demonstrieren Sie am NEA aus Teilaufgabe b). \txc{(NK2017)}
+    \item Konstruieren Sie einen NEA $A_*$ mit $L(A_*)=L(A)^*$ (in Tupelnotation). Erläutern Sie, wie $A_*$
+    ein Wort $\overline{w_1}\dots\overline{w_n}$ mit $\overline{w_i}\in L(A)$ ableitet (explizite Rechnung).
+    \begin{itemize}
+        \item für allgemeines $A=(\Phi,\Sigma,\Delta,q_0,F)$ \txc{(PK2023)}
+        \item NEA für $L(A)^*$ (Tupelnotation), Begründung \txc{(NK2019)}
+    \end{itemize}
+\end{itemize}
+
 
 \subsubsection{Äquivalenz Grammatik $\leftrightarrow$ Automat beweisen/widerlegen.}%\txc{2021, 2023P, 2023Z, 2025}
 $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklusion beider Richtungen.
+
+\begin{itemize}
+    \item Beweisen oder widerlegen Sie, dass die von $G_2$ erzeugte Sprache mit der von $G_1$ übereinstimmt
+    ($L(G_1)=L(G_2)$, beide als Sprachen über $\{a,b,c\}$):
+    \begin{itemize}
+        \item  $G_2=(\{S_0',S_1',S_2',S_3'\},\{a,b,c\},R,S_0')$,\\
+        $R:=\{S_0'::=aS_1'\mid bS_0'\mid cS_2'\mid a,\ S_1'::=aS_0'\mid bS_0'\mid cS_2'\mid b,\ S_2'::=aS_3',\ S_3'::=aS_2'\mid bS_2'\}$ \txc{(PK2023)}
+    \end{itemize}
+    \item Beweisen oder widerlegen Sie: Die von der Grammatik $G'$ erzeugte Sprache ist die vom Automaten $A$
+    (aus Teilaufgabe c) akzeptierte Sprache, d.h.\ $L(A)=L(G')$.
+    \begin{itemize}
+        \item
+        $G'=(\{S_0',S_1',S_2'\},\{a,b\},\{S_0'::=aS_1'\mid aS_2'\mid bS_0'\mid a,\ S_1'::=aS_0'\mid bS_2'\mid b,\ S_2'::=bS_1'\},S_0')$ \txc{(NK2023)}
+    \end{itemize}
+    \item Beweisen Sie: Die von der Grammatik $G$ erzeugte Sprache steht in echter Inklusion zur vom Automaten
+    $A_3$ akzeptierten Sprache, d.h.\ $L(A_3)\subsetneq L(G)$.
+    \begin{itemize}
+        \item $G=(\{S_0',S_1',S_2',S_3'\},\{a,b,c\},R,S_0')$,\\
+        $R:=\{S_0'::=bS_0'\mid aS_1'\mid bS_1'\mid aS_2'\mid S_3',\ S_1'::=aS_0'\mid b,\ S_2'::=aS_1'\mid b,\ S_3'::=S_3'\mid\eps\}$.\\
+        $A_3$ \% Diagramm über $\{a,b\}$: $q_0,q_1,q_2$ mit Kanten $b,\,a,\,a,b,\,b$. \txc{(PK2025)}
+    \end{itemize}
+    \item Geben Sie zu dem NEA aus Aufgabenteil c eine rechtslineare Grammatik an, die genau die vom NEA
+    akzeptierte Sprache erzeugt, und erzeugen Sie mit dieser Grammatik das Wort $\underline{aabbb}$. \txc{(PK2021)} (NEA $A$ aus 2c, s.\,o.)
+\end{itemize}
+
+\subsubsection{Deterministischen Ersatzakzeptor vervollständigen.}
+Schon lange her...vermutlich nicht wieder?
+\begin{itemize}
+    \item Betrachten Sie den NEA auf der linken Seite. Vervollständigen Sie gemäß der Konstruktion aus
+    der Vorlesung den deterministischen Ersatzakzeptor (rechts vorgegebene Zustände).
+    \begin{itemize}
+        \item NEA \% Diagramm:\ $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{a}q_1,\ q_1\xrightarrow{\eps}q_0$;
+        vorgegebene DEA-Zustände $\{q_1\},\{q_0\},\{q_0,q_1\}$  \txc{(HK2019)}
+        \item NEA \% Diagramm:\ $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{b}q_2,\ q_2\xrightarrow{a}q_2,\ q_2\xrightarrow{\eps}q_0$;
+        vorgegebene DEA-Zustände $\{q_0\},\{q_1\},\{\,\},\{q_0,q_2\},\{q_2\}$ \txc{(NK2019)}
+    \end{itemize}
+\end{itemize}
 
 \section{Kontextfreie Grammatiken \& LR/Kellerautomaten}
 
@@ -201,8 +292,10 @@ $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklu
         \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
         \hline
         Jede endliche Sprache ist regulär. & W & endlich $\Rightarrow$ RegExp als Aufzählung.\\
-        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cup L_2$ kontextfrei. & W & CFL sogar \emph{immer} unter $\cup$ abgeschl.\\
-        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cap L_2$ kontextfrei. & W & ``es gibt ein Paar'' (z.\,B.\ regulär); \emph{nicht} für alle.\\
+        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cup L_2$ kontextfrei. & W & CFL sogar immer unter $\cup$
+        abgeschl.\\
+        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cap L_2$ kontextfrei. & W & ``es gibt ein Paar'' (z.\,B.\
+        regulär); nicht für alle.\\
         Kontextfreie Sprachen sind gegen Schnitt abgeschlossen. & F & Gegenbsp.\ $a^nb^nc^n$.\\
         $\exists$ kontextsensitive $L$ mit $L^C$ nicht kontextsensitiv. & F & kontextsensitiv unter Kompl.\ abgeschl.\\
         Reg.\ Sprache unendlich $\iff \exists$ Wort $n_0\le|w|<2n_0$ ($n_0=\#$Zust.). & W & Standard-Charakterisierung.\\
@@ -212,7 +305,7 @@ $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklu
         DPDAs/PDAs gegen Schnitt abgeschlossen. & F & schon CFL nicht unter $\cap$.\\
         DPDAs gegen Schnitt mit DEA abgeschlossen. & W & DCFL $\cap$ regulär $=$ DCFL.\\
         $\{a^nb^mc^nd\mid m,n\}$ durch DPDA erkennbar. & W & deterministisch: $a$ push, $c$ pop, $d$ prüfen.\\
-        Für kontextfreie Sprachen ist das Wortproblem \emph{nicht} entscheidbar. & F & CYK entscheidet es ($\mathcal O(n^3)$).\\
+        Für kontextfreie Sprachen ist das Wortproblem nicht entscheidbar. & F & CYK entscheidet es ($\mathcal O(n^3)$).\\
         $G=(\{S\},\{1,2\},\{S::=S1S\mid 2\},S)$ ist eindeutig. & F & z.\,B.\ ``$21212$'' hat zwei Bäume.\\
         Jede links-/rechtslineare Grammatik ist eindeutig. & F & reguläre Grammatiken können mehrdeutig sein.\\
         $G:\ S::=SS\mid(S)\mid\varepsilon$ ist nicht eindeutig. & W & $\varepsilon$/$SS$ erzeugen mehrere Bäume.\\
@@ -256,20 +349,22 @@ $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklu
         $A$ NP-vollständig $\iff A\le_p\text{SAT}$ und $\text{SAT}\le_p A$. & W & $A\le_p$SAT$\Rightarrow A\in$NP; SAT$\le_p A\Rightarrow$ NP-hart.\\
         $A$ NP-vollständig $\iff \text{SAT}\le_p A$. & F & $A\in$NP fehlt (das wäre nur NP-hart).\\
         $A$ NP-hart $\iff A\le_p\text{SAT}$. & F & Richtung falsch (müsste SAT$\le_p A$).\\
-        $A$ NP-hart $\iff A\le_p\text{ILP}\wedge\text{ILP}\le_p A$. & F & beschreibt NP-\emph{vollständig}, nicht NP-hart.\\
+        $A$ NP-hart $\iff A\le_p\text{ILP}\wedge\text{ILP}\le_p A$. & F & beschreibt NP-vollständig, nicht NP-hart.\\
         Für jede reguläre Sprache $A$ gilt $A\le_p$ 3-SAT. & W & regulär $\subseteq$ P $\subseteq$ NP; 3-SAT NP-vollst.\\
         $A\in\text{Chomsky-2}\Rightarrow$ 2-SAT $\le_p A$. & F & Gegenbsp.\ $A=\emptyset$ (kein Ziel für Ja-Instanzen).\\
         Longest-Path (Pfad Länge $\ge k$, knotendisjunkt) ist NP-hart. & W & Hamiltonpfad als Spezialfall.\\
-        Erreichbarkeit ($\exists$ Pfad $u$--$v$) ist NP-hart. & F & in P (BFS/DFS).\\
+        Erreichbarkeit ($\exists$ Pfad $u$-$v$) ist NP-hart. & F & in P (BFS/DFS).\\
         Fair teilen (Werte auf $k$ Personen gleich) ist NP-vollständig. & W & Partition/Bin-Packing.\\
         Bier auf Gläser ohne Überlauf verteilen. & W & Bin-Packing $\Rightarrow$ NP-hart.\\
         Wunsch-Zimmernachbar (je 1 Wunsch) erfüllbar? & F & Matching $\Rightarrow$ in P.\\
-        $\{1,\dots,5\}^*\to\Nz,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & W\,(?) & Ziffern $<10$ $\Rightarrow$ injektiv; def.-abhängig (nicht surjektiv).\\
-        $\N^*\to\N,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & F & unbeschr.\ $n_i$ $\Rightarrow$ Überträge, \emph{nicht} injektiv.\\
+        $\{1,\dots,5\}^*\to\nz,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & W\,(?) & Ziffern $<10$ $\Rightarrow$ injektiv; def.-abhängig (nicht surjektiv).\\
+        $\N^*\to\N,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & F & unbeschr.\ $n_i$ $\Rightarrow$
+        Überträge, nicht injektiv.\\
         Eine Gödelisierung muss polynomiell berechenbar sein. & F & nur berechenbar \& injektiv nötig.\\
         Universelle TM mit 42 Zuständen und 42 Bandzeichen. & W & UTMs existieren, $42\times42$ reicht üppig.\\
-        TM mit 42 Zuständen simulierbar durch TM mit wenigen Zuständen. & W\,(?) & Zustands-/Zeichen-Tradeoff; \emph{Skript prüfen}.\\
-        Universelle TM mit \emph{einem} Zustand. & (?) & umstritten -- \emph{im Skript / Tutorium klären}.\\
+        TM mit 42 Zuständen simulierbar durch TM mit wenigen Zuständen. & W\,(?) & Zustands-/Zeichen-Tradeoff;
+        Skript prüfen.\\
+        Universelle TM mit einem Zustand. & (?) & umstritten...im Skript / Tutorium klären.\\
         \hline
     \end{tabular}
 \end{mytable}
