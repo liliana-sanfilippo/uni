@@ -130,8 +130,8 @@ Example calculation on page~\pageref{sec:waterman-eggert-example}.
     \begin{algorithmic}
         \Statex \textbf{Input $S$:} matrix calculated by Smith-Waterman
         \State Take the calculated matrix from Smith-Waterman and set all cells that contribute to the optimal alignmnent to 0.
-        \State $i_start \gets $ start row
-        \For{$i \gets i_start$ to $n$}
+        \State $i_{start} \gets $ start row
+        \For{$i \gets i_{start}$ to $n$}
             \For{$j \gets 1$ to $m$}
                 \If{(i, j) belongs to optimal aligmnent}
                     \State $S(i,j) = 0$
@@ -149,3 +149,8 @@ Example calculation on page~\pageref{sec:waterman-eggert-example}.
 \end{algorithm}
 
 To calculate the k best non-overlapping alignments, repeat the above k times while inputing the result matrix of the previous run.
+
+Wichtige Formel dabei:
+\begin{equation}\label{eq:waterman_eggert}
+    \glsB*{waterman_eggert}
+\end{equation}
