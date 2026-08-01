@@ -3,15 +3,15 @@
 
 \begin{mytable}
     \begin{tabular}{@{}c l l@{}}
-        \toprule
+        \hline
         \textbf{Aufg.} & \textbf{Thema} & \textbf{Kernkompetenz}\\
-        \midrule
+        \hline
         1 & Sprachunterscheidung & Chomsky-Hierarchie, Pumping-Lemma, Grammatiken, RegExp\\
         2 & Endliche Automaten & NEA/DEA, Potenzmengenkonstr., Abschluss-Konstruktionen\\
         3 & Kontextfreie Gramm.\ \& LR/Kellerautomaten & Eindeutigkeit, LR-Parsing, Strukturbaum, CYK, PDA\\
         4 & Probleme / Berechenbarkeit \& Reduktion & P, NP, $\le_p$, Reduktionen, Chomsky-Größen\\
         5 & Multiple Choice & Querschnitt über den ganzen Stoff\\
-        \bottomrule
+        \hline
     \end{tabular}
 \end{mytable}
 
@@ -187,3 +187,89 @@ Diagramm \emph{und} allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Ph
 
 \subsubsection{Äquivalenz Grammatik $\leftrightarrow$ Automat beweisen/widerlegen.}%\txc{2021, 2023P, 2023Z, 2025}
 $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklusion beider Richtungen.
+
+\section{Kontextfreie Grammatiken \& LR/Kellerautomaten}
+
+\section{Probleme / Berechenbarkeit \& Reduktion}
+
+\section{Multiple-Choice}
+
+\subsubsection{Sprachen \& Automaten}
+\begin{mytable}
+    \begin{tabular}{@{}p{0.60\textwidth} c p{0.30\textwidth}@{}}
+        \hline
+        \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
+        \hline
+        Jede endliche Sprache ist regulär. & W & endlich $\Rightarrow$ RegExp als Aufzählung.\\
+        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cup L_2$ kontextfrei. & W & CFL sogar \emph{immer} unter $\cup$ abgeschl.\\
+        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cap L_2$ kontextfrei. & W & ``es gibt ein Paar'' (z.\,B.\ regulär); \emph{nicht} für alle.\\
+        Kontextfreie Sprachen sind gegen Schnitt abgeschlossen. & F & Gegenbsp.\ $a^nb^nc^n$.\\
+        $\exists$ kontextsensitive $L$ mit $L^C$ nicht kontextsensitiv. & F & kontextsensitiv unter Kompl.\ abgeschl.\\
+        Reg.\ Sprache unendlich $\iff \exists$ Wort $n_0\le|w|<2n_0$ ($n_0=\#$Zust.). & W & Standard-Charakterisierung.\\
+        Reg.\ Sprache unendlich, sobald ein Wort der Länge $\ge n_0$ existiert. & W & Zustand wiederholt sich $\Rightarrow$ pumpbar.\\
+        Reg.\ Grammatik mit $n$ Nichtterm.\ $\Rightarrow$ jeder DEA $\ge n$ Zustände. & F & minimaler DEA kann kleiner sein.\\
+        LR-/DPDA-Sprachen sind gegen Komplement abgeschlossen. & W & DCFL unter Komplement abgeschl.\\
+        DPDAs/PDAs gegen Schnitt abgeschlossen. & F & schon CFL nicht unter $\cap$.\\
+        DPDAs gegen Schnitt mit DEA abgeschlossen. & W & DCFL $\cap$ regulär $=$ DCFL.\\
+        $\{a^nb^mc^nd\mid m,n\}$ durch DPDA erkennbar. & W & deterministisch: $a$ push, $c$ pop, $d$ prüfen.\\
+        Für kontextfreie Sprachen ist das Wortproblem \emph{nicht} entscheidbar. & F & CYK entscheidet es ($\mathcal O(n^3)$).\\
+        $G=(\{S\},\{1,2\},\{S::=S1S\mid 2\},S)$ ist eindeutig. & F & z.\,B.\ ``$21212$'' hat zwei Bäume.\\
+        Jede links-/rechtslineare Grammatik ist eindeutig. & F & reguläre Grammatiken können mehrdeutig sein.\\
+        $G:\ S::=SS\mid(S)\mid\varepsilon$ ist nicht eindeutig. & W & $\varepsilon$/$SS$ erzeugen mehrere Bäume.\\
+        \hline
+    \end{tabular}
+\end{mytable}
+
+\subsubsection{Berechenbarkeit \& Komplexität}
+\begin{mytable}
+    \begin{tabular}{@{}p{0.60\textwidth} c p{0.30\textwidth}@{}}
+        \hline
+        \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
+        \hline
+        Probleme in NP sind entscheidbar. & W & $\text{NP}\subseteq$ entscheidbar.\\
+        Ein unentscheidbares Problem kann nicht in NP sein. & W & Kontraposition von oben.\\
+        Ein unentscheidbares Problem kann nicht NP-hart sein. & F & z.\,B.\ Halteproblem ist NP-hart.\\
+        Rekursiv aufzählbare Sprachen werden von det.\ TM akzeptiert. & W & det.\ TM $=$ nichtdet.\ TM (r.\,a.).\\
+        $\{(a,b,c)\mid \varphi_{a+b}(c)\!\downarrow\}$ ist formale Regelsprache (r.\,a.). & W & Halteproblem ist semi-entscheidbar.\\
+        $\{(a,b,c)\mid \varphi_{a+b}(c)\!\downarrow\}$ ist entscheidbar. & F & Halteproblem unentscheidbar.\\
+        $\{(a,b)\mid \varphi_a(b)\!\uparrow\}$ ist rekursiv aufzählbar. & F & Komplement des Halteproblems, nicht r.\,a.\\
+        Es gibt abzählbar viele verschiedene Turingmaschinen. & W & jede TM endlich kodierbar.\\
+        Es gibt überabzählbar viele verschiedene Turingmaschinen. & F & siehe oben.\\
+        $\text{P}\subseteq\text{PSPACE}$. & W & Standardinklusion.\\
+        $\text{P}\subset\text{NP}\cap\text{co-NP}$. & W\,(?) & $\subseteq$ gilt; echte Inklusion offen.\\
+        Menge der entscheidbaren Probleme gegen Schnitt abgeschlossen. & W & zwei Entscheider ``und''-verknüpfen.\\
+        Für beliebige entscheidbare $L_1,L_2$ ist ``$L_1\subseteq L_2$'' entscheidbar. & F & reduziert von Leerheit/Halteproblem.\\
+        Für beliebige kontextfreie $L_1,L_2$ ist ``$L_1\subseteq L_2$'' entscheidbar. & F & CFL-Inklusion unentscheidbar.\\
+        Entscheidbar, ob eine TM nach $\le t$ Schritten hält. & W & einfach $t$ Schritte simulieren.\\
+        Wortproblem für kontextsensitive Sprachen ist entscheidbar. & W & LBA / Chomsky-1.\\
+        Formale Regelsprachen abgeschl.\ gegen $\cap,{}^C,\cup,*$. & F & Komplement fehlt (r.\,a.\ nicht unter $^C$).\\
+        \hline
+    \end{tabular}
+\end{mytable}
+
+\subsubsection{Reduktion, NP-Vollständigkeit, Gödelisierung}
+\begin{mytable}
+    \begin{tabular}{@{}p{0.60\textwidth} c p{0.30\textwidth}@{}}
+        \hline
+        \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
+        \hline
+        $A$ NP-vollständig $\iff A\le_p\text{SAT}$ und $\text{SAT}\le_p A$. & W & $A\le_p$SAT$\Rightarrow A\in$NP; SAT$\le_p A\Rightarrow$ NP-hart.\\
+        $A$ NP-vollständig $\iff \text{SAT}\le_p A$. & F & $A\in$NP fehlt (das wäre nur NP-hart).\\
+        $A$ NP-hart $\iff A\le_p\text{SAT}$. & F & Richtung falsch (müsste SAT$\le_p A$).\\
+        $A$ NP-hart $\iff A\le_p\text{ILP}\wedge\text{ILP}\le_p A$. & F & beschreibt NP-\emph{vollständig}, nicht NP-hart.\\
+        Für jede reguläre Sprache $A$ gilt $A\le_p$ 3-SAT. & W & regulär $\subseteq$ P $\subseteq$ NP; 3-SAT NP-vollst.\\
+        $A\in\text{Chomsky-2}\Rightarrow$ 2-SAT $\le_p A$. & F & Gegenbsp.\ $A=\emptyset$ (kein Ziel für Ja-Instanzen).\\
+        Longest-Path (Pfad Länge $\ge k$, knotendisjunkt) ist NP-hart. & W & Hamiltonpfad als Spezialfall.\\
+        Erreichbarkeit ($\exists$ Pfad $u$--$v$) ist NP-hart. & F & in P (BFS/DFS).\\
+        Fair teilen (Werte auf $k$ Personen gleich) ist NP-vollständig. & W & Partition/Bin-Packing.\\
+        Bier auf Gläser ohne Überlauf verteilen. & W & Bin-Packing $\Rightarrow$ NP-hart.\\
+        Wunsch-Zimmernachbar (je 1 Wunsch) erfüllbar? & F & Matching $\Rightarrow$ in P.\\
+        $\{1,\dots,5\}^*\to\Nz,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & W\,(?) & Ziffern $<10$ $\Rightarrow$ injektiv; def.-abhängig (nicht surjektiv).\\
+        $\N^*\to\N,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & F & unbeschr.\ $n_i$ $\Rightarrow$ Überträge, \emph{nicht} injektiv.\\
+        Eine Gödelisierung muss polynomiell berechenbar sein. & F & nur berechenbar \& injektiv nötig.\\
+        Universelle TM mit 42 Zuständen und 42 Bandzeichen. & W & UTMs existieren, $42\times42$ reicht üppig.\\
+        TM mit 42 Zuständen simulierbar durch TM mit wenigen Zuständen. & W\,(?) & Zustands-/Zeichen-Tradeoff; \emph{Skript prüfen}.\\
+        Universelle TM mit \emph{einem} Zustand. & (?) & umstritten -- \emph{im Skript / Tutorium klären}.\\
+        \hline
+    \end{tabular}
+\end{mytable}
