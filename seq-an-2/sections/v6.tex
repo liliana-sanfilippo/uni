@@ -37,7 +37,7 @@ problems: Aligning the prefixes $x[1\ldots i_0]$ and $y[1\ldots j_0]$, and align
 \skript{
     The computation of the total cost matrix is particularly simple for additive alignment costs. Here
     \[
-        T(i,j) = D(i,j) + D^{\mathrm{rev}}(i,j).
+        T(i,j) = D(i,j) + D^{\mathrm{rev}}(i,j). % TODO
     \]
     Clearly matrices $D$, $D^{\mathrm{rev}}$, and thus $T$ can be computed in $O(mn)$ time.
 
@@ -131,6 +131,7 @@ The forward-backward technique is used, for example, in the following problems:
     \end{itemize}}
 
 \section{Hirschberg’s Algorithm}\label{sec:hirschbergs-algorithm}
+\komm{Beispiel auf Seite \pageref{sec:hirschberg-example}.}
 \skript{
     We have seen that the \emph{optimal alignment cost} of two sequences $x$ and $y$ of lengths $m$ and
     $n$, respectively, as well as an \emph{optimal alignment} can be computed in $O(mn)$ time and $O(mn)$
