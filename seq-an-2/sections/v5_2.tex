@@ -29,23 +29,9 @@ $\{\mathtt{A}, \mathtt{U}\}$ and $\{\mathtt{C}, \mathtt{G}\}$ stabilize the mole
 
 Let $s\in\{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^n$ be an RNA sequence of length $n$.}
 
-\begin{defi} % TODO
-    An \emph{$s$-basepair} is a set of two different numbers $\{i,j\}\subset\{1,\ldots,n\}$ such that
-    $\{s[i], s[j]\}\in\{\{\mathtt{A},\mathtt{U}\},\{\mathtt{C},\mathtt{G}\},\{\mathtt{G},\mathtt{U}\}\}$.
-    Basepairs must bridge at least $\delta\ge 0$ positions (e.g.\ $\delta = 3$); to account for this, we
-    have the additional constraint $|i-j| > \delta$ for a basepair $\{i,j\}$.
-\end{defi}
+\defin{s_basepair}
 
-\begin{defi} % TODO
-    A \emph{simple structure} on $s$ is a set $S = \{b_1, b_2, \ldots, b_N\}$ of $s$-basepairs with
-    $N\ge 0$ and the following properties:
-    \begin{itemize}
-        \item Either $N\le 1$, or
-        \item if $N\ge 2$ and $\{i,j\}\in S$ and $\{k,l\}\in S$ are two different basepairs such that $i<j$
-        and $k<l$, then $i<k<l<j$ or $k<i<j<l$ (nested basepairs) or $i<j<k<l$ or $k<l<i<j$ (separated
-        basepairs).
-    \end{itemize}
-\end{defi}
+\deffin{simple_structure}
 
 \skript{In other words, basepairs in a simple structure may not cross.
 
@@ -100,9 +86,9 @@ $\mathrm{score}(b) := \mathrm{score}(\{s[i], s[j]\})$.}
 
 \begin{prob}[Simple RNA Secondary Structure Prediction Problem]\label{prob:prediction_rna}
 \skript{Let an RNA sequence $s$ of length $n$ be given, determine a simple structure $S^\ast$ on $s$ such that
-    \[
-        \mathrm{score}(S^\ast) = \max\{\mathrm{score}(S)\mid S \text{ is a simple structure on } s\},
-    \]
+   \begin{equation}\label{eq:prediction_rna}
+       \glsB*{prediction_rna}
+   \end{equation}
     where $\mathrm{score}(S) := \sum_{b\in S}\mathrm{score}(b)$ is the sum of the base pair scores in the
     structure $S$.}
 \end{prob}
@@ -112,8 +98,6 @@ $\mathrm{score}(b) := \mathrm{score}(\{s[i], s[j]\})$.}
 so the most stable structure cannot be found in reasonable time by enumerating all possible
 structures. After a short digression to context free grammars, we present an efficient algorithm to
 solve the problem.}
-
-
 
 \section{Context-Free Grammars}\label{sec:context-free-grammars}
 
@@ -131,18 +115,7 @@ constraint),
 We recall the notion of a \emph{context-free grammar} here to show that simple secondary structures
 allow a straightforward recursive description.}
 
-\begin{defi} % TODO
-    A \emph{context-free grammar} (CFG) is a quadruple $G = (N, T, P, S)$, where
-    \begin{itemize}
-        \item $N$ is a finite set of \emph{non-terminal symbols},
-        \item $T$ is a finite set of \emph{terminal symbols}, $N\cap T = \emptyset$,
-        \item $P$ is a finite subset of $N\times(N\cup T)^\ast$, the \emph{productions}, which are rules for
-        transforming a non-terminal symbol into a (possibly empty) sequence of terminal and non-terminal
-        symbols, and
-        \item $S\in N$ is the \emph{start symbol}.
-    \end{itemize}
-\end{defi}
-
+\deffin{cfg}
 
 \skript{Ignoring basepair sequence and distance constraints, in the RNA structure setting, the terminal
 symbols are $T = \{\texttt{(}, \texttt{.}, \texttt{)}\}$ and $N = \{S\}$, where $S$ is also the start
@@ -197,15 +170,9 @@ Since it is easy to find an optimal secondary structure of short sequences, let 
     $M(i,j) = 0$, since no basepair is possible due to the length or distance constraints (case 0).
     \item If $j-i>\delta$, then we can decompose the optimal structure according to one of the four cases.
     In each case, the resulting substructures must also be the optimal ones. Thus
-    \[
-        M(i,j) = \max
-        \begin{cases}
-            M(i+1, j) & (\text{case 1: } S\to\texttt{.}S)\\
-            M(i, j-1) & (\text{case 2: } S\to S\texttt{.})\\
-            M(i+1, j-1) + \mu(i,j) & (\text{case 3: } S\to\texttt{(}S\texttt{)})\\
-            \max_{i+1<k<j}\{M(i, k-1) + M(k, j)\} & (\text{all cases 4: } S\to SS)
-        \end{cases}
-    \]
+    \begin{equation}\label{eq:nussinov}
+        \glsB*{nussinov}
+    \end{equation}
     where $\mu(i,j) := \mathrm{score}(\{s[i], s[j]\}) > 0$ if $\{s[i], s[j]\}$ is a valid basepair, and
     $\mu(i,j) := -\infty$ otherwise, excluding the possibility of any forbidden basepair $\{i,j\}$.
 \end{itemize}

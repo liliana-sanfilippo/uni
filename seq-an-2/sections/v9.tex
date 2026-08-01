@@ -1,0 +1,287 @@
+%! Author = lili
+%! Date = 8/1/26
+
+\section{Digression: \gls{np_complete}ness}\label{sec:digression:-\gls{np_complete}ness}
+\skript{It was stated before that sum-of-pairs multiple alignment is \gls{np_complete} with respect to the number of
+sequences $k$, without further explaining what that means. This section shall now give a brief
+introduction to the field of \gls{np_complete}ness, about which every good bioinformatician should know. The
+contents in this section are based on the book of Cormen et al.\ (2001).}
+
+\defin{problem}
+
+\skript{A problem instance can
+point to no, one, or several problem solutions, and a problem solution can be one of no,
+    one, or several problem instances.}
+%  TODO (see Figure~9.1). A problem instance can point to
+
+% TODO FIGURE
+
+\begin{bsp}[Aus Skript]
+    \skript{A simple example of a problem is integer addition. Then the problem instances could be ``$5+3$'',
+        ``$4+4$'' or ``$1+4$'' pointing to the problem solutions ``$8$'', ``$8$'' and ``$5$'', respectively.}
+\end{bsp}
+
+\subsubsection*{Problem types}
+\defin{optimization_problem}
+\defin{search_problem}
+
+\begin{bsp}
+    \skript{For example, finding the minimum-cost alignment of two or more
+    sequences is an \gls{optimization_problem}.}
+\end{bsp}
+
+\defin{decision_problem}
+
+\begin{bsp}
+    \skript{The question whether for two given
+    sequences there exists an alignment with a cost lower than a certain threshold $t$ is a decision
+    problem.}
+\end{bsp}
+
+\skript{The discussion about \gls{np_complete}ness mainly considers \gls{decision_problem}s, but the results influence
+    also \gls{optimization_problem}s: Searching for a bound, every \gls{optimization_problem} can be stated as a series
+    of \gls{decision_problem}s. If a \gls{decision_problem} is difficult, the corresponding \gls{optimization_problem} is
+    usually difficult as well.}
+
+\paragraph{Complexity classes.}
+\skript{The set of all \gls{decision_problem}s for which algorithms exist that have the same asymptotic behavior
+    (e.g.\ running time) are contained in one \emph{complexity class}. The class $\mathbf{P}$ contains all
+    problems for which a deterministic algorithm exists that can \emph{solve} in polynomial time a certain
+    problem instance, i.e., it can find, for a given problem instance, in polynomial time whether there
+    exists a configuration of input variables such that the problem has solution $\mathtt{T}$ or not. The
+    class $\mathbf{NP}$ contains all problems for which a deterministic algorithm exists that can
+    \emph{verify} in polynomial time whether a given certificate (configuration of input variables) is
+    able to solve an actual problem instance, i.e., it can tell whether the certificate indeed yields
+    solution $\mathtt{T}$ or not. In short $\mathbf{P} =$ efficiently solvable and $\mathbf{NP} =$
+    efficiently verifiable. It follows directly that $\mathrm{P}\subseteq\mathrm{NP}$. The question is
+    still open whether $\mathrm{P}\overset{?}{=}\mathrm{NP}$.}
+
+\begin{bem}
+    \skript{The given definition of NP above is not the historically original one. The original definition
+    describes NP as the class that contains all problems for which a non-deterministic algorithm exists
+    that can solve in polynomial time a certain problem instance. However, as this definition is less
+    intuitive, the verification-based definition is usually preferred.}
+\end{bem}
+
+\paragraph{Reducibility.} \skript{A problem $Q$ is \emph{reducible} to a problem $Q'$ if every instance of $Q$ can be formulated as an
+instance of $Q'$ so that the solution $S$ of problem $Q$ follows from the solution $S'$ of problem
+    $Q'$. If $Q$ can be reduced to $Q'$ in a simple way, it is not harder to solve $Q$ than to solve $Q'$.
+    $Q$ is \emph{polynomial-time reducible} to $Q'$ (shortly: $Q\le_p Q'$) if the reduction takes only
+    polynomial time. In particular, $Q\le_p Q'$ implies $Q'\in\mathrm{P}\Rightarrow Q\in\mathrm{P}$.}
+
+% TODo The idea of reducibility is illustrated in Figure~9.2.
+
+% TODO FIGURE
+
+\begin{bsp}
+    \skript{As an example, consider the \emph{Consecutive Ones Problem} (C1P) that asks whether the columns of an
+        $n\times m$ binary matrix $M$ can be permuted, such that the resulting matrix $M'$ has at most one run
+        of ones in each row. In order to solve C1P, one can resort to a well-known problem in graph theory, the
+        \emph{Traveling Salesperson Problem} (TSP), that asks for a shortest Hamiltonian cycle in a weighted
+        graph.
+
+        The reduction $\text{C1P}\le_p\text{TSP}$ works as follows (see Figure~9.3): Given the binary matrix
+        $M$, assume without loss of generality that it has one column of zeros only, and no two columns of $M$
+        are identical. Now, define the weighted complete graph $G(M)$ that has one vertex per column of $M$,
+        where the weight of an edge $(v,w)$ is defined as the Hamming distance between the two columns
+        represented by the two vertices $v$ and $w$. Then it is easy to see that the C1P is fulfilled for $M$
+        if and only if $G(M)$ contains a TSP tour of length $2n$, and otherwise not. Moreover, the construction
+        of $G(M)$ can be done in polynomial time and a solution of the TSP can easily be backtransformed into a
+        solution of the C1P. Therefore, given an algorithm that solves TSP efficiently, we would also have an
+        algorithm solving C1P efficiently.}
+\end{bsp}
+
+% TODO FIGURE
+
+\defin{np_hard}
+\defin{np_complete}
+
+\begin{lem}
+    \skript{ The following property holds for
+    the class NPC: If some \gls{np_complete} problem is solvable in polynomial time, then $\mathrm{P}=\mathrm{NP}$.
+    If some problem in NP is \emph{not} solvable in polynomial time, then no single \gls{np_complete} problem is
+    solvable in polynomial time.}
+\end{lem}
+
+\skript{For solving the question whether $\mathrm{P}\overset{?}{=}\mathrm{NP}$, \gls{np_complete} problems are
+intensely studied. The most common assumption is that $\mathrm{P}\ne\mathrm{NP}$. An alternative
+possibility is that $\mathrm{P}=\mathrm{NP}$ (see Figure~9.4 for schematic views of these two
+alternatives).}
+
+% TODO FIGURE
+
+\skript{It is not intuitively clear that any \gls{np_complete} problems exist because the conditions are quite strong
+and the implications enormous. Nevertheless, they do exist, and here we summarize a bit of that story.
+
+The first known example of an \gls{np_complete} problem was the \emph{satisfiability problem} (SAT).}
+
+\begin{prob}[The satisfiability problem SAT]
+\skript{Given a boolean formula of length $n$, is it satisfiable, i.e., is there a
+configuration of variables so that the evaluation of the formula yields $\mathtt{T}$?}
+\end{prob}
+
+\begin{bsp}
+    \skript{Given the formula $(a\vee b)\wedge(\neg a\vee b)\wedge(\neg b\vee c)$, is there a configuration of
+    variables so that the formula is true? Indeed, there are two certificates that satisfy the given
+    formula, first: $a=b=c=\mathtt{T}$ and second: $a=\mathtt{F}$ and $b=c=\mathtt{T}$. (The symbols denote
+        $\vee=$ OR, $\wedge=$ AND, $\neg=$ NOT.)}
+\end{bsp}
+
+\skript{To show that SAT is \gls{np_complete}, we prove two properties:
+    \begin{enumerate}
+        \item We show that SAT belongs to the class NP. This is the case, because given a certificate
+        (assignment of truth values to the variables in a boolean formula), it is easy to decide in polynomial
+        time whether the evaluation of the formula with these variable values indeed yields $\mathtt{T}$ or not.
+        \item We show that any problem $Q$ belonging to the class NP can be reduced to SAT ($Q\le_p\text{SAT}$)
+        in polynomial time. This can be seen as follows:
+        \begin{itemize}
+            \item $Q\in\mathrm{NP}$ implies that a verification algorithm $A(x,y)$ exists for $Q$ that tells in
+            polynomial time for any problem instance $x\in I$ and certificate $y\in S$ whether $y$ is a valid
+            solution of $x$ (i.e., $A(x,y)=\mathtt{T}$), or not (i.e., $A(x,y)=\mathtt{F}$).
+            \item Let $f(A, x)$ be a reduction function that partially evaluates the verification algorithm $A$
+            according to its first argument, yielding the function $C_x(y) = f(A(x,y), x)$, which only depends on
+            $y\in S$. Then we have:
+            \begin{itemize}
+                \item Encoded as a boolean function, $C_x$ is satisfiable ($C_x(y)=\mathtt{T}$) if and only if $y$
+                is a solution to $x$, otherwise $C_x(y)=\mathtt{F}$.
+                \item It can be shown that for any $Q\in\mathrm{NP}$ the corresponding boolean function $C_x(y)$ can
+                be constructed in polynomial time (via CIRCUIT-SAT, see Cormen et al.\ (2001, Chapter~36.6)),
+                therefore if SAT can be solved in polynomial time, also $Q$ can be solved in polynomial time, i.e.\
+                $Q\le_p\text{SAT}$.
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+    Therefore SAT is an \gls{np_complete} problem.}
+
+\paragraph{Extension of the class NPC.} \skript{For showing that some problem $Q$ is in NPC, it is sufficient to show that $Q\in\mathrm{NP}$ and to
+reduce a known \gls{np_complete} problem $Q'$ (e.g.\ $Q'=\text{SAT}$) to $Q$:
+    \begin{enumerate}
+        \item Show that $Q\in\mathrm{NP}$.
+        \item Choose a known \gls{np_complete} problem $Q'$.
+        \item Describe an algorithm that calculates in polynomial time a function $f$ that projects any
+        instance of $Q'$ to an instance of $Q$.
+        \item Show that for $f$ holds: $x\in Q'$ if and only if $f(x)\in Q$ for all $x\in\{\mathtt{F},
+        \mathtt{T}\}^\ast$.
+    \end{enumerate}}
+
+\paragraph{Consequences of NP completeness.}
+\skript{While the proof of \gls{np_complete}ness of a problem implies that it is quite unlikely to find a
+deterministic polynomial-time algorithm to solve the problem to optimality in general, there are
+various ways to respond to such a result if one wants to solve the problem in feasible time:
+    \begin{enumerate}
+        \item Small problem instances might be solvable anyway. See Section~\ref{sec:the-exact-algorithm-revisited}.
+        \item Using adequate techniques to efficiently prune the search space, even larger instances may be
+        solvable in reasonable time (running time heuristics). See Section~\ref{sec:carrillo-and-lipmans-search-space-reduction}.
+        \item The problem may not be hard for certain subclasses, so polynomial-time algorithms may exist for
+        them, called FPT (Fixed Parameter Tractability) algorithms.
+        \item In an \gls{optimization_problem}, it may be sufficient to approximate the optimal solution to a certain
+        degree. If closeness to the optimal solution can be guaranteed, one speaks of an approximation
+        algorithm. See Section~\ref{sec:approximation-algorithms}.
+        \item By no longer confining oneself to any optimality guarantee, one may get very fast heuristic
+        algorithms that produce good but not always optimal or guaranteed close-to-optimal solutions
+        (correctness heuristics). See Sections~\ref{sec:divide-and-conquer-alignment} and~\ref{sec:segment-based-alignment}
+    \end{enumerate}}
+
+\section{Approximation Algorithms}\label{sec:approximation-algorithms}
+\skript{As mentioned in Item~4 above, in some situations it may be sufficient to approximate the optimal
+solution of a problem to a certain degree. The following definition states more precisely, what that
+means.}
+
+\defin{c_approx}
+
+\section{The Center-Star Approximation}\label{sec:the-center-star-approximation}
+
+\skript{
+    There exists a series of results on the approximability of the sum-of-pairs multiple sequence alignment
+    problem.
+
+    A simple algorithm, the so-called \emph{center star method} (Gusfield, 1991, 1993), is a
+    $2$-approximation for the sum-of-pairs multiple alignment problem if the underlying weighted edit
+    distance satisfies the triangle inequality.
+
+    The algorithm is the following. First, for each sequence $s_p$, $1\le p\le k$, its overall distance
+    $d_p$ to the other sequences is computed, i.e.\ the sum of the pairwise optimal alignment costs:
+    \[
+        d_p = \sum_{1\le q\le k} d(s_p, s_q).
+    \]
+    Let $c$, $1\le c\le k$, be an index such that $d_c$ minimizes this overall distance. The sequence $s_c$
+    is then called \emph{center sequence}.
+
+    Secondly, a multiple alignment $A_c$ is constructed from all pairwise optimal alignments $A_{\{c,q\}}$
+    where the center sequence is involved, i.e., all the optimal alignments of $s_c$ and the other $s_p$,
+    $p\ne c$, are combined into one multiple alignment $A_c$, such that $\pi_{\{c,q\}}(A_c) = A_{\{c,q\}}$.
+
+    The claim is that this alignment is a $2$-approximation for the optimal sum-of-pairs multiple alignment
+    cost of the sequences $s_1, s_2, \ldots, s_k$, i.e.,
+    \[
+        \mathrm{cost}_{SP}(A_c) \le 2\cdot\mathrm{cost}_{SP}(A^{\mathrm{opt}}).
+    \]
+    This can be seen as follows:
+    \[
+        \begin{aligned}
+            \mathrm{cost}_{SP}(A_c)
+            &= \sum_{1\le p<q\le k}\mathrm{cost}_2(\pi_{\{p,q\}}(A_c)) && \text{//definition}\\
+            &= \tfrac12\sum_{1\le p\le k,\,1\le q\le k}\mathrm{cost}_2(\pi_{\{p,q\}}(A_c))
+            && \text{//since } \mathrm{cost}_2(\pi_{\{p,p\}})=0\\
+            &\le \tfrac12\sum_{1\le p\le k,\,1\le q\le k}
+            \bigl(\mathrm{cost}_2(\pi_{\{p,c\}}(A_c)) + \mathrm{cost}_2(\pi_{\{c,q\}}(A_c))\bigr)
+            && \text{//triangle inequality}\\
+            &= \tfrac12\sum_{1\le p\le k,\,1\le q\le k}\bigl(d(s_p, s_c) + d(s_c, s_q)\bigr)
+            && \text{//alignments to } s_c \text{ are optimal}\\
+            &= k\cdot\sum_{1\le q\le k} d(s_c, s_q) && \text{//star property}\\
+            &\le \sum_{1\le p\le k,\,1\le q\le k} d(s_p, s_q) && \text{//minimal choice of } s_c\\
+            &\le \sum_{1\le p\le k,\,1\le q\le k}\mathrm{cost}_2(\pi_{\{p,q\}}(A^{\mathrm{opt}}))\\
+            &= 2\cdot\sum_{1\le p<q\le k}\mathrm{cost}_2(\pi_{\{p,q\}}(A^{\mathrm{opt}}))\\
+            &= 2\cdot\mathrm{cost}_{SP}(A^{\mathrm{opt}})
+        \end{aligned}
+    \]
+    Hence $A_c$ is a $2$-approximation of the optimal alignment $A^{\mathrm{opt}}$.}
+
+
+\begin{algorithm}[H]
+\caption{Center-Star-Alignment}
+\label{alg:center-star}
+\begin{algorithmic}[1]
+
+\Statex \textbf{Input:} Sequenzen $s_1,\ldots,s_k$, paarweise Distanz $d$
+\Statex \textbf{Output:} Multiples Alignment $\mathcal{A}_c$
+
+\For{$p\gets 1$ to $k$}
+    \State $d_p \gets \displaystyle\sum_{1\leq q\leq k} d(s_p,s_q)$
+    \Comment{$d_p$: Gesamtdistanz von $s_p$ zu allen anderen Sequenzen}
+\EndFor
+
+\State $c \gets \displaystyle\arg\min_{1\leq p\leq k} d_p$
+\Comment{Bestimme die Center-Sequenz $s_c$}
+
+\State $\mathcal{A}_c \gets s_c$
+\Comment{Initialisiere Alignment mit der Center-Sequenz}
+
+\For{$p\gets 1$ to $k$}
+    \If{$p\neq c$}
+        \State Berechne ein optimales paarweises Alignment
+        $A_{\{c,p\}}$ von $s_c$ und $s_p$
+        \State Füge $s_p$ entsprechend $A_{\{c,p\}}$ in $\mathcal{A}_c$ ein
+        \State Füge neu eingeführte Gaps in $s_c$
+        in allen bereits eingefügten Sequenzen an denselben Positionen ein
+    \EndIf
+\EndFor
+
+\State \Return $\mathcal{A}_c$
+
+\end{algorithmic}
+\end{algorithm}
+
+
+\paragraph{Time and space complexity.} \skript{The running time of the algorithm can be estimated as follows, assuming all $k$ sequences have the same
+length $n$: In the first step, $\binom{k}{2}$ pairwise alignments are computed, requiring overall
+    $O(k^2 n^2)$ time. In the second step, the $k-1$ alignments are combined into one multiple alignment
+    which can be done in time proportional to the size of the constructed alignment, i.e.\ $O(k^2 n)$. This
+    yields an overall running time of $O(k^2 n^2)$.
+
+    The space complexity is $O(n+k)$ for the linear-space distance computation and to store $k$ computed
+    values $d_p$. Additionally, $O(k^2 n)$ space is used to store $k$ pairwise alignments and the
+    intermediate/final multiple alignment. Hence, the overall space complexity is $O(k^2 n)$.
+
+    This idea can be generalized to a $2 - \tfrac{\kappa}{k}$-approximation if instead of pairwise
+    alignments, optimal multiple alignments of $\kappa$ sequences are computed, see (Bafna et al., 1997).}

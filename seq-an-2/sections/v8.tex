@@ -1,0 +1,275 @@
+%! Author = lili
+%! Date = 8/1/26
+
+\skript{Although sum-of-pairs (SP) multiple sequence alignment is NP-complete, it is sometimes desirable to
+compute optimal solutions for a moderate number of sequences; either as a sub-procedure of other
+methods, or for comparison and benchmarking of heuristic alignment algorithms.
+
+Therefore here we will come back to the original model of sum-of-pairs multiple alignment and look at
+it a bit more closely. We first formally describe the multi-dimensional generalization of the pairwise
+dynamic programming algorithm. Then we show how to reduce the search space considerably according to
+an idea of Carrillo and Lipman.
+
+In this section we give the formulation for distance minimization. Naturally, equivalent algorithms
+exist for score maximization.}
+
+\section{The Exact Algorithm Revisited}\label{sec:the-exact-algorithm-revisited}
+
+\skript{The problem to be solved is the following. Given $k$ sequences $s_1, s_2, \ldots, s_k$ of lengths
+    $n_1, n_2, \ldots, n_k$, respectively, the goal is to find a multiple alignment $A$ such that
+    \[
+        \mathrm{cost}_{SP}(A) := \sum_{1\le p\le q\le k}\mathrm{cost}_2(\pi_{p,q}(A))
+    \]
+    is minimum among all multiple alignments of $s_1, s_2, \ldots, s_k$.}
+
+\subsection{The Basic Algorithm}\label{subsec:the-basic-algorithm}
+\skript{We have already seen that the SP multiple alignment problem can be solved by applying the Universal
+Alignment Algorithm from Chapter~5 of the ``Sequence Analysis 1'' lecture to a $k$-dimensional
+alignment matrix, one dimension for each of the input sequences:
+
+For each cell $v$ of the alignment matrix, compute in an appropriate order the dissimilarity value
+    \begin{equation}
+        D(v) = \min_{u\in\mathrm{pred}(v)}\bigl\{ D(u) + \mathrm{cost}(u\to v)\bigr\}. \tag{8.1}\label{eq:equation}
+    \end{equation}
+    More explicitly, this can be written as follows:
+    \[
+        D(0, 0, \ldots, 0) = 0
+    \]
+    \[
+        D(\underbrace{i_1, i_2, \ldots, i_k}_{v}) =
+        \min_{\substack{\Delta_1,\ldots,\Delta_k\in\{0,1\}\\ \Delta_1+\ldots+\Delta_k\ne 0}}
+        \left\{
+            D(\underbrace{i_1-\Delta_1, i_2-\Delta_2, \ldots, i_k-\Delta_k}_{\text{predecessor } u})
+        + D_{SP}\underbrace{\begin{pmatrix}\Delta_1 s_1[i_1]\\ \Delta_2 s_2[i_2]\\ \vdots\\
+        \Delta_k s_k[i_k]\end{pmatrix}}_{\text{alignm.\ col.}}
+        \right\}
+    \]
+    where for a character $c\in\Sigma$ the notation $\Delta c$ denotes $\Delta c = c$ if $\Delta = 1$ and
+    $\Delta c = -$ if $\Delta = 0$.}
+
+\paragraph{Space and time complexity.} \skript{The space complexity $O(n^k)$ is clearly given by the size of the multidimensional alignment matrix,
+    where $n\ge n_1, n_2, \ldots, n_k$.
+
+    The time complexity $O(n^k\cdot 2^k\cdot k^2)$ is also easy to see in this notation: For each of the
+    $O(n^k)$ cells, all $2^k-1$ predecessors have to be evaluated, given by the $2^k$ possible settings of
+    the vector $(\Delta_1, \ldots, \Delta_k)$ of binary variables $\Delta_i$, without the all-zero vector
+    where $\Delta_1 + \ldots + \Delta_k = 0$. In addition, the sum-of-pairs cost of the resulting
+    alignment column has to be computed, which requires additional $O(k^2)$ time per predecessor.}
+
+\subsection{Variations of the Basic Algorithm}\label{subsec:variations-of-the-basic-algorithm}
+
+\paragraph{Memory reduction.}  \skript{From the pairwise alignment, we remember that it is possible to reduce the space for optimal alignment
+    computation from quadratic to linear using Hirschberg's divide-and-conquer approach (Section~\ref{sec:hirschbergs-algorithm}).
+
+    In principle, the same idea can also be followed for multiple alignment, but the effect is much less
+    dramatic. The space reduction is by one dimension, from $O(n^k)$ to $O(n^{k-1})$. While for $k = 3$
+    this has quite some effect, the space savings become less and less impressive as $k$ grows. For
+    example, for $k = 12$ sequences the space consumption using this technique is still $O(n^{11})$.
+    % TODO
+    Figure~8.1 sketches on the left side the first division step for the pairwise case, and on the right
+    side the corresponding step in the multiple (here 3-dimensional) case.}
+
+% TODO Figure
+
+\paragraph{Free end gaps.} \skript{In the same spirit as in semi-global pairwise alignment, it is sometimes desired to penalize gaps at
+the beginning and at the end of a multiple alignment less than internal gaps (or not at all, known as
+\emph{free end-gap} alignment), in order to avoid that shorter sequences are ``spread'' over longer
+ones, just to get a slightly higher score that is not counter-penalized by gap costs, because these
+have to be imposed anyway to account for the difference in sequence length.
+
+This can be done in multiple alignment as in the pairwise case. It is just a different initialization
+of the base cases, i.e.\ the outer edges of the $k$-dimensional alignment matrix.}
+
+\paragraph{Affine gap costs.} \skript{Affine gap costs can be defined in a straightforward manner as a simple generalization of the pairwise
+case, called \emph{natural gap costs}: The cost of a multiple alignment is the sum of all costs of the
+pairwise projections, where the cost of a pairwise projection is computed with affine gap costs. In
+principle it is possible to perform the computation of such alignments similarly as it is done for
+pairwise alignments. However, the number of ``history matrices'' ($V$ and $H$ in the pairwise case)
+    grows exponentially with the number of sequences, so that very much space is needed.
+
+    That is why Altschul (1989) suggested to use an approximation of the exact case, so-called
+    \emph{quasi-natural gap costs}. The idea is to look back by only one position in the edit graph and
+    decide from the previous column in the alignment if a new gap is started in the column to be computed
+    or not. The choices, compared to the ``correct'' choices in natural gap costs, are given in the
+    following table whose first line depicts the different possible scenarios of pairwise alignment
+    projections where an asterisk (\texttt{*}) refers to a character, a dash (\texttt{-}) refers to a
+    blank, and a question mark (\texttt{?}) refers to either a character or a blank. The entries correspond
+    to the cost ($d$ is gap open cost, $e$ is gap extension cost), where ``no'' means no new gap is opened
+    (substitution cost):
+    \begin{center}
+        \setlength{\tabcolsep}{6pt}
+        \begin{tabular}{l|cccccc}
+            & $\substack{\texttt{?*}\\\texttt{?*}}$ & $\substack{\texttt{?-}\\\texttt{?-}}$
+            & $\substack{\texttt{**}\\\texttt{*-}}$ & $\substack{\texttt{**}\\\texttt{--}}$
+            & $\substack{\texttt{-*}\\\texttt{*-}}$ & $\substack{\texttt{-*}\\\texttt{--}}$\\
+            \hline
+            natural       & no & 0 & $d$ & $e$ & $d$ & $d/e$\\
+            quasi-natural & no & 0 & $d$ & $e$ & $d$ & $d$\\
+        \end{tabular}
+    \end{center}
+    The last case in natural gap costs cannot be decided if only one previous column is given. It would be
+    $d$ for $\substack{\texttt{*---*}\\\texttt{*----}}$ and $e$ for
+    $\substack{\texttt{***--}\\\texttt{**----}}$.
+
+    With this heuristic, the overall computation becomes slower by a factor of $2^k$, yielding a time
+    complexity for the complete multiple alignment computation of $O(n^k 2^{2k} k^2)$.
+
+    The space requirements do not change in the worst case, they remain $O(n^k)$.}
+
+\section{Carrillo and Lipman’s Search Space Reduction}\label{sec:carrillo-and-lipmans-search-space-reduction}
+
+\skript{Carrillo and Lipman (1988) suggested an effective way to prune the search space for multiple
+alignments. Their algorithm is still exponential in the worst case, but in many cases the time of
+alignment computation is considerably reduced compared to the full dynamic programming algorithm from
+Section~8.1, making it applicable in practice for data sets of moderate size (7--10 protein sequences
+of length 300--400).
+
+Let sequences $s_1, s_2, \ldots, s_k$ be given. The algorithm of Carrillo and Lipman is a
+\emph{branch-and-bound} running time heuristic, based on a simple observation.}
+
+\begin{idee}
+    \skript{We have seen that the pairwise projections of an optimal multiple alignment are not necessarily the
+    optimal pairwise alignments (making the problem hard). However, intuitively, they can also not be
+    particularly bad alignments: If all pairwise projections were bad, the whole multiple alignment would
+    also have a bad sum-of-pairs score.
+
+    If we can quantify this idea, we can restrict the search space to those vertices that are part of
+    close-to-optimal pairwise alignments for each pairwise projection.}
+\end{idee}
+
+\paragraph{Bounding pairwise alignment costs.} \skript{We assume that we already know some (suboptimal) multiple alignment $A^{\mathrm{heur}}$ of the given
+sequences with cost $\mathrm{cost}_{SP}(A^{\mathrm{heur}})\ge\mathrm{cost}_{SP}(A^{\mathrm{opt}})$, for
+example computed by a progressive alignment method or by the center-star heuristic (Section~9.3).
+
+Remember the definition of the sum-of-pairs multiple alignment cost:
+    \[
+        \mathrm{cost}_{SP}(A) = \sum_{p<q}\mathrm{cost}_2(\pi_{\{p,q\}}(A)).
+    \]
+    We now pick a particular index pair $(x,y)$, $x<y$, and remove it from the sum. In the remaining
+    pairs, we use the fact that the pairwise projections of the optimal multiple alignment cannot have a
+    lower cost than the optimal corresponding pairwise alignments:
+    $\mathrm{cost}_2(\pi_{\{p,q\}}(A^{\mathrm{opt}}))\ge d(s_p, s_q)$. Thus
+    \[
+        \begin{aligned}
+            \mathrm{cost}_{SP}(A^{\mathrm{heur}}) &\ge \mathrm{cost}_{SP}(A^{\mathrm{opt}})\\
+            &= \sum_{p<q}\mathrm{cost}_2(\pi_{\{p,q\}}(A^{\mathrm{opt}}))\\
+            &= \mathrm{cost}_2(\pi_{\{x,y\}}(A^{\mathrm{opt}})) +
+            \sum_{\substack{p<q\\(p,q)\ne(x,y)}}\mathrm{cost}_2(\pi_{\{p,q\}}(A^{\mathrm{opt}}))\\
+            &\ge \mathrm{cost}_2(\pi_{\{x,y\}}(A^{\mathrm{opt}})) +
+            \sum_{\substack{p<q\\(p,q)\ne(x,y)}} d(s_p, s_q)
+        \end{aligned}
+    \]
+    for any pair $(x,y)$, $1\le x<y\le k$.
+
+    This implies the following upper bound for the cost of the projection of an optimal multiple alignment
+    on rows $x$ and $y$:
+    \[
+        \mathrm{cost}_2(\pi_{\{x,y\}}(A^{\mathrm{opt}})) \le
+        \mathrm{cost}_{SP}(A^{\mathrm{heur}}) - \sum_{\substack{p<q\\(p,q)\ne(x,y)}} d(s_p, s_q)
+        =: U_{(x,y)}.
+    \]}
+
+\begin{notte}
+    \skript{Note that in order to compute the upper bound $U_{(x,y)}$, only pairwise optimal alignments and a
+    heuristic multiple alignment need to be calculated. This can be done efficiently.}
+\end{notte}
+
+\paragraph{Pruning the alignment matrix.} \skript{We now keep only those cells $(i_1, \ldots, i_k)$ of the alignment matrix that satisfy the following
+condition for all pairs $(x,y)$, $1\le x<y\le k$:
+    \begin{center}
+        \textit{The best pairwise alignment of $s_x$ and $s_y$ through cell $(i_x, i_y)$ has cost $\le U_{(x,y)}$.}
+    \end{center}
+    How do we know the cost of the best pairwise alignment through any given cell $(i_x, i_y)$? This
+    question was answered in Section~6.1: We use the forward-backward technique. In other words, for every
+    pair $(x,y)$, $x<y$, we compute the total cost matrix $T_{(x,y)}$ such that $T_{(x,y)}(i_x, i_y)$
+    contains the cost of the best alignment of $s_x$ and $s_y$ that passes through the cell $(i_x, i_y)$.
+
+    We can define the set of cells in the multi-dimensional alignment matrix that satisfy the constraint
+    imposed by the pair $(x,y)$ as follows:
+    \[
+        B_{(x,y)} := \{(i_1, \ldots, i_k) : T_{(x,y)}(i_x, i_y)\le U_{(x,y)}\}
+    \]
+    From the above considerations it is clear that the projection of an SP-optimal multiple alignment on
+    sequences $s_x$ and $s_y$ can not have a cost higher than $U_{(x,y)}$, implying that regions $(i,j)$
+    with values $T_{(x,y)}(i,j) > U_{(x,y)}$ cannot contain such a projection.
+
+    Thus an optimal multiple alignment passes only through cells that are in $B_{(x,y)}$ for all pairs
+    $(x,y)$, i.e., in
+    \[
+        B := \bigcap_{x<y} B_{(x,y)}.
+    \]
+    This means: Instead of computing the distances in all $O(n^k)$ cells in the alignment matrix, we need
+    to compute the distances of only $|B|$ cells. The whole procedure is conceptually illustrated in
+    Figure~8.2. % TODo FIG
+
+    The size of $B$ depends on many things, e.g.\ on
+    \begin{itemize}
+        \item the quality of the heuristic alignment with cost $\mathrm{cost}_{SP}(A^{\mathrm{heur}})$ that
+        serves as an upper bound of the optimal alignment cost. The closer
+        $\mathrm{cost}_{SP}(A^{\mathrm{heur}})$ is to the true optimal value, the smaller is $B$;
+        \item the difference between the optimal pairwise alignment costs and the costs of the pairwise
+        projections of the optimal multiple alignment.
+    \end{itemize}}
+
+% TODO FIG
+
+\skript{Generally, if all $k$ sequences are similar and the gap costs are small, then a good heuristic
+alignment (maybe even an optimal one) is easy to find, so $B$ may contain almost no additional
+vertices besides the true optimal multiple alignment path. Thus, for a medium number of similar
+sequences, the simple Carrillo-Lipman heuristic may already perform very well (because the relevant
+regions become very small) while for even fewer but less closely related sequences even the best known
+heuristics will not finish within weeks of computation. Sequence similarity plays a much higher role
+than sequence length or the number of sequences.
+
+Some implementations of the Carrillo-Lipman bound attempt to reduce the size of $B$ further by
+``cheating'': Remember that we need a heuristic alignment to obtain an upper bound
+    $\mathrm{cost}_{SP}(A^{\mathrm{heur}}) =: \delta$ on the optimal cost. If we have reason to suspect
+    that we have found a bad alignment, and believe that a better one exists, we may replace $\delta$ by a
+    smaller value, which could even be chosen differently for each pair $(x,y)$: $\delta - \epsilon_{(x,y)}$.
+    Of course, since we cannot be sure that such a better alignment exists, we may reduce the size of $B$
+    too much and in fact exclude the optimal multiple alignment from $B$. In practice, however, this kind
+    of cheating works quite well if done carefully, and further reduces the running time.}
+
+\paragraph{Algorithm.} \skript{We give a few remarks about implementing the above idea. We emphasize that the set of relevant matrix
+cells $B$ is conceptual and does not need to be constructed explicitly. Instead, it is sufficient to
+precompute all $T_{(x,y)}$ matrices, the optimal pairwise alignment scores $d(s_p, s_q)$ for all
+    $(p,q)$, $1\le p<q\le k$, and a heuristic alignment $A^{\mathrm{heur}}$ to obtain $\delta$.
+
+    It is advantageous not to implement the ``pull-type'' recurrence (8.1), but instead to use a
+    ``push-type'' algorithm as explained in the following.
+
+    Imagine that every cell has a value of $\infty$ at the beginning of the algorithm, although this
+    information is not stored explicitly. Instead, a list (e.g.\ a queue or priority queue) of ``active''
+    cells is maintained, that initially contains only $(0, 0, \ldots, 0)$.
+
+    The algorithm then consists of repeatedly ``visiting'' a cell from the queue until the final cell
+    $(n_1, n_2, \ldots, n_k)$ is reached. When a cell is visited, it already contains the correct alignment
+    distance.
+
+    Visiting a cell $v$ consists of the following steps.
+    \begin{enumerate}
+        \item We look at the $2^k-1$ successors $w$ of $v$ in the alignment matrix and check for each of them
+        if it belongs to the set $B$. This is the case if $w$ is already in the queue, or if the current
+        distance value plus edge cost $v\to w$ satisfies the Carrillo-Lipman bound for every index pair
+        $(x,y)$. In the former case, the distance (and backpointer) information of $w$ is updated if the new
+        distance value coming from $v$ is lower than the current one. In the latter case $w$ is ``activated''
+        with the appropriate distance and backpointer information and added to the queue.
+        \item We remove $v$ from the queue. If we want to create an alignment in the end, we need to store
+        $v$'s information somewhere else to reconstruct the traceback information. If we only want the distance
+        value, $v$ can now be completely discarded.
+        \item We pick the next cell $x$ to visit. The algorithm works correctly if $x$ is
+        \begin{itemize}
+            \item a vertex of minimum distance; then the algorithm is essentially Dijkstra's algorithm for
+            single-source shortest paths in the (reduced) alignment graph, or
+            \item any vertex that has no active predecessors, so we can be sure that we do not need to update
+            $x$'s distance information after visiting $x$.
+        \end{itemize}
+        Since often more than one vertex is available for visiting, a good target-driven choice may speed up
+        the algorithm.
+    \end{enumerate}}
+
+\paragraph{Implementations.}
+\skript{Implementations of the Carrillo-Lipman heuristic are the programs MSA (Gupta et al., 1995) and QALIGN
+    (Sammeth et al., 2003b).}
+
+

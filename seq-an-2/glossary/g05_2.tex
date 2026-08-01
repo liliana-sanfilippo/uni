@@ -1,0 +1,60 @@
+%! Author = lili
+%! Date = 8/1/26
+
+\newglossaryentry{prediction_rna}{
+    name={best simple structure score},
+    description={},
+    formB={\mathrm{score}(S^\ast) = \max\{\mathrm{score}(S)\mid S \text{ is a simple structure on } s\}}
+}
+
+\newglossaryentry{nussinov}{
+    name={Nussinov Algorithmus},
+    description={},
+    nominative={$O(n^3)$},
+    accusative={RNA Secondary Structure Prediction},
+    genitive={$O(n^2)$},
+    formB={M(i,j) = \max
+    \begin{cases}
+        M(i+1, j) & (\text{case 1: } S\to\texttt{.}S)\\
+        M(i, j-1) & (\text{case 2: } S\to S\texttt{.})\\
+        M(i+1, j-1) + \mu(i,j) & (\text{case 3: } S\to\texttt{(}S\texttt{)})\\
+        \max_{i+1<k<j}\{M(i, k-1) + M(k, j)\} & (\text{all cases 4: } S\to SS)
+    \end{cases}},
+    formF={-----}
+}
+
+\newglossaryentry{s_basepair}{
+    name={$s$-basepair},
+    description={a set of two different numbers $\{i,j\}\subset\{1,\ldots,n\}$ such that
+$\{s[i], s[j]\}\in\{\{\mathtt{A},\mathtt{U}\},\{\mathtt{C},\mathtt{G}\},\{\mathtt{G},\mathtt{U}\}\}$.
+Basepairs must bridge at least $\delta\ge 0$ positions (e.g.\ $\delta = 3$); to account for this, we
+have the additional constraint $|i-j| > \delta$ for a basepair $\{i,j\}$.},
+    type=defi
+}
+
+\newglossaryentry{simple_structure}{
+    name={simple structure},
+    name={simple structure on $s$},
+    description={A set $S = \{b_1, b_2, \ldots, b_N\}$ of $s$-basepairs with
+$N\ge 0$ and the following properties: \begin{itemize}
+\item Either $N\le 1$, or
+\item if $N\ge 2$ and $\{i,j\}\in S$ and $\{k,l\}\in S$ are two different basepairs such that $i<j$
+and $k<l$, then $i<k<l<j$ or $k<i<j<l$ (nested basepairs) or $i<j<k<l$ or $k<l<i<j$ (separated
+basepairs).
+\end{itemize}},
+    type=defi
+}
+
+\newglossaryentry{cfg}{
+name={context-free grammar},
+first={context-free grammar (CFG)},
+description={A quadruple $G = (N, T, P, S)$, where    \begin{itemize}
+\item $N$ is a finite set of \emph{non-terminal symbols},
+\item $T$ is a finite set of \emph{terminal symbols}, $N\cap T = \emptyset$,
+\item $P$ is a finite subset of $N\times(N\cup T)^\ast$, the \emph{productions}, which are rules for
+transforming a non-terminal symbol into a (possibly empty) sequence of terminal and non-terminal
+symbols, and
+\item $S\in N$ is the \emph{start symbol}.
+\end{itemize}},
+type=defi
+}

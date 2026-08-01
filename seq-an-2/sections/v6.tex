@@ -1,7 +1,7 @@
 %! Author = lili
 %! Date = 6/15/26
 
-\section{The Forward-Backward Technique}
+\section{The Forward-Backward Technique}\label{sec:the-forward-backward-technique}
 \skript{The following problem frequently arises as a sub-problem of more advanced alignment methods, that is
 why we discuss it beforehand in detail:}
 
@@ -78,6 +78,8 @@ Again, for any additive alignment cost, where
     computed in $O(mn)$ time, the additional cost matrix $C$ can be computed in $O(mn)$ time, too.
 }
 
+% TODO Figure~6.1.
+
 \begin{bsp}{Aus Skript}
 
     Consider the sequences $x = \mathtt{CT}$ and $y = \mathtt{AGT}$. For unit cost, the edit matrix $D$ and
@@ -120,13 +122,110 @@ Again, for any additive alignment cost, where
 \skript{\paragraph{Applications.}
 The forward-backward technique is used, for example, in the following problems:
     \begin{itemize}
-        \item linear-space alignment (Hirschberg technique, see Section~6.2),
+        \item linear-space alignment (Hirschberg technique, see Section~\ref{sec:hirschbergs-algorithm}),
         \item discovering regions of slightly sub-optimal alignments (those cells where the score gap, resp.\
         additional cost, remains below a small tolerance parameter),
         \item computing regions for the Carrillo-Lipman heuristic for multiple sequence alignment (see
-        Section~8.2),
-        \item finding cut-points for divide-and-conquer multiple alignment (see Section~10.1).
+        Section~\ref{sec:carrillo-and-lipmans-search-space-reduction}),
+        \item finding cut-points for divide-and-conquer multiple alignment (see Section~\ref{sec:divide-and-conquer-alignment}).
     \end{itemize}}
 
-\section{Hirschberg’s Algorithm}
-TODO
+\section{Hirschberg’s Algorithm}\label{sec:hirschbergs-algorithm}
+\skript{
+    We have seen that the \emph{optimal alignment cost} of two sequences $x$ and $y$ of lengths $m$ and
+    $n$, respectively, as well as an \emph{optimal alignment} can be computed in $O(mn)$ time and $O(mn)$
+    space.
+
+    Even though the $O(mn)$ time required to compute an optimal global or local alignment is sometimes
+    frowned upon, it is not the main bottleneck in sequence analysis. The main bottleneck so far is the
+    $O(mn)$ space requirement. Think of a matrix of traceback-pointers for two bacterial genomes of $5$
+    million nucleotides each. That matrix contains $25\cdot 10^{12}$ entries and would thus need $25$
+    Terabytes of memory. Fortunately, there is a solution!
+
+    We have already seen that the score by itself can easily be computed in $O(m+n)$ space, since we only
+    need to store the sequences and two rows or two columns of the edit matrix at a time. However, if we
+    also want to output an optimal alignment, the whole alignment matrix (or the backtracing matrix) is
+    required for the backtracing phase.
+
+    In this section we present an algorithm that allows to compute an optimal global alignment in
+    \emph{linear} space. It was first presented by Hirschberg (1975). Our presentation is for the simple
+    case of homogeneous linear gap costs $g(\ell) = \ell\cdot\gamma$, where $\gamma$ is the cost for a
+    single gap character. However, it can be generalized to affine gap costs with some additional
+    complications.
+
+    The algorithm works in a \emph{divide-and-conquer} manner, where in each recursion the alignment
+    matrix $D = (D(i,j))_{1\le i\le m, 1\le j\le n}$ is divided into an upper half and a lower half at its
+    middle row $m' = \lceil m/2\rceil$. Hereby, the cut positions are chosen so that an optimal alignment
+    of the two obtained prefixes, concatenated with an optimal alignment of the two obtained suffixes,
+    yields an optimal alignment of the original sequences.
+
+    To find the cut positions for the division of the sequences, the ``forward-backward'' technique is
+    used. The upper half is computed in a forward manner, as usual, and the lower one in a backward
+    manner. At index $m'$ both halves intersect, which makes it possible to compute the additional costs
+    $C(m', j)$ for this row $m'$. An optimal alignment passes row $m'$ at some column $n'$ if and only if
+    $C(m', n') = 0$.
+
+    The procedure is called recursively, once for the upper left ``quarter'', and once for the lower right
+    ``quarter'' of the alignment matrix. The recursion is continued until only one row remains, in which
+    case the problem can easily be solved directly.} % See Figure~6.2 for an illustration.
+
+% TODO figure
+
+\paragraph{Complexity analysis.} \skript{The space complexity is in $O(m+n)$ since all matrix computations can be performed row-wise using
+memory for two adjacent rows at most, and the final alignment has at most $m+n$ columns.
+
+A central question is, how much do we have to ``pay'' in terms of running time to obtain the linear
+space complexity? Fortunately, the answer is: Only approximately a constant factor of $2$. In the
+original (quadratic-space) algorithm, each cell of the edit matrix $S$ is computed once. In the
+linear-space version, some cells are computed several times during the recursions.
+
+The amount of cells computed in the first pass is $mn$, in the second pass it is only half of the
+matrix, in the third pass it is a quarter of the matrix and so on, for a total of
+    $mn\cdot(1 + 1/2 + 1/4 + \ldots)\le 2mn$ cells (geometric series). Thus, the asymptotic time
+    complexity is still $O(mn)$.}
+
+\begin{bsp}[Aus Skript]
+    Given strings $x = \mathtt{CACG}$ and $y = \mathtt{GAG}$, Figure~6.3 shows how alignment in linear
+    space works. Note that just the black numbers need to be calculated. The grey ones are only for
+    comparison to Section~6.1 to provide an easier comprehension.
+
+    The recursion ends in four base cases resulting in the overall alignment
+    $\left(\begin{smallmatrix}\mathtt{CACG}\\\mathtt{GA\text{-}G}\end{smallmatrix}\right)$. Note that if a
+    cut position $n'$ is found (indicated by a circle in additional cost matrix $C$), the sequences are
+    cut in two after this position, such that the left side of $t'$ contains the circled character and the
+    right side does not.
+    % TODO \caption{Complete example of linear-space alignment.}
+\end{bsp}
+
+\paragraph{Affine and general gap costs.} \skript{Combining the Hirschberg technique with affine gap costs is conceptually straightforward, while the
+devil is in the details. This was first presented by Myers and Miller (1988).
+
+General gap costs cannot be handled in linear space. We cannot even compute just the alignment score
+in linear space since we always need to refer back to all cells to the left and above of the current
+one.}
+
+\paragraph{Local alignment.} \skript{We have described how to compute an optimal global alignment in linear space. What about local
+alignments? Clearly, we have to use a scoring scheme instead of a cost function, but that modification
+is an easy exercise. For the main adaptation, it is important to note that a local alignment is in
+fact a global alignment of the two best-aligning substrings of $x$ and $y$. So, once we know the
+start- and endpoints of these substrings, we can use the above global alignment procedure.
+
+It is easy to find the endpoints: They are given by the entry with the highest score in the (forward)
+    local alignment matrix.
+
+    To find the start points, we can use the reversal technique: They are just the endpoints of the
+    optimal local alignment of the reversed strings. This technique is simple, but may become problematic
+    if there are several equally high-scoring local alignments, when the start- and end-points have to be
+    matched correctly. Details are left to the reader.}
+
+\paragraph{Suboptimal alignments.}
+
+\skript{In practice, we are often interested in several, say $K$ good alignments instead of a single optimal
+one. Can this also be done in linear space? Essentially, we need to remember the $K$ highest entries in
+the edit matrix, and once we have found an optimal alignment we store a list or hash table to remember
+its path and subsequently take care that the diagonal edges of this path cannot be used anymore when
+we re-compute the next (now optimal) alignment. This requires additional space proportional to the
+total lengths of all discovered alignments, which is linear for a constant number of alignments.
+
+A more satisfying way to define and compute suboptimal local alignments is presented in the next
+chapter.}

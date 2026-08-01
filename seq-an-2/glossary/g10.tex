@@ -1,0 +1,76 @@
+%! Author = lili
+%! Date = 8/1/26
+
+\newglossaryentry{test_form}{
+    name={dense},
+    description={},
+    formB={formula},
+    formF={text},
+    symbol={},
+    type=defi
+}
+
+
+
+\newglossaryentry{p_value_diagonal}{
+    name={p-value of the diagonal},
+    first={The probability that a random segment of length $l_D$ has at least $s_D$ matches},
+    description={$P_D(l_D, s_D) = \sum_{i=s_D}^{l_D}\binom{l_D}{i} p^i (1-p)^{l_D - i}$},
+    formB={P_D(l_D, s_D) = \sum_{i=s_D}^{l_D}\binom{l_D}{i} p^i (1-p)^{l_D - i}},
+    formF={(p-value of the diagonal)},
+    symbol={\ensuremath{P_D}},
+    type=defi
+}
+
+\newglossaryentry{weight_diagonal}{
+    name={weight of a diagonal},
+    first={weight of a diagonal},
+    description={$w_D = -\ln(P_D)$ (Wobei $P_D$ der p-value of the diagonal ist)},
+    formB={w_D = -\ln(P_D)},
+    formF={ (Wobei $P_D$ der p-value of the diagonal ist)},
+    symbol={\ensuremath{w_D}},
+    type=defi
+}
+
+\newglossaryentry{overlap_weight}{
+    name={overlap weight},
+    first={overlap weight of a diagonal $D$},
+    description={Weight with the set of all diagonals $\mathcal D$ and where $\tilde w(D_1, D_2) := w_{D_3}$ is the weight of the
+(implied) overlap $D_3$ of the two diagonals $D_1$ and $D_2$: $\mathrm{olw}(D) = w_D + \sum_{E\in\mathcal D}\tilde w(D, E)$},
+formB={\mathrm{olw}(D) = w_D + \sum_{E\in\mathcal D}\tilde w(D, E)},
+formF={Weight with the set of all diagonals $\mathcal D$ and where $\tilde w(D_1, D_2) := w_{D_3}$ is the weight of the
+(implied) overlap $D_3$ of the two diagonals $D_1$ and $D_2$:},
+symbol{\ensuremath{\mathrm{olw}(D)}},
+    type=defi
+}
+
+\newglossaryentry{dca}{
+    name={Divide-and-Conquer Alignment},
+    description={Description},
+    nominative={Laufzeit},
+    accusative={Aufgabe},
+    genitive={Speicher??}
+}
+% LZ $O(k^2 n^2 + n^{k-1} )$
+% SP: $O(k^2 n^2 )$
+
+
+\newglossaryentry{optimal_cut}{
+    name={optimal cut},
+    description={A family of cut positions $(c_1, c_2, \ldots, c_k)$ of the sequences $s_1, s_2, \ldots, s_k$ of lengths
+    $n_1, n_2, \ldots, n_k$ for which exists an
+    alignment $A$ of the prefixes $(s_1[1\ldots c_1], s_2[1\ldots c_2], \ldots, s_k[1\ldots c_k])$ and an
+    alignment $B$ of the suffixes $(s_1[c_1+1\ldots n_1], s_2[c_2+1\ldots n_2], \ldots, s_k[c_k+1\ldots
+    n_k])$ such that the concatenation $A++B$ is an optimal alignment of $s_1, s_2, \ldots,
+    s_k$.},
+    type=defi
+}
+
+\newglossaryentry{multiple_additional_cost}{
+name={multiple additional cost},
+first={multiple additional cost of a cut $(c_1, c_2, \ldots, c_k)$},
+description={The additional cost matrix $C_{(p,q)}$ for sequence pair $(s_p, s_q)$, $p<q$: $C(c_1, c_2, \ldots, c_k) := \sum_{1\le p<q\le k} C_{(p,q)}(c_p, c_q)$},
+formB={C(c_1, c_2, \ldots, c_k) := \sum_{1\le p<q\le k} C_{(p,q)}(c_p, c_q)},
+formF={The additional cost matrix $C_{(p,q)}$ for sequence pair $(s_p, s_q)$, $p<q$:},
+type=defi
+}

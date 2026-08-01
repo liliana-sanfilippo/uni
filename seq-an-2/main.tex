@@ -11,7 +11,10 @@
 \loadglsentries{glossary/g03.tex}
 \loadglsentries{glossary/g04.tex}
 \loadglsentries{glossary/g05.tex}
+\loadglsentries{glossary/g05_2.tex}
 \loadglsentries{glossary/g06.tex}
+\loadglsentries{glossary/g07.tex}
+\loadglsentries{glossary/g09.tex}
 \input{../preamble/commands}
 
 %% BIBTEX
@@ -19,8 +22,8 @@
 \usepackage{biblatex}
 \addbibresource{bib.bib}
 \title{Sequenzanalyse 2 \\ \small{by Jens Stoye} \\ \textit{\footnotesize{Summer semester 2026} } }
-\author{Aufarbeitung des Skripts, Vorlesungsnozizen und ergänzende Lehrmaterialien by Liliana Sanfilippo}
-\date{\today}
+\author{Aufarbeitung des Skripts, Vorlesungsnotizen und \\ ergänzende Lehrmaterialien by Liliana Sanfilippo}
+\date{Last update \today}
 
 
 \newcommand{\skript}[1]{
@@ -58,13 +61,13 @@
 \input{sections/v7}
 
 \chapter{Exact Algorithms for Sum-of-Pairs Multiple Sequence Alignment}\label{ch:exact-algorithms-for-sum-of-pairs-multiple-sequence-alignment}
-
+\input{sections/v8}
 
 \chapter{An Approximation Algorithm for Sum-of-Pairs Multiple Sequence Alignment}\label{ch:an-approximation-algorithm-for-sum-of-pairs-multiple-sequence-alignment}
-
+\input{sections/v9}
 
 \chapter{Heuristics for Multiple Sequence Alignment}\label{ch:heuristics-for-multiple-sequence-alignment}
-
+\input{sections/v10}
 
 \chapter{Examples and longer explanations}\label{ch:examples-and-longer-explanations}
 \input{sections/sellers}
@@ -94,6 +97,13 @@
 \section{Algorithms}\label{sec:algorithms}
 \input{sections/listen/alg_übersicht}
 
+% TODO List of Alignment types
+% emph{gap-free} local alignments
+
+% TODO Matrices types / Scores / Scoring functions
+% non-symmetric score matrices
+% position-Specific Scores
+% sum of pairs
 
 \addcontentsline{toc}{section}{Index}
 \printindex

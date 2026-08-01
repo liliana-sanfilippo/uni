@@ -80,7 +80,7 @@ deletions.)}
 
 
 \section{Sensible Similarity Scores}\label{sec:sensible-similarity-scores}
-\defin{sensible_score_function}
+
 
 \skript{The concept of a metric is useful because it embodies the essential properties of our intuition
 about distances.
@@ -97,23 +97,7 @@ indels receive negative scores, provide a useful alternative.
 Here we consider a general similarity
 score that should satisfy certain intuitive properties.}
 
-\begin{defi}
-    A \emph{sensible score function} for columns in a pairwise alignment is a function
-    $\mathrm{score}:\mathcal A(\Sigma)\to\mathbb R$ such that
-    \[
-        \begin{aligned}
-            &\mathrm{score}\!\left(\tbinom{a}{a}\right) \ge 0 \ge
-            \mathrm{score}\!\left(\tbinom{a}{-}\right) = \mathrm{score}\!\left(\tbinom{-}{a}\right)
-            && \text{for all } a\in\Sigma\\
-            &\mathrm{score}\!\left(\tbinom{a}{a}\right) \ge
-            \mathrm{score}\!\left(\tbinom{a}{c}\right) = \mathrm{score}\!\left(\tbinom{c}{a}\right)
-            && \text{for all } a,c\in\Sigma\\
-            &\mathrm{score}\!\left(\tbinom{a}{c}\right) \ge
-            \mathrm{score}\!\left(\tbinom{a}{-}\right) + \mathrm{score}\!\left(\tbinom{-}{c}\right)
-            && \text{for all } a,c\in\Sigma
-        \end{aligned}
-    \]
-\end{defi}
+\definSB{sensible_score_function}
 
 \skript{The first and second conditions impose symmetry and state that the similarity between $a$ and itself
 is always higher than between $a$ and anything else.
@@ -145,7 +129,7 @@ evolutionary point of view; we focus on proteins and define a similarity functio
     to define similarity by observing how often one amino acid is replaced by another one in a given
     amount of time.}
 
-\defin{frequency_vector}
+\definSB{frequency_vector}
 
 \skript{Let $\glssymbol{frequency_vector} = (\pi_a)_{a\in\Sigma}$ be the frequency vector, which means that $\pi_a\ge 0$ for all
     $a\in\Sigma$ and $\sum_{a\in\Sigma}\pi_a = 1$, of the naturally occurring amino acids.
@@ -203,7 +187,7 @@ problem at hand: If we want to compare two sequences whose most recent common an
 $530$ million years ago, then we should ideally use a score matrix constructed from sequence pairs
 with distance $t \approx 1060$ million years.}
 
-\defin{log_odds_score_matrix}
+\definSB{log_odds_score_matrix}
 
 \begin{bem}
     For convenience, scores are often scaled by a constant factor and then rounded to integers.

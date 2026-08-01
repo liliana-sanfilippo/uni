@@ -11,8 +11,21 @@
 
 \newglossaryentry{sensible_score_function}{
     name={sensible score function},
-    first={sensible score function},
+    first={sensible score function for columns in a pairwise alignment},
     description={Funktion $\mathrm{score}:\mathcal A(\Sigma)\to\mathbb R$ mit $\mathrm{score}\!\left(\tbinom{a}{a}\right)\ge 0\ge \mathrm{score}\!\left(\tbinom{a}{-}\right)=\mathrm{score}\!\left(\tbinom{-}{a}\right)$, $\mathrm{score}\!\left(\tbinom{a}{a}\right)\ge\mathrm{score}\!\left(\tbinom{a}{c}\right)=\mathrm{score}\!\left(\tbinom{c}{a}\right)$ und $\mathrm{score}\!\left(\tbinom{a}{c}\right)\ge\mathrm{score}\!\left(\tbinom{a}{-}\right)+\mathrm{score}\!\left(\tbinom{-}{c}\right)$ (Symmetrie; Selbst-Ähnlichkeit maximal; Substitution besser als Deletion+Insertion)},
+    formB={ \begin{aligned}
+                &\mathrm{score}\!\left(\tbinom{a}{a}\right) \ge 0 \ge
+                \mathrm{score}\!\left(\tbinom{a}{-}\right) = \mathrm{score}\!\left(\tbinom{-}{a}\right)
+                && \text{for all } a\in\Sigma\\
+                &\mathrm{score}\!\left(\tbinom{a}{a}\right) \ge
+                \mathrm{score}\!\left(\tbinom{a}{c}\right) = \mathrm{score}\!\left(\tbinom{c}{a}\right)
+                && \text{for all } a,c\in\Sigma\\
+                &\mathrm{score}\!\left(\tbinom{a}{c}\right) \ge
+                \mathrm{score}\!\left(\tbinom{a}{-}\right) + \mathrm{score}\!\left(\tbinom{-}{c}\right)
+                && \text{for all } a,c\in\Sigma
+    \end{aligned}},
+    formF={a function
+    $\mathrm{score}:\mathcal A(\Sigma)\to\mathbb R$ such that},
     type=defi
 }
 
@@ -36,6 +49,8 @@
     first={frequency vector},
     description={Vektor $\pi=(\pi_a)_{a\in\Sigma}$ der natürlich vorkommenden Aminosäuren mit $\pi_a\ge 0$ für alle $a\in\Sigma$ und $\sum_{a\in\Sigma}\pi_a=1$. Für zwei zufällige Positionen ist die Wahrscheinlichkeit des geordneten Paares $(a,b)$ gleich $\pi_a\cdot\pi_b$},
 symbol={\ensuremath{\pi}},
+formB={\pi=(\pi_a)_{a\in\Sigma}},
+formF={Vektor $\pi$ der natürlich vorkommenden Aminosäuren mit $\pi_a\ge 0$ für alle $a\in\Sigma$ und $\sum_{a\in\Sigma}\pi_a=1$. Für zwei zufällige Positionen ist die Wahrscheinlichkeit des geordneten Paares $(a,b)$ gleich $\pi_a\cdot\pi_b$:},
 type=defi
 }
 
@@ -44,6 +59,8 @@ name={background frequencies},
 first={background frequencies},
 description={Die Einträge des frequency vector $\pi$; gewinnbar als Randverteilungen (Marginals) von $M_t$: $\pi_a=\sum_{b\in\Sigma}M_t(a,b)$ und $\pi_b=\sum_{a\in\Sigma}M_t(a,b)$ (wegen Symmetrie)},
 symbol={\ensuremath{\pi_a}},
+formB={},
+formF={},
 type=defi
 }
 
@@ -66,7 +83,12 @@ type=defi
 \newglossaryentry{log_odds_score_matrix}{
 name={log-odds score matrix},
 first={log-odds score matrix},
-description={Additive Score-Matrix bzgl.\ Zeitraum $t$, definiert als Logarithmus der likelihood ratio: $\mathrm{score}_t(a,b):=\log\!\left(\frac{M_t(a,b)}{\pi_a\cdot\pi_b}\right)$. Wichtige Familien: PAM($t$) und BLOSUM($s$)},
+description={Additive Score-Matrix bzgl.\ Zeitraum $t$, definiert als Logarithmus der likelihood ratio: $\mathrm{
+score}_t(a,b):=\log\!\left(\frac{M_t(a,b)}{\pi_a\cdot\pi_b}\right)$ (Wichtige
+Familien: PAM($t$) und BLOSUM($s$))},
 symbol={\ensuremath{\mathrm{score}_t(a,b)}},
+formB={$\mathrm{score}_t(a,b):=\log\!\left(\frac{M_t(a,b)}{\pi_a\cdot\pi_b}\right)$},
+formF={Additive Score-Matrix bzgl.\ Zeitraum $t$, definiert als Logarithmus der likelihood ratio: (Wichtige
+Familien: PAM($t$) und BLOSUM($s$))},
 type=defi
 }

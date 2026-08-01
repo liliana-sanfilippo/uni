@@ -1,6 +1,67 @@
 %! Author = lili
 %! Date = 6/15/26
 
+
+
+\skript{Often it is desirable not only to find one or all \emph{optimal} alignments of two sequences, but also
+    to find \emph{suboptimal alignments}, i.e., alignments that score (slightly) below the optimal
+    alignment score. This is especially relevant in a local alignment context where several similar
+    regions might exist and be of biological interest, while the Smith-Waterman algorithm reports only a
+    single (optimal) one.
+
+    A simple way to find suboptimal local alignments could be to report first the alignment(s) (obtained
+    by backtracing) corresponding to the highest score in the local alignment graph, then the
+    alignment(s) corresponding to the second highest score, and so on. This approach has two
+    disadvantages, though:
+    \begin{enumerate}
+        \item Redundancy: Many of the local alignments reported by this procedure will be largely overlapping,
+        differing only by the precise placement of single gaps, single mismatches or the exact end characters
+        of the alignments. An illustration is given in Figure~7.1. % TODO
+        \item Shadowing effect: Some high scoring alignments will be invisible in this procedure if an even
+        higher scoring alignment is very close by, for example if the two alignments cross each other in the
+        edit graph, where always the higher scoring prefix will be chosen. An illustration is given in
+        Figure~7.2. % TODO
+    \end{enumerate}
+}
+
+% TODO Figure
+
+% TODO Figure andere
+
+\skript{In order to circumvent these disadvantages, Waterman and Eggert (1987) gave a more sensible definition
+of suboptimal local alignments.}
+
+\defin{non_overlapping_suboptimal_local_alignment}
+
+\skript{Algorithmically, non-overlapping alignments can be computed as follows: First the Smith-Waterman
+algorithm is run as usual, returning an optimal local alignment. Then, the matrix $S$ is computed
+again, but any match or mismatch from the reported optimal alignment is forbidden, i.e., in the
+alignment matrix the corresponding diagonal steps are ignored in the maximization. In terms of
+computing the alignment matrix, in the maximizations for these cells only two cases, namely insertion
+and deletion, are allowed.
+
+This could be done by re-computing the whole matrix, but it is easy to see that it suffices to compute
+only that part of the matrix from the starting point of the first alignment to the bottom-right of the
+matrix. Moreover, whenever in a particular row or column the entries in the re-computation do not
+change compared to the entries in the original matrix, the computation along this row or column can be
+stopped. Waterman and Eggert suggest to alternate the computation of one row and one column at a time,
+    each one until the new value coincides with the old value.
+
+    This procedure can be repeated for the third-best non-overlapping local alignment, and so on.
+
+    If we assume the usual type of similarity function with expected negative score of a random symbol
+    pair so that large parts of the alignment matrix are filled with zeros, then the part of the matrix
+    that needs to be re-computed is not much larger than the alignment itself.
+
+    Then, to compute the $K$ best non-overlapping suboptimal local alignments, the algorithm takes an
+    expected time of $O(mn + \sum_{k=1}^{K} L_k^2)$, where $L_k$ is the length of the $k$-th reported
+    alignment. In the worst case this is $O(mnK)$, but typically much less in practice.
+
+    Huang and Miller (1991) showed that the Waterman-Eggert algorithm can also be implemented for affine
+    gap costs and in linear space.}
+
+\section{Smith-Waterman-Algorithm}
+
 Example calculation on page~\pageref{sec:smith-waterman-example}.
 
 
@@ -60,6 +121,7 @@ Example calculation on page~\pageref{sec:smith-waterman-example}.
 
 \newpage
 
+\section{Waterman-Eggert-Algorithm}
 
 Example calculation on page~\pageref{sec:waterman-eggert-example}.
 
