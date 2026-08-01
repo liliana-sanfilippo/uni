@@ -1,5 +1,5 @@
 
-\section{Klausurstruktur}
+\section{Klausurstruktur}\label{sec:klausurstruktur}
 
 \begin{mytable}
     \begin{tabular}{@{}c l l@{}}
@@ -15,7 +15,7 @@
     \end{tabular}
 \end{mytable}
 
-\subsection{Sprachunterscheidung}
+\subsection{Sprachunterscheidung}\label{subsec:sprachunterscheidung}
 Zu einer Sprache $L$ entscheiden und beweisen, in welche Klasse sie fällt
 (regulär / nicht regulär, kontextfrei / nicht kontextfrei).
 Meist 3-4 Teilaufgaben, die die vier Beweisrichtungen kombinieren.
@@ -45,9 +45,10 @@ nicht kontextfrei $\Rightarrow$ Pumping-Lemma (kontextfrei).
         \item
         $\{\ol{x} \in \{\un{a}, \un{b},\un{c} \}^* \mid Anzahl(\un{a},\ol{x})+Anzahl(\un{b},\ol{x}) \text{ ist gerade } \land Anzahl(\un{b},\ol{x}) +Anzahl(\un{c},\ol{x}) \text{ ist ungerade }  \}$ \txc{(PK2021)}
         \item $\{a^m b^n c^k \mid n,m,k \in \nz_0, n = m+k\}$ \txc{(PK2021)}
-        \item $\{ \ol{x} \in \{\un{a}, ..., \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
+        \item $\{ \ol{x} \in \{\un{a}, \dots, \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
     \end{itemize}
-    \item Ist die folgende Sprache regulär/nicht regulär, kontextfrei/nicht kontextfrei? Beweisen Sie Ihre
+    \item Ist die folgende Sprache regulär/nicht regulär, kontextfrei/nicht kontextfrei?
+    Beweisen Sie Ihre
     Antwort
     \begin{itemize}
         \item $\{\un{a}^n, \un{b}^m, \un{c}^k \mid n \leq m \leq k\}$ \txc{(PK2021)}
@@ -62,7 +63,7 @@ nicht kontextfrei $\Rightarrow$ Pumping-Lemma (kontextfrei).
 \end{itemize}
 
 \subsubsection{Nicht-Regularität mit dem Pumping-Lemma zeigen.} % \txc{2017H, 2017N, 2023P, 2023Z, 2025}
-Typische Sprachen: $\{a^n b^m c^k\mid n=m\}$, $\{a^{2n}b^{4n}\}$, $\{c^4a^nb^n\}$.
+Typische Sprachen: $\{a^n b^m c^k\mid n=m\}$, $\{a^{2n}b^{4n}\}$, $\{c^4 a^n b^n\}$.
 Gefragt ist explizite Anwendung, das Gegenspieler-Schema muss also vollständig sein.
 
 \begin{itemize}
@@ -81,7 +82,7 @@ Gefragt ist explizite Anwendung, das Gegenspieler-Schema muss also vollständig 
 Für $L_1$ aus dem Pumping-Teil wird meist direkt danach die passende CFG verlangt.
 
 \begin{itemize}
-    \item Geben Sie eine explizite kontextfreie Grammatik für L1 (Teilaufgabe ...)) an.
+    \item Geben Sie eine explizite kontextfreie Grammatik für L1 (Teilaufgabe \ldots)) an.
     \begin{itemize}
         \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = k \}$  \txc{(PK2023)}
         \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = m \}$  \txc{(NK2023)}
@@ -119,9 +120,11 @@ Konstruktives Vorgehen: RegExp konkret hinschreiben.
 Allgemeine Konstruktion $G_\cup$ bzw.\ $G_\bullet$ aus zwei gegebenen Grammatiken angeben.
 
 \begin{itemize}
-    \item Seien $G$ und $G'$ rechtslineare Grammatiken. Geben Sie eine rechtslineare Grammetik $G_{\circ}$ an, die
+    \item Seien $G$ und $G'$ rechtslineare Grammatiken.
+    Geben Sie eine rechtslineare Grammetik $G_{\circ}$ an, die
     genau $L(G) \circ L(G')$ erzeugt. \txc{(NK2017)}
-    \item Seien $G$ und $G'$ kontextfreie Grammatiken. Geben Sie eine kontextfreie Grammetik $G_{\cup}$ an, die
+    \item Seien $G$ und $G'$ kontextfreie Grammatiken.
+    Geben Sie eine kontextfreie Grammetik $G_{\cup}$ an, die
     genau $L(G) \cup L(G')$ erzeugt. \txc{(HK2017)}
 \end{itemize}
 
@@ -132,47 +135,51 @@ endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
 
 \begin{itemize}
     \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ol{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
-    \item $\{ \ol{x} \in \{\un{a}, ..., \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
+    \item $\{ \ol{x} \in \{\un{a}, \dots, \un{z}\}^* \mid \exists n: |\ol{x}| = 42^n \}$ \txc{(PK2021)}
     \item $\{a^{2025} b^{2025} c^k \mid k \in \nz_0, k \leq 2025 \}$ \txc{(PK2025)}
 \end{itemize}
 
 \begin{warn} $\ $
 \begin{itemize}
     \item \textbf{Endlich $\Rightarrow$ regulär.} $a^{2025}b^{2025}c^{k},\,k\le2025$ hat nur endlich viele Wörter
-    $\Rightarrow$ regulär (und damit kontextfrei). Die festen $2025$ sind Konstanten, keine Variablen!
-    \item Das Pumping-Lemma ist \textbf{nur notwendig}, nicht hinreichend. Es beweist Nicht-Regularität,
+    $\Rightarrow$ regulär (und damit kontextfrei).
+    Die festen $2025$ sind Konstanten, keine Variablen!
+    \item Das Pumping-Lemma ist \textbf{nur notwendig}, nicht hinreichend.
+    Es beweist Nicht-Regularität,
     \textbf{niemals} Regularität.
     \item ``Regulär $\Rightarrow$ nach dem Schnitt bestimmen. $\{n=k\}\cap\{\dots\}$ erzwingt oft
     $n=m=k$, was typischerweise nicht kontextfrei ist.
 \end{itemize}
 \end{warn}
 
-\subsection{Endliche Automaten}
+\subsection{Endliche Automaten}\label{subsec:endliche-automaten}
 
 \subsubsection{NEA aus rechtslinearer Grammatik konstruieren (als Diagramm).}%\txc{2019H, 2019N, 2021, 2023P, 2023Z,2025}
-Nichtterminale $\to$ Zustände, ein zusätzlicher Finalzustand $f$ für Regeln $S::=a$.
+Nichtterminale $\to$ Zustände, ein zusätzlicher Finalzustand $f$ für Regeln $S\Coloneqq a$.
 
 \begin{itemize}
     \item Geben Sie zu folgender rechtslinearer Grammatik einen äquivalenten NEA (als Diagramm) an:
     \begin{itemize}
-        \item $G=(\{S_0,S_1\},\{a,b,c\},\{S_0::=bS_0\mid aS_1\mid bS_1\mid a,\ S_1::=aS_0\mid b\},S_0)$ \txc{(PK2021)}
-        \item $G_1=(\{S_0,S_1\},\{a,b\},\{S_0::=aS_1\mid bS_0\mid bS_1\mid a,\ S_1::=aS_0\mid b\},S_0)$ \txc{(PK2023)}
-        \item $G:=(\{S_0,S_1,S_2,S_3\},\{a,b,c\},R,S_0)$ mit\\
-        $R:=\{S_0::=cS_0\mid c\mid aS_1\mid bS_1,\ S_1::=cS_1\mid aS_2\mid bS_2,\ S_2::=cS_2\mid aS_3\mid bS_3\mid a,\ S_3::=cS_3\mid c\}$ \txc{(NK2023)}
-        \item $G:=(\{S_0,S_1,S_2\},\{a,b,c\},R,S_0)$ mit\\
-        $R:=\{S_0::=aS_0\mid cS_0\mid aS_1,\ S_1::=cS_1\mid aS_2\mid bS_2,\ S_2::=aS_2\mid bS_2\mid a\mid b\}$ \txc{(PK2025)}
+        \item $G=(\{S_0,S_1\},\{a,b,c\},\{S_0\Coloneqq bS_0\mid aS_1\mid bS_1\mid a,\ S_1\Coloneqq aS_0\mid b\},S_0)$ \txc{(PK2021)}
+        \item $G_1=(\{S_0,S_1\},\{a,b\},\{S_0\Coloneqq aS_1\mid bS_0\mid bS_1\mid a,\ S_1\Coloneqq aS_0\mid b\},S_0)$ \txc{(PK2023)}
+        \item $G\coloneqq(\{S_0,S_1,S_2,S_3\},\{a,b,c\},R,S_0)$ mit\\
+        $R\coloneqq\{S_0\Coloneqq cS_0\mid c\mid aS_1\mid bS_1,\ S_1\Coloneqq cS_1\mid aS_2\mid bS_2,\ S_2\Coloneqq cS_2\mid aS_3\mid bS_3\mid a,\ S_3\Coloneqq cS_3\mid c\}$ \txc{(NK2023)}
+        \item $G\coloneqq(\{S_0,S_1,S_2\},\{a,b,c\},R,S_0)$ mit\\
+        $R\coloneqq\{S_0\Coloneqq aS_0\mid cS_0\mid aS_1,\ S_1\Coloneqq cS_1\mid aS_2\mid bS_2,\ S_2\Coloneqq aS_2\mid bS_2\mid a\mid b\}$ \txc{(PK2025)}
     \end{itemize}
     \item Betrachten Sie die rechtslineare Grammatik G. Vervollständigen Sie gemäß der Konstruktion in der Vorlesung
     folgenden NEA, der genau die Sprache erkennen soll, die die Grammatik erzeugt.
     \begin{itemize}
-        \item $G=(\{A_0,A_1,B_0,B_1\},\{a,b\},\{A_0::=aA_1\mid B_0,\ A_1::=aA_0\mid B_1\mid a,\ B_0::=bB_1\mid\eps,\ B_1::=bB_0\},A_0)$ \txc{(HK2019)}
-        \item $G=(\{A_0,A_1,B_0,B_1\},\{a,b\},\{A_0::=aA_1\mid B_0,\ A_1::=aA_0\mid B_1\mid a,\ B_0::=bB_1\mid\eps,\ B_1::=bB_0\},A_0)$ \txc{(NK2019)}
+        \item $G=(\{A_0,A_1,B_0,B_1\},\{a,b\},\{A_0\Coloneqq aA_1\mid B_0,\ A_1\Coloneqq aA_0\mid B_1\mid a,\ B_0\Coloneqq bB_1\mid\epsilon,\ B_1\Coloneqq bB_0\},A_0)$ \txc{(HK2019)}
+        \item $G=(\{A_0,A_1,B_0,B_1\},\{a,b\},\{A_0\Coloneqq aA_1\mid B_0,\ A_1\Coloneqq aA_0\mid B_1\mid a,\ B_0\Coloneqq bB_1\mid\epsilon,\ B_1\Coloneqq bB_0\},A_0)$ \txc{(NK2019)}
     \end{itemize}
     \item Geben Sie einen
 \end{itemize}
 
 \subsubsection{Potenzmengenkonstruktion NEA $\to$ DEA.}%\txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
-Fast jede Klausur... Mal als Diagramm, mal als Übergangstabelle. Müllzustand $\emptyset$ mitnehmen. Zustände = Teilmengen
+Fast jede Klausur\ldots Mal als Diagramm, mal als Übergangstabelle.
+Müllzustand $\emptyset$ mitnehmen.
+Zustände = Teilmengen
 
 \begin{itemize}
     \item Geben Sie zu folgendem NEA einen DEA an (Tupel oder Diagramm bzw.\ vollständige Übergangstabelle),
@@ -213,10 +220,13 @@ Finalzustände tauschen nur beim vollständigen DEA korrekt!
         \item $A$ \% Diagramm über $\{a,b,c\}$, $\Phi=\{q_0,q_1,q_2,q_3\}$, Start/Final $q_0$;
         $q_0\xrightarrow{a,c}q_1,\ q_1\xrightarrow{a}q_0,\ q_1\xrightarrow{b}q_1,\ q_1\xrightarrow{c}q_2,\ q_0\xrightarrow{b}q_2,\ q_2\xrightarrow{c}q_1,\ q_2\xrightarrow{a}q_3,\ q_2\xrightarrow{b}q_2,\ q_3\xrightarrow{a,b,c}q_3$ \txc{(PK2021)}
     \end{itemize}
-    \item Gegeben ein endlicher Automat $A=(\Phi,\Sigma,\Delta,q_0,F)$. Betrachte $A_C=(\Phi,\Sigma,\Delta,q_0,\Phi\setminus F)$.
+    \item Gegeben ein endlicher Automat $A=(\Phi,\Sigma,\Delta,q_0,F)$.
+    Betrachte $A_C=(\Phi,\Sigma,\Delta,q_0,\Phi\setminus F)$.
     Unter welcher Annahme gilt $L(A_C)=L(A)^C$? Warum ist diese Annahme notwendig? \txc{(PK2023)}
-    \item Gegeben ein DEA $A=(\Phi,\Sigma,\delta,q_0,F)$. Konstruieren Sie einen DEA (in Tupelnotation),
-    der genau das Komplement von $L(A)$ akzeptiert. Begründen Sie. \txc{(HK2019)} \txc{(NK2019)}
+    \item Gegeben ein DEA $A=(\Phi,\Sigma,\delta,q_0,F)$.
+    Konstruieren Sie einen DEA (in Tupelnotation),
+    der genau das Komplement von $L(A)$ akzeptiert.
+    Begründen Sie. \txc{(HK2019)} \txc{(NK2019)}
 \end{itemize}
 
 
@@ -230,7 +240,8 @@ Diagramm und allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Phi_1\cap
     Demonstrieren Sie das Vorgehen am NEA aus Teilaufgabe b). \txc{(HK2017)}
     \item Wie kann man allgemein zu einem NEA $A$ einen NEA $A'$ konstruieren mit $L(A')=L(A)\cdot\{a\}$?
     Demonstrieren Sie am NEA aus Teilaufgabe b). \txc{(NK2017)}
-    \item Konstruieren Sie einen NEA $A_*$ mit $L(A_*)=L(A)^*$ (in Tupelnotation). Erläutern Sie, wie $A_*$
+    \item Konstruieren Sie einen NEA $A_*$ mit $L(A_*)=L(A)^*$ (in Tupelnotation).
+    Erläutern Sie, wie $A_*$
     ein Wort $\overline{w_1}\dots\overline{w_n}$ mit $\overline{w_i}\in L(A)$ ableitet (explizite Rechnung).
     \begin{itemize}
         \item für allgemeines $A=(\Phi,\Sigma,\Delta,q_0,F)$ \txc{(PK2023)}
@@ -247,19 +258,19 @@ $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklu
     ($L(G_1)=L(G_2)$, beide als Sprachen über $\{a,b,c\}$):
     \begin{itemize}
         \item  $G_2=(\{S_0',S_1',S_2',S_3'\},\{a,b,c\},R,S_0')$,\\
-        $R:=\{S_0'::=aS_1'\mid bS_0'\mid cS_2'\mid a,\ S_1'::=aS_0'\mid bS_0'\mid cS_2'\mid b,\ S_2'::=aS_3',\ S_3'::=aS_2'\mid bS_2'\}$ \txc{(PK2023)}
+        $R\coloneqq\{S_0'\Coloneqq aS_1'\mid bS_0'\mid cS_2'\mid a,\ S_1'\Coloneqq aS_0'\mid bS_0'\mid cS_2'\mid b,\ S_2'\Coloneqq aS_3',\ S_3'\Coloneqq aS_2'\mid bS_2'\}$ \txc{(PK2023)}
     \end{itemize}
     \item Beweisen oder widerlegen Sie: Die von der Grammatik $G'$ erzeugte Sprache ist die vom Automaten $A$
     (aus Teilaufgabe c) akzeptierte Sprache, d.h.\ $L(A)=L(G')$.
     \begin{itemize}
         \item
-        $G'=(\{S_0',S_1',S_2'\},\{a,b\},\{S_0'::=aS_1'\mid aS_2'\mid bS_0'\mid a,\ S_1'::=aS_0'\mid bS_2'\mid b,\ S_2'::=bS_1'\},S_0')$ \txc{(NK2023)}
+        $G'=(\{S_0',S_1',S_2'\},\{a,b\},\{S_0'\Coloneqq aS_1'\mid aS_2'\mid bS_0'\mid a,\ S_1'\Coloneqq aS_0'\mid bS_2'\mid b,\ S_2'\Coloneqq bS_1'\},S_0')$ \txc{(NK2023)}
     \end{itemize}
     \item Beweisen Sie: Die von der Grammatik $G$ erzeugte Sprache steht in echter Inklusion zur vom Automaten
     $A_3$ akzeptierten Sprache, d.h.\ $L(A_3)\subsetneq L(G)$.
     \begin{itemize}
         \item $G=(\{S_0',S_1',S_2',S_3'\},\{a,b,c\},R,S_0')$,\\
-        $R:=\{S_0'::=bS_0'\mid aS_1'\mid bS_1'\mid aS_2'\mid S_3',\ S_1'::=aS_0'\mid b,\ S_2'::=aS_1'\mid b,\ S_3'::=S_3'\mid\eps\}$.\\
+        $R\coloneqq\{S_0'\Coloneqq bS_0'\mid aS_1'\mid bS_1'\mid aS_2'\mid S_3',\ S_1'\Coloneqq aS_0'\mid b,\ S_2'\Coloneqq aS_1'\mid b,\ S_3'\Coloneqq S_3'\mid\epsilon\}$.\\
         $A_3$ \% Diagramm über $\{a,b\}$: $q_0,q_1,q_2$ mit Kanten $b,\,a,\,a,b,\,b$. \txc{(PK2025)}
     \end{itemize}
     \item Geben Sie zu dem NEA aus Aufgabenteil c eine rechtslineare Grammatik an, die genau die vom NEA
@@ -267,32 +278,34 @@ $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklu
 \end{itemize}
 
 \subsubsection{Deterministischen Ersatzakzeptor vervollständigen.}
-Schon lange her...vermutlich nicht wieder?
+Schon lange her $\ldots$ vermutlich nicht wieder?
 \begin{itemize}
-    \item Betrachten Sie den NEA auf der linken Seite. Vervollständigen Sie gemäß der Konstruktion aus
+    \item Betrachten Sie den NEA auf der linken Seite.
+    Vervollständigen Sie gemäß der Konstruktion aus
     der Vorlesung den deterministischen Ersatzakzeptor (rechts vorgegebene Zustände).
     \begin{itemize}
-        \item NEA \% Diagramm:\ $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{a}q_1,\ q_1\xrightarrow{\eps}q_0$;
+        \item NEA \% Diagramm:\ $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{a}q_1,\ q_1\xrightarrow{\epsilon}q_0$;
         vorgegebene DEA-Zustände $\{q_1\},\{q_0\},\{q_0,q_1\}$  \txc{(HK2019)}
-        \item NEA \% Diagramm:\ $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{b}q_2,\ q_2\xrightarrow{a}q_2,\ q_2\xrightarrow{\eps}q_0$;
+        \item NEA \% Diagramm:\ $q_0\xrightarrow{a}q_0,\ q_0\xrightarrow{b}q_1,\ q_1\xrightarrow{b}q_2,\ q_2\xrightarrow{a}q_2,\ q_2\xrightarrow{\epsilon}q_0$;
         vorgegebene DEA-Zustände $\{q_0\},\{q_1\},\{\,\},\{q_0,q_2\},\{q_2\}$ \txc{(NK2019)}
     \end{itemize}
 \end{itemize}
 
-\section{Kontextfreie Grammatiken \& LR/Kellerautomaten}
+\subsection{Kontextfreie Grammatiken \& LR/Kellerautomaten}\label{subsec:kontextfreie-grammatiken-&-lr/kellerautomaten}
 
 \subsubsection{Eindeutigkeit}
 Eindeutig $=$ jedes Wort hat genau einen Strukturbaum.
 
 \begin{itemize}
-    \item Ist die Grammatik eindeutig? Begründen Sie.
+    \item Ist die Grammatik eindeutig?
+    Begründen Sie.
     \begin{itemize}
-        \item  $G=(\{S\},\{a,b\},\{S::=aSSa\mid b\mid a\},S)$ \txc{(HK2017)}
-        \item $G=(\{S,B\},\{a,b\},\{S::=aBSa\mid\eps,\ B::=bS\mid Sb\},S)$ \txc{(NK2017)}
-        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(HK2019)}
-        \item $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(NK2019)}
-        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aScB\mid B,\ B::=bB\mid b\},S)$ \txc{(PK2021)}
-        \item $G=(\{S\},\{a,b,c\},\{S::=bSSb\mid c\mid b\},S)$ \txc{(PK2025)}
+        \item  $G=(\{S\},\{a,b\},\{S\Coloneqq aSSa\mid b\mid a\},S)$ \txc{(HK2017)}
+        \item $G=(\{S,B\},\{a,b\},\{S\Coloneqq aBSa\mid\epsilon,\ B\Coloneqq bS\mid Sb\},S)$ \txc{(NK2017)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S\Coloneqq aSc\mid B,\ B\Coloneqq bB\mid\epsilon\},S)$ \txc{(HK2019)}
+        \item $G=(\{S,B\},\{a,b,c\},\{S\Coloneqq aSc\mid B,\ B\Coloneqq bB\mid\epsilon\},S)$ \txc{(NK2019)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S\Coloneqq aScB\mid B,\ B\Coloneqq bB\mid b\},S)$ \txc{(PK2021)}
+        \item $G=(\{S\},\{a,b,c\},\{S\Coloneqq bSSb\mid c\mid b\},S)$ \txc{(PK2025)}
     \end{itemize}
 \end{itemize}
 
@@ -302,14 +315,14 @@ Shift-Regeln (Terminal lesen) und Reduce-Regeln (pro Grammatikregel).
 \begin{itemize}
     \item Geben Sie die Regeln des zur Grammatik G gehörenden LR-Automaten an
     \begin{itemize}
-        \item  $G=(\{S\},\{a,b\},\{S::=aSSa\mid b\mid a\},S)$ \txc{(HK2017)}
-        \item $G=(\{S,B\},\{a,b\},\{S::=aBSa\mid\eps,\ B::=bS\mid Sb\},S)$ \txc{(NK2017)}
-        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(HK2019)}
-        \item $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(NK2019)}
-        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aScB\mid B,\ B::=bB\mid b\},S)$ \txc{(PK2021)}
-        \item  $G=(\{S\},\{(,a,)\},\{S::=(SS)\mid aS\mid a\},S)$ \txc{(PK2023)}
-        \item $G=(\{S\},\{a,b\},\{S::=aSSa\mid a\mid b\},S)$ \txc{(NK2023)}
-        \item $G=(\{S\},\{a,b,c\},\{S::=bSSb\mid c\mid b\},S)$ \txc{(PK2025)}
+        \item  $G=(\{S\},\{a,b\},\{S\Coloneqq aSSa\mid b\mid a\},S)$ \txc{(HK2017)}
+        \item $G=(\{S,B\},\{a,b\},\{S\Coloneqq aBSa\mid\epsilon,\ B\Coloneqq bS\mid Sb\},S)$ \txc{(NK2017)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S\Coloneqq aSc\mid B,\ B\Coloneqq bB\mid\epsilon\},S)$ \txc{(HK2019)}
+        \item $G=(\{S,B\},\{a,b,c\},\{S\Coloneqq aSc\mid B,\ B\Coloneqq bB\mid\epsilon\},S)$ \txc{(NK2019)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S\Coloneqq aScB\mid B,\ B\Coloneqq bB\mid b\},S)$ \txc{(PK2021)}
+        \item  $G=(\{S\},\{(,a,)\},\{S\Coloneqq(SS)\mid aS\mid a\},S)$ \txc{(PK2023)}
+        \item $G=(\{S\},\{a,b\},\{S\Coloneqq aSSa\mid a\mid b\},S)$ \txc{(NK2023)}
+        \item $G=(\{S\},\{a,b,c\},\{S\Coloneqq bSSb\mid c\mid b\},S)$ \txc{(PK2025)}
     \end{itemize}
 \end{itemize}
 
@@ -337,21 +350,21 @@ Jeden Shift/Reduce-Schritt (Kellerinhalt) angeben.
 \begin{itemize}
     \item Prüfen Sie mit dem CYK-Algorithmus, ob $w\in L(G)$ (Grammatik aus Teilaufgabe c bzw.\ gegeben):
     \begin{itemize}
-        \item  $w=(a(aaa))$ für $G=(\{S\},\{(,a,)\},\{S::=(SS)\mid aS\mid a\},S)$ \txc{(PK2023)}
-        \item $G_1=(\{A,B,C\},\{a,b,c\},\{A::=AB\mid AC\mid BC\mid a,\ B::=BB\mid BC\mid b,\ C::=c\},A)$; prüfe $\underline{acb}\in L(G_1)$ \txc{(NK2023)}
-        \item $G_{\mathrm{CNF}}=(\{A,B,C\},\{a,b,c\},\{A::=AB\mid BC\mid a,\ B::=BB\mid b,\ C::=AC\mid CC\mid c\},B)$;\\
+        \item  $w=(a(aaa))$ für $G=(\{S\},\{(,a,)\},\{S\Coloneqq(SS)\mid aS\mid a\},S)$ \txc{(PK2023)}
+        \item $G_1=(\{A,B,C\},\{a,b,c\},\{A\Coloneqq AB\mid AC\mid BC\mid a,\ B\Coloneqq BB\mid BC\mid b,\ C\Coloneqq c\},A)$; prüfe $\underline{acb}\in L(G_1)$ \txc{(NK2023)}
+        \item $G_{\mathrm{CNF}}=(\{A,B,C\},\{a,b,c\},\{A\Coloneqq AB\mid BC\mid a,\ B\Coloneqq BB\mid b,\ C\Coloneqq AC\mid CC\mid c\},B)$;\\
         (i) zeigen Sie $w=ccabbc\notin L(G_{\mathrm{CNF}})$; \ (ii) für welchen Startzustand würde $w$ akzeptiert? \txc{(PK2025)}
     \end{itemize}
 \end{itemize}
 
 \subsubsection{Kellerautomat vervollständigen und Rechnung angeben.}
-Regeln $a\,q_0\,b::=\overline{w}\,q_1$ graphisch als $(a,b)/\overline{w}$.
+Regeln $a\,q_0\,b\Coloneqq\overline{w}\,q_1$ graphisch als $(a,b)/\overline{w}$.
 \begin{itemize}
     \item Vervollständigen Sie den (indeterministischen) Kellerautomaten, der dieselbe Sprache erkennt wie $G$,
     und geben Sie die Rechnung für das Wort an.
     \begin{itemize}
         \item Zustände $q_a,q_b,q_c,f$ (Diagramm), Rechnung für $\underline{aabcc}$ \txc{(HK2019)}
-        \item  Regelschablonen $(\#,a)/\_,\ (\#,b)/\_,\ (a,a)/\_,\ (a,b)/\_,\ (a,c)/\_$ und $\#/\eps$ nach $f$;
+        \item  Regelschablonen $(\#,a)/\_,\ (\#,b)/\_,\ (a,a)/\_,\ (a,b)/\_,\ (a,c)/\_$ und $\#/\epsilon$ nach $f$;
         Rechnung für $\underline{aabcc}$ \txc{(NK2019)}
     \end{itemize}
 \end{itemize}
@@ -371,9 +384,10 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
     Zeigen Sie $L(G)\subsetneq L'$. \txc{(PK2023)}
 \end{itemize}
 
-\section{Probleme / Berechenbarkeit \& Reduktion}
+\subsection{Probleme / Berechenbarkeit \& Reduktion}\label{subsec:probleme-/-berechenbarkeit-&-reduktion}
 
-\section{Multiple-Choice}
+
+\subsection{Multiple-Choice}\label{subsec:multiple-choice}
 
 \subsubsection{Sprachen \& Automaten}
 \begin{mytable}
@@ -381,24 +395,39 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
         \hline
         \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
         \hline
-        Jede endliche Sprache ist regulär. & W & endlich $\Rightarrow$ RegExp als Aufzählung.\\
-        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cup L_2$ kontextfrei. & W & CFL sogar immer unter $\cup$
+        Jede endliche Sprache ist regulär.
+        & W & endlich $\Rightarrow$ RegExp als Aufzählung.\\
+        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cup L_2$ kontextfrei.
+        & W & CFL sogar immer unter $\cup$
         abgeschl.\\
-        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cap L_2$ kontextfrei. & W & ``es gibt ein Paar'' (z.\,B.\
+        $\exists$ Paar kontextfreier $L_1,L_2$ mit $L_1\cap L_2$ kontextfrei.
+        & W & ``es gibt ein Paar'' (z.\,B.\
         regulär); nicht für alle.\\
-        Kontextfreie Sprachen sind gegen Schnitt abgeschlossen. & F & Gegenbsp.\ $a^nb^nc^n$.\\
-        $\exists$ kontextsensitive $L$ mit $L^C$ nicht kontextsensitiv. & F & kontextsensitiv unter Kompl.\ abgeschl.\\
+        Kontextfreie Sprachen sind gegen Schnitt abgeschlossen.
+        & F & Gegenbsp.\ $a^n b^n c^n$.\\
+        $\exists$ kontextsensitive $L$ mit $L^C$ nicht kontextsensitiv.
+        & F & kontextsensitiv unter Kompl.\ abgeschl.\\
         Reg.\ Sprache unendlich $\iff \exists$ Wort $n_0\le|w|<2n_0$ ($n_0=\#$Zust.). & W & Standard-Charakterisierung.\\
-        Reg.\ Sprache unendlich, sobald ein Wort der Länge $\ge n_0$ existiert. & W & Zustand wiederholt sich $\Rightarrow$ pumpbar.\\
-        Reg.\ Grammatik mit $n$ Nichtterm.\ $\Rightarrow$ jeder DEA $\ge n$ Zustände. & F & minimaler DEA kann kleiner sein.\\
-        LR-/DPDA-Sprachen sind gegen Komplement abgeschlossen. & W & DCFL unter Komplement abgeschl.\\
-        DPDAs/PDAs gegen Schnitt abgeschlossen. & F & schon CFL nicht unter $\cap$.\\
-        DPDAs gegen Schnitt mit DEA abgeschlossen. & W & DCFL $\cap$ regulär $=$ DCFL.\\
-        $\{a^nb^mc^nd\mid m,n\}$ durch DPDA erkennbar. & W & deterministisch: $a$ push, $c$ pop, $d$ prüfen.\\
-        Für kontextfreie Sprachen ist das Wortproblem nicht entscheidbar. & F & CYK entscheidet es ($\mathcal O(n^3)$).\\
-        $G=(\{S\},\{1,2\},\{S::=S1S\mid 2\},S)$ ist eindeutig. & F & z.\,B.\ ``$21212$'' hat zwei Bäume.\\
-        Jede links-/rechtslineare Grammatik ist eindeutig. & F & reguläre Grammatiken können mehrdeutig sein.\\
-        $G:\ S::=SS\mid(S)\mid\varepsilon$ ist nicht eindeutig. & W & $\varepsilon$/$SS$ erzeugen mehrere Bäume.\\
+        Reg.\ Sprache unendlich, sobald ein Wort der Länge $\ge n_0$ existiert.
+        & W & Zustand wiederholt sich $\Rightarrow$ pumpbar.\\
+        Reg.\ Grammatik mit $n$ Nichtterm.\ $\Rightarrow$ jeder DEA $\ge n$ Zustände.
+        & F & minimaler DEA kann kleiner sein.\\
+        LR-/DPDA-Sprachen sind gegen Komplement abgeschlossen.
+        & W & DCFL unter Komplement abgeschl.\\
+        DPDAs/PDAs gegen Schnitt abgeschlossen.
+        & F & schon CFL nicht unter $\cap$.\\
+        DPDAs gegen Schnitt mit DEA abgeschlossen.
+        & W & DCFL $\cap$ regulär $=$ DCFL.\\
+        $\{a^n b^m c^n d\mid m,n\}$ durch DPDA erkennbar.
+        & W & deterministisch: $a$ push, $c$ pop, $d$ prüfen.\\
+        Für kontextfreie Sprachen ist das Wortproblem nicht entscheidbar.
+        & F & CYK entscheidet es ($\mathcal O(n^3)$).\\
+        $G=(\{S\},\{1,2\},\{S\Coloneqq S1S\mid 2\},S)$ ist eindeutig.
+        & F & z.\,B.\ ``$21212$'' hat zwei Bäume.\\
+        Jede links-/rechtslineare Grammatik ist eindeutig.
+        & F & reguläre Grammatiken können mehrdeutig sein.\\
+        $G:\ S\Coloneqq SS\mid(S)\mid\varepsilon$ ist nicht eindeutig.
+        & W & $\varepsilon$/$SS$ erzeugen mehrere Bäume.\\
         \hline
     \end{tabular}
 \end{mytable}
@@ -409,23 +438,39 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
         \hline
         \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
         \hline
-        Probleme in NP sind entscheidbar. & W & $\text{NP}\subseteq$ entscheidbar.\\
-        Ein unentscheidbares Problem kann nicht in NP sein. & W & Kontraposition von oben.\\
-        Ein unentscheidbares Problem kann nicht NP-hart sein. & F & z.\,B.\ Halteproblem ist NP-hart.\\
-        Rekursiv aufzählbare Sprachen werden von det.\ TM akzeptiert. & W & det.\ TM $=$ nichtdet.\ TM (r.\,a.).\\
+        Probleme in NP sind entscheidbar.
+        & W & $\text{NP}\subseteq$ entscheidbar.\\
+        Ein unentscheidbares Problem kann nicht in NP sein.
+        & W & Kontraposition von oben.\\
+        Ein unentscheidbares Problem kann nicht NP-hart sein.
+        & F & z.\,B.\ Halteproblem ist NP-hart.\\
+        Rekursiv aufzählbare Sprachen werden von det.\ TM akzeptiert.
+        & W & det.\ TM $=$ nichtdet.\ TM (r.\,a.).\\
         $\{(a,b,c)\mid \varphi_{a+b}(c)\!\downarrow\}$ ist formale Regelsprache (r.\,a.). & W & Halteproblem ist semi-entscheidbar.\\
-        $\{(a,b,c)\mid \varphi_{a+b}(c)\!\downarrow\}$ ist entscheidbar. & F & Halteproblem unentscheidbar.\\
-        $\{(a,b)\mid \varphi_a(b)\!\uparrow\}$ ist rekursiv aufzählbar. & F & Komplement des Halteproblems, nicht r.\,a.\\
-        Es gibt abzählbar viele verschiedene Turingmaschinen. & W & jede TM endlich kodierbar.\\
-        Es gibt überabzählbar viele verschiedene Turingmaschinen. & F & siehe oben.\\
-        $\text{P}\subseteq\text{PSPACE}$. & W & Standardinklusion.\\
-        $\text{P}\subset\text{NP}\cap\text{co-NP}$. & W\,(?) & $\subseteq$ gilt; echte Inklusion offen.\\
-        Menge der entscheidbaren Probleme gegen Schnitt abgeschlossen. & W & zwei Entscheider ``und''-verknüpfen.\\
-        Für beliebige entscheidbare $L_1,L_2$ ist ``$L_1\subseteq L_2$'' entscheidbar. & F & reduziert von Leerheit/Halteproblem.\\
-        Für beliebige kontextfreie $L_1,L_2$ ist ``$L_1\subseteq L_2$'' entscheidbar. & F & CFL-Inklusion unentscheidbar.\\
-        Entscheidbar, ob eine TM nach $\le t$ Schritten hält. & W & einfach $t$ Schritte simulieren.\\
-        Wortproblem für kontextsensitive Sprachen ist entscheidbar. & W & LBA / Chomsky-1.\\
-        Formale Regelsprachen abgeschl.\ gegen $\cap,{}^C,\cup,*$. & F & Komplement fehlt (r.\,a.\ nicht unter $^C$).\\
+        $\{(a,b,c)\mid \varphi_{a+b}(c)\!\downarrow\}$ ist entscheidbar.
+        & F & Halteproblem unentscheidbar.\\
+        $\{(a,b)\mid \varphi_a(b)\!\uparrow\}$ ist rekursiv aufzählbar.
+        & F & Komplement des Halteproblems, nicht r.\,a.\\
+        Es gibt abzählbar viele verschiedene Turingmaschinen.
+        & W & jede TM endlich kodierbar.\\
+        Es gibt überabzählbar viele verschiedene Turingmaschinen.
+        & F & siehe oben.\\
+        $\text{P}\subseteq\text{PSPACE}$.
+        & W & Standardinklusion.\\
+        $\text{P}\subset\text{NP}\cap\text{co-NP}$.
+        & W\,(?) & $\subseteq$ gilt; echte Inklusion offen.\\
+        Menge der entscheidbaren Probleme gegen Schnitt abgeschlossen.
+        & W & zwei Entscheider ``und''-verknüpfen.\\
+        Für beliebige entscheidbare $L_1,L_2$ ist ``$L_1\subseteq L_2$'' entscheidbar.
+        & F & reduziert von Leerheit/Halteproblem.\\
+        Für beliebige kontextfreie $L_1,L_2$ ist ``$L_1\subseteq L_2$'' entscheidbar.
+        & F & CFL-Inklusion unentscheidbar.\\
+        Entscheidbar, ob eine TM nach $\le t$ Schritten hält.
+        & W & einfach $t$ Schritte simulieren.\\
+        Wortproblem für kontextsensitive Sprachen ist entscheidbar.
+        & W & LBA / Chomsky-1.\\
+        Formale Regelsprachen abgeschl.\ gegen $\cap,{}^C,\cup,*$.
+        & F & Komplement fehlt (r.\,a.\ nicht unter $^C$).\\
         \hline
     \end{tabular}
 \end{mytable}
@@ -436,25 +481,41 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
         \hline
         \textbf{Aussage} & \textbf{} & \textbf{Begründung}\\
         \hline
-        $A$ NP-vollständig $\iff A\le_p\text{SAT}$ und $\text{SAT}\le_p A$. & W & $A\le_p$SAT$\Rightarrow A\in$NP; SAT$\le_p A\Rightarrow$ NP-hart.\\
-        $A$ NP-vollständig $\iff \text{SAT}\le_p A$. & F & $A\in$NP fehlt (das wäre nur NP-hart).\\
-        $A$ NP-hart $\iff A\le_p\text{SAT}$. & F & Richtung falsch (müsste SAT$\le_p A$).\\
-        $A$ NP-hart $\iff A\le_p\text{ILP}\wedge\text{ILP}\le_p A$. & F & beschreibt NP-vollständig, nicht NP-hart.\\
+        $A$ NP-vollständig $\iff A\le_p\text{SAT}$ und $\text{SAT}\le_p A$.
+        & W & $A\le_p$SAT$\Rightarrow A\in$NP; SAT$\le_p A\Rightarrow$ NP-hart.\\
+        $A$ NP-vollständig $\iff \text{SAT}\le_p A$.
+        & F & $A\in$NP fehlt (das wäre nur NP-hart).\\
+        $A$ NP-hart $\iff A\le_p\text{SAT}$.
+        & F & Richtung falsch (müsste SAT$\le_p A$).\\
+        $A$ NP-hart $\iff A\le_p\text{ILP}\wedge\text{ILP}\le_p A$.
+        & F & beschreibt NP-vollständig, nicht NP-hart.\\
         Für jede reguläre Sprache $A$ gilt $A\le_p$ 3-SAT. & W & regulär $\subseteq$ P $\subseteq$ NP; 3-SAT NP-vollst.\\
-        $A\in\text{Chomsky-2}\Rightarrow$ 2-SAT $\le_p A$. & F & Gegenbsp.\ $A=\emptyset$ (kein Ziel für Ja-Instanzen).\\
-        Longest-Path (Pfad Länge $\ge k$, knotendisjunkt) ist NP-hart. & W & Hamiltonpfad als Spezialfall.\\
-        Erreichbarkeit ($\exists$ Pfad $u$-$v$) ist NP-hart. & F & in P (BFS/DFS).\\
-        Fair teilen (Werte auf $k$ Personen gleich) ist NP-vollständig. & W & Partition/Bin-Packing.\\
-        Bier auf Gläser ohne Überlauf verteilen. & W & Bin-Packing $\Rightarrow$ NP-hart.\\
-        Wunsch-Zimmernachbar (je 1 Wunsch) erfüllbar? & F & Matching $\Rightarrow$ in P.\\
-        $\{1,\dots,5\}^*\to\nz,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & W\,(?) & Ziffern $<10$ $\Rightarrow$ injektiv; def.-abhängig (nicht surjektiv).\\
-        $\N^*\to\N,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung. & F & unbeschr.\ $n_i$ $\Rightarrow$
+        $A\in\text{Chomsky-2}\Rightarrow$ 2-SAT $\le_p A$.
+        & F & Gegenbsp.\ $A=\emptyset$ (kein Ziel für Ja-Instanzen).\\
+        Longest-Path (Pfad Länge $\ge k$, knotendisjunkt) ist NP-hart.
+        & W & Hamiltonpfad als Spezialfall.\\
+        Erreichbarkeit ($\exists$ Pfad $u$-$v$) ist NP-hart.
+        & F & in P (BFS/DFS).\\
+        Fair teilen (Werte auf $k$ Personen gleich) ist NP-vollständig.
+        & W & Partition/Bin-Packing.\\
+        Bier auf Gläser ohne Überlauf verteilen.
+        & W & Bin-Packing $\Rightarrow$ NP-hart.\\
+        Wunsch-Zimmernachbar (je 1 Wunsch) erfüllbar?
+        & F & Matching $\Rightarrow$ in P.\\
+        $\{1,\dots,5\}^*\to\nz,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung.
+        & W\,(?) & Ziffern $<10$ $\Rightarrow$ injektiv; def.-abhängig (nicht surjektiv).\\
+        $\N^*\to\N,\ (n_1,\dots,n_t)\mapsto\sum n_i 10^i$ ist Gödelisierung.
+        & F & unbeschr.\ $n_i$ $\Rightarrow$
         Überträge, nicht injektiv.\\
-        Eine Gödelisierung muss polynomiell berechenbar sein. & F & nur berechenbar \& injektiv nötig.\\
-        Universelle TM mit 42 Zuständen und 42 Bandzeichen. & W & UTMs existieren, $42\times42$ reicht üppig.\\
-        TM mit 42 Zuständen simulierbar durch TM mit wenigen Zuständen. & W\,(?) & Zustands-/Zeichen-Tradeoff;
+        Eine Gödelisierung muss polynomiell berechenbar sein.
+        & F & nur berechenbar \& injektiv nötig.\\
+        Universelle TM mit 42 Zuständen und 42 Bandzeichen.
+        & W & UTMs existieren, $42\times42$ reicht üppig.\\
+        TM mit 42 Zuständen simulierbar durch TM mit wenigen Zuständen.
+        & W\,(?) & Zustands-/Zeichen-Tradeoff;
         Skript prüfen.\\
-        Universelle TM mit einem Zustand. & (?) & umstritten...im Skript / Tutorium klären.\\
+        Universelle TM mit einem Zustand.
+        & (?) & umstritten $\ldots$ im Skript / Tutorium klären.\\
         \hline
     \end{tabular}
 \end{mytable}
