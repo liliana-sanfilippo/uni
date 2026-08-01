@@ -272,3 +272,65 @@ ambiguous grammar. However, since in a hairpin loop a sequence of $S\to\texttt{.
     variant).}
 
 
+\begin{bsp}[AUAUAUAUA]
+    Das kann zwei Paarungen hervorrufen, je nach Backtracing.
+    \begin{itemize}
+        \item (((..))).
+        \item .(((..)))
+    \end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \includegraphics[width=\linewidth]{images/AUAUAUAUA_1_tab}
+            \caption{.(((..)))}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.45\textwidth}
+            \includegraphics[width=\linewidth]{images/AUAUAUAUA_2_tab}
+            \caption{(((..))).}
+        \end{subfigure}
+        \caption{Berechnung der beiden Möglichkeiten.}\label{fig:AUAUAUAUA_tab}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.3\textwidth}
+            \includegraphics[width=\linewidth]{images/AUAUAUAUA}
+            \caption{.(((..)))}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.3\textwidth}
+            \includegraphics[width=\linewidth]{images/AUAUAUAUA_1}
+            \caption{(((..))).}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.3\textwidth}
+            \includegraphics[width=\linewidth]{images/AUAUAUAUA_2}
+            \caption{.(((..)))}
+        \end{subfigure}
+        \caption{Paarung für Sequenz AUAUAUAUA, verschiedene Darstellungsweisen.}\label{fig:AUAUAUAUA}
+    \end{figure}
+
+\end{bsp}
+
+
+\begin{bsp}[GGUCCA]
+    Hier gibt es nur eine Möglichkeit: ((.)).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{images/GGUCCA}
+        \caption{Tracing}\label{fig:GGUCCA_tab}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \includegraphics[width=\linewidth]{images/GGUCCA}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.45\textwidth}
+            \includegraphics[width=\linewidth]{images/GGUCCA_1}
+        \end{subfigure}
+        \caption{Paarung für Sequenz GGUCCA}\label{fig:GGUCCA}
+    \end{figure}
+
+
+\end{bsp}
