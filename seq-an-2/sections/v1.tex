@@ -246,22 +246,23 @@ Now we can define an update system for each of the ranking systems
 above.
 $Let j = r(au)$.
 For the falling ranking function we compute:
+
 \[
     \text{(a) } \rf(ub) = (j \mod \sigma^{q-1} ) \cdot \sigma + \rfs (b),
 \]
 \txc{Or without using j:
-\[
-    \text{(a) } \rf(ub) = (\rf(au) \mod \sigma^{q-1} ) \cdot \sigma + \rfs (b),
-\]
+    \begin{equation}\label{eq:update_falling_ranking}
+    \glsB*{update_falling_ranking}
+    \end{equation}
 }
-and for the rising ranking function:
 \[
     \text{(b) }  \rf(zb) = \lfloor \frac{j}{\sigma} \rfloor + f (b), \quad \text{where } f (b) = \rfs (b) \cdot \sigma^{q-1}.
 \]
 \txc{Or without using j an f:
-    \[
-        \text{(b) }  \rf(zb) = \lfloor \frac{\rf(au)}{\sigma} \rfloor +  \rfs (b) \cdot \sigma^{q-1}.
-    \]
+and for the rising ranking function:
+    \begin{equation}\label{eq:update_rising_ranking}
+    \glsB*{update_rising_ranking}
+    \end{equation}
 }
 
 If we take a more detailed look at both systems now, we can see that the second way is
@@ -321,9 +322,9 @@ Generally, one can show the following relationship.
 \begin{theo} \label{thm:theorem-1-2}
     Let d denote the standard unit cost \gls{edis}.
     Then
-    \[
-        \frac{\dqu(x,y)}{2q} \leq d(x,y).
-    \]
+    \begin{equation}\label{eq:filter_schranke}
+        \glsB*{filter_schranke}
+    \end{equation}
     \paragraph{Proof.}
     Each edit operation locally affects up to $q$ \glspl{qgram}.
     Each changed \gls{qgram} can

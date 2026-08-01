@@ -32,9 +32,25 @@ description={An algorithm that implements a \gls{unrankfun}},
 type=defi
 }
 
-\newglossaryentry{dense}{
-name={dense},
+\newglossaryentry{filter_schranke}{
+name={q-gram Distanz als filter für Edit-Distanz},
 description={},
+formB={ \frac{d_q(x,y)}{2q} \leq d(x,y) =  d_q(x,y) \leq d(x,y)\cdot 2q},
+type=defi
+}
+
+
+\newglossaryentry{update_falling_ranking}{
+name={update function for falling ranking},
+description={},
+formB={r(ub) = (r(au) \mod \sigma^{q-1} ) \cdot \sigma + r_{\Sigma} (b)},
+type=defi
+}
+
+\newglossaryentry{update_rising_ranking}{
+name={update function for rising ranking},
+description={},
+formB={ r(zb) = \lfloor \frac{r(au)}{\sigma} \rfloor +  r_{\Sigma}  (b) \cdot \sigma^{q-1}},
 type=defi
 }
 
