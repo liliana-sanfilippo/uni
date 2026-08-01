@@ -83,9 +83,9 @@ Für $L_1$ aus dem Pumping-Teil wird meist direkt danach die passende CFG verlan
 \begin{itemize}
     \item Geben Sie eine explizite kontextfreie Grammatik für L1 (Teilaufgabe ...)) an.
     \begin{itemize}
-        \item  $\{a^n b^k c^m \mid n,m,k \in \nz_0, n = k\}$ \txc{(PK2025)}
         \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = k \}$  \txc{(PK2023)}
         \item $\{a^n b^m c^k \mid n,m,k \in \nz_0, n = m \}$  \txc{(NK2023)}
+        \item  $\{a^n b^k c^m \mid n,m,k \in \nz_0, n = k\}$ \txc{(PK2025)}
     \end{itemize}
 \end{itemize}
 
@@ -148,3 +148,42 @@ endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
 \end{itemize}
 \end{warn}
 
+\subsection{Endliche Automaten}
+
+\subsubsection{NEA aus rechtslinearer Grammatik konstruieren (als Diagramm).}%\txc{2019H, 2019N, 2021, 2023P, 2023Z,2025}
+Nichtterminale $\to$ Zustände, ein zusätzlicher Finalzustand $f$ für Regeln $S::=a$.
+
+\begin{itemize}
+    \item Geben Sie zu folgender rechtslinearer Grammatik einen äquivalenten NEA (als Diagramm) an:
+    \begin{itemize}
+        \item \txc{(PK2021)}
+        \item \txc{(PK2023)}
+        \item \txc{(NK2023)}
+        \item \txc{(PK2025)}
+    \end{itemize}
+    \item Betrachten Sie die rechtslineare Grammatik G. Vervollständigen Sie gemäß der Konstruktion in der Vorlesung
+    folgenden NEA, der genau die Sprache erkennen soll, die die Grammatik erzeugt.
+    \begin{itemize}
+        \item \txc{(HK2019)}
+        \item \txc{(NK2019)}
+    \end{itemize}
+    \item Geben Sie einen
+\end{itemize}
+
+\subsubsection{Potenzmengenkonstruktion NEA $\to$ DEA.}%\txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
+Fast jede Klausur... Mal als Diagramm, mal als Übergangstabelle. Müllzustand $\emptyset$ mitnehmen.
+
+\subsubsection{DEA direkt für eine gegebene Sprache angeben.} %\txc{2017H, 2017N}
+z.\,B.\ ``$\#_a(x)$ ungerade'' oder ``$\#_a(x)\equiv 1 \pmod 4$'' -- Zähl-Automat modulo\,$k$.
+
+\subsubsection{Komplement-Automat konstruieren.} % \txc{2019H, 2019N, 2021, 2023P}
+Finalzustände tauschen nur beim vollständigen DEA korrekt.
+
+\subsubsection{Kleene-Stern $L(A)^*$ bzw.\ $L(A)\cdot\{a\}$ konstruieren.} %\txc{2017H, 2017N, 2019N, 2023P}
+$\varepsilon$-Kanten von Finalzuständen zurück zum (neuen) Start; neuer akzeptierender Startzustand.
+
+\subsubsection{Konkatenation $L(A_1)\cdot L(A_2)$ / Vereinigung $L(A_1)\cup L(A_2)$.}% \txc{2019H, 2023Z (Konkat.);2025 (Vereinig.)}
+Diagramm \emph{und} allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Phi_1\cap\Phi_2=\emptyset$).
+
+\subsubsection{Äquivalenz Grammatik $\leftrightarrow$ Automat beweisen/widerlegen.}%\txc{2021, 2023P, 2023Z, 2025}
+$L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklusion beider Richtungen.
