@@ -217,7 +217,7 @@ function finalInner(){
   aln.forEach((l,k)=>{s+=`<text xml:space="preserve" x="${ax}" y="${ay+k*22}" font-family="monospace" font-size="16" fill="${COL.kom}">${l.replace(/ /g,'\u00a0')}</text>`;});
   const cy=32+grid.h+24;
   s+=`<text x="0" y="${cy}" font-size="14" fill="${COL.kom}">Gesamt-Editierdistanz </text>`;
-  s+=`<rect x="188" y="${cy-15}" width="${('C = '+editD).length*9+16}" height="22" rx="6" fill="${COL.hl}" stroke="${COL.defi}"/>`;
+  s+=`<rect x="188" y="${cy-15}" width="${('d(x,y) = '+editD).length*9+16}" height="22" rx="6" fill="${COL.hl}" stroke="${COL.defi}"/>`;
   s+=`<text x="196" y="${cy}" font-size="14" font-weight="700" fill="${COL.kap}">C = ${editD}</text>`;
   const w=Math.max(grid.w+28+aln[0].length*10, 360), h=cy+14;
   return {w,h,s};

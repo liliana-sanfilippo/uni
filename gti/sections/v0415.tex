@@ -1,15 +1,14 @@
-Formale Sprachen referieren im Gegensatz zu natürlichen Sprachen auf Sprachen
+\skript{Formale Sprachen referieren im Gegensatz zu natürlichen Sprachen auf Sprachen
 in der Technik: wie unterhalte ich mich mit einem Rechner oder Roboter? Eins der
 wichtigsten Beispiele sind Programmiersprachen auf unterschiedlichstem Niveau,
-angefangen von Assembler über gängige Hochsprachen wie Java oder C++ zu
-Anwendungssprachen wie etwa Matlab. Andere wichtige Bereiche, in denen
-formale Sprachen eine zentrale Rolle spielen, sind etwa XML, oder aber direkte
-Maschinenbefehle etwa in der NC Steuerung. Anders als natürliche Sprache muss
-dieses so präzise sein, dass die Maschine keinerlei Interpretationsspielraum hat
-und genau das versteht, was der Mensch intendiert. Zusätzliche Anforderung ist,
-dass dieses auch möglichst effizient umgesetzt werden kann, d.h. der Rechner
-sollte ein Wort möglichst schnell erkennen und interpretieren können.
-
+    angefangen von Assembler über gängige Hochsprachen wie Java oder C++ zu
+    Anwendungssprachen wie etwa Matlab. Andere wichtige Bereiche, in denen
+    formale Sprachen eine zentrale Rolle spielen, sind etwa XML, oder aber direkte
+    Maschinenbefehle etwa in der NC Steuerung. Anders als natürliche Sprache muss
+    dieses so präzise sein, dass die Maschine keinerlei Interpretationsspielraum hat
+    und genau das versteht, was der Mensch intendiert. Zusätzliche Anforderung ist,
+    dass dieses auch möglichst effizient umgesetzt werden kann, d.h. der Rechner
+    sollte ein Wort möglichst schnell erkennen und interpretieren können.}
 
 \section*{0\_orga.pdf}
 Vorerst irrelevant.
@@ -17,7 +16,7 @@ Vorerst irrelevant.
 
 \section{Historisches}
 \untit{1\_theoinf\_motivation.pdf - Skript S. 1--2}
-Die Formalisierung von Sprache ist ein nicht nur für die Informatik im Rahmen
+\skript{Die Formalisierung von Sprache ist ein nicht nur für die Informatik im Rahmen
 technischer Systeme relevantes Gebiet, sondern auch im Rahmen der Sprachphi-
 losophie und Linguistik behandelt worden. So ist einer der wichtigsten Forscher
 in dem Gebiet Noam Chomsky, ein Linguist, der 1956 die nach ihm benannte
@@ -37,25 +36,24 @@ schaften in dem Gebiet auch noch offen bzw. teilweise sehr spät gelöst worden.
 Abschluss so genannter kontextsensitiver Sprachen gegen Komplementbildung
 wurde erst 1988 bewiesen im Satz von Immerman/Szelepcsenyi (Immerman 1988).
 Letzterer war damals noch Student. Er erhielt 1995 zusammen mit Immerman
-hierfür den Gödel-Award, den Nobelpreis der Informatik.
-
+hierfür den Gödel-Award, den Nobelpreis der Informatik.}
 
 \section{Kapitelinhalt}
 \untit{2\_0\_sprachen\_intro.pdf - Skript S. 2}
-In diesem Kapitel werden wir eine Hierarchie von formalen Sprachen auf der
+\skript{In diesem Kapitel werden wir eine Hierarchie von formalen Sprachen auf der
 Basis von Grammatiken und deren Komplexität kennenlernen. Das dient dazu,
-unterschiedlich komplexe formale Sprachen definieren und interessante Eigen-
-schaften wie etwa den Abschluss untersuchen zu können.
+    unterschiedlich komplexe formale Sprachen definieren und interessante Eigen-
+    schaften wie etwa den Abschluss untersuchen zu können.}
 %Wichtige Begriffe in diesem Kapitel sind:
 
 
 \section{Wortersetzungssysteme und Notationen}
 \untit{2\_1\_Sprachen\_Grundlagen.pdf - Skript S. 2--6}
-Wortersetzungssysteme oder auch Semi-Thue-Systeme bilden ein grundlegendes
+\skript{Wortersetzungssysteme oder auch Semi-Thue-Systeme bilden ein grundlegendes
 Konzept, Wörter zu erzeugen oder abzuändern. Ausgehend von einem Startsymbol
 kann man eine Menge komplexer Wörter durch entsprechende Ersetzungsregeln
 definieren. Wir werden Wortersetzungssysteme als Grundlage in der gesamten
-Vorlesung verwenden. Zunächst geben wir einige Definitionen:
+Vorlesung verwenden. Zunächst geben wir einige Definitionen:}
 % 2_0_sprachen_intro.pdf
 
 \defin{symbol}
@@ -75,8 +73,7 @@ Vorlesung verwenden. Zunächst geben wir einige Definitionen:
 \begin{notation}
     Potenzen von Wörtern $\ww$ schreiben wir kurz als $\ww^k = \underbrace{\ww \dots \ww}_{k\ mal}$.
 \end{notation}
-\begin{bsp}
-    Zu Definition \ref{def:alphabet}. \\
+\begin{bsp}[Zu Definition \ref{def:alphabet} (Beispiel 2 in Skript)]
     $\{\un{0}, \un{1}\}$, $\{\un{a}, \un{b}, \un{c}\}$, $\{\un{4711}, \un{ha}, \un{ende}\}$ sind \glspl{alphabet}, wobei jeder
     Eintrag als ein untrennbares Zeichen gewertet wird.
 
@@ -85,7 +82,7 @@ Vorlesung verwenden. Zunächst geben wir einige Definitionen:
     $\{\un{a}, \un{aa}, \un{aaa}\}$ ist zwar ein gültiges \gls{alphabet} nach unserer Definition, aber nicht
     empfehlenswert, weil es keine eindeutige Identifikation der Zeichen erlaubt.
 \end{bsp}
-\begin{bsp} Zu Definition \autoref{def:allewörterlänge}  \nameref{def:allewörterlänge}. \\
+\begin{bsp}[Zu Definition \autoref{def:allewörterlänge} \nameref{def:allewörterlänge} (Beispiel 2 in Skript)]
 Alle Wörter über dem Alphabet $\{\un{0}, \un{1}\}$ der Länge maximal 3, aufgeschrieben in
 lexikographischer Reihenfolge, sind
 \[
@@ -93,24 +90,24 @@ lexikographischer Reihenfolge, sind
 \]
 \end{bsp}
 \begin{notation}
-    Um besser zwischen Variablen und Konstanten zu unterscheiden, schreiben wir konstante Wörter and Symbole
-    unterstrichen und aufrecht (etwa \textbf{\underline{bla}}).
-    Variablen schreiben wir stattdessen kursiv.
-    Außerdem heben wir Wortvariablen, ähnlich zu Vektoren in der linearen Algebra, durch einen Überstrich hervor (
-    etwa $\ww$).
+  \skript{  Um besser zwischen Variablen und Konstanten zu unterscheiden, schreiben wir konstante Wörter and Symbole
+  unterstrichen und aufrecht (etwa \textbf{\underline{bla}}).
+  Variablen schreiben wir stattdessen kursiv.
+  Außerdem heben wir Wortvariablen, ähnlich zu Vektoren in der linearen Algebra, durch einen Überstrich hervor (
+      etwa $\ww$).}
 \end{notation}
 
 
 \deffin{wsys}
 
 \begin{bem}
-    Für den Begriff ``Ersetzungsregel'' gibt
-    es reichlich Synonyme, z.B. ``Regel'',
-    ``Grammatikregel'',
-    ``Substitution'', ``Produktionsregel'' und
-    ``Produktion''. Dementsprechend wird ein
-    Wortersetzungssystem
-    auch häufig ``Regelmenge'' oder ``Produktionen'' genannt
+ \skript{Für den Begriff ``Ersetzungsregel'' gibt
+ es reichlich Synonyme, z.B. ``Regel'',
+     ``Grammatikregel'',
+     ``Substitution'', ``Produktionsregel'' und
+     ``Produktion''. Dementsprechend wird ein
+     Wortersetzungssystem
+     auch häufig ``Regelmenge'' oder ``Produktionen'' genannt}
 \end{bem}
 
 \deffin{ersetzungsregel}
@@ -174,12 +171,12 @@ Die transitive Hülle ist dann gegeben als die Menge
 
 % Beispiel 13
 
-\glspl{regA} werden bei der Textverarbeitung häufig benutzt.
+\skript{\glspl{regA} werden bei der Textverarbeitung häufig benutzt.
 Es ist daher interessant, möglichst einfache \glspl{regA} für eine gegebene Sprache zu konstruieren.
 Ein Maß, das hier betrachtet wird, ist die so-genannte Sternhöhe, also die Anzahl ineinander verschachtelter Operatoren \kleene.
 Das Sternhöhenproblem war tatsächlich bis 1988 noch ungelöst; das ist die Frage, für eine gegebene Sprache einen \glspldat{regA}
 zu finden mit möglichst wenig ineinander verschachtelten Operatoren \kleene.
-
+}
 \subsection{Lineare Grammatiken}
 
 \defin{linG}
@@ -188,9 +185,9 @@ zu finden mit möglichst wenig ineinander verschachtelten Operatoren \kleene.
 
 % Gimmick 15 Ó
 
-Kommen wir zu einem ``wüsten Beweis'', der \glspl{regA} zu \glspldat{rlinG} in Beziehung setzt (ein äquivalenter Beweis
+\skript{Kommen wir zu einem ``wüsten Beweis'', der \glspl{regA} zu \glspldat{rlinG} in Beziehung setzt (ein äquivalenter Beweis
 würde es erlauben, \glspl{llinG} zu \glspldat{regA} in Beziehung zu
-setzen, die Begriffe sind tatsächlich äquivalent):
+setzen, die Begriffe sind tatsächlich äquivalent):}
 \begin{satz}
     Eine Sprache L über $\Sigma$ ist regulär dann und nur dann, wenn es eine \gls{rlinG} G gibt mit $L(G) = L$.
 

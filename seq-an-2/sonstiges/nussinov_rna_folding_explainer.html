@@ -1,0 +1,169 @@
+<h2 class="sr-only">Interaktiver Nussinov-Erklärer: RNA-Sequenz, sich diagonal füllende DP-Matrix und Bogendiagramm der Basenpaare.</h2>
+
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0.5rem 0 1rem;">
+  <input id="seq" type="text" value="GGGAAAUCC" spellcheck="false"
+    style="width:150px;text-transform:uppercase;font-family:var(--font-mono);letter-spacing:2px;">
+  <button id="load">Neu berechnen</button>
+  <span style="flex:1"></span>
+  <button id="reset"><i class="ti ti-refresh" aria-hidden="true"></i> Zurück</button>
+  <button id="step">Schritt</button>
+  <button id="play"><i class="ti ti-player-play" aria-hidden="true"></i> Abspielen</button>
+</div>
+
+<div id="arc" style="margin:0 0 0.75rem;"></div>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;">
+  <div id="matrix"></div>
+  <div style="flex:1;min-width:210px;">
+    <div style="font-size:13px;color:black;margin-bottom:6px;">Aktueller Fall für N(i,j)</div>
+    <div id="cases" style="display:flex;flex-direction:column;gap:6px;"></div>
+    <div id="score" style="margin-top:14px;font-size:14px;"></div>
+  </div>
+</div>
+
+<style>
+  #matrix table{border-collapse:collapse;font-family:var(--font-mono);font-size:13px;}
+  #matrix th{color:black;font-weight:400;padding:3px 7px;}
+  #matrix td{width:26px;height:26px;text-align:center;border:0.5px solid #8A7B84;
+             color:black;transition:background .15s;}
+  #matrix td.empty{color:black;background:transparent;}
+  #matrix td.diag{background:white;color:black;}
+  #matrix td.cur{outline:2px solid #950E4F;background:#F49EC4;outline-offset:-2px;}
+  .casebox{border:0.5px solid black;border-radius:var(--radius);padding:7px 10px;
+           font-size:13px;color:black;max-width:300px}
+  .casebox.win{border-color:#BF1266;background:#F49EC4;color:black;}
+  .casebox b{font-family:var(--font-mono);}
+</style>
+
+<script>
+(function(){
+  const pairs = {AU:1,UA:1,GC:1,CG:1,GU:1,UG:1};
+  const MINLOOP = 1;
+  let s, n, N, choice, order, ptr, timer=null;
+
+  function canPair(a,b){ return pairs[a+b]?1:0; }
+
+  function compute(){
+    n = s.length;
+    N = Array.from({length:n},()=>Array(n).fill(0));
+    choice = Array.from({length:n},()=>Array(n).fill(null));
+    for(let l=2;l<=n;l++){
+      for(let i=0;i+l-1<n;i++){
+        const j=i+l-1;
+        let best=N[i+1][j], c={t:'down'};              // i ungepaart
+        if(N[i][j-1]>best){best=N[i][j-1];c={t:'left'};} // j ungepaart
+        const pv=(j-i>MINLOOP?canPair(s[i],s[j]):0);
+        if(pv && N[i+1][j-1]+1>best){best=N[i+1][j-1]+1;c={t:'pair'};}
+        for(let k=i+1;k<j;k++){
+          if(N[i][k]+N[k+1][j]>best){best=N[i][k]+N[k+1][j];c={t:'bif',k:k};}
+        }
+        N[i][j]=best; choice[i][j]=c;
+      }
+    }
+    order=[];
+    for(let l=2;l<=n;l++) for(let i=0;i+l-1<n;i++) order.push([i,i+l-1]);
+  }
+
+  function traceback(i,j,out){
+    if(i>=j) return;
+    const c=choice[i][j];
+    if(!c){return;}
+    if(c.t==='down') traceback(i+1,j,out);
+    else if(c.t==='left') traceback(i,j-1,out);
+    else if(c.t==='pair'){ out.push([i,j]); traceback(i+1,j-1,out); }
+    else { traceback(i,c.k,out); traceback(c.k+1,j,out); }
+  }
+
+  function drawArc(revealed){
+    const W=Math.max(360,n*40), pad=26, gap=(W-2*pad)/(n-1||1), H=110, base=H-26;
+    let svg=`<svg width="100%" viewBox="0 0 ${W} ${H}" role="img"><title>RNA-Sequenz mit Basenpaar-Bögen</title><desc>Bogendiagramm der gefundenen Basenpaare.</desc>`;
+    let pr=[];
+    if(revealed) traceback(0,n-1,pr);
+    for(const [a,b] of pr){
+      const x1=pad+a*gap, x2=pad+b*gap, r=(x2-x1)/2, cx=(x1+x2)/2;
+      svg+=`<path d="M ${x1} ${base} A ${r} ${r} 0 0 1 ${x2} ${base}" fill="none" stroke="#534AB7" stroke-width="1.6"/>`;
+    }
+    for(let i=0;i<n;i++){
+      const x=pad+i*gap;
+      svg+=`<circle cx="${x}" cy="${base}" r="11" fill="#F594C3" stroke="#F594C3" stroke-width="0.5"/>`;
+      svg+=`<text x="${x}" y="${base+4}" text-anchor="middle" font-family="var(--font-mono)" font-size="13" fill="black">${s[i]}</text>`;
+      svg+=`<text x="${x}" y="${base+24}" text-anchor="middle" font-size="11" fill="black">${i+1}</text>`;
+    }
+    svg+=`</svg>`;
+    document.getElementById('arc').innerHTML=svg;
+  }
+
+  function drawMatrix(){
+    let h='<table><tr><th></th>';
+    for(let j=0;j<n;j++) h+=`<th>${s[j]}</th>`;
+    h+='</tr>';
+    for(let i=0;i<n;i++){
+      h+=`<tr><th>${s[i]}</th>`;
+      for(let j=0;j<n;j++){
+        if(j<i) h+='<td class="empty"></td>';
+        else if(j===i) h+='<td class="diag">0</td>';
+        else h+=`<td class="empty" id="c${i}_${j}">·</td>`;
+      }
+      h+='</tr>';
+    }
+    document.getElementById('matrix').innerHTML=h+'</table>';
+    for(let i=0;i+1<n;i++){ const el=document.getElementById(`c${i}_${i+1}`); }
+  }
+
+  function renderCases(i,j){
+    const c=choice[i][j], box=document.getElementById('cases');
+    const pv=(j-i>MINLOOP?canPair(s[i],s[j]):0);
+    const items=[
+      {t:'down', txt:`<b>${s[i]}</b> ungepaart → N(i+1, j) = ${N[i+1]?N[i+1][j]:0}`},
+      {t:'left', txt:`<b>${s[j]}</b> ungepaart → N(i, j−1) = ${N[i][j-1]}`},
+      {t:'pair', txt:`<b>${s[i]}·${s[j]}</b> paart ${pv?'✓':'✗'} → N(i+1, j−1)+${pv} = ${N[i+1]&&j-1>=0?N[i+1][j-1]+pv:'–'}`},
+      {t:'bif',  txt:`Aufspaltung bei k → maxₖ N(i,k)+N(k+1,j)`}
+    ];
+    box.innerHTML=items.map(o=>`<div class="casebox${c&&c.t===o.t?' win':''}">${o.txt}</div>`).join('');
+    document.getElementById('score').innerHTML=
+      `N(${i+1}, ${j+1}) = <b style="font-family:var(--font-mono)">${N[i][j]}</b>`;
+  }
+
+  function reveal(idx){
+    const [i,j]=order[idx];
+    const el=document.getElementById(`c${i}_${j}`);
+    el.textContent=N[i][j]; el.classList.remove('empty');
+    el.style.background = N[i][j]>0 ? '#15B097' : 'transparent';
+    document.querySelectorAll('#matrix td.cur').forEach(e=>e.classList.remove('cur'));
+    el.classList.add('cur');
+    renderCases(i,j);
+  }
+
+  function stepOnce(){
+    if(ptr>=order.length){ stop(); drawArc(true);
+      document.getElementById('score').innerHTML+=' &nbsp;· fertig — optimale Faltung';
+      return; }
+    reveal(ptr++);
+  }
+  function stop(){ if(timer){clearInterval(timer);timer=null;}
+    document.getElementById('play').innerHTML='<i class="ti ti-player-play"></i> Abspielen'; }
+  function play(){
+    if(timer){stop();return;}
+    document.getElementById('play').innerHTML='<i class="ti ti-player-pause"></i> Pause';
+    timer=setInterval(()=>{ if(ptr>=order.length){stepOnce();stop();} else stepOnce(); },420);
+  }
+  function reset(){ stop(); ptr=0; drawMatrix(); drawArc(false);
+    document.getElementById('cases').innerHTML=
+      '<div class="casebox">Drücke <b>Schritt</b> oder <b>Abspielen</b>.</div>';
+    document.getElementById('score').innerHTML=''; }
+
+  function load(){
+    let v=document.getElementById('seq').value.toUpperCase().replace(/[^ACGU]/g,'');
+    if(v.length<2) v='GGGAAAUCC';
+    if(v.length>14) v=v.slice(0,14);
+    document.getElementById('seq').value=v;
+    s=v; compute(); reset();
+  }
+
+  document.getElementById('step').onclick=stepOnce;
+  document.getElementById('play').onclick=play;
+  document.getElementById('reset').onclick=reset;
+  document.getElementById('load').onclick=load;
+  load();
+})();
+</script>
