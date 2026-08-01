@@ -281,6 +281,96 @@ Schon lange her...vermutlich nicht wieder?
 
 \section{Kontextfreie Grammatiken \& LR/Kellerautomaten}
 
+\subsubsection{Eindeutigkeit}
+Eindeutig $=$ jedes Wort hat genau einen Strukturbaum.
+
+\begin{itemize}
+    \item Ist die Grammatik eindeutig? Begründen Sie.
+    \begin{itemize}
+        \item  $G=(\{S\},\{a,b\},\{S::=aSSa\mid b\mid a\},S)$ \txc{(HK2017)}
+        \item $G=(\{S,B\},\{a,b\},\{S::=aBSa\mid\eps,\ B::=bS\mid Sb\},S)$ \txc{(NK2017)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(HK2019)}
+        \item $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(NK2019)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aScB\mid B,\ B::=bB\mid b\},S)$ \txc{(PK2021)}
+        \item $G=(\{S\},\{a,b,c\},\{S::=bSSb\mid c\mid b\},S)$ \txc{(PK2025)}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Regeln des zur Grammatik gehörenden LR-Automaten explizit angeben.}
+Shift-Regeln (Terminal lesen) und Reduce-Regeln (pro Grammatikregel).
+
+\begin{itemize}
+    \item Geben Sie die Regeln des zur Grammatik G gehörenden LR-Automaten an
+    \begin{itemize}
+        \item  $G=(\{S\},\{a,b\},\{S::=aSSa\mid b\mid a\},S)$ \txc{(HK2017)}
+        \item $G=(\{S,B\},\{a,b\},\{S::=aBSa\mid\eps,\ B::=bS\mid Sb\},S)$ \txc{(NK2017)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(HK2019)}
+        \item $G=(\{S,B\},\{a,b,c\},\{S::=aSc\mid B,\ B::=bB\mid\eps\},S)$ \txc{(NK2019)}
+        \item  $G=(\{S,B\},\{a,b,c\},\{S::=aScB\mid B,\ B::=bB\mid b\},S)$ \txc{(PK2021)}
+        \item  $G=(\{S\},\{(,a,)\},\{S::=(SS)\mid aS\mid a\},S)$ \txc{(PK2023)}
+        \item $G=(\{S\},\{a,b\},\{S::=aSSa\mid a\mid b\},S)$ \txc{(NK2023)}
+        \item $G=(\{S\},\{a,b,c\},\{S::=bSSb\mid c\mid b\},S)$ \txc{(PK2025)}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Ein Wort mit dem LR-Automaten rechnen und den Strukturbaum angeben.}
+Jeden Shift/Reduce-Schritt (Kellerinhalt) angeben.
+
+\begin{itemize}
+    \item Rechnen Sie das Wort $w$ und geben Sie ggf.\ den Strukturbaum an:
+    \begin{itemize}
+        \item  $w=\underline{abba}$ (mit Strukturbaum) \txc{(HK2017)}
+        \item  $w=\underline{aba}$ (mit Strukturbaum) \txc{(NK2017)}
+        \item  $w=\underline{aabbcbbcb}$ \txc{(PK2021)}
+        \item  $w=\underline{(a(aaa))}$ (mit Strukturbaum) \txc{(PK2023)}
+        \item $w=\underline{abba}$ (mit Strukturbaum) \txc{(NK2023)}
+        \item  $w=\underline{bcbccbb}$ (jeden Schritt der Rechnung angeben) \txc{(PK2025)}
+    \end{itemize}
+    \item Geben Sie einen Strukturbaum für das Wort in dieser Grammatik an:
+    \begin{itemize}
+        \item  $w=\underline{aabcc}$ \txc{(HK2019)}
+        \item $w=\underline{aabcc}$  \txc{(NK2019)}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{CYK-Algorithmus (Cocke-Kasami-Younger). Grammatik in CNF.}
+\begin{itemize}
+    \item Prüfen Sie mit dem CYK-Algorithmus, ob $w\in L(G)$ (Grammatik aus Teilaufgabe c bzw.\ gegeben):
+    \begin{itemize}
+        \item  $w=(a(aaa))$ für $G=(\{S\},\{(,a,)\},\{S::=(SS)\mid aS\mid a\},S)$ \txc{(PK2023)}
+        \item $G_1=(\{A,B,C\},\{a,b,c\},\{A::=AB\mid AC\mid BC\mid a,\ B::=BB\mid BC\mid b,\ C::=c\},A)$; prüfe $\underline{acb}\in L(G_1)$ \txc{(NK2023)}
+        \item $G_{\mathrm{CNF}}=(\{A,B,C\},\{a,b,c\},\{A::=AB\mid BC\mid a,\ B::=BB\mid b,\ C::=AC\mid CC\mid c\},B)$;\\
+        (i) zeigen Sie $w=ccabbc\notin L(G_{\mathrm{CNF}})$; \ (ii) für welchen Startzustand würde $w$ akzeptiert? \txc{(PK2025)}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Kellerautomat vervollständigen und Rechnung angeben.}
+Regeln $a\,q_0\,b::=\overline{w}\,q_1$ graphisch als $(a,b)/\overline{w}$.
+\begin{itemize}
+    \item Vervollständigen Sie den (indeterministischen) Kellerautomaten, der dieselbe Sprache erkennt wie $G$,
+    und geben Sie die Rechnung für das Wort an.
+    \begin{itemize}
+        \item Zustände $q_a,q_b,q_c,f$ (Diagramm), Rechnung für $\underline{aabcc}$ \txc{(HK2019)}
+        \item  Regelschablonen $(\#,a)/\_,\ (\#,b)/\_,\ (a,a)/\_,\ (a,b)/\_,\ (a,c)/\_$ und $\#/\eps$ nach $f$;
+        Rechnung für $\underline{aabcc}$ \txc{(NK2019)}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Induktionsbeweis über Wörter / Sprachcharakterisierung.}
+Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
+\begin{itemize}
+    \item Zeigen Sie durch Induktion, dass für alle $\overline{x}\in L(G)$ gilt:
+    \begin{itemize}
+        \item  $\#_a(\overline{x})\ge\#_b(\overline{x})$ \; oder \; $\overline{x}=b$ \txc{(HK2017)}
+        \item $\#_a(\overline{x})\ge\#_b(\overline{x})$ \txc{(NK2017)}
+        \item $\#_b(\overline{w})\le\#_a(\overline{w})+1$ \txc{(NK2023)}
+    \end{itemize}
+    \item Zeigen Sie, dass für jedes Wort die Anzahl der $b$'s mindestens um $1$ größer ist als die Anzahl der $a$'s. \txc{(PK2021)}
+    \item Betrachten Sie die Sprache $L'=\{\overline{w}\in\{(,a,)\}^*\mid \#_((\overline{x})\ge\#_)(\overline{x})$ und
+    $\#_((\overline{y})\le\#_)(\overline{y})$ für alle Zerlegungen $\overline{w}=\overline{x}\overline{y}\}$.
+    Zeigen Sie $L(G)\subsetneq L'$. \txc{(PK2023)}
+\end{itemize}
+
 \section{Probleme / Berechenbarkeit \& Reduktion}
 
 \section{Multiple-Choice}
