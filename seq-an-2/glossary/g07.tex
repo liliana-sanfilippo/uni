@@ -13,12 +13,12 @@
 \newglossaryentry{waterman_eggert}{
 name={Waterman-Eggert-Algorithm},
 description={},
-formB={$S(i,j) = max \begin{cases}
+formB={S(i,j) = max \begin{cases}
 0   \\
 S(i - 1, j - 1) + s(x[i], y[j])  \\
 S(i - 1, j) - s(x[i], --)  \\
 S(i, j - 1) - s(--, y[j])
-\end{cases}$},
+\end{cases}},
 nominative={Laufzeit},
 accusative={Aufgabe},
 genitive={Speicherplatz}
