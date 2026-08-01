@@ -15,6 +15,12 @@ often still optimal or close to optimal.}
     parts, and then to solve the two such generated alignment problems for the left parts and the right
     parts separately. This is done either by recursion or, if the sequences are short enough, by an exact
     algorithm. For a graphical sketch of the procedure.} % TODO , see Figure~10.1.
+
+    Schneide alle Sequenzen an je einer geeigneten Stelle in zwei Teile, sodass ein optimales
+    MSA garantiert (fast) durch diese Schnitte läuft; löse die kleineren Blöcke (rekursiv oder exakt)
+    und konkateniere.
+    Die Schnittstellen ergeben sich aus Zusatzkosten-(C-)Matrizen, die den
+    minimalen Preis eines Durchgangs durch eine Schnittposition messen.
 \end{idee}
 
 \paragraph{Finding cut positions.} \skript{The main question about this procedure is how to choose good cut positions, since this choice is
@@ -308,6 +314,7 @@ length of a diagonal segment is bounded by a constant.}
     alignment, since they might be \emph{inconsistent}, i.e., the inclusion of some of the segments does not
     allow the inclusion of other segments into the alignment. In the case of two sequences, this is the
     case if and only if two segments ``cross'' as the two segments ``ON'' and ``ANA''.} % TODO  shown in Figure~10.4.
+    case if and only if two segments ``cross'' as the two segments ``ON'' and ``ANA''.} % TODO  shown in Figure~10.4.
 
 \begin{figure}
 
@@ -406,3 +413,6 @@ In its second version, DIALIGN 2.0, the statistical score for diagonals was chan
 longer diagonals. Also, the algorithm for consistency checking and greedy addition of diagonals into the
 growing multiple alignment has been improved several times.}
 
+\warnung{DCA und DIALIGN sind Heuristiken, keine Optimalitätsgarantie. DIALIGN eignet sich
+für lokale Ähnlichkeiten (konservierte Blöcke in sonst unähnlichen Sequenzen); die
+Greedy-Auswahl kann suboptimal sein. Bei DCA hängt die Qualität von den Schnittpositionen ab.}

@@ -187,16 +187,8 @@ problem at hand: If we want to compare two sequences whose most recent common an
 $530$ million years ago, then we should ideally use a score matrix constructed from sequence pairs
 with distance $t \approx 1060$ million years.}
 
-\begin{defi}[\glsfirst*{log_odds_score_matrix}]
-    \glsF*{log_odds_score_matrix}
+\definSB{log_odds_score_matrix}
 
-    \begin{equation}\label{eq:log_odds_score_matrix}
-        \mathrm{score}_t(a,b):=
-        \log\!\left(
-                  \frac{M_t(a,b)}{\pi_a\cdot\pi_b}
-        \right)
-    \end{equation}
-\end{defi}
 \begin{bem}
     For convenience, scores are often scaled by a constant factor and then rounded to integers.
     The
