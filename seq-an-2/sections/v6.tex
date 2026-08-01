@@ -167,9 +167,45 @@ The forward-backward technique is used, for example, in the following problems:
 
     The procedure is called recursively, once for the upper left ``quarter'', and once for the lower right
     ``quarter'' of the alignment matrix. The recursion is continued until only one row remains, in which
-    case the problem can easily be solved directly.} % See Figure~6.2 for an illustration.
+    case the problem can easily be solved directly.}  See Figure~\ref{fig:figure32} for an illustration.
 
-% TODO figure
+
+\begin{figure}[H]
+    \begin{tikzpicture}[x=0.5cm,y=0.5cm,>=Latex]
+        \def\N{17}\def\M{12}\def\np{8}\def\mp{7}
+        % Gitter
+        \draw[step=0.5cm,gray!60,thin] (0,0) grid (\N, -\M);
+        % Vertikal
+        \draw[step=0.5cm,black,dashed,thick] (2,0) rectangle (3, -7);
+        \draw[step=0.5cm,black,dashed,thick] (13,-6) rectangle (14, -12);
+        \draw[step=0.5cm,black,thick] (7,0) rectangle (8, -12);
+        % Horizontal
+        \draw[step=0.5cm,black,dashed,thick] (0,-3) rectangle (8, -4);
+        \draw[step=0.5cm,black,thick] (0,-6) rectangle (17, -7);
+        \draw[step=0.5cm,black,dashed,thick] (7,-9) rectangle (17, -10);
+        % Spaltenbeschriftung
+        \node[above] at (0.5,0.5){0};
+        \node[above] at (\np-0.5,0.5){$n'$};
+        \node[above] at (\N-0.5,0.5){$n$};
+        % Zeilenbeschriftung
+        \node[left] at (-0.5,-0.5){0};
+        \node[left] at (-0.5,-3.5){$\lceil m/4 \rceil$};
+        \node[left] at (-0.5,-\mp+0.5){$m'=\lceil m/2 \rceil$};
+        \node[left] at (-0.5,-9.5){$\lceil 3m/4 \rceil$};
+        \node[left] at (-0.5,-\M+0.5){$m$};
+
+        % Kreise
+        \draw[step=0.5cm, black, thick]
+        (2.5,-3.5) circle (0.4);
+        \draw[step=0.5cm, black, thick]
+        (7.5,-6.5) circle (0.4);
+        \draw[step=0.5cm, black, thick]
+        (13.5,-9.5) circle (0.4);
+
+    \end{tikzpicture}
+    \caption{Illustration of linear-space alignment.}\label{fig:figure32}
+\end{figure}
+
 
 \paragraph{Complexity analysis.} \skript{The space complexity is in $O(m+n)$ since all matrix computations can be performed row-wise using
 memory for two adjacent rows at most, and the final alignment has at most $m+n$ columns.
