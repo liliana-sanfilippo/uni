@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sellers vs. Ukkonen (Cutoff)</title>
+</head>
+<body>
+<h1>Sellers vs. Ukkonen-Cutoff</h1>
+<br>
+<div class="controls">
+    <label>P</label><input id="p" type="text" value="ACGT">
+    <label>T</label><input id="t" type="text" value="AGTCACGTGC">
+    <label>k</label><input id="k" type="text" value="1">
+    <button class="primary" id="load">Berechnen</button>
+    <span style="flex:1"></span>
+    <button id="reset">Zurück</button>
+    <button id="step">Schritt</button>
+    <button id="play">▶ Abspielen</button>
+
+    <div id="status"></div>
+    <div id="diff"></div>
+    <div class="svgwrap">
+        <div id="stage_sellers"></div>
+        <div id="stage_ukkonen"></div>
+        <div id="stage_code">
+            <svg xmlns="http://www.w3.org/2000/svg" width="850" height="1100" viewBox="0 0 1500 1900">
+                <text x="45" y="110" class="meta">Input:  Pattern x ∈ Σ^m,  Text y ∈ Σ^n,  threshold k ∈ ℕ₀,  indel cost γ &gt; 0</text>
+                <text x="45" y="144" class="meta">Output: End positions j with d(x,y′) ≤ k, where y′ = y[j′…j] for some j′ ≤ j</text>
+                <g id="initilisierung">
+                    <text x="45" y="178" class="comment">Initialize the 0-th column of the alignment matrix</text>
+                    <text x="45" y="213" class="code">i₀* ← min{m, ⌊k/γ⌋}</text>
+                    <text x="45" y="248" class="loop">for i ← 0 to i₀*</text>
+                    <text x="75" y="283" class="code">    C₀(i) ← i · γ</text>
+                    <text x="45" y="318" class="end">end for</text>
+                </g>
+                <text x="45" y="353" class="comment">Process the matrix column by column</text>
+                <text x="45" y="388" class="loop">for j ← 1 to n</text>
+                <text x="75" y="423" class="code">    Cⱼ(0) ← 0</text>
+                <text x="75" y="458" class="code">    iⱼ* ← 0</text>
+                <text x="75" y="493" class="code">    i ← 1</text>
+                <text x="75" y="528" class="loop">    while i ≤ iⱼ₋₁*</text>
+                <text x="105" y="563" class="formula">        Cⱼ(i) ← min { Cⱼ₋₁(i−1) + cost(x[i],y[j]),</text>
+                <text x="165" y="598" class="formula">                    Cⱼ₋₁(i) + γ,</text>
+                <text x="165" y="633" class="formula">                    Cⱼ(i−1) + γ }</text>
+                <text x="105" y="668" class="if">        if Cⱼ(i) ≤ k</text>
+                <text x="135" y="703" class="code">            iⱼ* ← i</text>
+                <text x="105" y="738" class="end">        end if</text>
+                <text x="105" y="773" class="code">        i ← i + 1</text>
+                <text x="75" y="808" class="end">    end while</text>
+                <text x="75" y="843" class="if">    if i ≤ m</text>
+                <text x="105" y="878" class="formula">        Cⱼ(i) ← min { Cⱼ₋₁(i−1) + cost(x[i],y[j]),</text>
+                <text x="165" y="913" class="formula">                    Cⱼ(i−1) + γ }</text>
+                <text x="105" y="948" class="if">        if Cⱼ(i) ≤ k</text>
+                <text x="135" y="983" class="code">            iⱼ* ← i</text>
+                <text x="105" y="1018" class="end">        end if</text>
+                <text x="105" y="1053" class="code">        i ← i + 1</text>
+                <text x="105" y="1088" class="loop">        while i ≤ m and Cⱼ(i−1) + γ ≤ k</text>
+                <text x="135" y="1123" class="code">            Cⱼ(i) ← Cⱼ(i−1) + γ</text>
+                <text x="135" y="1158" class="if">            if Cⱼ(i) ≤ k</text>
+                <text x="165" y="1193" class="code">                iⱼ* ← i</text>
+                <text x="135" y="1228" class="end">            end if</text>
+                <text x="135" y="1263" class="code">            i ← i + 1</text>
+                <text x="105" y="1298" class="end">        end while</text>
+                <text x="75" y="1333" class="end">    end if</text>
+                <text x="75" y="1368" class="if">    if iⱼ* = m and Cⱼ(m) ≤ k</text>
+                <text x="105" y="1403" class="comment">        report match ending at column j and its cost</text>
+                <text x="105" y="1438" class="return">        return (j, Cⱼ(m))</text>
+                <text x="75" y="1473" class="end">    end if</text>
+                <text x="45" y="1508" class="end">end for</text>
+            </svg>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<style>
+    .title { font: 700 30px "DejaVu Sans", sans-serif; fill: #111; }
+    .meta { font: 18px "DejaVu Sans", sans-serif; fill: #222; }
+    .code, .loop, .if, .end, .return, .formula { font-size: 18px; font-family: monospace; fill: #111; }
+    .comment { font: italic 17px "DejaVu Sans", sans-serif; fill: #555; }
+    .loop, .if, .return { font-weight: 700; }
+</style>
