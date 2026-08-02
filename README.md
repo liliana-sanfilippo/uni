@@ -1,16 +1,28 @@
 # Links
 
-https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf
+## Module
 
-https://liliana-sanfilippo.github.io/uni/seq-an-2.pdf
+- **Statistik und Wahrscheinlichkeitstheorie** (SS2026, Teile aus SS2025)
+  - [Statistik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/statistik.pdf)
+- **Sequenzanalyse 2** (SS2026)
+  - [Sequenzanalyse 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/seq-an-2.pdf)
+  - [Nussinov Visualisierung](https://liliana-sanfilippo.github.io/uni/nussinov.html)
+  - [Hirschberg Visualisierung](https://liliana-sanfilippo.github.io/uni/hirschberg.html)
+  - [Karteikarten in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/seq-an-2/karteikarten)
+- **Knowledge Representation** (SS2026)
+  - [Knowledge Representation Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf)
+- **Grundlagen Theoretischer Informatik** (SS2026)
+  - [Grundlagen Theoretischer Informatik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/gti.pdf)
+- **Eukaryotengentik** (SS2026)
+  - [Eukaryotengentik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/eukgen.pdf) 
+- **Grundlagen Molekularer Biologie 2** (SS2026)
+  - [Grundlagen Molekularer Biologie 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/mobi2.pdf) 
+- **Analyse von Postgenomdatensätzen** (SS2026)
 
-https://liliana-sanfilippo.github.io/uni/statistik.pdf
+## Weiteres
 
-https://liliana-sanfilippo.github.io/uni/gti.pdf
+- [Skript Latex-Karteikarten zu Anki-Karteikarten](https://github.com/liliana-sanfilippo/uni/blob/main/anki-sync/latex_glossary_to_anki.py) 
 
-https://liliana-sanfilippo.github.io/uni/eukgen.pdf
-
-https://liliana-sanfilippo.github.io/uni/mobi2.pdf
 
 # Vollständigkeit
 
