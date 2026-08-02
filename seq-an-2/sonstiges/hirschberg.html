@@ -34,8 +34,8 @@
 </style>
 </head>
 <body>
-  <h1>Hirschberg-Algorithmus</h1>
-  <p class="sub">Lineare-Speicher-Version des globalen Alignments · Editierdistanz (Match 0, Mismatch/Lücke 1). Jeder Schritt ist eine einzelne, herunterladbare SVG-Grafik.</p>
+  <h1 style="margin-bottom: 1em">Hirschberg-Algorithmus</h1>
+
 
   <div class="controls">
     <label>X</label><input id="sx" type="text" value="CACG">
@@ -189,7 +189,7 @@ function stepInner(sp,idx){
   let cy=titleH+lay.h+22;
   if(sp.type==='split'){
     s+=`<text x="0" y="${cy}" font-size="13" fill="${COL.kom}">Minimum von T in Spalte p=${sp.ps} (Y-Position ${sp.c0+sp.ps}) → Schnittpunkt. Beide Hälften werden anschließend weiter berechnet.</text>`;
-    cy+=12; const lbl=`d(x,y) (Editierdistanz der Sequenzen) = ${sp.edit}`, bw=lbl.length*8+16;
+    cy+=12; const lbl=`d(x,y) = ${sp.edit}`, bw=lbl.length*8+16;
     s+=`<rect x="0" y="${cy}" width="${bw}" height="24" rx="6" fill="${COL.hl}" stroke="${COL.defi}"/>`;
     s+=`<text x="8" y="${cy+16}" font-size="14" font-weight="700" fill="${COL.kap}">${lbl}</text>`;
     cy+=30;
@@ -211,14 +211,14 @@ function alignmentLines(){
 function finalInner(){
   const allSplits=steps.filter(s=>s.type==='split').map(s=>({r:s.r0+s.mid,c:s.c0+s.ps}));
   const grid=gridG(38,{path:path,bold:true,splits:allSplits});
-  let s=`<text x="0" y="20" font-size="18" font-weight="700" fill="${COL.kap}">Gesamtübersicht – der komplette Weg</text>`;
-  s+=`<g transform="translate(0,32)">${grid.s}</g>`;
+  //let s=`<text x="0" y="20" font-size="18" font-weight="700" fill="${COL.kap}">u</text>`;
+  let s=`<g transform="translate(0,32)">${grid.s}</g>`;
   const aln=alignmentLines(),ax=grid.w+28,ay=52;
   aln.forEach((l,k)=>{s+=`<text xml:space="preserve" x="${ax}" y="${ay+k*22}" font-family="monospace" font-size="16" fill="${COL.kom}">${l.replace(/ /g,'\u00a0')}</text>`;});
   const cy=32+grid.h+24;
-  s+=`<text x="0" y="${cy}" font-size="14" fill="${COL.kom}">Gesamt-Editierdistanz </text>`;
+  s+=`<text x="0" y="${cy}" font-size="14" fill="${COL.kom}">Editierdistanz: </text>`;
   s+=`<rect x="188" y="${cy-15}" width="${('d(x,y) = '+editD).length*9+16}" height="22" rx="6" fill="${COL.hl}" stroke="${COL.defi}"/>`;
-  s+=`<text x="196" y="${cy}" font-size="14" font-weight="700" fill="${COL.kap}">C = ${editD}</text>`;
+  s+=`<text x="196" y="${cy}" font-size="14" font-weight="700" fill="${COL.kap}">d(x,y) = ${editD}</text>`;
   const w=Math.max(grid.w+28+aln[0].length*10, 360), h=cy+14;
   return {w,h,s};
 }
@@ -371,7 +371,7 @@ function highlight(){document.querySelectorAll('.panel').forEach((p,i)=>p.classL
 function compute(){
   let x=document.getElementById('sx').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,10);
   let y=document.getElementById('sy').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,10);
-  if(x.length<2)x='AGTAC';if(y.length<2)y='ATCG';
+  if(x.length<2)x='';if(y.length<2)y='';
   document.getElementById('sx').value=x;document.getElementById('sy').value=y;
   X=x;Y=y;steps=[];path=[];editD=nwMatrix(X,Y).D[X.length][Y.length];
   hb(X,Y,0,0,0);cur=-1;renderFinal();renderSteps();highlight();
