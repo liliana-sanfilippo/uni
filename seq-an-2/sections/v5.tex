@@ -99,6 +99,16 @@ score that should satisfy certain intuitive properties.}
 
 \definSB{sensible_score_function}
 
+\komm{
+Also
+\begin{enumerate}
+    \item Ein Match bekommt einen positiven Score und eine Lücke einen negativen
+    \item Mismatch-Scores sind kleiner als Match-Scores
+    \item Scores sind immer Symmetrisch
+    \item Substitution bekommt besseren Score als erst Deletion und dann Insertion
+\end{enumerate}
+}
+
 \skript{The first and second conditions impose symmetry and state that the similarity between $a$ and itself
 is always higher than between $a$ and anything else.
 In particular, insertions and deletions never
