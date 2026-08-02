@@ -10,7 +10,7 @@
   - [Nussinov Visualisierung](https://liliana-sanfilippo.github.io/uni/nussinov.html)
   - [Hirschberg Visualisierung](https://liliana-sanfilippo.github.io/uni/hirschberg.html)
   - [Sellers VS Ukkonen Visualisierung](https://liliana-sanfilippo.github.io/uni/sellers_ukkonen.html)
-  - [Weitere Sellers VS Ukkonen Visualisierung mit Pseudocode-Schritten](https://liliana-sanfilippo.github.io/uni/sellers_ukkonen_pseudocode.html)
+  - [Ukkonen Visualisierung mit Pseudocode-Schritten](https://liliana-sanfilippo.github.io/uni/ukkonen_pseudocode.html) (dauert länger)
   - [Karteikarten in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/seq-an-2/karteikarten)
 - **Knowledge Representation** (SS2026)
   - [Knowledge Representation Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf)

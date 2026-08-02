@@ -416,7 +416,7 @@
                 if (colOk) {
                     show = true;
                     val = DS[i][j];
-                    if (j >= 1 && i >= 1 && S.uk[i + ',' + j] === undefined) skip = true;
+                    if (j >= 0 && i >= 1 && S.uk[i + ',' + j] === undefined) skip = true;
                 }
             }
             let fill = '#fff';
@@ -432,7 +432,8 @@
                 } else {
                     const tc = val <= K ? COL.kap : COL.kom;
                     s += `<text x="${x + cw / 2}" y="${y + ch / 2 + 4}" text-anchor="middle" font-size="12" font-family="monospace" fill="${tc}">${val}</text>`;
-                    if (i === m && j >= 1 && val <= K) s += `<rect x="${x + 2}" y="${y + 2}" width="${cw - 4}" height="${ch - 4}" rx="3" fill="none" stroke="${COL.grn}" stroke-width="1.7"/>`;
+                    if (i === m && j >= 0 && val <= K) s +=
+                        `<rect x="${x + 2}" y="${y + 2}" width="${cw - 4}" height="${ch - 4}" rx="3" fill="none" stroke="${COL.grn}" stroke-width="1.7"/>`;
                 }
             }
             if (isU && S.curCell && S.curCell.i === i && S.curCell.j === j)
