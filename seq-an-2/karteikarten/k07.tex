@@ -1,0 +1,106 @@
+
+% ===================================================================
+% Abschnitt: Motivation für suboptimale lokale Alignments
+% ===================================================================
+
+\newglossaryentry{bem_warum_suboptimale_alignments}{
+    name={Warum reicht es bei lokalem Alignment manchmal nicht aus, nur das eine optimale Alignment zu finden?},
+    description={Es können mehrere biologisch interessante, ähnliche Regionen zwischen zwei Sequenzen existieren, aber der Smith-Waterman-Algorithmus liefert standardmäßig nur ein einziges (optimales) lokales Alignment.},
+    type=dinge
+}
+
+\newglossaryentry{bem_naiver_ansatz_suboptimale_alignments}{
+    name={Was ist der naive Ansatz, um suboptimale lokale Alignments zu finden, und welche zwei Probleme hat er?},
+    description={Man berichtet nacheinander die Alignments zum höchsten, zweithöchsten usw.\ Score in der lokalen Alignment-Matrix. Probleme: (1) Redundanz -- viele gemeldete Alignments überlappen stark und unterscheiden sich nur in Details wie Gap-Platzierung; (2) Shadowing-Effekt -- manche hoch bewerteten Alignments bleiben unsichtbar, wenn ein noch höher bewertetes Alignment in der Nähe liegt (z.\,B.\ sich kreuzt), da dann immer das höher bewertete Präfix gewählt wird.},
+    type=dinge
+}
+
+\newglossaryentry{def_non_overlapping_suboptimal_local_alignment}{
+    name={Wie ist ein "non-overlapping suboptimal local alignment" definiert?},
+    description={Ein Alignment, das keinen Match oder Mismatch mit einem höher bewerteten (sub-)optimalen lokalen Alignment gemeinsam hat. Zwei Alignments $A,A'$ überlappen, wenn es mindestens eine Position $(i,j)$ gibt, an der $x[i]$ sowohl in $A$ als auch in $A'$ mit $y[j]$ aligniert ist.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Algorithmus zur Berechnung nicht überlappender Alignments
+% ===================================================================
+
+\newglossaryentry{bem_grundidee_waterman_eggert_algorithmus}{
+    name={Wie berechnet man algorithmisch das zweitbeste, nicht überlappende lokale Alignment, nachdem das optimale bereits gefunden wurde?},
+    description={Man berechnet die Matrix $S$ erneut, verbietet dabei aber jeden Match/Mismatch (diagonalen Schritt), der zum bereits gemeldeten optimalen Alignment gehört -- in den entsprechenden Zellen sind bei der Maximierung nur noch Insertion und Deletion erlaubt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_teilberechnung_matrix_waterman_eggert}{
+    name={Muss bei der Neuberechnung wirklich die gesamte Matrix $S$ neu berechnet werden?},
+    description={Nein, es genügt, nur den Teil der Matrix vom Startpunkt des ersten Alignments bis zur unteren rechten Ecke der Matrix neu zu berechnen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_abbruchkriterium_waterman_eggert}{
+    name={Wann kann man die Neuberechnung entlang einer Zeile bzw.\ Spalte vorzeitig abbrechen?},
+    description={Sobald die neu berechneten Werte mit den ursprünglichen Werten übereinstimmen -- Waterman und Eggert schlagen vor, abwechselnd eine Zeile und eine Spalte zu berechnen, jeweils bis der neue Wert wieder mit dem alten übereinstimmt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_wiederholung_fuer_k_beste}{
+    name={Wie berechnet man das $k$-t-beste nicht überlappende lokale Alignment?},
+    description={Man wiederholt das Verfahren (Verbieten der bereits verwendeten Diagonalschritte, Neuberechnung der betroffenen Matrixregion) erneut, ausgehend vom Ergebnis der vorherigen Runde.},
+    type=dinge
+}
+
+\newglossaryentry{bem_laufzeit_waterman_eggert_erwartet}{
+    name={Wie hoch ist die erwartete Laufzeit zur Berechnung der $K$ besten nicht überlappenden lokalen Alignments, und wovon hängt sie ab?},
+    description={$O\!\left(mn + \sum_{k=1}^K L_k^2\right)$ im Erwartungswert, wobei $L_k$ die Länge des $k$-t-besten gemeldeten Alignments ist -- diese Schranke gilt, weil bei üblichen Scoring-Funktionen mit negativem Erwartungswert für zufällige Symbolpaare große Teile der Matrix mit Nullen gefüllt sind und daher nur wenig neu berechnet werden muss.},
+    type=dinge
+}
+
+\newglossaryentry{bem_laufzeit_waterman_eggert_worst_case}{
+    name={Wie hoch ist die Worst-Case-Laufzeit zur Berechnung der $K$ besten nicht überlappenden lokalen Alignments?},
+    description={$O(mnK)$ -- in der Praxis aber meist deutlich schneller.},
+    type=dinge
+}
+
+\newglossaryentry{bem_waterman_eggert_erweiterung_huang_miller}{
+    name={Welche Erweiterung des Waterman-Eggert-Algorithmus zeigten Huang und Miller (1991)?},
+    description={Dass sich der Algorithmus auch für affine Gap-Kosten und im linearen Speicherplatz implementieren lässt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Der Smith-Waterman-Algorithmus (Rekursion)
+% ===================================================================
+
+\newglossaryentry{formel_smith_waterman_rekursion}{
+    name={Wie lautet die Rekursionsformel des Smith-Waterman-Algorithmus zur Berechnung der lokalen Alignment-Matrix $S$?},
+    description={$S(i,j) = \max\{0,\ S(i{-}1,j{-}1)+s(x[i],y[j]),\ S(i{-}1,j)-\gamma,\ S(i,j{-}1)-\gamma\}$ -- die $0$ erlaubt einen Neustart des lokalen Alignments an jeder Stelle.},
+    type=dinge
+}
+
+\newglossaryentry{bem_smith_waterman_randinitialisierung}{
+    name={Wie werden die Rand-Zeilen/-Spalten $S(i,0)$ und $S(0,j)$ beim Smith-Waterman-Algorithmus initialisiert, und warum?},
+    description={Alle mit $0$ -- im Gegensatz zum globalen Alignment gibt es beim lokalen Alignment keine Bestrafung dafür, das Alignment nicht bereits am äußersten Rand zu beginnen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_smith_waterman_traceback_start}{
+    name={Wo beginnt das Traceback beim Smith-Waterman-Algorithmus, und wo endet es?},
+    description={Es beginnt bei der Zelle mit dem höchsten Wert in der gesamten Matrix $S$ (statt wie beim globalen Alignment in der Ecke $(n,m)$) und endet, sobald eine Zelle mit Wert $0$ erreicht wird.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Der Waterman-Eggert-Algorithmus (konkretes Vorgehen)
+% ===================================================================
+
+\newglossaryentry{bem_waterman_eggert_algorithmus_ablauf}{
+    name={Wie läuft der Waterman-Eggert-Algorithmus konkret ab, um EIN weiteres suboptimales Alignment zu finden?},
+    description={Man nimmt die von Smith-Waterman berechnete Matrix, setzt alle Zellen, die zum optimalen Alignment beitragen, auf $0$, und berechnet ab der Startzeile des vorherigen Alignments die übrigen (nicht zum optimalen Alignment gehörenden) Zellen gemäß der gewöhnlichen Smith-Waterman-Rekursion neu.},
+    type=dinge
+}
+
+\newglossaryentry{bem_waterman_eggert_aufgabe}{
+    name={Für welche Art von Problem wird der Waterman-Eggert-Algorithmus eingesetzt?},
+    description={Für lokales Alignment sowie insbesondere für die Berechnung mehrerer nicht überlappender lokaler Alignments.},
+    type=dinge
+}

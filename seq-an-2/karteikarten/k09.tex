@@ -1,0 +1,210 @@
+
+% ===================================================================
+% Abschnitt: NP-Vollständigkeit -- Grundbegriffe
+% ===================================================================
+
+\newglossaryentry{def_problem_formal}{
+    name={Wie ist ein "Problem" $Q$ im Sinne der Komplexitätstheorie formal definiert?},
+    description={Als binäre Relation zwischen einer Menge $I$ von Probleminstanzen und einer Menge $S$ von Problemlösungen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_instanz_loesung_beziehung}{
+    name={Kann eine Probleminstanz zu mehreren Lösungen gehören, und umgekehrt?},
+    description={Ja -- eine Probleminstanz kann auf keine, eine oder mehrere Problemlösungen verweisen, und eine Problemlösung kann zu keiner, einer oder mehreren Probleminstanzen gehören.},
+    type=dinge
+}
+
+\newglossaryentry{def_optimierungsproblem}{
+    name={Was ist ein Optimierungsproblem?},
+    description={Ein Problem, bei dem eine Kostenfunktion minimiert oder eine Scorefunktion maximiert werden soll.},
+    type=dinge
+}
+
+\newglossaryentry{def_entscheidungsproblem}{
+    name={Was ist ein Entscheidungsproblem?},
+    description={Eine "Ja/Nein-Frage" mit genau zwei möglichen Problemlösungen, $S=\{T,F\}$ (wahr/falsch).},
+    type=dinge
+}
+
+\newglossaryentry{bem_zusammenhang_optimierung_entscheidung}{
+    name={Wie hängen Optimierungsprobleme und Entscheidungsprobleme in der Komplexitätstheorie zusammen?},
+    description={Die NP-Vollständigkeits-Theorie betrachtet hauptsächlich Entscheidungsprobleme, doch jedes Optimierungsproblem lässt sich als Folge von Entscheidungsproblemen (Schwellenwert-Suche) formulieren -- ist das Entscheidungsproblem schwer, ist meist auch das zugehörige Optimierungsproblem schwer.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Komplexitätsklassen P und NP
+% ===================================================================
+
+\newglossaryentry{def_komplexitaetsklasse_p}{
+    name={Welche Probleme enthält die Komplexitätsklasse $\mathbf{P}$?},
+    description={Alle Entscheidungsprobleme, für die ein deterministischer Algorithmus existiert, der eine gegebene Probleminstanz in Polynomialzeit \emph{löst} -- kurz: $\mathbf P$ = effizient lösbar.},
+    type=dinge
+}
+
+\newglossaryentry{def_komplexitaetsklasse_np}{
+    name={Welche Probleme enthält die Komplexitätsklasse $\mathbf{NP}$ (moderne, verifikationsbasierte Definition)?},
+    description={Alle Entscheidungsprobleme, für die ein deterministischer Algorithmus existiert, der für ein gegebenes Zertifikat (eine Belegung der Eingabevariablen) in Polynomialzeit \emph{verifizieren} kann, ob dieses Zertifikat tatsächlich Lösung $T$ liefert -- kurz: $\mathbf{NP}$ = effizient verifizierbar.},
+    type=dinge
+}
+
+\newglossaryentry{bem_p_teilmenge_np}{
+    name={In welchem Verhältnis stehen die Klassen $\mathbf P$ und $\mathbf{NP}$ zueinander, und ist diese Frage vollständig geklärt?},
+    description={Es gilt stets $\mathbf P \subseteq \mathbf{NP}$. Ob umgekehrt $\mathbf P = \mathbf{NP}$ gilt, ist bis heute eine offene Frage.},
+    type=dinge
+}
+
+\newglossaryentry{bem_historische_original_definition_np}{
+    name={Wie lautet die historisch ursprüngliche (nicht-verifikationsbasierte) Definition von $\mathbf{NP}$?},
+    description={$\mathbf{NP}$ als die Klasse aller Probleme, für die ein \emph{nichtdeterministischer} Algorithmus existiert, der eine Probleminstanz in Polynomialzeit lösen kann. Diese Definition ist weniger intuitiv, weshalb heute meist die verifikationsbasierte Definition bevorzugt wird.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Reduzierbarkeit
+% ===================================================================
+
+\newglossaryentry{def_reduzierbarkeit}{
+    name={Wann heißt ein Problem $Q$ auf ein Problem $Q'$ reduzierbar?},
+    description={Wenn sich jede Instanz von $Q$ so als Instanz von $Q'$ formulieren lässt, dass sich die Lösung von $Q$ aus der Lösung von $Q'$ ergibt.},
+    type=dinge
+}
+
+\newglossaryentry{def_polynomialzeit_reduzierbarkeit}{
+    name={Wann heißt eine Reduktion $Q\le_p Q'$ polynomialzeit-reduzierbar, und welche wichtige Konsequenz hat $Q\le_p Q'$?},
+    description={Wenn die Reduktion selbst nur Polynomialzeit benötigt. Konsequenz: $Q\le_p Q'$ impliziert $Q'\in\mathbf P \Rightarrow Q\in\mathbf P$ -- ist $Q'$ effizient lösbar, dann auch $Q$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: NP-schwer und NP-vollständig
+% ===================================================================
+
+\newglossaryentry{def_np_schwer}{
+    name={Wann heißt ein Problem NP-schwer (NP-hard)?},
+    description={Wenn sich jedes Problem aus $\mathbf{NP}$ in Polynomialzeit auf dieses Problem reduzieren lässt -- das Problem ist also mindestens so schwer wie jedes Problem in $\mathbf{NP}$ (muss selbst aber nicht zwingend in $\mathbf{NP}$ liegen).},
+    type=dinge
+}
+
+\newglossaryentry{def_np_vollstaendig}{
+    name={Wann heißt ein Problem NP-vollständig (NP-complete)?},
+    description={Wenn es sowohl in $\mathbf{NP}$ liegt als auch NP-schwer ist.},
+    type=dinge
+}
+
+\newglossaryentry{satz_npc_p_gleich_np}{
+    name={Welche zentrale Eigenschaft hat die Klasse NPC bezüglich der Frage $\mathbf P \overset{?}{=} \mathbf{NP}$?},
+    description={Ist irgendein NP-vollständiges Problem in Polynomialzeit lösbar, so folgt $\mathbf P = \mathbf{NP}$. Ist umgekehrt irgendein Problem in $\mathbf{NP}$ NICHT in Polynomialzeit lösbar, dann ist auch kein einziges NP-vollständiges Problem in Polynomialzeit lösbar.},
+    type=dinge
+}
+
+\newglossaryentry{bem_gaengige_annahme_p_np}{
+    name={Welche Annahme bezüglich $\mathbf P$ und $\mathbf{NP}$ wird üblicherweise als am plausibelsten angesehen?},
+    description={Dass $\mathbf P \ne \mathbf{NP}$ gilt (auch wenn $\mathbf P = \mathbf{NP}$ als Alternative nicht ausgeschlossen ist).},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: SAT als erstes NP-vollständiges Problem
+% ===================================================================
+
+\newglossaryentry{def_sat_problem}{
+    name={Wie lautet das Satisfiability-Problem (SAT)?},
+    description={Gegeben eine boolesche Formel der Länge $n$: Ist sie erfüllbar, d.\,h.\ gibt es eine Variablenbelegung, sodass die Formel zu $T$ ausgewertet wird?},
+    type=dinge
+}
+
+\newglossaryentry{bem_sat_in_np}{
+    name={Warum liegt SAT in der Klasse $\mathbf{NP}$?},
+    description={Weil man bei gegebenem Zertifikat (einer Variablenbelegung) in Polynomialzeit entscheiden kann, ob die Formel damit zu $T$ ausgewertet wird.},
+    type=dinge
+}
+
+\newglossaryentry{bem_sat_np_schwer_grundidee}{
+    name={Welche Grundidee steckt hinter dem Nachweis, dass sich jedes Problem $Q\in\mathbf{NP}$ auf SAT reduzieren lässt?},
+    description={Da $Q\in\mathbf{NP}$ einen Polynomialzeit-Verifikationsalgorithmus $A(x,y)$ besitzt, lässt sich dieser (für feste Instanz $x$) als boolesche Funktion $C_x(y)$ codieren, die genau dann erfüllbar ist, wenn $y$ eine gültige Lösung von $x$ ist -- diese Codierung ist in Polynomialzeit konstruierbar (via CIRCUIT-SAT).},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Nachweis der NP-Vollständigkeit eines neuen Problems
+% ===================================================================
+
+\newglossaryentry{bem_vier_schritte_npc_nachweis}{
+    name={Welche vier Schritte umfasst der Standardweg, um zu zeigen, dass ein Problem $Q$ NP-vollständig ist?},
+    description={(1) Zeige $Q\in\mathbf{NP}$. (2) Wähle ein bereits bekanntes NP-vollständiges Problem $Q'$. (3) Beschreibe eine in Polynomialzeit berechenbare Funktion $f$, die jede Instanz von $Q'$ auf eine Instanz von $Q$ abbildet. (4) Zeige, dass $x\in Q' \Leftrightarrow f(x)\in Q$ für alle $x$ gilt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_beispiel_reduktion_c1p_tsp}{
+    name={Was zeigt das Beispiel der Reduktion des Consecutive-Ones-Problems (C1P) auf das Traveling-Salesperson-Problem (TSP)?},
+    description={Wie man mit Hilfe einer bereits algorithmisch angreifbaren Problemklasse ein anderes Problem lösen kann: Aus der Binärmatrix $M$ wird ein gewichteter vollständiger Graph konstruiert, dessen Kantengewichte die Hamming-Distanzen der Spalten sind; C1P ist für $M$ genau dann erfüllt, wenn dieser Graph eine TSP-Tour einer bestimmten Länge besitzt -- ein effizienter TSP-Löser würde also auch C1P effizient lösen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Konsequenzen der NP-Vollständigkeit
+% ===================================================================
+
+\newglossaryentry{bem_fuenf_reaktionen_auf_npc}{
+    name={Welche fünf grundsätzlichen Strategien gibt es, um mit einem NP-vollständigen Problem in der Praxis dennoch umzugehen?},
+    description={(1) Kleine Instanzen exakt lösen; (2) Suchraum durch geeignete Heuristiken effizient beschneiden (Laufzeitheuristiken); (3) für bestimmte Unterklassen existieren ggf.\ Polynomialzeit-Algorithmen (Fixed-Parameter-Tractability, FPT); (4) die optimale Lösung nur bis zu einem garantierten Grad approximieren (Approximationsalgorithmen); (5) auf jede Optimalitätsgarantie verzichten und schnelle, meist gute Heuristiken verwenden (Korrektheitsheuristiken).},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Approximationsalgorithmen
+% ===================================================================
+
+\newglossaryentry{def_c_approximation}{
+    name={Wie ist eine $c$-Approximation definiert (für Minimierungs- bzw.\ Maximierungsprobleme)?},
+    description={Bei einem Kostenminimierungsproblem garantiert eine $c$-Approximation ($c\ge1$) eine Lösung mit höchstens $c$-fachen Kosten der optimalen Lösung. Bei einem Maximierungsproblem garantiert sie einen Score von mindestens $\frac1c$ des optimalen Scores.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Die Center-Star-Approximation
+% ===================================================================
+
+\newglossaryentry{bem_center_star_approximationsguete}{
+    name={Welche Approximationsgüte garantiert die Center-Star-Methode für das Sum-of-Pairs-Multiple-Alignment-Problem, und unter welcher Voraussetzung?},
+    description={Eine $2$-Approximation, vorausgesetzt die zugrundeliegende gewichtete Editierdistanz erfüllt die Dreiecksungleichung.},
+    type=dinge
+}
+
+\newglossaryentry{def_center_sequenz}{
+    name={Wie wird die "Center-Sequenz" $s_c$ im Center-Star-Verfahren bestimmt?},
+    description={Für jede Sequenz $s_p$ berechnet man ihre Gesamtdistanz $d_p=\sum_{1\le q\le k} d(s_p,s_q)$ zu allen anderen Sequenzen. Die Sequenz $s_c$ mit dem kleinsten Wert $d_c$ wird zur Center-Sequenz.},
+    type=dinge
+}
+
+\newglossaryentry{bem_center_star_algorithmus_ablauf}{
+    name={Wie wird das multiple Alignment $A_c$ im Center-Star-Verfahren konstruiert?},
+    description={Man berechnet für jede Sequenz $s_p\ne s_c$ das optimale paarweise Alignment $A_{\{c,p\}}$ mit der Center-Sequenz und kombiniert alle diese paarweisen Alignments zu einem multiplen Alignment, sodass die Projektion von $A_c$ auf $(c,p)$ genau $A_{\{c,p\}}$ entspricht (neu eingeführte Gaps in $s_c$ werden dabei an derselben Position in alle bereits eingefügten Sequenzen übernommen).},
+    type=dinge
+}
+
+\newglossaryentry{bem_center_star_beweisidee}{
+    name={Welche zentrale mathematische Zutat wird im Beweis der $2$-Approximationsgüte der Center-Star-Methode verwendet?},
+    description={Die Dreiecksungleichung: Die Kosten der Projektion $\pi_{\{p,q\}}(A_c)$ werden über den Umweg durch die Center-Sequenz abgeschätzt, $\mathrm{cost}_2(\pi_{\{p,q\}}(A_c)) \le \mathrm{cost}_2(\pi_{\{p,c\}}(A_c)) + \mathrm{cost}_2(\pi_{\{c,q\}}(A_c))$, wobei die beiden rechten Terme wegen der Optimalität der Alignments zur Center-Sequenz gerade den bekannten paarweisen Distanzen $d(s_p,s_c)$ bzw.\ $d(s_c,s_q)$ entsprechen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_center_star_zeitkomplexitaet}{
+    name={Welche Zeitkomplexität hat der Center-Star-Algorithmus (für $k$ Sequenzen gleicher Länge $n$)?},
+    description={$O(k^2n^2)$: $O(k^2n^2)$ für die $\binom{k}{2}$ paarweisen Alignments im ersten Schritt, plus $O(k^2n)$ für das Zusammenfügen im zweiten Schritt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_center_star_speicherkomplexitaet}{
+    name={Welche Speicherplatzkomplexität hat der Center-Star-Algorithmus?},
+    description={$O(k^2n)$ -- dominiert durch die Speicherung der $k$ paarweisen Alignments sowie des entstehenden multiplen Alignments (die reine Distanzberechnung benötigt nur $O(n+k)$).},
+    type=dinge
+}
+
+\newglossaryentry{bem_center_star_verallgemeinerung}{
+    name={Wie lässt sich die Center-Star-Idee zu einer besseren Approximationsgüte verallgemeinern?},
+    description={Statt paarweiser Alignments werden optimale multiple Alignments von jeweils $\kappa$ Sequenzen berechnet; dies liefert eine $\left(2-\frac{\kappa}{k}\right)$-Approximation (Bafna et al., 1997).},
+    type=dinge
+}

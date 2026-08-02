@@ -1,0 +1,232 @@
+
+% ===================================================================
+% Abschnitt: Das SP-Multiple-Alignment-Problem
+% ===================================================================
+
+\newglossaryentry{bem_sp_msa_np_vollstaendig}{
+    name={Welche Komplexitätsklasse hat das Sum-of-Pairs (SP) Multiple-Sequence-Alignment-Problem, und warum untersucht man trotzdem exakte Algorithmen dafür?},
+    description={Es ist NP-vollständig. Exakte Algorithmen sind trotzdem relevant als Teilprozedur anderer Methoden oder zum Vergleich/Benchmarking heuristischer Alignment-Algorithmen für eine moderate Anzahl von Sequenzen.},
+    type=dinge
+}
+
+\newglossaryentry{def_sp_kosten_multiples_alignment}{
+    name={Wie ist die Sum-of-Pairs-Kostenfunktion $\mathrm{cost}_{SP}(A)$ eines multiplen Alignments $A$ von $k$ Sequenzen definiert?},
+    description={$\mathrm{cost}_{SP}(A) := \sum_{1\le p\le q\le k} \mathrm{cost}_2(\pi_{p,q}(A))$ -- die Summe der paarweisen Alignment-Kosten aller Sequenzpaar-Projektionen $\pi_{p,q}(A)$ von $A$.},
+    type=dinge
+}
+
+\newglossaryentry{def_sp_msa_problem}{
+    name={Wie lautet das Sum-of-Pairs Multiple-Alignment-Problem?},
+    description={Gegeben $k$ Sequenzen $s_1,\dots,s_k$: Finde ein multiples Alignment $A$, das $\mathrm{cost}_{SP}(A)$ unter allen multiplen Alignments minimiert.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Der Basisalgorithmus
+% ===================================================================
+
+\newglossaryentry{bem_basisalgorithmus_grundidee}{
+    name={Wie lässt sich das SP-Multiple-Alignment-Problem grundsätzlich mit dem Universal-Alignment-Algorithmus lösen?},
+    description={Indem man ihn auf eine $k$-dimensionale Alignment-Matrix anwendet -- eine Dimension pro Eingabesequenz -- und für jede Zelle die minimalen Distanzwerte gemäß der üblichen Vorgänger-Minimierung berechnet.},
+    type=dinge
+}
+
+\newglossaryentry{formel_dp_rekursion_msa}{
+    name={Wie lautet die DP-Rekursion $D(v)$ für eine Zelle $v$ der $k$-dimensionalen Alignment-Matrix?},
+    description={$D(v) = \min_{u\in\mathrm{pred}(v)}\{D(u) + \mathrm{cost}(u\to v)\}$, explizit: $D(i_1,\dots,i_k) = \min_{\Delta_1,\dots,\Delta_k\in\{0,1\},\ \sum\Delta_i\ne0} \{D(i_1-\Delta_1,\dots,i_k-\Delta_k) + D_{SP}(\text{Alignment-Spalte})\}$, wobei $\Delta_i c = c$ falls $\Delta_i=1$ und $\Delta_i c = -$ (Gap) falls $\Delta_i=0$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_intuition_delta_vektor}{
+    name={Was bedeutet der Vektor $(\Delta_1,\dots,\Delta_k)$ in der MSA-Rekursion anschaulich?},
+    description={Er gibt an, welche der $k$ Sequenzen in der aktuellen Alignment-Spalte einen "echten" Buchstaben beisteuern ($\Delta_i=1$) und welche stattdessen einen Gap erhalten ($\Delta_i=0$); der Fall, dass alle $\Delta_i=0$ sind, ist ausgeschlossen, da das keiner sinnvollen Alignment-Spalte entspricht.},
+    type=dinge
+}
+
+\newglossaryentry{bem_speicherplatzkomplexitaet_msa}{
+    name={Welche Speicherplatzkomplexität hat der Basisalgorithmus für das $k$-dimensionale SP-Alignment, und woher kommt sie?},
+    description={$O(n^k)$ (mit $n\ge n_1,\dots,n_k$) -- gegeben durch die schiere Größe der $k$-dimensionalen Alignment-Matrix.},
+    type=dinge
+}
+
+\newglossaryentry{bem_zeitkomplexitaet_msa}{
+    name={Welche Zeitkomplexität hat der Basisalgorithmus, und wie setzt sie sich zusammen?},
+    description={$O(n^k\cdot 2^k\cdot k^2)$: Für jede der $O(n^k)$ Zellen müssen alle $2^k-1$ Vorgänger ausgewertet werden, und für jeden Vorgänger kostet die Berechnung der Sum-of-Pairs-Kosten der resultierenden Alignment-Spalte zusätzlich $O(k^2)$ Zeit.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Varianten des Basisalgorithmus
+% ===================================================================
+
+\newglossaryentry{bem_speicherreduktion_hirschberg_msa}{
+    name={Lässt sich Hirschbergs Speicherreduktionstechnik auf multiples Alignment übertragen, und wie stark ist der Effekt?},
+    description={Ja, im Prinzip funktioniert dieselbe Idee, aber der Effekt ist viel geringer als beim paarweisen Alignment: Die Speicherplatzreduktion erfolgt nur um eine Dimension, von $O(n^k)$ auf $O(n^{k-1})$ -- für große $k$ (z.\,B.\ $k=12$) bleibt der Speicherbedarf weiterhin enorm.},
+    type=dinge
+}
+
+\newglossaryentry{bem_free_end_gaps_msa}{
+    name={Wie überträgt sich das Konzept der "free end gaps" (kostenlose Randlücken) vom paarweisen auf das multiple Alignment?},
+    description={Genauso wie beim paarweisen semi-globalen Alignment -- man ändert lediglich die Initialisierung der Basisfälle (der äußeren Ränder der $k$-dimensionalen Matrix), sodass Gaps am Anfang/Ende nicht (oder weniger) bestraft werden.},
+    type=dinge
+}
+
+\newglossaryentry{def_natural_gap_costs}{
+    name={Was sind "natural gap costs" bei multiplen Alignments mit affinen Gap-Kosten?},
+    description={Die Kosten eines multiplen Alignments werden als Summe der Kosten aller paarweisen Projektionen definiert, wobei jede paarweise Projektion mit den gewöhnlichen affinen Gap-Kosten bewertet wird.},
+    type=dinge
+}
+
+\newglossaryentry{bem_problem_natural_gap_costs}{
+    name={Welches praktische Problem hat die exakte Berechnung mit "natural gap costs"?},
+    description={Die Anzahl der benötigten Historienmatrizen (wie $V$ und $H$ im paarweisen Fall) wächst exponentiell mit der Anzahl der Sequenzen -- das erfordert sehr viel Speicherplatz.},
+    type=dinge
+}
+
+\newglossaryentry{def_quasi_natural_gap_costs}{
+    name={Was ist die Grundidee der "quasi-natural gap costs" von Altschul (1989)?},
+    description={Statt die exakten natürlichen Gap-Kosten zu berechnen, schaut man nur eine Position zurück im Editgraphen und entscheidet allein anhand der vorherigen Spalte, ob in der aktuellen Spalte ein neuer Gap eröffnet wird -- eine Approximation, die einen im Zweifel nicht eindeutig entscheidbaren Fall pauschal wie eine bestimmte Gap-Situation behandelt, statt ihn korrekt zu unterscheiden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_kosten_quasi_natural_gap_costs}{
+    name={Welche Auswirkung hat die Verwendung von "quasi-natural gap costs" auf Zeit- und Speicherkomplexität im Vergleich zu exakten natürlichen Gap-Kosten?},
+    description={Die Zeitkomplexität verschlechtert sich um einen Faktor $2^k$ auf $O(n^k 2^{2k}k^2)$; die Speicherplatzkomplexität bleibt im Worst Case unverändert bei $O(n^k)$.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Carrillo-Lipmans Suchraumreduktion -- Grundidee
+% ===================================================================
+
+\newglossaryentry{bem_carrillo_lipman_typ}{
+    name={Was für eine Art von Algorithmus ist der Carrillo-Lipman-Ansatz, und was garantiert er?},
+    description={Ein Branch-and-Bound-Verfahren zur Laufzeitheuristik -- im Worst Case bleibt es weiterhin exponentiell, reduziert die Rechenzeit in der Praxis aber oft erheblich (anwendbar auf ca.\ 7--10 Proteinsequenzen der Länge 300--400).},
+    type=dinge
+}
+
+\newglossaryentry{bem_carrillo_lipman_grundbeobachtung}{
+    name={Welche intuitive Grundbeobachtung liegt dem Carrillo-Lipman-Ansatz zugrunde?},
+    description={Auch wenn die paarweisen Projektionen eines optimalen multiplen Alignments nicht notwendig selbst optimale paarweise Alignments sind, können sie auch nicht besonders schlecht sein -- wären alle paarweisen Projektionen schlecht, wäre auch der gesamte Sum-of-Pairs-Score des multiplen Alignments schlecht.},
+    type=dinge
+}
+
+\newglossaryentry{bem_carrillo_lipman_konsequenz}{
+    name={Welche algorithmische Konsequenz zieht man aus der Carrillo-Lipman-Grundbeobachtung?},
+    description={Man kann den Suchraum auf jene Zellen einschränken, die Teil von nahezu optimalen paarweisen Alignments für jede paarweise Projektion sind.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Carrillo-Lipmans Suchraumreduktion -- Schranken
+% ===================================================================
+
+\newglossaryentry{def_heuristisches_alignment_obere_schranke}{
+    name={Wozu benötigt man ein heuristisch berechnetes multiples Alignment $A^{\mathrm{heur}}$ im Carrillo-Lipman-Verfahren?},
+    description={Es liefert eine obere Schranke $\mathrm{cost}_{SP}(A^{\mathrm{heur}}) \ge \mathrm{cost}_{SP}(A^{\mathrm{opt}})$ für die unbekannten Kosten des optimalen multiplen Alignments -- z.\,B.\ berechnet durch progressives Alignment oder die Center-Star-Heuristik.},
+    type=dinge
+}
+
+\newglossaryentry{formel_obere_schranke_paarweise_projektion}{
+    name={Wie lautet die obere Schranke $U_{(x,y)}$ für die Kosten der Projektion eines optimalen multiplen Alignments auf ein Sequenzpaar $(x,y)$?},
+    description={$U_{(x,y)} := \mathrm{cost}_{SP}(A^{\mathrm{heur}}) - \sum_{\substack{p<q\\(p,q)\ne(x,y)}} d(s_p,s_q)$, wobei $d(s_p,s_q)$ die optimale paarweise Alignment-Distanz ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_herleitung_obere_schranke_idee}{
+    name={Welche Kernidee steckt hinter der Herleitung der oberen Schranke $U_{(x,y)}$?},
+    description={Da jede paarweise Projektion eines beliebigen multiplen Alignments mindestens so teuer ist wie das optimale paarweise Alignment dieses Sequenzpaares, kann man alle Paare außer $(x,y)$ durch ihre bekannten optimalen paarweisen Kosten nach unten abschätzen. So lässt sich aus der oberen Schranke für die Gesamtkosten eine obere Schranke allein für die Kosten des Paares $(x,y)$ isolieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_berechenbarkeit_oberer_schranken}{
+    name={Was wird benötigt, um alle oberen Schranken $U_{(x,y)}$ zu berechnen, und ist das aufwendig?},
+    description={Nur die paarweise optimalen Alignments aller Sequenzpaare sowie ein heuristisches multiples Alignment -- das lässt sich effizient berechnen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Carrillo-Lipmans Suchraumreduktion -- Pruning
+% ===================================================================
+
+\newglossaryentry{bem_pruning_bedingung}{
+    name={Welche Bedingung muss eine Zelle $(i_1,\dots,i_k)$ der multidimensionalen Alignment-Matrix erfüllen, um nicht aus dem Suchraum entfernt zu werden?},
+    description={Für jedes Sequenzpaar $(x,y)$ muss das beste paarweise Alignment von $s_x$ und $s_y$ durch die Zelle $(i_x,i_y)$ Kosten $\le U_{(x,y)}$ haben.},
+    type=dinge
+}
+
+\newglossaryentry{bem_kosten_bestes_paarweises_alignment_durch_zelle}{
+    name={Mit welcher bereits bekannten Technik bestimmt man die Kosten des besten paarweisen Alignments, das durch eine gegebene Zelle $(i_x,i_y)$ verläuft?},
+    description={Mit der Forward-Backward-Technik: Man berechnet die Total-Cost-Matrix $T_{(x,y)}$, sodass $T_{(x,y)}(i_x,i_y)$ genau diese Kosten liefert.},
+    type=dinge
+}
+
+\newglossaryentry{def_menge_b_xy_und_b}{
+    name={Wie sind die Mengen $B_{(x,y)}$ und $B$ im Carrillo-Lipman-Verfahren definiert?},
+    description={$B_{(x,y)} := \{(i_1,\dots,i_k) : T_{(x,y)}(i_x,i_y)\le U_{(x,y)}\}$ (Zellen, die die Schranke für Paar $(x,y)$ erfüllen); $B := \bigcap_{x<y} B_{(x,y)}$ (Zellen, die alle paarweisen Schranken gleichzeitig erfüllen).},
+    type=dinge
+}
+
+\newglossaryentry{bem_optimales_alignment_bleibt_in_b}{
+    name={Warum kann man sicher sein, dass ein optimales multiples Alignment nur durch Zellen in $B$ verläuft?},
+    description={Da die Projektion eines SP-optimalen multiplen Alignments auf jedes Sequenzpaar $(x,y)$ höchstens Kosten $U_{(x,y)}$ haben kann, können Zellen mit $T_{(x,y)}(i,j) > U_{(x,y)}$ keinen Teil dieser Projektion enthalten -- ein optimales Alignment muss also für jedes Paar in $B_{(x,y)}$ und somit insgesamt in $B$ verlaufen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_nutzen_reduktion_auf_b}{
+    name={Welchen praktischen Nutzen hat die Beschränkung auf die Zellmenge $B$?},
+    description={Statt der Distanzen in allen $O(n^k)$ Zellen der Alignment-Matrix müssen nur die Distanzen der oft sehr viel kleineren Menge $|B|$ Zellen berechnet werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_einflussfaktoren_groesse_b}{
+    name={Wovon hängt die Größe der reduzierten Zellmenge $B$ maßgeblich ab?},
+    description={Von der Qualität des heuristischen Alignments (je näher $\mathrm{cost}_{SP}(A^{\mathrm{heur}})$ am wahren Optimum liegt, desto kleiner ist $B$) und vom Unterschied zwischen optimalen paarweisen Alignment-Kosten und den Kosten der paarweisen Projektionen des optimalen multiplen Alignments.},
+    type=dinge
+}
+
+\newglossaryentry{bem_sequenzaehnlichkeit_wichtigster_faktor}{
+    name={Welcher Faktor beeinflusst die Praxistauglichkeit der Carrillo-Lipman-Heuristik am stärksten -- Sequenzlänge, Anzahl der Sequenzen, oder Sequenzähnlichkeit?},
+    description={Die Sequenzähnlichkeit spielt die größte Rolle: Bei vielen, aber einander ähnlichen Sequenzen mit kleinen Gap-Kosten kann die Heuristik sehr gut funktionieren, während schon wenige, aber wenig verwandte Sequenzen selbst mit den besten bekannten Heuristiken tage- bis wochenlange Rechenzeiten benötigen können.},
+    type=dinge
+}
+
+\newglossaryentry{bem_cheating_trick_carrillo_lipman}{
+    name={Welcher "Cheating"-Trick wird manchmal verwendet, um die Menge $B$ noch weiter zu verkleinern, und welches Risiko birgt er?},
+    description={Man ersetzt die obere Schranke $\delta=\mathrm{cost}_{SP}(A^{\mathrm{heur}})$ durch einen kleineren, spekulativen Wert $\delta-\epsilon_{(x,y)}$ (in der Annahme, dass ein besseres Alignment existiert). Risiko: Man kann dadurch das tatsächlich optimale multiple Alignment fälschlich aus $B$ ausschließen -- in der Praxis funktioniert der Trick bei vorsichtiger Anwendung aber oft gut und beschleunigt die Rechnung weiter.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Carrillo-Lipman -- Algorithmische Umsetzung
+% ===================================================================
+
+\newglossaryentry{bem_push_statt_pull_rekursion}{
+    name={Warum wird für die Carrillo-Lipman-Umsetzung eine "Push-Type"- statt einer "Pull-Type"-Rekursion empfohlen?},
+    description={Weil die Menge $B$ nur konzeptionell existiert und nicht explizit vorab konstruiert werden muss -- bei einer Push-Berechnung (ausgehend von bereits aktivierten Zellen) muss man nur die tatsächlich erreichbaren, gültigen Zellen verwalten, statt vorab über die gesamte potenziell riesige Matrix zu iterieren.},
+    type=dinge
+}
+
+\newglossaryentry{bem_aktive_zellen_warteschlange}{
+    name={Wie wird der Zustand des Algorithmus bei der Push-Type-Berechnung verwaltet?},
+    description={Über eine Warteschlange (Queue bzw.\ Priority Queue) "aktiver" Zellen, die anfangs nur die Startzelle $(0,\dots,0)$ enthält. Alle anderen Zellen gelten implizit als $\infty$, ohne dass dies explizit gespeichert wird.},
+    type=dinge
+}
+
+\newglossaryentry{bem_besuch_einer_zelle_schritte}{
+    name={Was passiert beim "Besuchen" einer Zelle $v$ im Carrillo-Lipman-Algorithmus?},
+    description={Man prüft für jeden der $2^k-1$ Nachfolger $w$, ob er zu $B$ gehört (bereits in der Queue, oder die Carrillo-Lipman-Schranke wird für jedes Indexpaar erfüllt) und aktualisiert bzw.\ aktiviert ihn entsprechend; danach wird $v$ aus der Queue entfernt (und ggf.\ für die Traceback-Rekonstruktion separat gespeichert).},
+    type=dinge
+}
+
+\newglossaryentry{bem_wahl_naechste_zelle_dijkstra}{
+    name={Nach welchen zwei möglichen Kriterien kann die nächste zu besuchende Zelle ausgewählt werden, damit der Algorithmus korrekt bleibt?},
+    description={(1) Eine Zelle mit minimaler Distanz -- dann entspricht der Algorithmus im Wesentlichen Dijkstras Algorithmus für kürzeste Wege; oder (2) eine beliebige Zelle ohne aktive Vorgänger -- dann muss ihre Distanzinformation nach dem Besuch nicht mehr aktualisiert werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_implementierungen_carrillo_lipman}{
+    name={Welche konkreten Implementierungen der Carrillo-Lipman-Heuristik werden genannt?},
+    description={Die Programme MSA (Gupta et al., 1995) und QALIGN (Sammeth et al., 2003b).},
+    type=dinge
+}

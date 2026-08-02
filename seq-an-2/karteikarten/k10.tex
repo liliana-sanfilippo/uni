@@ -1,0 +1,258 @@
+
+% ===================================================================
+% Abschnitt: Divide-and-Conquer Alignment -- Motivation und Grundidee
+% ===================================================================
+
+\newglossaryentry{bem_dca_heuristik_typ}{
+    name={Was für eine Art von Heuristik ist Divide-and-Conquer Alignment (DCA), und welche Garantien bietet sie (nicht)?},
+    description={Eine Korrektheitsheuristik -- sie gibt keine Garantie mehr über die resultierenden Alignment-Kosten, liefert in der Praxis aber oft sehr gute (häufig optimale oder nahezu optimale) Ergebnisse.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dca_vorteile_nachteile}{
+    name={Welche Vor- und Nachteile hat DCA gegenüber dem exakten Algorithmus bezüglich Laufzeit und Speicherplatz?},
+    description={Im Worst Case bleibt die Laufzeit weiterhin exponentiell in der Anzahl der Sequenzen. Vorteile sind ein polynomieller Speicherplatzbedarf sowie eine im Mittel deutlich schnellere praktische Laufzeit als die vollständige Suche.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dca_grundidee}{
+    name={Was ist die Grundidee des Divide-and-Conquer-Alignment-Verfahrens?},
+    description={Man schneidet alle Sequenzen an je einer geeigneten Stelle in einen linken und einen rechten Teil, sodass ein optimales multiples Alignment garantiert (fast) durch diese Schnitte verläuft, und löst dann die beiden kleineren Teilprobleme separat (rekursiv oder exakt).},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Optimale Schnittpositionen
+% ===================================================================
+
+\newglossaryentry{def_optimaler_schnitt}{
+    name={Wann heißt eine Familie von Schnittpositionen $(c_1,\dots,c_k)$ ein optimaler Schnitt?},
+    description={Wenn es ein Alignment $A$ der Präfixe $(s_1[1\dots c_1],\dots,s_k[1\dots c_k])$ und ein Alignment $B$ der Suffixe gibt, sodass die Konkatenation $A{+}{+}B$ ein optimales Alignment von $s_1,\dots,s_k$ ist.},
+    type=dinge
+}
+
+\newglossaryentry{lem_erste_schnittposition_frei_waehlbar}{
+    name={Was besagt das Lemma über die Wahl der ersten Schnittposition $\hat c_1$?},
+    description={Für jede beliebige Schnittposition $\hat c_1\in\{0,\dots,n_1\}$ der ersten Sequenz existieren stets passende Schnittpositionen $c_2,\dots,c_k$ der übrigen Sequenzen, sodass $(\hat c_1,c_2,\dots,c_k)$ insgesamt ein optimaler Schnitt ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_beweisidee_erste_schnittposition_frei}{
+    name={Wie lautet die Beweisidee für dieses Lemma?},
+    description={Man nimmt ein optimales Alignment $A^{\mathrm{opt}}$ und führt einen senkrechten Schnitt genau zwischen den Positionen, die zu $s_1[\hat c_1]$ und $s_1[\hat c_1+1]$ in der ersten Zeile gehören. Die dadurch in den übrigen Zeilen erzeugten Schnittpositionen $c_2,\dots,c_k$ sind per Konstruktion optimal.},
+    type=dinge
+}
+
+\newglossaryentry{bem_konsequenz_lemma_fuer_dca}{
+    name={Welche praktische Konsequenz hat dieses Lemma für den Aufbau von DCA?},
+    description={Man kann die erste Schnittposition frei wählen (aus Symmetriegründen üblicherweise die Mitte $\hat c_1=\lceil n_1/2\rceil$) und muss nur noch die dazu passenden optimalen Schnittpositionen der übrigen Sequenzen finden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_heuristik_fuer_schnittpositionen_noetig}{
+    name={Warum reicht das Lemma allein nicht aus, um optimale Schnittpositionen effizient zu finden?},
+    description={Wegen der NP-Vollständigkeit des SP-Alignment-Problems ist es unwahrscheinlich, dass es einen Polynomialzeit-Algorithmus gibt, der optimale Schnittpositionen findet -- man ist daher auf eine Heuristik angewiesen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Multiple Additional Cost
+% ===================================================================
+
+\newglossaryentry{def_multiple_additional_cost_final}{
+    name={Wie ist die "multiple additional cost" $C(c_1,\dots,c_k)$ eines Schnitts definiert?},
+    description={$C(c_1,\dots,c_k) := \sum_{1\le p<q\le k} C_{(p,q)}(c_p,c_q)$ -- die Summe der paarweisen Additional-Cost-Werte über alle Sequenzpaare, ausgewertet an den jeweiligen Schnittpositionen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_intuition_multiple_additional_cost}{
+    name={Was misst die multiple additional cost eines Schnitts anschaulich?},
+    description={Wie teuer es (summiert über alle Sequenzpaare) ist, ausgerechnet an diesen Positionen zu schneiden, verglichen damit, an mit den paarweise optimalen Alignments kompatiblen Positionen zu schneiden -- je näher die Schnittpositionen an optimalen paarweisen Alignment-Pfaden liegen, desto kleiner ist der Beitrag zu den Gesamtkosten.},
+    type=dinge
+}
+
+\newglossaryentry{bem_additional_cost_null_nicht_hinreichend}{
+    name={Garantiert eine multiple additional cost von Null, dass der zugehörige Schnitt zu einem optimalen multiplen Alignment führt? Gilt auch die Umkehrung?},
+    description={Nein, in beiden Richtungen nicht: Ein Schnitt mit multiple additional cost Null muss nicht optimal sein, und ein optimaler Schnitt hat nicht notwendigerweise multiple additional cost Null.},
+    type=dinge
+}
+
+\newglossaryentry{bem_heuristisches_prinzip_dca}{
+    name={Nach welchem Prinzip wählt man trotz der fehlenden Garantie in der Praxis gute Schnittpositionen?},
+    description={Man wählt Schnitte, welche die multiple additional cost minimieren -- das ist in der Praxis eine gute (wenn auch nicht garantiert optimale) Heuristik.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Der DCA-Algorithmus
+% ===================================================================
+
+\newglossaryentry{bem_dca_algorithmus_ablauf}{
+    name={Wie läuft der DCA-Algorithmus rekursiv ab?},
+    description={Man wählt eine Schnittposition $\hat c_1=\lceil n_1/2\rceil$ für die erste Sequenz, bestimmt die übrigen Schnittpositionen $c_2,\dots,c_k$ so, dass die multiple additional cost minimal wird, teilt alle Sequenzen dort, und ruft sich rekursiv auf beide Hälften auf -- bis die maximale Sequenzlänge unter einen Schwellenwert $L$ fällt, ab dem ein exakter MSA-Algorithmus (z.\,B.\ mit Carrillo-Lipman-Schranken) verwendet wird.},
+    type=dinge
+}
+
+\newglossaryentry{bem_suchraum_schnittpositionen}{
+    name={Wie groß ist der Suchraum bei der Bestimmung der übrigen Schnittpositionen $c_2,\dots,c_k$, wenn $\hat c_1$ bereits fixiert ist?},
+    description={$O(n_2\cdot n_3\cdots n_k)$, da $\hat c_1$ fest ist, die übrigen Positionen aber über die gesamte jeweilige Sequenzlänge variieren können.},
+    type=dinge
+}
+
+\newglossaryentry{bem_laufzeit_speicher_eine_schnittberechnung}{
+    name={Welche Zeit- und Speicherkomplexität hat die vollständige Berechnung einer einzelnen optimalen Schnittposition?},
+    description={$O(k^2n^2 + n^{k-1})$ Zeit und $O(k^2n^2)$ Speicherplatz.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dca_gesamtkomplexitaet_zeit}{
+    name={Wie lautet die (unter vereinfachenden Annahmen hergeleitete) asymptotische Gesamtzeitkomplexität des vollständigen DCA-Verfahrens?},
+    description={$O\big(k^2n^2 + n^{k-1} + 2^k n L^{k-1} k^2\big)$, wobei $n$ die maximale Sequenzlänge und $L$ der Schwellenwert für den exakten MSA-Basisfall ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dca_gesamtkomplexitaet_speicher}{
+    name={Wie lautet die Gesamtspeicherplatzkomplexität des vollständigen DCA-Verfahrens?},
+    description={$O(k^2n^2 + L^k)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dca_vergleich_standard_dp}{
+    name={Wie verhält sich die Gesamtzeitkomplexität von DCA im Vergleich zur Standard-DP für multiples Alignment?},
+    description={Die Zeit wird nur um eine Dimension reduziert -- es ist daher nicht offensichtlich, dass das Verfahren insgesamt einen echten Vorteil bringt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dca_eigentlicher_vorteil}{
+    name={Worin liegt der eigentliche praktische Vorteil von DCA, wenn nicht primär in der Zeitkomplexität?},
+    description={Im Speicherplatzbedarf: Er lässt sich als polynomiell ansehen, da der Speicher hauptsächlich für die $\binom{k}{2}$ Additional-Cost-Matrizen benötigt wird; der exponentielle Speicheranteil für den exakten MSA-Schritt bei Sequenzen kürzer als $L$ ist vernachlässigbar, da $L$ klein und frei wählbar ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_struktur_additional_cost_matrizen_nutzen}{
+    name={Welche strukturelle Eigenschaft der Additional-Cost-Matrizen lässt sich zur weiteren Beschleunigung ausnutzen?},
+    description={Die für die Schnittwahl interessanten kleinen Werte liegen oft nahe der Hauptdiagonalen, und die Werte wachsen schnell, wenn man sich von ihr entfernt -- darauf aufbauend wurden Branch-and-Bound-Heuristiken entwickelt, um die Suche nach guten Schnittpositionen zu beschleunigen.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Segment-basiertes Alignment -- Motivation
+% ===================================================================
+
+\newglossaryentry{bem_schwaeche_globaler_msa_methoden}{
+    name={Welche bekannte Schwäche haben globale multiple-Alignment-Methoden (wie progressive Methoden oder DCA)?},
+    description={Lokale Ähnlichkeiten können falsch aligniert werden, wenn sie im globalen Kontext nicht signifikant genug erscheinen -- das Ergebnis hängt zudem stark von vorab gewählten Parametern wie Kostenfunktion, Gap-Kosten und Scoring-Schema ab.},
+    type=dinge
+}
+
+\newglossaryentry{bem_grundidee_segment_alignment}{
+    name={Was ist die Grundidee des segment-basierten Sequenzalignments?},
+    description={Statt einzelne Positionen zu vergleichen, werden ganze Einheiten lokaler Ähnlichkeit (Segmente) identifiziert und als Bausteine für den Aufbau eines globalen multiplen Alignments verwendet -- das Ergebnis hängt dadurch weniger von den gewählten Alignment-Parametern ab und spiegelt stärker die tatsächlichen lokalen Ähnlichkeiten der Daten wider.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Segment-Identifikation
+% ===================================================================
+
+\newglossaryentry{bem_twoalign_segmentidentifikation}{
+    name={Wie identifiziert die (einfachste) TWOALIGN-Strategie Segmente, und welchen Nachteil hat dieser Ansatz?},
+    description={Durch suboptimale lokale Alignments, wie sie Smith-Waterman oder Waterman-Eggert liefern. Nachteil: Die lokale Alignment-Berechnung benötigt weiterhin die üblichen Alignment-Parameter (Scoring-Funktion, Gap-Kosten).},
+    type=dinge
+}
+
+\newglossaryentry{bem_gapfreie_segmente_alternative}{
+    name={Was ist die Alternative zu gap-behafteten lokalen Alignments bei der Segment-Identifikation, und welchen Vorteil bietet sie?},
+    description={Die Verwendung gap-freier lokaler Alignments, deren Segmente Diagonalstücken der Alignment-Matrix entsprechen. Da gap-freie Alignments schneller berechnet werden können, kann mehr Rechenzeit in die Bewertung ihres Scores investiert werden.},
+    type=dinge
+}
+
+\newglossaryentry{def_p_value_diagonale}{
+    name={Wie ist der p-Wert $P_D(l_D,s_D)$ einer Diagonale definiert, und was drückt er aus?},
+    description={$P_D(l_D,s_D) = \sum_{i=s_D}^{l_D} \binom{l_D}{i} p^i(1-p)^{l_D-i}$ -- die Wahrscheinlichkeit, dass ein zufälliges Segment der Länge $l_D$ mindestens $s_D$ Matches aufweist (mit $p=0.25$ für Nukleotide bzw.\ $p=0.05$ für Aminosäuren).},
+    type=dinge
+}
+
+\newglossaryentry{def_gewicht_diagonale}{
+    name={Wie ist das Gewicht $w_D$ einer Diagonale definiert?},
+    description={$w_D = -\ln(P_D)$ -- je unwahrscheinlicher (kleiner der p-Wert) ein beobachtetes Segment unter dem Zufallsmodell ist, desto größer ist sein Gewicht.},
+    type=dinge
+}
+
+\newglossaryentry{bem_laufzeit_diagonalen_berechnung}{
+    name={Welche Zeit benötigt die Berechnung aller Diagonalen, und wie lässt sie sich verbessern?},
+    description={$O(n^3)$ im Allgemeinen, reduzierbar auf $O(n^2)$, wenn die maximale Länge eines Diagonalsegments durch eine Konstante beschränkt wird.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Segment-Auswahl und -Zusammenbau
+% ===================================================================
+
+\newglossaryentry{def_inkonsistente_segmente}{
+    name={Wann sind zwei Segmente (im Fall von zwei Sequenzen) inkonsistent?},
+    description={Wenn sie sich "kreuzen" -- d.\,h.\ die Einbeziehung beider Segmente gleichzeitig ist in keinem gemeinsamen Alignment möglich.},
+    type=dinge
+}
+
+\newglossaryentry{bem_inkonsistenz_allgemein}{
+    name={Wie verallgemeinert sich der Begriff der Inkonsistenz auf eine Menge von Segmenten über mehrere Sequenzen?},
+    description={Eine Menge von Segmenten heißt inkonsistent, wenn es kein multiples Alignment der Sequenzen gibt, das alle diese Segmente gleichzeitig induziert.},
+    type=dinge
+}
+
+\newglossaryentry{bem_greedy_auswahl_konsistenter_segmente}{
+    name={Wie gehen TWOALIGN und DIALIGN vor, um aus einer Menge von Segmenten eine konsistente Teilmenge auszuwählen?},
+    description={Mit einem Greedy-Algorithmus: Man betrachtet die Segmente in absteigender Reihenfolge ihres Gewichts und fügt jedes Segment genau dann zur Lösung hinzu, wenn es mit den bereits ausgewählten Segmenten konsistent ist.},
+    type=dinge
+}
+
+\newglossaryentry{bem_alternative_zu_greedy_chaining}{
+    name={Welche alternative Methode zur Segmentauswahl (statt Greedy) wird genannt?},
+    description={Chaining-basierte Methoden, wie sie auch im Kontext des Ganzgenom-Alignments verwendet werden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_umgang_mit_nicht_erfassten_zeichen}{
+    name={Wie gehen unterschiedliche Methoden mit Zeichen um, die in keinem der ausgewählten konsistenten Segmente enthalten sind?},
+    description={DIALIGN füllt die verbleibenden Regionen einfach mit Gaps und lässt diese Zeichen ungealignt. Alternativ kann man versuchen, die Regionen zwischen den Segmenten nachträglich neu zu alignieren, was aber nicht trivial ist, da diese Zwischenregionen nicht eindeutig definiert sind.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: DIALIGN
+% ===================================================================
+
+\newglossaryentry{bem_dialign_optimierte_zielfunktion}{
+    name={Was verbessert DIALIGN gegenüber einer einfachen paarweisen Segmentbewertung?},
+    description={DIALIGN bezieht bei der Auswahl konsistenter Segmente Informationen aus mehreren Sequenzen gleichzeitig ein und verwendet eine optimierte Zielfunktion, um Diagonalen mit einem schwachen, aber über viele Sequenzen konsistenten Signal höher zu bewerten.},
+    type=dinge
+}
+
+\newglossaryentry{def_overlap_weight_final}{
+    name={Wie ist das "overlap weight" $\mathrm{olw}(D)$ einer Diagonale $D$ definiert?},
+    description={$\mathrm{olw}(D) = w_D + \sum_{E\in\mathcal D} \tilde w(D,E)$, wobei $\tilde w(D_1,D_2):=w_{D_3}$ das Gewicht des durch zwei Diagonalen implizierten Überlapps $D_3$ ist -- das eigene Gewicht der Diagonale wird also um die Gewichte aller mit ihr überlappenden Diagonalen ergänzt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dialign_aminosaeure_option}{
+    name={Welche Sonderfunktion bietet DIALIGN für codierende DNA-Sequenzen?},
+    description={Es kann die Codons automatisch in Aminosäuren übersetzen und die Diagonale dann mit dem Aminosäure-Scoring-Schema bewerten.},
+    type=dinge
+}
+
+\newglossaryentry{bem_dialign_2_verbesserungen}{
+    name={Was wurde in DIALIGN 2.0 gegenüber der ersten Version verbessert?},
+    description={Der statistische Score für Diagonalen wurde so verändert, dass längere Diagonalen stärker gewichtet werden, und die Algorithmen zur Konsistenzprüfung sowie zur Greedy-Aufnahme von Diagonalen in das wachsende multiple Alignment wurden mehrfach verbessert.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Warnungen
+% ===================================================================
+
+\newglossaryentry{bem_warnung_dca_dialign}{
+    name={Welche zentrale Warnung gilt für sowohl DCA als auch DIALIGN?},
+    description={Beide sind Heuristiken ohne Optimalitätsgarantie. DIALIGN eignet sich besonders für lokale Ähnlichkeiten (konservierte Blöcke in sonst unähnlichen Sequenzen), wobei die Greedy-Auswahl suboptimal sein kann; bei DCA hängt die Ergebnisqualität stark von den gewählten Schnittpositionen ab.},
+    type=dinge
+}
