@@ -3,7 +3,8 @@
 ## Module
 
 - **Statistik und Wahrscheinlichkeitstheorie** (SS2026, Teile aus SS2025)
-  - [Statistik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/statistik.pdf)
+  - [Statistik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/statistik.pdf) (inkl. Aufgaben und 
+    Lösungen, Karteikarten und so)
 - **Sequenzanalyse 2** (SS2026)
   - [Sequenzanalyse 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/seq-an-2.pdf)
   - [Nussinov Visualisierung](https://liliana-sanfilippo.github.io/uni/nussinov.html)

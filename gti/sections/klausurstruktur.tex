@@ -1,5 +1,4 @@
 
-\section{Klausurstruktur}\label{sec:klausurstruktur}
 
 \begin{mytable}
     \begin{tabular}{@{}c l l@{}}
@@ -15,7 +14,7 @@
     \end{tabular}
 \end{mytable}
 
-\subsection{Sprachunterscheidung}\label{subsec:sprachunterscheidung}
+\section{Sprachunterscheidung}\label{subsec:sprachunterscheidung}
 Zu einer Sprache $L$ entscheiden und beweisen, in welche Klasse sie fällt
 (regulär / nicht regulär, kontextfrei / nicht kontextfrei).
 Meist 3-4 Teilaufgaben, die die vier Beweisrichtungen kombinieren.
@@ -23,7 +22,7 @@ Meist 3-4 Teilaufgaben, die die vier Beweisrichtungen kombinieren.
     Fast immer Varianten von $\{a^n b^m c^k \mid \text{lineare (Un-)Gleichung über } n,m,k\}$
 \end{bem}
 
-\subsubsection{Vollständige Klassifikation (reg/nreg und cf/ncf) mit Beweis.}
+\subsection{Vollständige Klassifikation (reg/nreg und cf/ncf) mit Beweis.}
 % \txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
 
 Für jede Sprache beide Fragen beantworten:
@@ -62,7 +61,7 @@ nicht kontextfrei $\Rightarrow$ Pumping-Lemma (kontextfrei).
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Nicht-Regularität mit dem Pumping-Lemma zeigen.} % \txc{2017H, 2017N, 2023P, 2023Z, 2025}
+\subsection{Nicht-Regularität mit dem Pumping-Lemma zeigen.} % \txc{2017H, 2017N, 2023P, 2023Z, 2025}
 Typische Sprachen: $\{a^n b^m c^k\mid n=m\}$, $\{a^{2n}b^{4n}\}$, $\{c^4 a^n b^n\}$.
 Gefragt ist explizite Anwendung, das Gegenspieler-Schema muss also vollständig sein.
 
@@ -78,7 +77,7 @@ Gefragt ist explizite Anwendung, das Gegenspieler-Schema muss also vollständig 
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Kontextfreiheit durch Angabe einer kontextfreien Grammatik zeigen.} % \txc{2017N, 2021, 2023P, 2023Z,2025}
+\subsection{Kontextfreiheit durch Angabe einer kontextfreien Grammatik zeigen.} % \txc{2017N, 2021, 2023P, 2023Z,2025}
 Für $L_1$ aus dem Pumping-Teil wird meist direkt danach die passende CFG verlangt.
 
 \begin{itemize}
@@ -91,7 +90,7 @@ Für $L_1$ aus dem Pumping-Teil wird meist direkt danach die passende CFG verlan
 \end{itemize}
 
 
-\subsubsection{Regularität durch regulären Ausdruck (oder DEA/rechtslin.\ Grammatik) zeigen.}% \txc{2017H, 2017N}
+\subsection{Regularität durch regulären Ausdruck (oder DEA/rechtslin.\ Grammatik) zeigen.}% \txc{2017H, 2017N}
 z.\,B.\ $\{x\in\{a,b\}^*\mid \#_a(x)\text{ gerade}\}$ oder $\#_a+\#_b\ge 2$.
 Konstruktives Vorgehen: RegExp konkret hinschreiben.
 
@@ -105,7 +104,7 @@ Konstruktives Vorgehen: RegExp konkret hinschreiben.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Schnitt/Vereinigung zweier Sprachen aka ``erst den Schnitt berechnen''.} % \txc{2023P, 2023Z, 2025}
+\subsection{Schnitt/Vereinigung zweier Sprachen aka ``erst den Schnitt berechnen''.} % \txc{2023P, 2023Z, 2025}
 \begin{itemize}
     \item $\{\ol{x} \in \{\un{a}, \un{b}\}^* \mid  \ol{x} = a^n b^n \text{ mit } n \in \nz\} \cup \{ \ol{x} \in \{\un{c}, \un{d}\}^* \mid |\ol{x}| \leq 42 \}$ \txc{(HK2017)}
     \item  $\{a^n b^m c^k \mid n,m,k \in \nz_0, n \leq m \} \cap \{ a^n b^m c^k \mid n,m,k \in \nz_{0}, m \leq k \}$
@@ -115,7 +114,7 @@ Konstruktives Vorgehen: RegExp konkret hinschreiben.
 \end{itemize}
 
 
-\subsubsection{Grammatik für Vereinigung/Konkatenation zweier Sprachen.}
+\subsection{Grammatik für Vereinigung/Konkatenation zweier Sprachen.}
 % \txc{2017H (CFG, $\cup$), 2017N (rechtslin., $\cdot$)}
 Allgemeine Konstruktion $G_\cup$ bzw.\ $G_\bullet$ aus zwei gegebenen Grammatiken angeben.
 
@@ -128,7 +127,7 @@ Allgemeine Konstruktion $G_\cup$ bzw.\ $G_\bullet$ aus zwei gegebenen Grammatike
     genau $L(G) \cup L(G')$ erzeugt. \txc{(HK2017)}
 \end{itemize}
 
-\subsubsection{Sprachen mit festen Schranken / endliche Sprachen.}
+\subsection{Sprachen mit festen Schranken / endliche Sprachen.}
 % \txc{2017H ($|x|\le 42$), 2021 ($|x|=42n$), 2025 ($a^{2025}b^{2025}c^k,\,k\le 2025$)}
 Trickfrage: feste Exponenten bzw.\ obere Schranke $\Rightarrow$ die Sprache ist
 endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
@@ -152,9 +151,9 @@ endlich bzw.\ regulär, hier nicht auf das Pumping-Lemma hereinfallen!
 \end{itemize}
 \end{warn}
 
-\subsection{Endliche Automaten}\label{subsec:endliche-automaten}
+\section{Endliche Automaten}\label{subsec:endliche-automaten}
 
-\subsubsection{NEA aus rechtslinearer Grammatik konstruieren (als Diagramm).}%\txc{2019H, 2019N, 2021, 2023P, 2023Z,2025}
+\subsection{NEA aus rechtslinearer Grammatik konstruieren (als Diagramm).}%\txc{2019H, 2019N, 2021, 2023P, 2023Z,2025}
 Nichtterminale $\to$ Zustände, ein zusätzlicher Finalzustand $f$ für Regeln $S\Coloneqq a$.
 
 \begin{itemize}
@@ -176,7 +175,7 @@ Nichtterminale $\to$ Zustände, ein zusätzlicher Finalzustand $f$ für Regeln $
     \item Geben Sie einen
 \end{itemize}
 
-\subsubsection{Potenzmengenkonstruktion NEA $\to$ DEA.}%\txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
+\subsection{Potenzmengenkonstruktion NEA $\to$ DEA.}%\txc{2017H, 2017N, 2019H, 2019N, 2021, 2023P, 2023Z, 2025}
 Fast jede Klausur\ldots Mal als Diagramm, mal als Übergangstabelle.
 Müllzustand $\emptyset$ mitnehmen.
 Zustände = Teilmengen
@@ -201,7 +200,7 @@ Zustände = Teilmengen
     \end{itemize}
 \end{itemize}
 
-\subsubsection{DEA direkt für eine gegebene Sprache angeben.} %\txc{2017H, 2017N}
+\subsection{DEA direkt für eine gegebene Sprache angeben.} %\txc{2017H, 2017N}
 z.\,B.\ ``$\#_a(x)$ ungerade'' oder ``$\#_a(x)\equiv 1 \pmod 4$'' aka Zähl-Automat modulo\,$k$.
 \begin{itemize}
     \item Geben Sie einen DEA (als Automatendiagramm) an für die Sprache:
@@ -211,7 +210,7 @@ z.\,B.\ ``$\#_a(x)$ ungerade'' oder ``$\#_a(x)\equiv 1 \pmod 4$'' aka Zähl-Auto
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Komplement-Automat konstruieren.} % \txc{2019H, 2019N, 2021, 2023P}
+\subsection{Komplement-Automat konstruieren.} % \txc{2019H, 2019N, 2021, 2023P}
 Finalzustände tauschen nur beim vollständigen DEA korrekt!
 
 \begin{itemize}
@@ -230,10 +229,10 @@ Finalzustände tauschen nur beim vollständigen DEA korrekt!
 \end{itemize}
 
 
-\subsubsection{Kleene-Stern $L(A)^*$ bzw.\ $L(A)\cdot\{a\}$ konstruieren.} %\txc{2017H, 2017N, 2019N, 2023P}
+\subsection{Kleene-Stern $L(A)^*$ bzw.\ $L(A)\cdot\{a\}$ konstruieren.} %\txc{2017H, 2017N, 2019N, 2023P}
 $\varepsilon$-Kanten von Finalzuständen zurück zum (neuen) Start; neuer akzeptierender Startzustand.
 
-\subsubsection{Konkatenation $L(A_1)\cdot L(A_2)$ / Vereinigung $L(A_1)\cup L(A_2)$.}% \txc{2019H, 2023Z (Konkat.);2025 (Vereinig.)}
+\subsection{Konkatenation $L(A_1)\cdot L(A_2)$ / Vereinigung $L(A_1)\cup L(A_2)$.}% \txc{2019H, 2023Z (Konkat.);2025 (Vereinig.)}
 Diagramm und allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Phi_1\cap\Phi_2=\emptyset$).
 \begin{itemize}
     \item Wie kann man allgemein zu einem NEA $A$ einen NEA $A'$ konstruieren mit $L(A')=(L(A))^*$?
@@ -250,7 +249,7 @@ Diagramm und allgemeine Tupel-Konstruktion (disjunkte Zustandsmengen $\Phi_1\cap
 \end{itemize}
 
 
-\subsubsection{Äquivalenz Grammatik $\leftrightarrow$ Automat beweisen/widerlegen.}%\txc{2021, 2023P, 2023Z, 2025}
+\subsection{Äquivalenz Grammatik $\leftrightarrow$ Automat beweisen/widerlegen.}%\txc{2021, 2023P, 2023Z, 2025}
 $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklusion beider Richtungen.
 
 \begin{itemize}
@@ -277,7 +276,7 @@ $L(G_1)=L(G_2)$? oder $L(A)\subsetneq L(G)$? Gegenbeispielwort finden oder Inklu
     akzeptierte Sprache erzeugt, und erzeugen Sie mit dieser Grammatik das Wort $\underline{aabbb}$. \txc{(PK2021)} (NEA $A$ aus 2c, s.\,o.)
 \end{itemize}
 
-\subsubsection{Deterministischen Ersatzakzeptor vervollständigen.}
+\subsection{Deterministischen Ersatzakzeptor vervollständigen.}
 Schon lange her $\ldots$ vermutlich nicht wieder?
 \begin{itemize}
     \item Betrachten Sie den NEA auf der linken Seite.
@@ -291,9 +290,9 @@ Schon lange her $\ldots$ vermutlich nicht wieder?
     \end{itemize}
 \end{itemize}
 
-\subsection{Kontextfreie Grammatiken \& LR/Kellerautomaten}\label{subsec:kontextfreie-grammatiken-&-lr/kellerautomaten}
+\section{Kontextfreie Grammatiken \& LR/Kellerautomaten}\label{subsec:kontextfreie-grammatiken-&-lr/kellerautomaten}
 
-\subsubsection{Eindeutigkeit}
+\subsection{Eindeutigkeit}
 Eindeutig $=$ jedes Wort hat genau einen Strukturbaum.
 
 \begin{itemize}
@@ -309,7 +308,7 @@ Eindeutig $=$ jedes Wort hat genau einen Strukturbaum.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Regeln des zur Grammatik gehörenden LR-Automaten explizit angeben.}
+\subsection{Regeln des zur Grammatik gehörenden LR-Automaten explizit angeben.}
 Shift-Regeln (Terminal lesen) und Reduce-Regeln (pro Grammatikregel).
 
 \begin{itemize}
@@ -326,7 +325,7 @@ Shift-Regeln (Terminal lesen) und Reduce-Regeln (pro Grammatikregel).
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Ein Wort mit dem LR-Automaten rechnen und den Strukturbaum angeben.}
+\subsection{Ein Wort mit dem LR-Automaten rechnen und den Strukturbaum angeben.}
 Jeden Shift/Reduce-Schritt (Kellerinhalt) angeben.
 
 \begin{itemize}
@@ -346,7 +345,7 @@ Jeden Shift/Reduce-Schritt (Kellerinhalt) angeben.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{CYK-Algorithmus (Cocke-Kasami-Younger). Grammatik in CNF.}
+\subsection{CYK-Algorithmus (Cocke-Kasami-Younger). Grammatik in CNF.}
 \begin{itemize}
     \item Prüfen Sie mit dem CYK-Algorithmus, ob $w\in L(G)$ (Grammatik aus Teilaufgabe c bzw.\ gegeben):
     \begin{itemize}
@@ -357,7 +356,7 @@ Jeden Shift/Reduce-Schritt (Kellerinhalt) angeben.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Kellerautomat vervollständigen und Rechnung angeben.}
+\subsection{Kellerautomat vervollständigen und Rechnung angeben.}
 Regeln $a\,q_0\,b\Coloneqq\overline{w}\,q_1$ graphisch als $(a,b)/\overline{w}$.
 \begin{itemize}
     \item Vervollständigen Sie den (indeterministischen) Kellerautomaten, der dieselbe Sprache erkennt wie $G$,
@@ -369,7 +368,7 @@ Regeln $a\,q_0\,b\Coloneqq\overline{w}\,q_1$ graphisch als $(a,b)/\overline{w}$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Induktionsbeweis über Wörter / Sprachcharakterisierung.}
+\subsection{Induktionsbeweis über Wörter / Sprachcharakterisierung.}
 Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
 \begin{itemize}
     \item Zeigen Sie durch Induktion, dass für alle $\overline{x}\in L(G)$ gilt:
@@ -384,12 +383,12 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
     Zeigen Sie $L(G)\subsetneq L'$. \txc{(PK2023)}
 \end{itemize}
 
-\subsection{Probleme / Berechenbarkeit \& Reduktion}\label{subsec:probleme-/-berechenbarkeit-&-reduktion}
+\section{Probleme / Berechenbarkeit \& Reduktion}\label{subsec:probleme-/-berechenbarkeit-&-reduktion}
 
 
-\subsection{Multiple-Choice}\label{subsec:multiple-choice}
+\section{Multiple-Choice}\label{subsec:multiple-choice}
 
-\subsubsection{Sprachen \& Automaten}
+\subsection{Sprachen \& Automaten}
 \begin{mytable}
     \begin{tabular}{@{}p{0.60\textwidth} c p{0.30\textwidth}@{}}
         \hline
@@ -432,7 +431,7 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
     \end{tabular}
 \end{mytable}
 
-\subsubsection{Berechenbarkeit \& Komplexität}
+\subsection{Berechenbarkeit \& Komplexität}
 \begin{mytable}
     \begin{tabular}{@{}p{0.60\textwidth} c p{0.30\textwidth}@{}}
         \hline
@@ -475,7 +474,7 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
     \end{tabular}
 \end{mytable}
 
-\subsubsection{Reduktion, NP-Vollständigkeit, Gödelisierung}
+\subsection{Reduktion, NP-Vollständigkeit, Gödelisierung}
 \begin{mytable}
     \begin{tabular}{@{}p{0.60\textwidth} c p{0.30\textwidth}@{}}
         \hline

@@ -41,7 +41,7 @@
     <button id="play">▶ Abspielen</button>
     <button id="dl">Als SVG ⬇</button>
       <button onclick="downloadPng(
-    'nussinov.png',
+    'ukkonen_sellers.png',
     document.getElementById('stage').innerHTML
 )">
           Als PNG ⬇
@@ -77,12 +77,20 @@ function ukkonenMask(D,P,T,k){
       }
   }
     let l=Math.min(k,m);
-  for(let i=0;i<=l;i++) comp[i][0]=true;    // Randspalte bekannt
+  for(let i=0;i<=l;i++) comp[i][0]=true;
+
+    // Setzt die linie für die erste Spalte
   lact[0]=l;
   for(let j=1;j<=n;j++){
     const t=Math.min(l+1,m);
-    for(let i=0;i<=t;i++) comp[i][j]=true;   // berechnet: 0..t
-    let nl=t; while(nl>0 && D[nl][j]>k) nl--;
+    for(let i=0;i<=t;i++){
+        // berechnet: 0..t
+        comp[i][j]=true;
+    }
+    let nl = t;
+    while(nl>0 && D[nl][j]>k){
+        nl--;
+    }
     l=nl; lact[j]=l;
   }
   return {comp,lact};
@@ -102,7 +110,7 @@ function matrixG(ox,title,isU){
   const cur=reveal-1, ci=cur%(m+1), cj=Math.floor(cur/(m+1));
   for(let i=0;i<=m;i++)for(let j=0;j<=n;j++){
     const x=gx+rHW+j*cw, y=gy+i*ch, rv=idxOf(i,j,m)<reveal;
-    const skip = isU && j>=1 && i>=1 && !MASK.comp[i][j];
+    const skip = isU && j>=0 && i>=1 && !MASK.comp[i][j];
     let fill='#fff';
     if(rv){
       if(skip) fill='#FBD9EA';
@@ -203,8 +211,8 @@ function download(name,svg){
 }
 
 function compute(){
-  P=document.getElementById('p').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,6)||'ACGT';
-  T=document.getElementById('t').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,12)||'AGTCACGTGC';
+  P=document.getElementById('p').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,8);
+  T=document.getElementById('t').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,20);
   K=Math.max(0,Math.min(3,parseInt(document.getElementById('k').value)||1));
   document.getElementById('p').value=P;document.getElementById('t').value=T;document.getElementById('k').value=K;
   D=seller(P,T); MASK=ukkonenMask(D,P,T,K);
@@ -304,6 +312,9 @@ function downloadPng(filename, svgString, scale = 2) {
 
     img.src = url;
 }
+
+// AACC
+// CACAACAACCACAA
 
 </script>
 </body>

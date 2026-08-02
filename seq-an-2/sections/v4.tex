@@ -316,6 +316,7 @@ The following definition captures this formally.}
     \end{center}
 \end{bsp}
 
+
 \komm{Weiteres Beispiel/Visualisierung von last esential indoices unter Variation von k auf Seite
 \pageref{subsubsec:last-essential-indices-sellers}.}
 
@@ -413,7 +414,7 @@ To set this in operation, the last essential index $\lei_0$ of the 0-th column i
     \end{algorithmic}\caption{Ukkonens cutoff algorithm}\label{alg:ukkonen}
 \end{algorithm}
 
-\begin{bsp}[Adapted from script]
+\begin{bsp}[Adapted from script]\label{bsp:BABAABAABBABAA}
     Let $x = \mathtt{AABB}$, $y = \mathtt{BABAABAABBABAA}$ and $k = 1$.
     The following table shows which values are computed by Algorithm \ref{alg:ukkonen} considering unit cost.
     The last essential index in each column is \txc{highlighted green-ish}.
@@ -456,6 +457,14 @@ To set this in operation, the last essential index $\lei_0$ of the 0-th column i
             \end{array}
         \end{array}
     \]
+\end{bsp}
+
+\begin{bsp}{Erweitert}
+Direkter Vergleich zu einer Sequenzen analog zu Bsp. \ref{bsp:BABAABAABBABAA}
+    \begin{figure}[H]
+        \centering
+     \includegraphics[width=\linewidth]{images/sellers_ukkonen_CACAACAACCACAA_AACC}
+    \end{figure}
 \end{bsp}
 
 \skript{Sometimes, because it was first published by Ukkonen (1985), this algorithm is referred to as
