@@ -1,0 +1,194 @@
+
+% ===================================================================
+% Abschnitt: Die Forward-Backward-Technik
+% ===================================================================
+
+\newglossaryentry{def_advanced_alignment_problem}{
+    name={Wie lautet das "Advanced Alignment Problem", das die Forward-Backward-Technik motiviert?},
+    description={Gegeben zwei Sequenzen $x,y$ der Längen $m,n$: Finde das optimale globale Alignment unter der Bedingung, dass der Alignment-Pfad durch eine vorgegebene Zelle $(i_0,j_0)$ der Alignment-Matrix verläuft.},
+    type=dinge
+}
+
+\newglossaryentry{bem_zerlegung_advanced_alignment}{
+    name={Wie lässt sich das Advanced Alignment Problem in zwei Standardprobleme zerlegen?},
+    description={In die Ausrichtung der Präfixe $x[1\dots i_0]$ und $y[1\dots j_0]$ sowie die Ausrichtung der Suffixe $x[i_0+1\dots m]$ und $y[j_0+1\dots n]$ -- beides gewöhnliche globale Alignment-Probleme.},
+    type=dinge
+}
+
+\newglossaryentry{def_reverse_alignment_matrix}{
+    name={Wie ist die reverse Alignment-Matrix $D^{\mathrm{rev}}$ definiert?},
+    description={Man vertauscht Start- und Endzelle und kehrt die Berechnungsrichtung um -- effektiv richtet man die umgekehrten (reversed) Sequenzen global aus. $D^{\mathrm{rev}}(i,j)$ speichert damit die bestmöglichen Kosten für die Suffix-Alignments.},
+    type=dinge
+}
+
+\newglossaryentry{def_total_cost_matrix_final}{
+    name={Wie ist die Total-Cost-Matrix $T(i,j)$ definiert?},
+    description={$T(i,j) = \min\{\mathrm{cost}(A{+}{+}B)\}$, wobei $A$ ein Alignment der Präfixe $x[1\dots i]$, $y[1\dots j]$ und $B$ ein Alignment der Suffixe $x[i{+}1\dots m]$, $y[j{+}1\dots n]$ ist, "$+{+}$" die Konkatenation von Alignments bezeichnet -- also die minimalen Gesamtkosten aller Alignment-Pfade, die durch $(i,j)$ verlaufen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_intuition_total_cost_matrix}{
+    name={Was gibt $T(i,j)$ anschaulich an?},
+    description={Die minimal erreichbaren Gesamtkosten eines globalen Alignments von $x$ und $y$, wenn man sich dazu zwingt, den Alignment-Pfad durch die Zelle $(i,j)$ zu führen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_eigenschaft_t_00_t_mn}{
+    name={Welchen speziellen Wert hat $T(0,0)$ bzw.\ $T(m,n)$, und welche Ungleichung gilt allgemein für $T(i,j)$?},
+    description={$T(0,0)=T(m,n)=d(x,y)$, die optimale globale Alignment-Distanz (jeder Pfad, insbesondere die optimalen, verläuft durch $(0,0)$ und $(m,n)$). Allgemein gilt $T(i,j)\ge d(x,y)$ für alle $(i,j)$.},
+    type=dinge
+}
+
+\newglossaryentry{formel_total_cost_matrix_additiv}{
+    name={Wie berechnet sich die Total-Cost-Matrix $T(i,j)$ im Fall additiver Alignment-Kosten?},
+    description={$T(i,j) = D(i,j) + D^{\mathrm{rev}}(i,j)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_komplexitaet_total_cost_matrix}{
+    name={In welcher Zeit lassen sich $D$, $D^{\mathrm{rev}}$ und damit $T$ berechnen?},
+    description={In $O(mn)$ Zeit.},
+    type=dinge
+}
+
+\newglossaryentry{formel_total_cost_matrix_affine_gap_kosten}{
+    name={Warum ist die Berechnung der Total-Cost-Matrix bei affinen Gap-Kosten komplizierter als bei additiven Kosten, und wie löst man das?},
+    description={Bei affinen Gap-Kosten ist die Kostenkonkatenation nicht einfach additiv, da beim Verschmelzen zweier Gaps an der Schnittstelle die Gap-Eröffnungsstrafe nicht doppelt gezählt werden darf. Lösung mit den Gotoh-Historienmatrizen $V,H$ (und ihren reversen Gegenstücken): $T(i,j) = \min\{D(i,j){+}D^{\mathrm{rev}}(i,j),\ V(i,j){+}V^{\mathrm{rev}}(i,j){-}d{+}e,\ H(i,j){+}H^{\mathrm{rev}}(i,j){-}d{+}e\}$, mit Gap-Öffnungskosten $d$ und Gap-Verlängerungskosten $e$.},
+    type=dinge
+}
+
+\newglossaryentry{def_additional_cost_matrix_final}{
+    name={Wie ist die Additional-Cost-Matrix $C(i,j)$ definiert, und was bedeutet ihr Wert?},
+    description={$C(i,j) = T(i,j) - d(x,y)$ -- die "Mehrkosten" dafür, den Alignment-Pfad durch $(i,j)$ zu führen, verglichen mit dem Verbleiben auf einem optimalen Pfad. $C(i,j)=0$ genau dann, wenn $(i,j)$ auf dem Pfad eines optimalen Alignments liegt, sonst ist der Wert positiv.},
+    type=dinge
+}
+
+\newglossaryentry{formel_additional_cost_matrix_additiv}{
+    name={Wie berechnet sich $C(i,j)$ im additiven Kostenfall, ausgedrückt durch $D$ und $D^{\mathrm{rev}}$?},
+    description={$C(i,j) = D(i,j) + D^{\mathrm{rev}}(i,j) - d(x,y)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_komplexitaet_additional_cost_matrix}{
+    name={In welcher Zeit lässt sich die Additional-Cost-Matrix $C$ berechnen?},
+    description={Ebenfalls in $O(mn)$ Zeit, da sowohl $T$ als auch $d(x,y)$ bereits in $O(mn)$ Zeit vorliegen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_anwendungen_forward_backward}{
+    name={In welchen vier Anwendungen wird die Forward-Backward-Technik u.\,a.\ eingesetzt?},
+    description={(1) Alignment im linearen Speicherplatz (Hirschberg-Technik), (2) Auffinden von Regionen leicht suboptimaler Alignments, (3) Berechnung der Regionen für die Carrillo-Lipman-Heuristik beim multiplen Sequenzalignment, (4) Finden von Schnittpunkten für Divide-and-Conquer-Alignment.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Hirschbergs Algorithmus -- Motivation
+% ===================================================================
+
+\newglossaryentry{bem_eigentlicher_flaschenhals_alignment}{
+    name={Was ist der eigentliche praktische Flaschenhals bei der Berechnung optimaler Alignments -- Zeit oder Speicherplatz?},
+    description={Der Speicherplatzbedarf von $O(mn)$, nicht die Laufzeit: Für zwei Bakteriengenome mit je 5 Millionen Basen bräuchte die Traceback-Matrix bereits $25\cdot10^{12}$ Einträge (25 Terabyte).},
+    type=dinge
+}
+
+\newglossaryentry{bem_warum_score_allein_wenig_speicher_braucht}{
+    name={Warum lässt sich der reine Alignment-Score bereits in $O(m+n)$ Speicherplatz berechnen, während für das vollständige Alignment mehr Platz nötig ist?},
+    description={Für den Score genügt es, jeweils zwei benachbarte Zeilen/Spalten der Editiermatrix zu speichern. Für die Rekonstruktion eines konkreten optimalen Alignments (Backtracing) wird dagegen die vollständige Matrix bzw.\ Backtracing-Matrix benötigt.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Hirschbergs Algorithmus -- Funktionsweise
+% ===================================================================
+
+\newglossaryentry{bem_hirschberg_grundidee}{
+    name={Was ist die Grundidee von Hirschbergs Divide-and-Conquer-Algorithmus für Alignment im linearen Speicherplatz?},
+    description={Die Alignment-Matrix wird an ihrer mittleren Zeile $m'=\lceil m/2\rceil$ in eine obere und eine untere Hälfte geteilt, wobei die Schnittposition so gewählt wird, dass ein optimales Alignment der Präfixe, verkettet mit einem optimalen Alignment der Suffixe, ein optimales Gesamt-Alignment ergibt.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_schnittpunkt_finden}{
+    name={Wie wird die Schnittspalte $n'$ in Zeile $m'$ bei Hirschbergs Algorithmus bestimmt?},
+    description={Mit Hilfe der Forward-Backward-Technik: Die obere Hälfte wird vorwärts, die untere rückwärts berechnet; an Zeile $m'$ überschneiden sich beide, sodass man die Additional-Cost-Werte $C(m',j)$ für diese Zeile berechnen kann. Ein optimales Alignment verläuft durch Spalte $n'$ genau dann, wenn $C(m',n')=0$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_rekursion_basisfall}{
+    name={Wie wird Hirschbergs Algorithmus rekursiv fortgesetzt, und wann endet die Rekursion?},
+    description={Das Verfahren wird rekursiv einmal für das obere linke "Viertel" und einmal für das untere rechte "Viertel" der Matrix aufgerufen. Die Rekursion endet, sobald nur noch eine einzige Zeile übrig bleibt -- dieser Fall lässt sich direkt lösen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_kostenmodell_einschraenkung}{
+    name={Für welches Gap-Kostenmodell wird Hirschbergs Algorithmus in der Grundversion vorgestellt?},
+    description={Für homogene lineare Gap-Kosten $g(\ell)=\ell\cdot\gamma$ (mit konstanten Kosten $\gamma$ pro Gap-Zeichen).},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Hirschbergs Algorithmus -- Komplexität
+% ===================================================================
+
+\newglossaryentry{bem_aufgabe_hirschberg_algorithmus}{
+    name={Welche Aufgabe löst Hirschbergs Algorithmus?},
+    description={Berechnung eines optimalen globalen Alignments zweier Sequenzen bei geringem Speicherbedarf.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_speicherkomplexitaet}{
+    name={Welche Speicherplatzkomplexität hat Hirschbergs Algorithmus, und warum?},
+    description={$O(m+n)$: Alle Matrixberechnungen lassen sich zeilenweise mit höchstens zwei benachbarten Zeilen im Speicher durchführen, und das finale Alignment hat höchstens $m+n$ Spalten.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_zeitkomplexitaet_kosten}{
+    name={Wie hoch ist der Laufzeit-"Preis", den man für den linearen Speicherplatzbedarf bei Hirschbergs Algorithmus zahlt?},
+    description={Nur etwa ein konstanter Faktor $2$ -- die asymptotische Zeitkomplexität bleibt bei $O(mn)$.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_zeitkomplexitaet_begruendung}{
+    name={Warum bleibt die Gesamtzeitkomplexität von Hirschbergs Algorithmus bei $O(mn)$, obwohl manche Zellen mehrfach berechnet werden?},
+    description={In der ersten Rekursionsebene werden $mn$ Zellen berechnet, in der zweiten nur noch die Hälfte der Matrix, in der dritten ein Viertel usw. Die Gesamtsumme ist $mn\cdot(1+\tfrac12+\tfrac14+\dots) \le 2mn$ (geometrische Reihe).},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_affine_gap_kosten}{
+    name={Lässt sich Hirschbergs Technik auf affine Gap-Kosten übertragen, und was ist dabei zu beachten?},
+    description={Ja, konzeptionell unkompliziert (erstmals gezeigt von Myers und Miller, 1988) -- die Grundidee bleibt gleich, aber die Detailrechnung (analog zur Total-Cost-Matrix-Berechnung mit affinen Kosten) ist aufwendiger.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_allgemeine_gap_kosten_limitation}{
+    name={Kann Hirschbergs Technik auch auf allgemeine (beliebige) Gap-Kostenfunktionen angewendet werden?},
+    description={Nein -- allgemeine Gap-Kosten lassen sich nicht im linearen Speicherplatz behandeln; selbst der reine Alignment-Score kann dann nicht in linearem Speicherplatz berechnet werden, da man stets auf alle Zellen links und oberhalb der aktuellen Zelle zugreifen muss.},
+    type=dinge
+}
+
+% ===================================================================
+% Abschnitt: Hirschbergs Algorithmus -- Erweiterungen
+% ===================================================================
+
+\newglossaryentry{bem_hirschberg_lokales_alignment_anpassung}{
+    name={Wie lässt sich Hirschbergs Technik auf lokales Alignment im linearen Speicherplatz übertragen?},
+    description={Man verwendet eine Scoring- statt einer Kostenfunktion und nutzt aus, dass ein lokales Alignment ein globales Alignment der beiden bestpassenden Teilstrings von $x$ und $y$ ist. Kennt man Start- und Endpunkte dieser Teilstrings, kann man das gewöhnliche globale Verfahren anwenden.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_lokales_alignment_start_endpunkte}{
+    name={Wie findet man beim lokalen Alignment im linearen Speicherplatz die Endpunkte bzw.\ die Startpunkte des optimalen Teilstrings?},
+    description={Die Endpunkte sind der Eintrag mit dem höchsten Score in der (vorwärts berechneten) lokalen Alignment-Matrix. Die Startpunkte findet man über die Reversal-Technik: Sie sind die Endpunkte des optimalen lokalen Alignments der umgekehrten Sequenzen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_lokales_alignment_problem_mehrdeutigkeit}{
+    name={Welches Problem kann bei der Reversal-Technik zur Bestimmung der Startpunkte auftreten?},
+    description={Gibt es mehrere gleich hoch bewertete lokale Alignments, kann es schwierig werden, die richtigen Start- und Endpunkte einander korrekt zuzuordnen.},
+    type=dinge
+}
+
+\newglossaryentry{bem_hirschberg_suboptimale_alignments}{
+    name={Wie lässt sich das Prinzip von Hirschbergs Algorithmus erweitern, um die $K$ besten Alignments im linearen Speicherplatz zu finden?},
+    description={Man merkt sich die $K$ höchsten Einträge der Editiermatrix; hat man ein optimales Alignment gefunden, speichert man dessen Pfad und schließt seine diagonalen Kanten von der erneuten Verwendung aus, bevor man das nächste (nun optimale) Alignment neu berechnet. Der zusätzliche Speicherbedarf ist proportional zur Gesamtlänge aller gefundenen Alignments -- linear bei konstanter Anzahl gesuchter Alignments.},
+    type=dinge
+}
