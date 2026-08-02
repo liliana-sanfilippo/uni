@@ -199,7 +199,7 @@ function status(){
       df.textContent = isDiff ? `Unterschied: Sellers berechnet (${i},${j}) = ${D[i][j]} – Ukkonen überspringt diese Zelle (unter dem Cutoff).` : '';
       dfs = df.textContent;
 }
-function render(){ status(); window.curSVG=buildSVG(); document.getElementById('stage').innerHTML=window.curSVG; }
+function render(){ status(); window.curSVG=buildSVG();document.getElementById('stage').innerHTML=window.curSVG; }
 function stepOnce(){ if(reveal<total){reveal++;render();} else stop(); }
 function stop(){ if(timer){clearInterval(timer);timer=null;} document.getElementById('play').textContent='▶ Abspielen'; }
 function play(){ if(timer){stop();return;} document.getElementById('play').textContent='⏸ Pause';
