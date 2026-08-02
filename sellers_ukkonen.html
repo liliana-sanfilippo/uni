@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sellers vs. Ukkonen (Cutoff)</title>
+<style>
+  :root{--kap:#950E4F;--kom:#14060D;--sec:#BF1266;--defi:#EF58A0;--bsp:#F49EC4;
+        --kmt:#8A7B84;--bd:#E3CBD6;--hl:#F8CFE1;--ring:#FCE1EE;--grn:#1E9E6A;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--kom);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:20px;}
+  h1{color:var(--kap);font-size:22px;font-weight:600;margin:0 0 4px;}
+  .sub{color:var(--kmt);font-size:14px;margin:0 0 16px;max-width:760px;}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;}
+  label{font-size:13px;color:var(--sec);font-weight:500;}
+  input[type=text]{padding:6px 8px;border:1px solid var(--bd);border-radius:6px;
+       font-family:monospace;text-transform:uppercase;letter-spacing:1px;font-size:14px;}
+  input#p{width:90px;} input#t{width:170px;} input#k{width:46px;text-transform:none;}
+  button{padding:6px 12px;border:1px solid var(--kap);background:#fff;color:var(--kap);
+       border-radius:6px;font-size:13px;cursor:pointer;}
+  button:hover{background:var(--ring);}
+  button.primary{background:var(--kap);color:#fff;}
+  #status{font-size:13px;color:var(--kom);margin:6px 0 4px;min-height:20px;}
+  #status b{color:var(--kap);}
+  #diff{font-size:13px;color:var(--defi);font-weight:600;min-height:18px;margin-bottom:8px;}
+  .svgwrap{overflow-x:auto;border:1px solid var(--bd);border-radius:10px;padding:8px;}
+</style>
+</head>
+<body>
+  <h1>Sellers vs. Ukkonen-Cutoff</h1>
+  <br>
+  <div class="controls">
+    <label>P</label><input id="p" type="text" value="ACGT">
+    <label>T</label><input id="t" type="text" value="AGTCACGTGC">
+    <label>k</label><input id="k" type="text" value="1">
+    <button class="primary" id="load">Berechnen</button>
+    <span style="flex:1"></span>
+    <button id="reset">Zurück</button>
+    <button id="step">Schritt</button>
+    <button id="play">▶ Abspielen</button>
+    <button id="dl">Als SVG ⬇</button>
+      <button onclick="downloadPng(
+    'ukkonen_sellers.png',
+    document.getElementById('stage').innerHTML
+)">
+          Als PNG ⬇
+      </button>
+  </div>
+
+  <div id="status"></div>
+  <div id="diff"></div>
+  <div class="svgwrap"><div id="stage"></div></div>
+
+<script>
+const COL={kap:'#950E4F',kom:'#14060D',sec:'#BF1266',defi:'#EF58A0',bsp:'#F49EC4',
+           kmt:'#8A7B84',bd:'#E3CBD6',hl:'#F8CFE1',ring:'#FCE1EE',grn:'#1E9E6A'};
+let P,T,K,D,MASK,reveal,total,timer=null;
+
+function seller(P,T){
+  const m=P.length,n=T.length,D=[];
+  for(let i=0;i<=m;i++){D[i]=[];}
+  for(let j=0;j<=n;j++) D[0][j]=0;          // Suche: Start überall erlaubt
+  for(let i=0;i<=m;i++) D[i][0]=i;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++){
+    const c=P[i-1]===T[j-1]?0:1;
+    D[i][j]=Math.min(D[i-1][j-1]+c, D[i-1][j]+1, D[i][j-1]+1);
+  }
+  return D;
+}
+function ukkonenMask(D,P,T,k){
+  const m=P.length,n=T.length,comp=[],lact=[];
+  for(let i=0;i<=m;i++){
+      comp[i]=[];
+      for(let j=0;j<=n;j++){
+          comp[i][j]=false;
+      }
+  }
+    let l=Math.min(k,m);
+  for(let i=0;i<=l;i++) comp[i][0]=true;
+
+    // Setzt die linie für die erste Spalte
+  lact[0]=l;
+  for(let j=1;j<=n;j++){
+    const t=Math.min(l+1,m);
+    for(let i=0;i<=t;i++){
+        // berechnet: 0..t
+        comp[i][j]=true;
+    }
+    let nl = t;
+    while(nl>0 && D[nl][j]>k){
+        nl--;
+    }
+    l=nl; lact[j]=l;
+  }
+  return {comp,lact};
+}
+
+/* ---------- SVG ---------- */
+function idxOf(i,j,m){return j*(m+1)+i;}
+function matrixG(ox,title,isU){
+  const m=P.length,n=T.length,cw=26,ch=26,rHW=24,cHH=22,tH=24;
+  const gx=ox, gy=tH+cHH;
+  let s=`<text x="${ox}" y="16" font-size="14" font-weight="700" fill="${COL.kap}">${title}</text>`;
+  // headers
+  s+=`<text x="${gx+rHW-8}" y="${tH+cHH-9}" text-anchor="middle" font-size="11" fill="${COL.kmt}">ε</text>`;
+  for(let j=0;j<n;j++) s+=`<text x="${gx+rHW+(j+1)*cw+cw/2}" y="${tH+13}" text-anchor="middle" font-size="12" font-family="monospace" fill="${COL.kmt}">${T[j]}</text>`;
+  s+=`<text x="${gx+rHW-12}" y="${gy+ch/2+4}" text-anchor="middle" font-size="11" fill="${COL.kmt}">ε</text>`;
+  for(let i=0;i<m;i++) s+=`<text x="${gx+rHW-12}" y="${gy+(i+1)*ch+ch/2+4}" text-anchor="middle" font-size="12" font-family="monospace" fill="${COL.kmt}">${P[i]}</text>`;
+  const cur=reveal-1, ci=cur%(m+1), cj=Math.floor(cur/(m+1));
+  for(let i=0;i<=m;i++)for(let j=0;j<=n;j++){
+    const x=gx+rHW+j*cw, y=gy+i*ch, rv=idxOf(i,j,m)<reveal;
+    const skip = isU && j>=0 && i>=1 && !MASK.comp[i][j];
+    let fill='#fff';
+    if(rv){
+      if(skip) fill='#FBD9EA';
+      else if(isU){ fill = D[i][j]<=K ? COL.hl : (i>0? '#F1EAEE':'#fff'); }
+    }
+    s+=`<rect x="${x}" y="${y}" width="${cw}" height="${ch}" fill="${fill}" stroke="${COL.bd}" stroke-width="0.7"/>`;
+    if(rv){
+      if(skip){
+        s+=`<line x1="${x+3}" y1="${y+ch-3}" x2="${x+cw-3}" y2="${y+3}" stroke="${COL.defi}" stroke-width="1"/>`;
+      } else {
+        const tc = D[i][j]<=K ? COL.kap : COL.kom;
+        s+=`<text x="${x+cw/2}" y="${y+ch/2+4}" text-anchor="middle" font-size="13" fill="${tc}" font-family="monospace">${D[i][j]}</text>`;
+        if(i===m && j>=1 && D[m][j]<=K)
+          s+=`<rect x="${x+2}" y="${y+2}" width="${cw-4}" height="${ch-4}" rx="4" fill="none" stroke="${COL.grn}" stroke-width="1.8"/>`;
+      }
+      if(!isU && skip===false && j>=1 && i>=1 && !MASK.comp[i][j]){} // n/a on S
+    }
+    // Sellers: markiere Zellen, die Ukkonen überspringt
+    if(!isU && rv && j>=1 && i>=1 && !MASK.comp[i][j])
+      s+=`<circle cx="${x+cw-5}" cy="${y+5}" r="2.2" fill="${COL.defi}"/>`;
+    // aktuelle Zelle
+    if(i===ci && j===cj && cur>=0){
+      const isDiff = j>=1 && i>=1 && !MASK.comp[i][j];
+      s+=`<rect x="${x+1}" y="${y+1}" width="${cw-2}" height="${ch-2}" fill="none" stroke="${isDiff?COL.defi:COL.kap}" stroke-width="2.4"/>`;
+    }
+  }
+  // Cutoff-Linie (Ukkonen) für fertig gefüllte Spalten
+  if(isU){
+    let prevY=null;
+    for(let j=0;j<=n;j++){
+      if(reveal>=(j+1)*(m+1)){
+        const yl=gy+(MASK.lact[j]+1)*ch, x1=gx+rHW+j*cw, x2=x1+cw;
+        s+=`<line x1="${x1}" y1="${yl}" x2="${x2}" y2="${yl}" stroke="${COL.kap}" stroke-width="2"/>`;
+        if(prevY!=null && prevY!==yl){const xv=x1; s+=`<line x1="${xv}" y1="${prevY}" x2="${xv}" y2="${yl}" stroke="${COL.kap}" stroke-width="2"/>`;}
+        prevY=yl;
+      } else prevY=null;
+    }
+  }
+  return s;
+}
+function buildSVG(){
+  const m=P.length,n=T.length,cw=26,rHW=24,tH=24,cHH=22,ch=26,gap=46;
+  const mw=rHW+(n+1)*cw, mh=tH+cHH+(m+1)*ch;
+  const legendY=mh+16, W=mw*2+gap+20, H=mh+80;
+  let inner=`<g transform="translate(10,6)">${matrixG(0,'Sellers – volle Matrix',false)}</g>`;
+  inner+=`<g transform="translate(${10+mw+gap},6)">${matrixG(0,'Ukkonen – Cutoff',true)}</g>`;
+  // Legende
+  const lx=12; let lg='';
+  const items=[['Treffer (≤k)','ring',COL.grn],['aktiv ≤k','box',COL.hl],['berechnet >k','box','#F1EAEE'],
+               ['von Ukkonen übersprungen','skip',COL.defi],['Cutoff-Linie','line',COL.kap],
+  ];
+  let cx=lx;
+  items.forEach(it=>{
+    if(it[1]==='ring') lg+=`<rect x="${cx}" y="${legendY-9}" width="14" height="14" rx="3" fill="none" stroke="${it[2]}" stroke-width="1.8"/>`;
+    else if(it[1]==='skip'){lg+=`<rect x="${cx}" y="${legendY-9}" width="14" height="14" fill="#FBD9EA" stroke="${COL.bd}"/><line x1="${cx+2}" y1="${legendY+3}" x2="${cx+12}" y2="${legendY-7}" stroke="${it[2]}"/>`;}
+    else if(it[1]==='line') lg+=`<line x1="${cx}" y1="${legendY-2}" x2="${cx+14}" y2="${legendY-2}" stroke="${it[2]}" stroke-width="2"/>`;
+    else lg+=`<rect x="${cx}" y="${legendY-9}" width="14" height="14" fill="${it[2]}" stroke="${COL.bd}"/>`;
+    lg+=`<text x="${cx+19}" y="${legendY+2}" font-size="11" fill="${COL.kmt}">${it[0]}</text>`;
+    cx+=it[0].length*6.2+44;
+  });
+  inner+=`<g transform="translate(10,6)">${lg}</g>`;
+
+    inner+=`<g transform="translate(10,6)"><text  x="${lx}" y="${legendY+30}" font-size="13" fill="black" id="status_svg"> ${sts} </text></g>`;
+
+    inner+=`<g transform="translate(10,6)"><text id="diff_svg" x="${lx}" y="${legendY+50}" font-weight="600" font-size="13" fill="${COL.defi}"> ${dfs} </text></g>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="max-width:100%;height:auto" font-family="sans-serif"><rect width="${W}" height="${H}" fill="#fff"/>${inner}</svg>`;
+}
+
+/* ---------- driver ---------- */
+
+let sts = '';
+let dfs = '';
+
+function status(){
+  const
+      m=P.length,st=document.getElementById('status'),df=document.getElementById('diff');
+  if(reveal===0){st.innerHTML='Drücke <b>Schritt</b> oder <b>Abspielen</b>.';df.textContent='';return;}
+  const cur=reveal-1, i=cur%(m+1), j=Math.floor(cur/(m+1));
+  let skipped=0; for(let jj=0;jj<=T.length;jj++)for(let ii=0;ii<=m;ii++){
+    if(idxOf(ii,jj,m)<reveal && jj>=1 && ii>=1 && !MASK.comp[ii][jj]) skipped++;}
+  let matches=0; for(let jj=1;jj<=T.length;jj++){ if(idxOf(m,jj,m)<reveal && D[m][jj]<=K) matches++; }
+  st.innerHTML=`Zelle (i=${i}, j=${j}) · aktuelle Cutoff-Zeile in Spalte ${j}: lact=${MASK.lact[j]} · Ukkonen spart bisher <b>${skipped}</b> Zellen · Treffer bisher: <b>${matches}</b>`;
+  sts =
+      `Zelle (i=${i}, j=${j}) · Cutoff in Spalte ${j}: lact=${MASK.lact[j]} · Ukkonen spart bisher ${skipped} Zellen · Treffer bisher: ${matches}`;
+  const isDiff = j>=1 && i>=1 && !MASK.comp[i][j];
+      df.textContent = isDiff ? `Unterschied: Sellers berechnet (${i},${j}) = ${D[i][j]} – Ukkonen überspringt diese Zelle (unter dem Cutoff).` : '';
+      dfs = df.textContent;
+}
+function render(){ status(); window.curSVG=buildSVG(); document.getElementById('stage').innerHTML=window.curSVG; }
+function stepOnce(){ if(reveal<total){reveal++;render();} else stop(); }
+function stop(){ if(timer){clearInterval(timer);timer=null;} document.getElementById('play').textContent='▶ Abspielen'; }
+function play(){ if(timer){stop();return;} document.getElementById('play').textContent='⏸ Pause';
+  timer=setInterval(()=>{ if(reveal>=total)stop(); else stepOnce(); },220); }
+function download(name,svg){
+  const blob=new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n'+svg],{type:'image/svg+xml;charset=utf-8'});
+  const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);
+}
+
+function compute(){
+  P=document.getElementById('p').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,8);
+  T=document.getElementById('t').value.toUpperCase().replace(/[^ACGTU]/g,'').slice(0,20);
+  K=Math.max(0,Math.min(3,parseInt(document.getElementById('k').value)||1));
+  document.getElementById('p').value=P;document.getElementById('t').value=T;document.getElementById('k').value=K;
+  D=seller(P,T); MASK=ukkonenMask(D,P,T,K);
+  total=(P.length+1)*(T.length+1); reveal=0; stop(); render();
+}
+document.getElementById('load').onclick=compute;
+document.getElementById('reset').onclick=()=>{reveal=0;stop();render();};
+document.getElementById('step').onclick=stepOnce;
+document.getElementById('play').onclick=play;
+document.getElementById('dl').onclick=()=>download('sellers_vs_ukkonen.svg',window.curSVG||buildSVG());
+compute();
+
+
+function downloadPng(filename, svgString, scale = 2) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgString, 'image/svg+xml');
+
+    // Prüfen, ob der SVG-Parser einen Fehler gefunden hat
+    const parserError = doc.querySelector('parsererror');
+
+    if (parserError) {
+        console.error('SVG ist ungültig:', parserError.textContent);
+        return;
+    }
+
+    const svg = doc.documentElement;
+
+    const viewBox = svg.getAttribute('viewBox');
+
+    if (!viewBox) {
+        console.error('SVG besitzt kein viewBox-Attribut.');
+        return;
+    }
+
+    const values = viewBox.trim().split(/\s+/).map(Number);
+
+    const width = values[2];
+    const height = values[3];
+
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+
+    const serialized = new XMLSerializer()
+        .serializeToString(svg);
+
+    const blob = new Blob(
+        [serialized],
+        { type: 'image/svg+xml;charset=utf-8' }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+
+    img.onload = function () {
+
+        const canvas = document.createElement('canvas');
+
+        canvas.width = width * scale;
+        canvas.height = height * scale;
+
+        const ctx = canvas.getContext('2d');
+
+        ctx.scale(scale, scale);
+        ctx.drawImage(img, 0, 0, width, height);
+
+        URL.revokeObjectURL(url);
+
+        canvas.toBlob(function (pngBlob) {
+
+            if (!pngBlob) {
+                console.error('PNG konnte nicht erzeugt werden.');
+                return;
+            }
+
+            const pngUrl = URL.createObjectURL(pngBlob);
+
+            const a = document.createElement('a');
+            a.href = pngUrl;
+            a.download = filename;
+
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+
+            setTimeout(() => {
+                URL.revokeObjectURL(pngUrl);
+            }, 1000);
+
+        }, 'image/png');
+    };
+
+    img.onerror = function (error) {
+        console.error('SVG konnte nicht als Bild geladen werden.');
+        console.log('SVG:', serialized);
+        URL.revokeObjectURL(url);
+    };
+
+    img.src = url;
+}
+
+// AACC
+// CACAACAACCACAA
+
+</script>
+</body>
+</html>
