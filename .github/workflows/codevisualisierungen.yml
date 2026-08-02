@@ -17,11 +17,11 @@ jobs:
 
       - name: Copy HTMLs
         run: |
-          mkdir -p htmls
-          cp seq-an-2/sonstiges/*.html htmls/
+          mkdir -p docs
+          cp seq-an-2/sonstiges/*.html docs/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./htmls
+          publish_dir: ./docs
