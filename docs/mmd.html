@@ -305,6 +305,15 @@
     <input id="yInput" type="text" value="ATCTA" spellcheck="false">
     <label for="xInput">Sequenz x</label>
     <input id="xInput" type="text" value="CTAATGCT" spellcheck="false">
+    <label>
+        <input type="radio" name="direction" value="left" checked>
+        Links → Rechts
+    </label>
+
+    <label>
+        <input type="radio" name="direction" value="right">
+        Rechts → Links
+    </label>
 </div>
 <div class="controls">
     <button class="primary" id="resetBtn">Neu berechnen</button>
@@ -360,17 +369,101 @@
         let states = [];
         let step = 0;
 
-        function longestPrefixInY(s, y) {
-            let best = "";
-            for (let len = 1; len <= s.length; len++) {
-                const candidate = s.slice(0, len);
-                if (y.includes(candidate)) best = candidate;
-                else break;
-            }
-            return best;
-        }
+        let direction = "left";
+
+        document.querySelectorAll('input[name="direction"]').forEach(input => {
+            input.addEventListener("change", () => {
+                direction = input.value;
+                step = 0;
+                render();
+            });
+        });
 
         function calculate(x, y) {
+            return direction === "left"
+                ? calculateLeftToRight(x, y)
+                : calculateRightToLeft(x, y);
+        }
+
+        function calculateRightToLeft(x, y) {
+            const result = [];
+            const matches = [];
+            const separators = [];
+
+            let pos = x.length - 1;
+
+            while (pos >= 0) {
+                const end = pos + 1;
+                let candidate = "";
+
+                while (pos - candidate.length >= 0) {
+                    const nextChar = x[pos - candidate.length];
+                    const tested = nextChar + candidate;
+
+                    const positions = findAllOccurrences(y, tested);
+
+                    result.push({
+                        type: "test",
+                        start: pos - tested.length + 1,
+                        end,
+                        text: tested,
+                        valid: positions.length > 0,
+                        yMatches: positions
+                    });
+
+                    if (positions.length === 0) {
+                        break;
+                    }
+
+                    candidate = tested;
+                }
+
+                if (candidate.length > 0) {
+                    const start = pos - candidate.length + 1;
+
+                    matches.push({
+                        start,
+                        end,
+                        text: candidate
+                    });
+
+                    pos = start - 1;
+
+                    if (pos >= 0) {
+                        separators.push({
+                            index: pos,
+                            text: x[pos]
+                        });
+
+                        result.push({
+                            type: "separator",
+                            index: pos,
+                            text: x[pos]
+                        });
+
+                        pos--;
+                    }
+                } else {
+                    separators.push({
+                        index: pos,
+                        text: x[pos]
+                    });
+
+                    result.push({
+                        type: "separator",
+                        index: pos,
+                        text: x[pos],
+                        noMatch: true
+                    });
+
+                    pos--;
+                }
+            }
+
+            return {result, matches, separators};
+        }
+
+        function calculateLeftToRight(x, y) {
             const result = [];
             let pos = 0;
             const matches = [];
@@ -380,7 +473,7 @@
                 const start = pos;
                 let candidate = "";
 
-                // Buchstabe für Buchstabe aufbauen
+                // Buchstabe für Buchstabe
                 while (pos + candidate.length < x.length) {
                     const nextChar = x[pos + candidate.length];
                     const tested = candidate + nextChar;
@@ -529,19 +622,39 @@
                 c.className = "char";
                 c.textContent = x[i];
 
-                if (i < activeStart) {
-                    const isSep = calc.separators.some(
-                        s => s.index === i
-                    );
+                if (direction === "left") {
 
-                    c.classList.add(
-                        isSep
-                            ? "consumed-sep"
-                            : "consumed-match"
-                    );
+                    // Alles links vom aktuellen Bereich wurde verarbeitet
+                    if (i < activeStart) {
+                        const isSep = calc.separators.some(
+                            s => s.index === i
+                        );
+
+                        c.classList.add(
+                            isSep ? "consumed-sep" : "consumed-match"
+                        );
+                    }
+
+                } else {
+
+                    // Alles rechts vom aktuellen Bereich wurde verarbeitet
+                    if (i >= activeEnd) {
+                        const isSep = calc.separators.some(
+                            s => s.index === i
+                        );
+
+                        c.classList.add(
+                            isSep ? "consumed-sep" : "consumed-match"
+                        );
+                    }
                 }
 
-                if (i >= activeStart && i < activeEnd) {
+                // Aktuellen Bereich hervorheben
+                if (
+                    activeStart >= 0 &&
+                    i >= activeStart &&
+                    i < activeEnd
+                ) {
                     c.classList.add("active");
                 }
 
@@ -550,28 +663,32 @@
         }
 
         function renderY(y, calc) {
-            const current = step < states.length
-                ? states[step]
+            $("yView").innerHTML = "";
+
+            // step = Anzahl der bereits ausgeführten Schritte
+            // Der aktuell sichtbare State ist deshalb step - 1.
+            const current = step > 0
+                ? calc.result[step - 1]
                 : null;
 
-            const candidate =
-                current && current.type === "test"
-                    ? current.text
-                    : "";
+            let candidate = "";
+            let positions = [];
 
-            const positions = current?.yMatches || [];
-
-            $("yView").innerHTML = "";
+            if (current && current.type === "test") {
+                candidate = current.text;
+                positions = current.yMatches || [];
+            }
 
             for (let i = 0; i < y.length; i++) {
                 const c = document.createElement("span");
                 c.className = "char";
                 c.textContent = y[i];
 
-                const isMatch = positions.some(start =>
-                    i >= start &&
-                    i < start + candidate.length
-                );
+                // Prüfen, ob Zeichen i zu EINEM der Matches gehört
+                const isMatch = positions.some(start => {
+                    return i >= start &&
+                        i < start + candidate.length;
+                });
 
                 if (isMatch) {
                     c.classList.add("consumed-match");
@@ -665,9 +782,6 @@
             }
         }
 
-        function countSeparatorsVisible(result, n) {
-            return result.slice(0, n).filter(s => s.type === "separator").length;
-        }
 
         $("resetBtn").onclick = () => {
             step = 0;
