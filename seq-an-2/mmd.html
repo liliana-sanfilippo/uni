@@ -249,7 +249,6 @@
         }
 
 
-
         .explain {
             padding: 13px 15px;
             background: var(--bd);
@@ -299,60 +298,60 @@
     </style>
 </head>
 <body>
-    <h1>Maximal Matches Distance</h1>
+<h1>Maximal Matches Distance</h1>
 
-    <div class="inputs">
-        <label for="yInput">Referenzsequenz y</label>
-        <input id="yInput" type="text" value="ATCTA" spellcheck="false">
-        <label for="xInput">Sequenz x</label>
-        <input id="xInput" type="text" value="CTAATGCT" spellcheck="false">
-    </div>
-    <div class="controls">
-        <button class="primary" id="resetBtn">Neu berechnen</button>
-        <button id="prevBtn">← Zurück</button>
-        <button id="nextBtn">Nächster Schritt →</button>
-        <button id="allBtn">Alle Schritte</button>
+<div class="inputs">
+    <label for="yInput">Referenzsequenz y</label>
+    <input id="yInput" type="text" value="ATCTA" spellcheck="false">
+    <label for="xInput">Sequenz x</label>
+    <input id="xInput" type="text" value="CTAATGCT" spellcheck="false">
+</div>
+<div class="controls">
+    <button class="primary" id="resetBtn">Neu berechnen</button>
+    <button id="prevBtn">← Zurück</button>
+    <button id="nextBtn">Nächster Schritt →</button>
+    <button id="allBtn">Alle Schritte</button>
+</div>
+<div>
+    <h2>Greedy von links nach rechts</h2>
+    <div class="progress" id="progress"></div>
+    <p id="status" class="small"></p>
+
+    <div>
+        <strong>x:</strong>
+        <div class="sequence" id="xView"></div>
     </div>
     <div>
-        <h2>Greedy von links nach rechts</h2>
-        <div class="progress" id="progress"></div>
-        <p id="status" class="small"></p>
-
-        <div>
-            <strong>x:</strong>
-            <div class="sequence" id="xView"></div>
-        </div>
-        <div>
-            <strong>y:</strong>
-            <div class="sequence" id="yView"></div>
-        </div>
-
-        <div class="legend">
-            <span class="lmatch">Match: Teilstring von y</span>
-            <span class="lsep">Separator: einzelnes Zeichen</span>
-            <span class="lactive">aktueller Suchbereich</span>
-        </div>
-
-        <div class="explain" id="explain"></div>
-        <h2 class="result" id="result"></h2>
+        <strong>y:</strong>
+        <div class="sequence" id="yView"></div>
     </div>
 
-    <div class="grid">
-        <div>
-            <h2>Warum ist der Match maximal?</h2>
-            <div class="steps" id="logic"></div>
-        </div>
-       <!--
-        <div>
-            <h2>Partition</h2>
-            <div id="partition" class="sequence"> </div>
-            <p class="small">
-                Die grünen Blöcke sind die <span class="math">zᵢ</span>. Die roten Zeichen sind die
-                Separatoren <span class="math">bᵢ</span>. Die Distanz ist die Anzahl der Separatoren.
-            </p>
-        </div>
-       -->
+    <div class="legend">
+        <span class="lmatch">Match: Teilstring von y</span>
+        <span class="lsep">Separator: einzelnes Zeichen</span>
+        <span class="lactive">aktueller Suchbereich</span>
     </div>
+
+    <div class="explain" id="explain"></div>
+    <h2 class="result" id="result"></h2>
+</div>
+
+<div class="grid">
+    <div>
+        <h2>Warum ist der Match maximal?</h2>
+        <div class="steps" id="logic"></div>
+    </div>
+    <!--
+     <div>
+         <h2>Partition</h2>
+         <div id="partition" class="sequence"> </div>
+         <p class="small">
+             Die grünen Blöcke sind die <span class="math">zᵢ</span>. Die roten Zeichen sind die
+             Separatoren <span class="math">bᵢ</span>. Die Distanz ist die Anzahl der Separatoren.
+         </p>
+     </div>
+    -->
+</div>
 
 
 <script>
@@ -374,38 +373,80 @@
         function calculate(x, y) {
             const result = [];
             let pos = 0;
-            let matches = [];
-            let separators = [];
+            const matches = [];
+            const separators = [];
 
             while (pos < x.length) {
-                const rest = x.slice(pos);
-                const match = longestPrefixInY(rest, y);
+                const start = pos;
+                let candidate = "";
 
-                if (match.length > 0) {
-                    const start = pos;
-                    console.log(start)
-                    const end = pos + match.length;
-                    matches.push({start, end, text: match});
-                    result.push({
-                        type: "match",
-                        start, end, text: match,
-                        remaining: x.slice(end),
-                        tested: match + (x[end] || "")
+                // Buchstabe für Buchstabe aufbauen
+                while (pos + candidate.length < x.length) {
+                    const nextChar = x[pos + candidate.length];
+                    const tested = candidate + nextChar;
+
+                    if (y.includes(tested)) {
+                        candidate = tested;
+
+                        result.push({
+                            type: "test",
+                            start,
+                            end: start + candidate.length,
+                            text: candidate,
+                            testedChar: nextChar,
+                            valid: true,
+                            yMatches: findAllOccurrences(y, candidate)
+                        });
+                    } else {
+                        // Dieser Buchstabe kann nicht mehr an den Match angehängt werden
+                        result.push({
+                            type: "test",
+                            start,
+                            end: start + candidate.length + 1,
+                            text: tested,
+                            testedChar: nextChar,
+                            valid: false,
+                            yMatches: []
+                        });
+
+                        break;
+                    }
+                }
+
+                if (candidate.length > 0) {
+                    const end = start + candidate.length;
+
+                    matches.push({
+                        start,
+                        end,
+                        text: candidate
                     });
+
                     pos = end;
 
+                    // Separator
                     if (pos < x.length) {
-                        separators.push({index: pos, text: x[pos]});
+                        separators.push({
+                            index: pos,
+                            text: x[pos]
+                        });
+
                         result.push({
                             type: "separator",
                             index: pos,
                             text: x[pos],
                             after: x.slice(pos + 1)
                         });
+
                         pos++;
                     }
                 } else {
-                    separators.push({index: pos, text: x[pos]});
+                    // Schon der erste Buchstabe ist kein Match
+                    separators.push({
+                        index: pos,
+                        text: x[pos]
+                    });
+
                     result.push({
                         type: "separator",
                         index: pos,
@@ -413,10 +454,16 @@
                         after: x.slice(pos + 1),
                         noMatch: true
                     });
+
                     pos++;
                 }
             }
-            return {result, matches, separators};
+
+            return {
+                result,
+                matches,
+                separators
+            };
         }
 
         function render() {
@@ -444,6 +491,9 @@
 
         function findAllOccurrences(text, pattern) {
             const positions = [];
+
+            if (!pattern) return positions;
+
             let pos = text.indexOf(pattern);
 
             while (pos !== -1) {
@@ -455,48 +505,72 @@
         }
 
         function renderX(x, calc) {
-            const activeStart = step < states.length
-                ? (states[step].type === "match" ? states[step].start : states[step].index)
-                : -1;
-            const activeEnd = step < states.length
-                ? (states[step].type === "match" ? states[step].end + 1 : states[step].index + 1)
-                : -1;
+            const current = step < states.length
+                ? states[step]
+                : null;
+
+            let activeStart = -1;
+            let activeEnd = -1;
+
+            if (current) {
+                if (current.type === "test") {
+                    activeStart = current.start;
+                    activeEnd = current.end;
+                } else if (current.type === "separator") {
+                    activeStart = current.index;
+                    activeEnd = current.index + 1;
+                }
+            }
 
             $("xView").innerHTML = "";
+
             for (let i = 0; i < x.length; i++) {
                 const c = document.createElement("span");
                 c.className = "char";
                 c.textContent = x[i];
 
                 if (i < activeStart) {
-                    const isSep = calc.separators.some(s => s.index === i);
-                    c.classList.add(isSep ? "consumed-sep" : "consumed-match");
+                    const isSep = calc.separators.some(
+                        s => s.index === i
+                    );
+
+                    c.classList.add(
+                        isSep
+                            ? "consumed-sep"
+                            : "consumed-match"
+                    );
                 }
-                if (i >= activeStart && i < activeEnd) c.classList.add("active");
+
+                if (i >= activeStart && i < activeEnd) {
+                    c.classList.add("active");
+                }
 
                 $("xView").appendChild(c);
             }
         }
 
         function renderY(y, calc) {
-            const current = step < states.length ? states[step] : null;
-            const candidate = current?.type === "match"
-                ? current.text
-                : "";
+            const current = step < states.length
+                ? states[step]
+                : null;
+
+            const candidate =
+                current && current.type === "test"
+                    ? current.text
+                    : "";
+
+            const positions = current?.yMatches || [];
 
             $("yView").innerHTML = "";
-
-            const matchPositions = candidate
-                ? findAllOccurrences(y, candidate)
-                : [];
 
             for (let i = 0; i < y.length; i++) {
                 const c = document.createElement("span");
                 c.className = "char";
                 c.textContent = y[i];
 
-                const isMatch = matchPositions.some(start =>
-                    i >= start && i < start + candidate.length
+                const isMatch = positions.some(start =>
+                    i >= start &&
+                    i < start + candidate.length
                 );
 
                 if (isMatch) {
@@ -509,49 +583,85 @@
 
         function renderText(x, y, calc) {
             const total = calc.separators.length;
+
             if (step === 0) {
-                $("status").textContent = "Start: Wir betrachten x von links nach rechts.";
+                $("status").textContent =
+                    "Start: Wir betrachten x von links nach rechts.";
+
                 $("explain").textContent =
-                    "Suche an der aktuellen Position den längsten Präfix von x, der gleichzeitig ein Teilstring von y ist.";
-            } else if (step <= states.length) {
+                    "Wir erweitern den aktuellen Match Buchstabe für Buchstabe und prüfen jedes Präfix in y.";
+            } else {
                 const s = states[step - 1];
-                if (s.type === "match") {
-                    const next = x[s.end];
-                    $("status").textContent = `Schritt ${step}: längster Match = „${s.text}“`;
+
+                if (s.type === "test") {
+                    if (s.valid) {
+                        $("status").textContent =
+                            `Schritt ${step}: „${s.text}“ kommt in y vor.`;
+
+                        $("explain").innerHTML =
+                            `Der Präfix <b>„${s.text}“</b> kommt in y vor. ` +
+                            `Wir können deshalb den nächsten Buchstaben testen.`;
+                    } else {
+                        $("status").textContent =
+                            `Schritt ${step}: „${s.text}“ kommt nicht in y vor.`;
+
+                        $("explain").innerHTML =
+                            `Der Kandidat <b>„${s.text}“</b> kommt nicht in y vor. ` +
+                            `Der letzte gültige Match ist <b>„${s.text.slice(0, -1)}“</b>.`;
+                    }
+                }
+
+                if (s.type === "separator") {
+                    $("status").textContent =
+                        `Schritt ${step}: Separator „${s.text}“`;
+
                     $("explain").innerHTML =
-                        `„<b>${s.text}</b>“ kommt in y vor. Der nächste Buchstabe ` +
-                        (next ? `<b>„${next}“</b> kann nicht mehr an diesen Match angehängt werden und wird als Separator abgetrennt.` :
-                            "liegt am Ende – es gibt keinen weiteren Separator.");
-                } else {
-                    $("status").textContent = `Schritt ${step}: Separator „${s.text}“`;
-                    $("explain").innerHTML =
-                        `An dieser Position gibt es keinen nichtleeren Präfix von x, der in y vorkommt. ` +
-                        `<b>„${s.text}“</b> muss daher als einzelner Separator behandelt werden.`;
+                        `Der Buchstabe <b>„${s.text}“</b> gehört nicht mehr zum Match ` +
+                        `und wird als Separator abgetrennt.`;
                 }
             }
 
-            $("result").textContent = step === states.length
-                ? `δ(x‖y) = ${total}  (Anzahl der Separatoren)`
-                : `Bisher: ${calc.separators.slice(0, countSeparatorsVisible(calc.result, step)).length} Separator(en)`;
-
             const visible = calc.result.slice(0, step);
+
+            const separatorCount = visible.filter(
+                s => s.type === "separator"
+            ).length;
+
+            $("result").textContent =
+                step === states.length
+                    ? `δ(x‖y) = ${total}  (Anzahl der Separatoren)`
+                    : `Bisher: ${separatorCount} Separator(en)`;
+
             const logic = $("logic");
             logic.innerHTML = "";
+
             visible.forEach((s, i) => {
                 const d = document.createElement("div");
                 d.className = "step";
-                if (s.type === "match") {
-                    d.innerHTML = `<strong>Match ${i + 1}: „${s.text}“</strong>
-          Längster Präfix an dieser Position, der in y vorkommt.`;
+
+                if (s.type === "test") {
+                    d.innerHTML = s.valid
+                        ? `<strong>Test ${i + 1}: „${s.text}“ ✓</strong>
+                   Dieser Präfix kommt in y vor.`
+                        : `<strong>Test ${i + 1}: „${s.text}“ ✗</strong>
+                   Dieser Präfix kommt nicht in y vor.`;
                 } else {
-                    d.innerHTML = `<strong>Separator: ⟨${s.text}⟩</strong>
-          Danach beginnt die nächste Suche beim folgenden Zeichen.`;
+                    d.innerHTML =
+                        `<strong>Separator: ⟨${s.text}⟩</strong>
+                 Danach beginnt die nächste Suche beim folgenden Zeichen.`;
                 }
+
                 logic.appendChild(d);
             });
+
             if (step === 0) {
-                logic.innerHTML = `<div class="step"><strong>Greedy-Idee</strong>
-        Nimm immer den längsten möglichen Match und gehe danach einen einzelnen Separator weiter.</div>`;
+                logic.innerHTML = `
+            <div class="step">
+                <strong>Greedy-Idee</strong>
+                Baue den Match Buchstabe für Buchstabe auf
+                und nimm immer den längsten gültigen Präfix.
+            </div>
+        `;
             }
         }
 
