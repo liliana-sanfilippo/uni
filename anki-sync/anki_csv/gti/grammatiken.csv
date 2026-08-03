@@ -1,0 +1,13 @@
+Wie ist eine kontextfreie Grammatik definiert?,"\(G=(\Phi,\Sigma,R,S)\) mit Nichtterminalen \(\Phi\), Terminalen \(\Sigma\), Startsymbol \(S\in\Phi\) und Regeln \(R\) der Form \(A::=\gamma\) mit \(A\in\Phi\), \(\gamma\in(\Phi\cup\Sigma)^*\)."
+Wann heißt eine Grammatik eindeutig?,Wenn jedes Wort der erzeugten Sprache genau einen Strukturbaum (Ableitungsbaum) besitzt.
+Wie widerlegt man die Eindeutigkeit einer Grammatik?,"Man gibt ein Wort an, das zwei verschiedene Strukturbäume (Ableitungsbäume) besitzt."
+Ist Eindeutigkeit dasselbe wie Determinismus?,Nein. Eindeutigkeit betrifft die Anzahl der Strukturbäume pro Wort; Determinismus betrifft den erkennenden Automaten (z.B DPDA). Es gibt eindeutige Sprachen ohne deterministischen Kellerautomaten.
+Welche zwei Arten von Regeln hat ein LR-Automat?,"Shift-Regeln (ein Terminal lesen und auf den Keller legen) und Reduce-Regeln (oberen Kellerinhalt, der einer rechten Regelseite entspricht, durch das zugehörige Nichtterminal ersetzen)."
+Unter welcher Bedingung darf ein LR-Automat reduzieren?,Nur wenn der obere Kellerinhalt exakt einer rechten Regelseite \(\gamma\) einer Regel \(A::=\gamma\) entspricht; dann wird \(\gamma\) durch \(A\) ersetzt.
+Welche Voraussetzung hat der CYK-Algorithmus an die Grammatik?,Die Grammatik muss in Chomsky-Normalform (CNF) vorliegen.
+Was ist die Chomsky-Normalform (CNF)?,Alle Regeln haben die Form \(A::=BC\) (zwei Nichtterminale) oder \(A::=a\) (ein Terminal); ggf \(S::=\eps\).
+Was leistet der CYK-Algorithmus und mit welcher Laufzeit?,"Er entscheidet das Wortproblem \(w\in L(G)\) für kontextfreie \(G\) in CNF, in \(\mathcal O(n^3)\) (Dreieckstabelle über allen Teilwörtern)."
+Wie beweist man eine Eigenschaft für alle Wörter von \(L(G)\)?,"Durch Induktion über den Ableitungsbaum bzw die Regelanwendungen: Verankerung an den terminalen Regeln, Schritt über die rekursiven Regeln (Fallunterscheidung nach allen Regeln mit gleicher linker Seite)."
+Welche Sprachklasse erkennen (nichtdeterministische) Kellerautomaten?,Genau die kontextfreien Sprachen (Chomsky-2).
+Welche Sprachklasse gehört zu deterministischen Kellerautomaten (DPDA)?,Die deterministisch kontextfreien Sprachen (DCFL); sie entsprechen den LR(\(k\))-Sprachen und sind eine echte Teilmenge der kontextfreien Sprachen.
+Sind deterministisch kontextfreie Sprachen gegen Schnitt mit regulären Sprachen abgeschlossen?,Ja. DCFL \(\cap\) regulär ist wieder DCFL (analog: kontextfrei \(\cap\) regulär ist kontextfrei).

@@ -1,0 +1,45 @@
+Wie ist die Klasse P definiert (formal)?,"Die Menge der Probleme, die von einer deterministischen Turingmaschine in polynomieller Laufzeit entschieden werden."
+Was bedeutet P anschaulich?,"Probleme, die sich effizient (in polynomieller Zeit) LÖSEN lassen."
+Wie ist die Klasse NP definiert (formal)?,"Die Menge der Probleme, die von einer nichtdeterministischen Turingmaschine in polynomieller Zeit akzeptiert werden - äquivalent: deren Ja-Instanzen einen in Polyzeit verifizierbaren Zeugen besitzen."
+Was bedeutet NP anschaulich?,"Probleme, bei denen man eine gegebene Lösung effizient PRÜFEN kann (auch wenn das Finden schwer sein mag)."
+Wann ist ein Problem \(A\) NP-hart?,Wenn sich jedes Problem \(B\in\mathrm{NP}\) polynomiell auf \(A\) reduzieren lässt: \(B\le_p A\) für alle \(B\in\mathrm{NP}\).
+Wann ist ein Problem NP-vollständig?,Wenn es NP-hart ist UND selbst in NP liegt.
+"Welche Inklusionen gelten zwischen P, NP und PSPACE?","\(\mathrm{P}\subseteq\mathrm{NP}\subseteq\mathrm{PSPACE}\). Ob die Inklusionen echt sind, ist offen."
+Was bedeutet \(A\le_p B\) (formal)?,Es gibt eine in Polynomialzeit berechenbare totale Funktion \(f\) mit \(x\in A\iff f(x)\in B\) für alle Eingaben \(x\).
+Was bedeutet \(A\le_p B\) anschaulich?,"\(A\) ist höchstens so schwer wie \(B\): löst man \(B\) effizient, so über \(f\) auch \(A\)."
+Welche vier Bedingungen muss eine Reduktion \(A\le_p B\) per \(f\) erfüllen?,"(1) \(f\) ist total, (2) \(f\) ist in Polyzeit berechenbar (inkl polynomieller Ausgabelänge), (3) \(x\in A\iff f(x)\in B\), (4) der Typ/Definitionsbereich passt (Bild in der Grundmenge von \(B\))."
+"In welche Richtung reduziert man, um NP-Härte von \(A\) zu zeigen?",Man reduziert ein bekannt NP-hartes Problem AUF \(A\) (z.B \(\mathrm{SAT}\le_p A\)) - nicht umgekehrt.
+Warum kann eine Abbildung mit \(f(\dots)=2^{a+b}\) trotz korrekter Äquivalenz keine polynomielle Reduktion sein?,Weil die Ausgabe exponentiell viele Bits hat (Länge \(\sim a+b\)); die Ausgabelänge - und damit die Berechnung - ist nicht polynomiell in der Eingabelänge.
+"Warum ist eine partielle Abbildung (z.B \(f(x,y)=y/x\)) i.A keine gültige Reduktion?",Weil sie nicht total ist (für \(x=0\) bzw bei nicht-ganzzahligem Ergebnis undefiniert); Reduktionen müssen auf dem ganzen Definitionsbereich definiert sein.
+Was ist eine Gödelisierung?,"Eine injektive, berechenbare Kodierung (z.B von Wörtern/Objekten in Zahlen), deren Umkehrung ebenfalls berechenbar ist."
+Muss eine Gödelisierung polynomiell berechenbar sein?,"Nein. Verlangt wird nur Berechenbarkeit (mit berechenbarer Umkehrung) und Injektivität, nicht Polynomialität."
+Muss eine Gödelisierung surjektiv sein?,Nein. Injektivität genügt; nicht jede Zahl muss ein Urbild haben.
+"Warum ist \((n_1,\dots,n_t)\mapsto\sum_i n_i\cdot 10^i\) auf unbeschränkten \(n_i\) keine Gödelisierung?",Weil \(n_i\ge10\) Überträge erzeugen und verschiedene Tupel auf dieselbe Zahl abgebildet werden - die Funktion ist nicht injektiv.
+"Ist \(\beta(w)=2^{\#_a(w)}\cdot 3^{\#_b(w)}\) über \(\{a,b\}\) eine gültige Gödelisierung der Wörter?",Nein. Verschiedene Wörter mit gleichen Buchstabenanzahlen (z.B \(ab\) und \(ba\)) haben denselben Wert - \(\beta\) ist auf Wörtern nicht injektiv.
+"Wie ist „entscheidbar"" (rekursiv) definiert?","Eine Sprache/ein Problem ist entscheidbar, wenn eine TM auf JEDER Eingabe hält und korrekt ja/nein ausgibt."
+"Wie ist „rekursiv aufzählbar"" (semi-entscheidbar) definiert?","Eine TM akzeptiert genau die Ja-Instanzen (hält und sagt „ja""); auf Nein-Instanzen darf sie divergieren."
+Ist das Halteproblem entscheidbar?,"Nein, das Halteproblem ist unentscheidbar (aber rekursiv aufzählbar)."
+"Ist die Menge der nicht-haltenden Eingaben \(\{(a,b)\mid\varphi_a(b)\!\uparrow\}\) rekursiv aufzählbar?",Nein. Sie ist das Komplement des Halteproblems und nicht rekursiv aufzählbar.
+"Ist \(\{(a,b,c)\mid\varphi_{a+b}(c)\!\downarrow\}\) entscheidbar?",Nein - das ist im Kern das Halteproblem und daher unentscheidbar. Rekursiv aufzählbar (eine formale Regelsprache) ist es hingegen schon.
+Wie viele verschiedene Turingmaschinen gibt es?,Abzählbar unendlich viele - jede TM ist endlich (über einem endlichen Alphabet) kodierbar.
+Existieren universelle Turingmaschinen?,Ja. Eine universelle TM simuliert jede andere TM anhand von deren Kodierung und Eingabe.
+"Ist entscheidbar, ob eine TM nach höchstens \(t\) Schritten hält?","Ja. Man simuliert die TM einfach \(t\) Schritte lang und prüft, ob sie hält (beschränkte Simulation)."
+Sind die entscheidbaren Sprachen gegen Schnitt abgeschlossen?,"Ja. Man lässt beide Entscheider laufen und verknüpft die Ergebnisse mit „und""."
+Kann ein unentscheidbares Problem in NP liegen?,"Nein. NP-Probleme sind entscheidbar (\(\mathrm{NP}\subseteq\) entscheidbar), also kann Unentscheidbares nicht in NP sein."
+Kann ein unentscheidbares Problem NP-hart sein?,"Ja. NP-Härte verlangt nur, dass sich alle NP-Probleme darauf reduzieren lassen; das Problem selbst muss nicht in NP (oder entscheidbar) sein. Z.B ist das Halteproblem NP-hart."
+Gilt \(\mathrm{P}\subseteq\mathrm{NP}\cap\text{co-NP}\)?,"Ja, \(\subseteq\) gilt. Ob die Inklusion echt ist (\(\mathrm{P}\subsetneq\mathrm{NP}\cap\text{co-NP}\)), ist ein offenes Problem."
+Ist das Finden eines kürzesten Pfades bzw die Erreichbarkeit zwischen zwei Knoten schwer?,"Nein, das liegt in P (z.B Breiten-/Tiefensuche)."
+Ist das Finden eines längsten einfachen (knotendisjunkten) Pfades der Länge \(\ge k\) schwer?,"Ja, dieses Problem ist NP-hart (enthält u.a den Hamiltonpfad als Spezialfall)."
+Ist das gleichmäßige Aufteilen einer Menge von Werten auf mehrere Teile NP-vollständig?,Ja (Partition-/Bin-Packing-artige Probleme sind NP-vollständig bzw NP-hart).
+"Ist ein Zuordnungsproblem, bei dem jeder nach einem einzelnen Wunsch genau einen Partner/Platz erhält, schwer?",Nein - solche Matching-Probleme sind effizient (in P) lösbar.
+"Ist für beliebige kontextfreie Sprachen \(L_1,L_2\) das Inklusions-/Äquivalenzproblem (\(L_1\subseteq L_2\)) entscheidbar?",Nein. Inklusion und Äquivalenz kontextfreier Sprachen sind unentscheidbar (nur das Wortproblem ist entscheidbar).
+"Ist für beliebige entscheidbare Sprachen \(L_1,L_2\) das Problem \(L_1\subseteq L_2\) entscheidbar?","Nein, im Allgemeinen unentscheidbar (reduzierbar vom Halteproblem)."
+Ist das Wortproblem für formale Regelsprachen (Chomsky-0) stets entscheidbar?,Nein. Für rekursiv aufzählbare Sprachen ist das Wortproblem im Allgemeinen unentscheidbar (schon gar nicht in \(\mathcal O(|w|)\)).
+"Genügt „\(\mathrm{SAT}\le_p A\)"", damit \(A\) NP-vollständig ist?",Nein. Das zeigt nur NP-Härte. Für NP-Vollständigkeit muss zusätzlich \(A\in\mathrm{NP}\) gelten.
+Wie charakterisiert man NP-Vollständigkeit über SAT durch zwei Reduktionen?,"\(A\) ist NP-vollständig genau dann, wenn \(A\le_p\mathrm{SAT}\) (also \(A\in\mathrm{NP}\)) UND \(\mathrm{SAT}\le_p A\) (NP-Härte)."
+"Ist „\(A\le_p\mathrm{SAT}\)"" gleichbedeutend mit NP-Härte von \(A\)?",Nein - das ist die falsche Richtung. NP-Härte verlangt \(\mathrm{SAT}\le_p A\) (SAT auf \(A\) reduzieren).
+"Gilt für jede reguläre Sprache \(A\), dass \(A\le_p 3\text{-SAT}\)?","Ja. Reguläre Sprachen liegen in P \(\subseteq\) NP, und jedes NP-Problem reduziert sich auf das NP-vollständige 3-SAT."
+"Folgt aus \(A\in\text{Chomsky-2}\), dass \(2\text{-SAT}\le_p A\)?",Nein. Gegenbeispiel \(A=\emptyset\): die Ja-Instanzen von 2-SAT könnten nicht auf Elemente von \(A\) abgebildet werden.
+"Was bezeichnet der Begriff „formale Regelsprache"" (in dieser Vorlesung)?",Die von beliebigen (Chomsky-0-)Grammatiken erzeugten Sprachen - genau die rekursiv aufzählbaren Sprachen. [Begriff gegen die Skript-Terminologie prüfen.]
+"Gibt es universelle Turingmaschinen mit fester, kleiner Zahl an Zuständen/Bandzeichen?","Ja - über einen Zustand-/Bandzeichen-Tradeoff existieren sehr kleine universelle TMs (z.B mit \(42\) Zuständen und \(42\) Bandzeichen). Die genaue Untergrenze (etwa „ein Zustand"") ist definitionsabhängig. [UNSICHER - im Skript prüfen.]"
+Kann eine TM mit vielen Zuständen durch eine TM mit sehr wenigen Zuständen simuliert werden?,"Tendenziell ja über einen Zustand-/Bandzeichen-Tradeoff (mehr Bandzeichen statt Zuständen). Die konkrete Grenze (z.B „3 Zustände"") ist definitionsabhängig. [UNSICHER - im Skript/Tutorium prüfen.]"

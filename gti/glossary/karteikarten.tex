@@ -1,0 +1,517 @@
+%! Author = lili
+%! Date = 8/2/26
+% ##################################################################
+% ABSCHNITT 1 -- SPRACHEN & CHOMSKY-HIERARCHIE
+% ##################################################################
+
+\newglossaryentry{chomsky_typen}{
+    name={Welche vier Typen umfasst die Chomsky-Hierarchie (von 3 nach 0)?},
+    description={Typ 3 = regulär, Typ 2 = kontextfrei, Typ 1 = kontextsensitiv, Typ 0 = rekursiv aufzählbar (beliebige Grammatik). Mit fallendem Typ werden Grammatiken mächtiger und Sprachklassen größer.},
+    type=sprachen}
+
+\newglossaryentry{chomsky3_form}{
+    name={Welche Grammatik- und Automatenform gehört zu Chomsky-3 (regulär)?},
+    description={Rechts- bzw.\ linkslineare Grammatiken; erkannt durch (deterministische oder nichtdeterministische) endliche Automaten.},
+    type=sprachen}
+
+\newglossaryentry{chomsky2_form}{
+    name={Welche Grammatik- und Automatenform gehört zu Chomsky-2 (kontextfrei)?},
+    description={Kontextfreie Grammatiken (Regeln $A::=\gamma$); erkannt durch (nichtdeterministische) Kellerautomaten.},
+type=sprachen}
+
+\newglossaryentry{chomsky1_form}{
+name={Welche Grammatik- und Automatenform gehört zu Chomsky-1 (kontextsensitiv)?},
+description={Kontextsensitive Grammatiken ($\alpha A\beta::=\alpha\gamma\beta$, $\gamma\ne\eps$); erkannt durch linear beschränkte Turingmaschinen (LBA).},
+type=sprachen}
+
+\newglossaryentry{chomsky0_form}{
+name={Welche Grammatik- und Automatenform gehört zu Chomsky-0?},
+description={Beliebige Grammatiken ($\alpha::=\beta$); erkannt durch Turingmaschinen. Die Sprachklasse ist genau die der rekursiv aufzählbaren Sprachen.},
+type=sprachen}
+
+\newglossaryentry{inklusionskette}{
+name={Wie lautet die Inklusionskette der wichtigsten Sprachklassen?},
+description={regulär $\subsetneq$ det.\ kontextfrei (DCFL) $\subsetneq$ kontextfrei $\subsetneq$ kontextsensitiv $\subsetneq$ entscheidbar $\subsetneq$ rekursiv aufzählbar $\subsetneq$ alle Sprachen. Alle Inklusionen sind echt.},
+type=sprachen}
+
+\newglossaryentry{entsch_vs_ra}{
+name={Worin unterscheiden sich „entscheidbar" und „rekursiv aufzählbar" (Intuition)?},
+description={Entscheidbar: eine TM hält auf jeder Eingabe und sagt ja/nein. Rekursiv aufzählbar: eine TM sagt bei Ja-Instanzen „ja", darf bei Nein-Instanzen aber ewig weiterlaufen.},
+type=sprachen}
+
+\newglossaryentry{automaten_entsch_ra}{
+name={Welche Automaten erkennen genau die entscheidbaren bzw.\ die rekursiv aufzählbaren Sprachen?},
+description={Entscheidbar = die von stets haltenden (det.)\ Turingmaschinen erkannten Sprachen. Rekursiv aufzählbar = die von beliebigen Turingmaschinen akzeptierten Sprachen.},
+type=sprachen}
+
+\newglossaryentry{det_nondet_tm}{
+name={Erkennen deterministische und nichtdeterministische Turingmaschinen dieselbe Sprachklasse?},
+description={Ja, beide erkennen genau die rekursiv aufzählbaren Sprachen; Nichtdeterminismus lässt sich deterministisch simulieren.},
+type=sprachen}
+
+\newglossaryentry{pl_reg_formal}{
+name={Wie lautet das Pumping-Lemma für reguläre Sprachen (formal)?},
+description={Ist $L$ regulär, so gibt es $n_0\ge1$, sodass jedes $z\in L$ mit $|z|\ge n_0$ zerlegbar ist als $z=uvw$ mit $|uv|\le n_0$, $|v|\ge1$ und $uv^iw\in L$ für alle $i\ge0$.},
+type=sprachen}
+
+\newglossaryentry{pl_reg_intuition}{
+name={Was besagt das Pumping-Lemma für reguläre Sprachen anschaulich?},
+description={In langen Wörtern regulärer Sprachen gibt es nahe am Anfang einen „Kern" $v$, den man beliebig oft wiederholen oder weglassen kann, ohne die Sprache zu verlassen -- weil sich ein Zustand des Automaten wiederholt (Schleife).},
+type=sprachen}
+
+\newglossaryentry{pl_cf_formal}{
+name={Wie lautet das Pumping-Lemma für kontextfreie Sprachen (formal)?},
+description={Ist $L$ kontextfrei, so gibt es $n_0$, sodass jedes $z\in L$ mit $|z|\ge n_0$ zerlegbar ist als $z=uvwxy$ mit $|vwx|\le n_0$, $|vx|\ge1$ und $uv^iwx^iy\in L$ für alle $i\ge0$.},
+type=sprachen}
+
+\newglossaryentry{pl_cf_intuition}{
+name={Was besagt das Pumping-Lemma für kontextfreie Sprachen anschaulich?},
+description={In langen Wörtern kontextfreier Sprachen lassen sich zwei nahe beieinander liegende Teilstücke $v,x$ gleichzeitig gleich oft aufpumpen -- weil im Ableitungsbaum ein Nichtterminal auf einem Pfad doppelt vorkommt.},
+type=sprachen}
+
+\newglossaryentry{pl_zweck}{
+name={Was kann man mit dem Pumping-Lemma beweisen -- und was nicht?},
+description={Es ist nur notwendig, nicht hinreichend: Man beweist damit, dass eine Sprache NICHT regulär (bzw.\ nicht kontextfrei) ist. Regularität/Kontextfreiheit kann es nie beweisen.},
+type=sprachen}
+
+\newglossaryentry{gegenspieler}{
+name={Wer wählt im Gegenspieler-Schema das Wort $z$ und wer die Zerlegung?},
+description={Man selbst wählt ein passendes $z\in L$ (abhängig von $n_0$). Der „Gegenspieler" wählt die Zerlegung -- deshalb muss das Argument für alle zulässigen Zerlegungen gelten.},
+type=sprachen}
+
+\newglossaryentry{nicht_regulaer_vorgehen}{
+name={Wie zeigt man, dass eine Sprache nicht regulär ist (Vorgehen)?},
+description={Annahme regulär $\Rightarrow$ es gibt $n_0$. Wähle konkretes $z\in L$, $|z|\ge n_0$. Zeige: für jede Zerlegung $z=uvw$ mit $|uv|\le n_0,|v|\ge1$ existiert ein $i$ mit $uv^iw\notin L$. Widerspruch.},
+type=sprachen}
+
+\newglossaryentry{endlich_regulaer}{
+name={Ist jede endliche Sprache regulär?},
+description={Ja. Eine endliche Sprache lässt sich als endliche Aufzählung ihrer Wörter als regulärer Ausdruck schreiben.},
+type=sprachen}
+
+\newglossaryentry{regulaer_unendlich}{
+name={Woran erkennt man, dass eine reguläre Sprache unendlich ist?},
+description={Genau dann, wenn sie ein Wort $z$ mit $n_0\le|z|<2n_0$ enthält ($n_0$ = Zustandszahl eines akzeptierenden DEA) -- dann wiederholt sich ein Zustand und man kann pumpen.},
+type=sprachen}
+
+\newglossaryentry{abschluss_regulaer}{
+name={Gegen welche Operationen sind die regulären Sprachen abgeschlossen?},
+description={Gegen alle Standardoperationen: Vereinigung, Schnitt, Komplement, Konkatenation und Kleene-Stern.},
+type=sprachen}
+
+\newglossaryentry{abschluss_cf}{
+name={Gegen welche Operationen sind die kontextfreien Sprachen (nicht) abgeschlossen?},
+description={Abgeschlossen gegen Vereinigung, Konkatenation, Kleene-Stern und Schnitt mit regulären Sprachen. NICHT abgeschlossen gegen Schnitt und Komplement.},
+type=sprachen}
+
+\newglossaryentry{abschluss_dcfl}{
+name={Gegen welche Operationen sind die deterministisch kontextfreien Sprachen (DCFL/LR) abgeschlossen?},
+description={Gegen Komplement (und gegen Schnitt mit regulären Sprachen). NICHT gegen Vereinigung, Schnitt, Konkatenation oder Kleene-Stern.},
+type=sprachen}
+
+\newglossaryentry{abschluss_cs}{
+name={Sind die kontextsensitiven Sprachen gegen Komplement abgeschlossen?},
+description={Ja (Satz von Immerman--Szelepcsényi).},
+type=sprachen}
+
+\newglossaryentry{abschluss_ra}{
+name={Gegen welche Operationen sind die rekursiv aufzählbaren Sprachen (nicht) abgeschlossen?},
+description={Abgeschlossen gegen Vereinigung, Schnitt, Konkatenation und Kleene-Stern. NICHT gegen Komplement (sonst wäre das Halteproblem entscheidbar).},
+type=sprachen}
+
+\newglossaryentry{wortproblem_cf}{
+name={Ist das Wortproblem für kontextfreie Sprachen entscheidbar?},
+description={Ja, z.B.\ mit dem CYK-Algorithmus in $\mathcal O(n^3)$.},
+type=sprachen}
+
+\newglossaryentry{wortproblem_cs}{
+name={Ist das Wortproblem für kontextsensitive Sprachen entscheidbar?},
+description={Ja (mit einer linear beschränkten Turingmaschine).},
+type=sprachen}
+
+\newglossaryentry{jede_sprache_teilmenge}{
+name={Ist jede Sprache Teilmenge einer formalen Regelsprache?},
+description={Ja -- trivial, da $\Sigma^*$ selbst regulär (also eine formale Regelsprache) ist und jede Sprache über $\Sigma$ Teilmenge von $\Sigma^*$ ist.},
+type=sprachen}
+
+\newglossaryentry{unendlich_regulaer_nein}{
+name={Ist jede unendliche Sprache regulär?},
+description={Nein. Z.B.\ ist $\{a^nb^n\mid n\in\N\}$ unendlich, aber nicht regulär.},
+type=sprachen}
+
+\newglossaryentry{pl_cf_n0}{
+name={Wovon hängt die Pumping-Zahl $n_0$ einer kontextfreien Sprache ab?},
+description={Von einer erzeugenden Grammatik in CNF; sie wächst (etwa exponentiell) mit der Zahl der Nichtterminale. Sie ist NICHT einfach gleich der Anzahl der Nichtterminale.},
+type=sprachen}
+
+% ##################################################################
+% ABSCHNITT 2 -- ENDLICHE AUTOMATEN
+% ##################################################################
+
+\newglossaryentry{dea_def}{
+name={Wie ist ein deterministischer endlicher Automat (DEA) als Tupel definiert?},
+description={$A=(\Phi,\Sigma,\delta,q_0,F)$ mit Zustandsmenge $\Phi$, Alphabet $\Sigma$, Übergangsfunktion $\delta:\Phi\times\Sigma\to\Phi$, Startzustand $q_0$, Finalzustandsmenge $F\subseteq\Phi$.},
+type=automaten}
+
+\newglossaryentry{nea_def}{
+name={Wie ist ein nichtdeterministischer endlicher Automat (NEA) als Tupel definiert?},
+description={$A=(\Phi,\Sigma,\Delta,q_0,F)$ wie beim DEA, aber mit Übergangsrelation $\Delta\subseteq\Phi\times(\Sigma\cup\{\eps\})\times\Phi$ (mehrere oder keine Folgezustände, ggf.\ $\eps$-Kanten).},
+type=automaten}
+
+\newglossaryentry{nea_dea_maechtig}{
+name={Sind NEAs und DEAs gleich mächtig?},
+description={Ja. Zu jedem NEA gibt es einen äquivalenten DEA (Potenzmengenkonstruktion); beide erkennen genau die regulären Sprachen.},
+type=automaten}
+
+\newglossaryentry{potenzmenge_idee}{
+name={Was ist die Grundidee der Potenzmengenkonstruktion (NEA$\to$DEA)?},
+description={DEA-Zustände sind Teilmengen der NEA-Zustände. Start $=\{q_0\}$ (bzw.\ dessen $\eps$-Hülle), $\delta'(M,a)=\bigcup_{q\in M}\Delta(q,a)$, final sind alle $M$ mit $M\cap F\ne\emptyset$.},
+type=automaten}
+
+\newglossaryentry{muellzustand}{
+name={Warum muss man bei der Potenzmengenkonstruktion den Zustand $\emptyset$ mitführen?},
+description={$\emptyset$ ist der Müllzustand; ohne ihn wäre der DEA nicht vollständig (nicht für jede Eingabe definiert).},
+type=automaten}
+
+\newglossaryentry{komplement_auto}{
+name={Wie konstruiert man den Komplementautomaten -- und unter welcher Voraussetzung?},
+description={Finalzustände vertauschen: $F\to\Phi\setminus F$. Voraussetzung: ein VOLLSTÄNDIGER DEA (erst determinisieren und totalisieren); bei einem NEA liefert das Vertauschen nicht das Komplement.},
+type=automaten}
+
+\newglossaryentry{kleene_idee}{
+name={Wie erhält man aus einem NEA $A$ einen NEA für $L(A)^*$ (Idee)?},
+description={Neuen Startzustand $q_s$ einführen, ihn final machen (für $\eps$), $\eps$-Kante $q_s\to q_0$, und von jedem alten Finalzustand eine $\eps$-Kante zurück nach $q_0$.},
+type=automaten}
+
+\newglossaryentry{konkat_idee}{
+name={Wie erhält man aus NEAs $A_1,A_2$ einen NEA für $L(A_1)\cdot L(A_2)$ (Idee)?},
+description={Bei disjunkten Zustandsmengen: $\eps$-Kanten von jedem Finalzustand von $A_1$ zum Startzustand von $A_2$; Start $=q_0^{(1)}$, Finalzustände $=F_2$.},
+type=automaten}
+
+\newglossaryentry{union_idee}{
+name={Wie erhält man aus NEAs $A_1,A_2$ einen NEA für $L(A_1)\cup L(A_2)$ (Idee)?},
+description={Neuen Startzustand $q_s$ mit $\eps$-Kanten zu beiden alten Startzuständen; Finalzustände $=F_1\cup F_2$ (Zustandsmengen disjunkt).},
+type=automaten}
+
+\newglossaryentry{rechtslinear_nea}{
+name={Wie konstruiert man aus einer rechtslinearen Grammatik einen NEA?},
+description={Nichtterminale werden Zustände, Startsymbol wird Startzustand. $A::=aB\Rightarrow$ Kante $A\xrightarrow{a}B$; $A::=a\Rightarrow$ Kante $A\xrightarrow{a}f$ in neuen Finalzustand $f$; $A::=\eps\Rightarrow$ $A$ wird final.},
+type=automaten}
+
+\newglossaryentry{reg_grammatik_eindeutig}{
+name={Ist jede rechts- oder linkslineare Grammatik eindeutig?},
+description={Nein. Auch reguläre Grammatiken können mehrdeutig sein (ein Wort mit mehreren Ableitungsbäumen).},
+type=automaten}
+
+\newglossaryentry{nondet_vergroessert}{
+name={Vergrößert das Zulassen nichtdeterministischer Übergänge die Klasse der endlichen Automaten?},
+description={Nein. NEAs erkennen dieselbe Klasse wie DEAs (die regulären Sprachen).},
+type=automaten}
+
+\newglossaryentry{grammatik_dea_groesse}{
+name={Folgt aus „$n$ Nichtterminale in einer regulären Grammatik", dass jeder erkennende DEA $\ge n$ Zustände hat?},
+description={Nein. Der minimale DEA kann deutlich kleiner sein als die Zahl der Nichtterminale.},
+type=automaten}
+
+\newglossaryentry{dea_schritte}{
+name={In wie vielen Schritten entscheidet ein DEA, ob $w\in L(A)$?},
+description={In genau $|w|$ Schritten -- pro Eingabezeichen ein Übergang, ohne Backtracking (linear).},
+type=automaten}
+
+% ##################################################################
+% ABSCHNITT 3 -- KONTEXTFREIE GRAMMATIKEN & LR/KELLERAUTOMATEN
+% ##################################################################
+
+\newglossaryentry{cfg_def}{
+name={Wie ist eine kontextfreie Grammatik definiert?},
+description={$G=(\Phi,\Sigma,R,S)$ mit Nichtterminalen $\Phi$, Terminalen $\Sigma$, Startsymbol $S\in\Phi$ und Regeln $R$ der Form $A::=\gamma$ mit $A\in\Phi$, $\gamma\in(\Phi\cup\Sigma)^*$.},
+type=grammatiken}
+
+\newglossaryentry{eindeutig_def}{
+name={Wann heißt eine Grammatik eindeutig?},
+description={Wenn jedes Wort der erzeugten Sprache genau einen Strukturbaum (Ableitungsbaum) besitzt.},
+type=grammatiken}
+
+\newglossaryentry{eindeutig_widerlegen}{
+name={Wie widerlegt man die Eindeutigkeit einer Grammatik?},
+description={Man gibt ein Wort an, das zwei verschiedene Strukturbäume (Ableitungsbäume) besitzt.},
+type=grammatiken}
+
+\newglossaryentry{eindeutig_vs_determ}{
+name={Ist Eindeutigkeit dasselbe wie Determinismus?},
+description={Nein. Eindeutigkeit betrifft die Anzahl der Strukturbäume pro Wort; Determinismus betrifft den erkennenden Automaten (z.B.\ DPDA). Es gibt eindeutige Sprachen ohne deterministischen Kellerautomaten.},
+type=grammatiken}
+
+\newglossaryentry{lr_regeln}{
+name={Welche zwei Arten von Regeln hat ein LR-Automat?},
+description={Shift-Regeln (ein Terminal lesen und auf den Keller legen) und Reduce-Regeln (oberen Kellerinhalt, der einer rechten Regelseite entspricht, durch das zugehörige Nichtterminal ersetzen).},
+type=grammatiken}
+
+\newglossaryentry{lr_reduce_bedingung}{
+name={Unter welcher Bedingung darf ein LR-Automat reduzieren?},
+description={Nur wenn der obere Kellerinhalt exakt einer rechten Regelseite $\gamma$ einer Regel $A::=\gamma$ entspricht; dann wird $\gamma$ durch $A$ ersetzt.},
+type=grammatiken}
+
+\newglossaryentry{cyk_voraussetzung}{
+name={Welche Voraussetzung hat der CYK-Algorithmus an die Grammatik?},
+description={Die Grammatik muss in Chomsky-Normalform (CNF) vorliegen.},
+type=grammatiken}
+
+\newglossaryentry{cnf_def}{
+name={Was ist die Chomsky-Normalform (CNF)?},
+description={Alle Regeln haben die Form $A::=BC$ (zwei Nichtterminale) oder $A::=a$ (ein Terminal); ggf.\ $S::=\eps$.},
+type=grammatiken}
+
+\newglossaryentry{cyk_leistung}{
+name={Was leistet der CYK-Algorithmus und mit welcher Laufzeit?},
+description={Er entscheidet das Wortproblem $w\in L(G)$ für kontextfreie $G$ in CNF, in $\mathcal O(n^3)$ (Dreieckstabelle über allen Teilwörtern).},
+type=grammatiken}
+
+\newglossaryentry{induktion_ableitung}{
+name={Wie beweist man eine Eigenschaft für alle Wörter von $L(G)$?},
+description={Durch Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen: Verankerung an den terminalen Regeln, Schritt über die rekursiven Regeln (Fallunterscheidung nach allen Regeln mit gleicher linker Seite).},
+type=grammatiken}
+
+\newglossaryentry{pda_klasse}{
+name={Welche Sprachklasse erkennen (nichtdeterministische) Kellerautomaten?},
+description={Genau die kontextfreien Sprachen (Chomsky-2).},
+type=grammatiken}
+
+\newglossaryentry{dpda_klasse}{
+name={Welche Sprachklasse gehört zu deterministischen Kellerautomaten (DPDA)?},
+description={Die deterministisch kontextfreien Sprachen (DCFL); sie entsprechen den LR($k$)-Sprachen und sind eine echte Teilmenge der kontextfreien Sprachen.},
+type=grammatiken}
+
+\newglossaryentry{dcfl_schnitt_regulaer}{
+name={Sind deterministisch kontextfreie Sprachen gegen Schnitt mit regulären Sprachen abgeschlossen?},
+description={Ja. DCFL $\cap$ regulär ist wieder DCFL (analog: kontextfrei $\cap$ regulär ist kontextfrei).},
+type=grammatiken}
+
+% ##################################################################
+% ABSCHNITT 4 -- BERECHENBARKEIT, KOMPLEXITÄT & REDUKTION
+% ##################################################################
+
+\newglossaryentry{p_formal}{
+name={Wie ist die Klasse P definiert (formal)?},
+description={Die Menge der Probleme, die von einer deterministischen Turingmaschine in polynomieller Laufzeit entschieden werden.},
+type=berechnung}
+
+\newglossaryentry{p_intuition}{
+name={Was bedeutet P anschaulich?},
+description={Probleme, die sich effizient (in polynomieller Zeit) LÖSEN lassen.},
+type=berechnung}
+
+\newglossaryentry{np_formal}{
+name={Wie ist die Klasse NP definiert (formal)?},
+description={Die Menge der Probleme, die von einer nichtdeterministischen Turingmaschine in polynomieller Zeit akzeptiert werden -- äquivalent: deren Ja-Instanzen einen in Polyzeit verifizierbaren Zeugen besitzen.},
+type=berechnung}
+
+\newglossaryentry{np_intuition}{
+name={Was bedeutet NP anschaulich?},
+description={Probleme, bei denen man eine gegebene Lösung effizient PRÜFEN kann (auch wenn das Finden schwer sein mag).},
+type=berechnung}
+
+\newglossaryentry{nphart_def}{
+name={Wann ist ein Problem $A$ NP-hart?},
+description={Wenn sich jedes Problem $B\in\mathrm{NP}$ polynomiell auf $A$ reduzieren lässt: $B\le_p A$ für alle $B\in\mathrm{NP}$.},
+type=berechnung}
+
+\newglossaryentry{npvoll_def}{
+name={Wann ist ein Problem NP-vollständig?},
+description={Wenn es NP-hart ist UND selbst in NP liegt.},
+type=berechnung}
+
+\newglossaryentry{p_np_pspace}{
+name={Welche Inklusionen gelten zwischen P, NP und PSPACE?},
+description={$\mathrm{P}\subseteq\mathrm{NP}\subseteq\mathrm{PSPACE}$. Ob die Inklusionen echt sind, ist offen.},
+type=berechnung}
+
+\newglossaryentry{reduktion_formal}{
+name={Was bedeutet $A\le_p B$ (formal)?},
+description={Es gibt eine in Polynomialzeit berechenbare totale Funktion $f$ mit $x\in A\iff f(x)\in B$ für alle Eingaben $x$.},
+type=berechnung}
+
+\newglossaryentry{reduktion_intuition}{
+name={Was bedeutet $A\le_p B$ anschaulich?},
+description={$A$ ist höchstens so schwer wie $B$: löst man $B$ effizient, so über $f$ auch $A$.},
+type=berechnung}
+
+\newglossaryentry{reduktion_bedingungen}{
+name={Welche vier Bedingungen muss eine Reduktion $A\le_p B$ per $f$ erfüllen?},
+description={(1) $f$ ist total, (2) $f$ ist in Polyzeit berechenbar (inkl.\ polynomieller Ausgabelänge), (3) $x\in A\iff f(x)\in B$, (4) der Typ/Definitionsbereich passt (Bild in der Grundmenge von $B$).},
+type=berechnung}
+
+\newglossaryentry{reduktion_richtung}{
+name={In welche Richtung reduziert man, um NP-Härte von $A$ zu zeigen?},
+description={Man reduziert ein bekannt NP-hartes Problem AUF $A$ (z.B.\ $\mathrm{SAT}\le_p A$) -- nicht umgekehrt.},
+type=berechnung}
+
+\newglossaryentry{reduktion_ausgabelaenge}{
+name={Warum kann eine Abbildung mit $f(\dots)=2^{a+b}$ trotz korrekter Äquivalenz keine polynomielle Reduktion sein?},
+description={Weil die Ausgabe exponentiell viele Bits hat (Länge $\sim a+b$); die Ausgabelänge -- und damit die Berechnung -- ist nicht polynomiell in der Eingabelänge.},
+type=berechnung}
+
+\newglossaryentry{reduktion_partiell}{
+name={Warum ist eine partielle Abbildung (z.B.\ $f(x,y)=y/x$) i.A.\ keine gültige Reduktion?},
+description={Weil sie nicht total ist (für $x=0$ bzw.\ bei nicht-ganzzahligem Ergebnis undefiniert); Reduktionen müssen auf dem ganzen Definitionsbereich definiert sein.},
+type=berechnung}
+
+\newglossaryentry{goedel_def}{
+name={Was ist eine Gödelisierung?},
+description={Eine injektive, berechenbare Kodierung (z.B.\ von Wörtern/Objekten in Zahlen), deren Umkehrung ebenfalls berechenbar ist.},
+type=berechnung}
+
+\newglossaryentry{goedel_poly}{
+name={Muss eine Gödelisierung polynomiell berechenbar sein?},
+description={Nein. Verlangt wird nur Berechenbarkeit (mit berechenbarer Umkehrung) und Injektivität, nicht Polynomialität.},
+type=berechnung}
+
+\newglossaryentry{goedel_surjektiv}{
+name={Muss eine Gödelisierung surjektiv sein?},
+description={Nein. Injektivität genügt; nicht jede Zahl muss ein Urbild haben.},
+type=berechnung}
+
+\newglossaryentry{goedel_basis10}{
+name={Warum ist $(n_1,\dots,n_t)\mapsto\sum_i n_i\cdot 10^i$ auf unbeschränkten $n_i$ keine Gödelisierung?},
+description={Weil $n_i\ge10$ Überträge erzeugen und verschiedene Tupel auf dieselbe Zahl abgebildet werden -- die Funktion ist nicht injektiv.},
+type=berechnung}
+
+\newglossaryentry{goedel_potenzprodukt}{
+name={Ist $\beta(w)=2^{\#_a(w)}\cdot 3^{\#_b(w)}$ über $\{a,b\}$ eine gültige Gödelisierung der Wörter?},
+description={Nein. Verschiedene Wörter mit gleichen Buchstabenanzahlen (z.B.\ $ab$ und $ba$) haben denselben Wert -- $\beta$ ist auf Wörtern nicht injektiv.},
+type=berechnung}
+
+\newglossaryentry{entscheidbar_def}{
+name={Wie ist „entscheidbar" (rekursiv) definiert?},
+description={Eine Sprache/ein Problem ist entscheidbar, wenn eine TM auf JEDER Eingabe hält und korrekt ja/nein ausgibt.},
+type=berechnung}
+
+\newglossaryentry{ra_def}{
+name={Wie ist „rekursiv aufzählbar" (semi-entscheidbar) definiert?},
+description={Eine TM akzeptiert genau die Ja-Instanzen (hält und sagt „ja"); auf Nein-Instanzen darf sie divergieren.},
+type=berechnung}
+
+\newglossaryentry{halteproblem}{
+name={Ist das Halteproblem entscheidbar?},
+description={Nein, das Halteproblem ist unentscheidbar (aber rekursiv aufzählbar).},
+type=berechnung}
+
+\newglossaryentry{nichthalten_ra}{
+name={Ist die Menge der nicht-haltenden Eingaben $\{(a,b)\mid\varphi_a(b)\!\uparrow\}$ rekursiv aufzählbar?},
+description={Nein. Sie ist das Komplement des Halteproblems und nicht rekursiv aufzählbar.},
+type=berechnung}
+
+\newglossaryentry{phi_ab_c}{
+name={Ist $\{(a,b,c)\mid\varphi_{a+b}(c)\!\downarrow\}$ entscheidbar?},
+description={Nein -- das ist im Kern das Halteproblem und daher unentscheidbar. Rekursiv aufzählbar (eine formale Regelsprache) ist es hingegen schon.},
+type=berechnung}
+
+\newglossaryentry{tm_abzaehlbar}{
+name={Wie viele verschiedene Turingmaschinen gibt es?},
+description={Abzählbar unendlich viele -- jede TM ist endlich (über einem endlichen Alphabet) kodierbar.},
+type=berechnung}
+
+\newglossaryentry{utm_existenz}{
+name={Existieren universelle Turingmaschinen?},
+description={Ja. Eine universelle TM simuliert jede andere TM anhand von deren Kodierung und Eingabe.},
+type=berechnung}
+
+\newglossaryentry{halt_t_schritte}{
+name={Ist entscheidbar, ob eine TM nach höchstens $t$ Schritten hält?},
+description={Ja. Man simuliert die TM einfach $t$ Schritte lang und prüft, ob sie hält (beschränkte Simulation).},
+type=berechnung}
+
+\newglossaryentry{entscheidbar_schnitt}{
+name={Sind die entscheidbaren Sprachen gegen Schnitt abgeschlossen?},
+description={Ja. Man lässt beide Entscheider laufen und verknüpft die Ergebnisse mit „und".},
+type=berechnung}
+
+\newglossaryentry{unentsch_np}{
+name={Kann ein unentscheidbares Problem in NP liegen?},
+description={Nein. NP-Probleme sind entscheidbar ($\mathrm{NP}\subseteq$ entscheidbar), also kann Unentscheidbares nicht in NP sein.},
+type=berechnung}
+
+\newglossaryentry{unentsch_nphart}{
+name={Kann ein unentscheidbares Problem NP-hart sein?},
+description={Ja. NP-Härte verlangt nur, dass sich alle NP-Probleme darauf reduzieren lassen; das Problem selbst muss nicht in NP (oder entscheidbar) sein. Z.B.\ ist das Halteproblem NP-hart.},
+type=berechnung}
+
+\newglossaryentry{p_np_conp}{
+name={Gilt $\mathrm{P}\subseteq\mathrm{NP}\cap\text{co-NP}$?},
+description={Ja, $\subseteq$ gilt. Ob die Inklusion echt ist ($\mathrm{P}\subsetneq\mathrm{NP}\cap\text{co-NP}$), ist ein offenes Problem.},
+type=berechnung}
+
+\newglossaryentry{kuerzester_pfad}{
+name={Ist das Finden eines kürzesten Pfades bzw.\ die Erreichbarkeit zwischen zwei Knoten schwer?},
+description={Nein, das liegt in P (z.B.\ Breiten-/Tiefensuche).},
+type=berechnung}
+
+\newglossaryentry{laengster_pfad}{
+name={Ist das Finden eines längsten einfachen (knotendisjunkten) Pfades der Länge $\ge k$ schwer?},
+description={Ja, dieses Problem ist NP-hart (enthält u.a.\ den Hamiltonpfad als Spezialfall).},
+type=berechnung}
+
+\newglossaryentry{fair_teilen}{
+name={Ist das gleichmäßige Aufteilen einer Menge von Werten auf mehrere Teile NP-vollständig?},
+description={Ja (Partition-/Bin-Packing-artige Probleme sind NP-vollständig bzw.\ NP-hart).},
+type=berechnung}
+
+\newglossaryentry{matching_leicht}{
+name={Ist ein Zuordnungsproblem, bei dem jeder nach einem einzelnen Wunsch genau einen Partner/Platz erhält, schwer?},
+description={Nein -- solche Matching-Probleme sind effizient (in P) lösbar.},
+type=berechnung}
+
+\newglossaryentry{cf_inklusion}{
+name={Ist für beliebige kontextfreie Sprachen $L_1,L_2$ das Inklusions-/Äquivalenzproblem ($L_1\subseteq L_2$) entscheidbar?},
+description={Nein. Inklusion und Äquivalenz kontextfreier Sprachen sind unentscheidbar (nur das Wortproblem ist entscheidbar).},
+type=berechnung}
+
+\newglossaryentry{entsch_inklusion}{
+name={Ist für beliebige entscheidbare Sprachen $L_1,L_2$ das Problem $L_1\subseteq L_2$ entscheidbar?},
+description={Nein, im Allgemeinen unentscheidbar (reduzierbar vom Halteproblem).},
+type=berechnung}
+
+\newglossaryentry{wortproblem_chomsky0}{
+name={Ist das Wortproblem für formale Regelsprachen (Chomsky-0) stets entscheidbar?},
+description={Nein. Für rekursiv aufzählbare Sprachen ist das Wortproblem im Allgemeinen unentscheidbar (schon gar nicht in $\mathcal O(|w|)$).},
+type=berechnung}
+
+\newglossaryentry{sat_nphart_genuegt}{
+name={Genügt „$\mathrm{SAT}\le_p A$", damit $A$ NP-vollständig ist?},
+description={Nein. Das zeigt nur NP-Härte. Für NP-Vollständigkeit muss zusätzlich $A\in\mathrm{NP}$ gelten.},
+type=berechnung}
+
+\newglossaryentry{npvoll_zwei_reduktionen}{
+name={Wie charakterisiert man NP-Vollständigkeit über SAT durch zwei Reduktionen?},
+description={$A$ ist NP-vollständig genau dann, wenn $A\le_p\mathrm{SAT}$ (also $A\in\mathrm{NP}$) UND $\mathrm{SAT}\le_p A$ (NP-Härte).},
+type=berechnung}
+
+\newglossaryentry{a_le_sat_richtung}{
+name={Ist „$A\le_p\mathrm{SAT}$" gleichbedeutend mit NP-Härte von $A$?},
+description={Nein -- das ist die falsche Richtung. NP-Härte verlangt $\mathrm{SAT}\le_p A$ (SAT auf $A$ reduzieren).},
+type=berechnung}
+
+\newglossaryentry{regulaer_le_3sat}{
+name={Gilt für jede reguläre Sprache $A$, dass $A\le_p 3\text{-SAT}$?},
+description={Ja. Reguläre Sprachen liegen in P $\subseteq$ NP, und jedes NP-Problem reduziert sich auf das NP-vollständige 3-SAT.},
+type=berechnung}
+
+\newglossaryentry{chomsky2_2sat}{
+name={Folgt aus $A\in\text{Chomsky-2}$, dass $2\text{-SAT}\le_p A$?},
+description={Nein. Gegenbeispiel $A=\emptyset$: die Ja-Instanzen von 2-SAT könnten nicht auf Elemente von $A$ abgebildet werden.},
+type=berechnung}
+
+\newglossaryentry{formale_regelsprache_begriff}{
+name={Was bezeichnet der Begriff „formale Regelsprache" (in dieser Vorlesung)?},
+description={Die von beliebigen (Chomsky-0-)Grammatiken erzeugten Sprachen -- genau die rekursiv aufzählbaren Sprachen. [Begriff gegen die Skript-Terminologie prüfen.]},
+type=berechnung}
+
+\newglossaryentry{utm_klein}{
+name={Gibt es universelle Turingmaschinen mit fester, kleiner Zahl an Zuständen/Bandzeichen?},
+description={Ja -- über einen Zustand-/Bandzeichen-Tradeoff existieren sehr kleine universelle TMs (z.B.\ mit $42$ Zuständen und $42$ Bandzeichen). Die genaue Untergrenze (etwa „ein Zustand") ist definitionsabhängig. [UNSICHER -- im Skript prüfen.]},
+type=berechnung}
+
+\newglossaryentry{tm_zustaende_simulation}{
+name={Kann eine TM mit vielen Zuständen durch eine TM mit sehr wenigen Zuständen simuliert werden?},
+description={Tendenziell ja über einen Zustand-/Bandzeichen-Tradeoff (mehr Bandzeichen statt Zuständen). Die konkrete Grenze (z.B.\ „3 Zustände") ist definitionsabhängig. [UNSICHER -- im Skript/Tutorium prüfen.]},
+type=berechnung}
