@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DCA – Pseudocode-Ausführung</title>
+    <style>
+        :root {
+            --kap: #950E4F;
+            --kom: #14060D;
+            --sec: #BF1266;
+            --defi: #EF58A0;
+            --bsp: #F49EC4;
+            --kmt: #8A7B84;
+            --bd: #E3CBD6;
+            --hl: #F8CFE1;
+            --ring: #FCE1EE;
+            --grn: #1E9E6A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--kom);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            padding: 18px;
+        }
+
+        h1 {
+            color: var(--kap);
+            font-size: 21px;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+
+        .sub {
+            color: var(--kmt);
+            font-size: 13px;
+            margin: 0 0 14px;
+            max-width: 840px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        textarea {
+            width: 170px;
+            height: 88px;
+            padding: 6px 8px;
+            border: 1px solid var(--bd);
+            border-radius: 6px;
+            font-family: monospace;
+            text-transform: uppercase;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        input#L {
+            width: 50px;
+            padding: 6px 8px;
+            border: 1px solid var(--bd);
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--sec);
+            font-weight: 500;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: 1px solid var(--kap);
+            background: #fff;
+            color: var(--kap);
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--ring);
+        }
+
+        button.primary {
+            background: var(--kap);
+            color: #fff;
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        #status {
+            font-size: 13px;
+            color: var(--kom);
+            margin: 4px 0 10px;
+            min-height: 18px;
+        }
+
+        #status b {
+            color: var(--kap);
+        }
+
+        .svgwrap {
+            overflow-x: auto;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<h1>DCA (mit Pseudocode)</h1>
+<br>
+<div class="controls">
+    <div>
+        <div style="font-size:13px;color:var(--sec);font-weight:500;margin-bottom:3px;">Sequenzen</div>
+        <textarea id="seqs">ACGTACGT
+AGGTACT
+ACGTTACG</textarea></div>
+    <div class="btns">
+        <div class="row"><label>L</label><input id="L" type="text" value="3"></div>
+        <button class="primary" id="load">Berechnen</button>
+        <div class="row">
+            <button id="prev">‹ Zeile</button>
+            <button id="next">Zeile ›</button>
+            <button id="play">▶</button>
+        </div>
+        <button id="dl">Als SVG ⬇</button>
+    </div>
+</div>
+
+<div id="status"></div>
+<div class="svgwrap">
+    <div id="stage"></div>
+</div>
+
+<script>
+    const COL = {
+        kap: '#950E4F', kom: '#14060D', sec: '#BF1266', defi: '#EF58A0', bsp: '#F49EC4',
+        kmt: '#8A7B84', bd: '#E3CBD6', hl: '#F8CFE1', ring: '#FCE1EE', grn: '#1E9E6A'
+    };
+    const DC = ['#950E4F', '#BF1266', '#EF58A0', '#C77BA8', '#8A7B84'];
+    let S, K, L, EV, step, timer = null;
+    // let NP = {};
+
+    const rev = s => [...s].reverse().join('');
+
+    function nwScore(A, B) {
+        const n = B.length;
+        let prev = [];
+        for (let j = 0; j <= n; j++) prev[j] = j;
+        for (let i = 1; i <= A.length; i++) {
+            let cur = [i];
+            for (let j = 1; j <= n; j++) {
+                const c = A[i - 1] === B[j - 1] ? 0 : 1;
+                cur[j] = Math.min(prev[j - 1] + c, prev[j] + 1, cur[j - 1] + 1);
+            }
+            prev = cur;
+        }
+        return prev;
+    }
+
+    function costProfile(sub1, chat, subp) {
+        const F = nwScore(sub1.slice(0, chat), subp), R = nwScore(rev(sub1.slice(chat)), rev(subp)), n = subp.length,
+            prof = [];
+        for (let j = 0; j <= n; j++) prof[j] = F[j] + R[n - j];
+        return prof;
+    }
+
+    function argmin(a) {
+        let b = Infinity, k = 0;
+        for (let j = 0; j < a.length; j++) if (a[j] < b) {
+            b = a[j];
+            k = j;
+        }
+        return k;
+    }
+
+    /* ---------- Trace ---------- */
+    function trace(S, L) {
+        const k = S.length, ev = [];
+
+        function push(line, V, extra) {
+            ev.push(Object.assign({line, V: Object.assign({k, L}, V)}, extra || {}));
+        }
+
+        function node(ranges, depth) {
+            const sub = ranges.map((r, p) => S[p].slice(r[0], r[1])), lens = sub.map(x => x.length);
+            for (let p = 1; p <= k; p++) {
+                push('L1', {depth, ranges, p});
+                push('L2', {depth, ranges, p, np: lens[p - 1]});
+            }
+            push('L3', {depth, ranges});
+            const maxN = Math.max(...lens), base = maxN <= L;
+            push('L4', {depth, ranges, maxN, base: base ? 'ja' : 'nein'});
+            if (base) {
+                push('L5', {depth, ranges, leaf: true}, {leaf: ranges.map(r => r.slice())});
+                return;
+            }
+            push('L6', {depth, ranges});
+            const chat = Math.ceil(lens[0] / 2), cRel = [chat];
+            push('L7', {depth, ranges, n1: lens[0], chat});
+            for (let p = 1; p < k; p++) {
+                const prof = costProfile(sub[0], chat, sub[p]), cp = argmin(prof);
+                cRel.push(cp);
+                push('L8', {depth, ranges, curP: p + 1, cp, chat, cRel: cRel.slice()}, {prof, profP: p, pchat: chat});
+            }
+            const cAbs = ranges.map((r, pp) => r[0] + cRel[pp]);
+            push('L9', {depth, ranges, chat, cRel: cRel.slice()}, {cut: cAbs.slice()});
+            node(ranges.map((r, pp) => [r[0], cAbs[pp]]), depth + 1);
+            push('L10', {depth, ranges, chat});
+            node(ranges.map((r, pp) => [cAbs[pp], r[1]]), depth + 1);
+            push('L11', {depth, ranges});
+        }
+
+        node(S.map(s => [0, s.length]), 0);
+        return ev;
+    }
+
+    /* ---------- Pseudocode ---------- */
+    const LINES = [
+        ['L1', 'loop', 0, 'for p ← 1 to k', 'for p ← 1 to {k}   (p = {p})'],
+        ['L2', 'code', 22, 'nₚ ← |sₚ|', 'n{p} ← |s{p}| = {np}'],
+        ['L3', 'end', 0, 'end for', null],
+        ['L4', 'if', 0, 'if max{n₁,…,n_k} ≤ L', 'if max{…} = {maxN} ≤ L = {L}   → {base}'],
+        ['L5', 'return', 22, 'return MSA(s₁,…,s_k)', 'return MSA(…)   (Basisfall)'],
+        ['L6', 'else', 0, 'else', null],
+        ['L7', 'code', 22, 'ĉ₁ ← ⌈n₁/2⌉', 'ĉ₁ ← ⌈{n1}/2⌉ = {chat}'],
+        ['L8', 'code', 22, 'berechne (c₂,…,c_k) mit C(ĉ₁,c₂,…,c_k) minimal', 'c{curP} ← argminⱼ [F(j)+B(j)] = {cp}'],
+        ['L9', 'return', 22, 'return DCA(s₁[1..ĉ₁], s₂[1..c₂], …; L)', 'return DCA( …[·..ĉ₁={chat}] ; L )   ← linke Hälfte'],
+        ['L10', 'return', 22, '  ++ DCA(s₁[ĉ₁+1..n₁], s₂[c₂+1..n₂], …; L)', '++ DCA( …[ĉ₁+1..] ; L )   ← rechte Hälfte'],
+        ['L11', 'end', 0, 'end if', null],
+    ];
+    const CLSCOL = {loop: COL.sec, 'if': COL.sec, 'else': COL.sec, code: COL.kom, 'return': COL.kap, end: COL.kmt};
+
+    function fillVals(tpl, V) {
+        return tpl.replace(/\{(\w+)\}/g, (_, n) => {
+            let v = V[n];
+            if (v === undefined) v = '·';
+            return `<tspan fill="${COL.kap}" font-weight="700">${v}</tspan>`;
+        });
+    }
+
+    function ctxOf(line) {
+        if (line === 'L1' || line === 'L2') return ['L1'];
+        if (['L7', 'L8', 'L9', 'L10'].includes(line)) return ['L4', 'L6'];
+        if (line === 'L5') return ['L4'];
+        return [];
+    }
+
+    function callText(ranges) {
+        return 'DCA( ' + ranges.map((r, p) => `s${p + 1}[${r[0] + 1}..${r[1]}]`).join(', ') + `; L=${L} )`;
+    }
+
+    function pseudoG(cur) {
+        const lh = 27, x0 = 12;
+        let s = '';
+        s += `<text x="0" y="14" font-size="13" font-weight="700" fill="${COL.sec}">Aktueller Aufruf:</text>`;
+        s += `<text x="0" y="32" font-size="13" font-family="monospace" fill="${COL.kap}">${cur ? callText(cur.V.ranges) : '—'}</text>`;
+        const oy = 52, ctx = cur ? ctxOf(cur.line) : [];
+        LINES.forEach((Ln, idx) => {
+            const [id, cls, ind, sym, val] = Ln, y = oy + 18 + idx * lh;
+            const isCur = cur && cur.line === id, isCtx = ctx.includes(id), active = isCur || isCtx;
+            if (active) s += `<rect x="4" y="${y - 18}" width="470" height="24" rx="4" fill="${isCur ? COL.hl : COL.ring}"/>`;
+            const txt = (isCur && val) ? fillVals(val, cur.V) : sym;
+            const col = isCur ? COL.kap : CLSCOL[cls];
+            const fw = (cls === 'loop' || cls === 'if' || cls === 'else' || isCur) ? '600' : '400';
+            s += `<text x="${x0 + ind}" y="${y}" font-family="monospace" font-size="14" font-weight="${fw}" fill="${col}">${txt}</text>`;
+        });
+        return {w: 490, h: oy + 18 + LINES.length * lh + 6, s};
+    }
+
+    /* ---------- rechts: Sequenzen + Schnitte + Kostenprofil ---------- */
+    function stateAt(s) {
+        const finalCuts = [], leaves = [];
+        let cur = EV[s - 1];
+        for (let t = 0; t < s; t++) {
+            const e = EV[t];
+            if (e.cut) finalCuts.push({cut: e.cut, depth: e.V.depth});
+            if (e.leaf) leaves.push(e.leaf);
+        }
+        return {finalCuts, leaves, cur};
+    }
+
+    function rightG(st) {
+        const cw = 22, x0 = 40, topY = 20, rowGap = 38, cellH = 26, maxN = Math.max(...S.map(x => x.length));
+        const rowY = p => topY + p * rowGap;
+        let s = '';
+        // Basisblöcke (grün) schattieren
+        st.leaves.forEach(rr => {
+            for (let p = 0; p < K; p++) {
+                const a = rr[p][0], b = rr[p][1];
+                s += `<rect x="${x0 + a * cw}" y="${rowY(p)}" width="${(b - a) * cw}" height="${cellH}" fill="#E6F6EE"/>`;
+            }
+        });
+        // aktueller Block-Rahmen
+        const cur = st.cur;
+        if (cur && cur.V.ranges) {
+            for (let p = 0; p < K; p++) {
+                const r = cur.V.ranges[p];
+                s += `<rect x="${x0 + r[0] * cw}" y="${rowY(p) - 2}" width="${(r[1] - r[0]) * cw}" height="${cellH + 4}" fill="${COL.bsp}" fill-opacity="0.20" stroke="${COL.sec}" stroke-width="1"/>`;
+            }
+        }
+        // Sequenzen
+        for (let p = 0; p < K; p++) {
+            const y = rowY(p);
+            s += `<text x="${x0 - 8}" y="${y + cellH / 2 + 5}" text-anchor="end" font-size="12" fill="${COL.kmt}">s${p + 1}</text>`;
+            for (let i = 0; i < S[p].length; i++) {
+                const x = x0 + i * cw;
+                s += `<rect x="${x}" y="${y}" width="${cw}" height="${cellH}" fill="none" stroke="${COL.bd}" stroke-width="0.7"/>`;
+                s += `<text x="${x + cw / 2}" y="${y + cellH / 2 + 5}" text-anchor="middle" font-size="13" font-family="monospace" fill="${COL.kom}">${S[p][i]}</text>`;
+            }
+           // s += `<text x="${x0 + maxN * cw + cw}" y="${y + cellH / 2 + 5}"  font-size="13" font-family="monospace" fill="${COL.kom}"> n${p+1} = ${NP[`${p}`]} </text>`;
+        }
+        // finalisierte Schnitte
+        st.finalCuts.forEach(fc => {
+            const c = DC[Math.min(fc.depth, DC.length - 1)], pts = [];
+            for (let p = 0; p < K; p++) {
+                const x = x0 + fc.cut[p] * cw, y = rowY(p);
+                s += `<line x1="${x}" y1="${y - 3}" x2="${x}" y2="${y + cellH + 3}" stroke="${c}" stroke-width="2"/>`;
+                pts.push([x, y + cellH / 2]);
+            }
+            s += `<path d="M ${pts.map(p => p[0] + ' ' + p[1]).join(' L ')}" fill="none" stroke="${c}" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>`;
+        });
+        // aktueller Knoten: ĉ₁ + Teil-Schnitte + Kostenprofil
+        let extraH = 0;
+        if (cur && ['L7', 'L8', 'L9', 'L10'].includes(cur.line)) {
+            const r = cur.V.ranges, chat = cur.V.chat;
+            const x1 = x0 + (r[0][0] + chat) * cw;
+            s += `<line x1="${x1}" y1="${rowY(0) - 6}" x2="${x1}" y2="${rowY(0) + cellH + 3}" stroke="${DC[0]}" stroke-width="3"/>`;
+            s += `<text x="${x1}" y="${rowY(0) - 9}" text-anchor="middle" font-size="11" font-weight="700" fill="${DC[0]}">ĉ₁=${chat}</text>`;
+            const cRel = cur.V.cRel || [chat];
+            for (let p = 1; p < cRel.length; p++) {
+                const x = x0 + (r[p][0] + cRel[p]) * cw, y = rowY(p);
+                s += `<line x1="${x}" y1="${y - 3}" x2="${x}" y2="${y + cellH + 3}" stroke="${DC[0]}" stroke-width="2.4"/>`;
+                s += `<text x="${x}" y="${y - 6}" text-anchor="middle" font-size="10" fill="${DC[0]}">c${p + 1}=${cRel[p]}</text>`;
+            }
+        }
+        // Kostenprofil bei L8
+        if (cur && cur.line === 'L8') {
+            const r = cur.V.ranges, p = cur.profP, prof = cur.prof, chat = cur.pchat, lo = r[p][0];
+            const py = rowY(K) + 14;
+            s +=
+                `<text x="0" y="${py - 6}" font-size="12" fill="${COL.sec}" font-weight="600">Zusatzkosten aus additional cost matrix:</text>`;
+            const mn = argmin(prof);
+            for (let j = 0; j < prof.length; j++) {
+                const x = x0 + (lo + j) * cw, hot = j === mn;
+                s += `<rect x="${x - cw / 2 + 2}" y="${py}" width="${cw - 4}" height="20" rx="3" fill="${hot ? COL.hl : '#F7F3F5'}" stroke="${hot ? COL.kap : 'none'}" stroke-width="${hot ? 1.4 : 0}"/>`;
+                s += `<text x="${x}" y="${py + 14}" text-anchor="middle" font-size="11" font-family="monospace" fill="${hot ? COL.kap : COL.kom}" font-weight="${hot ? '700' : '400'}">${prof[j]}</text>`;
+            }
+            extraH = 44;
+        }
+        const done = step >= EV.length;
+        const capY = rowY(K) + (cur && cur.line === 'L8' ? extraH + 18 : 14);
+        if (done) {
+            s += `<text x="0" y="${rowY(K) + 14}" font-size="13" fill="${COL.kom}">Alle Blöcke (grün) sind ≤ L=${L}: sie werden per MSA aligniert und mit ++ konkateniert.</text>`;
+        }
+        const w = Math.max(x0 + maxN * cw + 16, 300),
+            h = capY + (cur && cur.line === 'L8' ? 4 : 0) + (done ? 4 : 0) + 8;
+        return {w, h: Math.max(h, rowY(K) + extraH + 20), s};
+    }
+
+    function buildSVG() {
+        const st = stateAt(step), ps = pseudoG(st.cur), rt = rightG(st);
+        const mx = ps.w + 24, W = Math.max(mx + rt.w + 20, 520), H = Math.max(ps.h + 20, rt.h + 30) + 8;
+        let inner = `<g transform="translate(10,8)">${ps.s}</g>`;
+        inner += `<g transform="translate(${mx},14)">${rt.s}</g>`;
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="max-width:100%;height:auto" font-family="sans-serif"><rect width="${W}" height="${H}" fill="#fff"/>${inner}</svg>`;
+    }
+
+    function status() {
+        const st = document.getElementById('status');
+        if (step === 0) {
+            st.innerHTML = 'Drücke <b>Zeile ›</b> oder <b>▶</b>.';
+            return;
+        }
+        const e = EV[step - 1], Ln = LINES.find(l => l[0] === e.line);
+        let m = `Ebene ${e.V.depth} · Zeile: <b>${Ln ? Ln[3] : e.line}</b>`;
+        if (e.V.chat != null) m += ` · ĉ₁=${e.V.chat}`;
+        if (e.line === 'L8') m += ` · c${e.V.curP}=${e.V.cp} (min. Zusatzkosten)`;
+        if (e.line === 'L5') m += ` · Basisfall → MSA`;
+        st.innerHTML = m;
+    }
+
+    function render() {
+        window.curSVG = buildSVG();
+        document.getElementById('stage').innerHTML = window.curSVG;
+        status();
+    }
+
+    function stop() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+        document.getElementById('play').textContent = '▶';
+    }
+
+    function play() {
+        if (timer) {
+            stop();
+            return;
+        }
+        document.getElementById('play').textContent = '⏸';
+        timer = setInterval(() => {
+            if (step >= EV.length) stop(); else {
+                step++;
+                render();
+            }
+        }, 650);
+    }
+
+    function download(name, svg) {
+        const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + svg], {type: 'image/svg+xml;charset=utf-8'});
+        const u = URL.createObjectURL(blob), a = document.createElement('a');
+        a.href = u;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(u), 1500);
+    }
+
+    function build() {
+        const raw = document.getElementById('seqs').value.split(/\n+/).map(s => s.toUpperCase().replace(/[^ACGTU]/g, '')).filter(s => s.length > 0);
+        S = raw.slice(0, 4).map(s => s.slice(0, 12));
+        if (S.length < 2) S = ['ACGTACGT', 'AGGTACT', 'ACGTTACG'];
+        K = S.length;
+        L = Math.max(1, Math.min(8, parseInt(document.getElementById('L').value) || 3));
+        document.getElementById('L').value = L;
+        EV = trace(S, L);
+        step = 0;
+        stop();
+    }
+
+    document.getElementById('load').onclick = () => {
+        build();
+        render();
+    };
+    document.getElementById('prev').onclick = () => {
+        if (step > 0) {
+            step--;
+            render();
+        }
+    };
+    document.getElementById('next').onclick = () => {
+        if (step < EV.length) {
+            step++;
+            render();
+        }
+    };
+    document.getElementById('play').onclick = play;
+    document.getElementById('dl').onclick = () => download('dca_detail.svg', window.curSVG || buildSVG());
+    build();
+    render();
+</script>
+</body>
+</html>
