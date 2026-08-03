@@ -385,6 +385,109 @@ Induktion über den Ableitungsbaum bzw.\ die Regelanwendungen.
 
 \section{Probleme / Berechenbarkeit \& Reduktion}\label{subsec:probleme-/-berechenbarkeit-&-reduktion}
 
+\subsubsection{P, NP, NP-vollständig umgangssprachlich erklären.}
+\begin{itemize}
+    \item Erläutern Sie umgangssprachlich in je einem Satz die Konzepte P, NP und NP-vollständig. \txc{(PK2021)} \quad \txc{(PK2023)}
+\end{itemize}
+
+\subsubsection{Implikationen aus $A\le_p B$ beurteilen (unter $P\ne NP$).}
+Bei ``falsch'' Gegenbeispiel, bei ``wahr'' Beweis.
+\begin{itemize}
+    \item Geben Sie an, ob die Implikationen korrekt sind (formal begründen):
+    \begin{itemize}
+        \item $A\in\mathrm{P}\Rightarrow B\in\mathrm{P}$; \; $A\in\mathrm{NP}\Rightarrow B\in\mathrm{NP}$; \; $A$
+        NP-vollständig $\Rightarrow B$ NP-vollständig \txc{(HK2017)}
+        \item $B\in\text{Chomsky-2}\Rightarrow A\in\mathrm{P}$; \; $A\in\mathrm{NP}\Rightarrow B$ NP-vollständig; \; $A$ NP-vollständig $\Rightarrow B$ NP-hart  \txc{(NK2017)}
+        \item  $B\in\mathrm{NP}\Rightarrow A\in\mathrm{P}$; \; $B\in\mathrm{P}\Rightarrow A\in\mathrm{NP}$; \; $B$
+        NP-hart $\Rightarrow A$ NP-vollständig \txc{(HK2019)}
+        \item $B\in\mathrm{NP}\Rightarrow A\in\mathrm{P}$; \; $B\in\mathrm{P}\Rightarrow A\in\mathrm{NP}$; \; $B$
+        NP-hart $\Rightarrow A$ NP-vollständig \txc{(NK2019)}
+        \item (i) $B\in\mathrm{NP}\Rightarrow A\in\mathrm{P}$; \ (ii) $A$ NP-vollständig $\Rightarrow B$ NP-hart  \txc{(NK2023)}
+        \item (i) $B\in\mathrm{NP}\Rightarrow A\in\mathrm{P}$; \ (ii) $A\in\mathrm{P}\Rightarrow B$ NP-vollständig \txc{(PK2025)}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Sprachklassen der Größe nach ordnen / Teilmengenbeziehungen.}
+$\subsetneq$ oder $=$; ggf.\ Beispielsprachen.
+\begin{itemize}
+    \item Ordnen Sie die folgenden Mengen/Probleme der Größe nach ($\subsetneq$ oder $=$):
+    \begin{itemize}
+        \item (i) entscheidbar, (ii) endlicher Automat, (iii) rekursiv aufzählbar, (iv) Chomsky-0, (v) kontextfrei \txc{(NK2023)}
+        \item  (i) LR($k$), $k>0$, (ii) DEA, (iii) indeterministische Turingmaschine, (iv) Chomsky-2, (v)
+        Turingmaschine \txc{(PK2025)}
+    \end{itemize}
+    \item Welche Teilmengenbeziehungen gelten für P, PSPACE und Chomsky-2? Welche Mengen sind echt größer? Warum? \txc{(PK2021)} \quad \txc{(PK2023)}
+    \item Geben Sie je ein Beispiel an, das zeigt, dass Chomsky-$i$ eine echte Teilmenge von Chomsky-$(i-1)$
+    ist für $i\in\{1,2,3\}$. Geben Sie zudem eine Sprache an, die nicht in Chomsky-0 liegt. \txc{(HK2017)}
+    \item Geben Sie für die Teilmengenbeziehungen an, ob korrekt (Beispiel/Gegenbeispiel):
+    \begin{itemize}
+        \item reguläre Sprachen $\subsetneq$ formale Regelsprachen; \ Kellerautomaten-Sprachen $\subsetneq$ Chomsky-3;
+        \ (det.\ TM entscheidbare Sprachen) $\subsetneq$ (det.\ TM akzeptierbare Sprachen) \txc{(NK2017)}
+    \end{itemize}
+    \item Beschriften Sie alle Mengen im Diagramm mit je einer Sprachklasse und die äußeren Mengen mit
+    Beispielsprachen (nicht in der nächstkleineren Menge), die innerste mit einer enthaltenen Beispielsprache.
+    \begin{itemize}
+        \item Klassen: DPDA, rekursiv aufzählbar, Chomsky-2, entscheidbar \txc{(HK2019)}
+        \item  Klassen: DPDA, rekursiv aufzählbar, Chomsky-3, entscheidbar \txc{(NK2019)}
+    \end{itemize}
+    \item Ordnen Sie die Problemklassen rekursiv aufzählbar, Chomsky-2, Chomsky-0, kontextsensitiv, Chomsky-3. \txc{(HK2020)}
+    \item Begründen Sie richtig/falsch: (i) $\mathrm{NP}\subset\mathrm{PSPACE}$; \txc{(PK2025)}
+    (ii) die durch deterministische Turingmaschinen akzeptierten Sprachen sind genau die entscheidbaren Sprachen. \txc{(PK2025)}
+\end{itemize}
+
+\subsubsection{Prüfen, welche gegebenen Abbildungen $f$ eine Reduktion $A\le_p B$ sind.}
+Total? polynomiell (Ausgabelänge!)? $x\in A\Leftrightarrow f(x)\in B$? Typ passend?
+\begin{itemize}
+    \item Beweisen bzw.\ prüfen Sie, ob die folgenden Abbildungen eine Reduktion $A\le_p B$ sind:
+    \begin{itemize}
+        \item \txc{(HK2017)} $A=\{(a,b,c,d)\in\N^4\mid a+b=c+d\}$, $B=\{(x,y)\in\N^2\mid x=y\}$;\\
+        1) $f:(a,b,c,d)\mapsto(a+b,c+d)$; \ 2) $g:(a,b,c,d)\mapsto(a+c,b+d)$
+        \item \txc{(NK2017)} $A=\{(x,y)\in\nz^2\mid x^2=y\}$, $B=\{(a,b,c)\in\nz^3\mid a\cdot b=c\}$;\\
+        1) $f(x,y):=(1,x,\tfrac{y}{x})$; \ 2) $g(x,y):=(x,x,y)$
+        \item \txc{(PK2023)} $A=\{(a,b,c,d)\in\nz^4\mid a+b=c+d\}$, $B=\{(x,y)\in\nz^2\mid x=y\}$;\\
+        (i) $f:(a,b,c,d)\mapsto(a+c,b+d)$; \ (ii) $g:(a,b,c,d)\mapsto(2^{a+b},2^{c+d})$; \ (iii) $h:(a,b,c,d)\mapsto(1,1)$
+        \item \txc{(NK2023)} drei Teile:\\
+        (i) $A=\{(x,y)\in\nz^2\mid x^2=y\}$, $B=\{(a,b,c)\in\nz^3\mid a^2+(b-1)^2=2(c+1)\}$,
+        $f(x,y)=\begin{cases}(2,1,1)&(x,y)\in A\\(0,0,0)&\text{sonst}\end{cases}$\\
+        (ii) $A=\{(x,y,z)\in\nz^3\mid \exp(x)2^y=\exp(\log(2)z)\}$, $B=\{(a,b,c)\in\nz^3\mid c\cdot b=a\}$,
+        $f(x,y,z)=(\exp(\log(2)z),2^y,\exp(x))$\\
+        (iii) $A=\{(x,y)\in\Q^2\mid x^2+y^2=2yx\}$, $B=\{(a,b,c)\in\nz^3\mid a\cdot c=(1+a)b\}$, $f(x,y)=(1,x,2y)$
+        \item \txc{(HK2020)} $A=\{(a,b)\in\N^2\mid 2a=b\}$, $B=\{(c,d,e)\in\N^3\mid c=d\cdot e\}$;\\
+        1) $f(a,b):=(b,a,2)$; \ 2) $f(a,b):=(a,b,2)$
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Eine polynomielle Reduktion selbst angeben und beweisen.}
+\begin{itemize}
+    \item Geben Sie eine Reduktion $A\le_p B$ an und beweisen Sie:
+    \begin{itemize}
+        \item  $A=\{(x,y)\in\nz^2\mid x^2=y\}$, $B=\{(a,b,c)\in\nz^3\mid (a-1)b=c-1\}$ \txc{(PK2023)}
+        \item  $A=\{(x,y,z)\in\nz^3\mid 2^x\cdot 2^y=4^z\}$, $B=\{(a,b)\in\nz^2\mid 2a=b\}$ \txc{(NK2023)}
+    \end{itemize}
+    \item Geben Sie explizit \emph{zwei unterschiedliche} polynomielle Reduktionen $f_1,f_2$ an und beweisen Sie:
+    \begin{itemize}
+        \item  $A=\{(x,y)\in\nz^2\mid x^2=y\}$, $B=\{(a,b,c)\in\nz^3\mid (a-1)b=c-1\}$ \txc{(PK2025)}
+    \end{itemize}
+    \item Beweisen Sie, dass $f$ eine polynomielle Reduktion ist:
+    \begin{itemize}
+        \item  $A=\{(a,b)\in\N^2\mid a=b\}$, $B=\{(x,y,z)\in\N^3\mid x^2=y^2=z\}$, $f:(a,b)\mapsto(a,b,a^2)$ \txc{(PK2021)}
+    \end{itemize}
+    \item Zeigen Sie $\mathrm{IND}\le_p\mathrm{TEAM}$:
+    \begin{itemize}
+        \item \textbf{TEAM:} Menge $S$ von $n$ Spielern, Menge $T=\{T_1,\dots,T_m\}$ mit $T_i\subset S$, \txc{(PK2021)}
+        Zahl $k\le m$. Existieren $k$ Teams, in denen kein Spieler doppelt vorkommt?\\
+        \textbf{IND:} ungerichteter Graph $(V,E)$, Zahl $k\le|V|$. Existiert $V'\subseteq V$ mit $|V'|=k$,
+        so dass für $u,v\in V'$ gilt $\{u,v\}\notin E$?
+    \end{itemize}
+    \item Vervollständigen Sie den Beweis $\mathrm{KP}_*\le_p\mathrm{BPP}$:
+    \begin{itemize}
+        \item
+        $\mathrm{BPP}:=\{(\vec c,\vec w)\in\N^m\times\N^n\mid \exists I_1,\dots,I_m\subseteq\{1,\dots,n\}:\ j\ne k\Rightarrow I_j\cap I_k=\emptyset,\ \bigcup_{i=1}^m I_i=\{1,\dots,n\},\ \forall i:\ \sum_{j\in I_i}w_j\le c_i\}$;\\
+        $\mathrm{KP}_*:=\{(\vec w,\hat w)\in\N^n\times\N\mid \exists I\subseteq\{1,\dots,n\}:\ \sum_{i\in I}w_i=\hat w\}$.\\
+        Ansatz: $f(\vec w,\hat w)=(\vec c,\vec w)$ mit passendem $\vec c$; Äquivalenzkette $\Leftrightarrow$
+        ausfüllen. \\ \txc{(HK2019)} \quad \txc{(NK2019)}
+    \end{itemize}
+\end{itemize}
 
 \section{Multiple-Choice}\label{subsec:multiple-choice}
 
