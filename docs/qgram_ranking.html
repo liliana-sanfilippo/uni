@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q-Gram Ranking & Unranking</title>
+    <style>
+        :root {
+            --kap: #950E4F;
+            --kom: #14060D;
+            --sec: #BF1266;
+            --defi: #EF58A0;
+            --bsp: #F49EC4;
+            --kmt: #8A7B84;
+            --link: #A22F69;
+            --bd: #E3CBD6;
+            --hl: #F8CFE1;
+            --ring: #FCE1EE;
+            --grn: #1E9E6A;
+        }
+
+        table{font-size:13px;}
+         td{text-align:center;border:0.5px solid #8A7B84;
+            color:black;transition:background .15s;}
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--kom);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--kap);
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+
+        h2 {
+            color: var(--sec);
+            font-size: 20px;
+            font-weight: 500;
+            margin: 10px 4px;
+        }
+
+        .sub, .subtitle {
+            color: var(--kmt);
+            font-size: 14px;
+            margin: 0 0 16px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--sec);
+            font-weight: 500;
+        }
+
+        input[type=text], input[type=number] {
+            width: 110px;
+            padding: 6px 8px;
+            border: 1px solid var(--bd);
+            border-radius: 6px;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: 1px solid var(--kap);
+            background: #fff;
+            color: var(--kap);
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--ring);
+        }
+
+        button.primary {
+            background: var(--kap);
+            color: #fff;
+        }
+
+        button:disabled {
+            opacity: .45;
+            cursor: not-allowed;
+        }
+
+        .panel {
+            border: 1px solid var(--bd);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin: 14px 0;
+        }
+
+        .panel.cur {
+            border-color: var(--kap);
+            box-shadow: 0 0 0 2px var(--ring);
+        }
+
+        .panelhead {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .panelhead h2, .panelhead h3 {
+            margin: 0;
+            color: var(--kap);
+        }
+
+        .panelhead h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .panelhead h2 {
+            font-size: 18px;
+        }
+
+        .depthbadge {
+            display: inline-block;
+            background: var(--sec);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 11px;
+            padding: 1px 8px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .svgwrap {
+            overflow-x: auto;
+        }
+
+        .final {
+            border: 2px solid var(--kap);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 8px 0 22px;
+            background: #FFF7FB;
+        }
+
+        .legend {
+            font-size: 12px;
+            color: var(--kmt);
+            margin: 6px 0 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 18px 50px;
+        }
+
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 16px;
+        }
+
+        .progress {
+            display: flex;
+            gap: 6px;
+            margin: 18px 0 8px;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            width: 28px;
+            height: 8px;
+            border-radius: 99px;
+            background: #dfe3eb;
+        }
+
+        .dot.done {
+            background: var(--grn);
+        }
+
+        .dot.current {
+            background: var(--link);
+        }
+
+        .sequence {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+            margin: 10px 0 18px;
+        }
+
+        .char, .token {
+            min-width: 38px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--bsp);
+            border-radius: 8px;
+            background: white;
+            font-weight: 700;
+        }
+
+        .token.match {
+            background: var(--grn);
+            border-color: var(--grn-border);
+        }
+
+        .token.sep {
+            background: var(--bsp);
+            border-color: var(--bsp-border);
+        }
+
+        .char.active {
+            background: var(--kap);
+            border: 2px solid var(--kap-border);
+        }
+
+        .char.consumed-match {
+            background: var(--grn);
+            border-color: var(--grn-border);
+        }
+
+        .char.consumed-sep {
+            background: var(--bsp);
+            border-color: var(--bsp-border);
+        }
+
+
+        .explain {
+            padding: 13px 15px;
+            background: var(--bd);
+            border-radius: 7px;
+            margin-top: 14px;
+        }
+
+        .result {
+            font-size: 22px;
+            font-weight: 800;
+            margin-top: 12px;
+        }
+
+        .math {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            background: #f3f4f6;
+            border-radius: 7px;
+            padding: 2px 6px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .small {
+            color: var(--kom);
+            font-size: 14px;
+        }
+
+        .steps {
+            display: grid;
+            gap: 9px;
+        }
+
+        .step strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        @media (max-width: 760px) {
+            .inputs, .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>q-Gram Ranking & Unranking</h1>
+
+    <div>
+        <h2>q, q-Gram und Alphabet</h2>
+        <div class="inputs">
+            <div><label>q</label><input id="q" type="number" min="1" max="8" value="3"></div>
+            <div><label>Alphabet Σ (Reihenfolge = Ranking)</label><input type="text"  id="alphabet" value="ACGT" spellcheck="false">
+            </div>
+            <div><label>q-Gram z</label><input type="text" id="gram" value="GTA" spellcheck="false"></div>
+        </div>
+        <div class="controls">
+            <button class="primary" id="calc">Berechnen</button>
+        </div>
+        <!--
+        <button id="fallBtn">Falling</button>
+            <button id="riseBtn">Rising</button>
+       -->
+    </div>
+
+    <div>
+    <h2>
+        Infos für beide:
+    </h2>
+        <span id="info_allg" ></span>
+        <span id="seq" ></span>
+    </div>
+    <br>
+    <div class="grid">
+        <div>
+            <h2>Falling Ranking</h2>
+            <p class="math">r(z) = Σ rΣ(z[i]) · σ<sup>q−i</sup></p>
+            <div id="fallVisual"></div>
+            <h3 id="fallResult"></h3>
+        </div>
+
+        <div>
+            <h2>Rising Ranking</h2>
+            <p class="math">r(z) = Σ rΣ(z[i]) · σ<sup>i−1</sup></p>
+            <div id="riseVisual"></div>
+            <h3 id="riseResult" ></h3>
+        </div>
+    </div>
+    <br>
+    <div class="grid">
+        <div>
+            <h2>Falling Ranking</h2>
+            <b>Update-Idee:</b> Bei <i>falling</i> wird links ein Zeichen entfernt und rechts ein neues angehängt:
+            <p class="math">r(ub) = (r(au) mod σ<sup>q−1</sup>) · σ + rΣ(b)</p>
+            <div id="steps_falling"></div>
+        </div>
+        <div>
+            <h2>Rising Ranking</h2>
+            <b>Update-Idee:</b>  Bei <i>rising</i> wandert das neue Zeichen auf die höchste Stelle:
+            <p class="math">r(zb) = floor(r(au)/σ) + rΣ(b) · σ<sup>q−1</sup></p>
+            <div id="steps_rising"></div>
+        </div>
+    </div>
+    <br>
+    <div class="grid">
+        <div>
+            <h2>Falling Unranking</h2>
+            <p class="math">r / σ<sup>q−1</sup> = c, &nbsp; R &nbsp; r'</p>
+            <div id="fallUnrank"></div>
+        </div>
+        <div>
+            <h2>Rising Unranking</h2>
+            <p class="math">r / σ = r', &nbsp; R &nbsp; c</p>
+            <div id="riseUnrank"></div>
+        </div>
+    </div>
+
+    <div>
+        <h2>3. Ranking-Tabelle aller q-Gramme</h2>
+        <p class="small">Die Tabelle zeigt, wie sich die beiden Konventionen unterscheiden. Bei <b>rising</b> ist das
+            erste Zeichen das niederwertigste, bei <b>falling</b> das höchstwertige.</p>
+        <div id="table"></div>
+    </div>
+
+<script>
+    (() => {
+        const $ = id => document.getElementById(id);
+        let mode = "both";
+
+        function data() {
+            const q = Math.max(1, parseInt($("q").value) || 1);
+            const A = [...$("alphabet").value].filter((x, i, a) => a.indexOf(x) === i);
+            let z = [...$("gram").value].slice(0, q);
+            if (z.length < q) z = [...z, ...Array(q - z.length).fill("?")];
+            const sigma = A.length;
+            const rank = c => A.indexOf(c);
+            return {q, A, z, sigma, rank};
+        }
+
+        function rankings(d) {
+            let falling = 0, rising = 0;
+            d.z.forEach((c, i) => {
+                const v = d.rank(c);
+                if (v < 0) return;
+                falling += v * Math.pow(d.sigma, d.q - 1 - i);
+                rising += v * Math.pow(d.sigma, i);
+            });
+            return {falling, rising};
+        }
+
+        function render() {
+            const d = data(), r = rankings(d);
+            $("fallResult").textContent = `r(z) = ${r.falling}`;
+            $("riseResult").textContent = `r(z) = ${r.rising}`;
+            document.getElementById("info_allg").innerHTML = `<b>z = ${d.z.join("")}</b> &nbsp; σ = ${d.sigma}`;
+            const row = document.createElement("div");
+            row.className = "sequence";
+            d.z.forEach((c, i) => {
+                const cell = document.createElement("div");
+                cell.innerHTML = `<div class="char">${c}</div><div class="digit">${d.rank(c) >= 0 ? d.rank(c) : "?"}</div>`;
+                row.appendChild(cell);
+            });
+            document.getElementById("seq").innerHTML =  row.outerHTML;
+            renderVisual("fallVisual", d, "falling");
+            renderVisual("riseVisual", d, "rising");
+            renderSteps(d,r, "falling");
+            renderSteps(d,r, "rising");
+            renderUnrank(d, r.falling, "fallUnrank", "falling");
+            renderUnrank(d, r.rising, "riseUnrank", "rising");
+            renderTable(d);
+        }
+
+        function renderVisual(id, d, type) {
+            const box = $(id);
+            box.innerHTML = "";
+
+            const powers = document.createElement("h3");
+            powers.className = "small";
+            powers.textContent = type === "falling"
+                ? "Gewichte: " + d.z.map((_, i) => `σ^${d.q - 1 - i}`).join(" · ")
+                : "Gewichte: " + d.z.map((_, i) => `σ^${i}`).join(" · ");
+            box.appendChild(powers);
+        }
+
+        function renderSteps(d, r, type) {
+            const box = $(`steps_${type}`);
+            box.innerHTML = "";
+            d.z.forEach((c, i) => {
+                const v = d.rank(c);
+                const power = type === "falling" ? d.q - 1 - i : i;
+                const value = v < 0 ? "?" : v * Math.pow(d.sigma, power);
+                const t = document.createElement("div");
+                t.className = "term";
+                t.innerHTML = `Position ${i + 1}: <b>${c}</b> → rΣ(${c}) = <b>${v < 0 ? "?" : v}</b> · σ<sup>${power}</sup> = <b>${value}</b>`;
+                box.appendChild(t);
+            });
+        }
+
+        function unrankValue(r, d, type) {
+            let n = r, chars = [];
+            for (let i = 0; i < d.q; i++) {
+                if (type === "falling") {
+                    const div = Math.pow(d.sigma, d.q - 1 - i);
+                    const v = Math.floor(n / div);
+                    n = n % div;
+                    chars.push(d.A[v] ?? "?");
+                } else {
+                    const v = n % d.sigma;
+                    n = Math.floor(n / d.sigma);
+                    chars.unshift(d.A[v] ?? "?");
+                }
+            }
+            return chars.join("");
+        }
+
+        function renderUnrank(d, r, id, type) {
+            const box = $(id);
+            box.innerHTML = "";
+            let n = r;
+            const table = document.createElement("table");
+            table.innerHTML = "<thead><tr><th>Schritt</th><th>Division</th><th>Rest / Quotient</th><th>Zeichen</th></tr></thead>";
+            const tb = document.createElement("tbody");
+            for (let i = 0; i < d.q; i++) {
+                const tr = document.createElement("tr");
+                if (type === "falling") {
+                    const div = Math.pow(d.sigma, d.q - 1 - i), c = Math.floor(n / div), rem = n % div;
+                    tr.innerHTML = `<td>${i + 1}</td><td>${n} ÷ ${div}</td><td>c = ${c}, r' = ${rem}</td><td><b>${d.A[c] ?? "?"}</b></td>`;
+                    n = rem;
+                } else {
+                    const rem = n % d.sigma, quo = Math.floor(n / d.sigma);
+                    tr.innerHTML = `<td>${i + 1}</td><td>${n} ÷ ${d.sigma}</td><td>r' = ${quo}, c = ${rem}</td><td><b>${d.A[rem] ?? "?"}</b></td>`;
+                    n = quo;
+                }
+                tb.appendChild(tr);
+            }
+            table.appendChild(tb);
+            box.appendChild(table);
+            const res = document.createElement("div");
+            res.className = "result";
+            res.textContent = `z = ${unrankValue(r, d, type)}`;
+            box.appendChild(res);
+        }
+
+        function allGrams(A, q) {
+            if (q === 0) return [""];
+            const out = [];
+
+            function rec(s) {
+                if (s.length === q) {
+                    out.push(s);
+                    return
+                }
+                A.forEach(c => rec(s + c))
+            }
+
+            rec("");
+            return out;
+        }
+
+        function renderTable(d) {
+            const grams = allGrams(d.A, d.q);
+            if (grams.length > 256) {
+                $("table").innerHTML = "<p class='small'>Für σ^q > 256 wird die Tabelle aus Platzgründen nicht angezeigt.</p>";
+                return
+            }
+            let html = "<table><thead><tr><th>q-Gram</th><th>Digits</th><th>Falling</th><th>Rising</th></tr></thead><tbody>";
+            grams.forEach(z => {
+                let f = 0, r = 0;
+                [...z].forEach((c, i) => {
+                    const v = d.rank(c);
+                    f += v * Math.pow(d.sigma, d.q - 1 - i);
+                    r += v * Math.pow(d.sigma, i)
+                });
+                html += `<tr><td><b>${z}</b></td><td>${[...z].map(c => d.rank(c)).join(", ")}</td><td>${f}</td><td>${r}</td></tr>`;
+            });
+            $("table").innerHTML = html + "</tbody></table>";
+        }
+
+        $("calc").onclick = render;
+        $("fallBtn").onclick = () => {
+            mode = "falling";
+            render()
+        };
+        $("riseBtn").onclick = () => {
+            mode = "rising";
+            render()
+        };
+        $("q").oninput = render;
+        $("alphabet").oninput = render;
+        $("gram").oninput = render;
+        render();
+    })();
+</script>
+</body>
+</html>
