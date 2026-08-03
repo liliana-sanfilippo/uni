@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximal Matches Distance – Schrittweise Visualisierung</title>
+    <style>
+        :root {
+            --kap: #950E4F;
+            --kom: #14060D;
+            --sec: #BF1266;
+            --defi: #EF58A0;
+            --bsp: #F49EC4;
+            --kmt: #8A7B84;
+            --link: #A22F69;
+            --bd: #E3CBD6;
+            --hl: #F8CFE1;
+            --ring: #FCE1EE;
+            --grn: #1E9E6A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--kom);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--kap);
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+
+        h2 {
+            color: var(--sec);
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0 0 4px;
+        }
+
+        .sub, .subtitle {
+            color: var(--kmt);
+            font-size: 14px;
+            margin: 0 0 16px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--sec);
+            font-weight: 500;
+        }
+
+        input[type=text] {
+            width: 110px;
+            padding: 6px 8px;
+            border: 1px solid var(--bd);
+            border-radius: 6px;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: 1px solid var(--kap);
+            background: #fff;
+            color: var(--kap);
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--ring);
+        }
+
+        button.primary {
+            background: var(--kap);
+            color: #fff;
+        }
+
+        button:disabled {
+            opacity: .45;
+            cursor: not-allowed;
+        }
+
+        .panel {
+            border: 1px solid var(--bd);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin: 14px 0;
+        }
+
+        .panel.cur {
+            border-color: var(--kap);
+            box-shadow: 0 0 0 2px var(--ring);
+        }
+
+        .panelhead {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .panelhead h2, .panelhead h3 {
+            margin: 0;
+            color: var(--kap);
+        }
+
+        .panelhead h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .panelhead h2 {
+            font-size: 18px;
+        }
+
+        .depthbadge {
+            display: inline-block;
+            background: var(--sec);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 11px;
+            padding: 1px 8px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .svgwrap {
+            overflow-x: auto;
+        }
+
+        .final {
+            border: 2px solid var(--kap);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 8px 0 22px;
+            background: #FFF7FB;
+        }
+
+        .legend {
+            font-size: 12px;
+            color: var(--kmt);
+            margin: 6px 0 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 18px 50px;
+        }
+
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 16px;
+        }
+
+        .progress {
+            display: flex;
+            gap: 6px;
+            margin: 18px 0 8px;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            width: 28px;
+            height: 8px;
+            border-radius: 99px;
+            background: #dfe3eb;
+        }
+
+        .dot.done {
+            background: var(--grn);
+        }
+
+        .dot.current {
+            background: var(--link);
+        }
+
+        .sequence {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+            margin: 10px 0 18px;
+        }
+
+        .char, .token {
+            min-width: 38px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--bsp);
+            border-radius: 8px;
+            background: white;
+            font-weight: 700;
+        }
+
+        .token.match {
+            background: var(--grn);
+            border-color: var(--grn-border);
+        }
+
+        .token.sep {
+            background: var(--bsp);
+            border-color: var(--bsp-border);
+        }
+
+        .char.active {
+            background: var(--kap);
+            border: 2px solid var(--kap-border);
+        }
+
+        .char.consumed-match {
+            background: var(--grn);
+            border-color: var(--grn-border);
+        }
+
+        .char.consumed-sep {
+            background: var(--bsp);
+            border-color: var(--bsp-border);
+        }
+
+
+
+        .explain {
+            padding: 13px 15px;
+            background: var(--bd);
+            border-radius: 7px;
+            margin-top: 14px;
+        }
+
+        .result {
+            font-size: 22px;
+            font-weight: 800;
+            margin-top: 12px;
+        }
+
+        .math {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            background: #f3f4f6;
+            border-radius: 7px;
+            padding: 2px 6px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .small {
+            color: var(--kom);
+            font-size: 14px;
+        }
+
+        .steps {
+            display: grid;
+            gap: 9px;
+        }
+
+        .step strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        @media (max-width: 760px) {
+            .inputs, .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Maximal Matches Distance</h1>
+
+    <div class="inputs">
+        <label for="yInput">Referenzsequenz y</label>
+        <input id="yInput" type="text" value="ATCTA" spellcheck="false">
+        <label for="xInput">Sequenz x</label>
+        <input id="xInput" type="text" value="CTAATGCT" spellcheck="false">
+    </div>
+    <div class="controls">
+        <button class="primary" id="resetBtn">Neu berechnen</button>
+        <button id="prevBtn">← Zurück</button>
+        <button id="nextBtn">Nächster Schritt →</button>
+        <button id="allBtn">Alle Schritte</button>
+    </div>
+    <div>
+        <h2>Greedy von links nach rechts</h2>
+        <div class="progress" id="progress"></div>
+        <p id="status" class="small"></p>
+
+        <div>
+            <strong>x:</strong>
+            <div class="sequence" id="xView"></div>
+        </div>
+        <div>
+            <strong>y:</strong>
+            <div class="sequence" id="yView"></div>
+        </div>
+
+        <div class="legend">
+            <span class="lmatch">Match: Teilstring von y</span>
+            <span class="lsep">Separator: einzelnes Zeichen</span>
+            <span class="lactive">aktueller Suchbereich</span>
+        </div>
+
+        <div class="explain" id="explain"></div>
+        <h2 class="result" id="result"></h2>
+    </div>
+
+    <div class="grid">
+        <div>
+            <h2>Warum ist der Match maximal?</h2>
+            <div class="steps" id="logic"></div>
+        </div>
+       <!--
+        <div>
+            <h2>Partition</h2>
+            <div id="partition" class="sequence"> </div>
+            <p class="small">
+                Die grünen Blöcke sind die <span class="math">zᵢ</span>. Die roten Zeichen sind die
+                Separatoren <span class="math">bᵢ</span>. Die Distanz ist die Anzahl der Separatoren.
+            </p>
+        </div>
+       -->
+    </div>
+
+
+<script>
+    (() => {
+        const $ = id => document.getElementById(id);
+        let states = [];
+        let step = 0;
+
+        function longestPrefixInY(s, y) {
+            let best = "";
+            for (let len = 1; len <= s.length; len++) {
+                const candidate = s.slice(0, len);
+                if (y.includes(candidate)) best = candidate;
+                else break;
+            }
+            return best;
+        }
+
+        function calculate(x, y) {
+            const result = [];
+            let pos = 0;
+            let matches = [];
+            let separators = [];
+
+            while (pos < x.length) {
+                const rest = x.slice(pos);
+                const match = longestPrefixInY(rest, y);
+
+                if (match.length > 0) {
+                    const start = pos;
+                    console.log(start)
+                    const end = pos + match.length;
+                    matches.push({start, end, text: match});
+                    result.push({
+                        type: "match",
+                        start, end, text: match,
+                        remaining: x.slice(end),
+                        tested: match + (x[end] || "")
+                    });
+                    pos = end;
+
+                    if (pos < x.length) {
+                        separators.push({index: pos, text: x[pos]});
+                        result.push({
+                            type: "separator",
+                            index: pos,
+                            text: x[pos],
+                            after: x.slice(pos + 1)
+                        });
+                        pos++;
+                    }
+                } else {
+                    separators.push({index: pos, text: x[pos]});
+                    result.push({
+                        type: "separator",
+                        index: pos,
+                        text: x[pos],
+                        after: x.slice(pos + 1),
+                        noMatch: true
+                    });
+                    pos++;
+                }
+            }
+            return {result, matches, separators};
+        }
+
+        function render() {
+            const x = $("xInput").value;
+            const y = $("yInput").value;
+            const calc = calculate(x, y);
+            states = calc.result;
+
+            if (step > states.length) step = states.length;
+
+            $("progress").innerHTML = "";
+            for (let i = 0; i < states.length; i++) {
+                const d = document.createElement("span");
+                d.className = "dot " + (i < step ? "done" : i === step ? "current" : "");
+                $("progress").appendChild(d);
+            }
+
+            renderX(x, calc);
+            renderY(y, calc);
+            renderText(x, y, calc);
+
+            $("prevBtn").disabled = step === 0;
+            $("nextBtn").disabled = step === states.length;
+        }
+
+        function findAllOccurrences(text, pattern) {
+            const positions = [];
+            let pos = text.indexOf(pattern);
+
+            while (pos !== -1) {
+                positions.push(pos);
+                pos = text.indexOf(pattern, pos + 1);
+            }
+
+            return positions;
+        }
+
+        function renderX(x, calc) {
+            const activeStart = step < states.length
+                ? (states[step].type === "match" ? states[step].start : states[step].index)
+                : -1;
+            const activeEnd = step < states.length
+                ? (states[step].type === "match" ? states[step].end + 1 : states[step].index + 1)
+                : -1;
+
+            $("xView").innerHTML = "";
+            for (let i = 0; i < x.length; i++) {
+                const c = document.createElement("span");
+                c.className = "char";
+                c.textContent = x[i];
+
+                if (i < activeStart) {
+                    const isSep = calc.separators.some(s => s.index === i);
+                    c.classList.add(isSep ? "consumed-sep" : "consumed-match");
+                }
+                if (i >= activeStart && i < activeEnd) c.classList.add("active");
+
+                $("xView").appendChild(c);
+            }
+        }
+
+        function renderY(y, calc) {
+            const current = step < states.length ? states[step] : null;
+            const candidate = current?.type === "match"
+                ? current.text
+                : "";
+
+            $("yView").innerHTML = "";
+
+            const matchPositions = candidate
+                ? findAllOccurrences(y, candidate)
+                : [];
+
+            for (let i = 0; i < y.length; i++) {
+                const c = document.createElement("span");
+                c.className = "char";
+                c.textContent = y[i];
+
+                const isMatch = matchPositions.some(start =>
+                    i >= start && i < start + candidate.length
+                );
+
+                if (isMatch) {
+                    c.classList.add("consumed-match");
+                }
+
+                $("yView").appendChild(c);
+            }
+        }
+
+        function renderText(x, y, calc) {
+            const total = calc.separators.length;
+            if (step === 0) {
+                $("status").textContent = "Start: Wir betrachten x von links nach rechts.";
+                $("explain").textContent =
+                    "Suche an der aktuellen Position den längsten Präfix von x, der gleichzeitig ein Teilstring von y ist.";
+            } else if (step <= states.length) {
+                const s = states[step - 1];
+                if (s.type === "match") {
+                    const next = x[s.end];
+                    $("status").textContent = `Schritt ${step}: längster Match = „${s.text}“`;
+                    $("explain").innerHTML =
+                        `„<b>${s.text}</b>“ kommt in y vor. Der nächste Buchstabe ` +
+                        (next ? `<b>„${next}“</b> kann nicht mehr an diesen Match angehängt werden und wird als Separator abgetrennt.` :
+                            "liegt am Ende – es gibt keinen weiteren Separator.");
+                } else {
+                    $("status").textContent = `Schritt ${step}: Separator „${s.text}“`;
+                    $("explain").innerHTML =
+                        `An dieser Position gibt es keinen nichtleeren Präfix von x, der in y vorkommt. ` +
+                        `<b>„${s.text}“</b> muss daher als einzelner Separator behandelt werden.`;
+                }
+            }
+
+            $("result").textContent = step === states.length
+                ? `δ(x‖y) = ${total}  (Anzahl der Separatoren)`
+                : `Bisher: ${calc.separators.slice(0, countSeparatorsVisible(calc.result, step)).length} Separator(en)`;
+
+            const visible = calc.result.slice(0, step);
+            const logic = $("logic");
+            logic.innerHTML = "";
+            visible.forEach((s, i) => {
+                const d = document.createElement("div");
+                d.className = "step";
+                if (s.type === "match") {
+                    d.innerHTML = `<strong>Match ${i + 1}: „${s.text}“</strong>
+          Längster Präfix an dieser Position, der in y vorkommt.`;
+                } else {
+                    d.innerHTML = `<strong>Separator: ⟨${s.text}⟩</strong>
+          Danach beginnt die nächste Suche beim folgenden Zeichen.`;
+                }
+                logic.appendChild(d);
+            });
+            if (step === 0) {
+                logic.innerHTML = `<div class="step"><strong>Greedy-Idee</strong>
+        Nimm immer den längsten möglichen Match und gehe danach einen einzelnen Separator weiter.</div>`;
+            }
+        }
+
+        function countSeparatorsVisible(result, n) {
+            return result.slice(0, n).filter(s => s.type === "separator").length;
+        }
+
+        $("resetBtn").onclick = () => {
+            step = 0;
+            render();
+        };
+        $("prevBtn").onclick = () => {
+            step = Math.max(0, step - 1);
+            render();
+        };
+        $("nextBtn").onclick = () => {
+            step = Math.min(states.length, step + 1);
+            render();
+        };
+        $("allBtn").onclick = () => {
+            step = states.length;
+            render();
+        };
+        $("xInput").oninput = () => {
+            step = 0;
+            render();
+        };
+        $("yInput").oninput = () => {
+            step = 0;
+            render();
+        };
+
+        render();
+    })();
+</script>
+</body>
+</html>
