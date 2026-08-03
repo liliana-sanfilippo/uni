@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ukkonen (Cutoff) – Pseudocode-Ausführung</title>
+    <style>
+        :root {
+            --kap: #950E4F;
+            --kom: #14060D;
+            --sec: #BF1266;
+            --defi: #EF58A0;
+            --bsp: #F49EC4;
+            --kmt: #8A7B84;
+            --bd: #E3CBD6;
+            --hl: #F8CFE1;
+            --ring: #FCE1EE;
+            --grn: #1E9E6A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--kom);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            padding: 18px;
+        }
+
+        h1 {
+            color: var(--kap);
+            font-size: 21px;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+
+        .sub {
+            color: var(--kmt);
+            font-size: 13px;
+            margin: 0 0 14px;
+            max-width: 820px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--sec);
+            font-weight: 500;
+        }
+
+        input[type=text] {
+            padding: 6px 8px;
+            border: 1px solid var(--bd);
+            border-radius: 6px;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        input#p {
+            width: 90px;
+        }
+
+        input#t {
+            width: 170px;
+        }
+
+        input#k {
+            width: 44px;
+            text-transform: none;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: 1px solid var(--kap);
+            background: #fff;
+            color: var(--kap);
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--ring);
+        }
+
+        button.primary {
+            background: var(--kap);
+            color: #fff;
+        }
+
+        #status {
+            font-size: 13px;
+            color: var(--kom);
+            margin: 4px 0 10px;
+            min-height: 18px;
+        }
+
+        #status b {
+            color: var(--kap);
+        }
+
+        .svgwrap {
+            overflow-x: auto;
+            border: 1px solid var(--bd);
+            border-radius: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<h1>Ukkonen-Cutoff</h1>
+<br>
+<div class="controls">
+    <label>P</label><input id="p" type="text" value="AACC">
+    <label>T</label><input id="t" type="text" value="CACAACAACCACAA">
+    <label>k</label><input id="k" type="text" value="1">
+    <button class="primary" id="load">Berechnen</button>
+    <button id="reset">Reset</button>
+    <button id="step">Zeile ›</button>
+    <button id="play">▶ Abspielen</button>
+    <span style="flex:1"></span>
+    <button id="dl">Als SVG ⬇</button>
+</div>
+
+<div id="status"></div>
+<div class="svgwrap">
+    <div id="stage"></div>
+</div>
+
+<script>
+    const COL = {
+        kap: '#950E4F', kom: '#14060D', sec: '#BF1266', defi: '#EF58A0', bsp: '#F49EC4',
+        kmt: '#8A7B84', bd: '#E3CBD6', hl: '#F8CFE1', ring: '#FCE1EE', grn: '#1E9E6A'
+    };
+    let P, T, K, DS, TR, events, step, timer = null;
+    const INF = Infinity, inf = x => x === INF ? '∞' : x;
+
+    /* ---------- Sellers full (Referenz) ---------- */
+    function seller(P, T) {
+        const m = P.length, n = T.length, D = [];
+        for (let i = 0; i <= m; i++) D[i] = [];
+        for (let j = 0; j <= n; j++) D[0][j] = 0;
+        for (let i = 0; i <= m; i++) D[i][0] = i;
+        for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) {
+            const c = P[i - 1] === T[j - 1] ? 0 : 1;
+            D[i][j] = Math.min(D[i - 1][j - 1] + c, D[i - 1][j] + 1, D[i][j - 1] + 1);
+        }
+        return D;
+    }
+
+    /* ---------- Ukkonen explizit als Trace ---------- */
+    function trace(P, T, k) {
+        const m = P.length, n = T.length, G = 1, ev = [], st = [];
+        let V = {m, n, k, i: '-', j: '-', istar: '-', istarPrev: '-', i0star: '-'};
+        let uk = {}; // uk["i,j"]=val
+        function E(line, ex) {
+            ev.push({
+                line, headers: st.slice(), V: Object.assign({}, V, ex || {}),
+                uk: (ex && ex.uk) || null, j: V.j, colDone: (ex && ex.colDone)
+            });
+        }
+
+        let matched = null;
+        E('L1');
+        const i0star = Math.min(m, Math.floor(k / 1));
+        V.i0star = i0star;
+        E('L2', {i0star});
+        st.push('L3');
+        let Cprev = [];
+        for (let i = 0; i <= i0star; i++) {
+            V.i = i;
+            E('L3');
+            Cprev[i] = i;
+            V.i = i;
+            E('L4', {uk: {i, j: 0, val: i}});
+        }
+        V.i = i0star + 1;
+        E('L3');
+        st.pop();
+        E('L5');
+        let istarPrev = i0star;
+        E('L6');
+        st.push('L7');
+        for (let j = 1; j <= n; j++) {
+            V.j = j;
+            V.istarPrev = istarPrev;
+            E('L7');
+            let Ccur = [];
+            Ccur[0] = 0;
+            V.i = 0;
+            E('L8', {uk: {i: 0, j, val: 0}});
+            let istar = 0;
+            V.istar = 0;
+            E('L9');
+            let i = 1;
+            V.i = 1;
+            E('L10');
+            st.push('L11');
+            while (true) {
+                V.i = i;
+                V.istarPrev = istarPrev;
+                E('L11');
+                if (!(i <= istarPrev)) break;
+                const cst = P[i - 1] === T[j - 1] ? 0 : 1;
+                const diag = (Cprev[i - 1] !== undefined ? Cprev[i - 1] : INF) + cst;
+                const up = (Cprev[i] !== undefined ? Cprev[i] : INF) + G;
+                const left = (Ccur[i - 1] !== undefined ? Ccur[i - 1] : INF) + G;
+                const val = Math.min(diag, up, left);
+                Ccur[i] = val;
+                V.val = val;
+                E('L12', {uk: {i, j, val}, a: inf(diag), b: inf(up), c: inf(left), val});
+                E('L13', {val});
+                if (val <= k) {
+                    istar = i;
+                    V.istar = i;
+                    E('L14');
+                    E('L15');
+                } else {
+                    E('L15');
+                }
+                i++;
+                V.i = i;
+                E('L16', {inext: i});
+            }
+            st.pop();
+            E('L17');
+            E('L18');
+            if (i <= m) {
+                const cst = P[i - 1] === T[j - 1] ? 0 : 1;
+                const diag = (Cprev[i - 1] !== undefined ? Cprev[i - 1] : INF) + cst;
+                const left = (Ccur[i - 1] !== undefined ? Ccur[i - 1] : INF) + G;
+                const val = Math.min(diag, left);
+                Ccur[i] = val;
+                V.val = val;
+                E('L19', {uk: {i, j, val}, a: inf(diag), c: inf(left), val});
+                E('L20', {val});
+                if (val <= k) {
+                    istar = i;
+                    V.istar = i;
+                    E('L21');
+                    E('L22');
+                } else E('L22');
+                i++;
+                V.i = i;
+                E('L23', {inext: i});
+                st.push('L24');
+                while (true) {
+                    V.i = i;
+                    const cprevleft = Ccur[i - 1];
+                    const cond = i <= m && (cprevleft + G) <= k;
+                    E('L24', {cprevleft: inf(cprevleft)});
+                    if (!cond) break;
+                    const val = cprevleft + G;
+                    Ccur[i] = val;
+                    V.val = val;
+                    E('L25', {uk: {i, j, val}, val});
+                    E('L26', {val});
+                    if (val <= k) {
+                        istar = i;
+                        V.istar = i;
+                        E('L27');
+                        E('L28');
+                    } else E('L28');
+                    i++;
+                    V.i = i;
+                    E('L29', {inext: i});
+                }
+                st.pop();
+                E('L30');
+                E('L31');
+            } else {
+                E('L31');
+            }
+            V.istar = istar;
+            E('L32', {istar, cm: inf(Ccur[m])});
+            if (istar === m && Ccur[m] <= k) {
+                matched = {j, cost: Ccur[m]};
+                E('L33');
+                E('L34', {cm: Ccur[m]});
+                E('L35', {colDone: j});
+                Cprev = Ccur.slice();
+                istarPrev = istar;
+                // return
+            } else {
+                E('L35', {colDone: j});
+            }
+            Cprev = Ccur.slice();
+            istarPrev = istar;
+        }
+        st.pop();
+        E('L36');
+        // uk map aufbauen (finale Werte) – für Skip-Erkennung
+        return {ev, matched};
+    }
+
+    /* ---------- Pseudocode-Zeilen ---------- */
+    const LINES = [
+        ['L1', 'comment', 0, '// Initialize the 0-th column of the alignment matrix', null],
+        ['L2', 'code', 0, 'i₀* ← min{ m, ⌊k/1⌋ }', 'i₀* ← min{ {m}, ⌊{k}/1⌋ } = {i0star}'],
+        ['L3', 'loop', 0, 'for i ← 0 to i₀*', 'for i ← 0 to {i0star}   (i = {i})'],
+        ['L4', 'code', 26, 'C₀(i) ← i · 1 = i', 'C₀({i}) ← {i}'],
+        ['L5', 'end', 0, 'end for', null],
+        ['L6', 'comment', 0, '// Process the matrix column by column', null],
+        ['L7', 'loop', 0, 'for j ← 1 to n', 'for j ← 1 to {n}   (j = {j})'],
+        ['L8', 'code', 26, 'Cⱼ(0) ← 0', 'C{j}(0) ← 0'],
+        ['L9', 'code', 26, 'iⱼ* ← 0', 'i{j}* ← 0'],
+        ['L10', 'code', 26, 'i ← 1', 'i ← {i}'],
+        ['L11', 'loop', 26, 'while i ≤ iⱼ₋₁*', 'while i ≤ iⱼ₋₁*   ({i} ≤ {istarPrev})'],
+        ['L12', 'formula', 52, 'Cⱼ(i) ← min{ Cⱼ₋₁(i−1)+cost, Cⱼ₋₁(i)+γ, Cⱼ(i−1)+γ }', 'C{j}({i}) ← min{ {a}, {b}, {c} } = {val}'],
+        ['L13', 'if', 52, 'if Cⱼ(i) ≤ k', 'if C{j}({i}) ≤ k   ({val} ≤ {k})'],
+        ['L14', 'code', 78, 'iⱼ* ← i', 'i{j}* ← {i}'],
+        ['L15', 'end', 52, 'end if', null],
+        ['L16', 'code', 52, 'i ← i + 1', 'i ← {inext}'],
+        ['L17', 'end', 26, 'end while', null],
+        ['L18', 'if', 26, 'if i ≤ m', 'if i ≤ m   ({i} ≤ {m})'],
+        ['L19', 'formula', 52, 'Cⱼ(i) ← min{ Cⱼ₋₁(i−1)+cost, Cⱼ(i−1)+γ }', 'C{j}({i}) ← min{ {a}, {c} } = {val}'],
+        ['L20', 'if', 52, 'if Cⱼ(i) ≤ k', 'if C{j}({i}) ≤ k   ({val} ≤ {k})'],
+        ['L21', 'code', 78, 'iⱼ* ← i', 'i{j}* ← {i}'],
+        ['L22', 'end', 52, 'end if', null],
+        ['L23', 'code', 52, 'i ← i + 1', 'i ← {inext}'],
+        ['L24', 'loop', 52, 'while i ≤ m and Cⱼ(i−1)+γ ≤ k', 'while i ≤ m and Cⱼ(i−1)+γ ≤ k   ({i}≤{m}, {cprevleft}+1≤{k})'],
+        ['L25', 'code', 78, 'Cⱼ(i) ← Cⱼ(i−1)+γ', 'C{j}({i}) ← {val}'],
+        ['L26', 'if', 78, 'if Cⱼ(i) ≤ k', 'if C{j}({i}) ≤ k   ({val} ≤ {k})'],
+        ['L27', 'code', 104, 'iⱼ* ← i', 'i{j}* ← {i}'],
+        ['L28', 'end', 78, 'end if', null],
+        ['L29', 'code', 78, 'i ← i + 1', 'i ← {inext}'],
+        ['L30', 'end', 52, 'end while', null],
+        ['L31', 'end', 26, 'end if', null],
+        ['L32', 'if', 26, 'if iⱼ* = m and Cⱼ(m) ≤ k', 'if i{j}* = m and C{j}(m) ≤ k   ({istar} = {m}? , C{j}(m)={cm})'],
+        ['L33', 'comment', 26, '// report match ending at column j and its cost', null],
+        ['L34', 'return', 26, 'return (j, Cⱼ(m))', 'return ( {j}, {cm} )'],
+        ['L35', 'end', 26, 'end if', null],
+        ['L36', 'end', 0, 'end for', null],
+    ];
+    const CLSCOL = {
+        comment: COL.kmt,
+        loop: COL.sec,
+        'if': COL.sec,
+        code: COL.kom,
+        formula: COL.kom,
+        end: COL.kmt,
+        'return': COL.kap
+    };
+
+    function fillVals(tpl, V) {
+        return tpl.replace(/\{(\w+)\}/g, (_, n) => {
+            let v = V[n];
+            if (v === undefined) v = '·';
+            return `<tspan fill="${COL.kap}" font-weight="700">${v}</tspan>`;
+        });
+    }
+
+    /* ---------- Zustand bis Schritt s rekonstruieren ---------- */
+    function stateAt(s) {
+        const uk = {}, colIstar = {};
+        let colDoneMax = 0, curJ = 0, curCell = null, cur = events[s - 1];
+        for (let t = 0; t < s; t++) {
+            const e = events[t];
+            if (e.uk) uk[e.uk.i + ',' + e.uk.j] = e.uk.val;
+            if (e.line === 'L9') colIstar[e.V.j] = 0;
+            if (e.line === 'L14' || e.line === 'L21' || e.line === 'L27') colIstar[e.V.j] = e.V.i;
+            if (e.colDone != null) colDoneMax = Math.max(colDoneMax, e.colDone);
+            if (typeof e.j === 'number') curJ = e.j;
+        }
+        if (cur && cur.uk) curCell = cur.uk;
+        return {uk, colIstar, colDoneMax, curJ, curCell, cur};
+    }
+
+    /* ---------- SVG ---------- */
+    function pseudoG(cur) {
+        const lh = 27, x0 = 14;
+        let s = '';
+        const headers = cur ? new Set(cur.headers) : new Set();
+        LINES.forEach((L, idx) => {
+            const [id, cls, ind, sym, val] = L, y = 24 + idx * lh;
+            const isCur = cur && cur.line === id, isHdr = headers.has(id), active = isCur || isHdr;
+            if (active) s += `<rect x="6" y="${y - 18}" width="560" height="24" rx="4" fill="${isCur ? COL.hl : COL.ring}"/>`;
+            const txt = (active && val) ? fillVals(val, cur.V) : sym;
+            const col = isCur ? COL.kap : CLSCOL[cls];
+            const fw = (cls === 'loop' || cls === 'if' || isCur) ? '600' : '400';
+            s += `<text x="${x0 + ind}" y="${y}" font-family="monospace" font-size="14.5" font-weight="${fw}" fill="${col}">${txt}</text>`;
+        });
+        return {w: 580, h: 24 + LINES.length * lh, s};
+    }
+
+    function matG(title, isU, S) {
+        const m = P.length, n = T.length, cw = 24, ch = 24, rHW = 22, cHH = 20, tH = 20, gx = 0, gy = tH + cHH;
+        let s = `<text x="0" y="14" font-size="13" font-weight="700" fill="${COL.kap}">${title}</text>`;
+        s += `<text x="${gx + rHW - 8}" y="${gy - 7}" text-anchor="middle" font-size="10" fill="${COL.kmt}">ε</text>`;
+        for (let j = 0; j < n; j++) s += `<text x="${gx + rHW + (j + 1) * cw + cw / 2}" y="${tH + 12}" text-anchor="middle" font-size="11" font-family="monospace" fill="${COL.kmt}">${T[j]}</text>`;
+        s += `<text x="${gx + rHW - 11}" y="${gy + ch / 2 + 4}" text-anchor="middle" font-size="10" fill="${COL.kmt}">ε</text>`;
+        for (let i = 0; i < m; i++) s += `<text x="${gx + rHW - 11}" y="${gy + (i + 1) * ch + ch / 2 + 4}" text-anchor="middle" font-size="11" font-family="monospace" fill="${COL.kmt}">${P[i]}</text>`;
+        for (let i = 0; i <= m; i++) for (let j = 0; j <= n; j++) {
+            const x = gx + rHW + j * cw, y = gy + i * ch;
+            let show = false, val = null, skip = false;
+            if (isU) {
+                const key = i + ',' + j;
+                if (S.uk[key] !== undefined) {
+                    show = true;
+                    val = S.uk[key];
+                }
+            } else {
+                const colOk = (j === 0) || (j <= S.colDoneMax);
+                if (colOk) {
+                    show = true;
+                    val = DS[i][j];
+                    if (j >= 0 && i >= 1 && S.uk[i + ',' + j] === undefined) skip = true;
+                }
+            }
+            let fill = '#fff';
+            if (show) {
+                if (skip) fill = '#FBD9EA'; else if (isU) {
+                    fill = val <= K ? COL.hl : (i > 0 ? '#F1EAEE' : '#fff');
+                }
+            }
+            s += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" fill="${fill}" stroke="${COL.bd}" stroke-width="0.7"/>`;
+            if (show) {
+                if (skip) {
+                    s += `<line x1="${x + 3}" y1="${y + ch - 3}" x2="${x + cw - 3}" y2="${y + 3}" stroke="${COL.defi}" stroke-width="1"/>`;
+                } else {
+                    const tc = val <= K ? COL.kap : COL.kom;
+                    s += `<text x="${x + cw / 2}" y="${y + ch / 2 + 4}" text-anchor="middle" font-size="12" font-family="monospace" fill="${tc}">${val}</text>`;
+                    if (i === m && j >= 0 && val <= K) s +=
+                        `<rect x="${x + 2}" y="${y + 2}" width="${cw - 4}" height="${ch - 4}" rx="3" fill="none" stroke="${COL.grn}" stroke-width="1.7"/>`;
+                }
+            }
+            if (isU && S.curCell && S.curCell.i === i && S.curCell.j === j)
+                s += `<rect x="${x + 1}" y="${y + 1}" width="${cw - 2}" height="${ch - 2}" fill="none" stroke="${COL.kap}" stroke-width="2.4"/>`;
+        }
+        // Ukkonen: iⱼ* Marker + Cutoff-Linie
+        if (isU) {
+            for (const j in S.colIstar) {
+                const ii = S.colIstar[j], x = gx + rHW + (+j) * cw, y = gy + ii * ch;
+                if (ii >= 0) {
+                    s += `<circle cx="${x + cw - 4}" cy="${y + cw - 4}" r="2.4" fill="${COL.sec}"/>`;
+                }
+            }
+        }
+        return {w: rHW + (n + 1) * cw + 4, h: gy + (m + 1) * ch + 4, s};
+    }
+
+    function buildSVG() {
+        const S = stateAt(step);
+        const ps = pseudoG(S.cur);
+        const mS = matG('Sellers – volle Matrix', false, S);
+        const mU = matG('Ukkonen – Cutoff (Cⱼ)', true, S);
+        const mx = ps.w + 24, gapv = 26;
+        let inner = `<g transform="translate(10,8)">${ps.s}</g>`;
+        inner += `<g transform="translate(${mx},14)">${mS.s}</g>`;
+        inner += `<g transform="translate(${mx},${14 + mS.h + gapv})">${mU.s}</g>`;
+        // Legende
+        const ly = 14 + mS.h + gapv + mU.h + 24, lx = mx;
+        const items = [['Treffer', 'ring', COL.grn], ['aktiv ≤k', 'box', COL.hl], ['>k', 'box', '#F1EAEE'],
+            ['übersprungen', 'skip', COL.defi], ['iⱼ*', 'dot', COL.sec]];
+        let cx = lx, lg = '';
+        items.forEach(it => {
+            if (it[1] === 'ring') lg += `<rect x="${cx}" y="${ly - 9}" width="13" height="13" rx="3" fill="none" stroke="${it[2]}" stroke-width="1.6"/>`;
+            else if (it[1] === 'skip') lg += `<rect x="${cx}" y="${ly - 9}" width="13" height="13" fill="#FBD9EA" stroke="${COL.bd}"/><line x1="${cx + 2}" y1="${ly + 2}" x2="${cx + 11}" y2="${ly - 7}" stroke="${it[2]}"/>`;
+            else if (it[1] === 'dot') lg += `<circle cx="${cx + 7}" cy="${ly - 3}" r="2.6" fill="${it[2]}"/>`;
+            else lg += `<rect x="${cx}" y="${ly - 9}" width="13" height="13" fill="${it[2]}" stroke="${COL.bd}"/>`;
+            lg += `<text x="${cx + 18}" y="${ly + 1}" font-size="11" fill="${COL.kmt}">${it[0]}</text>`;
+            cx += it[0].length * 6.4 + 34;
+        });
+        inner += `<g>${lg}</g>`;
+        const W = Math.max(mx + mS.w + 20, mx + cx), H = Math.max(ps.h + 16, ly + 20);
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="max-width:100%;height:auto" font-family="sans-serif"><rect width="${W}" height="${H}" fill="#fff"/>${inner}</svg>`;
+    }
+
+    /* ---------- driver ---------- */
+    function status() {
+        const st = document.getElementById('status');
+        if (step === 0) {
+            st.innerHTML = 'Drücke <b>Zeile ›</b> oder <b>Abspielen</b>.';
+            return;
+        }
+        const e = events[step - 1], L = LINES.find(l => l[0] === e.line);
+        let msg = `Zeile: <b>${L ? L[3] : e.line}</b>`;
+        if (typeof e.V.j === 'number') msg += ` · j=${e.V.j}`;
+        if (typeof e.V.i === 'number') msg += ` · i=${e.V.i}`;
+        if (e.V.istar !== '-' && e.V.istar != null) msg += ` · iⱼ*=${e.V.istar}`;
+        if (e.V.istarPrev !== '-' && e.V.istarPrev != null) msg += ` · iⱼ₋₁*=${e.V.istarPrev}`;
+        if (e.line === 'L34') msg += ` &nbsp;→ <b>Treffer bei Spalte ${e.V.j}, Kosten ${e.V.cm}</b>`;
+        st.innerHTML = msg;
+    }
+
+    function render() {
+        window.curSVG = buildSVG();
+        document.getElementById('stage').innerHTML = window.curSVG;
+        status();
+    }
+
+    function stepOnce() {
+        if (step < events.length) {
+            step++;
+            render();
+        } else stop();
+    }
+
+    function stop() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+        document.getElementById('play').textContent = '▶ Abspielen';
+    }
+
+    function play() {
+        if (timer) {
+            stop();
+            return;
+        }
+        document.getElementById('play').textContent = '⏸ Pause';
+        timer = setInterval(() => {
+            if (step >= events.length) stop(); else stepOnce();
+        }, 130);
+    }
+
+    function download(name, svg) {
+        const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + svg], {type: 'image/svg+xml;charset=utf-8'});
+        const u = URL.createObjectURL(blob), a = document.createElement('a');
+        a.href = u;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(u), 1500);
+    }
+
+    function compute() {
+        P = document.getElementById('p').value.toUpperCase().replace(/[^ACGTU]/g, '').slice(0, 10) || 'AACC';
+        T = document.getElementById('t').value.toUpperCase().replace(/[^ACGTU]/g, '').slice(0, 20) || 'CACAACAACCACAA';
+        K = Math.max(0, Math.min(3, parseInt(document.getElementById('k').value) || 1));
+        document.getElementById('p').value = P;
+        document.getElementById('t').value = T;
+        document.getElementById('k').value = K;
+        DS = seller(P, T);
+        TR = trace(P, T, K);
+        events = TR.ev;
+        step = 0;
+        stop();
+        render();
+    }
+
+    document.getElementById('load').onclick = compute;
+    document.getElementById('reset').onclick = () => {
+        step = 0;
+        stop();
+        render();
+    };
+    document.getElementById('step').onclick = stepOnce;
+    document.getElementById('play').onclick = play;
+    document.getElementById('dl').onclick = () => download('ukkonen_pseudocode.svg', window.curSVG || buildSVG());
+    compute();
+</script>
+</body>
+</html>
