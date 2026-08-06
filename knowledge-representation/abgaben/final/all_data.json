@@ -1492,5 +1492,376 @@
       }
     ]
   },
-
+  {
+    "name": "Artificial Intelligence (Schwerpunkt)",
+    "kuerzel": "39-M-Inf-AI-x",
+    "lp": 10,
+    "struktur": "2 bPr",
+    "dauer": 1,
+    "programs": [
+      "NWI"
+    ],
+    "veranstaltungen": [
+      {
+        "name": "Einf\u00fchrende Veranstaltung Seminar o. Vorlesung",
+        "type": "Seminar o. Vorlesung",
+        "uni_id": 544405007,
+        "kurse": {
+          "ws": [
+            {
+              "name": "PR\u00dcFUNG BENOTET",
+              "type": "pr",
+              "uni_id": 544405082
+            }
+          ],
+          "ss": [
+            {
+              "name": "Modern Data Analysis",
+              "uni_id": 749881039,
+              "typ": "V",
+              "termine": [
+                "Mo 12-14"
+              ],
+              "beleg_nr": "392246",
+              "kurztitel": "392246 Modern Data Analysis (V)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Begleitende \u00dcbung",
+        "type": "\u00dcbung",
+        "uni_id": 544404987,
+        "kurse": {
+          "ws": [
+            {
+              "name": "Tut. Learning from Distributed Data",
+              "uni_id": 665302435,
+              "typ": "\u00dc",
+              "termine": [
+                "Mi 14-16 U2-135"
+              ],
+              "beleg_nr": "392043",
+              "kurztitel": "392043 Tutorial: Learning from Distributed Data  (\u00dc)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "Tut. Modern Data Analysis",
+              "uni_id": 749884368,
+              "typ": "\u00dc",
+              "termine": [
+                "Mo 14-16"
+              ],
+              "beleg_nr": "392247",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Begleitende Veranstaltung \u00dcbung (Alternative)",
+        "type": "\u00dcbung",
+        "uni_id": 544404990,
+        "kurse": {
+          "ws": [
+            {
+              "name": "Tut. Modern Data Analysis",
+              "uni_id": 749884368,
+              "typ": "\u00dc",
+              "termine": [
+                "Mo 14-16"
+              ],
+              "beleg_nr": "392247",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Begleitendes Seminar",
+        "type": "Seminar",
+        "uni_id": 544404993,
+        "leistungen": [
+          {
+            "name": "PR\u00dcFUNG BENOTET",
+            "type": "pr",
+            "uni_id": 544405077
+          },
+          {
+            "name": "PR\u00dcFUNG BENOTET",
+            "type": "pr",
+            "uni_id": 544405082
+          }
+        ],
+        "kurse": {
+          "ws": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vorlesung zum zweiten Thema",
+        "type": "Vorlesung",
+        "uni_id": 544405039,
+        "leistungen": [
+          {
+            "name": "PR\u00dcFUNG BENOTET",
+            "type": "pr",
+            "uni_id": 544405077
+          },
+          {
+            "name": "PR\u00dcFUNG BENOTET",
+            "type": "pr",
+            "uni_id": 544405082
+          }
+        ],
+        "kurse": {
+          "ws": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "\u00dcbung zum zweiten Thema",
+        "type": "\u00dcbung",
+        "uni_id": 544405042,
+        "kurse": {
+          "ws": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "\u00dcb. Vert. Neuronale Netze",
+              "uni_id": 745064295,
+              "typ": "\u00dc",
+              "termine": [
+                "Fr 16-18 14-t\u00e4glich"
+              ],
+              "beleg_nr": "392196",
+              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vertiefendes Seminar",
+        "type": "Seminar",
+        "uni_id": 544405045,
+        "leistungen": [
+          {
+            "name": "PR\u00dcFUNG BENOTET",
+            "type": "pr",
+            "uni_id": 544405077
+          },
+          {
+            "name": "PR\u00dcFUNG BENOTET",
+            "type": "pr",
+            "uni_id": 544405082
+          }
+        ],
+        "kurse": {
+          "ws": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vertiefende \u00dcbung",
+        "type": "\u00dcbung",
+        "uni_id": 544405048,
+        "kurse": {
+          "ws": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vertiefende \u00dcbung (Alternative)",
+        "type": "\u00dcbung",
+        "uni_id": 544405051,
+        "kurse": {
+          "ws": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vertiefendes Projekt",
+        "type": "Projekt",
+        "uni_id": 544405054,
+        "kurse": {
+          "ws": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ],
+          "ss": [
+            {
+              "name": "Learning from Distributed Data",
+              "uni_id": 663986734,
+              "typ": "S",
+              "termine": [
+                "Mi 10-12 B2-266"
+              ],
+              "beleg_nr": "392041",
+              "kurztitel": "392041 Learning from Distributed Data  (S)",
+              "english": true
+            }
+          ]
+        }
+      }
+    ]
+  }
 ]
