@@ -15,7 +15,7 @@
         "uni_id": 544093131,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET 'Advanced Interaction Technology: Seminar (S)'",
+            "name": "PRÜFUNG BENOTET 'Advanced Interaction Technology: Seminar (S)'",
             "type": "pr",
             "uni_id": 544093157
           }
@@ -83,27 +83,27 @@
         },
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET 'Advanced Interaction Technology: Vorlesung (V)'",
+            "name": "PRÜFUNG BENOTET 'Advanced Interaction Technology: Vorlesung (V)'",
             "type": "pr",
             "uni_id": 544093160
           }
         ]
       },
       {
-        "name": "Advanced Interaction Technology: begleitende \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Advanced Interaction Technology: begleitende Übung",
+        "type": "Übung",
         "uni_id": 544093124,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ],
@@ -111,32 +111,32 @@
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Advanced Interaction Technology: begleitende \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Advanced Interaction Technology: begleitende Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 544093127,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ],
@@ -144,12 +144,12 @@
             {
               "name": "Tutorials Autonome Robotermanipulation",
               "uni_id": 744241249,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 14-16 14-t\u00e4glich"
+                "Fr 14-16 14-täglich"
               ],
               "beleg_nr": "392116",
-              "kurztitel": "392116 Tutorials: Autonome Robotermanipulation (\u00dc)",
+              "kurztitel": "392116 Tutorials: Autonome Robotermanipulation (Ü)",
               "english": true
             }
           ]
@@ -168,17 +168,17 @@
     ],
     "veranstaltungen": [
       {
-        "name": "Advanced Interaction Technology (focus): einf\u00fchrende Vorlesung",
+        "name": "Advanced Interaction Technology (focus): einführende Vorlesung",
         "type": "Vorlesung",
         "uni_id": 543982467,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET 'Advanced Interaction Technology (focus): einf\u00fchrende Vorlesung (V)'",
+            "name": "PRÜFUNG BENOTET 'Advanced Interaction Technology (focus): einführende Vorlesung (V)'",
             "type": "pr",
             "uni_id": 543982513
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 543982520
           }
@@ -186,14 +186,14 @@
         "kurse": {
           "ws": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
           ],
           "ss": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
@@ -201,20 +201,20 @@
         }
       },
       {
-        "name": "Advanced Interaction Technology (focus): \u00dcbung 1",
-        "type": "\u00dcbung",
+        "name": "Advanced Interaction Technology (focus): Übung 1",
+        "type": "Übung",
         "uni_id": 543982475,
         "kurse": {
           "ws": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
           ],
           "ss": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
@@ -222,20 +222,20 @@
         }
       },
       {
-        "name": "Advanced Interaction Technology (focus): \u00dcbung 1 (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Advanced Interaction Technology (focus): Übung 1 (Alternative)",
+        "type": "Übung",
         "uni_id": 543982482,
         "kurse": {
           "ws": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
           ],
           "ss": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
@@ -249,14 +249,14 @@
         "kurse": {
           "ws": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
           ],
           "ss": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 543982520
             }
@@ -264,7 +264,7 @@
         },
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 543982520
           }
@@ -304,27 +304,27 @@
         },
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 543982520
           }
         ]
       },
       {
-        "name": "Advanced Interaction Technology (focus): \u00dcbung 2",
-        "type": "\u00dcbung",
+        "name": "Advanced Interaction Technology (focus): Übung 2",
+        "type": "Übung",
         "uni_id": 543982500,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ],
@@ -332,32 +332,32 @@
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Advanced Interaction Technology (focus): \u00dcbung 2 (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Advanced Interaction Technology (focus): Übung 2 (Alternative)",
+        "type": "Übung",
         "uni_id": 543982506,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ],
@@ -365,12 +365,12 @@
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ]
@@ -394,12 +394,12 @@
         "uni_id": 544074587,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074634
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074657
           }
@@ -427,12 +427,12 @@
         "uni_id": 544074590,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074634
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074657
           }
@@ -461,20 +461,20 @@
         }
       },
       {
-        "name": "Applied Interaction Technology (focus): begleitende \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Applied Interaction Technology (focus): begleitende Übung",
+        "type": "Übung",
         "uni_id": 544074593,
         "kurse": {
           "ws": [
             {
               "name": "Tut. 3D 4D Computer Vision",
               "uni_id": 663409774,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Mi 12-16 14-t\u00e4glich X-E0-228"
+                "Mi 12-16 14-täglich X-E0-228"
               ],
               "beleg_nr": "392142",
-              "kurztitel": "392142 Tutorial: 3D and 4D Computer Vision  (\u00dc)",
+              "kurztitel": "392142 Tutorial: 3D and 4D Computer Vision  (Ü)",
               "english": true
             }
           ],
@@ -482,32 +482,32 @@
             {
               "name": "Adv. Artificial Intelligence Biomedicine",
               "uni_id": 746228122,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Do 10-12"
               ],
               "beleg_nr": "392242",
-              "kurztitel": "392242 Advanced Artificial Intelligence in Biomedicine (\u00dc)",
+              "kurztitel": "392242 Advanced Artificial Intelligence in Biomedicine (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Applied Interaction Technology (focus) - begleitende \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Applied Interaction Technology (focus) - begleitende Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 544074616,
         "kurse": {
           "ws": [
             {
               "name": "Tutorials Auditory Data Science",
               "uni_id": 662852064,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Di 12-14 14-t\u00e4glich X-E0-200 X-E0-200"
+                "Di 12-14 14-täglich X-E0-200 X-E0-200"
               ],
               "beleg_nr": "392138",
-              "kurztitel": "392138 Tutorials: Auditory Data Science (\u00dc)",
+              "kurztitel": "392138 Tutorials: Auditory Data Science (Ü)",
               "english": true
             }
           ],
@@ -515,12 +515,12 @@
             {
               "name": "Tutorials Auditory Data Science",
               "uni_id": 662852064,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Di 12-14 14-t\u00e4glich X-E0-200 X-E0-200"
+                "Di 12-14 14-täglich X-E0-200 X-E0-200"
               ],
               "beleg_nr": "392138",
-              "kurztitel": "392138 Tutorials: Auditory Data Science (\u00dc)",
+              "kurztitel": "392138 Tutorials: Auditory Data Science (Ü)",
               "english": true
             }
           ]
@@ -560,12 +560,12 @@
         "uni_id": 544074622,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074634
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074657
           },
@@ -610,12 +610,12 @@
         "uni_id": 544074625,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074634
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544074657
           }
@@ -667,7 +667,7 @@
         "uni_id": 420168431,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 420168456
           }
@@ -695,7 +695,7 @@
         "uni_id": 420168449,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 420168456
           }
@@ -719,20 +719,20 @@
         }
       },
       {
-        "name": "Applied Interaction Technology: \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Applied Interaction Technology: Übung",
+        "type": "Übung",
         "uni_id": 420168443,
         "kurse": {
           "ws": [
             {
-              "name": "Kognitive Systeme menschliche Bewegung \u00dcb. Stud. Tech Fak",
+              "name": "Kognitive Systeme menschliche Bewegung Üb. Stud. Tech Fak",
               "uni_id": 667782651,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12-14 X-E0-211"
               ],
               "beleg_nr": "610273",
-              "kurztitel": "610273 Kognitive Systeme und menschliche Bewegung (\u00dcbung nur f\u00fcr Studierende der Tech Fak) (\u00dc)",
+              "kurztitel": "610273 Kognitive Systeme und menschliche Bewegung (Übung nur für Studierende der Tech Fak) (Ü)",
               "english": false
             }
           ],
@@ -740,20 +740,20 @@
             {
               "name": "Adv. Artificial Intelligence Biomedicine",
               "uni_id": 746228122,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Do 10-12"
               ],
               "beleg_nr": "392242",
-              "kurztitel": "392242 Advanced Artificial Intelligence in Biomedicine (\u00dc)",
+              "kurztitel": "392242 Advanced Artificial Intelligence in Biomedicine (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Applied Interaction Technology: \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Applied Interaction Technology: Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 420168437,
         "kurse": {
           "ws": [],
@@ -761,12 +761,12 @@
             {
               "name": "Tutorials Artificial Intelligence Biomedicine",
               "uni_id": 746212655,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mi 10-12"
               ],
               "beleg_nr": "392121",
-              "kurztitel": "392121 Tutorials: Artificial Intelligence in Biomedicine (\u00dc)",
+              "kurztitel": "392121 Tutorials: Artificial Intelligence in Biomedicine (Ü)",
               "english": true
             }
           ]
@@ -790,7 +790,7 @@
         "uni_id": 420160872,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG UNBENOTET",
+            "name": "PRÜFUNG UNBENOTET",
             "type": "pr",
             "uni_id": 420160916
           }
@@ -832,7 +832,7 @@
         "uni_id": 420160910,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG UNBENOTET",
+            "name": "PRÜFUNG UNBENOTET",
             "type": "pr",
             "uni_id": 420160916
           }
@@ -855,8 +855,8 @@
         }
       },
       {
-        "name": "Basics of Artificial Intelligence: \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Basics of Artificial Intelligence: Übung",
+        "type": "Übung",
         "uni_id": 420160904,
         "kurse": {
           "ws": [],
@@ -864,32 +864,32 @@
             {
               "name": "Tutorials Applied Optimization",
               "uni_id": 737063383,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "n.V. n.V."
               ],
               "beleg_nr": "392220",
-              "kurztitel": "392220  Tutorials: Applied Optimization (\u00dc)",
+              "kurztitel": "392220  Tutorials: Applied Optimization (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Basics of Artificial Intelligence: \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Basics of Artificial Intelligence: Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 420160898,
         "kurse": {
           "ws": [
             {
               "name": "Tutorials Applied Optimization",
               "uni_id": 737063383,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "n.V. n.V."
               ],
               "beleg_nr": "392220",
-              "kurztitel": "392220  Tutorials: Applied Optimization (\u00dc)",
+              "kurztitel": "392220  Tutorials: Applied Optimization (Ü)",
               "english": true
             }
           ],
@@ -897,12 +897,12 @@
             {
               "name": "Additional Tutorials Intro. Machine Learning int. Track",
               "uni_id": 748227787,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Do 16-18"
               ],
               "beleg_nr": "392141",
-              "kurztitel": "392141 Additional Tutorials: Introduction to Machine Learning (int. Track) (\u00dc)",
+              "kurztitel": "392141 Additional Tutorials: Introduction to Machine Learning (int. Track) (Ü)",
               "english": true
             }
           ]
@@ -926,7 +926,7 @@
         "uni_id": 544082175,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET 'Advanced Artificial Intelligence: Seminar (S)'",
+            "name": "PRÜFUNG BENOTET 'Advanced Artificial Intelligence: Seminar (S)'",
             "type": "pr",
             "uni_id": 544082187
           }
@@ -994,27 +994,27 @@
         },
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET 'Advanced Artificial Intelligence: Vorlesung (V)'",
+            "name": "PRÜFUNG BENOTET 'Advanced Artificial Intelligence: Vorlesung (V)'",
             "type": "pr",
             "uni_id": 544082190
           }
         ]
       },
       {
-        "name": "Advanced Artificial Intelligence: \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Advanced Artificial Intelligence: Übung",
+        "type": "Übung",
         "uni_id": 544082178,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
               "beleg_nr": "392239",
-              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (\u00dc)",
+              "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
               "english": true
             }
           ],
@@ -1022,32 +1022,32 @@
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Advanced Artificial Intelligence: \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Advanced Artificial Intelligence: Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 544082181,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ],
@@ -1055,12 +1055,12 @@
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ]
@@ -1084,7 +1084,7 @@
         "uni_id": 420164922,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 420164946
           }
@@ -1124,7 +1124,7 @@
         "uni_id": 420164940,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 420164946
           }
@@ -1147,8 +1147,8 @@
         }
       },
       {
-        "name": "Applied Artificial Intelligence: \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Applied Artificial Intelligence: Übung",
+        "type": "Übung",
         "uni_id": 420164934,
         "kurse": {
           "ws": [],
@@ -1156,45 +1156,45 @@
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Applied Artificial Intelligence: \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Applied Artificial Intelligence: Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 420164928,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
@@ -1218,7 +1218,7 @@
         "uni_id": 420164922,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 420164946
           }
@@ -1258,7 +1258,7 @@
         "uni_id": 420164940,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 420164946
           }
@@ -1281,8 +1281,8 @@
         }
       },
       {
-        "name": "Applied Artificial Intelligence: \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Applied Artificial Intelligence: Übung",
+        "type": "Übung",
         "uni_id": 420164934,
         "kurse": {
           "ws": [],
@@ -1290,45 +1290,45 @@
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Applied Artificial Intelligence: \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Applied Artificial Intelligence: Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 420164928,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
@@ -1347,13 +1347,13 @@
     ],
     "veranstaltungen": [
       {
-        "name": "Begleitende \u00dcbungen",
-        "type": "\u00dcbung",
+        "name": "Begleitende Übungen",
+        "type": "Übung",
         "uni_id": 544404790,
         "kurse": {
           "ws": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 544404835
             }
@@ -1362,45 +1362,45 @@
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Begleitende \u00dcbungen (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Begleitende Übungen (Alternative)",
+        "type": "Übung",
         "uni_id": 544404816,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
@@ -1412,7 +1412,7 @@
         "uni_id": 544404784,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544404835
           }
@@ -1420,39 +1420,39 @@
         "kurse": {
           "ws": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Einf\u00fchrende Vorlesung",
+        "name": "Einführende Vorlesung",
         "type": "Vorlesung",
         "uni_id": 544404829,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544404835
           }
@@ -1460,14 +1460,14 @@
         "kurse": {
           "ws": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ],
@@ -1475,12 +1475,12 @@
         }
       },
       {
-        "name": "Einf\u00fchrendes Seminar",
+        "name": "Einführendes Seminar",
         "type": "Seminar",
         "uni_id": 544404822,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544404835
           }
@@ -1503,13 +1503,13 @@
     ],
     "veranstaltungen": [
       {
-        "name": "Einf\u00fchrende Veranstaltung Seminar o. Vorlesung",
+        "name": "Einführende Veranstaltung Seminar o. Vorlesung",
         "type": "Seminar o. Vorlesung",
         "uni_id": 544405007,
         "kurse": {
           "ws": [
             {
-              "name": "PR\u00dcFUNG BENOTET",
+              "name": "PRÜFUNG BENOTET",
               "type": "pr",
               "uni_id": 544405082
             }
@@ -1530,20 +1530,20 @@
         }
       },
       {
-        "name": "Begleitende \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Begleitende Übung",
+        "type": "Übung",
         "uni_id": 544404987,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Learning from Distributed Data",
               "uni_id": 665302435,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mi 14-16 U2-135"
               ],
               "beleg_nr": "392043",
-              "kurztitel": "392043 Tutorial: Learning from Distributed Data  (\u00dc)",
+              "kurztitel": "392043 Tutorial: Learning from Distributed Data  (Ü)",
               "english": true
             }
           ],
@@ -1551,45 +1551,45 @@
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "Begleitende Veranstaltung \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Begleitende Veranstaltung Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 544404990,
         "kurse": {
           "ws": [
             {
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
                 "Mo 14-16"
               ],
               "beleg_nr": "392247",
-              "kurztitel": "392247 Tutorial: Modern Data Analysis (\u00dc)",
+              "kurztitel": "392247 Tutorial: Modern Data Analysis (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
@@ -1601,12 +1601,12 @@
         "uni_id": 544404993,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544405077
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544405082
           }
@@ -1614,27 +1614,27 @@
         "kurse": {
           "ws": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
@@ -1646,12 +1646,12 @@
         "uni_id": 544405039,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544405077
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544405082
           }
@@ -1659,60 +1659,60 @@
         "kurse": {
           "ws": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
         }
       },
       {
-        "name": "\u00dcbung zum zweiten Thema",
-        "type": "\u00dcbung",
+        "name": "Übung zum zweiten Thema",
+        "type": "Übung",
         "uni_id": 544405042,
         "kurse": {
           "ws": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ],
           "ss": [
             {
-              "name": "\u00dcb. Vert. Neuronale Netze",
+              "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
-              "typ": "\u00dc",
+              "typ": "Ü",
               "termine": [
-                "Fr 16-18 14-t\u00e4glich"
+                "Fr 16-18 14-täglich"
               ],
               "beleg_nr": "392196",
-              "kurztitel": "392196 \u00dcbungen: Vertiefung Neuronale Netze (\u00dc)",
+              "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
               "english": true
             }
           ]
@@ -1724,12 +1724,12 @@
         "uni_id": 544405045,
         "leistungen": [
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544405077
           },
           {
-            "name": "PR\u00dcFUNG BENOTET",
+            "name": "PRÜFUNG BENOTET",
             "type": "pr",
             "uni_id": 544405082
           }
@@ -1764,8 +1764,8 @@
         }
       },
       {
-        "name": "Vertiefende \u00dcbung",
-        "type": "\u00dcbung",
+        "name": "Vertiefende Übung",
+        "type": "Übung",
         "uni_id": 544405048,
         "kurse": {
           "ws": [
@@ -1797,8 +1797,8 @@
         }
       },
       {
-        "name": "Vertiefende \u00dcbung (Alternative)",
-        "type": "\u00dcbung",
+        "name": "Vertiefende Übung (Alternative)",
+        "type": "Übung",
         "uni_id": 544405051,
         "kurse": {
           "ws": [
