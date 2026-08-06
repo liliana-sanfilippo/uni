@@ -1,4 +1,5 @@
 import json
+import requests
 
 folder = "data/"
 
@@ -47,10 +48,43 @@ def clean_module_data(filename):
                     else:
                         ver["leistungen"] = [info]
         else:
-            print("nein")
+            for ver in modell_veranstaltungen:
+                if ver["type"] == "Seminar" or ver["type"] == "Vorlesung":
+                    if "leistungen" in ver:
+                        ver["leistungen"].append(info)
+                    else:
+                        ver["leistungen"] = [info]
 
 
+            # noch Veranstaltungsinfos dazu holen
+        for item in modell_veranstaltungen:
+            item["kurse"] = {
+                "ws": [],
+                "ss": []
+            }
+            for sem in [20261, 20262]:
+                try:
+                    link = API_BASE + f'vst/bySemesterAndModellveranstaltung/{sem}/{item["uni_id"]}'
+                    print(link)
+                    response = requests.get(link)
+                    data = response.json()
+                    for kurs in data:
+                        info = {
+                            "name": kurs["thema_kurz"],
+                            "uni_id": kurs["vst_id"],
+                            "typ": kurs["art"],
+                            "termine": kurs["zeitOrt"],
+                            "beleg_nr": kurs["beleg_nr"],
+                            "kurztitel": kurs["kurztitel"],
+                            "english": kurs["spracheEnglisch"]
+                        }
+                    if sem == 20261:
+                        item["kurse"]["ws"].append(info)
+                    else:
+                        item["kurse"]["ss"].append(info)
 
+                except Exception as e:
+                    print(f"Fehler bei Team {item['name']}: {e}")
 
     new_json["veranstaltungen"] = modell_veranstaltungen
 
@@ -58,7 +92,7 @@ def clean_module_data(filename):
         json.dump(new_json, file, indent=2)
 
 
-# clean_module_data("39-M-Inf-AI-adv-foc_response_1786033745128.json")
+clean_module_data("39-M-Inf-AI-adv-foc_response_1786033745128.json")
 
 clean_module_data("39-M-Inf-AI-adv_a_response_1786033717714.json")
 
