@@ -99,6 +99,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -112,6 +113,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -132,6 +134,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -145,6 +148,7 @@
               "name": "Tutorials Autonome Robotermanipulation",
               "uni_id": 744241249,
               "typ": "Ü",
+              "belongsto": 744239610,
               "termine": [
                 "Fr 14-16 14-täglich"
               ],
@@ -188,7 +192,7 @@
             {
               "name": "PRÜFUNG BENOTET",
               "type": "pr",
-              "uni_id": 543982520
+              "uni_id": 543982513
             }
           ],
           "ss": [
@@ -320,6 +324,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -333,6 +338,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -353,6 +359,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -366,6 +373,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -470,6 +478,7 @@
               "name": "Tut. 3D 4D Computer Vision",
               "uni_id": 663409774,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Mi 12-16 14-täglich X-E0-228"
               ],
@@ -483,6 +492,7 @@
               "name": "Adv. Artificial Intelligence Biomedicine",
               "uni_id": 746228122,
               "typ": "Ü",
+              "belongsto": 746225740,
               "termine": [
                 "Do 10-12"
               ],
@@ -503,6 +513,7 @@
               "name": "Tutorials Auditory Data Science",
               "uni_id": 662852064,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Di 12-14 14-täglich X-E0-200 X-E0-200"
               ],
@@ -516,6 +527,7 @@
               "name": "Tutorials Auditory Data Science",
               "uni_id": 662852064,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Di 12-14 14-täglich X-E0-200 X-E0-200"
               ],
@@ -728,6 +740,7 @@
               "name": "Kognitive Systeme menschliche Bewegung Üb. Stud. Tech Fak",
               "uni_id": 667782651,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Di 12-14 X-E0-211"
               ],
@@ -741,6 +754,7 @@
               "name": "Adv. Artificial Intelligence Biomedicine",
               "uni_id": 746228122,
               "typ": "Ü",
+              "belongsto": 746225740,
               "termine": [
                 "Do 10-12"
               ],
@@ -762,147 +776,12 @@
               "name": "Tutorials Artificial Intelligence Biomedicine",
               "uni_id": 746212655,
               "typ": "Ü",
+              "belongsto": 746225740,
               "termine": [
                 "Mi 10-12"
               ],
               "beleg_nr": "392121",
               "kurztitel": "392121 Tutorials: Artificial Intelligence in Biomedicine (Ü)",
-              "english": true
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "name": "Basics of Artificial Intelligence",
-    "kuerzel": "39-M-Inf-AI-bas",
-    "lp": 5,
-    "struktur": "1 uPr",
-    "dauer": 1,
-    "programs": [
-      "IISY"
-    ],
-    "veranstaltungen": [
-      {
-        "name": "Basics of Artificial Intelligence: Seminar",
-        "type": "Seminar",
-        "uni_id": 420160872,
-        "leistungen": [
-          {
-            "name": "PRÜFUNG UNBENOTET",
-            "type": "pr",
-            "uni_id": 420160916
-          }
-        ],
-        "kurse": {
-          "ws": [
-            {
-              "name": "Knowledge Representation",
-              "uni_id": 654011536,
-              "typ": "S",
-              "termine": [
-                "Di 14-16 X-E0-205 einmalig am 05.05.2026 in H9",
-                "Di 14-16 einmalig H9 einmalig am 05.05.2026 in H9"
-              ],
-              "beleg_nr": "392101",
-              "kurztitel": "392101 Knowledge Representation  (S)",
-              "english": true
-            }
-          ],
-          "ss": [
-            {
-              "name": "Knowledge Representation",
-              "uni_id": 654011536,
-              "typ": "S",
-              "termine": [
-                "Di 14-16 X-E0-205 einmalig am 05.05.2026 in H9",
-                "Di 14-16 einmalig H9 einmalig am 05.05.2026 in H9"
-              ],
-              "beleg_nr": "392101",
-              "kurztitel": "392101 Knowledge Representation  (S)",
-              "english": true
-            }
-          ]
-        }
-      },
-      {
-        "name": "Basics of Artificial Intelligence: Vorlesung",
-        "type": "Vorlesung",
-        "uni_id": 420160910,
-        "leistungen": [
-          {
-            "name": "PRÜFUNG UNBENOTET",
-            "type": "pr",
-            "uni_id": 420160916
-          }
-        ],
-        "kurse": {
-          "ws": [],
-          "ss": [
-            {
-              "name": "Applied Optimization",
-              "uni_id": 737054604,
-              "typ": "V",
-              "termine": [
-                "Mo 14-16"
-              ],
-              "beleg_nr": "392219",
-              "kurztitel": "392219  Applied Optimization  (V)",
-              "english": true
-            }
-          ]
-        }
-      },
-      {
-        "name": "Basics of Artificial Intelligence: Übung",
-        "type": "Übung",
-        "uni_id": 420160904,
-        "kurse": {
-          "ws": [],
-          "ss": [
-            {
-              "name": "Tutorials Applied Optimization",
-              "uni_id": 737063383,
-              "typ": "Ü",
-              "termine": [
-                "n.V. n.V."
-              ],
-              "beleg_nr": "392220",
-              "kurztitel": "392220  Tutorials: Applied Optimization (Ü)",
-              "english": true
-            }
-          ]
-        }
-      },
-      {
-        "name": "Basics of Artificial Intelligence: Übung (Alternative)",
-        "type": "Übung",
-        "uni_id": 420160898,
-        "kurse": {
-          "ws": [
-            {
-              "name": "Tutorials Applied Optimization",
-              "uni_id": 737063383,
-              "typ": "Ü",
-              "termine": [
-                "n.V. n.V."
-              ],
-              "beleg_nr": "392220",
-              "kurztitel": "392220  Tutorials: Applied Optimization (Ü)",
-              "english": true
-            }
-          ],
-          "ss": [
-            {
-              "name": "Additional Tutorials Intro. Machine Learning int. Track",
-              "uni_id": 748227787,
-              "typ": "Ü",
-              "termine": [
-                "Do 16-18"
-              ],
-              "beleg_nr": "392141",
-              "kurztitel": "392141 Additional Tutorials: Introduction to Machine Learning (int. Track) (Ü)",
               "english": true
             }
           ]
@@ -1010,6 +889,7 @@
               "name": "Tut. Human Centered Artificial Intelligence Journal Club",
               "uni_id": 659883795,
               "typ": "Ü",
+              "belongsto": 659886362,
               "termine": [
                 "Di 12:30-14:00 CITC 3.220"
               ],
@@ -1023,6 +903,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1043,6 +924,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1056,6 +938,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1157,6 +1040,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": 749881039,
               "termine": [
                 "Mo 14-16"
               ],
@@ -1177,6 +1061,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": 749881039,
               "termine": [
                 "Mo 14-16"
               ],
@@ -1190,6 +1075,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1291,6 +1177,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": 749881039,
               "termine": [
                 "Mo 14-16"
               ],
@@ -1311,6 +1198,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": 749881039,
               "termine": [
                 "Mo 14-16"
               ],
@@ -1324,6 +1212,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1363,6 +1252,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1383,6 +1273,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1396,6 +1287,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1423,6 +1315,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1436,6 +1329,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1463,6 +1357,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1539,6 +1434,7 @@
               "name": "Tut. Learning from Distributed Data",
               "uni_id": 665302435,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Mi 14-16 U2-135"
               ],
@@ -1552,6 +1448,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1572,6 +1469,7 @@
               "name": "Tut. Modern Data Analysis",
               "uni_id": 749884368,
               "typ": "Ü",
+              "belongsto": "749881039",
               "termine": [
                 "Mo 14-16"
               ],
@@ -1585,6 +1483,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1617,6 +1516,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1630,6 +1530,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1662,6 +1563,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1675,6 +1577,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1695,6 +1598,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
@@ -1708,6 +1612,7 @@
               "name": "Üb. Vert. Neuronale Netze",
               "uni_id": 745064295,
               "typ": "Ü",
+              "belongsto": "",
               "termine": [
                 "Fr 16-18 14-täglich"
               ],
