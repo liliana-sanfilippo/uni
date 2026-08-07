@@ -6,7 +6,7 @@ def test_course_to_module(environment, kurs, modul, sem):
     env = reset_environment_for_clean_answer(environment)
     env.run()
     treffer = get_answer(env, "gehoert-zu-modul", **{"echte_veranstaltung": kurs, "modul": modul})
-    return answer_string(treffer), f"  -> Does course {kurs} belong to module {modul}?"
+    return answer_string(treffer), f'  -> Does course {kurs} belong to module "{modul}"?'
 
 
 def test_use_course_for_module(environment, kurs, modul, sem):
@@ -16,7 +16,7 @@ def test_use_course_for_module(environment, kurs, modul, sem):
     env.run()
     treffer = get_answer(env, "kann-belegen",
                          **{"student": "liliana", "echte_veranstaltung": kurs, "modul": modul})
-    return answer_string(treffer), f"  -> Can liliana choose the course {kurs} for the module {modul}?"
+    return answer_string(treffer), f'  -> Can liliana choose the course {kurs} for the module "{modul}"?'
 
 
 def test_do_course_in_semester(environment, kurs, modul, sem):
@@ -26,12 +26,12 @@ def test_do_course_in_semester(environment, kurs, modul, sem):
     env.run()
     treffer = get_answer(env, "kann-belegen-sem",
                          **{"student": "liliana", "echte_veranstaltung": kurs, "semester": sem})
-    return answer_string(treffer), f"  -> Can liliana choose course {kurs} in {sem.upper()}?"
+    return answer_string(treffer), f"  -> Can liliana choose course {kurs} in {sem}?"
 
 
 def test_fulfill_prerequisites(environment, kurs, modul, sem):
     env = reset_environment_for_clean_answer(environment)
-    env.assert_string(f'(frage-belegbar-modul (student liliana) (modul {modul})')
+    env.assert_string(f'(frage-belegbar-modul (student liliana) (modul "{modul}")')
     env.run()
     fehlend = []
     treffer = get_answer(env, "modul-belegbar", **{"student": "liliana", "modul": modul})
@@ -40,15 +40,15 @@ def test_fulfill_prerequisites(environment, kurs, modul, sem):
         #for f in fehlend:
         #    print(f"     Missing prerequisites: {f['benoetigt']}")
 
-    return len(fehlend), f"  -> Can liliana do the module {modul}?  {answer_string(treffer)}"
+    return len(fehlend), f'  -> Can liliana do the module "{modul}"?'
 
 
 def test_complete_module_one_semester(environment, kurs,  modul, sem):
     env = reset_environment_for_clean_answer(environment)
-    env.assert_string(f'(frage-abschluss-sem (modul {modul}) (semester {sem}))')
+    env.assert_string(f'(frage-abschluss-sem (modul "{modul}") (semester {sem}))')
     env.run()
     treffer = get_answer(env, "modul-abschliessbar-sem", **{"modul": modul, "semester": sem})
-    return answer_string(treffer), f"  -> Can the module {modul} be completed in one {sem.upper()}?"
+    return answer_string(treffer), f'  -> Can the module "{modul}" be completed in one {sem}?'
 
 
 def test_modul_abgeschlossen(environment, kurs, modul, sem):
@@ -101,22 +101,31 @@ def main():
     environment = set_up_env()
     with open("test_results.txt", "w") as text_file:
         for scen in SCENARIOS:
+            error_occurred = False
             text_file.write("=========================================\n")
             text_file.write(f'TEST SCENARIO {scen["id"]}:\n')
             text_file.write("=========================================\n\n")
 
             # Set up with discarding old info
             set_up_scenario(f'mockup_{scen["id"]}.txt', environment)
+            index = 1
             for quest in QUESTIONS:
                 function = QUESTIONS[quest]
                 real_answer, question_text = function(environment, scen["course"], scen["module"], scen["semester"])
-                text_file.write(f'Question 1: {question_text}\n')
+                text_file.write(f'Question {index}: {question_text}\n')
 
                 text_file.write(f'Expected answer: {scen[f'expected_{quest}']}\n')
                 text_file.write(f'Actual answer:   {real_answer}\n')
                 if real_answer != scen[f'expected_{quest}']:
+                    error_occurred = True
                     text_file.write(f'\n---> ERROR <---\n')
-                    print("")
+                index += 1
+            if error_occurred:
+                text_file.write("\n\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n")
+                for f in environment.facts():
+                    text_file.write(f'{f}\n')
+                text_file.write("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n")
+
 
 
 if __name__ == "__main__":

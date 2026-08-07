@@ -67,22 +67,72 @@
 
 ### Basic example
 
-1. Student wants to check 
-
-| Configuration            | 1                                                    | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-|--------------------------|------------------------------------------------------|---|---|---|---|---|---|---|---|----|
-| Relevant modules         | 39-M-Inf-INT-adv_a                                   |   |   |   |   |   |   |   |   |    |
-| Relevant courses         | Advanced Interaction Technology: Seminar (659886362) |   |   |   |   |   |   |   |   |    |
-| Prequisites              | None                                                 |   |   |   |   |   |   |   |   |    |
-| Course offers            | In the current semester                              |   |   |   |   |   |   |   |   |    |
-| Course belongs to module | Yes                                                  |   |   |   |   |   |   |   |   |    |
-| Course completion        | No courses completed yet                             |   |   |   |   |   |   |   |   |    |
+1. DESCRIPTION
+    1. Does the course KURS belong to the module MODULE?
+    2. Can I choose the course KURS for the module MODULE?
+    3. Is the course KURS available in the SEM semester?
+    4. Can I do the module MODULE or am I missing prerequisites?
+    5. Can I complete the module MODULE in one SEM semester?
+    6. Have I completed the module MODULE?
 
 
+1. It is (the start of) the winter semester. The student has not completed any courses yet. They want to take the
+   module 39-M-Inf-INT-adv_a and want to have the following questions answered:
+    1. Does the course "Neural Networks Natural Language Processing" (624620553) belong to the module
+       39-M-Inf-INT-adv_a?
+    2. Can I choose the course "Neural Networks Natural Language Processing" (624620553) for the module
+       39-M-Inf-INT-adv_a?
+    3. Is the course "Neural Networks Natural Language Processing" (624620553) available in the winter semester?
+    4. Can I do the module 39-M-Inf-INT-adv_a or am I missing prerequisites?
+    5. Can I complete the module 39-M-Inf-INT-adv_a in one winter semester?
+    6. Have I completed the module 39-M-Inf-INT-adv_a?
+2.
+
+| Configuration                  | 1                                                       | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--------------------------------|---------------------------------------------------------|---|---|---|---|---|---|---|---|----|
+| Prequisites                    | None                                                    |   |   |   |   |   |   |   |   |    |
+| Semester                       | Winter                                                  |   |   |   |   |   |   |   |   |    |
+| Completed courses              | None (first semester student)                           |   |   |   |   |   |   |   |   |    |
+| --                             | --                                                      |   |   |   |   |   |   |   |   |    |
+| Course offers                  | In the current semester                                 |   |   |   |   |   |   |   |   |    |
+| Course belongs to module       | Yes                                                     |   |   |   |   |   |   |   |   |    |
+| --                             | --                                                      |   |   |   |   |   |   |   |   |    |
+| Module of interest             | 39-M-Inf-INT-adv_a                                      |   |   |   |   |   |   |   |   |    |
+| Theoretical course if interest | Advanced Interaction Technology: Seminar                |   |   |   |   |   |   |   |   |    |
+| Course(s) of interest          | Neural Networks Natural Language Processing (624620553) |   |   |   |   |   |   |   |   |    |
+|                                |                                                         |   |   |   |   |   |   |   |   |    |
 
 ## TODOs
 
 - [ ] (deftemplate echte_veranstaltung_abgeschlossen (slot student) (slot echte_veranstaltung))
-  - theoretische Veranstaltung abgeschlossen muss existieren und darüber sollte dann abgefragt werden, ob ein Kurs 
-    für ein Modul belegt werden kann
+    - theoretische Veranstaltung abgeschlossen muss existieren und darüber sollte dann abgefragt werden, ob ein Kurs
+      für ein Modul belegt werden kann
 - [ ] Unterschied belongs to und can use for module noch kar machen
+
+
+## Aufschlüsselungen regeln 
+
+### modul-abschliessbar-im-semester
+
+```
+// Benennung
+(defrule modul-abschliessbar-im-semester
+    // welche Frage dazu gehört
+    (frage-abschluss-sem (modul ?m) (semester ?sem))
+    (modul (id ?m) (pr ?npr) (sl ?nsl))
+=>  
+    // Alle theorie_veranstaltungen
+    (bind ?apr (find-all-facts ((?t theorie_veranstaltung))
+        // Die zu dem gegebenen Modul gehören
+        (and (eq ?t:modul ?m)
+            (any-factp ((?h hat-pr)) (eq ?h:theorie_veranstaltung ?t:id))
+            (any-factp ((?i instance-of))
+                (and (eq ?i:theorie_veranstaltung ?t:id) (eq ?i:semester ?sem))))))
+    (bind ?asl (find-all-facts ((?t theorie_veranstaltung))
+        (and (eq ?t:modul ?m)
+            (any-factp ((?h hat-sl)) (eq ?h:theorie_veranstaltung ?t:id))
+            (any-factp ((?i instance-of))
+                (and (eq ?i:theorie_veranstaltung ?t:id) (eq ?i:semester ?sem))))))
+    (if (and (>= (length$ ?apr) ?npr) (>= (length$ ?asl) ?nsl))
+        then (assert (modul-abschliessbar-sem (modul ?m) (semester ?sem)))))
+```
