@@ -1,13 +1,13 @@
 import json
-from api_helpers import get_json_cached
 
+from api_helpers import get_json_cached
 
 folder = "data/"
 
 API_BASE = "https://ekvv.uni-bielefeld.de/bisapi/v2/"
 
-def get_and_clean_module_data(modul_id, programs):
 
+def get_and_clean_module_data(modul_id, programs):
     try:
         link = API_BASE + f'sinfo/modulDetailsById/{modul_id}'
         json_data = get_json_cached(link)
@@ -50,7 +50,7 @@ def get_and_clean_module_data(modul_id, programs):
                 "type": typ,
                 "uni_id": item["id"],
             }
-            #print(json_data["modul"]["name"])
+            # print(json_data["modul"]["name"])
             if "veranstaltung" in item:
                 for ver in modell_veranstaltungen:
                     if ver["uni_id"] == item["veranstaltung"]:
@@ -65,7 +65,6 @@ def get_and_clean_module_data(modul_id, programs):
                             ver["leistungen"].append(info)
                         else:
                             ver["leistungen"] = [info]
-
 
                 # noch Veranstaltungsinfos dazu holen
             for mod in modell_veranstaltungen:
@@ -84,7 +83,7 @@ def get_and_clean_module_data(modul_id, programs):
                                 "name": kurs["thema_kurz"],
                                 "uni_id": kurs["vst_id"],
                                 "typ": kurs["art"],
-                               # "termine": kurs["zeitOrt"],
+                                # "termine": kurs["zeitOrt"],
                                 "beleg_nr": kurs["beleg_nr"],
                                 "kurztitel": kurs["kurztitel"],
                                 "english": kurs["spracheEnglisch"]
@@ -105,8 +104,6 @@ def get_and_clean_module_data(modul_id, programs):
         print(f"Fehler bei {modul_id}: {e}")
 
 
-
-
 iisy_module = [
     544093118, 543982456, 544074581, 420168424, 544082149, 420164915, 420164915
 ]
@@ -122,7 +119,6 @@ for nr in iisy_module:
 
 for nr in nwi_module:
     complete_json.append(get_and_clean_module_data(nr, ["NWI"]))
-
 
 with open("all_data.json", "w") as file:
     json.dump(complete_json, file, indent=2)

@@ -1,7 +1,7 @@
-from helper_functions_user_input import ask_user, ask_user_for_semester
-from helper_functions_printing import print_answer, answer_string, list_modules_and_courses
-
 import clips
+
+from helper_functions_printing import print_answer, answer_string, list_modules_and_courses, alle
+from helper_functions_user_input import ask_user, ask_user_for_semester
 
 
 def reset_environment_for_clean_answer(environment):
@@ -12,9 +12,10 @@ def reset_environment_for_clean_answer(environment):
             environment.assert_string(f)
     return environment
 
+
 def get_answer(env, template, **slots):
     for f in env.facts():
-        #print(f)
+        # print(f)
         if f.template.name == template and all(str(f[k]) == str(v) for k, v in slots.items()):
             return f
     return None
@@ -37,7 +38,7 @@ def q_use_course_for_module(environment):
                       f'(echte_veranstaltung {kurs}) (modul "{modul}"))')
     env.run()
     treffer = get_answer(env, "kann-belegen",
-                    **{"student": "liliana", "echte_veranstaltung": kurs, "modul": modul})
+                         **{"student": "liliana", "echte_veranstaltung": kurs, "modul": modul})
     print_answer(f"  -> Can liliana choose the course {kurs} for the module {modul}?  {answer_string(treffer)}")
 
 
@@ -53,14 +54,45 @@ def q_do_course_in_semester(environment):
     print_answer(f"  -> Can liliana choose course {kurs} in {sem.upper()}?  {answer_string(treffer)}")
 
 
+def q_fulfill_prerequisites(environment):
+    modul = ask_user("  module code: ")
+    env = reset_environment_for_clean_answer(environment)
+    env.assert_string(f'(frage-belegbar-modul (student liliana) (modul {modul})')
+    env.run()
+    treffer = get_answer(env, "modul-belegbar", **{"student": "liliana", "modul": modul})
+    print_answer(f"  -> Can liliana do the module {modul}?  {answer_string(treffer)}")
+    if not treffer:
+        fehlend = alle(env, "fehlende-voraussetzung", **{"student": "liliana", "modul": modul})
+        for f in fehlend:
+            print(f"     Missing prerequisites: {f['benoetigt']}")
+
+def q_complete_module_one_semester(environment):
+    modul = ask_user("  module code: ")
+    sem = ask_user_for_semester()
+    env = reset_environment_for_clean_answer(environment)
+    env.assert_string(f'(frage-abschluss-sem (modul {modul}) (semester {sem}))')
+    env.run()
+    treffer = get_answer(env, "modul-abschliessbar-sem", **{"modul": modul, "semester": sem})
+    print_answer(f"  -> Can the module {modul} be completed in one {sem.upper()}? "
+                 f" {answer_string(treffer)}")
+
+
+def q_modul_abgeschlossen(environment):
+    modul = ask_user("  module code: ")
+    env = reset_environment_for_clean_answer(environment)
+    env.run()
+    treffer = get_answer(env, "modul-abgeschlossen", **{"student": "liliana", "modul": modul})
+    print_answer(f"  -> Has liliana completed the module {modul}?  {answer_string(treffer)}")
+
+
 
 FRAGEN = {
-    "1": ("Does a course belong to a module?",              q_course_to_module),
-    "2": ("Can I choose a course for a module?",   q_use_course_for_module),
+    "1": ("Does a course belong to a module?", q_course_to_module),
+    "2": ("Can I choose a course for a module?", q_use_course_for_module),
     "3": ("Can I do a course in a semester?", q_do_course_in_semester),
-    "4": ("Kann ich ein Modul belegen? (Voraussetzungen)", "q_modul_belegbar"),
-    "5": ("Kann ich ein Modul in einem Semester abschliessen?", "q_modul_abschliessbar"),
-    "6": ("Habe ich ein Modul abgeschlossen?",             "q_modul_abgeschlossen"),
+    "4": ("Can I do a module (prerequisites)", q_fulfill_prerequisites),
+    "5": ("Can I complete a module in one semester?", q_complete_module_one_semester),
+    "6": ("Have I completed a module?", "q_completed_module"),
 }
 
 
@@ -99,9 +131,6 @@ def run_tests():
     scenario("mockup_10.txt")
 
 
-
-
-
 def main():
     environment = set_up_env()
     while True:
@@ -137,7 +166,6 @@ def main():
                     break
             except Exception as e:
                 print(f"  Fehler bei der Anfrage: {e}")
-
 
 
 if __name__ == "__main__":

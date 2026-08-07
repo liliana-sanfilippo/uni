@@ -1,6 +1,6 @@
-
 def ask_user(prompt):
     return input(prompt).strip()
+
 
 def ask_user_for_semester(prompt="  semester (ws/ss): "):
     while True:

@@ -1,11 +1,12 @@
-
 def answer_string(treffer):
     return "YES" if treffer else "NO"
+
 
 def print_answer(answer):
     print("############")
     print(answer)
     print("############")
+
 
 def alle(env, template, **slots):
     return [f for f in env.facts()
