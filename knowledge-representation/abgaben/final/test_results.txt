@@ -1,0 +1,172 @@
+=========================================
+TEST SCENARIO 01:
+=========================================
+
+Question 1:   -> Does course 624620553 belong to module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 624620553 for the module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 3:   -> Can liliana choose course 624620553 in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-adv_a"?
+Expected answer: 0
+Actual answer:   0
+Question 5:   -> Can the module "39-M-Inf-INT-adv_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-adv_a"?
+Expected answer: NO
+Actual answer:   NO
+=========================================
+TEST SCENARIO 02:
+=========================================
+
+Question 1:   -> Does course 659886362 belong to module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 659886362 for the module "39-M-Inf-INT-adv_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 3:   -> Can liliana choose course 659886362 in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-adv_a"?
+Expected answer: 0
+Actual answer:   0
+Question 5:   -> Can the module "39-M-Inf-INT-adv_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+=========================================
+TEST SCENARIO 03:
+=========================================
+
+Question 1:   -> Does course 737382051 belong to module "39-M-Inf-INT-app-foc_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 737382051 for the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 3:   -> Can liliana choose course 737382051 in ss?
+Expected answer: YES
+Actual answer:   YES
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: 0
+Actual answer:   0
+Question 5:   -> Can the module "39-M-Inf-INT-app-foc_a" be completed in one ss?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+=========================================
+TEST SCENARIO 04:
+=========================================
+
+Question 1:   -> Does course 737382051 belong to module "39-M-Inf-INT-app-foc_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 737382051 for the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 3:   -> Can liliana choose course 737382051 in ws?
+Expected answer: NO
+Actual answer:   NO
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: 1
+Actual answer:   1
+Question 5:   -> Can the module "39-M-Inf-INT-app-foc_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+=========================================
+TEST SCENARIO 05:
+=========================================
+
+Question 1:   -> Does course 662782877 belong to module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 2:   -> Can liliana choose the course 662782877 for the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 3:   -> Can liliana choose course 662782877 in ss?
+Expected answer: NO
+Actual answer:   NO
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: 1
+Actual answer:   1
+Question 5:   -> Can the module "39-M-Inf-INT-app-foc_a" be completed in one ss?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+=========================================
+TEST SCENARIO 06:
+=========================================
+
+Question 1:   -> Does course 662782877 belong to module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 2:   -> Can liliana choose the course 662782877 for the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 3:   -> Can liliana choose course 662782877 in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: 2
+Actual answer:   2
+Question 5:   -> Can the module "39-M-Inf-INT-app-foc_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+=========================================
+TEST SCENARIO 07:
+=========================================
+
+Question 1:   -> Does course 659886362 belong to module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 1:   -> Does course 659886362 belong to module "39-M-Inf-AI-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 659886362 for the module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 659886362 for the module "39-M-Inf-AI-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 3:   -> Can liliana choose course 659886362 in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 3:   -> Can liliana choose course 659886362 in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 4:   -> Can liliana do the module "39-M-Inf-INT-adv_a"?
+Expected answer: 0
+Actual answer:   0
+Question 4:   -> Can liliana do the module "39-M-Inf-AI-adv_a"?
+Expected answer: 0
+Actual answer:   0
+Question 5:   -> Can the module "39-M-Inf-INT-adv_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 5:   -> Can the module "39-M-Inf-AI-adv_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-INT-adv_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 6:  -> Has liliana completed the module "39-M-Inf-AI-adv_a"?
+Expected answer: NO
+Actual answer:   NO

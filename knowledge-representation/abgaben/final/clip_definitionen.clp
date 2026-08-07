@@ -13,6 +13,9 @@
 
 (deftemplate echte_veranstaltung (slot id) (slot typ) (slot titel))
 (deftemplate instance-of (slot echte_veranstaltung) (slot theorie_veranstaltung) (slot semester))
+(deftemplate anrechnung-wahl (slot student) (slot echte_veranstaltung) (slot modul))
+(deftemplate anrechnung      (slot student) (slot echte_veranstaltung) (slot modul))
+(deftemplate gehoert-nicht-zu-mehreren-modulen (slot echte_veranstaltung))
 
 (deftemplate echte_veranstaltung_abgeschlossen (slot student) (slot echte_veranstaltung))
 (deftemplate best-pr    (slot student) (slot echte_veranstaltung))
@@ -35,23 +38,40 @@
 (deftemplate fehlende-voraussetzung (slot student) (slot modul) (slot benoetigt))
 (deftemplate modul-abschliessbar-sem (slot modul) (slot semester))
 
+(defrule anrechnung-explizit
+   (declare (salience 25))
+   (anrechnung-wahl (student ?s) (echte_veranstaltung ?e) (modul ?m))
+   (not (anrechnung (student ?s) (echte_veranstaltung ?e) (modul ?m)))
+=> (assert (anrechnung (student ?s) (echte_veranstaltung ?e) (modul ?m))))
+
+(defrule anrechnung-eindeutig
+   (declare (salience 25))
+   (student (id ?s))
+   (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m))
+   (gehoert-nicht-zu-mehreren-modulen (echte_veranstaltung ?e))
+   (not (anrechnung (student ?s) (echte_veranstaltung ?e) (modul ?m)))
+=> (assert (anrechnung (student ?s) (echte_veranstaltung ?e) (modul ?m))))
+
+
 (defrule lift-pr
+   (declare (salience 20))
    (best-pr (student ?s) (echte_veranstaltung ?k))
    (instance-of (echte_veranstaltung ?k) (theorie_veranstaltung ?v) (semester ?sem))
    (hat-pr (theorie_veranstaltung ?v))
+   (theorie_veranstaltung (id ?v) (modul ?m))
+   (anrechnung (student ?s) (echte_veranstaltung ?k) (modul ?m))
+   (not (erfuellt-pr (student ?s) (theorie_veranstaltung ?v)))
 => (assert (erfuellt-pr (student ?s) (theorie_veranstaltung ?v))))
 
 (defrule lift-sl
+   (declare (salience 20))
    (best-sl (student ?s) (echte_veranstaltung ?k))
    (instance-of (echte_veranstaltung ?k) (theorie_veranstaltung ?v) (semester ?sem))
    (hat-sl (theorie_veranstaltung ?v))
+   (theorie_veranstaltung (id ?v) (modul ?m))
+   (anrechnung (student ?s) (echte_veranstaltung ?k) (modul ?m))
+   (not (erfuellt-sl (student ?s) (theorie_veranstaltung ?v)))
 => (assert (erfuellt-sl (student ?s) (theorie_veranstaltung ?v))))
-
-(defrule pr-impliziert-abgeschlossen
-   (declare (salience 20))
-   (best-pr (student ?s) (echte_veranstaltung ?e))
-   (not (echte_veranstaltung_abgeschlossen (student ?s) (echte_veranstaltung ?e)))
-=> (assert (echte_veranstaltung_abgeschlossen (student ?s) (echte_veranstaltung ?e))))
 
 (defrule ableiten-gehoert-zu-modul
    (declare (salience 20))
@@ -59,6 +79,15 @@
    (theorie_veranstaltung (id ?t) (modul ?m))
    (not (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m)))
 => (assert (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m))))
+
+(defrule ableiten-gehoert-nicht-zu-mehreren-modulen
+   (declare (salience 19))
+   (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m1))
+   (not (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m2&~?m1)))
+   (not (gehoert-nicht-zu-mehreren-modulen (echte_veranstaltung ?e)))
+=>
+   (assert (gehoert-nicht-zu-mehreren-modulen (echte_veranstaltung ?e))))
+
 
 (defrule ableiten-modul-abgeschlossen
    (declare (salience 10))

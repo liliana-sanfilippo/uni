@@ -1,5 +1,5 @@
-from clips_main import get_answer, alle
-from helper_functions_printing import answer_string
+from clips_main import get_answer
+from helper_functions_printing import answer_string, alle
 from set_ups import set_up_env, reset_environment_for_clean_answer
 
 
@@ -51,8 +51,8 @@ def test_modul_abgeschlossen(env, kurs, modul, sem):
     return answer_string(treffer), f' -> Has liliana completed the module "{modul}"?'
 
 
-def set_up_scenario(filename, environment):
-    env = reset_environment_for_clean_answer(environment)
+def set_up_scenario(filename, env):
+    env = reset_environment_for_clean_answer(env)
     with open("scenarios/" + filename, "r") as background:
         bg = background.readlines()
         for f in bg:
@@ -160,7 +160,24 @@ SCENARIOS = [
         "expected_fulfill_prerequisites": 2,
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO"
+    },
+    {
+        "id": "07",
+        "desc": """It is (the start of) the winter semester. \n 
+                The student already took the course Human Centered Artifical Intelligence Lab ForschKolloq. (
+                659886362) which can belong to multiple modules. 
+                """,
+        "module": ["39-M-Inf-INT-adv_a", "39-M-Inf-AI-adv_a"],
+        "course": 659886362,
+        "semester": "ws",
+        "expected_course_to_module": "YES",
+        "expected_use_course_for_module": "YES",
+        "expected_do_course_in_semester": "YES",
+        "expected_fulfill_prerequisites": 0,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO"
     }
+
 ]
 
 QUESTIONS = {
@@ -174,7 +191,7 @@ QUESTIONS = {
 
 
 def main():
-    environment = set_up_env()
+    env = set_up_env()
     with open("test_results.txt", "w") as text_file:
         for scen in SCENARIOS:
             error_occurred = False
@@ -183,18 +200,29 @@ def main():
             text_file.write("=========================================\n\n")
 
             # Set up with discarding old info
-            env = set_up_scenario(f'mockup_{scen["id"]}.txt', environment)
+            env = set_up_scenario(f'mockup_{scen["id"]}.txt', env)
             index = 1
             for quest in QUESTIONS:
                 function = QUESTIONS[quest]
-                real_answer, question_text = function(env, scen["course"], scen["module"], scen["semester"])
-                text_file.write(f'Question {index}: {question_text}\n')
+                if isinstance(scen["module"], str):
+                    real_answer, question_text = function(env, scen["course"], scen["module"], scen["semester"])
+                    text_file.write(f'Question {index}: {question_text}\n')
 
-                text_file.write(f'Expected answer: {scen[f'expected_{quest}']}\n')
-                text_file.write(f'Actual answer:   {real_answer}\n')
-                if real_answer != scen[f'expected_{quest}']:
-                    error_occurred = True
-                    text_file.write(f'\n---> ERROR <---\n')
+                    text_file.write(f'Expected answer: {scen[f'expected_{quest}']}\n')
+                    text_file.write(f'Actual answer:   {real_answer}\n')
+                    if real_answer != scen[f'expected_{quest}']:
+                        error_occurred = True
+                        text_file.write(f'\n---> ERROR <---\n')
+                else:
+                    for jedes_modul in scen["module"]:
+                        real_answer, question_text = function(env, scen["course"], jedes_modul, scen["semester"])
+                        text_file.write(f'Question {index}: {question_text}\n')
+
+                        text_file.write(f'Expected answer: {scen[f'expected_{quest}']}\n')
+                        text_file.write(f'Actual answer:   {real_answer}\n')
+                        if real_answer != scen[f'expected_{quest}']:
+                            error_occurred = True
+                            text_file.write(f'\n---> ERROR <---\n')
                 index += 1
             if error_occurred:
                 print(f'Error in question_text')
