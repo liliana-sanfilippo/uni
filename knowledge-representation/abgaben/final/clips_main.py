@@ -59,10 +59,10 @@ def q_course_available_in_semester(environment):
 def q_fulfill_prerequisites(environment):
     modul = ask_user("  module code: ")
     env = reset_environment_for_clean_answer(environment)
-    env.assert_string(f'(frage-belegbar-modul (student liliana) (modul {modul})')
+    env.assert_string(f'(frage-belegbar-modul (student liliana) (modul "{modul}"))')
     env.run()
     treffer = get_answer(env, "modul-belegbar", **{"student": "liliana", "modul": modul})
-    print_answer(f"  -> Do I fulfill the prerequisites for the module {modul}?  {answer_string(treffer)}")
+    print_answer(f'  -> Do I fulfill the prerequisites for the module "{modul}"?  {answer_string(treffer)}')
     if not treffer:
         fehlend = alle(env, "fehlende-voraussetzung", **{"student": "liliana", "modul": modul})
         for f in fehlend:
@@ -73,17 +73,19 @@ def q_complete_module_one_semester(environment):
     modul = ask_user("  module code: ")
     sem = ask_user_for_semester()
     env = reset_environment_for_clean_answer(environment)
-    env.assert_string(f'(frage-abschluss-sem (modul {modul}) (semester {sem}))')
+    env.assert_string(f'(frage-abschluss-sem (modul "{modul}") (semester {sem}))')
     env.run()
     treffer = get_answer(env, "modul-abschliessbar-sem", **{"modul": modul, "semester": sem})
-    print_answer(f"  -> Can the module {modul} be completed in one {sem.upper()}? "
+    print_answer(f'  -> Can the module "{modul}" be completed in one {sem.upper()}? '
                  f" {answer_string(treffer)}")
+
 
 def q_course_for_program(environment):
     kurs = ask_user("  course_id (echte_veranstaltung): ")
     program = ask_user_for_program()
     env = reset_environment_for_clean_answer(environment)
     env.assert_string(f'(frage-kurs-programm (echte_veranstaltung {kurs}) (programm {program.upper()}))')
+    env.run()
     treffer = get_answer(env, "kurs-fuer-programm",
                     **{"echte_veranstaltung": kurs, "programm": program.upper()})
     print(f'  -> Can course {kurs} be studied for program {program.upper()}?  {answer_string(treffer)}')

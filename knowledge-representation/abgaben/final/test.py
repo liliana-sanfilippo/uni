@@ -61,8 +61,8 @@ def test_modul_abgeschlossen(env, kurs, modul, sem):
 
 def test_course_for_program(env, kurs, modul, sem):
     program = "iisy"
-    env.run()
     env.assert_string(f'(frage-kurs-programm (echte_veranstaltung {kurs}) (programm {program.upper()}))')
+    env.run()
     treffer = get_answer(env, "kurs-fuer-programm",
                          **{"echte_veranstaltung": kurs, "programm": program.upper()})
     return answer_string(treffer),  f'  -> Can course {kurs} be studied for program {program.upper()}?'
