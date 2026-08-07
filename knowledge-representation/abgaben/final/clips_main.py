@@ -85,8 +85,8 @@ def q_course_for_program(environment):
     env = reset_environment_for_clean_answer(environment)
     env.assert_string(f'(frage-kurs-programm (echte_veranstaltung {kurs}) (programm {program.upper()}))')
     treffer = get_answer(env, "kurs-fuer-programm",
-                    **{"echte_veranstaltung": kurs, "programm": program})
-    print(f'  -> Can course {kurs} be studied for program {program}?  {answer_string(treffer)}')
+                    **{"echte_veranstaltung": kurs, "programm": program.upper()})
+    print(f'  -> Can course {kurs} be studied for program {program.upper()}?  {answer_string(treffer)}')
 
 
 
@@ -147,7 +147,20 @@ def main():
                     break
             except Exception as e:
                 print(f"  Fehler bei der Anfrage: {e}")
-
+        if choice == "e":
+            while True:
+                print("  A.) I want to enter a course (echte_veranstaltung) I completed")
+                print("  B.) I want to assign a course to a module")
+                print("  q) Go back")
+                sec_choice = input("Choice: ").strip().lower()
+                if sec_choice in ("q", "quit", "exit"):
+                    print("Back to main menu...")
+                    break
+                if con in ("yes", "y"):
+                    continue
+                else:
+                    print("Exiting...")
+                    break
 
 
 if __name__ == "__main__":

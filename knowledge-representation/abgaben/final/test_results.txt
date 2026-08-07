@@ -23,6 +23,9 @@ Actual answer:   NO
 Question 7:   -> Is the course 624620553 available in ws?
 Expected answer: YES
 Actual answer:   YES
+Question 8:   -> Can course 624620553 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 02:
 =========================================
@@ -46,6 +49,9 @@ Question 6:  -> Has liliana completed the module "39-M-Inf-INT-adv_a"?
 Expected answer: YES
 Actual answer:   YES
 Question 7:   -> Is the course 659886362 available in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 8:   -> Can course 659886362 be studied for program IISY?
 Expected answer: YES
 Actual answer:   YES
 =========================================
@@ -73,6 +79,9 @@ Actual answer:   NO
 Question 7:   -> Is the course 737382051 available in ss?
 Expected answer: YES
 Actual answer:   YES
+Question 8:   -> Can course 737382051 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 04:
 =========================================
@@ -98,6 +107,9 @@ Actual answer:   NO
 Question 7:   -> Is the course 737382051 available in ws?
 Expected answer: NO
 Actual answer:   NO
+Question 8:   -> Can course 737382051 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 05:
 =========================================
@@ -123,6 +135,9 @@ Actual answer:   NO
 Question 7:   -> Is the course 662782877 available in ss?
 Expected answer: NO
 Actual answer:   NO
+Question 8:   -> Can course 662782877 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 06:
 =========================================
@@ -148,6 +163,9 @@ Actual answer:   NO
 Question 7:   -> Is the course 662782877 available in ws?
 Expected answer: YES
 Actual answer:   YES
+Question 8:   -> Can course 662782877 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 06.1:
 =========================================
@@ -171,6 +189,9 @@ Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
 Expected answer: NO
 Actual answer:   NO
 Question 7:   -> Is the course 659890294 available in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 8:   -> Can course 659890294 be studied for program IISY?
 Expected answer: YES
 Actual answer:   YES
 =========================================
@@ -219,6 +240,12 @@ Actual answer:   YES
 Question 7:   -> Is the course 659886362 available in ws?
 Expected answer: YES
 Actual answer:   YES
+Question 8:   -> Can course 659886362 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
+Question 8:   -> Can course 659886362 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 08:
 =========================================
@@ -242,6 +269,9 @@ Question 6:  -> Has liliana completed the module "39-M-Inf-AI-adv_a"?
 Expected answer: YES
 Actual answer:   YES
 Question 7:   -> Is the course 659886362 available in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 8:   -> Can course 659886362 be studied for program IISY?
 Expected answer: YES
 Actual answer:   YES
 =========================================
@@ -290,6 +320,12 @@ Actual answer:   YES
 Question 7:   -> Is the course 659886362 available in ws?
 Expected answer: YES
 Actual answer:   YES
+Question 8:   -> Can course 659886362 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
+Question 8:   -> Can course 659886362 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 10:
 =========================================
@@ -315,3 +351,6 @@ Actual answer:   NO
 Question 7:   -> Is the course 662782877 available in ss?
 Expected answer: NO
 Actual answer:   NO
+Question 8:   -> Can course 662782877 be studied for program IISY?
+Expected answer: YES
+Actual answer:   YES

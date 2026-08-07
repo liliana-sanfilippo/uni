@@ -10,7 +10,7 @@
 (deftemplate echte_veranstaltung (slot id) (slot typ) (slot titel))
 (deftemplate instance-of (slot echte_veranstaltung) (slot theorie_veranstaltung) (slot semester))
 (deftemplate gehoert-nicht-zu-mehreren-modulen (slot echte_veranstaltung))
-
+(deftemplate kurs-fuer-programm  (slot echte_veranstaltung) (slot programm))
 
 (deftemplate student (slot id))
 (deftemplate echte_veranstaltung_abgeschlossen (slot student) (slot echte_veranstaltung))
@@ -28,6 +28,8 @@
 (deftemplate frage-in-semester-vorhanden (slot echte_veranstaltung) (slot semester))
 (deftemplate frage-belegbar-modul (slot student) (slot modul))
 (deftemplate frage-abschluss-sem (slot modul) (slot semester))
+(deftemplate frage-kurs-programm (slot echte_veranstaltung) (slot programm))
+
 
 (deftemplate kann-belegen (slot student) (slot echte_veranstaltung) (slot modul))
 (deftemplate kann-belegen-sem (slot student) (slot echte_veranstaltung) (slot semester))
@@ -166,3 +168,8 @@
    (if (and (>= (length$ ?apr) ?npr) (>= (length$ ?asl) ?nsl))
       then (assert (modul-abschliessbar-sem (modul ?m) (semester ?sem)))))
 
+(defrule ableiten-kurs-fuer-programm
+   (declare (salience 10))
+   (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m))
+   (in-program (modul ?m) (programm ?p))
+=> (assert (kurs-fuer-programm (echte_veranstaltung ?e) (programm ?p))))
