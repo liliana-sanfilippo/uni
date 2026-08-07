@@ -1,7 +1,7 @@
 import clips
 
 from helper_functions_printing import print_answer, answer_string, list_modules_and_courses, alle
-from helper_functions_user_input import ask_user, ask_user_for_semester
+from helper_functions_user_input import ask_user, ask_user_for_semester, ask_user_for_program
 from set_ups import set_up_env, reset_environment_for_clean_answer
 
 
@@ -79,6 +79,16 @@ def q_complete_module_one_semester(environment):
     print_answer(f"  -> Can the module {modul} be completed in one {sem.upper()}? "
                  f" {answer_string(treffer)}")
 
+def q_course_for_program(environment):
+    kurs = ask_user("  course_id (echte_veranstaltung): ")
+    program = ask_user_for_program()
+    env = reset_environment_for_clean_answer(environment)
+    env.assert_string(f'(frage-kurs-programm (echte_veranstaltung {kurs}) (programm {program.upper()}))')
+    treffer = get_answer(env, "kurs-fuer-programm",
+                    **{"echte_veranstaltung": kurs, "programm": program})
+    print(f'  -> Can course {kurs} be studied for program {program}?  {answer_string(treffer)}')
+
+
 
 def q_modul_abgeschlossen(environment):
     modul = ask_user("  module code: ")
@@ -97,6 +107,7 @@ FRAGEN = {
     "5": ("Can a module be completed in one semester?", q_complete_module_one_semester),
     "6": ("Have I completed a module?", q_modul_abgeschlossen),
     "7": ("Is a course available in a semester?", q_course_available_in_semester),
+    "8": ("Can a course be chosen for a program?", q_course_for_program)
 }
 
 
@@ -136,6 +147,7 @@ def main():
                     break
             except Exception as e:
                 print(f"  Fehler bei der Anfrage: {e}")
+
 
 
 if __name__ == "__main__":
