@@ -93,6 +93,21 @@ SCENARIOS = [
         "expected_fulfill_prerequisites": 0,
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "YES"
+    },{
+        "id": "03",
+        "desc": "It is (the start of) the summer semester. The student so far completed the course Neural Networks "
+                "Natural Language Processing (624620553) and therefore the module 39-M-Inf-INT-adv_a. They want to take the module "
+                "39-M-Inf-INT-app-foc_a, for which 39-M-Inf-INT-adv_a is a prerequisite, and are interested "
+                "in the course Intelligent Tutoring Systems (737382051).",
+        "module": "39-M-Inf-INT-app-foc_a",
+        "course": 737382051,
+        "semester": "ss",
+        "expected_course_to_module": "YES",
+        "expected_use_course_for_module": "YES",
+        "expected_do_course_in_semester": "YES",
+        "expected_fulfill_prerequisites": 0,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO"
     }
 ]
 
