@@ -1,0 +1,104 @@
+{
+  "modul": {
+    "name": "Artificial Intelligence (Basis)",
+    "id": 544404773,
+    "kuerzel": "39-M-Inf-AI",
+    "name_en": "Artificial Intelligence (Basis)",
+    "veranstaltungen": [
+      {
+        "name": "Begleitende Übungen",
+        "id": 544404790,
+        "leistungspunkte_gesamt": 2,
+        "turnus_freitext": "mindestens jährlich angeboten",
+        "artenAsText": "Übung",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 45,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Begleitende Übungen (Alternative)",
+        "id": 544404816,
+        "leistungspunkte_gesamt": 2,
+        "turnus_freitext": "mindestens jährlich angeboten",
+        "artenAsText": "Übung",
+        "workload_praesenz": 15,
+        "workload_selbst": 45,
+        "gruppengroesse": 45,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Begleitendes Seminar",
+        "id": 544404784,
+        "leistungspunkte_gesamt": 2,
+        "turnus_freitext": "mindestens jährlich angeboten",
+        "artenAsText": "Seminar",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Einführende Vorlesung",
+        "id": 544404829,
+        "leistungspunkte_gesamt": 2,
+        "turnus_freitext": "mindestens jährlich angeboten",
+        "artenAsText": "Vorlesung",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 60,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Einführendes Seminar",
+        "id": 544404822,
+        "leistungspunkte_gesamt": 2,
+        "turnus_freitext": "mindestens jährliches Angebot",
+        "artenAsText": "Seminar",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      }
+    ],
+    "modulstrukturangabe": "1 bPr",
+    "berechenbar": true,
+    "leistungspunkte": 5,
+    "turnus": "mindestens jährlich angeboten",
+    "detailUrl": "https://ekvv.uni-bielefeld.de/sinfo/publ/modul/544404773",
+    "leistungen": [
+      {
+        "name": "PRÜFUNG BENOTET",
+        "id": 544404835,
+        "name_en": "GRADED EXAMINATION",
+        "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit ENTWEDER einführender Vorlesung + Übung ODER einführendem Seminar + Übung.</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der einführenden Vorlesung/des einführenden Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur einführenden Vorlesung ODER des einführenden Seminars<br/>Die Abschlussprüfung zu den Inhalten des Seminars/der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p><strong>Seminar</strong>: Referat (im Umfang von 30–45 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem*der Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p><strong>Vorlesung</strong>: Abschlussklausur (im Umfang von 90-180 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-40 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.</p><p>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-180 Minuten. </p><p>Alternativ kann ein Essay (im Umfang von ca. 4 Seiten) mit einer stark auf die vermittelten Kenntnisse und Fähigkeiten bezogenen Aufgabenstellung vorgesehen werden. Es handelt sich um eine reflektive Aufgabenstellung zu Systematik und Zusammenhängen der Lerninhalte oder um eine Auseinandersetzung mit einer Programmieraufgabe zu den erlernten Inhalten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit einführender Vorlesung und begleitendem Seminar.</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)      Portfolio im begleitenden Seminar: Referat mit Ausarbeitung<br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem*der Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar/in der Vorlesung behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. </p><p>2)        einer Abschlussprüfung zur einführenden Vorlesung: <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Inhalte des Seminars oder entwickelt sich aus den im Seminar erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.<br/>Die Studierenden weisen im Rahmen der Abschlussklausur/der mündlichen Prüfung nach, die exemplarische Anwendung abstrakt erlernter Kompetenzen über das spezifisch gewählte Thema des Referats/der Ausarbeitung hinaus zu beherrschen. </p><p>Abschlussklausur (im Umfang von 90-180 Minuten) oder mündliche Prüfung (im Umfang von 20-40 Minuten) </p><p>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-180 Minuten. </p><p>Alternativ kann ein Essay (im Umfang von ca. 4 Seiten) mit einer stark auf die vermittelten Kenntnisse und Fähigkeiten bezogenen Aufgabenstellung vorgesehen werden. Es handelt sich um eine reflektive Aufgabenstellung zu Systematik und Zusammenhänge der Lerninhalte oder um eine Auseinandersetzung mit einer Programmieraufgabe zu den erlernten Inhalten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+        "studienleistung": false,
+        "artenAsText": "Portfolio mit Abschlussprüfung"
+      }
+    ]
+  },
+  "kontexte": [
+    {
+      "modultypMasterEdAbschluss": false,
+      "ebene2": 462589677,
+      "beginnfachsemester": [
+        1,
+        2,
+        3
+      ],
+      "pflichtmodul": false,
+      "dauer": "1 Semester"
+    },
+    {
+      "modultypMasterEdAbschluss": false,
+      "ebene2": 373320751,
+      "beginnfachsemester": [
+        1,
+        2,
+        3
+      ],
+      "pflichtmodul": false,
+      "dauer": "1 Semester"
+    }
+  ]
+}

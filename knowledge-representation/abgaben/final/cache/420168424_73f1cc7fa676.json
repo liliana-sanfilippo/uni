@@ -1,0 +1,89 @@
+{
+  "modul": {
+    "name": "Applied Interaction Technology",
+    "id": 420168424,
+    "kuerzel": "39-M-Inf-INT-app",
+    "name_en": "Applied Interaction Technology",
+    "veranstaltungen": [
+      {
+        "name": "Applied Interaction Technology: Seminar",
+        "id": 420168431,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit der zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit der zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "artenAsText": "Seminar",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology: Vorlesung",
+        "id": 420168449,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "artenAsText": "Vorlesung",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 0,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology: Übung",
+        "id": 420168443,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "artenAsText": "Übung",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology: Übung (Alternative)",
+        "id": 420168437,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "artenAsText": "Übung",
+        "workload_praesenz": 15,
+        "workload_selbst": 45,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      }
+    ],
+    "modulstrukturangabe": "1 bPr",
+    "berechenbar": true,
+    "leistungspunkte": 5,
+    "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+    "detailUrl": "https://ekvv.uni-bielefeld.de/sinfo/publ/modul/420168424",
+    "leistungen": [
+      {
+        "name": "PRÜFUNG BENOTET",
+        "id": 420168456,
+        "name_en": "GRADED EXAMINATION",
+        "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+        "studienleistung": false,
+        "artenAsText": "Portfolio mit Abschlussprüfung"
+      }
+    ]
+  },
+  "kontexte": [
+    {
+      "modultypMasterEdAbschluss": false,
+      "ebene2": 366747900,
+      "beginnfachsemester": [
+        2,
+        3
+      ],
+      "pflichtmodul": false,
+      "dauer": "1 Semester"
+    }
+  ]
+}

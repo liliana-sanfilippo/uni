@@ -1,0 +1,265 @@
+[
+  {
+    "zeitOrt": [
+      "Mo 16-18 einmalig CITEC 1.015 Vorbesprechung",
+      "n.V. n.V."
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "4",
+    "spracheEnglisch": false,
+    "beleg_nr": "392175",
+    "semester_id": 413271031,
+    "thema": "Projekt: RoboCup@Home",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Pj",
+    "vst_id": 746095351,
+    "kurztitel": "392175 Projekt: RoboCup@Home (Pj)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Pj",
+    "lehrende": [
+      {
+        "person_id": 10378,
+        "nachname": "Wachsmuth",
+        "anrede": "Herr",
+        "pers_titel": "PD Dr.-Ing.",
+        "vorname": "Sven",
+        "name_komplett": "PD Dr.-Ing. Sven Wachsmuth"
+      },
+      {
+        "person_id": 474254669,
+        "nachname": "Holzmann",
+        "anrede": "Herr",
+        "vorname": "Dennis",
+        "name_komplett": "Dennis Holzmann"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…75…",
+    "thema_kurz": "Projekt RoboCup@Home",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Autonomous Systems Engineering (focus): Projekt (Pj)'",
+                  "id": 544072629,
+                  "name_en": "STUDY REQUIREMENT 'Applied Autonomous Systems Engineering (focus): Projekt (Pj)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544072620
+                }
+              ],
+              "name": "Applied Autonomous Systems Engineering (focus): Projekt",
+              "id": 544072620,
+              "leistungspunkte_gesamt": 4,
+              "erlaeuterungen": "<p>zusammen mit einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a lecture/a seminar and the corresponding exercise from the field of Applied Autonomous Systems Engineering.</p>",
+              "artenAsText": "Projekt",
+              "workload_praesenz": 30,
+              "workload_selbst": 90,
+              "gruppengroesse": 30,
+              "workload_gesamt": 120
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Autonomous Systems Engineering (focus): Projekt (Pj)'",
+              "id": 544072629,
+              "name_en": "STUDY REQUIREMENT 'Applied Autonomous Systems Engineering (focus): Projekt (Pj)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544072620
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering (focus)",
+          "id": 544072581,
+          "kuerzel": "39-M-Inf-ASE-app-foc_a",
+          "name_en": "Applied Autonomous Systems Engineering (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): Projekt (Pj)'",
+                  "id": 544074628,
+                  "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Project (Pj)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544074619
+                }
+              ],
+              "name": "Applied Interaction Technology (focus): Projekt",
+              "id": 544074619,
+              "leistungspunkte_gesamt": 4,
+              "erlaeuterungen": "<p>zusammen mit  einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit  einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a lecture/a seminar and the corresponding exercise from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Projekt",
+              "workload_praesenz": 30,
+              "workload_selbst": 90,
+              "gruppengroesse": 30,
+              "workload_gesamt": 120
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): Projekt (Pj)'",
+              "id": 544074628,
+              "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Project (Pj)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544074619
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "n.V. n.V."
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "2",
+    "spracheEnglisch": false,
+    "beleg_nr": "392250",
+    "semester_id": 413271031,
+    "thema": "Projekt: Applying and Extending Concept-based xAI ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Pj",
+    "vst_id": 748235389,
+    "kurztitel": "392250 Projekt: Applying and Extending Concept-based xAI  (Pj)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Pj",
+    "lehrende": [
+      {
+        "person_id": 34943216,
+        "nachname": "Schulz",
+        "anrede": "Herr",
+        "pers_titel": "Dr.",
+        "vorname": "Alexander",
+        "name_komplett": "Dr. Alexander Schulz"
+      }
+    ],
+    "beleg_nr_gelesen": "39…22…50…",
+    "thema_kurz": "Projekt Applying Extending Concept based xAI",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): Projekt (Pj)'",
+                  "id": 544074628,
+                  "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Project (Pj)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544074619
+                }
+              ],
+              "name": "Applied Interaction Technology (focus): Projekt",
+              "id": 544074619,
+              "leistungspunkte_gesamt": 4,
+              "erlaeuterungen": "<p>zusammen mit  einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit  einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a lecture/a seminar and the corresponding exercise from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Projekt",
+              "workload_praesenz": 30,
+              "workload_selbst": 90,
+              "gruppengroesse": 30,
+              "workload_gesamt": 120
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): Projekt (Pj)'",
+              "id": 544074628,
+              "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Project (Pj)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544074619
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  }
+]

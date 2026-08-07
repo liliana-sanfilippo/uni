@@ -1,0 +1,455 @@
+[
+  {
+    "zeitOrt": [
+      "Mi 8-10 F1-125"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "230025",
+    "semester_id": 413269727,
+    "thema": "Lab: Neural Networks",
+    "org_id": 10019,
+    "ausgefallen": false,
+    "art": "S",
+    "vst_id": 624621047,
+    "kurztitel": "230025 Lab: Neural Networks (S)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "S",
+    "lehrende": [
+      {
+        "person_id": 533163709,
+        "nachname": "Momen",
+        "anrede": "Herr",
+        "pers_titel_nachgestellt": "M.Sc.",
+        "vorname": "Omar",
+        "name_komplett": "Omar Momen, M.Sc."
+      }
+    ],
+    "beleg_nr_gelesen": "23…00…25…",
+    "thema_kurz": "Lab Neural Networks",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+                  "id": 29612350,
+                  "name_en": "STUDY REQUIREMENT 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+                  "erlaeuterungen": "<p>Abhängig vom Veranstaltungstyp variiert die Form der Studienleistung und wird durch das Bearbeiten von Übungsaufgaben, das Lesen, Diskutieren und/oder Referieren von Texten oder durch die Durchführung von Programmieraufgaben erbracht. Die übliche Bearbeitungszeit hat einen Umfang von ca. 1-2 Stunden pro Woche.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 29612351
+                }
+              ],
+              "name": "Veranstaltung aus dem Bereich computerlinguistische Grundlagen",
+              "id": 29612351,
+              "leistungspunkte_gesamt": 3,
+              "turnus": "WS",
+              "artenAsText": "Seminar o. Vorlesung o. Vorlesung mit Übungsanteil",
+              "workload_praesenz": 30,
+              "workload_selbst": 60,
+              "gruppengroesse": 0,
+              "workload_gesamt": 90
+            }
+          },
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+                  "id": 29612352,
+                  "name_en": "STUDY REQUIREMENT 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+                  "erlaeuterungen": "<p>Abhängig vom Veranstaltungstyp variiert die Form der Studienleistung und wird durch das Bearbeiten von Übungsaufgaben, das Lesen, Diskutieren und/oder Referieren von Texten oder durch die Durchführung von Programmieraufgaben erbracht. Die übliche Bearbeitungszeit hat einen Umfang von ca. 1-2 Stunden pro Woche.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 29612353
+                }
+              ],
+              "name": "Veranstaltung aus dem Bereich computerlinguistische Grundlagen",
+              "id": 29612353,
+              "leistungspunkte_gesamt": 3,
+              "turnus": "IMMER",
+              "artenAsText": "Seminar o. Vorlesung o. Vorlesung mit Übungsanteil",
+              "workload_praesenz": 30,
+              "workload_selbst": 60,
+              "gruppengroesse": 0,
+              "workload_gesamt": 90
+            }
+          },
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+                  "id": 29612354,
+                  "name_en": "STUDY REQUIREMENT 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+                  "erlaeuterungen": "<p>Abhängig vom Veranstaltungstyp variiert die Form der Studienleistung und wird durch das Bearbeiten von Übungsaufgaben, das Lesen, Diskutieren und/oder Referieren von Texten oder durch die Durchführung von Programmieraufgaben erbracht. Die übliche Bearbeitungszeit hat einen Umfang von ca. 1-2 Stunden pro Woche.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 29612355
+                }
+              ],
+              "name": "Veranstaltung aus dem Bereich computerlinguistische Grundlagen",
+              "id": 29612355,
+              "leistungspunkte_gesamt": 3,
+              "turnus": "SS",
+              "artenAsText": "Seminar o. Vorlesung o. Vorlesung mit Übungsanteil",
+              "workload_praesenz": 30,
+              "workload_selbst": 60,
+              "gruppengroesse": 0,
+              "workload_gesamt": 90
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+              "id": 29612350,
+              "name_en": "STUDY REQUIREMENT 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+              "erlaeuterungen": "<p>Abhängig vom Veranstaltungstyp variiert die Form der Studienleistung und wird durch das Bearbeiten von Übungsaufgaben, das Lesen, Diskutieren und/oder Referieren von Texten oder durch die Durchführung von Programmieraufgaben erbracht. Die übliche Bearbeitungszeit hat einen Umfang von ca. 1-2 Stunden pro Woche.</p>",
+              "studienleistung": true,
+              "veranstaltung": 29612351
+            }
+          },
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+              "id": 29612352,
+              "name_en": "STUDY REQUIREMENT 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+              "erlaeuterungen": "<p>Abhängig vom Veranstaltungstyp variiert die Form der Studienleistung und wird durch das Bearbeiten von Übungsaufgaben, das Lesen, Diskutieren und/oder Referieren von Texten oder durch die Durchführung von Programmieraufgaben erbracht. Die übliche Bearbeitungszeit hat einen Umfang von ca. 1-2 Stunden pro Woche.</p>",
+              "studienleistung": true,
+              "veranstaltung": 29612353
+            }
+          },
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+              "id": 29612354,
+              "name_en": "STUDY REQUIREMENT 'Veranstaltung aus dem Bereich computerlinguistische Grundlagen (S o. V o. VÜA)'",
+              "erlaeuterungen": "<p>Abhängig vom Veranstaltungstyp variiert die Form der Studienleistung und wird durch das Bearbeiten von Übungsaufgaben, das Lesen, Diskutieren und/oder Referieren von Texten oder durch die Durchführung von Programmieraufgaben erbracht. Die übliche Bearbeitungszeit hat einen Umfang von ca. 1-2 Stunden pro Woche.</p>",
+              "studienleistung": true,
+              "veranstaltung": 29612355
+            }
+          },
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 29612349,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p>Die Modulprüfung kann folgende drei Formen haben</p><ul><li>Klausur von 90 min über die Modulinhalte</li><li>mündliche Prüfung von ca. 30 min über die Modulinhalte</li><li>eine schriftliche Ausarbeitung eines Referats oder Projekts als Hausarbeit im Umfang von ca. 15 Seiten, die klare und dokumentierte Bezüge zu den Veranstaltungen des Moduls aufzeigt.</li></ul><p>Die Modulprüfung wird von einer oder einem Lehrenden des Moduls abgenommen.</p>",
+              "studienleistung": false,
+              "artenAsText": "Hausarbeit o. Klausur o. mündliche Prüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Computerlinguistische Grundlagen für Informatik-Studierende",
+          "id": 27460924,
+          "kuerzel": "23-LIN-Inf",
+          "name_en": "Foundations of Computational Linguistics for Students of Informatics",
+          "modulstrukturangabe": "3 SL, 1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10019,
+          "turnus": "Studium kann nur im Wintersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Lehrveranstaltung 2 (S)'",
+                  "id": 199428310,
+                  "name_en": "STUDY REQUIREMENT 'Lehrveranstaltung 2 (S)'",
+                  "erlaeuterungen": "<p>vgl. Erläuterungen zu Lehrveranstaltung 1</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 199428299
+                }
+              ],
+              "name": "Lehrveranstaltung 2",
+              "id": 199428299,
+              "leistungspunkte_gesamt": 4,
+              "turnus": "WS",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 90,
+              "gruppengroesse": 0,
+              "workload_gesamt": 120
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Lehrveranstaltung 2 (S)'",
+              "id": 199428310,
+              "name_en": "STUDY REQUIREMENT 'Lehrveranstaltung 2 (S)'",
+              "erlaeuterungen": "<p>vgl. Erläuterungen zu Lehrveranstaltung 1</p>",
+              "studienleistung": true,
+              "veranstaltung": 199428299
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methods in Applied Computational Linguistics",
+          "id": 199428284,
+          "kuerzel": "23-LIN-MaCL-MethAngewCL",
+          "name_en": "Methods in Applied Computational Linguistics",
+          "modulstrukturangabe": "2 SL, 1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10019,
+          "turnus": "Studium kann nur im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 541747706,
+          "beginnfachsemester": [
+            2
+          ],
+          "pflichtmodul": false,
+          "dauer": "2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology: begleitende Übung",
+              "id": 544093124,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology",
+          "id": 544093118,
+          "kuerzel": "39-M-Inf-INT-adv_a",
+          "name_en": "Advanced Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Di 12:30-14:00 CITC 3.220"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392239",
+    "semester_id": 413269727,
+    "thema": "Tutorial: Human-Centered Artificial Intelligence (Journal Club)  ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 659883795,
+    "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 252906639,
+        "nachname": "Drimalla",
+        "anrede": "Frau",
+        "pers_titel": "Prof. Dr.",
+        "vorname": "Hanna",
+        "name_komplett": "Prof. Dr. Hanna Drimalla"
+      },
+      {
+        "person_id": 289260750,
+        "nachname": "Hakobyan",
+        "anrede": "Frau",
+        "pers_titel": "Dr. ",
+        "vorname": "Olya",
+        "name_komplett": "Dr.  Olya Hakobyan"
+      }
+    ],
+    "beleg_nr_gelesen": "39…22…39…",
+    "thema_kurz": "Tut. Human Centered Artificial Intelligence Journal Club",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence (focus): Übung 2",
+              "id": 543938994,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence (focus)",
+          "id": 543938933,
+          "kuerzel": "39-M-Inf-AI-adv-foc",
+          "name_en": "Advanced Artificial Intelligence (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence: Übung",
+              "id": 544082178,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar each from the area of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence",
+          "id": 544082149,
+          "kuerzel": "39-M-Inf-AI-adv_a",
+          "name_en": "Advanced Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology (focus): Übung 2",
+              "id": 543982500,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der zugehörigen Veranstaltung (Seminar oder Vorlesung) aus dem Bereich Advanced Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der zugehörigen Veranstaltung (Seminar oder Vorlesung) aus dem Bereich Advanced Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the corresponding course (seminar or lecture) from the field of Advanced Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology (focus)",
+          "id": 543982456,
+          "kuerzel": "39-M-Inf-INT-adv-foc",
+          "name_en": "Advanced Interaction Technology (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology: begleitende Übung",
+              "id": 544093124,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology",
+          "id": 544093118,
+          "kuerzel": "39-M-Inf-INT-adv_a",
+          "name_en": "Advanced Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  }
+]

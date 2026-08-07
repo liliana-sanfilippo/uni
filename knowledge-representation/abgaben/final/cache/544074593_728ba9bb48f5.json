@@ -1,0 +1,1259 @@
+[
+  {
+    "zeitOrt": [
+      "Di 16-18"
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392114",
+    "semester_id": 413271031,
+    "thema": "Tutorials: Intelligent Tutoring Systems ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 737385392,
+    "kurztitel": "392114 Tutorials: Intelligent Tutoring Systems  (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 437290336,
+        "nachname": "Khalid",
+        "anrede": "Frau",
+        "pers_titel": "Dr.",
+        "vorname": "Adia",
+        "name_komplett": "Dr. Adia Khalid"
+      },
+      {
+        "person_id": 49941564,
+        "nachname": "Paaßen",
+        "pers_titel": "Prof. Dr.",
+        "vorname": "Benjamin",
+        "name_komplett": "Prof. Dr. Benjamin Paaßen"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…14…",
+    "thema_kurz": "Tutorials Intelligent Tutoring Systems",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übungen",
+              "id": 420724136,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Kognitive Interaktionstechnologie (Basis)",
+          "id": 420724116,
+          "kuerzel": "39-Inf-WP-CIT",
+          "name_en": "Cognitive Interaction Technology (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 368770237,
+          "beginnfachsemester": [
+            4,
+            5,
+            6
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Seminar o. Übung",
+              "id": 420580127,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Seminar o. Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Kognitive Interaktionstechnologie (Schwerpunkt)",
+          "id": 420580124,
+          "kuerzel": "39-Inf-WP-CIT-x",
+          "name_en": "Cognitive Interaction Technology (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 368770237,
+          "beginnfachsemester": [
+            4,
+            5
+          ],
+          "pflichtmodul": false,
+          "dauer": "2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übungen",
+              "id": 420725535,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Mensch-Technik-Interaktion (Basis)",
+          "id": 420725516,
+          "kuerzel": "39-Inf-WP-MTI",
+          "name_en": "Human-Technology Interaction (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 368770237,
+          "beginnfachsemester": [
+            4,
+            5,
+            6
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung",
+              "id": 420168443,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus): begleitende Übung",
+              "id": 544074593,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Mi 10-12"
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392121",
+    "semester_id": 413271031,
+    "thema": "Tutorials: Artificial Intelligence in Biomedicine",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 746212655,
+    "kurztitel": "392121 Tutorials: Artificial Intelligence in Biomedicine (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 289004176,
+        "nachname": "Schlüter",
+        "anrede": "Herr",
+        "vorname": "Johannes",
+        "name_komplett": "Johannes Schlüter"
+      },
+      {
+        "person_id": 202729007,
+        "nachname": "Schönhuth",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr.",
+        "vorname": "Alexander",
+        "name_komplett": "Prof. Dr. Alexander Schönhuth"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…21…",
+    "thema_kurz": "Tutorials Artificial Intelligence Biomedicine",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Übung zur ausgewählten Vorlesung",
+              "id": 308594666,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Biomedical Data Science for Modern Healthcare Technology",
+          "id": 308594662,
+          "kuerzel": "39-Inf-BDS",
+          "name_en": "Biomedical Data Science for Modern Healthcare Technology",
+          "modulstrukturangabe": "1 SL, 0-1 bPr, 0-1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Auslaufend",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 188583091,
+          "beginnfachsemester": [
+            5,
+            6
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übungen",
+              "id": 420724318,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Computational Life Sciences (Basis)",
+          "id": 420724298,
+          "kuerzel": "39-Inf-WP-CLS",
+          "name_en": "Computational Life Sciences (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 368770250,
+          "beginnfachsemester": [
+            4,
+            5,
+            6
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Seminar o. Übung",
+              "id": 420580462,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Seminar o. Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Computational Life Sciences (Schwerpunkt)",
+          "id": 420580459,
+          "kuerzel": "39-Inf-WP-CLS-x",
+          "name_en": "Computational Life Sciences (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 405818188,
+          "beginnfachsemester": [
+            4,
+            5
+          ],
+          "pflichtmodul": false,
+          "dauer": "2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übungen",
+              "id": 420724488,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Data Science (Basis)",
+          "id": 420724449,
+          "kuerzel": "39-Inf-WP-DS",
+          "name_en": "Data Science (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 368770250,
+          "beginnfachsemester": [
+            4,
+            5,
+            6
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Seminar o. Übung",
+              "id": 420581035,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Seminar o. Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Data Science (Schwerpunkt)",
+          "id": 420581012,
+          "kuerzel": "39-Inf-WP-DS-x",
+          "name_en": "Data Science (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 368770250,
+          "beginnfachsemester": [
+            4,
+            5
+          ],
+          "pflichtmodul": false,
+          "dauer": "2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence: Übung",
+              "id": 420164934,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence",
+          "id": 420164915,
+          "kuerzel": "39-M-Inf-AI-app",
+          "name_en": "Applied Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence (focus): Übung",
+              "id": 544067525,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder Seminar aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder Seminar aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or seminar from the field of Applied Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung (Alternative)",
+              "id": 420168437,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus): begleitende Übung",
+              "id": 544074593,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung",
+              "id": 544400283,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methoden der Naturwissenschaftlichen Informatik (Basis)",
+          "id": 544400254,
+          "kuerzel": "39-M-Inf-NWI",
+          "name_en": "Methods for Informatics in the Natural Sciences (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Übung",
+              "id": 544400745,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methoden der Naturwissenschaftlichen Informatik (Schwerpunkt)",
+          "id": 544400708,
+          "kuerzel": "39-M-Inf-NWI-x",
+          "name_en": "Methods for Informatics for the Natural Sciences (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Mo 16:15-18 einmalig CITEC 0.114 Vorbesprechung",
+      "n.V. 14:15-16 n.V. CITEC 0.114"
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "2",
+    "spracheEnglisch": false,
+    "beleg_nr": "392177",
+    "semester_id": 413271031,
+    "thema": "Übungen A zu RoboCup@Home",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 746133028,
+    "kurztitel": "392177 Übungen A zu RoboCup@Home (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 10378,
+        "nachname": "Wachsmuth",
+        "anrede": "Herr",
+        "pers_titel": "PD Dr.-Ing.",
+        "vorname": "Sven",
+        "name_komplett": "PD Dr.-Ing. Sven Wachsmuth"
+      },
+      {
+        "person_id": 474254669,
+        "nachname": "Holzmann",
+        "anrede": "Herr",
+        "vorname": "Dennis",
+        "name_komplett": "Dennis Holzmann"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…77…",
+    "thema_kurz": "Üb. A RoboCup@Home",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering: Übung",
+              "id": 420166682,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering",
+          "id": 420166623,
+          "kuerzel": "39-M-Inf-ASE-app",
+          "name_en": "Applied Autonomous Systems Engineering",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering (focus): Übung",
+              "id": 544072594,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or a corresponding seminar from the field of Applied Autonomous Systems Engineering.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering (focus)",
+          "id": 544072581,
+          "kuerzel": "39-M-Inf-ASE-app-foc_a",
+          "name_en": "Applied Autonomous Systems Engineering (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung",
+              "id": 420168443,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus): begleitende Übung",
+              "id": 544074593,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Mo 12:15-14 einmalig CITEC 0.114 Besprechung",
+      "n.V. n.V."
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "2",
+    "spracheEnglisch": false,
+    "beleg_nr": "392177",
+    "semester_id": 413271031,
+    "thema": "Übungen B zu RoboCup@Home",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 746133513,
+    "kurztitel": "392177 Übungen B zu RoboCup@Home (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 10378,
+        "nachname": "Wachsmuth",
+        "anrede": "Herr",
+        "pers_titel": "PD Dr.-Ing.",
+        "vorname": "Sven",
+        "name_komplett": "PD Dr.-Ing. Sven Wachsmuth"
+      },
+      {
+        "person_id": 474254669,
+        "nachname": "Holzmann",
+        "anrede": "Herr",
+        "vorname": "Dennis",
+        "name_komplett": "Dennis Holzmann"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…77…",
+    "thema_kurz": "Üb. B RoboCup@Home",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering: Übung",
+              "id": 420166682,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering",
+          "id": 420166623,
+          "kuerzel": "39-M-Inf-ASE-app",
+          "name_en": "Applied Autonomous Systems Engineering",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering (focus): Übung",
+              "id": 544072594,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or a corresponding seminar from the field of Applied Autonomous Systems Engineering.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering (focus)",
+          "id": 544072581,
+          "kuerzel": "39-M-Inf-ASE-app-foc_a",
+          "name_en": "Applied Autonomous Systems Engineering (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung",
+              "id": 420168443,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus): begleitende Übung",
+              "id": 544074593,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Do 10-12"
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392242",
+    "semester_id": 413271031,
+    "thema": "Advanced Artificial Intelligence in Biomedicine",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 746228122,
+    "kurztitel": "392242 Advanced Artificial Intelligence in Biomedicine (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 202729007,
+        "nachname": "Schönhuth",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr.",
+        "vorname": "Alexander",
+        "name_komplett": "Prof. Dr. Alexander Schönhuth"
+      },
+      {
+        "person_id": 289004176,
+        "nachname": "Schlüter",
+        "anrede": "Herr",
+        "vorname": "Johannes",
+        "name_komplett": "Johannes Schlüter"
+      }
+    ],
+    "beleg_nr_gelesen": "39…22…42…",
+    "thema_kurz": "Adv. Artificial Intelligence Biomedicine",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Übung zur ausgewählten Vorlesung",
+              "id": 308594666,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Biomedical Data Science for Modern Healthcare Technology",
+          "id": 308594662,
+          "kuerzel": "39-Inf-BDS",
+          "name_en": "Biomedical Data Science for Modern Healthcare Technology",
+          "modulstrukturangabe": "1 SL, 0-1 bPr, 0-1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Auslaufend",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 81435348,
+          "beginnfachsemester": [
+            1,
+            2
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung",
+              "id": 544402189,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Neue Forschungsthemen der Naturwissenschaftlichen Informatik",
+          "id": 544402147,
+          "kuerzel": "39-M-Inf-ERT_NWI",
+          "name_en": "Emerging Research Topics in Informatics for the Natural Sciences",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung",
+              "id": 420168443,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus): begleitende Übung",
+              "id": 544074593,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,408 @@
+[
+  {
+    "zeitOrt": [
+      "Di 10-12 14-täglich CITEC 2.015"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "1",
+    "spracheEnglisch": true,
+    "beleg_nr": "392136",
+    "semester_id": 413269727,
+    "thema": "Hot Topics in Interactive Cognitive Systems",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "S",
+    "vst_id": 655667453,
+    "kurztitel": "392136 Hot Topics in Interactive Cognitive Systems (S)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "S",
+    "lehrende": [
+      {
+        "person_id": 14743,
+        "nachname": "Kopp",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr.-Ing. ",
+        "vorname": "Stefan",
+        "name_komplett": "Prof. Dr.-Ing.  Stefan Kopp"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…36…",
+    "thema_kurz": "Hot Topics Interactive Cognitive Systems",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1 (S)'",
+                  "id": 544074631,
+                  "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Application-oriented seminar  1 (S)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544074622
+                }
+              ],
+              "name": "Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1",
+              "id": 544074622,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with another application-oriented seminar 2 from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1 (S)'",
+              "id": 544074631,
+              "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Application-oriented seminar  1 (S)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544074622
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Mo 14-16 CITEC 1.015"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392148",
+    "semester_id": 413269727,
+    "thema": "Robot Learning in the Age of Foundation Models ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "S",
+    "vst_id": 659890294,
+    "kurztitel": "392148 Robot Learning in the Age of Foundation Models  (S)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "S",
+    "lehrende": [
+      {
+        "person_id": 26109209,
+        "nachname": "Neumann",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr. rer. nat.",
+        "vorname": "Klaus",
+        "name_komplett": "Prof. Dr. rer. nat. Klaus Neumann"
+      },
+      {
+        "person_id": 472547520,
+        "nachname": "Stranghöner",
+        "anrede": "Herr",
+        "vorname": "Jannick",
+        "name_komplett": "Jannick Stranghöner"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…48…",
+    "thema_kurz": "Robot Learning Age Foundation Models",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Artificial Intelligence (focus): anwendungsorientiertes Seminar 1 (S)'",
+                  "id": 544067563,
+                  "name_en": "STUDY REQUIREMENT 'Applied Artificial Intelligence (focus): application-oriented seminar 1 (S)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544067534
+                }
+              ],
+              "name": "Applied Artificial Intelligence (focus): anwendungsorientiertes Seminar 1",
+              "id": 544067534,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the application-oriented seminar 2 from the field of Applied Artificial Intelligence.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence (focus): anwendungsorientiertes Seminar 2",
+              "id": 544067557,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit dem anwendungsorientierten Seminar 1 aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit dem anwendungsorientierten Seminar 1 aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the application-oriented seminar 1 from the field of Applied Artificial Intelligence.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Artificial Intelligence (focus): anwendungsorientiertes Seminar 1 (S)'",
+              "id": 544067563,
+              "name_en": "STUDY REQUIREMENT 'Applied Artificial Intelligence (focus): application-oriented seminar 1 (S)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544067534
+            }
+          },
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544067569,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 2: (anwendungsorientiertes Seminar 1 + anwendungsorientiertes Seminar 2)</strong><br/>Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten Inhalte.</p><p>ODER</p><p><strong>Teilprüfung 2: (Projekt)</strong><br/>Projektbericht (8-10 Seiten)</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 2: (practical Seminar 1 + practical Seminar 2)</strong><br/>Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar.</p><p>OR </p><p><strong>Partial Examination 2: (project course)</strong><br/>Project report (8-10 pages)</p>",
+              "studienleistung": false,
+              "artenAsText": "Bericht o. Referat mit Ausarbeitung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Autonomous Systems Engineering (focus): anwendungsorientiertes Seminar 1 (S)'",
+                  "id": 544072636,
+                  "name_en": "STUDY REQUIREMENT 'Applied Autonomous Systems Engineering (focus): Application-oriented seminar 1 (S)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544072623
+                }
+              ],
+              "name": "Applied Autonomous Systems Engineering (focus): anwendungsorientiertes Seminar 1",
+              "id": 544072623,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with another application-oriented seminar 2 from the field of Applied Autonomous Systems Engineering.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering (focus): anwendungsorientiertes Seminar 2",
+              "id": 544072626,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einem anwendungsorientierten Seminar 1 aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einem anwendungsorientierten Seminar 1 aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with an application-oriented seminar 1 from the field of Applied Autonomous Systems Engineering.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Autonomous Systems Engineering (focus): anwendungsorientiertes Seminar 1 (S)'",
+              "id": 544072636,
+              "name_en": "STUDY REQUIREMENT 'Applied Autonomous Systems Engineering (focus): Application-oriented seminar 1 (S)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544072623
+            }
+          },
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544072656,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 2: (anwendungsorientiertes Seminar 1 + anwendungsorientiertes Seminar 2)</strong><br/>Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten Inhalte.</p><p>ODER</p><p><strong>Teilprüfung 2: (Projekt)</strong><br/>Projektbericht (8-10 Seiten)</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 2: ( practical Seminar 1 + practical Seminar 2)</strong><br/>Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar.</p><p>OR</p><p><strong>Partial Examination 2: (project course)</strong><br/>Project report (8-10 pages)</p>",
+              "studienleistung": false,
+              "artenAsText": "Bericht o. Referat mit Ausarbeitung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering (focus)",
+          "id": 544072581,
+          "kuerzel": "39-M-Inf-ASE-app-foc_a",
+          "name_en": "Applied Autonomous Systems Engineering (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1 (S)'",
+                  "id": 544074631,
+                  "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Application-oriented seminar  1 (S)'",
+                  "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+                  "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 544074622
+                }
+              ],
+              "name": "Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1",
+              "id": 544074622,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with another application-oriented seminar 2 from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus): anwendungsorientiertes Seminar 2",
+              "id": 544074625,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit dem anwendungsorientierten Seminar 1 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit dem anwendungsorientierten Seminar 1 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the application-oriented seminar 1 from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544074657,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 2: (anwendungsorientiertes Seminar 1 + anwendungsorientiertes Seminar 2)</strong><br/>Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten Inhalte.</p><p>ODER</p><p><strong>Teilprüfung 2: (Projekt)</strong><br/>Projektbericht (8-10 Seiten)</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 2: (practical Seminar 1 + practical Seminar 2)</strong><br/>Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar.</p><p>OR</p><p><strong>Partial Examination 2: (project course)</strong><br/>Project report (8-10 pages)</p>",
+              "studienleistung": false,
+              "artenAsText": "Bericht o. Referat mit Ausarbeitung"
+            }
+          },
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1 (S)'",
+              "id": 544074631,
+              "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Application-oriented seminar  1 (S)'",
+              "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+              "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+              "studienleistung": true,
+              "veranstaltung": 544074622
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  }
+]

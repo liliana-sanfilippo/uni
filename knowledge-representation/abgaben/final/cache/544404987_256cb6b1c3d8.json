@@ -1,0 +1,301 @@
+[
+  {
+    "zeitOrt": [
+      "Mi 14-16 U2-135"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392043",
+    "semester_id": 413269727,
+    "thema": "Tutorial: Learning from Distributed Data ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 665302435,
+    "kurztitel": "392043 Tutorial: Learning from Distributed Data  (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 309392735,
+        "nachname": "Düsing",
+        "anrede": "Herr",
+        "pers_titel": "Dr.",
+        "vorname": "Christoph",
+        "name_komplett": "Dr. Christoph Düsing"
+      }
+    ],
+    "beleg_nr_gelesen": "39…20…43…",
+    "thema_kurz": "Tut. Learning from Distributed Data",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence (focus): Übung 1",
+              "id": 543938970,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence (focus)",
+          "id": 543938933,
+          "kuerzel": "39-M-Inf-AI-adv-foc",
+          "name_en": "Advanced Artificial Intelligence (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence: Übung",
+              "id": 544082178,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar each from the area of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence",
+          "id": 544082149,
+          "kuerzel": "39-M-Inf-AI-adv_a",
+          "name_en": "Advanced Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence: Übung",
+              "id": 420164934,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence",
+          "id": 420164915,
+          "kuerzel": "39-M-Inf-AI-app",
+          "name_en": "Applied Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence (focus): Übung",
+              "id": 544067525,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder Seminar aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder Seminar aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or seminar from the field of Applied Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Artificial Intelligence: Übung",
+              "id": 420160904,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigem Seminar jeweils aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigem Seminar jeweils aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Basics of Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Artificial Intelligence",
+          "id": 420160864,
+          "kuerzel": "39-M-Inf-AI-bas",
+          "name_en": "Basics of Artificial Intelligence",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung",
+              "id": 544404987,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Artificial Intelligence (Schwerpunkt)",
+          "id": 544404997,
+          "kuerzel": "39-M-Inf-AI-x",
+          "name_en": "Artificial Intelligence (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Übung",
+              "id": 544399707,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Informatische Methoden der Datenanalyse (Schwerpunkt)",
+          "id": 544399690,
+          "kuerzel": "39-M-Inf-IMDA-x",
+          "name_en": "Computer Science Methods in Data Analysis (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  }
+]

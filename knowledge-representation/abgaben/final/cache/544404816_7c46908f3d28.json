@@ -1,0 +1,365 @@
+[
+  {
+    "zeitOrt": [
+      "Fr 16-18 14-täglich"
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "1",
+    "spracheEnglisch": true,
+    "beleg_nr": "392196",
+    "semester_id": 413271031,
+    "thema": "Übungen: Vertiefung Neuronale Netze",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 745064295,
+    "kurztitel": "392196 Übungen: Vertiefung Neuronale Netze (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 503068013,
+        "nachname": "Kappel",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr. ",
+        "vorname": "David",
+        "name_komplett": "Prof. Dr.  David Kappel"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…96…",
+    "thema_kurz": "Üb. Vert. Neuronale Netze",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übungen (Alternative)",
+              "id": 544404816,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Artificial Intelligence (Basis)",
+          "id": 544404773,
+          "kuerzel": "39-M-Inf-AI",
+          "name_en": "Artificial Intelligence (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence (focus): Übung 1 (Alternative)",
+              "id": 543938976,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence (focus): Übung 2 (Alternative)",
+              "id": 543939000,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence (focus)",
+          "id": 543938933,
+          "kuerzel": "39-M-Inf-AI-adv-foc",
+          "name_en": "Advanced Artificial Intelligence (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence: Übung (Alternative)",
+              "id": 420164928,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence",
+          "id": 420164915,
+          "kuerzel": "39-M-Inf-AI-app",
+          "name_en": "Applied Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence (focus): Übung (Alternative)",
+              "id": 544067528,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder Seminar aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder Seminar aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or seminar from the field of Applied Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544067569,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 2: (anwendungsorientiertes Seminar 1 + anwendungsorientiertes Seminar 2)</strong><br/>Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten Inhalte.</p><p>ODER</p><p><strong>Teilprüfung 2: (Projekt)</strong><br/>Projektbericht (8-10 Seiten)</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 2: (practical Seminar 1 + practical Seminar 2)</strong><br/>Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar.</p><p>OR </p><p><strong>Partial Examination 2: (project course)</strong><br/>Project report (8-10 pages)</p>",
+              "studienleistung": false,
+              "artenAsText": "Bericht o. Referat mit Ausarbeitung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Übung (Alternative)",
+              "id": 544404990,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>dies ist eine Alternative zur Übung mit einer Kontaktzeit von 30h</p>",
+              "turnus_freitext": "unregelmäßig angeboten",
+              "erlaeuterungenAsHtml": "<p>dies ist eine Alternative zur Übung mit einer Kontaktzeit von 30h</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Artificial Intelligence (Schwerpunkt)",
+          "id": 544404997,
+          "kuerzel": "39-M-Inf-AI-x",
+          "name_en": "Artificial Intelligence (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung",
+              "id": 708303411,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Fortgeschrittene Künstliche Intelligenz & Deep Learning (Basis)",
+          "id": 708303398,
+          "kuerzel": "39-M-Inf-KIDL",
+          "name_en": "Advanced Artificial Intelligence & Deep Learning (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 569518723,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Übung",
+              "id": 708304909,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Fortgeschrittene Künstliche Intelligenz & Deep Learning (Schwerpunkt)",
+          "id": 708304891,
+          "kuerzel": "39-M-Inf-KIDL-x",
+          "name_en": "Advanced Artificial Intelligence & Deep Learning (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 569518723,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Vertiefung Neuronale Netze",
+              "id": 29614559,
+              "leistungspunkte_gesamt": 1,
+              "turnus": "WS",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 15,
+              "gruppengroesse": 0,
+              "workload_gesamt": 30
+            }
+          }
+        ],
+        "modul": {
+          "name": "Vertiefung Neuronale Netze",
+          "id": 27461584,
+          "kuerzel": "39-M-Inf-VNN",
+          "name_en": "Advanced Neural Networks",
+          "modulstrukturangabe": "0-1 bPr, 0-1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Auslaufend",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 81435348,
+          "beginnfachsemester": [
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  }
+]

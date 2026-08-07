@@ -1,0 +1,196 @@
+[
+  {
+    "zeitOrt": [
+      "Di 12:30-14:00 CITC 3.220"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392239",
+    "semester_id": 413269727,
+    "thema": "Tutorial: Human-Centered Artificial Intelligence (Journal Club)  ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 659883795,
+    "kurztitel": "392239 Tutorial: Human-Centered Artificial Intelligence (Journal Club)   (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 252906639,
+        "nachname": "Drimalla",
+        "anrede": "Frau",
+        "pers_titel": "Prof. Dr.",
+        "vorname": "Hanna",
+        "name_komplett": "Prof. Dr. Hanna Drimalla"
+      },
+      {
+        "person_id": 289260750,
+        "nachname": "Hakobyan",
+        "anrede": "Frau",
+        "pers_titel": "Dr. ",
+        "vorname": "Olya",
+        "name_komplett": "Dr.  Olya Hakobyan"
+      }
+    ],
+    "beleg_nr_gelesen": "39…22…39…",
+    "thema_kurz": "Tut. Human Centered Artificial Intelligence Journal Club",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence (focus): Übung 2",
+              "id": 543938994,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence (focus)",
+          "id": 543938933,
+          "kuerzel": "39-M-Inf-AI-adv-foc",
+          "name_en": "Advanced Artificial Intelligence (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence: Übung",
+              "id": 544082178,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar each from the area of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence",
+          "id": 544082149,
+          "kuerzel": "39-M-Inf-AI-adv_a",
+          "name_en": "Advanced Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology (focus): Übung 2",
+              "id": 543982500,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der zugehörigen Veranstaltung (Seminar oder Vorlesung) aus dem Bereich Advanced Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der zugehörigen Veranstaltung (Seminar oder Vorlesung) aus dem Bereich Advanced Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the corresponding course (seminar or lecture) from the field of Advanced Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology (focus)",
+          "id": 543982456,
+          "kuerzel": "39-M-Inf-INT-adv-foc",
+          "name_en": "Advanced Interaction Technology (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology: begleitende Übung",
+              "id": 544093124,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology",
+          "id": 544093118,
+          "kuerzel": "39-M-Inf-INT-adv_a",
+          "name_en": "Advanced Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  }
+]

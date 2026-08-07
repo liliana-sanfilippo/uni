@@ -1,0 +1,272 @@
+[
+  {
+    "zeitOrt": [
+      "Do 12:30-14:00 s.t. 3.220"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "kurz_kommentarAsHTML": "Tutorial: 392239",
+    "spracheEnglisch": true,
+    "beleg_nr": "392238",
+    "semester_id": 413269727,
+    "thema": "Human-Centered Artifical Intelligence Lab (Forschungskolloquium)",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "S",
+    "vst_id": 659886362,
+    "kurztitel": "392238 Human-Centered Artifical Intelligence Lab (Forschungskolloquium) (S)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "S",
+    "lehrende": [
+      {
+        "person_id": 252906639,
+        "nachname": "Drimalla",
+        "anrede": "Frau",
+        "pers_titel": "Prof. Dr.",
+        "vorname": "Hanna",
+        "name_komplett": "Prof. Dr. Hanna Drimalla"
+      },
+      {
+        "person_id": 289260750,
+        "nachname": "Hakobyan",
+        "anrede": "Frau",
+        "pers_titel": "Dr. ",
+        "vorname": "Olya",
+        "name_komplett": "Dr.  Olya Hakobyan"
+      }
+    ],
+    "beleg_nr_gelesen": "39…22…38…",
+    "thema_kurz": "Human Centered Artifical Intelligence Lab ForschKolloq.",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Artificial Intelligence (focus): Seminar",
+              "id": 543938988,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 543939013,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 2 bei Absolvierung von Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Teilprüfung 2 bei Absolvierung von Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 2 upon Completion of Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Partial Examination 2 upon Completion of Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence (focus)",
+          "id": 543938933,
+          "kuerzel": "39-M-Inf-AI-adv-foc",
+          "name_en": "Advanced Artificial Intelligence (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "PRÜFUNG BENOTET 'Advanced Artificial Intelligence: Seminar (S)'",
+                  "id": 544082187,
+                  "name_en": "GRADED EXAMINATION 'Advanced Artificial Intelligence: Seminar (S)'",
+                  "erlaeuterungen": "<p><strong>Prüfung bei Absolvierung von Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+                  "erlaeuterungen_en": "<p><strong>Examination upon Completion of Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+                  "studienleistung": false,
+                  "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung",
+                  "veranstaltung": 544082175
+                }
+              ],
+              "name": "Advanced Artificial Intelligence: Seminar",
+              "id": 544082175,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET 'Advanced Artificial Intelligence: Seminar (S)'",
+              "id": 544082187,
+              "name_en": "GRADED EXAMINATION 'Advanced Artificial Intelligence: Seminar (S)'",
+              "erlaeuterungen": "<p><strong>Prüfung bei Absolvierung von Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Examination upon Completion of Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung",
+              "veranstaltung": 544082175
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Artificial Intelligence",
+          "id": 544082149,
+          "kuerzel": "39-M-Inf-AI-adv_a",
+          "name_en": "Advanced Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology (focus): Seminar",
+              "id": 543982494,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Advanced Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Advanced Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise from the field of Advanced Interaction Technology.</p>",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 543982520,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 2 bei Absolvierung von Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Teilprüfung 2 bei Absolvierung von Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 2 upon Completion of Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Partial Examination 2 upon Completion of Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology (focus)",
+          "id": 543982456,
+          "kuerzel": "39-M-Inf-INT-adv-foc",
+          "name_en": "Advanced Interaction Technology (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "PRÜFUNG BENOTET 'Advanced Interaction Technology: Seminar (S)'",
+                  "id": 544093157,
+                  "name_en": "GRADED EXAMINATION 'Advanced Interaction Technology: Seminar (S)'",
+                  "erlaeuterungen": "<p><strong>Prüfung bei Absolvierung von Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+                  "erlaeuterungen_en": "<p><strong>Examination upon Completion of Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+                  "studienleistung": false,
+                  "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung",
+                  "veranstaltung": 544093131
+                }
+              ],
+              "name": "Advanced Interaction Technology: Seminar",
+              "id": 544093131,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET 'Advanced Interaction Technology: Seminar (S)'",
+              "id": 544093157,
+              "name_en": "GRADED EXAMINATION 'Advanced Interaction Technology: Seminar (S)'",
+              "erlaeuterungen": "<p><strong>Prüfung bei Absolvierung von Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Examination upon Completion of Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/in the lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung",
+              "veranstaltung": 544093131
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology",
+          "id": 544093118,
+          "kuerzel": "39-M-Inf-INT-adv_a",
+          "name_en": "Advanced Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  }
+]

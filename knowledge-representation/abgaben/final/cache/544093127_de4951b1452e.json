@@ -1,0 +1,390 @@
+[
+  {
+    "zeitOrt": [
+      "Fr 14-16 14-täglich"
+    ],
+    "semester_name": "WiSe 2026/2027",
+    "sws": "1",
+    "spracheEnglisch": true,
+    "beleg_nr": "392116",
+    "semester_id": 413271031,
+    "thema": "Tutorials: Autonome Robotermanipulation",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 744241249,
+    "kurztitel": "392116 Tutorials: Autonome Robotermanipulation (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20262",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 33056,
+        "nachname": "Haschke",
+        "anrede": "Herr",
+        "pers_titel": "Dr. rer. nat.",
+        "vorname": "Robert",
+        "name_komplett": "Dr. rer. nat. Robert Haschke"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…16…",
+    "thema_kurz": "Tutorials Autonome Robotermanipulation",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Autonomous Systems Engineering (focus): Übung 1 (Alternative)",
+              "id": 543976552,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der zugehörigen Vorlesung aus dem Bereich Advanced Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der zugehörigen Vorlesung aus dem Bereich Advanced Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the corresponding lecture from the field of Advanced Autonomous Systems Engineering.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "name": "Advanced Autonomous Systems Engineering (focus): Übung 2 (Alternative)",
+              "id": 543976584,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Autonomous Systems Engineering.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Autonomous Systems Engineering (focus)",
+          "id": 543976539,
+          "kuerzel": "39-M-Inf-ASE-adv-foc",
+          "name_en": "Advanced Autonomous Systems Engineering (focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Autonomous Systems Engineering: Übung (Alternative)",
+              "id": 544088105,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder mit dem dazugehörigen Seminar jeweils aus dem Bereich Advanced Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or with the associated seminar, each from the field of Advanced Artificial Intelligence.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Autonomous Systems Engineering",
+          "id": 544088073,
+          "kuerzel": "39-M-Inf-ASE-adv_a",
+          "name_en": "Advanced Autonomous Systems Engineering",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering: Übung (Alternative)",
+              "id": 420166676,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering",
+          "id": 420166623,
+          "kuerzel": "39-M-Inf-ASE-app",
+          "name_en": "Applied Autonomous Systems Engineering",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Autonomous Systems Engineering (focus): Übung zur Vorlesung (Alternative)",
+              "id": 544072617,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar aus dem Bereich Applied Autonomous Systems Engineering zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding lecture or a corresponding seminar from the field of Applied Autonomous Systems Engineering.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Autonomous Systems Engineering (focus)",
+          "id": 544072581,
+          "kuerzel": "39-M-Inf-ASE-app-foc_a",
+          "name_en": "Applied Autonomous Systems Engineering (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Advanced Interaction Technology: begleitende Übung (Alternative)",
+              "id": 544093127,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "IMMER",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Advanced Interaction Technology",
+          "id": 544093118,
+          "kuerzel": "39-M-Inf-INT-adv_a",
+          "name_en": "Advanced Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung (Alternative)",
+              "id": 420168437,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Autonomes Greifen",
+              "id": 29616711,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "zwei-jährlich, WS",
+              "artenAsText": "Übung mit Praktikum",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Manuelle Intelligenz",
+          "id": 27461558,
+          "kuerzel": "39-M-Inf-MI",
+          "name_en": "Manual Intelligence",
+          "modulstrukturangabe": "0-1 bPr, 0-1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Auslaufend",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 81440911,
+          "beginnfachsemester": [
+            1,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung (Alternative)",
+              "id": 544403490,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Robotik, Automatisierung und Technische Informatik (Basis)",
+          "id": 544403475,
+          "kuerzel": "39-M-Inf-RAT",
+          "name_en": "Robotics, Automation and Technical Informatics (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Übung",
+              "id": 544403604,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Robotik, Automatisierung und Technische Informatik (Schwerpunkt)",
+          "id": 544403594,
+          "kuerzel": "39-M-Inf-RAT-x",
+          "name_en": "Robotics, Automation and Technical Informatics (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  }
+]

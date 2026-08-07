@@ -1,0 +1,163 @@
+{
+  "modul": {
+    "name": "Applied Interaction Technology (focus)",
+    "id": 544074581,
+    "kuerzel": "39-M-Inf-INT-app-foc_a",
+    "name_en": "Applied Interaction Technology (focus)",
+    "veranstaltungen": [
+      {
+        "name": "Applied Interaction Technology (focus): Vorlesung",
+        "id": 544074587,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with a corresponding exercise from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Vorlesung",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 0,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology (focus) - Seminar",
+        "id": 544074590,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit der begleitenden Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit der begleitenden Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with the accompanying exercise from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Seminar",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology (focus): begleitende Übung",
+        "id": 544074593,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Übung",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology (focus) - begleitende Übung (Alternative)",
+        "id": 544074616,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Übung",
+        "workload_praesenz": 15,
+        "workload_selbst": 45,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology (focus): Projekt",
+        "id": 544074619,
+        "leistungspunkte_gesamt": 4,
+        "erlaeuterungen": "<p>zusammen mit  einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit  einer Vorlesung/einem Seminar + zugehöriger Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with a lecture/a seminar and the corresponding exercise from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Projekt",
+        "workload_praesenz": 30,
+        "workload_selbst": 90,
+        "gruppengroesse": 30,
+        "workload_gesamt": 120
+      },
+      {
+        "name": "Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1",
+        "id": 544074622,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit einem weiteren anwendungsorientierten Seminar 2 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with another application-oriented seminar 2 from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Seminar",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      },
+      {
+        "name": "Applied Interaction Technology (focus): anwendungsorientiertes Seminar 2",
+        "id": 544074625,
+        "leistungspunkte_gesamt": 2,
+        "erlaeuterungen": "<p>zusammen mit dem anwendungsorientierten Seminar 1 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "turnus": "IMMER",
+        "erlaeuterungenAsHtml": "<p>zusammen mit dem anwendungsorientierten Seminar 1 aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+        "erlaeuterungen_en": "<p>To study together with the application-oriented seminar 1 from the field of Applied Interaction Technology.</p>",
+        "artenAsText": "Seminar",
+        "workload_praesenz": 30,
+        "workload_selbst": 30,
+        "gruppengroesse": 30,
+        "workload_gesamt": 60
+      }
+    ],
+    "modulstrukturangabe": "1 SL, 2 bPr",
+    "berechenbar": true,
+    "leistungspunkte": 10,
+    "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+    "detailUrl": "https://ekvv.uni-bielefeld.de/sinfo/publ/modul/544074581",
+    "leistungen": [
+      {
+        "name": "PRÜFUNG BENOTET",
+        "id": 544074634,
+        "name_en": "GRADED EXAMINATION",
+        "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+        "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+        "studienleistung": false,
+        "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+      },
+      {
+        "name": "PRÜFUNG BENOTET",
+        "id": 544074657,
+        "name_en": "GRADED EXAMINATION",
+        "erlaeuterungen": "<p><strong>Teilprüfung 2: (anwendungsorientiertes Seminar 1 + anwendungsorientiertes Seminar 2)</strong><br/>Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten Inhalte.</p><p>ODER</p><p><strong>Teilprüfung 2: (Projekt)</strong><br/>Projektbericht (8-10 Seiten)</p>",
+        "erlaeuterungen_en": "<p><strong>Partial Examination 2: (practical Seminar 1 + practical Seminar 2)</strong><br/>Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar.</p><p>OR</p><p><strong>Partial Examination 2: (project course)</strong><br/>Project report (8-10 pages)</p>",
+        "studienleistung": false,
+        "artenAsText": "Bericht o. Referat mit Ausarbeitung"
+      },
+      {
+        "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): Projekt (Pj)'",
+        "id": 544074628,
+        "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Project (Pj)'",
+        "erlaeuterungen": "<p>Mündlicher Vortrag über die Durchführung und Ergebnisse der Projektarbeit im Umfang von 10 bis 15 Minuten</p>",
+        "erlaeuterungen_en": "<p>Oral presentation on the implementation and results of the project work with a duration of 10 to 15 minutes.</p>",
+        "studienleistung": true,
+        "veranstaltung": 544074619
+      },
+      {
+        "name": "STUDIENLEISTUNG 'Applied Interaction Technology (focus): anwendungsorientiertes Seminar 1 (S)'",
+        "id": 544074631,
+        "name_en": "STUDY REQUIREMENT 'Applied Interaction Technology (focus): Application-oriented seminar  1 (S)'",
+        "erlaeuterungen": "<p>Mündlicher Vortrag zu einem mit dem/der Prüfer*in vereinbarten Thema im Umfang von 30 bis 40 Minuten</p>",
+        "erlaeuterungen_en": "<p>Oral presentation on a topic agreed upon with the examiner, lasting 30 to 40 minutes.</p>",
+        "studienleistung": true,
+        "veranstaltung": 544074622
+      }
+    ]
+  },
+  "kontexte": [
+    {
+      "modultypMasterEdAbschluss": false,
+      "ebene2": 366747900,
+      "beginnfachsemester": [
+        2,
+        3
+      ],
+      "pflichtmodul": false,
+      "dauer": "1 oder 2 Semester"
+    }
+  ]
+}

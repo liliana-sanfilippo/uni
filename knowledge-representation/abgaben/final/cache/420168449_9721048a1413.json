@@ -1,0 +1,1331 @@
+[
+  {
+    "zeitOrt": [
+      "Mi 14-16 X-E0-202",
+      "Mi 14-16 einmalig H8",
+      "Mi 14-16 einmalig H8",
+      "Mi 14-16 einmalig S1-147"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392137",
+    "semester_id": 413269727,
+    "thema": "Auditory Data Science",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "V",
+    "vst_id": 662850971,
+    "kurztitel": "392137 Auditory Data Science (V)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "V",
+    "lehrende": [
+      {
+        "person_id": 11596,
+        "nachname": "Hermann",
+        "anrede": "Herr",
+        "pers_titel": "Dr. rer. nat.",
+        "vorname": "Thomas",
+        "name_komplett": "Dr. rer. nat. Thomas Hermann"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…37…",
+    "thema_kurz": "Auditory Data Science",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "PRÜFUNG BENOTET 'Auditory Data Science (V)'",
+                  "id": 210149282,
+                  "name_en": "GRADED EXAMINATION 'Auditory Data Science (V)'",
+                  "erlaeuterungen": "<p>Mündliche Prüfung im Umfang von 15-25 Minuten oder schriftliche Klausur im Umfang von 60-90 Minuten über die Inhalte der Vorlesung.</p>",
+                  "erlaeuterungen_en": "<p>Oral examamination (15-25 min.) or written examination (60-90 min.) about the contents of the lecture.</p>",
+                  "studienleistung": false,
+                  "artenAsText": "Klausur o. mündliche Prüfung",
+                  "veranstaltung": 210149254
+                }
+              ],
+              "name": "Auditory Data Science",
+              "id": 210149254,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "SS",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET 'Auditory Data Science (V)'",
+              "id": 210149282,
+              "name_en": "GRADED EXAMINATION 'Auditory Data Science (V)'",
+              "erlaeuterungen": "<p>Mündliche Prüfung im Umfang von 15-25 Minuten oder schriftliche Klausur im Umfang von 60-90 Minuten über die Inhalte der Vorlesung.</p>",
+              "erlaeuterungen_en": "<p>Oral examamination (15-25 min.) or written examination (60-90 min.) about the contents of the lecture.</p>",
+              "studienleistung": false,
+              "artenAsText": "Klausur o. mündliche Prüfung",
+              "veranstaltung": 210149254
+            }
+          }
+        ],
+        "modul": {
+          "name": "Auditory Data Science",
+          "id": 210149228,
+          "kuerzel": "39-M-Inf-ADS",
+          "name_en": "Auditory Data Science",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Auslaufend",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 128265770,
+          "beginnfachsemester": [
+            2
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Vorlesung",
+              "id": 420168449,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420168456,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544074634,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Einführende Vorlesung",
+              "id": 544400267,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 60,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544400301,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit ENTWEDER einführender Vorlesung + Übung ODER einführendem Seminar + Übung.</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der einführenden Vorlesung/des einführenden Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur einführenden Vorlesung ODER des einführenden Seminars<br/>Die Abschlussprüfung zu den Inhalten des Seminars/der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p><strong>Seminar</strong>: Referat (im Umfang von 30–45 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem*der Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p><strong>Vorlesung</strong>: Abschlussklausur (im Umfang von 90-180 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-40 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.</p><p>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-180 Minuten. </p><p>Alternativ kann ein Essay (im Umfang von ca. 4 Seiten) mit einer stark auf die vermittelten Kenntnisse und Fähigkeiten bezogenen Aufgabenstellung vorgesehen werden. Es handelt sich um eine reflektive Aufgabenstellung zu Systematik und Zusammenhängen der Lerninhalte oder um eine Auseinandersetzung mit einer Programmieraufgabe zu den erlernten Inhalten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit einführender Vorlesung und begleitendem Seminar.</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)      Portfolio im begleitenden Seminar: Referat mit Ausarbeitung<br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem*der Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar/in der Vorlesung behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. </p><p>2)        einer Abschlussprüfung zur einführenden Vorlesung: <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Inhalte des Seminars oder entwickelt sich aus den im Seminar erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.<br/>Die Studierenden weisen im Rahmen der Abschlussklausur/der mündlichen Prüfung nach, die exemplarische Anwendung abstrakt erlernter Kompetenzen über das spezifisch gewählte Thema des Referats/der Ausarbeitung hinaus zu beherrschen. </p><p>Abschlussklausur (im Umfang von 90-180 Minuten) oder mündliche Prüfung (im Umfang von 20-40 Minuten) </p><p>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-180 Minuten. </p><p>Alternativ kann ein Essay (im Umfang von ca. 4 Seiten) mit einer stark auf die vermittelten Kenntnisse und Fähigkeiten bezogenen Aufgabenstellung vorgesehen werden. Es handelt sich um eine reflektive Aufgabenstellung zu Systematik und Zusammenhänge der Lerninhalte oder um eine Auseinandersetzung mit einer Programmieraufgabe zu den erlernten Inhalten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methoden der Naturwissenschaftlichen Informatik (Basis)",
+          "id": 544400254,
+          "kuerzel": "39-M-Inf-NWI",
+          "name_en": "Methods for Informatics in the Natural Sciences (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Einführende Veranstaltung Seminar o. Vorlesung",
+              "id": 544400738,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Seminar o. Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 60,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544400799,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1</strong><br/><strong>Bei Absolvierung der Modulteilprüfung 1 mit ENTWEDER den Veranstaltungen einführende Vorlesung + Übung ODER einführendes Seminar + Übung.</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der einführenden Vorlesung/des einführenden Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur einführenden Vorlesung ODER des einführenden Seminars<br/>Die Abschlussprüfung zu den Inhalten des Seminars/der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p><strong>Seminar</strong>: Referat (im Umfang von 30–45 Minuten) mit Ausarbeitung (im Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem*der Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p><strong>Vorlesung</strong>: Abschlussklausur (im Umfang von 90-180 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-40 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.</p><p>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-180 Minuten. </p><p>Alternativ kann ein Essay (im Umfang von ca. 4 Seiten) mit einer stark auf die vermittelten Kenntnisse und Fähigkeiten bezogenen Aufgabenstellung vorgesehen werden. Es handelt sich um eine reflektive Aufgabenstellung zu Systematik und Zusammenhängen der Lerninhalte oder um eine Auseinandersetzung mit einer Programmieraufgabe zu den erlernten Inhalten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung der Modulteilprüfung 1 mit den Veranstaltungen einführende Vorlesung und begleitendes Seminar.</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)      Portfolio im begleitenden Seminar: Referat mit Ausarbeitung<br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem*der Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar/in der Vorlesung behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. </p><p>2)        einer Abschlussprüfung zur einführenden Vorlesung: <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Inhalte des Seminars oder entwickelt sich aus den im Seminar erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.<br/>Die Studierenden weisen im Rahmen der Abschlussklausur/der mündlichen Prüfung nach, die exemplarische Anwendung abstrakt erlernter Kompetenzen über das spezifisch gewählte Thema des Referats/der Ausarbeitung hinaus zu beherrschen.</p><p>Abschlussklausur (im Umfang von 90-180 Minuten) oder mündliche Prüfung (im Umfang von 20-40 Minuten).</p><p>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-180 Minuten. </p><p>Alternativ kann ein Essay (im Umfang von ca. 4 Seiten) mit einer stark auf die vermittelten Kenntnisse und Fähigkeiten bezogenen Aufgabenstellung vorgesehen werden. Es handelt sich um eine reflektive Aufgabenstellung zu Systematik und Zusammenhänge der Lerninhalte oder um eine Auseinandersetzung mit einer Programmieraufgabe zu den erlernten Inhalten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methoden der Naturwissenschaftlichen Informatik (Schwerpunkt)",
+          "id": 544400708,
+          "kuerzel": "39-M-Inf-NWI-x",
+          "name_en": "Methods for Informatics for the Natural Sciences (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Einführende Vorlesung zu Thema 1",
+              "id": 587318499,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Einführende Vorlesung zu Thema 2 (V)'",
+                  "id": 587318562,
+                  "name_en": "STUDY REQUIREMENT 'Introductory lecture on topic 2 (V)'",
+                  "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+                  "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 587318520
+                }
+              ],
+              "name": "Einführende Vorlesung zu Thema 2",
+              "id": 587318520,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Einführende Vorlesung zu Thema 3 (V)'",
+                  "id": 587318583,
+                  "name_en": "STUDY REQUIREMENT 'Introductory lecture on topic 3 (V)'",
+                  "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+                  "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 587318541
+                }
+              ],
+              "name": "Einführende Vorlesung zu Thema 3",
+              "id": 587318541,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Einführende Vorlesung zu Thema 2 (V)'",
+              "id": 587318562,
+              "name_en": "STUDY REQUIREMENT 'Introductory lecture on topic 2 (V)'",
+              "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+              "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+              "studienleistung": true,
+              "veranstaltung": 587318520
+            }
+          },
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Einführende Vorlesung zu Thema 3 (V)'",
+              "id": 587318583,
+              "name_en": "STUDY REQUIREMENT 'Introductory lecture on topic 3 (V)'",
+              "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+              "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+              "studienleistung": true,
+              "veranstaltung": 587318541
+            }
+          },
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 587318705,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p>Je nach Wahl der Lehrveranstaltungen im Thema 1  ist eine der folgenden Prüfungsleistungen zu erbringen:<br/>- Einführende Vorlesung (2 LP) + begleitende Übung (2 LP): Portfolio: Lösen von mindestens 50% der Übungsaufgaben; Abschlussprüfung:  Klausur im Umfang von 90-120 Minuten oder mündliche Prüfung im Umfang von 15-25 Minuten über die Inhalte der Vorlesung<br/>- Einführende Vorlesung (2 LP)  + begleitendes Seminar (2 LP): Portfolio: Referat (30-45 Minuten) im Seminar; Abschlussprüfung:  Klausur im Umfang von 90-120 Minuten oder mündliche Prüfung im Umfang von 15-25 Minuten über die Inhalte der Vorlesung<br/>- Einführendes Seminar (2 LP) + begleitende Übung (2 LP): Portfolio: Lösen von mindestens 50% der Übungsaufgaben; Abschlussprüfung: Referat im Umfang von 30-45 Minuten inklusive anschließender Diskussion im Seminar<br/>- Eigenständiges Seminar (4 LP): Referat im Umfang von 30-45 Minuten und schriftliche Ausarbeitung im Umfang von 10-15 Seiten<br/>- Eigenständiges Projekt (4 LP): Bearbeiten der Projektaufgabe und schriftliche Ausarbeitung im Umfang von 8-12 Seiten</p>",
+              "erlaeuterungen_en": "<p>Depending on the choice of courses in Topic 1, one of the following examinations must be completed:<br/>- Introductory lecture (2 CP) + accompanying exercise (2 CP): Portfolio: Solving at least 50% of the exercises; final examination: written examination of 90-120 minutes or oral examination of 15-25 minutes on the contents of the lecture<br/>- Introductory lecture (2 CP) + accompanying seminar (2 CP): Portfolio: Presentation (30-45 minutes) in the seminar; final examination: written examination of 90-120 minutes or oral examination of 15-25 minutes on the contents of the lecture<br/>- Introductory seminar (2 CP) + accompanying exercise (2 CP): Portfolio: Solving at least 50% of the exercises; final examination: presentation of 30-45 minutes including subsequent discussion in the seminar<br/>- Independent seminar (4 CP): presentation of 30-45 minutes and written elaboration of 10-15 pages<br/>- Independent project (4 CP): Completion of the project task and written elaboration of 8-12 pages</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung o. Projekt mit Ausarbeitung o. Referat mit Ausarbeitung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Medien- und Informationsverarbeitungstechnologien",
+          "id": 587318493,
+          "kuerzel": "39-MeWi-HM42",
+          "name_en": "Media and information processing technologies",
+          "modulstrukturangabe": "2 SL, 1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 15,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 471393964,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "zeitOrt": [
+      "Mi 16-18 X-E0-234"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392141",
+    "semester_id": 413269727,
+    "thema": "3D and 4D Computer Vision ",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "V",
+    "vst_id": 663400351,
+    "kurztitel": "392141 3D and 4D Computer Vision  (V)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "V",
+    "lehrende": [
+      {
+        "person_id": 695189715,
+        "nachname": "Golyanik",
+        "anrede": "Herr",
+        "pers_titel": "Dr.",
+        "vorname": "Vladislav",
+        "name_komplett": "Dr. Vladislav Golyanik"
+      },
+      {
+        "person_id": 459844196,
+        "nachname": "Rhodin",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr. ",
+        "vorname": "Helge",
+        "name_komplett": "Prof. Dr.  Helge Rhodin"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…41…",
+    "thema_kurz": "3D 4D Computer Vision",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence: Vorlesung",
+              "id": 420164940,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420164946,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence",
+          "id": 420164915,
+          "kuerzel": "39-M-Inf-AI-app",
+          "name_en": "Applied Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544067566,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Artificial Intelligence: Vorlesung",
+              "id": 420160910,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise from the field of Basics of Artificial Intelligence.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG UNBENOTET",
+              "id": 420160916,
+              "name_en": "UNGRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Upon Completion of the Module with Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (5–10 pages)<br/>Students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Upon Completion of the Module with Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Artificial Intelligence",
+          "id": 420160864,
+          "kuerzel": "39-M-Inf-AI-bas",
+          "name_en": "Basics of Artificial Intelligence",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Vorlesung",
+              "id": 420168449,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420168456,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544074634,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Interaction Technology: Vorlesung",
+              "id": 420161183,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung und alternativ zum Seminar mit Übung jeweils aus dem Bereich Basics of Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung und alternativ zum Seminar mit Übung jeweils aus dem Bereich Basics of Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise and alternatively with the seminar with exercise, each from the field of Basics of Interaction Technology.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG UNBENOTET",
+              "id": 420161189,
+              "name_en": "UNGRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Upon Completion of the Module with Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (5–10 pages)<br/>Students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Upon Completion of the Module with Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Interaction Technology",
+          "id": 420161136,
+          "kuerzel": "39-M-Inf-INT-bas",
+          "name_en": "Basics of Interaction Technology",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392141",
+    "semester_id": 413269727,
+    "thema": "Klausur: 3D and 4D Computer Vision - 1. Termin",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Kl",
+    "vst_id": 701104311,
+    "kurztitel": "392141 Klausur: 3D and 4D Computer Vision - 1. Termin (Kl)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "Kl",
+    "lehrende": [
+      {
+        "person_id": 695189715,
+        "nachname": "Golyanik",
+        "anrede": "Herr",
+        "pers_titel": "Dr.",
+        "vorname": "Vladislav",
+        "name_komplett": "Dr. Vladislav Golyanik"
+      },
+      {
+        "person_id": 459844196,
+        "nachname": "Rhodin",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr. ",
+        "vorname": "Helge",
+        "name_komplett": "Prof. Dr.  Helge Rhodin"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…41…",
+    "thema_kurz": "Klausur 3D 4D Computer Vision 1. Termin",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence: Vorlesung",
+              "id": 420164940,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420164946,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence",
+          "id": 420164915,
+          "kuerzel": "39-M-Inf-AI-app",
+          "name_en": "Applied Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544067566,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Artificial Intelligence: Vorlesung",
+              "id": 420160910,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise from the field of Basics of Artificial Intelligence.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG UNBENOTET",
+              "id": 420160916,
+              "name_en": "UNGRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Upon Completion of the Module with Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (5–10 pages)<br/>Students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Upon Completion of the Module with Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Artificial Intelligence",
+          "id": 420160864,
+          "kuerzel": "39-M-Inf-AI-bas",
+          "name_en": "Basics of Artificial Intelligence",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Vorlesung",
+              "id": 420168449,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420168456,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544074634,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Interaction Technology: Vorlesung",
+              "id": 420161183,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung und alternativ zum Seminar mit Übung jeweils aus dem Bereich Basics of Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung und alternativ zum Seminar mit Übung jeweils aus dem Bereich Basics of Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise and alternatively with the seminar with exercise, each from the field of Basics of Interaction Technology.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG UNBENOTET",
+              "id": 420161189,
+              "name_en": "UNGRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Upon Completion of the Module with Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (5–10 pages)<br/>Students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Upon Completion of the Module with Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Interaction Technology",
+          "id": 420161136,
+          "kuerzel": "39-M-Inf-INT-bas",
+          "name_en": "Basics of Interaction Technology",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  },
+  {
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "kurz_kommentarAsHTML": "Es werden mündliche Prüfungen dafür angeboten. Termine am 26. und 27.08.2026.",
+    "spracheEnglisch": false,
+    "beleg_nr": "392141",
+    "semester_id": 413269727,
+    "thema": "Klausur: 3D and 4D Computer Vision - 2. Termin",
+    "org_id": 10036,
+    "ausgefallen": true,
+    "art": "Kl",
+    "vst_id": 701116387,
+    "kurztitel": "392141 Klausur: 3D and 4D Computer Vision - 2. Termin (Kl)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "Kl",
+    "lehrende": [
+      {
+        "person_id": 695189715,
+        "nachname": "Golyanik",
+        "anrede": "Herr",
+        "pers_titel": "Dr.",
+        "vorname": "Vladislav",
+        "name_komplett": "Dr. Vladislav Golyanik"
+      },
+      {
+        "person_id": 459844196,
+        "nachname": "Rhodin",
+        "anrede": "Herr",
+        "pers_titel": "Prof. Dr. ",
+        "vorname": "Helge",
+        "name_komplett": "Prof. Dr.  Helge Rhodin"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…41…",
+    "thema_kurz": "Klausur 3D 4D Computer Vision 2. Termin",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Artificial Intelligence: Vorlesung",
+              "id": 420164940,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Artificial Intelligence zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420164946,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence",
+          "id": 420164915,
+          "kuerzel": "39-M-Inf-AI-app",
+          "name_en": "Applied Artificial Intelligence",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544067566,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Artificial Intelligence (focus)",
+          "id": 544067512,
+          "kuerzel": "39-M-Inf-AI-app-foc_a",
+          "name_en": "Applied Artificial Intelligence (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Artificial Intelligence: Vorlesung",
+              "id": 420160910,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Basics of Artificial Intelligence zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise from the field of Basics of Artificial Intelligence.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG UNBENOTET",
+              "id": 420160916,
+              "name_en": "UNGRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Upon Completion of the Module with Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (5–10 pages)<br/>Students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Upon Completion of the Module with Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Artificial Intelligence",
+          "id": 420160864,
+          "kuerzel": "39-M-Inf-AI-bas",
+          "name_en": "Basics of Artificial Intelligence",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Vorlesung",
+              "id": 420168449,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 420168456,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG BENOTET",
+              "id": 544074634,
+              "name_en": "GRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Teilprüfung 1: (Vorlesung + Übung) ODER (Seminar + Übung)</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung oder des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der in der Vorlesung vorgestellten Lerninhalte. </p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.<br/>Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p><strong>ODER</strong></p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 10-15 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Partial Examination 1: (Lecture + Exercise) OR (Seminar + Exercise)</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture or seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the lecture.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p><strong>OR</strong></p><p>2)  A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.<br/>Seminar: Presentation (lasting 30–40 minutes) with written report (10-15 pages)<br/>The students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit mündlicher Abschlussprüfung o. Portfolio mit schriftlicher Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Basics of Interaction Technology: Vorlesung",
+              "id": 420161183,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Übung und alternativ zum Seminar mit Übung jeweils aus dem Bereich Basics of Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Übung und alternativ zum Seminar mit Übung jeweils aus dem Bereich Basics of Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with a corresponding exercise and alternatively with the seminar with exercise, each from the field of Basics of Interaction Technology.</p>",
+              "artenAsText": "Vorlesung",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "PRÜFUNG UNBENOTET",
+              "id": 420161189,
+              "name_en": "UNGRADED EXAMINATION",
+              "erlaeuterungen": "<p><strong>Bei Absolvierung des Moduls mit Seminar + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten des Seminars<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zum Seminar<br/>Die Abschlussprüfung zu den Inhalten des Seminars nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Seminar: Referat (im Umfang von 30–40 Minuten) mit Ausarbeitung (Umfang von 5–10 Seiten) <br/>Die Studierenden präsentieren nach Abstimmung der konkreten Aufgabenstellung mit dem Prüfenden im Rahmen des Referats die Bedeutung und systematisch-fachwissenschaftliche Einordnung einer im Seminar behandelten Problemstellung und erläutern und stellen ihr Thema in ihrer Ausarbeitung schriftlich vor, wobei Aspekte aus der Diskussion im Seminar einzubeziehen sind. Die Aufgabenstellung kann auch die Ausarbeitung einer Anwendung (d.h. Programmierung/Rechnung etc.) eines Verfahrens auf einen typischerweise praktisch bedeutsamen Einzelfall beinhalten. Das Referat mit Ausarbeitung bezieht sich auf die im Seminar vermittelten und in den Übungen erarbeiteten Inhalte.</p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p><p><strong>Bei Absolvierung des Moduls mit Vorlesung + Übung</strong><br/>Portfolio mit Abschlussprüfung bestehend aus:<br/>1)        Portfolio von Übungen zu Inhalten der Vorlesung<br/>Übungsaufgaben oder Programmieraufgaben, die veranstaltungsbezogen gestellt werden (Bestehensgrenze 50% der erzielbaren Punkte). Die Kontrolle der Übungsaufgaben umfasst auch direkte Fragen zu den Lösungsansätzen, die von den Studierenden in den Übungen beantwortet werden müssen. Der*die Lehrende kann ein individuelles Erläutern und Vorführen von Aufgaben verlangen sowie einen Teil der Übungsaufgaben durch Präsenzübungen ersetzen. Die Übungsaufgaben im Rahmen des Portfolios werden in der Regel wöchentlich ausgegeben und dienen dem begleitenden Erlernen selbständiger Umsetzungen der im Seminar/in der Vorlesung vorgestellten Lerninhalte. Eine weitergehende Konkretisierung insbesondere zum zeitlichen Umfang der Abschlussprüfung erfolgt in der Beschreibung der Veranstaltung.</p><p>2)        einer Abschlussprüfung zur Vorlesung <br/>Die Abschlussprüfung zu den Inhalten der Vorlesung nimmt Bezug auf die Übungs- oder Programmieraufgaben oder entwickelt sich aus den in den Übungen erlernten Kompetenzen.</p><p>Vorlesung: Abschlussklausur (im Umfang von 90-120 Minuten) oder mündliche Abschlussprüfung (im Umfang von 20-30 Minuten) zu den in der Vorlesung vermittelten und in den Übungen erarbeiteten Inhalten.<br/>Die Klausur kann alternativ als eKlausur, Open Book Klausur oder eOpen Book Klausur geprüft werden. Im Falle von Open Book Klausur und eOpen Book Klausur beträgt der Umfang 120-150 Minuten Minuten. </p><p>Beide Portfolioelemente werden durch eine*n Prüfer*in geprüft. Es erfolgt eine abschließende Gesamtbewertung.</p>",
+              "erlaeuterungen_en": "<p><strong>Upon Completion of the Module with Seminar + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the seminar<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the seminar<br/>The final examination regarding the content of the seminar refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Seminar: Presentation (lasting 30–40 minutes) with written report (5–10 pages)<br/>Students present, after coordinating the specific task with the examiner, the significance and systematic-scientific classification of a problem addressed in the seminar and explain and present their topic in writing in their report, incorporating aspects from the discussion in the seminar. The task may also include the elaboration of an application (i.e., programming/calculation, etc.) of a method to a typically practically significant individual case. The presentation with report refers to the content conveyed in the seminar and developed in the exercises.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p><p><strong>Upon Completion of the Module with Lecture + Exercise</strong><br/>Portfolio with final examination consisting of:</p><p>1) Portfolio of exercises related to the content of the lecture<br/>Exercise tasks or programming tasks that are assigned in relation to the course (passing threshold: 50% of the achievable points). The assessment of the exercise tasks also includes direct questions regarding the solutions that must be answered by the students during the exercises. The instructor may require an individual explanation and demonstration of tasks and can replace a portion of the exercise tasks with in-person exercises. The exercise tasks within the portfolio are generally assigned weekly and serve to support the independent learning of implementations of the content presented in the seminar/lecture. Further specification, particularly regarding the time frame of the final examination, will be provided in the course description.</p><p>2) A final examination for the lecture<br/>The final examination regarding the content of the lecture refers to the exercise or programming tasks or develops from the competencies learned in the exercises.</p><p>Lecture: Final exam (lasting 90-120 minutes) or oral final examination (lasting 20-30 minutes) covering the content conveyed in the lecture and developed in the exercises.<br/>The exam can alternatively be conducted as an e-exam, open book exam, or e-open book exam. In the case of open book and e-open book exams, the duration is 120-150 minutes.</p><p>Both portfolio elements will be assessed by an examiner. A final overall assessment will be provided.</p>",
+              "studienleistung": false,
+              "artenAsText": "Portfolio mit Abschlussprüfung"
+            }
+          }
+        ],
+        "modul": {
+          "name": "Basics of Interaction Technology",
+          "id": 420161136,
+          "kuerzel": "39-M-Inf-INT-bas",
+          "name_en": "Basics of Interaction Technology",
+          "modulstrukturangabe": "1 uPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            1
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      }
+    ]
+  }
+]

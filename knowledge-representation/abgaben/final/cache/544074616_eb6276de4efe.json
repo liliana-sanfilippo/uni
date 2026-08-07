@@ -1,0 +1,356 @@
+[
+  {
+    "zeitOrt": [
+      "Di 12-14 14-täglich X-E0-200 X-E0-200"
+    ],
+    "semester_name": "SoSe 2026",
+    "sws": "2",
+    "spracheEnglisch": true,
+    "beleg_nr": "392138",
+    "semester_id": 413269727,
+    "thema": "Tutorials: Auditory Data Science",
+    "org_id": 10036,
+    "ausgefallen": false,
+    "art": "Ü",
+    "vst_id": 662852064,
+    "kurztitel": "392138 Tutorials: Auditory Data Science (Ü)",
+    "mitAnwesenheitsregistrierung": false,
+    "semester": "20261",
+    "arten": "Ü",
+    "lehrende": [
+      {
+        "person_id": 11596,
+        "nachname": "Hermann",
+        "anrede": "Herr",
+        "pers_titel": "Dr. rer. nat.",
+        "vorname": "Thomas",
+        "name_komplett": "Dr. rer. nat. Thomas Hermann"
+      },
+      {
+        "person_id": 525176714,
+        "nachname": "Hommel",
+        "anrede": "Herr",
+        "pers_titel": "M.Sc.",
+        "vorname": "Fabian",
+        "name_komplett": "M.Sc. Fabian Hommel"
+      }
+    ],
+    "beleg_nr_gelesen": "39…21…38…",
+    "thema_kurz": "Tutorials Auditory Data Science",
+    "fachzuordnungen": [
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Übung zu Auditory Data Science",
+              "id": 210149276,
+              "leistungspunkte_gesamt": 2,
+              "turnus": "SS",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Auditory Data Science",
+          "id": 210149228,
+          "kuerzel": "39-M-Inf-ADS",
+          "name_en": "Auditory Data Science",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Auslaufend",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 128265770,
+          "beginnfachsemester": [
+            2
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology: Übung (Alternative)",
+              "id": 420168437,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit einer zugehörigen Vorlesung oder einem zugehörigen Seminar jeweils aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology",
+          "id": 420168424,
+          "kuerzel": "39-M-Inf-INT-app",
+          "name_en": "Applied Interaction Technology",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Applied Interaction Technology (focus) - begleitende Übung (Alternative)",
+              "id": 544074616,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "turnus": "IMMER",
+              "erlaeuterungenAsHtml": "<p>zusammen mit der einführenden Veranstaltung (Vorlesung oder Seminar) aus dem Bereich Applied Interaction Technology zu studieren.</p>",
+              "erlaeuterungen_en": "<p>To study together with the introductory course (lecture or seminar) from the field of Applied Interaction Technology.</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Applied Interaction Technology (focus)",
+          "id": 544074581,
+          "kuerzel": "39-M-Inf-INT-app-foc_a",
+          "name_en": "Applied Interaction Technology (focus)",
+          "modulstrukturangabe": "1 SL, 2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 366747900,
+          "beginnfachsemester": [
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung (Alternative)",
+              "id": 544400289,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "mindestens jährlich angeboten",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 45,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methoden der Naturwissenschaftlichen Informatik (Basis)",
+          "id": 544400254,
+          "kuerzel": "39-M-Inf-NWI",
+          "name_en": "Methods for Informatics in the Natural Sciences (Basis)",
+          "modulstrukturangabe": "1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 5,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Veranstaltung Übung (Alternative)",
+              "id": 544400751,
+              "leistungspunkte_gesamt": 2,
+              "erlaeuterungen": "<p>dies ist eine Alternative zur Übung mit einer Kontaktzeit von 30h</p>",
+              "turnus_freitext": "unregelmäßig angeboten",
+              "erlaeuterungenAsHtml": "<p>dies ist eine Alternative zur Übung mit einer Kontaktzeit von 30h</p>",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 30,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "modul": {
+          "name": "Methoden der Naturwissenschaftlichen Informatik (Schwerpunkt)",
+          "id": 544400708,
+          "kuerzel": "39-M-Inf-NWI-x",
+          "name_en": "Methods for Informatics for the Natural Sciences (Focus)",
+          "modulstrukturangabe": "2 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 10,
+          "org": 10036,
+          "turnus": "mindestens jährlich angeboten",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 462589677,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      },
+      {
+        "veranstaltungen": [
+          {
+            "veranstaltung": {
+              "name": "Begleitende Übung zu Thema 1 (Alternative)",
+              "id": 587318508,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "name": "Begleitendes Seminar zu Thema 1",
+              "id": 587318511,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Seminar",
+              "workload_praesenz": 30,
+              "workload_selbst": 30,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Begleitende Übung zu Thema 2 (Alternative) (Ü)'",
+                  "id": 587318571,
+                  "name_en": "STUDY REQUIREMENT 'accompanying exercise on topic 2 (alternative) (Ü)'",
+                  "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+                  "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 587318529
+                }
+              ],
+              "name": "Begleitende Übung zu Thema 2 (Alternative)",
+              "id": 587318529,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          },
+          {
+            "veranstaltung": {
+              "leistungen": [
+                {
+                  "name": "STUDIENLEISTUNG 'Begleitende Übung zu Thema 3 (Alternative) (Ü)'",
+                  "id": 587318693,
+                  "name_en": "STUDY REQUIREMENT 'accompanying exercise on topic 3 (alternative) (Ü)'",
+                  "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+                  "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+                  "studienleistung": true,
+                  "veranstaltung": 587318550
+                }
+              ],
+              "name": "Begleitende Übung zu Thema 3 (Alternative)",
+              "id": 587318550,
+              "leistungspunkte_gesamt": 2,
+              "turnus_freitext": "unregelmäßig",
+              "turnus_freitext_en": "irregular",
+              "artenAsText": "Übung",
+              "workload_praesenz": 15,
+              "workload_selbst": 45,
+              "gruppengroesse": 0,
+              "workload_gesamt": 60
+            }
+          }
+        ],
+        "leistungen": [
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Begleitende Übung zu Thema 2 (Alternative) (Ü)'",
+              "id": 587318571,
+              "name_en": "STUDY REQUIREMENT 'accompanying exercise on topic 2 (alternative) (Ü)'",
+              "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+              "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+              "studienleistung": true,
+              "veranstaltung": 587318529
+            }
+          },
+          {
+            "leistung": {
+              "name": "STUDIENLEISTUNG 'Begleitende Übung zu Thema 3 (Alternative) (Ü)'",
+              "id": 587318693,
+              "name_en": "STUDY REQUIREMENT 'accompanying exercise on topic 3 (alternative) (Ü)'",
+              "erlaeuterungen": "<p>Es ist ein Essay im Umfang von 3-5 Seiten über die Inhalte der Lehrveranstaltung  und deren Relevanz für die aktuelle Medienproduktion zu verfassen. Das Essaythema wird von der*dem Veranstalter*in  ausgegeben.</p>",
+              "erlaeuterungen_en": "<p>An essay of 3-5 pages must be written on the content of the course and its relevance to current media production. The topic of the essay will be provided by the teaching staff.</p>",
+              "studienleistung": true,
+              "veranstaltung": 587318550
+            }
+          }
+        ],
+        "modul": {
+          "name": "Medien- und Informationsverarbeitungstechnologien",
+          "id": 587318493,
+          "kuerzel": "39-MeWi-HM42",
+          "name_en": "Media and information processing technologies",
+          "modulstrukturangabe": "2 SL, 1 bPr",
+          "berechenbar": true,
+          "leistungspunkte": 15,
+          "org": 10036,
+          "turnus": "Studium kann sowohl im Winter- als auch im Sommersemester aufgenommen werden",
+          "modultypMasterEdAbschluss": false,
+          "ebene2": 471393964,
+          "beginnfachsemester": [
+            1,
+            2,
+            3
+          ],
+          "pflichtmodul": false,
+          "dauer": "1 oder 2 Semester"
+        }
+      }
+    ]
+  }
+]
