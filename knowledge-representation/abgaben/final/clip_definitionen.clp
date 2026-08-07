@@ -64,6 +64,9 @@
    (declare (salience 10))
    (student (id ?s))
    (modul (id ?m) (pr ?npr) (sl ?nsl))
+   (theorie_veranstaltung (id ?x) (modul ?m))
+   (or (erfuellt-pr (student ?s) (theorie_veranstaltung ?x))
+       (erfuellt-sl (student ?s) (theorie_veranstaltung ?x)))
    (not (modul-abgeschlossen (student ?s) (modul ?m)))
 =>
    (bind ?dpr (find-all-facts ((?t theorie_veranstaltung))

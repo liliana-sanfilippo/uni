@@ -136,3 +136,28 @@
     (if (and (>= (length$ ?apr) ?npr) (>= (length$ ?asl) ?nsl))
         then (assert (modul-abschliessbar-sem (modul ?m) (semester ?sem)))))
 ```
+
+### ableiten-modul-abgeschlossen
+
+```
+(defrule ableiten-modul-abgeschlossen
+   (declare (salience 10))
+   (student (id ?s))
+   (modul (id ?m) (pr ?npr) (sl ?nsl))
+   (not (modul-abgeschlossen (student ?s) (modul ?m)))
+=>
+   // Alle theorie_veranstaltungen finden 
+   (bind ?dpr (find-all-facts ((?t theorie_veranstaltung))
+      // Die zu dem gegebenen Modul gehören
+      (and (eq ?t:modul ?m)
+           // und suche alle erfuellt-pr facts heraus
+           (any-factp ((?e erfuellt-pr))
+              // Schaue dann, ob der Student eine theorie_veranstaltung des moduls abgeschlossen hat 
+              (and (eq ?e:student ?s) (eq ?e:theorie_veranstaltung ?t:id))))))
+   (bind ?dsl (find-all-facts ((?t theorie_veranstaltung))
+      (and (eq ?t:modul ?m)
+           (any-factp ((?e erfuellt-sl))
+              (and (eq ?e:student ?s) (eq ?e:theorie_veranstaltung ?t:id))))))
+   (if (and (>= (length$ ?dpr) ?npr) (>= (length$ ?dsl) ?nsl))
+      then (assert (modul-abgeschlossen (student ?s) (modul ?m)))))
+```
