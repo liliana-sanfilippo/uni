@@ -7,7 +7,6 @@ from set_ups import set_up_env, reset_environment_for_clean_answer
 
 def get_answer(env, template, **slots):
     for f in env.facts():
-        # print(f)
         if f.template.name == template and all(str(f[k]) == str(v) for k, v in slots.items()):
             return f
     return None
@@ -31,7 +30,7 @@ def q_use_course_for_module(environment):
     env.run()
     treffer = get_answer(env, "kann-belegen",
                          **{"student": "liliana", "echte_veranstaltung": kurs, "modul": modul})
-    print_answer(f"  -> Can liliana choose the course {kurs} for the module {modul}?  {answer_string(treffer)}")
+    print_answer(f"  -> Can I choose the course {kurs} for the module {modul}?  {answer_string(treffer)}")
 
 
 def q_do_course_in_semester(environment):
@@ -43,7 +42,18 @@ def q_do_course_in_semester(environment):
     env.run()
     treffer = get_answer(env, "kann-belegen-sem",
                          **{"student": "liliana", "echte_veranstaltung": kurs, "semester": sem})
-    print_answer(f"  -> Can liliana choose course {kurs} in {sem.upper()}?  {answer_string(treffer)}")
+    print_answer(f"  -> Can I choose course {kurs} in {sem.upper()}?  {answer_string(treffer)}")
+
+def q_course_available_in_semester(environment):
+    kurs = ask_user("  course_id (echte_veranstaltung): ")
+    sem = ask_user_for_semester()
+    env = reset_environment_for_clean_answer(environment)
+    env.assert_string(f'(frage-in-semester-vorhanden '
+                      f'(echte_veranstaltung {kurs}) (semester {sem}))')
+    env.run()
+    treffer = get_answer(env, "in-sem-vorhanden",
+                         **{"echte_veranstaltung": kurs, "semester": sem})
+    print_answer(f"  -> Is the course {kurs} available in {sem}?    {answer_string(treffer)}")
 
 
 def q_fulfill_prerequisites(environment):
@@ -52,7 +62,7 @@ def q_fulfill_prerequisites(environment):
     env.assert_string(f'(frage-belegbar-modul (student liliana) (modul {modul})')
     env.run()
     treffer = get_answer(env, "modul-belegbar", **{"student": "liliana", "modul": modul})
-    print_answer(f"  -> Can liliana do the module {modul}?  {answer_string(treffer)}")
+    print_answer(f"  -> Do I fulfill the prerequisites for the module {modul}?  {answer_string(treffer)}")
     if not treffer:
         fehlend = alle(env, "fehlende-voraussetzung", **{"student": "liliana", "modul": modul})
         for f in fehlend:
@@ -75,17 +85,18 @@ def q_modul_abgeschlossen(environment):
     env = reset_environment_for_clean_answer(environment)
     env.run()
     treffer = get_answer(env, "modul-abgeschlossen", **{"student": "liliana", "modul": modul})
-    print_answer(f"  -> Has liliana completed the module {modul}?  {answer_string(treffer)}")
+    print_answer(f"  -> Have I completed the module {modul}?  {answer_string(treffer)}")
 
 
 
 FRAGEN = {
     "1": ("Does a course belong to a module?", q_course_to_module),
     "2": ("Can I choose a course for a module?", q_use_course_for_module),
-    "3": ("Can a course available in a semester?", q_do_course_in_semester),
-    "4": ("Can I do a module (prerequisites)", q_fulfill_prerequisites),
-    "5": ("Can I complete a module in one semester?", q_complete_module_one_semester),
+    "3": ("Can I choose a course in a semester?", q_do_course_in_semester),
+    "4": ("Do I fulfill the prerequisites for a module?", q_fulfill_prerequisites),
+    "5": ("Can a module be completed in one semester?", q_complete_module_one_semester),
     "6": ("Have I completed a module?", q_modul_abgeschlossen),
+    "7": ("Is a course available in a semester?", q_course_available_in_semester),
 }
 
 
@@ -98,6 +109,7 @@ def main():
         print("  l) Show modules and courses")
         print("  t) Run test scenarios")
         print("  q) Exit")
+        #print("  e) I want to enter information")
         choice = input("Choice: ").strip().lower()
         if choice in ("q", "quit", "exit"):
             print("Exiting...")
