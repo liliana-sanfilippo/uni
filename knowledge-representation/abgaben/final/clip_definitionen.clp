@@ -1,11 +1,7 @@
-(deftemplate student (slot id))
-
 (deftemplate modul (slot id) (slot lp) (slot dauer) (slot pr) (slot sl))
 (deftemplate in-program (slot modul) (slot programm))
 (deftemplate voraussetzung (slot modul) (slot benoetigt))
 (deftemplate gehoert-zu-modul (slot echte_veranstaltung) (slot modul))
-(deftemplate modul-abgeschlossen (slot student) (slot modul))
-
 
 (deftemplate theorie_veranstaltung (slot id) (slot modul) (slot typ))
 (deftemplate hat-pr (slot theorie_veranstaltung))
@@ -13,20 +9,20 @@
 
 (deftemplate echte_veranstaltung (slot id) (slot typ) (slot titel))
 (deftemplate instance-of (slot echte_veranstaltung) (slot theorie_veranstaltung) (slot semester))
-(deftemplate anrechnung-wahl (slot student) (slot echte_veranstaltung) (slot modul))
-(deftemplate anrechnung      (slot student) (slot echte_veranstaltung) (slot modul))
 (deftemplate gehoert-nicht-zu-mehreren-modulen (slot echte_veranstaltung))
 
+
+(deftemplate student (slot id))
 (deftemplate echte_veranstaltung_abgeschlossen (slot student) (slot echte_veranstaltung))
 (deftemplate best-pr    (slot student) (slot echte_veranstaltung))
 (deftemplate best-sl    (slot student) (slot echte_veranstaltung))
-
+(deftemplate modul-abgeschlossen (slot student) (slot modul))
 (deftemplate erfuellt-pr (slot student) (slot theorie_veranstaltung))
 (deftemplate erfuellt-sl (slot student) (slot theorie_veranstaltung))
 
+(deftemplate anrechnung-wahl (slot student) (slot echte_veranstaltung) (slot modul))
+(deftemplate anrechnung      (slot student) (slot echte_veranstaltung) (slot modul))
 
-(deftemplate frage-waehlbar (slot student) (slot programm) (slot semester))
-(deftemplate frage-modul (slot student) (slot modul))
 (deftemplate frage-belegen (slot student) (slot echte_veranstaltung) (slot modul))
 (deftemplate frage-belegen-sem (slot student) (slot echte_veranstaltung) (slot semester))
 (deftemplate frage-in-semester-vorhanden (slot echte_veranstaltung) (slot semester))
