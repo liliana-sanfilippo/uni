@@ -99,6 +99,7 @@
    (frage-belegen (student ?s) (echte_veranstaltung ?e) (modul ?m))
    (gehoert-zu-modul (echte_veranstaltung ?e) (modul ?m))
    (not (echte_veranstaltung_abgeschlossen (student ?s) (echte_veranstaltung ?e)))
+   (not (modul-abgeschlossen (student ?s) (modul ?m)))
 => (assert (kann-belegen (student ?s) (echte_veranstaltung ?e) (modul ?m))))
 
 (defrule kann-belegen-im-semester
