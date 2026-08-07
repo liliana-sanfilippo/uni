@@ -88,29 +88,22 @@
     6. Have I completed the module 39-M-Inf-INT-adv_a?
 2.
 
-| Configuration                  | 1                                                       | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-|--------------------------------|---------------------------------------------------------|---|---|---|---|---|---|---|---|----|
-| Prequisites                    | None                                                    |   |   |   |   |   |   |   |   |    |
-| Semester                       | Winter                                                  |   |   |   |   |   |   |   |   |    |
-| Completed courses              | None (first semester student)                           |   |   |   |   |   |   |   |   |    |
-| --                             | --                                                      |   |   |   |   |   |   |   |   |    |
-| Course offers                  | In the current semester                                 |   |   |   |   |   |   |   |   |    |
-| Course belongs to module       | Yes                                                     |   |   |   |   |   |   |   |   |    |
-| --                             | --                                                      |   |   |   |   |   |   |   |   |    |
-| Module of interest             | 39-M-Inf-INT-adv_a                                      |   |   |   |   |   |   |   |   |    |
-| Theoretical course if interest | Advanced Interaction Technology: Seminar                |   |   |   |   |   |   |   |   |    |
-| Course(s) of interest          | Neural Networks Natural Language Processing (624620553) |   |   |   |   |   |   |   |   |    |
-|                                |                                                         |   |   |   |   |   |   |   |   |    |
+| Configuration                             | 1   | 2   | 3   | 4   | 5   | 6   | 6.1 | 7   | 8   | 9   | 10 |
+|-------------------------------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|----|
+| course belongs to module                  | YES | YES | YES | YES | -   | -   | YES | YES | YES | YES | -  |
+| student can take course for module        | YES |     | YES | YES | -   | -   | YES | -   | -   | -   | -  |
+| student can take course in given semester | YES | YES | YES | NO  | -   | YES | YES | -   | -   | -   | -  |
+| missing prerequisites                     | 0   | 0   | 0   | 1   | 1   | 2   | 2   | 0   | 0   | 0   | 0  |
+| can module be completed in given semester | YES | YES | YES | YES | YES | YES | YES | YES | YES | YES | -  |
+| has student completed module              | -   | YES | -   | -   | -   | -   | -   | -   | YES | - * | -  |
+| course is available in given semester     | YES | YES | YES | -   | -   | YES | YES | YES | YES | YES | -  |
+* But another module is with the course of interest
 
 ## TODOs
 
-- [ ] (deftemplate echte_veranstaltung_abgeschlossen (slot student) (slot echte_veranstaltung))
-    - theoretische Veranstaltung abgeschlossen muss existieren und darüber sollte dann abgefragt werden, ob ein Kurs
-      für ein Modul belegt werden kann
-- [ ] Unterschied belongs to und can use for module noch kar machen
+- [ ] Unterschied belongs to und can use for module noch klar machen
 
-
-## Aufschlüsselungen regeln 
+## Aufschlüsselungen regeln
 
 ### modul-abschliessbar-im-semester
 

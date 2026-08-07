@@ -73,6 +73,7 @@ def set_up_scenario(filename, env):
 SCENARIOS = [
     {
         "id": "01",
+        "mockup": "01",
         "desc": "It is (the start of) the winter semester. The student has not completed any courses yet. They want "
                 "to take the module 39-M-Inf-INT-adv_a and are interested in the course Neural Networks Natural "
                 "Language Processing (624620553)",
@@ -89,6 +90,7 @@ SCENARIOS = [
     },
     {
         "id": "02",
+        "mockup": "02",
         "desc": "It is (the start of) the winter semester. The student so far completed the course Neural Networks "
                 "Natural Language Processing (624620553). They want to take the module 39-M-Inf-INT-adv_a and are interested "
                 "in the course Human Centered Artifical Intelligence Lab ForschKolloq. (659886362). Since they have "
@@ -106,6 +108,7 @@ SCENARIOS = [
         "expected_course_available_in_semester": "YES"
     },{
         "id": "03",
+        "mockup": "03",
         "desc": "It is (the start of) the summer semester. The student so far completed the course Neural Networks "
                 "Natural Language Processing (624620553) and therefore the module 39-M-Inf-INT-adv_a. They want to take the module "
                 "39-M-Inf-INT-app-foc_a, for which 39-M-Inf-INT-adv_a is a prerequisite, and are interested "
@@ -122,6 +125,7 @@ SCENARIOS = [
         "expected_course_available_in_semester": "YES"
     },{
         "id": "04",
+        "mockup": "04",
         "desc": "It is (the start of) the winter semester. \n"
                 "The student so far completed no courses They want to take the module 39-M-Inf-INT-app-foc_a, for which 39-M-Inf-INT-adv_a is a prerequisite, and are interested "
                 "in the course Intelligent Tutoring Systems (737382051), which is offered in the summer semester.",
@@ -138,6 +142,7 @@ SCENARIOS = [
     },
     {
         "id": "05",
+        "mockup": "05",
         "desc": """It is (the start of) the summer semester. \n 
                 The student already took the courses Agentic AI Architectures Self Evolution Safety (659862590) and 
                 the course Neural Networks Natural Language Processing (624620553) due to which the module 
@@ -159,6 +164,7 @@ SCENARIOS = [
     },
     {
         "id": "06",
+        "mockup": "06",
         "desc": """It is (the start of) the winter semester. \n 
                 The student already took the courses Agentic AI Architectures Self Evolution Safety (659862590). \n
                 They are interested in the course (Privacy Healthcare 662782877) which is offered in the winter 
@@ -177,7 +183,28 @@ SCENARIOS = [
         "expected_course_available_in_semester": "YES"
     },
     {
+        "id": "06.1",
+        "mockup": "06",
+        "desc": """(Variation of the test before) It is (the start of) the winter semester. \n 
+                The student already took the courses Agentic AI Architectures Self Evolution Safety (659862590). \n
+                They are interested in the course Robot Learning Age Foundation Models (659890294) which is offered 
+                in the winter semester and want to take the module 39-M-Inf-INT-app-foc_a which has the 
+                prerequisites 39-M-Inf-INT-app and 39-M-Inf-INT-adv_a.
+                """,
+        "module": "39-M-Inf-INT-app-foc_a",
+        "course": 659890294,
+        "semester": "ws",
+        "expected_course_to_module": "YES",
+        "expected_use_course_for_module": "YES",
+        "expected_do_course_in_semester": "YES",
+        "expected_fulfill_prerequisites": 2,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "YES"
+    },
+    {
         "id": "07",
+        "mockup": "07",
         "desc": """It is (the start of) the winter semester. \n 
                 The student already took the course Human Centered Artifical Intelligence Lab ForschKolloq. (
                 659886362) which can belong to multiple modules. Since it was already taken but not assigned, 
@@ -197,6 +224,7 @@ SCENARIOS = [
     },
     {
         "id": "08",
+        "mockup": "08",
         "desc": """It is (the start of) the winter semester. \n 
                 The student already took the course Human Centered Artifical Intelligence Lab ForschKolloq. (
                 659886362) which can belong to multiple modules. But the student has attributed it to the 
@@ -212,7 +240,44 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "YES",
         "expected_course_available_in_semester": "YES"
-    }
+    },{
+        "id": "09",
+        "mockup": "09",
+        "desc": """It is (the start of) the winter semester. \n 
+                The student already took the course Human Centered Artifical Intelligence Lab ForschKolloq. (
+                659886362) which can belong to multiple modules. The student has assigned it to 39-M-Inf-INT-adv-foc 
+                and is checking, if the have completed the modules 39-M-Inf-INT-adv_a or 39-M-Inf-AI-adv_a. 
+                """,
+        "module": ["39-M-Inf-INT-adv_a", "39-M-Inf-AI-adv_a"],
+        "course": 659886362,
+        "semester": "ws",
+        "expected_course_to_module": "YES",
+        "expected_use_course_for_module": "NO",
+        "expected_do_course_in_semester": "NO",
+        "expected_fulfill_prerequisites": 0,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "YES"
+    },
+    {
+        "id": "10",
+        "mockup": "01",
+        "desc": """It is (the start of) the summer semester. \n 
+                The student took no courses so far. \n 
+                They are interested in the course (Privacy Healthcare 662782877) which is offered in the winter 
+                semester and want to take the module 39-M-Inf-AI-x.
+                """,
+        "module": "39-M-Inf-AI-x",
+        "course": 662782877,
+        "semester": "ss",
+        "expected_course_to_module": "NO",
+        "expected_use_course_for_module": "NO",
+        "expected_do_course_in_semester": "NO",
+        "expected_fulfill_prerequisites": 0,
+        "expected_complete_module_one_semester": "NO",
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "NO"
+    },
 
 ]
 
@@ -237,7 +302,7 @@ def main():
             text_file.write("=========================================\n\n")
 
             # Set up with discarding old info
-            env = set_up_scenario(f'mockup_{scen["id"]}.txt', env)
+            env = set_up_scenario(f'mockup_{scen["mockup"]}.txt', env)
             index = 1
             for quest in QUESTIONS:
                 function = QUESTIONS[quest]
