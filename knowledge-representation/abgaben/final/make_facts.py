@@ -1,6 +1,6 @@
 import json
 
-with open("all_data_manually_completed.json", 'r') as file:
+with open("all_data.json", 'r') as file:
     module_data = json.load(file)
     with open("fakten.txt", "w") as text_file:
 
@@ -23,7 +23,7 @@ with open("all_data_manually_completed.json", 'r') as file:
                 text_file.write(f'(in-program (modul "{module["kuerzel"]}") (programm {prog}))\n')
 
             for mod_ver in module["veranstaltungen"]:
-                if mod_ver["type"] == "Übung":
+                if mod_ver["type"] in ("Übung", "Ü"):
                     continue
                 text_file.write(f'(theorie_veranstaltung (id {mod_ver["uni_id"]}) (modul "{module["kuerzel"]}") (typ '
                                 f'"{mod_ver["type"]}"))\n')
@@ -37,18 +37,22 @@ with open("all_data_manually_completed.json", 'r') as file:
                         text_file.write(f'(hat-sl (theorie_veranstaltung {mod_ver["uni_id"]}))\n')
 
 
-                print(mod_ver["kurse"]["ws"])
+
                 # reale Kurse hinzufügen
                 ## WS
-                for ws_kurs in mod_ver["kurse"]["ws"]:
-                    text_file.write(f'(echte_veranstaltung (id {ws_kurs["uni_id"]}) (typ "{mod_ver["type"]}")  (titel '
-                                    f'"{ws_kurs["name"].replace("'", "")}"))\n')
-                    text_file.write(f'(instance-of (echte_veranstaltung {ws_kurs["uni_id"]}) ('
-                                    f'theorie_veranstaltung {mod_ver["uni_id"]}) (semester '
-                                    f'ws))\n')
+                if len(mod_ver["kurse"]["ws"]) > 0:
+                    print(mod_ver["kurse"]["ws"])
+                    for ws_kurs in mod_ver["kurse"]["ws"]:
+                        text_file.write(f'(echte_veranstaltung (id {ws_kurs["uni_id"]}) (typ "{mod_ver["type"]}")  (titel '
+                                        f'"{ws_kurs["name"].replace("'", "")}"))\n')
+                        text_file.write(f'(instance-of (echte_veranstaltung {ws_kurs["uni_id"]}) ('
+                                        f'theorie_veranstaltung {mod_ver["uni_id"]}) (semester '
+                                        f'ws))\n')
                 ## SS
-                for ss_kurs in mod_ver["kurse"]["ss"]:
-                    text_file.write(f'(echte_veranstaltung (id {ss_kurs["uni_id"]}) (typ "{mod_ver["type"]}")  (titel '
-                                    f'"{ss_kurs["name"].replace("'", "")}"))\n')
-                    text_file.write(f'(instance-of (echte_veranstaltung {ss_kurs["uni_id"]}) ('
-                                    f'theorie_veranstaltung {mod_ver["uni_id"]}) (semester ss))\n')
+                if len(mod_ver["kurse"]["ss"]) > 0:
+                    print(mod_ver["kurse"]["ss"])
+                    for ss_kurs in mod_ver["kurse"]["ss"]:
+                        text_file.write(f'(echte_veranstaltung (id {ss_kurs["uni_id"]}) (typ "{mod_ver["type"]}")  (titel '
+                                        f'"{ss_kurs["name"].replace("'", "")}"))\n')
+                        text_file.write(f'(instance-of (echte_veranstaltung {ss_kurs["uni_id"]}) ('
+                                        f'theorie_veranstaltung {mod_ver["uni_id"]}) (semester ss))\n')
