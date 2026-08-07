@@ -79,3 +79,10 @@
 | Course completion        | No courses completed yet                             |   |   |   |   |   |   |   |   |    |
 
 
+
+## TODOs
+
+- [ ] (deftemplate echte_veranstaltung_abgeschlossen (slot student) (slot echte_veranstaltung))
+  - theoretische Veranstaltung abgeschlossen muss existieren und darüber sollte dann abgefragt werden, ob ein Kurs 
+    für ein Modul belegt werden kann
+- [ ] Unterschied belongs to und can use for module noch kar machen
