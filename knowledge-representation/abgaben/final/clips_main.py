@@ -1,3 +1,5 @@
+from helper_functions_user_input import ask_user, ask_user_for_semester
+from helper_functions_printing import print_answer, answer_string, list_modules_and_courses
 
 import clips
 
@@ -10,16 +12,6 @@ def reset_environment_for_clean_answer(environment):
             environment.assert_string(f)
     return environment
 
-def ask_user(prompt):
-    return input(prompt).strip()
-
-def ask_user_for_semester(prompt="  semester (ws/ss): "):
-    while True:
-        s = input(prompt).strip().lower()
-        if s in ("ws", "ss"):
-            return s
-        print("  Please enter 'ws' oder 'ss'!")
-
 def get_answer(env, template, **slots):
     for f in env.facts():
         #print(f)
@@ -27,13 +19,6 @@ def get_answer(env, template, **slots):
             return f
     return None
 
-def answer_string(treffer):
-    return "YES" if treffer else "NO"
-
-def print_answer(answer):
-    print("############")
-    print(answer)
-    print("############")
 
 def q_course_to_module(environment):
     kurs = ask_user("  course_id (echte_veranstaltung): ")
@@ -72,7 +57,10 @@ def q_do_course_in_semester(environment):
 FRAGEN = {
     "1": ("Does a course belong to a module?",              q_course_to_module),
     "2": ("Can I choose a course for a module?",   q_use_course_for_module),
-    "3": ("Can I do a course in a semester?", q_do_course_in_semester)
+    "3": ("Can I do a course in a semester?", q_do_course_in_semester),
+    "4": ("Kann ich ein Modul belegen? (Voraussetzungen)", "q_modul_belegbar"),
+    "5": ("Kann ich ein Modul in einem Semester abschliessen?", "q_modul_abschliessbar"),
+    "6": ("Habe ich ein Modul abgeschlossen?",             "q_modul_abgeschlossen"),
 }
 
 
@@ -111,22 +99,6 @@ def run_tests():
     scenario("mockup_10.txt")
 
 
-def alle(env, template, **slots):
-    return [f for f in env.facts()
-            if f.template.name == template and all(str(f[k]) == str(v) for k, v in slots.items())]
-
-
-def list_modules_and_courses(environment):
-    print("\n  Modules:")
-    for f in sorted(alle(environment, "modul"), key=lambda x: str(x['id'])):
-        print(f"    {f['id']}  (pr={f['pr']}, sl={f['sl']})")
-    print("  Courses (echte_veranstaltung):")
-    gesehen = set()
-    for f in alle(environment, "echte_veranstaltung"):
-        if f['id'] not in gesehen:
-            gesehen.add(f['id'])
-            print(f"    {f['id']}  {f['titel']}")
-    print()
 
 
 
@@ -165,9 +137,6 @@ def main():
                     break
             except Exception as e:
                 print(f"  Fehler bei der Anfrage: {e}")
-
-
-
 
 
 

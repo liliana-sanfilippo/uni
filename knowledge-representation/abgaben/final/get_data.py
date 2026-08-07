@@ -1,7 +1,6 @@
 import json
-import requests
-from api_helpers import get_json_cached, PAUSE
-import time
+from api_helpers import get_json_cached
+
 
 folder = "data/"
 
