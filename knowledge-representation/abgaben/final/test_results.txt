@@ -20,6 +20,9 @@ Actual answer:   YES
 Question 6:  -> Has liliana completed the module "39-M-Inf-INT-adv_a"?
 Expected answer: NO
 Actual answer:   NO
+Question 7:   -> Is the course 624620553 available in ws?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 02:
 =========================================
@@ -40,6 +43,9 @@ Question 5:   -> Can the module "39-M-Inf-INT-adv_a" be completed in one ws?
 Expected answer: YES
 Actual answer:   YES
 Question 6:  -> Has liliana completed the module "39-M-Inf-INT-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 7:   -> Is the course 659886362 available in ws?
 Expected answer: YES
 Actual answer:   YES
 =========================================
@@ -64,6 +70,9 @@ Actual answer:   YES
 Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
 Expected answer: NO
 Actual answer:   NO
+Question 7:   -> Is the course 737382051 available in ss?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 04:
 =========================================
@@ -84,6 +93,9 @@ Question 5:   -> Can the module "39-M-Inf-INT-app-foc_a" be completed in one ws?
 Expected answer: YES
 Actual answer:   YES
 Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 7:   -> Is the course 737382051 available in ws?
 Expected answer: NO
 Actual answer:   NO
 =========================================
@@ -108,6 +120,9 @@ Actual answer:   YES
 Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
 Expected answer: NO
 Actual answer:   NO
+Question 7:   -> Is the course 662782877 available in ss?
+Expected answer: NO
+Actual answer:   NO
 =========================================
 TEST SCENARIO 06:
 =========================================
@@ -130,6 +145,9 @@ Actual answer:   YES
 Question 6:  -> Has liliana completed the module "39-M-Inf-INT-app-foc_a"?
 Expected answer: NO
 Actual answer:   NO
+Question 7:   -> Is the course 662782877 available in ws?
+Expected answer: YES
+Actual answer:   YES
 =========================================
 TEST SCENARIO 07:
 =========================================
@@ -141,17 +159,17 @@ Question 1:   -> Does course 659886362 belong to module "39-M-Inf-AI-adv_a"?
 Expected answer: YES
 Actual answer:   YES
 Question 2:   -> Can liliana choose the course 659886362 for the module "39-M-Inf-INT-adv_a"?
-Expected answer: YES
-Actual answer:   YES
+Expected answer: NO
+Actual answer:   NO
 Question 2:   -> Can liliana choose the course 659886362 for the module "39-M-Inf-AI-adv_a"?
-Expected answer: YES
-Actual answer:   YES
+Expected answer: NO
+Actual answer:   NO
 Question 3:   -> Can liliana choose course 659886362 in ws?
-Expected answer: YES
-Actual answer:   YES
+Expected answer: NO
+Actual answer:   NO
 Question 3:   -> Can liliana choose course 659886362 in ws?
-Expected answer: YES
-Actual answer:   YES
+Expected answer: NO
+Actual answer:   NO
 Question 4:   -> Can liliana do the module "39-M-Inf-INT-adv_a"?
 Expected answer: 0
 Actual answer:   0
@@ -170,3 +188,34 @@ Actual answer:   NO
 Question 6:  -> Has liliana completed the module "39-M-Inf-AI-adv_a"?
 Expected answer: NO
 Actual answer:   NO
+Question 7:   -> Is the course 659886362 available in ws?
+Expected answer: YES
+Actual answer:   YES
+Question 7:   -> Is the course 659886362 available in ws?
+Expected answer: YES
+Actual answer:   YES
+=========================================
+TEST SCENARIO 08:
+=========================================
+
+Question 1:   -> Does course 659886362 belong to module "39-M-Inf-AI-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 2:   -> Can liliana choose the course 659886362 for the module "39-M-Inf-AI-adv_a"?
+Expected answer: NO
+Actual answer:   NO
+Question 3:   -> Can liliana choose course 659886362 in ws?
+Expected answer: NO
+Actual answer:   NO
+Question 4:   -> Can liliana do the module "39-M-Inf-AI-adv_a"?
+Expected answer: 0
+Actual answer:   0
+Question 5:   -> Can the module "39-M-Inf-AI-adv_a" be completed in one ws?
+Expected answer: YES
+Actual answer:   YES
+Question 6:  -> Has liliana completed the module "39-M-Inf-AI-adv_a"?
+Expected answer: YES
+Actual answer:   YES
+Question 7:   -> Is the course 659886362 available in ws?
+Expected answer: YES
+Actual answer:   YES

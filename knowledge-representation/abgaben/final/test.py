@@ -27,6 +27,15 @@ def test_do_course_in_semester(env, kurs, modul, sem):
     return answer_string(treffer), f"  -> Can liliana choose course {kurs} in {sem}?"
 
 
+def test_course_available_in_semester(env, kurs, modul, sem):
+    env.assert_string(f'(frage-in-semester-vorhanden '
+                      f'(echte_veranstaltung {kurs}) (semester {sem}))')
+    env.run()
+    treffer = get_answer(env, "in-sem-vorhanden",
+                         **{"echte_veranstaltung": kurs, "semester": sem})
+    return answer_string(treffer), f"  -> Is the course {kurs} available in {sem}?"
+
+
 def test_fulfill_prerequisites(env, kurs, modul, sem):
     env.assert_string(f'(frage-belegbar-modul (student liliana) (modul "{modul}"))')
     env.run()
@@ -75,7 +84,8 @@ SCENARIOS = [
         "expected_do_course_in_semester": "YES",
         "expected_fulfill_prerequisites": 0,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "NO"
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "YES"
     },
     {
         "id": "02",
@@ -92,7 +102,8 @@ SCENARIOS = [
         "expected_do_course_in_semester": "YES",
         "expected_fulfill_prerequisites": 0,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "YES"
+        "expected_modul_abgeschlossen": "YES",
+        "expected_course_available_in_semester": "YES"
     },{
         "id": "03",
         "desc": "It is (the start of) the summer semester. The student so far completed the course Neural Networks "
@@ -107,7 +118,8 @@ SCENARIOS = [
         "expected_do_course_in_semester": "YES",
         "expected_fulfill_prerequisites": 0,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "NO"
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "YES"
     },{
         "id": "04",
         "desc": "It is (the start of) the winter semester. \n"
@@ -121,7 +133,8 @@ SCENARIOS = [
         "expected_do_course_in_semester": "NO",
         "expected_fulfill_prerequisites": 1,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "NO"
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "NO"
     },
     {
         "id": "05",
@@ -141,7 +154,8 @@ SCENARIOS = [
         "expected_do_course_in_semester": "NO",
         "expected_fulfill_prerequisites": 1,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "NO"
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "NO"
     },
     {
         "id": "06",
@@ -159,23 +173,45 @@ SCENARIOS = [
         "expected_do_course_in_semester": "YES",
         "expected_fulfill_prerequisites": 2,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "NO"
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "YES"
     },
     {
         "id": "07",
         "desc": """It is (the start of) the winter semester. \n 
                 The student already took the course Human Centered Artifical Intelligence Lab ForschKolloq. (
-                659886362) which can belong to multiple modules. 
+                659886362) which can belong to multiple modules. Since it was already taken but not assigned, 
+                they cannot (again) take it for a module, but also have not completed any of the modules the course 
+                can be assigned to.
                 """,
         "module": ["39-M-Inf-INT-adv_a", "39-M-Inf-AI-adv_a"],
         "course": 659886362,
         "semester": "ws",
         "expected_course_to_module": "YES",
-        "expected_use_course_for_module": "YES",
-        "expected_do_course_in_semester": "YES",
+        "expected_use_course_for_module": "NO",
+        "expected_do_course_in_semester": "NO",
         "expected_fulfill_prerequisites": 0,
         "expected_complete_module_one_semester": "YES",
-        "expected_modul_abgeschlossen": "NO"
+        "expected_modul_abgeschlossen": "NO",
+        "expected_course_available_in_semester": "YES"
+    },
+    {
+        "id": "08",
+        "desc": """It is (the start of) the winter semester. \n 
+                The student already took the course Human Centered Artifical Intelligence Lab ForschKolloq. (
+                659886362) which can belong to multiple modules. But the student has attributed it to the 
+                39-M-Inf-INT-adv_a module and can therefore not choose it for that module again.
+                """,
+        "module": "39-M-Inf-AI-adv_a",
+        "course": 659886362,
+        "semester": "ws",
+        "expected_course_to_module": "YES",
+        "expected_use_course_for_module": "NO",
+        "expected_do_course_in_semester": "NO",
+        "expected_fulfill_prerequisites": 0,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "YES",
+        "expected_course_available_in_semester": "YES"
     }
 
 ]
@@ -186,7 +222,8 @@ QUESTIONS = {
     "do_course_in_semester": test_do_course_in_semester,
     "fulfill_prerequisites": test_fulfill_prerequisites,
     "complete_module_one_semester": test_complete_module_one_semester,
-    "modul_abgeschlossen": test_modul_abgeschlossen
+    "modul_abgeschlossen": test_modul_abgeschlossen,
+    "course_available_in_semester": test_course_available_in_semester
 }
 
 
