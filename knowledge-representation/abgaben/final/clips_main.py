@@ -2,15 +2,7 @@ import clips
 
 from helper_functions_printing import print_answer, answer_string, list_modules_and_courses, alle
 from helper_functions_user_input import ask_user, ask_user_for_semester
-
-
-def reset_environment_for_clean_answer(environment):
-    environment.reset()
-    with open("fakten.txt", "r") as text_file:
-        fakten = text_file.readlines()
-        for f in fakten:
-            environment.assert_string(f)
-    return environment
+from set_ups import set_up_env, reset_environment_for_clean_answer
 
 
 def get_answer(env, template, **slots):
@@ -66,6 +58,7 @@ def q_fulfill_prerequisites(environment):
         for f in fehlend:
             print(f"     Missing prerequisites: {f['benoetigt']}")
 
+
 def q_complete_module_one_semester(environment):
     modul = ask_user("  module code: ")
     sem = ask_user_for_semester()
@@ -89,46 +82,11 @@ def q_modul_abgeschlossen(environment):
 FRAGEN = {
     "1": ("Does a course belong to a module?", q_course_to_module),
     "2": ("Can I choose a course for a module?", q_use_course_for_module),
-    "3": ("Can I do a course in a semester?", q_do_course_in_semester),
+    "3": ("Can a course available in a semester?", q_do_course_in_semester),
     "4": ("Can I do a module (prerequisites)", q_fulfill_prerequisites),
     "5": ("Can I complete a module in one semester?", q_complete_module_one_semester),
-    "6": ("Have I completed a module?", "q_completed_module"),
+    "6": ("Have I completed a module?", q_modul_abgeschlossen),
 }
-
-
-def set_up_env():
-    environment = clips.Environment()
-    environment.load("clip_definitionen.clp")
-    environment.reset()
-    with open("fakten.txt", "r") as text_file:
-        fakten = text_file.readlines()
-        for f in fakten:
-            environment.assert_string(f)
-        return environment
-
-
-def scenario(filename):
-    environment = set_up_env()
-    with open("scenarios/" + filename, "r") as background:
-        bg = background.readlines()
-
-    for f in bg:
-        environment.assert_string(f)
-
-    environment.run()
-
-
-def run_tests():
-    scenario("mockup_01.txt")
-    scenario("mockup_02.txt")
-    scenario("mockup_03.txt")
-    scenario("mockup_04.txt")
-    scenario("mockup_05.txt")
-    scenario("mockup_06.txt")
-    scenario("mockup_07.txt")
-    scenario("mockup_08.txt")
-    scenario("mockup_09.txt")
-    scenario("mockup_10.txt")
 
 
 def main():
