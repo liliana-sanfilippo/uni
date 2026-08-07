@@ -57,7 +57,7 @@ def set_up_scenario(filename, environment):
         bg = background.readlines()
         for f in bg:
             env.assert_string(f)
-            print(f)
+            #print(f)
     return env
 
 
@@ -110,8 +110,8 @@ SCENARIOS = [
         "expected_modul_abgeschlossen": "NO"
     },{
         "id": "04",
-        "desc": "It is (the start of) the winter semester. The student so far completed no courses They want to take "
-                "the module 39-M-Inf-INT-app-foc_a, for which 39-M-Inf-INT-adv_a is a prerequisite, and are interested "
+        "desc": "It is (the start of) the winter semester. \n"
+                "The student so far completed no courses They want to take the module 39-M-Inf-INT-app-foc_a, for which 39-M-Inf-INT-adv_a is a prerequisite, and are interested "
                 "in the course Intelligent Tutoring Systems (737382051), which is offered in the summer semester.",
         "module": "39-M-Inf-INT-app-foc_a",
         "course": 737382051,
@@ -120,6 +120,44 @@ SCENARIOS = [
         "expected_use_course_for_module": "YES",
         "expected_do_course_in_semester": "NO",
         "expected_fulfill_prerequisites": 1,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO"
+    },
+    {
+        "id": "05",
+        "desc": """It is (the start of) the summer semester. \n 
+                The student already took the courses Agentic AI Architectures Self Evolution Safety (659862590) and 
+                the course Neural Networks Natural Language Processing (624620553) due to which the module 
+                39-M-Inf-INT-adv_a is completed.\n
+                They are interested in the course (Privacy Healthcare 662782877) which is offered in the winter 
+                semester and want to take the module 39-M-Inf-INT-app-foc_a which has the 
+                prerequisites 39-M-Inf-INT-app and 39-M-Inf-INT-adv_a.
+                """,
+        "module": "39-M-Inf-INT-app-foc_a",
+        "course": 662782877,
+        "semester": "ss",
+        "expected_course_to_module": "NO",
+        "expected_use_course_for_module": "NO",
+        "expected_do_course_in_semester": "NO",
+        "expected_fulfill_prerequisites": 1,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO"
+    },
+    {
+        "id": "06",
+        "desc": """It is (the start of) the winter semester. \n 
+                The student already took the courses Agentic AI Architectures Self Evolution Safety (659862590). \n
+                They are interested in the course (Privacy Healthcare 662782877) which is offered in the winter 
+                semester and want to take the module 39-M-Inf-INT-app-foc_a which has the 
+                prerequisites 39-M-Inf-INT-app and 39-M-Inf-INT-adv_a.
+                """,
+        "module": "39-M-Inf-INT-app-foc_a",
+        "course": 662782877,
+        "semester": "ws",
+        "expected_course_to_module": "NO",
+        "expected_use_course_for_module": "NO",
+        "expected_do_course_in_semester": "YES",
+        "expected_fulfill_prerequisites": 2,
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO"
     }
