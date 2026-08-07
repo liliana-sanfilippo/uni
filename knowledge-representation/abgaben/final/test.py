@@ -108,6 +108,20 @@ SCENARIOS = [
         "expected_fulfill_prerequisites": 0,
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO"
+    },{
+        "id": "04",
+        "desc": "It is (the start of) the winter semester. The student so far completed no courses They want to take "
+                "the module 39-M-Inf-INT-app-foc_a, for which 39-M-Inf-INT-adv_a is a prerequisite, and are interested "
+                "in the course Intelligent Tutoring Systems (737382051), which is offered in the summer semester.",
+        "module": "39-M-Inf-INT-app-foc_a",
+        "course": 737382051,
+        "semester": "ws",
+        "expected_course_to_module": "YES",
+        "expected_use_course_for_module": "YES",
+        "expected_do_course_in_semester": "NO",
+        "expected_fulfill_prerequisites": 1,
+        "expected_complete_module_one_semester": "YES",
+        "expected_modul_abgeschlossen": "NO"
     }
 ]
 
