@@ -11,9 +11,11 @@
  conda install python=3.12
  pip install clipspy
  
- python3 get_data.py
- python3 make_facts.py
- python3 main.py
+ (python3 get_data.py)
+ (python3 make_facts.py)
+ python3 clips_main.py
+ 
+ (python3 test.py)
 ```
 
 ## Web Sources

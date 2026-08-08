@@ -120,9 +120,7 @@ def main():
         for k, (text, _) in FRAGEN.items():
             print(f"  {k}) {text}")
         print("  l) Show modules and courses")
-        print("  t) Run test scenarios")
         print("  q) Exit")
-        #print("  e) I want to enter information")
         choice = input("Choice: ").strip().lower()
         if choice in ("q", "quit", "exit"):
             print("Exiting...")
@@ -149,20 +147,6 @@ def main():
                     break
             except Exception as e:
                 print(f"  Fehler bei der Anfrage: {e}")
-        if choice == "e":
-            while True:
-                print("  A.) I want to enter a course (echte_veranstaltung) I completed")
-                print("  B.) I want to assign a course to a module")
-                print("  q) Go back")
-                sec_choice = input("Choice: ").strip().lower()
-                if sec_choice in ("q", "quit", "exit"):
-                    print("Back to main menu...")
-                    break
-                if con in ("yes", "y"):
-                    continue
-                else:
-                    print("Exiting...")
-                    break
 
 
 if __name__ == "__main__":

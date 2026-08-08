@@ -28,8 +28,6 @@
 (deftemplate frage-in-semester-vorhanden (slot echte_veranstaltung) (slot semester))
 (deftemplate frage-belegbar-modul (slot student) (slot modul))
 (deftemplate frage-abschluss-sem (slot modul) (slot semester))
-(deftemplate frage-kurs-programm (slot echte_veranstaltung) (slot programm))
-
 
 (deftemplate kann-belegen (slot student) (slot echte_veranstaltung) (slot modul))
 (deftemplate kann-belegen-sem (slot student) (slot echte_veranstaltung) (slot semester))
