@@ -60,7 +60,7 @@ def test_modul_abgeschlossen(env, kurs, modul, sem):
     return answer_string(treffer), f' -> Has liliana completed the module "{modul}"?'
 
 def test_course_for_program(env, kurs, modul, sem):
-    program = "iisy"
+    program = "nwi"
     env.assert_string(f'(frage-kurs-programm (echte_veranstaltung {kurs}) (programm {program.upper()}))')
     env.run()
     treffer = get_answer(env, "kurs-fuer-programm",
@@ -96,7 +96,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "02",
@@ -116,7 +116,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "YES",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },{
         "id": "03",
         "mockup": "03",
@@ -134,7 +134,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },{
         "id": "04",
         "mockup": "04",
@@ -151,7 +151,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "NO",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "05",
@@ -174,7 +174,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "NO",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "06",
@@ -195,7 +195,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "06.1",
@@ -216,7 +216,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "07",
@@ -237,7 +237,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "08",
@@ -257,7 +257,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "YES",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },{
         "id": "09",
         "mockup": "09",
@@ -276,7 +276,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "YES",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "YES",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
     {
         "id": "10",
@@ -296,7 +296,7 @@ SCENARIOS = [
         "expected_complete_module_one_semester": "NO",
         "expected_modul_abgeschlossen": "NO",
         "expected_course_available_in_semester": "NO",
-        "expected_course_for_program": "YES"
+        "expected_course_for_program": "NO"
     },
 
 ]
