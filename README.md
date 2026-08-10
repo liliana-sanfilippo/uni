@@ -47,6 +47,10 @@ them, thank you.
     - [Grundlagen Theoretischer Informatik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/gti.pdf)
     - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Grundlagen-theoretischer-Informatik)
     - TODO: Klausurzettel uploaden
+- **Gruppen Software-Projekt** (SS2025)
+  - [Projektcode](https://github.com/liliana-sanfilippo/gp-se-ss-2025-team3-3)
+  - [Technisches Handbuch](https://github.com/liliana-sanfilippo/gp-se-ss-2025-team3-3/blob/main/Technisches_Handbuch.pdf)
+  - [Benutzerhandbuch](https://github.com/liliana-sanfilippo/gp-se-ss-2025-team3-3/blob/main/Benutzeranleitung.pdf)
 - **Knowledge Representation** (SS2026)
     - [Knowledge Representation Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf)
     - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Knowledge-Representation)
