@@ -10,14 +10,21 @@ them, thank you.
 
 ## Module
 
+- **Allgemeine Chemie für das Nebenfach**
+  - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/allgemeine-chemie)
 - **Analyse von Postgenomdatensätzen** (SS2026)
   - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/pgd)
+- **Datenbanken** (WS 2025/26)
+  - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/datenbanken/Datenbanken.txt)
+- **Diskrete Mathematik** (WS 2025/26)
+  - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/diskrete-mathematik/DiskreteMathematik.txt)
 - **Eukaryotengentik** (SS2026)
     - [Eukaryotengentik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/eukgen.pdf)
     - [Karteikarten und Definitionen in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/eukgen/glossary) (weitere 
       in bio_gloss.tex)
     - [Bilder](https://github.com/liliana-sanfilippo/uni/tree/main/eukgen/images)
     - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Eukaryotengenetik)
+    - [Karteikarten zum Lernen der Aminosäurencodes für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/Eukaryotengenetik/Aminos.txt)
 - **Grundlagen Molekularer Biologie 2** (SS2026)
     - [Grundlagen Molekularer Biologie 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/mobi2.pdf)
     - [Karteikarten und Definitionen in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/mobi2/glossary) (weitere
@@ -33,6 +40,7 @@ them, thank you.
     - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Knowledge-Representation)
 - **Phylogenetik** (WS 2025/26)
   - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik)
+  - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik/Phylogenetik.txt)
 - **Sequenzanalyse 2** (SS2026)
     - [Sequenzanalyse 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/seq-an-2.pdf)
     - [Nussinov Visualisierung](https://liliana-sanfilippo.github.io/uni/nussinov.html)

@@ -1,0 +1,125 @@
+#separator:tab
+#html:true
+#guid column:1
+#notetype column:2
+#deck column:3
+#tags column:6
+ji`9fW2?uA	Einfach	Archiv::Diskrete Mathematik	Formel k Elemente auf n Fächer verteilen -&nbsp;mit Reihenfolge,&nbsp;mit Zurücklegen&nbsp;	n<sup>k</sup>	dm
+b$FP&1)SXF	Einfach	Archiv::Diskrete Mathematik	Formel k Elemente auf n Fächer verteilen -&nbsp;mit Reihenfolge,&nbsp;ohne Zurücklegen&nbsp;	"<img src=""paste-86e5e6711d818c6c118544942dfdfb745135258e.jpg"">"	dm
+F.WC%crg(O	Einfach	Archiv::Diskrete Mathematik	Formel k Elemente auf n Fächer verteilen -&nbsp;ohne Reihenfolge,&nbsp;ohne Zurücklegen&nbsp;	"<img src=""paste-0c773235c2841df93af9ddc62c561b8127e2f712.jpg"">"	dm
+"h%;)#7Z!K5"	Einfach	Archiv::Diskrete Mathematik	Formel k Elemente auf n Fächer verteilen -&nbsp;ohne Reihenfolge,&nbsp;mit Zurücklegen&nbsp;	"<img src=""paste-e9756bc5157661a95bd1250a8bef2125a6c94f54.jpg"">"	dm
+"qO)7j%1:r#"	Einfach	Archiv::Diskrete Mathematik	Was muss man sich in Bezug auf&nbsp;Permutationen und&nbsp;Transpositionen merken?	Jede Permutation lässt sich als Produkt von Transpositionen schreiben.	dm
+Ix1upPg%QU	Einfach	Archiv::Diskrete Mathematik	Was muss man sich in Bezug auf Permutationen und&nbsp;Zykel merken?	Jede Permutation l¨asst sich als Produkt von sog. disjunkten Zykeln schreiben	dm
+D+y[}|aNqf	Einfach	Archiv::Diskrete Mathematik	Ist also die Permutation σ = π<sub>1</sub> . . . π<sub>k</sub> ein Produkt von k Transpositionen, so gilt...	sgn σ = (−1)<sup>k</sup>	dm
+mQp?`Dt5Rw	Einfach	Archiv::Diskrete Mathematik	Inklusion/Exklusion für&nbsp;|A ∪ B|	|A ∪ B| = |A| + |B| − |A ∩ C |	dm
+E9t%U~9ek%	Einfach	Archiv::Diskrete Mathematik	Inklusion/Exklusion für&nbsp;|A ∪ B ∪ C |	|A ∪ B ∪ C | = |A| + |B| + |C | − |A ∩ B| − |B ∩ C | − |A ∩ C | + |A ∩ B ∩ C |	dm
+QG8Aqa{|t:	Einfach	Archiv::Diskrete Mathematik	Was bedeutet es, wenn ein Design mit den Parametern (v , k, r ) existiert?	"k | vr <br>und<br><img src=""paste-49580e41a62960a414afddbcc5925326d06eaf64.jpg"">"	dm
+N<KUe/4Tm2	Einfach	Archiv::Diskrete Mathematik	"Was bedeutet es, wenn k | vr und&nbsp;<img src=""paste-6941a8c658640adac0507959eb0d7c8c39bbbb80.jpg"">?"	Ein Design mit den Parametern (v , k, r ) existiert	dm
+zeRTYrZ:DT	Einfach	Archiv::Diskrete Mathematik	Was bedeutet das t bei t-Designs mit (v , k, r<sub>t</sub>),?	Jede t-elementige Teilmenge von X kommt in genau r<sub>t</sub> Blöcken aus B vor	dm
+cQV63l9CX|	Einfach	Archiv::Diskrete Mathematik	Definition: Partition einer Menge	Eine Partition einer Menge X ist ein Mengensystem auf X , also eine Menge P von nichtleeren Teilmengen von X, sodass die Elemente von P paarweise disjunkt sind und vereinigt X ergeben.	dm
+DQ8DJ[m:kY	Einfach	Archiv::Diskrete Mathematik	Was ist ein Design mit r=1?	Eine Partiton	dm
+efzgF1Dmxr	Einfach	Archiv::Diskrete Mathematik	Stirlingzahlen 2. Art: S(n, 1)	S(n, 1) = 1	dm
+Lg;~C`Zb^l	Einfach	Archiv::Diskrete Mathematik	Stirlingzahlen 2ter Art: S(n, n)	S(n, n) = 1	dm
+LMFe{,6mJC	Einfach	Archiv::Diskrete Mathematik	Strilingzahlen 2te Art: S(n, k)	S(n, k) = S(n − 1, k − 1) + kS(n − 1, k).	dm
+rzq&O`TY6g	Einfach	Archiv::Diskrete Mathematik	Strilingzahlen 2te Art: S(n, 0)	S(n, 0) = 0	dm
+j|Y-_3;V}i	Einfach	Archiv::Diskrete Mathematik	Strilingzahlen 2te Art: S(n, k) mit&nbsp;k &gt; n	S(n, k) = 0, mit&nbsp;k &gt; n	dm
+jYYxEa4Z4g	Einfach	Archiv::Diskrete Mathematik	Rekursion für Stirlingzahlen 1. Art	bei&nbsp;n, k &gt; 0:&nbsp;<br><br>s(n, k) = s(n − 1, k − 1) + (n − 1)s(n − 1, k)	dm
+hkwU^u.7o)	Einfach	Archiv::Diskrete Mathematik	Die drei Eigenschaften von&nbsp;Aquivalenzrelationen	(i) x ∼ x (Reflexivität)<br>(ii) x ∼ y =⇒ y ∼ x (Symmetrie)<br>(iii) x ∼ y und y ∼ z =⇒ x ∼ z (Transitivität).	dm
+q`^6~novLO	Einfach	Archiv::Diskrete Mathematik	Äquivalenzklasse Definition	Menge aller Elemente, die äquivalent zu dem betrachteten Element sind.<br><br>[x] = {y ∈ X : x ∼ y } (Äquivalenzklasse von x)	dm
+N9.D/pwjRl	Einfach	Archiv::Diskrete Mathematik	Satz zu Äquivalenzklassen bzgl. einer Äquivalenzrelation&nbsp;	Die 'quivalenzklassen bzgl. einer Äquivalenzrelation bilden eine Partition	dm
+tb!g]P_f-D	Einfach	Archiv::Diskrete Mathematik	Was folgt aus&nbsp;x /= 0 und d | x?	"<img src=""paste-28de815a7d18f3089027bf16da24ef84c70facc1.jpg"">"	dm
+Iux*nsPzv7	Einfach	Archiv::Diskrete Mathematik	Was folgt aus&nbsp;x | y und y | z?	x | z	dm
+i[cf7JZ6t,	Einfach	Archiv::Diskrete Mathematik	Was folgt aus&nbsp;d | x und d | y?	d | (ax + by)	dm
+o&[.`[YGbk	Einfach	Archiv::Diskrete Mathematik	Was bedeutet&nbsp;x und y sind kongruent modulo m?&nbsp;	m | (x − y )<br><br>also&nbsp;<br><br>x und y haben den gleichen Rest bei Teilung durch m?	dm Überprüfen
+QV%8,%m:T6	Einfach	Archiv::Diskrete Mathematik	Was sind die Äquivalenzklassen [x], [y ] ∈ Z<sub>m</sub> der Kongruenz?	Alle Zahlen, die denselben Rest wie x bzw. y haben bei Teilung durch m	dm Überprüfen
+m75f:9lVPJ	Einfach	Archiv::Diskrete Mathematik	Was sind die&nbsp;Rechenregeln für Äquivalenzklassen?	[x] + [y ] := [x + y ] <br><br>und <br><br>[x] · [y ] = [x · y ]	dm
+dXB}.7cH|6	Einfach	Archiv::Diskrete Mathematik	Was sind die Stirlingzahlen erster Art s(n, k)?	Die Anzahl der Permutationen einer n-elementigen Menge, die genau k Zyklen haben	dm
+HiU$njj_g4	Einfach	Archiv::Diskrete Mathematik	Was sind die Strilingzahlen zweiter Art?	Die Anzahl der Partitionen einer n-elementigen Menge in k Teile	dm
+p{gK?_0g)x	Einfach	Archiv::Diskrete Mathematik	Was ist k! · S(n, k)?	Anzahl der surjektiven Abbildungen X → Y , falls |X| = n und |Y | = k.<br>Auch: Anzahl der M ̈oglichkeiten n Objekte in k F ̈acher zu verteilen, sodass kein Fach leer bleibt	dm
+Bxtva7cS}y	Einfach	Archiv::Diskrete Mathematik	Was ist eine Differenzenfamilie?	Eine Differenzenfamilie ist eine Sammlung von Teilmengen einer zyklischen Gruppe, sodass jede von null verschiedene Differenz zwischen zwei Elementen gleich oft auftritt.	dm
+sO=q6:_bB`	Einfach	Archiv::Diskrete Mathematik	Was kann man für&nbsp;Differenzenfamilien und Designs sagen?&nbsp;	"<img src=""paste-618e6f6f4a72ef63dc6e0f692c31e4d536c4155a.jpg"">"	dm
+g3S_g$EGiX	Einfach	Archiv::Diskrete Mathematik	Was ist der&nbsp;Hamming-Abstand?	Die Anzahl der Stellen wo sich zwei (Code)Wörter unterscheiden	dm
+e}W/x=j@l(	Einfach	Archiv::Diskrete Mathematik	Wann ist ein Code t-fehlererkennend?	falls für a, b ∈ C mit ∂(a, b) ≤ t bereits a = b gilt<br><br>also<br><br>falls nur identische Codewörter einen Hamming Abstand von kleiner/gleich t haben&nbsp;	dm
+QZA95Rp5aN	Einfach	Archiv::Diskrete Mathematik	Wann ist ein Code t-fehlerkorrigierend?	falls zu x ∈ V<sup>n</sup> höchstens ein a ∈ C existiert mit ∂(x, a) ≤ t<br><br>also&nbsp;<br><br>falls es zu jedem möglichen Wort der festgelegten Länge höchstens ein Codewort gibt, zu dem ein Hamming-Abstand von t oder kleiner besteht	dm
+oZ**&l_$+L	Einfach	Archiv::Diskrete Mathematik	Wann ist ein Code C linear?	wenn C abgeschlossen unter Addition ist, d.h. jede Summe von Elementen aus C ist wieder ein Element von C .<br>Äquivalent: C ist ein Untervektorraum von V<sup>n</sup>.	dm
+Gvv$ptD>!J	Einfach	Archiv::Diskrete Mathematik	Aus was für einer Matrix kann man einen&nbsp;einen linearen Code der Länge n erzeugen?	eine (r × n)-Matrix mit Einträgen aus Z<sub>2</sub>, also 0 oder 1	dm
+r+t=$p:MJ<	Einfach	Archiv::Diskrete Mathematik	"Was ist äuqivalent zu ""Ein linearer Code C mit Kontrollmatrix H 1-fehlerkorrigierend""?"	Die Spalten von H sind paarweise verschieden und ungleich Null.<br>Weicht ein Wort x ∈ V<sup>n</sup> nur im i-ten Bit/an der i-ten Stelle von einem Codewort aus C ab, dann ist Hx die i-te Spalte von H	dm
+l!m3j=wF-R	Einfach	Archiv::Diskrete Mathematik	Wann ist ein Code C zyklisch?	Falls für das alle Codewörter (c<sub>0</sub>, c<sub>1</sub>, . . . , c<sub>n−1</sub>) ∈ C auch das ‘verschobene’ Wort (c<sub>n−1</sub>, c<sub>0</sub>, . . . , c<sub>n−2</sub>) ∈ C wieder ein Codewort ist.	dm
+qVZU)1Xah.	Einfach	Archiv::Diskrete Mathematik	Satz von&nbsp;Fermat	"<img src=""paste-501a66a0c739c3636b79f9b4d80eabecc7fc084b.jpg"">"	dm
+Mi7>0~lO2`	Einfach	Archiv::Diskrete Mathematik	Satz von&nbsp;Wilson	Für jede Primzahl p gilt:<br>(p − 1)! ≡ −1 (mod p)	dm
+-@<u0cId>	Einfach	Archiv::Diskrete Mathematik	Formel des&nbsp;Multinomialkoeffizienten	"<img src=""paste-6f21b2155f1e926d3daf270d11904a7f9967f829.jpg"">"	dm
+qFt7x{r$L6	Einfach	Archiv::Diskrete Mathematik	Wofür benutzt man den&nbsp;erweiterten euklidischen Algorithmus?	Berechnung der inversen Elemente in ganzzahligen Restklassenringen	dm
+l[2eM$I;5o	Einfach	Archiv::Diskrete Mathematik	Wann ist ein Element [x]∈Z<sub>m</sub>​ invertierbar?	Wenn es ein [y]∈Z<sub>m</sub>&nbsp;gibt mit [x]⋅[y]=[1]. Dies ist genau dann der Fall, wenn ggT(x,m)=1.	dm
+DjaybNmJa$	Einfach	Archiv::Diskrete Mathematik	Was besagt die Bézout-Identität?	ür alle x,y∈Z existieren a,b∈Z mit ggT(x,y)=ax+by. Die Koeffizienten findet man mit dem erweiterten euklidischen Algorithmus.	dm
+"Pc#~794s!G"	Einfach	Archiv::Diskrete Mathematik	Wie konstruiert man einen linearen Code über eine Kontrollmatrix H?	Die Lösungen x∈Z2n von Hx=0 (also ker⁡H) bilden einen linearen Code. Ist dim⁡C=k, wählt man H als (n−k)×n-Matrix mit linear unabhängigen Zeilen.	dm
+N7wZ{$!(-@	Einfach	Archiv::Diskrete Mathematik	Wann ist ein linearer Code mit Kontrollmatrix H 1-fehlerkorrigierend?	Genau dann, wenn alle Spalten von H paarweise verschieden und ungleich Null sind. Weicht x nur im i-ten Bit ab, so ist Hx die i-te Spalte von H.	dm
+nLAvfMU$zv	Einfach	Archiv::Diskrete Mathematik	Wie werden Codewörter in Polynome übersetzt?	"(a<sub>0</sub>​,…,a<sub>n−1​)&nbsp;</sub>↦ a<sub>0</sub>​+a<sub>1​</sub>X+⋯+a<sub>n−1</sub>​X<sub>n−1</sub> ist ein Isomorphismus V<sub>n</sub>→Z<sub>2</sub>[X]/(x<sup>n</sup>+1)<br><br>Beispiel:&nbsp;<br><img src=""paste-0c8669a243e2033fdc1d22a84ce3401106424446.jpg"">"	dm
+fnhDtrZ%]i	Einfach	Archiv::Diskrete Mathematik	Wann ist ein Code C⊆V<sup>n</sup>&nbsp;zyklisch?	Genau dann, wenn das Urbild π<sup>−1</sup>(C)⊆Z<sub>2</sub>[X] ein Ideal ist.	dm
+Pte=v/7T=I	Einfach	Archiv::Diskrete Mathematik	Was ist ein Ideal im Polynomring K[X]?	Eine nichtleere Teilmenge I ⊆K[X] , die unter Addition abgeschlossen ist und für die gilt: f∈K[X],h∈I⇒fh∈I. <br>Also: für jedes Element aus I liegt eine Verknüpfung mit einem Element aus dem Polynomring wieder im Ideal.<br>Das von g erzeugte Ideal ist (g)={fg:f∈K[X]}	dm
+FsDpuelB}8	Einfach	Archiv::Diskrete Mathematik	Was ist die Euler'sche φ-Funktion φ(n)?	φ(n) ist die Anzahl der ganzen Zahlen zwischen 1 und n, die teilerfremd zu n sind (also ggT(k,n)=1)	dm
+Q_j}|m,z9Q	Einfach	Archiv::Diskrete Mathematik	Was gilt für Primzahlen bezüglich der Euler'schen φ-Funktion?	φ(p) = p−1, da alle Zahlen 1,...,p−1 teilerfremd zu p sind. <br><br>Allgemein gilt für p prim: φ(p<sup>k</sup>) = p<sup>k</sup> − p<sup>(k−1)</sup>.	dm
+Bl[+5F[=~d	Einfach	Archiv::Diskrete Mathematik	Was ist ein Isomorphismus?	Eine bijektive Abbildung f: A → B zwischen zwei algebraischen Strukturen, die die Verknüpfungen erhält, also f(x+y) = f(x)+f(y) und f(x·y) = f(x)·f(y). <br>Isomorphe Strukturen sind strukturell identisch, sie unterscheiden sich nur in der Benennung der Elemente.	dm
+Q5A*mV/DF1	Einfach	Archiv::Diskrete Mathematik	Wie lautet die formale Potenzreihe?	"<img src=""paste-9d41efc0f17d7642293b5cb40d87878cc427157b.jpg"">"	dm
+f*9&wG;PL}	Einfach	Archiv::Diskrete Mathematik	Was ist die erzeugende Funktion einer Folge (u<sub>n</sub>)?	Die formale Potenzreihe	dm
+iWo8vR]bUE	Einfach	Archiv::Diskrete Mathematik	Was ist ein irreduzibles Polynom?	Ein Polynom f(X) in K[X] heißt irreduzibel, wenn es sich nicht als Produkt zweier Polynome kleineren Grades schreiben lässt. Es spielt die Rolle einer Primzahl im Polynomring.	dm
+B_YvL5JD=1	Einfach	Archiv::Diskrete Mathematik	Wie berechnet man die Kontrollmatrix eines zyklischen Codes?	Sei C=(g) (g -&nbsp;Erzeugendenpolynom) mit x<sup>n</sup>+1=gh und h=h<sub>k</sub>X<sup>k</sup>+⋯+h<sub>0</sub>​. Die Kontrollmatrix H ist dann eine (n−k) × n-Matrix, deren Zeilen die Koeffizienten von h sind, jeweils um eine Stelle nach rechts verschoben.&nbsp;<br><br>Also:&nbsp;Man teilt x^n+1 durch das Erzeugendenpolynom g und erhält h. Die Koeffizienten von h schreibt man zeilenweise in die Matrix, wobei jede Zeile gegenüber der vorherigen um eine Stelle nach rechts verschoben ist. Ein Wort ist genau dann ein Codewort, wenn H es auf den Nullvektor abbildet.	dm
+ds[9q[Q7lM	Einfach	Archiv::Diskrete Mathematik	Was ist eine lineare Rekursion k-ter Ordnung?	"<div>Eine Gleichung der Form:</div>
+<div>u<sub>n</sub> = a<sub>1</sub>·u<sub>(n-1)</sub> + a<sub>2</sub>·u<sub>(n-2)</sub> + ... + a<sub>k</sub>·u<sub>(n-k)</sub> + b<sub>k</sub>   für alle n ≥ k</div>
+<div>mit Anfangsbedingungen u<sub>i</sub> = b<sub>i</sub> für i = 0,...,k−1.</div><div><br></div><div>Also:&nbsp;Jedes neue Folgenglied ist eine gewichtete Summe der k vorherigen Glieder, plus eventuell einer Konstanten. Man braucht k Startwerte, um die Folge eindeutig festzulegen.</div>
+<div></div>"	dm
+d(LSmJ5/Br	Einfach	Archiv::Diskrete Mathematik	Lösung der homogenen linearen Rekursion 1. Ordnung?	Für&nbsp;u<sub>n</sub> = a · u<sub>(n-1)</sub>, u<sub>0</sub> = b<sub>0</sub><br><br>u<sub>n</sub> = b<sub>0</sub> · a<sup>n</sup>	dm
+v=>/<8[:~2	Einfach	Archiv::Diskrete Mathematik	Wie lautet die lineare Rekursion 1. Ordnung?&nbsp;	u<sub>n</sub>&nbsp;= a · u<sub>(n-1)</sub>, u<sub>0</sub>&nbsp;= b<sub>0</sub>	dm
+v[}J;{qs}u	Einfach	Archiv::Diskrete Mathematik	Lösung der inhomogenen linearen Rekursion 1. Ordnung (u<sub>n</sub>&nbsp;= a · u<sub>(n-1)</sub>&nbsp;+ b<sub>1</sub>, u<sub>0</sub>&nbsp;= b<sub>0</sub>)?	a ≠ 1:  u<sub>n</sub> = b<sub>0</sub> · a<sup>n</sup>  +  b<sub>1</sub> · (a<sup>n − 1</sup>) / (a − 1)<br><br>a = 1:  u<sub>n</sub> = b<sub>0</sub> + n · b<sub>1</sub>	dm
+n`}t(x3OIF	Einfach	Archiv::Diskrete Mathematik	Wie lautet die inhomogenen linearen Rekursion 1. Ordnung?	u<sub>n</sub>&nbsp;= a · u<sub>(n-1)</sub>&nbsp;+ b<sub>1</sub>, u<sub>0</sub>&nbsp;= b<sub>0</sub>	dm
+AumuWL0MY5	Einfach	Archiv::Diskrete Mathematik	Was ist die Singleton-Schranke?	"Je größer der minimale Abstand (also je besser die Fehlerkorrektur), desto weniger Codewörter kann der Code haben. Ein Code, der diese Schranke mit Gleichheit erfüllt, heißt MDS-Code (Maximum Distance Separable).<br><br><div>Für einen Code C der Länge n mit M = |C| Codewörtern und minimalem Hamming-Abstand d gilt:</div>
+<div>M ≤ q^(n−d+1)</div>
+<div>wobei q die Alphabetgröße ist (für Binärcodes q=2). Für einen linearen [n,k,d]-Code bedeutet das:</div>
+<div>k ≤ n − d + 1,   also   d ≤ n − k + 1</div>
+<div></div>"	dm
+bp_B_;]?{v	Einfach	Archiv::Diskrete Mathematik	Was ist die Erzeugendenmatrix G eines linearen Codes?	"<div>Ist C ein linearer Code der Dimension k, so ist G eine k × n-Matrix über Z_2, deren Zeilen eine Basis von C bilden. Jedes Codewort entsteht als Linearkombination der Zeilen:</div>
+<div>C = {u · G : u in Z_2^k}</div>"	dm
+M72lztcK(i	Einfach	Archiv::Diskrete Mathematik	Was ist das Verhältnis zwischen Erzeugendenmatrix G und Kontrollmatrix H?	"<div>G ist eine k × n-Matrix, H ist eine (n−k) × n-Matrix. Sie erfüllen:</div>
+<div>H · G^T = 0</div>"	dm
+f=f%l;,bi`	Einfach	Archiv::Diskrete Mathematik	Was ist die Potenzmenge P(M)?	Die Potenzmenge P(M) ist die Menge aller Teilmengen von M<br><br>Beispiel:&nbsp;Für M = {1,2} gilt: P(M) = { ∅, {1}, {2}, {1,2} }	dm
+Ex!qodD^g6	Einfach	Archiv::Diskrete Mathematik	Was ist die Mächtigkeit einer Potenzmenge&nbsp;|P(M)|?	|P(M)| = 2^|M|	dm
+qL^RE!:S??	Einfach	Archiv::Diskrete Mathematik	Was ist das kartesische Produkt?	Die Menge aller geordneten Paare	dm
+Bc%YGMwRyF	Einfach	Archiv::Diskrete Mathematik	Was ist der Zykeltyp einer Permutation?	Schreibt man eine Permutation als Produkt disjunkter Zykel, so ist der Zykeltyp die Liste der Zykellängen	dm
+r:l>0m!!Pr	Einfach	Archiv::Diskrete Mathematik	Was sind Fixpunkte und wie hängen sie mit dem Zykeltyp zusammen?	Ein Fixpunkt einer Permutation σ ist ein Element x mit σ(x) = x. Fixpunkte entsprechen genau den 1-Zykeln in der Zykeldarstellung.	dm
+mL=AFi%pNK	Einfach	Archiv::Diskrete Mathematik	Was ist eine formale Potenzreihe und wie unterscheidet sie sich von einer Funktion?	Eine formale Potenzreihe über einem Körper K ist ein Ausdruck&nbsp;mit Koeffizienten a_n ∈ K.&nbsp;<br>Also: Eine formale Potenzreihe ist einfach eine unendliche Liste von Koeffizienten (a_0, a_1, a_2, ...), verpackt in eine bequeme algebraische Schreibweise. Die Stärke liegt darin, dass man mit ihnen wie mit Polynomen rechnen kann.	dm
+sn*{-+wz?)	Einfach	Archiv::Diskrete Mathematik	Wann ist eine formale Potenzreihe invertierbar?	f(X) = Summe(a<sub>n</sub> · X<sup>n</sup>) ist invertierbar genau dann, wenn a<sub>0</sub> ≠ 0<br><br>Also: wenn ihr konstantes Glied ungleich null ist.	dm
+y^|q*mxf}p	Einfach	Archiv::Diskrete Mathematik	wie berechnet man das Inverse einer formalen Potenzreihe?	"Das Inverse g = f<sup>(-1)</sup> mit f·g = 1 berechnet man rekursiv:
+<br><br><img src=""paste-379218039436cc0e86474527028789f5ba80c91e.jpg"">"	dm
+KSghvjnctL	Einfach	Archiv::Diskrete Mathematik	Was ist das Erzeugendenpolynom eines zyklischen Codes?	"Das Erzeugendenpolynom g ist das ""kleinste"" Polynom im Code. Alle Codewörter entstehen, indem man g mit beliebigen Polynomen multipliziert (modulo X<sup>n+1</sup>).&nbsp;Es bestimmt den Code vollständig."	dm
+sd4X|wccpD	Einfach	Archiv::Diskrete Mathematik	Wie hängen Grad des Erzeugendenpolynoms und Dimension des Codes zusammen?	"<div>Ist g das Erzeugendenpolynom eines zyklischen Codes C der Länge n mit deg(g) = n−k, dann gilt:</div>
+<div>dim(C) = k</div><div><br></div><div>Der Code hat also 2^k Codewörter<br></div><div><br></div><div>Je höher der Grad des Erzeugendenpolynoms, desto kleiner der Code. Ein Erzeugendenpolynom vom Grad n−k erzeugt genau einen k-dimensionalen Code.<br></div>"	dm
+C=(-vCeuRq	Einfach	Archiv::Diskrete Mathematik	Was ist ein Ring?	"<div>Eine Menge R mit zwei Verknüpfungen + und ·, sodass:</div>
+<ul>
+<li>(R,+) ist eine abelsche Gruppe (mit neutralem Element 0)</li>
+<li>· ist assoziativ und hat ein neutrales Element 1</li>
+<li>Distributivgesetze gelten: a·(b+c) = a·b + a·c</li></ul>"	dm
+"j#/N$4~VEn"	Einfach	Archiv::Diskrete Mathematik	Was ist ein Körper?	Ein Ring K, in dem zusätzlich jedes Element ≠ 0 ein multiplikatives Inverses hat.	dm
+q|/`V2GD<	Einfach	Archiv::Diskrete Mathematik	Was ist eine injektive Abbildung ?	Injektiv (eineindeutig): f(a) = f(b) =&gt; a = b. Keine zwei verschiedenen Elemente werden auf dasselbe abgebildet.	dm
+BC/zSQ(-]I	Einfach	Archiv::Diskrete Mathematik	Was ist eine bijektive Abbildung ?	Bijektiv: Injektiv und surjektiv zugleich. Jedes b ∈ B hat genau ein Urbild.	dm
+t=oBg|Y)DC	Einfach	Archiv::Diskrete Mathematik	Was ist eine surjektive Abbildung ?	Surjektiv (überdeckend): Für jedes b ∈ B gibt es ein a ∈ A mit f(a) = b. Jedes Element im Zielbereich wird getroffen.	dm
+E@*rO6q,&4	Einfach	Archiv::Diskrete Mathematik	Was ist das Signum (sgn) einer Permutation und wie berechnet man es?	"<div>Das Signum gibt an, ob eine Permutation ""gerade"" oder ""ungerade"" ist (gerade oder ungerade Anzahl an&nbsp;Transpositionen).&nbsp;</div><div>Also:&nbsp;Man zählt für jeden Zykel, wie viele Transpositionen er benötigt (Länge minus 1), addiert alles und schaut ob die Summe gerade oder ungerade ist.</div>
+<div></div>"	dm
+w0:?}mvHms	Einfach	Archiv::Diskrete Mathematik	Was ist eine Menge von Codewörtern über (F<sub>m</sub>)<sup>n</sup>?	(F<sub>m</sub>)<sup>n&nbsp;</sup>ist die Menge aller n-Tupel über einem Alphabet F<sub>m</sub> mit m Symbolen.&nbsp;<br><div>Ein Code C ist eine Teilmenge:</div> <div>C ⊆ (F<sub>m</sub>)<sup>n</sup></div>	dm
+D/7iQMZqz4	Einfach	Archiv::Diskrete Mathematik	Wie viele Codewörter besitzt ein Code über (F<sub>m</sub>)<sup>n</sup> höchstens?	höchstens m<sup>n</sup>&nbsp;Wörter (Bei Binärcodes 2<sup>n</sup>)	dm
+On-E=D?4vU	Einfach	Archiv::Diskrete Mathematik	Wie berechnet man den Minimalabstand d_min eines Codes C?	Der minimale Hamming-Abstand ist das Minimum über alle Paare verschiedener Codewörter.&nbsp;Für lineare Codes reicht es, das leichteste Nicht-Nullwort zu finden und das mit dem Nullwort zu vergleichen.&nbsp;	dm
+"Afo:#<4k2_"	Einfach	Archiv::Diskrete Mathematik	Wie bestimmt man den maximalen Hamming-Abstand eines Codes?	Berechne ∂(a,b) (den Hamming Abstand) für alle Paare und nimm das größte Ergebnis.	dm
+u=]3JX!rS]	Einfach	Archiv::Diskrete Mathematik	Wie kann man zeigen, dass ein Code t Fehler NICHT korrigieren kann?	Ein Code kann t Fehler nicht korrigieren, wenn d_min(C) &lt; 2t+1, also wenn d_min ≤ 2t.<br><br>Also: Wenn der minimale Abstand kleiner ist als 2t+1	dm
+timQh)chb^	Einfach	Archiv::Diskrete Mathematik	Was ist ein [n, k]-Code?	"<div>Ein linearer Code C heißt [n,k]-Code, wenn:</div>
+<div>n = Länge der Codewörter (Anzahl der Bits)&nbsp;</div><div>k = Dimension von C als Vektorraum über Z_2</div>"	dm
+N86$x%W518	Einfach	Archiv::Diskrete Mathematik	Wie bestimmt man die Generatormatrix G eines linearen Codes C?	<ol><li>Bestimme eine Basis {c<sub>1</sub>,...,c<sub>k</sub>} von C (k linear unabhängige Codewörter)</li><li>Schreibe diese als Zeilen in G</li></ol>	dm
+"PO#O@y7/%c"	Einfach	Archiv::Diskrete Mathematik	Was ist eine&nbsp;Transposition?	Ene Permutation, welche zwei Elemente vertauscht und alle anderen festlässt.	dm
+e|Zmy>$y6:	Einfach	Archiv::Diskrete Mathematik	Was bedeutet v bei einem Design Parameter (v,k,r)?	Anzahl der Elemente in der Menge X	dm
+iGUqJE|J<^	Einfach	Archiv::Diskrete Mathematik	Was bedeutet k bei einem Design Parameter (v,k,r)?	Anzahl der Elemente pro Block	dm
+u^$*_Ji-?9	Einfach	Archiv::Diskrete Mathematik	Was bedeutet r bei einem Design Parameter (v,k,r)?	In wie vielen Blöcken ein Element vorkommen soll	dm
+O8c]6!wXU6	Einfach	Archiv::Diskrete Mathematik	Was bedeutet b bei einem Design?	Anzahl der Blöcke im Design	dm
+v]57:D4{M@	Einfach	Archiv::Diskrete Mathematik	Wie berechnet man die Anzahl der Blöcke in einem Design?&nbsp;	"<img src=""paste-3d7d31789a2b740ce5bca30aace94df5d37e0693.jpg"">"	dm
+FJ>|l(~h0!	Einfach	Archiv::Diskrete Mathematik	Was ist S<sub>n</sub>?	Die Menge aller Permutationen von {1,...,n}	dm
+o<8(ny{yHH	Einfach	Archiv::Diskrete Mathematik	Summenregel	 Die Anzahl der Elemente in der Vereinigung aller Mengen ist gleich die Summe<br>der Anzahl der Elemente in jeder der Mengen.	
+u7E+Z.,]=8	Einfach	Archiv::Diskrete Mathematik	Fur Mengen X, Y gilt |X| = |Y | genau dann, wenn	Es eine Bijektion X → Y gibt	
+K?.LXdWX|Z	Einfach	Archiv::Diskrete Mathematik	Permutation	Eine Permutation von X ist eine bijektive Abbildung X → X	
+qEI.Fb+%Rg	Einfach	Archiv::Diskrete Mathematik	Sn ist unter was abgeschlossen? 	unter der Komposition von<br>Abbildungen abgeschlossen.<br>Und die Komposition σπ ∈ Sn bedeutet man wendet erst π und dann σ an. Und<br>landet dadurch wieder in Sn.	
+"q)5>.?f#eJ"	Einfach	Archiv::Diskrete Mathematik	Zwei Permutationen α, β von X heißen konjugiert, wenn 	es eine Permutation σ von X gibt, sodass β = σασ^−1<br>.	

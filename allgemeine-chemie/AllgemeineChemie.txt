@@ -1,0 +1,681 @@
+#separator:tab
+#html:true
+#guid column:1
+#notetype column:2
+#deck column:3
+#tags column:12
+F8:o68-q?*	Einfach-Gemische	Archiv::Allgemeine Chemie	Gemenge	fest/fest	heterogen	Granit, Sand	physikalisch - Sortieren, Sieben, Extraktion, Sichten, Sublimation				ch_01
+NeB:t~=?/-	Einfach-Gemische	Archiv::Allgemeine Chemie	Suspension	fest/flüssig	heterogen	Schlamm, Pasten	Physikalisch - Filtrieren, Sedimentieren, Dekantieren, Zentrifugieren				ch_01
+kQ|Vyd}Sqk	Einfach-Gemische	Archiv::Allgemeine Chemie	Emulsion	flüssig/flüssig	heterogen	Milch, Öl+Wasser	Physikalisch - Zentrifugieren, Abscheiden				ch_01
+"yi{QgK6g7#"	Einfach-Gemische	Archiv::Allgemeine Chemie	Aerosol f-g	fest/gasförmig	heterogen	Rauch	physikalisch - Sedimentieren, Filtrieren, Elektrostat. Trennung				ch_01
+Nx_U`(w5mB	Einfach-Gemische	Archiv::Allgemeine Chemie	Aerosol fl-g	flüssig/gasförmig	heterogen	Nebel, Schaum	Sedimentieren				ch_01
+fLspe0Y06N	Einfach-Gemische	Archiv::Allgemeine Chemie	Legierung	fest/fest	homogen	Bronze, Elektrum	Ätzung, Elektrolyse, Sublimation, Zonenschmelzverfahren				ch_01
+b%dump$sjU	Einfach-Gemische	Archiv::Allgemeine Chemie	Lösung fl-f/g-fl	fest/flüssig<br>gasförmig/flüssig	homogen	Sole, Iodwasser	Eindampfen, Ausfrieren, Extraktion, Fällung, Chromatographie				ch_01
+"SBF1(#5>-"	Einfach-Gemische	Archiv::Allgemeine Chemie	&nbsp;Lösung f-f	flüssig/flüssig	homogen	Benzin	Destillation, Rektifikation (Gegenstromdest.), Chromatographie				ch_01
+PO(k+sV|Wf	Einfach-Gemische	Archiv::Allgemeine Chemie	Lösung f-g	fest/gasförmig	homogen	H2 in Pd	Desorption durch Erwärmen				ch_01
+qJ/I|2P`F+	Einfach-Gemische	Archiv::Allgemeine Chemie	Gasgemisch	gasförmig/gasförmig	homogen	Luft	Ausfrieren (Lindeverfahren), Chromatographie				ch_01
+m<Me5NH{@w	Einfach	Archiv::Allgemeine Chemie	Woraus bestehen&nbsp;Heterogene Gemische?&nbsp;	Aus homogenen Stoffen							ch_01
+NIVF`:Uk0K	Einfach	Archiv::Allgemeine Chemie	Woraus bestehen&nbsp;Homogene Stoffe?	Aus homogenen&nbsp;Gemischen oder reinen Stoffen							ch_01
+NmH!2cB/uF	Einfach	Archiv::Allgemeine Chemie	Woraus bestehen reine Stoffe?	Aus Elementen oder Verbindungen							ch_01
+BXO$2:!YeN	Einfach	Archiv::Allgemeine Chemie	Wie kann man homogene und heterogene Gemische voneinander unterscheiden?	Bei heterogenen Gemischen gibt es eine Phasengrenze (z.B. zwischen fest und fest). Mit dem Auge oder optischen Hilfsmittel erkennbar.							ch_01
+qJfbpQ-vTy	Elemente und Isotope	Archiv::Allgemeine Chemie	Bor	5 Protonen							ch_01
+r/+Ec7XI-U	Elemente und Isotope	Archiv::Allgemeine Chemie	Sauerstoff	8 Protonen							ch_01
+Nre52h9-vQ	Elemente und Isotope	Archiv::Allgemeine Chemie	Magnesium-26	12 Protonen, 14 Neutronen							ch_01
+ER}.[iCuyM	Elemente und Isotope	Archiv::Allgemeine Chemie	Mangan	25 Protonen							ch_01
+iU&p3I(bRT	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Mittlere Atommasse?	Isotop-Masse * Isotop-Häufigkeit + Isotop-Masse * Isotop-Häufigkeit&nbsp;+ ....<br><br>(arithmetisches Mittel)							ch_01
+n3(}[$KKgs	Einfach	Archiv::Allgemeine Chemie	Welche Form hat das 3s-Orbital?	Kugelförmig							ch_01
+x7YKLez3GG	Einfach	Archiv::Allgemeine Chemie	Welche Form haben die 3p-Orbitale?	Hantelförmig							ch_01
+Fq1AUd^)?X	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich die&nbsp;Isotope eines Elementes?	In der Neutronenzahl des Kerns							ch_01
+G)W^H61(&c	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Ordnungszahl?&nbsp;	Die&nbsp;Anzahl der Protonen im Kern							ch_01
+BswJXA}fSc	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Massenzahl?	Die Anzahl der Neutronen plus die Anzahl der Protonen (Ordnungszahl)							ch_01
+z,amukLf3@	Einfach	Archiv::Allgemeine Chemie	Was ist ein&nbsp;Anisotop?	Ein&nbsp;Reinelement; Elemente die nicht mehrere Isotope haben							ch_01
+tl-]:m1rFh	Einfach	Archiv::Allgemeine Chemie	Was ist das&nbsp;Pauli Prinzip?	Elektronen in einem Atom dürfen nicht in allen Quantenzahlen übereinstimmen.							ch_01
+B$~X%1b54Q	Einfach	Archiv::Allgemeine Chemie	Was sind die&nbsp;Quantenzahlen?	Zahlen mit denen man&nbsp;messbare Eigenschaften eines Teilchens, eines Systems oder einem seiner Zustände beschreiben kann.&nbsp;							ch_01
+"d!#6A$Uk(e"	Einfach	Archiv::Allgemeine Chemie	Welche Quantenzahlen gibt es?	<ul><li>Die Hauptquantenzahl&nbsp;</li><li>Die&nbsp;Nebenquantenzahl</li><li>Die&nbsp;Magnetische Quantenzahl</li><li>Die&nbsp;Spinquantenzahl</li></ul>							ch_01
+w-T%O3J68P	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Hauptquantenzahl?	Die Hauptquantenzahl n gibt die Schale im Atom an, auf der sich ein Elektron befindet. Diese geben gleichzeitig auch das Energieniveau des Elektrons an.							ch_01
+PXDSlsdeLM	Einfach	Archiv::Allgemeine Chemie	Was ist die Nebenquantenzahl?	Sie gibt die Form des Orbitals in einem Atom an.							ch_01
+"i=I3FK}W#z"	Einfach	Archiv::Allgemeine Chemie	Was ist die Magnetische Quantenzahl?	Sie&nbsp;gibt an, wie der Elektronen-Bahndrehimpuls räumlich orientiert ist.							ch_01
+uN)n]A_b1Q	Einfach	Archiv::Allgemeine Chemie	Was ist die Spinquantenzahl?	Sie beschreibt die Orientierung des Spins zur z-Achse.							ch_01
+"lYl;#B`d^:"	Einfach	Archiv::Allgemeine Chemie	Was besagt die&nbsp;Heisenbergsche Unschärferelation?	Wenn die Position eines Partikels unscharf ist, kann der Impuls relativ genau bestimmt werden ist die Position eines Partikel relativ genau bekannt, ist sein Impuls unscharf.							ch_01
+czH,BOsmL/	Einfach	Archiv::Allgemeine Chemie	Was besagt das&nbsp;Sekundäres Ordnungsprinzip im PSE?	Es werden zuerst die energetisch am niedrigsten liegenden Orbitale vollständig mit Elektronen gefüllt.							ch_01 Überprüfen
+"j#?8,Ehw>y"	Einfach	Archiv::Allgemeine Chemie	Was besagt die&nbsp;Hundsche Regel?	Wenn für die Elektronen eines Atoms mehrere Orbitale/Nebenquanten mit gleichem Energieniveau zur Verfügung stehen, werden diese zuerst mit je einem Elektron mit parallelem Spin besetzt.&nbsp;<br><br>Aber: Halbgefüllte bzw. vollst. gefüllte Unterschalen geben höhere Stabilität. D.h. wenn man bspw. die 3er Schalen voll machen kann, obwohl 3d höher liegt als 4s, so wird 3d zuerst befüllt.&nbsp;							ch_01
+O-/Z@5w&=X	Einfach	Archiv::Allgemeine Chemie	Was ist das primäre Ordnungsprinzip des PSE?	Die&nbsp;Protonenzahl							ch_01
+M;hfD{J[Qc	Einfach	Archiv::Allgemeine Chemie	Was ist das sekundäre Ordnungsprinzip des PSE?	Die&nbsp;Elektronenkonfiguration							ch_01
+zI_AyU-x1d	Einfach	Archiv::Allgemeine Chemie	Was ist die erste&nbsp;Ionisierungsenergie?	Energie, die notwendig ist um 1 Elektron aus der äußeren Valenzschale zu entfernen.							ch_01
+dpDp=m3+yC	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Elektronenaffinität?	Energie, die benötigt/frei wird, wenn ein gasförmiges Atom ein Elektron aufnimmt.							ch_01
+Iewr$g}PI3	Einfach	Archiv::Allgemeine Chemie	Welche chemischen Bindungen gibt es?&nbsp;	<ul><li>intramolekulare Kräfte&nbsp;<br></li><li>intermolekulare Kräfte<br></li></ul>							ch_01
+hK3Htex*&b	Einfach	Archiv::Allgemeine Chemie	Was sind die intramolekularen Kräfte?	Ionen– , Metall– und Elektronenpaarbindung							ch_01
+y/uI`>7maC	Einfach	Archiv::Allgemeine Chemie	Was sind die intermolekularen Kräfte?	Van-der-Waals-Wechselwirkung und die Wasserstoffbrückenbindung							ch_01
+Ri0K&r@y[9	Einfach	Archiv::Allgemeine Chemie	Wie nennt man eine&nbsp;Elektronenpaarbindung auch?	kovalente Bindung							ch_01
+cApJ^g$mE;	Einfach	Archiv::Allgemeine Chemie	Wie nennt man eine&nbsp;kovalente Bindung auch?	Elektronenpaarbindung							ch_01
+AG,^ntybbF	Bindungen	Archiv::Allgemeine Chemie	Ionenbindungen	"Ionenbindungen werden üblicherweise&nbsp;nicht&nbsp;als ""polar"" oder ""unpolar"" klassifiziert – diese Begriffe werden hauptsächlich für&nbsp;kovalente<b> </b>Bindungen&nbsp;verwendet."	hauptsächlich bei Salzen, bspw.&nbsp;Natriumchlorid	Durch die vollständige Abgabe von einem Elektron des positiven Partner an den elektronegativeren Partner.	intramolekulare	Zwischen Metallen und Nichtmetallen mit einem einem Elektronennegativitätsunterschied über 1,7	stark		ch_bindungen
+u4(1%&QNE|	Bindungen	Archiv::Allgemeine Chemie	kovalenten Bindungen	Die Bindung kann&nbsp;kann unpolar oder polar sein. Welcher der beiden Fälle auftritt ist abhängig von den beteiligten Elementen und deren Elektronennegativität .<br><br>Zwischen zwei gleichen Elementen – z.B. H<sub>2</sub> oder O<sub>2</sub> – tritt immer eine unpolare Bindung auf, da die Elektronennegativität die gleiche ist.	Salzsäure, H2	Bei der kovalenten Bindung teilen sich zwei Elemente ein, zwei, oder drei gemeinsame Elektronenpaare. Sie entstehen, wenn jeweils ein teilbesetztes Orbital zweier Atome miteinander wechselwirken (= überlappen).<br><br>In einer kovalenten Bindung befinden sich die Atomkerne und Elektronen in einem Gleichgewicht von anziehenden und abstoßenden Kräften.	intramolekular	Nichtmetallen	stark	Für die Ausbildung einer kovalenten Bindungen ist die Annäherung der beteiligten Atomkerne notwendig.<br>Bei dieser Annäherung und vor allem bei der Ausbildung der Bindung wird Energie frei.<br>Will man die Entfernung der Atomkerne voneinander wieder<br>vergrößern oder die Bindung spalten, muss man<br>diese Energie wieder aufwenden.	ch_bindungen marked Überprüfen
+t6Hm^d<LUS	Bindungen	Archiv::Allgemeine Chemie	Metallische Bindung	"Bei Metallbindungen wird das Konzept ""polar/unpolar"" üblicherweise nicht angewendet, diese Kategorien sind für kovalente Bindungen gedacht."	Legierungen, bspw. Bronze	jedes an einer Bindung beteiligtes Metall gibt Valenzelektronen ab -&gt;&nbsp;Metallkationen, die durch die frei beweglichen Elektronen zusammengehalten werden.	intramolekular	Metallen	stark		ch_bindungen
+t+BYraI;xg	Bindungen	Archiv::Allgemeine Chemie	Wasserstoffbrückenbindung	Polar, die entstehen aufgrund von Polarität	Wasser, statt O ist es auch oft&nbsp;Stickstoff (N) oder Fluor (F)	Das stark elektronegative Atom zieht das&nbsp;Wasserstoffatom stark an, da&nbsp;eine hohe Elektronegativitätsdifferenz vorliegt	intermolekular	Entsteht zwischen einem gebundenen Wasserstoffatom eines Moleküls und einem stark elektronegativen&nbsp;Atom eines zweiten Moleküls.	schwach		ch_bindungen
+PYnYx|9^K-	Bindungen	Archiv::Allgemeine Chemie	Van-der-Waals-Kräfte	Zwischen polaren, unpolaren und polar/unpolaren&nbsp;	Methan , Ethan oder Butan	Durch kurzfristige unsymmetrische Ladungsverteilung der Elektronen innerhalb der Atomhülle kommt es zu Dipolen.	intermolekular	zwei unpolare Moleküle, die sich annähern und wo die Ladungsverteilung der Elektronen innerhalb der Atomhülle kurzfristig unsymmetrisch ist&nbsp;	schwach (schwächste)		ch_bindungen Überprüfen
+"Q#)TAP]&j/"	Einfach	Archiv::Allgemeine Chemie	Welche Bindungen wirken in Gasen?	van-der-Waals-Kräfte							ch_01
+"uvAJJ#9e%w"	Einfach	Archiv::Allgemeine Chemie	Was nesagt das&nbsp;Avogadrosche Gesetz?	Gleiche Volumina aller Gase enthalten bei gleicher Temperatur und gleichem Druck die gleiche Anzahl der Teilchen							ch_01
+d/YuPhvUFM	Einfach	Archiv::Allgemeine Chemie	Was besagt&nbsp;das ideale Gasgesetz?	Druck * Volumen =&nbsp;Stoffmenge *&nbsp;Gaskonstante * Temperatur							ch_01
+Q5n__;FQ;d	Einfach	Archiv::Allgemeine Chemie	Welche Einheit hat Volumen?	Kubikmeter (m^3)							ch_01
+Dg_61m?3C%	Einfach	Archiv::Allgemeine Chemie	Welche Einheit hat Druck?	Pascal (Pa)							ch_01
+cOa+<(1iC{	Einfach	Archiv::Allgemeine Chemie	Welche Einheit hat Stoffmenge?	mol							ch_01
+o0YA}<1{8I	Einfach	Archiv::Allgemeine Chemie	Welche Einheit hat Temperatur bei Gasen?	Kelvin (K)							ch_01
+"G#A.IoF7vk"	Einfach	Archiv::Allgemeine Chemie	Was ist die Gaskonstante?	"<img src=""paste-ea703f5591bd2d6b11c9f8c04b43cee0e1ec6846.jpg"">"							ch_01
+s,1K?1<ynv	Einfach	Archiv::Allgemeine Chemie	Wie rechnet man Joule u.a. um?	J = kg·m^2/s^2							ch_01
+J-L)|s;Ln1	Einfach	Archiv::Allgemeine Chemie	Wie stehen Pascal und Quadratmeter zueinander?	Pa = N/m^2							ch_01
+w`I5U)cK-5	Einfach	Archiv::Allgemeine Chemie	Wie stehen Pascal zu kg?	Pa = kg/m·s^2							ch_01
+"b3$i#V!O7@"	Einfach	Archiv::Allgemeine Chemie	Was sind ideale Gase?	idealisierte Modellvorstellung eines realen Gases							ch_01
+z%[SJe}Wwp	Einfach	Archiv::Allgemeine Chemie	Welche Eigenschaften haben ideale Gase?&nbsp;	• Punktmassen (alle Gasteilchen werden als ausdehnungslose Massenpunkte angenommen - belegen kein Volumen)<br>• ungeordnete Bewegung (rotieren und vibrieren nicht)<br>• Wechselwirkungen der Teilchen nur durch elastische Stöße untereinander und mit den Wänden<br>• Keine Interaktion der Teilchen untereinander über andere Kräfte (z.B. van-der-Waals-Kräfte)							ch_01
+N-$!Gf*j!Q	Einfach	Archiv::Allgemeine Chemie	Wie verhalten sich die Volumen von idealen und realen Gasen?	Reale Gase weisen (annähernd) identische Molvolumen auf wie ideale Gase.							ch_01
+J*X5^wuQu7	Einfach	Archiv::Allgemeine Chemie	Welche&nbsp;drei ähnlichen Wechselwirkungen verbergen sich unter dem Oberbegriff „van-der-Waals-Kräfte“?	-Dipol-Dipol-Wechselwirkungen<br>-Dipol-induzierter-Dipol-Wechselwirkungen<br>-induzierter-Dipol-induzierter-Dipol-Wechselwirkungen (London-Wechselwirkung)							ch_01
+t2w_b{n]X$	Einfach	Archiv::Allgemeine Chemie	Was ist ein Dipol?	Ein Molekül, in dem die Elektronendichte ungleich verteilt ist und somit unterschiedliche elektrische Ladungen auftreten.<br>Ein Dipol kann auch in ein Atom oder Molekül induziert werden!							ch_01
+kfH[JA`!:_	Einfach	Archiv::Allgemeine Chemie	Wie nennt man die&nbsp;induzierter-Dipol-induzierter-Dipol-Wechselwirkungen auch?	London-Wechselwirkung							ch_01
+e%x55F:sk<	Einfach	Archiv::Allgemeine Chemie	Wie nennt man die&nbsp;London-Wechselwirkung auch?	induzierter-Dipol-induzierter-Dipol-Wechselwirkungen							ch_01
+j-J6=:KyG]	Einfach	Archiv::Allgemeine Chemie	Wie werden Atome polarisiert?	Indem sich die Elektronenhülle verschiebt							ch_01
+Noy~V*xcCA	Einfach	Archiv::Allgemeine Chemie	Wie verhalten sich&nbsp;Polarisierbarkeit und Größe der Atome zueinander?	Die Polarisierbarkeit ist mit zunehmender Größe der Atome immer besser möglich							ch_01
+xhc8PSt2rN	Einfach	Archiv::Allgemeine Chemie	Warum steigt die Siedetemperatur der Edelgase mit Größe der Atome?	Edelgase werden in der flüssigen Phase nur durch van-der-Waals-Kräfte<br>(London-Wechselwirkung) zusammengehalten.<br>Da die Polarisierbarkeit mit zunehmender Größe der Atome immer besser möglich ist, hat Helium die niedrigste Siedetemperatur und Radon die höchste.							ch_01
+c~G.6iVGiQ	Einfach	Archiv::Allgemeine Chemie	Voraussetzungen für H-Brückenbindungen	1. polare H-Element-Bindung, d.h. H gebunden an ein deutlich elektronegativeres Element<br>2. Positiv polarisierter Wasserstoff (positive Partialladung) -&gt; H-Brücken Donator.<br>3. Element mit freiem Elektronenpaar (N, O, F) -&gt; H-Brücken Akzeptor.							ch_01
+tw=lZ/?]}W	Einfach	Archiv::Allgemeine Chemie	Was passiert beim Lösen eines Salzes in einem Lösungsmittel?	In einem polaren Lösungsmittel besitzen die Lösungsmittelmoleküle (Bspw. Wassermoleküle) ein Dipolmoment. Beim Lösen eines Salzes richten sich diese entsprechend dem solvatisiertem Ion (bspw.&nbsp;Na+ und Cl-) aus.							ch_01
+u-+{8?HTM;	Einfach	Archiv::Allgemeine Chemie	Wieso lassen sich polare Verbindungen in Wasser lösen?&nbsp;	Weil sie mit diesem H-Brückenbindungen eingehen können.							ch_01
+qA)QcU{NUj	Einfach	Archiv::Allgemeine Chemie	Wieso lassen sich unpolare Verbindungen nicht in Wasser lösen?&nbsp;	Unpolare Verbindungen wie Fette oder Kohlenwasserstoffe können nur über van-der-Waals-Kräfte mit den Wassermolekülen interagieren. Dies ist aber mit Wasser nur schlecht möglich, also sind sie praktisch unlöslich in Wasser.							ch_01
+BD`[=h;Uzn	Einfach	Archiv::Allgemeine Chemie	Wann treten&nbsp;van-der-Waals Kräfte auf?	Immer							ch_01
+vAN0%l9MlK	Einfach	Archiv::Allgemeine Chemie	Wie bildet sich ein Salz?&nbsp;	Ein Metall reagiert mit einem Nichtmetall: Es bildet sich ein Salz, bestehend aus Metallkationen<br>und Nichtmetallanionen.<br><br>Bspw.:<br>Li + F -&gt; Li+ + F-							ch_01
+C&R({zll]m	Einfach	Archiv::Allgemeine Chemie	Woraus bestehen Salze?&nbsp;	Immer aus Kationen und Anionen							ch_01
+"h#AQ@tles4"	Einfach	Archiv::Allgemeine Chemie	Wie steht es mit der Leitfähigkeit von Salzen?&nbsp;	Generell sind Salze Isolatoren. Aber Salzschmelzen leiten den elektrischen Strom, denn&nbsp;Ionen sind in der Schmelze beweglich und Salzlösungen leiten den elektrischen Strom, denn Ionen sind in der Lösung beweglich.							ch_01
+CH/+{SVTVC	Einfach	Archiv::Allgemeine Chemie	Wie lassen sich die&nbsp;metallischen Eigenschaften erklären?	Metalle sind nicht aus vollständigen Atomen aufgebaut.&nbsp;<br>Elektronengasmodell:&nbsp;Metallatome geben ihre äußeren Valenzelektronen ab. Die verbleibenden Atomrümpfe (positiv geladen, Edelgaskonfiguration) werden nun von Elektronen, die sich zwischen den Atomrümpfen bewegen, zusammen gehalten.							ch_01
+pa1B0G,2?q	Einfach	Archiv::Allgemeine Chemie	Wie lässt sich die&nbsp;elektrische Leitfähigkeit und die Wärmeleitfähigkeit von Metallen erklären?	Durch eine (gerichtete) Bewegung der Elektronen (zwischen den Atomrümpfen) kann Strom oder Wärme transportiert werden.							ch_01
+q@t`O~Q+_r	Einfach	Archiv::Allgemeine Chemie	Wie lässt sich die Verformbarkeit von Metallen&nbsp;erklären?	Dadurch, dass der Elektronenkitt beim Verschieben der Atomrümpfe ebenfalls mitwandert und die Interaktionen prinzipiell unverändert bleiben.							ch_01
+I:Yk)V|2Ya	Einfach	Archiv::Allgemeine Chemie	Was sind&nbsp;Radikale?	Atome oder Verbindungen mit ungepaarten Elektronen							ch_01
+v_5Jof~c2`	Einfach	Archiv::Allgemeine Chemie	Wie kann man&nbsp;kovalente Bindungen von Molekülen veranschaulichen?	Durch die Lewis-Strukturformel							ch_01
+AsXm(bFi--	Einfach	Archiv::Allgemeine Chemie	Was besagt die Oktettregel von Lewis?	Haupgruppenelemente der&nbsp;2. Periode können maximal acht Elektronen&nbsp;in der Valenzschale aufnehmen							ch_01 Überprüfen
+hqrW(tyrR_	Einfach	Archiv::Allgemeine Chemie	Welche Ausnahmen hat die&nbsp;Oktettregel?	Perioden höher als die 2te und&nbsp;Disauerstoffmoleküle (O<sub>2</sub>)&nbsp;sowie&nbsp;Stickoxide (NO / NO<sub>2</sub>). Außerdem gilt die Oktettregel eigentlich nur für stabile Verbindungen, ist also auf&nbsp;Zwischenprodukte oft nicht zutreffend.							ch_01
+Lyc!W,lc(D	Einfach	Archiv::Allgemeine Chemie	Was ist der Unterschied zwischen der Lewis-Strukturformel und der&nbsp;vereinfachten Lewis-Strukturformel?	Bei den vereinfachten Lewis-Strukturformeln werden die freien Elektronenpaare einer Verbindung vernachlässigt und nur die bindenden Elektronenpaare gezeichnet							ch_01
+xh1{DWS~/!	Einfach	Archiv::Allgemeine Chemie	Was ist besonders an der Bindung in O<sub>2</sub>?	Das hat ein Diradikal mit Doppelbindungscharakter - also hat es nur 7 Valenzelektronen							ch_01
+~>$0ctHkv	Einfach	Archiv::Allgemeine Chemie	Wie verhält sich die Vielfachhalt einer Bindung zu der Länge?&nbsp;	Dreifachbindung &lt; Doppelbindung &lt; Einfachbindung							ch_01
+bNTX?9L,e]	Einfach	Archiv::Allgemeine Chemie	Wie verhält sich die Vielfachhalt einer Bindung zu der Stärke?&nbsp;	Einfachbindung &lt; Doppelbindung &lt; Dreifachbindung							ch_01
+hIGueE{hfQ	Einfach	Archiv::Allgemeine Chemie	Wie kann man eine Aussage über die Bindungspolarität&nbsp;zweier Bindungspartner treffen?	Indem&nbsp;man die Elektronegativitätsdifferenz berechnet							ch_01
+Gm{D{RVw[:	Einfach	Archiv::Allgemeine Chemie	Was bedeutet eine Elektronegativitätsdifferenz von 1,7?	Die Bindung hat&nbsp;50% ionischen Charakter							ch_01
+nP<BTkj./h	Einfach	Archiv::Allgemeine Chemie	Was bedeutet eine Elektronegativitätsdifferenz &gt;1,7?	Es liegen vorwiegend ionische Verbindungen vor.							ch_01
+kft&vTuDx5	Einfach	Archiv::Allgemeine Chemie	Was bedeutet eine Elektronegativitätsdifferenz von &lt;0.5?	entspricht einer unpolaren Bindung							ch_01
+AeG?xi?9lh	Einfach	Archiv::Allgemeine Chemie	Wie können sich Atom-Orbital-Lappen überlappen?	Es können sich nur welche mit gleichem Vorzeichen überlappen							ch_01
+x2jK!ghIi_	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;σ-Bindung?&nbsp;	Eine Einfachbindung bspw. zwischen zwei p-Orbitalen, zwei s-Orbitalen oder einem s und einem p Orbital.							ch_01
+ez%f0Z|y$p	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;π-Bindung?&nbsp;	Eine Zweifachbindung, bspw. zwischen zwei p-Orbitalen, einem p und einem d-Orbital oder zwei d-Orbitalen							ch_01
+"ic5!,9o#?R"	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;δ-Bindung?	Eine Mehrfachbindung zwischen zwei d-Orbitalen							ch_01
+"dM;))#5aJ`"	Einfach	Archiv::Allgemeine Chemie	Wie kann man die Struktur mehratomiger Moleküle erklären?	"Durch die Bildung von Hybridorbitalen (Mischorbitale).&nbsp;<br><img src=""paste-aa23a7db6e8de2ca01c75cbc41e8ae4e0419b844.jpg"">"							ch_01
+udL!Yw@JZG	Einfach	Archiv::Allgemeine Chemie	Was beschreibt das&nbsp;VSEPR-Modell?	die räumliche Gestalt eines Moleküls &nbsp;basierend auf der Annahme, dass Elektronenpaare der Valenzschale sich voneinander abstoßen.							ch_01
+eVH@Pp8BBV	Einfach	Archiv::Allgemeine Chemie	Benötigen Bindungspartner oder freie Elektronenpaare mehr Platz laut dem VSEPR-Modell?	freie Elektronenpaare							ch_01
+v,)!L33na=	Einfach	Archiv::Allgemeine Chemie	Wieso sind die Bindungswinkel eines Atoms bei verschiedenen Bindungspartnern verschieden?	Der&nbsp;Bindungswinkel abhängig von der Größe der Substituenten							ch_01
+xjq(u2~Et[	Einfach	Archiv::Allgemeine Chemie	Was sind die 2 Grundstrukturen, von denen sich Molekülstrukturen nach dem VSEPR-Modell erstellen lassen?	"oktaedrisch und trigonal bipyramidal&nbsp;<br><img src=""paste-af3fae6eb42dade75438b07fc130d0618eea251e.jpg"">"							ch_01
+xMt/Kri^}h	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;Hypervalenz?	die positive Abweichung zur Valenzstrukturtheorie bezeichnet, nach der die äußere Schale eines Atoms mehr als die nach der Edelgaskonfiguration von s- und p-Orbitalen möglichen acht Elektronen aufnehmen kann							ch_01
+bXHYzhhd4T	Einfach	Archiv::Allgemeine Chemie	Was bedeutet&nbsp;Mesomerie?	mehr als eine Grenzstruktur beschreibt das Molekül korrekt							ch_01
+qceyu0D;.k	Einfach	Archiv::Allgemeine Chemie	Welche Bindungen bilden das Grundgerüst jedes Moleküls?	σ-Bindungen							ch_01
+pu1Jp9O.99	Wie-nennt-man-auch	Archiv::Allgemeine Chemie	cis/trans-Isomerie	E/Z-Isomerie							ch_01 Überprüfen
+iv9VRS^wNO	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;cis/trans-Isomerie?	eine spezielle Form der Konfigurationsisomerie, bei der sich die Moleküle nur dadurch unterscheiden, ob zwei Substituenten sich auf der gleichen Seite einer Referenzebene befinden oder nicht. Eine Referenzebene kann beispielsweise durch eine Doppelbindung oder ein Ringsystem definiert sein.							ch_01
+P>{ZSw(6qe	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich&nbsp;<i>cis</i>- und <i>trans</i>-Isomere?	in den chemischen und physikalischen Eigenschaften wie zum Beispiel Schmelztemperatur, Siedetemperatur, Bindungsenthalpie.							ch_01
+I`8:McoE1h	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich&nbsp;<i>cis</i>- und&nbsp;<i>trans</i>-Isomere zu Konformeren?	<i>cis</i>- und <i>trans</i>-Isomere können&nbsp;nur durch Bindungsbruch ineinander überführt werden.							ch_01
+s$%R.e9^dp	Einfach	Archiv::Allgemeine Chemie	Wie stehen&nbsp;Atomorbitale und&nbsp;Molekülorbitale zueinander?&nbsp;	Aus zwei Atomorbitalen entstehen zwei Molekülorbitale: ein bindendes und ein antibindendes.							ch_01
+MvV^)buX-d	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich Salze und Komplexe?	Die Hydrathülle von Ionen, die in einem polaren Lösungsmittel (wie Wasser) gelöst<br>sind, ist nicht statisch.<br>Mann kann also eine Salzlösung eindampfen und reines Salz bekommen.&nbsp;<br><br>Bei Komplexen sind die Liganden (z.B. Wasser) aber über eine Komplexbindung so stark an das zentrale Metallion gebunden, das kein Austausch stattfindet.<br>Übersteht sogar ein Verdampfen des Lösungsmittels.							ch_01
+j3i&M~tk^P	Einfach	Archiv::Allgemeine Chemie	Was besagt das&nbsp;Gesetz der konstanten Proportionen?	dass die Elemente in einer bestimmten chemischen Verbindung immer im gleichen Massenverhältnis vorkommen.&nbsp;Das Massenverhältnis im Natriumchlorid zum Beispiel ist immer 39&nbsp;% Natrium zu 61&nbsp;% Chlor.<br><sup></sup><br>-&gt; Elemente einer Verbindung liegen immer im gleichen Verhältnis zueinander vor.							ch_01
+JCDv.0AA*b	Einfach	Archiv::Allgemeine Chemie	Was besagt das&nbsp;Gesetz der Erhaltung der Masse?	dass sich bei chemischen Reaktionen die Gesamt-Masse der beteiligten Stoffe nicht ändert.							ch_01
+KR}HUAYR(_	Einfach	Archiv::Allgemeine Chemie	Was besagt das&nbsp;Gesetz der multiplen Proportionen?	Kann aus 2 Elementen A und B mehr wie eine Verbindung entstehen, ist das Verhältnis der Massen von A zu B ein kleiner, ganzzahliger Wert.							ch_01
+Q=T6lW;5;X	Einfach	Archiv::Allgemeine Chemie	Wie bestimmt man die Verbindungsverhältnisse bei Verbindungen aus Elementen der ersten und zweiten Hauptgruppe?	Die Wertigkeit entspricht immer der Hauptgruppe. Also ein Element der ersten und eines der zweiten ergeben 1:2 und zwei aus der zweiten 2:2 bzw. 1:1							ch_01
+d}1j@~(pbe	Einfach	Archiv::Allgemeine Chemie	Wie bestimmt man die Verbindungsverhältnisse bei Verbindungen aus Elementen der 2-7 Hauptgruppe?	Die Wertigkeit entspricht der Hauptgruppe, wenn der Reaktionspartner elektronegativer ist.							ch_01
+w2xZIROxgS	Einfach	Archiv::Allgemeine Chemie	Was bedeutet Wertigkeit im Kontext der&nbsp;Proportionen?	Wie viele Elektronen ein Atom abgeben, aufnehmen oder gemeinsam nutzen kann. Im Kontext der Propotionen ist es meistens das Gegenteil sozusagen.&nbsp;							ch_01
+KkG!V**c/U	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Avogadro-Konstante?	physikalische Konstante, die als Teilchenzahl N pro Stoffmenge n [mol] definiert ist							ch_01
+Osm.4B1/pu	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man&nbsp;N<sub>A</sub>?	N/n							ch_01
+EG*pF0DvX[	Einfach	Archiv::Allgemeine Chemie	Was ist der Wert der&nbsp;Avogadro-Konstante?	6,022 *10<sup>23</sup> mol<sup>-1</sup>							ch_01
+OZraNaFD.u	Einfach	Archiv::Allgemeine Chemie	Die Teilchenzahl (N) aus der&nbsp;Avogadro-Konstante berechnen?	N = N<sub>A</sub> ⋅n							ch_01
+tY2fKl<n1e	Wie-nennt-man-auch	Archiv::Allgemeine Chemie	Molare Masse	Stöchiometrische Masse							ch_01
+e&(ot*P$UY	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Molare Masse (M) aus der&nbsp;Avogadrokonstante?	M = N<sub>A</sub> ⋅ m<sub>X<br></sub><br>Atommasse (m<sub>X</sub>; in u)							ch_01
+DwmEHDZwYX	Einfach	Archiv::Allgemeine Chemie	Wofür steht&nbsp;m<sub>X</sub>?	Für die&nbsp;Atommasse							ch_01
+u8sIQG(9|%	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Molare Masse von Molekülen?	"<img src=""paste-a8deaeeffbd67e078a2e411425c8a75de3707851.jpg"">"							ch_01
+z<lEqubk(m	Einfach	Archiv::Allgemeine Chemie	Wie kann man die&nbsp;Stoffmenge n m.H. der Stoff-Masse m berechnen?	n = m/M							ch_01
+FUgsK)/ofv	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Ausbeute&nbsp;eines Produktes bezogen auf eines der Edukte?	Ausbeute = n<sub>Produkt</sub> / n<sub>Edukt</sub>							ch_01
+KYsSS3i>,i	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;m%<sub>Element</sub>?	Der&nbsp;Massenanteil eines Elementes in einer Verbindung							ch_01
+eJta*R-ZF1	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man m%<sub>Element</sub>?	"<img src=""paste-0e1bbe6a082f4f29c61e8a16b6071e2b8b4c49fc.jpg"">"							ch_01
+dO52NGuYc`	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;%<sub>Element</sub>?	Der&nbsp;Stoffmengenanteil eines Elementes in einer Verbindung							ch_01
+K$8*;tmoqT	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man %<sub>Element</sub>?	"<img src=""paste-94b888245af5ca7992b6cc9eedabedb222f4ddf8.jpg"">"							ch_01
+C04]WX%w?(	Einfach	Archiv::Allgemeine Chemie	Wofür steht&nbsp;<i>c<sub>i</sub></i>?	Für die&nbsp;Konzentration eines Stoffes							ch_01
+i)A||D1P{w	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Konzentration?	"<img src=""paste-9c2ad0ac7e53f9f91ae8e2546acb0001b105b9af.jpg"">"							ch_01
+GjG5,{LUxP	Einfach	Archiv::Allgemeine Chemie	Wie wird die&nbsp;Konzentration meist angegeben?	Als die Molarität (M) in einem Lösungsmittel angegeben. Die Molarität gibt an, welche Stoffmenge in einem Liter Lösungsmittel gelöst ist.							ch_01
+eXyw%C.h)?	Einfach	Archiv::Allgemeine Chemie	Welche Konzentration hat eine Lösung mit der Molarität 1 (1 molare Lösung)?	die Konzentration 1 mol/L							ch_01
+p:76!Ise{f	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Gleichgewichtskonstante K?	Die Gleichgewichtskonstante K gibt das Verhältnis der Konzentration aller an einer chemischen Gleichgewichtsreaktion beteiligten Stoffe an.							ch_01
+vMwa(5Y*hC	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Geschwindigkeitskonstante k?&nbsp;	Sie charakterisiert die spezifische Reaktionsgeschwindigkeit einer Reaktion unter festgelegten Bedingungen und ist unabhängig von den Konzentrationen der Reaktanten.							ch_01
+"zg[tC?d#(P"	Einfach	Archiv::Allgemeine Chemie	Wie bezeichnet man die&nbsp;Geschwindigkeitskonstante der Hinreaktion?	k<sub>1</sub>							ch_01
+OVv%$z;:/}	Einfach	Archiv::Allgemeine Chemie	Wie bezeichnet man die&nbsp;Geschwindigkeitskonstante der Rückeaktion?	k<sub>-1</sub>							ch_01
+e=2(E>[CIB	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Gleichgewichtskonstante K?	"<img src=""paste-59a6b4f7c2027618c62bb6c078d580f259ca1053.jpg"">"							ch_01 Überprüfen
+K-G6MtJsy<	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Gleichgewichtskonstante allgemein?	"<img src=""paste-90115128ae7437b97f08824b31f6baafbe25bc78.jpg"">"							ch_01
+s!`@CPRE8K	Einfach	Archiv::Allgemeine Chemie	"Wie beschreibt man die Geichgewichtskonstante für eine folgende Reaktion?<br><img src=""paste-9dd24ab45e4d7c1a2c29b1c8cadde33e26d5e27a.jpg"">"	"<img src=""paste-6b796f4a59fed2d2df6251df0c5b96dc573139ee.jpg"">"							ch_01
+uJYS{vLf%t	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn die&nbsp;Gleichgewichtskonstante&nbsp;&lt;&lt; 1?	das Gleichgewicht liegt auf der Seite der Edukte							ch_01
+Pi*@vW!wAZ	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn die&nbsp;Gleichgewichtskonstante &gt;&gt; 1?	das Gleichgewicht liegt auf der Seite der Produkte							ch_01
+jb9Du9Mj)c	Einfach	Archiv::Allgemeine Chemie	Wovon ist die&nbsp;Gleichgewichtskonstante abhängig?	Von der temperatur							ch_01
+Nqu=qG&+n2	Einfach	Archiv::Allgemeine Chemie	Wofür steht K<sub>S</sub>?	Die&nbsp;Säurekonstante (Dissoziationskonstante). Beschreibt die Dissoziation der Säure, also die Reaktion, in der das passiert.&nbsp;							ch_säure_basen
+q_~&jrrG>.	Einfach	Archiv::Allgemeine Chemie	Wofür steht K<sub>A</sub>?	Die&nbsp;Assoziationskonstante. Beschreibt die&nbsp;Assoziation/Bildung der Säure, also die Reaktion in der das passiert.&nbsp;							ch_säure_basen
+x9_vqM{<;,	Einfach	Archiv::Allgemeine Chemie	Wie stehen K<sub>A</sub> und K<sub>S</sub> zueinander?	K<sub>A</sub>&nbsp;= 1 / K<sub>A</sub>							ch_01 marked Überprüfen
+h!;W1]-~~L	Einfach	Archiv::Allgemeine Chemie	Was ist K<sub>L</sub>?	Das Löslichkeitsprodukt (Löslichkeitskonstante). Es&nbsp;beschreibt das Gleichgewicht zwischen einem Feststoff und seinen gelösten Ionen in Wasser, also was bei einer gegebenen Temperatur die maximal lösliche Menge eines Salzes in Wasser ist&nbsp;<div></div>							ch_01
+G0.6yPC&hm	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;homogenes Gleichgewicht?	Bei Reaktionen, wo sich alle Edukte und Produkte sich in einer Phase befinden.&nbsp;<br>z. B. Reaktionen in Lösung und Gasphasenreaktion							ch_01
+x7:YLiNJoi	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;heterogenes Gleichgewicht?	Gleichgewichtsreaktion wo der Stoff in zwei oder mehr Phasen vorliegt.&nbsp;<br>bspw. IMMER wenn an der Reaktion Feststoffe beteiligt sind							ch_01
+D1^]]0@qG0	Einfach	Archiv::Allgemeine Chemie	Welche Konzentrationen sind konstant?	Die Konzentration eines reinen Festkörpers&nbsp;und die Konzentration einer reinen Flüssigkeit oder eines Lösungsmittels.							ch_01
+B0f5@lV!zr	Einfach	Archiv::Allgemeine Chemie	Was ist p(Molekül)?	der&nbsp;Partialdruck des Moleküls/Stoffes.&nbsp;							ch_01
+ItMoMGH;Fo	Einfach	Archiv::Allgemeine Chemie	Was ist [Molekül]?	Die Konzentration des Stoffes/Moleküls							ch_01
+J},N-l>}/6	Einfach	Archiv::Allgemeine Chemie	Wie hängen&nbsp;Partialdruck und&nbsp;Konzentration zusammen?	Über das ideale Gasgesetz.&nbsp;<br><br>p(CO₂) = [CO₂] · R ·&nbsp;T							ch_01
+"Or#Qp5;thM"	Einfach	Archiv::Allgemeine Chemie	Was ist der&nbsp;Reaktionsquotient Q?	Der&nbsp;Wert zu jedem beliebigen Zeitpunkt einer Reaktion. Verändert sich, bis Gleichgewicht erreicht ist. Sagt voraus, wohin die Reaktion läuft.							ch_01
+AZ>{)A[:QB	Einfach	Archiv::Allgemeine Chemie	Wie kann man die&nbsp;Reaktionsrichtung voraussagen?	Durch Vergleich vom Reaktionsquotient&nbsp;Q mit der&nbsp;Gleichgewichtskonstanten K&nbsp;							ch_01
+"M$8v9#%8(M"	Einfach	Archiv::Allgemeine Chemie	Was besagt das Prinzip von Le Châtelier?	Wird ein im Gleichgewicht befindliches System durch eine Änderung von Temperatur, Druck oder Konzentration der Reaktionsteilnehmer gestört, so reagiert das System in einer Art, die der Störung entgegenwirkt.							ch_01
+A&dOLsp.gF	Stoff-Formel	Archiv::Allgemeine Chemie	CH<sub>3</sub>COOH	Essigsäure							ch_stoff_formeln
+}(uYYBl.b	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>3</sub>H<sub>7</sub>COOH	Buttersäure							ch_stoff_formeln
+L_5C}N/8w/	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>6</sub>H<sub>8</sub>O<sub>6</sub>	Ascorbinsäure (Vitamin C)							ch_stoff_formeln
+O.5}|{Xt+>	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>6</sub>H<sub>8</sub>O<sub>7</sub>	Zitronensäure							ch_stoff_formeln
+"oG4u#ek72c"	Stoff-Formel	Archiv::Allgemeine Chemie	HCl	Salzsäure							ch_stoff_formeln
+zvxd{Hy>`V	Stoff-Formel	Archiv::Allgemeine Chemie	HBr	Bromwasserstoffsäure							ch_stoff_formeln
+J@]yE~J}}c	Stoff-Formel	Archiv::Allgemeine Chemie	H<sub>2</sub>S	Schwefelwasserstoff							ch_stoff_formeln
+"jirov?qd/#"	Stoff-Formel	Archiv::Allgemeine Chemie	HCN	Blausäure							ch_stoff_formeln
+H;nhbmCp.e	Stoff-Formel	Archiv::Allgemeine Chemie	H<sub>2</sub>SO<sub>4</sub>	Schwefelsäure							ch_stoff_formeln
+H1%H&F5q4K	Stoff-Formel	Archiv::Allgemeine Chemie	H<sub>3</sub>PO<sub>4</sub>	Phosphorsäure							ch_stoff_formeln
+"G#8`9Vt0)="	Stoff-Formel	Archiv::Allgemeine Chemie	HClO<sub>4</sub>	Perchlorsäure							ch_stoff_formeln
+wVd0T7}IG3	Stoff-Formel	Archiv::Allgemeine Chemie	HNO<sub>3</sub>	Salpetersäure							ch_stoff_formeln
+L]UXRL3?3:	Stoff-Formel	Archiv::Allgemeine Chemie	CH<sub>3</sub>COO<sup>-</sup>	Acetat-Ion							ch_stoff_formeln
+qn{dJm2I82	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>3</sub>H<sub>7</sub>COO<sup>-</sup>	Butyrat-Ion							ch_stoff_formeln
+dw2aW9M*-I	Stoff-Formel	Archiv::Allgemeine Chemie	S<sup>2-</sup>	Sulfid-Ion							ch_stoff_formeln
+B{!>b4-j()	Stoff-Formel	Archiv::Allgemeine Chemie	OH<sup>-</sup>	Hydroxid-Ion							ch_stoff_formeln
+Om)tL/r;rM	Stoff-Formel	Archiv::Allgemeine Chemie	HSO<sub>4</sub><sup>-</sup>	Hydrogensulfat-Ion							ch_stoff_formeln
+E,`V6IT*q-	Stoff-Formel	Archiv::Allgemeine Chemie	SO<sub>4</sub><sup>2-</sup>	Sulfat-Ion							ch_stoff_formeln
+d@[^jg-_^&	Stoff-Formel	Archiv::Allgemeine Chemie	ClO<sub>4</sub><sup>-</sup>	Perchlorat-Ion							ch_stoff_formeln
+zP`k2t}xD0	Stoff-Formel	Archiv::Allgemeine Chemie	NO<sub>3</sub><sup>-</sup>	Nitrat-Ion							ch_stoff_formeln
+rWU6[9?z`t	Stoff-Formel	Archiv::Allgemeine Chemie	CN<sup>-</sup>	Cyanid-Ion							ch_stoff_formeln
+Cvw$%(7Ss=	Stoff-Formel	Archiv::Allgemeine Chemie	HS<sup>-</sup>	Hydrogensulfid-Ion							ch_stoff_formeln
+I$79(CAxhT	Stoff-Formel	Archiv::Allgemeine Chemie	H<sub>2</sub>PO<sub>4</sub><sup>-</sup>	Dihydrogenphosphat-Ion							ch_stoff_formeln
+Q+yF&d247E	Stoff-Formel	Archiv::Allgemeine Chemie	HPO<sub>4</sub><sup>2-</sup>	Hydrogenphosphat-Ion							ch_stoff_formeln
+MdTk?g(?-|	Stoff-Formel	Archiv::Allgemeine Chemie	PO<sub>4</sub><sup>3-</sup>	Phosphat-Ion							ch_stoff_formeln
+KkugAS9+`J	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>5</sub>H<sub>5</sub>N	Pyridin							ch_stoff_formeln
+iE4`R]n;s0	Stoff-Formel	Archiv::Allgemeine Chemie	CH<sub>3</sub>NH<sub>2</sub>	Methylamin							ch_stoff_formeln
+f,6DO.].*]	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>8</sub>H<sub>11</sub>NO<sub>2</sub>	Dopamin							ch_stoff_formeln
+rRe$GL}<OO	Stoff-Formel	Archiv::Allgemeine Chemie	NaOH	Natriumhydroxid							ch_stoff_formeln
+juTmC/Xlz+	Stoff-Formel	Archiv::Allgemeine Chemie	N<sub>2</sub>H<sub>4</sub>	Hydrazin							ch_stoff_formeln
+oF^HG&!&-^	Stoff-Formel	Archiv::Allgemeine Chemie	NH<sub>3</sub>	Ammoniak							ch_stoff_formeln
+pF8C7}:JHJ	Stoff-Formel	Archiv::Allgemeine Chemie	Fe(OH)<sub>3</sub>	Eisenhydroxid							ch_stoff_formeln
+yJopOj2u8/	Stoff-Formel	Archiv::Allgemeine Chemie	Na<sub>2</sub>CO<sub>3</sub>	Natriumcarbonat							ch_stoff_formeln
+QCHjYj?c;(	Einfach	Archiv::Allgemeine Chemie	Was ist das&nbsp;Arrhenius-Konzept?	Säuren dissozieren in Protonen (H+) und Anionen und&nbsp;Basen dissozieren in Hydroxidionen (OH-) und Kationen.							ch_säure_basen
+m=wbEs|ha?	Einfach	Archiv::Allgemeine Chemie	Was ist eine Säure nach&nbsp;Arrhenius?	Nur das Proton H+							ch_säure_basen
+eZQut|>G&?	Einfach	Archiv::Allgemeine Chemie	Was ist eine Base nach&nbsp;Arrhenius?	Nur&nbsp;das Hydroxidion (OH-)							ch_säure_basen
+t8jD(28:z%	Einfach	Archiv::Allgemeine Chemie	Wofür gilt das&nbsp;Arrhenius-Konzept?	nur in Wasser und für Metallhydroxide							ch_01
+h}0.^D0ePr	Einfach	Archiv::Allgemeine Chemie	Was ist das&nbsp;Brønsted-Lowry-Konzept?	Säuren sind Protonendonatoren und&nbsp;Basen sind Protonenakzeptoren -&nbsp;Protonendonatoren reagieren mit Protonenakzeptoren							ch_säure_basen
+NSPJEi4%|h	Einfach	Archiv::Allgemeine Chemie	Was sind Säuren nach&nbsp;Brønsted-Lowry?	Protonendonatoren							ch_säure_basen
+y~N!`/PjLO	Einfach	Archiv::Allgemeine Chemie	Was sind Basen nach&nbsp;Brønsted-Lowry?	Protonenakzeptoren							ch_säure_basen
+PD&R8(F*-.	Einfach	Archiv::Allgemeine Chemie	Was besagt das&nbsp;Lewis-Konzept?	Säuren sind ElektronenPAARakzeptoren und&nbsp;Basen sind ElektronenPAARdonatoren („Übertragung“ von Elektronenpaaren)							ch_säure_basen
+d1dUY-7zIf	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;Säure-Base Reaktion nach Lewis?	„Übertragung“ von Elektronenpaaren							ch_säure_basen
+HLv,zi-Ty5	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;Säure-Base Reaktion nach Brønsted-Lowry?	Übertragung von Protonen							ch_säure_basen
+Qm[9`0Y_&.	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;Säure-Base Reaktion nach Arrhenius?	Neutralisation							ch_säure_basen
+ttz<X`MF0B	Einfach	Archiv::Allgemeine Chemie	Mit welcher Säure-Basen-Definition kann man Komlexchemie erklären?	Mit Lewis							ch_säure_basen
+w]l2>l0bqP	Einfach	Archiv::Allgemeine Chemie	Was ist die Faustformel für das Löslichkeitsprodukt?	&nbsp;Je kleiner der Wert für K<sub>L</sub>, desto schlechter löslich das Salz							ch_01
+HfH,i{l25d	Strahlungen	Archiv::Allgemeine Chemie	α	Helium Atomkern	-4	-2					ch_01
+"F55n`@r4#)"	Strahlungen	Archiv::Allgemeine Chemie	β	Elektron und Elektronantineutrino aus einem Neutron	0	+1					ch_01
+EC$onzxG0E	Einfach	Archiv::Allgemeine Chemie	Wann tritt γ-Strahlung auf?	Nach α-Zerfall oder β-Zerfall							ch_01
+"Pr#nw?JzZb"	Einfach	Archiv::Allgemeine Chemie	Was wird bei γ-Strahlung&nbsp;abgegeben?	Ein&nbsp;Energiequant							ch_01
+PZG$f5/{Xy	Einfach	Archiv::Allgemeine Chemie	Wie lautet die&nbsp;Arrhenius-Gleichung?	"<img src=""paste-be632275039e3356baa4d882a1657ac8e5dc957d.jpg"">"							ch_thermodynamik
+Ai*G2cYITP	Einfach	Archiv::Allgemeine Chemie	Wofür wendet man die Arrhenius-Gleichung an?	Um die&nbsp;Geschwindigkeitskonstante zu berechnen							ch_thermodynamik
+Fb7y1y`zm$	Einfach	Archiv::Allgemeine Chemie	Was lässt sich durch die Bildung von Hybridorbitalen erklären?	die Struktur mehratomiger Moleküle							ch_Intramolekulare_Bindungen
+wqAVdz:7B@	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man eine&nbsp;Arrhenius-Säure?	Gibt die Verbindung H+ (bzw. H3O+)&nbsp; in wässriger Lösung und enthält die Formel H-Atome am Anfang?							ch_Intramolekulare_Bindungen
+D_ty;L<S/t	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man eine&nbsp;Arrhenius-Base?	Enthält die Formel OH− und gibt diesin wässriger Lösung ab?&nbsp;							ch_säure_basen
+o3pn+]{ko9	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;Hydroxidgruppe?	OH−							ch_säure_basen
+v}r[m_@$D!	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man eine&nbsp;Brønsted-Säure?	Kann H+ abgeben 							ch_säure_basen marked Überprüfen
+js]|DZ7X&i	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man, ob eine Verbindung Wasserstoffatome abgeben kann?	• H-X Bindungen mit polarem Charakter (X elektronegativer als H)<br>• H an Sauerstoff: –OH in Säuren (COOH, SO<sub>3</sub>H), nicht in Alkoholen<br>• H an Stickstoff in protonierten Formen: NH<sup>+</sup><sub>4</sub>&nbsp;, RNH<sup>+</sup><sub>3</sub><br>• H an Halogenen: HCl, HBr, HI<sub>3</sub>							ch_säure_basen
+KY}Pc])6][	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man&nbsp;Brønsted-Basen?	Die Verbindung kann ein H+ aufnehmen 							ch_säure_basen Überprüfen
+c_!)K7R|<Y	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man, dass eine Verbindung kann ein H+ aufnehmen kann?	• Freies Elektronenpaar an N: NH<sub>3</sub>, RNH<sub>2</sub> (Amine), N-Heterocyclen<br>• Freies Elektronenpaar an O: H<sub>2</sub>O, OH−, RO− (Alkoholate), COO− (Carboxylate)<br>• Negative Ladung deutet oft auf Basizität hin (aber nicht immer)							ch_säure_basen
+xpn]cC_CX7	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man Lewis-Säuren?	Sie können ein&nbsp;Elektronenpaar aufnehmen.&nbsp;							ch_säure_basen
+wb<x:GsI[F	Einfach	Archiv::Allgemeine Chemie	Was sind typische Lewis-Säuren?	Moleküle mit Elektronenoktettlücke,&nbsp;Metallkationen,&nbsp;Moleküle mit polarisierten Mehrfachbindungen							ch_säure_basen
+E?CUj9i[nj	Einfach	Archiv::Allgemeine Chemie	Wie erkennt man eine Lewis-Base?	Die Verbindung kann ein Elektronenpaar zur Verfügung stellen							ch_säure_basen
+lPPD]J,($W	Einfach	Archiv::Allgemeine Chemie	Was sind typische Lewis-Basen?	Moleküle mit freien Elektronenpaaren (Halogenide, N-, S- und O-Verbindungen),&nbsp;Anionen							ch_säure_basen
+O]$(LQq;iu	Einfach	Archiv::Allgemeine Chemie	Was ist eine konjugierte Säure?	Teilchen, das entsteht, wenn eine Base ein Proton (H+) aufnimmt. Bildet zusammen mit der Base ein konjugiertes Säure-Base-Paar.							ch_säure_basen
+Q}SLQ^7`r|	Einfach	Archiv::Allgemeine Chemie	Was ist die konjugierte Säure einer starken Base?	eine schwache Säure							ch_säure_basen
+F2_%tn~ePy	Einfach	Archiv::Allgemeine Chemie	Was ist die konjugierte Säure von NH<sub>3</sub>?	NH<sup>+</sup><sub>4</sub>							ch_säure_basen
+bzy2N6Ga!)	Einfach	Archiv::Allgemeine Chemie	Was ist die konjugierte Säure von H20?	H<sub>3</sub>O<sup>+</sup>							ch_säure_basen
+m}!YE|>}gr	Einfach	Archiv::Allgemeine Chemie	Was ist eine konjugierte Base?	Teilchen, das entsteht, wenn eine Säure ein Proton (H+) abgibt.							ch_säure_basen
+"g{3n#TP;nE"	Einfach	Archiv::Allgemeine Chemie	Was ist die konjugierte Base von HCl?	Cl<sup>-</sup>							ch_säure_basen
+yf,q}!DD+3	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;konjugierte Base von H2O?	OH<sup>-</sup>							ch_säure_basen
+Oe*FajP!W+	Einfach	Archiv::Allgemeine Chemie	Was ist die konjugierte Base von CH<sub>3</sub>COOH?	CH<sub>3</sub>COO<sup>−</sup>							ch_säure_basen
+n{OGQv?Ee[	Einfach	Archiv::Allgemeine Chemie	Was ist ein&nbsp;Ampholyt?	Stoff, der sowohl als Säure als auch als Base reagieren kann.							ch_säure_basen
+G][{xxB-?y	Einfach	Archiv::Allgemeine Chemie	Wie nennt man einen Stoff, der sowohl als Säure (Protonendonator) als auch als Base (Protonenakzeptor)&nbsp;reagieren kann?	Ampholyt							ch_säure_basen
+ry1m&L_&6?	Einfach	Archiv::Allgemeine Chemie	Was ist der pH-Wert?	Maß für die St¨arke der sauren bzw. basischen Wirkung einer wässrigen Lösung.							ch_säure_basen
+gB6-n+yDv=	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pH-Wert?	Negativer dekadischer Logarithmus der Oxoniumionenkonzentration:&nbsp;<br>pH = − lg[H3O+] = − lg[H+]							ch_säure_basen
+VS?~nDfFe	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;Autoprotolyse?	Die Selbstionisierung eines amphoteren Lösungsmittels, bei dem ein Molekül als Säure und ein anderes als Base fungiert.							ch_säure_basen
+Ejm(g+[/J_	Einfach	Archiv::Allgemeine Chemie	Was ist ein Beispiel für Autoprotolyse?	"<img src=""paste-c0bfb96ad1611915aa4c727b7448edc6007209fd.jpg"">"							ch_säure_basen
+O`pp}Z^<}B	Einfach	Archiv::Allgemeine Chemie	"Was ist das für ein Vorgang?<br><img src=""paste-c0bfb96ad1611915aa4c727b7448edc6007209fd.jpg"">"	Die Autoprotolyse							ch_säure_basen
+A(3f5Qwc}p	Einfach	Archiv::Allgemeine Chemie	Was ist das&nbsp;Ionenprodukt des Wassers?	Die Gleichgewichtskonstante der Autoprotolyse von Wasser. Produkt der Konzentrationen von Oxonium- und Hydroxidionen in reinem Wasser.							ch_säure_basen
+m3`jS-/GFR	Einfach	Archiv::Allgemeine Chemie	Wofür steht K<sub>W</sub>?	Für das&nbsp;Ionenprodukt des Wassers							ch_säure_basen
+d^c$BZH-4E	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man das&nbsp;Ionenprodukt des Wassers?	KW = [H3O+] · [OH−]							ch_säure_basen
+e`fT0XRDBt	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Säuredissoziationskonstante?	K<sub>S</sub>&nbsp;(= K * [H2O]) = [H<sub>3</sub>O+] * [X<sup>-</sup>] / [HX]							ch_säure_basen
+"N4mKJ$q`G#"	Einfach	Archiv::Allgemeine Chemie	Wie kann man die stärke einer Säure bestimmen?	Mit der Säuredissoziationskonstante (Je größer KS , desto stärker die Säure) oder dem pKS-Wert							ch_säure_basen
+z<4XT@?8%D	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den&nbsp;pK<sub>S</sub>-Wert?	pK<sub>S</sub> = − lg K<sub>S</sub>							ch_säure_basen
+C[K6V}inFR	Einfach	Archiv::Allgemeine Chemie	Was ist in Bezug auf die Säuredissoziationskonstante und die&nbsp;Deprotonierungsschritte zu beachten?	Jeder Deprotonierungsschritt hat einen eigenen KS-Wert!							ch_säure_basen
+j6QG%Cp5G?	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pKB-Wert?	pK<sub>B</sub> = − lg K<sub>B</sub>							ch_säure_basen
+"eyG2VS#ii8"	Einfach	Archiv::Allgemeine Chemie	Wie kann man pK<sub>S</sub>&nbsp;aus pK<sub>B</sub>&nbsp;ableiten oder umgekehrt?	pK<sub>B</sub> + pK<sub>S</sub> = 14							ch_säure_basen
+F{pHR/xA1j	Einfach	Archiv::Allgemeine Chemie	Wie hängen der&nbsp;(p)KS-Wert einer starken Base mit dem (p)KS-Wert der konjugierten Säure zusammen?	Der (p)KS-Wert einer starken Base entspricht dem (p)KS-Wert der konjugierten Säure							ch_säure_basen Überprüfen
+IUTcC=*<ob	Einfach	Archiv::Allgemeine Chemie	Wie hängen der (p)KB-Wert einer starken Säure und der (p)KB-Wert der konjugierten Base zusammen?	Der (p)KB-Wert einer starken Säure entspricht dem (p)KB-Wert&nbsp;der konjugierten Base							ch_säure_basen Überprüfen
+O&Y]*P)Yqs	Einfach	Archiv::Allgemeine Chemie	Welchen Einfluss hat die Anwesenheit von Nichtmetallen auf&nbsp;O-H-Bindungen?	Die Anwesenheit von Nichtmetallen schwächt die O-H-Bindung							ch_säure_basen
+A0LJCzish$	Einfach	Archiv::Allgemeine Chemie	Wie reagieren&nbsp;OH-Verbindungen von Nichtmetallen?	Sauer							ch_säure_basen
+UDvIWsb36	Einfach	Archiv::Allgemeine Chemie	Wie reagieren&nbsp;Molekülverbindungen?	Sauer							ch_säure_basen
+wm=;s@xhcZ	Einfach	Archiv::Allgemeine Chemie	Wie wirkt sich die&nbsp;Anwesenheit von Metallen auf Säure-Base-Reaktionen von der Verbindung aus?	MetallOH-Verbindungen reagieren basisch							ch_säure_basen
+r5w<@+3.H0	Einfach	Archiv::Allgemeine Chemie	Wie reagieren MetallOH-Verbindungen?	Basisch							ch_säure_basen
+c(:7gE^$^x	Einfach	Archiv::Allgemeine Chemie	Wie reagieren Salze?&nbsp;	Basisch							ch_säure_basen
+h.Y&)m!5wL	Einfach	Archiv::Allgemeine Chemie	Wie dissoziieren&nbsp;MetallOH-Verbindungen?	Die OH-Bindung bleibt intakt, die Verbindungen dissozieren in OH- und Kationen.							ch_säure_basen
+"o[*v#WWeH4"	Einfach	Archiv::Allgemeine Chemie	Wie wirkt sich die Anwesenheit elektronegativer Elemente auf&nbsp;O-H-Bindungen aus	Die Anwesenheit elektronegativer Elemente schwächt die O-H-Bindung.							ch_säure_basen
+EGqTUoLROr	Einfach	Archiv::Allgemeine Chemie	Wie hängen der elektronenziehende Effekt und die Säuredissoziationskonstante zusammen?	Umso stärker der Elektronenziehende Effekt, umso schwächer die O-H-Bindung -&gt; KS wird größer:							ch_säure_basen
+"g#z74Kq2@f"	Einfach	Archiv::Allgemeine Chemie	Was kann man allgemein über die Säure sagen, wenn der die konjugierte Base stabil ist und deren KB-Wert klein?	der&nbsp;KB einer sehr stabilen konjugierten Base ist sehr klein							ch_säure_basen Überprüfen
+gALd$)HjrN	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pOH-Wert generell?	pOH = − lg[OH ]							ch_säure_basen
+A7&[]|KZ2.	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pOH-Wert aus dem pH-Wert?	pH + pOH = pKW = 14							ch_säure_basen
+F(?qiUp^mO	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pH-Wert für&nbsp;Starke Säuren?	pH = − lg[H ] = − lg[Säure]&nbsp;= -lg(c₀ · z)							ch_säure_basen
+QU-rv-bn/K	Einfach	Archiv::Allgemeine Chemie	Warum kann man den pH-Wert starker Säuren besonders berechnen?	Starke Säuren dissozieren in Wasser vollständig, es gilt c(Säure) = c(H+)							ch_säure_basen Überprüfen
+zxfrXe=p@^	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pH-Wert für&nbsp;Starke Säuren, wenn eine geringe Konzentration vorliegt?	pH = − lg[H3O+]							ch_säure_basen
+ClfRyfD$:e	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pH-Wert von starken Basen?	pH = 14 − (− lg[OH ]) = 14 + lg[Base]							ch_säure_basen
+KLOlPK;pc!	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pH-Wert von schwachen Basen?	"<img src=""paste-e89027639ca387f3223c94ffe6425e07187bbf16.jpg"">"							ch_säure_basen
+wH7[7)s6rU	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den pH-Wert von schwachen Säuren?	"<img src=""paste-ec0736cd3329728a4f1ad1a1876586604ca01763.jpg""><br>bzw.&nbsp;<br>½ · (pKₛ - lg c₀)&nbsp;<br>oder&nbsp;<br>-lg(√(Kₛ · c₀))"							ch_säure_basen
+Nd?;/(8><7	Einfach	Archiv::Allgemeine Chemie	Was ist c<sub>0</sub>?	Die Anfangskonzentration einer Reaktion							ch_säure_basen
+B6{oc,O26t	Einfach	Archiv::Allgemeine Chemie	Was besagt das&nbsp;Ostwaldsches Verdünnungsgesetz?	Mittelstarke und schwache Säuren und Basen dissozieren in Wasser nicht vollständig! Der<br>Dissoziationsgrad ist abhängig von Konzentration und Dissoziationskonstante der Säure/Base.							ch_säure_basen
+vbI1<iwo9&	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den&nbsp;Dissoziationsgrad für&nbsp;schwache Säuren?	"<img src=""paste-1e5d1defa61b60847698d5f21d2bbbb2c905603a.jpg"">"							ch_säure_basen
+e)ktD7CepG	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den&nbsp;Dissoziationsgrad für&nbsp;schwache Basen?	"<img src=""paste-54b2a368a5d06b8de0289bbab60d80e6b2732638.jpg"">"							ch_säure_basen
+F]3512>Ue$	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den Dissoziationsgrad von Säuren generell?	"<img src=""paste-98efd3f1adb6d289ef7fb847e89c929f5a811599.jpg"">"							ch_säure_basen
+lx<fVDO8m7	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den Dissoziationsgrad von Basen generell?	"<img src=""paste-5f306e6b20aff9fcd96182e72cd81c0b1d87af94.jpg"">"							ch_säure_basen
+w^Yyiju]^`	Einfach	Archiv::Allgemeine Chemie	Was wird als&nbsp;Standardlösung bei einer&nbsp;Säure-Base-Titration zur Konzentrationsbestimmung gewählt?	eine sehr starke Säure (i.d.R. HCl) oder eine sehr starke Base (i.d.R. NaOH) verwendet.							ch_säure_basen
+xAcP?vvJ!M	Einfach	Archiv::Allgemeine Chemie	Was sind Metalloxide chemisch gesehen und wie ist ihre Löslichkeit in Wasser?	Metalloxide sind <strong>Basenanhydride</strong> (Basen ohne Wasser). Viele Metalloxide sind in Wasser <strong>schwerlöslich</strong> (z.B. NiO, Fe₂O₃, Eisenoxide).							ch_säure_basen
+Dn_2l1KKky	Einfach	Archiv::Allgemeine Chemie	Warum lösen sich schwerlösliche Metalloxide wie NiO in Säuren (z.B. Salpetersäure)?	"<div>Die <strong>Oxidionen (O²⁻)</strong> werden von den <strong>H⁺-Ionen der Säure protoniert</strong>. Dabei entsteht:</div>
+<ul>
+<li><strong>Wasser</strong> (H₂O)</li>
+<li>Ein <strong>lösliches Salz</strong> (z.B. Ni(NO₃)₂)</li></ul>"							ch_säure_basen
+E+Jb{-Q|;9	Einfach	Archiv::Allgemeine Chemie	Ordne nach Basenstärke (absteigend): Oxidion (O²⁻), Wasser (H₂O), Nitration (NO₃⁻)	"<li><strong>O²⁻</strong> (sehr starke Base)</li>
+<li><strong>H₂O</strong> (schwache Base)</li>
+<li><strong>NO₃⁻</strong> (sehr schwache Base)</li>"							ch_säure_basen
+mi_vIKv;LG	Einfach	Archiv::Allgemeine Chemie	Welche Regel gilt für Säure-Base-Reaktionen bei Salzen?	Die stärkere Säure verdrängt die schwächere aus dem Salz.<br><br><div>Diese Regel gilt immer, mit Einschränkungen bei:</div><ul><li>schwerlöslichen Produkten</li><li>flüchtigen Produkten</li></ul>							ch_säure_basen
+o-%hldcZk|	Einfach	Archiv::Allgemeine Chemie	Was passiert bei der Reaktion von Ag₂O mit HCl? Warum ist das eine Ausnahme für die Regel für&nbsp;Säure-Base-Reaktionen bei Salzen?	Es bildet sich ein neuer Niederschlag (AgCl↓), obwohl die Säure-Base-Reaktion abläuft:<br><br>Ag₂O + 2 HCl → 2 AgCl↓ + H₂O<br><br>Ausnahme, weil das Produkt (AgCl) schwerlöslich ist und ausfällt.							ch_säure_basen
+nNLc?foCm8	Einfach	Archiv::Allgemeine Chemie	Warum kann H₂SO₄ HCl aus Kochsalz verdrängen, obwohl H₂SO₄ eine <em>schwächere</em> Säure ist?	HCl ist gasförmig und entweicht aus dem System.&nbsp;Das Gleichgewicht kann sich nicht einstellen, solange HCl entweicht (→ Le Chatelier-Prinzip)							ch_säure_basen
+wgzN.hoPWi	Einfach	Archiv::Allgemeine Chemie	Was ist eine Titration?	Eine Titration ist ein quantitatives Analyseverfahren, bei dem die unbekannte Konzentration einer Lösung (Probelösung) durch schrittweise Zugabe einer Lösung mit bekannter Konzentration (Maßlösung/Titrant) bestimmt wird.							ch_säure_basen
+zMm7{2dPGo	Einfach	Archiv::Allgemeine Chemie	Was ist der Äquivalenzpunkt bei einer Säure-Base-Titration?	Der Äquivalenzpunkt ist der Punkt, an dem die Stoffmengen von Säure und Base stöchiometrisch vollständig miteinander reagiert haben.&nbsp;n(Säure) × z(Säure) = n(Base) × z(Base)							ch_säure_basen
+cR2QazStJe	Einfach	Archiv::Allgemeine Chemie	Was ist der Unterschied zwischen Äquivalenzpunkt und Endpunkt einer Titration?	<ul><li>Äquivalenzpunkt: Theoretischer Punkt der vollständigen Reaktion&nbsp;</li><li>Endpunkt: Praktisch beobachteter Punkt (Indikatorumschlag)</li></ul>							ch_säure_basen
+PRZ7lQtm(D	Einfach	Archiv::Allgemeine Chemie	Was zeigt eine Titrationskurve und welche Achsen hat sie?	"<li><strong>x-Achse:</strong> Volumen der zugegebenen Maßlösung (in mL)</li>
+<li><strong>y-Achse:</strong> pH-Wert der Probelösung</li>
+<li><strong>Zeigt:</strong> Verlauf des pH-Wertes während der Titration</li>
+<li><strong>Wichtig:</strong> Steiler Anstieg/Abfall am Äquivalenzpunkt</li>"							ch_säure_basen
+"p3#*4xMYB?"	Einfach	Archiv::Allgemeine Chemie	Was ist eine Maßlösung?	Lösung mit genau bekannter Konzentration							ch_säure_basen
+NDtm73h_G7	Einfach	Archiv::Allgemeine Chemie	Was bedeutet der Titer?	Korrekturfaktor für Abweichungen von der Sollkonzentration							ch_säure_basen
+r8Yeb`I^`}	Einfach	Archiv::Allgemeine Chemie	Was ist ein Säure-Base-Indikator und wie funktioniert er?	Ein Indikator ist eine schwache Säure (HIn) oder Base, die je nach pH-Wert ihre Farbe ändert.							ch_säure_basen
+r>rcsihoMy	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die unbekannte Konzentration c₁ aus Titrationsdaten?	"c₁ · V₁ · z₁ = c₂ · V₂ · z₂<br><br><li>c₁ = Konzentration der Probelösung (gesucht)</li>
+<li>V₁ = Volumen der Probelösung</li>
+<li>z₁ = Wertigkeit (Anzahl H⁺/OH⁻)</li>
+<li>c₂ = Konzentration der Maßlösung</li>
+<li>V₂ = Verbrauch an Maßlösung am ÄP</li>"							ch_säure_basen
+nUB$/(?Y;P	Einfach	Archiv::Allgemeine Chemie	Worauf bezieht sich&nbsp;Normalität?	auf die chemisch relevante Komponente einer Verbindung.							ch_säure_basen
+iHXKbEM@:9	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Konzentration der Oxoniumionen [H₃O⁺] bei einer starken Säure?	<div>Bei starken Säuren (vollständige Dissoziation):</div> <div>[H₃O⁺] = c₀ · z</div><div><br></div><div>z = Anzahl der protonierbaren H-Atome<br></div>							ch_säure_basen
+CJyZ6u,/M@	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Konzentration der Oxoniumionen [H₃O⁺] bei einer schwachen Säure?	<div>&nbsp;Bei schwachen Säuren (unvollständige Dissoziation):</div> <div>[H₃O⁺] = √(Kₛ · c₀)</div><div><br></div> <div></div>							ch_säure_basen
+O$aTskTTm3	Einfach	Archiv::Allgemeine Chemie	Woran erkennt man, dass eine Säure eine starke Säure ist?	Experimentell oder über den&nbsp;pK<sub>S</sub>-Wert (wenn&nbsp;pKS ≤ 0)							ch_säure_basen
+f)p_Z8!z;{	Einfach	Archiv::Allgemeine Chemie	Woran erkennt man, dass eine Säure eine schwache Säure ist?	pKS ≥ 4							ch_säure_basen
+y$%nj+Fk{l	Einfach	Archiv::Allgemeine Chemie	Was ist der pKₛ-Wert?	Der negative dekatische Logarithmus der Säurekonstante. Ein&nbsp;Maß für die Säurestärke, je kleiner der pKₛ, desto stärker die Säure.&nbsp;							ch_säure_basen
+c)%A_-aDN_	Einfach	Archiv::Allgemeine Chemie	In welchen pKₛ-Bereichen sind Säuren mittelstark?	pKₛ = 1 bis 4,5							ch_säure_basen
+uB;y(Fe|Wd	Einfach	Archiv::Allgemeine Chemie	In welchen pKₛ-Bereichen sind Säuren mittelschwach?	4,5 bis 10							ch_säure_basen
+z5bn-}?JjN	Einfach	Archiv::Allgemeine Chemie	In welchen pKₛ-Bereichen sind Säuren schwach?	pKₛ &gt; 10							ch_säure_basen
+K-%(&H+o@9	Einfach	Archiv::Allgemeine Chemie	Was ist Was ist K<sub>B</sub>?	Die&nbsp;Basenkonstante, auch&nbsp;Dissoziationskonstante der Base							ch_säure_basen
+HN&XkY+KIj	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Basenkonstante?	K<sub>B</sub>&nbsp;(= K * [H2O]) = [BaseH⁺] * [OH⁻] / [Base]							ch_säure_basen Überprüfen
+r{rue/|H5k	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man pK<sub>B</sub> aus dem K<sub>B</sub>-Wert?	pKB = -lg(KB)							ch_säure_basen
+"pKi7/s8#Kb"	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man K<sub>B</sub>&nbsp;aus dem pK<sub>B</sub>-Wert?	KB = 10<sup>(-pKB)</sup>							ch_säure_basen
+fb^y(z&*;,	Einfach	Archiv::Allgemeine Chemie	Was ist der pKB-Wert?	Maß für die Basenstärke, je kleiner pKB, desto stärker die Base							ch_säure_basen
+d)7%<!QQWg	Einfach	Archiv::Allgemeine Chemie	In welchen pKB-Bereichen sind Basen stark?	pKB &lt; 0							ch_säure_basen
+Qcq$<XefF2	Einfach	Archiv::Allgemeine Chemie	In welchen pKB-Bereichen sind Basen mittelstark?	pKB = 1 bis 4,75							ch_säure_basen
+jAQXK.FA%&	Einfach	Archiv::Allgemeine Chemie	In welchen pKB-Bereichen sind Basen mittelschwach?	pKB = 4,75 bis 10							ch_säure_basen
+q+k82_S/m&	Einfach	Archiv::Allgemeine Chemie	In welchen pKB-Bereichen sind Basen schwach?	pKB &gt; 10							ch_säure_basen
+I~+=,h4D^D	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, dass eine Verbindung sauer reagiert?	Eine Verbindung reagiert sauer, wenn sie in wässriger Lösung Protonen (H⁺) abgibt bzw. die H₃O⁺-Konzentration erhöht.<br>							ch_säure_basen
+hHuI(*L1G-	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, dass eine Verbindung basisch reagiert?	Eine Verbindung reagiert basisch, wenn sie in wässriger Lösung Protonen (H⁺) aufnimmt bzw. die OH⁻-Konzentration erhöht.							ch_säure_basen
+KG4pEMz$TP	Einfach	Archiv::Allgemeine Chemie	Was ist Resonanz (Mesomerie) in der Chemie?	<div>Überlagerung mehrerer Grenzstrukturen (mesomere Strukturen), wenn eine einzelne Lewis-Struktur die Bindungsverhältnisse nicht vollständig beschreibt.</div> <div></div>							ch_säure_basen
+mZAi[o5B|!	Einfach	Archiv::Allgemeine Chemie	Welche Eigenschaften haben&nbsp;Grenzstrukturen&nbsp;(mesomere Strukturen)?	<ul><li>Elektronen sind delokalisiert&nbsp;</li><li>Tatsächliche Struktur ist ein Hybrid aller Grenzstrukturen&nbsp;</li><li>Stabilisierung durch Resonanz</li></ul>							ch_säure_basen
+GYIgpPEjx~	Einfach	Archiv::Allgemeine Chemie	Wie beeinflusst Resonanzstabilisierung die Säurestärke?	Je stabiler das Anion (A⁻), desto stärker die Säure (HA)							ch_säure_basen
+zgW?)RYeZu	Einfach	Archiv::Allgemeine Chemie	Was versteht man unter der Hydrolyse von Salzen?	Reaktion von Salzionen mit Wasser unter Bildung von H₃O⁺ oder OH⁻							ch_säure_basen
+uYu5%Exyv4	Einfach	Archiv::Allgemeine Chemie	Was ist der elektronenziehende Effekt (-I-Effekt)?	Induktive Elektronenziehung durch elektronegative Atome							ch_säure_basen
+eXa?zRUg)H	Einfach	Archiv::Allgemeine Chemie	Wie beeinflusst der elektronenziehende Effekt die Säurestärke?	Säure wird stärker							ch_säure_basen
+s3fF0X8kGO	Einfach	Archiv::Allgemeine Chemie	Was sind Säureanhydride?	Verbindungen, die durch Wasserabspaltung aus Säuren entstehen und mit Wasser wieder Säuren bilden.							ch_säure_basen
+t_Qd=fjnvA	Einfach	Archiv::Allgemeine Chemie	Was sind Anhydride?	Verbindungen, die durch Wasserabspaltung aus Säuren oder Basen entstehen.							ch_säure_basen
+e!d?mMT/Xl	Einfach	Archiv::Allgemeine Chemie	Was sind Basenanhydride?	Verbindungen, die durch Wasserabspaltung aus Basen entstehen und mit Wasser wieder Basen bilden.							ch_säure_basen
+}jHFYG/i]	Einfach	Archiv::Allgemeine Chemie	Was ist der pOH-Wert und wie hängt er mit dem pH-Wert zusammen?	pOH = -lg([OH⁻])<br><br>pH + pOH = 14							ch_säure_basen
+"qc4M60:#+s"	Einfach	Archiv::Allgemeine Chemie	Was ist der pOH-Wert?	Maß für die Hydroxidionen-Konzentration							ch_säure_basen
+m`HL;jNGr+	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Anfangskonzentration c₀ einer Säure/Base aus Titrationsdaten?	Formel am Äquivalenzpunkt: c₀ = (c_Titrant · V_Titrant · z_Titrant) / (V_Probe · z_Probe)							ch_säure_basen
+FL:1aT7P,j	Einfach	Archiv::Allgemeine Chemie	<div>Wie berechnet man c₀ einer starken Säure aus dem pH-Wert?</div> <div></div>	[H₃O⁺] = c₀ · z<br><br>(z=1): c₀ = [H₃O⁺] = 10^(-pH)							ch_säure_basen
+y,-Z|hsdWV	Einfach	Archiv::Allgemeine Chemie	Was ist der Dissoziationsgrad α?	α = dissoziierte Moleküle / Gesamtzahl der Moleküle							ch_säure_basen
+"K&Ft/.[$#@"	Einfach	Archiv::Allgemeine Chemie	wie hängt der Dissoziationsgrad α mit der Säurestärke zusammen?	α = [H₃O⁺] / c₀							ch_säure_basen Überprüfen
+oY{^]8(}W)	Einfach	Archiv::Allgemeine Chemie	Was bedeutet einbasige Säure (auch: einprotonige Säure, Monoprotic acid)?	Säure, die ein Proton (H⁺) pro Molekül abgeben kann.							ch_säure_basen
+pz1yIH~EOv	Einfach	Archiv::Allgemeine Chemie	Was bedeutet einbasige Base?	Base, die ein Proton (H⁺) pro Molekül aufnehmen kann.							ch_säure_basen
+yA4[R/weww	Einfach	Archiv::Allgemeine Chemie	Was ist die Normalität (N) und wie unterscheidet sie sich von der Molarität?	Normalität (N) = Äquivalentkonzentration<br><br>N = Molarität (M) × Wertigkeit (z)							ch_säure_basen
+m7mNRHh4+4	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Äquivalentkonzentration (Normalität)?	c_eq = c · z = N							ch_säure_basen
+ItQt=SB+Ls	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den Gehalt (Massenanteil) eines Elements/einer Verbindung in einer Lösung?	w = (m_gelöst / m_Lösung) × 100%<br><br>w = (c · M · 100%) / p_Lösung							ch_säure_basen
+C:9s/{x)6-	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man den Gehalt einer Probe nach einer Titration?	<ol><li>Stoffmenge am ÄP berechnen: n = c_Titrant · V_Titrant · (z_Probe / z_Titrant)&nbsp;</li><li>Masse berechnen: m = n · M_Analyt&nbsp;</li><li>Massenanteil: w = (m / m_Probe) × 100%</li></ol>							ch_säure_basen
+hq?21J3LGr	Einfach	Archiv::Allgemeine Chemie	Was besagt die Henderson-Hasselbalch-Gleichung?	Wie man den pH-Wert von Pufferlösungen berechnet.&nbsp;<br><br>pH = pKₛ + lg([A⁻] / [HA])<br><br>pOH = pKB + lg([BH⁺] / [B])							ch_säure_basen Überprüfen
+zqgFHgh,P{	Einfach	Archiv::Allgemeine Chemie	Was ist ein Puffer (Pufferlösung)?	Lösung, die ihren pH-Wert bei Zugabe kleiner Mengen von Säure oder Base nahezu konstant hält.							ch_säure_basen
+nt)22?qP-m	Einfach	Archiv::Allgemeine Chemie	Woraus bestehen Puffer?	Schwache Säure + konjugierte Base&nbsp;<br><br>ODER&nbsp;<br><br>Schwache Base + konjugierte Säure							ch_säure_basen
+C+F1JWz0E=	Einfach	Archiv::Allgemeine Chemie	Was ist die Pufferkapazität und wovon hängt sie ab?	Menge an Säure/Base, die zugesetzt werden kann, bevor sich der pH-Wert um 1 Einheit ändert.							ch_säure_basen Überprüfen
+u8-~VD{QZy	Einfach	Archiv::Allgemeine Chemie	Wie beeinflusst die Elektronegativität des Zentralatoms die Säurestärke?	Je elektronegativer das Atom mit dem H, desto stärker die Säure.							ch_säure_basen
+LfpS4ym%CN	Einfach	Archiv::Allgemeine Chemie	Wie beeinflusst die Molekülstruktur die Stärke einer Base?	<div>Basenstärke hängt ab von der Fähigkeit, H⁺ aufzunehmen:</div> <div><br></div><div>Faktoren, die Basen stärker machen:</div><ul><li> Freies Elektronenpaar verfügbar&nbsp;</li><li>Negative Ladung (erhöht Protonenaffinität)&nbsp;</li><li>Elektronenschiebende Gruppen (+I, +M) → Erhöhen Elektronendichte am N/O&nbsp;</li><li>Kleines Zentralatom (N besser als P) </li></ul><div>Faktoren, die Basen schwächer machen:</div><ul><li> Resonanzstabilisierung der Base selbst&nbsp;</li><li>Elektronenziehende Gruppen (-I, -M)&nbsp;</li><li>Sterische Hinderung</li></ul>							ch_säure_basen
+K9!3(Zw9k*	Einfach	Archiv::Allgemeine Chemie	Wie bestimmt man die konjugierte Base einer Säure?	Konjugierte Base = Säure minus ein Proton (H⁺)							ch_säure_basen
+"lzQz-#a<{x"	Einfach	Archiv::Allgemeine Chemie	Wie bestimmt man die konjugierte Säure einer Base?	Konjugierte Säure = Base plus ein Proton (H⁺)							ch_säure_basen
+y!:_}-E)|G	Einfach	Archiv::Allgemeine Chemie	Welcher Zusammenhang besteht zwischen pKₛ und pKB eines konjugierten Säure-Base-Paares?	Je stärker die Säure (kleiner pK<sub>S</sub>), desto schwächer die konjugierte Base (größer pK<sub>B</sub>) <br>Je stärker die Base (kleiner pK<sub>B</sub>), desto schwächer die konjugierte Säure (größer pK<sub>S</sub>)							ch_säure_basen
+Av/2[v:F%k	Einfach	Archiv::Allgemeine Chemie	Welche anorganischen Stoffe/Stoffklassen reagieren basisch?	<ul><li>Hydroxide von Metallen<br></li><li>Metalloxide (Basenanhydride)<br></li><li>Ammoniak und Amine<br></li><li>Anionen schwacher Säuren<br></li><li>Hydride von Metallen<br></li></ul>							ch_säure_basen
+KVvN^7cN.B	Einfach	Archiv::Allgemeine Chemie	Welche organischen Stoffklassen reagieren basisch?	<ul><li>Amine</li><li>schwache Basen<br></li><li>Carboxylat-Anionen:&nbsp;RCOO⁻ (Salze org. Säuren)<br></li><li>Alkoxide:&nbsp;RO⁻ (sehr starke Basen)<br></li></ul>							ch_säure_basen
+"BBTB#3C8z!"	Einfach	Archiv::Allgemeine Chemie	Welche anorganischen Stoffe/Stoffklassen reagieren sauer?	<ul><li>Mineralsäuren (starke Säuren)<br></li><li>Nichtmetalloxide (Säureanhydride)<br></li><li>Schwefelwasserstoff und Analoge<br></li><li>Halogenwasserstoffe<br></li><li>Kationen schwacher Basen<br></li><li>Hydrogensalze<br></li></ul>							ch_säure_basen
+tD^R(,1GsR	Einfach	Archiv::Allgemeine Chemie	Welche organischen Stoffklassen reagieren sauer?	<ul><li>Carbonsäuren<br></li><li>Sulfonsäuren, Phenole, Thiole<br></li><li>Alkohole (sehr schwache Säuren)<br></li></ul>							ch_säure_basen
+Q]%_Yj,A(!	Einfach	Archiv::Allgemeine Chemie	Was sind die funktionelle Gruppen von Aminosäuren?	-NH2 und –C(=O)OH							ch_25
+D)ymv^iS<&	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;benachbart zur Amino-Gruppe ein weiterer Substituent enthalten ist?	die Aminosäure ist chiral							ch_25
+J^/?9sT6Kl	Einfach	Archiv::Allgemeine Chemie	Warum sind Aminosäuren&nbsp;amphoter?	Weil sie eine basische Amino-Gruppe und eine saure Carbonsäure-Gruppe enthalten.							ch_25
+gu+6C0$3C1	Einfach	Archiv::Allgemeine Chemie	Welchen Aggregatzustand haben Aminosäuren?	Fest							ch_25
+ezq;Mkb<N|	Einfach	Archiv::Allgemeine Chemie	Was sind Zwitterionen?	Moleküle mit gleichzeitig positiver und negativer Ladung, aber insgesamt elektrisch neutral.							ch_25
+H:f!LZi^Ko	Einfach	Archiv::Allgemeine Chemie	Wie entsteht das Zwitterion bei Aminosäuren?	Intramolekulare Protonenübertragung von -COOH auf -NH₂:							ch_25
+NG,.*o_5Ul	Einfach	Archiv::Allgemeine Chemie	Was ist der isoelektrische Punkt (pI)?	Der pH-Wert, bei dem ein Ampholyt (z.B. Aminosäure, Protein) keine Nettoladung trägt und nicht im elektrischen Feld wandert.							ch_25 ch_w
+p,zeNt7Bs.	Einfach	Archiv::Allgemeine Chemie	Was ist ein Oligomer?	Molekül aus einer kleinen, definierten Anzahl miteinander verknüpfter Monomer-Einheiten. (Typisch 2-20 Monomere)							ch_25
+xAxG&`2csj	Einfach	Archiv::Allgemeine Chemie	Was ist ein Polymer?	Makromolekül aus vielen gleichartigen oder verschiedenen Monomer-Einheiten, die durch kovalente Bindungen verknüpft sind.<br>							ch_25
+KUB;(%5k<P	Einfach	Archiv::Allgemeine Chemie	Was sind reduzierende Zucker?	Zucker (Kohlenhydrate), die eine freie oder potentiell freie Aldehydgruppe (-CHO) oder Ketogruppe (C=O) besitzen und daher als Reduktionsmittel wirken können.							ch_25
+D5nntIRR{F	Einfach	Archiv::Allgemeine Chemie	Was ist die allgemeine Summenformel von Kohlenhydraten?	C<sub>n</sub>(H<sub>2</sub>O)<sub>n</sub>							ch_kolenhydrate
+"BWwD#~dqN#"	Einfach	Archiv::Allgemeine Chemie	Wofür steht diese allgemeine Summenformel? C<sub>n</sub>(H<sub>2</sub>O)<sub>n</sub>	Kohlenhydrate							ch_kolenhydrate
+k3bUhD_ER_	Einfach	Archiv::Allgemeine Chemie	Wie schreibt man die Fischerprojektion von Stoffen?	"1. Kohlenstoff mit der #1 (nach IUPAC) nach oben – dies ist das am stärksten oxidierte C-Atom (Ox.-Zahl).<br>2. Horizontale Striche zeigen aus der Ebene heraus.<br>3. Vertikale Striche liegen hinter der Ebene.<br>4. „platt drücken“.<br>5. Betrachten des untersten, chiralen C-Atoms: zeigt in&nbsp;der horizontalen Ebene der Substituent mit der&nbsp;höheren Priorität nach rechts -&gt; D.&nbsp;Zeigt er nach links -&gt; L."							ch_kolenhydrate
+Go.hOM~N~I	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>	Fructose	"<img src=""paste-71535dbac7e73651d9cf496f45534648cbfda6fc.jpg"">"						ch_kolenhydrate
+d*!8j)fOmb	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>6</sub>H<sub>12</sub>O<sub>6&nbsp;</sub>	Glucose	"<img src=""paste-763a0d259a619de6f59c1bd1a87b6382fbaaea73.jpg"">"						ch_kolenhydrate
+hRAPG?Va9E	Stoff-Formel	Archiv::Allgemeine Chemie	C<sub>5</sub>H<sub>10</sub>O<sub>5</sub>	Ribose	"<img src=""paste-6e73eebde3fb910cceeafe65d1e79beba19fe228.jpg"">"						ch_kolenhydrate
+zv&@rP[cz0	Einfach	Archiv::Allgemeine Chemie	Wie setzen sich Verbindungsnamen zusammen?	Stammname: längste C-Kette<br>Suffix: funkt. Gruppe höchster Priorität<br>Präfix: alle weiteren Gruppen mit möglichst niedriger Zahl (Position) in alphabetischer Folge.							ch_kolenhydrate
+"BBbB#Ur.T7"	Einfach	Archiv::Allgemeine Chemie	Was ist die funktionelle Gruppe bei Aminen?	NR<sub>2</sub>							ch_amine
+qY2h%J.ttU	Einfach	Archiv::Allgemeine Chemie	Wie sieht es mit der Chiralität bei Aminen aus?	Amine sind theoretisch chiral, aber nicht bei Standardbedingungen.							ch_amine
+Est6[oTBxU	Einfach	Archiv::Allgemeine Chemie	Wie reagieren Amine?	Basisch							ch_amine
+qjoP8S=&~6	Einfach	Archiv::Allgemeine Chemie	Was ist die Funktionelle Gruppe bei Carbonsäuren?	C(=O)OH (oft als COOH abgekürzt)							ch_carbonsäuren
+w`!2Etz3;W	Einfach	Archiv::Allgemeine Chemie	Welche Gruppen sind Carbonsäurederivate?	Anhydride, Ester, Amide und Halogenide							ch_carbonsäuren
+"ef>!`ZY#:("	Einfach	Archiv::Allgemeine Chemie	Welche Zucker sind reduzierende Zucker?	<div>Monosaccharide (alle):</div><ul><li> Glucose (Aldohexose)</li><li>Fructose (Ketohexose)&nbsp;</li><li>Galactose, Mannose, Ribose</li></ul><div>Grund: Freie Carbonylgruppe<br></div><div><br></div><div>Disaccharide (mit freiem anomeren C):<br></div><div><ul><li>Maltose</li><li>Lactose</li><li>Cellobiose</li></ul></div>							ch_kolenhydrate
+JLfEWrmT|n	Einfach	Archiv::Allgemeine Chemie	Warum können Monosaccharide und manche Disaccharide reduzierend wirken?	Ringöffnung ermöglicht freie Carbonylgruppe							ch_kolenhydrate
+t~W8@p&t=?	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;glykosidischen Bindung?	Verbindung zwischen Zuckermolekülen über Sauerstoff							ch_kolenhydrate
+GPA<*lFTt>	Einfach	Archiv::Allgemeine Chemie	Welche biologische Bedeutung haben reduzierende Zucker?	<div>Besonders (u.a.):</div><ul><li>Energiequelle</li><li>Glykierung<br></li><li>Aufgaben im Stoffwechsel</li></ul>							ch_kolenhydrate
+"x#h$UKb}B4"	Einfach	Archiv::Allgemeine Chemie	Was sind D- und L-Isomere in der organischen Chemie?	Enantiomere (Spiegelbildisomere), benannt nach der Konfiguration am letzten (untersten) Chiralitätszentrum in der Fischer-Projektion.							ch_org
+d=yYylv5*q	Einfach	Archiv::Allgemeine Chemie	Was mach ein&nbsp;D-Isomer aus?	OH-Gruppe am letzten Chiralitätszentrum steht rechts							ch_org
+"zTKW(=,Ia#"	Einfach	Archiv::Allgemeine Chemie	Was mach ein L-Isomer aus?	OH-Gruppe am letzten Chiralitätszentrum steht links							ch_org
+h:O(A<`N&d	Einfach	Archiv::Allgemeine Chemie	Was ist bei der Bezeichnung D/L +/- Isomer zu beachten?	D/L bezieht sich NUR auf die Konfiguration, nicht auf die Drehrichtung des polarisierten Lichts,&nbsp;(+) oder (-) beschreibt die optische Drehung.							ch_org
+s*7:B)aTZ>	Einfach	Archiv::Allgemeine Chemie	Wie bestimmt man, ob ein Zucker zur D- oder L-Reihe gehört?	Betrachte das C-Atom vor dem letzten (CH₂OH)							ch_kolenhydrate
+Ivz`84GA2~	Einfach	Archiv::Allgemeine Chemie	Wofür ist die Fischer-Projektion?	Für die zweidimensionale Darstellung dreidimensionaler Moleküle mit Chiralitätszentren.&nbsp;							ch_kolenhydrate
+bmPalyv!Ar	Einfach	Archiv::Allgemeine Chemie	Welches Problem löst die Fischer-Projektion?	"<li>Räumliche Struktur auf Papier darstellen</li>
+<li>Konfiguration von Stereozentren eindeutig zeigen</li>
+<li>Vergleich von Stereoisomeren ermöglichen</li>
+<li>Systematische Nomenklatur (D/L, R/S) erleichtern</li>"							ch_kolenhydrate
+HvgETp$EGU	Einfach	Archiv::Allgemeine Chemie	Welche Operationen sind bei der Fischer-Projektion erlaubt, ohne die Konfiguration zu ändern?	180°-Drehung in der Ebene<br><br>Zyklische Vertauschung von 3 Substituenten							ch_kolenhydrate
+yp4]H!B&Dq	Einfach	Archiv::Allgemeine Chemie	Was ist der Unterschied zwischen galvanischer Zelle und Elektrolysezelle?	Galvanische Zelle:<br><ul><li>Freiwilliger Prozess (ΔG &lt; 0)&nbsp;</li><li>Chemische Energie → elektrische Energie&nbsp;</li><li>Stromerzeugung (Batterie)&nbsp;</li><li>Anode: Minuspol (Oxidation)&nbsp;</li><li>Kathode: Pluspol (Reduktion)<br></li></ul><div><div>Elektrolysezelle:</div><ul><li> Erzwungener Prozess (ΔG &gt; 0)&nbsp;</li><li>Elektrische Energie → chemische Energie&nbsp;</li><li>Stromverbrauch&nbsp;</li><li>Anode: Pluspol (Oxidation)&nbsp;</li><li>Kathode: Minuspol (Reduktion)</li></ul></div>							ch_elektro
+"hy]b[W9,}#"	Einfach	Archiv::Allgemeine Chemie	Was ist die Gemeinsamkeit zwischen galvanischer Zelle und Elektrolysezelle?	<ul><li>An der Anode findet immer Oxidation statt&nbsp;</li><li>An der Kathode findet immer Reduktion statt</li></ul>							ch_elektro
+uHG;5mjzjN	Einfach	Archiv::Allgemeine Chemie	Was ist das Standardpotential E°?	Spannung einer Halbzelle gegen die Standard-Wasserstoffelektrode unter Standardbedingungen							ch_elektro
+grhcp`>$%Q	Einfach	Archiv::Allgemeine Chemie	Wofür wird das Standardpotential E° verwendet?	Vorhersage von Redoxreaktionen und&nbsp;Berechnung von Zellspannungen							ch_elektro
+"O}Ggx#<)A+"	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Zellspannung E°_Zelle einer galvanischen Zelle?	E°_Zelle = E°_Kathode - E°_Anode<br><br>E°_Zelle = E°_Reduktion - E°_Oxidation							ch_elektro
+HtCZ!Y*v0o	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;E°_Zelle &gt; 0?	Die&nbsp;Reaktion läuft freiwillig ab -&gt;&nbsp;Galvanische Zelle							ch_elektro
+jA*G.jJ2H}	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;E°_Zelle &lt; 0?	Die&nbsp;Reaktion läuft nicht freiwillig ab -&gt;&nbsp;Elektrolysezelle							ch_elektro
+N)`W`dtD-v	Einfach	Archiv::Allgemeine Chemie	Was besagt die Nernst-Gleichung und wie lautet sie?	Zweck: Berechnung des tatsächlichen Potentials bei Nicht-Standardbedingungen<br><br>E = E° - (RT/nF) · ln Q							ch_elektro
+GkLn$6><x{	Einfach	Archiv::Allgemeine Chemie	Was ist die elektrochemische Spannungsreihe und wie nutzt man sie?	Ordnung der Redoxpaare nach ihren Standardpotentialen E°. Man nutzt sie zur&nbsp;Vorhersage von Reaktionen, zum&nbsp;Vergleich von Korrosionsneigung und um&nbsp;Galvanische Zellen zu konstruieren							ch_elektro
+JA^u[Pins3	Einfach	Archiv::Allgemeine Chemie	Was besagt der Erste Hauptsatz der Thermodynamik?	"Aussage: Energie kann weder erzeugt noch vernichtet, nur umgewandelt werden (Energieerhaltung) -&gt; ""Die Energie eines isolierten Systems ist konstant"""							ch_thermodynamik
+P+2ZdV*N~Q	Einfach	Archiv::Allgemeine Chemie	Was ist die Formel zum ersten Gesetz der Thermodynamik?	ΔU = Q + W<br><br><br>Änderung der inneren Energie =&nbsp;zugeführte Wärme +&nbsp;verrichtete Arbeit							ch_thermodynamik
+k4+;?`-E5M	Einfach	Archiv::Allgemeine Chemie	Was ist die Enthalpie ∆H?	∆H = ∆U + p · ∆V<br><br>Zustandsgröße für Wärmeinhalt bei konstantem Druck							ch_thermodynamik
+xlrGi$0M+v	Einfach	Archiv::Allgemeine Chemie	Was sagt die Enthalpie aus?	wird Energie (Arbeit, Wärme) aus der Umgebung aufgenommen, ist das Vorzeichen positiv, ansonsten negativ.&nbsp;<br><br>ΔH &lt; 0: Exotherm (Wärme wird abgegeben) <br>ΔH &gt; 0: Endotherm (Wärme wird aufgenommen)							ch_thermodynamik
+mtIf[d/i(n	Einfach	Archiv::Allgemeine Chemie	Was besagt der Hess'sche Satz?	Die Reaktionsenthalpie ist unabhängig vom Weg, nur Start- und Endzustand sind relevant.<br><br>ΔH_gesamt = Σ ΔH_Teilschritte<br><br>oder auch:&nbsp;<br><br>Die Enthalpieänderung eines Prozesses ist gleich der Summe der Enthalpieänderungen der Einzelprozesse.<br><br>∆<sub>R</sub>H<sup>0</sup> = Σn∆<sub>f</sub>H<sup>0</sup>(Produkte) - Σm∆<sub>f</sub>H<sup>0</sup>(Edukte)							ch_thermodynamik
+-%A}(kLem	Einfach	Archiv::Allgemeine Chemie	Wofür wird der der Hess'sche Satz verwendet?	Für die&nbsp;Berechnung von Reaktionsenthalpien aus bekannten Werten							ch_thermodynamik
+LFrJGGlcNf	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Reaktionsenthalpien aus bekannten Werten?	<div>Methode 1: Über Bildungsenthalpien ΔH°_R = Σ n * ΔH°_f(Produkte) - Σ m * ΔH°_f(Edukte)</div><div>-&gt;&nbsp;Reaktionsenthalpie = Summe der&nbsp;Standardbildungsenthalpien der Produke - Summe der&nbsp;Standardbildungsenthalpie der Edukte</div><div><br></div> <div>Methode 2: Über Verbrennungsenthalpien ΔH°_R = Σ n * ΔH°_c(Edukte) - Σ m * ΔH°_c(Produkte)</div><div>-&gt; Reaktionsenthalpie = Summe der&nbsp;Verbrennungsenthalpie der Edukte - Summe der&nbsp;Verbrennungsenthalpie der Produkte</div>							ch_thermodynamik
+I(2sj7N%/8	Einfach	Archiv::Allgemeine Chemie	Was ist die Entropie S und was bedeutet sie?	Maß für die Unordnung oder Anzahl der Mikrozustände eines Systems							ch_thermodynamik
+uu6KwXg]=.	Einfach	Archiv::Allgemeine Chemie	Was ist innere Energie U?	Die innere Energie ist die Summe aller möglichen Energieinhalte eines Systems.&nbsp;							ch_thermodynamik
+Mm^g{Yd8m8	Einfach	Archiv::Allgemeine Chemie	"Was ist der ""nullte Hauptsatz der Thermodynamik""?"	Steht System A mit System B im thermischen Gleichgewicht und System B mit System C im thermischen Gleichgewicht, steht auch System A mit System C im thermischen Gleichgewicht.							ch_thermodynamik
+v,wP?4F=X%	Einfach	Archiv::Allgemeine Chemie	Was beschreibt die&nbsp;Themodynamik?	Die Änderung der inneren Energie z. B. bei chemischen Reaktionen							ch_thermodynamik
+f1w7%,({^?	Einfach	Archiv::Allgemeine Chemie	Welches vorzeichen hat Energie, die an die Umgebung abgegeben wird?	Ein negatives							ch_thermodynamik
+"z&J#5r%a:["	Einfach	Archiv::Allgemeine Chemie	Welches vorzeichen hat Energie, die aus der Umgebung aufgenommen wird?	positives							ch_thermodynamik
+fHs|*nL2Qo	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;∆<sub>VB</sub>H<sup>0</sup>&nbsp;bzw. ΔH_c°?	Die&nbsp;Standardverbrennungsenthalpie							ch_thermodynamik
+rq{o*1t,)~	Einfach	Archiv::Allgemeine Chemie	Was entstehen bei organischen Verbindungen für Reaktionsprodukte aus Verbrennungen?	CO2(g) und H2O(l)							ch_thermodynamik
+F*n~s,YR~:	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;∆<sub>f</sub>H<sup>0&nbsp;</sup>bzw.&nbsp;ΔH_f°?	Die&nbsp;Standardbildungsenthalpie							ch_thermodynamik Überprüfen
+L7%|jgvnV>	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;∆<sub>U</sub>H<sup>0</sup>?&nbsp;	Die&nbsp;Standardumwandlungsenthalpie							ch_thermodynamik
+zNUsy):22G	Einfach	Archiv::Allgemeine Chemie	Was beschreiben&nbsp;Umwandlungsenthalpien?	die Energie für die Umwandlung (= Aggregatszustand, Kristallstruktur, etc.) von Verbindungen unter Standardbedingung							ch_thermodynamik
+eStB)x&k&(	Einfach	Archiv::Allgemeine Chemie	Wovon hängt die&nbsp;Enthalpieänderung ab?	vom Aggregatszustand der Edukte und Produkte&nbsp;							ch_thermodynamik
+bo@ikn:26q	Einfach	Archiv::Allgemeine Chemie	Wovon hängt die Enthalpie direkt ab?	von der eingesetzten Stoffmenge							ch_thermodynamik
+N!|^.A|03G	Einfach	Archiv::Allgemeine Chemie	Wie verändert sich die Enthalpie, wenn man die doppelte Stoffmenge (der Reaktanden) nutzt?	Sie verhält sich proportional: die doppelte Stoffmenge erzeugt die doppelte Menge an Enthalpie.							ch_thermodynamik
+entgi)<t.K	Einfach	Archiv::Allgemeine Chemie	Wie kann man&nbsp;∆<sub>R</sub>H (Reaktionsenthalpie) abschätzen?	Über mittlere&nbsp;Bindungsenergien. Bei der Spaltung einer Bindung wird Energie benötigt&nbsp;(∆H &gt; 0), beim<br>Knüpfen neuer Bindungen wird Energie frei (∆H &lt; 0).							ch_thermodynamik
+l2{bw~+2+G	Einfach	Archiv::Allgemeine Chemie	Was ist elektrochemische Korrosion?	Unerwünschte Oxidation eines Metalls durch elektrochemische Prozesse.&nbsp;<br><br>							ch_elektro
+F.~mQ!QQY-	Einfach	Archiv::Allgemeine Chemie	Warum sind lange Kohlenstoffketten sind energetisch möglich?	Bei der Umwandlung von C-C-Doppelbindungen in C-C-Einfachbindungen wird mehr Energie frei, wie für die Spaltung der Doppelbindung benötigt.							ch_thermodynamik
+q})qX,-WoW	Einfach	Archiv::Allgemeine Chemie	Warum sind lange N-Ketten sind energetisch ungünstig?	Bei der Umwandlung von N-N-Mehrfachbindungen in N-N-Einfachbindungen wird mehr Energie benötigt, wie für die Spaltung der Mehrfachbindungen frei wird.							ch_thermodynamik
+pgjm~T(E~v	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Doppelbindungsregel?	Elemente der 2. Periode bilden erheblich stabilere Doppelbindungen als die höherer Perioden							ch_thermodynamik
+b5L|.KHN1a	Einfach	Archiv::Allgemeine Chemie	Wovon kann es abhängen, ob eine Reaktion/Umwandlung spontan abläuft?	Unter anderem von der Temperatur							ch_thermodynamik
+pDwxQd6O^-	Einfach	Archiv::Allgemeine Chemie	Wovon hängt es NICHT ab, ob eine Reaktion/Umwandlung spontan abläuft?	Es idt egal,&nbsp;ob die Reaktion endotherm oder exotherm verläuft							ch_thermodynamik
+m0|=q9}C+p	Einfach	Archiv::Allgemeine Chemie	Was ist wichtig für die Reversibilität einer Reaktion?	System UND Umgebung sind am Ende der Umkehrung unverändert							ch_thermodynamik
+j:-}.9ZsxG	Einfach	Archiv::Allgemeine Chemie	Wie sieht es mit der&nbsp;Reversibilität bei realen Prozessen aus?	reale Prozesse sind nicht reversibel							ch_thermodynamik
+JUL,v05)jK	Einfach	Archiv::Allgemeine Chemie	Wie&nbsp; berechnet man die Entrophieänderung?	∆S = S<sub>Ende</sub> - S<sub>Anfang</sub>							ch_thermodynamik
+D0z$vs+y9G	Einfach	Archiv::Allgemeine Chemie	Wie lautet die&nbsp;Boltzmannkonstante?	1.38·10<sup>–23</sup> J/K							ch_thermodynamik
+AN8N7b$Rws	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Entropie?	S = k ln W<br><br>S =&nbsp;Boltzmannkonstante * ln der&nbsp;Zahl der Mikrozustände							ch_thermodynamik
+qC>nF0zB.b	Einfach	Archiv::Allgemeine Chemie	Was ist Temperatur generell?	thermische Energie							ch_thermodynamik
+zm^54Ka(_!	Einfach	Archiv::Allgemeine Chemie	Was ist Temperatur bei idealen Gasen?	In idealen Gasen ist die Temperatur ein Maß für die mittlere kinetische Energie der Teilchen.							ch_thermodynamik
+k!>Gj!/*<B	Einfach	Archiv::Allgemeine Chemie	Was ist der&nbsp;2. Hauptsatz der Thermodynamik?	Alle irreversiblen Prozesse führen zu einer Zunahme der Gesamtentropie, alle reversiblen Prozesse führen zu keiner Änderung der Gesamtentropie.							ch_thermodynamik
+"w!#*$x^mU7"	Einfach	Archiv::Allgemeine Chemie	Wie lautet der&nbsp;3. Hauptsatz der Thermodynamik?	Die Entropie eines reinen kristallinen Stoffes am absoluten Nullpunkt wird als null angenommen.							ch_thermodynamik
+ue`XGA6I09	Einfach	Archiv::Allgemeine Chemie	Wovon ist die molare Standardentropie einer Verbindung abhängig?	1. Dem Aggregatszustand (S<sup>0</sup><sub>(g)</sub> &gt; S<sup>0</sup><sub>(l)</sub> &gt; S<sup>0</sup><sub>(s)</sub>)<br>2. Der molaren Masse (Zunahme von S<sup>0 </sup>mit steigender Masse)<br>3. Der Anzahl an Atomen in einer Verbindung							ch_thermodynamik
+e$,B~RS8_3	Einfach	Archiv::Allgemeine Chemie	Wovon ist die Entropie einer Reaktion abhängig?	1. Der Temperatur (= Translation, Rotation, Schwingung der Teilchen)<br>2. Dem Volumen (abhängig von T und Anzahl der Teilchen)<br>3. Der Anzahl sich unabhängig bewegender Teilchen							ch_thermodynamik
+EB+wzYzR*1	Einfach	Archiv::Allgemeine Chemie	Was ist&nbsp;∆<sub>R</sub>S<sup>0</sup>?	Die&nbsp;Reaktionsentropie bei Standardbedingungen 							ch_thermodynamik
+AX|[WJMp[)	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Reaktionsentropie?	∆<sub>R</sub>S<sup>0</sup> = ΣnS<sup>0</sup><sub>(Produkte)</sub> - ΣmS<sup>0</sup><sub>(Edukte)</sub>							ch_thermodynamik
+u7)L:,K`]K	Einfach	Archiv::Allgemeine Chemie	Wie interpretiert man die Reaktionsentropie?	∆S<sup>0 </sup>&gt; 0: Entropie nimmt zu; ∆S<sup>0</sup> &lt; 0: Entropie nimmt ab							ch_thermodynamik
+L<!CQTc[>i	Einfach	Archiv::Allgemeine Chemie	Was bedeutet&nbsp;∆S<sub>Universum</sub> ≥ 0?	Die Gesamtentropie strebt einem Maximum zu							ch_thermodynamik
+I)[,3]tK,]	Einfach	Archiv::Allgemeine Chemie	Wie lautet die&nbsp;Gibbs-Helmholtz-Gleichung?	∆G = ∆H - T * ∆S<br><br>Freie Enthalpie =&nbsp;Enthalpie -&nbsp;Temperatur [K] *&nbsp;Entropie							ch_thermodynamik
+Bx[m],ajp0	Einfach	Archiv::Allgemeine Chemie	Wofpr nutzt man die&nbsp;Gibbs-Helmholtz-Gleichung?	Ermöglicht die Beurteilung der Spontanität einer Reaktion							ch_thermodynamik
+s[.U*V4yz;	Einfach	Archiv::Allgemeine Chemie	Wie beurteilt man die&nbsp;Spontanität einer Reaktion?	Mit der&nbsp;Gibbs-Helmholtz-Gleichung							ch_thermodynamik
+rPtRIOk]}C	Einfach	Archiv::Allgemeine Chemie	Wie interpretiert man die Ergebnisse der&nbsp;Gibbs-Helmholtz-Gleichung?	∆G &lt; 0: exergonisch -&gt;&nbsp;Reaktion verläuft spontan<br>∆G &gt; 0: endergonisch -&gt; Rückreaktion verläuft spontan<br>∆G = 0 -&gt; Gleichgewicht							ch_thermodynamik
+t03PQ8VZnk	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Freie Enthalpie?	Mit der&nbsp;Gibbs-Helmholtz-Gleichung							ch_thermodynamik
+Dpn-C.zZ/Q	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;∆G &lt; 0?	Die Reaktion ist&nbsp;exergonisch, verläuft also spontan							ch_thermodynamik
+kw,UyK1+`v	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;∆G &gt; 0?	Die Reaktion ist&nbsp;endergonisch, die&nbsp;Rückreaktion verläuft spontan							ch_thermodynamik
+mqxV8+RU3W	Einfach	Archiv::Allgemeine Chemie	Wie ist die Entropieänderung bei&nbsp;Alkoholischer Gärung durch Hefe?	Entropie nimmt zu							ch_thermodynamik
+oWRSZmn+*9	Einfach	Archiv::Allgemeine Chemie	Wie ist die Entropieänderung bei&nbsp;der Verbrennung von Alkohol?	Entropie nimmt ab							ch_thermodynamik
+s:2+Gp0}7W	Einfach	Archiv::Allgemeine Chemie	Wie ist die Entropieänderung bei der Zersetzung von festem N2O5?	Entropie nimmt zu							ch_thermodynamik
+j[jqyEh*UB	Einfach	Archiv::Allgemeine Chemie	Wie ist die Entropieänderung bei der Bildung von Ammoniak (bei 500K)?	Entropie nimmt ab							ch_thermodynamik
+q.Y4JF>O<R	Einfach	Archiv::Allgemeine Chemie	Wie lautet die&nbsp;Gibbs-Helmholtz-Gleichung bezogen auf die Produkte und Edukte?	∆G<sup>0</sup> = Σn∆G<sup>0</sup><sub>(Produkte)</sub> - Σm∆G<sup>0</sup><sub>(Reaktanten)</sub>							ch_thermodynamik
+MdlX.Yv!%[	Einfach	Archiv::Allgemeine Chemie	Was besagen das Massenwirkungsgesetz und das Prinzip von Le Châtelier zusammen?	Wird ein im Gleichgewicht befindliches System durch eine Änderung von Temperatur, Druck oder Konzentration der Reaktionsteilnehmer gestört, so reagiert das System in einer Art, die der Störung entgegenwirkt.							ch_thermodynamik
+gexCIl9xR}	Einfach	Archiv::Allgemeine Chemie	Welcher Zusammenhang besteht zwischen ΔG° und der Gleichgewichtskonstante K?	"ΔG° = -RT · ln K<br>bzw.&nbsp;<br><img src=""paste-0adc2dd818db328c43068c0493e2f94cb66439e6.jpg"">"							ch_thermodynamik
+uc$^xL13TI	Einfach	Archiv::Allgemeine Chemie	Welche&nbsp;Schwierigkeiten gibt es bei Anwendung der Gibbs-Helmholtz-Gleichung?	1. Die Entropie ist temperaturabhängig.<br>2. Interessant ist meist der Wert von ∆G unter Nichtstandardbedingungen (T, Verhältnis Reaktanten und/oder Produkte).<br>3. Gleichgewichte liegen nicht bei Standardbedingungen.							ch_thermodynamik
+Mr^|G?$oZv	Einfach	Archiv::Allgemeine Chemie	Wie ist die allgemeine Formel zur Berechnung von ∆G unter Berücksichtigung des Reaktionsquotienten Q?	∆G = ∆G° + RT ln Q							ch_thermodynamik
+"stki]#e=e5"	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;ΔG° &lt;&lt; 0 (negativ)?	K &gt;&gt; 1 (groß) <br>Gleichgewicht liegt rechts (viele Produkte)							ch_thermodynamik
+H[Y^v^z:2q	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;ΔG° = 0?	K = 1<br>Edukte ≈ Produkte							ch_thermodynamik
+"z1q%#y+m+!"	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn&nbsp;ΔG° &gt;&gt; 0 (positiv)?	K &lt;&lt; 1 (klein) <br>Gleichgewicht liegt links (viele Edukte)							ch_thermodynamik
+cT5PMm5Mrs	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man ΔG aus K für Nicht-Standardbedingungen?	ΔG = ΔG° + RT · ln Q							ch_thermodynamik Überprüfen
+NSEwEW^SxF	Einfach	Archiv::Allgemeine Chemie	Was besagt die Arrhenius-Gleichung und wie lautet sie?	Besagt die&nbsp;Temperaturabhängigkeit der Geschwindigkeitskonstante k<br><br>k = A · e<sup>(-E_a</sup><sup>/RT)</sup>							ch_thermodynamik
+b|Vg<OEu_<	Einfach	Archiv::Allgemeine Chemie	Was ist die Aktivierungsenergie E_a?	Mindestenergie, die für eine erfolgreiche Reaktion (Bindungsbruch/-bildung) erforderlich ist							ch_thermodynamik
+jiAeJX=yee	Einfach	Archiv::Allgemeine Chemie	Was ist ein Katalysator und wie wirkt er?	Stoff, der die Reaktionsgeschwindigkeit erhöht, ohne selbst verbraucht zu werden							ch_thermodynamik
+qfEa](|[@j	Einfach	Archiv::Allgemeine Chemie	Wie berchnet man&nbsp;die Aktivierungsenergie E_a?	E_a = E_Übergangszustand - E_Edukte							ch_thermodynamik Überprüfen
+x!V^dz24Gp	Einfach	Archiv::Allgemeine Chemie	Wie hängt&nbsp;die Aktivierungsenergie E_a mit&nbsp;ΔH zusammen?	E_a(hin) - E_a(rück) = ΔH<br><br>Exotherm: E_a(hin) &lt; E_a(rück)<br><br>Endotherm: E_a(hin) &gt; E_a(rück)							ch_thermodynamik
+sTPaVzu./@	Einfach	Archiv::Allgemeine Chemie	Was ist ein Reaktionsmechanismus?	Die&nbsp;bfolge der Elementarreaktionen, die zur Gesamtreaktion führen							ch_thermodynamik
+"zM2C9F@*#h"	Einfach	Archiv::Allgemeine Chemie	was ist der geschwindigkeitsbestimmende Schritt?	Der langsamste Schritt im Reaktionsmechanismus							ch_thermodynamik
+Fq$`?)]BC:	EinheitenVon	Archiv::Allgemeine Chemie	Dissoziationsgrad	α	keine oder %&nbsp;						ch_thermodynamik
+I;[[7v9PKl	EinheitenVon	Archiv::Allgemeine Chemie	Säurekonstante	K<sub>S</sub>	mol/L						ch_allg
+yjucPRMs?n	EinheitenVon	Archiv::Allgemeine Chemie	Basenkonstante	K<sub>B</sub>	mol/L						ch_allg
+ljj}@DZ1pV	EinheitenVon	Archiv::Allgemeine Chemie	Gleichgewichtskonstante	K	keine oder je nach Reaktionsart&nbsp;mol/L						ch_allg
+Pad$5_|owL	EinheitenVon	Archiv::Allgemeine Chemie	pK<sub>S</sub>-Wert	pK<sub>S</sub>	keine						ch_allg
+I}lNE+{L4_	EinheitenVon	Archiv::Allgemeine Chemie	Ionenprodukt des Wassers	K<sub>W</sub>	(mol/L)² oder mol²/L²						ch_allg
+"liV{J+`<#2"	EinheitenVon	Archiv::Allgemeine Chemie	Stoffmenge	n	mol (Mol)						ch_allg
+qm+1q8Ptz_	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Stoffmenge aus der&nbsp;Teilchenzahl?	n = N / N<sub>a</sub>							ch_allg
+d4|=ecov2(	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die&nbsp;Stoffmenge aus&nbsp;Volumen bei Gasen?	n = V / Vm							ch_allg Überprüfen
+e*=~x.$;TA	Einfach	Archiv::Allgemeine Chemie	Wie berechnet man die Stoffmenge aus der&nbsp;Konzentration?	n = c · V							ch_allg
+D}=Sex-dRr	EinheitenVon	Archiv::Allgemeine Chemie	Masse	m	g, kg, mg						ch_allg
+v]iHx3ts%3	EinheitenVon	Archiv::Allgemeine Chemie	Molmasse	M	g/mol						ch_allg
+xcqksk:NPx	EinheitenVon	Archiv::Allgemeine Chemie	Volumen	V	L, mL, m³, cm³						ch_allg
+F]5|$tiXyZ	Einfach	Archiv::Allgemeine Chemie	Wie rechnet man L in m<sup>3</sup>&nbsp;um?	1 m³ = 1000 L							ch_allg
+jP[49j7JX8	EinheitenVon	Archiv::Allgemeine Chemie	Konzentration	c oder&nbsp;[X]	mol/L oder M (Molar)						ch_allg
+bEe]8<Pn<S	Einfach	Archiv::Allgemeine Chemie	Wie rechnet man Molar in mol/L um?	1 M = 1 mol/L							ch_allg
+IS}:GK;`1(	EinheitenVon	Archiv::Allgemeine Chemie	Massenanteil	w,&nbsp;w<sub>%</sub>&nbsp;oder m<sub>%</sub>	% oder keine je nachdem, ob man *100% gerechnet hat&nbsp;						ch_allg
+w6d%,QN>]y	EinheitenVon	Archiv::Allgemeine Chemie	Dichte	p	g/mL, g/cm³, kg/L, kg/m³						ch_allg
+"bL,~IeIi9#"	EinheitenVon	Archiv::Allgemeine Chemie	Enthalpie und&nbsp;Enthalpieänderung	H bzw ΔH	J, kJ (Joule, Kilojoule)						ch_allg
+w.FM[9y,v:	EinheitenVon	Archiv::Allgemeine Chemie	Entropie und&nbsp;Entropieänderung	S bzw&nbsp;ΔS	J/(mol·K) oder J/K						ch_allg
+Q}7vHr[R1!	EinheitenVon	Archiv::Allgemeine Chemie	Standardpotential	E°	V (Volt)						ch_allg
+y/f|WC{7>M	EinheitenVon	Archiv::Allgemeine Chemie	Gaskonstante	R	J/(mol·K)						ch_allg
+k(5vJ3qJ<3	EinheitenVon	Archiv::Allgemeine Chemie	Aktivierungsenergie	E<sub>a</sub>	kJ/mol oder J/mol						ch_allg
+GTJu:z$mKj	Umrechnung	Archiv::Allgemeine Chemie	1 Pa = 1 N/m²	Pa	N/m²						ch_allg
+GmQ|rpmUx=	Umrechnung	Archiv::Allgemeine Chemie	1 bar = 10⁵ Pa = 100 kPa	Pa	bar						ch_allg
+qoQ&U:Ubp$	Umrechnung	Archiv::Allgemeine Chemie	1 bar = 0,987 atm ≈ 1 atm	bar	atm						ch_allg
+g7%47`{kbS	Einfach	Archiv::Allgemeine Chemie	Was sind Enantiomere?	Stereoisomere, die sich wie Bild und Spiegelbild verhalten, aber nicht deckungsgleich (nicht superponierbar) sind.							ch_01
+[sn8lfDSl	Einfach	Archiv::Allgemeine Chemie	Welche Eigenschaft muss ein Molekül haben, damit es ein&nbsp;Enantiomer sein kann?	Molekül muss chiral sein							ch_01
+M,EdlBQlg9	Einfach	Archiv::Allgemeine Chemie	Was bedeutet Chiralität?	Eigenschaft eines Moleküls, nicht mit seinem Spiegelbild deckungsgleich zu sein (wie linke und rechte Hand).							ch_01
+Av;<t41$)k	Einfach	Archiv::Allgemeine Chemie	Was sind die&nbsp;Voraussetzung für Chiralität?	Kein Symmetrieelement (keine Spiegelebene, kein Inversionszentrum) <br>Meist: mindestens ein Chiralitätszentrum (asymmetrisches C-Atom)							ch_01
+"F_e]r3S#*i"	Einfach	Archiv::Allgemeine Chemie	Was ist ein Chiralitätszentrum?	Ein Atom (meist Kohlenstoff), das vier verschiedene Substituenten trägt.							ch_01
+d7}6a|a)J-	Einfach	Archiv::Allgemeine Chemie	Wie bestimmt man ein Chiralitätszentrum in einem Molekül?	<div><ul><li>Schritt 1: Suche alle sp³-C-Atome (tetraedrisch, 4 Bindungen)</li><li>Schritt 2: Prüfe für jedes C-Atom:</li><ul><li> Sind alle 4 Substituenten verschieden? Falls ja → Chiralitätszentrum! </li></ul><li>Schritt 3: Markiere Chiralitätszentren (C*)</li></ul></div> 							ch_01
+p^}gyF>^L8	Einfach	Archiv::Allgemeine Chemie	Was bedeutet Konfiguration im Kontext der Fischer-Projektion?	Die räumliche Anordnung der Substituenten an Chiralitätszentren, dargestellt in der Fischer-Projektion.							ch_01
+s-+EC)nx_%	Einfach	Archiv::Allgemeine Chemie	Wie kann eine&nbsp;Konfiguration geändert werden?	Nur durch Bindungsbruch							ch_01
+DzBT1)HBvy	Einfach	Archiv::Allgemeine Chemie	Was sind Stereoisomere?	Isomere mit gleicher Konstitution (Verknüpfung), aber unterschiedlicher räumlicher Anordnung.							ch_01
+"g%Yt8w}#6m"	Einfach	Archiv::Allgemeine Chemie	Was ist ein Halbacetal?	Verbindung mit der Struktur R-O-C(OH)-R', entstanden aus einem Aldehyd (oder Keton) + einem Alkohol.							ch_01
+xn$Oc$RDy0	Einfach	Archiv::Allgemeine Chemie	Wie funktioniert die Fehling-Probe?	<div>Oxidation des reduzierenden Zuckers (Aldehyd) und Reduktion von Cu²⁺ zu Cu⁺</div> <div></div>							ch_01
+t+<TPM[:+D	Einfach	Archiv::Allgemeine Chemie	Was ist eine Halbzelle in der Elektrochemie?	Eine Elektrode (Metall oder Inertmaterial) in Kontakt mit einer Elektrolytlösung, in der eine Redoxreaktion stattfindet.							ch_01
+e&=E94w0yB	Einfach	Archiv::Allgemeine Chemie	Wie kann man mit dem Standardpotential E° Redoxreaktionen vorhersagen?	"Die Substanz mit dem höheren (positiveren) E° wird reduziert, die mit dem niedrigeren E° wird oxidiert.<br><br>""Edle Metalle (hohes E°) werden reduziert, unedle Metalle (niedriges E°) werden oxidiert."""							ch_01
+"vJ#s=llmhp"	Einfach	Archiv::Allgemeine Chemie	Wie schätzt man die Reaktionsenthalpie ΔH einer Reaktion ab?	<div>Methode 1: Über Bildungsenthalpien ΔH°_R = Σ ΔH°_f(Produkte) - Σ ΔH°_f(Edukte)</div><div><br></div> <div>Methode 2: Über Bindungsenergien ΔH°_R = Σ E(Bindungen gebrochen) - Σ E(Bindungen gebildet)</div> <div>Bindungsspaltung: ΔH &gt; 0 (endotherm, Energie nötig) Bindungsbildung: ΔH &lt; 0 (exotherm, Energie frei)</div><div><br></div> <div>Methode 3: Über Verbrennungsenthalpien ΔH°_R = Σ ΔH°_c(Edukte) - Σ ΔH°_c(Produkte)</div>							ch_01
+Jv1M4BQn`<	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, dass ein Hauptgruppenelement 2-wertig ist?	Das Element kann 2 Bindungen eingehen oder 2 Elektronen abgeben/aufnehmen.							ch_01
+HYgwQ.9PP4	Einfach	Archiv::Allgemeine Chemie	Wofür ist der 1. Hauptsatz der Thermodynamik relevant?	Energiebilanzen aufstellen, Unterscheidung Wärme/Arbeit							ch_01
+KyPRd8Um,i	Einfach	Archiv::Allgemeine Chemie	Wofür ist der 2. Hauptsatz der Thermodynamik relevant?	Spontanität von Prozessen vorhersagen, Richtung chemischer Reaktionen							ch_01
+IW?mItAU@7	Einfach	Archiv::Allgemeine Chemie	Wofür ist der 3. Hauptsatz der Thermodynamik relevant?	Absolute Entropiewerte berechnen (S° tabellieren), Referenzpunkt für thermodynamische Berechnungen							ch_01
+"L$TYJ#adS`"	Einfach	Archiv::Allgemeine Chemie	Was ist der Unterschied zwischen ΔG und ΔG°?	<strong>&nbsp;</strong>ΔG°ist bei&nbsp;Standardbedingungen und ΔG bei beliebigen Bedingungen							ch_01
+zqd0L&OQL,	Einfach	Archiv::Allgemeine Chemie	Was sind die Standardbedingungen?	25°C, 1 bar, 1 M							ch_01
+FDW{,P**_k	Einfach	Archiv::Allgemeine Chemie	Wie kann man Aussagen über die&nbsp;Bindungsspaltung und Bindungsbildung surch ΔH treffen?	ΔH &gt; 0 (endotherm) -&gt; Bindungsspaltung (Homolyse)<br>ΔH &lt; 0 (exotherm) -&gt;&nbsp;Bindungsbildung<br>							ch_01
+to(,(bfGz6	Einfach	Archiv::Allgemeine Chemie	Was ist die Hydrierungsenergie (Hydrierungsenthalpie)?	Enthalpieänderung bei der Addition von Wasserstoff (H₂) an eine ungesättigte Verbindung.							ch_01
+EP~>sm}7Y&	Einfach	Archiv::Allgemeine Chemie	Was sind konjugierte Doppelbindungen?	Zwei oder mehr Doppelbindungen, die durch eine Einfachbindung getrennt sind.							ch_01
+tj5n[j2$Wl	Einfach	Archiv::Allgemeine Chemie	Was sind isolierte Doppelbindungen?	Zwei oder mehr Doppelbindungen, die durch zwei oder mehr Einfachbindungen getrennt sind.							ch_01
+CO*8O<Q0C>	EinheitenVon	Archiv::Allgemeine Chemie	Boltzmann-Konstante	k oder k<sub>B</sub>	J/K (Joule pro Kelvin)						ch_01
+i?~eHD0q:&	Einfach	Archiv::Allgemeine Chemie	Wie lautet die&nbsp;Boltzmann-Konstante?	1,381 × 10<sup>-23</sup> J/K							ch_01
+rhbhOO7E9<	Einfach	Archiv::Allgemeine Chemie	Was ist die Standardentropie S°?	Die&nbsp;Absolute Entropie eines Stoffes unter Standardbedingungen (25°C, 1 bar).							ch_01
+wtm!v-;OO=	Einfach	Archiv::Allgemeine Chemie	Was bedeutet exergonisch?	Eine Reaktion ist exergonisch, wenn sie Gibbs-Energie (freie Enthalpie) freisetzt und spontan abläuft.							ch_01
+gcK@J_>uW^	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich&nbsp;exergonisch und endotherm?	exergonisch: + freie Entropie<br>endotherm:&nbsp; + Enthalpie							ch_01
+kA>fElY!+_	Einfach	Archiv::Allgemeine Chemie	Was bedeutet endergonisch?	Eine Reaktion ist endergonisch, wenn sie Gibbs-Energie benötigt und nicht spontan abläuft.							ch_01
+AdN6Ya>rN%	Einfach	Archiv::Allgemeine Chemie	Wie lautet die&nbsp;Faradaykonstante?	96485,3399 A·s/mol&nbsp;							ch_01
+sjMt2Ke}N~	Einfach	Archiv::Allgemeine Chemie	Wie kann man freie Enthalpie in der Elektrochemie unter Standarfbedingungen berechnen?	∆G° = − zFE °<br><br>Freie Enthalpie = - Anzahl der Elektronen *&nbsp;Faradaykonstante *&nbsp;Standardpotential							ch_thermodynamik
+Em,!e)7]!4	Einfach	Archiv::Allgemeine Chemie	Wie kann man freie Enthalpie in der Elektrochemie allgemein berechnen?	∆G = − zFE<sub>Zelle<br></sub><br>Freie Enthalpie = -&nbsp;Anzahl der Elektronen *&nbsp;Faradaykonstante * E<sub>Zelle</sub>							ch_thermodynamik
+o;@kJq~PZS	Einfach	Archiv::Allgemeine Chemie	Nernst‘sche Gleichung – zur Berechnung der EMK einer Halbzelle	"<img src=""paste-b5918fd4a9a8bf241b4e54f2ebfbfac6a5bab0b9.jpg""><br>n – Anzahl der Elektronen<br>F – Faradaykonstante 96485,3399 J/V·mol<br>T – Temperatur [K]<br>R – allg. Gaskonstante 8,314 J/mol·K"							ch_thermodynamik
+C,2d(M9]bg	Umrechnung	Archiv::Allgemeine Chemie	1 mL = 1 cm³	mL	cm³						ch_thermodynamik
+mtU:`ZP2,=	Umrechnung	Archiv::Allgemeine Chemie	Molarität (mol/L) ↔ Massenkonzentration (g/L): p = c · M oder c = p / M	mol/L	g/L						ch_thermodynamik
+A,hfWG&TZm	Umrechnung	Archiv::Allgemeine Chemie	T(K) = t(°C) + 273,15 t(°C)	K	°C						ch_thermodynamik
+Cyzd@NB[pK	Einfach	Archiv::Allgemeine Chemie	Was ist ein Enantiomerenpaar?	Die beiden Enantiomere eines chiralen Moleküls, die sich wie Bild und Spiegelbild verhalten.							ch_allg
+Q5P{$e<DyH	Einfach	Archiv::Allgemeine Chemie	Was sind Diastereomere?	Stereoisomere, die keine Enantiomere sind (keine Bild-Spiegelbild-Beziehung).							ch_allg
+jo-Qv69BB$	Einfach	Archiv::Allgemeine Chemie	Was sind cis/trans-Isomere (geometrische Isomere)?	Diastereomere, die durch eingeschränkte Rotation um eine Doppelbindung oder in einem Ring entstehen.							ch_allg
+EtTGen6W),	Einfach	Archiv::Allgemeine Chemie	Was sind Epimere?	Diastereomere, die sich nur an einem einzigen Chiralitätszentrum in ihrer Konfiguration unterscheiden.							ch_allg
+z/Lseb^xlz	Einfach	Archiv::Allgemeine Chemie	Was ist eine gesättigte Verbindung?	Organische Verbindung, die nur Einfachbindungen zwischen C-Atomen enthält (keine Mehrfachbindungen).							ch_allg
+BI^qSHYg!m	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich Konfiguration und Konformation?	Konfiguration:&nbsp;Räumliche Anordnung der Atome an Chiralitätszentren (FEST)<br>Konformation:&nbsp;Räumliche Anordnung durch Rotation um Einfachbindungen (FLEXIBEL)							ch_allg
+Rf7+wEKgDi	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich Diastereomere und Enantiomere?	"""Enantiomere sind wie Hände (Spiegelbilder), Diastereomere sind wie Geschwister (ähnlich aber verschieden)"""							ch_allg
+jEHDXnK3Cv	Einfach	Archiv::Allgemeine Chemie	Was ist die Fehling-Probe?	<div>Nachweis von reduzierenden Zuckern (über freie Aldehyd- oder Ketogruppe)</div> <div></div>							ch_allg
+I@*C;^i]V:	Einfach	Archiv::Allgemeine Chemie	Wodurch lässt die&nbsp;Reaktionsgeschwindigkeit sich beeinflussen?	<ul><li>Aggregatszustand der Reaktanten&nbsp;</li><li>Konzentration der Reaktanten<br></li><li>Temperatur, bei der die Reaktion abläuft<br></li><li>Katalysator<br></li></ul>							ch_kinetik
+E,{Gx7`+=d	Einfach	Archiv::Allgemeine Chemie	Was ist die Reaktionsgeschwindigkeit v?	Änderung der Konzentration pro Zeiteinheit							ch_kinetik
+zewG@n7&1$	Einfach	Archiv::Allgemeine Chemie	Was ist das Geschwindigkeitsgesetz einer Reaktion?	Mathematischer Zusammenhang zwischen Reaktionsgeschwindigkeit und Konzentrationen<br><br>v = k · [A]^m · [B]^n<br><br>[A], [B] = Konzentrationen der Edukte; m, n = Reaktionsordnungen (experimentell bestimmt!)							ch_kinetik Überprüfen
+FUxkG[mhJ@	Einfach	Archiv::Allgemeine Chemie	Was ist ein Heterogener Katalysator?	liegt in einer anderen Phase wie die Reaktanten vor							ch_kinetik
+F(1]`:0P8}	Einfach	Archiv::Allgemeine Chemie	Was ist ein&nbsp;Homogener Katalysator?	liegt in der gleichen Phase wie die Reaktanten vor.							ch_kinetik
+c70U6I`zoJ	Einfach	Archiv::Allgemeine Chemie	Was beeinflussen&nbsp;Katalysatoren (nicht)?	beeinflussen die Geschwindigkeit einer Reaktion<br><br>beeinflussen NIE die Lage des Gleichgewichts einer Reaktion							ch_kinetik
+"g6#}Xz4Zmn"	Einfach	Archiv::Allgemeine Chemie	Was bedeutet E<sub>Zelle</sub> (Zellspannung)?	Die elektrische Spannung zwischen den beiden Elektroden einer elektrochemischen Zelle (galvanische Zelle oder Elektrolysezelle).<br><br>Auch: EMK (Elektromotorische Kraft), U<sub>Zelle</sub>							ch_elektro
+dC9P1vo;xA	Einfach	Archiv::Allgemeine Chemie	Was bedeutet metastabil?	Ein Zustand, der thermodynamisch instabil ist (nicht das globale Minimum), aber kinetisch stabil genug, um längere Zeit zu existieren.							ch_kinetik
+i{j2F7K_ea	Einfach	Archiv::Allgemeine Chemie	Was ist der Orientierungsfaktor (sterischer Faktor) in der Stoßtheorie?	Anteil der Molekülstöße mit richtiger räumlicher Orientierung für eine erfolgreiche Reaktion.							ch_kinetik
+f;qHu546!I	Einfach	Archiv::Allgemeine Chemie	Was ist die Stoßzahl Z in der Stoßtheorie?	<div><div><div>Anzahl der Zusammenstöße zwischen Molekülen pro Zeiteinheit und Volumeneinheit.</div></div></div><div><div><div></div></div></div>							ch_kinetik
+"PGz.|[G5#;"	Einfach	Archiv::Allgemeine Chemie	Was sind Elementarreaktionen?	<div><div><div>Chemische Reaktionen, die in einem einzigen molekularen Schritt ablaufen, ohne Zwischenstufen oder Intermediate.</div></div></div><div><div><div></div></div></div>							ch_kinetik
+n,KE*WNY<m	Einfach	Archiv::Allgemeine Chemie	Konstitutionsformel von Butan	"<img src=""paste-4697d83004aca596cb55a4fcaf3468b50f144283.jpg"">"							ch_org
+"MZ#E3tC_xo"	Einfach (und die umgekehrte Richtung)	Archiv::Allgemeine Chemie	vereinfachte Konstitutionsformel von Butan	"<img src=""paste-3aa088b4c33d74e9bb9dc49d219eb01347fca660.jpg"">"							ch_org
+Cg|OV$3c3|	Einfach (und die umgekehrte Richtung)	Archiv::Allgemeine Chemie	Skelettformel von Butan	"<img src=""paste-79c94b2c32dcbd1d7f3f13c50308804e9ee3cede.jpg"">"							ch_org
+Jw0QgB[e!$	Einfach (und die umgekehrte Richtung)	Archiv::Allgemeine Chemie	Keilstrichformel von Butan	"<img src=""paste-88c54964e5b209222e1f4453740f15bdcb9890df.jpg"">"							ch_org
+i9N;C:yg:~	Einfach (und die umgekehrte Richtung)	Archiv::Allgemeine Chemie	vereinfachte&nbsp;Keilstrichformel von Butan	"<img src=""paste-2e80809a395d0c7b883762602c42c29ab141a7ea.jpg"">"							ch_org
+m7<B{EzT*I	Einfach	Archiv::Allgemeine Chemie	Allgemeine Summenformel von Alkanen	C<sub>n</sub>H<sub>2n+2</sub>							ch_org
+N~AdI6Wdn?	Einfach	Archiv::Allgemeine Chemie	Allgemeine Summenformel von&nbsp;Cycloalkanen	C<sub>n</sub>H<sub>2n</sub>							ch_org
+B~_L)4|R1,	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Funktionelle Gruppe der Alkene?&nbsp;	Die Doppelbindung							ch_org
+"yH#K9:]Uv9"	Einfach	Archiv::Allgemeine Chemie	Was ist die funktionelle gruppe der Alkine?	Die&nbsp;Dreifachbindung							ch_org
+c&<~OT&ekT	Einfach	Archiv::Allgemeine Chemie	Was sind typische Reaktionen von Alkenen und Alkinen?	Additionsreaktionen, da die Kohlenstoffatome im Bereich der Mehrfachbindung noch Bindungen zu weiteren Atomen eingehen können.							ch_org
+eNB:LY783h	Einfach	Archiv::Allgemeine Chemie	Was für&nbsp;Additionsreaktionen gehen Alkene und Alkine ein?	<ul><li>Hydrierung<br></li><li>Addition eines Halogens<br></li><li>Addition eines Halogenwasserstoffs<br></li><li>Addition von Wasser<br></li></ul>							ch_org
+e[*T,{^R6f	Einfach	Archiv::Allgemeine Chemie	Welchen Mechanismus haben Additionsreaktionen?	Elektrophile Addition<br><br>(Addition von Wasser(katalysiert durch H+ und Hg(II)-Kationen))							ch_org
+yj+?HW5>g<	Einfach	Archiv::Allgemeine Chemie	Welche Methoden der Polymerisation gibt es?	<ul><li>Elektrophile Polymerisation, initiiert durch Protonen<br></li><li>Nucleophile Polymerisation, initiiert durch Basen<br></li><li>Radikalische Polymerisation<br></li><li>Metallkatalysierte Polymerisation<br></li></ul>							ch_org
+HpoMX,{.Ko	Einfach	Archiv::Allgemeine Chemie	Wie entstehen Polymere?	Durch das Verknüpfen vieler kleiner Bausteine (Monomere).							ch_org
+"p1~#[XhJ$C"	Einfach	Archiv::Allgemeine Chemie	Was ist die Voraussetzung für Chiraliät?	Vier unterschiedliche Substituenten an einem C-Atom							ch_org
+k{:+J6wRUe	Einfach	Archiv::Allgemeine Chemie	Welche Art der Chiralität liegt bei organischen Molekülen vor?	Zentrochiralität							ch_org
+yW<NQtprL:	Einfach	Archiv::Allgemeine Chemie	Wie braucht man für Chiralität vier Substituenten und nicht nur 2 oder 3?	Bei 2 oder 3 verschiedenen Substituenten an einem Kohlenstoffatom lassen sich Bild und Spiegelbild durch eine weitere Symmetrieoperation (z.B. eine Drehung) wieder zur Deckung bringen.							ch_org
+"yVr_#K+r^^"	Einfach	Archiv::Allgemeine Chemie	Was ist die CIP-Konvention?	Eine Regelung zur&nbsp;Bestimmung der Priorität der Substituenten							ch_org Überprüfen
+n`xGZrpLBX	Einfach	Archiv::Allgemeine Chemie	Was legt die CIP-Konvention fest?	größere Ordnungszahl = höhere Priorität des Substituenten							ch_org
+mF[-hK[N<u	Einfach	Archiv::Allgemeine Chemie	Was für eine Art der Isomerie ist&nbsp;Zentrochiralität?	Konfigurationsisomerie							ch_org
+eT(63WJr<N	Einfach	Archiv::Allgemeine Chemie	Was ist ein wichtiger Unterschied zwischen chiralen Molekülen?	Chirale Moleküle unterscheiden sich darin, wie sie die Ebene linear polarisierten Lichtes drehen: Optische Aktivität.							ch_org
+F>C=Z<n2hi	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn ein&nbsp;Stereoisomer mit (+) bezeichnet wird?	Es dreht&nbsp;die Ebene des polarisierten Lichtes im Uhrzeigersinn							ch_org
+F7vjf?/05A	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn ein&nbsp;Stereoisomer mit (-) bezeichnet wird?	es dreht&nbsp;die Ebene des polarisierten Lichtes gegen den Uhrzeigersinn							ch_org
+O~vk`E]!ci	Einfach	Archiv::Allgemeine Chemie	Mit was bezeichnet man ein Stereoisomer, das&nbsp;die Ebene des polarisierten Lichtes im Uhrzeigersinn dreht?	(+)							ch_org
+eN{4a>c{@I	Einfach	Archiv::Allgemeine Chemie	Mit was bezeichnet man ein Stereoisomer, das&nbsp;die Ebene des polarisierten Lichtes gegen den Uhrzeigersinn dreht?	(-)							ch_org
+w2L!GpIYM.	Einfach	Archiv::Allgemeine Chemie	Was macht einen Aromaten aus?	<ul><li>Planar</li><li>Zyklisch</li><li>Konjugierte Doppelbindungen</li></ul>							ch_org Überprüfen
+r?xh>:F1g[	Einfach	Archiv::Allgemeine Chemie	Was ist die funktionelle Gruppe bei Alkoholen?	-OH (Hydroxy-Gruppe)							ch_org
+E]5ZM%VJER	Einfach	Archiv::Allgemeine Chemie	Was sind Konstitutionsisomere (Strukturisomere)?	Isomere mit gleicher Summenformel, aber unterschiedlicher Verknüpfung (Reihenfolge) der Atome.							ch_org
+JTl**,R+rZ	Einfach	Archiv::Allgemeine Chemie	Was ist E-/Z-Isomerie (geometrische Isomerie)?	Form der Diastereomerie bei eingeschränkter Rotation (meist C=C-Doppelbindung), benannt nach CIP-Konvention.							ch_org
+g>jKP+oEqC	Einfach	Archiv::Allgemeine Chemie	Was sind die Voraussetzung für&nbsp;E-/Z-Isomerie?	C=C-Doppelbindung (keine freie Rotation!) <br>Jedes C-Atom der Doppelbindung trägt zwei verschiedene Substituenten							ch_org
+q6O-0_^*w2	Einfach	Archiv::Allgemeine Chemie	Was macht ein&nbsp;Z-Isomer aus?	Die Prioritätssubstituenten auf gleicher Seite (<b>Z</b>usammen auf einer Seite)							ch_org
+v(L=Y.FykS	Einfach	Archiv::Allgemeine Chemie	Was macht ein E-Isomer aus?	Prioritätssubstituenten auf <b>E</b>ntgegengesetzten Seiten&nbsp;							ch_org
+F.2>P3.1R)	Einfach	Archiv::Allgemeine Chemie	Was sind Terpene?	Naturstoffe, die aus Isopren-Einheiten (C₅H₈) aufgebaut sind und häufig in ätherischen Ölen vorkommen.							ch_org
+b:lTr-+A&S	Einfach	Archiv::Allgemeine Chemie	Was sind kumulierte Doppelbindungen?	<div>Zwei oder mehr Doppelbindungen direkt nebeneinander (am gleichen C-Atom).</div> <div></div>							ch_org
+Q7f!V^s+Ot	Einfach	Archiv::Allgemeine Chemie	Was sind Polyene?	Kohlenwasserstoffe mit mehreren C=C-Doppelbindungen (mindestens zwei).							ch_org
+jsXmq!fjJ]	Einfach	Archiv::Allgemeine Chemie	Was ist Isopren?	En konjugiertes Dien, das als Baustein für Terpene und Kautschuk dient.							ch_org
+xo+~_imSO]	Einfach	Archiv::Allgemeine Chemie	Welche Kohlenwasserstoffe sind gesättigt?	Alkane,&nbsp;Cycloalkane							ch_org
+K&kE^WuaVJ	Einfach	Archiv::Allgemeine Chemie	Welche Kohlenwasserstoffe sind nicht gesättigt?	(Cyclo)Alkene, Alkine, Polyene, Aromaten							ch_org
+Ht~:CLT<7@	Einfach	Archiv::Allgemeine Chemie	Wofür ist die Sättigung bei Kohlenwasserstoffen wichtig?	Die chemische Reaktivität und damit für die Biochemie, bspw. in der Lebensmittelindustrie&nbsp;&nbsp;							ch_org
+"qsH+G#YhHg"	Einfach	Archiv::Allgemeine Chemie	Wie benennt man die cis- und trans-Versionen von Alkenen?	<div>cis-Isomer: Gleiche/ähnliche Substituenten auf gleicher Seite<br><br><div>trans-Isomer: Gleiche/ähnliche Substituenten auf entgegengesetzten Seiten</div></div>							ch_org
+BjT7;v7-?!	Einfach	Archiv::Allgemeine Chemie	Wann ist&nbsp;cis/trans-Nomenklatur anwendbar?	wenn an jedem C-Atom der Doppelbindung zwei gleiche oder ähnliche Gruppen sind							ch_org
+pISOaTL[0C	Einfach	Archiv::Allgemeine Chemie	Wofpr benutzt man&nbsp;E/Z-Isomerie?	Priorität der Substituenten an C=C bei Alkenen bestimmen							ch_org Überprüfen
+PGTy2l<$}5	Einfach	Archiv::Allgemeine Chemie	Wo benutzt man&nbsp;R/S-Nomenklatur?	Bei&nbsp;Chiralitätszentren, um die absolute Konfiguration an asymmetrischen C-Atomen zu beschreiben&nbsp;							ch_org
+k4L`KW?bt_	Einfach	Archiv::Allgemeine Chemie	Was muss man bei den&nbsp;CIP-Regeln bezüüglich Doppelbindungen beachten?	Mehrfachbindungen zählen mehrfach.<br>Also&nbsp;C=O zählt wie C-O-O							ch_org
+yt*4y631h;	Einfach	Archiv::Allgemeine Chemie	Wie ist die Nomenklatur von Alkenen bezüglich der E/Z-Isomerie?	(E/Z)-Präfix + Position + Stammname-en							ch_org
+"gXGO;#N*MZ"	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich die Reaktivitäten von Alkanen, Alkenen und Alkinen?	Reaktivitätsreihenfolge: Alkine &gt; Alkene &gt;&gt; Alkane							ch_org
+l*~(FDClK[	Einfach	Archiv::Allgemeine Chemie	Was bedeutet stereospezifisch und wofür ist das relevant?	Eine Reaktion ist stereospezifisch, wenn Stereoisomere der Edukte zu unterschiedlichen Stereoisomeren der Produkte führen.							ch_org
+B+z&!H:[?y	Einfach	Archiv::Allgemeine Chemie	Was ist Vulkanisation im Kontext von Polymeren?	Chemische Vernetzung von Polymer-Ketten (hauptsächlich Kautschuk) durch Schwefelbrücken, die die mechanischen Eigenschaften drastisch verbessert.							ch_org
+v{3t~@gSyZ	Einfach	Archiv::Allgemeine Chemie	Was ist ein Beispiel für einen Komplex, der in einem Organismus vorkommt?	Hämoglobin,&nbsp;Myoglobin							ch_org
+vE8y+?A!Xr	Einfach	Archiv::Allgemeine Chemie	Was sind Konformere (Konformationsisomere)?	Verschiedene räumliche Anordnungen eines Moleküls durch Rotation um Einfachbindungen, die ineinander überführbar sind ohne Bindungsbruch.							ch_org
+CIZ9z{SHK]	Einfach	Archiv::Allgemeine Chemie	Was ist ein Racemat (racemisches Gemisch)?	1:1-Gemisch von zwei Enantiomeren (R und S), das optisch inaktiv ist.							ch_org
+D27e8rZzou	Einfach	Archiv::Allgemeine Chemie	Was sind π-Elektronen (Pi-Elektronen)?	Elektronen in π-Bindungen (Mehrfachbindungen), die sich in p-Orbitalen oberhalb und unterhalb der Bindungsachse befinden.							ch_org
+fnO/&VNKn@	Einfach	Archiv::Allgemeine Chemie	Was ist ein primärer Alkohol (1°-Alkohol)?	lkohol, bei dem die OH-Gruppe an ein primäres C-Atom gebunden ist (C mit einem anderen C verbunden).							ch_org
+n]>_|p$O)1	Einfach	Archiv::Allgemeine Chemie	Was ist ein primäres C-Atom?	C mit einem anderen C verbunden							ch_org
+J:{ff5Bmoy	Einfach	Archiv::Allgemeine Chemie	Was ist ein sekundärer Alkohol?	Alkohol, bei dem die OH-Gruppe an ein sekundäres C-Atom gebunden ist&nbsp;C mit zwei anderen C verbunden).							ch_org
+"d>5U];a#!*"	Einfach	Archiv::Allgemeine Chemie	"Wie unterscheidet sich Zentrochiralität von ""normaler"" Chiralität?"	"""Normale"" Chiralität ist ein Oberbegriff , Zentrochiralität ist ein Spezialfall.&nbsp;"							ch_org
+uh]36!<)sQ	Einfach	Archiv::Allgemeine Chemie	Was sind wichtige&nbsp;Eigenschaften von Alkoholen?	Alkohole sind polare Moleküle<br>Langkettige Alkohole, gemischt mit Wasser bilden Grenzschichten aus<br><br>Aliphatische Alkohole sind sehr schwache Säuren, aromatische Alkohole sind im Vergleich dazu relativ starke Säuren<br><br>Einige Alkohole sind giftig							ch_org
+Fc*%$77~P$	Einfach	Archiv::Allgemeine Chemie	Wie reagieren Phenole in Wasser?	Phenole reagieren in Wasser sauer!							ch_org
+hFYl}fL.}T	Einfach	Archiv::Allgemeine Chemie	Was ist eine&nbsp;typische Reaktion der Alkohole?	Kondensationsreaktion zu Ethern							ch_org
+rvD*@RTqF/	Einfach	Archiv::Allgemeine Chemie	Was ist die funktionelle Gruppe bei Ether?	-O-							ch_org
+k$N;AeBl[N	Einfach	Archiv::Allgemeine Chemie	Wie entstehen Aldehyde?	Durch die Oxidation von&nbsp;primären Alkoholen							ch_org
+zb2ra~9~2s	Einfach	Archiv::Allgemeine Chemie	Wie entstehen&nbsp;Ketone?	Durch die Oxidierung&nbsp;sekundärer Alkohole							ch_org
+b`.[d&/l<p	Einfach	Archiv::Allgemeine Chemie	Was entsteht bei der Oxidierung primärer Alkohole?	Aldehyde							ch_org
+Ax>mE.2`^*	Einfach	Archiv::Allgemeine Chemie	Was entsteht bei der Oxidierung sekundärer Alkohole?	Ketone							ch_org
+QX[@){84@T	Einfach	Archiv::Allgemeine Chemie	Was entsteht bei der Oxidierung tertiärer Alkohole?	Die kann man nicht oxidieren!							ch_org
+u|R:.+RziX	Einfach	Archiv::Allgemeine Chemie	Was ist die funktionelle Gruppe bei Aldehyden und Ketonen?	C=O (Carbonyl-Gruppe)							ch_org
+s[hs*,&)e`	Einfach	Archiv::Allgemeine Chemie	Was sind die&nbsp;Besonderheiten der Carbonylgruppe?	Sie ist&nbsp;polarisiert und planar, dadurch ist die Carbonylgruppe prochiral.							ch_org
+bdi**vmQ`*	Einfach	Archiv::Allgemeine Chemie	Wie können Ketone und Aldehyde untereinander reagieren?	Aldoladdition, sie verknüpfen sich und biden ein&nbsp;Aldol							ch_org
+bx}oeIq>?P	Einfach	Archiv::Allgemeine Chemie	Was passiert, wenn man ein&nbsp;Aldehyd reduziert? (Hydrierung&nbsp;der Carbonylgruppe)	Es wird ein&nbsp;primärer Alkohol							ch_org
+Mi+ob}h1$n	Einfach	Archiv::Allgemeine Chemie	Was passiert, wenn man ein&nbsp;Keton reduziert? (Hydrierung&nbsp;der Carbonylgruppe)	Es wird ein&nbsp;sekundärer Alkohol							ch_org
+b/}L,guFTi	Einfach	Archiv::Allgemeine Chemie	Wie reagieren Alkohole und Amine?	Ein Aldehyd oder Keton reagiert mit einem primären Amin unter Wassserabspaltung zu einem Imin.							ch_org
+y{r(L`O$:W	Einfach	Archiv::Allgemeine Chemie	Was passiert, wenn man ein&nbsp;Aldehyd&nbsp;oxidiert?	Es entsteht eine&nbsp;Carbonsäure							ch_org
+fH@vS&U|0T	Einfach	Archiv::Allgemeine Chemie	Was passiert, wenn man ein&nbsp;Keton oxidiert?	Ein Keton kann nicht weiter oxidiert werden!							ch_org
+CizM2;53OY	Einfach	Archiv::Allgemeine Chemie	Was ist ein R-Enantiomer?	Enantiomer, bei dem die Substituenten am Chiralitätszentrum nach CIP-Priorität (1→2→3) im Uhrzeigersinn angeordnet sind, wenn die niedrigste Priorität (4) nach hinten zeigt.							ch_org
+tmR2c/Qj%*	Einfach	Archiv::Allgemeine Chemie	Was ist ein S-Enantiomer?	Enantiomer, bei dem die Substituenten am Chiralitätszentrum nach CIP-Priorität (1→2→3) gegen den Uhrzeigersinn angeordnet sind, wenn die niedrigste Priorität (4) nach hinten zeigt.							ch_org
+OTuWGGGx}V	Einfach	Archiv::Allgemeine Chemie	Wie entstehen Aromate?	<div>&nbsp;U.a. Dehydrierung von Cyclohexan</div> <div><div><div><div><div></div><div></div></div></div></div><div></div></div>							ch_org Überprüfen
+=x_k@c@t6	Einfach	Archiv::Allgemeine Chemie	Was ist die Hückel-Regel?	Planare, cyclische, vollständig konjugierte Moleküle sind aromatisch, wenn sie (4n+2) π-Elektronen besitzen (n = 0, 1, 2, 3, ...).							ch_org
+wk7.=BM$_M	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Hauptreaktion der Aromaten?	Elektrophile aromatische Substitution							ch_org
+ziR&hif&Pa	Einfach	Archiv::Allgemeine Chemie	Was sind aliphatische Alkohole?	Alkohole mit offenkettiger oder cyclischer Kohlenstoffstruktur ohne aromatischen Ring.							ch_org
+v.Kr$ya{|5	Einfach	Archiv::Allgemeine Chemie	Was sind Ether?	Organische Verbindungen mit der funktionellen Gruppe R-O-R', wo O an zwei Kohlenstoffreste gebunden ist.							ch_org
+"Fx)0[Ix#kd"	Einfach	Archiv::Allgemeine Chemie	Was bedeutet prochiral?	Bezeichnung für Moleküle oder Gruppen, die achiral sind, aber durch eine einzige chemische Veränderung chiral werden können.							ch_org
+n7rs&PBwp+	Einfach	Archiv::Allgemeine Chemie	Was ist die Keto-Enol-Tautomerie?	Gleichgewicht zwischen Keto-Form (Carbonylverbindung) und Enol-Form (Alkohol mit C=C), das durch Protonen-Verschiebung interkonvertiert.							ch_org
+tJ;?_l<!cz	Einfach	Archiv::Allgemeine Chemie	Was ist die Ketoform?	Tautomer mit Carbonylgruppe (C=O) und gesättigtem α-Kohlenstoff in der Keto-Enol-Tautomerie.							ch_org
+sijCwD+A,Y	Einfach	Archiv::Allgemeine Chemie	Was ist die Enolform?	Tautomer mit Hydroxylgruppe (OH) an einem Alken-Kohlenstoff (C=C-OH) in der Keto-Enol-Tautomerie.							ch_org
+"q$6#XC8ra]"	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich Ketone und Aldehyde (grob)?	Aldehyde haben die&nbsp;Carbonyl-C an H und R gebunden,&nbsp;Ketone an zwei&nbsp;C (R, R')<br><br>Aldehyde haben min. ein H am C=O,&nbsp;Ketone keines&nbsp;							ch_org
+Q-*-4Z0WSh	Einfach	Archiv::Allgemeine Chemie	Was bedeutet Reduktion?	Chemische Reaktion, bei der ein Molekül Elektronen aufnimmt, was meist zur Erhöhung der H-Anzahl oder Verringerung der O-Anzahl oder Abnahme der Oxidationsstufe führt.							ch_org
+BloOC|Gfgf	Einfach	Archiv::Allgemeine Chemie	Was sind Amine?	Organische Derivate des Ammoniaks (NH₃), bei denen ein oder mehrere H-Atome durch Alkyl- oder Arylgruppen ersetzt sind.							ch_org
+JO(u|{{Sg5	Einfach	Archiv::Allgemeine Chemie	Was sind Tautomere?	Konstitutionsisomere, die durch Verschiebung eines Protons und einer Doppelbindung spontan ineinander übergehen und in einem dynamischen Gleichgewicht stehen.							ch_org
+K%@6H4BUfA	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich die Enolform und Ketoform?	Ketoform hat eine Carbonylgruppe (C=O) und ein gesättigtes α-C-Atom mit sp³-Hybridisierung, ist meist thermodynamisch stabiler und elektrophil am Carbonyl-C. Enolform hat eine C=C-Doppelbindung mit OH-Gruppe (beide sp²), ist meist instabil, aber nukleophil und saurer.							ch_org
+"NC{ewwPJ#7"	Einfach	Archiv::Allgemeine Chemie	Wie bilden sich Halbacetale?	Aus&nbsp;Aldehyd/Keton + 1 Alkohol<br>							ch_org
+mq`A+)Ka.M	Einfach	Archiv::Allgemeine Chemie	Wie bilden sich Acetale?	Halbacetal + weiterer Alkohol							ch_org
+EjfW1.4f;r	Einfach	Archiv::Allgemeine Chemie	Was für&nbsp;Carbonsäurederivate gibt es?	Anhydride, Ester, Amide und Halogenide							ch_org
+h@.TS5b@vl	Einfach	Archiv::Allgemeine Chemie	Welche Relevanz haben Carbonsäureester und -amide?	Ester sind wichtig als Lösungsmittel (Ethylacetat), Aromastoffe (Fruchtester), Weichmacher (Phthalate), Fette/Öle (Triglyceride) und Polymere (Polyester, PET). Amide bilden die Peptidbindung in Proteinen (-CO-NH-), sind stabil durch Resonanz, dienen als Lösungsmittel (DMF, NMP) und sind Bausteine von Nylon und Kevlar.							ch_org
+H8{XYL~qYz	Einfach	Archiv::Allgemeine Chemie	Wie ist die Reaktivität von Amiden?	Amide sind sehr stabil							ch_org
+EgCiQ9T6:K	Einfach	Archiv::Allgemeine Chemie	Wie ist die Reaktivität von&nbsp;Estern?	Ester sind leicht hydrolysierbar							ch_org
+kYK_dF)W4O	Einfach	Archiv::Allgemeine Chemie	Wie entstehen Carbonsäurederivate?	Aus Carbonsäuren (R-COOH) durch Ersatz der OH-Gruppe: <br><ol><li>Säurechloride (R-COCl) mit SOCl₂ oder PCl₅</li><li>Ester (R-COOR') durch Fischer-Veresterung mit Alkohol/H⁺ oder mit Säurechlorid + Alkohol</li><li>Amide (R-CONH₂) mit NH₃ über Säurechlorid oder durch Erhitzen von Ammoniumsalzen</li><li>Anhydride (R-CO-O-CO-R) durch Kondensation zweier Carbonsäuren.</li></ol>							ch_org
+L80bE;1.q%	Einfach	Archiv::Allgemeine Chemie	Wie reaktiv sind Carbonsäurederivate?	Reaktivität nimmt ab in der Reihe: Säurechloride (sehr reaktiv, sofortige Hydrolyse) &gt; Anhydride &gt; Ester &gt; Amide (sehr stabil) &gt; Carboxylate (unreaktiv).							ch_org
+M-x5]9pS_*	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich Fette und Öle?	Fette sind bei Raumtemperatur fest und enthalten hauptsächlich <u>gesättigte Fettsäuren (keine C=C)</u>, die linear sind und dicht packen (höherer Schmelzpunkt), z.B. Butter, Schmalz, tierische Fette. Öle sind bei Raumtemperatur flüssig und enthalten hauptsächlich <u>ungesättigte Fettsäuren (eine oder mehrere C=C</u>, meist cis), die geknickt sind und lockerer packen (niedrigerer Schmelzpunkt).&nbsp;							ch_org
+yC6hsH$pB6	Einfach	Archiv::Allgemeine Chemie	Was ist Verseifung?	Basische Hydrolyse von Estern							ch_org
+JKZ._]vuWZ	Einfach	Archiv::Allgemeine Chemie	Was sind Tenside?	Amphiphile Moleküle mit einem hydrophilen (polaren) Kopf und einem hydrophoben (unpolaren) Schwanz, die die Grenzflächenspannung zwischen Wasser und Öl/Fett herabsetzen.							ch_org
+w+x{l&i<C`	Einfach	Archiv::Allgemeine Chemie	Was sind primäre, sekundäre und tertiäre Amine?	Primäre Amine haben einen Rest am N und zwei H-Atome<br>Sekundäre Amine haben zwei Reste am N und ein H-Atom&nbsp;<br>Tertiäre Amine haben drei Reste am N und kein H-Atom<br>Quartäre Ammoniumsalze haben vier Reste, positive Ladung, kein freies Elektronenpaar mehr, sind Salze und keine freien Basen							ch_org
+B9=GWMj+Kx	Einfach	Archiv::Allgemeine Chemie	Wie unterscheiden sich Amine und Amide?	<u>Amine</u> (R-NH₂, R₂NH, R₃N) haben <u>N mit Alkyl-/Arylresten</u>, sind stark basisch (freies Elektronenpaar, pKb ≈ 3-5), nukleophil und reaktiv.<br><u>Amide</u> (R-CO-NH₂) haben <u>N direkt an einer Carbonylgruppe</u>, sind durch Resonanz stabilisiert (C-N-Bindung hat partiellen Doppelbindungscharakter), praktisch nicht basisch (Elektronenpaar delokalisiert, pKb ≈ 14-15) und sehr unreaktiv.							ch_org
+EugO9+ssxG	Einfach	Archiv::Allgemeine Chemie	"In was lassen sich&nbsp;Redoxreaktionen ""zerlegen""?"	Sie bestehen immer aus einer Reduktion- und einer Oxidationsreaktion							ch_redox
+n6KQmBy=/$	Einfach	Archiv::Allgemeine Chemie	Was ist die&nbsp;Oxidationszahl von Atomen in Elementarer Form?	Immer 0							ch_redox
+ci10XuBtf,	Einfach	Archiv::Allgemeine Chemie	Wie ist die&nbsp;Oxidationszahl von Metallen in Verbindungen?	Immer positiv							ch_redox
+fP3x[R&6LS	Einfach	Archiv::Allgemeine Chemie	Wie ist die&nbsp;Oxidationszahl von Nichtmetallen in Verbindung mit Metallen?	Immer negativ							ch_redox
+c|y,6J0^$m	Einfach	Archiv::Allgemeine Chemie	Wie ist die&nbsp;Oxidationszahl bei ein-atomigen Ionen?	Immer&nbsp;identisch mit der Ladung							ch_redox
+kUMTKNz,I+	Einfach	Archiv::Allgemeine Chemie	Wie ist die Summe der Oxidationszahlen&nbsp;einer neutralen Verbindung?	Immer 0							ch_redox
+"e=B&d#BY+9"	Einfach	Archiv::Allgemeine Chemie	Wie ist die Summe der Oxidationszahlen&nbsp;in Molekül-Ionen?	Immer&nbsp;gleich der Ladung des Ions							ch_redox
+BWD4/xfd}v	Einfach	Archiv::Allgemeine Chemie	Wie werden&nbsp;Bindungselektronen in kovalenten Bindungen bezüglich der Oxidationszahlen zugeordnet? (Für Nichtmetalle in Molekülverbindungen)	die Bindungselektronen in kovalenten Bindungen werden dem elektronegativeren Partner zugeschlagen, die Atome als Ionen betrachtet							ch_redox
+hK%NNXIfdr	Einfach	Archiv::Allgemeine Chemie	Was sind die Ausnahmen, wo Sauerstoff nicht die Oxidationszahl -2 hat?	Wenn es in Verbindungen mit Fluor und Peroxiden ist [dann -1]							ch_redox
+NhD&?0abU.	Einfach	Archiv::Allgemeine Chemie	Wann haben Halogene NICHT die Oxidationszahl -1?	in Verbindungen mit O und F							ch_redox
+Bi__m@)dD*	Einfach	Archiv::Allgemeine Chemie	Was ist Oxidation?	Chemische Reaktion, bei der ein Molekül/Atom Elektronen abgibt.&nbsp;							ch_redox
+i`|:$u]o`y	Einfach	Archiv::Allgemeine Chemie	Was ist ein Oxidationsmittel?	Substanz, die <strong>Elektronen aufnimmt</strong> (selbst reduziert wird) und dabei eine andere Substanz <strong>oxidiert</strong>.							ch_redox
+coP*`Fg1Lk	Einfach	Archiv::Allgemeine Chemie	Was ist ein Reduktionsmittel?	Substanz, die <strong>Elektronen abgibt</strong> (selbst oxidiert wird) und dabei eine andere Substanz <strong>reduziert</strong>.							ch_redox
+oWHvk`x<R$	Einfach	Archiv::Allgemeine Chemie	Was bedeutet es, wenn eine Oxidationszahl positiv ist?	Das Atom hat Elektronen abgegeben oder zieht Bindungselektronen weniger stark an als seine Bindungspartner, ist also elektronenärmer als im elementaren Zustand.							ch_redox
+qs>3B5dA(8	Einfach	Archiv::Allgemeine Chemie	Was ist Redoxamphoterie?	Eigenschaft einer Substanz, sowohl als Oxidationsmittel als auch als Reduktionsmittel zu wirken, je nach Reaktionspartner.							ch_redox
+s:IKq.m(Y|	Einfach	Archiv::Allgemeine Chemie	Was ist Disproportionierung?	Redoxreaktion, bei der ein Element in mittlerer Oxidationsstufe gleichzeitig oxidiert und reduziert wird, sodass zwei verschiedene Oxidationsstufen entstehen. Ein Teil der Moleküle wird zu höherer, ein anderer zu niedrigerer Oxidationsstufe.							ch_redox
+t:>1%JBm{4	Einfach	Archiv::Allgemeine Chemie	Was ist Komproportionierung?	Redoxreaktion, bei der ein Element in zwei verschiedenen Oxidationsstufen (hoch und niedrig) reagiert und eine mittlere Oxidationsstufe bildet. Beide Reaktionspartner enthalten das gleiche Element in unterschiedlichen Oxidationszahlen.							ch_redox
+uD-%^<k0(2	Einfach	Archiv::Allgemeine Chemie	Was sind Halbreaktionen (Teilreaktionen)?	Aufteilung einer Redoxreaktion in zwei separate Gleichungen: die Oxidationsreaktion (Elektronenabgabe) und die Reduktionsreaktion (Elektronenaufnahme).							ch_redox
+r:mN]=G.X*	Einfach	Archiv::Allgemeine Chemie	Was ist die Spannungsreihe (elektrochemische Spannungsreihe)?	Anordnung von Redoxpaaren nach ihren Standardpotentialen E°, gemessen gegen die Standard-Wasserstoffelektrode.&nbsp;<br>Oben (positiv, z.B. F₂/F⁻ +2,87 V): starke Oxidationsmittel (nehmen leicht Elektronen auf). Unten (negativ, z.B. Li⁺/Li -3,04 V): starke Reduktionsmittel (geben leicht Elektronen ab).							ch_redox
+A`hK2UcE]U	Einfach	Archiv::Allgemeine Chemie	Wofür ist die Spannungsreihe relevant?	<ul><li><strong>Vorhersage von Redoxreaktionen</strong>: Stoff mit höherem E° oxidiert Stoff mit niedrigerem E° (ΔE° &gt; 0 → spontan)</li><li><strong>Berechnung von Zellspannungen</strong>: E°_Zelle = E°_Kathode - E°_Anode</li><li><strong>Korrosionsvorhersage</strong>: Unedlere Metalle korrodieren eher (negatives E°)</li><li><strong>Galvanische Elemente</strong>: Design von Batterien und Akkumulatoren</li><li><strong>Elektrolyse</strong>: Bestimmung, welche Substanzen zuerst reduziert/oxidiert werden.</li></ul>							ch_redox
+f6/-s}t.,z	Einfach	Archiv::Allgemeine Chemie	Was ist Redoxtitration?	Titrationsmethode zur quantitativen Bestimmung einer Substanz durch Redoxreaktion mit einer Maßlösung bekannter Konzentration.							ch_redox
+z)/-j_JR~X	Einfach	Archiv::Allgemeine Chemie	Wie funktioniert Redoxtitration?	Oxidations- oder Reduktionsmittel bekannter Konzentration (Titrant) wird zur Probelösung getropft, bis die Redoxreaktion vollständig abgelaufen ist (Äquivalenzpunkt). Am Äquivalenzpunkt gilt: n(Oxidationsmittel) · Anzahl aufgenommener e⁻ = n(Reduktionsmittel) · Anzahl abgegebener e⁻.							ch_redox

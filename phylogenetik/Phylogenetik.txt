@@ -1,0 +1,39 @@
+#separator:tab
+#html:true
+#guid column:1
+#notetype column:2
+#deck column:3
+#tags column:6
+MM>k{S8:B-	Einfach	Archiv::Phylogenetik	undirected graph	"<img src=""paste-5c5f18c6016f170f5106eba739bab61263e89dd2.jpg"">"	phylo_definition
+t@e*MdGJ9:	Einfach	Archiv::Phylogenetik	size of a graph	The number of nodes |V|	phylo_definition
+o`<]^u@-^d	Einfach	Archiv::Phylogenetik	incident	If e = {v1 , v2 } ∈ E is an edge connecting vertices v1 and v2, e is said to be incident to v1 and v2.	phylo_definition
+D]-0]{i4`_	Einfach	Archiv::Phylogenetik	adjacent	If e = {v1 , v2 } ∈ E is an edge connecting vertices v1 and v2, the two vertices v1 and v2 are adjacent.	phylo_definition
+Ppg;JM947t	Einfach	Archiv::Phylogenetik	path	A path is a sequence of nodes v<sub>1</sub> , v<sub>2</sub> , . . . , v<sub>n</sub> where v<sub>i</sub> and v<sub>i+1</sub> are connected by an edge for all i = 1, . . . , n − 1.	phylo_definition
+D)];LKiAH+	Einfach	Archiv::Phylogenetik	simple path	In a simple path all vertices except possibly the first and last are distinct.	phylo_definition
+E7Bsv<k^`%	Einfach	Archiv::Phylogenetik	simple cycle	A simple cycle is a simple path in which the first and last vertex are the same.	phylo_definition
+k&*UH>?=D2	Einfach	Archiv::Phylogenetik	acyclic	A graph without simple cycles is called acyclic.	phylo_definition
+rh$o|lx]J_	Einfach	Archiv::Phylogenetik	directed graph	A directed graph (digraph) is a pair G = (V, E), as for an undirected graph, but where now E ⊆ V × V .	phylo_definition
+"dO{`K:#5]b"	Einfach	Archiv::Phylogenetik	length of a tree	The length of a tree is the sum of all its edge lengths.	phylo_definition
+tN-3XN70@[	Einfach	Archiv::Phylogenetik	maximally acyclic	if any edge is added to E, the resulting graph contains a cycle.	phylo_definition
+oc(ablY!Qh	Einfach	Archiv::Phylogenetik	minimally connected	if any edge is removed from E, the resulting graph is disconnected.	phylo_definition
+e;$BKzkAk9	Einfach	Archiv::Phylogenetik	binary tree	An unrooted tree with degree three for all internal nodes is called a binary tree.	phylo_definition
+NMtr!!M{7D	Einfach	Archiv::Phylogenetik	rooted tree	A rooted tree is a tree in which one of the vertices is distinguished from the others and called the root. Rooting a tree induces a hierarchical relationship of the nodes and creates a directed graph, since rooting implies a direction for each edge (by definition always pointing away from the root).	phylo_definition
+GZi1D)`dI!	Einfach	Archiv::Phylogenetik	degree of a node in a rooted tree	the out-degree of that node	phylo_definition
+jdua<UNhGm	Einfach	Archiv::Phylogenetik	depth of node v	The depth of node v in a rooted tree is the length of the (unique) simple path from the root to v.	phylo_definition
+vbUw1JmUW3	Einfach	Archiv::Phylogenetik	depth of a tree T	The depth of a tree T is the maximum depth of all of Ts nodes.	phylo_definition
+P,.!b[o(}Z	Einfach	Archiv::Phylogenetik	width of a tree T	The width of a tree T is the maximal number of nodes in T with the same depth.	phylo_definition
+cSO@-@mp_J	Einfach	Archiv::Phylogenetik	lowest common ancestor	The lowest common ancestor (LCA), also called least, last or most recent common ancestor, of two (or more) given nodes is the deepest node that has all given nodes as descendents.	phylo_definition
+bE:JLT&_~.	Einfach	Archiv::Phylogenetik	LCA of a single node	The LCA of a single node is the node itself.	phylo_definition
+ko()!J7<Ap	Einfach	Archiv::Phylogenetik	polytomy	An internal node of a phylogenetic tree is described as a polytomy or multifurcation if (i) it is in a rooted tree and is linked to three or more child subtrees or (ii) it is in an unrooted tree and is attached to four or more branches.	phylo_definition
+wM=v%@KsV2	Einfach	Archiv::Phylogenetik	gene tree	when the species at the leaves of a phylogenetic tree are represented by genes	phylo_definition
+JjhYB`~7wS	Einfach	Archiv::Phylogenetik	homologous genes	Genes that&nbsp;originated from the same ancestral piece of DNA	phylo_definition
+d*Paj~0<G_	Einfach	Archiv::Phylogenetik	operational taxonomic unit (OTU)	The&nbsp;cluster of species that an internal node represents	phylo_definition
+L-4]ut9dyN	Einfach	Archiv::Phylogenetik	ortholog	Two genes are orthologs (or orthologous genes) if they descend from the same ancestor gene and their last common ancestor is a speciation event.	phylo_definition
+C{+m=}?N`6	Einfach	Archiv::Phylogenetik	paralog	Two genes are paralogs (paralogous genes) if they descend from the same ancestor gene and their last common ancestor is a duplication event.	phylo_definition
+c+4$GLU.>h	Einfach	Archiv::Phylogenetik	gene tree/species tree reconciliation (prooblem)	For a given species tree, a parsimonious way to fit the gene trees into it has to be found.	phylo_definition
+vO4+b.;$,O	Einfach	Archiv::Phylogenetik	LCA-approach	(a classical solution for the reconciliation problem)<br>For a given rooted binary gene tree G and a rooted binary species tree S, it outputs a minimal number of duplications necessary to reconcile G with S, where the duplications are as close to the leaves as possible.	phylo_definition
+L5|v*eE&l`	Einfach	Archiv::Phylogenetik	fully resolved tree	Trees that are not fully resolved (a.k.a. multifurcating trees) contain internal nodes with out degree of three or more.	phylo_definition
+r.:8JqGqF.	Einfach	Archiv::Phylogenetik	dendrogram	A special class of rooted weighted trees where each leaf has the same distance to the root	phylo_definition
+viFful`5i.	Einfach	Archiv::Phylogenetik	character	A character is a pair C = (λ, S) consisting of a property name λ and an arbitrary set S, where the elements of S are called character states.	phylo_definition
+HX}!yw%P.O	Einfach	Archiv::Phylogenetik	compatible (character with a tree)	C is compatible with T if all internal nodes of T can be labeled such that each character state induces one connected subtree.	phylo_definition
+v:b`c88exH	Einfach	Archiv::Phylogenetik	perfect phylogeny (PP)	Let K be a set of characters, and T be a tree with its leaves labeled with states for each character C ∈ K. Then T is called a perfect phylogeny (PP) for K if all characters C ∈ K are compatible with T .	phylo_definition
