@@ -1,0 +1,21 @@
+\usepackage{gidef}
+
+\newcommand{\Header}[2]{
+\AddressFrame{Dr.\ Roland Wittler} 
+             {}
+             {}
+  \begin{center}
+    \largeHV{Algorithmen der Bioinformatik}\\[2mm]
+    \largeHV{Sommersemester 2025}\\[5mm]
+    \largeHV{#1} \\[2mm]
+    \scriptsize{\texttt{Version #2}} \normalsize 
+  \end{center}}
+
+\newcommand{\Protokoll}[2]{%
+  \Header{Ausarbeitung #1}{#2}
+  }
+
+\newcommand{\Presentation}[1]{%
+  \Header{Hinweise zu Vortrag #1}}
+
+\pagestyle{empty}

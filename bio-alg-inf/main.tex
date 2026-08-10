@@ -1,0 +1,27 @@
+\input{preamble}
+\usepackage{subfiles} % Best loaded last in the preamble
+\begin{document}
+\tableofcontents 
+
+\chapter{How To read a scientific article (09.04)}
+\subfile{sections/section}
+\chapter{Pseudocode schreiben (16.04)}
+\subfile{sections/template_algo}
+\subfile{sections/pseudocode} 
+\chapter{Vortrag} 
+\subfile{sections/vortrag}
+\printglossary[type=vortrag]  
+
+\addcontentsline{toc}{section}{Sources}
+\printbibliography 
+\addcontentsline{toc}{section}{Index}
+\printindex
+\newpage
+\addcontentsline{toc}{section}{Glossary}
+\printglossary
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+\end{document}

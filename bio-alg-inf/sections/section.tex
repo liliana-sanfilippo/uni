@@ -1,0 +1,35 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\subsection{Begriffe}
+\begin{itemize}
+    \item \textbf{\glspl{k-mer}}: sind relevant für:
+\begin{itemize}
+    \item assembly
+    \item error correction
+    \item alignment mapping
+    \item genome comparison 
+    \item ...
+    \item \gls{Metagenomics}
+    \item \gls{Pangenomics}
+\end{itemize}
+    Benutzt für: 
+\begin{itemize}
+    \item connting
+    \item indexing
+    \item de bruijn Graphen 
+\end{itemize}
+\item \textbf{Canonical k-mers}: Wenn die Leserichtung unbekannt ist schaut man sich beide Richtungen an (das k-mer und das reverse Komplement) und nimmt eines davon als grundsätzlichen Repräsentanten des Paars (das ist dann das canonical). Canonical ist nach einem Kriterium ausgewählt, bspw. das was lexikographisch kleiner ist. 
+\item \textbf{Minimizer}: Wenn es zu viele k-mere gibt, macht man ein subsampling. \\
+Ds geht z.B durch : Man nimmt von den k-meren in einem w-langen Bereich der Sequenz das lexikographsich kleinste k-mer. Oder auch durch Bottom Sketch (kleinste x\% der k-mere).
+\end{itemize}  
+\begin{tipp}[title=Tipp]
+Man sollte das Velvet Paper für de Brujin auf jeden Fall lesen, weil die eine gute Erklärung für de Bruijn Grapgen haben, die in späteren Papers nicht nochmal so ausführlich gegeben wird.
+\end{tipp}
+Mein Thema: Minimizer-space de Bruijn graphs: Whole-genome assembly of long reads in minutes on a personal computer. \\
+
+
+
+
+
+ 
+\end{document}

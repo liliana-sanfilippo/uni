@@ -1,0 +1,50 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{Minimizer-space de Bruijn graphs: Whole-genome assembly of long reads in minutes on a personal computer.}
+\subsection{Eckdaten}
+\begin{itemize}
+    \item \textbf{Länge:} 20-45 min
+\end{itemize}  
+Ekim, Barış, Bonnie Berger, and Rayan Chikhi. “Minimizer-space de Bruijn graphs: Whole-genome assembly of long reads in minutes on a personal computer.” Cell systems 12.10 (\textbf{2021}): 958-968. 
+\subsection{Erarbeitung}
+\subsubsection{Was macht der überhaupt?} 
+\begin{itemize}
+    \item Whole-genome assembly 
+\end{itemize}
+\subsubsection{Wieso wurde der entwickelt?}  
+\begin{itemize}
+    \item DNA-Sequenzierung entwickelt sich weiter und die daraus entstehenden Reads werden länger und die zusammenzusetzen ist schwierig 
+    \begin{itemize}
+        \item DNA sequencing data continue to progress toward longer reads with increasingly lower sequencing error rates
+        \item High-throughput DNA sequencing
+    \end{itemize}
+    \item improvements in speed and memory usage for human genome assembly and metagenome assembly 
+    \begin{itemize}
+        \item achieves orders-of-magnitude improvement in both speed and memory usage over existing methods without compromising accuracy
+        \item It improves the efficiency of \gls{v:pgc}
+        \item here has traditionally been a trade-off between algorithmic efficiency and loss of information, at least during the initial sequence-processing steps
+    \end{itemize}
+\end{itemize} 
+\subsection{Was ist neu?}
+\begin{itemize}
+    \item \gls{v:mssa}
+    \item expanding the alphabet of DNA sequences to \gls{v:atomictokens} made of fixed-length words
+    \item  instead of building an assembly over sequence bases—the standard approach that for clarity we refer to as base space—newly performs assembly in \gls{v:minimizer space} and later converts it back to base-space assemblies 
+    \item Specifically, each read is initially converted to an ordered sequence of its \glspl{v:minimizer}
+\end{itemize}
+
+\subsubsection{Welche Datenstrukturen und Strategien benutzt er?}
+\subsubsection{Was macht er besser als andere?}
+\subsubsection{Was macht er schlechter als andere?}
+
+\subsubsection{Aufgekommene Fragen}
+\begin{itemize}
+    \item Wie ist es möglich aus Minimizern die ursprüngliche Sequenz wieder zu rekonstruieren? 
+    \item Werden Window-Minimizer oder globale Minimizer verwendet? 
+    
+    \item wie werden die Minimizer ausgesucht? 
+    
+    \item wie wird festgestellt, ob eine Sequenz high oder low errror ist? 
+\end{itemize}
+ 
+\end{document}

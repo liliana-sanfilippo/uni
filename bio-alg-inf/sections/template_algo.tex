@@ -1,0 +1,117 @@
+%\documentclass[a4paper,10pt]{scrartcl}
+
+%\usepackage[top=3cm, left=3cm, right=3cm]{geometry}
+\documentclass[main.tex]{subfiles}
+
+
+
+
+
+%=========================================================================================
+%=========================================================================================
+\begin{document}
+%=========================================================================================
+%=========================================================================================
+
+\begin{tipp}[title=Tipps]
+\begin{itemize}
+    \item In Latex!
+    \item möglichst an Mathematische Notationen halten
+    \item schön sschreiben, deswegen benutzen wir ja Latex! Also nicht x\_i sondern $x_i$
+    \item mit = aufpassen! Eher ":=" benutzen für Definitionen und für Folgerungen Pfeile 
+\end{itemize}
+\end{tipp}
+\section{Pseudo code}
+
+To present an algorithm, you can either first describe it in prose and then refer to a summary in pseudo code, or you first refer to the pseudo code, followed by an explanation of the comprised steps. 
+Algorithm~\ref{alg:hartigan} on page~\pageref{alg:hartigan} gives an example of pseudo code. 
+
+Note that all terms, data types and meanings of variables need to be clear -- either from the main text or specified in the pseudo code. For instance, write ``rooted tree $T$'' instead of just ``$T$''. Properly specify the input and output, even if you think it is clear from the main text, because often it is not, and even if so, pseudo code (like tables and figures) should be self-contained.
+
+You can point to individual lines or blocks composed of several lines. This is also useful when you discuss the run time complexity of an algorithm, e.g., the for-loop in lines~\ref{line:node}--\ref{line:node_end}.
+
+
+\paragraph{Level of detail.} Be only as detailed and technical as necessary to not obfuscate the procedure but still clarify all relevant aspects. 
+Whether a step needs to be broken into sub-steps often depends on the context. If  its implementation is not obvious or a naive implementation would ruin the overall run time, break it down. In particular, breaking down trivial things like the selection of a minimum from a list or summing up its values, would only hinder the reader to understand the algorithm. In such cases, use standard mathematical formalism, such as $\min\{\cdots\}$ or $\Sigma\cdots$. 
+
+\paragraph{Notation.} In general, when presenting algorithms, mathematical notation is preferable to programming notation, because it is standardized and commonly known by computer scientists. Feel free to combine it with prose, like in line~\ref{line:node} of Algorithm~\ref{alg:hartigan}. In particular, there is no need to use ascii-art such as ``\verb|x_i|'' rather than ``$x_i$'', or ``\verb|x*y|'' rather than ``$x\cdot y$''. Use ``$\leftarrow$'' for assignments to distinguish it from equality (``$=$'') or mathematical definitions (``$:=$''). The latter might only be needed to \emph{specify} a value but not to \emph{assign} it to any variable, see, e.g.\ line~\ref{line:node_end}.
+
+\begin{tipp}[title=Tipp]
+Zeilennummern braucht man immer! Sonst macht es wenig Sinn im Text auf eine bestimmte Zeile zu verweisen. 
+\end{tipp}
+\begin{algorithm}[ht]\DontPrintSemicolon%\SetLine
+ \caption{Fitch-Hartigan for Zero-One Instances}
+ \label{alg:hartigan}
+ 
+ %In- and output
+ \KwIn{A rooted tree $T=(V,E)$ with each leaf $l \in V$ labeled with $L(l) \subseteq \mathcal{C}$.}
+ \KwOut{A labeling $L$ with minimal Wagner parsimony weight $W(T,L)$.}
+
+ \ForEach{character $c\in\mathcal{C}$}{
+  \tcc{Bottom-up phase}
+  \ForEach{leaf $l$}{
+    $VU(l)\longleftarrow\{L_c(l)\}$\;
+    $VL(l)\longleftarrow\emptyset$\;
+  }
+  \ForEach{unlabeled node $u$ whose children $v_1,\ldots,v_{l(u)}$ are labeled}{
+   \lFor{$b\in\{0,1\}$}{$k(b)\longleftarrow|\{v_i\mid b \in VU(v_i)\}|$}
+   $K\longleftarrow\max\{k(0),k(1)\}$\label{line:max}\;
+   $VU(u)\longleftarrow\{b \mid k(b)=K\}$\;
+   $VL(u)\longleftarrow\{b \mid k(b)=K-1\}$\;
+  }
+  \tcc{Top-down refinement}
+  assign any $b \in VU(r)$ to the root node $r$: $L_c(r):=b$\;\label{line:root}
+  \ForEach{\label{line:node}unrefined node $v$ whose parent node $u$ is already refined to $L_c(u)=a$}{
+   refine the labeling of $v$ to $L_c(v)\longleftarrow b$, with any $b \in B(v,a)$: 
+   $B(v,a):=\left\{\begin{array}{ll}
+	 \{a\}           & \text{if }a \in VU(v),\\
+	 \{a\}\cup VU(v) & \text{if } a \in VL(v),\\
+	 VU(v)           & \text{otherwise.}
+    \end{array}\right.$\label{line:node_end} 
+  }
+ }
+\KwRet{$L$}
+\end{algorithm}
+
+\section{K-mer counting exercise}
+\begin{tipp}[title=Vorgehen]
+Wenn man in der Sequenz einem N begegnet, schmeißt man alle k-mere die das N enthalten weg und macht hinter dem N weiter. 
+\end{tipp}
+First, read in sequence and return all canonic k-mers of a sequence.
+\begin{algorithm}
+\caption{Reading in k-mers}
+\KwIn{A string of length $n$, an integer value for $k$}
+\KwOut{A list $L$ of all canonic $k$-mers contained in the input sequence}
+$L \longleftarrow \emptyset$\;
+$index \longleftarrow 0$\; 
+\While{$index < n-k$ \textit{(end of sequence not reached)}}{
+  $kmer_c \longleftarrow$ letters from position $index$ to $index+k$\;
+ \If{$kmer_c$ enthält Zeilenumbruch}{
+ Zeilen verbinden damit es weitergehen kann
+ }
+ \If{char "N" in $kmer_c$}{
+ $index \longleftarrow  index + (pos("N")$ in $kmer_c)$\;
+ } \Else{
+    Find canonic $k$-mer\;
+ $ index ++$\;
+ }
+ 
+ }
+ \KwRet{$L$}
+\end{algorithm}
+Oee rauch: 
+Leere Liste initialisieren, dann alle Zeilen durchgehen, enn es mit $>$ (Header Zeile) beginnt neues x leer initialisieren und das reverse Komplement xwelle sirekt mit leer initialisieren und zur nächsten Zeile springen. Sonst (wenn es eine Sequenzzeile ist) fpr jeden character: Wenn N,  dann mache x leer und mache xwelle auch leer und skippe zum nächsten character . Sonst append character zu x un dfüge komplement von c zu xwelle hinzu. Wenn l´die länge von X schon k ist, dann  ist min\{x, xwelle\} das kanonische kmer und man fügt das canonischt zur Liste hinzu. Dann löscht man in x und  xwelle den erste charcater und macht mit den Schleifen weiter, damit man nicht alles neu einlesen muss. 
+
+
+\begin{algorithm}
+ \caption{\backslash caption}
+ \KwIn{\backslash KwIn\{input\}}
+ \KwOut{ \backslash KwOut\{output\}}
+ \KwData{\backslash KwData\{data input \}}
+ \KwResult{\backslash KwResult\{data output\}}
+ 
+\end{algorithm}
+
+
+\end{document}
+

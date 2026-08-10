@@ -1,0 +1,275 @@
+\documentclass{book}
+\usepackage[a4paper,left=20mm,top=20mm,bottom=20mm]{geometry}
+\usepackage[T1]{fontenc}
+% NAME 
+\title{Genomforschung}
+\author{Lil'Jana}
+\date{WS 24/25}
+% IMAGES AND FIGURES 
+\usepackage{float}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{caption}
+\usepackage{subcaption}
+% COLORS 
+\usepackage{xcolor}
+\definecolor{accdark}{HTML}{102542}
+\definecolor{accdarklight}{HTML}{204983}
+\definecolor{acclight}{HTML}{FFCB77}
+\definecolor{bck}{HTML}{fcfffc}
+\definecolor{urgent}{HTML}{A02C3C}
+\definecolor{colorthree}{HTML}{107E7D}
+\definecolor{colorfour}{HTML}{105260}
+\definecolor{myred}{HTML}{af5655}
+\definecolor{mygreen}{HTML}{377771}
+\definecolor{myblue}{HTML}{164254}
+\definecolor{myyellow}{HTML}{D5BF86}
+\definecolor{mygray}{HTML}{8AA1B1}
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{bckdarker}{HTML}{dfeedf}
+\definecolor{urgentlight}{HTML}{CF4F60}
+\definecolor{colortwo}{HTML}{3AB09E}
+\definecolor{codebg}{HTML}{1f1f1f}
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+%%
+\definecolor{grays}{HTML}{4F646F}
+\definecolor{blush}{HTML}{EA638C}
+\definecolor{reds}{HTML}{7D1D3F}
+\definecolor{ash}{HTML}{AEB4A9}
+\definecolor{blues}{HTML}{2C4251}
+\definecolor{purp}{HTML}{850F78}
+\definecolor{orang}{HTML}{F59121}
+\definecolor{yello}{HTML}{fae99e}
+% MATH & SYMBOLS
+\usepackage{textcmds}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nomencl}
+\usepackage[normalem]{ulem}
+% LINKS
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accdarklight,
+    filecolor=colorthree,      
+    urlcolor=acclight,
+    pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+\usepackage{cleveref} 
+% LISTS
+\usepackage{enumitem}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+% COLUMNS
+\usepackage{multicol}
+% BIBTEX 
+\usepackage{biblatex}
+\addbibresource{sources.bib}
+% INDEX 
+\usepackage{makeidx}
+\makeindex
+% POSITIONING
+\usepackage{float}
+% Glossary 
+\usepackage[automake]{glossaries}
+\glsaddkey{genitiv}% key
+ {}% default value
+ {\glsgenT}% no link cs
+ {\GlsgenT}% no link ucfirst cs
+ {\glsgen}% link cs
+ {\Glsgen}% link ucfirst cs
+ {\GLSgen}% link all caps cs
+\newglossary*{vortrag}{Begriffe}
+\makeglossaries
+\loadglsentries{gloss}
+\loadglsentries{vortragsgloss}
+% QUOTES 
+\usepackage{epigraph}
+\usepackage{quoting, lipsum}
+% CODE
+\usepackage{soul} % Für das Highlighting
+\usepackage{listings} % Für verbatim Code mit Highlighting
+\lstdefinelanguage{TypeScript}{
+   keywords={any, boolean, number, string, void, null, undefined, never, object, if, else, switch, case, console, log, default, for, while, do, break, continue, function, PartsTable, className, constructor, public, private, protected, static, readonly, get, set, class, render, interface, Type, Array, extends, implements, enum, namespace, module, try, Part, catch, finally, key, map, throw, as, from, instanceof, in, typeof, let, const, async,TwoHorizontal, BasicParts, await, this, super, yield, with, HPLinktoOtherHPTab, OurLink},
+   keywordstyle=\color{colortwo}\bfseries,
+   ndkeywords={export, boolean, throw, implements, alert, Error, return, import, this},
+   ndkeywordstyle=\color{urgentlight}\bfseries,
+   identifierstyle=\color{white},
+   sensitive=true,
+   comment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   commentstyle=\color{bckdarker}\ttfamily,
+   stringstyle=\color{acclight}\ttfamily,
+   morestring=[b]',
+   morestring=[b]"
+}
+\lstdefinelanguage{HTML}{
+   basicstyle=\ttfamily,
+   keywords={html, title, meta, head, body, script, canvas, mark, b, div, span, blockquote, em, i, p, strong, img, h1, h2, h3, h4, h5, h6, a, hr, br, q, sub, sup, details, summary, ul, ol, li},
+   keywordstyle=\color{accdarklight}\bfseries,
+   ndkeywords={href, src, target, cite, alt, style, class},
+   otherkeywords={<, >, \/}, 
+   ndkeywordstyle=\color{urgentlight}\bfseries,
+   identifierstyle=\color{black},
+   sensitive=true,
+   comment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   commentstyle=\color{bckdarker}\ttfamily,
+   stringstyle=\color{colorthree}\ttfamily,
+   morestring=[b]',
+   morestring=[b]"
+}
+\lstset{
+   language=TypeScript,
+   extendedchars=true,
+   basicstyle=\color{white}\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=none,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+% COMMANDS
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\colorbox{lightgray}{\oldtexttt{#1}}}
+\newcommand{\head}[1]{\noindent \textbf{#1} \newline  }
+\newcommand{\platz}{\newline \newline \newline \newline}
+\newcommand{\testhead}[1]{\noindent \textbf{#1} \newline \newline \newline \newline \newline }
+\newcommand{\testheadnote}[2]{\noindent \textbf{#1} \texit{#2} \newline \newline \newline \newline \newline }
+\newcommand{\einschub}[1]{\setlength\parindent{#1}}
+\newcommand{\abstand}{\hspace{1cm}}
+\newcommand{\nii}{\newline \newline}
+\newcommand{\niv}{\newline \newline \newline \newline}
+\newcommand{\angaben}[2]{M(#1) = #2 g/mol}
+\newcommand{\angabenH}[2]{H°(#1) = #2 kj/mol}
+% BOXES 
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\tcbset{my box/.style={ 
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west) {};
+        
+      }
+    }
+  }
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=rose-d,
+    coltitle=white, colbacktitle=rose,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west) {};
+        
+      }
+    }
+  }
+}
+\tcbset{blue box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=accdarklight,
+    coltitle=white, colbacktitle=accdark,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west) {};
+        
+      }
+    }
+  }
+}
+\newtcolorbox{mybox}[1][]{blue box, #1}
+\newtcolorbox{tipp}[1][Tipp]{my box, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+
+% OTHER
+\setcounter{tocdepth}{2}
+
+% HEADER
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{SoSe 2025}
+\chead{}
+\rhead{\fcolorbox{reds}{urgent}{
+        \footnotesize\bfseries{\makebox[22em]
+        {\color{white} K-mer basierte Algorithmen in der Bioinformatik}}}%
+}
+\renewcommand{\headrulewidth}{1pt}
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{reds}}{}{\PatchFailed}
+% THEOREM 
+\newtcbtheorem[number within=section]{Theorem}{}{
+        enhanced,
+        sharp corners,
+        attach boxed title to top left={
+            xshift=-1mm,
+            yshift=-5mm,
+            yshifttext=-1mm
+        },
+        top=1.5em,
+        colback=white,
+        colframe=blush,
+        fonttitle=\bfseries,
+        boxed title style={
+            sharp corners,
+            size=small,
+            colback=blush,
+            colframe=blush,
+        } 
+    }{thm}
+
+\newtcbtheorem[number within=section]{Definition}{}{
+        enhanced,
+        sharp corners,
+        attach boxed title to top left={
+            xshift=-1mm,
+            yshift=-5mm,
+            yshifttext=-1mm
+        },
+        top=1.5em,
+        colback=white,
+        colframe=ash,
+        fonttitle=\bfseries,
+        boxed title style={
+            sharp corners,
+            size=small,
+            colback=ash,
+            colframe=ash,
+        } 
+    }{def}
+
+\newenvironment{myTheorem}[2]{ \begin{Theorem}[adjusted title=#1]{}{#2} 
+  }{\end{Theorem}}
+
+  \newenvironment{myDefinition}[2]{ \begin{Definition}[adjusted title=#1]{}{#2} }{\end{Definition}}
+
+
+%\usepackage[latin1]{inputenc}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage{t1enc}
+\usepackage{times}
+
+%Pseudocode
+\usepackage[ruled,linesnumbered,nofillcomment,vlined]{algorithm2e}

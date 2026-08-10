@@ -1,0 +1,57 @@
+\usepackage[german]{babel}
+
+\setlength{\topmargin}{-1.5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24.0cm}
+
+\def\Width{165}
+\unitlength1mm
+\parskip5pt
+\parindent0pt
+
+\newcommand{\ubfont}{\fontfamily{phv}\fontseries{b}\selectfont}
+\newcommand{\adfont}{\fontfamily{phv}\selectfont}
+\newcommand{\LargeHV}[1]{{\Large \ubfont #1}}
+\newcommand{\largeHV}[1]{{\large \ubfont #1}}
+\newcommand{\scriptHV}[1]{{\scriptsize \adfont #1}}
+\newcommand{\normalHV}[1]{{\adfont #1}}
+
+\newcommand{\AddressFrame}[3]{
+  \count1=35 %Height
+  \count2=\Width %Width
+  \divide \count2 by -2
+  \count3=-23  %Ypos
+  %Arg1: rechts oben erste Zeile
+  %Arg2: rechts oben zweite Zeile
+  %Arg3: rechts oben dritte Zeile
+  \begin{center}
+  \begin{picture}(0,0)
+  %Folgendes Kommando erzeugt einen Rahmen
+  %\put(\count2,\count3){\framebox(\Width,\count1)[t]{}}
+  \put(\count2,\count3){\makebox(\Width,\count1)[lt]{
+    \begin{tabular}{@{}l@{}}
+      \largeHV{Universität Bielefeld}\\
+      \largeHV{Technische Fakultät}\\
+      \largeHV{Genominformatik}
+    \end{tabular}}}
+  \put(\count2,\count3){\makebox(\Width,\count1)[rt]{
+    \begin{tabular}{@{}r@{}}
+      \largeHV{#1}\\
+      \largeHV{#2}\\
+      \largeHV{#3}
+    \end{tabular}}}
+  \end{picture}
+  \end{center}
+  \rule{0em}{2ex}
+  }
+
+\newcommand{\VortragGI}[1]{
+  \AddressFrame{AG Genominformatik}{Prof.\ Dr.\ Jens Stoye}{}
+  \begin{center}
+    \largeHV{Vortragsankündigung}
+  \end{center}}
+
+\pagestyle{empty}
+

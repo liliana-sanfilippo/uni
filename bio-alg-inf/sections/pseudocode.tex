@@ -1,0 +1,54 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\begin{algorithm}
+\caption{Reading in k-mers - k-mer counting exercise}
+\KwIn{A multiple fasta file $file$, an integer value for $k$, a threshold $c$}
+\KwOut{number of all canonic $k$-mers contained in the input sequences}
+$L \longleftarrow \emptyset$\  \tcc*[r]{initialize empty list}
+$kmer_{comp} \longleftarrow$ "" \ \tcc*[r]{initialize complementary $k$-mer}
+$kmer \longleftarrow$ "" \ \tcc*[r]{initialize $k$-mer}
+$hashmap(key, value) \longleftarrow \emptyset$ \  \tcc*[r]{for the Threshold}
+\ForEach{$line$ in $file$}{
+    \If(\tcc*[h]{if a new sequence begins}){$line$ contains "$>$"}{ 
+         $kmer_{comp} \longleftarrow$ "" \;
+            $kmer \longleftarrow$ "" \;
+    } \Else{
+        \ForEach{Character $char$ in $line$}{
+        $char\longleftarrow uppercase(char)$    \;
+            \If(\tcc*[h]{"N" in kmer}){$char = "N"$}{
+                $kmer_{comp} \longleftarrow$ "" \;
+                $kmer \longleftarrow$ ""\; 
+            } \Else{
+            $kmer$  append $char$ \;
+                    $kmer_{comp}$ prepend complement of $char$ \;
+                \If{$length(kmer) = k$}{
+%DONE Zeichen direkt zu uppercase machen statt jedes kmer
+                    $canon \longleftarrow  min\{kmer_{comp}, kmer\}$ \;  
+                    \If(\tcc*[h]{if kmer already in hasmap}){exists $hashmap[canon]$}{
+                        $old \longleftarrow hashmap[canon]$ \; 
+                        $hashmap[canon] = old+1$\   \tcc*[r]{update count}
+                    }
+                    \Else(\tcc*[h]{otherwise add with count 1}){
+                        $hasmap[canon] = 1$
+                    }
+% DONE Hashmap H[key] statt add dieses Ding 
+% DONE Wenn old noch nicht existiert, muss man den erstellen!
+                    \If( \tcc*[h]{if Threshold reached}){$hashmap[canon] = c$}{
+                        $L$ add $canon$ \  
+                    }
+                    $kmer$ remove first element \;
+                    $kmer_{comp}$ remove last element\;
+                }
+% DONE Remove nur wenn es schon die Läneg k hat 
+                   
+% DONE Reverses Komlement: da muss es imme rvorne dran gehängt werden 
+            }
+        }
+    }
+}
+% DONE Nur Englisch statt Eng-Deu 
+\KwRet{$length(L)$}
+% DONE Länge der Liste zurück geben 
+\end{algorithm}
+
+\end{document}

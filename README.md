@@ -12,6 +12,8 @@ them, thank you.
 
 - **Algorithmen der Informatik** (irgendwann mal)
   - [Lernzettel](https://liliana-sanfilippo.github.io/uni/AlgoInf.pdf)
+- **Algorithms in Bioinformatics**
+  - Notizen liegen vor (bio-alg-inf)
 - **Allgemeine Chemie für das Nebenfach**
   - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/allgemeine-chemie)
 - **Analyse von Postgenomdatensätzen** (SS2026)
