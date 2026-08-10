@@ -1,0 +1,35 @@
+\input{preamble}
+
+\begin{document} 
+
+\maketitle
+\tableofcontents
+\newpage
+
+%% TODO
+% E-R-Modell Abschnitt aus Intro woanders 
+
+\section{Einführung}  \label{sec:intro}
+\input{sections/intro}
+\newpage
+\section{E-R-Modell}  \label{sec:ermod}
+\input{sections/er}
+\newpage
+%\section{Klausurenanlyse unfertig}
+%\input{sections/klausurenanaylse}
+\addcontentsline{toc}{section}{References}
+\printbibliography
+\newpage
+\addcontentsline{toc}{section}{Glossary} 
+\printglossary
+\newpage
+\addcontentsline{toc}{section}{Index}
+\printindex
+\newpage
+\addcontentsline{toc}{section}{Code Listing}
+\lstlistoflistings
+\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+\end{document}

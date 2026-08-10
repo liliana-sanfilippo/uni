@@ -14,8 +14,9 @@ them, thank you.
   - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/allgemeine-chemie)
 - **Analyse von Postgenomdatensätzen** (SS2026)
   - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/pgd)
-- **Datenbanken** (WS 2025/26)
+- **Datenbanken** (WS 2025/26 und WS 2024/25)
   - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/datenbanken/Datenbanken.txt)
+  - Skript-Aufarbeitung mal begonnen, aber nie weiter gemacht. Feel free. 
 - **Diskrete Mathematik** (WS 2025/26 und WS 2024/25)
   - [Diskrete Mathematik Skript und Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/Diskrete_Mathematik.pdf)
   - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/diskrete-mathematik/DiskreteMathematik.txt)
