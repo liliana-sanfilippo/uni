@@ -1,167 +1,65 @@
-# Links
+I believe in making notes and learning materials permanently available to other students, especially since not every 
+teacher provides scripts or further learning materials. 
+
+These materials are not always complete. I welcome other people wanting to collaborate. 
+
+Do not use these materials to cheat or falsely pretend they are your own or do other academically fraudy things with 
+them, thank you. 
+
+# Links / Overview
 
 ## Module
 
-- **Statistik und Wahrscheinlichkeitstheorie** (SS2026, Teile aus SS2025)
-    - [Statistik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/statistik.pdf) (inkl. Aufgaben und
-      Lösungen, Karteikarten und so)
+- **Analyse von Postgenomdatensätzen** (SS2026)
+  - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/pgd)
+- **Eukaryotengentik** (SS2026)
+    - [Eukaryotengentik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/eukgen.pdf)
+    - [Karteikarten und Definitionen in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/eukgen/glossary) (weitere 
+      in bio_gloss.tex)
+    - [Bilder](https://github.com/liliana-sanfilippo/uni/tree/main/eukgen/images)
+    - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Eukaryotengenetik)
+- **Grundlagen Molekularer Biologie 2** (SS2026)
+    - [Grundlagen Molekularer Biologie 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/mobi2.pdf)
+    - [Karteikarten und Definitionen in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/mobi2/glossary) (weitere
+      in bio_gloss.tex)
+    - [Bilder](https://github.com/liliana-sanfilippo/uni/tree/main/mobi2/bilder)
+    - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/MoBi-2)
+- **Grundlagen Theoretischer Informatik** (SS2026)
+    - [Grundlagen Theoretischer Informatik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/gti.pdf)
+    - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Grundlagen-theoretischer-Informatik)
+    - TODO: Klausurzettel uploaden
+- **Knowledge Representation** (SS2026)
+    - [Knowledge Representation Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf)
+    - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Knowledge-Representation)
+- **Phylogenetik** (WS 2025/26)
+  - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik)
 - **Sequenzanalyse 2** (SS2026)
     - [Sequenzanalyse 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/seq-an-2.pdf)
     - [Nussinov Visualisierung](https://liliana-sanfilippo.github.io/uni/nussinov.html)
     - [Hirschberg Visualisierung](https://liliana-sanfilippo.github.io/uni/hirschberg.html)
     - [Sellers VS Ukkonen Visualisierung](https://liliana-sanfilippo.github.io/uni/sellers_ukkonen.html)
-    - [Ukkonen Visualisierung mit Pseudocode-Schritten](https://liliana-sanfilippo.github.io/uni/ukkonen_pseudocode.html) (
-      dauert länger)
+    - [Ukkonen Visualisierung mit Pseudocode-Schritten](https://liliana-sanfilippo.github.io/uni/ukkonen_pseudocode.html) (dauert länger)
+    - [Center-Star Visualisierung](https://liliana-sanfilippo.github.io/uni/center_star.html)
+    - [DCA Visualisierung](https://liliana-sanfilippo.github.io/uni/dca_pseudocode.html)
     - [Karteikarten in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/seq-an-2/karteikarten)
-- **Knowledge Representation** (SS2026)
-    - [Knowledge Representation Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf)
-- **Grundlagen Theoretischer Informatik** (SS2026)
-    - [Grundlagen Theoretischer Informatik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/gti.pdf)
-- **Eukaryotengentik** (SS2026)
-    - [Eukaryotengentik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/eukgen.pdf)
-- **Grundlagen Molekularer Biologie 2** (SS2026)
-    - [Grundlagen Molekularer Biologie 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/mobi2.pdf)
-- **Analyse von Postgenomdatensätzen** (SS2026)
+    - [Maximal Matches Distanz Visualisierung](https://liliana-sanfilippo.github.io/uni/mmd.html)
+    - [q-gram ranking Visualisierung](https://liliana-sanfilippo.github.io/uni/qgram_ranking.html)
+    - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/seq-an-2/aufgaben)
+    - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Sequenzanalyse-2)
+- **Statistik und Wahrscheinlichkeitstheorie** (SS2026, Teile aus SS2025)
+    - [Statistik Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/statistik.pdf) (inkl. Aufgaben und
+      Lösungen, Karteikarten und so)
+    - [Karteikarten in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/statistik/karteikarten)
+    - IN ARBEIT: Interaktiver Schlüssel, damit man lernt wie man bei Aufgaben vorgehen muss
+    - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Statistik-und-Wahrscheinlickeitstheorie)
+
 
 ## Weiteres
 
 - [Skript Latex-Karteikarten zu Anki-Karteikarten](https://github.com/liliana-sanfilippo/uni/blob/main/anki-sync/latex_glossary_to_anki.py)
+- [All SVGs I created or adapted]()
 
-# Vollständigkeit
 
-:white_check_mark: - fertig
+# Todos
 
-:ballot_box_with_check: - da, aber muss noch überprüft werden
-
-:construction: - in Arbeit
-
-:red_square: - nicht begonnen
-
-:black_square_button: - war noch nicht
-
-:white_medium_square: - wird auch nicht mehr
-
-## Statistik SoSe 2026
-
-| Woche | Vorlesung  | In Notizen                                | Thema                              | In Karteikarten         | Tutorium   | In Notizen              | Übung (Abgabe) | In Notizen   |
-|-------|------------|-------------------------------------------|------------------------------------|-------------------------|------------|-------------------------|----------------|--------------|
-| KW 16 | Fr, 17.04. | :white_check_mark:                        | Modellieren zufälliger Ereignisse  | :ballot_box_with_check: | --         | --                      | --             | --           |
-| KW 17 | Fr, 24.04. | :ballot_box_with_check:                   | Rechnen mit Wahrscheinlichkeiten   | :ballot_box_with_check: | Mo, 20.04. | :red_square:            | Fr, 24.04.     | :red_square: |
-| KW 18 | --         | --                                        |                                    | --                      | Mo, 27.04. | :ballot_box_with_check: | Fr, 01.05.     | :red_square: |
-| KW 19 | Fr, 08.05. | :ballot_box_with_check:                   | ZV und ihre Verteilung             | :red_square:            | Mo, 04.05. | :construction:          | Fr, 08.05.     | :red_square: |
-| KW 20 | Fr, 15.05. | :construction:  (fast fertig, bsp fehlen) | Unabhängigkeit von Ereignissen     | :construction:          | Mo, 11.05. | :red_square:            | Fr, 15.05.     | :red_square: |
-| KW 21 | Fr, 22.05. | :ballot_box_with_check:                   | Unabhängigkeit von ZV              | :ballot_box_with_check: | Mo, 18.05. | :red_square:            | Fr, 22.05.     | :red_square: |
-| KW 22 | Fr, 29.05. | :construction: (glaube fertig)            | Bedingte WS                        | :red_square:            | Mo, --     | --                      | Fr, 29.05.     | :red_square: |
-| KW 23 | Fr, 05.06. | :ballot_box_with_check:                   | Erwartungswert und Varianz von ZV  | :ballot_box_with_check: | Mo, 01.06. | :construction:          | Fr, 05.06.     | :red_square: |
-| KW 24 | Fr, 12.06. | :ballot_box_with_check:                   | Grenzwertsätze                     | :ballot_box_with_check: | Mo, 08.06. | :red_square:            | Fr, 12.06.     | :red_square: |
-| KW 25 | Fr, 19.06. | :ballot_box_with_check:                   | Grenzwertsätze (Fortsetzung)       | :ballot_box_with_check: | Mo, 15.06. | :construction:          | Fr, 19.06.     | :red_square: |
-| KW 26 | Fr, 26.06. | :ballot_box_with_check:                   | Statistik                          | :ballot_box_with_check: | Mo, 22.06. | :construction:          | Fr, 26.06.     | :red_square: |
-| KW 27 | Fr, 03.07. | :construction: (glaube fertig)            | Punktschätzer (Fortsetzung)        | :construction:          | Mo, 29.06. | :red_square:            | Fr, 03.07.     | :red_square: |
-| KW 28 | Fr, 10.07. | :construction: (glaube fertig)            | Testen von Hypothesen              | :red_square:            | Mo, 06.07. | :red_square:            | Fr, 10.07.     | :red_square: |
-| KW 29 | Fr, 17.07. | --                                        | --                                 | --                      | Mo, 13.07. | :construction:          | Fr, 17.07.     | :red_square: |
-| KW 30 | Fr, 24.07. | :red_square:                              | Vorbereitung Klausur Statistikteil | :red_square:            | Mo, 20.07. | :red_square:            | Fr, 24.07.     | :red_square: |
-
-| Abschnitt Skript | In Notizen         | 
-|------------------|--------------------|
-| 1                | :white_check_mark: |
-| 2                | :white_check_mark: |
-| 3                | :white_check_mark: |
-
-## MoBi 2 SoSe 2026
-
-| Woche | Vorlesung 1 | In Notizen     | In Karteikarten | Vorlesung 2 | In Notizen     | In Karteikarten |
-|-------|-------------|----------------|-----------------|-------------|----------------|-----------------|
-| KW 16 | Mo, 13.04.  | :construction: |                 | Di, 14.04.  | :construction: |                 |
-| KW 17 | Mo, 20.04.  | :construction: |                 | Di, 21.04.  | :construction: |                 |
-| KW 18 | Mo, 27.04.  | :construction: |                 | Di, 28.04.  | :construction: |                 |
-| KW 19 | Mo, 04.05.  | :construction: |                 | Di, 05.05.  | :red_square:   |                 |
-| KW 20 | Mo, 11.05.  | :construction: |                 | Di, 12.05.  | :construction: |                 |
-| KW 21 | Mo, 18.05.  | :red_square:   |                 | Di, 19.05.  | :construction: |                 |
-| KW 22 | --          | --             |                 | Di, 26.05.  | :red_square:   |                 |
-| KW 23 | Mo, 01.06.  | :red_square:   |                 | Di, 02.06.  | :red_square:   |                 |
-| KW 24 | Mo, 08.06.  | :red_square:   |                 | Di, 09.06.  | :red_square:   |                 |
-| KW 25 | Mo, 15.06.  | :red_square:   |                 | Di, 16.06.  | :red_square:   |                 |
-| KW 26 | Mo, 22.06.  | :red_square:   |                 | Di, 23.06.  | :red_square:   |                 |
-| KW 27 | Mo, 29.06.  | :red_square:   |                 | Di, 30.06.  | :red_square:   |                 |
-| KW 28 | Mo, 06.07.  | :red_square:   |                 | Di, 07.07.  | :red_square:   |                 |
-| KW 29 | Mo, 13.07.  | :red_square:   |                 | Di, 14.07.  | :red_square:   |                 |
-| KW 30 | Mo, 20.07.  | :red_square:   |                 | Di, 21.07.  | :red_square:   |                 |
-
-## Knowledge Representation SoSe 2026
-
-| Woche | Vorlesung  | In Notizen              | In Karteikarten | Übung      | In Notizen   | Abgabe     | In Notizen   |
-|-------|------------|-------------------------|-----------------|------------|--------------|------------|--------------|
-| KW 16 | Di, 14.04. | :ballot_box_with_check: |                 | --         | --           | --         | --           |
-| KW 17 | --         | --                      | --              | --         | --           | --         | --           |
-| KW 18 | Di, 28.04. | :construction:          |                 | --         | --           | Fr, 08.05. | :red_square: |
-| KW 19 | Di, 05.05. | :construction:          |                 | Di, 05.05. | :red_square: | --         | --           |
-| KW 20 | Di, 12.05. | :construction:          |                 | Di, 12.05. | :red_square: | --         | --           |
-| KW 21 | Di, 19.05. | :construction:          |                 | Di, 19.05. | :red_square: | Fr, 22.05. | :red_square: |
-| KW 22 | Di, 26.05. | :construction:          |                 | Di, 26.05. | :red_square: | --         | --           |
-| KW 23 | Di, 02.06. | :construction:          |                 | Di, 02.06. | :red_square: | Fr, 05.06. | :red_square: |
-| KW 24 | Di, 09.06. | :construction:          |                 | Di, 09.06. | :red_square: | --         | --           |
-| KW 25 | Di, 16.06. | :construction:          |                 | Di, 16.06. | :red_square: | Fr, 19.06. | :red_square: |
-| KW 26 | Di, 23.06. | :red_square:            |                 | Di, 23.06. | :red_square: | --         | --           |
-| KW 27 | Di, 30.06. | :red_square:            |                 | Di, 30.06. | :red_square: | --         | --           |
-| KW 28 | Di, 07.07. | :red_square:            |                 | Di, 07.07. | :red_square: | --         | --           |
-| KW 29 | Di, 14.07. | :red_square:            |                 | Di, 14.07. | :red_square: | --         | --           |
-| KW 30 | Di, 21.07. | :red_square:            |                 | Di, 21.07. | :red_square: | --         | --           |
-
-## Grundlagen theoretischer Informatik SoSe 2026
-
-| Woche | Vorlesung Mi | In Notizen     | In Karteikarten | Vorlesung Do | In Notizen     | In Karteikarten | Abgabe     | In Notizen |
-|-------|--------------|----------------|-----------------|--------------|----------------|-----------------|------------|------------|
-| KW 16 | Mi, 15.04.   | :construction: |                 | Do, 16.04.   | :construction: |                 | --         | --         |
-| KW 17 | Mi, 22.04.   | :construction: |                 | --           | --             | --              | --         | --         |
-| KW 18 | Mi, 29.04.   | :construction: |                 | Do, 30.04.   | :construction: |                 | Mi, 06.05. |            |
-| KW 19 | Mi, 06.05.   | :red_square:   |                 | --           | --             | --              | --         | --         |
-| KW 20 | Mi, 13.05.   | :red_square:   |                 | Do, 14.05.   | :red_square:   |                 | Mi, 20.05. |            |
-| KW 21 | Mi, 20.05.   | :red_square:   |                 | --           | --             | --              | --         | --         |
-| KW 22 | Mi, 27.05.   | :red_square:   |                 | Do, 28.05.   | :red_square:   |                 | Mi, 03.06. |            |
-| KW 23 | Mi, 03.06.   | :red_square:   |                 | --           | --             | --              | --         | --         |
-| KW 24 | Mi, 10.06.   | :red_square:   |                 | Do, 11.06.   | :red_square:   |                 | Mi, 17.06. |            |
-| KW 25 | Mi, 17.06.   | :red_square:   |                 | --           | --             | --              | --         | --         |
-| KW 26 | Mi, 24.06.   | :red_square:   |                 | Do, 25.06.   | :red_square:   |                 | Mi, 01.07. |            |
-| KW 27 | Mi, 01.07.   | :red_square:   |                 | --           | --             | --              | --         | --         |
-| KW 28 | Mi, 08.07.   | :red_square:   |                 | Do, 09.07.   | :red_square:   |                 | Mi, 15.07. |            |
-| KW 29 | Mi, 15.07.   | :red_square:   |                 | --           | --             | --              | --         | --         |
-| KW 30 | Mi, 22.07.   | :red_square:   |                 | Do, 23.07.   | :red_square:   |                 | Mi, 29.07. |            |
-
-## Sequenzanalyse 2 SoSe 2026
-
-| Woche | Vorlesung  | In Notizen              | In Karteikarten | Übung      | In Notizen   | Abgabe     | In Notizen    |
-|-------|------------|-------------------------|-----------------|------------|--------------|------------|---------------|
-| KW 16 | Do, 16.04. | :ballot_box_with_check: | :construction:  | Do, 16.04. |              | Do, 30.04. |               |
-| KW 17 | Do, 23.04. | :ballot_box_with_check: | :construction:  | Do, 23.04. |              | Do, 07.05. |               |
-| KW 18 | Do, 30.04. | :ballot_box_with_check: | :construction:  | --         | --           | Do, 14.05. |               |
-| KW 19 | Do, 07.05. | :ballot_box_with_check: | :construction:  | Do, 07.05. |              | Do, 21.05. |               |
-| KW 20 | --         | --                      | --              | --         | --           | --         | --            |
-| KW 21 | Do, 21.05. | :ballot_box_with_check: | :construction:  | Do, 21.05. |              | Do, 28.05. | :red_square:  |
-| KW 22 | Do, 28.05. | :ballot_box_with_check: | :construction:  | Do, 28.05. | :red_square: | --         | --            |
-| KW 23 | --         | --                      | --              | --         | --           | --         |               |
-| KW 24 | Do, 11.06. | :ballot_box_with_check: | :construction:  | Do, 11.06. | :red_square: | Do, 18.06. | :red_square:  |
-| KW 25 | Do, 18.06. | :ballot_box_with_check: | :construction:  | Do, 18.06. | :red_square: | --         | --            |
-| KW 26 | Do, 25.06. | :ballot_box_with_check: | :construction:  | Do, 25.06. | :red_square: | Do, 02.07. | :red_square:  |
-| KW 27 | Do, 02.07. | :ballot_box_with_check: | :construction:  | Do, 02.07. | :red_square: | Do, 09.07. | :red_square:  |
-| KW 28 | Do, 09.07. | :ballot_box_with_check: | :construction:  | Do, 09.07. | :red_square: | Do, 16.07. | :red_square : |
-| KW 29 | Do, 16.07. | ??                      | ??              | Do, 16.07. | :red_square: | Do, 23.07. | :red_square:  |
-
-## Eukaryotengenetik SoSe 2026
-
-| Nr. | Woche | Vorlesung (Do) | In Notizen (Do)            | In Karteikarten (Do)    | Vorlesung (Mi) | In Notizen (Mi)                | In Karteikarten (Mi) |
-|-----|-------|----------------|----------------------------|-------------------------|----------------|--------------------------------|----------------------|
-| 1   | KW 16 | Do, 16.04.     | :ballot_box_with_check:    | :ballot_box_with_check: | --             | --                             | --                   |
-| 2   | KW 17 | Do, 23.04.     | :ballot_box_with_check:    | :ballot_box_with_check: | --             | --                             | --                   |
-| 3   | KW 18 | Do, 30.04.     | :ballot_box_with_check:    | :ballot_box_with_check: | --             | --                             | --                   |
-| 4   | KW 19 | Do, 07.05.     | :ballot_box_with_check:    | :ballot_box_with_check: | --             | --               --            |
-| -   | KW 20 | --             | --                         |                         | --             | --                             | --                   |
-| 5   | KW 21 | Do, 21.05.     | :ballot_box_with_check:    | :construction:          | --             | --                             | --                   |
-| 6   | KW 22 | Do, 28.05.     | :ballot_box_with_check: ** |                         | --             | --                             | --                   |
-| 7   | KW 23 | --             | --                         | --                      | Mi, 03.06.     | :construction: (viel fehlt)    |                      |
-| 8   | KW 24 | --             | --                         |                         | Mi, 10.06.     | :construction: (bisschen; 296) |                      |
-| 9   | KW 25 | --             | --                         |                         | Mi, 17.06.     | :construction: (vorlesung)     |                      |
-| 10  | KW 26 | --             | --                         |                         | Mi, 24.06.     | :construction: (ca hälfte)     |                      |
-| 11  | KW 27 | --             | --                         |                         | Mi, 01.07.     | :ballot_box_with_check: **     |                      |
-| 12  | KW 28 | --             | --                         |                         | Mi, 08.07.     | :ballot_box_with_check: **     |                      |
-
-* Aufgaben in Statistik bewerten danach, was für Konzepte und Sätze man anwenden muss
+* Aufgaben im PDF in Statistik bewerten danach, was für Konzepte und Sätze man anwenden muss
