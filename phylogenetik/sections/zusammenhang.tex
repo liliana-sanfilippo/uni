@@ -1,0 +1,85 @@
+
+\section*{How the different methods connect }
+\begin{figure}[H]
+    \centering
+  \begin{tikzpicture}[
+  every node/.style={draw, align=center, rounded corners, font=\small,minimum size=2.5cm},
+  ->
+]
+
+% Layer 0
+\node (rd)  {raw \\ data};
+
+% Layer 1
+\node (pp)  [below=of rd] {pre\\ processing};
+\node (ppd)  [below=of pp] {pre\\ processed\\ data};
+
+
+% Layer 2
+\node (tr)  [below=of ppd]  {tree\\ reconstruction};
+
+% Layer 3
+\node (ton) [below=of tr]  {tree\\ or network};
+
+
+% Layer 4
+\node (fs) [below=of ton] {quality eval.,\\optimization,\\analysis,... };
+\node (qu) [right= of fs] {Bootstrapping,\\ Jackknifing,\\...};
+\node (opt) [right=of qu]  {Split Decomp.,\\ SANS,\\ NeighborNet};
+\node (sa) [right=of opt] {specific analysis\\ (e.g. Gene/\\ Species Tree)};
+
+% Layer 3
+\node (spl) [above=of opt] {network or (un)rooted/\\ultrametric/etc. trees};
+\node (x5) [white, above=of qu]  {};
+\node (x6) [white, above=of sa] {};
+x
+% Layer 2 
+\node (dbm) [above=of x5]  {distance based\\ methods};
+\node (pbm) [above=of spl] {parsimony based\\ methods};
+\node (lbm) [above=of x6] {likelihood based\\ methods};
+\node (em) [gray, right=of lbm] {evolutionary\\ model};
+
+% Layer 1
+
+\node (dm)  [above=of dbm]  {distance\\ matrix};
+\node (cs)  [above=of pbm] {character\\ states};
+\node (msa) [above=of lbm] {MSA};
+
+% Layer 0
+\node (prpr)  [above=of cs] {Anchor distances,\\ mash, K2P,\\ JC-Correction};
+\node (sg)  [above=of prpr] {sequences or\\ genomes};
+
+% Edges
+\draw[->] (rd)  -- (pp);
+\draw[->] (pp)  -- (ppd);
+\draw[->] (ppd)  -- (tr);
+\draw[->] (tr)  -- (ton);
+\draw[->] (ton)  -- (fs);
+
+\draw[->] (sg)  -- (prpr);
+
+\draw[->] (prpr)  -- (dm);
+\draw[->] (sg)  -| (msa);
+\draw[->] (prpr)  -- (cs);
+
+\draw[->] (cs)  -- (pbm);
+\draw[->] (msa)  -- (lbm);
+\draw[->] (dm)  -- (dbm);
+
+\draw[->] (em)  -- (lbm); 
+
+\draw[->] (lbm)  -- (spl);
+\draw[->] (dbm)  -- (spl);
+\draw[->] (pbm)  -- (spl);
+
+\draw[->] (spl)  -- (sa);
+\draw[->] (spl)  -- (qu);
+\draw[->] [bend right] (opt)  -- (qu);
+\draw[->] (spl)  -- (opt);
+\draw[->] [bend left] (qu)  -- (opt);
+\end{tikzpicture}
+    \caption{Different methods in the context of phylogenic research.}
+    \label{fig:context}
+\end{figure}
+
+

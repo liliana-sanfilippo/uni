@@ -1,0 +1,228 @@
+\newpage \section{Abgabe Blatt 09 - Liliana - \_\_\_ Punkte}
+\section*{Task 1 Evolutionary Markov Processes \_\_\_/3(+2)}
+\subsection{$X_t$ is time homogeneous}
+Das bedeutet die Wahrscheinlichkeit einer State-Änderung muss zu jedem Zeitpunkt unabhängig sein von dem vorherigen Zeitpunkt und nur Abhängig von der aktuellen Zeit. 
+
+Im Kontext der Phylogenetik kann das bedeuten, dass die Größe der vergangenen Zeiträume irrelevant ist für die Wahrscheinlichkeit von Mutationen in der Sequenz und nur der aktuelle Moment relevant ist. 
+
+\subsection{$X_t$ is stationary and the initial distribution $\pi^{(0)}$ is the stationary distribution $\pi$. Therefore $X_t$ is distributed according to $\pi$ for all $t \in \mathbb{R}^+_0$.}
+Konkret bedeutet es aber, dass "nichts ersetzt" wird, weil die Ersetzungsrate 0 ist, also bleibt die Verteilung insgesamt gleich. Es heißt aber nur, dass die Einsetzung und Ersetzung von States gleich ist und sich das ausgleichtm, nicht dass sich tatsächlich nichts ändert. 
+In der Phylogenetik bedeutet das vermutlich, dass sich die Wahrscheinlichkeit, dass eine Base in einer Sequenz auftritt sich nie verändert und die Basenanteile in einer Sequenz gleich bleiben. 
+
+
+\subsection{$X_t$ is irreducible: $P_{ij} (t) > 0$ for all $t > 0$ and $x_i , x_j \in A$, i.e. $\pi$ is unique.}
+
+Das bedeutet jeder State ist jederzeit von jedem anderen State aus erreichbar, also jede Base kann jederzeit in jede andere Base mutieren. 
+
+\subsection{$X_t$ is calibrated to 1 PEM: $- \sum_i \pi_i Q_{ii} = 0.01$}
+Das skaliert die Rekonstruktionen unabhängig davon was Q genau ist und man hat eine einheitliche Skala. 
+
+\subsection{$X_t$ is reversible: $\pi_i P_{ij} (t) = \pi_j P_{ji} (t)$ for all $t > 0$ and all $x_i , x_j \in A$.}
+Das bedeutet zuerst einmal, dass $P$ eine (nicht Spiegelmatrix...die Art von matrix wo man den Teil unter der Diagonale einfach weg lassen kann weil die keinen zusätzlichen Informationsgehalt hat) ist. Konkret bedeutet das zwei Basen haben zu einem Zeitpunkt einfach nur eine Übergangswahrscheinlichkeit und es ist egal, von welcher in welche es geht. Hauptsache es sind die gleichen Zeiträume die man betrachtet. Es wird nicht zwischen der Wahrscheinlichkeit für Hin- und Rückmutationen zwischen zwei Basen unterschieden. 
+
+\section*{Task 2 Review - Christmas Trees \_\_\_/8}
+\subsection*{Counting trees}
+\subsection*{(a) Does a Christmas Tree with an even number of taxa exist? Justify your answer}
+No, because the number of Taxa is $3+x\cdot2$ where $x$ is the number of internal nodes. This follows from the definition of the Christmas tree as the root has to have either three leaves as children ($x=0$) or two leaves and an internal node which in tun can have either three leaves as children ($x=0$) or two leaves and an internal node and so on.  
+
+\subsubsection*{(b) For n taxa, how many internal nodes does a Christmas Tree have?}
+
+\(
+\frac{n-3}{2}
+\) viele (siehe oben für Herleitung der Gleichung)
+ 
+% 3 + x * 2 = n | - 3
+% x * 2 = n - 3 | : 2
+% (7-3) / 2 = 4 / 2 = 2
+
+\subsection*{Parsimony Methods}
+\subsubsection*{(c) Solve the small parsimony problem under unit cost for the given tree with leaf character states ... Use an algorithm from the lecture notes. Justify your choice of algorithm!}
+
+\subsubsection*{(d) Connie Count, the worlds least succesful bioinformatician, is convinced that the topology for the
+set of taxa he is analyzing is a Christmas Tree. He therefore wants to brute-force all Christmas
+Tree topologies for n taxa. Help him, by nding a formula for the number of Christmas Tree topologies for n taxa, thus discouraging
+him from this ludicrous plan}
+
+That should be $n!$, because that is the number of possibilities to distribute $n$ things on $n$ places. But if we say that the topology (a,b,c) is equal to (c,b,a), it is less. But since we want to discourage Connie we do not tell him that.  
+
+\subsubsection*{(e) Find edge lengths a to i, such that the path metric of the given tree is ultrametric}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \tikzset{
+    st/.style = {shape = star,fill=yellow, draw=red,  minimum size=1.2cm},
+    di/.style ={diamond, draw=black, fill=green, minimum size=1.2cm},
+    ba/.style ={circle, fill=red , minimum size=1.2cm, draw = yellow}
+    }
+   \node [st] (A) at (-4,-1) {A}; 
+   \node [di] (root) at (0,2) {}; 
+   \node [di] (int1) at (0,-2) {};
+   \node [st] (B) at (4,-1) {B};
+   \node [st] (C) at (-4,-4) {C};
+   \node [di] (int2) at (0,-6) {};
+   \node [st] (D) at (4,-4) {D};
+    \node [st] (E) at (-4,-7) {E};
+   \node [ba] (F) at (0,-9) {F};
+   \node [st] (G) at (4,-7) {G};
+   
+   \path[black] (root) edge node[above]  {3} (A)
+                (root) edge node[above]  {3} (B)
+                (root) edge node[right]  {1} (int1)
+                (int1) edge node[above]  {2} (C)
+                (int1) edge node[above]  {2} (D)
+                (int1) edge node[right]  {1} (int2)
+                (int2) edge node[right]  {1} (F)
+                (int2) edge node[above]  {1} (G)
+                (int2) edge node[above]  {1} (E);
+                
+    
+\end{tikzpicture}
+    %\label{fig:my_label}
+\end{figure}
+
+
+\subsubsection*{(f) Which of the following distance matrices can be expressed as the path metric of a Christmas Tree
+(not necessarily the one given above!)? If you can make a decision without computing a tree, do
+so, but justify your answer! Links to spoilers: a, b}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \tikzset{
+    st/.style = {shape = star,fill=yellow, draw=red,  minimum size=1.2cm},
+    di/.style ={diamond, draw=black, fill=green, minimum size=1.2cm},
+    ba/.style ={circle, fill=red , minimum size=1.2cm, draw = yellow}
+    }
+   \node [st] (A) at (-2,-2) {A}; 
+   \node [di] (root) at (0,1) {}; 
+   \node [ba] (B) at (0,-3) {B};
+   \node [st] (C) at (2,-2) {C};
+   
+   \path[black] (root) edge node[left]  {2 / 3} (A)
+                (root) edge node[left]  {1} (B)
+                (root) edge node[right]  {1 / 2} (C);
+    \node [cross out,draw=red, minimum size=6cm] at (0,0) {};
+\end{tikzpicture}
+    \caption{\textbf{Matrix (i)}: C - root und B - root müsste jeweils 1 sein bei einem Christmas tree, da B-C nur zwei ist. Dann müsste A - root 2 sein. Dann ist aber der Abstand zu A - C falsch, nur drei statt vier. Kann kein Christman Tree sein. }
+    %\label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \tikzset{
+    st/.style = {shape = star,fill=yellow, draw=red,  minimum size=1.2cm},
+    di/.style ={diamond, draw=black, fill=green, minimum size=1.2cm},
+    ba/.style ={circle, fill=red , minimum size=1.2cm, draw = yellow}
+    }
+   \node [st] (A) at (-4,-1) {A}; 
+   \node [di] (root) at (0,2) {}; 
+   \node [di] (int) at (0,-2) {};
+   \node [st] (B) at (4,-1) {B};
+   \node [st] (C) at (-4,-4) {C};
+   \node [ba] (D) at (0,-6) {D};
+   \node [st] (E) at (4,-4) {E};
+   
+   \path[black] (root) edge node[left]  {min 1; max \textcolor{teal}{6}} (A)
+                (root) edge node[right]  {min \textcolor{teal}{3}; max \textcolor{red}{8}} (B)
+                (root) edge node  {min \textcolor{teal}{2}; max \textcolor{teal}{7}} (int)
+                (int) edge node[left]  {min \textcolor{violet}{2}; max \textcolor{brown}{2}} (C)
+                (int) edge node  {min \textcolor{teal}{5}; max \textcolor{brown}{5}} (D)
+                (int) edge node[right]  {min \textcolor{violet}{5} max \textcolor{brown}{5}} (E);
+                
+    \path[dotted]  (int) edge node  {min \textcolor{brown}{8}; max \textcolor{violet}{8}} (A)
+                (int) edge node  {min \textcolor{brown}{10}; max \textcolor{teal}{10}} (B);
+   % \node [cross out,draw=red, minimum size=6cm] at (0,0) {};
+\end{tikzpicture}
+    \caption{\textbf{Matrix (ii)}: Auf Basis der Abstande aus der matrix ist abzuschätzen, dass wenn es ein Christmas Tree ist, A und B aufder "ersten Etage" sind und die restlichen Blätter auf der "unteren Etage". Geht man die Abstände durch, kann man die minimal und maximal erfolrderlichen Abstände ermitteln und darauf mögliche Lösungen }
+    %\label{fig:my_label}
+\end{figure}
+
+\begin{tabular}{c|ccccc}
+(ii) & A & B & C & D & E \\
+\hline
+A & 0 & \textcolor{red}{9} & \textcolor{blue}{10} & \textcolor{green}{12} & \textcolor{magenta}{12} \\
+B &   & 0 & \textcolor{teal}{12} & \textcolor{orange}{15} & \textcolor{olive}{15} \\
+C &   &   & 0 & \textcolor{purple}{7} & \textcolor{violet}{7} \\
+D &   &   &   & 0 & \textcolor{brown}{6} \\
+E &   &   &   &   & 0 \\
+\end{tabular}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \tikzset{
+    st/.style = {shape = star,fill=yellow, draw=red,  minimum size=1.2cm},
+    di/.style ={diamond, draw=black, fill=green, minimum size=1.2cm},
+    ba/.style ={circle, fill=red , minimum size=1.2cm, draw = yellow}
+    }
+   \node [st] (A) at (-4,-1) {A}; 
+   \node [di] (root) at (0,2) {}; 
+   \node [di] (int) at (0,-2) {};
+   \node [st] (B) at (4,-1) {B};
+   \node [st] (C) at (-4,-4) {C};
+   \node [ba] (D) at (0,-6) {D};
+   \node [st] (E) at (4,-4) {E};
+   
+   \path[black] (root) edge node[left]  {1} (A)
+                (root) edge node[right]  {8} (B)
+                (root) edge node[right]  {2} (int)
+                (int) edge node[left]  {2} (C)
+                (int) edge node[left]  {5} (D)
+                (int) edge node[right]  {5} (E);
+                
+    \path[dotted]  (int) edge node  {8} (A)
+                (int) edge node  {10} (B);
+   % \node [cross out,draw=red, minimum size=6cm] at (0,0) {};
+\end{tikzpicture}
+    \caption{Beispielhafte Lösung für (ii)}
+    %\label{fig:my_label}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \tikzset{
+    st/.style = {shape = star,fill=yellow, draw=red,  minimum size=1.2cm},
+    di/.style ={diamond, draw=black, fill=green, minimum size=1.2cm},
+    ba/.style ={circle, fill=red , minimum size=1.2cm, draw = yellow}
+    }
+   \node [st] (A) at (-4,-1) {A}; 
+   \node [di] (root) at (0,2) {}; 
+   \node [di] (int) at (0,-2) {};
+   \node [st] (B) at (4,-1) {B};
+   \node [st] (C) at (-4,-4) {C};
+   \node [ba] (D) at (0,-6) {D};
+   \node [st] (E) at (4,-4) {E};
+   
+   \path[black] (root) edge node[left]  {min 1; max y} (A)
+                (root) edge node[right]  {min 1; max \textcolor{orange}{5}} (B)
+                (root) edge node  {min 1; max \textcolor{orange}{5}} (int)
+                (int) edge node[left]  {min \textcolor{purple}{2}; max \textcolor{violet}{4}} (C)
+                (int) edge node  {min \textcolor{purple}{2}; max \textcolor{brown}{4}} (D)
+                (int) edge node[right]  {min \textcolor{olive}{5}; max \textcolor{purple}{3}} (E);
+                
+    \path[dotted]  (int) edge node  {min 1; max y} (A)
+                (int) edge node  {min \textcolor{olive}{8}; max \textcolor{orange}{6}} (B);
+    \node [cross out,draw=red, minimum size=8cm] at (0,-2) {};
+\end{tikzpicture}
+    \caption{\textbf{Matrix (iii)}: Hier haben erneut C, D und E die kleinsten Abstände und es ergibt sich daher eine Etagen-Aufteilung wie bei (ii). Das klappt allerdings letztendlich nicht, da sich der Abstand von B und E mit anderen Abständen beißt. Die Distanzen sind je nach Berechnungsstart verschieden und somit lässt sich daraus kein Christmas tree machen. }
+    %\label{fig:my_label}
+\end{figure}
+
+
+\begin{tabular}{c|ccccc}
+(ii) & A & B & C & D & E \\
+\hline
+A & 0 & \textcolor{red}{10} & \textcolor{blue}{16} & \textcolor{green}{12} & \textcolor{magenta}{15} \\
+B &   & 0 & \textcolor{teal}{12} & \textcolor{orange}{8} & \textcolor{olive}{11} \\
+C &   &   & 0 & \textcolor{purple}{6} & \textcolor{violet}{5} \\
+D &   &   &   & 0 & \textcolor{brown}{5} \\
+E &   &   &   &   & 0 \\
+\end{tabular}
+
+\paragraph{Matrix iv} hat sehr ähnliche Distanzen und es ergibt sich keine klare Aufteilung in Etagen. Daher kann diese kein Christmas tree sein. 

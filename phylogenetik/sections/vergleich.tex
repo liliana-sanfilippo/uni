@@ -1,0 +1,45 @@
+\section{What are the relations between Waterman, WPGMA and UPGMA?}
+Gelenutzt: \cite{scarr_upgma_wpgma, ogilvie_upgma_wpgma, enwiki1233469513}
+Is the following true? 
+\begin{enumerate}
+    \item For any distance matrix for which WPGMA constructs an exact tree, the Waterman Algorithm constructs an exact tree
+    \item[->] Intuition Ja, aber unsicher
+\item For any distance matrix for which the Waterman Algorithm constructs an exact tree, WPGMA constructs an exact tree 
+\item[->] Nein, wegen der molekularen Uhr und ultrametrisch, funktioniert grundlegend anders
+\item For any distance matrix for which UPGMA constructs an exact tree, WPGMA constructs an exact tree.
+\item[->] Nein, wegen der Gewichtung
+\item For any distance matrix for which WPGMA constructs an exact tree, UPGMA constructs an exact tree.
+\end{enumerate}
+
+\subsection*{Exact method of Waterman (See 7.3.1)}
+successively inserts objects into intermediate trees until no objects are left to insert
+
+\subsection*{UPGMA}
+\begin{itemize}
+    \item Distance measures on real sequence data generally do not form an ultrametric. However, if the observed distances are close to an ultrametric, clustering procedures such as UPGMA (see Section 7.2.1) are the simplest and fastest way to reconstruct an ultrametric tree.
+    \item Note that clustering procedures are sensitive to unequal evolutionary rates.
+\end{itemize}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{5cm}p{5cm}p{5cm}}
+        Waterman & UPGMA & WPGMA \\
+         & Agglomerative Clustering & Agglomerative Clustering \\
+         Additive & Ultrametric & Ultrametric  
+    \end{tabular}
+  
+\end{table}
+Remember: Wenn eine Distanzmatrix ultrametrisch ist, dann ist sie immer additiv (aber nicht umgekehrt). 
+
+
+WPGMA $<$ UPGMA $<$ Waterman ?
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c p{5cm}p{5cm}p{5cm}}
+    & Waterman & UPGMA & WPGMA \\
+        1. & & Find the two clusters i and j (i neq j) with the smallest distance dij . \\ \\
+        2.  & & Create a new cluster u that joins clusters i and j \\ \\
+    \end{tabular}
+\end{table}
+
+%\printbibliography

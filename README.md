@@ -46,7 +46,8 @@ them, thank you.
 - **Mathematik für Informatik 2** (SS 2025)
   - Mal Lernzettel begonnen, aber nicht beendet. Feel free. 
 - **Phylogenetik** (WS 2025/26)
-  - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik)
+  - [Lernzettel](https://liliana-sanfilippo.github.io/uni/Phylogenetik.pdf)
+  - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik/abgaben)
   - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik/Phylogenetik.txt)
 - **Sequenzanalyse 2** (SS2026)
     - [Sequenzanalyse 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/seq-an-2.pdf)

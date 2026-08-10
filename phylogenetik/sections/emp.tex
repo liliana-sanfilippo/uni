@@ -1,0 +1,148 @@
+\newpage
+\section{Evolutionary markov process}
+\subsection{$X_t$ is time homogeneous}
+\paragraph{Was ist $X_t$?}
+$X_t$ is a markov chain at time $t$.
+\paragraph{Was ist time homogeneous?} 
+\begin{itemize}
+    \item \textbf{Time Discrete Markov Chains}: We assume that the Markov chain is time homogeneous, that is for each pair of states $x_i , x_j \in A$ the transition probability $Pr(X_n = x_j \mid X_{n-1} = x_i)$ is the same for all $n \in \mathbb{N}$.
+    \item \textbf{Time Continuous Markov Chains}: The Markov chain is time homogeneous if there exists a transition probability matrix $P(t)$ such that $Pr(X_{s+t} = x_j \mid X_s = x_i ) = P_{ij} (t), \quad \forall s, t \geq 0, \quad \forall x_i , x_j \in A$.
+\end{itemize}
+\paragraph{Was trifft auf EMPs zu?}
+"We call a time continuous Markov chain $X_t$ on the set of states $A$ an evolutionary Markov process (EMP)" Also die Definition: \begin{center}
+    he Markov chain is time homogeneous if there exists a transition probability matrix $P(t)$ such that $Pr(X_{s+t} = x_j \mid X_s = x_i ) = P_{ij} (t), \quad \forall s, t \geq 0, \quad \forall x_i , x_j \in A$.
+\end{center}
+\paragraph{Was ist $P_{ij}(t)$?} 
+$P(t)$ is a a stochastic matrix called the transition probability matrix. Therefore $P_{ij}(t)$ is the transition probability of $i$ and $j$ at a time $t$. 
+\paragraph{Was ist $Pr(X_{s+t} = x_j \mid X_s = x_i )$?}
+Die Wahrscheinlichkeit von $X_{s+t} = x_j$ gegeben $X_s = x_i$. Also dass vom Zustand $x_i$ in $x_j$ übergegangen wird innerhalb einer Zeitspanne $t$ nach $s$ (bspw. jetzt).
+\paragraph{Formel übersetzt}
+\begin{equation*}
+    \textcolor{Plum}{
+        \underbrace{Pr}_{
+            \text{The probability of }
+        }
+    }
+    \textcolor{Cerulean}{
+        \underbrace{
+        (\textcolor{NavyBlue}{
+            \overbrace{X_{s+t} = x_j}^{
+                \text{that the state of the markov chain is } x_j
+            } 
+        }
+        \overbrace{\mid}^{given}
+        \textcolor{TealBlue}{
+            \overbrace{X_s = x_i}^{
+                \text{it was } x_i \text{ before} 
+            } 
+        }
+        )}_{\text{the event}}
+    }
+     \underbrace{=}_{is}
+     \textcolor{Mulberry}{
+        \underbrace{P_{ij}(t)}_{\text{the transition probability of state i and j}}
+     }
+\end{equation*}
+Aber das passt noch nicht ganz, weil es $s$ und $t$ nicht mit einbezieht. \begin{equation*}
+    \textcolor{Black}{
+        \underbrace{Pr}_{
+            \text{The probability of }
+        }
+    }
+    \textcolor{Black}{
+        \underbrace{
+        (\textcolor{Black}{
+            \overbrace{X_{s+t} = x_j}^{
+                \substack{\text{that the state of the markov chain is } x_j \\ \textcolor{Maroon}{\text{ after, at or in the scope of } t \text{ time}}
+                }
+            } 
+        }
+        \overbrace{\mid}^{given}
+        \textcolor{Black}{
+            \overbrace{X_s = x_i}^{
+                \substack{\text{it was } x_i \text{ before} \\ \textcolor{Maroon}{\text{at an earlier time } s}}
+            } 
+        }
+        )}_{\text{the event}}
+    }
+     \underbrace{=}_{is}
+     \textcolor{Black}{
+        \underbrace{P_{ij}(t)}_{
+            \substack{\text{the transition probability of state i and j} \\ \textcolor{Maroon}{\text{ after, at or in the scope of } t \text{ time}}
+            }
+        }
+     }
+\end{equation*}
+Das bedeutet die Wahrscheinlichkeit einer State-Änderung muss zu jedem Zeitpunkt $t$ unabhängig sein von dem vorherigen Zeitpunkt $s$ und nur Abhängig von der aktuellen Zeit $t$. 
+
+Im Kontext der Phylogenetik könnte das bedeuten, dass die Größe der vergangenen Zeiträume irrelevant ist für die Wahrscheinlichkeit von Mutationen in der Sequenz und nur der aktuelle Moment relevant ist. 
+
+\subsection{$X_t$ is stationary and the initial distribution $\pi^{(0)}$ is the stationary distribution $\pi$. Therefore $X_t$ is distributed according to $\pi$ for all $t \in \mathbb{R}^+_0$.}
+\paragraph{Was bedeutet stationary?}
+"A distribution $\pi$ is a stationary distribution on $A$ if 
+\begin{align*}
+ \pi_j &= \sum_{x_i\in A} \pi_i P_{ij} \quad \forall x_j \in A \\
+ \pi &= \pi P"
+\end{align*}
+bzw. "Then $\pi$ is a stationary distribution if
+\begin{align*}
+    \sum_i \pi_i Q_{ii}  &= 0 \quad \forall j \\
+    \pi Q &= \overrightarrow{0}"
+\end{align*}
+\paragraph{Was meint $\pi = \pi P$?}
+Eine Verteilung $\pi$ ist ein Zeilenvektor, also wenn man diesen Zeilenvektor mit der ganzen probability  matrix mal nimmt, kommt wieder der gleiche Zeilenvektor heraus. 
+\paragraph{Und was hat es für eine Bedeutung, dass das gleiche wieder heraus kommt?}
+Dass resultiert darin, dass sich diese (eine) Verteilung $\pi$ nicht ändert. 
+\paragraph{Welche Auswirkung hat es, dass das die initial distribution ist?}
+D.h. die Verteilung ändert sich nie, weil man darin startet und da nicht mehr weg kommt. 
+ 
+"If $\pi^{(0)} = \pi$, every $X_n$ is distributed as $\pi$"
+\paragraph{Was ist überhaupt $\pi_j$?} Genau genommen die j-te Stelle von $\pi$, also von dem Verteilungs-Zeilenvektor. Aber an sich einfach die Wahrscheinlichkeit, insgesamt in Zustand $j$ anzukommen. 
+\paragraph{Was meint $\pi_j = \sum_{x_i\in A} \pi_i P_{ij} \quad \forall x_j \in A$?}
+Dass die Wahrscheinlichkeit, in Zustand $j$ anzukommen die Summe aller $\pi_i P_{ij}$ ist, also die Summe aller Wahrscheinlichkeiten aus einem Zustand aus der Menge aller Zustände in den Zustand $j$ zu kommen.
+
+
+\paragraph{Was ist $Q_{ii}$?}
+$Q$ ist eine rate matrix. Aus $Q_{ii}$ kann man die Rate ablesen mit der der Zustand $x_i$ verlassen wird, das ist nämlich $-Q_{ii}$.
+
+\paragraph{Was ist $\pi_i Q_{ii}$??}
+"Rate des Wahrscheinlichkeitsflusses AUS Zustand i." also eine Ersetzungsrate
+
+\paragraph{Was bedeutet $\pi Q = \overrightarrow{0}$?}
+Exakt übersetzt die Verteilung mal die rate Matrix ist der Nullvektor. Konkret bedeutet es aber, dass im großen und ganzen "nichts ersetzt" wird, weil die Ersetzungsrate 0 ist, also bleibt die Verteilung insgesamt gleich. Es heißt aber nur, dass die Einsetzung und Ersetzung von States gleich ist und sich das ausgleicht. 
+
+\paragraph{Was bedeutet $\sum_i \pi_i Q_{ii} = 0 \quad \forall j$?}
+Das bedeutet dass die "Ersetzungsrate" für alle einzelnen States ausgeglichen ist. 
+
+\paragraph{Was heißt das im Kontext der Phylogenie?}
+Dass sich die Wahrscheinlichkeit, dass eine Base in einer Sequenz auftritt sich nie verändert und die Basenanteile in einer Sequenz gleich bleiben?
+
+\subsection{$X_t$ is irreducible: $P_{ij} (t) > 0$ for all $t > 0$ and $x_i , x_j \in A$, i.e. $\pi$ is unique.}
+\paragraph{Was bedeuet irreducible?}  "A Markov chain is irreducible if for any two states $x_i , x_j \in A$ there exists a $k \in \mathbb{N}$ such that $P_{ij}^{(k)} > 0$" $\Rightarrow$ "Markov chain is irreducible if it is possible for the chain to reach each state from each state." bzw. "A time continuous Markov chain is irreducible if for any period $t > 0$ each state can reach each state"
+
+Außerdem impliziert es noch (evtl.): "each irreducible homogeneous Markov chain converges against its stationary distribution"
+
+\paragraph{Was hat es damit zu tun, wenn $\pi$ unique ist?}
+$\pi$ ist eindeutig bedeutet es gibt genau eine stationäre Verteilung
+
+\paragraph{Bedeutung für die Phylogeny?}
+Jede Base kann jederzeit in jede andere Base mutieren?
+
+\subsection{$X_t$ is calibrated to 1 PEM: $- \sum_i \pi_i Q_{ii} = 0.01$}
+\paragraph{Was ist ein PEM} "One PEM (percent of expected mutations) is the time in which one substitution event (mutation) per 100 sites is expected in." und "In contrast to PAM units, PEM units take back-mutations into account. Therefore, 1 PEM is a slightly shorter time unit than 1 PAM."
+
+\paragraph{Was hat es mit der $0.01$ auf sich?}
+Das heißt $E = 1/100$, also es sind 0.01 substitutions per site per time unit. 
+
+\paragraph{Was heißt das für die Phylogenie?}
+Das skaliert die Rekonstruktionen unabhängig davon was Q genau ist und man hat eine einheitliche Skala. 
+
+\subsection{$X_t$ is reversible: $\pi_i P_{ij} (t) = \pi_j P_{ji} (t)$ for all $t > 0$ and all $x_i , x_j \in A$.}
+Das bedeutet zuerst einmal, dass $P$ eine (nicht Spiegelmatrix...die Art von matrix wo man den Teil unter der Diagonale einfach weg lassen kann weil die keinen zusätzlichen Informationsgehalt hat) ist. Konkret bedeutet das zwei Basen haben zu einem Zeitpunkt einfach nur eine Übergangswahrscheinlichkeit und es ist egal, von welcher in welche es geht. Hauptsache es sind die gleichen Zeiträume die man betrachtet. 
+ 
+\begin{itemize}
+    \item \url{https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Stationary_distributions}
+    \item \url{https://en.wikipedia.org/wiki/Continuous-time_Markov_chain}
+    \item \url{https://en.wikipedia.org/wiki/Markov_chain}
+    \item \url{https://en.wikipedia.org/wiki/Models_of_DNA_evolution    }
+\end{itemize}

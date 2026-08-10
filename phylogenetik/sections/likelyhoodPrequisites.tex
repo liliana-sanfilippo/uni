@@ -1,0 +1,26 @@
+%Erfordert Modellierung der Sequenzevolution (Markov-Modelle, Rate Matrices, JC, K2P)
+All likelihood-based methods require some kind of sequence evolution modelling. Those models are based on markov processes, rate matrices, etc. 
+\subsection*{Nucleotide Substitution Models (DNA/RNA)}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{3cm}p{5cm}p{5cm}}
+    \textbf{Model} & \textbf{Base frequencies} & \textbf{Substitution rates}  \\
+        Jukes-Cantor  & assumed to be all equal & assumed to be all equally likely \\
+        Kimura 2-Parameter  & assumed to be all equal & differentiates between transitions and transversions 
+    \end{tabular}
+    \caption{Comparison of Nucleotide Substitution Models.}
+    \label{tab:my_label}
+\end{table}
+
+\subsection*{Amino Acid Substitution Models (Proteins)}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{2cm}p{3cm}p{6cm}}
+    \textbf{Model} & \textbf{High number} & \textbf{Formula}  \\
+      PAM & means more divergence & $\log \frac{ij\ entry\ of\ matrix\ potency}{relative\ frequency\ of\ j}$ \\
+      BLOSUM &  means less divergence & $\frac{1}{scale\ factor} \cdot \log \frac{pair\ frequency}{expected\ frequency}$ 
+    \end{tabular}
+    \caption{Comparison of Amino Acid Substitution Models.}
+    \label{tab:my_label}
+\end{table}

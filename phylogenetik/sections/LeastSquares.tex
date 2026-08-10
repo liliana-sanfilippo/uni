@@ -1,0 +1,136 @@
+
+\section{Calculating the Least Squares Error}
+Input: distance matrix 
+\[\begin{array}{c|cccccc}
+  & A & B & C & D & E & F \\
+\hline
+A & 0 & 4 & 8 & 18 & 18 & 6 \\
+B &   & 0 & 6 & 12 & 8 & 8 \\
+C &   &   & 0 & 18 & 18 & 12 \\
+D &   &   &   & 0 & 10 & 8 \\
+E &   &   &   &   & 0 & 12 \\
+F &   &   &   &   &   & 0
+\end{array}\]
+
+and a tree the error is supposed to be calculated for
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \path node[punkt] (AB) at (0,0) {}
+        node[punkt, label=below:A] (A) at (-1,-1) {}
+        node[punkt, label=below:B] (B) at (1,-1) {}
+        node[punkt, label=below:C] (C) at (3,-1) {}
+         node[punkt, label=below:F] (F) at (5,-1) {}
+         node[punkt, label=below:D] (D) at (7,-1) {}
+         node[punkt, label=below:E] (E) at (9,-1) {}
+        node[punkt] (ABCF) at (3.5,2) {}
+         node[punkt] (ABCFD) at (5.5,3) {}
+          node[punkt] (ABCFDE) at (7.5,4) {}
+        node[punkt] (ABC) at (1.5,1) {};
+       \draw   (AB) -| node[near end,left] {2} (A);
+        \draw   (AB) -| node[near end,right] {2} (B);
+        \draw   (ABC) -| node[near end,right] {3} (C);
+        \draw   (ABC) -| node[near end,right] {1} (AB); 
+        \draw   (ABCF) -| node[near end,right] {0} (ABC);
+        \draw   (ABCF) -| node[near end,right] {3} (F);
+         \draw   (ABCFD) -| node[near end,right] {4} (D);
+         \draw   (ABCFD) -| node[near end,right] {1} (ABCF);
+         \draw (ABCFDE) -| node[near end,right] {0} (ABCFD);
+         \draw (ABCFDE) -| node[near end,right] {1} (E);
+    \end{tikzpicture}
+\end{figure}
+
+Output: the least squares error as a number
+
+\subsection*{Step 1. Calculate the leaf distance vectors}
+The distance vector for the matrix: 
+\[
+d^M = 
+\begin{pmatrix}
+d(A,B) \\ d(A,C) \\ d(A, D) \\ d(A,E) \\d(A,F) \\ d(B,C) \\ d(B,D) \\ d(B,E) \\ d(B,F) \\ d(C,D) \\ d(C,E) \\d(C,F) \\ d(D,E) \\ d(D,F) \\ d(E,F)
+\end{pmatrix} = 
+\begin{pmatrix}
+4 \\ 8 \\18\\18\\6\\6\\12\\8\\8\\18\\18\\12\\10\\8\\12
+\end{pmatrix} 
+\]
+And from the given tree: 
+\[
+d^T = 
+\begin{pmatrix}
+d(A,B) \\ d(A,C) \\ d(A, D) \\ d(A,E) \\d(A,F) \\ d(B,C) \\ d(B,D) \\ d(B,E) \\ d(B,F) \\ d(C,D) \\ d(C,E) \\d(C,F) \\ d(D,E) \\ d(D,F) \\ d(E,F)
+\end{pmatrix} = 
+\begin{pmatrix}
+4\\6\\8\\8\\6\\6\\8\\8 \\6\\8\\8\\6\\8\\8\\8\\
+\end{pmatrix} 
+\]
+
+Example on how to calculate $d(A,B)$ easily:
+\[d(A,B) = 2 +2 = 4\]
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \path node[punkt] (AB) at (0,0) {}
+        node[punkt, label=below:A] (A) at (-1,-1) {}
+        node[punkt, label=below:B] (B) at (1,-1) {}
+        node[punkt, label=below:C] (C) at (3,-1) {}
+         node[punkt, label=below:F] (F) at (5,-1) {}
+         node[punkt, label=below:D] (D) at (7,-1) {}
+         node[punkt, label=below:E] (E) at (9,-1) {}
+        node[punkt] (ABCF) at (3.5,2) {}
+         node[punkt] (ABCFD) at (5.5,3) {}
+          node[punkt] (ABCFDE) at (7.5,4) {}
+        node[punkt] (ABC) at (1.5,1) {};
+       \draw[red]   (AB) -| node[near end,left] {2} (A);
+        \draw[red]   (AB) -| node[near end,right] {2} (B);
+        \draw   (ABC) -| node[near end,right] {3} (C);
+        \draw   (ABC) -| node[near end,right] {1} (AB); 
+        \draw   (ABCF) -| node[near end,right] {0} (ABC);
+        \draw   (ABCF) -| node[near end,right] {3} (F);
+         \draw   (ABCFD) -| node[near end,right] {4} (D);
+         \draw   (ABCFD) -| node[near end,right] {1} (ABCF);
+         \draw (ABCFDE) -| node[near end,right] {0} (ABCFD);
+         \draw (ABCFDE) -| node[near end,right] {1} (E);
+    \end{tikzpicture}
+
+\end{figure}
+
+
+%\noindent Example on how to calculate $d(A,B)$ via the path edge incidence matrix $M^T$ and the edge weight vector $w$: \\\newline
+%$M^T$ is a binary table where we assign 1 to a pair of leaves $(X, Y )$ and an edge $e_j$ whenever $e_j$ belongs to the simple path between $X$ and $Y$ , and $0$ otherwise.
+%\[ M^T = 
+%\begin{pmatrix}
+%\begin{array}{c|ccccccc}
+% & e_1 & e_2 & e_3 & e_4 & e_5 & e_6 & e_7 \\ \hline
+%(A,B) & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+%(A,C) & 1 & 0 & 1 & 0 & 1 & 1 & 0 \\
+%(A,D) & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+%(A,E) & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+%(B,C) & 0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+%(B,D) & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+%(B,E) & 0 & 1 & 1 & 0 & 1 & 0 & 1 \\
+%(C,D) & 0 & 0 & 0 & 1 & 1 & 1 & 0 \\
+%(C,E) & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+%(D,E) & 0 & 0 & 0 & 1 & 1 & 0 & 1
+%\end{array}
+%\end{pmatrix}
+%\]
+%$w$ equals 
+%\[
+%w = \begin{pmatrix}
+% w(e_1) \\ w(e_2) \\ w(e_3) \\ w(e_4) \\ w(e_5) \\ w(e_6) \\ w(e_7) 
+%\end{pmatrix} = 
+%\]
+%Multiply $M^T$ and $w$:
+
+\subsection*{Step 2. Calculate the error (easy)}
+Formula: 
+\[
+E := || d^T - d^M ||^2 = \sum_i
+(d^T_i - d^M_i )^2
+\]
+Here that is
+\[
+E = (4-4)^2 + (6-8)^2 + (8-18)^2 + ... = 0+4+100+100+0+0+16+0+4+100+100+36+4+0+16 = 480
+\]
+
+(A smaller E is better)

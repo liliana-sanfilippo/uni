@@ -1,0 +1,234 @@
+
+\begin{itemize}
+    \item \textcolor{OliveGreen}{O(1) – konstant}
+    \item \textcolor{ForestGreen}{O(log n) – logarithmisch}
+    \item \textcolor{LimeGreen}{O(n) – linear}
+    \item \textcolor{GreenYellow}{O(n log n) – quasi-linear}
+    \item \textcolor{Goldenrod}{O(n²) – quadratisch}
+    \item \textcolor{YellowOrange}{O(n³) – kubisch (polynomiell)}
+    \item \textcolor{RedOrange}{O($n^m$) – polynomiell}
+    \item \textcolor{OrangeRed}{O($2^n$) – exponentiell}
+    \item \textcolor{BrickRed}{O(n!) – faktoriell}
+\end{itemize}
+
+
+\newcommand{\linear}[0]{\textcolor{LimeGreen}{linear }}
+\newcommand{\quadrat}[0]{\textcolor{Goldenrod}{quadratisch }}
+\newcommand{\polynom}[0]{\textcolor{RedOrange}{polynomiell }}
+\newcommand{\kubisch}[0]{\textcolor{YellowOrange}{kubisch }}
+
+
+
+
+
+\section{Methodenvergleich}
+\begin{table}[H]
+ \centering
+    \begin{tabular}{p{4cm}p{1cm}p{3cm}p{6cm}}  
+        \textbf{LCA-Reconciliation-Method} & 13 & Exact method & Species/Gene Tree Reconciliation \\ \\
+        \textbf{Neighbor Joining} & 56 & Algorithm & Clustering for tree reconstruction \\ \\
+        \textbf{Fast Minimum Evolution} & 55 & Heuristic algorithm & to compute a minimum evolution tree  \\ \\
+        \textbf{Calculation of the Least Squares Error (Fitch-Margoliash)}& 54 & Method &  \\ \\
+        \textbf{Waterman's Algorithm} & 51 & Exact algorithm & Exact Reconstruction of Additive Trees \\ \\
+        \textbf{Complete Linkage Clustering (Farthest Neighbor)} & 48& Heuristic algorithm &\textcolor{amethyst}{Distance-based} tree construction \\ \\
+        \textbf{Single Linkage Clustering (Nearest Neighbor)}& 48 & Heuristic algorithm &\textcolor{amethyst}{Distance-based} tree construction\\  \\
+        \textbf{WPGMA} & 48 & Heuristic algorithm & \\ \\
+        \textbf{UPGMA} (Agglomerative clustering)& 48 & Heuristic algorithm \\ \\
+        \textbf{Naive algorithm to check if PP exists} & 21 & exact algorithm & recognition and construction of a Perfect Phylogeny\\ \\
+       \textbf{ more sophisticated method for recognition and construction of a PP }& 22 \\ \\
+        \textbf{Fitch’s algorithm} 
+        &27
+        & Exact algorithm
+        & Small Parsimony Problem for unit costs
+        \\ \\
+         \textbf{Sankoff-Rousseau Dynamic Programming}
+        & 29
+        & Exact algorithm
+        & (Weighted) Small Parsimony Problem with general substitution costs \\ \\
+        \textbf{Exhaustive Enumeration}
+        & 31 & Exact algorithm & Large Parsimony Problem \\ \\
+        \textbf{Greedy Sequential Addition}
+        & 35& Heuristic algorithm & construction of a parsimony tree \\ \\
+         \textbf{Steiner Tree Heuristic}
+        & 40& Heuristic algorithm & Steiner Tree problem  \\ \\
+        \textbf{Kruskal}
+        & 39 & Exact algorithm & MST problem  \\ \\
+          \textbf{Prim}
+        & 39
+        & Exact algorithm & MST problem \\ \\
+        \textbf{Split Decomposition} & 62 & Exact method & decomposing a distance matrix into splits for the construction of phylogenetic networks \\ \\
+        \textbf{Nearest Neighbor Interchange (NNI)} & 36 & Heuristic algorithm &  Tree rearrangement (optimization)   \\ \\
+    \end{tabular}
+\end{table}
+\begin{table}[H]
+ \centering
+    \begin{tabular}{p{4cm}p{1cm}p{3cm}p{6cm}}  
+    \textbf{Jukes-Cantor Correction} & & exact method & Correcting observed sequence differences for multiple substitutions to estimate true evolutionary distances \\ \\
+    \textbf{Bootstrapping} & & heuristic method & Assessing the statistical confidence / reliability of nodes and topologies in a phylogenetic tree \\ \\
+    \textbf{Likelihood Computation} & & exact method  & Computing the probability of observed data given a tree and an evolutionary model\\ \\
+    \textbf{SANS} & & heuristic algorithm & Alignment-free phylogenetic reconstruction based on shared k-mers \\ \\
+    \textbf{MASH} & & heuristic algorithm & Fast, alignment-free estimation of genomic distances using MinHash sketches \\ \\
+    \textbf{Split Filtering} & & heuristic method & Removing weak or inconsistent splits from a split set to improve a phylogenetic network \\ \\
+    \textbf{Computing the Anchor Distance} && exact algorithm  & Computing a sequence distance based on shared anchors (conserved regions) between sequences\\ \\
+   \textbf{Likelihood Mapping} & & exact method \\ \\
+   \textbf{Generalized Tree Alignment} & & heuristic method  \\ \\
+   \textbf{Jackknifing} & & heuristic method & statistical resampling  \\ \\
+   \textbf{k-mer Fingerprinting} & & heuristic method 6 
+     \end{tabular}
+     
+\end{table}
+
+\subsection{Background}
+\begin{table}[H]
+    \centering
+\begin{tabular}{p{3.5cm}p{3cm}p{2cm}p{3cm}p{3cm}}
+\textbf{Method/Algorithm} & \textbf{"Basis"} & \textbf{Molecular Clock} & \textbf{Costs}  & \textbf{Ultrametric / Additive}  \\ \\
+\textbf{LCA-Reconciliation-Method} & Tree-based (gene \& species tree) & No & Unit costs (duplication, loss) & Neither \\ \\
+\textbf{Neighbor Joining} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} & Assumes additive distances; produces additive tree \\ \\
+\textbf{Minimum Evolution} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} & Assumes additive distances \\ \\
+\textbf{Least Squares} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} & Assumes additive distances \\ \\
+\textbf{Waterman's Algorithm} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} (must be additive) & Requires additive distance matrix \\ \\
+\textbf{Complete Linkage Clustering} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} & Produces ultrametric tree \\ \\
+\textbf{Single Linkage Clustering} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} & Produces ultrametric tree \\ \\
+\textbf{WPGMA} & \textcolor{amethyst}{Distance-based} & \textcolor{bazaar}{Yes} & \textcolor{amethyst}{Given distance matrix} & \textcolor{bazaar}{Produces ultrametric tree; assumes ultrametric distances} \\ \\
+\textbf{UPGMA} & \textcolor{amethyst}{Distance-based} & \textcolor{bazaar}{Yes}  & \textcolor{amethyst}{Given distance matrix} & \textcolor{bazaar}{Produces ultrametric tree; assumes ultrametric distances} \\ \\ 
+\textbf{Naive algorithm (PP)} & Character-based & No & Not relevant & Neither \\ \\
+\textbf{Sophisticated method (PP)} & Character-based & No & Not relevant & Neither \\ \\
+\textbf{Fitch's Algorithm} & Character-based (parsimony) & No & Unit costs only & Neither \\ \\
+\textbf{Sankoff-Rousseau DP} & Character-based (parsimony) & No & substitution cost matrix (symmetric, edge independent costs) & Neither \\ \\
+\textbf{Exhaustive Enumeration} & Character- or Distance-based & No & Depends on objective function & Depends on objective \\ \\
+\textbf{Greedy Sequential Addition} & Character- or Distance-based  & No & Depends on objective function & Depends on objective \\ \\
+\textbf{Steiner Tree Heuristic} & Character-based (parsimony) & No & Unit costs & Neither 
+\end{tabular}
+ \caption{Comparison of relevant basic attributes of different methods - Part 1.}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{3.5cm}p{3cm}p{2cm}p{3cm}p{3cm}}
+\textbf{Kruskal} & Distance-based (graph) & No & Given edge weights & Neither \\ \\
+    \textbf{Prim} & Distance-based (graph) & No & Given edge weights & Neither \\ \\
+\textbf{Split Decomposition} & \textcolor{amethyst}{Distance-based} & No & \textcolor{amethyst}{Given distance matrix} & Works with additive and non-additive distances \\ \\
+\textbf{NNI} & Any (depends on objective) & No & Depends on objective function & Depends on objective \\ \\
+\textbf{Jukes-Cantor Correction} & Sequence-based & No & Not relevant & Corrected distances are additive under the model \\ \\
+\textbf{Bootstrapping} & Any (statistical method) & No & Not relevant & Neither \\ \\
+\textbf{Likelihood Computation} & Sequence-based (model-based) & No & Not relevant (model-based probabilities) & Neither directly; model may imply additive distances \\ \\
+\textbf{SANS} & Sequence-based (k-mer) & No & Not relevant & Neither \\ \\
+\textbf{MASH} & Sequence-based (k-mer / sketch) & No & Not relevant & Neither \\ \\
+\textbf{Split Filtering} & Split-based & No & Not relevant & Neither \\ \\
+\textbf{Computing the Anchor Distance} & Sequence-based (alignment-free) & No & Not relevant & Neither \\ \\
+\textbf{Likelihood Mapping} & sequence-based (model-based) & No & Not relevant & Neither \\ \\
+\textbf{Generalized Tree Alignment} & sequence-based & No & Gap and substitution costs & Neither  \\ \\
+\textbf{Jackknifing} & Any &  No & not relevant & neither  \\ \\
+\textbf{k-mer Fingerprinting} & Sequence-based (alignment-free) & no & not relevant & neither 
+    \end{tabular}
+
+ \caption{Comparison of relevant basic attributes of different methods - Part 2.}
+\end{table}
+
+\subsection{Inputs and outputs}
+\begin{table}[H]
+\centering
+   \begin{tabular}{p{5cm}p{4cm}p{4cm}}  
+        \textbf{LCA-Reconciliation-Method} & Gene tree + species tree  & Reconciled tree with duplication/loss events annotated \\ \\
+        \textbf{Neighbor Joining} & Distance matrix & Unrooted tree with branch lengths  \\ \\
+        \textbf{Minimum Evolution} & Distance matrix &  tree with minimal total branch length (ME tree) \\ \\
+        \textbf{Calculation of the Least Squares Error (Fitch-Margoliash)} & distance matrix and a tree the error is supposed to be calculated for & the error value \\ \\
+        \textbf{Waterman's Algorithm} & additive distance matrix & unique additive tree with branch lengths \\ \\
+        \textbf{Complete Linkage Clustering (Farthest Neighbor)} & Distance matrix & rooted ultrametric tree (dendrogram) \\ \\
+        \textbf{Single Linkage Clustering (Nearest Neighbor)}  &  Distance matrix &  rooted ultrametric tree (dendrogram)\\  \\
+        \textbf{WPGMA} & Distance matrix & rooted ultrametric tree (dendrogram) \\ \\
+        \textbf{UPGMA} & Distance matrix & rooted ultrametric tree (dendrogram) \\ \\
+        \textbf{Naive algorithm to check if PP exists} & &  Yes/No: does a perfect phylogeny exist\\ \\
+        \textbf{more sophisticated method for recognition and construction of a PP} & character state matrix &Yes/No + the perfect phylogeny tree if it exists \\ \\
+        \textbf{Fitch's algorithm} & tree with annotated leaves & annotated tree (inferred ancestral states) + minimum parsimony score (at root) \\ \\
+        \textbf{Sankoff-Rousseau Dynamic Programming} & tree with annotated leaves +  substitution cost matrix & annotated tree (inferred ancestral states) + minimum parsimony score (at root) \\ \\
+        \textbf{Exhaustive Enumeration} & set of taxa + objective function & Optimal tree (topology) \\ \\
+        \textbf{Greedy Sequential Addition} & set of taxa + objective function & good tree topology \\ \\
+        \textbf{Steiner Tree Heuristic} & graph + terminal nodes & if it works approximate Steiner tree, if not a min. spanning tree \\ \\
+        \textbf{Kruskal} &weighted graph & min. spanning tree \\ \\
+\end{tabular}
+
+    \caption{Comparison of the inputs and outputs different method have - Part 1.}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+ \centering
+    \begin{tabular}{p{5cm}p{4cm}p{4cm}}  
+      \textbf{Prim} & weighted graph & min. spanning tree\\ \\
+        \textbf{Split Decomposition} & Distance matrix &  Set of weighted splits; possibly a phylogenetic network \\ \\
+        \textbf{Nearest Neighbor Interchange (NNI)} & tree + objective function & locally optimized tree\\ \\
+    \textbf{Jukes-Cantor Correction} & & corrected evolutionary distance \\
+    \textbf{Bootstrapping} & & Bootstrap support values for nodes of the tree  \\
+    \textbf{Likelihood Computation} & likelihood score of the tree; optimized branch lengths\\
+    \textbf{SANS} & & set of weighted splits / distance matrix / phylogenetic network  \\
+    \textbf{MASH} & & Pairwise genomic distance matrix (approximate)  \\
+    \textbf{Split Filtering} & & Filtered set of splits (network or tree)\\
+    \textbf{Computing the Anchor Distance} & Two sequences + set of anchors (conserved regions) & Pairwise anchor-based distance value \\ \\
+    \textbf{Likelihood Mapping} &  Multiple sequence alignment + substitution model & Triangular plot showing support for different tree topologies per quartet; assessment of phylogenetic signal in the data  \\ \\
+    \textbf{Generalized Tree Alignment} & Set of unaligned sequences + substitution/gap cost model & Tree + branch lengths \\ \\
+    \textbf{Jackknifing} & Multiple sequence alignment + tree-building method & Support values for nodes of the tree (similar to bootstrap support) \\ \\
+    \textbf{k-mer Fingerprinting} & Raw genome sequences + parameter k & k-mer frequency vectors per sequence; pairwise distances derived from these vectors
+     \end{tabular}
+      \caption{Comparison of the inputs and outputs different method have - Part 2.}
+\end{table}
+
+\subsection{Complexity}
+\begin{table}[H]
+    \centering
+\begin{tabular}{p{5cm}p{7cm}p{2cm}}  
+\textbf{Method/Algorithm} & & \textbf{Time} \\  \\
+        \textbf{LCA-Reconciliation-Method} & \textit{Gesamt} & \ON -\ONz \\ 
+         \textit{Initialization} &  For each leaf on the gene tree we set the LCA to the corresponding leaf in the species tree. & \ON \\
+        \textit{Bottom-Up-Phase} & We compute the LCA for each set of species in which any descendant from an internal node occurs: For the current node, we set the LCA of the set of species in which any descendant from this node occurs to the to the LCA of the set of species in which any descendant of these descendants occur. If the newly set LCA is equal to the LCA of one set in which a descendant occurs, it is a duplication event, otherwise a speciation event. &  \Oc -\ON  \\ \\
+        \textbf{Neighbor Joining} & &  \\ \\
+        \textbf{Minimum Evolution} & & \\ \\
+        \textbf{Calculation of the Least Squares Error (Fitch-Margoliash)} &  \\ \\
+        \textbf{Waterman's Algorithm} & Gesamt & \ONz \\ \\
+        \textbf{Complete Linkage Clustering (Farthest Neighbor)} & & \\ \\
+        \textbf{Single Linkage Clustering (Nearest Neighbor)}  & & \\  \\
+        \textbf{WPGMA} & & \\ \\
+        \textbf{UPGMA}& & \\ \\
+        \textbf{Naive algorithm to check if PP exists} & Gesamt &  $O(nm^2)$ \\ \\
+        \textbf{more sophisticated method for recognition and construction of a PP} & Gesamt & $O(nm)$  \\ \\
+        
+        \textbf{Fitch's algorithm} & Gesamt &  $O(mn\sigma)$ \\ 
+        \textit{traversal} & & \ON \\
+        \textit{computation for each node} &  & $O(\sigma)$ \\
+        \textit{Bottom-up phase} &  & $O(n\sigma)$ \\
+        \textit{Top-down refinement}  &  & $O(n\sigma)$ 
+\end{tabular}
+ \caption{Comparison of the complexity of different methods - Part 1.}
+\end{table}
+
+\begin{table}[H]
+ \centering
+    \begin{tabular}{p{5cm}p{7cm}p{2cm}}  
+     \textbf{Sankoff-Rousseau Dynamic Programming} & Gesamt & $O(mn\sigma^2)$\\ 
+         \textit{traversal} & & \ON \\
+        \textit{computation for each node (bottom-up)} & & $O(\sigma^2)$ \\
+        \textit{Bottom-up phase}  & & $O(n\sigma^2)$ \\
+        \textit{Top-down refinement} &  & $O(n\sigma)$  \\ \\
+        
+        \textbf{Exhaustive Enumeration} & & \\ \\
+        \textbf{Greedy Sequential Addition} & & \\ \\
+        \textbf{Steiner Tree Heuristic} & & \\ \\
+        \textbf{Kruskal} & & \\ \\
+        \textbf{Prim} & & \\ \\
+        \textbf{Split Decomposition} & & \\
+          Computation of the d-Splits & & $O(n^6)$ \\ \\
+        \textbf{Nearest Neighbor Interchange (NNI)} & & \\ \\
+    \textbf{Jukes-Cantor Correction} \\
+    \textbf{Bootstrapping}  \\
+    \textbf{Likelihood Computation} \\
+    \textbf{SANS}  \\
+    \textbf{MASH}  \\
+    \textbf{Split Filtering} \\
+    \textbf{Computing the Anchor Distance}  \\
+    \textbf{Likelihood Mapping} \\
+    \textbf{Generalized Tree Alignment}\\
+    \textbf{Jackknifing} \\
+    \textbf{k-mer Fingerprinting}
+     \end{tabular}
+     
+ \caption{Comparison of the complexity of different methods - Part 2.}
+\end{table}

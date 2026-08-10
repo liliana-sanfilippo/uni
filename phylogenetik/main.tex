@@ -1,0 +1,150 @@
+\input{preamble}
+\begin{document}
+\usegdlibrary{trees, layered}
+ 
+\tableofcontents 
+%\part{Vorlesungen und Tutorien}
+%\input{sections/vorlesung01}
+%\input{sections/tut07}
+%\input{sections/vorlesung07}
+
+%\input{sections/abgabe09}
+
+%\chapter{Other}
+%
+%\input{sections/Trees}
+%\input{sections/emp}
+%\part{Concepts}
+
+%\part{Problems and challenges}
+%\chapter{Tree reconstruction challenges}
+%\section{Parsimony-based challenges}
+%\subsection{Perfect Phlogeny Problem}
+%\subsection{Small Parsimony Problem}
+%\subsection{Large Parsimony Problem}
+
+%\section{Distance-based challenges}
+%\subsection{Additive reconstruction}
+%\subsection{Ultrametric reconstruction}
+%\subsection{Approximate reconstruction}
+
+%\section{Likelihood-based challenges}
+%\subsection{Tree Evaluation Problem}
+%\subsection{Maximum Likelihood Tree Problem}
+%\subsection{Simultaneous Alignment and Reconstruction}
+
+
+%\chapter{Data (pre-)processing challenges}
+%\section{Distance correction challenges}
+%Jukes-Cantor Correction
+%Kimura 2-Parameter Model (K2P)
+%\section{Alignment free distance calculation challenges}
+%k-mer Fingerprinting
+%MASH
+%Computing the Anchor Distance
+%\section{Evolutionary distance calculation challenges}
+%Maximum Likelihood Estimation of Evolutionary Distances
+
+
+%\chapter{Phylogenetic network (reconstruction) challenges}
+%\section{Split calculation}
+%\section{Network reconstruction}
+%\section{Split filtering}
+
+%\chapter{Tree quality evaluation challenges}
+%\section{Statistic confidence}
+%\section{Likelyhood}
+%
+%\chapter{Other challenges}
+%\section{Gene/Species Tree Reconciliation Problem}
+%\section{Long Branch Attraction Problem}
+% Baumoptimierung: Gegeben ein bereits rekonstruierter Baum, wie kann man ihn lokal verbessern? (NNI)
+
+
+\part{Algorithms and Methods}
+\input{sections/zusammenhang}
+
+
+\chapter{Tree reconstruction methods}
+\section{Parsimony-based methods}   
+\subsection{For the Small Parsimony Problem}
+\includepdf[scale=0.8, pages=-, pagecommand={\subsubsection{Fitch}\label{sec:fitch}}]{pdfs/phylo_fitch.pdf}
+\includepdf[scale=0.8, pages=1, pagecommand={\subsubsection{Sankoff-Russeau}\label{sec:sankoff}}]{pdfs/phylo_sankoff.pdf}
+\includepdf[scale=0.8, pages=2,
+pagecommand={}]{pdfs/phylo_sankoff.pdf}
+\subsection{For the Large Parsimony Problem}
+% xhaustive Enumeration (NP, exakt )
+% Greedy Sequential Addition (heuristisch)
+\includepdf[scale=0.8, pages=1, pagecommand={\subsubsection{Steiner Tree Heuristic}\label{sec:sth}}]{pdfs/phylo_sth.pdf}
+\includepdf[scale=0.8, pages=1, pagecommand={\subsubsection{Kruskal}\label{sec:kruskal}}]{pdfs/phylo_kruskal.pdf}
+\includepdf[scale=0.8, pages=1, pagecommand={\subsubsection{Prim}\label{sec:prim}}]{pdfs/phylo_prim.pdf}
+% NNI (lokale Suche zur Verbesserung einer Topologie)
+\section{Distance-based methods}
+\subsection{Exact reconstruction - Agglomerative Clustering and Waterman}
+% Least Squares / Fitch-Margoliash
+\input{sections/AgglClus2}
+\newpage
+\includepdf[scale=0.8, pages=1, pagecommand={\subsubsection{Waterman}\label{sec:waterman}}]{pdfs/phylo_waterman.pdf}
+
+%\subsection{Heuristic optimization}
+% Neighbour Joining
+% Minimum Evolution 
+\section{Likelyhood-based methods} 
+\subsection{Prequisites}
+\input{sections/likelyhoodPrequisites}
+% Likelihood Computation
+% generalized Tree Alignment
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Data (pre-)processing methods}
+% Jukes-Cantor Correction / K2P
+% Computing the Anchor Distance
+\input{sections/anchor_vizualization}
+% Maximum Likelihood Estimation of Evolutionary Distances
+%\section{Alignmnent-free methods (Phylogenomics)}
+% k-mer Fingerprinting → SANS
+% MASH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\chapter{Phylogenetic network (reconstruction) methods}
+% Split Decomposition 
+% Split filtering
+% NeighborNet
+% SANS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Tree quality evaluation methods}
+% Bootstrapping / Jackknifing 
+% Likelihood Mapping
+% Long Branch Attraction
+\input{sections/splits}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Further methods}
+\includepdf[scale=0.8, pages=1, pagecommand={\subsubsection{Finding perfect phylogenies}\label{sec:pp}}]{pdfs/phylo_pp.pdf}
+\includepdf[scale=0.8, pages=2, pagecommand={}]{pdfs/phylo_pp.pdf}
+
+\input{sections/LeastSquares}   
+\newpage
+\input{sections/Methoden}
+\part{Questions and comparisons}
+\input{sections/vergleich}
+
+
+%\addcontentsline{toc}{section}{Sources}
+%\printbibliography
+%\addcontentsline{toc}{section}{Index}
+%\printindex
+%\newpage
+%\addcontentsline{toc}{section}{Glossary}
+%\printglossary
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+\end{document}
