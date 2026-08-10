@@ -27,6 +27,9 @@ them, thank you.
     - [Bilder](https://github.com/liliana-sanfilippo/uni/tree/main/eukgen/images)
     - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Eukaryotengenetik)
     - [Karteikarten zum Lernen der Aminosäurencodes für Anki als txt](https://github.com/liliana-sanfilippo/uni/blob/main/Eukaryotengenetik/Aminos.txt)
+- **Genomforschung** (WS 2025/26)
+  -  [Genomforschung Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/Genomforschung.pdf)
+  - [Karteikarten für Anki](https://github.com/liliana-sanfilippo/uni/blob/main/genomforschung)
 - **Grundlagen Molekularer Biologie 2** (SS2026)
     - [Grundlagen Molekularer Biologie 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/mobi2.pdf)
     - [Karteikarten und Definitionen in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/mobi2/glossary) (weitere
