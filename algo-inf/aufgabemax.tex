@@ -1,0 +1,133 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{array}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=1cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{longtable} 
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+% Useful packages 
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{makeidx}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{algpseudocode} 
+\usepackage{algorithm}
+\algnewcommand\algorithmicnot{\textbf{not}}
+\algdef{SE}[IF]{IfNot}{EndIf}[1]{\algorithmicif\ \algorithmicnot\ #1\ \algorithmicthen}{\algorithmicend\ \algorithmicif}%
+
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+\definecolor{blueboxTitle}{HTML}{B3C5D7}
+\definecolor{blueboxFrame}{HTML}{7392B7}
+\definecolor{blueboxBackground}{HTML}{C5D5EA}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{boxBackground1}{HTML}{F0D3F7}
+\definecolor{boxFrame1}{HTML}{A57982}
+\definecolor{boxTitle1}{HTML}{B98EA7}
+\tcbset{my box1/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=boxFrame1,
+    coltitle=black, colbacktitle=boxTitle1
+  }
+}
+\tcbset{my info/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=blueboxFrame,
+    coltitle=black, colbacktitle=blueboxTitle
+  }
+}
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle
+  } 
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=rose-d,
+    coltitle=black, colbacktitle=rose
+  }
+}
+\newtcolorbox{definitionbox}[1][]{my info, #1}
+\newtcolorbox{action}[1][]{my box, #1}
+\newtcolorbox{vsbox}[1][]{my box1, #1}
+\newtcolorbox{algo}[1][]{my other box, #1}
+\newcommand{\checkedbox}[0]{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
+
+\usepackage{amssymb} 
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{sample.bib} %Import the bibliography file
+
+\begin{document}
+\begin{align*}
+    \text{maximiere} \quad & z = 2x_1 - 3x_2 \\
+    \text{so dass} \quad & x_3 = 2 - x_1 + x_2 \\
+                          & x_4 = 3 + 2x_1 - 2x_2 \\
+                          & x_1, x_2, x_3, x_4 \geq 0
+\end{align*}
+
+Die Eingangsvariable könnten $x_1$ oder $x_2$ sein, da: 
+\[ 
+z = 2\textcolor{Peach}{x_1} + 3\textcolor{Peach}{x_2 }
+\]
+Wir wählen $x_1$ als Entering-Variable. \newline
+Jetzt müssen wir berechnen was der Wert (die Ratio) von dem \textcolor{RedViolet}{Koeffizienten} der Entering-Variable durch das jeweilige "\textcolor{BlueViolet}{b}" der Gleichung ist. 
+\begin{align*}
+ x_3 &= \textcolor{BlueViolet}{2} - \textcolor{RedViolet}{1}x_1 + x_2 \\
+x_4 & = \textcolor{BlueViolet}{3} + \textcolor{RedViolet}{2}x_1 - 2x_2 \\
+\end{align*}
+Die Ratios sind: 
+\begin{align*}
+    \frac{2}{1} &= 0.5 & \quad \text{für } x_3 \\
+    \frac{3}{2} & \approx 0.6 & \quad  \text{ für } x_3 \\
+\end{align*}
+Die Leaving-Variable wird die mit der kleinsten Ratio, also $x_3$. \newline
+Nun formen wir die zur Leave-Variable ($x_3$) gehörende Gleichung nach der Entering-Variable ($x_1$) um.
+\begin{align*}
+    x_3 &= 2 - x_1 + x_2 \\
+    x_1 + x_3 &= 2 + x_2 \\
+    x_1  &= 2 + x_2  - x_3 \\
+\end{align*}
+Nun müssen wir noch das LP updaten mit der neuen Variable:
+\begin{align*}
+    z &= 2x_1 - 3x_2 \\
+    &= 2(2 + x_2  - x_3) - 3x_2 \\
+    &= 4 + 2x_2  - 2x_3 - 3x_2 \\
+    &= 4 + 2x_2  - 5x_2 \\
+\end{align*}
+\begin{align*}
+     x_4 &= 3 + 2(2 + x_2  - x_3) - 2x_2 \\
+     &= 3 + 4 + 2x_2  - 2x_3 - 2x_2 \\
+     &= 7 - 2x_3 \\
+\end{align*}
+Das LP sieht nach dem Pivotschritt also folgendermaßen aus:
+\begin{align*}
+    \text{maximiere} \quad & z = 4 + 2x_2  - 5x_2 \\
+    \text{so dass} \quad & x_1  = 2 + x_2  - x_3 \\
+                          & x_4 = 7 - 2x_3 \\
+                          & x_1, x_2, x_3, x_4 \geq 0
+\end{align*}
+
+\end{document}

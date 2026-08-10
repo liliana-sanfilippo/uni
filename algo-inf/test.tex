@@ -1,0 +1,200 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{array}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=1cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{longtable} 
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+% Useful packages 
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{makeidx}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{algpseudocode} 
+\usepackage{algorithm}
+\algnewcommand\algorithmicnot{\textbf{not}}
+\algdef{SE}[IF]{IfNot}{EndIf}[1]{\algorithmicif\ \algorithmicnot\ #1\ \algorithmicthen}{\algorithmicend\ \algorithmicif}%
+
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+\definecolor{blueboxTitle}{HTML}{B3C5D7}
+\definecolor{blueboxFrame}{HTML}{7392B7}
+\definecolor{blueboxBackground}{HTML}{C5D5EA}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{boxBackground1}{HTML}{F0D3F7}
+\definecolor{boxFrame1}{HTML}{A57982}
+\definecolor{boxTitle1}{HTML}{B98EA7}
+\tcbset{my box1/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground1, colframe=boxFrame1,
+    coltitle=black, colbacktitle=boxTitle1
+  }
+}
+\tcbset{my info/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=blueboxBackground, colframe=blueboxFrame,
+    coltitle=black, colbacktitle=blueboxTitle
+  }
+}
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle
+  } 
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose
+  }
+}
+\newtcolorbox{infobox}[1][]{my info, #1}
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mybox1}[1][]{my box1, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+\newcommand{\checkedbox}[0]{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
+
+\usepackage{amssymb}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{sample.bib} %Import the bibliography file
+
+\usepackage[T1]{fontenc}
+\makeindex
+\title{AlgoInf Test}
+\author{Lil`Jana}
+\usepackage[table]{xcolor}
+\begin{document}
+
+\section{}
+\subsection{Aufwand}
+\begin{table}[H]
+    \begin{tabular}{ p{5cm} | c c c c }
+          & \textbf{Insert} & \textbf{Delete} & \textbf{Decrease-key} & \textbf{extract min} \\
+        \textbf{Ungeordnetes Array} & \textcolor{white}{plazhalter} & \textcolor{white}{plazhalter} & \textcolor{white}{plazhalter} & \textcolor{white}{plazhalter}  \\ \\ \\
+        \textbf{Binärer Min-Heap} & &&&& \\ \\ \\
+        \textbf{Fibonacci-Heap} & & && \\ \\ \\
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{ p{5cm} | c c c c}
+         & \textbf{Insert} & \textbf{Delete} & \textbf{Nachfolger} \textbf{Minimum finden} \\
+         \textbf{Adjazenzmatrix} & \textcolor{white}{plazhalter} &  \textcolor{white}{plazhalter}  & \textcolor{white}{plazhalter} & \textcolor{white}{plazhalter} \\ \\ \\
+        \textbf{Kantenliste} & && &  \\ \\ \\
+        \textbf{Adjazenzliste} &  & &   & \\ \\ \\
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{ p{5cm} | c c c c  }
+         & \textbf{Insert}  & \textbf{Decrease-key} & \textbf{extract min} & \textbf{Gesamtlaufzeit}  \\
+        \textbf{Dijkstra mit Adjazenzliste und Binärer Heap} & \textcolor{white}{plazhalter} & \textcolor{white}{plazhalter}   &  \textcolor{white}{plazhalter} &  \textcolor{white}{plazhalter} \\ \\ \\
+        \textbf{Dijkstra mit Adjazenzliste und Fibonacci-Heap} &    & & &  \textcolor{white}{plazhalter}  \\ \\ \\
+        \textbf{Dijkstra mit Kantenliste} & & & &  \textcolor{white}{plazhalter}   \\ \\ \\
+        \textbf{Dijkstra mit Adjazenzmatrix} & &  & &  \textcolor{white}{plazhalter} \\ \\ \\
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+\section{Algorithmen}
+\subsubsection*{Was tut Prim?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Kruskal?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Floyd?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Bellman-Ford?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Dijkstra?} 
+\bigskip \bigskip
+
+
+\section{Multiple Choice}
+\begin{longtable}[H]
+    \centering
+    \begin{tabular}{ | p{1cm} | c c | p{13cm} |} \hline
+    & & & \\
+     & \textbf{Richtig} & \textbf{Falsch} &  \\ & & & \\ \hline \hline  & & & \\
+     \cite{probeklausur21}\cite{hauptklausur21}\cite{probeklausur24} & $\square$ &  $\square$  &  In einem Flussnetzwerk ist für einen gültigen Fluss die Kapazität jedes Schnittes (Cuts) gleich.\\ & & & \\  \hline \hline & & & \\
+     \cite{probeklausur21}\cite{probeklausur24} & $\square$ &  $\square$  & Der Simplex-Algorithmus kann mit vier möglichen Ausgängen enden: Optimale Lösung, LP ungültig, LP unbeschränkt oder lokales, aber nicht globales Optimum des LPs. \\ & & & \\
+     \cite{nachklausur19} & $\square$ &  $\square$   & Wenn die Basislösung des LP ungültig ist, besitzt das LP keine zulässige Lösung. \\ & & & \\ \hline \hline & & & \\
+     \cite{probeklausur21}\cite{probeklausur24} & $\square$ &  $\square$  & Das folgende Problem ist NP-hart: Gegeben sei ein gerichteter, gewichteter Graph. Gibt es einen negativen Kreis? \\ & & & \\
+     \cite{nachklausur19} & $\square$ &  $\square$  & Das Problem, gegeben eine beliebige nichtlineare Funktion, finde ein globales Optimum, ist NP schwer.\\ & & & \\
+     & & & Das folgende Problem ist in polynomieller Laufzeit lösbar:\\ & & & \\
+     \cite{nachklausur19} & $\square$ &  $\square$  &  Gegeben lineare Ungleichungen der Form $w_1^ix_1+...+w_n^i x_n \leq b^i$ , entscheide, ob es eine Lösung gibt, die maximal vier Ungleichungen nicht erfüllt. \\ & & & \\
+     \cite{nachklausur19}& $\square$ &  $\square$  & Gegeben eine aussagenlogische Formel in konjunktiver Normalform, finde eine Belegung der Variablen, so dass maximal viele Klauseln erfüllt sind.  \\& & & \\
+     \cite{probeklausur21}\cite{probeklausur24} & $\square$ &  $\square$  &  Gegeben eine Anzahl von Räumen und Veranstaltungen, die in gewissen Räumen stattfinden können. Existiert eine Zuordnung aller Veranstaltungen zu Räumen, so dass kein Raum doppelt belegt ist? \\ & & & \\\hline \hline & & & \\  
+     \cite{probeklausur21}\cite{probeklausur24} & $\square$ &  $\square$  &  Das Problem einen minimalen Fluss in einem Flussgraphen (V, (E, c)) zu finden, kann man als LP mit |E| Variablen und 3 · |V| Nebenbedingungen schreiben. \\ & & & \\\hline \hline & & & \\
+     & & & Bei einem gerichteten Graphen mit nicht-negativen Kantengewichten ist der kürzesten Pfad zwischen 2 Knoten eindeutig, wenn ... \\ & & & \\
+     \cite{probeklausur24}\cite{hauptklausur21} & $\square$ &  $\square$  &  ...alle Kantengewichte unterschiedliche Potenzen von 2 sind. \\ & & & \\
+     \cite{probeklausur24}& $\square$ &  $\square$  & ...alle Kantengewichte unterschiedliche positive ganze Zahlen sind
+und der Graph keine Zyklen enthält. \\ & & & \\
+    \cite{hauptklausur21}& $\square$ &  $\square$  & ...alle Kantengewichte unterschiedliche, positive ganze Zahlen sind. \\ & & & \\ \hline \hline & & & \\ 
+    
+    \end{tabular}
+    \label{tab:mutiple_choice}
+\end{longtable}
+
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{ | p{1cm} | c c | p{13cm} |} \hline
+    & & & \\
+     & \textbf{Richtig} & \textbf{Falsch} &  \\ & & & \\ \hline \hline  & & & \\
+         & & &  Wir betrachten einen gerichteten Graphen und einen Startknoten. Wir nehmen an, dass einige Kantengewichte negativ sind, es aber keine Zyklen in dem Graphen gibt. Wenn wir den Dijkstra-Algorithmus anwenden... \\ & & & \\
+     \cite{probeklausur24}\cite{probeklausur21} & $\square$ &  $\square$  & ...könnte der Algorithmus in eine Endlosschleife geraten. \\ & & & \\
+     \cite{probeklausur24}& $\square$ &  $\square$  & ...wird der Algorithmus garantiert terminieren, aber in einigen Fällen kann es passieren, dass die kürzesten Pfade nicht alle korrekt sind. \\ & & & \\
+     \cite{probeklausur21} & $\square$ &  $\square$  & Die Greedy Idee, welche der Dijkstra Algorithmus anwendet, kann nicht auf einem Graphen mit negativen Kantengewichten angewendet werden! \\ & & & \\
+     \cite{probeklausur24} \cite{probeklausur21} & $\square$ &  $\square$  & ...wird der Algorithmus garantiert terminieren und in einigen Fällen sind tatsächlich die kürzesten Pfade alle korrekt.\\ & & & \\ \hline \hline & & & \\
+     \cite{hauptklausur21} & $\square$ &  $\square$  & Die Komplexität des Problems alle kürzesten Pfade in einem Graphen mit negativen Kantengewicht zu finden ist immer in $\Omega(|V|^3)$. \\ & & & \\ \hline \hline & & & \\ 
+     \cite{hauptklausur21} & $\square$ &  $\square$  &  Gegeben sei ein gerichteter und gewichteter Graph G = (V, E, W ). Die Länge des längsten Pfades zwischen 2 beliebigen Knoten zu finden, wenn der Graph azyklisch ist, kann in $O(|V|^3)$ gelöst werden. \\ & & & \\
+     \cite{hauptklausur21}  & $\square$ &  $\square$  &  Gegeben sei ein gerichteter und gewichteter Graph G = (V, E, W ). Die Länge des längsten, azyklischen Pfades zwischen 2 beliebigen Knoten zu finden, wenn alle Kantengewichte nicht negativ sind, kann in $O(|V|^3)$ gelöst werden. \\ & & & \\
+      \cite{hauptklausur21}  & $\square$ &  $\square$  & Gegeben sei ein gerichteter und gewichteter Graph G = (V, E, W ). Die Länge des längsten, azyklischen Pfades zwischen 2 beliebigen Knoten zu finden, kann in $O(|V|^3)$ gelöst werden.  \\ & & & \\
+       % & $\square$ &  $\square$  & \\ & & & \\ %
+        %& $\square$ &  $\square$  & \\ & & & % 
+        \hline \hline & & & \\
+    \cite{nachklausur19}    & $\square$ &  $\square$  & Der minimale Produktspannbaum lässt sich mit dem Prim Algorithmus berechnen. \\ & & & \\ \hline
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+
+Müssen noch Fragen vom Spickzettel einfügen und Laufzeiten und wie man die Algorithmen anwendet. Algorithmen mit Problemen zusammenführen. 
+
+
+
+\addcontentsline{toc}{section}{Index}
+\printindex
+\addcontentsline{toc}{section}{List of Algorithms}
+\listofalgorithms
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+
+\end{document}

@@ -1,0 +1,135 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{array}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=1cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{longtable} 
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+% Useful packages 
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{makeidx}
+\setlength{\columnsep}{1cm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{algpseudocode} 
+\usepackage{algorithm}
+\algnewcommand\algorithmicnot{\textbf{not}}
+\algdef{SE}[IF]{IfNot}{EndIf}[1]{\algorithmicif\ \algorithmicnot\ #1\ \algorithmicthen}{\algorithmicend\ \algorithmicif}%
+
+\tcbuselibrary{skins}
+\usepackage{lipsum}
+\definecolor{blueboxTitle}{HTML}{B3C5D7}
+\definecolor{blueboxFrame}{HTML}{7392B7}
+\definecolor{blueboxBackground}{HTML}{C5D5EA}
+\definecolor{rose}{HTML}{CC7E85}
+\definecolor{rose-d}{HTML}{83343C}
+\definecolor{rose-l}{HTML}{DCA7AC}
+\definecolor{boxBackground}{HTML}{DEF4C6}
+\definecolor{boxFrame}{HTML}{004346}
+\definecolor{boxTitle}{HTML}{B1CF5F}
+\definecolor{boxBackground1}{HTML}{F0D3F7}
+\definecolor{boxFrame1}{HTML}{A57982}
+\definecolor{boxTitle1}{HTML}{B98EA7}
+\tcbset{my box1/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground1, colframe=boxFrame1,
+    coltitle=black, colbacktitle=boxTitle1
+  }
+}
+\tcbset{my info/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=blueboxBackground, colframe=blueboxFrame,
+    coltitle=black, colbacktitle=blueboxTitle
+  }
+}
+\tcbset{my box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=boxBackground, colframe=boxFrame,
+    coltitle=black, colbacktitle=boxTitle
+  } 
+}
+\tcbset{my other box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=rose-l, colframe=rose-d,
+    coltitle=black, colbacktitle=rose
+  }
+}
+\newtcolorbox{infobox}[1][]{my info, #1}
+\newtcolorbox{mybox}[1][]{my box, #1}
+\newtcolorbox{mybox1}[1][]{my box1, #1}
+\newtcolorbox{mechanism}[1][]{my other box, #1}
+\newcommand{\checkedbox}[0]{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
+
+\usepackage{amssymb}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{sample.bib} %Import the bibliography file
+
+\usepackage[T1]{fontenc}
+\makeindex
+\title{AlgoInf Test}
+\author{Lil`Jana}
+\usepackage[table]{xcolor}
+\begin{document}
+
+\section{}
+\subsection{Aufwand}
+\begin{table}[H]
+    \begin{tabular}{ p{5cm} | c c c c }
+          & \textbf{Insert} & \textbf{Delete} & \textbf{Decrease-key} & \textbf{extract min} \\
+        \textbf{Ungeordnetes Array} & O(1) & O(|V|) & O(1) & O(|V|)  \\ \\ \\
+        \textbf{Binärer Min-Heap} & O(log|V|) & O(log|V|) & O(log|V|) & O(log|V|) \\ \\ \\
+        \textbf{Fibonacci-Heap} & O(1) & O(log|V|) & O(1) & O(log|V|)  \\ \\ \\
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{ p{5cm} | c c c c}
+         & \textbf{Insert} & \textbf{Delete} & \textbf{Nachfolger} & \textbf{Minimum finden} \\ 
+         \textbf{Adjazenzmatrix} & O(1) & O(1) &  O(|V|) & O($|V|^2$) \\ \\ \\
+        \textbf{Kantenliste} & O(1) & O(|E|) &   O(|E|)  &  O(|E|)\\ \\ \\ 
+        \textbf{Adjazenzliste} & O(1) & O(deg(|E|)) & O(deg(|E|)) & O((|E| + |V|))  \\ \\ \\
+    \end{tabular}
+    \label{tab:my_label} 
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{ p{5cm} | c c c c }
+         & \textbf{Insert} & \textbf{Decrease-key} & \textbf{extract min}  & \textbf{Gesamtlaufzeit} \\
+        \textbf{Dijkstra mit Adjazenzliste und Binärer Heap} & O(|V| log |V|)     & O(|E| log |V|) &  O(|V| log |V|) & O((|V| + |E|) log |V|) \\ \\ \\
+        \textbf{Dijkstra mit Adjazenzliste und Fibonacci-Heap} & O(|V|)  &  O(|E|) & O(|V| log |V|) & O(|V|log|V|+|E|) \\ \\ \\
+        \textbf{Dijkstra mit Kantenliste} &  & &  \\ \\ \\
+        \textbf{Dijkstra mit Adjazenzmatrix} & & & \\ \\ \\
+    \end{tabular}
+    \label{tab:my_label}   
+\end{table}
+
+\section{Algorithmen}
+\subsubsection*{Was tut Prim?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Kruskal?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Floyd?} 
+Berechnung der kürzesten Wege zwischen allen Paaren von Knoten in einem gewichteten Graphen.
+\subsubsection*{Was tut Bellman-Ford?} 
+\bigskip \bigskip
+\subsubsection*{Was tut Dijkstra?} 
+\bigskip \bigskip
+
+\end{document}
