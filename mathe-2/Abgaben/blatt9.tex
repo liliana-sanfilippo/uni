@@ -1,0 +1,171 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 9; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 9.1}
+\subsection{a)} 
+\[
+\frac{dx}{du} \overset{x = au}{\rightarrow} \frac{d(au)}{du} = a \overset{* du}{\rightarrow} dx = a du 
+\]
+\[
+\frac{du}{dz} \overset{u = \tan(z)}{\rightarrow} \frac{d(\tan(z))}{dz} = \frac{d}{dz} \tan(z) = \sec^2 (z) \overset{* dz}{\rightarrow} du  = \sec^2 (z) dz
+\]
+\[
+\int \frac{dx}{a^2+x^2} \overset{x = au}{\rightarrow} \int \frac{a du}{a^2+a^2u^2} = \int \frac{du}{a+a u^2} \overset{u = \tan(z)}{\rightarrow} \int \frac{\sec^2 (z) dz}{a+a \tan^2(z)} 
+\]
+\[
+\int \frac{\sec^2 (z) dz}{a+a \tan^2(z)}  = \frac{1}{a} \int \frac{\sec^2 (z) dz}{\sec^2 (z)}   = \frac{1}{a} \int dz = \frac{1}{a} z + C
+\]
+\subsection{b)} 
+\[
+\frac{dx}{du} \overset{x = |a|u}{\rightarrow} 
+\frac{d(|a|u)}{du} = |a| \overset{* du}{\rightarrow} dx = |a| du
+\]
+\[
+\frac{du}{dz} \overset{u = \sin(z)}{\rightarrow} 
+\frac{d(\sin(z))}{dz}
+= \frac{d}{dz} \sin(z) = \cos(z) \overset{* dz}{\rightarrow} du = \cos(z) dz 
+\]
+\[
+\int \frac{dx}{\sqrt{a^2 - x^2}}
+\overset{x = |a|u}{\rightarrow} \int \frac{|a| du}{\sqrt{a^2 - |a|^2u^2}}
+= \int \frac{|a| du}{|a| \sqrt{1-u^2}}
+= \int \frac{du}{\sqrt{1-u^2}} \overset{u = \sin(z)}{\rightarrow}
+= \int \frac{\cos(z) dz }{\sqrt{1-\sin^2(z)}} 
+= \int \frac{\cos(z) dz }{\sqrt{\cos^2(z)}}
+\]
+\[
+= \int \frac{\cos(z) dz }{\cos(z)} = \int dz = z + C
+\]
+
+
+\section{Aufgabe 9.2}
+\[
+z.z. \ \lim_{N \rightarrow \infty} \sum^n_{n=1} \frac{1}{N+n} =  \int_1^2 \frac{dx}{x} = \ln 2
+\]
+%Summe imstellen indem man $k = N+n$ setzt
+%\[\lim_{N \rightarrow \infty} \sum^n_{n=1} \frac{1}{N+n} = \lim_{N \rightarrow \infty} \sum^{2N}_{k= N+1} \frac{1}{k}\]
+%Das kann man als harmonische Reihe schreiben, aber es fängt ja erst bei N an, also muss man rechnen:
+%\[\sum^{2N}_{k= N+1} \frac{1}{k} = H_{2N} - H_N\]
+\begin{align*}
+    \lim_{N \rightarrow \infty} \sum^n_{n=1} \frac{1}{N+n}  &= 
+    \lim_{N \rightarrow \infty} \sum^n_{n=1} \frac{1}{N} \cdot  \frac{1}{1+\frac{n}{N}} \\
+    & =  \lim_{N \rightarrow \infty} \frac{1}{N} \cdot \sum^n_{n=1}  f\bigg(1+\frac{n}{N}\bigg)  & mit \ f(x) = \frac{1}{x}
+\end{align*}
+$1+\frac{n}{N}$ liegt in der Summe immer zwischen 1 und 2, daher kann man das auf das Intervall [1,2] beziehen. Wenn man das als riemann-Summe ansieht, hat man: 
+\begin{align*}
+     = \int_1^2 \frac{1}{x} dx & = [\ln(|x|)]^2_1  \\
+     &= \ln(2) - \ln(1) \\
+     & = \ln(2)
+\end{align*}
+\section{Aufgabe 9.3}
+\subsection{Integral I}
+Substituieren: $x^3 = u$, dann ist $du = 3 x^2 dx$, also $dx = \frac{du}{3 x^2}$. Außerdem ist dann die obere Grenze $\frac{\pi}{2}$
+\[
+\int^{\sqrt[3]{\frac{\pi}{2}}}_0 x^5 \cos(x^3) dx 
+ \rightarrow \int^{\frac{\pi}{2}}_0 x^2 u \cos(u) \frac{du}{3 x^2} 
+ =  \int^{\frac{\pi}{2}}_0 u \cos(u) \frac{du}{3} = 
+ \int^{\frac{\pi}{2}}_0 u \cos(u) \frac{1}{3} du =   \frac{1}{3} \int^{\frac{\pi}{2}}_0 u \cos(u) du 
+\]
+
+\[
+\int\underbrace{u}_{f} \underbrace{\cos(u) }_{g'} du = \underbrace{u}_{f}  \underbrace{\sin(u)}_{g} - \int  \underbrace{1}_{f'}  \underbrace{\sin(u)}_{g} du  = 
+u \sin(u) + \cos(u) + C
+\]
+
+\[
+ \frac{1}{3} \int^{\frac{\pi}{2}}_0 u \cos(u) du  =  \frac{1}{3}  [u \sin(u) + \cos(u)]^{\frac{\pi}{2}}_0 =  \frac{1}{3} (\frac{\pi}{2} \sin(\frac{\pi}{2}) + \cos(\frac{\pi}{2}) - 0 \sin(0) + \cos(0)) = 
+ \frac{1}{3} (\frac{\pi}{2} + 1) = \frac{\pi - 2}{6}
+\]
+
+%\int^{\frac{\pi}{2}}_0 \underbrace{u}_{f} \underbrace{\cos(u) du }_{g'} = \underbrace{}_{f}  \underbrace{}_{g} - \int  \underbrace{}_{f'}  \underbrace{}_{g}
+\subsection{Integral II}
+\[
+\int_0^1 \sin(ax) \sin(bx) dx 
+\]
+
+\[
+\int^1_0 \underbrace{\sin(ax)}_{f} \underbrace{sin(bx)}_{g'} dx 
+= [\underbrace{\sin(ax)}_{f}  \underbrace{(- \frac{1}{b}\cos(bx))}_{g}]^1_0 - \int^1_0   \underbrace{a \cos(ax)}_{f'}  \underbrace{(- \frac{1}{b}\cos(bx))}_{g}  dx
+\]
+\[
+= \sin(ax) (-\frac{1}{b}\cos(bx)) - (-\frac{a}{b}) \int^1_0 \cos(ax)\cos(bx) dx
+\]
+Neues Integral berechnen 
+\[
+\int^1_0 \underbrace{\cos(ax)}_{f} \underbrace{\cos(bx)}_{g'} dx 
+= [\underbrace{\cos(ax)}_{f}  \underbrace{\frac{1}{b} \sin(bx)}_{g}]^1_0 - \int^1_0   \underbrace{(-a\sin(ax))}_{f'}  \underbrace{\frac{1}{b} \sin(bx)}_{g} dx =  [\underbrace{\cos(ax)}_{f}  \underbrace{\frac{1}{b} \sin(bx)}_{g}]^1_0 + \frac{a}{b} \int^1_0 \sin(ax) \sin(bx) dx
+\]
+Jetzt haben wir: 
+\begin{align*}
+    \int_0^1 \sin(ax) \sin(bx) dx 
+& = \sin(ax) (-\frac{1}{b}\cos(bx)) + \frac{a}{b} 
+\bigg([\cos(ax)  \frac{1}{b} \sin(bx)]^1_0 + \frac{a}{b} \int^1_0 \sin(ax) \sin(bx) dx \bigg)  \\
+&= \sin(ax) (-\frac{1}{b}\cos(bx)) +
+\frac{a}{b^2} [\cos(ax) \sin(bx)]^1_0 + \frac{a^2}{b^2} \int^1_0 \sin(ax) \sin(bx) dx   
+\end{align*}
+Und das kann man bestimmt noch weiter vereinfachen. 
+
+\section{Aufgabe 9.4}
+
+
+
+\end{document}

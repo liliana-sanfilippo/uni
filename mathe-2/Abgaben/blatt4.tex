@@ -1,0 +1,400 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url} 
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 4; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\ 
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section*{Aufgabe 4.1}
+\subsection*{(a)}
+\begin{align*}
+      A & = \begin{pmatrix}
+    -2 & 2 & -8 & -6 \\ 
+    0 & 0 & -8 & -6 \\
+    0 & 0 & 4 & 3 \\ 
+    0 & 0 & -6 & -5
+    \end{pmatrix} & \mid z1=z1-z2\\ 
+    & =  \begin{pmatrix}
+    -2 & 2 & 0 & 0 \\ 
+    0 & 0 & -8 & -6 \\
+    0 & 0 & 4 & 3 \\ 
+    0 & 0 & -6 & -5
+    \end{pmatrix} & \mid z2=z2 + 2\cdot z3\\ 
+     & =  \begin{pmatrix}
+    -2 & 2 & 0 & 0 \\ 
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 4 & 3 \\ 
+    0 & 0 & -6 & -5
+    \end{pmatrix}\\ 
+\end{align*}
+\[
+      A - \lambda I  = \begin{pmatrix}
+    -2 - \lambda & 2 & 0 & 0\\ 
+    0 &- \lambda & 0 & 0\\
+    0 & 0 & 4 - \lambda  & 3 \\
+    0 & 0 & -6 & -5 - \lambda
+    \end{pmatrix}
+\]
+Laplace Entwicklung nach der ersten Spalte. 
+\begin{align*}
+ det( A - \lambda I) & = \sum^4_{j=1} a_{1j} \cdot (-1)^{1+j} \cdot det(A'_{1j}) \\
+    & = a_{11} \cdot (-1)^{2} \cdot det(A'_{11})\\
+    & =(-2-\lambda) \cdot det(A'_{11}) \\ \\
+    A'_{11} & =  \begin{pmatrix}
+    - \lambda & 0 & 0 \\
+     0 & 4 - \lambda  & 3 \\ 
+     0 & -6 & -5 - \lambda 
+    \end{pmatrix} \\ \\
+\end{align*}
+Laplace nach der ersten Spalte. 
+\begin{align*}
+    det(A'_{11}) & =  \sum^3_{j=1} a_{1j} \cdot (-1)^{1+j} \cdot det(A''_{1j}) \\
+    & = a_{11} \cdot (-1)^{2} \cdot det(A''_{11}) \\
+     & = (-\lambda) \cdot det(A''_{11}) \\ \\
+     \Rightarrow  det( A - \lambda I) &  =(-2-\lambda) \cdot  (-\lambda \cdot det(A''_{11}) )  \\ \\
+     A''_{11} & =  \begin{pmatrix}
+     4 - \lambda  & 3 \\
+      -6 & -5 - \lambda
+    \end{pmatrix} \\ \\
+    det ( A''_{11}) & = (4-\lambda) \cdot (-5-\lambda) -  3 \cdot (-6) \\
+    & = \lambda^2 + \lambda - 2 
+\end{align*}
+\begin{align*}
+      \Rightarrow  det( A - \lambda I) &  =(-2-\lambda) \cdot  (-\lambda \cdot (\lambda^2 + \lambda - 2 ) )  \\ 
+     &  =(-2-\lambda) \cdot  (-\lambda^3 - \lambda^2 + 2 \lambda ) \\
+     & = \lambda^4 + 3\lambda^3 - 4 \lambda 
+\end{align*}
+Also: 
+ \begin{align*}
+ \chi_A(\lambda) &  = \lambda^4 + 3\lambda^3 - 4 \lambda  \\
+ & = \lambda \cdot  (\lambda^3 + 3\lambda^2 - 4)  \\  \\ 
+  0 &    = 0 \cdot  (0^3 + 3 \cdot 0^2 - 4) \\
+  \Rightarrow & \lambda_1 = 0 \\ \\
+  0 & = 1^3 + 3\cdot 1^2 - 4 \\ 
+  \Rightarrow & \lambda_2 = 1 \\ \\
+  \text{Zerlegen} \\ 
+  \lambda^3 + 3\lambda^2 - 4  & = (\lambda - 1) (\lambda^2 + 4 \lambda + 4)  \\
+  & = (\lambda - 1) (\lambda + 2) (\lambda + 2) \\ \\
+  \Rightarrow & \lambda_3 = -2 \\
+  & \lambda_4 = -2
+ \end{align*}
+Eigenvektoren und deren Basen berechnen.   
+\paragraph{Für $\lambda_1$:}
+\begin{align*}
+        A - 0I &  = \begin{pmatrix}
+    -2 - 0 & 2 & 0 & 0\\ 
+    0 &- 0 & 0 & 0 \\
+    0 & 0 & 4 - 0  & 3 \\
+    0 & 0 & -6 & -5 - 0
+    \end{pmatrix} \\
+   &  = \begin{pmatrix}
+    -2 & 2 & 0 & 0 \\ 
+    0 &0 &0 & 0 \\
+    0 & 0 & 4   & 3 \\
+    0 & 0 & -6 & -5
+    \end{pmatrix}
+\end{align*}
+    Setze $ (A - 0I)v = 0$.
+\[\begin{pmatrix}
+    -2 & 2 & 0 & 0 \\ 
+     0 & 0 & 0 & 0\\
+    0 & 0 & 4  & 3 \\
+    0 & 0 & -6 & -5 
+    \end{pmatrix} \begin{pmatrix}
+       a \\ b \\ c \\ d 
+    \end{pmatrix}  = \begin{pmatrix}
+       0 \\ 0 \\0 \\ 0
+    \end{pmatrix}\]
+    \[  \begin{array}{cccccc}
+       -2a  & +2b &  &  & = 0  \\
+       &&  4c & +3d & = 0 \\
+        && -6c & -5d & = 0
+    \end{array} \] 
+    \[  \Rightarrow a = b   \quad  und \  \Rightarrow 4c = -3d \quad  
+   \Rightarrow c = -\frac{3}{4}d \]
+\begin{align*}
+   -6 \cdot (-\frac{3}{4})d -5d  & = 0 \\
+    \Rightarrow  4,5d -5d & = 0 \\
+   \Rightarrow c = d = 0 
+\end{align*}
+\begin{align*}
+       \Rightarrow & \quad \text{ EV haben die Form } \begin{pmatrix}
+         a \\ a \\ 0 \\ 0
+      \end{pmatrix} \\
+        \Rightarrow & \quad \text{Basis des Eigenraums für } \lambda = 0 : \Biggl\{ \begin{pmatrix}
+         1 \\ 1 \\ 0 \\ 0
+      \end{pmatrix}   \Biggr\} 
+\end{align*}   
+\paragraph{Für $\lambda_2$:}
+\begin{align*}
+       A - 1I &  = \begin{pmatrix}
+    -3 & 2 &0 & 0\\ 
+    0 &- 1 & 0 & 0 \\
+    0 & 0 & 3  & 3 \\
+    0 & 0 & -6 & -6
+    \end{pmatrix} & \mid z1 = z1+ 2\cdot z2 \quad und  \quad z4 = z4 + 2\cdot z3\\
+    & = \begin{pmatrix}
+    -3 & 0 &0 & 0\\ 
+    0 &- 1 & 0 & 0 \\
+    0 & 0 & 3  & 3 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix} 
+\end{align*}
+    Setze $ (A - 1I)v = 0$.
+    \[   \begin{pmatrix}
+    -3 & 0 & 0 &  0\\ 
+    0 &- 1 & 0 & 0 \\
+    0 & 0 & 3  & 3 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix} \begin{pmatrix}
+       a \\ b \\ c \\ d 
+    \end{pmatrix}  = \begin{pmatrix}
+       0 \\ 0 \\0 \\ 0
+    \end{pmatrix} \]
+\begin{align*}
+    \begin{array}{cccccc}
+       -3a  &  &  & & = 0  \\
+       & -b &   &  & = 0 \\
+       &&  3c & +3d & = 0 \\
+    \end{array} \\
+    %%%%%%%%%%%%%%%%%%
+     \Rightarrow c & = -d \\
+     \Rightarrow  a & = b = 0
+\end{align*}
+\begin{align*}
+      \Rightarrow & \quad \text{ EV haben die Form } \begin{pmatrix}
+         0 \\ 0 \\ -d \\ d
+      \end{pmatrix}  \\
+       \Rightarrow & \quad \text{Basis des Eigenraums für } \lambda = 1 : \Biggl\{ \begin{pmatrix}
+          0 \\ 0 \\ -1 \\ 1
+      \end{pmatrix}   \Biggr\}
+\end{align*}
+\paragraph{Für $\lambda_3$ und $\lambda_4$:}
+\begin{align*}
+     A +2I &  = \begin{pmatrix}
+    0 & 2 & 0 & 0 \\ 
+    0 & 2 & 0 & 0\\
+    0 & 0 & 6  & 3 \\
+    0 & 0 & -6 & -3
+    \end{pmatrix} & \mid z2 = z2-z1 \quad und \quad z4 = z4+z3 \\ 
+    &  = \begin{pmatrix}
+    0 & 2 & 0 & 0 \\ 
+    0 & 0 & 0 & 0\\
+    0 & 0 & 6  & 3 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix}
+\end{align*}
+    Setze $(A +2 I)v = 0$.
+\begin{align*}
+       \begin{pmatrix}
+     0 & 2 & 0 & 0 \\ 
+    0 & 0 & 0 & 0\\
+    0 & 0 & 6  & 3 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix} \begin{pmatrix}
+       a \\ b \\ c \\ d 
+    \end{pmatrix} & = \begin{pmatrix}
+       0 \\ 0 \\0 \\ 0
+    \end{pmatrix}  
+     \end{align*}
+     \begin{align*}
+         \begin{array}{cccccc}
+             & 2b &  &  & =0\\
+    &  & 6c  & +3d & = 0 
+         \end{array} \\
+         \Rightarrow b = 0\\
+         \Rightarrow d = -2c \\
+          \Rightarrow a \text{ frei}
+     \end{align*}
+     \[
+       \Rightarrow \quad \text{ EV haben die Form }  \begin{pmatrix}
+         a \\ 0 \\ c \\ -2c 
+      \end{pmatrix} \quad 
+        also \quad  a \cdot  \begin{pmatrix}
+         1 \\ 0 \\ 0 \\ 0 
+      \end{pmatrix} + c \cdot  \begin{pmatrix}
+         0 \\ 0 \\ 1 \\ -2 
+      \end{pmatrix}
+     \]
+     \begin{align*}
+       \Rightarrow  \quad \text{Basis des Eigenraums für } \lambda = -2 : & \Biggl\{ \begin{pmatrix}
+         1 \\ 0 \\ 0 \\ 0 
+      \end{pmatrix}, \begin{pmatrix}
+         0 \\ 0 \\ 1 \\ -2 
+      \end{pmatrix}   \Biggr\}
+     \end{align*}
+ \subsection*{(b)}
+\[
+B = ( \begin{pmatrix}
+         1 \\ 1 \\ 0 \\ 0 
+      \end{pmatrix}, \begin{pmatrix}
+         0 \\ 0\\ -1 \\ 1
+      \end{pmatrix}, \begin{pmatrix}
+         1 \\ 0 \\ 0 \\ 0
+      \end{pmatrix}  , \begin{pmatrix}
+           0 \\ 0 \\ 1 \\ -2
+      \end{pmatrix}  )
+\]
+
+\[
+S =  \begin{pmatrix}
+         1&0&1&0\\
+         1&0&0&0 \\
+         0&-1&0&1 \\
+         0&1&0&-2
+      \end{pmatrix}
+\]
+
+\subsection*{(c)}
+\[
+A \cdot S = \begin{pmatrix}
+    -2 & 2 & 0 & 0 \\ 
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 4 & 3 \\ 
+    0 & 0 & -6 & -5
+    \end{pmatrix} \cdot   \begin{pmatrix}
+        1&0&1&0\\
+         1&0&0&0 \\
+         0&-1&0&1 \\
+         0&1&0&-2
+      \end{pmatrix} = 
+      \begin{pmatrix}
+   0&0&-2&0\\
+           0&0&0&0\\
+           0&-1&0&-2\\
+           0&1&0&4
+      \end{pmatrix}
+\]
+\[
+S \cdot D =  \begin{pmatrix}
+       1&0&1&0\\
+         1&0&0&0 \\
+         0&-1&0&1 \\
+         0&1&0&-2
+      \end{pmatrix} \cdot  
+      \begin{pmatrix}
+        0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & -2 & 0 \\
+0 & 0 & 0 & -2
+      \end{pmatrix} = 
+     \begin{pmatrix}
+  0&0&-2&0\\
+           0&0&0&0\\
+           0&-1&0&-2\\
+           0&1&0&4
+\end{pmatrix}
+\]
+     
+\section*{Aufgabe 4.2}
+''Sind v und w Eigenvektoren von F , so ist v + w ein Eigenvektor von
+F oder v + w = 0'' impliziert, dass alle Eigenvektoren zum gleichen Eigenwert gehören.  \\
+\underline{Beweis durch Widerspruch.} \\
+Angenommen F hat eine Basis aus Eigenwerten zu verschiedenen Eigenwerten. Folgentlich gibt es mindestens zwei linear unabhängige Vektoren zu den mindestens zwei verschiedenen Eigenwerten. Seien v und w zwei solche Vektoren. Dann gilt $v+w\neq 0$, da $v=-w$ nicht sein kann (linear unabhängig). Laut der Aufgabenstellung ist nun $v+w$ erneut ein Eigenwert von F. \\
+Sei der Eigenwert zu $v$ $\lambda$ und zu $w$ $\mu$. \\
+Da F linear ist, gilt 
+\[F(v+w) = F(v) + F(w)\]
+also
+\[F(v+w) = \lambda v + \mu w\]
+Da v+w ein Eigenvektor von F ist, gilt für dessen zugehörigen Eigenwert $\omega$:
+\[
+F(v+w) = \omega(v+w) 
+\]
+Also
+\[
+F(v+w) = \omega(v+w) = \lambda v + \mu w
+\]
+\[
+\Rightarrow \omega = \lambda = \mu 
+\]
+Widerspruch, da $\lambda \neq \mu$. Folglich gibt es nur einen Eigenwert für F. \\ 
+Sei dieser Eigenwert $\lambda$, dann gilt $F(v) = \lambda Id(v)$
+
+
+
+\section*{Aufgabe 4.3}
+
+$A^2 = \mathbb{I}_2$ bedeutet, dass die Matrix $A$ ihr eigenes Inverses ist. 
+\[
+\mathbb{I}_2 = \begin{pmatrix}
+  1&0\\0&1
+\end{pmatrix}, \quad -\mathbb{I}_2 = \begin{pmatrix}
+  -1&0\\0&-1
+\end{pmatrix}, \quad D^2 = \mathbb{I}_2
+\]
+A kann nur die Eigenwerte 1 oder -1 haben, damit $A^2 = \mathbb{I}_2$ erfüllbar ist, denn für einen Eigenvektoren v mit eigenwert $\lambda$ gilt 
+\begin{align*}
+    Av & = \lambda v \\
+    \Rightarrow A^2 v & = \lambda^2 v \\
+    Da\ A^2 = \mathbb{I}_2: \quad \mathbb{I}_2 v & = \lambda^2 v \\
+    \Rightarrow v & = \lambda^2 \\
+    \Rightarrow \lambda & = \pm 1
+\end{align*}
+Es gilt in den Fällen $A = \mathbb{I}_2$ oder $A = -\mathbb{I}_2$: 
+\[
+A^2 = \mathbb{I}_2 \cdot \mathbb{I}_2 = \mathbb{I}_2 
+\]
+\[
+A^2 = -\mathbb{I}_2 \cdot (-\mathbb{I}_2) = \mathbb{I}_2 
+\]
+Und wenn $A = SDS^{-1}$, dann 
+\[
+A^2 = (SDS^{-1}) \cdot (SDS^{-1}) = SD^2S^{-1}  = S\mathbb{I}_2S^{-1} = SS^{-1} = \mathbb{I}_2
+\]
+
+\end{document}

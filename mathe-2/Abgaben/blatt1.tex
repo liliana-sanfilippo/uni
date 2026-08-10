@@ -1,0 +1,277 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 1; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}} 
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 1.1}
+(Regel von Sarrus)
+\begin{align*}
+det 
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 5 & 1 \\
+2 & 7 & 9
+\end{pmatrix} & = 
+(1 \cdot 5 \cdot 9) + (2 \cdot 1 \cdot 2) + (3 \cdot 2 \cdot 7) - (3\cdot5\cdot2) - (1 \cdot 1 \cdot 7) - (2 \cdot 2 \cdot 9) \\
+&  = 45 + 4 + 42 - 30 - 7 - 36 \\
+& = 18
+\end{align*} 
+
+\section{Aufgabe 1.2}
+(Regel von Sarrus)
+\begin{align*}
+det 
+\begin{pmatrix}
+x & 1 & 1 \\
+1 & x & 1 \\
+1 & 1 & x
+\end{pmatrix} & = x^3 + 1 + 1 - x - x - x \\
+& = x^3 +2 -3x  \\
+& = x^3 - 3x +2 \\
+& = x^3 +2x^2 -2x^2 - 4x +x +2 \\
+& = (x^2 + 2x +1) \cdot (x+2) \\
+& = (x-1)^2 \cdot (x+2)
+\end{align*} 
+
+\section{Aufgabe 1.3}
+(Laplacescher Entwicklungssatz) 
+\[
+A = \begin{pmatrix}
+\sin \alpha & \cos \alpha & a \cdot \sin \alpha & b \cdot \cos \alpha & ab \\
+- \cos \alpha & \sin \alpha & -a^2 \sin \alpha & b^2 \cos \alpha & a^2 b^2 \\
+0 & 0 & 1 & a^2 & b^2 \\
+0 & 0 & 0 & a & b \\
+0 & 0 & 0 & -b & -a
+\end{pmatrix}
+\]
+Entwicklung nach erster Spalte ($j = 1$). 
+\begin{align*}
+    det(A) & = \sum^5_{i =1} a_{i1} \cdot (-1)^{1+i} \cdot det(A'_{i1})  \\
+    & = a_{11} \cdot det(A'_{11}) + \sum^5_{i =2} a_{i1} \cdot (-1)^{1+i} \cdot det(A'_{i1}) \\
+    & = a_{11} \cdot det(A'_{11}) + a_{21} \cdot (-1)\cdot det(A'_{21})  \\
+    & = a_{11} \cdot det(A'_{11}) - a_{21} \cdot det(A'_{21})  
+\end{align*}
+Da $a_{i3} - a_{i5}$ Null sind.
+\[
+A'_{11} = \begin{pmatrix}
+ \sin \alpha & -a^2 \sin \alpha & b^2 \cos \alpha & a^2 b^2 \\
+ 0 & 1 & a^2 & b^2 \\
+ 0 & 0 & a & b \\
+0 & 0 & -b & -a
+\end{pmatrix}
+\]
+\[
+A'_{21} = \begin{pmatrix}
+ \cos \alpha & a \cdot \sin \alpha & b \cdot \cos \alpha & ab \\
+ 0 & 1 & a^2 & b^2 \\
+ 0 & 0 & a & b \\
+ 0 & 0 & -b & -a
+\end{pmatrix}
+\]
+
+\subsection*{det($A'_{11}$)}
+Laplace-Entwiklung nach der ersten Spalte. Da $a_{i2} - a_{i1}$ alle Null gilt: 
+\begin{align*}
+ det(A'_{11}) & = \sum^3_{i =1} a_{i1} \cdot (-1)^{1+i} \cdot det(A''_{i1})  = \sin \alpha \cdot det(A''_{11})  \\ \\
+A''_{11} &  = \begin{pmatrix}
+1 & a^2 & b^2 \\
+ 0 & a & b \\
+ 0 & -b & -a
+\end{pmatrix} \\ \\
+    det(A''_{11})  & =  \sum^2_{i =1} a_{i1} \cdot (-1)^{1+i} \cdot det(A'''_{i1})  \\
+    & =  1 \cdot det(A'''_{11})  \\ \\
+    A'''_{11}  & = \begin{pmatrix}
+  a & b \\
+  -b & -a
+\end{pmatrix} \\ \\
+det( A'''_{11}) & = -a^2 + b^2 \\ \\
+Also: & \\
+ det(A'_{11}) & = \sin \alpha \cdot (1 \cdot (-a^2 + b^2))  \\
+ & = \sin \alpha \cdot(-a^2 + b^2) \\
+ & = -a^2 \cdot \sin \alpha  + b^2 \cdot \sin \alpha
+\end{align*}
+
+\subsection*{det($A'_{21}$)}
+Laplace-Entwiklung nach der ersten Spalte. Da $a_{i2} - a_{i1}$ alle Null gilt: 
+\begin{align*}
+     det(A'_{21}) & = \sum^3_{i =1} a_{i1} \cdot (-1)^{1+i} \cdot det(A''_{i1})  = a_{11} \cdot det(A''_{11})  \\ \\
+     A''_{11} &  = \begin{pmatrix}
+1 & a^2 & b^2 \\
+ 0 & a & b \\
+ 0 & -b & -a
+\end{pmatrix} \\ \\
+det(A''_{11})  & = -a^2 + b^2 \\ \\
+Also \\
+ det(A'_{21}) & = \cos \alpha \cdot(-a^2 + b^2) \\
+ & = -a^2 \cdot \cos \alpha  + b^2 \cdot \cos \alpha 
+\end{align*}
+
+
+Also:
+\begin{align*}
+    det(A) & = a_{11} \cdot det(A'_{11}) - a_{21} \cdot det(A'_{21})   \\
+    & = \sin \alpha \cdot (-a^2 \cdot \sin \alpha  + b^2 \cdot \sin \alpha) - \cos \alpha (-a^2 \cdot \cos \alpha  + b^2 \cdot \cos \alpha)  \\
+    & = -a^2 \sin^2 \alpha  + b^2 \sin^2 \alpha + a^2 \cos^2 \alpha -b^2 \cos^2 \alpha
+\end{align*}
+
+Frage: Hätte man das an irgendeiner Stelle schöner auflösen können? 
+
+\section{Aufgabe 1.4}
+\subsection*{Induktionsanfang}
+Sei \(n = 2\) und zeige $A_{n+1} = \frac{(n+2+1)!}{4} = \frac{(n+3)!}{4}$
+\begin{align*}
+A_2 & = \begin{pmatrix}
+1 & 2 \\
+-2 & 2
+\end{pmatrix}   \\ \\
+det (A_2 ) & = (1 \cdot 2) - (2 \cdot (-2)) \\
+& = 2 + 4 \\
+& = 6 \\
+& = \frac{24}{4} \\
+& = \frac{1\cdot 2 \cdot 3 \cdot 4 }{4} \\
+& = \frac{4!}{4} \\
+& = \frac{(2+2)!}{4}
+\end{align*}
+Die Aussage gilt also für ein $A_n$. 
+\subsection*{Induktionsschritt}
+\(n \Rightarrow n+1\)
+\begin{align*}
+    A_{n+1} & =
+\begin{pmatrix}
+    1 & 2 & 2 & \cdots & 2 & 2 \\
+   -2 & 2 & \ddots & 2 & 2 & 2\\
+   -2 & -2 & 3 & 2 & 2 & 2 \\
+   -2 & -2 & \ddots & n-1 & 2 & 2\\
+   -2 & -2 & \ddots & -2 & n & 2 \\
+   -2 & -2 & -2 & \cdots & -2 & n+1
+\end{pmatrix} \\ \\
+det(A_{n+1}) & = \sum^n_{i=1} a_{i1} \cdot (-1)^{1+i} \cdot det(A'_{i1}) \\
+& = 1 \cdot (-1)^{2} \cdot det(A'_{11}) + \sum^n_{i=2} a_{i1} \cdot (-1)^{1+i} \cdot det(A'_{i1}) \\
+& = 1 \cdot (-1)^{2} \cdot det(A'_{11}) + \sum^n_{i=2} (-2) \cdot (-1)^{1+i} \cdot det(A'_{i1}) \\
+& =  det(A'_{11}) + (-2) \cdot \sum^n_{i=2} (-1)^{1+i} \cdot det(A'_{i1}) \\
+%& =  \frac{24}{4} + (-2) \cdot \sum^n_{i=2} (-1)^{1+i} \cdot det(A'_{i1}) \\
+\end{align*}
+Dabei ist $ \sum^n_{i=2} (-2) \cdot (-1)^{1+i} \cdot det(A'_{i1})$ die Laplace-Entwicklung der Matrix nach der ersten Spalte. Man kann die Matrix folgendermaßen umstellen, ohen Zeilen zu vertauschen, sodass die Determinante gleich bleibt: 
+
+%\subsection{Nicht-Induktion zur Überprüfung}
+\[
+\begin{pmatrix}
+    1 & 2 & \cdots & 2 & 2  \\
+   -2 & 2 & \cdots & 2 & 2 \\
+   -2 & -2 & 3 & \ddots & 2 \\
+   -2 & -2 & \ddots & n & 2 \\
+   -2 & -2 & \cdots & -2 & n+1 
+\end{pmatrix}
+\]
+ \text{Zeilen 2 bis n mit der dem zweifachen der ersten Zeile addieren}
+\[
+\begin{pmatrix}
+    1 & 2 & \cdots & 2 & 2  \\
+   0 & 6 & \cdots & 6 & 6 \\
+   0 & 2 & 7 & \ddots & 6 \\
+   0 & 2 & \ddots & n+4 & 6 \\
+   0 & 2 & \cdots & 2 & n+5 
+\end{pmatrix}
+\]
+Die 3 als Faktor aus der zweiten Zeile herausziehen.
+\[
+3 \cdot \begin{pmatrix}
+    1 & 2 & \cdots & 2 & 2  \\
+   0 & 2 & \cdots & 2 & 2 \\
+   0 & 2 & 7 & \ddots & 6 \\
+   0 & 2 & \ddots & n+4 & 6 \\
+   0 & 2 & \cdots & 2 & n+5 
+\end{pmatrix}
+\]
+ \text{Zeilen 3 bis n mit der dem -1-fachen der 2-ten Zeile addieren}
+ \[
+3 \cdot \begin{pmatrix}
+    1 & 2 & \cdots & 2 & 2  \\
+   0 & 2 & \cdots & 2 & 2 \\
+   0 & 0 & 5 & \ddots & 4 \\
+   0 & 0 & \ddots & n+2 & 4 \\
+   0 & 0 & \cdots & 0 & n+3 
+\end{pmatrix}
+\]
+Determinante wurde nicht verändert, da keine Zeilenvertauschungen stattgefunden haben...
+
+\begin{align*}
+    det\ 3 \cdot \begin{pmatrix}
+    1 & 2 & \cdots & 2 & 2  \\
+   0 & 2 & \cdots & 2 & 2 \\
+   0 & 0 & 5 & \ddots & 4 \\
+   0 & 0 & \ddots & n+2 & 4 \\
+   0 & 0 & \cdots & 0 & n+3 
+\end{pmatrix} & = 1 \cdot 2 \cdot 5 \cdot 6 \cdots (n+2) \cdot (n+3) \\
+   det  \begin{pmatrix}
+    1 & 2 & \cdots & 2 & 2  \\
+   0 & 2 & \cdots & 2 & 2 \\
+   0 & 0 & 5 & \ddots & 4 \\
+   0 & 0 & \ddots & n+2 & 4 \\
+   0 & 0 & \cdots & 0 & n+3 
+\end{pmatrix}   & = 1 \cdot 2  \cdot 3 \cdot 5 \cdot 6 \cdots (n+2) \cdot (n+3) \\
+& = \frac{(n+3)!}{4}
+\end{align*}
+So funktioniert die Determinante für jedes $A'_{i1}, \quad i>1$, weshalb sie sich aufgrund der wechselnden Vorzeichen gegenseitig aufheben und nur $det(A'_{11}) = \frac{24}{4}$ übrig bleibt. 
+
+
+
+
+\end{document}

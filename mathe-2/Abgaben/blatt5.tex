@@ -1,0 +1,635 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 5; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+\newcommand{\txc}[1]{\textcolor{blue}{#1}}
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 5.1}
+\subsection*{(a)}
+\[
+B^3 = \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+-3 & 6 & 0 & 3
+\end{pmatrix} \cdot \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+-3 & 6 & 0 & 3
+\end{pmatrix} \cdot \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\ 
+-3 & 6 & 0 & 3
+\end{pmatrix} = \begin{pmatrix}
+-3 & 9 & 3 & 6 \\
+-3 & 9 & 3 & 6 \\
+0 & 0 & 0 & 0 \\
+3 & -9 & -3 & -6
+\end{pmatrix} \cdot \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+-3 & 6 & 0 & 3
+\end{pmatrix} = 0
+\]
+\subsection*{(b)}
+%ges. eine Matrix $J$ mit $B=S^{-1}JS, \quad S \in K^{4\times4}$  und $J$ in Jordan-Normalform\\ 
+%\txc{Was hat eine Jordan Basis damit zu tun? Wenn ich für B eine Jordan-Basis finde, kann ich daraus S bilden. Die Basis besteht aus den Eigenvektoren und der Jordan-Kette\\}
+Charakteristisches Polynom von $B$ mit Laplace nach der dritten Spalte: 
+\begin{align*}
+    \chi_B(\lambda)  = det (B - \lambda I) & = det \begin{pmatrix}
+2 - \lambda& -3 & 1 & -1 \\
+3 & -6- \lambda & 0 & -3 \\
+-1 & 3 & 1- \lambda & 2 \\
+-3 & 6 & 0 & 3- \lambda
+\end{pmatrix} \\
+& = \sum_{i=1}^4 a_{i3} \cdot (-1)^{i+3} \cdot det(B'_{i3}) \\
+& = a_{13} \cdot (-1)^{i+3} \cdot det(B'_{i3}) +  \sum_{i=2}^4 a_{i3} \cdot (-1)^{1+3} \cdot det(B'_{13}) \\
+& = 1 \cdot (-1)^{4} \cdot det(B'_{13}) +  \sum_{i=2}^4 a_{i3} \cdot (-1)^{i+3} \cdot det(B'_{i3}) \\
+& = det(B'_{13}) +  \sum_{i=2}^4 a_{i3} \cdot (-1)^{i+3} \cdot det(B'_{i3})  \\
+& = det(B'_{13}) +  0 + \sum_{i=3}^4 a_{i3} \cdot (-1)^{i+3} \cdot det(B'_{i3})  \\ 
+& = det(B'_{13}) +  a_{33} \cdot (-1)^{3+3} \cdot det(B'_{33}) + \sum_{i=3}^4 a_{i3} \cdot (-1)^{i+3} \cdot det(B'_{i3})  \\
+& = det(B'_{13}) + (1-\lambda)  \cdot det(B'_{33}) + \sum_{i=4}^4 a_{i3} \cdot (-1)^{i+3} \cdot det(B'_{i3})  \\
+& = det(B'_{13}) + (1-\lambda)  \cdot det(B'_{33})
+\end{align*}
+\[B'_{13} = \begin{pmatrix}
+3 & -6- \lambda  & -3 \\
+-1 & 3  & 2 \\
+-3 & 6 &  3- \lambda
+\end{pmatrix}  \]
+\begin{align*}
+    det(B'_{13}) & = 3\cdot3\cdot(-\lambda+3)+(-\lambda-6)\cdot2\cdot(-3)+(-3)\cdot(-1)\cdot6-(-3)\cdot3\cdot(-3)-6\cdot2\cdot3-(-\lambda+3)\cdot(-1)\cdot(-\lambda-6) \\
+    & = 9\cdot(-\lambda+3)+(-\lambda-6)\cdot(-6)+18-27-36-(-\lambda+3)\cdot(-1)\cdot(-\lambda-6) \\
+    & = -9\lambda + 27 + 
+    6 \lambda + 36 
+    +18-27-36
+   + \lambda^2 + 3 \lambda - 18 \\
+    & = -9\lambda +
+    6 \lambda
+   + \lambda^2 + 3 \lambda \\
+     & =  \lambda^2  \\
+\end{align*}
+Also 
+\[
+ \chi_B(\lambda)  = \lambda^2  + (1-\lambda)  \cdot det(B'_{33})
+\]
+\[
+B'_{33} = \begin{pmatrix}
+2 - \lambda& -3  & -1 \\
+3 & -6- \lambda & -3 \\
+-3 & 6 & 3- \lambda
+\end{pmatrix} 
+\]
+\begin{align*}
+    det(B'_{33}) & = (-\lambda+2)\cdot(-\lambda-6)\cdot(-\lambda+3)
+    +(-3)\cdot(-3)\cdot(-3)
+    +(-1)\cdot3\cdot6
+    -(-3)\cdot(-\lambda-6)\cdot(-1) \\
+    & -6\cdot(-3)\cdot(-\lambda+2)
+    -(-\lambda+3)\cdot3\cdot(-3) \\
+    & = -\lambda^3 - \lambda^2 + 24 \lambda - 36 
+    - 27  -18 
+    + 3 \lambda + 18
+    + 36 - 18 \lambda
+    + 27 - 9 \lambda \\
+    & = -\lambda^3 - \lambda^2 + 24 \lambda 
+    + 3 \lambda 
+  -18  \lambda
+    - 9 \lambda \\
+      & = -\lambda^3 - \lambda^2
+\end{align*}
+\[
+ \chi_B(\lambda)  = \lambda^2  + (1-\lambda)  \cdot ( -\lambda^3 - \lambda^2) = \lambda^2 +  \lambda^4 - \lambda^2 =  \lambda^4 
+\]
+Eigenwerte finden: \\
+$\lambda = 0$ mit algebraischer Vielfachheit vier.  \\
+Da der Eigenwert 0 ist, sind hier Kern und die Menge der Eigenwerte identisch. \\ 
+Kerne berechnen:   Dafür setze 
+\[
+ 0 = B v = \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+-3 & 6 & 0 & 3
+\end{pmatrix}  \cdot v
+\]
+B in Zeilenstufenform bringen. 
+\[
+\begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+-3 & 6 & 0 & 3
+\end{pmatrix} \overset{z4=z4+z2}{\rightsquigarrow}
+\begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \overset{z2=3*z3+z2}{\rightsquigarrow} \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+0 & 3 & 3 & 3 \\
+-1 & 3 & 1 & 2 \\
+0 & 0 & 0 & 0
+\end{pmatrix}  \overset{z3=0.5*z1+z2}{\rightsquigarrow} \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+0 & 3 & 3 & 3 \\
+0 & 1,5 & 1,5 & 1,5 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+\]
+\[
+ \overset{z3=(-1)*z2+z3}{\rightsquigarrow} \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+0 & 3 & 3 & 3 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+ \overset{z2=z2/3}{\rightsquigarrow} \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+ \overset{z1=z1/2}{\rightsquigarrow} \begin{pmatrix}
+1 & -1,5 & 0,5 & -0,5 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}  \overset{z1=z2*(3/2)+z1}{\rightsquigarrow} \begin{pmatrix}
+1 & 0 & 2 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+\]
+Sete $B \cdot v = 0$.
+Gleichungssystem lösen.
+\[
+\begin{array}{rrrrl}
+a &  & +2c & +d &=0 \\
+ & b & +c & +d &=0
+\end{array} \quad \Rightarrow \quad b = -c-d, \quad a = -b-2c
+\]
+Kern hat Dimension 2: 
+\[
+v_1 = \begin{pmatrix}
+-2 \\ -1 \\ 1 \\0 
+\end{pmatrix}, \quad v_2 = \begin{pmatrix}
+-1 \\ -1 \\ 0 \\ 1
+\end{pmatrix}
+\]
+Kern von $B^2$ berechnen: Dafür setze 
+\[
+ 0 = B^2 v = \begin{pmatrix}
+-3 & 9 & 3 & 6 \\
+-3 & 9 & 3 & 6 \\
+0 & 0 & 0 & 0 \\
+3 & -9 & -3 & -6
+\end{pmatrix}  \cdot v
+\]
+In Zeilenstufenform bringen: 
+\[
+\begin{pmatrix}
+-3 & 9 & 3 & 6 \\
+-3 & 9 & 3 & 6 \\
+0 & 0 & 0 & 0 \\
+3 & -9 & -3 & -6
+\end{pmatrix}  \overset{z2=z2-z1}{\rightsquigarrow}
+\begin{pmatrix}
+-3 & 9 & 3 & 6 \\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 \\
+3 & -9 & -3 & -6
+\end{pmatrix} \overset{z4=z4+z1}{\rightsquigarrow}
+\begin{pmatrix}
+-3 & 9 & 3 & 6 \\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\]
+Gleichung lösen. 
+\begin{align*}
+    0 &= -3a + 9b + 3c + 6d & :3 \\
+    & = -a +3b +c+2d \\
+    \Rightarrow a &= 3b +c+2d
+\end{align*}
+also 
+\[
+\begin{pmatrix}
+3b +c+2d \\ b \\c \\d
+\end{pmatrix}
+\]
+Also ist der Kern: 
+\[
+\begin{pmatrix}
+3\\1\\0\\0
+\end{pmatrix}, \quad \begin{pmatrix}
+1\\0\\1\\0
+\end{pmatrix}, \quad \begin{pmatrix}
+2\\0\\0\\1
+\end{pmatrix}
+\]
+Und hat Dimension 3. \\
+Da $A^3 = 0$ sind ab dem exponenten die Dimensionen des Kerns immer 4: \[
+\begin{pmatrix}
+1\\0\\0\\0
+\end{pmatrix}, 
+\quad \begin{pmatrix}
+0\\1\\0\\0
+\end{pmatrix},\quad \begin{pmatrix}
+0\\0\\1\\0
+\end{pmatrix}, \quad \begin{pmatrix}
+0\\0\\0\\1
+\end{pmatrix}
+\]
+Wenn man die Kerne von $A, A^2 und A^3$ berechnet, bekommt man heraus, dass 2, 3 und 4 sind. Also muss es einen Jordan-Block der Größe 3 geben und zwei Blöcke insgesamt. \\
+Also: 
+\[
+J = \begin{pmatrix}
+0&1&0&0\\
+0&0&1&0\\
+0&0&0&0\\
+0&0&0&0
+\end{pmatrix}
+\]
+
+\subsection*{(c)}
+Zuerst Jordanbasis finden. \\
+Dafür wählen wir einen Eigenvektor aus dem Kern mit der höchsten Dimension (einen veragllgemeinerten Eigenvektor).  \\
+Wir wählen $v_4 = \begin{pmatrix}
+1\\0\\0\\0
+\end{pmatrix}$, da das (u.a.) in keinem der anderen Kerne enthalten ist. Dann setzen wir $v_3 = B \cdot v_4, \quad v_2 = B^2 \cdot v_4$: 
+\[
+v_3 = B \cdot v_4 : \begin{pmatrix}
+2 & -3 & 1 & -1 \\
+3 & -6 & 0 & -3 \\
+-1 & 3 & 1 & 2 \\
+-3 & 6 & 0 & 3
+\end{pmatrix} \cdot  \begin{pmatrix}
+1\\0\\0\\0
+\end{pmatrix}  = \begin{pmatrix}
+ 2\\3\\-1\\-3
+\end{pmatrix}
+\]
+\[
+v_2 = B^2 \cdot v_4 : \begin{pmatrix}
+-3 & 9 & 3 & 6 \\
+-3 & 9 & 3 & 6 \\
+0 & 0 & 0 & 0 \\
+3 & -9 & -3 & -6
+\end{pmatrix} \cdot  \begin{pmatrix}
+ 2\\3\\-1\\-3
+\end{pmatrix}  = \begin{pmatrix}
+-3\\-3\\0\\-3
+\end{pmatrix}
+\]
+$v_1$ wählen wir aus dem Kern von B, hier $v_1 = \begin{pmatrix}
+-2 \\ -1 \\ 1 \\0 
+\end{pmatrix}$. \\
+Dann ist die Jordan Basis: 
+\[
+\begin{pmatrix}
+-2 \\ -1 \\ 1 \\0 
+\end{pmatrix},
+\begin{pmatrix}
+1\\0\\0\\0
+\end{pmatrix}, \begin{pmatrix}
+ 2\\3\\-1\\-3
+\end{pmatrix}, 
+\begin{pmatrix}
+-3\\-3\\0\\-3
+\end{pmatrix}
+\]
+Also
+\[
+S = \begin{pmatrix}
+-3 & 2 & 1 & -2 \\
+-3 & 3 & 0 & -1 \\
+0 & -1 & 0 & 1 \\
+3 & -3 & 0 & 0
+\end{pmatrix}
+\]
+
+
+
+\section{Aufgabe 5.2}
+Wenn das charakteristische Polynom $x^4$ ist, hat man den Eigenwert $0$ mit algebraischer Vielfachheit 4 (siehe vorherige Aufgabe). Das heißt die Dimensionen der Jordan-Blöcke müssen auf 4 summieren. 
+Man kann 4 auf fünf verschiedene Arten und Weisen zerlegen: 
+\begin{align*}
+    4:& \begin{pmatrix}
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&0&1\\
+    0&0&0&0
+    \end{pmatrix} &
+    3+1:& \begin{pmatrix}
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&0&0\\
+    0&0&0&0
+    \end{pmatrix} &
+    2+2:& \begin{pmatrix}
+    0&1&0&0\\
+    0&0&0&0\\
+    0&0&0&1\\
+    0&0&0&0
+    \end{pmatrix} \\
+     2+1+1:& \begin{pmatrix}
+    0&1&0&0\\
+    0&0&0&0\\
+    0&0&0&0\\
+    0&0&0&0
+    \end{pmatrix} &
+     1+1+1+1:& \begin{pmatrix}
+    0&1&0&0\\
+    0&0&0&0\\
+    0&0&0&0\\
+    0&0&0&0
+    \end{pmatrix}
+\end{align*}
+
+\section{Aufgabe 5.3}
+\[
+A = \begin{pmatrix}
+3 & -1 & 4 & -1 \\
+-4 & 0 & -4 & 1 \\
+0 & 0 & -1 & 0 \\
+5 & 5 & 5 & 4
+\end{pmatrix}
+\]
+\subsection{(a)}
+Charakteristisches Polynom von $A$ mit Laplace nach der dritten Zeile:
+\begin{align*}
+       \chi_A(\lambda)  = det (A - \lambda I) & = det \begin{pmatrix}
+       3 - \lambda & -1 & 4 & -1 \\
+-4 & - \lambda & -4 & 1 \\
+0 & 0 & -1- \lambda & 0 \\
+5 & 5 & 5 & 4- \lambda
+       \end{pmatrix} \\
+       & = \sum_{j=1}^4 a_{3j} \cdot (-1)^{3+j} \cdot det(A'_{3j}) \\
+       & = a_{33} \cdot (-1)^{3+3} \cdot det(A'_{33})\\
+       & = (-1- \lambda) \cdot det(A'_{33})
+\end{align*}
+\[
+A'_{33} = \begin{pmatrix}
+       3 - \lambda & -1 & -1 \\
+-4 & - \lambda & 1 \\
+5 & 5 & 4- \lambda
+\end{pmatrix}
+\]
+\begin{align*}
+    det(A'_{33}) & = (-\lambda+3)\cdot(-\lambda)\cdot(-\lambda+4)
+    +(-1)\cdot1\cdot5
+    +(-1)\cdot(-4)\cdot5
+    -5\cdot(-\lambda)\cdot(-1)
+    -5\cdot1\cdot(-\lambda+3)
+    -(-\lambda+4)\cdot(-4)\cdot(-1) \\
+    & = -\lambda^3 + 7 \lambda^2 - 12 \lambda
+    -5
+    +20
+    -5\lambda
+    +5 \lambda - 15
+    + 4 \lambda - 16\\
+     & = -\lambda^3 + 7 \lambda^2 - 8 \lambda - 16\\
+\end{align*}
+Also 
+\[
+  \chi_A(\lambda)  = (-1- \lambda) \cdot (-\lambda^3 + 7 \lambda^2 - 8 \lambda - 16) = (\lambda - 4)^2 (\lambda + 1)^2
+  %= \lambda^4 - 6 \lambda^3 + \lambda^2 + 24 \lambda + 16
+\]
+Man kann $\lambda_{1} = -1$  und $\lambda_{2} = 4$ ablesen. Beide mit der algebraischen Vielfachheit 2. Also wird K die Form \[
+\begin{pmatrix}
+-1&?&0&0\\
+0&-1&0&0\\
+0&0&4&?\\
+0&0&0&4
+\end{pmatrix}
+\]
+haben. Kern von $A-\lambda I$ berechnen. \\
+Für $\lambda = -1$:
+\[
+A +1 I = \begin{pmatrix}
+4 & -1 & 4 & -1 \\
+-4 & 1 & -4 & 1 \\
+0 & 0 & 0 & 0 \\
+5 & 5 & 5 & 5
+\end{pmatrix} \overset{z2=z2+z1}{\rightsquigarrow} \begin{pmatrix}
+4 & -1 & 4 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+5 & 5 & 5 & 5
+\end{pmatrix} \overset{z4 = z4/5}{\rightsquigarrow}
+\begin{pmatrix}
+4 & -1 & 4 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1
+\end{pmatrix}
+\]
+\[
+\overset{z1 = z1+z4}{\rightsquigarrow}
+\begin{pmatrix}
+5 & 0 & 5 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1
+\end{pmatrix}
+\overset{z1 = z1/5}{\rightsquigarrow}
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1
+\end{pmatrix}
+\overset{z4 = z4-z1}{\rightsquigarrow}
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix}
+\]
+Setze  $(A−\lambda I) \cdot v = 0$ un dlöse das Gleichungssystem 
+\[
+\begin{array}{rrrrl}
+ a &  & +c &  & = 0\\
+& b & & +d & =0
+\end{array} \Rightarrow a = -c, b =-d 
+\]
+Also ist der Kern Zwei dimensional: 
+\[
+\begin{pmatrix}
+-1\\0\\1\\0
+\end{pmatrix}, \begin{pmatrix}
+0\\-1\\0\\1
+\end{pmatrix}
+\]
+\[
+(A +1 I)^2 = \begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix} = (A +1 I)^3 = (A +1 I)^4
+\]
+Also sind für $\lambda = -1$ die Jordan-Ketten maximal Eins lang und K muss die form haben 
+\[
+\begin{pmatrix}
+-1&0&0&0\\
+0&-1&0&0\\
+0&0&4&?\\
+0&0&0&4
+\end{pmatrix}
+\]
+\[
+A -4 I = \begin{pmatrix}
+-1 & -1 & 4 & -1 \\
+-4 & -4 & -4 & 1 \\
+0 & 0 & -5 & 0 \\
+5 & 5 & 5 & 0
+\end{pmatrix} \overset{z4 = z4 + (z1+z2)}{\rightsquigarrow}
+\begin{pmatrix}
+-1 & -1 & 4 & -1 \\
+-4 & -4 & -4 & 1 \\
+0 & 0 & -5 & 0 \\
+0 & 0 & 5 & 0
+\end{pmatrix} \overset{z4=z4+z3}{\rightsquigarrow}
+\begin{pmatrix}
+-1 & -1 & 4 & -1 \\
+-4 & -4 & -4 & 1 \\
+0 & 0 & -5 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+\]
+\[
+ \overset{z3=z3/(-5)}{\rightsquigarrow}
+\begin{pmatrix}
+-1 & -1 & 4 & -1 \\
+-4 & -4 & -4 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \overset{z2=(z2+z1)/(-5)}{\rightsquigarrow}
+\begin{pmatrix}
+-1 & -1 & 4 & -1 \\
+1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+\overset{z1 = (z1+z2-4*z3)/(-1)}{\rightsquigarrow}
+\begin{pmatrix}
+0 & 0 & 0 & 1 \\
+1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} 
+\]
+Gleichungssystem mit A * v = 0 lösen. 
+\[
+\Rightarrow c = d = 0, \quad a = -b
+\]
+Also ist der Kern eindimensional: 
+\[
+\begin{pmatrix}
+-1\\1\\0\\0
+\end{pmatrix}
+\]
+\[
+(A -4 I )^2 =
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} = (A -4 I )^3 
+\]
+Der Kern von $(A -4 I )^2$ (GS lösen):
+\[
+\begin{array}{rrrrl}
+     a&+b&&+d &=0\\
+     &&c&&=0
+\end{array} \Rightarrow a = -b-d, \quad c = 0
+\]
+Kern ist zweidimensional mit
+\[
+\begin{pmatrix}
+-1\\1\\0\\0
+\end{pmatrix}, \begin{pmatrix}
+-1\\0\\0\\1
+\end{pmatrix}
+\]
+Die Dimensionen können nicht höher werden, also hat der größte Jordanblock die Größe 2 und K ist: 
+\[
+\begin{pmatrix}
+-1&0&0&0\\
+0&-1&0&0\\
+0&0&4&1\\
+0&0&0&4
+\end{pmatrix}
+\]
+
+
+
+
+
+
+\end{document}

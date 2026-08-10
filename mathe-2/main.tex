@@ -1,0 +1,1487 @@
+\documentclass[9pt]{article} %210 mm × 297 mm
+\input{preamble}
+\begin{document}
+
+\newcommand{\lv}[0]{\Biggl \langle}
+\newcommand{\rv}[0]{\Biggr \rangle}
+\newcommand{\V}[0]{\underline{v}}
+\tableofcontents
+\newpage 
+\section*{Legende}
+\begin{tabular}{ll}
+    Skript & normale schwarze Schrift  \\
+    Anmerkungen und Notizen  & \txc{Kommentar Ich } 
+    \textcolor{Aquamarine}{Kommentar Prof} \\
+    Zusatzinhalte & \textcolor{Sepia}{Ich}
+\end{tabular}
+\let\thefootnote\relax\footnote{Footnotes have no numbers}
+\newpage 
+\section*{Vorwissen und Erklärungen}
+\color{Sepia}
+\subsection{Weierstrassaxiome} 
+\begin{itemize}
+    \item \textbf{multilinear}: linear in jeder Spalte
+    \item \textbf{alternierend}: wenn in zwei Spalten das gleiche Argument steht, ist die Determinante gleich 0
+    \item \textbf{normiert}:  Einheitsmatrix hat die Determinante 1
+\end{itemize}
+\cite{Determinante}
+
+\subsection{Rang einer Matrix}
+Maximal Anzahl von linear unabhängigen Spaltenvektoren bzw. Zeilenvektoren einer Matrix. Beispielsweise  ist in der Matrix
+\begin{equation*} 
+A = \begin{vmatrix}
+    \textcolor{Mahogany}{1} & \textcolor{RawSienna}{2} & 7 \\
+    \textcolor{Mahogany}{2} & \textcolor{RawSienna}{4} & 2 \\
+    \textcolor{Mahogany}{3} & \textcolor{RawSienna}{6} & 9
+    \end{vmatrix}
+\end{equation*}
+die erste Spalte linear abhängig von der zweiten Spalte, also kann es maximal 2 linear unabhängige Spalten geben und das ist der Rang der Matrix. \\
+Weil der Rang für Zeilen und Spalten gelten muss, kann er maximal die Anzahl der Spalten bzw. Zeilen sein. Bzw. maximal so viel wie die Anzahl der beiden, die kleiner ist:
+\[
+\text{rang(A)} \leq \min(m, n)
+\]
+Ein "voller Rang" ist, wenn $\text{rang(A)} = \min(m, n)$.
+\cite{rang_einer_matrix} \\ 
+Um den Rang einer Matrix zu bestimmen, formt man diese mittels des gaußschen Eliminationsverfahrens in eine äquivalente Matrix in (Zeilen-)Stufenform um. Die Anzahl der Zeilenvektoren, die ungleich 0 sind, entspricht dann dem Rang der Matrix. \cite{Rang}  \\
+Ausnahme: bei quadratischen Matritzen kann man den Rang auch ohne die Zeilenstufenform bestimmen. Nicht jede quadratische Matrix ist invertierbar, aber alle invertierbaren Matritzen sind quadratisch. Invertierbare Matritzen haben immer vollan Rang und somit ist der Rang gleich der Spaltenzahl/Zweilenzahl. Eine nicht-invertierbare Matrix hat nie vollen Rang (da eine Matrix nur invertierbar ist, wenn alle Spalten/Zeilen linear unabhängig sind und das nicht gegeben ist bei einem unvollen Rang). \cite{rang_einer_matrix}
+
+\subsection{Elementarmatritzen}
+Elementarmatritzen sind quadratische Matritzen, welche sich entweder durch die Änderung eines einzigen Eintrages oder durch Vertauschen zweier Zeilen von einer $n \times n$-Einheitsmatrix \[
+I_n = \begin{pmatrix}
+1 & 0 & \cdots & 0 \\
+0 & 1  &  \ddots & \vdots \\
+\vdots &  \ddots &  \ddots 0 \\
+0 & \cdots & 0 & 1
+\end{pmatrix}
+\]
+unterscheidet. \\
+Entsteht, wenn man auf die Einheitsmatrix $I_n$ eine einzige elementare Zeilenoperation anwendet. Beispielsweise
+\[
+I_2 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+\]
+Multipliziert man eine $n \times p$-Matrix $A$ von links mit einer Elementarmatrix, so entspricht das einer elementaren Zeilenumformung der Matrix $A$. Elementarmatrizen können auch von rechts an eine Matrix $A$ multipliziert werden und entsprechen dann elementaren Spaltenumformungen von $A$. 
+\cite{Einheitsmatrix} \cite{Elementarmatrix} 
+\subsection{Permutationsmatritzen}
+Eine Matrix, bei der in jeder Zeile und in jeder Spalte genau ein Eintrag eins ist und alle anderen Einträge null sind. Jede Permutationsmatrix entspricht genau einer Permutation einer endlichen Menge von Zahlen. \cite{Permutationsmatrix}
+Beispielsweise die Permutation
+\[
+\pi = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\
+4 & 2 & 1 & 5 & 3 \end{pmatrix} \in S_5
+\]
+und die Permutationsmatrix
+\[
+P_{\pi} = \begin{pmatrix}
+    e_4 \\
+    e_2 \\
+    e_1 \\
+    e_5 \\
+    e_3
+\end{pmatrix}
+= \begin{pmatrix}
+    0 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 1 & 0 & 0
+\end{pmatrix}
+\in \mathbb{R}^{5 \times 5}
+\]
+\subsection{Determinanten}
+die Determinante einer $2 \times 2$-Matrix
+\begin{equation*}
+    det A = 
+    \begin{vmatrix}
+a & c\\
+b & d
+\end{vmatrix} = ad - bc
+\end{equation*}
+Jedes Mal, wenn man zwei Zeilen (oder Spalten) einer Matrix vertauscht, ändert sich das Vorzeichen der Determinante. \\
+Multiplikation von links vs. von rechts.
+
+\subsection{Inneres Produkt eines Vektorraums (Skalarprodukt)}
+ Mathematische Verknüpfung, die zwei Vektoren eine Zahl (Skalar) zuordnet. \cite{Skalarprodukt}
+\subsubsection{Standardskalarprodukt}
+Bestimmtes Skalarprodukt. 
+\[
+<v, w> = <w, v>
+\]
+\[<v + w, u> = <v, u> + <w, u>\]
+\[<cv, w> = c<v, w\]
+\cite{MathDataScience2021} 
+
+\subsection{Endomorphismus}
+Spezial eines Homomorphismus, eine struktur-erhaltende Abbildung von einer Struktur auf sich selbst. Also ein Homomorphismus, der von einer Struktur in sich selbst geht. \\
+Meistens eine lineare Abbildung eines Vektorraums in sich selbst: 
+\[f: V \rightarrow V\]
+\subsubsection{Adjungierter Endomorphismus}
+Wenn bezüglich des Standardskalarprodukts gilt
+\[
+\langle F(v), w\rangle \ = \ \langle v, F^* (w)\rangle \quad \text{ für alle } v,w\in V.
+\]
+Aka das Standardskalarprodukt von den beiden Vektoren $F(v)$ und $w$ ist gleich das Standardskalarprodukt von den Vektoren $v$ und $F*(w)$, wobei $F*$ der adjungierten Endomorphismus von $F$ ist.  \\
+selbstadjungiert ist, wenn $F = F*$, also 
+\[
+ \langle F(v), w\rangle \ = \ \langle v, F(w)\rangle \quad \text{ für alle } v,w\in V.
+\]
+\cite{MathDataScience2021} 
+
+\subsection{Eigenwerte und Eigenvektoren}
+Ein Eigenvektor einer Abbildung ist in der linearen Algebra ein vom Nullvektor verschiedener Vektor, dessen Richtung durch die Abbildung nicht verändert wird. Ein Eigenvektor wird also nur skaliert, wobei man den Skalierungsfaktor als Eigenwert der Abbildung bezeichnet.  \cite{Eigenwerte} \\
+\[
+f(\overbrace{v}^{Eigenvektor})=\underbrace{\lambda}_{Eigenwert} \cdot \overbrace{v}^{Eigenvektor}
+\]
+Das bedeutet: Der Eigenvektor wird durch $f$ nicht verdreht oder verbogen, sondern nur gestreckt oder gestaucht (oder gespiegelt, wenn $\lambda < 0$).
+
+\subsection{Eigenräume}
+Die lineare Hülle der Eigenvektoren zu einem bestimmten Eigenwert eines Endomorphismus. \cite{Eigenraum} Also: Menge aller Eigenvektoren zu einem Eigenwert $\lambda$ und des Nullvektors. 
+\subsection{Basis}
+
+\subsection{Basiswechselmatrix}
+
+\subsection{Komplexe Konjugation}
+In der Mathematik bezeichnet komplexe Konjugation die Abbildung einer komplexen Zahl als eine Zahl mit gleichem Realteil und einem Imaginärteil mit gleichem Betrag, aber entgegengesetztem Vorzeichen.
+\[
+\mathbb{C} \rightarrow \mathbb{C}, \quad z = a + b \cdot i \mapsto \bar z = a - b \cdot i
+\]
+Ist mit der Addition und Multiplikation verträglich. 
+\cite{KomplexeKonjugation}
+\subsection{Konjugierte Matrix}
+Die Konjugierte einer Matrix ist die Matrix, deren Komponenten die komplex konjugierten Komponenten der ursprünglichen Matrix sind. \cite{KomplexeKonjugation}
+Anders gesagt: Alle Vorzeichen für $i$s sind umgekehrt in der konjugierten Matrix. 
+
+
+
+\subsection{Orthonormalbasis eines Vektors}
+Zwei Vektoren $u,v \in V$ heißen orthogonal, falls gilt $\langle v, w \rangle \ = \ 0.$ Andere Schreibweise: $v \perp w$.
+\cite{MathDataScience2021} 
+Das impliziert: 
+\begin{itemize}
+    \item Die Vektoren v und w haben einen Winkel von 90 Grad zueinander
+    \item Die Projektion von v auf w ist der Nullvektor
+    \item Die Vektoren v und w sind linear unabhängig
+    \item Die Menge {v, w} ist eine Basis für den Untervektorraum span{v, w}, der durch v und w erzeugt wird.
+\end{itemize}
+Wir nennen eine Familie von orthonormalen Vektoren $(v_1, \ldots, v_n)$ in $V$ eine Orthonormalbasis, falls die Vektoren eine Basis von V bilden. Ist $V = V_1 \oplus \ldots \oplus V_n$, so heißt die direkte Summe orthogonal, falls gilt
+\begin{equation*}
+V_i \perp V_j \quad \text{ für alle } i \neq j.
+\end{equation*}
+\cite{MathDataScience2021} 
+ Basis eines Vektorraums, die sowohl orthogonal als auch normalisiert ist. Das heißt, die Vektoren in der Basis sind paarweise orthogonal und haben eine Länge (oder Norm) von 1.
+
+
+
+
+\subsection{Terme und Symbole}
+
+\begin{equation*}
+    det : K_{n \times n} \rightarrow K
+\end{equation*}
+\begin{equation*}
+    \tau \circ \sigma
+\end{equation*}
+
+\subsection{Typen von Matrizen}
+\subsubsection{Diagonalmatrix}
+
+\subsubsection{Obere Dreiecksmatrix}
+
+\subsubsection{Adjungierte Matrix}
+Diejenige Matrix, die durch Transponierung und Konjugation einer gegebenen komplexen Matrix entsteht. Anschaulich ergibt sich die adjungierte Matrix durch Spiegelung der Ausgangsmatrix an ihrer Hauptdiagonale und anschließende komplexe Konjugation aller Matrixeinträge. \cite{AdjungierteMatrix}
+\[
+A = \begin{pmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & & \vdots \\
+a_{m1} & \cdots & a_{mn}
+\end{pmatrix} \quad dann \quad A^H = \begin{pmatrix}
+\overline{a_{11}} & \cdots & \overline{a_{m1}} \\
+\vdots & & \vdots \\
+ \overline{a_{1n}}& \cdots & \overline{a_{mn}}
+\end{pmatrix} 
+\]
+
+\subsubsection{hermitesche Matrizen}
+Eine komplexe quadratische Matrix, die gleich ihrer adjungierten Matrix ist. Die Einträge einer hermiteschen Matrix oberhalb der Hauptdiagonale ergeben sich demnach durch Spiegelung der Einträge unterhalb der Diagonale und nachfolgender komplexer Konjugation.
+\cite{HermitescheMatrix}
+\[
+\begin{pmatrix}
+a & \overline{b} & \overline{c} \\
+b &d& \overline{e} \\
+c & e & f
+\end{pmatrix}
+\]
+
+\subsubsection{Gram-Matrix}
+
+\subsection{Normen}
+Eine Norm ist ein Funktion, die jedem Vektor $v \in V$ eine  nichtnegative reelle Zahl zuordnet, sodass für alle $u, v \in V$ und  $\lambda \n \mathbb{R}$ folgende drei Eigenschaften gelten:
+\begin{itemize}
+    \item Positive Definitheit
+    \item Homogenität
+    \item Dreiecksungleichung
+\end{itemize}
+\subsubsection{p-Norm}
+Für eine Folge definieren wir eine $p$-Norm als 
+\[
+||(a_i)_i||_p := (|a_a|^p + |a_2|^p+ \cdots + |a_n|^p + |a_{n+1}|^p + \cdots)^{\frac{1}{p}} = \Bigg( \sum^{\infty}_{i=1} |a_i|^p \Bigg)^{\frac{1}{p}}
+\]
+
+Die Menge $\mathcal{l}^p$ besteht aus all jenen Folgen $(a_i)$, für die diese Summe konvergiert, also:
+
+\mab{\mathcal{l}^p := \Bigg\{ (a_i) \in \mathbb{R}^{\mathbb{N}} \mid \sum^{\infty}_{i=1}|a_i|^p  < \infty \Bigg\} }
+Für p=2ist das die quadratisch summierbaren Folgen – also Folgen, bei denen die Summe der Quadrate der Glieder endlich ist. Die Norm heißt dann euklidische Norm für Folgen.
+
+\subsection{Vektorräume}
+\subsubsection{Normierter Vektorraum}
+Ein normierter Vektorraum ist ein Paar \ma{V, ||\cdot||} aus einem Vektorraum $V$ und einer Norm \ma{||\cdot||: V \rightarrow \mathbb{R}}. Wenn eine Norm auf einem Vektorraum die drei Eigenschaften einer Norm erfüllt, ist der Raum normiert.
+
+
+\color{black}
+\section{Determinanten und Matrizen}
+\subsection{Vorlesung 1 (09.04.2025)}
+\begin{defi}
+Eine \beg{Determinante} ist eine Abbildung 
+\[
+det: \mathbb{M}_{n \times n} (K) \rightarrow K 
+\]
+die folgende \beg{Weierstraßaxiome} erfüllt:
+\begin{enumerate}
+    \item Multilinearität: Die Determinante ist in jeder Spalte linear: 
+    \[
+    det (\un{v}_1 \un{v}_2 \cdots \lambda \un{v}_i + \mu u_i \cdots \un{v}_n) = \lambda det(\un{v}_1 \cdots \un{v}_n) + \mu det (\un{v}_1 \cdots u_i \cdots \un{v}_n)
+    \]
+    \txc{Man kann Determinanten also addieren. Aber! immer nur eine Zeile kann man addieren pro Zusammenrechnung.}
+    \item Die Determinante verschwindet \txc{(ist gleich Null)}, wenn zwei Spalten gleich sind: 
+    \[
+    i \neq j \quad  \& \quad  \un{v}_i = \un{v}_j \Rightarrow  det(\un{v}_1 \cdots \un{v}_n) = 0
+    \]
+    \item \(det(\mathbb{I}_n) = 1\)\footnote{$\mathbb{I}_n$: Einheitsmatrix der Größe $n$}
+\end{enumerate}
+\end{defi}
+\begin{beob}
+   Sind die Spalten einer $n \times n$-Matrix $A$ linear abhängig, so ist $det(A) = 0$ für jede Determinante. 
+   \paragraph{Beweis.} \texttt{Seite 4. in \cite{vor1}}
+\end{beob}
+\begin{er} (\textbf{Elementarmatrizen)} \index{Matrix!Elementar}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Elementarmatrizen.png} 
+\end{figure}
+\end{er}
+\begin{beob}
+   \[(\V_1 \cdots \V_n)\cdot E_{ji}(\lambda) = (\V_1 \cdots \V_i + \lambda \V_j \cdots \V_n)\]
+   \txc{Wenn man eine Elementarmatrix $E_{ji}(\lambda)$ auf eine beliebige Matrix $(\V_1 \cdots \V_n)$ anwendet, ist sie die $j$-te Zeile der Matrix $(\V_1 \cdots \V_n)$ mit der $i$-ten Zeile addiert, wobei $\lambda$ ein Skalar ist. }
+   \[(\V_1 \cdots \V_n)\cdot E_{i}(\lambda) = (\V_1 \cdots \lambda \V_i  \cdots \V_n)\]
+\end{beob}
+
+\begin{kor}
+ \[
+ det ( A \cdot E_{ij}(\lambda) ) = det(A)
+ \]
+ \txc{Weil die Determinante einer Matrix unverändert bleibt, wenn man eine Zeile (oder eine Spalte) einer anderen Zeile (oder Spalte) addiert oder subtrahiert.}
+ \[
+  det ( A \cdot E_{i}(\lambda) ) = \lambda det(A)
+ \]
+ \txc{Weil die Determinante einer Dreiecksmatrix (oder einer oberen oder unteren Dreiecksmatrix) das Produkt ihrer Diagonalelemente ist.} \index{Matrix!Dreiecks}
+ \paragraph{Beweis.} \texttt{Seite 6. in \cite{vor1}}
+\end{kor}
+\begin{kor}
+ \begin{align*}
+     det ( E_{ij}(\lambda)) &= det ( \mathbb{I} \cdot  E_{ij}(\lambda)) \\
+     & = det(\mathbb{I}) = 1 \\
+ \end{align*}
+ \begin{align*}
+       det ( E_{i}(\lambda)) &= det ( \mathbb{I} \cdot  E_{i}(\lambda)) \\
+     & = \lambda \cdot  det(\mathbb{I}) = \lambda \\
+ \end{align*}
+ Also: Für jede Elementarmatrix $E$ und jede Matrix $A$ ist: \index{Matrix!Elementar} 
+ \[
+ det(A \cdot E  ) = det(A) \cdot det(E)
+ \]
+\end{kor}
+
+\begin{beob}
+
+\[
+\underbrace{
+\underbrace{\overbrace{\begin{pmatrix} 1&1\\0&1 \end{pmatrix}}^{E_{ij}(1)}  \overbrace{\begin{pmatrix} 1&0\\-1&1\end{pmatrix}}^{E_{ji}(-1)}}_{\begin{pmatrix}0&1\\-1&1\end{pmatrix}}
+\underbrace{
+\overbrace{\begin{pmatrix}1&1\\0&1\end{pmatrix}}^{E_{ij}(1)} \overbrace{\begin{pmatrix}-1&0\\0&1\end{pmatrix}}^{E_{i}(-1)}}_{\begin{pmatrix}
+-1&1\\0&1
+\end{pmatrix}}
+}_{
+\begin{pmatrix}
+0&1\\1&0
+\end{pmatrix}
+}
+\]
+ \[
+ swap_{ij} = E_{ij}(1)E_{ji}(-1)E_{ij}(1)E_{i}(-1)
+ \]
+ \txc{Möglichkeit, eine SwapMatrix zu erzeugen, indem man eine Kette von Elementarmatrizen verwendet. \index{Matrix!Swap}
+ \begin{itemize}
+     \item  $E_{ij}(1)$ addiert die $i$-te Zeile zur $j$-ten Zeile der Matrix.
+    \item $E_{ji}(-1)$ subtrahiert die $j$-te Zeile von der $i$-ten Zeile der Matrix.
+    \item $E_{ij}(1)$ addiert erneut die $i$-te Zeile zur $j$-ten Zeile der Matrix.
+    \item $E_{i}(-1)$ multipliziert die $i$-te Zeile der Matrix mit $-1$.
+ \end{itemize}
+ }
+\end{beob}
+
+\begin{kor}
+ Jede invertierbare Matrix ist Prodult von Elementarmatrizen. 
+\end{kor}
+
+\begin{prop}
+Sei \(det: \mathbb{M}_{n \times n} (K) \rightarrow K \) eine Determinante. Dann gilt: 
+\[det(A\cdot B) = det (A) \cdot det(B)\]
+\paragraph{Beweis.} $A \cdot B$ ist invertierbar genau dann, wenn $A$ \un{und} $B$ invertierbar sind. 
+\begin{enumerate}
+    \item  Fall: $AB$ ist nicht invertierbar. Dann ist $det(AB)=0$. Ferner ist $det(A)=0$ oder $det(B) =0$. Also ist auch $0 = det(A) \cdot det(B)$. \index{Invertierbarkeit}
+    \item Fall: $AB$ ist invertierbar. Dann ist $B$ invertierbar und somit ein Produkt $B = E_1 \cdots E_k$ von Elementarmatrizen. Also:
+    \begin{align*}
+        det(AB) &= det(A \cdot E_1 \cdots E_k ) \\
+        &= det(A \cdot E_1 \cdots E_{k-1}) \cdot det(E_k) \\
+        & \vdots \\
+        &= det(A)det(E_1) \cdots det(E_k) \\
+        &= det(A)det(E_1 E_2) det(E_3) \cdots det(E_k) \\
+        & \vdots \\
+        &= det(A) det(E_1 \cdots E_k ) \\
+        &= det(A) det(B)
+    \end{align*}
+\end{enumerate}
+\end{prop}
+
+
+
+\subsection{Vorlesung 2 (11.04.2025)}
+\begin{er}\textbf{Elementare Zeilenoperationen} \\ \index{Zeilenoperationen!Elementare}
+\txc{Elementare Zeilenoperationen entsprechen einer Multiplikation der Matrix mit Elementarmatrix.}
+\begin{enumerate}
+    \item Addiere das $\lambda$-fache der j-ten Zeile zur i-ten Zeile
+  %      $\begin{pmatrix}
+  %      1 & 2 & 3\\
+  %      a & b & c
+  %      \end{pmatrix}$ 
+  \txc{(Ersetzen der i-ten Zeile durch die Summe i-ten Zeile und dem $\lambda$-fachen der j-ten Zeile $(i \neq j)$)}
+    \item Multipliziere die i-te Zeile mit $\lambda$ \txc{(Ersetzen einer Zeile durch ihr $\lambda$-faches)}
+    \item Vertausche die i-te Zeile und j-te Zeile  \txc{(Vertauschen von zwei Zeilen)} \aquanote{Im Prinzip ist diese dritte Operation überflüssig.} 
+\end{enumerate}
+\cite{gaussmatrix}
+\end{er}
+\begin{bsp} \txc{\textbf{Faktorisierung von Permutationsmatrizen}} \index{Matrix!Permutations}
+\txc{
+\[
+\begin{pmatrix}
+        0 & 1\\
+        1 & 0
+        \end{pmatrix}
+\]
+Ist eine Permutationsmatrix, die man in Elementarmatritzen zerlegen kann. }
+\[
+\begin{pmatrix}
+        1 & 1\\
+        0 & 1
+        \end{pmatrix}
+       \begin{pmatrix}
+        1 & 0\\
+        -1 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+        1 & 1\\
+        0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+        -1 & 0\\
+        0 & 1
+        \end{pmatrix}
+    = \begin{pmatrix}
+        0 & 1\\
+        1 & 0
+        \end{pmatrix}\]
+\txc{
+\[
+E_1  = \begin{pmatrix}
+        1 & 1\\
+        0 & 1
+        \end{pmatrix} \quad \text{addiere das 1-fache der 2-ten Zeile zur 1-ten Zeile (Typ I)}
+\]
+\[
+E_1 \cdot A = \begin{pmatrix} 
+1 & 1 \\
+0 & 1 
+\end{pmatrix} 
+\cdot 
+\begin{pmatrix} 
+a & b \\
+c & d 
+\end{pmatrix} 
+=
+\begin{pmatrix} 
+1 \cdot a + 1 \cdot c & 1 \cdot b + 1 \cdot d \\
+0 \cdot a + 1 \cdot c & 0 \cdot b + 1 \cdot d 
+\end{pmatrix}
+=
+\begin{pmatrix} 
+a + c & b + d \\
+c & d 
+\end{pmatrix}
+\]
+\[
+\begin{array}{cc|cc|cc}
+  &  & a&b  \\ 
+  & &  c & d   \\ \hline
+  \textcolor{red}{1} & \textcolor{yellow}{1} &  \textcolor{red}{1} \cdot a + \textcolor{yellow}{1}  \cdot c & \textcolor{red}{1} \cdot b + \textcolor{yellow}{1} \cdot d  & a+c & b+d \\
+  0 & \textcolor{green}{1} & 0 \cdot a + \textcolor{green}{1}  \cdot c & 0 \cdot b + \textcolor{green}{1} \cdot d  & c & d 
+\end{array}
+\]
+\hrulefill
+\[
+E_2 = \begin{pmatrix}
+        1 & 0\\
+        -1 & 1
+\end{pmatrix} \quad \text{Addiere das -1-fache der 1. Zeile auf die 2. Zeile (Typ I)}
+\]
+\[
+E_2 \cdot A = \begin{pmatrix} 
+1 & 0\\
+-1 & 1
+\end{pmatrix} 
+\cdot 
+\begin{pmatrix} 
+a & b \\
+c & d 
+\end{pmatrix} 
+=
+\begin{pmatrix} 
+1 \cdot a + 0 \cdot c & 1 \cdot b + 0 \cdot d \\
+-1 \cdot a + 1 \cdot c & -1 \cdot b + 1 \cdot d 
+\end{pmatrix}
+=
+\begin{pmatrix} 
+a  & b \\
+c-a & d-b
+\end{pmatrix}
+\]
+\[
+\begin{array}{cc|cc|cc}
+  &  & a&b  \\ 
+  & &  c & d   \\ \hline
+  \textcolor{red}{1} & \textcolor{yellow}{0} &  \textcolor{red}{1} \cdot a + \textcolor{yellow}{0}  \cdot c & \textcolor{red}{1} \cdot b + \textcolor{yellow}{0} \cdot d  & a & b \\
+  \textcolor{blue}{-1} & \textcolor{green}{1} &  \textcolor{blue}{-1} \cdot a + \textcolor{green}{1}  \cdot c &  \textcolor{blue}{-1} \cdot b + \textcolor{green}{1} \cdot d  & c-a & d-b
+\end{array}
+\]
+\hrulefill
+\[
+E_3 = E_1 = \begin{pmatrix}
+        1 & 0\\
+        -1 & 1
+\end{pmatrix} \quad \text{addiere das 1-fache der 2-ten Zeile zur 1-ten Zeile (Typ I)}
+\]
+\hrulefill
+\[
+E_4 = \begin{pmatrix}
+        -1 & 0\\
+        0 & 1
+\end{pmatrix} \quad \text{Multipliziere die 1-te Zeile mit -1 (Typ II)}
+\]
+\[
+E_4 \cdot A = \begin{pmatrix} 
+-1 & 0\\
+0 & 1
+\end{pmatrix} 
+\cdot 
+\begin{pmatrix} 
+a & b \\
+c & d 
+\end{pmatrix} 
+=
+\begin{pmatrix} 
+-1 \cdot a + 0 \cdot c & 1 \cdot b + 0 \cdot d \\
+01 \cdot a + 1 \cdot c & -1 \cdot b + 1 \cdot d 
+\end{pmatrix}
+=
+\begin{pmatrix} 
+a  & b \\
+c-a & d-b
+\end{pmatrix}
+\]
+\[
+\begin{array}{cc|cc|cc}
+  &  & a&b  \\ 
+  & &  c & d   \\ \hline
+  \textcolor{red}{-1} & \textcolor{yellow}{0} &  \textcolor{red}{-1} \cdot a + \textcolor{yellow}{0}  \cdot c & \textcolor{red}{-1} \cdot b + \textcolor{yellow}{0} \cdot d  & -a & -b \\
+  \textcolor{blue}{0} & \textcolor{green}{1} &  \textcolor{blue}{0} \cdot a + \textcolor{green}{1}  \cdot c &  \textcolor{blue}{0} \cdot b + \textcolor{green}{1} \cdot d  & c & d
+\end{array}
+\]
+} 
+\txc{
+Ausgerechnet: 
+\begin{align*}
+    & \begin{pmatrix}
+        1 & 1\\
+        0 & 1
+        \end{pmatrix}
+       \begin{pmatrix}
+        1 & 0\\
+        -1 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+        1 & 1\\
+        0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+        -1 & 0\\
+        0 & 1
+        \end{pmatrix} \\ %%%%%%%%%%%%
+        = & 
+       \begin{pmatrix}
+        0 & 1\\
+        -1 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+        1 & 1\\
+        0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+        -1 & 0\\
+        0 & 1
+        \end{pmatrix}\\ %%%%%%%%%%%%
+        = & 
+        \begin{pmatrix}
+        0 & 1\\
+        -1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+        -1 & 0\\
+        0 & 1
+        \end{pmatrix} \\ %%%%%%%%%%%%
+        = & 
+        \begin{pmatrix}
+        0 & 1\\
+        1 & 0
+        \end{pmatrix}
+\end{align*}}
+\noindent Die Permutationsmatrix $\begin{pmatrix}
+        0 & 1\\
+        1 & 0
+        \end{pmatrix}$  ist eine (schlechte) Implmentierung von Swap (Vertauschung von Zeilen). \bluenote{Swap stellt die dritte elementare Operation dar.}
+\txc{
+\[
+\begin{array}{cc|cc|cc}
+  &  & a&b  \\ 
+  & &  c & d   \\ \hline
+  \textcolor{red}{0} & \textcolor{yellow}{1} &  \textcolor{red}{0} \cdot a + \textcolor{yellow}{1}  \cdot c & \textcolor{red}{0} \cdot b + \textcolor{yellow}{1} \cdot d  & c & d \\
+  \textcolor{blue}{1} & \textcolor{green}{0} &  \textcolor{blue}{1} \cdot a + \textcolor{green}{0}  \cdot c &  \textcolor{blue}{1} \cdot b + \textcolor{green}{0} \cdot d  & a & b
+\end{array}
+\]
+}
+Siehe: 
+\begin{align*}
+    int\ A \\
+    int\ B \\
+    int\  dummy \\
+    swap(A,B): &  \\
+     & dummy = A \\
+    & A = B\\
+    &  B = dummy
+\end{align*}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c|c|ccc|c}
+                 A& 5 & - 5 & -3 & -3 & 2  \\
+                 B& 2 & 2 & 2 & 5 & 5
+            \end{tabular}
+            \caption{Sawp der Zeilen Schritt für Schritt nach der Faktorisierung-}
+            \label{tab:my_label}
+        \end{table}
+\txc{
+\[
+\begin{array}{cc|c|c}
+  &  & 5  \\ 
+  & &  2   \\ \hline
+  \textcolor{red}{0} & \textcolor{yellow}{1} &  \textcolor{red}{0} \cdot 5 + \textcolor{yellow}{1}  \cdot 2  & 2\\
+  \textcolor{blue}{1} & \textcolor{green}{0} &  \textcolor{blue}{1} \cdot 5 + \textcolor{green}{0}  \cdot 2 & 5 
+\end{array}
+\]
+}
+\end{bsp}
+
+\begin{prop}
+Jede Matrix kann durch Elementare Zeilenoperationen der Typen 1 und 2 auf reduzierte Zeilenstufenform gebracht werden. \aquanote{Aber der dritte Typ macht es deutlich einfacher.} \bluenote{Im Gauß-Algorithmus wendet man diese Operationen so lange an, bis man die Matrix auf seine zugehörige Gauß-Normalform transformiert hat.}
+\end{prop}
+\begin{prop} \label{prop23}
+Jede invertierbare Matrix B ist Produkt von Elementarmatritzen. \txc{Jede elementare Zeilenoperation auf eine Matrix lässt sich darstellen durch Multiplikation von links mit einer Elementarmatrix (invertierbaren Matrix). Alle Elementarmatritzen sind selber invertierbar, weil man jede elementare Operation, die sie repräsentieren, durch eine geeignete elementare Operation des gleichen Typs wieder rückgängig machen kann.\cite{gaussmatrix}} \bluenote{Alle Elementarmatrizen sind invertierbar, aber nicht alle invertierbaren Matritzen sind Elementarmatritzen!}
+\paragraph{Beweis.} $B^{-1}$ existiert und ist auch invertierbar. \\
+\un{Also:} Die reduzierte Zeilenstufenform von $B^{-1}$ ist die Einheitsmatrix $\mathbb{I}$. 
+\aquanote{Also: $B^{-1}$ kann in die EInheitsmatrix transfomriert werden durch die Verkettung elemen tare Zeilenops des Typs 1 und 2}
+\begin{align*}
+    B^{-1} & =: B_1 \\
+    B_2 \\
+    B_3 \\
+    \vdots \\
+    \mathbb{I} & =  B_{r+1} 
+\end{align*}
+Es gibt also Elementarmatritzen $E_1, .., E_r$ mit $B_{i+j} = E_iB_j$. \aquanote{Von links nach rechts wäre es eine Spaltenoperation und keine Zeilenoperation.} \txc{ Man kann den Gauß-Algorithmus auch spaltenweise anwenden \cite{gaussmatrix}.}
+\[\mathbb{I} = B_{r+1} = E_r B_r . E_r E_{r-1}B_{r-1} = \cdots = E_r E_{r-1} \cdots E_2 E_  B^{-1}\] \aquanote{Der Determinantenmultiplikationssatz folgt daraus.}
+Rechnet man $| - \times B$ bekommt man 
+\[B = E_r \cdots E_1\]
+\end{prop}
+\begin{kor} \label{kor25}
+Jede Determinante ist multiplikativ. 
+\end{kor}
+\begin{prop}
+Es gibt \un{höchstens} eine Determinante 
+\[det : \mathbb{M}_{n \times n} (K) \rightarrow K\]
+\paragraph{Beweis.} durch Widerspruch. Nehmen wie an es göbe ein weitere: 
+Seien \[der, det^*: \mathbb{M}_{n \times n} (K) \rightarrow K\] zwei Determinanten. \\
+\un{z.z.:} $det = det^*$ \\
+d.h. $det (A) = det^*(A)$ für \un{jede} Matrix $A \in \mathbb{M}_{n \times n} (K)$
+\begin{enumerate}
+    \item \textbf{Fall: } $A$ ist nicht invertierbar: \\ Dann sind die Spalten von $A$ linear abhängig. \\
+    Also: $det(A) = 0 = det^*(A)$
+    \aquanote{aus der Weierstrassaxiomen folgt dann, dass die Determinante dann verschwindert, aber die Weierstrass gilt auch für det* und die verschwindet aich }
+    \item \textbf{Fall}: A ist invertierbar \\
+    Dann ist $A = E_1 \cdots E_k$ ein Produkt von Elementarmatritzen $ E_1, \cdots, E_k$. \txc{(Siehe Prop. \ref{prop23})}\\
+    Also: $det(A) = det(E_1) det(E_2) \cdots det(E_k)$ und $det^*(A) = det^*(E_1) det(E_2) \cdots det^*(E_k)$ \txc{(Siehe Kor. \ref{kor25})}\aquanote{Jede Det ist Multiplikativ, daher können wir das machen} \\
+    Denk dran: 
+    $det(E_i(\lambda)) = \lambda = det^*(E_i(\lambda))$ \bluenote{$det(E_i(\lambda))$ ist eine Elementarmatrix, die eine Operation I (das $\lambda$-fache einer Zeile zu einer anderen addieren). Die Determinante einer solchen Matrix ist gleich $\lambda$, weil die Determinante der Einheitsmatrix 1 ist und wenn man eine Zeile mit $\lambda$ multipliziert, wird auch die Determinante mit $\lambda$ multipliziert.}\\
+    $det(E_{ij}(\lambda)) = 1 = det^*(E_{ij}(\lambda))$ \\
+    Also sind alle Determinanten für jede Elementarmatritze paarweise gleich. 
+\end{enumerate}
+\end{prop}
+%Problem bei der Existenz ist  man schreibt die gleiche Matrix A auf verschiedene Art durch Elmentarmatritzen. 
+%\[E^*_1 \cdots E_m^* = A = E_1 \cdots E_k\]
+\begin{er}
+Sei $X$ eine Menge bspw. $\{1,..,n\}$
+\[Perm(X) := f: X \rightarrow X \mid f\text{ ist bijektiv}\]
+ist eine Gruppe unter Verkettung. 
+\[\sum_n := Perm(\{1,..,n\})\] heißt \un{symmetrische} Gruppe. \txc{Und die ist für jedes n verschieden!} \index{Gruppe!symmetrische}
+\end{er}
+
+Für 
+\[j,j \in \{1,..,n\}\]
+mit $i \neq j$ und $\sigma \in \sum_n$ setze: 
+\[[ij]_{\sigma} := \begin{cases}
+     1: & (i,j) \text{ und } (\sigma(i), \sigma(j)) \text{ sind \beg{gleichgeordnet}}  \\ 
+      -1: & (i,j) \text{ und }  (\sigma(i), \sigma(j))  \text{ sind gegenläufig angeordnet}
+    \end{cases}\]
+    \bluenote{gleichgeordnet: $i < j$ und $\sigma(i) < \sigma(j)$ bzw. identisch mit $>$}  \bluenote{gegenläufig: $i > j$ und $\sigma(i) < \sigma(j)$ bzw. identisch mit $<$ und $>$}
+    \txc{1, wenn die Permutation gerade ist und -1, wenn sie ungerade ist.}
+    
+    \noindent Beispiele: 
+    $(1,3) (\underbrace{\sigma(1)}_{=3}, \underbrace{\sigma(3)}_{=4})$ beide aufsteigend \\
+    $(3,1) (4,3)$beide absteigend  
+    \[[1\ 3]_{\sigma} = 1 = [3\  1]_{\sigma}\]
+    (3,5) aufsteigend $(\sigma(3), \sigma(5))=(4,1)$ ist absteigend 
+    \[[3\ 5]_{\sigma} = -1\] \aquanote{$[3\ 5]_{\sigma}$ und $[3, 5]_{\sigma}$ ist beides okay geschrieben}
+    Andersherum 
+    \[[5\ 3]_{\sigma} = -1\]
+    kreuzende Pfeile (siehe Foto) $\leftrightarrow$ $[...]_{\sigma} = -1$
+    \begin{defi}
+    
+    \[ (-1)^{\sigma} := \prod_{\{i,j\}} [i\ j]_{\sigma} = \prod_{i < j}  [i\ j]_{\sigma} \] 
+    heißt \beg{Signum} oder \beg{Vorzeichen} von $\sigma$. \bluenote{Man kann anscheinend in so einem Pfeil-Bild anhand der Pfeil-Überschneideungen das Vorzeichen ablesen. } 
+    Dabei sind $\{i,j\}$ 2-Elementige Teilmengen. \aquanote{Vorzeichen ist multiplikativ.}
+    \end{defi}
+    \begin{beob}
+    \[
+    \underbrace{[i\ j]_{\tau \circ \sigma} }_1= \underbrace{[\sigma(i) \ \sigma(j)]_{\tau}}_{-1} \underbrace{[i\ j]_{\sigma}}_{-1}
+    \]
+    Und in der Tat $-1 \cdot -1 = 1$ \\
+     Also: 
+    \[(-1)^{\tau \sigma} = (-1)^{\tau } (-1)^{\sigma }\]
+    \paragraph{Beweis.}   \bluenote{Siehe Foto... irgendwelche Mengen sind eigentlich gleich? Wieder was mit Überkreuzungen...} 
+    \begin{align*}
+        (-1)^{\tau \sigma} & = \prod_{\{i,j\}} [i\ j]_{\tau \sigma}  \\
+        & = \prod_{\{i,j\}} [\sigma(i) \ \sigma(j)]_{\tau} [i\ j]_{\sigma} \\
+        & = \prod_{\{i,j\}}  [i\ j]_{\sigma}  \prod_{\{i,j\}} \sigma(i) \ \sigma(j)]_{\tau} \\
+        & = (-1)^{\sigma}  \prod_{\{l, m\}} [l\ m]_{\tau} \\
+        & = (-1)^{\sigma} (-1)^{\tau} 
+    \end{align*} \bluenote{}
+    \end{beob}
+    \begin{prop}
+    \textbf{Leibnitzformel}\\ \index{Leibnitzformel}
+    Sei \[A = (a_{ij}) \in \mathbb{M}_{n \times n} (K) \] (eine Matrix der größe $n \times n$ über dem Körper $K$). Dann wird durch 
+    \begin{equation*}
+        det(A):= \sum_{\sigma \in \sum_n} (-1)^{\sigma} a_{\sigma(1)1} a_{\sigma(2)2} \cdots a_{\sigma(n)n}
+    \end{equation*} \bluenote{$\sum_n$ beinhaltet $n!$ viele Permutationen}
+    eine (die) Determinante erklärt. (D.h. die Weierstrassaxiome werden erfüllt)
+     \begin{bsp}
+    \[
+    n = 2, \quad \sum_2 =  \{id, \tau\}
+    \]
+\begin{tikzpicture} 
+    \node (A) at (0,0) {1};
+    \node(B) at (1,0) {2};
+    \node(C) at (0,-1) {1};
+    \node(D) at (1,-1) {2};
+    \node (E) at (0.5, -2) {$\tau$};
+    \path [->] (A) edge node[left] {} (D);
+    \path [->](B) edge node[left] {} (C);
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node (A) at (0,0) {1};
+    \node(B) at (1,0) {2};
+    \node(C) at (0,-1) {1};
+    \node(D) at (1,-1) {2};
+    \node (E) at (0.5, -2) {$id$};
+    \path [->] (A) edge node[left] {} (C);
+    \path [->](B) edge node[left] {} (D);
+\end{tikzpicture}
+    \[
+    det\begin{pmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22}
+    \end{pmatrix}
+     = \underbrace{ a_{id(1)1}   a_{id(2)2}}_{id} -  \underbrace{a_{\tau(1)1}   a_{\tau(2)2}  }_{\tau}  = a_{11} a_{22} - q_{21} a_{12}
+    \]
+    \end{bsp}
+    \paragraph{Beweis.} Setze 
+    \begin{align*}
+        P_j : & K^n \rightarrow K \\
+        & \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+        \end{pmatrix} \mapsto x_j 
+    \end{align*}
+    (Projektion auf die j-te Koordinate)
+    \[\sigma \in \sum_n\]
+    \begin{align*}
+        b_j: & \mathbb{M}_{n\times n}(K) \rightarrow K \\
+        & a_{\sigma(1)1} \cdots a_{\sigma(n)n} (v_1 \cdots v_n) \mapsto P_{\sigma(1)}(v_1)
+ \cdots P_{\sigma(n)}(v_n)    \end{align*}
+ \begin{equation}
+    a_{\sigma(1)1} \cdots a_{\sigma(n)n} (v_1 \cdots v_n) = b_{\sigma} 
+    \begin{pmatrix}
+    a_{11} & \cdots  & a_{1n} \\
+    \vdots & & \vdots \\
+    a_{n1} & \cdots & a_{nn}
+    \end{pmatrix}
+ \end{equation}
+\end{prop}
+\begin{beob}
+\[
+det (v_1 \cdots v_n) = \sum_{\sigma \in \sum_n} (-1)^{sigma} b_{\sigma} (v_1 \cdots v_n)
+\]
+\[
+det = \sum_{\sigma \in \sum_n} (-1)^{sigma} b_{\sigma}
+\]
+\end{beob}
+\begin{beob}
+       Jedes $b_{\sigma}$ ist multilinear. \\
+   Also: det ist multilinear. 
+\end{beob}
+\begin{beh}
+   Sind zwei Spalten gleich, so ist $det(1) = 0$ (mehr dazu zum nöchsten mal). 
+\end{beh}
+3) $det(\mathbb{I)} = 1$ \\
+Siehe nochmal Tafel, keine Ahnung woher die 3 plötzlich kommt. 
+
+\subsection{Vorlesung 3 (16.04.2025)}
+\begin{prop} (\textbf{Leibnitzformel)} \\ \index{Leibnitzformel}
+Sei $A = (a_{ij}) \in \mathbb{M}_{n \times n} (K)$. Dann wird durch 
+\begin{equation} \label{eq:leibnitzformel}
+    det(A) := \sum_{\sigma \in \Sigma_n} (-1)^{\sigma} a_{\sigma(1) 1}   \cdots a_{\sigma(n) n}
+\end{equation}
+eine Determinante erklärt. 
+\paragraph{Beweis.} Wir weisen die Weierstraßaxiome nach. Setze: 
+\begin{align*}
+    P_j: & K^n \rightarrow K & \text{Projektion} \\
+    & \begin{pmatrix} x_1 \\ \vdots \\ x_n  \end{pmatrix} \mapsto x_j \\
+    b_{\sigma}: & \mathbb{M}_{n \times n}(K) \rightarrow K & (\sigma \in \Sigma_n) \\
+    & (\V_1 \cdots \V_n) \mapsto P_{\sigma(1)} (\V_1) \cdots  P_{\sigma(n)} (\V_n)
+\end{align*}
+
+\begin{beob}
+Jedes $b_{\sigma}$ ist multilinear. 
+\end{beob}
+Also: \(det = \sum_{\sigma \in \Sigma_n} (-1)^{\sigma} b_{\sigma}\) ist multilinear. \\
+Ist nun $\V_i = \V_j$ so bezeichne $\tau$ die \beg{Transposition} $i \leftrightarrow j$. \\
+D.h. \(\tau(k) = \begin{cases}  
+i: & k=j\\ j:&k=i\\ k: & sonst
+\end{cases}\). Dann ist $b_{\sigma} (\V_1 \cdots \V_n) = - b_{\sigma\tau}  (\V_1 \cdots \V_n)$. \\ \\
+\txc{Die Transposition $\tau$ tauscht die $i$-te und $j$-te Spalte der Matrix. Wenn man $\tau$ auf die Permutation $\sigma$ anwendet, erhält man eine neue Permutation $\sigma\tau$, die die $i$-te und $j$-te Spalte der Matrix tauscht und die restlichen Spalten unverändert lässt. \\
+Da die $i$-te und $j$-te Spalte der Matrix identisch sind, werden die Einträge, die für $b_{\sigma}$ und $b_{\sigma\tau}$ ausgewählt werden, für die meisten Indizes übereinstimmen. Die einzigen Unterschiede sind, dass $b_{\sigma}$ die $i$-te Spalte an der Stelle $\sigma(i)$ und die $j$-te Spalte an der Stelle $\sigma(j)$ auswählt, während $b_{\sigma\tau}$ die $i$-te Spalte an der Stelle $\sigma\tau(i) = \sigma(j)$ und die $j$-te Spalte an der Stelle $\sigma\tau(j) = \sigma(i)$ auswählt. \\
+Da $\sigma(i)$ und $\sigma(j)$ unterschiedlich sind (andernfalls wäre $\sigma$ keine Permutation), werden $b_{\sigma}$ und $b_{\sigma\tau}$ für mindestens einen Index unterschiedliche Einträge auswählen. Da die $i$-te und $j$-te Spalte der Matrix identisch sind, sind diese Einträge gleich, und das Vorzeichen, das aus der Vertauschung der $i$-ten und $j$-ten Spalte resultiert, ist $-1$. \\
+Daher gilt $b_{\sigma} (\V_1 \cdots \V_n) = - b_{\sigma\tau} (\V_1 \cdots \V_n)$.} \\ \\
+Also: $b_{\sigma}(\V_1 \cdots \V_n) + b_{\sigma \tau}(\V_1 \cdots \V_n) = 0$. \\
+D.h. In $\sum_{\sigma \in \Sigma (-1)^{\sigma} b_{\sigma}(\V_1 \cdots \V_n)}$ heben sich die   Summanden in Paaren weg. Schließlich ist $b_{\sigma}(\mathbb{I}_n) = \begin{cases} 1:& \sigma = id \\ 0:& sonst \end{cases}$.
+\end{prop}
+
+\begin{satz}
+ Es gibt genau eine Determinante 
+ \[
+ det: \mathbb{M}_{n \times n}(K) \rightarrow K.
+ \]
+ Sie ist multiplikativ [$det(AB) = det(A)det(B)$] und gegeben durch die Leibnitzformel \ref{eq:leibnitzformel}.
+\end{satz}
+
+\begin{bsp}
+ \texttt{Seite 3 in \cite{vor3}.}
+\end{bsp}
+
+\begin{beob}
+\(A = (A_{ij})\)
+\begin{align*}
+    det(A) &= \sum_{\sigma \in \Sigma_n} (-1)^{\sigma} a_{\sigma(1) 1} \cdots a_{\sigma(n) n}  \\
+    &= \sum_{\sigma \in \Sigma_n} (-1)^{\sigma} a_{\sigma^{-1}(1) 1} \cdots a_{\sigma^{-1}(n) n}  & denn \ (-1)^{\sigma}  = (-1)^{(\sigma^{-1})}  \\
+    &= \sum_{\sigma \in \Sigma_n} (-1)^{\sigma^{-1}} a_{\sigma^{-1}(1) 1} \cdots a_{\sigma^{-1}(n) n} \\
+    &= \sum_{\tau \in \Sigma_n} (-1)^{\tau} a_{\tau(1) 1} \cdots a_{\tau(n) n} \\
+    &= det(A^T)
+\end{align*}
+\end{beob}
+
+\begin{kor}
+Die Determinante erfüllt auch die Weierstraßaxiome für Zeilen anstelle von Spalten.  
+\end{kor}
+
+\begin{defi}
+Sei $A = (a_{ij}) \in \mathbb{M}_{n \times n}(K)$. Für $k,l \in \kl{1, ..., n}$ definieren wir $A^{kl} \in \mathbb{M}_{(n-1) \times (n-1)}(K)$ durch 
+\[
+(A^{kl})_{ij} := \begin{cases}
+a_{ij}: & i < k, j < l \\
+a_{ij+1}: & i < k, j \geq l \\
+a_{i+1j}: & i \geq k, j < l \\
+a_{i+1j+1}: & i \geq k,j \geq l \\
+\end{cases}
+\] 
+$A^{kl}$ heißt \beg{Streichmatrix}. \index{Matrix!Streich} Die \beg{Kofaktoren} $\tilde a_{kl}$ von $A$ sind gegeben durch  
+\[
+\tilde a_{kl} := \underbrace{
+(-1)^{k+l} \overbrace{det(A^{kl} )}^{Minor}
+}_{Kofaktor}
+\]
+\txc{Minor = Unterdeterminante -  Determinante einer quadratischen Untermatrix, die durch Streichen einer oder mehrerer Spalten und Zeilen einer Matrix entsteht\cite{Minor}} \\ 
+% TODO Kofaktor genau erklären
+und $Cof(A) := (\tilde a_{kl}) \in \mathbb{M}_{n \times n}(K)$ heißt \beg{Kofaktormatrix} von $A$. \index{Matrix!Kofaktor}\\
+Ihre Transponierte 
+\[
+adj(A) := Cof(A)^T = \begin{pmatrix}
+\tilde a_{11} & \cdots & \tilde a_{n1} \\
+\vdots & & \vdots \\
+\tilde a_{1m} & \cdots & \tilde a_{nm}
+\end{pmatrix}
+\]
+heißt \beg{Adjunkte} von $A$ oder auch die zu $A$ \beg{komplementäre Matrix}. \index{Matrix!komplementäre} 
+\end{defi}
+\begin{beob} $\ $
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/beobachtungv3.png}
+    \caption{}
+    \label{fig:beobachtungv3}
+\end{figure}
+\end{beob}
+\begin{satz} (\textbf{\beg{Entwicklungssatz}})  \\
+Sei $A = (a_{ij}) \in \mathbb{M}_{n \times n}(K)$ eine Matrix. Dann gilt für $j \in \kl{1, ..., n}$: 
+\begin{align*}
+    det(A) &= \sumEN (-1)^{i+j} a_{ij} det (A^{ij}) \\
+    & = \sumEN a_{ij} Cof(A)_{ij} \\
+    &= \sumEN a_{ij} adj(A)_{ij}
+\end{align*}
+ \paragraph{Beweis.} \texttt{Siehe Seite 7 in \cite{vor3}}
+\end{satz}
+\begin{kor}
+ \[
+ A \cdot adj(A) = det(A) \mathbb{I}_n
+ \]
+ \txc{Die adjunkte Matrix ist die transponierte Matrix der Kofaktormatrix. Multipliziert man aber eine Matrix $A$ mit ihrer Kofaktormatrix, so erhält man die Determinante von $A$ multipliziert mit der Einheitsmatrix. Die Transponierung der Kofaktormatrix ändert daran nichts, da das Transponieren zweimal die Matrix wieder in ihre ursprüngliche Form bringt.}
+ \paragraph{Beweis.} Sei $A = (\un{a}_1 \cdots \un{a}_n$. Setze $B = (b_{kl}) := adj(A) \cdot A$. Also: 
+ \begin{align*}
+     b_{kl} &= \sumEN adj(A)_{ki} a_{il} \\
+     &= \sumEN a_{il} adj(A)_{ki} \\
+     &= det(\un{a}_1 \cdots \un{a}_l \cdots \un{a}_l \cdots \un{a}_n) \\
+     & = \begin{cases}
+     det(A): & k=l \\
+     0 : & k \neq l
+     \end{cases}
+ \end{align*}
+ % TODO den Beweis verstehen 
+\end{kor}
+\begin{bem}
+\[det(P A P^{-1}) = det(A)\]
+Ähnliche Matrizen haben die gleiche Determinante. \txc{Ähnliche Matrizen sind Matrizen, die sich nur durch eine Multiplikation mit einer invertierbaren (nicht singulären) Matrix unterscheiden.}
+\end{bem}
+\begin{bem}
+Eine bemerkenswerte Folge ist es, dass sich die Determinante für \beg{lineare Endomorphismen} von Vektorräumen endlicher Dimension erklären lässt.  \\
+Sei $V$ ein $K-VR$ der Dimension $n$. Wähle(!) eine Basis $B = (\un{b}_1, .., \un{b}_n$ V. Dann wird eine lineare Abbildung 
+\[
+\Psi : V \rightarrow V 
+\]
+bezüglich $B$ durch eine $\nn$-Matrix $A = (a_{ij})$ beschrieben mittels der Regel 
+\[
+\Psi(\un{b}_j) = \sumEN a_{ij} \un{b}_i
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/dhvor3.png}
+    \caption{}
+    \label{fig:beobachtungv3}
+\end{figure}
+\noindent Wir erklären 
+\[
+det(\Psi) := det(A) 
+\]
+\txc{Eine lineare Abbildung zwischen zwei Vektorräumen kann durch eine Matrix dargestellt werden.}
+\begin{beh}
+\textit{$det(\Psi)$ ist unabhängig von der $B$.} 
+\paragraph{Beweis.} Sei $B' = (\un{b'}_1, ..., \un{b'}_n)$ eine andere Basis von $V$ und $A'$ die Matrix, die $\Psi$ bezüglich $B'$ beschreibt. Dann ist 
+\[
+A' = PAP^{-1}
+\]
+für eine \un{Basiswechselmatrix} $P$. Daher $det(A')=det(A)$. \\
+\txc{Die Determinante der linearen Abbildung $\Psi$ ist unabhängig von der gewählten Basis $B$ ist, da sie durch die Determinante der zugehörigen Matrix $A$ gegeben ist, und die Determinante einer Matrix unabhängig von der gewählten Basis ist, solange man die gleiche Basis für die Zeilen und Spalten verwendet.}
+\end{beh}
+\end{bem}
+   
+   \subsection{Vorlesung 4 (23.04.2025)}
+\section{Eigenwerte, Eigenvektoren, Eigenräume}
+   \begin{defi}
+   Sei $V$ ein $K-VR$ und $\varphi: V \rightarrow V$ linear (Endomorphismus). \aquanote{   sidenote: 
+   $\varphi: V \rightarrow W$ beschreiben wir durch eine Matrix durch Wahl von Basen $\mathcal{B} = (\un{b}_1, ..., \un{b}_n)$ von $V$ \\ $\mathcal{C} = (\un{c}_1, ..., \un{c}_n)$ von $W$ \texttt{siehe Bild}} $\varphi$ wird durch eine Matrix $A$ beschrieben, wenn wir eine Bais $\mathcal{B} = (\un{b}_1, ..., \un{b}_n)$ von $V$ wählen . \\
+   \texttt{Bild} \\
+   Ein Skalar $\lambda \in K$ heißt \gls{ew} von $\varphi$ (bzw. $A$), wenn es einen Vektor $\un{v}$ \aquanote{$\un{v}$: Eigenvektor con $\varphi$ zum \gls{ew} $\lambda$} $\neq 0$ mit $\varphi(\un{v}) = \lambda \un{v}$ gibt. 
+   \aquanote{EIne Einschränkung kommt zu stande, wenn man so einen Vektor haben will, der Null ist. (was auch immer das heißen soll)} \\
+   und \begin{align*}
+       E_{\lambda} (\varphi) :& = \{\un{v} \in V \mid \varphi(\un{v) = \lambda \un{v}}\} \\
+       & = \{\un{v} \in V \mid \varphi(\un{v)} - \lambda \un{v} = 0\} \\
+       & = ker(\underbrace{\varphi - \lambda id_v}_{linear})
+   \end{align*} \bluenote{$\varphi - \lambda id_v$ ist die Identität auf dem Vektorraum} \aquanote{$ E_{\lambda} (\varphi)$: Eigenraum von $\varphi$ zum \gls{ew} $\lambda$ ist ein Unterraum von $V$}
+   Wichtiger Spezialfall: $V=K^n, \quad \varphi = A$ \bluenote{Dann kann man den Kern(?) einfach hinschreiben} dann: \[E_{\lambda}(A) = ker(A-\lambda \mathbbm{1})\]
+   \txc{Man kann konkret mit Matrizen arbeiten, wenn der Vektorraum $V$ der Standardraum $K^n$ (bspw. $\mathbb{R}^n$) ist.}
+   \end{defi}
+   \begin{bem}
+   $\lambda$ ist ein \gls{ew} von $\varphi \Leftrightarrow E_{\lambda} = \txc{
+   \underbrace{\textcolor{black}{ ker(\varphi - \lambda id_v)\neq \{0\}}}_{\text{besteht  nicht nur aus Nullvektor}}
+   } \Leftrightarrow dim E_{\lambda} \geq 1$ \\
+   \txc{''Ein Skalar $\lambda$ ist genau dann ein Eigenwert einer linearen Abbildung $\varphi$, wenn der Eigenraum zu $\lambda$ nicht nur den Nullvektor enthält, also wenn er mindestens eindimensional ist.'' \\
+   Anwendung: Eigenwerte erkennen.}
+   \end{bem}
+   \begin{defi}
+   $dim E_{\lambda}$ heißt geometrische Vielfachheit von $\lambda$.
+   \end{defi}
+   \subsubsection{Aufgabe: Bestimmte die Eigenwerte einer Matrix A.}
+   Lösung: Wir haben: \\
+   $\lambda$ ist \gls{ew} von $A \Leftrightarrow E_{\lambda = ker(A - \lambda \mathbbm{1})}\neq \{0\} \Leftrightarrow A - \lambda \mathbbm{1})$ ist \textbf{nicht} inverteierbar $\Leftrightarrow \underbrace{det(A - \lambda \mathbbm{1})) = 0}_{\text{charackterisctische Gleichung}}$
+   \begin{bsp}
+    \[
+    A = \begin{pmatrix}
+    1 & 3 \\ 2 & 4
+    \end{pmatrix}
+    \]
+    charakteristische Gleichung: $det(A - \lambda \mathbbm{1}_2)) = 0$ 
+    \[
+    det \begin{pmatrix}
+    1 - \lambda & 3 \\ 2 & 4 - \lambda
+    \end{pmatrix} = 0
+    \]
+    \begin{align*}
+        (1-\lambda)(4-\lambda) - 2\cdot 3  & = 0 \\
+        \lambda^2 - 5 \lambda + 4 -6 & = 0 \\
+        \lambda - 5 \lambda & = 2  & \mid + (\frac{5}{2})^2 = \frac{25}{4}\\
+        (\lambda - \frac{5}{2})^2 & = \frac{
+        33}{4} \\
+        \lambda - \frac{5}{2} & = \frac{+}{-} \frac{\sqrt{33}}{2} \\ \\
+        \lambda_1
+ & = \frac{5 + \sqrt{33}}{2} \\
+ \lambda_2  & = \frac{5 - \sqrt{33}}{2}
+\end{align*} \aquanote{Generell gilt bei der bestimmung von eigenwerten: da kommen hässliche Zhalen raus }
+ Wir bestimmen die Eigenräume. 
+ \begin{align*}
+     E_i & = ker(A - \lambda_i \mathbbm{1}) \\
+     & = \Biggl\{
+     \binom{x}{y} \mid \begin{pmatrix}
+     1 - \lambda_i & 3 \\ & 2 & 4 - \lambda_i
+     \end{pmatrix} \cdot  
+     \binom{x}{y} = \binom{0}{0} 
+     \Biggr\}
+ \end{align*}
+ \un{$\lambda_1\backslash E_1$: }
+ \begin{align*}
+     E_1 & = ker \begin{pmatrix}
+     \frac{-3 -\sqrt{33}}{2} & 3 \\ 2 & \frac{3 - \sqrt{33}}{2} 
+     \end{pmatrix} & \overset{\times 2}{\times \frac{-3 -\sqrt{33}}{2}} \\
+     & = ker\begin{pmatrix}
+    -3 -\sqrt{33}& 6 \\ -3 -\sqrt{33} & \frac{33-9}{4} = \frac{24}{4} = 6  & \overset{I}{II \rightarrow II-I} 
+     \end{pmatrix} \\
+     & = ker \begin{pmatrix}
+     -3 -\sqrt{33} & 6 \\ 0 & 0
+    \end{pmatrix} \\
+    & = \Biggl\{\binom{x}{y} \mid (-3 -\sqrt{33}) x - 6 y = 0 \Biggl\} \\
+    & = \lv \binom{6}{3 + \sqrt{33}} \rv
+ \end{align*}
+   \end{bsp}
+   \begin{bsp}
+    \[
+    A = \begin{pmatrix}
+    0 & 1 & 1 \\ -1 & 0 & 1 \\ 0 & 0 & 1
+    \end{pmatrix}
+    \]
+    charakterisctische Gleichung  $det \begin{pmatrix}
+    -\lambda & 1 & 1 \\ -1 & -\lambda  & 1 \\
+    0 & 0 & 1 -\lambda 
+    \end{pmatrix} = 0$
+    \[
+    = det \begin{pmatrix}
+    -\lambda & 1 \\ -1 & -\lambda 
+    \end{pmatrix} \cdot (1-\lambda) + \underbrace{0 \cdot det} + \underbrace{0 \cdot det} = 0
+    \] \bluenote{0 weil es nach der letzten Spalte (?) entwickelt ist?}
+    \[
+    (\lambda^2 +1) (1-\lambda) = 0 = \lv \begin{pmatrix}
+    1 \\ 0 \\ 1
+    \end{pmatrix} \rv
+    \]
+    \[\lambda = 1\]
+   \end{bsp}
+   $A \in \mathbb{M}_{3\times3}(\mathbb{R})$ hat \textbf{nur} \gls{ew} $\lambda = 1$ \\
+   $A \in \mathbb{M}_{3\times3}(\mathbb{C})$ hat \gls{ew} $\lambda_1 = 1, \lambda_2 = i, \lambda_3 = i$
+   \bluenote{Hier muss man irgendwie gucken wie man das auslegt, ob nur reelle oder auch andere (komplexe??) Zahlen zugelassen sind und dementsprechend können die EIgenwerte auch sowas sein}
+   \aquanote{Tipp: Wenn man als Aufgabe sowohl \gls{ew} als auch ER bestimmen muss testet die Berechnug des \gls{ew}, denn wenn man beim ER Nullvektor herausekommt muss das falsch sein, weil es ja min dim 1 haben muss \texttt{aus Gründen}}
+   
+  \begin{defi}
+  Sei $A \in \mathbb{M}_{n\times m}(K)$- Dan ist die linke Seite der charak. Gleichung 
+  $\chi_A (t) : = det (A - t \mathbbm{1})$ ein Polynom $n$-ten Grades \[
+  det = \begin{pmatrix}
+  a_{11}- t & q_{12} & \cdots & a_{1n} \\
+  & \vdots \\
+  a_{n1} & \cdots & a_{nn-1} & a_{nn}-t 
+  \end{pmatrix}
+  \]
+  In der Leibnitzformel können dann nur zwei Koeffizienten vorkoemmen: $(a_{jj}-t)$ $a_{jk} j+k$ \bluenote{not sure was jetzt die Koeffizienten sind}
+ \aquanote{ polynom in t mit Grad max n und gibt einen Koeffizienten in der eibnitzformel wo n erreicht wird }
+ 
+ Der Diagnoalbetrag $(a_{11} -t) \cdots (a_{nn}-t)$ ist der eintige, der zu den Geraden $n$ und $n-1$ beitrögt.  \\
+ \[
+ \rightsquigarrow
+ \chi_A(t) = (-1)^n t^n + (-1)^{n-1} (a_{11} + ... + a_{nn})^{n-1}t + ... + \underbrace{det A t^0 }_{fakt}\]
+ heißt das charakteristische Polanom von $A$. 
+ \[
+ tr(A) : = a_{11} + a_{22} + ... + a_{nn}
+ \] heißt Spur von $A$. 
+  \end{defi}
+Erläuterndes Beispiel: 
+  \[
+  det \begin{pmatrix}
+  q_{11} -t & a_{12} \\ q_{21} & a_{22} - t 
+  \end{pmatrix} = (a_{11}-t) \cdot (a_{22} -t) - a_{21}\cdot a_{12}
+  \]
+  Auch schreibbar als  \bluenote{weiß aber nicht wie}
+  \[
+  = (-t)(-t) + a_{11}(-t) + a_{22}(-t) + a_{11} \cdot a_{22} = (-1)^2 t^2 (a_{11} + a_{22}) t + \underbrace{a_{11}\cdot a_{22} + a_{21} \cdot a_{12}}_{det A}
+  \]
+ Wenn man damit Sarrus macht kommt raus 
+ 
+ \begin{align*}
+    det \begin{pmatrix}
+     q_{11} -t & a_{12} & a_{13} \\ q_{21} & a_{22} - t & a_{23} \\a_{31} & a_{32} & a_{33} -t 
+    \end{pmatrix} & =  (a_{11}-t)  (a_{22}-t)  (a_{33}-t) + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{31}(a_{22}-t)a_{13} - a_{32} a_{23} (a_{11}-t) - (a_{33}-t) a_[21] a_{12}
+ \end{align*} \bluenote{irgendein Beitrag (evtl. $ (a_{11}-t)  (a_{22}-t)  (a_{33}-t)$)trägt nur zum Faktor n und n-1 zu und das ist besonders und whelp und deswegen wird eine Spur nicht verunreinigt durch weitere Summanden, die man einsammelt help }
+ \begin{align*}
+      (a_{11}-t)  (a_{22}-t)  (a_{33}-t) & = (-t)^3 + a_{11}(-t)^2 + a_{22}(-t)^2 \\
+      & + a_{33}(-t)^2 \\
+      & + a_{11} a_{22}(-t) + a_{11} a_{33}(-t) \\
+      & + a_{22} a_{33}(-t) \\
+      & + a_{11} a_{22} a_{33}
+ \end{align*} \aquanote{Beweist man indem man das t = 0 setzt, weil dann als Funktionswert die Determinante herauskommt}
+\begin{satz}
+ Ähnliche Matrizen haben gleiche charakteristische Polynome. 
+ \paragraph{Beweis.}
+ Seien $A, B \in \mathbb{M}_{n\times n}(K)$ ähnlich, d.h. es gibt eine invertierbare Matrix $P \in  \mathbb{M}_{n\times n}(K)$ mit $B = PAP^{-1}$. 
+ \begin{align*}
+     \chi_B(t) = det (B - t \mathbbm{1}) \\
+      & = det (PAP^{-1} - P\mathbbm{1}P^{-1})
+       \\
+       & = det(P(A - t \mathbbm{1}) P^{-1})  \\
+       & \overset{Determinantensatz=}{=} det(P) \cdot det (A - t \mathbbm{1}) \cdot det (P)^{-1} \\ 
+       & = det (A - t \mathbbm{1})  & \text{denn } det(P) \text{ und } det (P)^{-1} \text{ kürzen sich } \\
+       & = \chi_A(t)
+ \end{align*} \aquanote{Die Spur ist \textbf{nicht} multiplikativ!}
+\end{satz}
+\begin{kor}
+\(tr(A) = tr(B)\) wenn $A$ und $B$ ähnlich sind. 
+\end{kor} 
+\begin{kor}
+ Für $\varphi: v \rightarrow V$ (einen Endomorophismus) sind beschreibende Matrizen $B$ (zur Basis $\mathcal{B} = ()$) und $C$ (zur Basis  $\mathcal{C} = ()$) ähnlich. \\
+ Die konjugiertende Matrix $P$ beschreibt den Basiswechsel. \aquanote{Man kann B und C überführen durch Multiplikation mit der Basiswechselmatrix}
+ \un{Also:} 
+ \[
+ \chi_B(t) =  \chi_C(t)
+ \] ist unabhängig von der Basiswahl. \\
+ \un{Also:} 
+ \[
+ \chi_{\varphi}(t) : = \chi_B(t)
+ \]
+ Wobei $\chi_B$ hier bedeutet: beschreibt $\varphi$ bezüglich einer beliebigen Basis. 
+\end{kor}
+\begin{defi}
+$K$ heißt algebraisch abgeschlossen, wenn eine (und damit alle) der folgenden äquivalenten Bedingungen erfüllt sind: 
+\begin{enumerate}
+    \item Jedes nicht-konstante Polynom $p(t) = a_n t^n + ... + a_1 t + a_0$  hat mindestens eine Nullstelle. 
+    \item Jedes nicht-konstante Polynom $p(t)$ zerfällt in Linearfaktoren $p(x) = a(\lambda_1-t) (\lambda_2 - t) \cdots (\lambda_n -t)$. 
+\end{enumerate}
+\end{defi}
+
+
+
+\subsection{Vorlesung 5 (30.04.2025)}
+\begin{defi}
+Ein Körper $K$ heißt \un{algebraisch abgeschlossen}, wenn jedes Polynom \ma{p(x) = a_n x^n + \cdots + a_1 x + a_0} vom Grad \ma{n \geq 1} (d.h. insbesondere \ma{a_n \neq 0}) in Linearfaktoren zerfällt: 
+\[
+p(x) = a_n (x-\lambda_1) \cdots (x-\lambda_n)
+\]
+\end{defi}
+\begin{bem}
+Die \ma{\lambda_i} sind dann \textbf{die} \aquanote{es gibt keine anderen Nullstellen} Nullstellen von \ma{p(x)}. Sie müssen nicht paarweise verschieden sein. \\
+Der Grad von \ma{p(x)} ist die Anzahl der Nullstellen \un{gezählt mit Vielfachheit}.
+\begin{bsp}
+\[
+p(x) = 2 (x-5) (x-5) (x-3) 
+\]
+hat die Nullstellen 5 mit \un{Vielfachheit} 2 und 3 mit \un{Vielfachheit} 1. \\ 
+\end{bsp}
+\end{bem}
+\begin{defi}
+Die \un{algebraische Vielfachheit} eines Eigenwerts \ma{\lambda} det Matrix $A$ (oder eines Endomorphismus \ma{\varphi: V \rightarrow V}) ist die Vielfachheit von \ma{\lambda} als Nullstelle des charackteristischen Polynom \ma{\chi_A(t)} bzw. \ma{\chi_{\varphi}(t)}. 
+\end{defi}
+\begin{prop}
+Ist $\lambda$ Eigenwert von \ma{A \in \mnnk}, so übersteigt die geometrische Vielfachheit von \ma{\lambda} seine algebraische Vielfachheit \un{nicht}. 
+\paragraph{Beweis.} \texttt{Seite 2 in \cite{vor5}}
+\end{prop}
+\begin{beob}
+\ma{ \mathbbm{1} = B^{-1}B}, d.h.: \ma{\tau_i \un{b}_j  = \delta_{ij}}.
+\bluenote{$\tau_i$ ist die $i$-te Spalte der inversen Matrix $B^{-1}$}
+\bluenote{$un{b}_j$ ist die $j$-te Spalte der Basismatrix $B$}
+\bluenote{das Kronecker-Delta, eine Funktion, die 1 ist, wenn $i = j$, und 0, wenn $i \neq j$}  \\
+\txc{Die Gleichung besagt also, dass das Produkt der $i$-ten Spalte der inversen Matrix $B^{-1}$ mit der $j$-ten Spalte der Basismatrix $B$ genau die $i$-te Spalte der Identitätsmatrix $\mathbbm{1}$ ergibt, während das Produkt der $i$-ten Spalte der inversen Matrix $B^{-1}$ mit den anderen Spalten der Basismatrix $B$ die Nullspalte ergibt.} \\ \\ 
+Also: \ma{\tau_i A \un{b}_j = \tau_i \lambda \un{b}_j = \lambda \delta_{ij}} für \ma{j \leq r}. \\
+D.h. \ma{B^{-1}AB = } \includegraphics[width=2cm]{images/dhvor5.png} \\
+Also: \ma{\chi_A(t) = \chi_{B^{-1}AB}(t) = (\lambda - t)^r  \chi_D(t)}
+\end{beob}
+\begin{kor}
+\paragraph{Beweis.}
+\end{kor}
+\begin{beob} 
+\paragraph{Beweis.}
+\end{beob}
+\begin{prop}
+\paragraph{Beweis.}
+\end{prop}
+\begin{beob}
+
+\end{beob}
+\begin{beob}
+
+\end{beob}
+\begin{defi}
+
+\end{defi}
+\begin{bem}
+
+\end{bem}
+\begin{bem}
+
+\end{bem}
+\begin{bsp}
+
+\end{bsp}
+\begin{satz}
+
+\paragraph{Beweis.}
+\begin{bem}
+
+\end{bem}
+
+\begin{beh}
+
+\end{beh}
+\end{satz}
+\begin{kor}
+\paragraph{Beweis.}
+\end{kor}
+\begin{defi}
+
+\end{defi}
+\begin{satz}
+\paragraph{Beweis.}
+\end{satz}
+\begin{bem}
+
+\end{bem}
+
+
+
+\subsection{Vorlesung 6 (02.05.2025)}
+
+\subsection{Vorlesung 7 (07.05.2025)}
+
+\subsection{Vorlesung 8 (09.05.2025)}
+
+\subsection{Vorlesung 9 (14.05.2025)}
+
+\subsection{Vorlesung 10 (16.05.2025)}
+
+\subsection{Vorlesung 11 (23.05.2025)}
+
+\subsection{Vorlesung 12 (28.05.2025)}
+
+\section{Das Integral}
+\subsection{Vorlesung 13 (30.05.2025)}
+Sei \ma{I = [a,b] \subseteq \mathbb{R}} ein abgeschlossenes Intervall. 
+\begin{defi}
+Eine \beg{Unterteilung} von $I$ ist eine endliche Folge 
+\mab{a = s_0 < s_1 < ... < s_{m-1} < s_m = b.}
+Die \ma{t_i} heißen \beg{Unterteilungspunkte}. Eine Unterteilung 
+\mab{a = t_0 < t_1 < ... < t_m = b} heißt Verfeinerung von \ma{(s_0 < ... < s_m)}, wenn \ma{\kl{s_i} \subseteq \kl{t_j}} gilt. Also: Es kommen nur Unterteilungspunkte hinzu. 
+\end{defi}
+\begin{beob}
+Je zwei Unterteilungen von $I$ haben eine gemeinsame Verfeinerung.  
+\end{beob}
+\begin{defi}
+Eine Funktion \ma{f: I \rightarrow \mathbb{R}} heißt \beg{Treppenfunktion}, wenn es eine Unterteilung \ma{a = s_0 < s_1 < ... < s_m = b} von $I$ gibt, so dass \ma{f|_{s_{i-1},s_i }} konstant ist für jedes \ma{i = 1, ..., m}. \\
+D.h.: Es gibt \ma{y_1, ..., y_m \in \mathbb{R}} mit \ma{\forall i: f(x) = y_i} für alle \ma{x \in (s_{i-1},s_i)}. \\
+Wir sagen \ma{(s_0 < ... < s_m)} \beg{bezeugt}, dass $f$ eine Treppenfunktion ist. Das \beg{Integral} von $f$ ist \mab{\int_a^b f = \sumEN y_i (s_i - s_{i-1})} \bluenote{\ma{ (s_i - s_{i-1})} ist die Länge des Intervalls} \\
+\txc{Anders: Eine Funktion \ma{f: [a;b] \rightarrow \mathbb{R}} heißt \beg{Treppenfunktion}, wenn es Zahlen \ma{s_0, s_1, ..., s_m} gibt mit \ma{a = s_0 < s_1 < ... < s_m = b} und Zahlen \ma{y_1, y_2, ..., y_m}, so dass \ma{f(x) = y_i} für alle \ma{x \in (s_{i-1},s_i)}.}
+\end{defi}
+\begin{beob}
+Das Integral ist unabhängig von der bezeugenden Unterteilung. 
+\paragraph{Beweis.} Es reicht zu zeigen: Wert des Integral ändert sich nicht bei Verfeinerung. Das bricht runter auf Hinzufügen eines einzelnen weiteren Unterteilungspunktes. 
+\end{beob}
+\begin{bem}
+\ma{\Tau_I := \kl{f: I \rightarrow} \R \mid f: Treppenfunktion} ist ein \ma{\R}-Vektorraum und \mab{\int_I : \Tau_I \rightarrow \R, \quad f \mapsto \int_a^b f } ist linear. 
+\end{bem}
+\begin{defi}
+Sei \ma{f: \itr} beschränkt. \bluenote{Abbildung, deren Bildmenge beschränkt ist} \aquanote{$f$ beschränkt \ma{\Rightarrow \mathcal{R} \neq 0, \quad \mathcal{L} \neq 0}} \\
+\begin{align*}
+    \mathcal{R} & := \kl{f_+ : \itr \mid f \leq f_+, \quad f_+\ Treppenfkt.} \\
+    \mathcal{L} & := \kl{f_- : \itr \mid f_-  \leq f, \quad f_- \ Treppenfkt.} \\ \\
+    R &:= \kl{\int f_+ \mid f_+ \in \mathcal{R}}  \neq \emptyset\\
+    L &:= \kl{\int f_- \mid f_- \in \mathcal{L}}  \neq \emptyset \\
+\end{align*}
+\aquanote{\ma{\forall \alpha \in L, \beta \in R: \alpha \leq \beta}}
+Wir sagen $f$ ist \beg{integrierbar}, wenn \ma{sup\  L = inf\ R} ist und 
+\mab{\int_a^b f := sup\ L = inf\ R =: \int_a^b f(x) \dx } ist das \beg{bestimmte Integral} von $f$ über $I$.  
+\end{defi}
+\begin{bem}
+\ma{\mathcal{I}_I := \kl{f: \itr \mid f\  integrierbar}} ist ein $\R$-Vektorraum und \mab{\int_I: \mathcal{I}_I \rightarrow \R, \quad f \mapsto \int_a^b f} ist linear. 
+\paragraph{Beweis.} Folgt aus der vorherigen Bemerkung, sonst \texttt{Seite 4 in \cite{vor13}}. 
+\end{bem}
+\begin{bem}
+\ma{f: \itr} ist integrierbar genau dann, wenn es zu jedem \ma{\epsilon > 0} Treppenfunktionen \ma{f_-} und \ma{f_+} gibt, so dass gilt: 
+\begin{enumerate}
+    \item \ma{f_- \leq f \leq f_+}
+    \item \ma{\int f_+ - \int f_- \leq \epsilon}
+\end{enumerate}
+\txc{Das bedeutet, dass die Integrale der beiden Treppenfunktionen sich nicht um mehr als \ma{\epsilon} voneinander unterscheiden können, was für eine wohldefinierte Fläche unter der Kurve spricht.}
+\end{bem}
+\begin{bsp}
+\ma{I = [0,1]} und \mab{f: \itr, \quad x \mapsto \begin{cases}
+1:& x \in \mathbb{Q} \\
+0:& x \notin \mathbb{Q}
+\end{cases}
+}
+Dann ist \ma{R = [1, \infty)} und \ma{L = (-\infty, 0]}. Also ist $f$ \un{nicht} integrierbar. 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{images/bspUniintegrierbar.png}
+        \caption{}
+        \label{fig:bspUniintegrierbar}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{images/bspintegrierbar.png}
+    \caption{\ma{\int_0^1 f(x) \dx = 0.5 \cdot 0 + 0.5 \cdot 1 = 0.5}}
+    \label{fig:bspintegrierbar}
+    \end{subfigure}
+    \caption{}
+    \label{fig:bspintegrierbarkeit}
+\end{figure}
+\end{bsp}
+\begin{satz}
+\begin{enumerate}
+    \item Jede monotone Funktion \ma{f: \itr} ist integrierbar \bluenote{Eine monotone reelle Funktion ist eine reellwertige Funktion einer reellen Variablen, bei der der Funktionswert \ma{f(x)} entweder immer wächst oder gleich bleibt beziehungsweise immer fällt oder gleich bleibt, wenn das Argument $x$ erhöht wird. \cite{monotonereelleFunktion}}
+    \item Jede stetige Funktion \ma{f: \itr} ist integrierbar \bluenote{Sofern die Länge der Kurve endlich ist, kann der Graph einer reellen stetigen und differenzierbaren Funktion \ma{y=f(x)} in einem kartesischen Koordinatensystem innerhalb ihres Definitionsbereichs als zusammenhängende Kurve ohne Absetzen des Stiftes gezeichnet werden \cite{stetigeFunktion}}
+\end{enumerate}
+\paragraph{Beweis.} \texttt{Siehe Seite 5 in \cite{vor13}}
+\end{satz}
+\begin{fakt}
+Seien \ma{f,g : \itr} integrierbar. 
+\begin{enumerate}
+    \item \ma{|f|} ist integrierbar und es gilt: \ma{|\int f| \leq \int |f|} ($\Delta$-Ungleichung) 
+    \item \ma{f \cdot g} und \ma{|f|^p} mit \ma{p \geq 1} sind integrierbar. 
+\end{enumerate}
+\end{fakt} 
+\txc{
+\begin{bsp} Siehe: 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=\linewidth]{images/verkettung.png}
+        \caption{}
+        \label{fig:verkettung}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+    \includegraphics[width=\linewidth]{images/absolutf.png}
+    \caption{}
+    \label{fig:absolutf}
+    \end{subfigure}
+    \caption{}
+    \label{fig:integrierbarkeit}
+\end{figure}
+\end{bsp}
+}
+\begin{beob}
+\ma{f, g: \itr} integrierbar. \ma{f \leq g \Rightarrow \int f \leq \int g}
+\paragraph{Beweis.} \textbf{Seite 6 in \cite{vor13}}
+\end{beob}
+
+\satz{\textbf{\beg{Mittelwertsatz}}}{
+Sei \ma{f: [a,b] \rightarrow \R} stetig und \ma{g: [a,b] \rightarrow \R]} integrierbar mit \ma{g \geq 0}. Dann gibt es \ma{\xi \in [a,b]} mit 
+\mab{\intab f(x) g(x) \dx = f(\xi) \intab g(x) \dx }
+\paragraph{Beweis.} \ma{f \cdot g} ist integrierbar. 
+}
+
+
+
+Hier fehlt noch etwas %TODO
+
+\begin{beob}
+
+\end{beob} Sei \ma{a < b < c}. 
+\mab{f: [a,b] \rightarrow \R} ist integrierbar genau dann, wenn die Einschränkungen \ma{f |_{[a,b]} : [a,b] \rightarrow \R}  und \ma{f |_{[b,c]} : [b,c] \rightarrow \R}  beide integrierbar sind. \\ 
+Es gilt dann \ma{\int_a^c f(x) \dx = \intab f(x) \dx + \int_b^c f(x) \dx}. 
+
+\subsection{Vorlesung 14 (04.06.2025)}
+\begin{defi}
+Sei \ma{I \subseteq \R} ein Intervall und \ma{f: \itr} eine Funktion. Eine auf $I$ differenzierbare Funktion \ma{F: \itr} heißt \beg{Stammfunktion} von $f$, wenn \ma{f = F'} ist. 
+\end{defi}
+ 
+\begin{bem}
+Seien \ma{F_1, F_2} Stammfunktionen von $f$. \\ 
+Dann \ma{(F_1 - F_2))' = f-f = 0}, also \ma{F_1 - F_2} ist konstant. 
+\end{bem}
+
+\begin{satz} \textbf{\beg{Hauptsatz} der Differential und Integralrechnung} \\
+Sei \ma{\isr} ein Intervall und \ma{f:\itr} stetig. Für eine Funktion \ma{F: \itr} sind äquivalent:
+\begin{enumerate}
+    \item $F$ ist Stammfunktion von $f$
+    \item  Für alle \ma{s,t \in I} (mit \ma{s \leq t)} gilt: \ma{F(t)- F(s) = \int_s^t f(x) \dx}
+\end{enumerate}
+Insbesondere ist \ma{F(x): = \int_a^x f(t) dt} eine Stammfunktion von $f$.
+\paragraph{Beweis.} Seite 2
+\end{satz}
+
+\paragraph{Notationen} \ma{[F(x))^b_a = F(b) - F(a)} und \ma{\underbrace{\int f(x) \dx}_{unbestimmtes\ Integral} = F(x) \Leftrightarrow F} ist Stammfunktion von $f.$
+
+\begin{bsp}
+Siehe Seite 3
+\end{bsp}
+
+\subsubsection{\beg{Integrationsregeln}}
+Linearität: 
+\mab{\intab \alpha f(x)  + \beta g(x) \dx = \alpha \intab f(x) \dx + \beta \intab g(x) \dx}
+\subsubsection{\beg{Partielle Integration}} \txc{wird verwendet, um komplexere Integrale zu lösen} \\
+\ma{f,g} stetig und differenzierbar 
+\mab{\intab f'(x) g(x) \dx = [f(x) g(x)]^b_a - \intab f(x) g'(x) \dx}
+\paragraph{Herleitung:} \ma{h(x) := f(x) g(x)} \mab{h'(x) = f'(x) g(x) + f(x) g'(x)} Also:  \mab{\underbrace{\intab h'(x) \dx }_{\intab f'(x) g(x) \dx + \intab f(x) g'(x) \dx} = [h(x)]^a_b}
+
+\begin{bsp}
+\begin{align*}
+    \intab \ln (x) \dx &= \intab \bob{\aub{1}{f'} \cdot \aub{\ln(x)}{g}}{h(x)} \dx \\
+    &= \bub{[x \cdot \ln (x)]^b_a}{z} -  \intab \bub{x \cdot \frac{1}{x} \dx }{x \cdot x^1 = x}\\
+    &= [x \ln (x)]^b_a - [x]^b_a \\
+    &= [x \ln (x) - x]^b_a  %TODO Bsp verstehen 
+\end{align*}
+\end{bsp}
+
+
+\subsubsection{\beg{Substitution}}
+$f$ stetig, $g$ stetig differenzierbar. \\
+\mab{\intab f(g(x)) g'(x) dx = \int^{g(b)}_{g(a)} f(y) \dy }
+\texttt{Einschub Ableitungssachen siehe Seite 6 in \cite{vor14}} %TODO
+
+\begin{bsp}
+\mab{\int \frac{h'(x)}{h(x)} \dx = \ln (|h(x)|)}
+\txc{
+\ma{\frac{d}{dx} \ln(|x|) = \frac{1}{x}} also \ma{\frac{d}{dx} \ln(|h(x)|) = \frac{1}{h(x)} \cdot h'(x)} also \ma{\int \frac{h'(x)}{h(x)} \dx = \ln(|h(x)|) + C}
+\bluenote{\ma{\frac{d}{dx}\ln} ist die Ableitung des ln} 
+Denn: \mab{\frac{d}{dx} \ln(|x|) = \frac{1}{x} \cdot \frac{d}{dx} |x| = \frac{1}{x} \cdot 1 = \frac{1}{x}}
+}
+\end{bsp}
+\begin{bsp}
+\begin{align*}
+    \int \tan (x) \dx &= \int \frac{\sin (x)}{\cos (x)} \dx \\
+    &= - \int \frac{- \sin (x)}{\cos (x)} \dx \\
+    &= - \ln (|\cos (x)|)
+\end{align*}
+\bluenote{Substitution \ma{u = \cos(x)} und \ma{du = -\sin(x)}}
+\end{bsp}
+\subsubsection{Integration rationaler Funktionen}
+\paragraph{\beg{Partialbruchzerlegung}}
+\txc{Wird in der Mathematik verwendet, um das Rechnen mit solchen Funktionen zu erleichtern. \cite{partialbruchzerlegung} \\ Siehe \ref{sec:anleitungpartialbruchzerlegung}.
+}
+\begin{bsp} 
+\begin{align*}
+    \frac{x}{1 - x^2} &= \frac{a}{1+x} + \frac{b}{1-x} \\
+    &= \frac{a (1-x) + b(1+x)}{1-x^2}
+\end{align*}
+\texttt{Hier fehlt was} % TODO 
+\end{bsp}
+
+\subsection{Vorlesung 15 (06.06.2025)}
+\begin{fakt}
+Sei \ma{h(x) = \frac{p(x)}{q(x)}} eine rationale Funktion, d.h. \ma{p(x)} und \ma{q(x)} sind Polynome. \\
+O.B.d.A.: \ma{q(x)} ist \beg{normiert}, d.h. der führende Koeffizient ist 1. \\
+\txc{Anleitung:} 
+\begin{enumerate}
+    \item Zerlegung in Linearfaktoren: \mab{q(x) = (x-\lambda_1)^{k_1} \cdots  (x-\lambda_n)^{k_n} \quad \txca{\lambda_i \in \mathbb{C}}} 
+    \item Polynomdivision \mab{p(x) = s(x) q(x) + r(x) \quad deg(r) < deg(q)} wird zu \mab{h(x) = s(x) + \frac{r(x)}{q(x)}}
+    \item Partialbruchzerlegung \mab{\frac{r(x)}{q(x)} = \sumEN \sum^{k_i}_{j=1} \frac{a_{ij}}{(x - \lambda_i)^j}} Die \ma{a_{ij}} sind die Lösung eines linearen Gleichungssystems. 
+\end{enumerate}
+\end{fakt}
+\begin{bem}
+Für \un{reelle} Polynome ist die Lage etwas komplexer. 
+\end{bem}
+
+\texttt{Hier fehlen diverse Sachen}
+
+%TODO
+
+\section{Uneigentliche Integrale}
+\mab{a < b \leq \infty, \quad f: [a,b) \rightarrow \mathbb{R}, \quad f|_{[a,c]} \text{ integrierbar für jedes } c \in [a,b)}
+Dann ist \mab{\intab f(x) \dx = \lim_{c \nearrow b} \int_a^c f(x) \dx} ein \beg{uneigentliches Integral}; es existiert, wenn der Grenzwert rechts existiert. 
+ 
+\section{Anleitungen}
+\subsection{Charakteristisches Polynom berechnen} 
+\begin{align*}
+\chi_A (t) & : = det (A - t \mathbbm{1}) \\ \\
+    \chi_A (t)  & : \text{Polynom $n$-ten Grades}\\
+  \mathbbm{1} & : n \times n \text{ Einheitsmatrix}
+\end{align*}
+Um $A - t \mathbbm{1}$ zu bekommen, zieht man von jedem Wert der Diagonale $\lambda$ ab. 
+
+\subsection{Eigenwerte bestimmen} 
+\paragraph{Schritt 1: } Charakteristisches Polynom berechnen
+\paragraph{Schritt 2:} Nullstellen des charakteristischen Polynoms berechnen
+\subsection{Eigenvektoren bestimmen}
+\paragraph{Schritt 1: } Eigenwerte bestimmen
+\subsection{Eigenräume bestimmen}
+\paragraph{Schritt 1:} Die Eigenwerte der Matrix berechnen. 
+\subsection{Etwas komplex konjugieren}
+
+
+\subsection{Partialbruchzerlegung} \label{sec:anleitungpartialbruchzerlegung}
+\begin{enumerate}
+    \item Polynomdivision
+    \item Nullstellen des Nenners bestimmen
+    \item Zu jeder Nullstelle die Partialbrüche berechnen
+    \item Ansatz für die Partialbruchzerlegung aufstellen
+    \item Koeffizientenvergleich durchführen
+\end{enumerate}
+
+\printindex
+ \printbibliography
+\end{document}

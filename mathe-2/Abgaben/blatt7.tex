@@ -1,0 +1,317 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 7; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+\newcommand{\txc}[1]{\textcolor{blue}{#1}}
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular} 
+\vspace{0.2cm}\\
+\section{Aufgabe 7.1}
+Der Vektorraum $\mathbb{R}^4$ sei mit dem kanonischen inneren Produkt versehen \txc{(Es existiert ein Standardskalarprodukt)}. Bestimmen Sie eine Orthonormalbasis für den Untervektorraum $U$. 
+\[
+v_1 = \begin{pmatrix} 
+1\\1\\0\\1
+\end{pmatrix}, \quad v_2 = \begin{pmatrix} 
+1\\-2\\0\\0
+\end{pmatrix}, \quad v_3 = \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix}
+\]
+\\ 
+$v_1$ normalisieren: 
+\[
+w_1 = \frac{v_1}{||v_1||} = \frac{v_1}{\sqrt{(<v_1, v_1>)}}  = \frac{v_1}{\sqrt{1 + 1+ 0 + 1}} = \frac{v_1}{\sqrt{3}}   = \frac{1}{\sqrt{3}} \begin{pmatrix} 
+1\\1\\0\\1
+\end{pmatrix} =  \frac{\sqrt{3}}{3} \begin{pmatrix} 
+1\\1\\0\\1
+\end{pmatrix} = \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix} 
+\]
+$v_2$ othogonalisieren 
+\[
+v_2' = v_2 - <w_1, v_2> \cdot  w_1 =  \begin{pmatrix} 
+1\\-2\\0\\0
+\end{pmatrix} - <\begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix} , \begin{pmatrix} 
+1\\-2\\0\\0
+\end{pmatrix}> \cdot \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix}  = \begin{pmatrix} 
+1\\-2\\0\\0
+\end{pmatrix} - (\frac{\sqrt{3}}{3} - \frac{2 \sqrt{3}}{3}) \cdot \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix} = 
+\begin{pmatrix} 
+1\\-2\\0\\0
+\end{pmatrix} + \frac{\sqrt{3}}{3} \cdot \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix} 
+\]
+\[
+= 
+\begin{pmatrix} 
+1\\-2\\0\\0
+\end{pmatrix} + \begin{pmatrix} 
+\frac{1}{3}\\\frac{1}{3}\\0\\\frac{1}{3}
+\end{pmatrix}  = \begin{pmatrix} 
+\frac{4}{3}\\\frac{-5}{3}\\0\\\frac{1}{3}
+\end{pmatrix} 
+\]
+
+$v_2'$ normalisieren 
+\[
+w_2 = \frac{v_2'}{||v_2'||} 
+= v_2' \cdot \frac{1}{\sqrt{(\frac{4}{3})^2 + (\frac{-5}{3})^2 + (\frac{1}{3})^2}} 
+= v_2' \cdot  \frac{1}{\sqrt{\frac{16}{9} + \frac{25}{9} + \frac{1}{9}}} 
+= v_2' \cdot  \frac{1}{\sqrt{\frac{42}{9}}} 
+= v_2' \cdot  \frac{1}{\frac{\sqrt{42}}{\sqrt{9}}} 
+= v_2' \cdot  \frac{3}{\sqrt{42}} 
+= v_2' \cdot  \frac{3\sqrt{42}}{42} 
+= v_2' \cdot  \frac{\sqrt{42}}{14} 
+\]
+\[
+= \begin{pmatrix} 
+\frac{4}{3}\\\frac{-5}{3}\\0\\\frac{1}{3}
+\end{pmatrix} \cdot \frac{\sqrt{42}}{14}  = 
+\begin{pmatrix} 
+\frac{4\sqrt{42}}{42}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42}
+\end{pmatrix} = 
+\begin{pmatrix} 
+\frac{2\sqrt{42}}{21}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42}
+\end{pmatrix}
+\]
+$v_3$ othogonalisieren 
+\begin{align*}
+    v_3' &= v_3 - <w_2, v_3> \cdot  w_2  -  <w_1, v_3> \cdot  w_1 \\
+    & = \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix} - <\begin{pmatrix} 
+\frac{2\sqrt{42}}{21}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42}
+\end{pmatrix}, \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix}> \cdot\begin{pmatrix} 
+\frac{2\sqrt{42}}{21}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42} 
+\end{pmatrix}  -  <\begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix} , \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix}> \cdot  \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix}  \\
+%
+& = \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix}  - (\frac{2\sqrt{42}}{21} \cdot 1 + 0 + 0 + 2 \cdot  \frac{\sqrt{42}}{42}) \cdot \begin{pmatrix} 
+\frac{2\sqrt{42}}{21}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42}
+\end{pmatrix} - (\frac{\sqrt{3}}{3} + 0 + 0 + \frac{2\sqrt{3}}{3}) \cdot  \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix}  \\
+&= \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix} - \frac{3\sqrt{42}}{21} \cdot \begin{pmatrix} 
+\frac{2\sqrt{42}}{21}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42}
+\end{pmatrix} -  \sqrt{3} \cdot  \begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix}  \\
+% 
+&= \begin{pmatrix} 
+1\\0\\-1\\2
+\end{pmatrix} - \begin{pmatrix} 
+\frac{4}{7}\\\frac{-5}{7}\\0\\\frac{1}{7}
+\end{pmatrix} -  \begin{pmatrix} 
+1 \\1\\0\\1
+\end{pmatrix}   = \begin{pmatrix}
+-\frac{4}{7} \\ - \frac{2}{7} \\ -1 \\ \frac{6}{7}
+\end{pmatrix}
+\end{align*}
+
+$v_3'$ normalisieren. 
+\[
+w_3 = \frac{v_3'}{||v_3'||}  = v_3' \cdot \frac{1}{\sqrt{
+(-\frac{4}{7})^2 + (-\frac{2}{7})^2 + (-1)^2 + (\frac{6}{7})^2}}  = v_3' \cdot \frac{1}{\sqrt{\frac{16}{49} + \frac{4}{49} + \frac{49}{49} + \frac{36}{49}}} = v_3' \cdot \frac{1}{\sqrt{\frac{105}{49}}} = v_3' \cdot \frac{\sqrt{105}}{15}  = \begin{pmatrix}
+-\frac{4\sqrt{105}}{105} \\ -\frac{2\sqrt{105}}{105}  \\ -\frac{\sqrt{105}}{15}  \\ -\frac{2\sqrt{105}}{35} 
+\end{pmatrix}
+\]
+Orthonormalbasis: 
+\[
+<
+\begin{pmatrix} 
+\frac{\sqrt{3}}{3}\\\frac{\sqrt{3}}{3}\\0\\\frac{\sqrt{3}}{3}
+\end{pmatrix}, 
+\begin{pmatrix} 
+\frac{2\sqrt{42}}{21}\\\frac{-5\sqrt{42}}{42}\\0\\\frac{\sqrt{42}}{42}
+\end{pmatrix},
+\begin{pmatrix}
+-\frac{4\sqrt{105}}{105} \\ -\frac{2\sqrt{105}}{105}  \\ -\frac{\sqrt{105}}{15}  \\ -\frac{2\sqrt{105}}{35} 
+\end{pmatrix}
+>
+\]
+\section{Aufgabe 7.2}
+\subsection*{a)}
+Zeigen Sie, dass die Matrix $B := A \overline{A}^T$ \txc{(also $B = AA^H$)} hermitesch ist; \txc{(zeigen, dass $B$ gleich der konjugiert transponierten Matrix $B^H$ ist)} \\
+\[
+B^H = (A A^H)^H = A^H (A^H)^H= A^H A = B
+\]
+\subsection*{b)}
+Ist $A$ weiterhin auch invertierbar, dann ist $\beta_B (x, y) := x^T B \overline{y}$ \txc{(eine bilineare Form)} positiv definit; \txc{$\beta_B (x, y)$ ist positiv definit, wenn für alle $x \neq 0$ gilt $x^T A x > 0$}.\\
+\[
+\beta_B (x,x) = x^T A \overline{A}^T \overline{x} = x^T A \overline{A^T x} = (x A^T)^T \overline{A^T x} = \sum_{i=1}^n (A^T x)_i \overline{(A^T x)_i} = || A^T x ||^2
+\]
+Da $x \leq 0$ und negative Vorzeichen sich aufheben würden, muss $|| A^T x ||^2$ positiv sein.
+\subsection*{c)}
+/
+\section{Aufgabe 7.3}
+Auf $\mathbb{C}^3$ sei das innere Produkt $\gamma$ gegeben durch die Gram-Matrix
+\[C := \begin{pmatrix}
+2 &1 + i & -i \\
+1 - i & 3 & 0 \\
+i & 0& 4
+\end{pmatrix}
+\]
+Bestimmen Sie eine bezüglich $\gamma$ orthogonale Basis des $\mathbb{C}^3$. \\ \\
+Standardbasen orthogonalisieren mit $\gamma$:
+\[
+v_1 = e_1 = \begin{pmatrix}
+1\\0\\0
+\end{pmatrix},  e_2 = \begin{pmatrix}
+0\\1\\0
+\end{pmatrix},  e_3 = \begin{pmatrix}
+0\\0\\1
+\end{pmatrix}
+\]
+$e_2$ orthogonalisieren: 
+\[
+v_2 = e_2 - \frac{\gamma(e_2, v_1)}{\gamma(v_1, v_1)} v_1 = e_2 \frac{e_2^H C v_1}{v_1^H C v_1}v_1    = e_2 - \frac{C_{21}}{C_{11}}v_1  = e_2 - \frac{i-1}{2}v_1 
+\]
+\[
+= \begin{pmatrix}
+0\\1\\0
+\end{pmatrix} -  \frac{i-1}{2} \cdot \begin{pmatrix}
+1\\0\\0
+\end{pmatrix} = \begin{pmatrix}
+0\\1\\0
+\end{pmatrix} -  \begin{pmatrix}
+\frac{i-1}{2}\\0\\0
+\end{pmatrix} = \begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix} 
+\]
+$e_3$ orthogonalisieren: 
+
+\[
+v_2^H C v_2 = \left(\begin{matrix}
+\frac{1-i}{2} & 1 & 0
+\end{matrix}\right) C \begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix}  = \left(\begin{matrix}
+2-2*i & 4 & \frac{-1-i}{2}
+\end{matrix}\right) \begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix} = 4-2i
+\]
+\[
+e_3^H C v_2 = \left(\begin{matrix}
+0&0&1
+\end{matrix}\right) C \begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix}  = \left(\begin{matrix}
+i & 0 & 4
+\end{matrix}\right) \begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix} = \frac{1+i}{2}
+\]
+\[
+v_3 = e_3 - \frac{\gamma(e_3, v_1)}{\gamma(v_1, v_1)} v_1 - \frac{\gamma(e_3, v_2)}{\gamma(v_2, v_2)} v_2 = e_3 - \frac{C_{31}}{C_{11}} v_1 - \frac{e_3^H C v_2}{v_2^H C v_2}v_2  = e_3 - \frac{i}{2} v_1 - \frac{\frac{1+i}{2}}{4-2i} v_2 = e_3 - \frac{i}{2} v_1 - \frac{{1+i}}{8-4i} v_2
+%= e_3 - \frac{i}{2} v_1 - \frac{e_3^H C e_2 - e_3^H C \frac{1-i}{2} v_1}{v_2^H C v_2}
+\]
+\[
+ = \begin{pmatrix}
+0\\0\\1
+\end{pmatrix} - \frac{i}{2} \begin{pmatrix}
+1\\0\\0
+\end{pmatrix} - \frac{{1+i}}{8-4i}  \begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix} = \begin{pmatrix}
+- \frac{i}{2}\\0\\1
+\end{pmatrix} 
++ \begin{pmatrix}
+\frac{i^2-1}{16-8i}\\- \frac{{1+i}}{8-4i} \\0
+\end{pmatrix} = \left(\begin{matrix}
+\frac{-2-11i}{20} \\
+\frac{-1-3i}{20} \\
+1
+\end{matrix}\right)
+\]
+Die Basis ist; 
+
+\[
+ \begin{pmatrix}
+1\\0\\0
+\end{pmatrix}, 
+\begin{pmatrix}
+-\frac{i-1}{2}\\1\\0
+\end{pmatrix}  , \left(\begin{matrix}
+\frac{-2-11i}{20} \\
+\frac{-1-3i}{20} \\
+1
+\end{matrix}\right)
+\]
+\section{Aufgabe 7.4}
+/
+\end{document}

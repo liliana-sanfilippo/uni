@@ -40,6 +40,8 @@ them, thank you.
 - **Knowledge Representation** (SS2026)
     - [Knowledge Representation Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/knowledge-representation.pdf)
     - [Übersicht was in der Aufarbeitung enthalten ist](https://github.com/liliana-sanfilippo/uni/wiki/Knowledge-Representation)
+- **Mathematik für Informatik 2** (SS 2025)
+  - Mal Lernzettel begonnen, aber nicht beendet. Feel free. 
 - **Phylogenetik** (WS 2025/26)
   - [Code](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik)
   - [Karteikarten für Anki als txt](https://github.com/liliana-sanfilippo/uni/tree/main/phylogenetik/Phylogenetik.txt)

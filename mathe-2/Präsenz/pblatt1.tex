@@ -1,0 +1,323 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{todo}
+
+\newcommand{\titulo}{Präsenzübungsblatt 1; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+ 
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+<
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular} 
+\vspace{0.2cm}\\
+
+Was ist der Unterschied zwischen zeigen und beweisen? Synonym. 
+\section{Aufgabe 1.1}
+Determinante ist eine Funktion, die linear in jeder einzelnen Zeile ist. Also gilt: 
+\begin{equation} \label{eq:zeilenaddition}
+    det \begin{pmatrix}
+        z_1 \\ \vdots \\ z_i + z'_i \\ \vdots \\ z_n 
+    \end{pmatrix} = det \begin{pmatrix}
+        z_1 \\ \vdots \\ z_i \\ \vdots \\ z_n 
+    \end{pmatrix} + det \begin{pmatrix}
+        z_1 \\ \vdots \\  z'_i \\ \vdots \\ z_n 
+    \end{pmatrix}
+\end{equation}
+Und auch 
+\begin{equation} \label{eq:skalar}
+    det \begin{pmatrix}
+        z_1 \\ \vdots \\ a \cdot z_i  \\ \vdots \\ z_n 
+    \end{pmatrix} =  a \cdot det \begin{pmatrix}
+        z_1 \\ \vdots \\  z_i  \\ \vdots \\ z_n 
+    \end{pmatrix} 
+\end{equation}
+bspw. 
+\begin{equation*}
+    det \begin{pmatrix}
+        4 & 2 \\ 1 & 2
+    \end{pmatrix} =  2 \cdot det \begin{pmatrix}
+       2 & 1 \\ 1 & 2
+    \end{pmatrix} 
+\end{equation*}
+Man kann Skalare auch reinziehen! Aber immer nur in eine Zeile, man kann sich aussuchen in welche Zeile. 
+\begin{equation*}
+    E_n = \begin{pmatrix}
+       1 \\
+       & \ddots \\
+       & & 1
+    \end{pmatrix}  \quad \text{ und } \quad 
+    det E_n = 1
+\end{equation*}
+Wenn eine Determinante eine Zeuile doppelt hat, ist sie Null. 
+\begin{equation*}
+    det \begin{pmatrix}
+       z_1 \\
+       z_i \\
+       z_i \\
+       z_n
+    \end{pmatrix} = 0
+\end{equation*}
+
+\subsection{(a)}
+Warum muss es Lambda aus K sein und nicht aus bspw. den ganzen Zahlen? K ist einfach allgemeiner als es zu begrenzen auf die reellen Zahlen oder so. \\
+Man kann in jeder der n Zeilen ein Lambda rausziehen, dann hat man $\lambda^n$ und dann von der Matrix ohne lambdas die Determinante berechnen und dann muss man eben die Skalare wieder hinzu rechnen. 
+\[
+det(\lambda \cdot A) = det \begin{pmatrix}
+\lambda \cdot z_1 \\
+\vdots \\
+\lambda \cdot z_n
+\end{pmatrix} = \lambda^n det (A)
+\]
+\subsection{(b)}
+Sein Trick: man addiert beide und es soll Null rauskommen und das zeigt dann, dass det(A) = -det(B). \\
+Man kann immer nur eine Zeile gleichzeitig addieren! Also folgendes geht \textbf{nicht}.
+\begin{equation*}
+    det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_j \\
+\vdots \\
+ \cdot z_n
+\end{pmatrix} + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix} = det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i + z_j\\
+z_i + z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix}
+\end{equation*}
+Stattdessen macht man: 
+\begin{equation*}
+     det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_j \\
+\vdots \\
+ \cdot z_n
+\end{pmatrix} + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix}  =  det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_j \\
+\vdots \\
+ \cdot z_n
+\end{pmatrix} + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix} + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_i \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix}
+ + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_j \\
+z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix} = 
+ det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_j \\
+z_i + z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix}  + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+z_i + z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix} = det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i + z_j\\
+z_i + z_j \\
+\vdots \\
+ \cdot z_n
+ \end{pmatrix} 
+\end{equation*}
+Beim letzten Schritt beachten: Man rechnet immer nur eine Zeile! Das passt so. Das alles geht, weil man sozusagen Null dazu rechnet, da $det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_j \\
+z_j
+\vdots \\
+ \cdot z_n
+ \end{pmatrix} = 0$ und somit rechnet man
+ \[det(A) + det(B) + 0 + 0  \]
+ 
+ 
+\subsection{(c)}
+Was genau bedeutet es, wenn $B$ aus $A$ durch Addition der $\lambda$-fachen $j$-ten Zeile zur
+$i$-ten Zeile $(i \neq j)$ entsteht? Was impliziert das? Das sagt einfach aus, dass die genannte Art von Zeilen-Additionen die Determinante nicht verändern. \\
+
+\begin{equation*}
+    det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i + \lambda \cdot z_j \\
+\vdots \\
+z_j \\
+\vdots \\
+ z_n
+ \end{pmatrix} \overset{(\ref{eq:zeilenaddition})}{=} det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_i \\
+\vdots \\
+z_j \\
+\vdots \\
+ z_n
+ \end{pmatrix}  + det \begin{pmatrix}
+ z_1 \\
+\vdots \\
+ \lambda \cdot z_j \\
+\vdots \\
+z_j \\
+\vdots \\
+ z_n
+ \end{pmatrix}  \overset{(\ref{eq:skalar})}{=} det(A) + \lambda \cdot det  \underbrace{\begin{pmatrix}
+ z_1 \\
+\vdots \\
+z_j \\
+\vdots \\
+z_j \\
+\vdots \\
+ z_n
+ \end{pmatrix}}_0
+\end{equation*}
+
+\subsection{(d)}
+\begin{equation*}
+    det (A) = \sum_{\sigma \in Sgn} \underbrace{\prod_{i=1}^n a_{i \sigma(i)}}_{= 0 wenn \sigma \neq id} = \prod_{i=1}^n a_{ii} = \prod_{i=1}^n a_{\lambda_i}
+\end{equation*}
+
+\section{Aufgabe 1.2}
+Muss man das händisch ausrechnen oder gibt es einen Trick, weil die Matrix besonders ist? Ist sie überhaupt besonders, müsste ich die erkennen? Das hier kann man theoretisch auch umformen, ansonsten benutzt man Laplace. \\
+\begin{equation*}
+\begin{array}{ccccc|c}
+      0 & 1 & 1 & 1 & 1 & tausche \\ 
+    1 & 0 & 1 & 1 & 1 \\
+    1 & 1 & 0 & 1 & 1 \\
+    1 & 1 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 0  & tausche \\ \hline
+    1 & 1 & 1 & 1 & 0 \\
+    1 & 0 & 1 & 1 & 1 \\
+    1 & 1 & 0 & 1 & 1 \\
+    1 & 1 & 1 & 0 & 1 \\
+     0 & 1 & 1 & 1 & 1 \\
+\end{array}
+\end{equation*}
+Rest siehe Foto. 
+  
+\section{Aufgabe 1.3}
+Wäre Zeile geteilt durch $\lambda$ auch eine Zeilenoperation? Ja. \\
+Wie sehe ich, was ich vertauschen sollte bei so etwas? \\
+%\[Menge = \{a,b,c\}, \quad n = 3, \quad |\sum_n| = 6, \quad \sum_n = \{\underbrace{(a,b,c)}_{1}, \underbrace{(a,c,b)}_{1}, (c,a,b), (c,b,a), (b,c,a), (b,a,c)\}\]
+% \begin{equation*}      \sum_{\sigma \in \sum_n} (-1)^{\sigma} a_{\sigma(1)1} a_{\sigma(2)2} \cdots a_{\sigma(n)n}    \end{equation*}
+Herangehensweise: 
+Zeilen operieren und vertauschen bis man eine Form hat, die man kann und dann nachzuvollziehen wie welche Operation die Determinante verändert hat und es zurück verfolgen. \\ \newline
+Mein Ansatz: 
+\[
+\begin{array}{ccc|c}
+    a^2+1 & ab & ac \\
+    ab & b^2 +1 & bc \\
+    ac & bc & c^2 + 1 & - ac \\ \hline
+    a^2+1 & ab & ac \\
+    ab & b^2 +1 & bc \\
+    0 & bc - ac & c^2 + 1 - ac \\
+\end{array}
+\]
+Und aufgegeben. \\ \newline
+Man verwendet diese Formel für 3x3 Matritzen (siehe Bild). 
+Wie würde man das mit dem Zeilenvertauschen und den Operationen machen?  \\
+Das a als Skalar rausziehen und dann Fallunterscheidungen, dass irgendwas Null ist.  Mein Ansatz war falsch. 
+
+
+\section{Aufgabe 1.4}
+Ist das auch eine Dreiecksmatrix? Hat keinen Namen. Man muss alle Zeilen vertauschen, damit man eine obere Dreiecksmatrix hat wie in 1.1.d. und das dann dementsprechend löst und die Operationen wieder zurück verfolgt.  \\ \newline
+Meine Idee: $(-1)^n \cdot (a_1\cdots a_n)$  \\ \newline
+Es gibt eine Fallunterscheidung, aber die ist nicht auf gerade und ungerade ns bezogen, es ist was anderes komisches. Warum es so komisch ist kommt daher, dass man bei 2x2 nur einmal tauscht, aber bei 3x3 auch nur einmal und bei 4x4 zweimal und bei 5x5 auch nur zweimal. 
+
+
+
+
+\end{document}

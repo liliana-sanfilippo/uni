@@ -1,0 +1,539 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 3; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\ora}[1]{\textcolor{orange}{#1}}
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 3.1}
+\subsection*{Matrix C}
+\[
+C = \begin{pmatrix}
+3&1&1\\
+2&4&2\\
+1&1&3
+\end{pmatrix}
+\]
+\[
+C -\lambda I = \begin{pmatrix}
+3-\lambda&1&1\\
+2&4-\lambda&2\\
+1&1&3-\lambda
+\end{pmatrix}
+\]
+\[
+det (C) = (-\lambda+3)\cdot(-\lambda+4)\cdot(-\lambda+3)+1\cdot2\cdot1+1\cdot2\cdot1-1\cdot(-\lambda+4)\cdot1-1\cdot2\cdot(-\lambda+3)-(-\lambda+3)\cdot2\cdot1 = -\lambda^3+10\cdot\lambda^2-28\cdot\lambda+24
+\]
+\[
+\Rightarrow \chi_C = -\lambda^3+10\cdot\lambda^2-28\cdot\lambda+24
+\]
+\begin{align*}
+    -\lambda^3+10\cdot\lambda^2-28\cdot\lambda+24 & = -(\lambda-2) \cdot (\lambda^2 -8\lambda+12) \\
+    & = -(\lambda-2) \cdot (\lambda-2) \cdot (\lambda-6)
+\end{align*}
+\[
+\lambda_1 = 2, \quad \lambda_2 = 2, \quad \lambda_3 = 6
+\]
+\subsubsection*{Für Eigenwert 2:}
+\[
+C - 2 I = \begin{pmatrix}
+3-2&1&1\\
+2&4-2&2\\
+1&1&3-2
+\end{pmatrix}
+ = \begin{pmatrix}
+1&1&1\\
+2&2&2\\
+1&1&1
+\end{pmatrix}
+\]
+Setze $(A - 2)v = 0$.
+\[
+\begin{pmatrix}
+1&1&1\\
+2&2&2\\
+1&1&1
+\end{pmatrix} \cdot \begin{pmatrix}
+a \\ b\\c
+\end{pmatrix} = \begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+\]
+Gleichungssystem lösen (für Zeile 1, da alle davon linear abhängig). 
+\begin{align*}
+    0 & = a+b+c \\
+    \Rightarrow a & = -b-c 
+\end{align*}
+EV hat Form 
+\[
+\begin{pmatrix}
+-b-c\\b\\c
+\end{pmatrix} = b \cdot \begin{pmatrix}
+-1\\1\\0
+\end{pmatrix} + c \cdot \begin{pmatrix}
+-1\\0\\1
+\end{pmatrix}
+\]
+
+
+\subsubsection*{Für Eigenwert 6:}
+\[
+C - 2 I = \begin{pmatrix}
+3-6&1&1\\
+2&4-6&2\\
+1&1&3-6
+\end{pmatrix}
+ = \begin{pmatrix}
+-3&1&1\\
+2&-2&2\\
+1&1&-3
+\end{pmatrix}
+\]
+Setze $(A - 6)v = 0$.
+\[
+\begin{pmatrix}
+-3&1&1\\
+2&-2&2\\
+1&1&-3
+\end{pmatrix} \cdot \begin{pmatrix}
+a \\ b\\c
+\end{pmatrix} = \begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+\]
+Gleichungssystem lösen 
+\[
+\begin{array}{cccc}
+ -3a&+b&+c&=0\\
+2a&-2b&+2c&=0\\
+a&+b&-3c&=0
+\end{array}
+\]
+
+\begin{align*}
+    0 & = 2a-2b+2c\\
+    \Rightarrow   0 & = a-b+c\\
+    \Rightarrow   b & = a+c\\
+\end{align*}
+\[
+ -3a+b+c  = -3a+a+c+c = -2a+2c = 0
+\]
+\[
+\Rightarrow c = a
+\]
+EV hat Form:
+\[
+ \begin{pmatrix}
+a\\a+c\\a
+\end{pmatrix}
+\]
+Also sind die Eigenvektoren:
+\[
+v_1 = \begin{pmatrix}
+-1\\1\\0
+\end{pmatrix}, \quad v_2 = \begin{pmatrix}
+-1\\0\\1
+\end{pmatrix}, \quad v_3 =  \begin{pmatrix}
+1\\2\\1
+\end{pmatrix}
+\]
+
+\subsection*{Matrix D}
+\[
+D = \begin{pmatrix}
+2-i&0&0\\
+i&-3&1-i\\
+1&0&2+i
+\end{pmatrix}
+\]
+\[
+D - \lambda I = \begin{pmatrix}
+2-i- \lambda&0&0\\
+i&-3- \lambda&1-i\\
+1&0&2+i- \lambda
+\end{pmatrix}
+\]
+\begin{align*}
+    det(D) & = (-\lambda+(2-i))\cdot(-\lambda-3)\cdot(-\lambda+(2+i)) \\
+    & +0\cdot(1-i)\cdot1+0\cdot i\cdot0-1\cdot(-\lambda-3)\cdot0-0\cdot(1-i)\cdot(-\lambda+(2-i)) \\
+    & -(-\lambda+(2+i))\cdot i\cdot0 \\
+   & = (-\lambda+(2-i))\cdot(-\lambda-3)\cdot(-\lambda+(2+i)) +0+0-0-0 -0 \\
+   & = (-\lambda+(2-i))\cdot(-\lambda-3)\cdot(-\lambda+(2+i))\\
+      & = (-\lambda+(2-i))\cdot(-\lambda-3)\cdot(-\lambda+(2+i))\\
+      & = ((2-\lambda)^2 - i^2) \cdot (-\lambda-3) \\
+      & = ((2-\lambda)^2 +1) \cdot (-\lambda-3) \\
+    & = (5-4\lambda+ \lambda^2) \cdot (-\lambda-3) \\
+    & = -\lambda^3 + \lambda^2 + 7\lambda -15 
+\end{align*}
+\[
+\chi_D = -\lambda^3 + \lambda^2 + 7\lambda -15 
+\]
+bzw. 
+\[
+\chi_D = \lambda^3 - \lambda^2 - 7\lambda +15 
+\]
+Nullstellen
+\[
+\lambda^3 - \lambda^2 - 7\lambda +15  = (\lambda +3) \cdot (\lambda^2 - 4 \lambda +5)
+\]
+und Mitternachtsformel fpr $\lambda^2 - 4 \lambda +5$
+\[
+\lambda_{2,3} = \frac{4 \pm \sqrt{(-4)^2 - 4 \cdot 1 \cdot 5 }}{2 \cdot 1} = \frac{4 \pm \sqrt{16 -20} }{2} = \frac{4 \pm \sqrt{-4}}{2} = \frac{4 \pm 2i}{2} = 2 \pm i
+\]
+Also sind die Nullstellen: 
+\[
+\Rightarrow \lambda_1 = -3, \quad \lambda_2 = 2+i, \quad \lambda_3 = 2-i
+\]
+\subsubsection*{Für Eigenwert -3:}
+\[
+C + 3 I = \begin{pmatrix}
+3+3&1&1\\
+2&4+3&2\\
+1&1&3+3
+\end{pmatrix}
+ = \begin{pmatrix}
+6&1&1\\
+2&7&2\\
+1&1&6
+\end{pmatrix}
+\]
+Setze $(A + 3)v = 0$.
+\[
+\begin{pmatrix}
+6&1&1\\
+2&7&2\\
+1&1&6
+\end{pmatrix} \cdot \begin{pmatrix}
+a \\ b\\c
+\end{pmatrix} = \begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+\]
+Lineares Gleichungssystem lösen: 
+\begin{align*}
+            0 & =  6a+b+c \\
+\Rightarrow c & = -6a-b \\
+            0 & = a+b+6c \\
+              & = a+b+6\cdot(-6a-b) \\
+              & = a+b-36a-6b\\
+              & = -35a-5b \\
+\Rightarrow b & = -7a \\ 
+\Rightarrow c & = -6a+7a = a 
+\end{align*}
+EV hat die Form
+\[
+\begin{pmatrix}
+1 \\ -7\\1
+\end{pmatrix}
+\]
+\subsubsection*{Für Eigenwert 2+i:}
+\[
+C  (-2+i) I = \begin{pmatrix}
+3-(2+i)&1&1\\
+2&4-(2+i)&2\\
+1&1&3-(2+i)
+\end{pmatrix}
+ = \begin{pmatrix}
+1-i&1&1\\
+2&2-i&2\\
+1&1&1-i
+\end{pmatrix}
+\]
+Setze $(A -(2+i) )v = 0$.
+\[
+\begin{pmatrix}
+1-i&1&1\\
+2&2-i&2\\
+1&1&1-i
+\end{pmatrix} \cdot \begin{pmatrix}
+a \\ b\\c
+\end{pmatrix} = \begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+\]
+Lineares Gleichungssystem lösen:
+\begin{align*}
+            0 & = a(1-i)+b+c \\
+\Rightarrow a & = \frac{-b-c}{1-i} \\
+            0 & = a+b+(1-i)c \\
+\Rightarrow a & = -b-(1-i)c\\
+              & = -b-c+ic  \\ \\
+\frac{-b-c}{1-i} & =  -b-c+ic  \\
+\Rightarrow -b-c & = (-b-c+ic) (1-i) \\
+\Rightarrow-c & = bi+2ic \\
+              & = i(b+2c) \\
+\Rightarrow \frac{-c}{i} & = b+2c \\
+\Rightarrow b & = \frac{-c}{i} -2c  \\
+              & = \frac{-c}{i} \cdot \frac{i}{i} -2c \\
+              & = \frac{-ci}{i^2} -2c \\
+              & = \frac{-ci}{-1} -2c \\
+              & = ci -2c \\ \\
+\Rightarrow a & = -(ci -2c)-(1-i)c\\
+              & = -ci + 2c +ci -c \\
+              & = c \\ \\
+\end{align*}
+EV hat die Form
+\[
+\begin{pmatrix}
+1 \\i-2 \\1
+\end{pmatrix}
+\]
+\subsubsection*{Für Eigenwert 2-i:}
+\[
+C  (-2-i) I = \begin{pmatrix}
+3-(2-i)&1&1\\
+2&4-(2-i)&2\\
+1&1&3-(2-i)
+\end{pmatrix}
+ = \begin{pmatrix}
+1+i&1&1\\
+2&2+i&2\\
+1&1&1+i
+\end{pmatrix}
+\]
+Setze $(A -(2-i) )v = 0$.
+\[
+\begin{pmatrix}
+1+i&1&1\\
+2&2+i&2\\
+1&1&1+i
+\end{pmatrix} \cdot \begin{pmatrix}
+a \\ b\\c
+\end{pmatrix} = \begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+\]
+Lineares Gleichungssystem lösen:
+\begin{align*}
+            0 & = a(1+i) +b+c \\
+\Rightarrow b & = -c -a(1+i) \\ \\ 
+%            0 & = 2a(1+i) +b(2+i) + 2c \\
+%              & = 2a(1+i) + (-c -a(1+i))(2+i) + 2c \\
+%              & = 2a + 2ai + (-c -a-ai)(2+i) + 2c \\
+%              & = 2a + 2ai - c(2+i) -a(2+i) -ai(2+i) +2c \\
+%              & = 2a + 2ai - 2c -ci -2a -ai -2ai -ai^2 +2c \\
+%              & =  -ci -ai - a\cdot(-1) \\
+%              & =  -ci -ai +a\\
+%              & = a + i(-c-a) \\ \\
+            0 & = a + b + (1+i)c \\
+              & = a + -c -a -ai  + c+ ci \\
+              & = -ai + ci \\
+\Rightarrow a & = c \\
+\Rightarrow b & = -a -a(1+i) \\
+              & = -a -a -ai \\
+              & = -2a -ai
+\end{align*}
+EV hat Form: 
+\[
+\begin{pmatrix}
+1 \\ -2-i\\1
+\end{pmatrix}
+\]
+Also sind die Eigenvektoren:
+\[
+v_1 = \begin{pmatrix}
+1 \\ -7\\1
+\end{pmatrix}, \quad v_2 = \begin{pmatrix}
+1 \\i-2 \\1
+\end{pmatrix}, \quad v_3 =  \begin{pmatrix}
+1 \\ -2-i\\1
+\end{pmatrix}
+\]
+\subsection*{Matrix E}
+\[
+ E = \begin{pmatrix}
+ 1 &-2&1 \\
+ 1&1&3\\
+ 0&-1&-2
+ \end{pmatrix}
+\]
+\[
+ E -\lambda I= \begin{pmatrix}
+ 1-\lambda&-2&1 \\
+ 1&1-\lambda&3&\\
+ 0&-1&-2-\lambda
+ \end{pmatrix}
+\]
+\begin{align*}
+    det(E) & =  (-\lambda+1)\cdot(-\lambda+1)\cdot(-\lambda-2)+
+    \ora{(-2)\cdot3\cdot0}
+    + \blue{1\cdot1\cdot(-1)}
+    -\ora{0\cdot(-\lambda+1)\cdot1}
+    -\blue{(-1)}\cdot3\cdot(-\lambda+1)
+    -(-\lambda-2)\cdot\blue{1}\cdot(-2)  \\
+& =  (-\lambda+1)\cdot(-\lambda+1)\cdot(-\lambda-2)
+    + \blue{(-1)}
+    -(-3)\cdot(-\lambda+1)
+    -(-\lambda-2)\cdot(-2)  \\
+    & = (-\lambda+1)\cdot(-\lambda+1)\cdot(-\lambda-2)
+    -1
+    -(-3)\cdot(-\lambda+1)
+    -(-\lambda-2)\cdot(-2)  \\
+     & = -\lambda^3 + 3 \lambda -2
+    -1
+    -3\lambda+3
+    -2\lambda -4\\
+    & = -\lambda^3 -2\lambda -4\\
+\end{align*}
+\[
+\chi_E = -\lambda^3 -2\lambda -4
+\]
+bzw. 
+\[
+\chi_E = \lambda^3 +2\lambda +4
+\]
+Nullstellen finden mit Cardano
+\[ 0  = \lambda^3 +2\lambda +4\]
+Wolfram Alpha löst auf (keine Ahnung wie das händisch geht, frage ich im nächsten Tutorium) als:
+\begin{align*}
+ \lambda_1 &  \approx -1,1795 \\
+  \lambda_2 &  \approx 0,5898 - 1,7445 i \\
+   \lambda_3 &  \approx 0,5898 - 1,7445 i
+\end{align*}
+Wenn man $E$ als reelle $3\times3$-Matrix auffasst, findet man nur einen Eigenwert, die anderen beiden sind weiterhin komplex. Ohne Eigenwerte keine Eigenvektoren. 
+\section{Aufgabe 3.2}
+Wenn alle Einträge in $A$ reell sind, können keine $i$s drin sein. Daher ist $A = \bar A$. \\
+Daher gilt auch
+\[ \bar A\cdot v  = A\cdot v = \lambda \cdot v\]
+bzw.
+\[\overline{A\cdot v} = \overline{\lambda \cdot v} \Rightarrow \bar A\cdot \bar v = \bar\lambda \cdot \bar v \Rightarrow  A \cdot \bar v = \bar\lambda \cdot \bar v\]
+Und damit ist $\bar v$ ein Eigenvektor zum Eigenwert $\bar \lambda$ für $A$. 
+\section{Aufgabe 3.3}
+\[
+A = \begin{pmatrix}
+0&\cdots&0&-\alpha_0\\
+1&&0&-\alpha_1\\
+& \ddots & & \vdots\\
+0&&1&-\alpha_{n-1}
+\end{pmatrix}
+\]
+Wikipedia sagt $A$ ist die Begleitmatrix eines normierten Polynoms $n$-ten Grades $t^n + \alpha_n t ^{n-1} + \cdots + \alpha_1 t + \alpha_0 $.  \\
+Wir wissen aus der Vorlesung das charackteristische Polynom von $A$ ist $\chi_A(t) = det(A - t I)$. \\ \\
+z.z. $det(A - t I) = (-1)^n \cdot (t^n + \alpha_{n-1} t ^{n-1} + \cdots + \alpha_1 t + \alpha_0)$
+\[
+A - t I = \begin{pmatrix}
+-t&\cdots&0&-\alpha_0\\
+1&-t&0&-\alpha_1\\
+& \ddots &\ddots & \vdots\\
+0&&1&-\alpha_{n-1} -t
+\end{pmatrix}
+\]
+Leibnitz Entwickung entlang der letzten Zeile. 
+\begin{align*}
+    det(A - t I) &= \sum^n_{i = 1} a_{in} \cdot (-1)^{i+n} \cdot det(A'_{in}) \\
+    &=  \sum^n_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot det(A'_{in}) 
+  %  &= (-1)^{n} \cdot \sum^n_{i = 1} a_{in} \cdot  (-1)^{i} \cdot det(A'_{in})\\
+\end{align*}
+Diese Summe hat die Form
+\[
+-\alpha_{0} \cdot (-1)^{1} \cdot det(A'_{1n})  
++ (-\alpha_{1}) \cdot (-1)^{2} \cdot det(A'_{2n}) 
++ ... 
++ (-\alpha_{n-2}) \cdot (-1)^{n-1} \cdot det(A'_{(n-1)n}) 
++ (-\alpha_{n-1}-t) \cdot (-1)^{n} \cdot det(A'_{nn}) 
+\]
+Dabei hat $A'_{nn}$ die gleiche Form wie $A$, nur ist eine $(n-1)\times(n-1)$-Matrix. Die restlichen $A'_{in}$ haben die Form 
+\[
+A'_{in} = \begin{pmatrix}
+-t & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & -t & 0 & 0 & 0 & 0 & 0 & 0  \\
+0 &\ddots & \ddots & \ddots &\ddots &\ddots &\ddots &0  \\  
+0 & 0 & 1 & -t & 0 & 0 & 0 & 0  \\
+0 & 0 & 0 & 0 & 1 & -t & 0 & 0  \\
+0 &\ddots & \ddots & \ddots &\ddots &\ddots &\ddots  &0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & -t \\
+\end{pmatrix}
+\]
+Dabei ist das obere linke Viertel eine Matrix der Form 
+\[
+O=\begin{pmatrix}
+-t & 0 & 0 &0 \\
+1 & -t & 0 & 0 \\
+0 &\ddots & \ddots & 0  \\  
+0 & 0 & 1 & -t 
+\end{pmatrix}
+\]
+Und das untere rechte Viertel eine Matrix der Form 
+\[
+U= \begin{pmatrix}
+ 1 & -t & 0 & 0  \\
+ 0 & 1 & -t & 0  \\
+0&\ddots &\ddots  &-t\\
+0 & 0 &0 & 1   \\
+\end{pmatrix}
+\]
+Also ist jedes $A'_{in}$ eine Blockmatrix und die Determinanten davon kann man berechnen als Produkt der Determinanten der beiden Matrix-Blöcke. \\
+Da $U, O$ $(n-1)\times(n-1)$Dreiecksmatrizen sind, gilt hier $det(U) = 1^{n-1} = 1$ und $det(O) = (-t)^{n-1}$.
+Also
+\[
+det(A'_{in}) = det(U) \cdot det(O) = 1 \cdot (-t)^{n-1} = (-t)^{n-1} \quad für\ i \in \{1,...,n-1\}
+\] 
+und für $A'_{nn}$ gilt ebenfalls $det(A'_{nn}) = (-t)^{n-1}$. \\
+Daher 
+\begin{align*}
+    det(A - t I) & =  \sum^n_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot det(A'_{in})  \\
+    & =  \sum^n_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot (-t)^{n-1}  \\
+    & = (-1)^{2n} \cdot (-\alpha_{n-1} -t)  \cdot (-t)^{n-1} +  \sum^{n-1}_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot (-t)^{n-1}  \\
+     & = (-\alpha_{n-1} -t)  \cdot (-t)^{n-1} +  \sum^{n-1}_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot (-t)^{n-1}  \\
+       & = t^3 + \alpha_{n-1}\cdot t^{n-1} +  \sum^{n-1}_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot (-t)^{n-1}  \\
+        & = t^3 + \alpha_{n-1}\cdot t^{n-1} + \alpha_{n-2}t^{n-2} + \sum^{n-2}_{i = 1} a_{in} \cdot (-1)^{n} \cdot (-1)^{i} \cdot (-t)^{n-1}  \\
+       & \quad  \vdots
+\end{align*}
+\end{document}

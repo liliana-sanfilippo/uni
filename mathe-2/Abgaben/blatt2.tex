@@ -1,0 +1,250 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 2; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 2.1}
+\[
+\begin{array}{rrrrrr}
+    0 & 1 & 0 & 0 & -2   \\
+    1 & 0 & 0 & -2 & -1 \\
+    -3 & 0 & 4 & 4 & -3 \\
+    2 & 0 & 0 & 0 & 0 \\
+    1 & -1 & 0 & 4 & 3 & +Zeile1 \\ \hline
+    %%
+    0 & 1 & 0 & 0 & -2   \\
+    1 & 0 & 0 & -2 & -1 \\
+    -3 & 0 & 4 & 4 & -3 \\
+    2 & 0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 4 & 1 
+    %%
+%     0 & 1 & 0 & 0 & -2   \\
+%    1 & 0 & 0 & -2 & -1 \\
+%    -3 & 0 & 4 & 4 & -3 \\
+%    2 & 0 & 0 & 0 & 0 \\
+%    2 & 0 & 0 & 2 & 0 & -Zeile4 \\ \hline \\
+    %% 
+%     0 & 1 & 0 & 0 & -2   \\
+%    1 & 0 & 0 & -2 & -1 & + Zeile4\\
+%    -3 & 0 & 4 & 4 & -3 \\
+%    2 & 0 & 0 & 0 & 0 \\
+%    0 & 0 & 0 & 2 & 0  \\ \hline \\
+     %% 
+%     0 & 1 & 0 & 0 & -2   \\
+%    3 & 0 & 0 & -2 & -1 & +Zeile3\\
+%    -3 & 0 & 4 & 4 & -3 \\ 
+%    2 & 0 & 0 & 0 & 0 \\
+%    0 & 0 & 0 & 2 & 0  \\ \hline \\
+     %% 
+%     0 & 1 & 0 & 0 & -2   \\
+%    0 & 0 & 4 & 2 & -4 \\
+%    -3 & 0 & 4 & 4 & -3 & -Zeile2 \\ 
+%    2 & 0 & 0 & 0 & 0 \\
+%    0 & 0 & 0 & 2 & 0  \\ \hline \\
+      %% 
+%     0 & 1 & 0 & 0 & -2   \\
+%    0 & 0 & 4 & 2 & -4 \\
+%    -3 & 0 & 0 & -2 & 1  \\ 
+%    2 & 0 & 0 & 0 & 0 \\
+%    0 & 0 & 0 & 2 & 0  \\ \hline \\
+\end{array}
+\]
+Laplace-Entwicklung nach der zweiten Spalte:
+\begin{align*}
+   det(A) & =  \sum^5_{i=1} a_{i2} \cdot (-1)^{i+2} \cdot det(A'_{i2}) \\
+   & = a_{12} \cdot (-1)^{1+2} \cdot det(A'_{12}) \\
+    & = 1 \cdot (-1)^{3} \cdot det(A'_{12})  \\
+    & = -det (A'_{12})  \\ \\
+    A'_{12} & = \begin{pmatrix}
+    1 &  0 & -2 & -1 \\
+    -3   & 4 & 4 & -3 \\
+    2   & 0 & 0 & 0 \\
+    1   & 0 & 4 & 1  
+\end{pmatrix}
+\end{align*}
+Also: 
+\[
+  det(A) = -det (A'_{12})
+\]
+Laplace Entwicklung nach der dritten Zeile: 
+\begin{align*}
+    det(A'_{12}) & = \sum^4_{j=1} a_{3j} \cdot (-1)^{3+j} \cdot det(A''_{3j}) \\
+    & = a_{31} \cdot (-1)^{3+1} \cdot det(A''_{31}) \\
+     & = 2 \cdot (-1)^{4} \cdot det(A''_{31}) \\
+     & = 2 \cdot det(A''_{31}) \\ \\
+      A''_{31} & = \begin{pmatrix}
+     0 & -2 & -1 \\
+     4 & 4 & -3 \\
+     0 & 4 & 1  
+\end{pmatrix}
+\end{align*}
+Also: 
+\[
+  det(A) = -1 \cdot (2 \cdot det(A''_{31}))
+\]
+Satz von Sarrus: 
+\begin{align*}
+    det(A''_{31}) & = 0 + 0 + (1 \cdot 4 \cdot 4) - 0 - 0 - (1 \cdot (-2) \cdot 4) \\ 
+    & = 16 - 8\\ 
+    & = 8
+\end{align*}
+Also: 
+\begin{align*}
+    det(A) & = -1 \cdot (2 \cdot (-8)) \\
+    & = -1 \cdot (-16) \\
+    & = 16 
+\end{align*}
+Die Determinante von $A$ und ungleich null und $A$ ist eine quadratische Matrix, also ist $A$ invertierbar. 
+\section{Aufgabe 2.2}
+Nach der ersten Spalte
+\begin{align*}
+A & = \begin{pmatrix}
+a & b & c & d \\
+-b & a & -d & c \\
+-c & d & a & -b \\
+-d & -c & b & a
+\end{pmatrix} \\ \\
+    det(A) & = \sum^4_{j=1} a_{1j} \cdot (-1)^{1+j} \cdot det(A'_{1j}) \\
+    & = a_{11} \cdot (-1)^{1+1} \cdot det(A'_{11}) + a_{12} \cdot (-1)^{1+2} \cdot det(A'_{12}) + a_{13} \cdot (-1)^{1+3} \cdot det(A'_{13})  + a_{14} \cdot (-1)^{1+4} \cdot det(A'_{14}) \\
+     & = a \cdot det(A'_{11}) + (-b) \cdot det(A'_{12}) + c \cdot det(A'_{13})  - d \cdot det(A'_{14})  \\ \\
+     A'_{11} & = \begin{pmatrix}
+a & -d & c \\
+d & a & -b \\
+-c & b & a
+\end{pmatrix} \\ \\
+det (A'_{11}) & = a^3 - cbd + cbd + acc + abb + add \\
+& = a^3 + acc + abb + add \\ \\
+ A'_{12} & =  \begin{pmatrix}
+-b & -d & c \\
+-c &  a & -b \\
+-d & b & a
+\end{pmatrix}  \\  \\
+det( A'_{12}) & = -aab -bdd - bcc + acd - b^3 -acd \\
+ & = -aab -bdd - bcc - b^3 
+\end{align*} 
+\begin{align*}
+    A'_{13} & = \begin{pmatrix}
+-b & a & c \\
+-c & d   & -b \\
+-d & -c  & a
+\end{pmatrix}  \\ \\
+det(A'_{13}) & = -abd + abd + c^3 + cdd + bbc + aac \\
+ & = c^3 + cdd + bbc + aac \\ \\
+  A'_{14} & = \begin{pmatrix}
+-b & a & -d  \\
+-c & d & a  \\
+-d & -c & b
+\end{pmatrix} \\ \\
+det (A'_{14}) & = -bbd - aad - ccd - d^3 - acb + acb \\
+ & = -bbd - aad - ccd - d^3\\
+\end{align*}
+Also: 
+\begin{align*}
+    det(A) & = a \cdot (a^3 + acc + abb + add) - b \cdot (-aab -bdd - bcc - b^3 ) + c \cdot (c^3 + cdd + bbc + aac)  - d \cdot (-bbd - aad - ccd - d^3) \\
+    & = a \cdot (a^3 + ac^2 + ab^2 + ad^2) - b \cdot (-a^2b -bd^2 - bc^2 - b^3 ) + c \cdot (c^3 + cd^2 + b^2c + a^2c)  - d \cdot (-b^2d - a^2d - c^2d - d^3) \\
+      & = a^4 + a^2c^2 + a^2b^2 + a^2d^2 - ( -a^2b^2 -b^2d^2 - b^2c^2 - b^4 ) + c^4 + c^2d^2 + b^2c^2 + a^2c^2  - (-b^2d^2 - a^2d^2 - c^2d^2 - d^4) \\
+       & = a^4 + a^2c^2 + a^2b^2 + a^2d^2 + a^2b^2 + b^2d^2 + b^2c^2 + b^4  + c^4 + c^2d^2 + b^2c^2 + a^2c^2  +b^2d^2 + a^2d^2 + c^2d^2 + d^4 \\
+        & = a^4 + 2(a^2c^2) + 2(a^2b^2) + 2(a^2d^2) + 2(b^2d^2) + 2(b^2c^2) + b^4  + c^4 + 2(c^2d^2) + d^4 \\
+     & = (a^2 + b^2 + c^2 + d^2) \cdot (a^2 + b^2 + c^2 + d^2) \\    
+    & = (a^2 + b^2 + c^2 + d^2)^2
+\end{align*}
+\section{Aufgabe 2.3}
+\[
+x=v+t(w-v), \quad \text{für ein } t \in \mathbb{R}
+\] 
+\[
+\begin{array}{rrrr}
+     1& v_1 & v_2 \\
+     1 & w_1 & w_2 & -Zeile1 \\
+     1  & x_1 & x_2 & -Zeile1  \\ \hline
+     %%
+     1& v_1 & v_2 \\
+      0& w_1 - v_1 & w_2 -v_2 \\
+       0& x_1 -v_1 & x_2 - v_2 
+\end{array}
+\]
+\begin{align*}
+    det(A) &=   \sum^3_{i=1} a_{i1} \cdot (-1)^{i+1} \cdot det(A'_{i1}) \\
+    & = a_{11} \cdot det(A'_{11}) \\
+    & = det(A'_{11})  \\ \\
+   A'_{11} & = \begin{pmatrix}
+       w_1 - v_1 & w_2 -v_2 \\
+       x_1 -v_1 & x_2 - v_2 
+    \end{pmatrix} %\\ \\
+%    det(A'_{11}) & = ( w_1 - v_1 ) (x_2 - v_2 ) - (w_2 -v_2) ( x_1 -v_1)  \\
+%    & = w_1x_2 - v_1x_2 - w_1v_2 + v_1v_2 - w_2x_1 + v_2x_1 + w_2v_1 - v_1v_2 \\
+%    & = w_1x_2 - v_1x_2 - w_1v_2 - w_2x_1 + v_2x_1 + w_2v_1
+\end{align*}
+$det(A'_{11}) = det (A) = 0$, wenn die beiden Zeilen linear abhängig sind. Die erste Zeile steht für eine Gerade durch $w$ und $v$ und die zweite Zeile einer Gerade durch $x$ und $v$. Sind diese beiden Linear abhängig, muss $x$ auch auf der Gerade durch $w$ und $v$ liegen. \\
+Also: Für jeden Punkt $x$ gilt, wenn die Determinante der Matrix Null ist, muss $x$ auf $L$ liegen. \\
+Andersherum, wenn $x$ auf $L$ liegt, müssen die beiden Zeilen linear abhängig sein und die Determiante ist Null. 
+
+\section{Aufgabe 2.4}
+
+\subsection*{(a)}
+Entwicklung über $n!$ Permutationen (also  $n!$ Additionen) mit jeweils $n$ viele Multiplikationen pro Permutation (also $n  \cdot n!$ Multiplikationen). \\
+Gesamt: $O(n \cdot n!)$
+
+\subsection*{(b)}
+Man braucht ungefähr $\frac{2}{3}n^3$ Schritte (Zeilenoperationen oder Aufmultiplizieren der Diagonalelemente), um eine Matrix in die obere Dreiecksform zu bringen. 
+Also: $O(n^3)$
+
+
+\end{document}

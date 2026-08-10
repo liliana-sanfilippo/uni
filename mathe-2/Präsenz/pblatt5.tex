@@ -1,0 +1,267 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Präsenzübungsblatt 5; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section*{Besprechung 3.1 D}
+\[
+D = \begin{pmatrix}
+2-i&0&0\\
+i&-3&1-i\\
+1&0&2+i
+\end{pmatrix}
+\]
+wenn $\lambda_2 = -3$
+\[
+D+3I = \begin{pmatrix}
+2-i+3&0&0\\
+i&0&1-i\\
+1&0&5+i
+\end{pmatrix} \quad und \quad
+E_D(\lambda_2) = ker \begin{pmatrix}
+2-i+3&0&0\\
+i&0&1-i\\
+1&0&5+i
+\end{pmatrix}
+\]
+Kern hat Dimension 1 und deswegen kann man das direkt ablesen 
+\[
+\Rightarrow \begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix}
+\]
+wenn $\lambda_1 = 2-i$
+\[
+E_D(\lambda_1) = ker\begin{pmatrix}
+0&0&0\\
+i&-5+i&1-i\\
+1&0&2i
+\end{pmatrix} 
+\]
+\begin{align*}
+    0 & = ix_2 + x_2 (-5 + i) + x_3 (1-i) & (i)\\
+    0 & = x_1 + x_3 \cdot 2i  \\
+    x_1 & = -x_3 \cdot 2i & (ii) 
+\end{align*}
+(ii) in (i) eingesetzt 
+\[
+2 x_3 + x_2 (-5 +i) + x_3 - i x_3 = 0
+\]
+\[x_2 (-5 +i) = x_3 (-3 +i) \]
+\[x_2 = x_3 (\frac{-3+i}{-5+i}) \Rightarrow EV zu \lambda_1 ist x_3 \cdot \begin{pmatrix} -2i \\ \frac{-3+i}{-5+i} \\ 1 
+\end{pmatrix} = x_3 \cdot \begin{pmatrix} -2i \\ \frac{8+i}{13} \\ 1 
+\end{pmatrix}
+\]
+Wenn $\lambda_3 = 2+i$ \\
+Hier bieten sich Zeilenumformungen an 
+\[
+E_D(\lambda_3) = ker\begin{pmatrix}
+-2i&0&0\\
+i&-5-i&1-i\\
+1&0&0
+\end{pmatrix} = ker\begin{pmatrix}
+0&0&0\\
+i&-5-i&1-i\\
+1&0&0
+\end{pmatrix}
+\]
+Man sieht an der ersten Zeile (nur nullen), dass die erste Zahl im Vektor eine Null sein muss. \\
+Aus der dritten Zeile folgt: für $\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} \in ker \Rightarrow x_1 = 0$ \\
+\[\Rightarrow (-5-i) \cdot x_2 + x_3 (1-i) = 0\]
+\[\Rightarrow \begin{pmatrix} 0 \\ -(1-i) \\ -5-1 \end{pmatrix} \in ker \Rightarrow <\begin{pmatrix} 0 \\ -(1-i) \\ -5-1 \end{pmatrix} >  sind die EV zu \lambda_3 \]
+
+Wenn die algebraische Vielfachheit 1 ist kann die geometrische auch nur 1 sein, weil die g immer kleiner gleich die a ist. 
+\section*{Besprechung 3.1 E}
+\[
+ E = \begin{pmatrix}
+ 1 &-2&1 \\
+ 0&1&3\\
+ 0&-1&-2
+ \end{pmatrix}
+\]
+\[
+ E-\lambda I = \begin{pmatrix}
+ 1 -\lambda  &-2&1 \\
+ 0&1-\lambda &3\\
+ 0&-1&-2-\lambda 
+ \end{pmatrix}
+\]
+\[
+\chi_{\lambda} = det(E-\lambda I) 
+\]
+Laplace nach der ersten Zeile. 
+\begin{align*}
+    \chi_{\lambda} & = det(E-\lambda I) \\
+    & = (1-\lambda) \cdot det \begin{pmatrix} 1- \lambda & 3 \\ -1 & -2- \lambda \end{pmatrix} \\
+     & = (1-\lambda) \cdot (1+t+t^2) 
+\end{align*}
+\[
+\lambda_1 = 1, \lambda_2 = -\frac{1}{2} + \frac{1}{2} \cdot \sqrt{3}i, \lambda_3 = -\frac{1}{2} - \frac{1}{2} \cdot \sqrt{3}i
+\]
+\[
+E v_E(1) = ker \begin{pmatrix}
+0 &-2&1 \\
+ 0&0&3\\
+ 0&-1&-3 
+ \end{pmatrix} = < \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} >
+\]
+\[
+E v_E ( -\frac{1}{2} + \frac{1}{2} \cdot \sqrt{3}i) = ker \begin{pmatrix}
+\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i &-2&1 \\
+ 0&\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i&3\\
+ 0&-1&-\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i
+ \end{pmatrix}  = ker \begin{pmatrix}
+\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i &-2&1 \\
+ 0&\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i&3\\
+ 0&-1&0
+ \end{pmatrix} 
+\]
+\begin{align*}
+    \Rightarrow 0 & =  x_2  \cdot (\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i) - 2x_2 + x_3 & I \\
+    0  & = x_2  \cdot (\frac{3}{2} - \frac{1}{2} \cdot \sqrt{3}i) + 3x_3 & II \\
+    \Leftrightarow x_3 & = -x_2 (\frac{1}{2} - \frac{1}{6} \sqrt{3}i) 
+\end{align*}
+Setze II in I ein
+\begin{align*}
+   0 & =  x_1 (\frac{3}{2}-\frac{1}{2}\sqrt{3}i) -2x_2 - x_2 \cdot (\frac{1}{2} - \frac{1}{6}\sqrt{3}i) \\
+   x_1 & = x_2 \frac{(\frac{5}{2}- \frac{1}{6} \sqrt{3}i)}{(\frac{3}{2}-\frac{1}{2}\sqrt{3}i)} 
+\end{align*}
+\[
+E v_E (\lambda_2) = <
+\begin{pmatrix}
+x_2 \frac{(\frac{5}{2}- \frac{1}{6} \sqrt{3}i)}{(\frac{3}{2}-\frac{1}{2}\sqrt{3}i)} \\ 1 \\ -\frac{1}{2} + \frac{1}{6}\sqrt{3}i
+\end{pmatrix}>
+\]
+\[
+E v_E ( -\frac{1}{2} - \frac{1}{2} \cdot \sqrt{3}i) = ker
+\]
+Aus Aufgabe 3.2 folgt 
+\[
+E v_E (\lambda_3) = \overline{E v_E(\lambda_2)}
+\]
+Frage mit den Auffassung: \\
+Reeller Eigenraum: $ < \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} >$ \\
+Reeller Eigenwert: $\lambda_1 = 1$
+\section*{Besprechung 3.3}
+Bilder (Induktion und Laplace auf die erste Zeile anwenden) 
+\section{Aufgabe 5.1}
+Das wäre bereits Jordan Normalform: 
+\[
+\begin{pmatrix}
+5 & 1 & 0 \\
+0 & 5 & 0 \\
+0 & 0 & 6
+\end{pmatrix}
+\]
+JNF existiert nur, wenn das charakteristische Polynom in Linearfaktoren zerfällt. A hat JN  J wenn exists S $\in$ Sln(K)???  \\
+$S^{-1} A S = J $
+\subsection*{(a)}
+Man zeigt sie es nilpotent, wenn man zeigt es gibt ein k mit dem das klappt 
+\[
+A = \begin{pmatrix}
+1& -1& 1\\0 & 0 & 2 \\ 1&-1&-1
+\end{pmatrix}
+\]
+\[
+A^2 = \begin{pmatrix}
+1& -1& 1\\0 & 0 & 2 \\ 1&-1&-1
+\end{pmatrix} \cdot \begin{pmatrix}
+1& -1& 1\\0 & 0 & 2 \\ 1&-1&-1
+\end{pmatrix} = \begin{pmatrix}
+2 & -2 & -2 \\ 2 & -2 & -2 \\ 0 & 0 & 0 
+\end{pmatrix}
+\]
+\[
+A^3 = \begin{pmatrix}
+2 & -2 & -2 \\ 2 & -2 & -2 \\ 0 & 0 & 0 
+\end{pmatrix} \cdot \begin{pmatrix}
+1& -1& 1\\0 & 0 & 2 \\ 1&-1&-1
+\end{pmatrix} = 0
+\] 
+JordanBasis: Man will Vektore v1, v2, v3 finden bei denen v1 auf v2 geschickt wird und v2 auf v3 und v3 auf 0 und wenn die eine Basis bilden ist irgendwas. \\
+Solche Ketten von Elementen möchte man finden. Es ginge sowohl $v1 \mapsto v2 \mapsto v3 \mapsto$ als auch $v1 \mapsto v2 \mapsto 0, \quad v3 \mapsto 0$
+\subsection*{(b)}
+Was ist ein Element, das nicht im Kern von $A^2$ ist? setze \\
+v3 = $\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}$
+\[v1 = A^2 \cdot v3 = \begin{pmatrix}
+2\\2\\0
+\end{pmatrix}\]
+\[v2 = A \cdot v3 = \begin{pmatrix}
+1\\0\\1
+\end{pmatrix}\]
+\subsection*{(c)}
+S ist die geeignete Basiswechselmatrix
+\[ S = (v1\ v2\ v3) = \begin{pmatrix} 
+2&1&1\\ 2&0&0\\ 0&1&0
+\end{pmatrix}
+\Rightarrow S^{-1}AS = \begin{pmatrix}
+0&1&0\\0&0&1\\0&0&0 
+\end{pmatrix}
+\]
+
+\section{Aufgabe 5.2}
+\subsection*{(a)}
+\subsection*{(b)}
+
+
+
+\end{document}

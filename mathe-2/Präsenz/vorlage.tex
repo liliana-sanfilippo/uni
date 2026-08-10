@@ -1,0 +1,139 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow} 
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Präsenzübungsblatt 1; MfN II.}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{SoSe 2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Aufgabe 1.1}
+\textcolor{Blue}{Was ist überhaupt $\Phi$ hier? Eine lineare Abbildung $\Phi: V \rightarrow V$. \\
+Was ist $V$ hier? ein Vektorraum über einem Körper $K$. \\
+Wie hängt eine Matrix damit zusammen? Man kann lineare Abbildungen durch Matrizen darstellen. \\
+Was passiert, wenn man lineare Abbildungen mit sich selber multipliziert ($\Phi^n$)? Multiplikation linearer Abbildungen ist eigentlich eine hintereinander her Ausführung der Funktion, also eine Verkettung $\Phi(\Phi(\cdots))$. Weil man lineare Abbildungen durch Matrizen darstellen kann, entspricht das einer Matrixmultiplikation einer Matrix mit sich selber. \\
+Was für Matrizen muss man Multiplizieren, damit 0 raus kommt? \\
+Wie kann es überhaupt sein, dass $A \cdot v = 0 \cdot v $? \\
+Was bedeutet es, wenn der Eigenwert 0 ist? 
+} \\
+Sei $a$ EW von $\Phi$.
+$\Phi(v) = a \cdot v$
+Wenn $\Phi(v) = 0$, ist auch $a^n \cdot v = 0$, also muss $a^n = 0$ und auch $a = 0$
+\section{Aufgabe 1.2}
+$F^2 + F$ hat EW -1 \\
+Sei $v \neq 0$ EV zu -1 \\
+\begin{align*}
+    F^2(v) + F(v) & = -v  \\
+    \Rightarrow F^2(v) + F(v) + v & = 0 \\
+    \overset{F}{\Rightarrow} F^3(v) + \underbrace{F^2(v) + F(v)}_{=-v} & = 0 \\
+    \Rightarrow F^3(v) - v & = 0 \\
+    \Rightarrow F^3(v) & = v \\
+    \Rightarrow F \text{ hat EW } 1
+\end{align*}
+
+
+\section{Aufgabe 1.3}
+\subsubsection{A.}
+\begin{align*}
+    A & = \begin{pmatrix}2 & -1 \\ 1 & 4 \end{pmatrix} \\ \\
+    det(A - \lambda \cdot E) & = (2-\lambda) (4-\lambda) +1 \\
+    & = \lambda^2 - 6 \lambda +9 \\ \\
+    \lambda_{1|2} & = 3 \overset{+}{-} \sqrt{0} \\
+    \Rightarrow \lambda_{1|2} & = 3
+\end{align*}
+EV zu EW $\lambda = 3$
+\begin{align*}
+    \begin{pmatrix}
+    2-3 & -1 \\ 1 & 4-3
+    \end{pmatrix} \rightsquigarrow \begin{pmatrix}
+    -1 & -1 \\ 1 & 1 
+    \end{pmatrix} \rightsquigarrow \begin{pmatrix}
+    -1 & -1  \\ 0 & 0 
+    \end{pmatrix} \Rightarrow x_2 beliebig  \\ \\
+    x_1 = -x_2 \\ 
+    \mathcal{C} = \Biggl \{ \binom{-1}{1} \Biggr \}
+\end{align*}
+\subsubsection{B.}
+\begin{align*}
+    B & = \begin{pmatrix}
+    1 & -3i \\ i & -1
+    \end{pmatrix} \\ \\
+    det(B - \lambda E) & = (1-\lambda) (-1-\lambda) - (-3i^2) \\
+    & = \lambda^2 -4 \\ \\
+    \lambda^2 & = 4 \overset{\sqrt{}}{\Rightarrow} \lambda_1 = 2, \quad \lambda_2 = -2 \\ 
+\end{align*}
+EV zu EW $\lambda = -2$
+\begin{align*}
+    \begin{pmatrix}
+    2 & -3i \\ i & 1 
+    \end{pmatrix} \overset{z2 + z1 \cdot \frac{-i}{3}}{\rightsquigarrow }\begin{pmatrix}
+    3 & -3i \\ 0 & 0 
+    \end{pmatrix} \Rightarrow x_2 beliebig \\ \\
+    x_1 & = i x_2 \\
+     \mathcal{C} = \Biggl \{ \binom{i}{1} \Biggr \}
+\end{align*}
+EV zu EW $\lambda = 2$
+\begin{align*}
+    \begin{pmatrix}
+    -1 & -3i \\ i & -3 
+    \end{pmatrix}  \overset{z2 = z2 \cdot i}{\rightsquigarrow }
+    \begin{pmatrix}
+    -1 & -3i \\ 0 & 0 
+    \end{pmatrix} \Rightarrow x_2 beliebig \\ \\
+     x_1 & = -3i x_2 \\
+      \mathcal{C} = \Biggl \{ \binom{-3i}{1} \Biggr \}
+\end{align*}
+\end{document}

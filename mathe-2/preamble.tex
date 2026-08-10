@@ -1,0 +1,235 @@
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=2cm, bottom=2cm, outer=7cm, inner=1cm, heightrounded, marginparwidth=5cm, marginparsep=1cm]{geometry}
+\usepackage{graphicx}
+\usepackage[german]{babel}
+%\usepackage{blindtext}
+\usepackage{marginnote}
+\usepackage{multirow}
+\usepackage{diagbox}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{bbm}
+\usepackage{biblatex}
+\addbibresource{sources.bib}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{tikz}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+\usepackage{longdivision}
+\usepackage{polynom}
+\usepackage{xcolor}
+%\usepackage{rotating}
+%\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=CarnationPink,   % Farbe für interne Links
+    citecolor=CarnationPink,    % Farbe für Zitierungen
+    urlcolor=CarnationPink       % Farbe für URLs
+}
+%\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[symbol]{footmisc}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+% BOXES 
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\tcbset{blue box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=accdarklight,
+    coltitle=white, colbacktitle=accdark,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west) {};
+        
+      }
+    }
+  }
+}
+\newtcolorbox{mybox}[1][]{blue box, #1}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Aufarbeitung Diskrete Mathematik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+\newcommand{\resumen}{Abstrakt}
+
+
+% Glossary 
+\usepackage[automake]{glossaries}
+\newglossary*{dinge}{Was ist was?}
+\glsaddkey
+ {formB}
+ {}
+ {\glsentryB}
+ {\GlsentryB}
+ {\glsB}
+ {\GlsB}
+ {\GLSB}
+ \glsaddkey
+ {formF}
+ {}
+ {\glsentryF}
+ {\GlsentryF}
+ {\glsF}
+ {\GlsF}
+ {\GLSF}
+\makeglossaries
+\loadglsentries{gloss} 
+
+\newcommand{\charfunc}[1]{\glsentrytext{charfunc} mit $A = #1$, also $\chi_{#1}$}
+
+
+% Index
+\usepackage{imakeidx}
+\makeindex
+
+
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+\newcommand{\mapsfrom}{\mathrel{\style{display:inline-block; transform:scale(-1,1);}{\mapsto}}}
+\newcommand{\X}{$X$}
+\usepackage{amsthm}
+%\theoremstyle{definition}
+\newtheoremstyle{mytheoremstyle} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {}                   % Body font
+    {}                           % Indent amount
+    {\bfseries}                   % Theorem head font
+    {}                          % Punctuation after theorem head
+    {1.5em}                       % Space after theorem head
+    {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
+
+\theoremstyle{mytheoremstyle}
+\newtheorem{bsp}{Beispiel}[section]
+\newtheorem{info}[bsp]{Zusatzinformation}
+\newtheorem{reg}[bsp]{Regel}
+\newtheorem{satz}[bsp]{Satz}
+\newtheorem{lem}[bsp]{Lemma}
+\newtheorem{defi}[bsp]{Definition}
+\newtheorem{fr}[bsp]{Frage}
+\newtheorem{fakt}[bsp]{Fakt}
+\newtheorem{beo}[bsp]{Beobachtung}
+\newtheorem{prinz}[bsp]{Prinzip}
+\newtheorem{bem}[bsp]{Bemerkung}
+\newtheorem{anmerkung}{Anmerkung}[]
+\newtheorem{folg}[bsp]{Folgerung}
+\newtheorem{er}[bsp]{Erinnerung}
+\newtheorem{prob}[bsp]{Problem}
+\newtheorem{prop}[bsp]{Proposition}
+\newtheorem{beob}[bsp]{Beobachtung}
+\newtheorem{eig}[bsp]{Eigenschaften}
+\newtheorem{kor}[bsp]{Korollar}
+\newtheorem{beh}[bsp]{Behauptung}
+\newcommand{\anm}[2]{
+\color{Blue} \noindent
+\begin{anmerkung}  \textit{zu "#1"}  \newline
+#2
+\end{anmerkung} \color{black}
+}
+
+\newcommand{\regel}[2]{
+\begin{reg} \textbf{#1}  \newline
+#2
+\end{reg}
+}
+\newcommand{\satz}[2]{
+\begin{satz} \textbf{#1}  \newline
+#2
+\end{satz}
+}
+\newcommand{\prin}[2]{
+\begin{prinz} \textbf{#1}  \newline
+#2
+\end{prinz}
+}
+\newcommand{\rsp}[3]{
+\noindent \textbf{#1} \pageref{rsp:#2}  
+
+\noindent #3 
+
+}
+\newcommand{\txc}[1]{
+\textcolor{Blue}{#1}
+}
+\newcommand{\txca}[1]{
+\textcolor{Aquamarine}{#1}
+}
+
+\newcommand{\za}[1]{\mathbb{Z} / #1 \mathbb{Z}}
+\newcommand{\zat}[0]{\mathbb{Z} / m \mathbb{Z}}
+\newcommand{\zatx}[1]{\mathbb{Z} / #1 \mathbb{Z}[x]}
+\usepackage[onehalfspacing]{setspace} 
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+
+\newcommand{\kl}[1]{\{ #1 \}}
+\newcommand{\sumEN}[0]{\sum_{i=1}^n}
+\newcommand{\un}[1]{\underline{#1}}
+\newcommand{\nn}[0]{n \times n}
+\newcommand{\ma}[1]{\(#1\)}
+\newcommand{\mab}[1]{\[#1\]}
+\newcommand{\beg}[1]{\un{#1} \index{#1}}
+\newcommand{\mnnk}[0]{\mathbb{M}_{\nn}(K)}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Tau}[0]{\mathcal{T}}
+\newcommand{\itr}[0]{I \rightarrow \R}
+\newcommand{\intab}[0]{\int_a^b}
+\newcommand{\isr}[0]{I \subseteq \R}
+\newcommand{\dx}[0]{\,dx}
+\newcommand{\dy}[0]{\,dy}
+\newcommand{\aub}[2]{\txca{
+     \underbrace{
+     \textcolor{black}{#1}
+     }_{#2}
+     }}
+\newcommand{\bub}[2]{\txc{
+\underbrace{
+\textcolor{black}{#1}
+}_{#2}
+}}
+\newcommand{\aub}[2]{\txca{
+\overbrace{
+\textcolor{black}{#1}
+}^{#2}
+}}
+\newcommand{\bob}[2]{\txc{
+\overbrace{
+\textcolor{black}{#1}
+}^{#2}
+}}
+
+\usepackage{todonotes}
+\newcommand{\bluenote}[1]{\todo[backgroundcolor=white, bordercolor=Blue, color=Blue!10]{\textcolor{Blue}{#1}}}
+\newcommand{\aquanote}[1]{\todo[backgroundcolor=white, bordercolor=Aquamarine, color=Aquamarine!10]{\textcolor{Aquamarine}{#1}}}
