@@ -57,7 +57,7 @@ them, thank you.
 ## Weiteres
 
 - [Skript Latex-Karteikarten zu Anki-Karteikarten](https://github.com/liliana-sanfilippo/uni/blob/main/anki-sync/latex_glossary_to_anki.py)
-- [All SVGs I created or adapted]()
+- [All SVGs I created or adapted](https://github.com/liliana-sanfilippo/uni/tree/main/svgs)
 
 
 # Todos
