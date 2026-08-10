@@ -1,0 +1,99 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\subsection{Scrum Planung} \label{sec:scrumplanung}
+\subsection*{Agile Aufwandsschätzung - Planning Poker} \label{sec:planningpoker}
+\begin{myTheorem}{Planning Poker}{thm:planningpoker}
+
+\end{myTheorem}
+\subsubsection*{Voraussetzungen}
+\begin{itemize}
+    \item Einigen auf \gls{Referenz-Item}
+    \item \gls{pbi} auswählen
+\end{itemize}
+\subsubsection*{Ablauf}
+\begin{enumerate}
+    \item Verständnisfragen klären
+    \item Alle wählen jeweils eine „Spielkarte“ (Fibonacci-Reihe) (verdeckt) aus
+    \item Alle Karten werden gleichzeitig aufgedeckt
+    \item Team-Mitglieder mit niedrigster und höchster Wertung erläutern ihre Wahl (moderiert)
+    \item Wiederholung der Schätzung
+    \item Sinnvollsten Wert auswählen 
+\end{enumerate}
+\subsection*{Planungshorizonte} \label{sec:planungshorizonte}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{3cm} p{5.5cm} p{5.5cm}}
+         \textbf{Name} & \textbf{Release Planning} & \textbf{Sprint Planning} \\ 
+         \textbf{Typ} & Ungefährer Projektplan & Plan für eine einzelne Iteration \\
+         \textbf{Inhalt} & Inhaltliche und zeitliche Planung der Softwareauslieferung & Auswahl des Sprint Ziel und des \gls{spl}; Detaillierung der \glspl{pbi} des \gls{spl} mit Entwicklungsaufgaben und Erfassen dieser im \gls{Sprint Backlog} \\
+         \textbf{Planungshorizont} & 1-4 Monate & 1-4 Wochen \\
+        \textbf{Gemacht von}  & \gls{po}, ggf. Stakeholdern und Entwicklungsteam  & \gls{po}, Team und \gls{sm}\\
+    \end{tabular} 
+\end{table}
+\subsubsection*{Sprint Planung}
+\begin{equation} \label{eq:prio}
+    \text{Priorität} = \text{Wert der Funktionalität} * \text{Risiko}
+\end{equation}
+\begin{itemize}
+    \item \textbf{Analyse-Tei}l (was)
+    \begin{itemize}
+        \item Vorbereitete Vorstellung der \glspl{pbi} / Stories durch \gls{po} gemäß ihrer Priorisierung
+        \item Entwicklungsteam analysiert jede Story, notiert zusätzliche Anforderungen und Akzeptanzkriterien
+        \item Realistisches Arbeitspensum des Sprints festlegen (\gls{forecast}): 
+        \begin{itemize}
+            \item Auswahl der \glspl{pbi} für Selected Backlog für nächsten Sprint
+            \item Team entscheidet auf Basis von Kapazität und \gls{Velocity}, ob Story noch im Sprint realisierbar ist
+            \begin{equation}
+                \text{Gesamtlaufzeit des Backlogs} = \frac{\text{Gesamt-Story-Points}}{\text{Velocity}}
+            \end{equation}
+        \end{itemize}
+         \item[] $\Rightarrow$ \gls{spl} ist festgelegt
+    \end{itemize}
+    \item \textbf{Design-Teil} (wie)
+    \begin{itemize}
+        \item Entwicklungsteam und \gls{sm} identifizieren Tasks (konkrete Implementierungsaufgaben) für die Umsetzung der ausgewählten \glspl{pbi}
+    \end{itemize}
+\end{itemize}
+\begin{myTheorem}{Velocity}{thm:velocity}
+\Gls{Velocity} ist ein Maß für die Arbeitsleistung eines Scrum-Teams und gibt an, wie viele Story Points das Team in einem Sprint erfolgreich abschließt. Es dient als wichtige Kennzahl, um die Effizienz und Produktivität des Teams über mehrere Sprints hinweg zu bewerten.
+\end{myTheorem}
+
+\subsection{Durchführung von Sprints}
+
+\begin{myTheorem}{Sprint}{thm:sprint}
+
+\end{myTheorem}
+\subsection*{Überprüfen des Sprintfortschritts}
+\begin{myTheorem}{Burndown-Chart}{thm:burnchart}
+Die Anzahl der nicht erledigten Arbeiten bzw. des verbleibenden Aufwands, gemessen in Task oder Story Points, visualisiert in einem sog. Restaufwandsdiagramm. 
+\end{myTheorem}
+
+\subsection*{Sprint Nacharbeit}
+\subsubsection*{Sprint Review}
+\begin{itemize}
+    \item Alle Rollen
+    \item Präsentation von Product Incrememt
+    \item \gls{po} entscheidet, ob es akzeptiert wird 
+    \item es kann theoretisch alles geändert oder auch verworfen werden
+\end{itemize}
+
+\subsubsection*{Sprint Retrospektive}
+\begin{itemize}
+    \item Entwicklungsteam und \gls{sm}
+    \item Analyse des Sprints
+    \item Positives, Probleme & Verbesserungsmöglichkeiten werden diskutiert
+    \item Impediments werden an den \gls{sm} kommuniziert
+\end{itemize}
+
+
+\section{Fragen}
+\subsubsection*{Warum werden für die Release-Planung und die Sprintplanung verschiedene Einheiten für die zu schätzenden Aufgaben verwendet?}
+\subsubsection*{Was sind Vor- und Nachteile der Schätzung und Messung in Task-Points gegenüber der Verwendung von Stunden?}
+\subsubsection*{Was sind Vor- und Nachteile von kurzen
+(<3 Wochen) und
+längeren (>= 4 Wochen) Sprints?}
+\subsubsection*{Inwiefern kann der Einsatz von Scrum und
+agilen Methoden helfen, typische Probleme
+des Wasserfallmodells zu reduzieren?}
+\end{document}

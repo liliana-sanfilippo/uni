@@ -1,0 +1,205 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{Software}
+\begin{myTheorem}{Software}{thm:software}
+  Die Programme, Verfahren, zugehörige
+Dokumentation und Daten, die mit dem Betrieb
+eines Rechnersystems zu tun haben. (IEEE 610.12)
+\end{myTheorem}
+\subsection*{Typen von Software}
+\begin{itemize}
+    \item \textbf{Individualsoftware}: 
+    \begin{itemize}
+        \item Software mit spezifischer Funktionalität, die für Auftraggeber*innen entwickelt wird
+    \end{itemize}
+    \item \textbf{Softwareprodukte}: 
+    \begin{itemize}
+        \item Softwareprodukte werden für einen Markt mit einem bestimmten Bedarf entwickelt
+        \item Normalerweise keine direkten Auftraggeber*innen
+    \end{itemize}
+    \item \textbf{Softwareplattform}: 
+    \begin{itemize}
+        \item Ein Softwareprodukt, dass den Aufbau neuer Anwendungen in derselben Plattform erlaubt
+    \end{itemize}
+    \item \textbf{Software realisiert Systeme}:
+    \begin{itemize}
+        \item Mengen von Programmen genügen nicht; wir brauchen Systeme
+        \item Zusammenspiel vieler verteilter Bausteine aus Hardware und Software notwendig
+        \item Durch die (notwendige) Systemintegration wird aus vielen einfachen kleinen Teilproblemen ein komplexes und schwieriges Gesamtproblem!
+    \end{itemize}
+\end{itemize}
+\subsection*{Eigenschaften von Software}
+\begin{itemize}
+    \item \textbf{immateriell}: Software ist abstrakt und mit unseren Sinnen nicht direkt wahrnehmbar!
+    \begin{itemize}
+        \item Fehler sind schwieriger erkennbar
+        \item Entwicklungsstand sowie Qualität schwer zu beurteilen
+    \end{itemize}
+    \item \textbf{unstet}
+    \begin{itemize}
+        \item Kleinste Veränderungen der Software führen ggf. zu massiven Änderungen im Systemverhalten
+        \item Zusammenhang zwischen Eingabe und Ausgabe nicht durch eine kontinuierliche Funktion beschreibbar
+        \item Valider Funktionsnachweis schwierig, insbesondere im Nachhinein, ggf. schwieriger als in anderen Domänen
+        \item Nicht-triviale Softwaresysteme sind intrinsisch komplex
+    \end{itemize}
+    \item \textbf{benötigt Qualität}
+    \begin{itemize}
+        \item \underline{Zuverlässigkeit}: Software darf im Fall des Versagens keine physischen oder ökonomischen Schäden verursachen
+        \item \underline{Benutzbarkeit}: Software muss sich nach den Bedürfnissen der Benutzer richten, die Benutzerschnittstelle muss ergonomisch und selbsterklärend sein und die Dokumentation muss zielgerecht zur Verfügung stehen
+        \item \underline{Wartbarkeit}: Software muss an neue Anforderungen anpassbar sein und sollte möglichst plattformunabhängig sein
+        \item \underline{Effizienz} Software muss ökonomischen Gebrauch von Ressourcen des unterliegenden Systems machen
+        \item \underline{nicht-funktionale Qualitätseigenschaften} \ref{sec:vl3}
+    \end{itemize}
+    \item \textbf{verändert Realität}
+    \begin{itemize}
+        \item \underline{Automatisierung oder Unterstützung} von menschlicher Arbeit, technischen oder sozialen Abläufen und in beliebigen Anwendungsbereichen
+        \item in ständiger \underline{Wechselwirkung} mit Arbeitsprozessen, Produktionsprozessen und Menschen 
+        \item hat zwei hauptsächliche \textbf{Herausforderungen}: Das Problem im Kontext des jeweiligen Anwendungsbereichs verstehen und die Problemlösung auf Software abbilden
+    \end{itemize}
+\end{itemize}
+\subsection*{Der Software Lebenszyklus}
+\begin{itemize}
+    \item \textbf{Analyse und Spezifikation:} Was soll das System machen?
+    \item \textbf{Entwicklung:} Erstellung des Systems, Integration und Test.
+    \item \textbf{Abnahme:} Übereinstimmung mit den Kundenanforderungen.
+    \item \textbf{Betrieb:} Installation beim Kunden, Wartung.
+    \item \textbf{Evolution:} Weiterentwicklung gemäß neuer Kundenanforderungen oder Ausmusterung.
+\end{itemize}
+
+\section{Software Engineering}
+\begin{myTheorem}{Software Engineering}{thm:se}
+Software Engineering ist die Anwendung eines
+\textbf{systematischen}, \textbf{disziplinierten} und \textbf{quantifizierbaren}
+Ansatzes auf die \textbf{Entwicklung}, den \textbf{Betrieb} und die \textbf{Wartung}
+von Software, das heißt, die Anwendung der Prinzipien des
+Ingenieurwesens auf Software. (IEEE 610.12)
+\end{myTheorem}
+
+\begin{itemize}
+    \item \textbf{Systematisch}: Klar abgegrenzte Einzelschritte und Ein- und Ausgaben sind definiert
+    \item \textbf{Diszipliniert}: Vorgehen folgt organisierten Prinzipien, feste Rollendefinitionen, sorgfältige Dokumentation
+    \item \textbf{Quantifizierbar}: Schätzung und Messung von relevanten Größen und vorhersagbar mit begründbaren und akzeptablen Grenzen
+\end{itemize}
+
+\subsection*{Typen von Software Engineering} 
+\begin{figure}
+    \centering
+    \begin{subfigure}
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+    \end{subfigure}
+    \begin{subfigure}
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+    \end{subfigure}
+    \begin{subfigure}
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+    \end{subfigure}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+\begin{table}[H]
+    \centering
+   \begin{tabular}{p{1.8cm} p{3.8cm} p{3.8cm} p{3.8cm} } 
+    \textbf{Merkmal} & \textbf{Projektbasiertes Software Engineering}   & \textbf{Produktorientiertes Software Engineering} & \textbf{Produktmanagement in Softwareprojekten}  \\  \hline
+    \scriptsize{Ausgangspunkt} & Kundenanforderungen & Geschäftsidee oder Marktlücke & Interne strategische Planung \\  
+    \scriptsize{Zielsetzung} & Individuelle Software, die spezifische Anforderungen erfüllt & Entwicklung eines marktfähigen Softwareprodukts & Steuerung der Entwicklung, Vermarktung und Wartung eines Produkts  \\  
+    \scriptsize{Kundenfokus} & Externer Kunde mit spezifischen Anforderungen & Kein externer Kunde; Fokus auf Marktanforderungen & Schnittstelle zwischen Kunden, Unternehmen und Entwicklungsteam \\  
+    \scriptsize{Flexibilität} & Anforderungen können sich während der Entwicklung ändern & Time-to-Market hat Priorität, daher weniger flexibel & Anpassung an Kundenbedürfnisse und Marktanforderungen \\  
+    \scriptsize{Lebensdauer der Software} & Lange Lebensdauer (10 Jahre oder mehr) mit langfristiger Unterstützung & Abhängig von Marktakzeptanz und Produktstrategie & Überwachung des gesamten Produktlebenszyklus \\ 
+    \scriptsize{Entscheidungs- findung} &Kunde gibt Anforderungen vor & Entscheidungen durch internes Produktmanagement & Produktmanager*innen tragen Gesamtverantwortung \\  
+    \scriptsize{Hauptfokus} & Kundenorientierte Lösung &  Marktgerechtes Produkt& Langfristige Produktstrategie und -planung \\  
+\end{tabular}
+    \caption{Typen von Software Engineering}
+    \label{tab:setypen}
+\end{table}
+
+\subsection*{Softwareentwicklungsprozesse}
+\begin{myTheorem}{Softwareprozess}{thm:softwareprozess}
+Satz von Aktivitäten dessen Ziel die Entwicklung oder
+Weiterentwicklung von Software ist.
+\end{myTheorem}
+\begin{myTheorem}{Software development process}{thm:softwareprocess}
+The process by which user needs are translated
+into a software product. The process involves translating user needs into software
+requirements, transforming the software requirements into design, implementing
+the design in code, testing the code, and sometimes, installing and checking out the
+software for operational use. (IEEE 610.12)
+\end{myTheorem}
+\subsubsection*{Naives Vorgehen}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{2cm} p{13.5cm}}
+           \scriptsize{Name} & \textbf{Code-and-Fix}  \\ \\
+       \scriptsize{Vorgehen}  & Vorläufiges Programm erstellen; Anforderung, Entwurf, Testen, Wartung überlegen; Programm entsprechend verbessern \\ \\
+       \scriptsize{Eigenschaften} & \textbf{keine}: Spezifikation, Entwurf, nachvollziehbare Systematik \\  \\
+       \scriptsize{Vorteile} & schnell, einfach\\ \\
+       \scriptsize{Nachteile} & nicht planbar, Teamarbeit unmöglich, Programme schlecht strukturiert, keine bestimmten Anforderungen, extrem hoher Korrekturaufwand, schlechte Dokumentation - also \textbf{schlechte Qualität} und \textbf{teuer}
+    \end{tabular}
+\end{table}
+\subsubsection*{Generelle Schritte}
+\begin{enumerate}
+    \item Anwendung
+    \begin{itemize}
+        \item Nutzung
+        \item Sonderfälle
+        \item Performance
+        \item Technologische oder regulatorische Vorgaben
+    \end{itemize}
+    \item Struktur
+    \begin{itemize}
+        \item Benutzeroberfläche
+        \item Architektur
+        \item Klassen
+        \item Algorithmik
+        \item Programmiersprache
+    \end{itemize}
+    \item Programmierung
+    \begin{itemize}
+        \item Modularität
+        \item Nutze Code-Standards und Muster (Erklärbarkeit)
+        \item Standardbibliotheken 
+        \item Fehlerbehandlungen
+    \end{itemize}
+    \item Testen 
+    \begin{itemize}
+        \item Korrekte Funktionalität
+        \item Robustheit und Fehlervermeidung
+        \item Performance-Aspekte
+        \item Erweiterbarkeit
+    \end{itemize}
+    \item Aufwandsschätzung
+    \begin{itemize}
+        \item Aufwände, benötigte Ressourcen und Dauer
+        \item eine Implementierungszeit und Aspekte wie Pausen, Tests, Debugging und reale Faktoren wie Verzögerungen
+    \end{itemize}
+\end{enumerate}
+\subsubsection*{Beispiel}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{2cm} p{13.5cm}}
+        \scriptsize{Name} & Wasserfallmodell  \\ \\
+        \scriptsize{Typ} & dokumentengetriebenes Modell \\ \\
+       \scriptsize{Vorgehen}  & \\ \\
+       \scriptsize{Eigenschaften} &  \\  \\
+       \scriptsize{Vorteile} &  \\ \\
+       \scriptsize{Nachteile} & 
+    \end{tabular}
+\end{table}
+\subsubsection*{Vorgehens- vs. Prozessmodelle}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{2cm} p{6.75cm} p{6.75cm}}
+        \scriptsize{Name} & \textbf{Vorgehensmodell} & \textbf{Prozessmodell} \\ \\
+        \scriptsize{Umfang} & Auszuführende Entwicklungsschritte und deren Reihenfolge  & Verfahren zur Anforderungserhebung und Prüfung von Zwischenergebnissen,  Projektphasen, Meilensteine und Prüfkriterien, Notationen und Terminologie, Werkzeuge\\ \\
+        \scriptsize{Fokus} & Praktische Umsetzung der Entwicklung & Umfassende Sicht auf den gesamten Softwareentwicklungsprozess \\ \\
+        \scriptsize{Flexibilität} & Oft weniger formal und flexibler in der Anwendung & Strukturierter und formeller Ansatz \\ \\
+    \end{tabular}
+\end{table}
+%\section{Motivation}
+%\section{Konzept}
+\end{document}

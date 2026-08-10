@@ -34,6 +34,9 @@ them, thank you.
 - **Genomforschung** (WS 2025/26)
   -  [Genomforschung Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/Genomforschung.pdf)
   - [Karteikarten für Anki](https://github.com/liliana-sanfilippo/uni/blob/main/genomforschung)
+- **Grundlagen des Software Engineering**
+  - Lernzettel / Aufarbeitung begonnen, feel free. 
+  - [Projektcode](https://github.com/liliana-sanfilippo/g-se-ws-2024-lsanfilippo)
 - **Grundlagen Molekularer Biologie 2** (SS2026)
     - [Grundlagen Molekularer Biologie 2 Aufarbeitung PDF](https://liliana-sanfilippo.github.io/uni/mobi2.pdf)
     - [Karteikarten und Definitionen in Latex-Form](https://github.com/liliana-sanfilippo/uni/tree/main/mobi2/glossary) (weitere

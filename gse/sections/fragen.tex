@@ -1,0 +1,1390 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\subsection{Planung bei Scrum}
+\subsubsection*{Welche zwei Planungshorizonte gibt es?} %checked
+\begin{itemize}
+    \item 
+    \textbf{Langfristige Planung (Release Planning):} Inhaltliche und zeitliche Planung der Softwareauslieferung (welche Features und Funktionalitäten in den kommenden Releases implementiert werden sollen). \textbf{1-4 Monate}.  
+    \item \textbf{Kurzfristige Planung (\gls{Sprint Planning}):} plant Aktivitäten für eine einzelne Iteration (legt fest, welche Aufgaben und \glspl{User Story} im aktuellen \gls{Sprint} bearbeitet werden sollen). \textbf{1-4 Wochen}.
+\end{itemize}
+\subsubsection*{Wie schätzt und misst man den Gesamtaufwand?} %checked
+Durch Schätztechniken wie \gls{Planning Poker}.
+\begin{itemize} 
+    \item relativen Größen
+    \item braucht Referenz, Einheit und Skala
+\end{itemize}
+\subsubsection*{Gibt es die Möglichkeit, längerfristig zu planen?} %checked
+Ja, mit \textbf{Release Planung} gibt es die Möglichkeit, längerfristig zu planen. Jedoch ist diese Planung flexibler und kann sich während der Iterationen ändern, basierend auf den Ergebnissen und dem Feedback. Langfristige Planungen richten sich oft nach den Releases, die auch die Roadmap des Produkts darstellen. \\ 
+Langrfritisg planen kann man bspw. durch 
+\begin{itemize}
+    \item \textbf{Identifikation von Releases:} Bestimmung der wichtigsten Releases, die auf der Roadmap des Produkts basieren.
+    \item \textbf{Priorisierung von Anforderungen:} Festlegung, welche \glspl{User Story} oder Features in den kommenden Releases umgesetzt werden sollen.
+    \item \textbf{Schätzung der Implementierungsdauer:} Einschätzung des Aufwands für die Umsetzung der \glspl{User Story}, um realistische Zeitpläne zu erstellen.
+    \item \textbf{Flexibilität in der Planung:} Die Planung sollte anpassbar sein, um auf Veränderungen in den Anforderungen und Feedback aus den \glspl{Sprint} reagieren zu können.
+    \item \textbf{Regelmäßige Überprüfung:} Bei jedem \gls{Sprint Review} sollte die langfristige Planung überprüft und angepasst werden, um sicherzustellen, dass sie weiterhin relevant und realistisch ist.
+\end{itemize}
+\subsubsection*{Was umfasst die Planung?} %checked
+\begin{itemize}
+    \item Identifikation und Priorisierung von Anforderungen (\glspl{User Story})
+    \item Schätzung von Aufwand und Risiken
+    \item Zeitplan entlang der Iterationeo: Definition von Zielen und Erfolgskriterien für die \glspl{Sprint}
+    \item Erstellung eines \gls{Sprint}-Backlogs, das die zu bearbeitenden Aufgaben enthält
+\end{itemize}
+
+\subsubsection*{Was ist relevant für die Planung?} %semichecked
+\begin{itemize}
+    \item Die Erfahrungen aus vorherigen \glspl{Sprint}
+    \item Die Teamkapazität und -verfügbarkeit
+    \item Die Prioritäten des \gls{po}s
+    \item Technische Abhängigkeiten und Risiken
+\end{itemize}
+
+\subsubsection*{Was passiert in einem \gls{Sprint}, in einer Iteration?} %checked
+\begin{itemize}
+    \item festgelegter Satz an \glspl{User Story} aus dem \gls{Product Backlog} ausgewählt und umgesetzt
+\end{itemize}
+Eventuell auch: 
+\begin{itemize}
+    \item \gls{Daily Scrum}
+    \item Überprüfen des \gls{Sprint}fortschritts
+\end{itemize}
+Danach: \gls{Sprint Review} und ein \gls{Sprint Retrospective}
+
+\subsubsection*{Sollten alle Anforderungen im ersten \gls{Sprint} implementiert werden?} %checked
+\textbf{Nein}, nicht alle Anforderungen sollten im ersten \gls{Sprint} implementiert werden. Es ist ratsam, \textbf{die wichtigsten Anforderungen zuerst} zu bearbeiten, um schnell Feedback zu erhalten und den Fokus auf die wichtigsten Features zu legen.
+
+\subsubsection*{Was ist die \gls{Velocity} in Scrum?} %checked
+Die \gls{Velocity} ist ein \textbf{Maß} für die \textbf{Menge an Arbeit}, die ein Scrum-Team \textbf{in einem \gls{Sprint}} erledigen kann. Sie wird in der Regel in \glspl{sp} oder anderen Maßeinheiten ausgedrückt und hilft Teams, ihre Kapazität für zukünftige \glspl{Sprint} zu schätzen.
+
+\subsubsection*{Wie funktioniert das Release Planning?} 
+Im Release Planning wird festgelegt, welche Features in den nächsten Releases des Produkts implementiert werden. Das Team priorisiert die \glspl{User Story} im \gls{Product Backlog} und plant die Releases basierend auf der geschätzten \gls{Velocity} und den verfügbaren Ressourcen.
+
+\subsubsection*{Was macht der \gls{po} ?}
+Der \gls{po} ist verantwortlich für das \textbf{Management des \gls{Product Backlog}s}. Dazu gehört das \textbf{Priorisieren von Anforderungen}, das Klären von Fragen des Teams und das Sicherstellen, dass die Entwicklungsteams die richtigen Features zur richtigen Zeit umsetzen, um den maximalen Wert für das Unternehmen zu liefern.
+
+\subsubsection*{Wie belastbar ist eine Schätzung?}
+Schätzungen in Scrum sind \textbf{Annäherungen und nicht genau}. Sie basieren auf dem Wissen und den Erfahrungen des Teams und können durch neue Informationen, Änderungen der Anforderungen oder technische Herausforderungen variieren.
+
+\subsubsection*{Wie kann man erklären, dass die Ziele realistisch sind?}
+Die Realisierbarkeit der Ziele kann durch die Analyse der Teamkapazität, vergangene \glspl{Sprint} (insbesondere die \gls{Velocity}) und durch Einbeziehung von Stakeholdern und Teammitgliedern in die Schätzungen und Planungen erklärt werden.
+
+\subsubsection*{Wie belastbar ist ein vorgelegter Zeitplan?}
+Ein vorgelegter Zeitplan ist belastbar, solange er regelmäßig überprüft und angepasst wird. In Scrum ist es wichtig, flexibel zu bleiben und auf neue Informationen oder Veränderungen im Projektumfeld zu reagieren.
+
+\subsubsection*{Was ist am Ende des \glspl{Sprint} bekannt?}
+Am Ende des \glspl{Sprint} ist bekannt, welche \glspl{User Story} abgeschlossen wurden, ob die \gls{Sprint}-Ziele erreicht wurden und welche Erkenntnisse aus dem \gls{Sprint} gewonnen wurden. Das Team hat ein potenziell lieferbares Produktinkrement erstellt.
+ 
+\subsubsection*{Woran lässt sich das ablesen?}
+Das lässt sich an der Fertigstellung der \glspl{User Story} im \gls{Sprint Backlog}, den Ergebnissen der \gls{Sprint Review} und den Feedback-Runden ablesen. Auch die Retrospektive bietet Einblicke in die Teamdynamik und die Qualität der Arbeit.
+
+\subsection{Charakterisierung Software-Engineering}
+\subsubsection*{Was macht man im Software-Engineering?}
+Im Software-Engineering werden systematische Methoden und Techniken angewendet, um Softwareprodukte zu entwerfen, zu entwickeln, zu testen und zu warten. Die Hauptaktivitäten umfassen:
+\begin{itemize}
+    \item Anforderungsanalyse: Erfassung und Spezifizierung der Anforderungen an die Software.
+    \item Entwurf: Planung der Architektur, Module und Schnittstellen der Software.
+    \item Implementierung: Programmierung und Realisierung der Software basierend auf dem Entwurf.
+    \item Testen: Überprüfung der Software auf Funktionalität, Leistung, Sicherheit und Benutzerfreundlichkeit.
+    \item Wartung: Anpassungen und Verbesserungen nach der Auslieferung, um Fehler zu beheben und neue Anforderungen zu integrieren.
+\end{itemize}
+
+\subsubsection*{In welche Artefakte werden funktionale Anforderungen überführt?}
+Funktionale Anforderungen werden in verschiedene Artefakte überführt, darunter:
+\begin{itemize}
+    \item \glspl{Use Case}: Beschreiben, wie Benutzer mit dem System interagieren.
+    \item \glspl{User Story}: Kurze Beschreibungen von Anforderungen aus der Perspektive der Benutzer.
+    \item \gls{Lastenheft}: Dokument, das die Anforderungen und Erwartungen des Auftraggebers beschreibt.
+    \item \gls{Pflichtenheft}: Detaillierte Beschreibung, wie die Anforderungen erfüllt werden sollen, einschließlich technischer Spezifikationen.
+    \item Prototypen: Visuelle Darstellungen der Software, um Anforderungen zu testen und Feedback zu sammeln.
+\end{itemize}
+
+\subsubsection*{Wo findet das Anforderungsmanagement statt?}
+Das Anforderungsmanagement findet in der Regel in der Phase der Anforderungsanalyse statt, die Teil des gesamten Softwareentwicklungsprozesses ist. Dies geschieht in enger Zusammenarbeit zwischen Stakeholdern, Kunden und dem Entwicklungsteam. Es wird oft in einem agilen Umfeld kontinuierlich während des gesamten Lebenszyklus des Projekts durchgeführt, um sicherzustellen, dass die Anforderungen aktuell und relevant bleiben.
+
+\subsubsection*{Wie ist eine \gls{usc} aufgebaut?}
+Eine \gls{usc} ist typischerweise einfach strukturiert und enthält folgende Elemente:
+\begin{itemize}
+    \item Titel: Eine kurze Beschreibung der \gls{User Story}.
+    \item Beschreibung: 
+    \begin{itemize}
+        \item Wer: Der Benutzer oder die Benutzergruppe (Akteur).
+        \item Was: Die Funktionalität oder das gewünschte Ziel.
+        \item Warum: Der Nutzen oder die Motivation hinter der Anforderung.
+    \end{itemize}
+    \item Akzeptanzkriterien: Bedingungen, die erfüllt sein müssen, damit die \gls{User Story} als abgeschlossen gilt.
+    \item Schätzung: Eine Schätzung des Aufwands (z.B. in \glspl{sp}).
+\end{itemize}
+
+\subsubsection*{Welche Methoden zur Aufwandschätzung gibt es?}
+Es gibt verschiedene Methoden zur Aufwandschätzung, darunter:
+\begin{itemize}
+    \item \gls{Planning Poker}: Eine Schätztechnik, bei der Teammitglieder Karten mit Schätzungen verwenden.
+    \item T-Shirt-Größen: Eine einfache Methode, um Anforderungen in Größen (XS, S, M, L, XL) zu kategorisieren.
+    \item Delphi-Methode: Eine strukturierte Kommunikationsmethode zur Schätzung durch Experten.
+    \item Analogie-Schätzung: Vergleich mit ähnlichen, bereits durchgeführten Projekten oder Aufgaben.
+    \item Punkteschätzung: Verwendung von \glspl{sp} zur Schätzung der Komplexität.
+\end{itemize}
+
+\subsubsection*{Erfassung von Anforderungen}
+Die Anforderungen werden typischerweise in folgende Kategorien unterteilt:
+\begin{itemize}
+    \item Funktionale Anforderungen: Beschreiben, was das System tun soll.
+    \item Nicht-funktionale Anforderungen: Beschreiben die Qualitätsmerkmale des Systems, wie z.B. Leistung, Sicherheit, Usability und Wartbarkeit.
+    \item Technische Anforderungen: Beziehen sich auf die technischen Aspekte, die für die Implementierung notwendig sind.
+    \item Geschäftliche Anforderungen: Umfassen die Ziele und Bedürfnisse des Unternehmens.
+\end{itemize}
+
+\subsection{Herausforderungen bei der Anforderungsanalyse}
+\subsubsection*{Kann man Anforderungen systematisch erfassen?} %TODO
+Ja, Anforderungen können systematisch erfasst werden. Methoden wie Interviews, Workshops, Umfragen, Beobachtungen und die Analyse bestehender Dokumente helfen dabei, die Bedürfnisse und Erwartungen der Stakeholder zu verstehen. Techniken wie \glspl{Use Case}, \glspl{User Story} und Personas werden oft verwendet, um Anforderungen klar zu definieren und zu dokumentieren.
+
+\subsubsection*{Was ist das Format eines Anwendungsfalls?}
+Ein Anwendungsfall (Use Case) beschreibt eine Interaktion zwischen einem Benutzer (Akteur) und einem System, um ein bestimmtes Ziel zu erreichen. Das Format eines Anwendungsfalls umfasst typischerweise:
+\begin{itemize}
+    \item \textbf{Titel:} Name des Anwendungsfalls
+    \item \textbf{Akteure:} Wer interagiert mit dem System?
+    \item \textbf{Ziel:} Was soll erreicht werden?
+    \item \textbf{Vorbedingungen:} Bedingungen, die erfüllt sein müssen, bevor der Anwendungsfall gestartet werden kann.
+    \item \textbf{Ablauf:} Eine Schritt-für-Schritt-Beschreibung der Interaktion.
+    \item \textbf{\glspl{Nachbedingung}:} Zustand des Systems nach der Durchführung des Anwendungsfalls.
+    \item \textbf{Alternativabläufe:} Abweichungen oder Fehlerbehandlungen während des Ablaufs.
+\end{itemize}
+
+\subsubsection*{Sind Anwendungsfälle nur für den Entwurf geeignet?}
+Nein, Anwendungsfälle sind nicht nur für den Entwurf geeignet. Sie dienen auch der Anforderungsanalyse, da sie helfen, die Anforderungen an das System aus der Perspektive der Benutzer zu verstehen. Anwendungsfälle können in verschiedenen Phasen des Softwareentwicklungsprozesses verwendet werden, einschließlich der Analyse, des Designs und der Validierung.
+
+\subsubsection*{Wie erfasst man Anforderungen?}
+Anforderungen können durch verschiedene Methoden erfasst werden, darunter:
+\begin{itemize}
+    \item \textbf{Interviews mit Stakeholdern:} Direkte Gespräche, um die Bedürfnisse zu verstehen.
+    \item \textbf{Workshops und Brainstorming-Sitzungen:} Gemeinsame Diskussionen zur Erfassung von Ideen und Anforderungen.
+    \item \textbf{Beobachtungen:} Analyse der aktuellen Arbeitsabläufe und Systeme der Benutzer.
+    \item \textbf{Dokumentenanalysen:} Überprüfung vorhandener Dokumentationen und Systembeschreibungen.
+    \item \textbf{\gls{Prototyping}:} Erstellung von Modellen oder Mockups, um Feedback zu den Anforderungen zu erhalten.
+\end{itemize}
+
+
+\subsubsection*{Wenn der Kunde nicht alles beschreiben/erklären kann - wie geht man vor?}
+Wenn der Kunde nicht alle Anforderungen klar beschreiben kann, kann man folgende Ansätze verfolgen:
+\begin{itemize}
+    \item \textbf{Interaktive Workshops:} Durch gezielte Fragen und Diskussionen können Anforderungen schrittweise erarbeitet werden.
+    \item \textbf{\gls{Prototyping}:} Visuelle oder funktionale Prototypen helfen, die Vorstellungen des Kunden zu konkretisieren.
+    \item \textbf{Iterative Rückmeldungen:} Regelmäßige Überprüfungen und Feedback-Runden während des Entwicklungsprozesses, um Missverständnisse zu klären und Anforderungen zu verfeinern.
+    \item \textbf{Verwendung von Personas:} Erstellung von Personas, um die Benutzerbedürfnisse besser zu verstehen und zu kommunizieren.
+\end{itemize}
+
+
+\subsubsection*{Was soll die Software am Ende alles können?}
+Die Software sollte am Ende die definierten funktionalen und nicht-funktionalen Anforderungen erfüllen. Dazu gehören:
+\begin{itemize}
+    \item \textbf{Erfüllung der Benutzerbedürfnisse und -erwartungen.}
+    \item \textbf{Bereitstellung der notwendigen Funktionen und Features.}
+    \item \textbf{Sicherstellung von Qualität, Leistung, Sicherheit, Usability und Wartbarkeit.}
+\end{itemize}
+
+\subsubsection*{Lasten- und \gls{Pflichtenheft}}
+\begin{itemize}
+    \item \textbf{\gls{Lastenheft}}: Dokument, das die Anforderungen und Erwartungen des Auftraggebers an das System beschreibt. Es enthält die Ziele, Funktionalitäten und Rahmenbedingungen.
+    \item \textbf{\gls{Pflichtenheft}}: Detaillierte Beschreibung, wie die Anforderungen aus dem \gls{Lastenheft} umgesetzt werden sollen. Es enthält technische Spezifikationen, Systemarchitektur und Implementierungsdetails.
+\end{itemize} 
+
+\subsubsection*{Welche Aktivitäten gibt es, um die Analyse durchzuführen?}
+Aktivitäten zur Durchführung der Anforderungsanalyse können Folgendes umfassen:
+\begin{itemize}
+    \item \textbf{Interviews und Umfragen:} Um die Meinungen und Bedürfnisse der Stakeholder zu erfassen.
+    \item \textbf{Workshops:} Gemeinsame Diskussionen zur Ideenfindung und Anforderungsdefinition.
+    \item \textbf{\gls{Prototyping}:} Entwicklung von Prototypen, um Anforderungen zu testen und Feedback zu sammeln.
+    \item \textbf{Erstellung von Personas:} Nutzung von Personas, um die Benutzerbedürfnisse zu verstehen.
+    \item \textbf{Nutzung von \glspl{User Story}:} Erfassung der Anforderungen in Form von \glspl{User Story}.
+\end{itemize}
+
+\subsubsection*{Unterschied zwischen \gls{User Story} und \gls{Szenario}?}
+\begin{itemize}
+    \item \textbf{\gls{User Story}}: Eine kurze, einfache Beschreibung einer Funktionalität aus der Sicht des Endbenutzers, oft im Format: "Als [Benutzertyp] möchte ich [Ziel], damit [Nutzen]." \glspl{User Story} sind in der Regel weniger detailliert und bieten Raum für Diskussion und Anpassungen.
+    \item \textbf{\gls{Szenario}}: Ein \gls{Szenario} ist eine detailliertere Beschreibung einer spezifischen Situation, in der ein Benutzer mit dem System interagiert. Es beschreibt den Kontext und die Schritte einer Interaktion und kann mehrere \glspl{User Story} umfassen.
+\end{itemize}
+
+\subsection{Struktur eines Anwendungsfalls}
+\subsubsection*{Wie ist das Dokument des \gls{Use Case} strukturiert?}
+\begin{itemize}
+    \item \textbf{Titel:} Eine klare und prägnante Bezeichnung des Anwendungsfalls.
+    \item \textbf{Ziel:} Eine kurze Beschreibung des Ziels des Anwendungsfalls und was erreicht werden soll.
+    \item \textbf{Akteure:} Die Benutzer oder Systeme, die mit dem Anwendungsfall interagieren, darunter:
+    \begin{itemize}
+        \item Primäre Akteure: Die Hauptbenutzer, die die Funktionalität nutzen.
+        \item Sekundäre Akteure: Andere Systeme oder Personen, die mit dem Anwendungsfall interagieren.
+    \end{itemize}
+    \item \textbf{Vorbedingungen:} Bedingungen, die erfüllt sein müssen, bevor der Anwendungsfall gestartet werden kann.
+    \item \textbf{Ablauf:} Eine Schritt-für-Schritt-Beschreibung der Interaktion zwischen dem Akteur und dem System, einschließlich Hauptablauf und Alternativabläufe.
+    \item \textbf{\glspl{Nachbedingung}:} Der Zustand des Systems nach der Durchführung des Anwendungsfalls.
+    \item \textbf{Akzeptanzkriterien:} Die spezifischen Bedingungen, die erfüllt sein müssen, damit der Anwendungsfall als erfolgreich abgeschlossen gilt.
+    \item \textbf{Besondere Anforderungen:} Zusätzliche Informationen oder Anforderungen, die für den Anwendungsfall relevant sind.
+    \item \textbf{Ereignisse:} Eine Liste von Ereignissen oder Triggern, die den Anwendungsfall auslösen können.
+\end{itemize}
+
+\subsection{Agile Softwareentwicklung}
+\subsubsection*{Wie geht man in einem agilen Prozess vor?}
+In einem agilen Prozess folgt man einem iterativen und inkrementellen Ansatz, der es Teams ermöglicht, flexibel auf Änderungen zu reagieren und kontinuierlich Feedback zu integrieren. Die Schritte umfassen typischerweise:
+\begin{itemize}
+    \item Planung (\gls{Sprint Planning})
+    \item Durchführung (\gls{Sprint Execution})
+    \item Überprüfung (\gls{Sprint Review})
+    \item Retrospektive (\gls{Sprint Retrospective})
+\end{itemize}
+
+\subsubsection*{Was sind Kennzeichen von Scrum?} %TODO
+Die Kennzeichen von Scrum umfassen:
+\begin{itemize}
+    \item Rollen: \gls{po} , \gls{sm}, Entwicklungsteam.
+    \item Artefakte: \gls{Product Backlog}, \gls{Sprint Backlog}, Increment.
+    \item Ereignisse: \gls{Sprint}, \gls{Sprint Planning}, \gls{Daily Scrum}, \gls{Sprint Review}, \gls{Sprint Retrospective}.
+    \item Iterative Entwicklung: Regelmäßige \glspl{Sprint} zur Lieferung von funktionsfähiger Software.
+\end{itemize}
+
+\subsubsection*{Was ist das Prozessmodell?}
+Das Prozessmodell in Scrum beschreibt den iterativen und inkrementellen Ansatz zur Softwareentwicklung. Es beinhaltet:
+\begin{itemize}
+    \item Kurze Entwicklungszyklen (\glspl{Sprint})
+    \item Regelmäßige Überprüfung und Anpassung
+    \item Fokussierung auf die Lieferung von Wert für den Kunden.
+\end{itemize}
+
+\subsubsection*{Welche Motive gibt es für agile Methoden?} %TODO
+Motive für agile Methoden sind:
+\begin{itemize}
+    \item Flexibilität bei sich ändernden Anforderungen
+    \item Höhere Kundenzufriedenheit durch kontinuierliches Feedback
+    \item Verbesserte Teamarbeit und Kommunikation
+    \item Schnellere Lieferzeiten und bessere Qualität: Vermeidung von Zeitverzug 
+    \item Vermeidung von Über-Analyse
+    \item Vermeidung von Bürokratisierung des Entwicklungsprozesses
+\end{itemize}
+
+\subsubsection*{Welche Motivation gibt es für agile Methoden?}
+Die Motivation für agile Methoden ist, die Effizienz und Effektivität der Softwareentwicklung zu steigern, indem man:
+\begin{itemize}
+    \item Kundenengagement fördert
+    \item Risiken frühzeitig identifiziert und mindert
+    \item Die Anpassungsfähigkeit an sich ändernde Marktbedingungen verbessert.
+\end{itemize}
+
+\subsubsection*{Wie sieht grob eine zeitliche Planung aus?}
+Die zeitliche Planung in Scrum erfolgt in \glspl{Sprint}, die in der Regel 1 bis 4 Wochen dauern. Grob sieht die Planung folgendermaßen aus:
+\begin{itemize}
+    \item \gls{Sprint Planning}: Festlegung der Ziele und des Backlogs für den \gls{Sprint}.
+    \item \gls{Daily Scrum}: Kurze tägliche Meetings zur Abstimmung.
+    \item \gls{Sprint Review}: Präsentation der Ergebnisse am Ende des \glspl{Sprint}.
+    \item \gls{Sprint Retrospective}: Reflexion über den Prozess zur kontinuierlichen Verbesserung.
+\end{itemize}
+
+\subsubsection*{Warum wurden die Prinzipien der agilen Software-Entwicklung entwickelt?}
+Die Prinzipien der agilen Software-Entwicklung wurden entwickelt, um:
+\begin{itemize}
+    \item Die Reaktionsfähigkeit auf Veränderungen zu verbessern.
+    \item Die Zusammenarbeit zwischen Stakeholdern zu fördern.
+    \item Die Qualität der Software durch kontinuierliches Feedback zu erhöhen.
+\end{itemize}
+
+
+\subsubsection*{Wie kann man agile Prinzipien umsetzen?}
+Agile Prinzipien können umgesetzt werden durch:
+\begin{itemize}
+    \item Regelmäßige Kommunikation und Zusammenarbeit im Team.
+    \item Iteratives Arbeiten mit kurzen Feedbackzyklen.
+    \item Priorisierung von Anforderungen basierend auf Kundenwert.
+    \item Nutzung von Werkzeugen zur Unterstützung der agilen Praktiken.
+\end{itemize}
+
+\subsubsection*{Wie geht man agil vor?}
+Agil vorzugehen bedeutet, flexibel und anpassungsfähig zu sein, während man:
+\begin{itemize}
+    \item In kurzen Zyklen arbeitet.
+    \item Regelmäßige Anpassungen an den Anforderungen vornimmt.
+    \item Kontinuierliches Feedback von den Stakeholdern einholt.
+\end{itemize}
+
+\subsubsection*{Was sind mögliche Vorgehensweisen?}
+\begin{itemize}
+    \item Scrum
+    \item Kanban
+    \item Extreme Programming (XP)
+    \item Feature Driven Development (FDD)
+\end{itemize}
+
+\subsubsection*{Was meint das iterativ-inkrementelle Vorgehen?}
+\begin{itemize}
+    \item Iteration: Wiederholung von Entwicklungszyklen, um schrittweise Fortschritte zu erzielen.
+    \item Inkrementell: Lieferung von Software in kleinen, funktionsfähigen Teilen (Inkrementen).
+\end{itemize}
+
+\subsubsection*{Hat der Auftraggeber Planbarkeit bei agilen Prozessen?}
+Ja, der Auftraggeber hat Planbarkeit, jedoch ist diese flexibler und anpassungsfähiger.
+
+\subsubsection*{Hat man mit agilen Methoden zeitliche Konsistenz?}
+Mit agilen Methoden kann zeitliche Konsistenz erreicht werden, indem:
+\begin{itemize}
+    \item Die \gls{Velocity} des Teams gemessen wird.
+    \item Regelmäßige Schätzungen und Anpassungen stattfinden.
+\end{itemize}
+
+\subsubsection*{Welche Rolle spielt die Performance des Teams?}
+Die Performance des Teams ist entscheidend für den Erfolg agiler Projekte, da sie direkten Einfluss auf die Geschwindigkeit und Qualität der Ergebnisse hat.
+
+\subsubsection*{Wie misst man die Performance des Teams?}
+Die Performance des Teams kann gemessen werden durch:
+\begin{itemize}
+    \item \gls{Velocity}: Anzahl der \glspl{sp}, die in einem \gls{Sprint} abgeschlossen werden.
+    \item Burndown Charts: Visualisierung des verbleibenden Aufwands im \gls{Sprint}.
+    \item Teamzufriedenheit: Regelmäßige Feedback-Runden und Retrospektiven.
+\end{itemize}
+
+\subsubsection*{Wie wird \gls{Velocity} im \gls{Sprint Planning} genutzt?}
+\begin{itemize}
+    \item Um die Anzahl der \glspl{User Story} zu bestimmen, die in den nächsten \gls{Sprint} aufgenommen werden können.
+    \item Um eine realistische Schätzung des Arbeitsaufwands zu geben.
+\end{itemize}
+
+\subsection{\gls{Kopplung} von Klassen}
+\subsubsection*{Wie können Klassen miteinander gekoppelt sein?}
+Klassen können auf verschiedene Weise gekoppelt sein, darunter:
+\begin{itemize}
+    \item  \gls{Direkte Kopplung}: Eine Klasse verwendet direkt die Methoden oder Attribute einer anderen Klasse.
+    \item  \gls{Indirekte Kopplung}: Eine Klasse nutzt eine dritte Klasse, um mit einer anderen Klasse zu interagieren.
+    \item Datenkopplung: Klassen kommunizieren über gemeinsame Datenstrukturen.
+    \item Kontrollkopplung: Eine Klasse steuert das Verhalten einer anderen Klasse durch Übergabe von Steuerinformationen.
+\end{itemize}
+
+\subsubsection*{Wie können Klassen sich gegenseitig benutzen?}
+Klassen können sich gegenseitig benutzen, indem sie:
+\begin{itemize}
+    \item Methoden der anderen Klasse aufrufen.
+    \item Objekte der anderen Klasse erstellen und deren Methoden verwenden.
+    \item Daten austauschen, indem sie gemeinsame Datenstrukturen oder \glspl{Interface} nutzen.
+\end{itemize}
+
+\subsubsection*{Was bedeutet hohe Kopplung?}
+ \gls{High Coupling} bedeutet, dass Klassen stark voneinander abhängig sind. Änderungen in einer Klasse können erhebliche Auswirkungen auf andere Klassen haben, was die Wartbarkeit und Flexibilität des Systems verringert.
+
+
+\subsubsection*{Warum sollte man sich darüber Gedanken machen?}
+Man sollte sich Gedanken über die \gls{Kopplung} machen, weil:
+\begin{itemize}
+    \item  \gls{High Coupling} die Wartbarkeit und Testbarkeit des Codes erschwert.
+    \item Änderungen in einem Teil des Systems unvorhergesehene Fehler in anderen Teilen verursachen können.
+    \item Eine lose \gls{Kopplung} die Flexibilität und Wiederverwendbarkeit eines Systems erhöht.
+\end{itemize}
+
+\subsubsection*{Was sind die \gls{GRASP-Pattern}?}
+GRASP (General Responsibility Assignment Software Patterns) sind Muster zur Zuweisung von Verantwortlichkeiten in der Softwareentwicklung. Einige der wichtigsten \gls{GRASP-Pattern} sind:
+\begin{itemize}
+    \item \gls{Information Expert}: Verantwortlichkeiten sollten den Klassen zugewiesen werden, die die benötigten Informationen besitzen.
+    \item Creator: Bestimmt, welche Klasse für die Erstellung eines Objekts verantwortlich sein sollte.
+    \item Controller: Eine Klasse, die als Koordinator für Benutzerinteraktionen fungiert.
+\end{itemize}
+
+\subsubsection*{Was sind die \glspl{GRASP-Prinzip}}
+\begin{itemize}
+     \item \gls{Information Expert}: Verantwortlichkeiten sollten den Klassen zugewiesen werden, die die benötigten Informationen besitzen.
+    \item Creator: Bestimmt, welche Klasse für die Erstellung eines Objekts verantwortlich sein sollte.
+    \item Controller: Eine Klasse, die als Koordinator für Benutzerinteraktionen fungiert.
+    \item  \gls{Low Coupling}: Minimiert die Abhängigkeiten zwischen Klassen.
+    \item \gls{High Cohesion}: Fördert die Zusammengehörigkeit von Aufgaben innerhalb einer Klasse.
+\end{itemize}
+
+
+\subsubsection*{Stehen \gls{Kohäsion} und \gls{Kopplung} im Widerspruch?}
+Ja, \gls{Kohäsion} und \gls{Kopplung} stehen oft im Widerspruch zueinander. \gls{High Cohesion} innerhalb einer Klasse bedeutet, dass die Verantwortlichkeiten gut zusammenpassen, während \gls{Low Coupling} zwischen Klassen bedeutet, dass die Klassen unabhängig voneinander arbeiten.
+
+
+\subsubsection*{Wie kann man feststellen, ob eine Klasse kohäsiv ist?}
+Eine Klasse ist kohäsiv, wenn:
+\begin{itemize}
+    \item Alle Methoden und Attribute der Klasse eng miteinander verbunden sind.
+    \item Die Klasse eine klar definierte Rolle im System hat.
+    \item Die Funktionalität der Klasse aus Sicht des Benutzers sinnvoll erscheint.
+\end{itemize}
+
+\subsubsection*{Kann man Metriken wie  \gls{Low Coupling} oder \gls{High Cohesion} berechnen?}
+Ja, es gibt Metriken zur quantitativen Bewertung von \gls{Kohäsion} und \gls{Kopplung}:
+\begin{itemize}
+    \item Kohäsionsmetriken: LCOM (Lack of Cohesion of Methods) bewertet, wie eng die Methoden einer Klasse zusammenarbeiten.
+    \item Kopplungsmetriken: CBO (Coupling Between Objects) bewertet, wie viele andere Klassen mit einer bestimmten Klasse interagieren.
+\end{itemize}
+
+
+\subsubsection*{Nennen Sie Beispiele aus dem Begleitprojekt?} %TODO
+
+\subsubsection*{Wie kann eine \gls{Aggregation} aussehen?}
+\gls{Aggregation} ist eine Form der Beziehung zwischen Klassen, bei der eine Klasse eine andere als Teil von sich enthält, jedoch unabhängig von ihr ist. Beispiel:
+\begin{itemize}
+    \item Eine Library-Klasse kann eine Sammlung von Book-Objekten aggregieren.
+\end{itemize}
+
+
+\subsubsection*{Wofür werden \glspl{Interface} genutzt?}
+\glspl{Interface} werden verwendet, um:
+\begin{itemize}
+    \item Die Implementierung einer Klasse von ihrer Verwendung zu trennen.
+    \item Eine gemeinsame Schnittstelle zu definieren, die von verschiedenen Klassen implementiert werden kann.
+    \item \gls{Low Coupling} zwischen Klassen zu fördern.
+\end{itemize}
+
+\subsubsection*{Warum ist \gls{Kopplung} ein Problem?}
+\gls{Kopplung} ist ein Problem, weil:
+\begin{itemize}
+    \item  \gls{High Coupling} die Wartbarkeit des Codes verringert.
+    \item Änderungen in einer Klasse unvorhergesehene Auswirkungen auf andere Klassen haben können.
+    \item Die Wiederverwendbarkeit von Klassen erschwert wird.
+\end{itemize}
+
+
+\subsection{GRASP}
+\subsubsection*{Warum gibt es die Richtlinien?}Die GRASP-Richtlinien wurden entwickelt, um Softwarearchitekten und Entwicklern zu helfen, Verantwortlichkeiten effektiv zuzuweisen.
+
+\subsubsection*{Was sind Verantwortlichkeiten?}
+Verantwortlichkeiten sind die Aufgaben oder Funktionen, die einer Klasse oder einem Objekt in einem Software-System zugewiesen werden.
+
+\subsubsection*{Was ist der Kernaspekt von GRASP?}
+Der Kernaspekt von GRASP ist die Zuweisung von Verantwortlichkeiten an Klassen und Objekte in einem objektorientierten Design.
+
+\subsubsection*{Woher kommen die Verantwortlichkeiten für den objektorientierten Entwurf?}
+Die Verantwortlichkeiten stammen aus:
+\begin{itemize}
+    \item Anforderungen
+    \item \glspl{Use Case}
+    \item \gls{Domänenmodell}
+\end{itemize}
+
+
+\subsubsection*{Wie helfen die Patterns beim Entwurf?}
+Die \gls{GRASP-Pattern}s helfen beim Entwurf, indem sie:
+\begin{itemize}
+    \item Verantwortlichkeiten klären
+    \item \gls{Kohäsion} und \gls{Kopplung} verbessern
+    \item Best Practices bereitstellen
+\end{itemize}
+
+\subsubsection*{Wann kommen \gls{GRASP-Pattern}s zum Einsatz?}
+\gls{GRASP-Pattern}s kommen zum Einsatz, wenn:
+\begin{itemize}
+    \item Ein neues System entworfen wird
+    \item Bestehende Systeme analysiert oder refaktoriert werden
+\end{itemize}
+
+\subsubsection*{Woher weiß man, was eine Klasse können muss?}
+Man weiß, was eine Klasse können muss, indem man:
+\begin{itemize}
+    \item \glspl{Use Case} analysiert
+    \item \glspl{CRC} verwendet
+\end{itemize}
+
+\subsubsection*{Patterns:  \gls{Low Coupling}, \gls{High Cohesion}, \gls{Information Expert}, Creator Pattern}
+\begin{itemize}
+    \item  \gls{Low Coupling}: Minimiert die Abhängigkeiten zwischen Klassen.
+    \item \gls{High Cohesion}: Fördert die Zusammengehörigkeit von Aufgaben innerhalb einer Klasse.
+    \item \gls{Information Expert}: Verantwortlichkeiten werden den Klassen zugewiesen, die die benötigten Informationen besitzen.
+    \item Creator Pattern: Bestimmt, welche Klasse für die Erstellung eines Objekts verantwortlich sein sollte.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Welche Verantwortlichkeiten werden damit abgegeben?}
+    \begin{itemize}
+        \item \gls{Information Expert}: Überträgt die Verantwortung für die Verarbeitung von Informationen an die Klasse, die die Daten besitzt.
+        \item Creator: Delegiert die Verantwortung für die Erstellung von Objekten an die Klasse, die die Daten hat.
+        \item Controller: Überträgt die Verantwortung für die Benutzerinteraktion an eine spezielle Klasse.
+        \item  \gls{Low Coupling}: Minimiert die Verantwortung für die Interaktion zwischen Klassen.
+        \item \gls{High Cohesion}: Gibt spezifische Aufgaben an Klassen weiter.
+        \item \gls{Polymorphism} : Überträgt die Verantwortung für die Behandlung von Objekten an eine gemeinsame Schnittstelle.
+        \item \gls{Pure Fabrication} : Kapselt spezifische Verantwortlichkeiten in einer neuen Klasse.
+        \item Indirection: Delegiert Interaktionen an eine Vermittlerklasse.
+        \item Protected Variations: Schützt vor Variationen durch den Einsatz von Abstraktionen.
+    \end{itemize}
+     \item \textbf{Erläutern, wie die Pattern funktionieren.}
+    \begin{itemize}
+        \item \gls{Information Expert}: Weist Verantwortlichkeiten der Klasse zu, die die relevanten Daten hat.
+        \item Creator: Bestimmt, dass die Klasse, die ein Objekt benötigt, auch für dessen Erstellung verantwortlich ist.
+        \item Controller: Koordiniert Benutzerinteraktionen.
+        \item  \gls{Low Coupling}: Verringert Abhängigkeiten zwischen Klassen.
+        \item \gls{High Cohesion}: Fördert die Zusammengehörigkeit von Funktionen innerhalb einer Klasse.
+        \item \gls{Polymorphism} : Ermöglicht eine einheitliche Behandlung verschiedener Klassen durch gemeinsame Schnittstellen.
+        \item \gls{Pure Fabrication} : Schafft eine Klasse zur Kapselung spezifischer Verantwortlichkeiten.
+        \item Indirection: Verwendet eine Vermittlerklasse zur Reduzierung der Kopplung.
+        \item Protected Variations: Schützt das System durch den Einsatz von Schnittstellen oder Abstraktionen.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Welche Klassen haben die höchste Priorität?}
+Die Klassen mit der höchsten Priorität sind:
+\begin{itemize}
+    \item Klassen, die grundlegende Geschäftslogik oder kritische Funktionen implementieren.
+    \item Klassen, die häufig in \glspl{Use Case} verwendet werden.
+\end{itemize}
+
+
+\subsubsection*{Welche Klasse instanziiert Objekte?}
+In der Regel instanziert die Klasse, die für die Erstellung und Verwaltung des Objekts verantwortlich ist, die Objekte.
+
+
+\subsubsection*{Was ist \gls{Pure Fabrication} ?}
+\gls{Pure Fabrication}  ist ein \gls{GRASP-Pattern}, das vorschlägt, eine Klasse zu erstellen, die nicht direkt aus den Anforderungen abgeleitet ist, um die \gls{Kopplung} zu reduzieren.
+
+\begin{itemize}
+    \item Beispiel aus dem Begleitprojekt? %TODO
+\end{itemize}
+
+\subsubsection*{Beispiel aus dem Begleitprojekt?} %TODO 
+
+\subsubsection*{Was hat die Anforderungsanalyse mit GRASP zu tun?}
+Die Anforderungsanalyse hat mit GRASP zu tun, weil GRASP-Richtlinien helfen, die Verantwortlichkeiten basierend auf den Anforderungen zu definieren.
+
+
+\subsubsection*{Wie helfen \gls{GRASP-Pattern}, die Verantwortlichkeiten umzusetzen?}
+\gls{GRASP-Pattern}s helfen, die Verantwortlichkeiten umzusetzen, indem sie klare Richtlinien für die Zuweisung von Verantwortlichkeiten bieten.
+
+
+\subsubsection*{Wie können Klassen in Java gekoppelt sein?}
+Klassen in Java können auf verschiedene Weise gekoppelt sein:
+\begin{itemize}
+    \item  \gls{Direkte Kopplung}
+    \item  \gls{Indirekte Kopplung}
+    \item Datenkopplung
+    \item Kontrollkopplung
+\end{itemize}
+
+\subsection{\glspl{CRC} }
+\subsubsection*{Wie ist eine \gls{CRC}  aufgebaut?}
+Eine \gls{CRC}  ist typischerweise in folgende Elemente gegliedert:
+\begin{itemize}
+    \item \textbf{Klasse:} Der Name der Klasse, die definiert wird.
+    \item \textbf{Verantwortlichkeiten:} Eine Liste von Aufgaben oder Funktionen, für die die Klasse verantwortlich ist.
+    \item \textbf{Zusammenarbeit:} Eine Liste von anderen Klassen oder Objekten, mit denen die Klasse interagiert.
+\end{itemize}
+
+\subsubsection*{Wie finde ich die Verantwortlichkeiten heraus?}
+Verantwortlichkeiten können durch folgende Methoden ermittelt werden:
+\begin{itemize}
+    \item Analyse von \glspl{Use Case}
+    \item Interviews mit Stakeholdern
+    \item Brainstorming-Sitzungen
+    \item Dokumentenanalysen
+\end{itemize}
+
+\subsubsection*{Was versteht man unter einer Verantwortlichkeit und in welchem Dokument steht sie?}
+\begin{itemize}
+    \item \textbf{Verantwortlichkeit:} Eine Aufgabe oder Funktion, die einer Klasse zugewiesen ist.
+    \item \textbf{Dokumente:} Verantwortlichkeiten sind typischerweise in folgenden Dokumenten festgehalten:
+    \begin{itemize}
+        \item \gls{Use Case}-Dokumente
+        \item \glspl{Lastenheft}
+        \item \glspl{Pflichtenheft}
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{\gls{High Cohesion}}
+\subsubsection*{Was bedeutet \gls{Low Coupling}?}
+\textbf{\gls{Low Coupling}} ist ein Prinzip in der Softwareentwicklung, das darauf abzielt, die Abhängigkeiten zwischen Klassen zu minimieren. 
+
+
+\subsection{\glspl{bbt}}
+\subsubsection*{Kann man in \glspl{bbt} den Code sehen?}
+Nein, in \glspl{bbt} sieht man den Code nicht. Die Tests konzentrieren sich ausschließlich auf die Eingaben und Ausgaben eines Systems.
+
+
+\subsubsection*{Gibt es \glspl{Äquivalenzklasse}?}
+Ja, in \glspl{bbt} gibt es \glspl{Äquivalenzklasse}. Diese sind:
+\begin{itemize}
+    \item \textbf{Gültige \glspl{Äquivalenzklasse}:} Eingabewerte, die gültig sind und vom System akzeptiert werden sollten.
+    \item \textbf{Ungültige \glspl{Äquivalenzklasse}:} Eingabewerte, die ungültig sind und vom System abgelehnt werden sollten.
+\end{itemize}
+
+\subsection{\glspl{gbt} }
+\subsubsection*{Unterschied zum \gls{bbt}}
+\glspl{gbt}  (oder White-Box-Tests) unterscheiden sich von \glspl{bbt} dadurch, dass der Tester Zugriff auf den Quellcode hat und die interne Logik der Anwendung versteht. Während \glspl{bbt} sich auf die Eingaben und Ausgaben konzentrieren, analysieren \glspl{gbt}  die Struktur und den Ablauf des Codes.
+
+
+\subsubsection*{Wie sollte ein \gls{gbt}  konstruiert werden?}
+Ein \gls{gbt} sollte konstruiert werden, indem:
+\begin{itemize}
+    \item Der Quellcode analysiert wird, um alle möglichen Ausführungspfade zu identifizieren.
+    \item Testfälle erstellt werden, die alle signifikanten \glspl{Pfad}, Bedingungen und Schleifen im Code abdecken.
+\end{itemize}
+
+\subsubsection*{Welche Tabellen oder Diagramme kann man verwenden?}
+Folgende Tabellen oder Diagramme können verwendet werden:
+\begin{itemize}
+    \item \glspl{Kontrollflussdiagramm}
+    \item \glspl{Entscheidungsdiagramm}e
+    \item Testfall-Tabellen
+\end{itemize}
+
+\subsubsection*{Was sind Überdeckungsmaße und welche gibt es?}
+Überdeckungsmaße sind Metriken, die den Grad der Codeabdeckung während der Tests angeben. Es gibt verschiedene Arten von Überdeckungsmaßen:
+\begin{itemize}
+    \item \textbf{Anweisungsüberdeckung:} Misst, wie viele Anweisungen im Code ausgeführt wurden.
+    \item \textbf{\gls{Zweigüberdeckung}:} Misst, wie viele \glspl{Entscheidungspunkt} (z.B. if-Anweisungen) im Code durchlaufen wurden.
+    \item \textbf{\gls{Pfadüberdeckung}:} Misst, wie viele verschiedene \glspl{Pfad} im \gls{Kontrollflussdiagramm} durchlaufen wurden.
+\end{itemize}
+
+\subsubsection*{(Beispiel von den Übungszetteln)} %TODO
+
+
+\subsubsection*{Welche \glspl{Detektor} kann es geben?}
+\glspl{Detektor} können Folgendes umfassen:
+\begin{itemize}
+    \item Syntax-Checker
+    \item Code-Analyse-Tools
+    \item Testfall-Generatoren
+\end{itemize}
+
+\subsubsection*{Wie wird die for-Schleife behandelt?}
+In einem \gls{gbt}  wird die for-Schleife behandelt, indem man sicherstellt, dass alle möglichen Iterationen der Schleife getestet werden, einschließlich der Fälle, in denen die Schleife nicht ausgeführt wird (z.B. wenn die Bedingung von Anfang an falsch ist).
+
+
+\subsubsection*{Sind das unterschiedliche \glspl{Pfad} oder \glspl{Zweig}?} %TODO
+Unterschiedliche Zweige: Schleife wird ausgeführt oder nicht. \\
+Unterschiedliche Pfade: die verschiedenen Iterationen, die überprüft werden
+
+\subsubsection*{Was ist ein \gls{Pfad}, was ist ein \gls{Zweig}?}
+\begin{itemize}
+    \item \textbf{Pfad:} Eine vollständige Sequenz von Anweisungen, die während der Ausführung eines Programms durchlaufen wird.
+    \item \textbf{\gls{Zweig}:} Ein Entscheidungs- oder Kontrollpunkt im Code, an dem der Fluss je nach Bedingung in verschiedene Richtungen verlaufen kann.
+\end{itemize}
+
+
+\subsubsection*{Wann nutzt man \glspl{gbt} ?}
+\glspl{gbt}  werden verwendet, wenn:
+\begin{itemize}
+    \item Die interne Logik und Struktur des Codes bekannt ist.
+    \item Eine detaillierte Überprüfung der Implementierung erforderlich ist.
+    \item Man sicherstellen möchte, dass alle Codepfade getestet werden.
+\end{itemize}
+
+\subsubsection*{Was sind die Vorteile eines \glspl{gbt}  gegenüber eines \glspl{bbt}?}
+Die Vorteile sind:
+\begin{itemize}
+    \item Bessere Erkennung von Logikfehlern.
+    \item Höhere Testabdeckung durch gezielte Tests aller Codepfade.
+    \item Möglichkeit, die Testeffizienz zu erhöhen, indem redundante Tests vermieden werden.
+\end{itemize}
+
+\subsubsection*{Wie kann man Code-Abschnitte systematisch testen?}
+Code-Abschnitte können systematisch getestet werden, indem:
+\begin{itemize}
+    \item Testfälle für alle möglichen \glspl{Pfad} erstellt werden.
+    \item Überdeckungsmaße verwendet werden, um sicherzustellen, dass alle Teile des Codes getestet werden.
+\end{itemize}
+
+\subsubsection*{(Zeichnen eines Kontrollflussgraphen)} %TODO
+
+\subsubsection*{Benennung von Elementen} %TODO
+
+\subsubsection*{Unterschied zwischen \gls{Pfad}- und \gls{Zweigüberdeckung}}
+\begin{itemize}
+    \item \textbf{\gls{Pfadüberdeckung}:} Misst, ob alle möglichen \glspl{Pfad} durch den Code getestet wurden.
+    \item \textbf{\gls{Zweigüberdeckung}:} Misst, ob alle Entscheidungszweige (z.B. if-Anweisungen) durchlaufen wurden.
+\end{itemize}
+
+\subsubsection*{Unterschied zwischen \glspl{Pfad}n und \glspl{Äquivalenzklasse}}
+\begin{itemize}
+    \item \textbf{\glspl{Pfad}:} Repräsentieren die Ausführungssequenzen im Code.
+    \item \textbf{\glspl{Äquivalenzklasse}:} Gruppen von Eingaben, die das gleiche Verhalten des Systems erwarten lassen.
+\end{itemize}
+
+
+\subsubsection*{\glspl{Termbaum}}
+\glspl{Termbaum} sind eine grafische Darstellung von Ausdrücken, die in vielen Programmiersprachen verwendet werden. Sie helfen bei der Analyse von Ausdrücken in Bezug auf die Ausführungsreihenfolge und Priorität von Operationen.
+
+
+\subsubsection*{Was sind \glspl{Äquivalenzklasse}?}
+\glspl{Äquivalenzklasse} sind Gruppen von Eingabewerten, die dasselbe Verhalten des Systems erwarten lassen, um die Anzahl der notwendigen Testfälle zu reduzieren.
+
+
+\subsubsection*{Wie wird starke Äquivalenz sichtbar?}
+Starke Äquivalenz zwischen Testfällen wird sichtbar, wenn alle relevanten Eingabewerte und Zustände eines Systems getestet werden, um sicherzustellen, dass es in jeder Situation korrekt funktioniert.
+
+
+\subsubsection*{Ist immer eine 100\%-ige \gls{Pfadüberdeckung} möglich?}
+Eine 100\%-ige \gls{Pfadüberdeckung} ist in der Praxis oft schwierig zu erreichen, da es möglicherweise zu viele Kombinationen von Bedingungen gibt, insbesondere in komplexen Systemen.
+
+\subsubsection*{Was ist die Grundlage für einen \gls{gbt} ?}
+Die Grundlage für einen \gls{gbt}  ist das Verständnis des Quellcodes, der Logik und der Struktur des Systems, um gezielte Tests zu erstellen.
+
+\subsubsection*{Wie kommt man vom Graphen zu systematischen Tests?}
+Man kommt vom Kontrollflussgraphen zu systematischen Tests, indem man die \glspl{Pfad} und \glspl{Zweig} im Graphen analysiert und Testfälle entwickelt, die diese abdecken.
+
+
+\subsubsection*{Wo wendet man \glspl{gbt}  an?}
+\glspl{gbt}  werden in der Regel in der Unit-Testing-Phase und bei der Integrationstestphase angewendet.
+
+
+\subsubsection*{Wo lohnt sich der Einsatz?}
+Der Einsatz von \glspl{gbt}  lohnt sich besonders in sicherheitskritischen Anwendungen, wo die interne Logik des Codes entscheidend für die Funktionalität ist.
+
+
+\subsubsection*{Für welchen Zweck eignet sich ein \gls{gbt} ?}
+\glspl{gbt}  eignen sich für den Zweck, die interne Logik von Software zu verifizieren, um sicherzustellen, dass alle \glspl{Pfad} und Bedingungen korrekt implementiert sind.
+
+
+\subsubsection*{Wie erreiche ich alle Anweisungen?}
+Um alle Anweisungen zu erreichen, sollten Tests so gestaltet werden, dass sie jeden möglichen \gls{Pfad} im Code abdecken, einschließlich aller Bedingungen und Schleifen.
+
+
+\subsection{\gls{Domänenmodell}}
+\subsubsection*{Was ist ein \gls{Domänenmodell} und warum ist es hilfreich?}
+Ein \gls{Domänenmodell} ist eine abstrahierte Darstellung der relevanten Konzepte, Beziehungen und Regeln innerhalb eines bestimmten Anwendungsbereichs. Es hilft, die Anforderungen besser zu verstehen und zu kommunizieren, weil:
+\begin{itemize}
+    \item es eine gemeinsame Sprache für alle Stakeholder schafft.
+    \item es hilft, die Komplexität der Domäne zu reduzieren.
+    \item es als Grundlage für die Softwarearchitektur und das Design dient.
+    \item es die Identifizierung von Entitäten, deren Attribute und deren Beziehungen ermöglicht.
+\end{itemize}
+
+\subsubsection*{Was ist eine \gls{semantische Lücke}?}
+Eine \gls{semantische Lücke} tritt auf, wenn es einen Unterschied zwischen dem, was das System tatsächlich tut, und dem, was die Stakeholder erwarten oder benötigen.
+
+
+\subsubsection*{Wo tritt sie auf?}
+Semantische Lücken können an verschiedenen Stellen im Softwareentwicklungsprozess auftreten, darunter:
+\begin{itemize}
+    \item Während der Anforderungsanalyse.
+    \item Bei der Erstellung des \gls{Domänenmodell}s.
+    \item In der Implementierungsphase.
+\end{itemize}
+
+\subsubsection*{Was enthält ein \gls{Domänenmodell}?}
+Ein \gls{Domänenmodell} enthält typischerweise:
+\begin{itemize}
+    \item Entitäten: Hauptobjekte oder Konzepte in der Domäne.
+    \item Attribute: Eigenschaften oder Merkmale der Entitäten.
+    \item Beziehungen: Verbindungen zwischen den Entitäten.
+    \item Regeln: Geschäftsregeln und Einschränkungen.
+\end{itemize}
+
+\subsubsection*{Wie kommt man zum Software-Design?}
+Der Übergang vom \gls{Domänenmodell} zum Software-Design erfolgt typischerweise in mehreren Schritten:
+\begin{itemize}
+    \item Analyse des \gls{Domänenmodell}s.
+    \item Identifikation von Klassen und Objekten.
+    \item Definition von Schnittstellen und Interaktionen.
+    \item Erstellung von Prototypen.
+    \item Iterative Verfeinerung.
+\end{itemize}
+
+
+\subsection{Qualitätsmerkmale von Software}
+\begin{itemize}
+    \item \textbf{Funktionalität:} Die Software erfüllt die festgelegten Anforderungen und Erwartungen.
+    \item \textbf{Zuverlässigkeit:} Die Software funktioniert stabil und fehlerfrei.
+    \item \textbf{Benutzerfreundlichkeit:} Die Software ist intuitiv und einfach zu bedienen.
+    \item \textbf{Wartbarkeit:} Die Software lässt sich leicht anpassen und reparieren.
+    \item \textbf{Leistung:} Die Software reagiert schnell und effizient.
+    \item \textbf{Sicherheit:} Die Software schützt Daten und verhindert unbefugten Zugriff.
+\end{itemize}
+
+\subsubsection*{Prozessbezogene und produktbezogene Qualität}
+\begin{itemize}
+    \item \textbf{Prozessbezogene Qualität:} Bezieht sich auf die Qualität der Prozesse, die zur Softwareentwicklung verwendet werden.
+    \item \textbf{Produktbezogene Qualität:} Bezieht sich auf die Qualität des Endprodukts selbst.
+\end{itemize}
+
+\subsubsection*{Warum sind Qualitäten oft schwer messbar?}
+Qualitäten sind oft schwer messbar, weil:
+\begin{itemize}
+    \item Viele Merkmale subjektiv sind.
+    \item Einige Merkmale schwer quantifizierbar sind.
+    \item Keine einheitlichen Standards oder Metriken existieren.
+\end{itemize}
+
+
+\subsubsection*{Harte und weiche Kriterien}
+\begin{itemize}
+    \item \textbf{Harte Kriterien:} Objektiv messbare Merkmale.
+    \item \textbf{Weiche Kriterien:} Subjektive Merkmale, die schwer zu quantifizieren sind.
+\end{itemize}
+
+
+\subsubsection*{Nutzerfreundlichkeit, Wartbarkeit, Fehlertoleranz, Entwicklungsgeschwindigkeit, Entwicklungseffizienz}
+Diese Merkmale sind entscheidend für die Gesamtqualität einer Softwareanwendung:
+\begin{itemize}
+    \item Nutzerfreundlichkeit
+    \item Wartbarkeit
+    \item Fehlertoleranz
+    \item Entwicklungsgeschwindigkeit
+    \item Entwicklungseffizienz
+\end{itemize}
+
+
+
+\subsubsection*{Gibt es rechtliche Rahmenbedingungen bei der Entwicklung von Software?}
+Ja, es gibt rechtliche Rahmenbedingungen, darunter:
+\begin{itemize}
+    \item Urheberrecht und Lizenzierung
+    \item Datenschutzgesetze
+    \item Sicherheitsstandards
+    \item Branchenvorschriften
+\end{itemize}
+
+
+\subsubsection*{Woran hat ein Auftraggeber Interesse (\gls{Magisches Dreieck})?}
+Ein Auftraggeber hat Interesse an:
+\begin{itemize}
+    \item Kosten
+    \item Zeit
+    \item Qualität
+\end{itemize}
+
+
+\subsubsection*{Welche Qualität muss das Team aufweisen, damit der Auftraggeber das Projekt vergibt?}
+Das Team muss über folgende Qualitäten verfügen:
+\begin{itemize}
+    \item Fachliche Kompetenz
+    \item Teamarbeit
+    \item Kommunikationsfähigkeiten
+    \item Flexibilität
+\end{itemize}
+
+\subsubsection*{Warum muss man die Qualitätseigenschaften im Entwurf beachten?}
+Die Qualitätseigenschaften müssen beachtet werden, weil:
+\begin{itemize}
+    \item sie die Grundlage für die Architektur bilden.
+    \item frühe Entscheidungen spätere Probleme verhindern können.
+    \item sie sicherstellen, dass die Software den Anforderungen entspricht.
+\end{itemize}
+
+\subsubsection*{Ist die Ressourceneffizienz im Entwurf wichtig?}
+Ja, die Ressourceneffizienz ist wichtig, da sie den Ressourcenverbrauch optimiert und die Gesamtkosten senkt.
+
+
+\subsubsection*{Was meint Effizienz?}
+Effizienz bezieht sich auf das Verhältnis von Ressourcenaufwand zu den erzielten Ergebnissen.
+
+\subsubsection*{Wann ist ein Produkt "gut" umgesetzt?}
+Ein Produkt ist "gut" umgesetzt, wenn:
+\begin{itemize}
+    \item Es die Anforderungen erfüllt.
+    \item Es zuverlässig und wartbar ist.
+    \item Es positive Rückmeldungen erhält.
+\end{itemize}
+
+\subsubsection*{(Beispiel Corona-Warn-App)} %TODO
+
+\subsubsection*{Unterschied zwischen funktionalen und nicht-funktionalen Anforderungen?}
+\begin{itemize}
+    \item Funktionale Anforderungen: Beschreiben, was das System tun soll.
+    \item Nicht-funktionale Anforderungen: Beschreiben, wie das System die funktionalen Anforderungen erfüllen soll.
+\end{itemize}
+
+
+\subsubsection*{Was hilft dabei, nicht-funktionale Anforderungen zu testen?}
+Folgende Methoden helfen dabei:
+\begin{itemize}
+    \item Last- und Performancetests
+    \item Sicherheitstests
+    \item Usability-Tests
+\end{itemize}
+
+
+\subsubsection*{Welche Probleme kann es beim Erfassen der Merkmale geben?}
+Probleme können sein:
+\begin{itemize}
+    \item Unklare Anforderungen
+    \item Subjektivität
+    \item Mangelnde Kommunikation
+\end{itemize}
+
+
+\subsubsection*{Wie kann man \gls{Portabilität} sicherstellen?}
+\gls{Portabilität} kann sichergestellt werden durch:
+\begin{itemize}
+    \item Verwendung standardisierter Technologien
+    \item Modularer Aufbau
+    \item Dokumentation
+\end{itemize}
+
+
+\subsubsection*{Was sind die Vorteile von \gls{Portabilität}?}
+Die Vorteile sind:
+\begin{itemize}
+    \item Erleichterte Verbreitung
+    \item Kosteneinsparungen
+    \item Höhere Benutzerfreundlichkeit
+\end{itemize}
+
+
+\subsubsection*{Was macht man, wenn der Kunde eine nicht-funktionale Anforderung bemängelt? Wo liegt der Fehler?} %TODO
+Man sollte:
+\begin{itemize}
+    \item Die Bedenken klären.
+    \item Die Anforderungen überprüfen.
+    \item Feedback sammeln.
+\end{itemize}
+Der Fehler könnte in der unzureichenden Erfassung der Anforderungen liegen.
+
+\subsubsection*{Was bedeutet es, ein Problem effizient zu lösen?}
+Ein Problem effizient zu lösen bedeutet, dass die Lösung mit minimalem Aufwand erreicht wird. %TODO
+
+
+\subsubsection*{Was ist eine nicht-funktionale Anforderung an eine Handy-App?}
+Eine nicht-funktionale Anforderung könnte die Benutzerfreundlichkeit oder Leistung betreffen.
+
+
+\subsubsection*{Welche Qualitätsmerkmale gibt es?}
+Qualitätsmerkmale können umfassen:
+\begin{itemize}
+    \item Funktionalität
+    \item Zuverlässigkeit
+    \item Benutzerfreundlichkeit
+    \item Wartbarkeit
+    \item Leistung
+    \item Sicherheit
+\end{itemize}
+
+\subsubsection*{Sind nicht-funktionale Merkmale einfacher oder schwerer als funktionale Merkmale zu erfassen und warum?}
+Nicht-funktionale Merkmale sind oft schwerer zu erfassen, weil sie subjektiv sind und schwer quantifizierbare Eigenschaften betreffen.
+
+
+
+\subsection{Scrum-Team, Schätzungen und \gls{Planning Poker}}
+\subsubsection*{Was ist das \gls{Planning Poker}?}
+\gls{Planning Poker} ist eine Schätztechnik, die in agilen Projekten, insbesondere in Scrum, verwendet wird, um den Aufwand oder die Komplexität von Aufgaben (insbesondere \glspl{User Story}) zu schätzen. Dabei kommen Karten mit verschiedenen Punktwerten zum Einsatz, die von den Teammitgliedern gleichzeitig ausgewählt und aufgedeckt werden, um eine Diskussion über die Schätzungen zu fördern.
+\subsubsection*{Was sind die Kenngrößen?}
+Die Kenngrößen im \gls{Planning Poker} beziehen sich auf die relativen Schätzwerte, die den Teammitgliedern helfen, den Aufwand für eine Aufgabe oder \gls{User Story} zu quantifizieren. Oft wird eine Fibonacci-Folge (1, 2, 3, 5, 8, 13, ...) verwendet, um die Schätzungen zu strukturieren und größere Unterschiede in der Komplexität hervorzuheben.
+\subsubsection*{Warum werden Karten verdeckt gelegt?}
+Karten werden verdeckt gelegt, um die Unabhängigkeit der Schätzungen der Teammitglieder zu gewährleisten. So wird verhindert, dass die Meinungen anderer Teammitglieder die individuellen Schätzungen beeinflussen. Dies fördert eine ehrliche und unvoreingenommene Bewertung des Aufwands.
+\subsubsection*{Warum wird abstrakt geschätzt und nicht in Arbeitsstunden?}
+Abstrakte Schätzungen (z. B. in \glspl{sp}) werden verwendet, weil sie den Fokus auf die relative Komplexität oder den Aufwand einer Aufgabe legen, anstatt auf eine genaue Zeitschätzung. Dies hilft, Unsicherheiten und Variabilität in der Schätzung zu berücksichtigen und ermöglicht es dem Team, sich auf die relative Größe der Aufgaben zu konzentrieren, anstatt sich auf spezifische Zeitangaben festzulegen.
+\subsubsection*{Warum nicht mit Zahlen von 1 bis 100?}
+Die Verwendung von Zahlen von 1 bis 100 kann zu einer übermäßigen Genauigkeit führen, die in der frühen Phase der Planung nicht sinnvoll ist. Solche feinen Abstufungen können zu Verwirrung führen und die Diskussion unnötig kompliziert machen. Stattdessen fördert die Verwendung einer begrenzten Skala, wie der Fibonacci-Folge, eine einfachere und klarere Kommunikation über die Schätzungen.
+\subsubsection*{Meint jeder mit 5 Punkten das Gleiche?}
+Nicht unbedingt. Obwohl alle Teammitglieder ihre Schätzungen auf der gleichen Skala abgeben, kann die Bedeutung von 5 Punkten für verschiedene Personen unterschiedlich sein, abhängig von ihrer Erfahrung, ihrem Wissen über die Aufgabe und ihrer Perspektive. Aus diesem Grund ist es wichtig, nach der Abstimmung Diskussionen zu führen, um die Gründe für die unterschiedlichen Schätzungen zu verstehen und einen gemeinsamen Konsens zu erreichen. 
+
+\subsection{\gls{Velocity}}
+\subsubsection*{Wie ist die Arbeitsgeschwindigkeit eines Teams definiert?}
+Die \gls{Velocity} wird in der Regel in \glspl{sp} gemessen, die als Maßeinheit für den Aufwand oder die Komplexität von \glspl{User Story} verwendet werden. Am Ende eines \glspl{Sprint} wird die Summe der \glspl{sp}, die das Team erfolgreich umgesetzt hat, erfasst. Diese Summe definiert die \gls{Velocity} für diesen \gls{Sprint}.
+
+\subsection{\gls{mvc}}
+\subsubsection*{Welche Bestandteile hat \gls{mvc}?}
+\begin{itemize}
+    \item Model
+    \item View
+    \item Controller
+\end{itemize}
+\subsubsection*{Zeichnen von \gls{mvc}-Interaktionen}
+Aktion im View -> View informiert Controller -> Controller verarbeitet Eingabe und aktualisiert Model -> Model ändert Zustand und benachrichtigt View -> View aktualisiert sich 
+\subsubsection*{Vorteil(e) des \gls{op}s?}
+\begin{itemize}
+    \item Entkopplung
+    \item Flexibilität
+    \item Einfache Erweiterbarkeit
+\end{itemize}
+\subsubsection*{Vorteile von \gls{mvc}?}
+\begin{itemize}
+    \item Bessere Wartbarkeit
+    \item Wiederverwendbarkeit
+    \item Bessere Testbarkeit
+    \item Flexibilität
+\end{itemize}
+\subsubsection*{Warum nutzt man \gls{Architekturmuster}?}
+\begin{itemize}
+    \item Strukturierung
+    \item Wiederverwendbarkeit
+    \item Wartbarkeit
+    \item Testbarkeit
+    \item Skalierbarkeit
+\end{itemize}
+\subsubsection*{Wie sind Model und View gekoppelt?}
+Gar nicht, das Model sollte keine direkte Abhängigkeit zur View haben. Aber der View ist der Beobachter des Models.  
+\subsubsection*{Warum sollte man keine View-Referenzen im Model speichern?}
+\begin{itemize}
+    \item Verletzung des \gls{mvc}-Prinzips
+    \item Schlechte Wartbarkeit
+    \item Schwierige Testbarkeit
+    \item Erweiterbarkeit wird erschwert
+\end{itemize}
+
+\subsection{Prozessmodell in der Software-Entwicklung}
+\subsubsection*{Wie sind die Abläufe in IT-Projekten?}
+Die Abläufe in IT-Projekten folgen normalerweise einem strukturierten Prozess, der in Phasen unterteilt ist:
+\begin{itemize}
+    \item Anforderungsanalyse: Identifizierung und Dokumentation der Anforderungen.
+    \item Entwurf: Planung der Architektur und der Komponenten der Software.
+    \item Entwicklung: Programmierung und Implementierung der Software.
+    \item Testen: Überprüfung der Software auf Fehler.
+    \item Deployment: Bereitstellung der Software für die Benutzer.
+    \item Wartung: Anpassungen und Fehlerbehebungen nach der Auslieferung.
+\end{itemize}
+
+\subsubsection*{Beispiel anhand des V-Modells?}
+Das V-Modell zeigt die Phasen der Entwicklung und die entsprechenden Testaktivitäten:
+\begin{itemize}
+    \item Anforderungsdefinition
+    \item System- und Software-Design
+    \item Implementierung
+    \item Testen (Komponententest, Integrationstest, Systemtest, Abnahmetest)
+\end{itemize}
+
+
+\subsubsection*{Vorgehens- und Prozessmodelle - Unterschiede?}
+\begin{itemize}
+    \item \textbf{Vorgehensmodelle:} Definieren spezifische Schritte und deren Reihenfolge in der Softwareentwicklung (z.B. Wasserfallmodell, agile Methoden).
+    \item \textbf{Prozessmodelle:} Umfassen ein breiteres Spektrum, einschließlich Organisation, Verantwortlichkeiten, Dokumentationsstandards und Qualitätssicherungsmaßnahmen.
+\end{itemize}
+
+\subsubsection*{Was wird im Prozessmodell festgelegt?}
+Im Prozessmodell werden folgende Aspekte festgelegt:
+\begin{itemize}
+    \item Prozessphasen
+    \item Rollen und Verantwortlichkeiten
+    \item Dokumentationsanforderungen
+    \item Qualitätssicherungsmaßnahmen
+    \item Werkzeuge
+\end{itemize}
+
+
+\subsection{Testfälle für Fakultätsfunktion}
+\subsubsection*{Grenzfälle} %TODO
+Grenzfälle sind spezielle Eingabewerte, die an den Grenzen oder extremen Punkten der Eingabedaten liegen. Für eine Fakultätsfunktion sind folgende Grenzfälle zu berücksichtigen:
+ 
+\subsubsection*{\glspl{Äquivalenzklasse} und Beispiele?} %TODO
+\glspl{Äquivalenzklasse} sind Gruppen von Eingabewerten, die das gleiche Verhalten des Systems erwarten lassen. Für eine Fakultätsfunktion können die \glspl{Äquivalenzklasse} wie folgt definiert werden:
+
+\subsubsection*{Wofür sind Äquivalenzklassen relevant?}
+Sie helfen, die Anzahl der benötigten Testfälle zu reduzieren, indem Tester sicherstellen, dass alle relevanten Eingabebereiche abgedeckt sind. Durch die Identifizierung von \glspl{Äquivalenzklasse} können Tester effizientere Tests erstellen und sich auf kritische \glspl{Szenrio} konzentrieren. Diese Methode fördert eine systematische Testfallgenerierung und verbessert die Testabdeckung, während sie gleichzeitig die Effizienz und Effektivität des Testprozesses steigert.
+
+\subsection{Aufwandsschätzung mit \glspl{ucp}}
+\subsubsection*{Wie berechnet man die \glspl{ucp}?}
+Die \glspl{ucp} (\glspl{ucp}) werden berechnet, indem man die Komplexität der \glspl{Use Case} und die Anzahl der Akteure berücksichtigt. Der Prozess umfasst typischerweise die folgenden Schritte:
+\begin{itemize}
+    \item Identifikation der \glspl{Use Case} und Akteure.
+    \item Klassifizierung der \glspl{Use Case} in einfache, mittlere und komplexe Kategorien.
+    \item Bestimmung der gewichteten Punkte für jeden \gls{Use Case}.
+    \item Addition der Punkte und Berücksichtigung der Technik- und \glspl{Umweltfaktor}.
+\end{itemize}
+
+\subsubsection*{Was ist ein \gls{Use Case}?}
+Ein \gls{Use Case} ist eine Beschreibung einer Interaktion zwischen einem Benutzer (Akteur) und einem System, die darauf abzielt, ein bestimmtes Ziel zu erreichen. \glspl{Use Case} helfen, die Anforderungen an das System aus der Sicht der Benutzer zu verstehen.
+
+
+\subsubsection*{Struktur eines \glspl{Use Case}}
+Die Struktur eines \glspl{Use Case} umfasst typischerweise:
+\begin{itemize}
+    \item Titel: Name des Anwendungsfalls.
+    \item Akteure: Benutzer oder Systeme, die mit dem System interagieren.
+    \item Ziel: Was soll erreicht werden?
+    \item Vorbedingungen: Bedingungen, die erfüllt sein müssen, bevor der Anwendungsfall gestartet werden kann.
+    \item Ablauf: Eine Schritt-für-Schritt-Beschreibung der Interaktion.
+    \item \glspl{Nachbedingung}: Zustand des Systems nach der Durchführung des Anwendungsfalls.
+    \item Alternativabläufe: Abweichungen oder Fehlerbehandlungen während des Ablaufs.
+\end{itemize}
+
+\subsubsection*{Was sind die wichtigsten Punkte eines \glspl{Use Case}?}
+Die wichtigsten Punkte eines \glspl{Use Case} sind:
+\begin{itemize}
+    \item Klare Beschreibung des Ziels.
+    \item Identifikation der Akteure und deren Interaktionen.
+    \item Detaillierte Schritt-für-Schritt-Abläufe und Alternativen.
+    \item Akzeptanzkriterien, die die Bedingungen für den Erfolg definieren.
+\end{itemize}
+
+\subsubsection*{Wie sieht die Formel zur Berechnung der \glspl{ucp} aus?}
+Die Formel zur Berechnung der \glspl{ucp} lautet typischerweise:
+\begin{equation*}
+    \glspl{ucp}=(UUCW+UAW) \backslash times TCF
+\end{equation*}
+wobei:
+- UUCWUUCW die gewichteten Punkte der einfachen, mittleren und komplexen \glspl{Use Case} sind. \\
+- UAWUAW die gewichteten Punkte der Akteure sind. \\
+- TCFTCF der Technikfaktor ist, der die technischen Anforderungen widerspiegelt.
+
+\subsubsection*{Wird beschrieben, was passieren soll?}
+Ja, in einem \gls{Use Case} wird beschrieben, was passieren soll. Der \gls{Use Case} definiert die Interaktionen zwischen Akteur und System sowie die erwarteten Ergebnisse.
+
+
+\subsubsection*{Was sind Akteure in einem \gls{Use Case}?}
+\textbf{Akteure} sind Benutzer oder andere Systeme, die mit dem System interagieren. Sie können direkt (z.B. Endbenutzer) oder indirekt (z.B. ein externes System) sein.
+
+\subsubsection*{Ist die Anzahl der Akteure in einem \gls{Use Case} relevant?}
+Ja, die Anzahl der Akteure in einem \gls{Use Case} ist relevant, da sie die Komplexität des \glspl{Use Case} beeinflussen kann. Mehr Akteure können zu komplexeren Interaktionen und Anforderungen führen.
+
+
+\subsubsection*{Was sagen Technik- und \glspl{Umweltfaktor} aus?}
+\textbf{\glspl{Technikfaktor}} beziehen sich auf die technischen Anforderungen und Einschränkungen, die die Implementierung beeinflussen, während \textbf{\glspl{Umweltfaktor}} externe Bedingungen beschreiben, die das Projekt betreffen können, wie z.B. gesetzliche Vorschriften, Marktbedingungen oder organisatorische Aspekte.
+
+
+\subsection{\glspl{Äquivalenzklasse}}
+\subsubsection*{Praktische Bedeutung}
+Die praktische Bedeutung von \glspl{Äquivalenzklasse} liegt in der Verbesserung der Effizienz von Testprozessen.
+
+
+\subsubsection*{Wie kann man sicher sein, dass zwei Testfälle äquivalent sind?}
+Um sicherzustellen, dass zwei Testfälle äquivalent sind, sollte man:
+\begin{itemize}
+    \item Die Eingabewerte analysieren.
+    \item Überprüfen, ob die erwarteten Ergebnisse gleich sind.
+    \item Die Anforderungen und Spezifikationen überprüfen.
+\end{itemize}
+
+
+\subsubsection*{Wie finde ich \glspl{Äquivalenzklasse}?}
+\glspl{Äquivalenzklasse} können gefunden werden durch:
+\begin{itemize}
+    \item Analyse der Anforderungen.
+    \item Nutzung von Grenzwertanalyse.
+    \item Diskussion mit Stakeholdern.
+\end{itemize}
+
+
+\subsubsection*{Unterschied zu \glspl{bbt}?}
+\begin{itemize}
+    \item \glspl{Äquivalenzklasse} sind eine Technik zur Identifizierung von Testfällen.
+    \item \glspl{bbt} konzentrieren sich auf Eingaben und Ausgaben, ohne Kenntnisse über den internen Code.
+\end{itemize}
+
+
+\subsubsection*{(Beispiel Fibonacci-Folge)}
+Ein Beispiel für \glspl{Äquivalenzklasse} in Bezug auf die Fibonacci-Folge könnte sein:
+\begin{itemize}
+    \item Gültige Äquivalenzklasse: Positive ganze Zahlen.
+    \item Ungültige Äquivalenzklasse: Negative Zahlen.
+\end{itemize}
+
+
+
+\subsubsection*{Was kann schiefgehen, wenn man \glspl{Äquivalenzklasse} aufstellt?}
+Mögliche Probleme sind:
+\begin{itemize}
+    \item Übersehen von wichtigen Randfällen.
+    \item Falsches Identifizieren von \glspl{Äquivalenzklasse}.
+    \item Fehlinterpretation der Anforderungen.
+\end{itemize}
+
+
+\subsubsection*{Wie weist man starke Äquivalenz nach, wenn der Code vorliegt?}
+Starke Äquivalenz kann nachgewiesen werden, indem:
+\begin{itemize}
+    \item Alle relevanten Eingabewerte getestet werden.
+    \item Die Ergebnisse mit den erwarteten Ausgaben verglichen werden.
+    \item Die Logik des Codes analysiert wird.
+\end{itemize}
+\begin{itemize}
+    \item Was bedeutet starke Äquivalenz? \\
+    Starke Äquivalenz bedeutet, dass zwei Eingabewerte unter denselben Bedingungen verwendet werden können und das gleiche Ergebnis liefern.
+\end{itemize}
+
+
+\subsubsection*{Wie geht man mit Grenzwerten um?}
+Mit Grenzwerten geht man um, indem man:
+\begin{itemize}
+    \item Testfälle für die Grenzwerte erstellt.
+    \item Überprüft, ob das System an diesen Grenzen korrekt funktioniert.
+\end{itemize}
+
+
+
+\subsubsection*{Welche Vermutung hat man bei einer Äquivalenzklasse?}
+Bei einer \gls{Äquivalenzklasse} hat man die Vermutung, dass alle Eingabewerte in dieser Klasse das gleiche Verhalten erwarten lassen.
+
+
+\subsection{Vorgangsknotennetz}
+\subsubsection*{Wie funktioniert die \gls{mpm}?}
+Die \gls{mpm} funktioniert folgendermaßen:
+\begin{itemize}
+    \item \textbf{Vorgangsknoten:} Jeder Knoten im Netz stellt einen bestimmten Vorgang dar.
+    \item \textbf{Kanten:} Die Kanten zeigen die Abhängigkeiten zwischen den Vorgängen an.
+    \item \textbf{Zeitliche Planung:} Analyse des Vorgangsknotennetzes zur Bestimmung der frühesten und spätesten Start- und Endzeiten.
+\end{itemize}
+
+\subsubsection*{Wie berechnet man \gls{fap}, wie \gls{ssp}?}
+\begin{itemize}
+    \item \textbf{\gls{fap}:} 
+    \begin{equation*}
+      \gls{fap} = max (FEP_{vorganger})
+    \end{equation*}
+    \item \textbf{\gls{ssp}:} 
+    \begin{equation*}
+        \gls{sep} = min(\gls{sep}_{nachfolger}) - \text{Dauer des Vorgangs}
+    \end{equation*}
+\end{itemize}
+
+\subsubsection*{Wie können Termine und Zeiten geplant werden?}
+Termine und Zeiten können geplant werden durch:
+\begin{itemize}
+    \item Erstellung eines Vorgangsknotennetzes.
+    \item Bestimmung der Dauer für jeden Vorgang.
+    \item Berechnung der \gls{fap} und \gls{ssp}.
+    \item Ressourcenplanung zur Sicherstellung der Verfügbarkeit.
+    \item Festlegung von Meilensteinen zur Überwachung des Fortschritts.
+\end{itemize}
+
+
+\subsection{Erfolg eines IT-Projekts}
+\subsubsection*{Was muss erfüllt sein, damit ein IT-Projekt erfolgreich ist?}
+Damit ein IT-Projekt erfolgreich ist, sollten folgende Kriterien erfüllt sein:
+\begin{itemize}
+    \item Erfüllung der Anforderungen
+    \item Termintreue
+    \item Budgeteinhaltung
+    \item Qualität
+    \item Kundenzufriedenheit
+\end{itemize}
+
+
+
+\subsubsection*{Wie funktioniert gutes Projektmanagement heute?}
+Gutes Projektmanagement heute umfasst:
+\begin{itemize}
+    \item Agile Methoden
+    \item Regelmäßige Kommunikation
+    \item Risikomanagement
+    \item Stakeholder-Engagement
+    \item Nutzung von Projektmanagement-Tools
+\end{itemize}
+
+
+\subsubsection*{Was kann man machen, wenn der Zeit- oder Kostenplan knapp wird?}
+Wenn der Zeit- oder Kostenplan knapp wird, können folgende Maßnahmen ergriffen werden:
+\begin{itemize}
+    \item Priorisierung von Anforderungen
+    \item Erhöhung der Ressourcen
+    \item Anpassung des Zeitplans
+    \item Effizienzsteigerungen
+\end{itemize}
+
+
+\subsubsection*{\gls{Magisches Dreieck}}
+Beschreibt die drei Hauptfaktoren:
+\begin{itemize}
+    \item Kosten
+    \item Zeit
+    \item Qualität
+\end{itemize}
+
+
+\subsubsection*{Was bedeutet Qualität?}
+Qualität bezieht sich auf das Maß, in dem ein Produkt oder eine Dienstleistung die festgelegten Anforderungen und Erwartungen erfüllt.
+
+
+\subsubsection*{Was sind funktionale und nicht-funktionale Anforderungen?}
+\begin{itemize}
+    \item \textbf{Funktionale Anforderungen:} Beschreiben, was das System tun soll.
+    \item \textbf{Nicht-funktionale Anforderungen:} Beschreiben, wie das System die funktionalen Anforderungen erfüllen soll.
+\end{itemize}
+
+
+\subsubsection*{Was sind Qualitätseigenschaften?}
+Qualitätseigenschaften sind Merkmale, die die Qualität eines Softwareprodukts bestimmen, darunter:
+\begin{itemize}
+    \item Funktionalität
+    \item Zuverlässigkeit
+    \item Benutzerfreundlichkeit
+    \item Wartbarkeit
+    \item Leistung
+    \item Sicherheit
+\end{itemize}
+
+\subsection{\gls{Entwurfsmuster}}
+\gls{Entwurfsmuster} sind bewährte Lösungen für häufige Designprobleme in der Softwareentwicklung. Sie können in folgende Kategorien unterteilt werden:
+
+\begin{itemize}
+    \item \textbf{\gls{Erzeugungsmuster}:}
+    \begin{itemize}
+        \item Singleton: Stellt sicher, dass eine Klasse genau ein Objekt hat.
+        \item Factory Method: Definiert eine Schnittstelle zur Erstellung von Objekten.
+    \end{itemize}
+    
+    \item \textbf{\gls{Strukturmuster}:}
+    \begin{itemize}
+        \item Adapter: Ermöglicht die Zusammenarbeit von Klassen mit inkompatiblen Schnittstellen.
+        \item Decorator: Fügt einer bestehenden Klasse zusätzliche Verantwortlichkeiten hinzu.
+    \end{itemize}
+    
+    \item \textbf{\gls{Verhaltensmuster}:}
+    \begin{itemize}
+        \item Observer: Definiert eine Abhängigkeit zwischen Objekten für Benachrichtigungen.
+        \item Strategy: Ermöglicht die Definition und Änderung von Algorithmen.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Beispiele}
+Einige praktische Beispiele für \gls{Entwurfsmuster} sind:
+\begin{itemize}
+    \item \textbf{Singleton:} Eine Konfigurationsklasse, die sicherstellt, dass nur eine Instanz existiert.
+    \item \textbf{Factory Method:} Eine Anwendung, die verschiedene Fahrzeugtypen erstellt.
+    \item \textbf{Observer:} Ein Benachrichtigungssystem, das Benutzer über Änderungen informiert.
+\end{itemize}
+
+\subsubsection*{\glspl{Interface}}
+\begin{itemize}
+    \item Flexibilität: Klassen können verschiedene Implementierungen eines \glspl{Interface} definieren.
+    \item Abstraktion: \glspl{Interface} bieten eine klar definierte API.
+    \item \gls{Polymorphism} us: Ermöglicht die Verwendung von Objekten unterschiedlicher Klassen über eine Schnittstelle.
+\end{itemize}
+
+\subsection{Unterschied Architektur- und \gls{Entwurfsmuster}}
+\begin{itemize}
+    \item \textbf{\gls{Architekturmuster}:} Beschreiben die grundlegende Struktur und Organisation eines Softwaresystems.
+    \item \textbf{\gls{Entwurfsmuster}:} Konzentrieren sich auf spezifische Probleme innerhalb einer bestimmten Komponenten- oder Modulfunktionalität.
+\end{itemize}
+
+\subsubsection*{Ist \gls{mvc} ein Architektur- oder ein \gls{Entwurfsmuster}?}
+Das \gls{mvc}-Muster (Model-View-Controller) ist ein Architekturpattern.
+
+
+\subsubsection*{Wie sollten Model und View gekoppelt werden?}
+Model und View sollten lose gekoppelt sein, um:
+\begin{itemize}
+    \item Flexibilität und Wiederverwendbarkeit zu erhöhen.
+    \item Das \gls{op} zu verwenden, um Updates zu ermöglichen.
+    \item \glspl{Interface} zu nutzen, um Abhängigkeiten zu reduzieren.
+\end{itemize}
+
+
+\subsubsection*{Wobei hilft einem ein \gls{Architekturmuster}?}Ein \gls{Architekturmuster} hilft bei:
+\begin{itemize}
+    \item Strukturierung des Systems.
+    \item Verbesserung der Wartbarkeit.
+    \item Förderung der Wiederverwendbarkeit.
+    \item Standardisierung bewährter Lösungen.
+\end{itemize}
+
+\subsubsection*{Was wird möglich, wenn es keine \gls{Kopplung} gibt?}
+Wenn es keine \gls{Kopplung} gibt:
+\begin{itemize}
+    \item Unabhängigkeit von Komponenten.
+    \item Flexibilität bei Änderungen.
+    \item Erweiterbarkeit ohne Beeinträchtigung bestehender Komponenten.
+    \item Wiederverwendbarkeit in anderen Projekten.
+\end{itemize}
+
+
+
+\subsection{\gls{Architekturmuster}}
+\subsubsection*{Wozu gehören \gls{csm}?}
+\gls{csm} gehören zu den \gls{Architekturmuster} in der Softwareentwicklung. Sie definieren eine Struktur, in der:
+\begin{itemize}
+    \item \textbf{Client:} Der Teil, der Anfragen an den Server stellt.
+    \item \textbf{Server:} Der Teil, der die Anfragen verarbeitet und die erforderlichen Antworten zurücksendet.
+\end{itemize}
+Dieses Muster ermöglicht eine verbesserte Skalierbarkeit, Wartbarkeit und Flexibilität.
+
+
+\subsubsection*{Was ist das \gls{Schichtenmodell}?}
+Das \gls{Schichtenmodell} ist ein \gls{Architekturmuster}, das die Software in klar definierte Schichten unterteilt:
+\begin{itemize}
+    \item \textbf{Präsentationsschicht:} Verantwortlich für die Benutzeroberfläche.
+    \item \textbf{Anwendungsschicht:} Beinhaltet die Geschäftslogik.
+    \item \textbf{Datenzugriffsschicht:} Verantwortlich für den Zugriff auf Datenspeicher.
+\end{itemize}
+
+\subsubsection*{Was sind die Vorteile des \gls{Schichtenmodell}s?}
+Die Vorteile des \gls{Schichtenmodell}s sind:
+\begin{itemize}
+    \item Trennung von Anliegen
+    \item Wartbarkeit
+    \item Wiederverwendbarkeit
+    \item Testbarkeit
+    \item Flexibilität
+\end{itemize}
+
+
+\end{document}

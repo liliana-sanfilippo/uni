@@ -1,0 +1,350 @@
+\newacronym[
+  plural={PBIs},
+  description={\textit{Product-Backlog-Item}. Anforderungen, die im Product Backlog eines Projekts festgehalten werden},
+  longplural={Product-Backlog-Items}
+            ]{pbi}{PBI}{Product-Backlog-Item}
+\newacronym{ssp}{SSP}{spätester Startzeitpunkt}
+\newacronym[
+    description={\textit{Product Owner}. Rolle im Scrum-Framework, die für das Management des Product Backlogs verantwortlich ist. Der Product Owner priorisiert die Anforderungen, stellt sicher, dass das Team die richtigen Funktionen umsetzt, und fungiert als Schnittstelle zwischen den Stakeholdern und dem Entwicklungsteam}
+]{po}{PO}{Product Owner}
+\newacronym{sm}{SM}{Scrum Master}
+\newacronym[
+    description={\textit{Use Case Points}. Methode zur Aufwandsschätzung in der Softwareentwicklung, die auf der Analyse von Use Cases basiert. UCP berücksichtigt die Anzahl und Komplexität der Use Cases sowie die Anzahl der Akteure, um den Aufwand für die Entwicklung zu schätzen}
+]{ucp}{UCP}{Use Case Points}
+\newacronym{mvc}{MVC}{Model-View-Controller}
+\newacronym{sep}{SEP}{spätester Endzeitpunkt}
+\newacronym{fap}{FAP}{frühester Anfangszeitpunkt}
+\newacronym{fep}{FEP}{spätester Anfangszeitpunkt}
+\newacronym{spl}{SPL}{Selected Product Backlog}
+\newacronym[
+    description={\textit{Observer-Pattern}. Verhaltensmuster, das eine Eins-zu-viele-Abhängigkeit zwischen Objekten definiert, sodass, wenn sich der Zustand eines Objekts ändert, alle abhängigen Objekte (Beobachter) automatisch benachrichtigt und aktualisiert werden. Dieses Muster wird häufig in Event-Driven-Architekturen eingesetzt.}
+]{op}{OP}{Observer-Pattern}
+\newacronym{sp}{SP}{Story Point}
+\newacronym[
+    description={\textit{User Story Card}. Dokument, das eine User Story beschreibt. Sie enthält typischerweise den Titel der Story, eine Beschreibung aus der Sicht des Benutzers und Akzeptanzkriterien, die definieren, wann die Story als abgeschlossen gilt}
+]{usc}{USC}{User Story Card}
+\newacronym[
+    description={\textit{Metra-Potential-Methode}. Technik zur Planung von Projekten, die auf einem Vorgangsknotennetz basiert. Sie dient dazu, die Abhängigkeiten zwischen den Aufgaben zu visualisieren und die erforderlichen Ressourcen und Zeitpläne zu optimieren. Die Methode hilft, früheste und späteste Start- sowie Endzeiten für Vorgänge zu berechnen}
+]{mpm}{MPM}{Metra-Potential-Methode}
+\newacronym[
+    description={\textit{Glass-Box-Test}. Testmethode, bei der der Tester Zugriff auf den Quellcode hat und die interne Struktur sowie die Logik des Systems kennt. Diese Art von Test konzentriert sich auf die Überprüfung der Implementierung, indem alle Code-Pfade, Bedingungen und Schleifen getestet werden. Ziel ist es, sicherzustellen, dass der Code korrekt funktioniert und alle möglichen Ausführungspfade abgedeckt sind},
+    longplural={Glass-Box-Tests}
+]{gbt}{GBT}{Glass-Box-Test}
+\newacronym[
+    description={\textit{Black-Box-Test}. Testmethode, bei der der Tester keine Kenntnisse über die interne Implementierung oder den Quellcode des Systems hat. Der Fokus liegt auf der Überprüfung der Funktionalität des Systems durch Eingaben und Ausgaben. Der Tester bewertet, ob das System die erwarteten Ergebnisse basierend auf den gegebenen Eingaben liefert, ohne zu wissen, wie das System intern arbeitet},
+    longplural={Black-Box-Tests}
+]{bbt}{BBT}{Black-Box-Test}
+
+
+
+
+
+
+\newglossaryentry{test}
+{
+    name={test},
+    description={test}
+}
+\newglossaryentry{Entscheidungspunkt}
+{
+    name={Entscheidungspunkt},
+    plural={Entscheidungspunkte},
+    description={test}
+}
+\newglossaryentry{GRASP-Pattern}
+{
+    name={GRASP-Pattern},
+    description={Spezifische Lösungen oder Entwurfsmuster, die auf den oben genannten Prinzipien basieren. Sie bieten konkrete Ansätze, um wiederkehrende Designprobleme zu lösen. GRASP-Patterns sind oft näher an der praktischen Implementierung und können als Vorlagen für das Design von Klassen und deren Interaktionen verwendet werden}
+}
+\newglossaryentry{GRASP-Prinzip}
+{
+    name={GRASP-Prinzip},
+    plural={GRASP-Prinzipien},
+    description={Grundlegende Leitlinien oder Regeln, die bei der Zuweisung von Verantwortlichkeiten in objektorientierten Designs helfen. Sie bieten allgemeine Empfehlungen, wie man die Struktur und Organisation von Klassen und Objekten gestalten sollte, um die Softwarequalität zu verbessern}
+}
+\newglossaryentry{semantische Lücke}
+{
+    name={semantische Lücke},
+    description={Tritt auf, wenn es einen Unterschied zwischen den Erwartungen der Stakeholder und dem tatsächlichen Verhalten eines Systems gibt. Sie beschreibt die Diskrepanz zwischen dem, was Benutzer oder Stakeholder von einem System erwarten und dem, was das System tatsächlich liefert}
+}
+\newglossaryentry{Magisches Dreieck}
+{
+    name={Magisches Dreieck},
+    description={Kosten - Zeit - Qualität}
+}
+\newglossaryentry{csm}
+{
+    name={Client-Server-Muster},
+    description={Ein Architekturmuster, das die Struktur eines Systems beschreibt, in dem Clients Anfragen an einen Server senden, der die Anfragen verarbeitet und die entsprechenden Antworten zurücksendet. Dieses Muster fördert die Trennung von Benutzeroberfläche und Geschäftslogik und ermöglicht Skalierbarkeit und Wartbarkeit}
+}
+\newglossaryentry{Verhaltensmuster}
+{
+    name={Verhaltensmuster},
+    description={Kategorie von Entwurfsmustern, die sich mit der Interaktion zwischen Objekten und der Kommunikation zwischen ihnen befassen. Beispiele sind das Observer-Muster und das Strategy-Muster}
+}
+\newglossaryentry{Schichtenmodell}
+{
+    name={Schichtenmodell},
+    description={Architekturmuster, das Software in mehrere Schichten unterteilt, wobei jede Schicht eine bestimmte Verantwortung hat. Typische Schichten sind die Präsentationsschicht, die Anwendungsschicht und die Datenzugriffsschicht. Es fördert die Trennung von Anliegen und erleichtert die Wartung und Erweiterung der Software}
+}
+\newglossaryentry{Strukturmuster}
+{
+    name={Strukturmuster},
+    description={Kategorie von Entwurfsmustern, die sich mit der Zusammensetzung von Klassen und Objekten befassen. Sie helfen, die Beziehungen zwischen Objekten zu organisieren und die Struktur des Softwaredesigns zu verbessern. Beispiele sind das Adapter-Muster und das Decorator-Muster}
+}
+\newglossaryentry{Erzeugungsmuster}
+{
+    name={Erzeugungsmuster},
+    description={Eine Kategorie von Entwurfsmustern, die sich mit der Instanziierung von Objekten befassen. Sie bieten Mechanismen zur Erstellung von Objekten auf flexible und wiederverwendbare Weise. Beispiele sind das Singleton-Muster und das Factory-Muster}
+}
+\newglossaryentry{Zweigüberdeckung}
+{
+    name={Zweigüberdeckung},
+    description={Testmetrik, die misst, ob alle Entscheidungspunkte im Code getestet wurden. Sie stellt sicher, dass alle möglichen Wege durch die Bedingungen im Code abgedeckt sind}
+}
+\newglossaryentry{Pure Fabrication}
+{
+    name={Pure Fabrication},
+    description={GRASP-Pattern, das vorschlägt, eine Klasse zu erstellen, die nicht direkt aus den Anforderungen oder dem Domänenmodell abgeleitet ist, um die Kopplung zu reduzieren und die Kohäsion zu erhöhen. Diese Klasse wird verwendet, um spezifische Verantwortlichkeiten zu kapseln}
+}
+\newglossaryentry{Polymorphism}
+{
+    name={Polymorphism},
+    description={Konzept in der objektorientierten Programmierung, das es ermöglicht, dass verschiedene Klassen auf die gleiche Weise behandelt werden können, indem sie eine gemeinsame Schnittstelle oder Basisklasse verwenden. Es fördert die Flexibilität und Wiederverwendbarkeit des Codes}
+}
+\newglossaryentry{Aggregation}
+{
+    name={Aggregation},
+    description={Eine Beziehung zwischen Klassen in der objektorientierten Programmierung, bei der eine Klasse (das Aggregat) aus einer oder mehreren anderen Klassen (den Komponenten) besteht, aber die Komponenten unabhängig existieren können. Zum Beispiel kann eine Bibliothek eine Aggregation von Buch-Objekten sein, wobei die Bücher auch ohne die Bibliothek existieren können}
+}
+\newglossaryentry{Kohäsion}
+{
+    name={Kohäsion},
+    description={Bezieht sich auf das Maß, in dem die Elemente einer Klasse (Methoden und Attribute) zusammengehören. Hohe Kohäsion bedeutet, dass die Elemente eng miteinander verbunden sind und eine klare, konsistente Aufgabe erfüllen, was die Verständlichkeit und Wartbarkeit der Klasse erhöht}
+}
+\newglossaryentry{Information Expert}
+{
+    name={Information Expert},
+    description={GRASP-Pattern, das besagt, dass Verantwortlichkeiten den Klassen zugewiesen werden sollten, die die benötigten Informationen besitzen. Dies fördert die Kohäsion und reduziert die Kopplung}
+}
+\newglossaryentry{Interface}
+{
+    name={Interface},
+    description={Sammlung von Methoden, die von einer Klasse implementiert werden müssen, ohne dass die Implementierung spezifiziert wird. Interfaces fördern die lose Kopplung und ermöglichen Polymorphismus, indem sie eine gemeinsame Schnittstelle für verschiedene Klassen bereitstellen}
+}
+\newglossaryentry{Sprint Execution}
+{
+    name={Sprint Execution},
+    description={Die Phase, in der das Entwicklungsteam die im Sprint Backlog festgelegten Aufgaben umsetzt. Diese Phase umfasst die eigentliche Entwicklungsarbeit, das Testen und die Integration der Software}
+}
+\newglossaryentry{Daily Scrum}
+{
+    name={Daily Scrum},
+    description={Kurzes, tägliches Stand-up-Meeting, das im Scrum-Prozess stattfindet. Es dient der Synchronisation des Teams und ermöglicht es den Teammitgliedern, ihren Fortschritt zu teilen, Hindernisse zu identifizieren und die Arbeit für den Tag zu planen. Die Dauer beträgt in der Regel 15 Minuten}
+}
+\newglossaryentry{Sprint Retrospective}
+{
+    name={Sprint Retrospective},
+    description={Meeting, das am Ende eines Sprints abgehalten wird, in dem das Team darüber reflektiert, was gut gelaufen ist, was verbessert werden kann und welche Maßnahmen für den nächsten Sprint ergriffen werden sollen}
+}
+\newglossaryentry{Product Backlog}
+{
+    name={Product Backlog},
+    description={Priorisierte Liste von Anforderungen, Features und Verbesserungen für ein Produkt, die vom Product Owner verwaltet wird. Es dient als zentrales Dokument für die Planung und Durchführung der Sprints}
+}
+\newglossaryentry{Sprint Planning}
+{
+    name={Sprint Planning},
+    description={Meeting, das zu Beginn jedes Sprints stattfindet. In diesem Meeting bestimmt das Team, welche User Stories aus dem Product Backlog für den nächsten Sprint ausgewählt werden und plant, wie die Arbeit ausgeführt wird}
+}
+\newglossaryentry{Technikfaktor}
+{
+    name={Technikfaktor},
+    plural={Technikfaktoren},
+    description={Parameter, der in der Aufwandsschätzung, insbesondere bei Use Case Points, berücksichtigt wird. Er reflektiert die technischen Herausforderungen und Anforderungen, die das Projekt beeinflussen können, und hilft, die geschätzte Komplexität zu bewerten}
+}
+\newglossaryentry{Umweltfaktor}
+{
+    name={Umweltfaktor},
+    plural={Umweltfaktoren},
+    description={Parameter, der in der Aufwandsschätzung berücksichtigt wird und externe Bedingungen beschreibt, die das Projekt beeinflussen können. Dazu gehören beispielsweise Marktbedingungen, organisatorische Rahmenbedingungen und gesetzliche Vorgaben}
+}
+\newglossaryentry{Portabilität}
+{
+    name={Portabilität},
+    description={Fähigkeit einer Software, auf verschiedenen Plattformen oder in unterschiedlichen Umgebungen ohne wesentliche Anpassungen zu laufen. Hohe Portabilität ermöglicht es, die Software effizient zu verteilen und auf verschiedenen Systemen zu verwenden}
+}
+\newglossaryentry{Termbaum}
+{
+    name={Termbaum},
+    plural={Termbäume},
+    description={Grafische Darstellung von Ausdrücken oder Berechnungen in der Informatik. Er zeigt die Struktur von Ausdrücken und deren Auswertungsreihenfolge und wird häufig in der Programmierung und im Compilerbau verwendet}
+}
+\newglossaryentry{Detektor}
+{
+    name={Detektor},
+    description={Werkzeug oder eine Komponente in der Softwareentwicklung, die dazu dient, bestimmte Zustände, Bedingungen oder Ereignisse zu erkennen. Detektoren können in verschiedenen Kontexten verwendet werden, beispielsweise zur Identifikation von Fehlern, zur Überwachung der Leistung oder zur Ausführung von Tests}
+}
+\newglossaryentry{Pfad}
+{
+    name={Pfad},
+    description={Vollständige Sequenz von Anweisungen, die während der Ausführung eines Programms durchlaufen wird. Pfade sind wichtig für die Analyse des Kontrollflusses und die Erstellung von Testfällen, um sicherzustellen, dass alle Codepfade abgedeckt werden}
+}
+\newglossaryentry{Pfadüberdeckung}
+{
+    name={Pfadüberdeckung},
+    description={Ein Maß dafür, inwieweit die verschiedenen Ausführungspfade in einem Programm getestet werden. Eine 100\%-ige Pfadüberdeckung bedeutet, dass alle möglichen Pfade durch das Programm ausgeführt wurden. Dies ist ein wichtiger Aspekt der Testabdeckung}
+}
+\newglossaryentry{Entscheidungsdiagramm}
+{
+    name={Entscheidungsdiagramm},
+    description={Eine grafische Darstellung von Entscheidungsprozessen, die es ermöglicht, verschiedene Optionen und die daraus resultierenden Konsequenzen zu visualisieren. Es wird häufig verwendet, um die Logik von Programmen zu analysieren und zu dokumentieren}
+}
+\newglossaryentry{Kontrollflussdiagramm}
+{
+    name={Kontrollflussdiagramm},
+    description={Eine grafische Darstellung des Ablaufs eines Programms oder eines Algorithmus. Es zeigt die verschiedenen Schritte, Entscheidungen und Abläufe in einem Prozess. Kontrollflussdiagramme helfen dabei, die Logik und Struktur eines Codes zu visualisieren und zu analysieren}
+}
+\newglossaryentry{Zweig}
+{
+    name={Zweig},
+    description={Entscheidungspunkt im Code, an dem der Fluss basierend auf einer Bedingung in verschiedene Richtungen verzweigt. Zum Beispiel in einer if-Anweisung, wo verschiedene Ausführungspfade existieren}
+}
+\newglossaryentry{High Coupling}
+{
+    name={High Coupling},
+    description={Bezieht sich auf eine starke Abhängigkeit zwischen Klassen. Eine hohe Kopplung kann die Wartbarkeit und Flexibilität eines Systems verringern, da Änderungen in einer Klasse Auswirkungen auf andere Klassen haben können}
+}
+\newglossaryentry{Low Coupling}
+{
+    name={Low Coupling},
+    description={Prinzip, das darauf abzielt, die Abhängigkeiten zwischen Klassen zu minimieren. Eine niedrige Kopplung fördert die Unabhängigkeit der Klassen, was die Wartbarkeit, Testbarkeit und Wiederverwendbarkeit des Codes verbessert}
+}
+\newglossaryentry{Direkte Kopplung}
+{
+    name={Direkte Kopplung},
+    description={Bezieht sich auf eine Beziehung zwischen Klassen, bei der eine Klasse direkt auf die Methoden oder Attribute einer anderen Klasse zugreift. Diese Art der Kopplung kann zu einer engen Abhängigkeit führen, was die Flexibilität und Wartbarkeit des Systems verringert}
+}
+\newglossaryentry{Indirekte Kopplung}
+{
+    name={Indirekte Kopplung},
+    description={Liegt vor, wenn eine Klasse über eine dritte Klasse mit einer anderen Klasse interagiert. Diese Art der Kopplung verringert die direkte Abhängigkeit zwischen Klassen und fördert die Flexibilität}
+}
+\newglossaryentry{Szenario}
+{
+    name={Szenario},
+    description={Spezifische Beschreibung einer Interaktion zwischen einem Benutzer (Akteur) und einem System, die eine bestimmte Situation oder Anforderung darstellt. Szenarien werden häufig in der Anforderungsanalyse verwendet, um die Benutzererfahrung zu veranschaulichen}
+}
+\newglossaryentry{Prototyping}
+{
+    name={Prototyping},
+    description={Prozess der Erstellung von Modellen oder Mockups einer Softwareanwendung, um Anforderungen zu testen und Feedback von Benutzern zu sammeln. Prototypen helfen, die Benutzererfahrung zu visualisieren und sicherzustellen, dass die Anforderungen korrekt verstanden werden}
+}
+\newglossaryentry{Nachbedingung}
+{
+    name={Nachbedingung},
+    description={Definiert den Zustand, der nach der Ausführung eines Anwendungsfalls oder einer Funktion erreicht werden sollte. Sie beschreibt, was im System nach der Durchführung einer Aktion oder eines Vorgangs erwartet wird und ist wichtig für die Validierung der Funktionalität}
+}
+\newglossaryentry{Pflichtenheft}
+{
+    name={Pflichtenheft},
+    plural={Pflichtenhefte},
+    description={Dokument, das die detaillierten Anforderungen an ein System beschreibt, einschließlich technischer Spezifikationen und Implementierungsdetails. Es wird in der Regel auf der Grundlage des Lastenhefts erstellt und dient als Grundlage für die Entwicklung}
+}
+\newglossaryentry{Lastenheft}
+{
+    name={Lastenheft},
+    plural={Lastenhefte},
+    description={Dokument, das die Anforderungen und Erwartungen des Auftraggebers an ein System beschreibt. Es definiert, was das System tun soll, ohne zu spezifizieren, wie dies erreicht werden soll. Das Lastenheft dient als Grundlage für die weitere Planung und Entwicklung}
+}
+\newglossaryentry{Use Case}
+{
+    name={Use Case},
+    plural={Use Cases},
+    description={Beschreibung einer Interaktion zwischen einem Benutzer (Akteur) und einem System, um ein bestimmtes Ziel zu erreichen. Use Cases helfen dabei, die Anforderungen an das System aus der Perspektive der Benutzer zu verstehen}
+}
+\newglossaryentry{Sprint Review}
+{
+    name={Sprint Review},
+    description={Meeting, das am Ende eines Sprints stattfindet, in dem das Team das entwickelte Produktinkrement präsentiert. Stakeholder geben Feedback, und das Team diskutiert, ob die Ziele des Sprints erreicht wurden}
+}
+\newglossaryentry{User Story}
+{
+    name={User Story},
+    plural={User Stories},
+    description={Kurze, einfache Beschreibung einer Anforderung aus der Sicht des Endbenutzers. Sie folgt typischerweise dem Format: "Als [Benutzertyp] möchte ich [Ziel], damit [Nutzen]." User Stories sind ein zentrales Element agiler Methoden}
+}
+\newglossaryentry{Sprint}
+{
+    name={Sprint},
+    description={Festgelegte, zeitlich begrenzte Phase im Scrum-Prozess, in der ein funktionsfähiges Produktinkrement entwickelt wird. Sprints dauern in der Regel zwischen 1 und 4 Wochen. Am Ende eines Sprints wird das entwickelte Produkt überprüft und bewertet}
+}
+\newglossaryentry{Referenz-Item}{
+    name={Referenz-Item},
+    description={Beispiel oder eine Vorlage aus einem bestehenden System oder Projekt sein, das zur Unterstützung bei der Entwicklung neuer Anforderungen oder Designs verwendet wird. Es dient als Leitfaden oder Inspirationsquelle}
+}
+\newglossaryentry{Architekturmuster}
+{
+    name={Architekturmuster},
+    description={Bewährte Lösungen für häufige Probleme in der Softwarearchitektur. Sie definieren die Struktur und Organisation eines Softwaresystems und legen fest, wie die verschiedenen Komponenten interagieren. Beispiele sind das Model-View-Controller (MVC)-Muster, das Schichtenmodell und das Client-Server-Modell}
+}
+\newglossaryentry{Entwurfsmuster}
+{
+    name={Entwurfsmuster},
+    description={Bewährte Lösungen für wiederkehrende Designprobleme in der Softwareentwicklung. Sie bieten eine allgemeine Vorlage, die in verschiedenen Kontexten angepasst werden kann. Zu den bekanntesten Entwurfsmustern gehören Singleton, Factory Method und Observer}
+}
+\newglossaryentry{Domänenmodell}
+{
+    name={Domänenmodell},
+    description={Eine abstrahierte Darstellung der relevanten Konzepte, Beziehungen und Regeln innerhalb eines bestimmten Anwendungsbereichs (Domäne). Es beschreibt die Struktur und das Verhalten der Elemente in diesem Bereich und hilft, die Anforderungen besser zu verstehen und zu kommunizieren}
+}
+\newglossaryentry{High Cohesion}
+{
+    name={High Cohesion},
+    description={Das Prinzip, dass die Methoden und Attribute einer Klasse eng miteinander verbunden sind und eine gemeinsame Verantwortung haben. Eine hohe Kohäsion führt zu besser strukturierten und leichter verständlichen Klassen}
+}
+\newglossaryentry{Kopplung}
+{
+    name={Kopplung},
+    description={Beschreibt die Abhängigkeit zwischen Klassen oder Modulen in einem Software-System. Hohe Kopplung bedeutet, dass Klassen stark voneinander abhängig sind, während niedrige Kopplung darauf hinweist, dass Klassen weitgehend unabhängig sind. Niedrige Kopplung ist wünschenswert, da sie die Wartbarkeit und Flexibilität des Systems erhöht}
+}
+
+\newglossaryentry{CRC}
+{
+    name={CRC-Karte},
+    description={Eine CRC-Karte (Class-Responsibility-Collaborator-Karte) ist ein Werkzeug zur Analyse und Planung von objektorientierten Klassen. Sie enthält drei Hauptkomponenten: Klasse, Verantwortlichkeiten, Zusammenarbeit}
+}
+\newglossaryentry{Black Box Test}
+{
+    name={Black Box Test},
+    description={Ein Black-Box-Test ist eine Testmethode, bei der das interne Design, die Implementierung oder die Struktur des getesteten Systems nicht bekannt ist. Der Tester konzentriert sich ausschließlich auf die Eingaben und Ausgaben des Systems, um zu überprüfen, ob es den Anforderungen entspricht. Diese Methode wird häufig verwendet, um die Funktionalität von Software zu validieren, ohne dass Kenntnisse über den zugrunde liegenden Code erforderlich sind.}
+}
+\newglossaryentry{Hohe Kohäsion}
+{
+    name={Hohe Kohäsion},
+    description={Hohe Kohäsion bezieht sich auf das Prinzip, dass alle Methoden und Attribute innerhalb einer Klasse eng miteinander verbunden sind und eine gemeinsame Verantwortung oder Aufgabe haben. Eine Klasse mit hoher Kohäsion hat klar definierte und konsistente Verantwortlichkeiten, was die Verständlichkeit, Wartbarkeit und Wiederverwendbarkeit des Codes erhöht. Hohe Kohäsion führt oft zu besser strukturierten und leichter zu verstehenden Klassen}
+}
+\newglossaryentry{Glass Box Test}
+{
+    name={Glass Box Test},
+    description={Ein Glass-Box-Test (auch bekannt als White-Box-Test) ist eine Testmethode, bei der der Tester das interne Design und die Implementierung des Systems kennt. Diese Art von Test überprüft die Funktionsweise des Codes, indem verschiedene Teile der Software direkt angesprochen werden. Der Tester analysiert den Code, um sicherzustellen, dass alle Pfade, Bedingungen und Logik korrekt implementiert sind.}
+}
+\newglossaryentry{Sprint Backlog}
+{
+    name={Sprint Backlog},
+    description={Liste von User Stories, Aufgaben und Anforderungen, die das Team während eines Sprints umsetzen möchte. Es wird zu Beginn des Sprints im Sprint Planning Meeting erstellt und stellt sicher, dass das Team klare Ziele hat}
+}
+\newglossaryentry{Äquivalenzklasse}{
+    name={Äquivalenzklasse},
+    description={Eine Äquivalenzklasse ist eine Gruppe von Eingabewerten, die das gleiche Verhalten eines Systems erwarten lassen.}
+}
+\newglossaryentry{Velocity}
+{
+    name={Velocity},
+    description={Maß für die Menge an Arbeit, die ein Scrum-Team in einem Sprint erledigen kann. Sie wird in der Regel in Story Points gemessen und hilft dem Team, seine Kapazität für zukünftige Sprints besser zu schätzen.}
+}
+\newglossaryentry{Planning Poker}
+{
+    name={Planning Poker},
+    description={test}
+}

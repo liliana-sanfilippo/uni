@@ -1,0 +1,58 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{2cm} p{5.5cm} p{5.5cm}}
+         & \textbf{MVC} & \textbf{Observer-Pattern} \\     
+       \textbf{Paradigma}  &  Architektur-Muster & Entwurfsmuster \\ 
+       \textbf{Zweck} & Strukturiert Software in drei Schichten & Ermöglicht Benachrichtigungen bei Änderungen \\
+       \textbf{Kopplung} & Lose Kopplung zwischen Model, View, Controller & Sehr lose Kopplung zwischen Subjekt und Beobachtern \\
+       \textbf{Verwendung} & Wird für die gesamte Softwarestruktur verwendet & Wird meist zur Implementierung von Benachrichtigungen genutzt \\
+       \textbf{Beziehung zueinander} & MVC kann das Observer-Pattern für die Verbindung zwischen Model und View nutzen & Kann in MVC, aber auch unabhängig verwendet werden  \\ 
+       \textbf{Vorteile} & Klare Trennung von Verantwortlichkeiten, Erhöhte Wiederverwendbarkeit von Komponenten, Verbesserte Wartbarkeit und Testbarkeit, Ermöglicht parallele Entwicklung von UI und Logik & Ermöglicht lose Kopplung zwischen Subjekt und Beobachtern, Mehrere Views können automatisch aktualisiert werden, Erhöht die Flexibilität bei Änderungen, Einfach zu implementieren und modular erweiterbar \\
+       \textbf{Nachteile} & Erhöhter Implementierungsaufwand, komplex, Erfordert oft zusätzliches Design für Datenbindung und Zustandsmanagement & Kann zu Performance-Problemen führen, wenn zu viele Beobachter registriert sind, Zyklische Abhängigkeiten sind möglich, Schwieriger zu debuggen, wenn viele Events gleichzeitig verarbeitet werden   
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+\subsection{Fragen}
+\subsubsection*{Welche Bestandteile hat MVC?}
+\begin{itemize}
+    \item Model
+    \item View
+    \item Controller
+\end{itemize}
+\subsubsection*{Zeichnen von MVC-Interaktionen}
+Aktion im View -> View informiert Controller -> Controller verarbeitet Eingabe und aktualisiert Model -> Model ändert Zustand und benachrichtigt View -> View aktualisiert sich 
+\subsubsection*{Vorteil(e) des Observer-Patterns?}
+\begin{itemize}
+    \item Entkopplung
+    \item Flexibilität
+    \item Einfache Erweiterbarkeit
+\end{itemize}
+\subsubsection*{Vorteile von MVC?}
+\begin{itemize}
+    \item Bessere Wartbarkeit
+    \item Wiederverwendbarkeit
+    \item Bessere Testbarkeit
+    \item Flexibilität
+\end{itemize}
+\subsubsection*{Warum nutzt man Architekturmuster?}
+\begin{itemize}
+    \item Strukturierung
+    \item Wiederverwendbarkeit
+    \item Wartbarkeit
+    \item Testbarkeit
+    \item Skalierbarkeit
+\end{itemize}
+\subsubsection*{Wie sind Model und View gekoppelt?}
+Gar nicht, das Model sollte keine direkte Abhängigkeit zur View haben. Aber der View ist der Beobachter des Models.  
+\subsubsection*{Warum sollte man keine View-Referenzen im Model speichern?}
+\begin{itemize}
+    \item Verletzung des MVC-Prinzips
+    \item Schlechte Wartbarkeit
+    \item Schwierige Testbarkeit
+    \item Erweiterbarkeit wird erschwert
+\end{itemize}
+\end{document}
