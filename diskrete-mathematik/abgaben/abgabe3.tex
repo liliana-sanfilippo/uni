@@ -1,0 +1,304 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 3; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+\section{Präsenzaufgaben, im Tutorium bearbeitet}
+\subsection{Aufgabe 1}
+Die Permutationen $\pi$ und $\sigma$ von $\{1, 2, \dots, 7\}$ seien in Zykelschreibweise durch
+    \[
+    \pi := (1, 2)(3, 4, 5, 6)(7) \quad \text{und} \quad \sigma := (1)(2, 3, 4, 5, 6, 7) 
+    \]
+    
+    gegeben. Stellen Sie $\pi\sigma$, $\sigma\pi$, $\pi^2$, $\pi^{-1}$ und $\sigma^{-1}$ als Produkte disjunkter Zykeln dar.
+    \subsection*{$\pi\sigma$:}
+    \begin{align*}
+        \pi (\sigma (1)) = \pi (1) &  =2 & \text{also } 1 \xrightarrow[]{\pi \sigma} 2 \\
+        \pi (\sigma (2)) = \pi (3) &  =4 & \text{also } 2 \xrightarrow[]{\pi \sigma} 4 \\
+        \pi (\sigma (3)) = \pi (4) &  =5 & \text{also } 3 \xrightarrow[]{\pi \sigma} 5 \\
+        \pi (\sigma (4)) = \pi (5) &  = 6& \text{also } 4 \xrightarrow[]{\pi \sigma} 6 \\
+        \pi (\sigma (5)) = \pi (6) &  =3 & \text{also } 5 \xrightarrow[]{\pi \sigma} 3 \\
+        \pi (\sigma (6)) = \pi (7) &  =7 & \text{also } 6 \xrightarrow[]{\pi \sigma} 7 \\
+        \pi (\sigma (7)) = \pi (2) &  = 1& \text{also } 7 \xrightarrow[]{\pi \sigma} 1 \\
+    \end{align*}
+Als Produkt disjunkter Zykel: 
+\[
+(3,5)(1,2,4,6,7)\textcolor{Blue}{^*}
+\]
+\textcolor{Blue}{$^*$ Bei disjunkten Zykeln: (3,5)(1,2,4,6,7) = (1,2,4,6,7)(3,5)} \newline
+\subsection*{$\sigma \pi$:}
+ \begin{align*}
+        \sigma (\pi (1)) = \sigma (2) &  =3 & \text{also } 1 \xrightarrow[]{\sigma \pi} 3 \\
+        \sigma (\pi (2)) = \sigma (1) &  =1 & \text{also } 2 \xrightarrow[]{\sigma \pi} 1 \\
+        \sigma (\pi (3)) = \sigma (4) &  =5 & \text{also } 3 \xrightarrow[]{\sigma \pi} 5 \\
+        \sigma (\pi (4)) = \sigma (5) &  =6 & \text{also } 4 \xrightarrow[]{\sigma \pi} 6 \\
+        \sigma (\pi (5)) = \sigma (6) &  =7 & \text{also } 5 \xrightarrow[]{\sigma \pi} 7 \\
+        \sigma (\pi (6)) = \sigma (3) &  =4 & \text{also } 6 \xrightarrow[]{\sigma \pi} 4 \\
+        \sigma (\pi (7)) = \sigma (7) &  =2 & \text{also } 7 \xrightarrow[]{\sigma \pi} 2 \\
+    \end{align*}
+Als Produkt disjunkter Zykel: 
+\[
+(1,3,5,7,2)(4,6)
+\]
+\subsection*{$\pi^2$:}
+\begin{align*}
+     \sigma (\sigma (1)) = \sigma (2) &  =1 & \text{also } 1 \xrightarrow[]{\sigma \sigma} 1 \\
+     \sigma (\sigma (2)) = \sigma (1) &  =2 & \text{also } 2 \xrightarrow[]{\sigma \sigma} 2 \\
+     \sigma (\sigma (3)) = \sigma (4) &  =5 & \text{also } 3 \xrightarrow[]{\sigma \sigma} 5 \\
+     \sigma (\sigma (4)) = \sigma (5) &  =6 & \text{also } 4 \xrightarrow[]{\sigma \sigma} 6 \\
+     \sigma (\sigma (5)) = \sigma (6) &  =3 & \text{also } 5 \xrightarrow[]{\sigma \sigma} 3 \\
+     \sigma (\sigma (6)) = \sigma (3) &  =4 & \text{also } 6 \xrightarrow[]{\sigma \sigma} 4   \\
+     \sigma (\sigma (7)) = \sigma (7) &  = 7 & \text{also } 7 \xrightarrow[]{\sigma \sigma} 7 \\
+\end{align*}
+Als Produkt disjunkter Zykel: 
+\[
+(3,5)(4,6)
+\]
+\subsection*{$\pi^{-1}$:}
+ \[
+    \pi^{-1} := (1, 2)(6,5,4,3) 
+    \]
+ \subsection*{$\sigma^{-1}$:}   
+    \[
+    \sigma^{-1} := (7,6,5,4,3,2)
+    \]
+\textcolor{Blue}{\textit{Anmerkung: \\ Die Fixpunkte weglassen, weil das keine Zykel sind.}}
+\subsection{Aufgabe 2}
+     Seien $A$, $B$, $C$, $D \subseteq X$. Geben Sie die Formel für $|A \cup B \cup C \cup D|$ in Abhängigkeit der Mächtigkeit der Durchschnitte an.
+
+\[
+|A \cup B \cup C \cup D| = |A| + |B| + |C| + |D| 
+\]
+\[
+- |A \cap B| - |A \cap C| - |A \cap D| - |B \cap C| - |B \cap D| - |C \cap D|
+\]
+\[
++ |A \cap B \cap C| + |A \cap B \cap D| + |A \cap C \cap D| + |B \cap C \cap D|
+\]
+\[
+- |A \cap B \cap C \cap D|
+\]
+\color{Blue}
+\subsubsection*{\textit{Notizen für eigenes Verständnis:}}
+Das ist die Inklusions-Exklusions-Formel nur für vier Mengen. Sie ergibt die Anzahl der Elemente der Vereinigung und sorgt dafür, dass Sachen aber nicht doppelt gezählt werden. 
+\begin{table}[h]
+\color{Blue}
+    \centering
+    \begin{tabular}{p{8cm} p{9cm}}
+        $|A| + |B| + |C| + |D| $ & alle Elemente der Mengen zusammen addieren \\ \\
+        $- |A \cap B| - |A \cap C| - |A \cap D| - |B \cap C| - |B \cap D| - |C \cap D|$ &  Paarweise Überschneidungen entfernen \\ \\
+        $+ |A \cap B \cap C| + |A \cap B \cap D| + |A \cap C \cap D| + |B \cap C \cap D|$ & Dreifache Überschneidungen wieder hinzufügen, weil man mit den Paaren zu viel weg gemacht hat \\ \\
+        $|A \cap B \cap C \cap D|$ & Vierfache Überschneidung wegmachen \\
+    \end{tabular}
+\end{table}
+\color{black}
+\section{Aufgaben zur Abgabe}
+\subsection*{Aufgabe 1 (4 Punkte)}
+Eine Permutation $\pi$ mit der Eigenschaft $\pi(i) \neq i$ für alle $i \in \{1, 2, \dots, n\}$ heißt
+\textit{Derangement} (oder auch fixpunktfreie Permutation \textcolor{Blue}{d.h. Permutationen, bei denen kein Element auf seiner ursprünglichen Position bleibt}). Wir bezeichnen die Teilmenge der
+Derangements mit $D_n \subseteq S_n$.
+
+Sei $X = S_n$ und $A_i = \{\pi \in S_n \mid \pi(i) = i\}$ für $1 \leq i \leq n$. Für $I \subseteq \{1, 2, \dots, n\}$ schreiben wir
+$A_I = \bigcap_{i \in I} A_i$ \textcolor{Blue}{(d.h. $A_i$ ist die Menge aller Permutationen, bei denen das i-te Element an seiner ursprünglichen Position bleibt und $A_I$ besteht aus den Permutationen $\pi$, bei denen alle Elemente an den Positionen $i \in I$ Fixpunkte sind - also nicht nur mindestens eines!)} \\
+\textcolor{Blue}{\textbf{Beispiel: }Wenn \( I = \{1, 2\} \), dann ist \( A_I = A_1 \cap A_2 \), und es umfasst alle Permutationen, bei denen sowohl \( \pi(1) = 1 \) als auch \( \pi(2) = 2 \).
+}
+\begin{enumerate}
+    \item[(a)] Finden Sie $|A_I|$ für $I \subseteq \{1, 2, \dots, n\}$. 
+   % \begin{mybox}
+    %    \[
+     %   |A_I| = \sum_{k=1}^{|I|} (-1)^{k+1} \binom{|I|}{k} (n - k)! 
+     %   \] 
+      %  Dabei ist $k = |J|$, also die Größe einer Menge $A_J \subseteq A_I$. \\
+       %  Man möchte Mehrfachzählungen vermeiden und daher Subtrahiert und Addiert man abwechselnd die z-fachen Überlappungen, deren Anzahl jeweils der der k-elementigen Teilmengen $J \subseteq I$ entspricht. Dabei ist $z \in \{1, ..., |I|, |I|+1\}$, also $z$ rangiert von $1$ bis $|I|+1$. Deswegen steht $(-1)^{k+1}$ in der Formel. \\
+     %    Da wir $|A_I|$ berechnen wollen, zählen wir natürlich wie viele z-fache Überlappungen bzw. k-elementigen Teilmengen es pro Iteration in I gibt. Aus Definition 2.1. wissen wir, es gibt $\binom{|I|}{k}$ k-elementige Teilmengen in einer $|I|$-elementigen Menge. \\
+     %    $(n-k)!$ bezeichnet die Anzahl der nicht fixierten Punkte, welche ihre Positionen verändern könnten und somit die Anzahl der möglichen Permutationen erhöhen.  
+    %    \textcolor{white}{\cite{inkludionsprinzipENG}}
+%\end{mybox}
+\begin{mybox}
+    Wenn alle Elemente in $I$ fixiert sind, können immer noch $n - |I|$ Elemente frei permuttiert werden. Aus der Vorlesung wissen wir, dass $(n - |I|)!$ mögliche Permutationen ergibt. \\
+    Daher: 
+    \[
+        A_I = (n - |I|)!
+    \]
+\end{mybox}
+    \item[(b)] Finden Sie $|D_n|$.
+\begin{mybox}
+    Bei $D_n$ handelt es sich um eine Teilmenge von $S_n$, in der keine Permutation Fixpunkte aus $I$ hat. Also auch nicht mindestens einen.  \\
+    Die Permutationen mit mindestens einem fixierten Punkt können durch eine Teilmenge 
+    \[
+       |B_I| = \sum_{k=1}^{|I|} (-1)^{k+1} \binom{|I|}{k} (n - k)! 
+    \] 
+    dargestellt werden. 
+    Dabei ist $k = |J|$, also die Größe einer Menge $A_J \subseteq A_I$. \\
+    Man möchte Mehrfachzählungen vermeiden und daher Subtrahiert und Addiert man abwechselnd die z-fachen Überlappungen, deren Anzahl jeweils der der k-elementigen Teilmengen $J \subseteq I$ entspricht. Dabei ist $z \in \{1, ..., |I|, |I|+1\}$, also $z$ rangiert von $1$ bis $|I|+1$. Deswegen steht $(-1)^{k+1}$ in der Formel. \\
+    Da wir $|A_I|$ berechnen wollen, zählen wir natürlich wie viele z-fache Überlappungen bzw. k-elementigen Teilmengen es pro Iteration in I gibt. Aus Definition 2.1. wissen wir, es gibt $\binom{|I|}{k}$ k-elementige Teilmengen in einer $|I|$-elementigen Menge. \\
+    $(n-k)!$ bezeichnet die Anzahl der nicht fixierten Punkte, welche ihre Positionen verändern könnten und somit die Anzahl der möglichen Permutationen erhöhen. \\
+    $D_n$ ist das Komplement von $B_I$.   
+    \[
+    \text{Also: } D_n = S_n \backslash B_I
+    \]
+    \begin{align*}
+         \text{Und: } |D_n| & = |S_n| - |B_I| \\
+        & = |S_n| - \sum_{k=1}^{|I|} (-1)^{k+1} \binom{|I|}{k} (n - k)! 
+    \end{align*}
+    
+\end{mybox}
+\end{enumerate}
+
+
+\subsection{Aufgabe 2 (4 Punkte)}
+In einer Gruppe von 70 Studierenden sprechen 45 Englisch, 37 Französisch und 22 beide
+Sprachen. Wie viele sprechen keine von beiden Sprachen?
+\begin{mybox}
+\begin{align*}
+    45 + 37 - 22 & = 60 \\
+    72 - 60 & = 12
+\end{align*}
+12 Studierende sprechen keine von beiden Sprachen. 
+\end{mybox}
+\noindent Wenn außerdem 16 Studierende Russisch sprechen, von denen 5 auch Englisch, 7 auch
+Französisch und 4 alle drei Sprachen sprechen, wie viele sprechen dann keine der drei
+Sprachen?
+\begin{mybox}
+\begin{align*}
+    45 + 37 + 16 & = 98 \\
+    98 - 22 - 5 - 7 & = 64 \\
+    64 + 4 & = 68 \\ 
+    70 - 68 & = 2 
+\end{align*}
+2 Studierende sprechen keine der drei Sprachen.
+\end{mybox}
+
+\subsection*{Aufgabe 3 (4 Punkte)}
+Ein Kartenspiel mit $2n$ Karten wird wie folgt gemischt:
+Der Stapel wird in obere und untere Hälfte geteilt. Die beiden Hälften werden dann so
+ineinander geschoben, dass der neu entstehende Stapel von oben beginnend abwechselnd
+eine Karte von der unteren und der oberen Hälfte enthält. \\
+Für die gegebenen $n$, wie oft muss gemischt werden, bis sich die Karten wieder in ihrer
+Ursprungsreihenfolge befinden? \\
+\textcolor{Blue}{Der Mischvorgang ist eine Permutation. Da nach jeder Permutation jeweils eine Karte aus dem oberen Stapel sich mit einer aus dem unteren Stapel abwechselt, ist die Permutation der Art $\pi = (1,n+1)(2,n+2)...$}
+\begin{enumerate}
+    \item[(a)] $n = 2$
+    \begin{mybox}
+    $ 2 \cdot 2 = 4$ \\ \newline
+        \begin{tabular}{c|cccc}
+            Mischvorgang 0 & 1 & 2& 3& 4\\
+            Mischvorgang 1 & 1 & 3 & 2 & 4 \\
+            Mischvorgang 2 & 1 & 2 & 3 & 4
+        \end{tabular} \\ \newline
+    Es braucht 2 Mischungen, damit die Karten wieder in der richtigen Reihenfolge sind. 
+    \end{mybox}
+    \item[(b)] $n = 4$
+    \begin{mybox}
+     $ 2 \cdot 4 = 8$ \\ \newline
+     \begin{tabular}{c|cccccccc}
+        Mischvorgang 0  &1&2&3&4&5&6&7&8 \\
+        Mischvorgang 1  &1&5&2&6&3&7&4&8  \\
+        Mischvorgang 2 &1&3&5&7&2&4&6&8  \\
+        Mischvorgang 3 &1&2&3&4&5&6&7&8  \\
+     \end{tabular} \\ \newline
+     Es braucht 3 Mischungen, damit die Karten wieder in der richtigen Reihenfolge sind.
+    \end{mybox}
+    \item[(c)] $n = 8$
+\begin{mybox}
+  $ 2 \cdot 8 = 16$ \\ \newline
+     \begin{tabular}{c|cccccccccccccccc}
+        Mischvorgang 0  &1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16 \\
+        Mischvorgang 1  &1&9&2&10&3&11&4&12&5&13&6&14&7&15&8&16  \\
+        Mischvorgang 2 &1&5&9&13&2&6&10&14&3&7&11&15&4&8&12&16  \\
+        Mischvorgang 3 &1&3&5&7&9&11&13&15&2&4&6&8&10&12&14&16  \\
+        Mischvorgang 4 &1&2&3&4&5&6 &7 & 8&9&10&11&12&13&14&15&16  \\
+     \end{tabular} \\ \newline
+     Es braucht 4 Mischungen, damit die Karten wieder in der richtigen Reihenfolge sind.
+\end{mybox}
+\end{enumerate}
+
+
+\subsection*{Aufgabe 4 (4 Punkte)} 
+Gegeben sei eine Permutation $\sigma$ der Menge $\{1, 2, \dots, n\}$. \\
+Zeigen Sie, dass $\operatorname{sgn}(\sigma) = \det(M(\sigma))$, wobei $M(\sigma)$ die $(n \times n)$-Matrix bezeichnet, deren $i$-te
+Spalte der $\sigma(i)$-te Standardbasisvektor des $\mathbb{R}^n$ ist.
+\begin{mybox}
+  Aufgrund der gegebenen Definition von $M(\sigma)$, kann man es so ausschreiben: $M(\sigma)_{i,j} = 
+\begin{cases} 
+1 & \text{wenn } j = \sigma(i), \\
+0 & \text{sonst}.
+\end{cases}$ \\
+Dank Leibniz wissen wir, dass 
+\[
+\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i, \sigma(i)}
+\] 
+also hier \[
+\det(M(\sigma)) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n M(\sigma)_{i, \sigma(i)}
+\]
+und weil \( M(\sigma)_{i, \sigma(i)} = 1 \) für jedes \( i \) ist es \[
+\det(M(\sigma)) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \cdot 1
+\]
+Also: 
+\[
+\det(M(\sigma)) =  \text{sgn}(\sigma) 
+\]
+
+\end{mybox}
+
+
+\end{document}

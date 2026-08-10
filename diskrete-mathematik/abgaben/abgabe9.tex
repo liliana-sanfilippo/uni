@@ -1,0 +1,363 @@
+
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{systeme}          % for Solution 3
+\usepackage{array}  
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 9; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.1cm}
+\end{tabular}
+\section*{Präsenzaufgaben}
+
+\textbf{1. Welche der folgenden Codes sind linear? Bestimmen Sie jeweils den Minimalabstand und wie viele Fehler erkannt bzw. korrigiert werden können.}
+\begin{itemize}
+  \item[(a)] \( \{0000, 1100, 1010, 1001, 0110, 0101, 0011, 1111\} \)
+  \begin{mybox}
+  \paragraph{Nullvektor:}
+  Ist vorhanden (0000) 
+  \paragraph{Abgeschlossenheit unter Addition:}
+Mit dem Nullvektor addiert bleiben alle Codes sie selbst, also nicht in der Tabelle.  
+  \begin{table}[H]
+      \centering
+      \begin{tabular}{c|ccccccc}
+        & 1100 & 1010 & 1001 & 0110 & 0101 & 0011 & 1111\\ \hline
+    1100& 0000 & 0110 & 0101 & 1010 & 1001 & 1111 & 0011\\
+    1010&  & 0000 & 0110 & 1100 & 1111 & 1001 & 0101\\
+    1001&  &  & 0000 & 1111 & 1100 & 1010 & 0110\\
+    0110&  &  &  & 0000 & 1010 & 0101 & 1001\\
+    0101&  &  &  &  & 0000 & 0110 & 1010 \\
+    0011&  &  &  &  &  & 0000 & 1100\\
+    1111&  &  &  &  &  &  & 0000
+      \end{tabular}
+  \end{table}
+  Der Code ist also linear. 
+  \paragraph{Minimalabstand:} 2
+  \paragraph{t-Fehlererkennend:} für $2 > t$ (bis zu 1 Fehler) 
+  \paragraph{t-Fehlerkorrigierend:} $2 > 2t$ (keine Fehler)
+  \end{mybox}
+  \item[(b)] \( \{10000, 01010, 00001\} \)
+\begin{mybox}
+Ist nicht linear, da er keinen Nullvektor beinhaltet. 
+\paragraph{Minimalabstand:} 2
+\paragraph{t-Fehlererkennend:} für $2 > t$ (bis zu 1 Fehler) 
+\paragraph{t-Fehlerkorrigierend:} für $2 > 2t$ (keine Fehler) 
+\end{mybox}
+  \item[(c)] \( \{00000000, 10101010, 01010101\} \)
+  \begin{mybox}
+  Ist nicht linear, da nicht abgeschlossen unter Addition: 
+  \[10101010 + 01010101 = 11111111 \notin \{00000000, 10101010, 01010101\} \]
+  \paragraph{Minimalabstadn:} 4
+  \paragraph{t-Fehlererkennend:} für $4 > t$ (bis zu 3 Fehler) 
+  \paragraph{t-Fehlerkorrigierend:} $4 > 2t$ (bis zu 1 Fehler) 
+  \end{mybox}
+\end{itemize}
+
+
+
+\section*{Aufgaben zur Abgabe}
+
+\subsection*{Aufgabe 1 (4 Punkte)}
+Sei $S$ eine Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$. Zeigen Sie, dass $S + i$ eine Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$ ist für jedes $i \in \mathbb{Z}/m\mathbb{Z}$. Folgern Sie, dass man ohne Einschränkung annehmen kann, dass jede Differenzenfamilie $0$ und $1$ enthält.
+\begin{mybox}
+Sei $S + i = \{s+i \mod m \mid s \in S\}$, also eine Verschiebung von $S$. Da für $s_1 \neq s_2; s_1, s_2 \in S$ gilt für $S+i$: $(s_1 + i) - (s_2 + i) \mod m = s_1 - s_2 \mod m$. \\
+Weil $S$ eine Differenzenfamilie modulo $m$ ist und jedes $i$ auch aus einer kommt, ist auch $S + i$ eine Differenzenfamilie modulo $m$ und somit in $\mathbb{Z}/m\mathbb{Z}$. \\ \newline 
+Für alle $S =\{ s_1, s_2, ...\}$ kann man eine Verschiebung der Art $-s_1$ erzeugen, so dass $S' = \{0, s_2 - s_1, ...\}$ bzw. $S' = \{0, s_2', ...\}$. Also liegt 0 in jeder Differenzenfamilie. \\
+Wählt man ein $x \in \mathbb{Z}/m\mathbb{Z}$ mit $ggT(x,m) = 1$ (invertierbar), kann man jedes $s_i \in S'$ mit $x$ multiplizieren und erhält $S'' = \{0 \mod m, s_2'\cdot x \mod m, ... \} = \{0, 1, ...\}$.  
+\end{mybox}
+
+\subsection*{Aufgabe 2 (4 Punkte)}
+Sei $S$ eine Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$. Zeigen Sie, dass $T = \mathbb{Z}/m\mathbb{Z} \setminus S$ eine Differenzenfamilie ist. Bestimmen Sie die Parameter des von $T$ induzierten $2$-Designs in Abhängigkeit der Parameter des von $S$ induzierten $2$-Designs.
+\begin{mybox}
+Da
+\[\# \text{Anzahl Restklassen in } \mathbb{Z}/m\mathbb{Z} = m \]
+gilt
+\[|T| = m - |S|\]
+Ein $x \in \mathbb{Z}/m\mathbb{Z} \backslash \{0\}$ trifft für $S$ genau $a_S$ mal und für $T$ genau $a_T$ mal. 
+Da 
+\[\# \text{Anzahl Restklassen in } \mathbb{Z}/m\mathbb{Z} \backslash \{0\} = m -1 = \# \text{Gesamtanzahl die $x$ trifft}\]
+Also 
+\begin{align*}
+    a_S + a_T & = m -1 \\
+     a_T & = m -1 - a_S 
+\end{align*}
+Also ist $T$ eine Differenzenfamilie, bei der jede Differenz $a_T$-mal vorkommt. 
+\\
+Für ein 2-Design sind die Parameter bein Induzierung durch $S$: 
+\[v = |S|, \quad k = |S|, \quad \lambda = a_S\]
+Aufgrund der Komplementarität von $S$ und $T$  sind die Parameter für ein durch $T$ induziertes 2-Design: 
+\[v = |T| = m - |S|, \quad k = |T| = m - |S|, \quad \lambda = a_T =  m-1-a_S\]
+\end{mybox}
+
+\subsection*{Aufgabe 3 (4 Punkte)}
+Ergänzen Sie die Menge von Codewörtern
+\[
+\{00000, \ 00110, \ 10101\}
+\]
+zu einem linearen Code $C$. Finden Sie eine Kontrollmatrix für $C$ und bestimmen Sie das Gewicht aller Codewörter in $C$.
+\begin{mybox}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|cccc}
+        & 00000 & 00110 & 10101 & 10011\\ \hline
+   00000& 00000 & 00110 & 10101 & 10011\\
+   00110&       & 00000 & 10011 & 10101\\
+   10101&       &       & 00000 & 00110\\
+   10011&       &       &       & 00000\\
+    \end{tabular}
+\end{table}
+Ergänzter Code: \{00000, \ 00110, \ 10101, \ 10011\}\\
+Gewichte: 
+\begin{align*}
+    00000: & \quad 0\\
+    00110: & \quad 2\\
+    10101: & \quad 3\\
+    10011: & \quad 3
+\end{align*}
+\end{mybox}
+\begin{mybox}
+\[
+Generatormatrix = \begin{pmatrix}
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+1 & 0 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 & 0
+\end{pmatrix}
+\]
+Wie man die Kontrollmatrix berechnet habe ich nicht verstanden. 
+\end{mybox}
+\subsection*{Aufgabe 4 (4 Punkte)}
+Der Code $C$ sei durch die folgende Kontrollmatrix gegeben:
+\[
+\begin{pmatrix}
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0 \\
+\end{pmatrix}
+\]
+\begin{enumerate}
+    \item[(a)] Korrigieren Sie folgende empfangenen Wörter zu Codewörtern in $C$ unter der Annahme, dass höchstens ein Fehler aufgetreten ist:
+    \[
+    110111, \quad 101010, \quad 110101.
+    \]
+    \begin{mybox}
+    \[
+    110111: 
+\begin{pmatrix} 
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0
+\end{pmatrix} 
+\cdot 
+\begin{pmatrix} 
+1 \\
+1 \\
+0 \\
+1 \\
+1 \\
+1
+\end{pmatrix}
+= \begin{pmatrix}
+1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 + 1 \cdot 1 \\
+0 \cdot 1 + 1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 + 1 \cdot 1 \\
+1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 1 + 0 \cdot 1
+\end{pmatrix}
+= \begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix}
+\]
+$ 110111 \rightarrow 110101$
+\[
+101010: 
+\begin{pmatrix} 
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0
+\end{pmatrix}
+\cdot 
+\begin{pmatrix} 
+1 \\
+0 \\
+1 \\
+0 \\
+1 \\
+0
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+1 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 0 \\
+0 \cdot 1 + 1 \cdot 0 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 0 \\
+1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 0 + 1 \cdot 1 + 0 \cdot 0
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+1 \\
+1 \\
+0
+\end{pmatrix}
+\]
+$101010 \rightarrow 101011$
+\[
+110101: 
+\begin{pmatrix} 
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0
+\end{pmatrix}
+\cdot 
+\begin{pmatrix} 
+1 \\
+1 \\
+0 \\
+1 \\
+0 \\
+1
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 0 + 1 \cdot 1 \\
+0 \cdot 1 + 1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 0 + 1 \cdot 1 \\
+1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 0 + 0 \cdot 1
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+0 \\
+0 \\
+0
+\end{pmatrix}
+\]
+Bleibt so, ist richtig. 
+    \end{mybox}
+    \item[(b)] Wie viele Wörter existieren, die nicht durch Änderung von höchstens einem Bit zu einem Codewort in $C$ korrigiert werden können?
+\end{enumerate}
+\begin{mybox}
+Dafür erstmal den Code berechnen: 
+\[
+\begin{aligned}
+1x_1 + 0x_2 + 1x_3 + 0x_4 + 1x_5 + 1x_6 &= 0 \\
+0x_1 + 1x_2 + 0x_3 + 0x_4 + 1x_5 + 1x_6 &= 0 \\
+1x_1 + 0x_2 + 0x_3 + 1x_4 + 1x_5 + 0x_6 &= 0
+\end{aligned}
+\]
+\[
+\left( \begin{array}{c cccccc|c}
+I. &1 & 0 & 1 & 0 & 1 & 1 & 0 \\
+II. & 0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+III. & 1 & 0 & 0 & 1 & 1 & 0 & 0
+\end{array} \right)
+\]
+III. - I. 
+\[
+\left( \begin{array}{c cccccc|c}
+I. & 1 & 0 & 1 & 0 & 1 & 1 & 0 \\
+II. & 0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+III. & 0 & 0 & 1 & 1 & 0 & 1 & 0
+\end{array} \right)
+\]
+I. - III. 
+\[
+\left( \begin{array}{c cccccc|c}
+I.      & 1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+II.     & 0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+III.    & 0 & 0 & 1 & 1 & 0 & 1 & 0
+\end{array} \right)
+\]
+II. - III. 
+\[
+\left( \begin{array}{c cccccc|c}
+I.      & 1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+II.     & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+III.    & 0 & 0 & 1 & 1 & 0 & 1 & 0
+\end{array} \right)
+\]
+\[
+\left( \begin{array}{c cccccc|c}
+I.      & 1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+II.     & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+III.    & 0 & 0 & 1 & 1 & 0 & 1 & 0
+\end{array} \right)
+\]
+II. 
+\begin{align*}
+    x_2+x_5+x_6& =0 \\
+    x_5+x_6& = x_2
+\end{align*}
+III. 
+\begin{align*}
+    x_1+x_4+x_5& =0 \\
+    x_4+x_5& = x_1
+\end{align*}
+I.
+\begin{align*}
+   x_1+x_3+x_5+x_6 & =0 \\
+   (x_4+x_5)+x_3+x_5+x_6 & =0 \\
+   x_4+x_3+2x_5+x_6 & =0 \\
+   x_4+x_3+x_6 & =0 \\
+   x_4+x_6 & = x_3
+\end{align*}
+Codewörter: 
+\[
+(x_1, x_2, x_3, x_4, x_5, x_6) = (x_4 + x_5, x_5 + x_6, x_4 + x_6, x_4, x_5, x_6)
+\]
+$\{(0,0,0,0,0,0), (0,0,1,0,0,1), (1,1,0,0,1,0), (1,0,1,0,1,1), (1,0,1,1,0,0), (1,1,0,1,0,1)
+(0,1,1,1,1,0), (0,0,0,1,1,1)\}$
+\end{mybox}
+\begin{mybox}
+Der Minimalabstand des Codes ist 3 (siehe bspw. (1,0,1,0,1,1)  und (0,1,0,0,1,1)). Da es $2^6 = 64$ mögliche 6-stellige Wörter aus 0,1 gibt und Wörter mit einem Bit nicht korrigiert werden können (davon gibt es pro Wort 6: $6 \cdot 8$) und der Code 8 Wörter hat: 
+\[64-8-6\cdot 8=48\]
+48 Wörter können nicht mit nur einem Bit korrigiert werden. 
+\end{mybox}
+\end{document}

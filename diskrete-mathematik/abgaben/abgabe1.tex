@@ -1,0 +1,198 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+
+\usepackage{color}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Abgabe 1; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+
+\usepackage[onehalfspacing]{setspace}
+\begin{document}
+
+
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+\end{tabular}
+\vspace{0.2cm}\\
+\section{Präsenzaufgaben}
+
+
+
+\subsection{Aufgabe 1 - \textcolor{blue}{Teilmengen}}
+Im Hof spielen 20 Kinder. Ein Elternteil hat 5 Schokoriegel zu verschenken. Wie viele Möglichkeiten gibt es, wenn
+\begin{itemize}
+    \item alle Schokoriegel verschieden sind, jedes Kind darf maximal einen haben? \\ 
+    \textcolor{blue}{\textbf{Definition 2.1.} Die Anzahl der $r$-elementigen Teilmengen einer $n$-elementigen Menge wird mit $\binom{n}{r}$ bezeichnet.
+} \newline
+    \textcolor{blue}{jedes Kind darf maximal einen haben $\rightarrow$ Anzahl der r-elementigen Teilmengen einer n-elementigen Menge, wobei n Anzahl der Kinder und r Anzahl der Schokoriegel: $\binom{n}{r} = \binom{20}{5}$ } \\
+\textcolor{blue}{alle Schokoriegel verschieden $\rightarrow$ Reihenfolge der Verteilung der Schokoriegel ist relevant: $5*4*3*2*1 = 120 = 5!$ Möglichkeiten } \\
+    \textcolor{blue}{Daher: $\binom{20}{5}  * 5!$ = $\frac{20!}{15!}$ }
+ \item alle Schokoriegel gleich sind, jedes Kind darf maximal einen haben? \\
+ \textcolor{blue}{\textbf{Definition 2.1.} Die Anzahl der $r$-elementigen Teilmengen einer $n$-elementigen Menge wird mit $\binom{n}{r}$ bezeichnet.
+} \\
+ \textcolor{blue}{jedes Kind darf maximal einen haben $\rightarrow$ Anzahl der r-elementigen Teilmengen einer n-elementigen Menge, wobei n Anzahl der Kinder und r Anzahl der Schokoriegel: $\binom{n}{r} = \binom{20}{5}$ } \\
+\textcolor{blue}{alle Schokoriegel gleich $\rightarrow$ Reihenfolge der Verteilung der Schokoriegel ist irrelevant } \\
+    \textcolor{blue}{Daher: $\binom{20}{5}$ }
+ \item alle Schokoriegel gleich sind, die Kinder nehmen wie viel sie wollen/können? \\
+ \textcolor{blue}{\textbf{Satz 2.9.} Es gibt $\binom{n+r-1}{r}$ Möglichkeiten, $r$ Elemente aus einer $n$-elementigen Menge mit Wiederholung auszuwählen.
+}\\ 
+\textcolor{blue}{$\binom{n+r-1}{r}$ = $\binom{20+5-1}{5}$ = $\binom{24}{5}$}
+ \item alle Schokoriegel verschieden sind, die Kinder nehmen wie viel sie wollen/können? \\
+ \textcolor{blue}{\textbf{Potenzregel 1.5.} \quad $|X^n| = |X| \cdot \cdots \cdot |X| = |X|^n$
+} \\
+\textcolor{blue}{Also: $20^5$}
+\end{itemize}
+
+
+\subsection{Aufgabe 2}
+In einem Modul muss jede*r der 35 Studierenden eines Jahrgangs genau drei von fünf
+möglichen Veranstaltungen wählen. In der ersten Veranstaltung nehmen 18 teil, in der
+zweiten 23, in der dritten 20 und in der vierten 27.
+\\ \newline
+Wie viele belegen die fünfte Veranstaltung?
+\\ 
+\color{blue}
+\begin{itemize}
+    \item Studenten in Veranstaltung 1: 18 
+    \item Studenten in Veranstaltung 2: 23
+    \item Studenten in Veranstaltung 3: 20
+    \item Studenten in Veranstaltung 4: 27 
+    \item Studenten in Veranstaltung 5: x
+\end{itemize}
+Jeder muss drei Veranstaltungen belegen, also sollten 105 Einschreibungen in ein Modul vorliegen. 
+\begin{equation*}
+    18 + 23 + 20 + 27 + x = 105
+\end{equation*}
+\begin{equation*}
+    88 + x = 105
+\end{equation*}
+\begin{equation*}
+     x = 17
+\end{equation*}
+In Veranstaltung 5 befinden sich 17 Studenten.
+\color{black}
+
+\subsection{Aufgabe 3}
+Sicherheitsschlüssel haben Kerben an genau bestimmten Positionen. Wenn die Kerben
+acht verschiedene Tiefen haben können, wie viele Positionen muss man dann vorsehen,
+damit man eine Billion verschiedene Schlüssel herstellen kann?
+\color{blue}
+Anzahl Tiefen: 8 \\
+Anzahl Kerben: x \\
+\begin{equation*}
+    8^x = 1.000.000.000.000
+\end{equation*}
+\begin{equation*}
+    log(8^x) = log(1.000.000.000.000)
+\end{equation*}
+\begin{equation*}
+   x * log(8) = log(1.000.000.000.000)
+\end{equation*}
+\begin{equation*}
+   x * log(8) = log(10^{12})
+\end{equation*}
+\begin{equation*}
+   x * log(8) = 12
+\end{equation*}
+\begin{equation*}
+   x  = \frac{12}{log(8)} \approx 13.29
+\end{equation*}
+Aufrunden, damit man tatsächlich eine Billion hinbekommt: 14
+\color{black}
+
+
+\subsection{Aufgabe 4}
+Es sei $X = \{1, 2, \dots, 100\}$ und $A \subseteq X$.
+\begin{itemize}
+    \item[(a)] Zeigen Sie: Wenn $|A| = 55$, dann gibt es $a, b \in A$ mit $a - b = 9$.
+    \color{blue}
+
+\color{black}
+    \item[(b)] Gilt dies auch für $|A| = 54$?
+\end{itemize}
+\color{blue}
+
+\color{black}
+
+
+\section{Aufgaben zur Abgabe}
+\subsection{Aufgabe 1 (4 Punkte)}
+Im Parlament eines Landes gibt es 151 Sitze und drei Parteien. Wie viele Möglichkeiten
+der Sitzverteilung gibt es, so dass keine Partei eine absolute Mehrheit hat?
+\color{blue}
+
+\color{black}
+
+\subsection{Aufgabe 2 (4 Punkte)}
+Die acht Professor*innen A, B, C, . . . , H einer Fakultät haben mehrere Kommissionen
+mit je vier Mitgliedern gebildet. Jede*r Professor*in gehört genau drei Kommissionen an
+und keine zwei Kommissionen sind gleich zusammengesetzt. Wie viele Kommissionen gibt
+es? Begründen Sie Ihre Antwort und finden Sie eine mögliche Zusammenstellung der
+Kommissionen.
+\color{blue}
+
+\color{black}
+
+\subsection{Aufgabe 3 (4 Punkte)}
+Zeigen Sie: Unter je fünf Punkten der Ebene mit ganzzahligen Koordinaten gibt es zwei,
+deren Mittelpunkt ebenfalls ganzzahlige Koordinaten hat.
+\color{blue}
+
+\color{black}
+
+\subsection{Aufgabe 4 (4 Punkte)}
+Auf wie viele Arten kann ein König von der linken unteren Ecke eines Schachbrettes nach
+der rechten oberen ziehen, wenn er stets nach oben, nach rechts oder diagonal nach rechts
+oben zieht?
+\color{blue}
+
+\color{black}
+
+
+\end{document}

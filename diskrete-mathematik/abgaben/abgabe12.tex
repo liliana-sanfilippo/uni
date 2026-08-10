@@ -1,0 +1,412 @@
+
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{systeme}          % for Solution 3
+\usepackage{array}  
+%\usepackage{blindtext}
+\usepackage{polynom}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage[normalem]{ulem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 12; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyhead[RO]{\small }
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.1cm}
+\end{tabular}
+
+
+\section*{Präsenzaufgaben}
+
+\begin{enumerate}
+    \item Auf einem Bankkonto werden am Anfang jeden Monats 250 Euros eingezahlt und am Ende des Monates das vorhandene Geld mit 0,5\% verzinst. Nach wie vielen Jahren ist man Millionär?
+    \begin{mybox}
+    Sei $K_{St}$ der Kontostand, $z = 1,005$ der Zinsfaktor und $e = 250$ die monatliche Einzahlung. \\
+    Der Kontostand nach $x$ Monaten ist $K_{St}(x) = \sum_{i=0}^{x-1} e \cdot z^i$.  
+    \[
+    \sum_{i=0}^{x-1} e \cdot z^i =  e \cdot \frac{1-z^x}{1-z}
+    \]
+    Wir wollen \(e \cdot \frac{1-z^x}{1-z} \geq 1.000.000 \) nach $x$ auflösen. 
+    \begin{align*}
+      1,000,000 & \leq   250 \cdot \frac{1-1,005^x}{1-1,005} \\
+                & \leq   250 \cdot \frac{1-1,005^x}{-0,005} \\
+                & \leq   -50.000 \cdot (1-1,005^x) & | \ :50.000\\
+         20     & \leq  -(1-1,005^x) \\
+                & \leq  1,005^x - 1\\
+         21     & \leq  1,005^x & | \ ln \\
+         ln(21) & \leq x \cdot ln(1,005) & | \ : ln(1,005) \\
+         \frac{ln(21)}{ln(1,005)} & \leq x   
+    \end{align*}
+    \[ \frac{ln(21)}{ln(1,005)} \approx \frac{3.04452}{0.004987} \approx 610.49\]
+    \[610.49 / 12 \approx 50,9\]
+    Nach ca. 60 Jahren ist man Millionär. 
+    \end{mybox}
+    \item Finden Sie die Potenzreihe von
+    \[
+    \frac{1 + x}{1 - x}, \quad \frac{1 + x + x^2}{1 - x}, \quad \text{und} \quad \frac{1}{(1 - x)^2}.
+    \] 
+    \begin{mybox}
+    \begin{align*}
+        \frac{1 + x}{1 - x} & = \frac{1}{1 - x} + \frac{x}{1 - x} 
+         = \frac{1}{1 - x} + x \cdot \frac{1}{1 - x} \\
+        & =  \sum_{i=0}^{\infty} x^i + x \cdot \sum_{i=0}^{\infty} x^i 
+        =  \sum_{i=0}^{\infty} x^i + \sum_{i=0}^{\infty} x^{i+1} \\
+        &  =  \sum_{i=0}^{\infty} x^i + \sum_{i=1}^{\infty} x^{i} 
+        = 1+  \sum_{i=1}^{\infty} x^i + \sum_{i=1}^{\infty} x^{i} = 1+ 2 \cdot  \sum_{i=1}^{\infty} x^i \\
+       &  = 1 + 2x + 2x^2 + 2x^3 + ...
+    \end{align*}
+    \end{mybox}
+    \begin{mybox}
+    \begin{align*}
+        \frac{1 + x + x^2}{1 - x} &  = \frac{1}{1 - x} + x \cdot \frac{1}{1 - x} + x^2 \cdot \frac{1}{1 - x} \\
+        &  = \sum_{i=0}^{\infty} x^i + x \cdot \sum_{i=0}^{\infty} x^i + x^2 \cdot \sum_{i=0}^{\infty} x^i \\
+       & = \sum_{i=0}^{\infty} x^i +\sum_{i=0}^{\infty} x^{i+1} +  \sum_{i=0}^{\infty}  x^{i+2} \\
+        & = \sum_{i=0}^{\infty} x^i +\sum_{i=1}^{\infty} x^{i} +  \sum_{i=2}^{\infty}  x^{i} \\
+        & = 1 + \sum_{i=1}^{\infty} x^i +\sum_{i=1}^{\infty} x^{i} +  \sum_{i=2}^{\infty}  x^{i}  \\
+        & = 1 + \sum_{i=1}^{\infty} x^i +  \sum_{i=1}^{\infty} x^{i} +  \sum_{i=2}^{\infty}  x^{i}  \\
+         & = 1+ 2 \cdot  \sum_{i=1}^{\infty} x^i  +  \sum_{i=2}^{\infty}  x^{i} \\
+         & = 1+ 2x + 2 \cdot  \sum_{i=2}^{\infty} x^i  +  \sum_{i=2}^{\infty}  x^{i} \\
+          & = 1+ 2x + 3 \cdot  \sum_{i=2}^{\infty} x^i  \\
+          & =  1+ 2x + 3x^2 + 3x^3 + ...
+        \end{align*}
+    \end{mybox}
+    \begin{mybox}
+    \begin{align*}
+        \frac{1}{(1 - x)^2} & = \frac{1}{1 - x} \times \frac{1}{1 - x} \\
+        & = \sum_{i=0}^{\infty} x^i \times \sum_{i=0}^{\infty} x^i \\
+        & = (\sum_{i=0}^{\infty} x^i)^2 \\
+        & = \sum_{i=0}^{\infty} \sum_{j=0}^{\infty} x^i x^j \\
+        & = \sum_{i=0}^{\infty} \sum_{j=0}^{\infty} x^{i+j} \\ 
+        & = \sum_{k=0}^{\infty} (k+1)x^{k} \\ 
+        & = 1 + 2x + 3x^2 + ...
+    \end{align*}
+    \end{mybox}
+\end{enumerate}
+\newpage 
+\section*{Aufgaben zur Abgabe}
+
+\subsection*{Aufgabe 1 (4 Punkte)}  
+Das Standardskalarprodukt auf $(\mathbb{Z}/2\mathbb{Z})^n$ ist definiert als
+\[
+\langle v, w \rangle = \sum_{i=0}^{n-1} v_i w_i
+\]
+für $v = (v_0, \dots, v_{n-1})$ und $w = (w_0, \dots, w_{n-1})$. Der duale Code $C^\perp$ eines linearen Codes $C \subseteq (\mathbb{Z}/2\mathbb{Z})^n$ ist definiert als
+\[
+C^\perp := \{v \in (\mathbb{Z}/2\mathbb{Z})^n \mid \langle v, w \rangle = 0 \text{ für alle } w \in C\}.
+\]
+Zeigen Sie, dass für jeden zyklischen Code $C$, der duale Code $C^\perp$ auch zyklisch ist.   \\
+\textit{Hinweis: Verwenden Sie den Isomorphismus $(\mathbb{Z}/2\mathbb{Z})^n \to \mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$.}
+\begin{mybox}
+Der genannte Isomorphismus besagt, dass ein Vektor  $v = (v_0, \dots, v_{n-1}) \in \mathbb{Z}/2\mathbb{Z})^n $ einem Polynom $v(x)=v_0+v_1x+...+v_{n-1}x^{n-1} \in \mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$ entspricht. \\
+Da in $(\mathbb{Z}/2\mathbb{Z})^n$ eine Multiplikation mit $x$ einer zyklischen Verschiebung in $\mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$ entspricht, ist der Code $C$ ein Ideal im Ring $\mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$. \\
+Da die Abbildung (der Isomorphismus) bijektiv ist, lässt sich auch schließen, dass Ideale im Ring $\mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$ auch zyklischen linearen Codes in $(\mathbb{Z}/2\mathbb{Z})^n$ entsprechen. \\
+Wir können zeigen, dass  $C^\perp$ auch ein Ideal in $\mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$ ist und somit ein zyklischer linearer Code in $(\mathbb{Z}/2\mathbb{Z})^n$. \\
+\underline{$C^\perp$ ist Ideal in $\mathbb{Z}/2\mathbb{Z}[x]/(x^n + 1)$:} \\
+$C^\perp$ ist unter Addition abgeschlossen, da das Skalarprodukt linear ist und man daher bei der Addition zweier Codes deren Skalarprodukte addiert und 0+0=0. \\
+Abgeschlossenheit unter Multiplikation mit $x$ ($v(x) \in C^\perp \Rightarrow x\cdot v(x) \in C^\perp$) gilt, da $x^n\equiv 1\mod(x^n+1)$ und die Multiplikation somit eine zyklische Verschiebung ist. \\ \newline
+$\Rightarrow C^\perp$ ist zyklischer linearer Code (in $(\mathbb{Z}/2\mathbb{Z})^n$)
+%Zeigen, dass $C^\perp$ auch zyklisch ist, also dass man folgern kann $v(x) \in C^\perp \Rightarrow x\cdot v(x) \in C^\perp$:  \\
+
+\end{mybox} 
+
+\subsection*{Aufgabe 2 (4 Punkte)}  
+Für jeden Teiler $g(x)$ von $x^4 + 1$ in $\mathbb{Z}/2\mathbb{Z}[x]$ berechnen Sie:
+\begin{mybox}
+Erst einmal alle Teiler finden. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{3cm}p{5cm}}
+        $x$ & Rest $\neq$ 0, kein Teiler  \\
+        $x+1$ & Rest 0, Teiler \\
+        $x^2$ & Rest $\neq$ 0, kein Teiler \\
+        $x^2 +1$ & Rest 0, Teiler \\
+        $x^2 +x$ & Rest 0, Teiler \\
+        $x^2 +x +1$ & Rest 0, Teiler \\ \\
+    \end{tabular}
+\end{table}
+Damit ein Polynom $p$ dritten Grades ein Teiler ist, muss $(x+1) \times p = (x^4+1)$ sein, also $(x^4+1) / (x+1) = p$. Das passt für $p = x^3 + x^2 + x + 1$ \\
+D.h. die Teiler sind: 
+\[1, \quad x+1,\quad x^2 +1, \quad x^2 +x, \quad x^2 +x +1, \quad x^3 + x^2 + x + 1, \quad x^4 +1\]
+\end{mybox}
+\begin{enumerate}
+    \item das Kontrollpolynom $h(x)$,
+    \begin{mybox}
+    %\polylongdiv[style=A]{x^4 + 1}{x+1} \\
+    $\mathbf{g(x) = 1}$: 
+    \[
+    h(x) = \frac{x^4+1}{1} = x^4+1 
+    \]
+    $\mathbf{g(x) = x+1}$:
+    \[
+    h(x) = \frac{x^4+1}{x+1} =  x^3 + x^2 + x + 1
+    \]
+     $\mathbf{g(x) = x^2+1}$: 
+    \[
+    h(x) = \frac{x^4+1}{x^2+1} = x^2+1
+    \]
+     $\mathbf{g(x) = x^2+x}$:
+    \[
+    h(x) = \frac{x^4+1}{x^2+x} = x^2+x+1
+    \]
+     $\mathbf{g(x) = x^2+x+1}$:
+    \[
+    h(x) = \frac{x^4+1}{x^2+x+1} = x^2 +x
+    \]
+    $\mathbf{g(x) = x^3 + x^2 + x + 1}$:
+    \[
+    h(x) = \frac{x^4+1}{x^3 + x^2 + x + 1} = x+1
+    \]
+    $\mathbf{g(x) = x^4+1}$:
+    \[
+    h(x) = \frac{x^4+1}{x^4+1} = 1 
+    \]
+    \end{mybox}
+    \item die Kontrollmatrix $H$,
+    \begin{mybox}
+    %\polylongdiv[style=A]{x^4 + 1}{x+1} \\
+     $\mathbf{g(x) = x^4+1}$ mit $\mathbf{h(x) = 1}$: 
+    \[
+    H = [\ ]
+    \]
+    $\mathbf{g(x) = x^3 + x^2 + x + 1}$ mit $\mathbf{h(x) = x+1}$ mit Koeffizienten (0011)
+    \[
+    H = 
+    \begin{bmatrix}
+     0 & 0 & 1 & 1
+\end{bmatrix}
+    \]
+    $g(x) = \mathbf{x^2+1}$ mit $h(x) = \mathbf{x^2+1}$ mit Koeffizienten  (0101)
+    \[
+    H = 
+    \begin{bmatrix}
+     0&1&0&1 \\
+    1&0&1&0 
+    \end{bmatrix}
+    \]
+    $\mathbf{g(x) = x^2+x+1}$ mit $\mathbf{h(x) = x^2+x}$ mit Koeffizienten  (0110)
+   \[
+    H = 
+      \begin{bmatrix}
+      0 & 1 & 1 & 0  \\
+    0 & 0 & 1 & 1
+\end{bmatrix}
+    \]
+    $\mathbf{g(x) = x^2+x}$ mit  $\mathbf{h(x) = x^2+x+1}$ mit Koeffizienten (0111)
+    \[
+    H = 
+\begin{bmatrix}
+0&1&1&1 \\
+1&0&1&1
+\end{bmatrix}
+    \]
+   $\mathbf{g(x) = x+1}$ mit  $\mathbf{h(x) = x^3 + x^2 + x + 1}$ mit Koeffizienten (1111): \(H = [1 \ 1 \ 1 \ 1]\) \\
+     $\mathbf{g(x) = 1}$ mit $\mathbf{h(x) = x^4+1}$ mit Koeffizienten (0000): \(H = [0 \ 0 \ 0 \ 0]\)
+    \end{mybox}
+    \item den zyklischen Code $C$ mit Erzeugendenpolynom $g(x)$.
+    \begin{mybox}
+    $\mathbf{g(x) = 1}$: \\
+    C = Alle möglichen Codewörter bestehend aus Nullen und Einsen der Länge 4\\
+    $\mathbf{g(x) = x+1}$:\\
+    C = \{0011, 1001, 0011, 0110\} \\
+     $\mathbf{g(x) = x^2+1}$: \\
+    C = \{0101, 1010\} \\
+     $\mathbf{g(x) = x^2+x}$:\\
+    C = \{0011, 1001, 0011, 0110\} \\
+     $\mathbf{g(x) = x^2+x+1}$:\\
+    C = \{0111, 1011, 1101, 1110\} \\
+    $\mathbf{g(x) = x^3 + x^2 + x + 1}$:\\
+    C = \{1111\} \\
+    $\mathbf{g(x) = x^4+1}$:\\
+    C = \{0000\} \\
+    \end{mybox}
+\end{enumerate}
+Warum sind dies alle zyklischen Codes der Länge 4?
+\begin{mybox}
+ Weil diese Codes eine Zerlegung von $x^4+1$ sind und nur Teiler dieses Polynoms Codes der Länge 4 erzeugen können. Betrachtet man alle Teiler, bekommt man alle Codes der Länge 4. 
+\end{mybox}
+
+\subsection*{Aufgabe 3 (4 Punkte)}  
+Lösen Sie die folgenden linearen Rekursionen:
+\begin{enumerate}
+    \item $a_{n+2} = 5a_{n+1} - 6a_n$ mit Anfangsbedingungen $a_0 = 0$ und $a_1 = 1$.
+    \begin{mybox}
+    Umschreiben $a_n$ zu $a^n$: 
+    \[
+    a^{n+2} = 1 \cdot 5a^{n+1} - 1 \cdot 6a^n \quad \text{ für } 
+    %\forall n+2 \geq 2 (oder 0?)
+    \]
+    Weiter umstellen 
+    \begin{align*}
+        a^{n+2} & = 5a^{n+1} - 6a^n & \mid :a^{n-2} \\
+    a^{2} & =  5a - 6 & \mid +6 \ -5a \\ 
+    0 & = a^2 +6 - 5a
+    \end{align*}
+    Mit der pq-Formel lösen 
+    \begin{align*}
+        a_{1,2} &= -\frac{-5}{2} \pm \sqrt{(\frac{-5}{2})^2 - 6} \\
+        & = \frac{5}{2} \pm \sqrt{(\frac{-5}{2})^2 - 6} \\
+        & = \frac{5}{2} \pm \sqrt{\frac{25}{4} - 6}
+        \\
+        & = \frac{5}{2} \pm \sqrt{\frac{1}{4}} \\
+        & = \frac{5}{2} \pm \frac{1}{2}
+    \end{align*}
+    \[
+   a_1 = \frac{6}{2} = 3, \quad a_2 = \frac{4}{2} = 2 
+    \]
+    \end{mybox}
+    \begin{mybox}
+    Allgemeine Lösung: 
+    \[
+    a_n = c_1 \cdot 3^n + c_2 \cdot 2^n
+    \]
+    Konstanten bestimmen: 
+    \[
+    a_0 = 0 = c_1 \cdot 3^0 + c_2 \cdot 2^0 = c_1 + c_2 
+    \]
+    \[
+    a_1 =1= c_1 \cdot 3^1 + c_2 \cdot 2^1 = 3c_1 + 2c_2
+    \]
+    Gleichungssystem lösen
+    \[
+    c_1 + c_2  = 0 \Rightarrow c_2 = -c_1
+    \]
+    \begin{align*}
+        1 & = 3c_1 + 2c_2 \\
+         & = 3c_1 + 2(-c_1) \\
+         & = 3c_1 - 2c_1 \\
+         & = c_1
+    \end{align*}
+    \[
+    \Rightarrow c_2 = -1
+    \]
+    $\Rightarrow a_n = 3^n - 2^n$
+    \end{mybox}
+    \item $b_{n+2} = 4(b_{n+1} - b_n)$ mit Anfangsbedingungen $b_0 = -5$ und $b_1 = -2$.
+    \begin{mybox}
+    Umschreiben 
+    \[
+    b^{n+2} = 4(b^{n+1} - b^n)
+    \]
+    Umstellen 
+    \begin{align*}
+        b^{n+2} & = 4(b^{n+1} - b^n) \\
+        b^{n+2} & = 4b^{n+1} - 4b^n & \mid :b^n \\
+        b^{2} & = 4b - 4 \\
+        0 & = b^2 -4b +4 
+    \end{align*}
+    pq-Formel
+    \begin{align*}
+        b_{1,2} & = -\frac{-4}{2} \pm \sqrt{(\frac{-4}{2})^2 -4 } \\
+        & = 2 \pm \sqrt{4-4 } \\
+         & = 2 \pm \sqrt{0}  \\
+         & = 2
+    \end{align*}
+    Allgemeine Lösung: 
+    \[
+    b_n = c_1 \cdot 2^n + c_2 \cdot n \cdot 2^n
+    \]
+    Konstanten bestimmen
+    \[
+     b_0 = -5 = c_1 \cdot 2^0 + c_2 \cdot 0 \cdot 2^0 =  c_1  
+    \]
+    \[
+    b_1 = -2 = c_1 \cdot 2^1 + c_2 \cdot 1 \cdot 2^1 = 2c_1 + 2c_2 = 2(-5) + 2c_2 = -10 + 2c_2 
+    \]
+    \[
+    \Rightarrow 2c_2 = 8 \Rightarrow c_2 = 4
+    \]
+    $\Rightarrow b_n = 2^n(-5+4)$
+    \end{mybox}
+    \item $c_{n+1} = 3(c_n + 1)$ mit Anfangsbedingungen $c_0 = 5$.
+    \begin{mybox}
+    Umschreiben 
+    \[
+    c^{n+1} = 3(c^n + 1)
+    \]
+    Umstellen 
+    \begin{align*} 
+        c^{n+1} & = 3(c^n + 1) \\
+        c^{n+1} & = 3c^n + 3
+    \end{align*}
+    \[
+    c_n = K \cdot 3^n + \frac{3}{1-3} = K \cdot 3^n - \frac{3}{2}
+    \]
+    Konstanten bestimmen 
+    \begin{align*}
+        c_0 & = K \cdot 3^0 - \frac{3}{2} \\
+        5 &  = K - \frac{3}{2} \\
+        K & = 5 +  \frac{3}{2}  \\
+        & = \frac{13}{2}
+    \end{align*}
+    $\Rightarrow c_n = \frac{13}{2} 3^n - \frac{3}{2}$
+    \end{mybox}
+\end{enumerate}
+
+\vspace{1em}
+
+\subsection*{Aufgabe 4 (4 Punkte)}  
+Finden Sie die Potenzreihe in $\mathbb{Q} \llbracket x \rrbracket$ von
+\[
+\frac{5x - 5}{1 - x - 6x}.
+\]
+Gehen Sie wie folgt vor:
+\begin{enumerate}
+    \item Finden Sie die Partialbruchzerlegung, das heißt Zahlen $A$ und $B$, sodass
+    \[
+    \frac{5x - 5}{1 - x - 6x} = \frac{A}{1 - \alpha x} + \frac{B}{1 - \beta x},
+    \]
+    wobei $1 - x - 6x = (1 - \alpha x)(1 - \beta x)$.
+    \item Finden Sie die Potenzreihe jedes Summanden.
+    \item Finden Sie die Potenzreihe von $\frac{5x - 5}{1 - x - 6x}$.
+\end{enumerate}
+
+\end{document}
+

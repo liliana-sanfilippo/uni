@@ -1,0 +1,150 @@
+
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{systeme}          % for Solution 3
+\usepackage{array}  
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure} 
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+\usepackage{longdivision}
+\usepackage{polynom}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Tutorium 10; Diskrete Mathematik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyhead[RO]{\small 13.01.2025}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.1cm}
+\end{tabular} 
+\section*{Besprochene Lösungen}
+\textbf{2a.} \\
+monisch Grad 1. , $x +a $ für $a \in \mathbb{Z}/ p \mathbb{Z}$ \\
+jedes solche Polynom muss irred. sein $x+a = f(x)g(x) \rightarrow 1 = deg f + deg g$  \\
+OBdA $deg g = 0 \rightarrow g$ eine EInheit und $a+x$ ist irreduzibel. \\
+$\Rightarrow$ $p = \#$ mon. irred. Grad! \\ \newline
+\textbf{2b.}\\
+monisch Grad 2, $x^2 +ax+b$, $a,b \in \mathbb{Z}/p \mathbb{Z}$, also p solche \\
+redizibel, dann $(x+a\alpha)(x+\beta)$ für $\alpha, \beta \in \mathbb{Z}/ p \mathbb{Z}$
+\begin{enumerate}
+    \item Fall: $\alpha = \beta$: $p$ solche
+    \item Fall: $\alpha \neq \beta$: $\frac{1}{2} p (p-1)$ solche
+\end{enumerate}
+$\Rightarrow p + \frac{1}{2}p(p-1) = \frac{1}{2}p(p+1)$ red Polynome \\
+$\Rightarrow \# $ mon irred. Grad 2 $ = p^2 - \frac{1}{2}p(p+1) = \frac{1}{2}(p^2-p)$\\ 
+\textbf{2c.} \\
+Mon Polynome Grad 3 $x^3 + ax^2 + bx + c$, $a,b,c \in \mathbb{Z}/p \mathbb{Z}$, $p^3$ solche 
+\begin{enumerate}
+    \item Fall: $f(x) (x+\alpha)$ $f(x)$ mon. irred. Grad 2, $\alpha \in \mathbb{Z}/p \mathbb{Z} $ \\
+    $\frac{1}{2}(p^2-p)\cdot p = \frac{1}{2} (p^3-p^2)$
+    \item Fall: $(x+\alpha)(x+\beta)(x+\gamma) \quad \alpha, \beta, \gamma \in \mathbb{Z}/p \mathbb{Z}$ \\
+    $(x+\alpha)^3$: $p$ solche \\
+    $(x+\alpha)^3 (x+\beta), \alpha \neq \beta$: $p(p-1)$ solche \\
+    $(x+\alpha)(x+\beta)(x+\gamma)$, $\alpha, \beta, \gamma$ paarweise verschieden $\frac{1}{6} p (p-1) (p-2)$ \\
+    $\Rightarrow p+(p^2) + \frac{1}{6} (p^3-3p^2+3p) = \frac{1}{6} (p^3+3p^2+3p $ solche in Fall 2 
+\end{enumerate}
+Insgesamt gibt es $\frac{1}{6}(4p^3+2p) = \frac{1}{3} (2p^3+p) = \frac{1}{3}(p^3-p)$ \\ \newline
+\textbf{3.} \\
+C linear, dim k, Länge n, Minabstand $\delta$, Kontrollmatrix H  \\
+\begin{tabular}{ll}
+    linear: & $O \in C, \quad a,b \in C \Rightarrow a+b \in C$ \\
+    dim k: &  entweder $\exists$ Basis mit k Elemente oder $|C| = 2^k$ \\
+    Länge n: & jedes $c \in C$ hat Länge n, also besteht aus n Bits \\
+    Minabst. $\delta$: & $\delta = \underset{min}{a \neq b \in C} \partial (a,b) \underbrace{=}_{falls \ linear} \underset{min}{a \neq 0 \in C} \underbrace{\omega(a)}_{\text{Gewicht = Anzahl der Einsen)}}$  \\
+    Kontrollmatrix H: & hat Größe $(n-k) \times n$ \\
+    & $C = \{x \mid H x^T = 0\}$
+\end{tabular} \\ 
+d:= max \{r | jede Teilmenge von den Spalten in H mit Größe r-1; ist linear unabhängig\} = min \{r | $\exists$ r linear abhängige Spalten in H\} \\
+\textbf{a.} z.z. $\delta = d$  \\
+Sei: \\
+$H_i$ die i-te Spalte von H \\
+$e_i = 0 ... 0 \underbrace{1}_{\text{i-te Pos.}} 0 ... 0 $ 
+\begin{itemize}
+    \item $H_i + ... + H_{ir} = 0 $ (also lin abhängig) $ \quad \Rightarrow $ Für $x = e_{i1} + ... + e_{i d}$ gilt: $Hx = 0$. ALso $x \in C$. ($d = \omega (x) \geq \delta)$ \\
+    d minimal $\Rightarrow H_{i1} + ... + H_{i \delta} = 0$. \\
+    Außerdem folgt aus d minimal noch: $\exists $ lin Komb. $a_i H_{i1} + ... + a_d H_{i d} = 0$ mit $a_j \in \{0,1\}$, nicht alle 0. \\
+    Wenn $a_j = 0$ wäre --- (hier fehlt etwas)
+    \item $\exists c \in C$ mit $\omega (c) = \delta $, schreibe $e_{i1} + ... + e_{i \delta}$ \\
+    Dann gilt $Hc = 0$ Also $H_{i1} + ... + H_{i \delta} = 0$. \\
+    $\Rightarrow H_{i1} + ... + H_{i \delta}$ sind lin. abh. $\Rightarrow d \leq \delta$ 
+\end{itemize}
+Rang H = max \{ r | $\exists$ r Spalten die lin. unabh. sind\} = n-k \\
+$\delta $ = min \{ r | $\exists$ r Spalten, die lin abhängig sind\} \\
+\textbf{b.} z.z. $\delta \leq n-k +1$ \\
+Mögliche Beweise: 
+\begin{itemize}
+    \item Jede Teilmenge der Spalten der Größe $\delta-1$ ist linear unabhängig \\
+$n-k = Rang H = max \{r | \exists r$ lin unabhängieg Spalten \} \\
+Also $\delta-1 \leq n-k$
+\item Entferne die letzten $\delta -1$ Einträge von jedem Codewort. Resultat ist der lin. Code C' der Länge $n-\delta +1$ mit gleicher Dimension k, da die Abb $C \longrightarrow C'$ ist eine Bijektion  \\
+$\Rightarrow |C'| = 2^k \leq 2^{n-\delta+1}$, Also $k \leq n-\delta+1$
+\end{itemize}
+\textbf{4.} z.z. C alle Wörter der Länge n mit geradem Gewicht ist ein MDS Code \\
+\textbf{linear}: \\
+\begin{tabular}{ll}
+    $O \in C$ & erfüllt  \\
+    $a,b \in C $ & $\omega(a,b) = \omega(a) + \omega(b) \mod 2$ \\
+    & also $\omega(a) , \omega(b)$ gerade $\Rightarrow \omega(a+b)$ gerade $\Rightarrow a+b \in C$ \\
+    Alternativ:\\
+    $\exists$ lin Abb. & $(\mathbb{Z}/ 2 \mathbb{Z})^n \rightarrow (\mathbb{Z}/ 2 \mathbb{Z})$ \\ 
+    & $a \mapsto \omega(a) \mod 2$ \\
+    & Ker = C
+\end{tabular} \\
+$\mathbf{\delta = 2}$ \\
+$c = 1 1 0 ... 0$ in $C$, Gewicht 2 \\
+$\delta = min \omega(a) $ gerade. ALso $\delta \neq 1 \Rightarrow \delta = 2$
+\\ 
+$\mathbf{k = n-1}$ \\
+Bij. $C \overset{1-zu-1}{\leftrightarrow}$ \{Wörter mit ungeradem Gewicht\} \\
+$C \mapsto c + e_1$ \\
+$x \mapsto x+e_1 $ \\ 
+$2^n = |Worter| = |C|+|\neg C| = 2|C|$ ALso $|C| = 2^{n-1}$ \\
+\newline
+Eine Kontrollmatrix ist nicht einheitlich und man muss eine Kontrollmatrix aufstellen können (KLausur)
+\end{document}

@@ -1,0 +1,201 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 7; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+
+\section*{Aufgaben zur Abgabe}
+
+    \subsection*{Aufgabe 1 (4 Punkte)}
+    Zeigen Sie die Rekursionsformel 
+    \[
+    s(n, k) = s(n - 1, k - 1) + (n - 1)s(n - 1, k)
+    \]
+    für die Stirlingzahlen erster Art.
+    \begin{mybox}
+    Wir wissen aus den vorherigen Aufgaben, dass man für das herleiten einer Rekursionsformel am besten das n-te Element zuerst betrachtet. Hier gibt es für dieses Element zwei Fälle: Entweder gehört es zu einem bereits existierenden Zyklus oder es gehört zu einem neuem. \\
+    Wenn das $n$-te Element in einen neuen Zyklus eingefügt wird, bleiben noch $n-1$ Elemente, die auf nun nur noch $k-1$ Zyklen verteilt werden können. Also können von diesem Punkt aus $s(n - 1, k - 1)$ mögliche Permutationen gebildet werden. \\
+    Wenn das $n$-te Element hingegen einem existierenden Zyklus hinzugefügt wird, bleiben $n-1$ Elemente, die weiterhin auf $k$ Zyklen verteilt werde können. Aus dem Skript können wir ableiten, dass es $s(n-1,k)$ Möglichkeiten gibt $n-1$ Elemente auf $k$ Zyklen zu verteilen. Es muss jedoch auch noch beachtet werden, dass das $n$-te Element ja in bestehende Zyklen eingefügt wurde und das bedeutet, dass die anderen $n-1$ Elemente bereits enthalten sind und daher gibt es $n-1$ mögliche Positionen für das $n$-te Element. Also muss man $s(n-1,k)$ mit $n-1$ multiplizieren.  \\
+   Nimmt man diese beiden Fälle zusammen, ergeben sich  $s(n - 1, k - 1) + (n - 1)s(n - 1, k)$ Möglichkeiten $n$ Elemente auf $k$ Zyklen zu verteilen. 
+    \end{mybox}
+    \subsection*{Aufgabe 2 (4 Punkte)}
+    \begin{enumerate}
+        \item[(a)] Benutzen Sie die Rekursionsformel aus Aufgabe 1, um zu zeigen (durch Induktion über $n$), dass
+        \[
+        x(x + 1) \cdots (x + n - 1) = \sum_{k \geq 1} s(n, k)x^k.
+        \]
+        \begin{mybox}
+        IA: $n = 1 = k$: \\
+        \[(x+1-1) = x\]
+        \[s(1,1)= s(1-1, 1-1) + (1-1) \cdot s(1-1, 1) = s(0, 0) + 0 \cdot s(1-1, 1) =  1\]
+        Daher
+        \[ s(1, 1)x^1 = x\]
+        \end{mybox}
+        \begin{mybox}
+        IA: Die Aussage gilt für $n = k$, also gilt
+         \[
+        x(x + 1) \cdots (x + k - 1) = \sum_{a \geq 1} s(k, a)x^a.
+        \]
+        IS: $n = n+1 = k+1$ \\
+        Für $n = k+1$ ist die linke Seite: 
+        \[
+         x(x + 1) \cdots (x + k - 1) (x + k)
+        \]
+        Es gilt aufgrund der IA: 
+        \begin{align*}
+            x(x + 1) \cdots (x + k - 1) (x + k)  & = \big( \sum_{a \geq 1} s(k, a)x^a \big) (x + k) \\
+             & = \sum_{a \geq 1} s(k, a)x^{a+1} + \sum_{a \geq 1} k \cdot s(k, a)x^{a}
+        \end{align*}
+        Außerdem gilt nach Aufgabe 1: 
+        \[s(k+1,a)=s(k,a-1)+k\cdot s(k,a)\]
+        Setzt man das in die rechte Seite der Formel ein, ergibt sich 
+        \begin{align*}
+            \sum_{a \geq 1} s(k+1, a)x^{a} & = \sum_{a \geq 1}\big( s(k, a-1)x^{a} + k\cdot s(k,a) \big)x^a \\
+            & = \sum_{a \geq 1} s(k, a-1)x^{a} + \sum_{a \geq 1} k\cdot s(k,a) x^a \\
+            \text{(Hier muss man die Laufvariable ändern: } b = a-1) & =  \sum_{b \geq 1} s(k, b)x^{b+1} + \sum_{a \geq 1} k\cdot s(k,a) x^a  
+        \end{align*}
+        Da \[\sum_{b \geq 1} s(k, b)x^{b+1} + \sum_{a \geq 1} k\cdot s(k,a) x^a  = \sum_{a \geq 1} s(k, a)x^{a+1} + \sum_{a \geq 1} k \cdot s(k, a)x^{a} \] sind die Summen identisch. 
+        \end{mybox}
+        \item[(b)] Sei $n \geq 2$. Folgern Sie aus (a), dass es gleich viele Permutationen von $\{1, \dots, n\}$ mit einer geraden Anzahl von Zykeln wie mit einer ungeraden Anzahl von Zykeln gibt.
+        \begin{mybox}
+    Für $\{1, \dots, n\}$ gibt es $n!$ viele Permutationen. Das erhält man auch, wenn man $x=1$ in die Summenformel aus (a) einsetzt. Setzt man jedoch $x= -1$, bekommt man aber $0$ heraus, da dann $x(x+1)(x+2)...(x+n-1) = -1(0)(1)...(n-2) = 0$. Das kann nur passieren, wenn es gleich viele gerade und ungerade Permutationen gibt, weil Terme mit $(-1)^k$ (siehe  $\sum_{k \geq 1} s(n, k)(-1)^k$) die Vorzeichen abwechseln. Wenn die Endsumme $0$ ist, muss es also gleich viele positive und negative Terme geben, also gleich viele Permutationen mit geraden und ungeraden Anzahlen von Zyklen. 
+        \end{mybox}
+    \end{enumerate}
+
+    \subsection*{Aufgabe 3 (4 Punkte)} 
+    Entscheiden Sie, ob die folgenden Gleichungen mit ganzen Zahlen lösbar sind, und bestimmen Sie ggf. alle Lösungen:
+    \begin{enumerate}
+        \item[(a)] $998x + 4199y = 65$
+        \begin{mybox}
+        Euklidischer Algorithmus. Die Gleichung ist lösbar, wenn $ggT(998,4199) | 65$
+        \begin{align*}
+            4199 &= 4 * 998 + 207 \\
+            998 &= 4 * 207 + 170 \\
+            207 &= 1 * 170 + 37 \\
+            170 &= 4 * 37 + 22 \\
+            37 &= 1 * 22 + 15 \\
+            22 &= 1*15 + 7 \\
+            15 = 2*7 + 1 \\
+            7 = 7*1 + 0
+        \end{align*}
+        $ggT(998,4199)  = 1$ und $1 \mid 65$, also mit ganzen Zahlen lösbar.
+        \end{mybox}
+        \item[(b)] $988x + 4199y = 65$
+        \begin{mybox}
+        Siehe Lösung zu a. 
+        \end{mybox}
+    \end{enumerate}
+    \textbf{Hinweis:} Betrachten Sie $ax + by = m$. Berechnen Sie erst den $\operatorname{ggT}(a, b)$, da er $m$ teilen muss. Wenn $ax + by = ax' + by'$, dann gilt $a(x - x') = b(y' - y)$ und diese Zahl muss ein Vielfaches von $\operatorname{kgV}(a, b)$ sein.
+
+    \subsection*{Aufgabe 4 (4 Punkte)}
+    Das Ziel ist $\varphi(990)$ zu bestimmen.
+    \begin{enumerate}
+        \item[(a)] Finden Sie die Primfaktorzerlegung von $990$.
+        \begin{mybox}
+        $\varphi(990)=2\cdot 3^2\cdot5\cdot11$, da 
+        \begin{align*}
+            990 / 2 & = 495 & \\
+            495 / 3 & =165 & \text{und } 3 \mid 4+9+5=18  \\
+            165 / 3 & = 55 & \text{und } 3 \mid 1+6+5=12 \\
+            55/5& =11 \\
+            & 11 \text{ ist Primzahl} 
+        \end{align*}
+        \end{mybox}
+        \item[(b)] Für jeden Primfaktor $p$ finden Sie die Anzahl der Zahlen zwischen $1$ und $990$, die durch $p$ teilbar sind.
+        \begin{mybox}
+         Jede $x$-te Zahl zwischen 1 und 990 kann man durch $x$ teilen...\\
+        Also für jeden Primfaktor ist die Anzahl der Zahlen $990/ p$.
+        \begin{align*}
+            p :& \quad \text{Anzahl} \\
+            2: & \quad 495\\
+            3 :&\quad 330 \\
+            5 :&\quad 198\\
+            11 :& \quad 90\\
+        \end{align*}
+        \end{mybox}
+        \item[(c)] Verwenden Sie Inklusion/Exklusion, um $\varphi(990)$ zu bestimmen.
+        \begin{mybox}
+        \[Anzahl = \text{\#durch 1 p teilbar} - \text{\#durch 2 p teilbar} + \text{\#durch 3 p teilbar} - \text{\#durch 4 p teilbar}\]
+        Wir wissen bereits, wie viele Zahlen durch jeden Primfaktor von 990 teilbar sind. Wir müssen jedoch noch herausfinde, welche Zahlen duch mehrere Primfaktoren teilbar sind. Das könne wir, indem wir das kleinste gemeinsame Vielfache der Primfaktoren ausrechnen und dann ausrechnen wie viele Zahlen sich durch das kgV teilen lassen. Wir wissen, wenn der $ggT(x,y)=1$ ist, ist $kgV(x,y)=(x \cdot y)$. 
+       \[Anzahl = (495+330+198+90) - \text{\#durch 2 p teilbar} + \text{\#durch 3 p teilbar} - \text{\#durch 4 p teilbar}\]
+       \begin{align*}
+           \text{Teilbar durch } 2,3: & \quad 990 /6 &= 165 \\
+           \text{Teilbar durch }2,5 : & \quad 990 / 10 &= 99 \\
+           \text{Teilbar durch }2,11 : & \quad 990 / 22 &= 45 \\
+           \text{Teilbar durch }3,5 : & \quad 990 /15 &=  66\\
+           \text{Teilbar durch }3,11 : & \quad 990 / 33 &= 30\\
+             \text{Teilbar durch } 5,11: & \quad 990 /55 &= 18
+       \end{align*}
+        \[Anzahl = (495+330+198+90) - (165+99+45+66+30+18)+ \text{\#durch 3 p teilbar} - \text{\#durch 4 p teilbar}\]
+\begin{align*}
+     \text{Teilbar durch } 2,3,5: & \quad 990 / 30 &= 33 \\
+      \text{Teilbar durch }2,3,11 : & \quad 990 / 66 &= 15\\
+       \text{Teilbar durch } 2,5,11: & \quad 990 / 110 &=  9 \\
+        \text{Teilbar durch } 3,5,11: & \quad 990 / 165 &= 6 \\
+\end{align*}
+\[Anzahl = (495+330+198+90) - (165+99+45+66+30+18)+ (33+15+9+6) - \text{\#durch 4 p teilbar}\]
+\[ \text{Teilbar durch } 2,3,5,11:  \quad 990 / 330 =3 \]
+\[Anzahl = (495+330+198+90) - (165+99+45+66+30+18)+ (33+15+9+6) - 3\]
+\begin{align*}
+    & (495+330+198+90) - (165+99+45+66+30+18)+ (33+15+9+6) - 3 \\
+    = & 1113 - 423 + 63 -3 \\
+    = & 750
+\end{align*}
+        \end{mybox}
+    \end{enumerate}
+
+
+\end{document}

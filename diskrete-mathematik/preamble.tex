@@ -1,0 +1,188 @@
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=2cm, bottom=2cm, outer=6cm, inner=2cm, heightrounded, marginparwidth=5cm, marginparsep=1cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{marginnote}
+\usepackage{multirow}
+\usepackage{diagbox}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+\usepackage{longdivision}
+\usepackage{polynom}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=CarnationPink,  %choose some color if you want links to stand out
+}
+%\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[symbol]{footmisc}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+% BOXES 
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\tcbset{blue box/.style={
+    enhanced, fonttitle=\bfseries,
+    colback=white, colframe=accdarklight,
+    coltitle=white, colbacktitle=accdark,
+    attach boxed title to top left={xshift=0.3cm,
+                                    yshift*=-\tcboxedtitleheight/2},
+    boxed title style={
+      before upper=\hspace*{0.5cm}, % reserve space for the image
+      overlay={
+       \node at ([xshift=0.5cm]frame.west) {};
+        
+      }
+    }
+  }
+}
+\newtcolorbox{mybox}[1][]{blue box, #1}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[dvipsnames]{xcolor}
+
+
+\newcommand{\titulo}{Aufarbeitung Diskrete Mathematik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025} und \textbf{WiSe 2025/2026}}
+\newcommand{\resumen}{Abstrakt}
+
+
+% Glossary 
+\usepackage[automake]{glossaries}
+\newglossary*{dinge}{Was ist was?}
+\glsaddkey
+ {formB}
+ {}
+ {\glsentryB}
+ {\GlsentryB}
+ {\glsB}
+ {\GlsB}
+ {\GLSB}
+ \glsaddkey
+ {formF}
+ {}
+ {\glsentryF}
+ {\GlsentryF}
+ {\glsF}
+ {\GlsF}
+ {\GLSF}
+\makeglossaries
+\loadglsentries{gloss} 
+
+\newcommand{\charfunc}[1]{\glsentrytext{charfunc} mit $A = #1$, also $\chi_{#1}$}
+
+
+% Index
+\usepackage{imakeidx}
+\makeindex
+
+
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+
+
+\newcommand{\mapsfrom}{\mathrel{\style{display:inline-block; transform:scale(-1,1);}{\mapsto}}}
+\newcommand{\X}{$X$}
+\usepackage{amsthm}
+%\theoremstyle{definition}
+\newtheoremstyle{mytheoremstyle} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {}                   % Body font
+    {}                           % Indent amount
+    {\bfseries}                   % Theorem head font
+    {}                          % Punctuation after theorem head
+    {1.5em}                       % Space after theorem head
+    {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}  % Theorem head spec (can be left empty, meaning ‘normal’)
+
+\theoremstyle{mytheoremstyle}
+\newtheorem{bsp}{Beispiel}[section]
+\newtheorem{info}[bsp]{Zusatzinformation}
+\newtheorem{reg}[bsp]{Regel}
+\newtheorem{satz}[bsp]{Satz}
+\newtheorem{lem}[bsp]{Lemma}
+\newtheorem{defi}[bsp]{Definition}
+\newtheorem{fr}[bsp]{Frage}
+\newtheorem{beo}[bsp]{Beobachtung}
+\newtheorem{prinz}[bsp]{Prinzip}
+\newtheorem{bem}[bsp]{Bemerkung}
+\newtheorem{anmerkung}{Anmerkung}[]
+\newtheorem{folg}[bsp]{Folgerung}
+\newtheorem{er}[bsp]{Erinnerung}
+\newtheorem{prob}[bsp]{Problem}
+\newtheorem{eig}[bsp]{Eigenschaften}
+\newcommand{\anm}[2]{
+\color{Blue} \noindent
+\begin{anmerkung}  \textit{zu "#1"}  \newline
+#2
+\end{anmerkung} \color{black}
+}
+
+\newcommand{\regel}[2]{
+\begin{reg} \textbf{#1}  \newline
+#2
+\end{reg}
+}
+\newcommand{\prin}[2]{
+\begin{prinz} \textbf{#1}  \newline
+#2
+\end{prinz}
+}
+\newcommand{\rsp}[3]{
+\noindent \textbf{#1} \pageref{rsp:#2}  
+
+\noindent #3 
+
+}
+\newcommand{\stz}[3]{
+\noindent \textbf{#1} \pageref{satz:#2}  
+
+\noindent #3 
+
+}
+\newcommand{\txc}[1]{
+\textcolor{Blue}{#1}
+}
+\newcommand{\za}[1]{\mathbb{Z} / #1 \mathbb{Z}}
+\newcommand{\zat}[0]{\mathbb{Z} / m \mathbb{Z}}
+\newcommand{\zatx}[1]{\mathbb{Z} / #1 \mathbb{Z}[x]}
+\usepackage[onehalfspacing]{setspace} 
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+
+\newcommand{\explainvkr}[0]{\footnote{$v$: Anzahl der Elemente in der Menge $X$} \footnote{$k$: Anzahl der Elemente pro Block} \footnote{$r$: in wie vielen Blöcken ein Element vorkommen soll}}
+\newcommand{\explainvkrb}[0]{\explainvkr \footnote{$b$: Anzahl der Blöcke im Design}}
+\newcommand{\explaindesign}[0]{\footnote{$\mathcal{B}, \mathcal{C}, ...$: damit sind Designs gemeint}}
+\newcommand{\explainrs}[0]{\footnote{$r_s, r_t, ...$: t bzw. s ist die Größe der Teilmengen von X, die gleich oft in allen $r_t$ Blöcken eines $t$-Designs vorkommen soll}}
+
+\newcommand{\bluenote}[1]{\marginpar{\textcolor{Blue}{#1}}}

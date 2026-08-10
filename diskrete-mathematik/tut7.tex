@@ -1,0 +1,279 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{amssymb}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Tutorium 7; Diskrete Mathematik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ \usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+
+\makeatletter
+\newcommand{\xMapsto}[2][]{\ext@arrow 0599{\Mapstofill@}{#1}{#2}}
+\def\Mapstofill@{\arrowfill@{\Mapstochar\Relbar}\Relbar\Rightarrow}
+\makeatother
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyhead[RO]{\small 09.12.2024}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+
+\section*{Besprochene Lösungen}
+
+    \subsection*{Aufgabe 1}
+    Zeigen Sie die Rekursionsformel 
+    \[
+    s(n, k) = s(n - 1, k - 1) + (n - 1)s(n - 1, k)
+    \]
+    für die Stirlingzahlen erster Art.
+    \begin{mybox}
+    $s(n,k)= \# \{$Permutationen in $S_n$ mit genau $k$ Zykeln$\}$ \\
+    z.z. $s(n, k) = s(n - 1, k - 1) + (n - 1)s(n - 1, k)$ \\ \newline
+    Abb. \{$\underbrace{\text{Permutationen in $S_n$ mit $k$ Zykeln}}_{\circledast}$\} $\xrightarrow[\text{entferne "n"}]{}$ \{Permutationen in $S_{n-1}$\} \\ \newline
+    Das teilt sich in zwei Fälle auf: 
+    \begin{align*}
+        \{\circledast \text{ und $n$ ist ein Fixpunkt}\} & \xrightarrow[]{\thicksim}  \{\text{Permutationen in $S_{n-1}$ mit $k-1$ Zykeln}\} & (Bijektion)\\
+        \{\circledast \text{ und $n$ ist kein Fixpunkt}^*\}  & \xmapsto[]{f} \{\text{Permutationen in $S_{n-1}$ mit $k$ Zykeln}\} & (surjektiv)
+    \end{align*}
+    $*$ d.h. es kommt in einem Zykel mit mindestens einem anderen Element vor aka. in einem Zykel mit min 2 Elementen. \\ 
+    z.z. $f$ ist \underline{surjektiv} und $f^{-1}(\sigma)$ hat $n-1$ Elemente (denn dann ergibt das die Menge der Permutationen in $S_{n-1}$ mit $k$ Zykeln). \\ \newline
+    Betrachte $\sigma$ in der linken Seite. \\
+    Bilde ein Element in $f^{-1}(\sigma)$ durch: wähle $1 \leq i < n$ und füge $n$ ein durch $\underbrace{"n \mapsto n \mapsto \sigma (i)"}_{\text{Jedes Element muss von dieser Form sein!}}$. Dann sind alle verschieden und wir bekommen jedes Element in $f$ auf diese Art und Weise. \\ 
+    Dann kann man sagen 
+    \begin{align*}
+        s(n,k) & = |\{ \circledast \text{ mit $n$ ist Fixpunkt}\}| + |\{ \circledast \text{ mit $n$ ist kein Fixpunkt}\}|  \\
+        & = s(n-1, k-1) + (n-1) \cdot s(n-1, k)
+    \end{align*}
+    !Man sollte hier schon etwas über eine Bijektion schreiben! \\
+    \newline
+    Beispiel für das wählen des $1 \leq i < n$:  (123)(45)
+    \begin{align*}
+       i = 1 & \quad (1623)(45) \\
+       i = 2 & \quad (1263)(45) \\
+       i = 4 & \quad (123)(465) \\
+       \vdots 
+    \end{align*}
+    \end{mybox}
+    \subsection*{Aufgabe 2}
+    \begin{enumerate}
+        \item[(a)] Benutzen Sie die Rekursionsformel aus Aufgabe 1, um zu zeigen (durch Induktion über $n$), dass
+        \[
+        x(x + 1) \cdots (x + n - 1) = \sum_{k \geq 1} s(n, k)x^k.
+        \]
+        \begin{mybox}
+        z.z. $x(x + 1) \cdots (x + n - 1) = \sum_{k \geq 1} s(n, k)x^k$ \\ \newline
+        \underline{IA:} $n-1$ \\
+        RS = $s(1,1)\cdot x = x$ \\ \newline
+        \underline{IS:} Gilt für $n$, nun für $n+1$: 
+        \begin{align*}
+            \text{LS} & = x(x + 1) \cdots (x + n - 1)(x+n) \\
+            & \overset{IV}{=} \sum_{k = 1}^n s(n, k)x^k (x+n) \\
+            & = \sum_{k = 1} s(n, k)x^{k+1}^n + \sum_{k = 1}^n n \cdot s(n, k)x^k \\
+            & = \sum_{k = 2}^{n+1} s(n, k-1)x^{k} + \sum_{k = 1}^{n} n \cdot s(n, k)x^k \\
+            & = \sum_{k = 1}^{n+1} \big[s(n,k-1) + n \cdot s(n,k) \big] x^k & \text{weil } s(n,0) = 0 \text{ und } s(n,n+1) = 0 \\
+            & \overset{A. 1}{=} \sum_{k = 1}^{n+1} s(n+1, k) x^k
+        \end{align*}
+        \end{mybox}
+        \item[(b)] Sei $n \geq 2$. Folgern Sie aus (a), dass es gleich viele Permutationen von $\{1, \dots, n\}$ mit einer geraden Anzahl von Zykeln wie mit einer ungeraden Anzahl von Zykeln gibt.
+        \begin{mybox}
+        a. gilt als Gleichheit von Polynomen. \\
+        Nun setze $x=-1$ ein für $n \geq 2$. \\ \newline
+        Linke Seite ist dann Null:
+        \[ 0 = LS = RS = \sum_{k\ gerade} s(n,k) - \sum_{k\ ungerade} s(n,k)\]
+        \[ \Rightarrow \sum_{k\ gerade} s(n,k) = \sum_{k\ ungerade} s(n,k)\]
+        \end{mybox}
+    \end{enumerate}
+    \newpage
+    \subsection*{Aufgabe 3} 
+    Entscheiden Sie, ob die folgenden Gleichungen mit ganzen Zahlen lösbar sind, und bestimmen Sie ggf. alle Lösungen:
+    \begin{enumerate}
+        \item[(a)] $998x + 4199y = 65$
+        \begin{mybox}
+        Euklidischer Algorithmus. Die Gleichung ist lösbar, wenn $ggT(998,4199) | 65$
+        \begin{align*}
+            4199 &= 4 \cdot 998 + 207 \\
+            998 &= 4 \cdot 207 + 170 \\
+            207 &= 1 \cdot 170 + 37 \\
+            170 &= 4 \cdot 37 + 22 \\
+            37 &= 1 \cdot 22 + 15 \\
+            22 &= 1 \cdot 15 + 7 \\
+            15 & = 2 \cdot 7 + 1 \\
+            7 & = 7 \cdot 1 + 0 
+        \end{align*}
+        $ggT(998,4199)  = 1$ und $1 \mid 65$, also mit ganzen Zahlen lösbar. 
+        \begin{align*}
+            1 & = 15 - 2 \cdot 7 \\
+            & = 15 - 2 \cdot (22 - 1 \cdot 15) \\
+            & \vdots \\
+            & = 135 \cdot 4199 - 568 \cdot 998 & | \cdot 65 \\
+            65 & = 8775 \cdot 4199 - 36920 \cdot 998
+        \end{align*}
+        Allgemeine Lösung: 
+        \begin{align*}
+            y & = 8775 + 998 \cdot g \\
+            x & = - 36920 - 4199 \cdot g \\
+            & \text{für } \forall g \in \mathbb{Z}
+        \end{align*} 
+        \color{Blue}
+        Anmerkung: 
+        Man kann das ganze auch verkürzt schreiben, indem man auch minus rechnet! 
+        \begin{align*}
+            4199 & = 4 \cdot 998 + 207 \\
+            998 & = 5 \cdot 207 - 37 \\
+            207 & = 6 \cdot 37 -15 \\
+            37 & = 2 \cdot 15 +7 \\
+            15 & = ...
+        \end{align*}
+        Dann muss man aber darauf achten es auf dem Rückweg auch so zu machen. 
+\begin{align*}
+    1 & = 15 - 2 \cdot 7 \\
+    & = 15 -2 \cdot ( 37 - 2 \cdot 15) & = h \cdot 15 - 2 \cdot 37 \\
+    \vdots
+\end{align*}\color{black}
+        \end{mybox}
+        \newpage
+        \begin{mybox}
+        \color{Blue}
+        Weitere Anmerkung: Die allgemeine Lösung ist nicht immer so etwas wie
+        \begin{align*}
+            y & = 8775 + 998 \cdot g  = 8775 + Zahl2 \cdot g \\
+            x & = - 36920 - 4199 \cdot g   = - 36920 - Zahl1 \cdot g \\
+            & \text{für } \forall g \in \mathbb{Z}
+        \end{align*} 
+        Und es könnte auch gefordert sein, dass die Lösung weitere Eigenschaften hat (z.B. die kleinste ist). Dann wäre passend: 
+        \begin{align*}
+            y &  = -207 + 998 \cdot g \\
+            x &  = 871 - 4199 \cdot g \\
+            & \text{für } \forall g \in \mathbb{Z}
+        \end{align*} 
+        Eine generelle allgemeine Lösung verdeutlicht ann einem Beispiel: $6x+9y= 15$ \\
+        ges. $ggT(6,9)$ 
+        \begin{align*}
+            9 &= 6+3 \\
+            6 & = 2 \cdot 3 \\
+            ggT(6,9) &= 3 = 6-9 
+        \end{align*}
+        \begin{align*}
+            \text{Eine spezielle Lösung wäre: } & 5 \cdot 9 - 5 \cdot 6 = 15 \\
+            \text{Eine allgemeine Lösung wäre: } & (5 + ...k)  \cdot 9 - (5 + ...k) \cdot 6 = 15 \ \ \forall k \in \mathbb{Z}
+        \end{align*}
+        Eine weitere spezielle Lösung wäre: 
+        \[  7 \cdot 9 - 8 \cdot 6 = 15 \]
+        Sie auf dem Zettel "$ax + by = ax' + by'$, dann gilt $a(x - x') = b(y' - y)$..." - wenn man also zwei verschiedene Lösungen hat schreibt man die allg. Lösung am besten: 
+        \[\big( 5 + \frac{kgV}{9}\big) \cdot 9 + \big( 5 + \frac{kgV}{6}\big) \cdot 6 = 15 \ \ \forall k \in \mathbb{Z} \]
+        Der $kgV$ ist hier 18, also: 
+        \[\big( 5 + \frac{18}{9} k \big) \cdot 9 + \big( 5 + \frac{18}{6} k \big) \cdot 6 = 15 \ \ \forall k \in \mathbb{Z} \]
+        \[\big( 5 + 2 k \big) \cdot 9 + \big( 5 + 3 k \big) \cdot 6 = 15 \ \ \forall k \in \mathbb{Z} \]
+        \color{black}
+        \end{mybox}
+        \item[(b)] $988x + 4199y = 65$
+        \begin{mybox}
+        \[ggT(988, 4199) = 247\]
+        \[247 \nmid  65 \Rightarrow \text{ nicht lösbar }\]
+        \end{mybox}
+    \end{enumerate}
+    \textbf{Hinweis:} Betrachten Sie $ax + by = m$. Berechnen Sie erst den $\operatorname{ggT}(a, b)$, da er $m$ teilen muss. Wenn $ax + by = ax' + by'$, dann gilt $a(x - x') = b(y' - y)$ und diese Zahl muss ein Vielfaches von $\operatorname{kgV}(a, b)$ sein.
+    \newpage 
+    \subsection*{Aufgabe 4}
+    Das Ziel ist $\varphi(990)$ zu bestimmen.
+    \begin{enumerate}
+        \item[(a)] Finden Sie die Primfaktorzerlegung von $990$.
+        \begin{mybox}
+        Aus Lilianas Abgabe (laut Korrektur richtig): \\
+        $\varphi(990)=2\cdot 3^2\cdot5\cdot11$, da 
+        \begin{align*}
+            990 / 2 & = 495 & \\
+            495 / 3 & =165 & \text{und } 3 \mid 4+9+5=18  \\
+            165 / 3 & = 55 & \text{und } 3 \mid 1+6+5=12 \\
+            55/5& =11 \\
+            & 11 \text{ ist Primzahl} 
+        \end{align*}
+        \end{mybox}
+        \item[(b)] Für jeden Primfaktor $p$ finden Sie die Anzahl der Zahlen zwischen $1$ und $990$, die durch $p$ teilbar sind.
+        \begin{mybox}
+        Aus Lilianas Abgabe (laut Korrektur richtig): \\
+          Jede $x$-te Zahl zwischen 1 und 990 kann man durch $x$ teilen...\\
+        Also für jeden Primfaktor ist die Anzahl der Zahlen $990/ p$.
+        \begin{align*}
+            p :& \quad \text{Anzahl} \\
+            2: & \quad 495\\
+            3 :&\quad 330 \\
+            5 :&\quad 198\\
+            11 :& \quad 90
+        \end{align*}
+        \end{mybox}
+        \item[(c)] Verwenden Sie Inklusion/Exklusion, um $\varphi(990)$ zu bestimmen.
+        \begin{mybox}
+            \begin{align*}
+            \varphi(990) & = 990 -  \text{\#durch 1 p teilbar} - \text{\#durch 2 p teilbar} + \text{\#durch 3 p teilbar} - \text{\#durch 4 p teilbar} \\
+            & = 990 - (495+330+198+90) - (165+99+45+66+30+18)+ (33+15+9+6) - 3 \\
+            & = 990 - 750 \\ 
+            & = 240 \\
+            & \text{Das hat er angeschrieben: }\\
+            \varphi(990) & = 990 - 990 \cdot(\frac{1}{2}+\frac{1}{3}+\frac{1}{5}+\frac{1}{11}) + 990 \cdot (\frac{1}{2 \cdot 3}+\frac{1}{2 \cdot 5}+\frac{1}{2 \cdot 11}+\frac{1}{3 \cdot 5}+\frac{1}{3 \cdot 11}+\frac{1}{5 \cdot 11}) \\ & \ \ \ \ - 990 \cdot (\frac{1}{2 \cdot 3 \cdot 5} + \frac{1}{2 \cdot 3 \cdot 11}+\frac{1}{2 \cdot 5 \cdot 11}+\frac{1}{2 \cdot 3 \cdot 11}) + 990 \cdot \frac{1}{2 \cdot 3 \cdot 5 \cdot 11} \\
+            & = 990 \cdot \big( 1 - (\frac{1}{2}+\frac{1}{3} + ...) + (\frac{1}{2 \cdot 3}+\frac{1}{2 \cdot 5}+...) +(\frac{1}{2 \cdot 3 \cdot 5} + ...) +   \frac{1}{2 \cdot 3 \cdot 5 \cdot 11}\big)  \\
+            & = 990 \cdot (1- \frac{1}{2})(1- \frac{1}{3})(1- \frac{1}{5})(1- \frac{1}{11}) \\
+            & = (2-1)(9-3)(5-1)(11-1) \\
+            & = \prod_{p^k \| 990} \varphi(p^k)
+        \end{align*}
+        \end{mybox}
+        \begin{mybox}
+         \color{Blue}
+        \underline{Tipp für zukünftige Zerlegungen:}
+        \begin{align*}
+            990 & = 9 \cdot 11 \cdot 10 \\
+             & = 3^2 \cdot 11 \cdot 2 \cdot 5
+        \end{align*}
+        \end{mybox}
+    \end{enumerate}
+
+
+\end{document}

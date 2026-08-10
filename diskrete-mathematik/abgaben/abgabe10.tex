@@ -1,0 +1,405 @@
+
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{systeme}          % for Solution 3
+\usepackage{array}  
+%\usepackage{blindtext}
+\usepackage{polynom}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage[normalem]{ulem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 10; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.1cm}
+\end{tabular}
+
+\section*{Präsenzaufgaben}
+\begin{enumerate}
+    \item Dividieren Sie mit Rest
+    \[
+    x^5 + x^4 + 2x^3 + x^2 + 4x + 2
+    \]
+    durch
+    \[
+    x^2 + 2x + 3
+    \]
+    im Polynomring \( \mathbb{Z}/5\mathbb{Z}[x] \).
+    \begin{mybox}
+    \[
+    r(x) = x^5 + x^4 + 2x^3 + x^2 + 4x + 2
+    \]
+    \[
+    g(x) = x^2 + 2x + 3
+    \]
+    Leitkoeffizient von $r(x): 1$ \\
+    Leitkoeffizient von $g(x): 1$ \\
+    \[
+    \frac{1}{1} \mod 5 = 1 
+    \]
+     \[
+    t(x)_1 = x^3
+    \]
+    \[
+    q(x) = x^3
+    \]
+     \begin{align*}
+        r(x) & = (x^5 + x^4 + 2x^3 + x^2 + 4x + 2) - (x^3 \cdot (x^2 + 2x + 3)) \mod 5 \\
+        r(x) & = (x^5 + x^4 + 2x^3 + x^2 + 4x + 2) - (x^5 + 2x^4 + 3x^3) \mod 5 \\
+        r(x) & = (-x^4 - 1x^3 + x^2 + 4x + 2) \mod 5 \\
+        r(x) & = 4x^4 +4x^3 + x^2 + 4x + 2
+    \end{align*}
+    \hrule 
+    \[
+    \frac{-1}{1} \mod 5 = -1 \mod 5 = 4
+    \]
+    \[
+    t(x)_2 = 4x^2
+    \]
+    \[
+    q(x) = x^3 + 4x^2
+    \]
+     Leitkoeffizient von $r(x): -1$ \\
+    Leitkoeffizient von $g(x): 1$ \\
+    \begin{align*}
+        r(x) & = (4x^4 +4x^3 + x^2 + 4x + 2) - (4x^2 \cdot (x^2 + 2x + 3)) \mod 5 \\
+        r(x) & = (4x^4 +4x^3 + x^2 + 4x + 2) - (4x^4 + 8x^3 + 12x^2) \mod 5\\
+        r(x) & = (4x^4 +4x^3 + x^2 + 4x + 2) - (4x^4 + 3x^3 + 2x^2) \\
+        r(x) & = (x^3 - x^2 + 4x + 2)
+    \end{align*}
+    \hrule 
+    \end{mybox}
+    
+    
+    \begin{mybox}
+    Leitkoeffizient von $r(x): 1$ \\
+    Leitkoeffizient von $g(x): 1$ \\
+    \[
+    \frac{1}{1} \mod 5 = 1 \mod 5 = 1
+    \]
+    Gradunterschied: 1
+    \[
+    t(x)_3 = x
+    \]
+    \[
+    q(x) = x^3 + 4x^2 + x
+    \]
+    \begin{align*}
+        r(x) & = (x^3 - x^2 + 4x + 2) - (x \cdot (x^2 + 2x + 3)) \mod 5 \\
+        r(x) & = (x^3 - x^2 + 4x + 2) - (x^3 + 2x^2 + 3x) \mod 5 \\
+        r(x) & = ( - 3x^2 + x + 2) \mod 5 \\
+        r(x) & = 2x^2 + x + 2
+    \end{align*}
+   \sout{ Lösung: 
+    $q(x) = x^3 + 4x^2 + x$ mit  
+    $r(x)  = ( - 3x^2 + x + 2) $} Da muss man noch einen Schrott weiter, damit der Rest einen Grad kleiner hat als $g(x)$
+    \hrule 
+    Leitkoeffizient von $r(x): 2$ \\
+    Leitkoeffizient von $g(x): 1$ \\
+    \[
+    \frac{2}{1} \mod 5 = 2 \mod 5 = 2
+    \]
+    Gradunterschied: -1
+    \[
+    t(x)_4 = 2
+    \]
+    \[
+    q(x) = x^3 + 4x^2 + x + 2
+    \]
+    \begin{align*}
+        r(x) & = (2x^2 + x + 2) - (2 \cdot (x^2 + 2x + 3)) \mod 5 \\
+       r(x) & = (2x^2 + x + 2) - (2x^2 + 4x + 6) \mod 5 \\
+       r(x) & = (-3x -4) \mod 5 \\
+       r(x) & = 2x + 1
+    \end{align*}
+    Lösung: 
+    $q(x) = x^3 + 4x^2 + x + 2$ mit  
+    $r(x)  = 2x + 1 $
+    \end{mybox}
+        \item Finden Sie alle monischen (normierten) irreduziblen Polynome in \( \mathbb{Z}/3\mathbb{Z}[x] \) vom Grad höchstens 2.
+        \begin{mybox}
+        Wir suchen Polynome der Form $x^2+ax+b$ (Grad 2), $x+b$ (Grad 1) und $b$ (Grad 0) mit $a,b \in \mathbb{Z}/3\mathbb{Z}$. \\
+        Da $\mathbb{Z}/3\mathbb{Z} = {0,1,2}$ beinhaltet es folgende Polynome mit diesen Eigenschaften: 
+       \[
+       \begin{array}{cccc}
+        x^2 &  & & \text{reduzibel}\\
+        x^2 &  & + 1 \\ 
+        x^2 &  & + 2 \\
+        x^2 & + x & \\ 
+        x^2 & + x & + 1 \\ 
+        x^2 & + x & + 2 \\ 
+        x^2 & + 2x &  \\ 
+        x^2 & + 2x & + 1 \\ 
+        x^2 & + 2x & + 2 \\
+        & x \\
+        &  x & + 1 \\
+        & x & +2 \\
+        & & 1 & irreduzibel\\
+        & & 2
+       \end{array}
+       \]
+       Ich verstehe nicht, wie ich auf eine (einigermaßen zeit-freundliche Art) berechnen kann, wie man berechnet, ob ein Polynom reduzibel ist. 
+        \end{mybox}
+\end{enumerate}
+
+
+\section*{Aufgaben zur Abgabe}
+
+\subsection*{Aufgabe 1 (4 Punkte)}
+Finden Sie den größten gemeinsamen Teiler der Polynome
+\[
+x^6 + x^5 + x^4 + x^2 + x + 1 \quad \text{und} \quad x^9 + x^8 + x + 1
+\]
+im Polynomring \( \mathbb{Z}/2\mathbb{Z}[x] \).
+\begin{mybox}
+%Um den ggT zu berechnen, muss ich erst einmal Polynomdivision machen. Ich habe erst das Polynom mit dem höheren Grad durch das mit dem niedrigeneren Grad geteilt - muss man das so machen?
+%\[
+%(x^6 + x^5 + x^4 + x^2 + x + 1 ) = (x^9 + x^8 + x + 1) \cdot ( x^{-3} + x^{-5}
+%\]
+%\[
+%\begin{array}{ccccccccccccc}
+%    & x^6   & +x^5  &+x^4   &+x^3   &+x^2   &+x &+1 &  \\
+%-(  & x^6   & +x^5  &       &       &       &   &   & +x^{-2}&+x^{-1} & ) && | \text{ Rest multipliziert mit }  x^{-3}  \\ \hline
+%    &       &       &x^4    &+x^3   &+x^2   &+x &+1 & -x^{-2}&-x^{-1} \\
+%-(  &       &       &x^4    &+x^3   &       & & & &        &+x^{-4}& -x^{-5}) & | \text{ Rest multipliziert mit }  x^{-5} \\ \hline
+%\end{array}
+%\]
+%\begin{align*}
+%    (x^9 + x^8 + x + 1)&  = (x^6 + x^5 + x^4 + x^2 + x + 1 ) \cdot (x^3 - x +1) -x^5 -2x^4 +x \\
+%    (x^9 + x^8 + x + 1) +x^5 +x^4 -x &  = (x^6 + x^5 + x^4 + x^2 + x + 1 ) \cdot (x^3 - x +1) \\
+%    x^9 + x^8 +x^5 +x^4 + 1  &  = (x^6 + x^5 + x^4 + x^2 + x + 1 ) \cdot (x^3 - x +1) \\
+%    x^9 + x^8 +x^5 +x^4 + 1  &  = (x^6 + x^5 + x^4 + x^2 + x + 1 ) \cdot (x^3 - x +1)
+%\end{align*}
+Das mit den Vorzeichen in $\mathbb{Z}/2\mathbb{Z}[x]$ finde ich sehr verwirrend. Habe ich das bei dieser Polynomdivision richtig gemacht? 
+\[
+\begin{array}{cccccccccccc}
+    & x^9   & + x^8 & & & & && &   + x & + 1 &  \\
+-(  & x^9   & + x^8 & + x^7 &   & +  x^5 & + x^4 & + x^3& ) &   & & | \text{ Rest multipliziert mit } x^3 \\ \hline
+    &       &       &  x^7 &       & + x^5 & + x^4 & +x^3  &       &+x & +1 &  \\
+-(  &       &       &  x^7 &+x^6   &  +x^5 &       & +x^3  & +x^2  &+x & )& | \text{ Rest multipliziert mit } x \\ \hline
+    &       &       &       & x^6   &       & +x^4  &       & +x^2  & +x& +1 \\
+-(  &       &       &       & x^6   &  +x^5 & + x^4 &       & +x^2  & +x& +1) & | \text{ Rest multipliziert mit } 1 \\ \hline
+&           &       &       &       & x^5  & +x^4 &       &       
+\end{array}
+\]
+
+\begin{align*}
+    r(x) & = x^9 + x^8 + x + 1 \\
+    g(x) &= x^6 + x^5 + x^4 + x^2 + x + 1 
+\end{align*}
+\end{mybox}
+\begin{mybox}
+ Schritt 1. im euklidischen Algorithmus: 
+\[ 
+(x^9 + x^8 + x + 1) = (x^6 + x^5 + x^4 + x^2 + x + 1 ) \cdot (x^3 + x +1) + (x^5 + x^4)
+\]
+Als nächstes berechnen: 
+\[
+(x^6 + x^5 + x^4 + x^2 + x + 1 ) = (x^5 + x^4) \cdot ? + ? 
+\]
+Also $(x^5 + x^4) / (x^3 + x +1)$ berechnen. 
+\[
+\begin{array}{ccccccccc}
+    & x^6   & +x^5  &+x^4   &+x^3   &+x^2   &+x &+1 &  \\
+-(  &x^6    & +x^5 & )  \\\hline
+    &       &       &+x^4   &+x^3   &+x^2   &+x &+1 &  \\
+\end{array}
+\]
+ Schritt 2. im euklidischen Algorithmus: 
+\[
+(x^6 + x^5 + x^4 + x^2 + x + 1 ) = (x^5 + x^4) \cdot x + (x^4 + x^2 + x + 1)
+\]
+Als nächstes berechnen:
+\[
+ (x^5 + x^4) = (x^4 + x^2 + x + 1) \cdot ? + ? 
+\]
+
+\[
+\begin{array}{ccccccccc}
+    &x^5&+x^4 \\
+ -( &x^5   &   &+x^3   &+x^2 &+x & ) \\ \hline
+    & & x^4 & +x^3 & +x^2 & +x
+\end{array}
+\]
+Schritt 3. im euklidischen Algorithmus: 
+\[
+ (x^5 + x^4) = (x^4 + x^2 + x + 1) \cdot (x) + (x^4+x^3+x^2+x)
+\]
+Als nächstes berechnen:
+\[
+(x^4 + x^2 + x + 1) = (x^4+x^3+x^2+x) \cdot ? +? 
+\]
+
+\[
+\begin{array}{ccccccccc}
+  & x^4 & & + x^2 & + x & + 1  \\
+ -( & x^4 & +x^3 & +x^2 & +x & ) \\ \hline
+ & & x^3  & & & +1
+\end{array}
+\]
+Schritt 4. im euklidischen Algorithmus:
+\[
+(x^4 + x^2 + x + 1) = (x^4+x^3+x^2+x) \cdot 1 + (x^3 +1) 
+\]
+Als nächstes berechnen:
+\[
+(x^4+x^3+x^2+x) = (x^3 +1) \cdot ? + ? 
+\]
+
+\[
+\begin{array}{ccccccccc}
+  & x^4 & + x^3 & + x^2 & + x \\ 
+-(& x^4 & & & +x & ) \\ \hline
+& & x^3 + & x^2 
+\end{array}
+\]
+Schritt 5. im euklidischen Algorithmus:
+\[
+(x^4+x^3+x^2+x) = (x^3 +1) \cdot (x) +  (x^3 +  x^2) 
+\]
+Als nächstes berechnen:
+\[
+(x^3 +1) = (x^3 +  x^2)  \cdot ? + ? 
+\]
+\end{mybox}
+
+\begin{mybox}
+\[
+\begin{array}{ccccccccc}
+  x^3 & & +1 \\
+  x^3 & +  x^2 \\ \hline
+  x^2 & & +1
+\end{array}
+\]
+Schritt 5. im euklidischen Algorithmus:
+\[
+(x^3 +1) = (x^3 +  x^2)  \cdot 1 + (x^2 +1) 
+\]
+
+Das hat nicht so funktioniert, wie es sollte. Aber ich sitze schon mehr als 2 Stunden an dieser Aufgabe und es wird nicht besser. Daher bleibt es jetzt so. 
+\end{mybox}
+
+\subsection*{Aufgabe 2 (4 Punkte)}
+Ein Polynom \( f(x) \in k[x] \) heißt monisch, oder normiert, falls der Leitkoeffizient 1 ist. Mit
+anderen Worten, \( \deg(f) = n \) und \( a_n = 1 \).
+
+\begin{enumerate}
+    \item[(a)] Zeigen Sie, dass es genau \( p \) irreduzible monische Polynome vom Grad 1 in \( \mathbb{Z}/p\mathbb{Z}[x] \) gibt.
+    \begin{mybox}
+     Ein normiertes Polynom vom Grad 1 in  \( \mathbb{Z}/p\mathbb{Z}[x] \) hat die Form $f(x)=x+a$ für $a \in \mathbb{Z}/p\mathbb{Z}$. Weil $|\mathbb{Z}/p\mathbb{Z}| = p$ und $a$ somit $p$ verschieden viele Werte annehmen kann, gibt es $p$ monische Polynome vom Grad 1 in \( \mathbb{Z}/p\mathbb{Z}[x] \). \\
+     Ein Polynom von Grad 1 ist wegen seiner Form $f(x)=x+a$ immer irreduzibel, weil man weder das $x$ noch eine Zahl $a$ weiter zerlegen kann. 
+    \end{mybox}
+    \item[(b)] Zeigen Sie weiterhin, dass es \( \frac{1}{2}(p^2 - p) \) irreduzible monische Polynome vom Grad 2 in \( \mathbb{Z}/p\mathbb{Z}[x] \) gibt.
+    \begin{mybox}
+    Ein normiertes Polynom vom Grad 2 in \( \mathbb{Z}/p\mathbb{Z}[x] \) hat die Form $f(x)=x^2+ax+b$ für $a,b \in \mathbb{Z}/p\mathbb{Z}$. \\
+    Es gibt jeweils für $a$ und $b$ genau $p$ mögliche Werte und somit $p^2$ viele monische Polynome 2ten Grades in \( \mathbb{Z}/p\mathbb{Z}[x] \). \\
+    Von dieser Zahl muss man die reduziblen monischen Polynome abziehen. Da diese sich in zwei irreduzible monische Polynome vom Grad 1 zerlegen lassen würden, gibt es $p$ Möglichkeiten. Man landet bei der Zahl $p^2-p$. \\
+    Weil es egal ist, in welcher Reihenfolge die Polynome ersten Grades nach der Zerlegung stehen (siehe $f(x)=(x-r_1)(x-r_2)$ ), müssen wir beachten die Paare $(r_1, r_2)$ nicht doppelt zu zählen. Deshalb teilen wir die Anzahl noch durch 2. 
+    \[ \frac{p^2-p}{2} = \frac{1}{2}(p^2 - p)\]
+    \end{mybox} 
+    \item[(c)] Wie viele irreduzible Polynome vom Grad 3 in \( \mathbb{Z}/p\mathbb{Z}[x] \) gibt es?
+    \begin{mybox}
+    Monische Polynome vom Grad 3: $p^3$ \\
+    Reduzible monische Polynome vom Grad 3: anscheinend $p$
+     \[
+     \frac{1}{3}(p^3-p)
+     \]
+    \end{mybox}
+\end{enumerate}
+
+Hinweis zu (b): Wie viele monische Polynome vom Grad 2 gibt es? Falls ein solches
+Polynom reduzierbar ist, dann faktorisiert es sich als zwei irreduzible monische Polynome
+vom Grad 1. Wie viele Möglichkeiten gibt es?
+
+\subsection*{Aufgabe 3 (4 Punkte)}
+Sei \( C \) ein linearer Code der Länge \( n \) und Dimension \( k \) mit Minimalabstand \( \delta \). Außerdem
+sei \( H \) eine Kontrollmatrix von \( C \).
+\begin{enumerate}
+    \item[(a)] Zeigen Sie, dass der Minimalabstand \( \delta \) die größte natürliche Zahl \( d \) ist, für die jede
+    Menge von \( d - 1 \) Spalten der Kontrollmatrix \( H \) linear unabhängig ist.
+    \begin{mybox}
+      Beweis durch Widerspruch. \\
+      Sei $\delta > d$, dann sind mindestens $\delta$ Spalten von $H$ linear abhängig (weil $\delta > d$ und $d-1$ ist die Grenze, also muss eine Anzahl größer als $\delta -1$ linear abhängig sein). \\
+      Dadurch existiert ein Wort mit Hamming-Gewicht kleiner als $\delta$. \\
+      \textbf{Widerspruch}, da das Minimalgewicht gleich dem minimalen Hamming-Gewicht ist. 
+    \end{mybox}
+    \item[(b)] Beweisen Sie die sogenannte Singleton-Schranke
+    \[
+    \delta \leq n - k + 1
+    \]
+    \begin{mybox}
+    Sei $q$ die Größe des Alphabets\\ 
+     Es gibt $q^k$ Codewörter der Länge $n$. Wenn man von jedem Codewort die ersten $\delta-1$ Stellen löscht, müssen die Codewörter weiterhin verschieden sein, weil sie einen Hamming-Abstand von mindestens $\delta$ hatten und haben nun einen von mindestens 1. Außerdem gäbe es weiterhin $q^k$ viele dieser neuen Codewörter. Also $q^{n-\delta +1} = q^k$. Bestehen weitere Einschränkungen für den ursprünglichen Code (mit $q^k$ Wörtern), kann es sein, dass aus dem neuen Code (mit $q^{n-\delta +1}$ Wörtern) nicht alle Wörter auch Wörter im Sinne des alten Codes wären. Daher beschränkt man sich darauf es als Ungleichung zu formulieren:
+     \[
+     q^{n-\delta +1} \geq q^k   \Rightarrow  n- \delta +1 \geq k  \Leftrightarrow \delta \leq n-k+1
+     \]
+    \end{mybox}
+\end{enumerate}
+
+\subsection*{Aufgabe 4 (4 Punkte)}
+Ein linearer Code, für den Gleichheit in der Singleton-Schranke gilt, wird als separabler
+Maximal-Distanz-Code (MDS-Code) bezeichnet.
+Es sei \( C \) die Menge aller Codewörter der Länge \( n \) mit geradem Gewicht. Zeigen Sie, dass \( C \)
+ein linearer MDS-Code ist.
+\begin{mybox}
+$C$ beinhaltet den Nullvektor, da 0 ein gerades Gewicht ist. Außerdem ist $C$ abgeschlossen unter Addition, da die Summe zweier geraden Gewichte wieder gerade ist, da für die Gewichte von Codewörtern gilt $\partial(a, b) = \partial(a + b, b + b) = \partial(a + b, 0) = w(a + b)$. Also ist $C$ ein linearer Code. \\ 
+Das minimalste Gewicht ungleich Null wäre 1, aber das ginge nur, wenn Codewörter auch ungerade wären. Also ist $\delta = 2$. \\ 
+Weil der Code nur die Hälfte aller Codewörter der Länge $n$ beinhaltet (die geraden...) gibt es $\frac{2^n}{2} = 2^{n-1}$ viele Wörter in $C$ und die Dimension ist somit $n-1$. 
+\begin{align*}
+    \delta &  \leq n-k+1\\
+     2 &  \leq n- (n-1) +1 \\
+     2 &  \leq n- n + 1 +1  \\
+     2 &  \leq 2
+\end{align*}
+Die Singleton-Schranke ist erfüllt und somit ist $C$ ein linearer MDS-Code. 
+\end{mybox}
+
+\end{document}

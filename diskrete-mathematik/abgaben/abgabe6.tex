@@ -1,0 +1,275 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 6; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+\section*{Präsenzaufgaben}
+\subsection*{Aufgabe 1}
+Es seien $\alpha = (13624)(587)(9)$ und $\beta = (15862)(394)(7)$. Geben Sie eine Permutation
+$\sigma \in S9$ an, so dass $\sigma\alpha\sigma^{-1} = \beta$ gilt. Schreiben Sie $\sigma$ als Produkt disjunkter Zykeln. Wie
+viele Möglichkeiten gibt es für die Wahl von $\sigma$?
+\begin{mybox}
+Ich fände es schön, wenn wir diese Aufgabe doch noch machen und besprechen könnten, denn ich verstehe sie nicht recht. 
+\end{mybox}
+\subsection*{Aufgabe 2}
+Geben Sie alle Partitionen von n = 8 zusammen mit dem korrespondierenden Young
+Diagramm an.  
+\begin{mybox}
+\begin{tabular}{cl}
+      8 & xxxxxxxx \\ \hline
+      7+1 & xxxxxxx \\
+      & x\\ \hline
+      6+2 & xxxxxx\\
+      & xx\\\hline
+      6+1+1 & xxxxxx\\
+      & x\\
+      & x\\\hline
+      5+3 & xxxxx\\
+      & xxx\\
+\end{tabular}
+\begin{tabular}{cl}
+      5+2+1 & xxxxx \\
+      & xx\\
+      & x\\\hline
+      5+1+1+1 & xxxxx \\
+      & x \\
+      & x \\
+      & x \\\hline
+      4+4 & xxxx\\
+      & xxxx\\\hline
+      4+3+1 & xxxx\\
+      & xxx\\
+      & x\\
+\end{tabular}
+\begin{tabular}{cl}
+      4+2+2 & xxxx \\
+      & xx\\
+      & xx\\\hline
+      4+2+1+1& xxxx\\
+      & xx\\
+      & x\\
+      & x\\\hline
+      4+1+1+1+1 & xxxx\\
+      & x\\
+      & x\\
+      & x\\
+      & x\\
+\end{tabular}
+\begin{tabular}{cl}
+      3+3+2 & xxx \\
+     & xxx\\
+     & xx\\\hline
+     3+3+1+1 & xxx\\
+     & xxx\\
+    &  x\\
+     & x\\ \hline
+     3+2+2+1 & xxx\\
+     & xx\\
+     & xx\\
+     & x\\
+\end{tabular}
+\begin{tabular}{cl}
+      3+2+1+1+1 & xxx\\
+      & xx\\
+      & x\\
+      & x\\
+      & x\\ \hline
+      2+2+2+2 & xx\\
+      & xx\\
+      & xx\\
+      & xx\\
+\end{tabular}
+\end{mybox}
+\section*{Aufgaben zur Abgabe}
+\subsection*{Aufgabe 1 (4 Punkte)}
+
+Beweisen Sie, dass
+\[
+S(n, k) = \frac{1}{k!} 
+\sum_{} 
+\binom{n}{n_1, n_2, \ldots, n_k},
+\]
+wobei über alle Sequenzen \((n_1, \ldots, n_k)\) natürlicher Zahlen mit \(n_1, \ldots, n_k \geq 1\) und 
+\(n_1 + n_2 + \cdots + n_k = n\) summiert wird.
+\begin{mybox}
+Wir analysieren die gegeben Formel und vergleichen anschließend die beiden Seiten. \\
+$S(n,k)$ ist eine Stirling-Zahl zweiter Art und gibt die Anzahl der Möglichkeiten an, eine Menge mit $n$ Elementen in $k$ nichtleere, disjunkte Teilmengen zu zerlegen. \\
+Multipliziert man beide Seiten der Gleichung mit $k!$, erhält man
+\[
+k!S(n, k) = 
+\sum_{} 
+\binom{n}{n_1, n_2, \ldots, n_k}
+\]
+Wir wissen bereits, dass $k!S(n, k)$ dia Anzahl der surjektiven Abbildungen zwischen einer Menge von $n$ Objekten auf eine Menge von $k$ Fächer ist und kennen $\binom{n}{n_1, n_2, \ldots, n_k}$ als Multinomialkoeffizienten. \\ \newline
+Aus dem Skript wissen wir, dass der Multinomialkoeffizient angibt, wie viele Möglichkeiten es gibt eine Menge mit $n$ Elementen in $k$ geordnete Teilmengen aufzuteilen, bei denen jeweils $n_x$ Elemente auf eine Zahl $x$ abgebildet werden. Dabei betrachten wir die Anzahl mit Reihenfolge. \\
+Summiert man alle möglichen Multinomialkoeffizienten, erhält man die Anzahl aller möglichen Zerlegungen von $n$ Elementen in $k$ Teilmengen unter der Berücksichtigung der Reihenfolgen der Elemente und das entspricht $k!S(n, k)$. 
+Damit ist folgendes bewiesen: 
+\[
+k!S(n, k) = 
+\sum_{} 
+\binom{n}{n_1, n_2, \ldots, n_k}
+\]
+Und es folgt die Korrektheit der Formel 
+\[
+S(n, k) = \frac{1}{k!} 
+\sum_{} 
+\binom{n}{n_1, n_2, \ldots, n_k}
+\]
+
+
+\end{mybox}
+\subsection*{Aufgabe 2 (4 Punkte)}
+
+Zeigen Sie, dass für alle natürlichen Zahlen \(a, b, c\) mit \(a + b + c = n\) gilt:
+\[
+\binom{n}{a, b, c} = 
+\binom{n-1}{a-1, b, c} + 
+\binom{n-1}{a, b-1, c} + 
+\binom{n-1}{a, b, c-1}.
+\]
+
+Geben Sie eine analoge Formel für allgemeine Multinomialzahlen an.
+
+\begin{mybox}
+$\binom{n}{a, b, c}$ ist ein Multinomialkoeffizient. Dieser spezielle Multinomialkoeffizient gibt die Anzahl der Möglichkeiten an $n$ Objekte auf drei Teilmengen mit $a$, $b$ und $c$ vielen Elementen abzubilden. \\
+$\binom{n-1}{a-1, b, c} + 
+\binom{n-1}{a, b-1, c} + 
+\binom{n-1}{a, b, c-1}$ ist eine Rekursionsformel und erlaubt es, dass man zuerst nur das $n$-te Objekt und dessen Zuweisung betrachtet. Dabei gibt es drei Möglichkeiten. 
+\begin{enumerate}
+    \item Das $n$-te Objekt wurde der Teilmenge mit $a$ vielen Elementen zugeordnet \\
+    $\rightarrow$ Dann werden die restlichen $n-1$ Objekte auf drei Teilmengen mit $a-1$, $b$ und $c$ vielen Elementen abgebildet; Es gibt $\binom{n-1}{a-1, b, c}$ viele Möglichkeiten
+    \item Das $n$-te Objekt wurde der Teilmenge mit $b$ vielen Elementen zugeordnet\\
+    $\rightarrow$ Dann werden die restlichen $n-1$ Objekte auf drei Teilmengen mit $a$, $b-1$ und $c$ vielen Elementen abgebildet; Es gibt $\binom{n-1}{a, b-1, c}$ viele Möglichkeiten
+    \item Das $n$-te Objekt wurde der Teilmenge mit $c$ vielen Elementen zugeordnet\\
+    $\rightarrow$ Dann werden die restlichen $n-1$ Objekte auf drei Teilmengen mit $a$, $b$ und $c-1$ vielen Elementen abgebildet; Es gibt $\binom{n-1}{a, b, c-1}$ viele Möglichkeiten
+\end{enumerate}
+Addiert man die drei sich daraus ergebenden Anzahlen von Möglichkeiten, erhält man die Gesamtanzahl von Möglichkeiten $n$ Objekte auf drei Teilmengen mit $a$, $b$ und $c$ vielen Elementen abzubilden.\\ \newline
+Diese Summierung der Anzahlen der Partitionen abhängig davon wo das $n$-te Element ist, kann man verallgemerinern als 
+\[
+\binom{n}{r_1, r_2, \dots, r_k} = \sum_{i=1}^{k} \binom{n-1}{r_1, \dots, r_{i-1}, r_i-1, r_{i+1}, \dots, r_k} 
+\]
+\end{mybox}
+
+\subsection*{Aufgabe 3 (4 Punkte)}
+
+Sei \(n = a_1 + \cdots + a_k\) eine Partition. Sei \(b_i := |\{j \mid a_j \geq i\}|\). Die konjugierte Partition ist 
+\(b_1 + b_2 + \cdots\).
+
+\begin{enumerate}
+    \item[(a)] Schreiben Sie alle Partitionen von \(n = 6\) und \(n = 7\) auf. Für jede Partition von \(n = 6\) und \(n = 7\), geben Sie die konjugierte Partition an.
+   \begin{mybox}
+    \begin{tabular}{cc|c}
+        n = 6 & Partitionen & konjugierte Partitionen\\
+         & 6 & 1+1+1+1+1+1 \\
+         & 5+1 & 2+1+1+1+1 \\
+         & 4+2 & 2+2+1+1 \\
+         & 4+1+1 & 3+1+1+1 \\
+         & 3+3 & 2+2+2\\
+         & 3+2+1  & 3+2+1\\
+         & 2 +2+2 & 3+3 \\
+         & 2+2+1+1&  4+2\\
+         & 1+1+1+1+1+1 & 6\\
+    \end{tabular}
+    \end{mybox}
+    \begin{mybox}
+    \begin{tabular}{cc|c}
+    n = 7 & Partitionen & konjugierte Partitionen\\
+         & 7 &   1+1+1+1+1+1+1\\
+         & 6+1& 2+1+1+1+1+1+1\\
+         & 5+2& 2+2+1+1+1 \\
+         & 5+1+1 & 3+1+1+1+1\\
+         &4+3& 2+2+2+1 \\
+         &4+2+1 & 3+2+1+1 \\
+         & 4+1+1+1& 4+1+1+1 \\
+         &3+2+1+1& 4+2+1\\
+         & 3+1+1+1+1& 5+1+1 \\
+         &2+2+2+1&4+3\\
+         &2+2+1+1+1& 5+2 \\
+         &2+1+1+1+1+1& 6+1\\
+         & 1+1+1+1+1+1+1& 7\\
+    \end{tabular} 
+   \end{mybox}
+    \item[(b)] Zeigen Sie, dass \(n = b_1 + b_2 + \cdots\), das heißt, \(b_1 + b_2 + \cdots\) ist ebenfalls eine Partition von \(n\).
+    \begin{mybox}
+    Wir wollen zeigen, dass die Summe aller $b_i$ eine Partition von $n$ ist. \\
+    $b_1 + b_2 + \cdots$ beschreibt wie viele Teile der Partition $a_1 + a_2 + \cdots + a_k$ größer oder gleich $i$ sind. Für jedes $i$ wird also jedes Element $a_j$ genau einmal in dem $b_i$ betrachtet und (wenn es $\geq i$ ist) dazu gezählt. Dadurch wird jedes $a_j$ genau so oft in die Summe der $b_i$s einbezogen, wie der Wert von $a_j$ in der Partition ist. Und dadurch ist die Summe identisch zu $n$ und somit eine Partition von $n$.
+    \end{mybox}
+\end{enumerate}
+
+\subsection*{Aufgabe 4 (4 Punkte)}
+
+Sei \(p_k(n)\) die Anzahl der Partitionen von \(n\) mit genau \(k\) Summanden. Beweisen Sie die folgende Rekursionsformel:
+\[
+p_k(n) = p_k(n - k) + p_{k-1}(n - k) + \cdots + p_1(n - k), \quad n > k \geq 1.
+\]
+\begin{mybox}
+Wie bei Aufgabe 2 müssen wir uns anschauen welche Fälle es bei der Zerlegung von $p_k(n)$ in eine Rekursionsformel geben kann. 
+\begin{enumerate}
+    \item Der größte Summand einer Partition ist gleich $k$ \\
+    $\rightarrow$ Die restlichen $k-1$ Summanden bilden dann eine Partition von $n-k$. Die Anzahl dieser Partitionen ist $p_{k-1}(n-k)$
+    \item Der größte Summand der Partition ist kleiner als $k$.  \\
+    $\rightarrow$ Dann sind die Partitionen von $n$ mit $k$ Summanden identisch mit den Partitionen von $n-k$ in maximal $k-1$ Summanden, da der größte Summand kleiner als $k$ ist. \\
+    Die Anzahl der Partitionen in Summanden kleiner als $k$ ist $\sum_{i=1}^{k-1} p_{i}(n-k)$, also $p_{k-1}(n-k) + p_{k-2}(n-k) \cdots + p_{1}(n-k)$. 
+\end{enumerate} 
+Nimmt man all diese Anzahlen zusammen (und deckt somit alle Fälle ab), erhält man die Gesamtanzahl der Partitionen von $n$ mit genau $k$ Summanden. 
+\[
+p_{k}(n-k) + \sum_{i=1}^{k-1} p_{i}(n-k) = p_{k}(n-k) + p_{k-1-i}(n-k) + p_{k-2}(n-k) \cdots + p_{1}(n-k)
+\]
+\end{mybox}
+\end{document}
+
+  %Wenn der größte Summand kleiner als $k$ ist, dann muss der größte Summand mindestens 1 sein und 

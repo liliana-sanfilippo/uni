@@ -1,0 +1,287 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 5; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+\section*{Präsenzaufgaben}
+
+\subsection*{1. Entscheiden Sie für jede der folgenden Relationen zwischen ganzen Zahlen \( x \) und \( y \), ob sie reflexiv, ob sie symmetrisch und ob sie transitiv ist.}
+\begin{itemize}
+    \item[(a)] \( R = \{(x, y) \mid |x - y| \leq 2 \} \)
+    \item[(b)] \( R = \{(x, y) \mid xy > 0 \} \)
+    \item[(c)] \( R = \{(x, y) \mid x \mid y \} \)
+\end{itemize} 
+\color{Blue}
+\begin{itemize}
+    \item \textbf{Reflexiv}: wenn jedes Element einer Menge in Beziehung zu sich selbst steht. 
+    \item \textbf{Symmetrisch}: wenn ein Element x in Beziehung zu einem Element y steht (also $x \sim y$), dann muss auch y in Beziehung zu x stehen (also $y \sim x$)
+    \item \textbf{Transitiv}: wenn ein Element x in Beziehung zu einem Element y steht und y in Beziehung zu einem Element z steht, dann muss auch x in Beziehung zu z stehen
+\end{itemize}
+\color{black}
+\begin{mybox}
+    \begin{tabular}{c|ccc}
+        Relation $x \sim y$, falls  & reflexiv & symmetrisch & transitiv \\ \hline
+        $|x - y| \leq 2$ &  Ja & Ja & Nein \\ 
+        $xy > 0$ & Nein & Ja & Ja \\
+        $x \mid y$ & Ja & Nein & Ja \\
+    \end{tabular}
+\end{mybox}
+
+\subsection*{2. Wir betrachten folgende Substitutionen in Wörtern der Länge 3 über dem Alphabet mit den drei Buchstaben A, B und C:}
+\begin{itemize}
+    \item AB kann gegen BC ausgetauscht werden,
+    \item AC gegen CB,
+    \item AA gegen BA,
+    \item und jeweils umgekehrt.
+\end{itemize}
+Zwei Wörter heißen äquivalent, wenn sie gleich sind oder eines aus dem anderen durch eine Folge der oben genannten Substitutionen hervorgeht. Geben Sie die Äquivalenzklassen von Wörtern an.
+\begin{mybox}
+Es gibt insgesamt $3^3=27$ mögliche Wörter der Länge 3, die aus den Buchstaben $A$, $B$ und $C$ gebildet werden können: \[
+\{AAA,AAB,AAC,ABA,ABB,ABC,ACA,ACB,ACC,BAA,BAB,BAC,BBA,BBB,BBC,BCA,BCB,
+\]
+\[BCC,CAA,CAB,CAC,CBA,CBB,CBC,CCA,CCB,CCC\}\]
+Äquivalenzklassen finden wir heraus, indem wir uns ansehen welche Wörter sich in welche umwandeln lassen. \\ \newline
+\end{mybox}
+\begin{mybox}
+\textbf{AAA}: \\
+Verwendbar ist hier \textit{AA gegen BA} anwendbar: \\
+ BCA $\leftrightarrow$ ABA $\leftrightarrow$ AAA $\leftrightarrow$ BAA $\leftrightarrow$ BBA\\
+Es bleibt übrig: 
+\[
+\{AAB,AAC,ABB,ABC,ACA,ACB,ACC,BAB,BAC,BBB,BBC,BCB,
+\]
+\[BCC,CAA,CAB,CAC,CBA,CBB,CBC,CCA,CCB,CCC\}\]
+\textbf{AAB}: \\
+Hier sind \textit{AB gegen BC} und \textit{AA gegen BA} anwendbar. \\
+BBC $\leftrightarrow$ BAB $\leftrightarrow$ AAB $\leftrightarrow$ ABC $\leftrightarrow$ BCC\\
+Es bleibt übrig: 
+\[
+\{AAC,ABB,ACA,ACB,ACC,BAC,BBB,BCB,
+\]
+\[CAA,CAB,CAC,CBA,CBB,CBC,CCA,CCB,CCC\}\]
+\textbf{AAC}: \\
+Hier sind \textit{AC gegen CB} und \textit{AA gegen BA} und \textit{AB gegen BC} anwendbar. \\
+ACB $\leftrightarrow$ AAC $\leftrightarrow$ BAC $\leftrightarrow$ BCB $\leftrightarrow$ ABB \\
+Es bleibt übrig: 
+\[
+\{ACA,ACC,BBB,CAA,CAB,CAC,CBA,CBB,CBC,CCA,CCB,CCC\}
+\]
+\textbf{ACA}: \\
+Hier ist \textit{AC gegen CB} und \textit{AA gegen BA}anwendbar. \\
+ACA  $\leftrightarrow$ CBA $\leftrightarrow$ CAA
+Es bleibt übrig: 
+\[
+\{ACC,BBB,CAB,CAC,CBB,CBC,CCA,CCB,CCC\}
+\]
+\textbf{ACC}: \\
+Hier ist \textit{AC gegen CB} und \textit{AB gegen BC} anwendbar. \\
+ACC  $\leftrightarrow$ CBC $\leftrightarrow$ CAB
+Es bleibt übrig: 
+\[
+\{BBB,CAC,CBB,CCA,CCB,CCC\}
+\]
+\textbf{BBB}: \\
+Hier ist nichts anwendbar. \\
+Es bleibt übrig: 
+\[
+\{CAC,CBB,CCA,CCB,CCC\}
+\]
+\textbf{CAC}: \\
+Hier ist \textit{AC gegen CB} anwendbar. \\
+ CAC $\leftrightarrow$ CCB 
+Es bleibt übrig: 
+\[
+\{CCA,CCC\}
+\]
+\textbf{CCA}: \\
+Hier ist nichts anwendbar. \\
+Es bleibt übrig: 
+\[
+\{CCC\}
+\]
+\textbf{CCB}: \\
+Hier ist nichts anwendbar. \\ 
+
+\end{mybox}
+\begin{mybox}
+Die Äquivalenzklassen sind also: \\
+\{BCA, ABA, AAA, BAA, BBA\}, \{BBC, BAB, AAB, ABC, BCC\}, \{ACB, AAC, BAC, BCB, ABB\}, \{ACA, CBA, CAA\}, \{ACC, CBC, CAB\}, \{BBB\}, \{CAC, CCB\}, \{CCA\}, \{CCB\}
+\end{mybox}
+
+\section*{Aufgaben zur Abgabe}
+
+\subsection*{Aufgabe 1 (4 Punkte)}
+Sei \( p \) eine Primzahl und \( F_p \) der Körper mit \( p \) Elementen. Eine Gerade ist ein 1-dimensionaler Unterraum und eine Ebene ein 2-dimensionaler Unterraum. Zeigen Sie, dass der Vektorraum \( F_p^3 \) genau \( p^2 + p + 1 \) Geraden enthält. Wie viele Ebenen gibt es? \\
+\color{Blue}
+In particular, for every finite field F$_q$ with q elements, the Gaussian binomial coefficient
+\( \binom{n}{k}_q \)
+counts the number of k-dimensional vector subspaces of an n-dimensional vector space over F$_q$ (a Grassmannian). \cite{enwikiqbinom} 
+\color{black}
+\begin{mybox}
+    Um die Anzahl der Geraden festzustellen, müssen wir die Anzahl der 1-dimensionales Unterräume von \( F_p^3 \) ermitteln. \\
+    \[ \text{Also: }\binom{n}{k}_q\text{, hier: } \binom{3}{1}_p\]
+    Wir wissen aus dem Internet: \cite{enwikiqbinom}
+    \[
+\binom{m}{r}_q = \frac{(1 - q^m)(1 - q^{m-1}) \cdots (1 - q^{m-r+1})}{(1 - q)(1 - q^2) \cdots (1 - q^r)}
+\]
+Also in unserem Fall: 
+
+\[
+\binom{3}{1}_p  = \frac{1 - p^3}{1 - p} = 
+\frac{(1-q)(1+q+q^2)}{1 - p} = 1 + p + p^2
+\]
+Weil wir uns im Zähler nur $(1 - p^{n-k+1})$ betrachten müssen, da $k = 1$. Im Nenner ebenso mit $(1 - p^k)$. \\ \newline
+Um die Anzahl der Ebenen festzustellen, müssen wir hingegen die Anzahl der 2-dimensionales Unterräume von \( F_p^3 \) ermitteln. \\
+Also in unserem Fall: 
+\[
+{3 \choose 2}_{p} = \frac{(1 - p^3)(1 - p^2)}{(1 - p)(1 - p^2)} = \frac{1 - p^3}{1 - p} = 
+\frac{(1-q)(1+q+q^2)}{1 - p} = 1 + p + p^2
+\]
+Es gibt also gleich viele Geraden und Ebenen in \( F_p^3 \). 
+\end{mybox}
+\subsection*{Aufgabe 2 (4 Punkte)}
+Sei \( G \) die Menge der Geraden in \( F_p^3 \) und \( E \) die Menge der Ebenen.
+
+\begin{itemize}
+    \item[(a)] Zeigen Sie, dass die folgenden Teilmengen 2-Designs bilden:
+    \begin{itemize} 
+        \item i. \( G \) zusammen mit den Blöcken \( \{BE \mid E \in E \} \), wobei \( BE = \{ G \in G \mid G \subseteq E \} \)
+            \begin{mybox}
+        Da $G$ die Anzahl der Geraden ist, ist $\mid G \mid = 1 + p + p^2 $. Damit haben wir das $v$ für unser Design. \\  \newline
+        Hat jeder Block genau $\mid BE \mid = k$ Punkte? \\
+        Wir setzen $k = 1 + p$ und überprüfen, ob das $\mid BE \mid$ entspricht: \\
+        $BE$ ist die Menge aller Geraden, die in der Ebene $E$ enthalten sind (betrachtet für \( F_p^3 \)). 
+        Die Geraden aus $G$ in $E$ entsprechen den eindimensionalen Unterräumen von $E$, also können wir einfach die Anzahl dieser Unterräume berechnen. Da Ebenen zweidimensional sind, ergibt sich die folgende Rechnung: 
+            \[
+\binom{2}{1}_p = \frac{ (1 - p^{2})}{(1 - p)} = \frac{ (1 - p)(1+p)}{(1 - p)} = 1 + p
+\] 
+Man sieht, diese Bedingung ist erfüllt. 
+\newline
+Kommt jedes Paar von Punkten in genau $r$ Blöcken vor? \\
+Wir setzen $r = 1$ und überprüfen, ob das passt. \\ Daher überprüfen wir in wie vielen Blöcken bzw. Ebenen jedes Paar von Geraden enthalten ist. Damit zwei geraden sich schneiden, müssen sie auf einer Ebene liegen und somit erfüllt $r = 1$ die Bedingung.\\
+        Also ist $(v,k,r)=((1 + p + p^2), (1+p), 1)$ ein 2-Design.
+    \end{mybox}
+        \item ii. \( E \) zusammen mit den Blöcken \( \{BG \mid G \in G \} \), wobei \( BG = \{ E \in E \mid E \supseteq G \} \).
+        \begin{itemize}
+            \item BG: Menge aller Ebenen, die die Gerade G enthalten
+        \end{itemize}
+        \textcolor{Blue}{Mengen von Ebenen, die jeweils alle Ebenen enthalten, die eine bestimmte Gerade G enthalten. Jede dieser Mengen BG ist eine Menge der Ebenen, die eine bestimmte Gerade enthalten; jede Gerade wird durch eine Menge von Blöcken von Ebenen beschrieben}
+        \begin{mybox}
+           Wir wählen die Parameter genau so wie bei i. und überprüfen. \\ \newline
+            Wir haben erneut $v = 1 + p + p^2$, da $\mid E \mid = 1 + p + p^2$. \\ \newline
+        Hat jeder Block genau $| BE |= k$ Punkte? \\
+       Ja, weil jede Gerade in $p+1$ Ebenen enthalten ist.  \\  \newline
+        Kommt jedes Paar von Punkten in genau $r$ Blöocken vor? \\
+       Ja, weil wie in i. jede Gerade in genau $p+1$ Ebenen enthalten ist und daher zwei sich schneidende Geraden in einer Ebene enthalten sein müssen. \\
+        Also ist $(v,k,r)=((1 + p + p^2), (1+p), 1)$ ein 2-Design.
+        \end{mybox}
+    \end{itemize}
+
+    Was sind die Parameter?
+    \begin{mybox}
+    Bei beiden Designs sind die Parameter $(v,k,r)=((1 + p + p^2), (1+p), 1)$. 
+    \end{mybox}
+    
+    \item[(b)] Welches Design erhalten Sie für \( p = 2 \)?
+    \begin{mybox}
+    Das 2-Design $(v,k,r)=(7, 3, 1)$.  \\
+    \{ \{1, 2, 3\}, \{1, 4, 5\}, \{1, 6, 7\}, \{2, 4, 6\}, \{2, 5, 7\}, \{3, 4, 7\}, \{3, 5, 6\} \}
+    \end{mybox}
+\end{itemize}
+
+\subsection*{Aufgabe 3 (4 Punkte)}
+Beweisen Sie folgende Formeln für Stirlingzahlen zweiter Art, indem Sie sie kombinatorisch interpretieren: \\
+\textcolor{Blue}{(Strirling Zahlen: $n$ Elemente in $k$ nichtleere, disjunkte Teilmengen aufzuteilen)}
+\[
+S(n, 2) = 2^{n-1} - 1 \quad \text{und} \quad S(n, n - 1) = \binom{n}{2}.
+\]
+ \begin{mybox}
+$ \mathbf{S(n, 2) = 2^{n-1} - 1}$:\\
+ Durch Problem 6.9 und Satz 6.10. wissen wir, dass es $k!S(n, k)$ Möglichkeiten gibt $n$ Objekte auf $k$ Fächer zu verteilen, indem wir die Anzahl der surjektiven Abbildungen zwischen der Menge der Objekte und Fächer ermitteln. \\
+ Für $S(n, 2)$ sind das $2!S(n, 2) = 2S(n, 2)$ Möglichkeiten. \\
+Nun zu $S(n, 2)$: Wir wissen durch die Potenzregel, es gibt $2^n$ Möglichkeiten n Elemente auf zwei Mengen aufzuteilen. \\
+ Da bei Stirlingzahlen verlangt wird, dass in beide Mengen etwas hinein gelegt wird (sie nicht leer sind), müssen wir jedoch die beiden Fälle ausschließen in denen alle n Elemente in der einen oder anderen Menge liegen. Daher verbleiben nur $2^n -2$ mögliche Aufteilungen.  \\
+ Dadurch erhalten wir folgende Formel: 
+  \[
+ 2S(n, 2) = 2^n -2
+ \]
+ Um nur $S(n, 2)$ zu erhalten, teilen wir beide Seiten der Gleichung durch $2$: 
+ \[
+ S(n, 2) = \frac{2^n -2}{2} = \frac{2^{n-1} -1}{1} = 2^{n-1} -1
+ \]\\
+ $\mathbf{S(n, n - 1) = \binom{n}{2}}$:\\
+ Wenn man $n$ Elemente auf $n-1$ Teilmengen aufteilen muss, werden in nur einer Menge zwei Elemente drin sein und in allen anderen Mengen nur jeweils eines. Die Anzahl der Möglichkeiten welche $2$ der $n$ Elemente in einer Menge landen kann man ausrechnen, indem man ausrechnet wie viele Möglichkeiten es gibt $2$ Elemente aus $n$ Elementen auszuwählen. Die restlichen $n-2$ Elemente sind ihre eigenen Teilmengen und müssen nicht weiter berechnet werden. \\
+ Aus Definition 2.1. wissen wir die Anzahl ist $\binom{n}{2}$. Somit gilt: 
+ \[
+ S(n, n - 1) = \binom{n}{2}
+ \]
+ \end{mybox}
+\subsection*{Aufgabe 4 (4 Punkte)}
+Zeigen Sie, dass 
+\[
+\sum_{k=1}^{m} \frac{n!}{(n - k)!} S(m, k) = n^m.
+\]
+\begin{mybox}
+Zuerst analysieren wir die gegebene Formel und vergleichen anschließend die beiden Seiten. \\
+Man kann sie als Zählung von Abbildungen von einer Menge $X$ mit $|X| = n$ auf eine Menge $Y$ mit $|Y| = m$ betrachten. Dabei ist $n^m$ eine direkte Zählung und $\sum_{k=1}^{m} \frac{n!}{(n - k)!} S(m, k)$ bezieht dazu noch die verschiedenen Werte ein, die $k$ annehmen kann. \\
+Dabei zählt $\frac{n!}{(n - k)!} S(m, k)$ die Anzahl der Funktionen mit $k$ Zielwerten. Denn $S(m,k)$ beschreibt die Anzahl der Möglichkeiten, die $m$ Elemente in genau $k$ nichtleere Teilmengen zu partitionieren und $\frac{n!}{(n - k)!}$ zählt jeweils die Zuordnung der Zielwerte zu den Partitionierungen. \\
+Da die Summe auf der rechten Seite jedoch von $1$ bis $m$ iteriert, unabhängig davon was $m$ ist, werden alle möglichen Zielwerte betrachtet und die Gleichungen kommen auf das gleiche hinaus. 
+\end{mybox}
+\color{Blue}
+\printbibliography
+
+\end{document}

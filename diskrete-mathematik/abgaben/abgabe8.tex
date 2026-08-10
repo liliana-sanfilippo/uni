@@ -1,0 +1,199 @@
+
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 8; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+
+
+\section*{Präsenzaufgaben}
+
+\begin{enumerate}
+    \item Für jedes $k$ im Bereich $2 \leq k \leq 6$ geben Sie entweder eine Differenzenfamilie von $\mathbb{Z}/7\mathbb{Z}$ mit $k$ Elementen an oder erklären Sie, warum keine existiert.
+    \begin{mybox}
+    Es gibt $\binom{k}{2}$ $\frac{k(k-1)}{2}$ mögliche Differenzen $x-y$ mit $x, y \in S$, $x \neq y$ in Differenzenfamilien in Bezug auf $\mathbb{Z}/m\mathbb{Z}$. Für $\mathbb{Z}/7\mathbb{Z}$ bedeutet das, dass eine Teilmenge $S \subset \mathbb{Z}/7\mathbb{Z}$ nur eine Differenzenfamilie ist, wenn $\frac{k(k-1)}{2} \leq 6$, denn es gibt 6 Elemente in $\mathbb{Z}/7\mathbb{Z} \backslash \{0\}$. Außerdem müssen die Differenzen alle gleich oft vorkommen. 
+    \\ $k = 2$: \\
+    $\frac{2(2-1)}{2} =  \frac{2(1)}{2} = \frac{2}{2} = 1 \leq 6$ \\
+    Differenzenfamilie: $\{0,1\}$ 
+   \\ $k = 3$: \\
+   $\frac{3(3-1)}{2} =  \frac{3(2)}{2} = \frac{6}{2} = 3 \leq 6$ \\
+    Differenzenfamilie: $\{0,1,3\}$ 
+    \\ $k = 4$: \\
+     $\frac{4(4-1)}{2} =  \frac{4(3)}{2} = \frac{12}{2} \leq 6$ passt, aber ich kriege es irgendwie nicht hin eine Differenzenfamilie zu finden.  
+   \\ $k = 5$: \\
+   $\frac{5(5-1)}{2} =  \frac{5(4)}{2} = \frac{20}{2} = 10 > 6 \Rightarrow $ keine Differenzenfamilie  
+    \\ $k = 6$: \\
+    $\frac{6(6-1)}{2} =  \frac{6(5)}{2} = \frac{30}{2} = 15 > 6 \Rightarrow $ keine Differenzenfamilie  
+    \end{mybox}
+    \item Bestimmen Sie alle Quadrate $\neq 0$ in $\mathbb{Z}/11\mathbb{Z}$ und konstruieren Sie daraus ein $2$-Design mit den Parametern $(11, 5, 2)$.
+\end{enumerate}
+\newpage 
+\section*{Aufgaben zur Abgabe}
+
+\subsection*{Aufgabe 1 (4 Punkte)}
+Bestimmen Sie
+\begin{enumerate}
+    \item[(a)] die letzte Dezimalstelle von $13^{2020}$,
+    \begin{mybox}
+    Die letzte Dezimalstelle von $13^{2020}$ entspricht $13^{2020} \mod 10$. Betrachten wir also die Potenzen von  $13 \mod 10$ in $\mathbb{Z} / 10 \mathbb{Z}$: 
+    \[13 \equiv 3 \mod 10\]
+    \begin{align*}
+        3 &  \equiv 3 \mod 10 \\
+        3^2 &  \equiv 9 \mod 10 \\
+        3^3 &  \equiv 7 \mod 10 \\
+        3^4 &  \equiv 1 \mod 10 \\
+        3^5 &  \equiv 3 \mod 10 
+    \end{align*}
+    Man sieht, die Potenzen wiederholen sich in 4er Zyklen.  \\
+    Jetzt berechnen wir $2020 \mod 4 = 505 + 0$\\
+    Also: $13^{2020} \equiv 3^{2020} \equiv 3^4 \equiv 1 \mod 10$ \\
+    Die letzte Dezimalstelle ist also 1. 
+    \end{mybox}
+    \item[(b)] den Rest von $9^{2525}$ bei Division durch $11$.
+    \begin{mybox}
+    Betrachten wir die Potenzen von  $9 \mod 10$ in $\mathbb{Z} / 11 \mathbb{Z}$:
+    \begin{align*}
+        9& \equiv 9 \mod 11 \\
+        9^2 & \equiv 4 \mod 11 \\
+        9^3 & \equiv 3 \mod 11 \\
+        9^4 & \equiv 5 \mod 11 \\
+        9^5 & \equiv 1 \mod 11 
+    \end{align*}
+    Man sieht, die Potenzen wiederholen sich in 5er Zyklen. 
+    Jetzt berechnen wir $ 2525 \mod 5 = 505 + 0$\\
+    Also: $9^{2525} \equiv 9^5 \equiv 1 \mod 11$, der Rest ist also 1.\\
+    \end{mybox}
+\end{enumerate}
+\newpage 
+\subsection*{Aufgabe 2 (4 Punkte)}
+Sei $p$ eine Primzahl.
+\begin{enumerate}
+    \item[(a)] Finden Sie alle Elemente $[x] \in \mathbb{Z}/p\mathbb{Z}$, sodass $[x]^2 = [1]$.
+    \begin{mybox}
+    Da $\mathbb{Z}/p\mathbb{Z}$ kommutativer Ring: 
+    \begin{align*}
+        [x]^2 & = [1] \\
+        [x]^2-[1] & = [0] \\
+        ([x]-[1])([x]+[1])& = [0]
+    \end{align*}
+    Da $p$ eine Primzahl, kann ein Produkt in $\mathbb{Z}/p\mathbb{Z}$ nur 0 sein, wenn einer der Faktoren 0 ist, also: 
+    $[x]-[1]=[0]$ oder $[x]+[1]=[0]$
+    \begin{itemize}
+        \item Fall $[x]-[1]=[0]$ \\
+        $\Rightarrow [x]=[1]$
+        \item Fall $[x]+[1]=[0]$ \\
+        $\Rightarrow [x]=[-1]$ bzw. weil $ [-1] \equiv p-1 \mod p$ ist es $[x]=[p-1]$
+    \end{itemize}
+    Also sind alle Elemente $[x] \in \mathbb{Z}/p\mathbb{Z}$, sodass $[x]^2 = [1]$: \\
+    $[x]=[1]$ und $[x]=[p-1]$
+    \end{mybox}
+    \item[(b)] Zeigen Sie, dass
+    \[(p - 1)! \equiv -1 \mod p.\]
+    \begin{mybox}
+    Aus dem Skript wissen wir, dass eine Restklasse $\mathbb{Z}/p\mathbb{Z}$ alle Elemente $[1], ..., [p-1]$ enthält, die Teilerfremd sind und dass die Menge deren invertierbarer Produkte $\varphi(p) = p-1$ ist  (Folgerung 8.16, Beispiel 8.17.). \\ \newline 
+    %Außerdem wissen wir, dass $(p - 1)! = 1  \cdot  2  \cdots  (2k)  \cdot  (2k + 1)  \cdots  (p - 2) \cdot (p - 1)$ (Lemma 9.9.). \\
+    Wir wissen auch, dass jedes Element $[x]$ in $\mathbb{Z}/p\mathbb{Z}$ ein Inverses $[y]$ hat, sodass $[x][y]\equiv [1] \mod p$. Dabei sind aber [1] und $[p-1]$ zu sich selber invers. Multipliziert man die Faktoren also aus, reduziere sich alle Faktoren mit ihren Inversen, außer [1] und $[p-1]$. \\
+    Also $(p-1)! \equiv (1)(p-1) \equiv  (p-1) \equiv  -1 \mod p$
+    \end{mybox}
+\end{enumerate}
+\newpage
+\subsection*{Aufgabe 3 (4 Punkte)}
+Bestimmen Sie die quadratischen Reste in $\mathbb{Z}_{13}$ und $\mathbb{Z}_{19}$. Prüfen Sie nach, ob diese Teilmengen Differenzenfamilien bilden, und wenn ja, konstruieren Sie die zugehörigen $2$-Designs.
+\begin{mybox}
+\begin{align*}
+    x=0 & \Rightarrow x^2 \mod 13 = 0 \\
+    x= 1 & \Rightarrow x^2 \mod 13 = 1 \\
+    x= 2 & \Rightarrow x^2 \mod 13 = 4 \\
+    x= 3 & \Rightarrow x^2 \mod 13 = 9 \\
+    x= 4 & \Rightarrow x^2 \mod 13 = 16 \equiv 3 \mod 13 \\
+    x= 5 & \Rightarrow x^2 \mod 13 = 25 \equiv 12 \mod 13 \\
+    x= 6 & \Rightarrow x^2 \mod 13 = 36 \equiv 10 \mod 13 \\
+    x= 7 & \Rightarrow x^2 \mod 13 = 49 \equiv 10 \mod 13 \\
+    x= 8 & \Rightarrow x^2 \mod 13 = 64 \equiv 12 \mod 13 \\
+    x= 9 & \Rightarrow x^2 \mod 13 = 81 \equiv 3 \mod 13 \\ 
+    x= 10 & \Rightarrow x^2 \mod 13 = 100 \equiv 9 \mod 13 \\ 
+    x= 11 & \Rightarrow x^2 \mod 13 = 121 \equiv 4 \mod 13 \\
+    x= 12 & \Rightarrow x^2 \mod 13 = 144 \equiv 1 \mod 13 \\ 
+\end{align*}
+Quadratische Reste sind also: \{0,1,3,4,9,10,12\} 
+\begin{align*}
+    x=0 & \Rightarrow x^2 \mod 19 = 0 \\
+    x=1, x = 18 & \Rightarrow x^2 \mod 19 = 1 \\
+    x=2, x = 17 & \Rightarrow x^2 \mod 19 = 4 \\
+    x=3, x = 16 & \Rightarrow x^2 \mod 19 = 9 \\
+    x=4, x = 15 & \Rightarrow x^2 \mod 19 = 16 \\
+    x=5, x = 14 & \Rightarrow x^2 \mod 19 = 6 \\
+    x=6, x = 13 & \Rightarrow x^2 \mod 19 = 17 \\
+    x=7, x = 12 & \Rightarrow x^2 \mod 19 = 11 \\
+    x=8, x = 11 & \Rightarrow x^2 \mod 19 = 7 \\
+    x=9, x = 10 & \Rightarrow x^2 \mod 19 = 5 \\
+\end{align*}
+Quadratische Reste sind also: \{0,1,4,5,6,7,9,11,16,17\}
+Es sind beides keine Differenzenfamilien, da in beiden Teilmengen die Differenzen nach Def. 9.5 ($x-y$ mit $x, y \in S$, $x \neq y$) nicht gleich oft vorkommen. 
+\end{mybox}
+\newpage
+\subsection*{Aufgabe 4 (4 Punkte)}
+Es sei $S$ eine $k$-elementige Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$ und $B = \{S + i \mid i \in \mathbb{Z}/m\mathbb{Z}\}$ die Blöcke des entsprechenden $2$-Designs mit Parametern $(m, k, r_2)$. Zeigen Sie, dass je zwei verschiedene Blöcke in $B$ genau $r_2$ gemeinsame Elemente besitzen.
+\begin{mybox}
+Das ist bewiesen, wenn wir zeigen können, dass $B$ ein 2-Design ist. \\
+Wir wissen: Bei Differenzenfamilien kommt unter den Differenzen $j-i$ mit $j, i \in S$, $j \neq i$ jedes Element von $\mathbb{Z}/m\mathbb{Z} \backslash \{0\}$
+gleich oft vor. \\
+Liegt ein Element $x$ in zwei Blöcken $(S+i)$ und $(S+j)$, gilt $x=s_1 +i \mod m$ und  $x=s_2 +j \mod m$ für $s_1, s_2 \in S$, weil $(S+i)$ und $(S+j)$ Verschiebungen von $S$ sind. \\
+Es folgt: $s_1+i \mod m \equiv s_2 + j \mod m$ und somit $s_1+ s_2 \mod m \equiv i  + j \mod m$. Wir wissen aus dem Skript auch, dass es $\frac{k(k-1)}{m-1}$ Differenzen $j-i \neq 0$ gibt und dass $\frac{k(k-1)}{m-1} = r_2$. \\
+Somit ist $B$ ein 2-Design. 
+\end{mybox}
+
+\end{document}

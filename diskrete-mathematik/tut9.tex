@@ -1,0 +1,349 @@
+
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{systeme}          % for Solution 3
+\usepackage{array}  
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+\usepackage{longdivision}
+\usepackage{polynom}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Tutorium 9; Diskrete Mathematik}
+\newcommand{\nombre}{Lil'Jana}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyhead[RO]{\small 07.01.2025}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.1cm}
+\end{tabular} \\
+Inkl. ein paar als richtig befundene Ausschnitte aus meiner Abgabe. 
+\section*{Besprochene Lösungen}
+
+\subsection*{Aufgabe 1 (4 Punkte)}
+Sei $S$ eine Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$. Zeigen Sie, dass $S + i$ eine Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$ ist für jedes $i \in \mathbb{Z}/m\mathbb{Z}$. Folgern Sie, dass man ohne Einschränkung annehmen kann, dass jede Differenzenfamilie $0$ und $1$ enthält.
+\begin{mybox}
+ Behauptung: Falls S eine Differenzenfamilie ist, dann ist S+1 eine Differenzenfamilie. \\
+ Beweis: $T = S+i = \{x+i \mid x \in S\}$ \\
+\begin{align*}
+    \mid T_r \mid & = \mid \{(x,y) \in T \times T \mid x-y = r\}\mid  \\
+    & = \mid \{ (u+i, v+i) \mid u,v \in S , \underbrace{(u+i) - (v+i) }_{u-v} = r \} \mid \\
+    & = \mid \{ (u,v) \in S \times S \mid u-v = r \}\mid \\
+     & = \mid S_r \mid 
+\end{align*}
+Somit ist $T_r$ unabhängig von $r \in \mathbb{Z}/m\mathbb{Z}$ und $T$ ist eine Differenzfamilie. \\ \newline
+Falls $S_1 \neq leere Menge$, wähle $(\alpha, y) \in S_1$ \\
+Dann $\{0,1\} \in S+ (-y)$
+\end{mybox}
+
+\subsection*{Aufgabe 2 (4 Punkte)}
+Sei $S$ eine Differenzenfamilie in $\mathbb{Z}/m\mathbb{Z}$. Zeigen Sie, dass $T = \mathbb{Z}/m\mathbb{Z} \setminus S$ eine Differenzenfamilie ist. Bestimmen Sie die Parameter des von $T$ induzierten $2$-Designs in Abhängigkeit der Parameter des von $S$ induzierten $2$-Designs.
+\begin{mybox}
+Wie finden wir heraus, ob es eine Differenzenfamilie ist? Zählen. \\
+Behauptung: Falls S eine Differenzenfamilie ist, dann ist $\mathbb{Z}/m\mathbb{Z} \setminus S$ eine Differenzenfamilie.  \\ \newline
+\textbf{Beweis:} $T = \mathbb{Z}/m\mathbb{Z} \setminus S$ \\
+$T_r = \{ (x,y)\}$ \\
+$T_r = \{(x,y) \in T \times T \mid x-y = r\} $ \\
+$ m = \mid \{(x,y) \in \mathbb{Z}/m\mathbb{Z} \times \mathbb{Z}/m\mathbb{Z} \mid x-y =r \}$ 
+\begin{align*}
+    \mid S_r\mid &= \mid \{ (x,y) \in S \times S \mid x-y = r \} \mid \\
+    a_r: &= \mid \{ (x,y) \in S \times T \mid x-y = r \} \mid \\
+    b_r: &= \mid \{ (x,y) \in T \times S \mid x-y = r \} \mid 
+\end{align*}
+\end{mybox}
+\begin{mybox}
+ \sout{Hauptfrage: Sind $a_r$ und $b_r$ unabhängig von $r$.  \\
+Wie zeigen wir, dass zwei mengen die gleiche Anzahl von Elementen haben? Wir schreiben eine Bijektion hin. Also können wir versuchen eine Bijektion zwischen $a_r$ und $\mid \{ (x,y) \in S \times T \mid x-y = 1 \} \mid$ (die Menge wo wir r = 1 setzen) zu schreiben. }
+
+Was können wir über $c_r = \mid \{ (x,y) \in S \times \mathbb{Z}/m\mathbb{Z}  \mid x-y = r \} \mid$ aussagen? \\
+Dass $c_r := \mid \{ (x,y) \in S \times \mathbb{Z}/m\mathbb{Z}  \mid x-y = r \} \mid = \mid S \mid$. \\
+ALso: $c_r = \mid S_r \mid + a_r $ \scriptsize{Weil weder die linke noch die mittlere Seite abhängig von r ist, muss $a_r$ unabhängig von r sein - nach dem gleichen Argument ist $b_r$ auch unabhängig von r (da muss man aber $\mathbb{Z}/m\mathbb{Z} \times S$ nehmen anstatt das oben) bzw. die Mächtigkeiten der beiden Mengen sind unabhängig von r} \normalsize \\
+$d_r := \{(x,y) \in T \times \mathbb{Z}/m\mathbb{Z} \mid x-y =r\} \mid  = \mid T \mid = m - \mid S \mid$ \\
+$m - \mid S \mid  = d_r = \mid T_r \mid + b_r$ \\
+$\Rightarrow  \mid T_r \mid $ unabhängig von r \\ \newline
+$S \subset \mathbb{Z}/m\mathbb{Z} $ Differnzenfamilie \\
+$wobbelpfeil$ 2-Deisgn mit Parametern $v = m$, $k = \mid S\mid$, $r_2 = \frac{k(n-1)}{m-1}$ \\
+$ T = \mathbb{Z}/m\mathbb{Z} \backslash S$ 
+\begin{align*}
+    v_T & = m = v \\
+    k_T & = \mid T \mid  = m - \mid S \mid = m - k \\
+    {(r_2)}_T & = \frac{k_T (k_T -1)}{m-1}
+\end{align*}
+\end{mybox}
+\subsubsection*{Weiteres Beispiel:}
+\begin{mybox}
+ Bsp.: $S = \{1,2,3\} \subset \mathbb{Z}/7\mathbb{Z}$ \\
+ $ T = \{0,3,5,6\}$\\
+  Differenzentabelle: 
+  \begin{table}[H]
+      \centering
+      \begin{tabular}{c|cccc}
+      &0&3&5&6\\ \hline
+           0&0&3&5&6  \\
+           3&4&0&2&3 \\
+           5&2&5&0&1 \\
+           6&1&4&6&0
+      \end{tabular}
+  \end{table}
+  Alles gleich oft da, ist also eine Differenzenfamilie. 
+  
+  \hrule
+  
+  Wenn r = 2 und x = 4 muss y = 2, weil 4-y = 2 \\
+  Help wofür gilt das, das hat sie zu $T_r$ oben gesagt. 
+\end{mybox}
+
+\subsection*{Aufgabe 3 (4 Punkte)}
+Ergänzen Sie die Menge von Codewörtern: $\{00000, \ 00110, \ 10101\}$ \\
+zu einem linearen Code $C$. Finden Sie eine Kontrollmatrix für $C$ und bestimmen Sie das Gewicht aller Codewörter in $C$.
+\begin{mybox}
+
+    \begin{tabular}{c|cccc}
+        & 00000 & 00110 & 10101 & 10011\\ \hline
+   00000& 00000 & 00110 & 10101 & 10011\\
+   00110&       & 00000 & 10011 & 10101\\
+   10101&       &       & 00000 & 00110\\
+   10011&       &       &       & 00000
+    \end{tabular}
+\end{mybox}
+\begin{mybox}
+Ergänzter Code: \{00000, \ 00110, \ 10101, \ 10011\}\\
+Gewichte: 
+\begin{align*}
+    00000: & \quad 0\\
+    00110: & \quad 2\\
+    10101: & \quad 3\\
+    10011: & \quad 3
+\end{align*}
+Basis: \{\ 00110, \ 10101\}, denn die beiden sind linear unabhängig (im Gegensatz zu 10011) und den Nullvektor bezieht man für eine Basis gar nicht mit ein. \\
+Was zieht man zuerst in der Matrix? Zeilen oder Spalten? Zeilen. \\ 
+
+Wir suchen eine Kontrollmatrix $H$ mit $_{ker}H = C$ \\
+$dim\ C = 2$ \\
+Wir können $H$ als $(3\times 5)$-Matrix wählen. 
+\begin{equation*}
+    A = \begin{pmatrix}
+0 & 0 & 1 & 1 & 0 \\
+1 & 0 & 1 & 0 & 1
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    _{ker}A = span \{ 
+    \begin{pmatrix}
+    1 & \\ 0 & \\ 1 & \\ 1 & \\ 0 
+    \end{pmatrix}, 
+    \begin{pmatrix}
+    0 & \\ 1 & \\ 0 & \\ 0 & \\ 0
+    \end{pmatrix}, 
+    \begin{pmatrix}
+    1 & \\ 0 & \\ 0 & \\ 0 & \\ 1
+    \end{pmatrix}
+    \}
+\end{equation*}
+
+\begin{equation*}
+    H = \begin{pmatrix}
+    1&0&1&1&0 \\
+    0&1&0&0&0 \\
+    1&0&0&0&1 
+    \end{pmatrix}
+\end{equation*} \\
+\textbf{Anmerkungen}:\\
+$_{ker}$ ist der Kern (Siehe Lineare Algebra)\\
+$f: U \rightarrow V$ \\
+$_{ker}f = \{u \mid f(u) = 0\}$ \\ \newline
+$span$ ist der Spann, also die lineare Hülle 
+\end{mybox}
+
+\subsection*{Aufgabe 4 (4 Punkte)}
+Der Code $C$ sei durch die folgende Kontrollmatrix gegeben:
+\[
+\begin{pmatrix}
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0 \\
+\end{pmatrix}
+\]
+\begin{enumerate}
+    \item[(a)] Korrigieren Sie folgende empfangenen Wörter zu Codewörtern in $C$ unter der Annahme, dass höchstens ein Fehler aufgetreten ist:
+    \[
+    110111, \quad 101010, \quad 110101.
+    \]
+     \begin{mybox}
+    \[
+    110111: 
+\begin{pmatrix} 
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0
+\end{pmatrix} 
+\cdot 
+\begin{pmatrix} 
+1 \\
+1 \\
+0 \\
+1 \\
+1 \\
+1
+\end{pmatrix}
+= \begin{pmatrix}
+1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 + 1 \cdot 1 \\
+0 \cdot 1 + 1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 + 1 \cdot 1 \\
+1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 1 + 0 \cdot 1
+\end{pmatrix}
+= \begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix}
+\]
+$ 110111 \rightarrow 110101$
+Wenn wir einen Fehler an der fünften Stelle von H haben, ist im empfangenen Wort das 5te Bit falsch!
+\[
+101010: 
+\begin{pmatrix} 
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0
+\end{pmatrix}
+\cdot 
+\begin{pmatrix} 
+1 \\
+0 \\
+1 \\
+0 \\
+1 \\
+0
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+1 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 0 \\
+0 \cdot 1 + 1 \cdot 0 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 0 \\
+1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 0 + 1 \cdot 1 + 0 \cdot 0
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+1 \\
+1 \\
+0
+\end{pmatrix}
+\]
+$101010 \rightarrow 101011$
+\[
+110101: 
+\begin{pmatrix} 
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 & 0
+\end{pmatrix}
+\cdot 
+\begin{pmatrix} 
+1 \\
+1 \\
+0 \\
+1 \\
+0 \\
+1
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 0 + 1 \cdot 1 \\
+0 \cdot 1 + 1 \cdot 1 + 0 \cdot 0 + 0 \cdot 1 + 1 \cdot 0 + 1 \cdot 1 \\
+1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1 + 1 \cdot 0 + 0 \cdot 1
+\end{pmatrix}
+= 
+\begin{pmatrix} 
+0 \\
+0 \\
+0
+\end{pmatrix}
+\]
+Bleibt so, ist richtig. 
+    \end{mybox} 
+    \item[(b)] Wie viele Wörter existieren, die nicht durch Änderung von höchstens einem Bit zu einem Codewort in $C$ korrigiert werden können?
+\end{enumerate}
+\begin{mybox}
+ Anzahl Wörter: $2^6$ \\
+ Dim vom Kern (dim C): 3 \\
+ Anzahl Codewörter: $2^3$ \\
+ rang von H: 3, weil wir in H drei Zeilen haben (die linear unabhängig sind...) \\
+ dim C + rang H = Länge eines Wortes \\
+ Hier: $3+3 =6$ - passt \\ \newline
+ Zu jedem Codewort gibt es 6 Wörter, die zu dem Codewort korrigiert werden können. \\ \newline
+Wörter, die nicht durch Änderung eines Bits zu einem Cidewort korrigiert werden können: $2^6 - 2^3 - 6\cdot 2^3 = 64 - 8 - 48 = 8$
+\end{mybox} 
+
+\subsection*{Polynomdivision Crashkurs}
+\begin{mybox}
+ \[
+\frac{ x^5 + x^4 + 2x^3 + x^2 + 4x + 2 }{x^2 + 2x + 3} 
+ \]
+ Ihre schreibweise: $(x^5 + x^4 + 2x^3 + x^2 + 4x + 2) = (x^2 + 2x + 3) ( ...)$
+ Man schaut sich zuerst den höchsten an: $x^5$ - womit muss man $x^3$ multiplizieren, damit man das bekommt ? $x^2$ \\
+Usw. ... \\ \newline
+Ihre schreibweise: $(x^5 + x^4 + 2x^3 + x^2 + 4x + 2) = (x^2 + 2x + 3) (x^3 + 4x^2 + x +2 ) + (2x +1)$
+Hier einmal als normale Polynomdivision, wo am Ende modulo 5 gerechnet wird: \\
+  Hier drunter ihre Tabelle/Bruchrechnung aus Notizheft... \\ \newline
+\polylongdiv[style=A]{x^5 + x^4 + 2x^3 + x^2 + 4x + 2 }{x^2 + 2x + 3}
+\[- 3x - 4 \mod 5 = 2x +1\]
+Und hier einmal (weniger gut formatiert) die Schreibweise von der Tafel, wo direkt immer module 5 gerechnet wird:  \\ \newline 
+$\begin{array}{cccccccc}
+    & x^5 & +  2x^3 & + x^2 &+ 4x &+ 2\\
+    -(&  x^5 & + 2x^4 & + 3x^3& )  \\ \hline
+    & & 4x^4 & 4x^3 & + x^2 \\
+    &  -( & 4x^4 & + 3x^3 & + 2x^2& ) \\ \hline
+    & & & x^3 & + 4x^2 & + 4x \\
+    & & -( & x^3 & + 2x^2 & + 3x& ) \\ \hline
+    & & & & 2x^2 & + x & +1 \\
+    & & & -( & 2x^2 & + 4x & +1 & ) \\ \hline
+    & & & & & 2x & +1 
+\end{array}$
+
+\end{mybox}
+\end{document}

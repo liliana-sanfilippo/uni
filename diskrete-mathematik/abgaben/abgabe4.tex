@@ -1,0 +1,141 @@
+\documentclass{article} %210 mm × 297 mm
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{mhchem}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{amsfonts,latexsym} % para tener disponibilidad de diversos simbolos
+\usepackage{enumerate}
+%\usepackage{booktabs}
+\usepackage{float}
+%\usepackage{threeparttable}
+\usepackage{array,colortbl}
+%\usepackage{ifpdf}
+%\usepackage{rotating}
+\usepackage{cite}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\usepackage{color}
+\addbibresource{sources.bib}
+%\usepackage{hyperref}
+%\usepackage{wrapfig}
+\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{nccmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}{colback=white,
+colframe=black}
+\newcommand{\titulo}{Abgabe 4; Diskrete Mathematik}
+\newcommand{\nombre}{Liliana Sanfilippo}
+\newcommand{\FCE}{\textbf{WiSe 2024/2025}}
+
+ 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\small\nombre}
+\fancyhead[RE]{\small\titulo}
+\fancyhead[LO]{\small\FCE}
+\fancyfoot[RO,LE] {\thepage}
+\usepackage[onehalfspacing]{setspace}
+
+\setcounter{page}{1} %Número de la página, la editorial lo cambiará
+\begin{document}
+\begin{tabular}{p{12cm}}
+{{\Large\bf\titulo}}\\
+\vspace{0.2cm}\\
+ {\large\nombre}\\
+ \vspace{0.2cm}\\   
+\end{tabular}
+\section*{Aufgaben zur Abgabe}
+\subsection*{Aufgabe 1 (4 Punkte)}
+Wie viele verschiedene Wörter kann man durch Permutation der Buchstaben aus den
+Buchstaben \( A, E, M, O, U, Y \) bilden? In wie vielen dieser Wörter taucht weder \texttt{ME} noch \texttt{YOU} auf?
+\begin{mybox}
+ \(| A, E, M, O, U, Y | = 6\) und $6! = 720$, also gibt es 720 verschiedene Wörter (das bezieht sich aber nicht auf Wörter mit semantischem Sinn!). \\ 
+ Um herauszufinden in wie vielen dieser Wörter weder \texttt{ME} noch \texttt{YOU} auftaucht, kann man diese Kombinationen als Buchstaben betrachten.  Zumindest wenn man es als Permutationen ohne Wiederholung betrachtet. \\
+  \(| A, ME, O, U, Y | = 5\) und $5! = 120$. \\
+   \(| A, E, M, YOU | = 4\) und $4! = 24$. \\
+      \(| A, ME YOU | = 3\) und $3! = 6$. \\
+      Mit der Inklusions-Exklusionsregel: 
+       \[
+\text{Wörter ohne ME und YOU} = \text{Gesamtanzahl} -( \text{alle Wörter mit ME} + \text{alle Wörter mit YOU} - |A \cap B|)
+\] also
+      \[
+\text{Wörter ohne ME und YOU} = \text{Gesamtanzahl} - \text{alle Wörter mit ME} - \text{alle Wörter mit YOU} + |A \cap B|
+\]
+      \[
+      720-120-24+6=582
+      \]
+\end{mybox}
+\subsection*{Aufgabe 2 (4 Punkte)}
+Eine Permutation \( \sigma \in S_n \) heißt zyklisch, falls sie durch einen Zyklus der Länge \( n \) dargestellt
+werden kann. Zeigen Sie, dass es \( (n - 1)! \) zyklische Permutationen gibt.
+\begin{mybox}
+Man kann jede der \( (n - 1)! \) zyklischen Permutationen darstellen, indem man irgendeine der n Positionen als Start des Zyklus wählt und die restlichen Elemente (n-1) in einer bestimmten Reihenfolge ordnet. Also gibt es \( (n - 1)! \) zyklische Permutationen.
+\end{mybox}
+\subsection*{Aufgabe 3 (4 Punkte)}
+Finden Sie für jede der folgenden Werte \( (v, k, r) \) ein Design mit diesen Parametern oder
+erklären Sie, warum ein solches nicht existiert:
+\begin{itemize}
+    \item[(a)] \( (6, 3, 2) \)
+    \item[(b)] \( (5, 2, 1) \)
+    \item[(c)] \( (7, 4, 4) \)
+    \item[(d)] \( (9, 6, 4) \)
+\end{itemize}
+\begin{mybox}
+$b = \frac{r \cdot v}{k}$
+\begin{itemize}
+    \item[(a)] \((v, k, r) = (6, 3, 2) \) \\
+    Gilt $k | v\cdot r$ ? \\
+    Ja, $4 | 6\cdot 2$ also $4 | 12 $ gilt.  \\
+    $b = \frac{2 \cdot 6}{3} = 4$ \\
+    Gilt $b \leq \binom{v}{k}$? \\
+    $
+    \binom{v}{k} = \binom{6}{3} = 20
+    $ also ja, $4 \leq 20$ ist richtig. \\
+    Also gibt es ein solches Design. 
+    \item[(b)] \((v, k, r) =  (5, 2, 1) \)
+    $b = \frac{1 \cdot 5}{2} = $ \\
+    Gilt $2 | 5\cdot 1$ ? \\
+    Nein, 2 ist kein Teiler von 5. Daher kann es kein solches Design geben. 
+    
+    \item[(c)] \((v, k, r) =  (7, 4, 4) \) \\
+    Gilt $4 | 7\cdot 4$ ? \\
+    Ja, 4 ist ein Teiler von 28.  \\
+    $b = \frac{4 \cdot 7}{4} = 7$ \\
+    Gilt $b \leq \binom{v}{k}$? \\ 
+    Ja, denn $7 \leq 35$ ist richtig. 
+    Also gibt es ein solches Design. 
+    
+    \item[(d)] \((v, k, r) =  (9, 6, 4) \) \\
+    Gilt $6 | 9\cdot 4$ ? \\ 
+    Ja, 6 ist ein Teiler von 36. \\
+    $b = \frac{4 \cdot 9}{6} = 6$ \\
+     Gilt $b \leq \binom{v}{k}$? \\
+     Ja, denn $6 \leq 84$
+     Also gibt es ein solches Design. 
+     
+\end{itemize}
+\end{mybox}
+\subsection*{Aufgabe 4 (4 Punkte)}
+Ein 2-Design mit Parametern \( (v, k, \lambda) = (v, 3, 1) \) wird \emph{Steinersches Tripelsystem} (STS) genannt.
+Stellen Sie fest, für welche \( v \) im Bereich \( 3 \leq v \leq 12 \) ein STS mit \( v \) Varietäten
+existieren kann, und finden Sie ein Beispiel in diesen Fällen.
+\begin{mybox}
+Absolut gar keine Ahnung, ich verstehe STS anscheinend nicht. 
+\end{mybox}
+
+
+
+\end{document}
