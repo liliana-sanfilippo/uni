@@ -4,23 +4,42 @@
 
 \section{Abgabe 1.2 - Dichten und Rechnen mit Wahrscheinlichkeiten}\label{sec:abgabe-1.2---dichten-und-rechnen-mit-wahrscheinlichkeiten}
 
-\subsection{HA 1.2.1 (Lösung vorhanden, nicht eingetragen)}\label{subsec:ha-1.2.1}
+\subsection{HA 1.2.1 (Lösung teils vorhanden)}\label{subsec:ha-1.2.1}
 
 \begin{auf}[Seien $(\Omega,P)$ ein Wahrscheinlichkeitsraum und $D,E\subseteq\Omega$ Ereignisse mit $P(D)=\frac{8}{13}$ und $P(E)=\frac{6}{13}$. Welche der folgenden Mengen können die Wahrscheinlichkeit 0 besitzen? Begründen Sie Ihre Antwort. Falls Wahrscheinlichkeit 0 möglich ist, geben Sie dazu ein Beispiel an. Andernfalls beweisen Sie, dass die Wahrscheinlichkeit 0 nicht möglich ist.]
     \begin{enumerate}
         \item $D\cap E^c$;
         \item $D^c\setminus E$.
     \end{enumerate}
-    LÖSUNG DA, NICHT EINGETRAGEN % TODO NOCH KEINE LÖSUNG
+    NOCH KEINE LÖSUNG % TODO NOCH KEINE LÖSUNG
 \end{auf}
 
-Seien $(\Omega,P)$ ein Wahrscheinlichkeitsraum und $A,B\subseteq\Omega$ mit $P(A)=P(B)=\frac45$.
-\begin{auf}[Finden Sie eine Zahl $c\in(0,1)$ derart, dass $P(A\cap B)\ge c$.]
-    LÖSUNG DA, NICHT EINGETRAGEN % TODO NOCH KEINE LÖSUNG
+(b) Seien $(\Omega,P)$ ein Wahrscheinlichkeitsraum und $A,B\subseteq\Omega$ mit $P(A)=P(B)=\frac45$.
+\begin{auf}[(i) Finden Sie eine Zahl $c\in(0,1)$ derart, dass $P(A\cap B)\ge c$.]
+    $\ $
+    \begin{align*}
+        \pe(A \backslash B) & \leq c \\
+        \pe(A \backslash B) &  = \pe(A) - \pe(A \cap B) \\
+        \pe(A \cap B) & \geq \pe(A) + \pe(B) -1 \\
+        \Leftrightarrow \pe(A \cap B) & \geq \frac45 + \frac45 -1  = \frac35
+    \end{align*}
+    \[
+        \pe(A \backslash B)  = \pe(A) - \pe(A \cap B) \leq \frac45 + \frac35  = \frac15 \quad \Rightarrow c = \frac15
+    \]
+    (Studi Abgabe von Tutor korrigiert)
 \end{auf}
 
-\begin{auf}[Geben Sie ein Beispiel an, das die obigen Voraussetzungen erfüllt und für das $P(A\cap B)=c$.]
-    LÖSUNG DA, NICHT EINGETRAGEN % TODO NOCH KEINE LÖSUNG
+\begin{auf}[(ii) Geben Sie ein Beispiel an, das die obigen Voraussetzungen erfüllt und für das $P(A\cap B)=c$.]
+    $\ $
+    \[
+        \pe(A \backslash B) = c
+    \]
+    Und $\eraum = \{1,2,3,4,5\}$, $\pe \sim U_{\eraum}$ (Gleichverteilt). \\
+    $A = = \{1,2,3,4\}$ und $B= \{2,3,4,5\}$ also $A \backslash B = \{1\}$
+    \[
+        \pe(A \backslash B) = \pe(\{1\}) = \frac15 =  c
+    \]
+    (Studi Abgabe von Tutor korrigiert)
 \end{auf}
 
 

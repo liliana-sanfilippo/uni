@@ -40,10 +40,10 @@
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung | In PDF             | In Schlüssel          |
 |--------|---------|------|-----------|--------------------|--------------------|-----------------------|
-| HA 1.2 | 1.2.1   | a    | i         | da                 | n                  | :white_medium_square: |
-|        |         |      | ii        | da                 | n                  | :white_medium_square: |
-|        |         | b    | i         | da                 | n                  | :white_medium_square: |
-|        |         |      | ii        | da                 | n                  | :white_medium_square: |
+| HA 1.2 | 1.2.1   | a    | i         | ?                  | n                  | :white_medium_square: |
+|        |         |      | ii        | ?                  | n                  | :white_medium_square: |
+|        |         | b    | i         | Jan / Korrigiert   | :white_check_mark: | :white_medium_square: |
+|        |         |      | ii        | Jan / Korrigiert   | :white_check_mark: | :white_medium_square: |
 |        | 1.2.2   | a    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
 |        |         | b    |           | Niki / Korrigiert  | n                  | :white_medium_square: |
 |        |         | c    |           | Niki / Korrigiert  | n                  | :white_medium_square: |
@@ -99,10 +99,10 @@
 |        |         | c    |           | Jan / Korrigiert   | n      | :white_medium_square:   |
 |        |         | d    |           | Jan / Korrigiert   | n      | :white_medium_square:   |
 |        |         | e    |           | Jan / Korrigiert   | n      | :white_medium_square:   |
-|        | 1.4.3   | a    |           | Meine / Korrigiert | n      | :white_medium_square:   |
-|        |         | b    |           | Meine / Korrigiert | n      | :white_medium_square:   |
-|        |         | c    |           | Meine / Korrigiert | n      | :white_medium_square:   |
-|        |         | d    |           | Meine / Korrigiert | n      | :white_medium_square:   |
+|        | 1.4.3   | a    |           | Meine / Korrigiert | j      | :white_medium_square:   |
+|        |         | b    |           | Meine / Korrigiert | j      | :white_medium_square:   |
+|        |         | c    |           | Meine / Korrigiert | j      | :white_medium_square:   |
+|        |         | d    |           | Meine / Korrigiert | j      | :white_medium_square:   |
 | PÜ 1.4 | 1.4.4   | a    |           |                    |        |
 |        |         | b    |           |                    |        |                         |
 |        |         | c    | i         |                    |        |                         |
