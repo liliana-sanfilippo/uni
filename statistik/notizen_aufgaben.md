@@ -196,18 +196,18 @@
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung          | In PDF               | In Schlüssel            |
 |--------|---------|------|-----------|-----------------------------|----------------------|-------------------------|
-| HA 2.2 | 2.2.1   | a    |           | Meine / Korrigiert          | n                    | n wohin soll das        |
-|        |         | b    |           | Meine / Korrigiert          | n                    | n wohin soll das        |
-|        |         | c    |           | Meine / Korrigiert          | n                    | :white_check_mark:      |
-|        |         | d    |           | Meine / Korrigiert          | n                    | :white_check_mark:      |
+| HA 2.2 | 2.2.1   | a    |           | Meine / Korrigiert Schlecht | n                    | n wohin soll das        |
+|        |         | b    |           | Meine / Korrigiert Schlecht | n                    | n wohin soll das        |
+|        |         | c    |           | Meine / Korrigiert          | :white_check_mark:   | :white_check_mark:      |
+|        |         | d    |           | Meine / Korrigiert          | :white_check_mark:   | :white_check_mark:      |
 |        | 2.2.2   | a    |           | Meine / Korrigiert Schlecht | n                    | :white_check_mark:      |
 |        |         | b    |           | Meine / Korrigiert Schlecht | n                    | :white_check_mark:      |
 |        |         | c    |           | Niki / Korrigiert           | n                    | :white_check_mark:      |
-|        | 2.2.3   | a    |           | Jan / Korrigiert            | n                    | :white_check_mark:      |
-|        |         | b    |           | Jan / Korrigiert            | n                    | :ballot_box_with_check: |
-|        |         | c    |           | Jan / Korrigiert            | n                    | :white_check_mark:      |
-|        |         | d    |           | Jan / Korrigiert            | n                    | :white_check_mark:      |
-|        |         | e    |           | Jan / Korrigiert            | n                    | :white_check_mark:      |
+|        | 2.2.3   | a    |           | Jan / Korrigiert            | :white_check_mark:   | :white_check_mark:      |
+|        |         | b    |           | Jan / Korrigiert            | :white_check_mark:   | :ballot_box_with_check: |
+|        |         | c    |           | Jan / Korrigiert            | :white_check_mark:   | :white_check_mark:      |
+|        |         | d    |           | Jan / Korrigiert Schlecht   | n                    | :white_check_mark:      |
+|        |         | e    |           | Jan / Korrigiert Schlecht   | n                    | :white_check_mark:      |
 | PÜ 2.2 | 2.2.4   | a    |           | Tutor                       | :white_check_mark:   |                         |
 |        |         | b    |           | Tutor                       | noch fertig von Bild |                         |
 |        |         | c    |           | ?                           |                      |                         |
