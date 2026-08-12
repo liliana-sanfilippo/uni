@@ -138,13 +138,13 @@
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung         | In PDF             | In Schlüssel            |
 |--------|---------|------|-----------|----------------------------|--------------------|-------------------------|
-| HA 1.6 | 1.6.1   | a    |           | Meine / Korrigiert         | n                  | :white_check_mark:      |
-|        |         | b    |           | Meine / Korrigiert         | n                  | :ballot_box_with_check: |
-|        |         | c    |           | Meine / Korrigiert         | n                  | :white_check_mark:      |
-|        |         | d    |           | Meine / Korrigiert         | n                  | :white_check_mark:      |
-|        | 1.6.2   |      |           | Jan / Korrigiert           | n                  | :white_medium_square:   |
-|        | 1.6.3   | a    |           | Meine / Korrigiert         | n                  | :white_medium_square:   |
-|        |         | b    |           | Meine / Korrigiert         | n                  | :white_medium_square:   |
+| HA 1.6 | 1.6.1   | a    |           | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:      |
+|        |         | b    |           | Meine / Korrigiert         | :white_check_mark: | :ballot_box_with_check: |
+|        |         | c    |           | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:      |
+|        |         | d    |           | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:      |
+|        | 1.6.2   |      |           | Jan / Korrigiert           | :white_check_mark: | :white_medium_square:   |
+|        | 1.6.3   | a    |           | Meine / Korrigiert         | :white_check_mark: | :white_medium_square:   |
+|        |         | b    |           | Meine / Korrigiert         | :white_check_mark: | :white_medium_square:   |
 | PÜ 1.6 | 1.6.4   | a    |           | Meine / Korrigiert & Tutor | :white_check_mark: |                         |
 |        |         | b    |           | Meine / Korrigiert & Tutor | :white_check_mark: |                         |
 |        |         | c    |           | Meine / Korrigiert & Tutor | :white_check_mark: |                         |
@@ -161,36 +161,36 @@
 |        |         | d    |           | ?                          |                    |                         |
 |        |         | e    |           | ?                          |                    |                         |
 
-| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung          | In PDF | In Schlüssel           |
-|--------|---------|------|-----------|-----------------------------|--------|------------------------|
-| HA 2.1 | 2.1.1   | a    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | b    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | c    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | d    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | e    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        | 2.1.2   | a    |           | Meine / Korrigiert Schlecht | n      | :white_check_mark:     |
-|        |         | b    |           | Meine / Korrigiert          | n      | :white_check_mark:     |
-|        |         | c    |           | Meine / Korrigiert          | n      | :white_check_mark:     |
-|        | 2.1.3   | a    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | b    |           | ?                           |        | :white_check_mark:     |
-|        |         | c    |           | ?                           |        | :white_check_mark:     |
-|        |         | d    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | e    |           | Jan / Korrigiert            | n      | :white_check_mark:     |
-|        |         | f    |           | Jan / Korrigiert            | n      | :white_medium_square:? |
-|        |         | g    |           | ?                           |        | n TODO                 |
-| PÜ 2.1 | 2.1.4   | a    |           | ?                           |        |                        |
-|        |         | b    |           | ?                           |        |                        |
-|        |         | c    |           | ?                           |        |                        |
-|        |         | d    |           | ?                           |        |                        |
-|        | 2.1.5   | a    |           | ?                           |        |                        |
-|        |         | b    |           | ?                           |        |                        |
-|        |         | c    |           | ?                           |        |                        |
-|        |         | d    |           | ?                           |        |                        |
-|        |         | e    |           | ?                           |        |                        |
-|        |         | f    |           | ?                           |        |                        |
-|        |         | g    |           | ?                           |        |                        |
-|        | 2.1.6   | a    |           | ?                           |        |                        |
-|        |         | b    |           | ?                           |        |                        |
+| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung          | In PDF             | In Schlüssel           |
+|--------|---------|------|-----------|-----------------------------|--------------------|------------------------|
+| HA 2.1 | 2.1.1   | a    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
+|        |         | b    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
+|        |         | c    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
+|        |         | d    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
+|        |         | e    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
+|        | 2.1.2   | a    |           | Meine / Korrigiert Schlecht | n                  | :white_check_mark:     |
+|        |         | b    |           | Meine / Korrigiert          | n                  | :white_check_mark:     |
+|        |         | c    |           | Meine / Korrigiert          | n                  | :white_check_mark:     |
+|        | 2.1.3   | a    |           | Jan / Korrigiert            | n                  | :white_check_mark:     |
+|        |         | b    |           | ?                           |                    | :white_check_mark:     |
+|        |         | c    |           | ?                           |                    | :white_check_mark:     |
+|        |         | d    |           | Jan / Korrigiert            | n                  | :white_check_mark:     |
+|        |         | e    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
+|        |         | f    |           | Jan / Korrigiert            | :white_check_mark: | :white_medium_square:? |
+|        |         | g    |           | ?                           |                    | n TODO                 |
+| PÜ 2.1 | 2.1.4   | a    |           | ?                           |                    |                        |
+|        |         | b    |           | ?                           |                    |                        |
+|        |         | c    |           | ?                           |                    |                        |
+|        |         | d    |           | ?                           |                    |                        |
+|        | 2.1.5   | a    |           | ?                           |                    |                        |
+|        |         | b    |           | ?                           |                    |                        |
+|        |         | c    |           | ?                           |                    |                        |
+|        |         | d    |           | ?                           |                    |                        |
+|        |         | e    |           | ?                           |                    |                        |
+|        |         | f    |           | ?                           |                    |                        |
+|        |         | g    |           | ?                           |                    |                        |
+|        | 2.1.6   | a    |           | ?                           |                    |                        |
+|        |         | b    |           | ?                           |                    |                        |
 
 221 und 222 sind Problemstellen!
 
