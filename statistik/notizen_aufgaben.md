@@ -168,9 +168,9 @@
 |        |         | c    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
 |        |         | d    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
 |        |         | e    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
-|        | 2.1.2   | a    |           | Meine / Korrigiert Schlecht | n                  | :white_check_mark:     |
-|        |         | b    |           | Meine / Korrigiert          | n                  | :white_check_mark:     |
-|        |         | c    |           | Meine / Korrigiert          | n                  | :white_check_mark:     |
+|        | 2.1.2   | a    |           | Meine / Korrigiert Schlecht | :white_check_mark: | :white_check_mark:     |
+|        |         | b    |           | Meine / Korrigiert          | :white_check_mark: | :white_check_mark:     |
+|        |         | c    |           | Meine / Korrigiert          | :white_check_mark: | :white_check_mark:     |
 |        | 2.1.3   | a    |           | Jan / Korrigiert            | n                  | :white_check_mark:     |
 |        |         | b    |           | ?                           |                    | :white_check_mark:     |
 |        |         | c    |           | ?                           |                    | :white_check_mark:     |
