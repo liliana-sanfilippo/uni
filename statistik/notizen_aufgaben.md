@@ -229,10 +229,10 @@
 | HA 2.3 | 2.3.1   | a    |           | Jan / Korrigiert   | :white_check_mark: | :white_check_mark:      |
 |        |         | b    |           | Jan / Korrigiert   | :white_check_mark: | :white_check_mark:      |
 |        |         | c    |           | Niki / Korrigiert  | :white_check_mark: | :white_medium_square:   |
-|        | 2.3.2   | a    |           | Meine / Korrigiert | n                  | :white_medium_square:   |
-|        |         | b    |           | Meine / Korrigiert | n                  | :white_medium_square:   |
-|        |         | c    |           | Meine / Korrigiert | n                  | :white_check_mark:      |
-|        |         | d    |           | Meine / Korrigiert | n                  | :white_check_mark:      |
+|        | 2.3.2   | a    |           | Meine / Korrigiert | :white_check_mark: | :white_medium_square:   |
+|        |         | b    |           | Meine / Korrigiert | :white_check_mark: | :white_medium_square:   |
+|        |         | c    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
+|        |         | d    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
 |        | 2.3.3   | a    |           | Jan / Korrigiert   | n                  | :white_check_mark:      |
 |        |         | b    |           | Jan / Korrigiert   | n                  | :ballot_box_with_check: |
 |        |         | c    |           | Jan / Korrigiert   | n                  | :ballot_box_with_check: |
