@@ -263,7 +263,7 @@
 |        |         | f    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
 |        | 2.4.3   | a    |           | Meine / Korrigiert     | n                  | :white_check_mark:    |
 |        |         | b    |           | Meine / Korrigiert     | n                  | :white_medium_square: |
-|        |         | c    |           | Meine / Korrigiert     | n                  | :white_medium_square: |
+|        |         | c    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
 |        |         | d    |           | Meine / Korrigiert     | n                  | :white_check_mark:    |
 |        |         | e    |           | Meine / Korrigiert     | n                  | :white_check_mark:    |
 | PÜ 2.4 | 2.4.4   | a    |           | da                     | n                  |                       |
