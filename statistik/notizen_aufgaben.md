@@ -40,8 +40,8 @@
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung | In PDF             | In Schlüssel          |
 |--------|---------|------|-----------|--------------------|--------------------|-----------------------|
-| HA 1.2 | 1.2.1   | a    | i         | ?                  | n                  | :white_medium_square: |
-|        |         |      | ii        | ?                  | n                  | :white_medium_square: |
+| HA 1.2 | 1.2.1   | a    | i         | ?                  | :white_check_mark: | :white_medium_square: |
+|        |         |      | ii        | ?                  | :white_check_mark: | :white_medium_square: |
 |        |         | b    | i         | Jan / Korrigiert   | :white_check_mark: | :white_medium_square: |
 |        |         |      | ii        | Jan / Korrigiert   | :white_check_mark: | :white_medium_square: |
 |        | 1.2.2   | a    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
