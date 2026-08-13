@@ -4,13 +4,15 @@
 \section{Abgabe 2.3}\label{sec:abgabe-2.3}
 
 \subsection{HA 2.3.1 \abhaken}\label{subsec:ha-2.3.1}
-Der Glashersteller Crystal Clear produziert unter anderem Rotweingläser. Im Schnitt weist eins von tausend produzierten Rotweingläsern kleine Bläschen auf. Diese Gläser werden als B-Ware deklariert.
+Der Glashersteller Crystal Clear produziert unter anderem Rotweingläser.
+Im Schnitt weist eins von tausend produzierten Rotweingläsern kleine Bläschen auf.
+Diese Gläser werden als B-Ware deklariert.
 
 \begin{auf}[(a) Geben Sie einen geeigneten Wahrscheinlichkeitsraum an, der es erlaubt, die folgenden Aufgabenteile zu bearbeiten. Diskutieren Sie, welche Annahmen Sie machen müssen, um Ihre Wahl des Wahrscheinlichkeitsraums zu rechtfertigen.]
     $\ $
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/lösungen/wts231a}
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts231a}\label{fig:figure50}
     \end{figure}
 \end{auf}
 
@@ -19,7 +21,7 @@ Der Glashersteller Crystal Clear produziert unter anderem Rotweingläser. Im Sch
     $\ $
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/lösungen/wts231bi}
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts231bi}\label{fig:figure49}
     \end{figure}
 \end{auf}
 
@@ -27,7 +29,7 @@ Der Glashersteller Crystal Clear produziert unter anderem Rotweingläser. Im Sch
     $\ $
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/lösungen/wts231bii}
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts231bii}\label{fig:figure48}
     \end{figure}
 \end{auf}
 
@@ -38,8 +40,8 @@ Der Glashersteller Crystal Clear produziert unter anderem Rotweingläser. Im Sch
 \end{auf}
 
 \subsection{HA 2.3.2 \abhaken}\label{subsec:ha-2.3.2}
-
-\begin{auf}[(a)]
+Sei $Z$ eine normalverteilte Zufallsvariable mit beliebigen Werten für den Erwartungswert $\mu\in\mathbb R$ und die Varianz $\sigma^2>0$.
+\begin{auf}[(a) Zeigen Sie für alle $x\in\mathbb R$: $P(Z\ge \mu-x) = \Phi\!\left(\frac{x}{\sigma}\right).$]
     $\ $ \\
     \paragraph{z.z.:} $\pe(Z \geq \wfk - x) = \Phi \left( \frac{x}{\sigma} \right) \quad \forall x \in \rz$ \\
     \paragraph{Beweis:} $\pe(Z \geq \wfk - x) = \pe(Z - \wfk \geq  - x) = \pe\left( \frac{Z - \wfk}{\sigma} \geq  \frac{- x}{\sigma} \right)$ \\
@@ -47,32 +49,68 @@ Der Glashersteller Crystal Clear produziert unter anderem Rotweingläser. Im Sch
     $\pe\left( Y \geq  \frac{- x}{\sigma} \right) = 1 - \Phi\left(  \frac{- x}{\sigma} \right) \Leftrightarrow  1 - \Phi\left(  \frac{- x}{\sigma} \right)  = \Phi \left(  \frac{x}{\sigma}  \right) $
 \end{auf}
 
-\begin{auf}[(b)]
+\begin{auf}[(b) Zeigen Sie: $\P(Z\ge\mu-\sigma)\approx 0{,}8413,\qquad P(Z\ge\mu-1{,}65\,\sigma)\approx 0{,}9505.$]
     $\ $
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/lösungen/wts232b}
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts232b}\label{fig:figure47}
+    \end{figure}
+\end{auf}
+
+Das Abfüllgewicht (in Gramm) einer Zuckerabfüllmaschine sei normalverteilt mit $\sigma=0.5\,$g. Für den Verkauf wird ein Mindestgewicht von 999\,g pro Packung toleriert.
+
+\begin{auf}[(c) Wie groß muss $\mu$ mindestens sein, damit das Abfüllgewicht den Anforderungen für den Verkauf mit einer Wahrscheinlichkeit von mindestens $\frac{95}{100}$ genügt?]
+    \textit{Hinweis:} Sie können hier die Approximation aus (b) verwenden.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts232c}\label{fig:figure46}
     \end{figure}
 \end{auf}
 
 
-\begin{auf}[(c)]
-    $\ $
+
+\begin{auf}[(d) Wie groß muss $\mu$ mindestens sein, damit das Abfüllgewicht den Anforderungen für den Verkauf mit einer Wahrscheinlichkeit von mindestens $\frac{99}{100}$ genügt?]
+    \textit{Hinweis:} Gehen Sie analog zu (c) vor.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/lösungen/wts232c}
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts232d}\label{fig:figure45}
     \end{figure}
 \end{auf}
 
 
+\subsection{HA 2.3.3 \abhaken}\label{subsec:ha-2.3.3}
+Der Zug steht schon längere Zeit mitten auf der Strecke.
+Die 70 Fahrgäste haben wunderbarerweise genügend Würfel dabei und beschließen, dass jede Person mit einem fairen Würfel so lange würfelt, bis sie zum ersten Mal eine 6 würfelt.
+Anschließend wird die Gesamtzahl der Würfe ermittelt.
 
-\begin{auf}[(d)]
+\begin{auf}[(a) Geben Sie einen geeigneten Wahrscheinlichkeitsraum an, der es erlaubt, die folgenden Aufgabenteile zu bearbeiten. Diskutieren Sie, welche Annahmen Sie machen müssen, um Ihre Wahl des Wahrscheinlichkeitsraums zu rechtfertigen.]
     $\ $
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/lösungen/wts232d}
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts233a}\label{fig:figure44}
     \end{figure}
 \end{auf}
 
+\begin{auf}[(b)  Definieren Sie für jedes $i\in\{1,\dots,70\}$ eine Zufallsvariable $X_i$, die angibt, im wievielten Versuch der Würfel des $i$-ten Fahrgasts das erste Mal eine 6 zeigt. Welcher Verteilung folgt die Zufallsvariable $X_i$? Geben Sie gegebenenfalls die zugehörigen Parameter an.]
+    $\ $
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts233b}\label{fig:figure43}
+    \end{figure}
+\end{auf}
 
-\subsection{HA 2.3.3}\label{subsec:ha-2.3.3}
+\begin{auf}[(c) Definieren Sie eine Zufallsvariable $S_{70}$, die die Gesamtzahl der Würfe im Zug angibt. Die Zufallsvariable $Z_{70}=\frac{1}{70}S_{70}$ gibt an, wie oft der Würfel im Mittel pro Person geworfen wurde.]
+    $\ $
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts233c}\label{fig:figure42}
+    \end{figure}
+\end{auf}
+
+\begin{auf}[(d) Berechnen Sie näherungsweise die Wahrscheinlichkeit, dass der Würfel im Durchschnitt pro Person zwischen (einschließlich) 5 und (einschließlich) 8 mal geworfen wurde.]
+    $\ $
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/lösungen/wts233d}\label{fig:figure41}
+    \end{figure}
+\end{auf}

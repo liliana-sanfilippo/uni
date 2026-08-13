@@ -233,10 +233,10 @@
 |        |         | b    |           | Meine / Korrigiert | :white_check_mark: | :white_medium_square:   |
 |        |         | c    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
 |        |         | d    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
-|        | 2.3.3   | a    |           | Jan / Korrigiert   | n                  | :white_check_mark:      |
-|        |         | b    |           | Jan / Korrigiert   | n                  | :ballot_box_with_check: |
-|        |         | c    |           | Jan / Korrigiert   | n                  | :ballot_box_with_check: |
-|        |         | d    |           | Jan / Korrigiert   | n                  | :white_check_mark:      |
+|        | 2.3.3   | a    |           | Jan / Korrigiert   | :white_check_mark: | :white_check_mark:      |
+|        |         | b    |           | Jan / Korrigiert   | :white_check_mark: | :ballot_box_with_check: |
+|        |         | c    |           | Jan / Korrigiert   | :white_check_mark: | :ballot_box_with_check: |
+|        |         | d    |           | Jan / Korrigiert   | :white_check_mark: | :white_check_mark:      |
 | PÜ 2.3 | 2.3.4   |      |           | Tut                | noch nicht fertig  |                         |
 |        | 2.3.5   | a    |           | da                 | n                  |                         |
 |        |         | b    |           | da                 | n                  |                         |
