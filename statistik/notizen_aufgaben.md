@@ -172,12 +172,12 @@
 |        |         | b    |           | Meine / Korrigiert          | :white_check_mark: | :white_check_mark:     |
 |        |         | c    |           | Meine / Korrigiert          | :white_check_mark: | :white_check_mark:     |
 |        | 2.1.3   | a    |           | Jan / Korrigiert            | n                  | :white_check_mark:     |
-|        |         | b    |           | ?                           |                    | :white_check_mark:     |
-|        |         | c    |           | ?                           |                    | :white_check_mark:     |
+|        |         | b    |           | -                           |                    | :white_check_mark:     |
+|        |         | c    |           | -                           |                    | :white_check_mark:     |
 |        |         | d    |           | Jan / Korrigiert            | n                  | :white_check_mark:     |
 |        |         | e    |           | Jan / Korrigiert            | :white_check_mark: | :white_check_mark:     |
 |        |         | f    |           | Jan / Korrigiert            | :white_check_mark: | :white_medium_square:? |
-|        |         | g    |           | ?                           |                    | n TODO                 |
+|        |         | g    |           | -                           |                    | n TODO                 |
 | PÜ 2.1 | 2.1.4   | a    |           | ?                           |                    |                        |
 |        |         | b    |           | ?                           |                    |                        |
 |        |         | c    |           | ?                           |                    |                        |
@@ -194,35 +194,35 @@
 
 221 und 222 sind Problemstellen!
 
-| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung          | In PDF               | In Schlüssel            |
-|--------|---------|------|-----------|-----------------------------|----------------------|-------------------------|
-| HA 2.2 | 2.2.1   | a    |           | Meine / Korrigiert Schlecht | n                    | n wohin soll das        |
-|        |         | b    |           | Meine / Korrigiert Schlecht | n                    | n wohin soll das        |
-|        |         | c    |           | Meine / Korrigiert          | :white_check_mark:   | :white_check_mark:      |
-|        |         | d    |           | Meine / Korrigiert          | :white_check_mark:   | :white_check_mark:      |
-|        | 2.2.2   | a    |           | Meine / Korrigiert Schlecht | n                    | :white_check_mark:      |
-|        |         | b    |           | Meine / Korrigiert Schlecht | n                    | :white_check_mark:      |
-|        |         | c    |           | Niki / Korrigiert           | n                    | :white_check_mark:      |
-|        | 2.2.3   | a    |           | Jan / Korrigiert            | :white_check_mark:   | :white_check_mark:      |
-|        |         | b    |           | Jan / Korrigiert            | :white_check_mark:   | :ballot_box_with_check: |
-|        |         | c    |           | Jan / Korrigiert            | :white_check_mark:   | :white_check_mark:      |
-|        |         | d    |           | Jan / Korrigiert Schlecht   | n                    | :white_check_mark:      |
-|        |         | e    |           | Jan / Korrigiert Schlecht   | n                    | :white_check_mark:      |
-| PÜ 2.2 | 2.2.4   | a    |           | Tutor                       | :white_check_mark:   |                         |
-|        |         | b    |           | Tutor                       | noch fertig von Bild |                         |
-|        |         | c    |           | ?                           |                      |                         |
-|        | 2.2.5   | a    |           | Tutor                       | :white_check_mark:   |                         |
-|        |         | b    |           | Tutor                       | :white_check_mark:   |                         |
-|        |         | c    |           | Tutor                       | :white_check_mark:   |                         |
-|        |         | d    |           | Tutor                       | Bild                 |                         |
-|        |         | e    |           | ? evtl Bild?                |                      |                         |
-|        | 2.2.6   | a    |           | da                          | n                    |                         |
-|        |         | b    |           | da                          | n                    |                         |
-|        |         | c    |           | da                          | n                    |                         |
-|        |         | d    |           | da                          | n                    |                         |
-|        |         | e    |           | da                          | n                    |                         |
-|        |         | f    |           | da                          | n                    |                         |
-|        |         | g    |           | da                          | n                    |                         |
+| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung                 | In PDF               | In Schlüssel            |
+|--------|---------|------|-----------|------------------------------------|----------------------|-------------------------|
+| HA 2.2 | 2.2.1   | a    |           | Meine / Korrigiert Schlecht        | :white_check_mark:   | n wohin soll das        |
+|        |         | b    |           | Meine / Korrigiert Schlecht        | :white_check_mark:   | n wohin soll das        |
+|        |         | c    |           | Meine / Korrigiert                 | :white_check_mark:   | :white_check_mark:      |
+|        |         | d    |           | Meine / Korrigiert                 | :white_check_mark:   | :white_check_mark:      |
+|        | 2.2.2   | a    |           | Meine / Korrigiert Schlecht & Niki | :white_check_mark:   | :white_check_mark:      |
+|        |         | b    |           | Meine / Korrigiert Schlecht & Niki | :white_check_mark:   | :white_check_mark:      |
+|        |         | c    |           | Niki / Korrigiert                  | :white_check_mark:   | :white_check_mark:      |
+|        | 2.2.3   | a    |           | Jan / Korrigiert                   | :white_check_mark:   | :white_check_mark:      |
+|        |         | b    |           | Jan / Korrigiert                   | :white_check_mark:   | :ballot_box_with_check: |
+|        |         | c    |           | Jan / Korrigiert                   | :white_check_mark:   | :white_check_mark:      |
+|        |         | d    |           | Jan / Korrigiert Schlecht          | n                    | :white_check_mark:      |
+|        |         | e    |           | Jan / Korrigiert Schlecht          | n                    | :white_check_mark:      |
+| PÜ 2.2 | 2.2.4   | a    |           | Tutor                              | :white_check_mark:   |                         |
+|        |         | b    |           | Tutor                              | noch fertig von Bild |                         |
+|        |         | c    |           | ?                                  |                      |                         |
+|        | 2.2.5   | a    |           | Tutor                              | :white_check_mark:   |                         |
+|        |         | b    |           | Tutor                              | :white_check_mark:   |                         |
+|        |         | c    |           | Tutor                              | :white_check_mark:   |                         |
+|        |         | d    |           | Tutor                              | Bild                 |                         |
+|        |         | e    |           | ? evtl Bild?                       |                      |                         |
+|        | 2.2.6   | a    |           | da                                 | n                    |                         |
+|        |         | b    |           | da                                 | n                    |                         |
+|        |         | c    |           | da                                 | n                    |                         |
+|        |         | d    |           | da                                 | n                    |                         |
+|        |         | e    |           | da                                 | n                    |                         |
+|        |         | f    |           | da                                 | n                    |                         |
+|        |         | g    |           | da                                 | n                    |                         |
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung | In PDF             | In Schlüssel            |
 |--------|---------|------|-----------|--------------------|--------------------|-------------------------|
