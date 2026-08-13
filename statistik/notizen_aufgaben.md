@@ -246,38 +246,38 @@
 |        |         | c    |           | da                 | n                  |                         |
 |        |         | d    |           | da                 | n                  |                         |
 
-| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung     | In PDF | In Schlüssel          |
-|--------|---------|------|-----------|------------------------|--------|-----------------------|
-| HA 2.4 | 2.4.1   | a    |           | Jan / Korrigiert       | n      | n                     |
-|        |         | b    |           | Jan / Korrigiert       | n      | :white_check_mark:    |
-|        |         | c    |           | Jan / Korrigiert       | n      | :white_check_mark:    |
-|        |         | d    |           | Jan / Korrigiert       | n      | :white_check_mark:    |
-|        |         | e    |           | Jan / Korrigiert       | n      | :white_check_mark:    |
-|        |         | f    |           | Jan / Korrigiert       | n      | :white_check_mark:    |
-|        |         | g    |           | Niki / Korrigiert halb | n      | :white_check_mark:    |
-|        | 2.4.2   | a    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | b    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | c    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | d    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | e    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | f    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        | 2.4.3   | a    |           | Meine / Korrigiert     | n      | :white_check_mark:    |
-|        |         | b    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | c    |           | Meine / Korrigiert     | n      | :white_medium_square: |
-|        |         | d    |           | Meine / Korrigiert     | n      | :white_check_mark:    |
-|        |         | e    |           | Meine / Korrigiert     | n      | :white_check_mark:    |
-| PÜ 2.4 | 2.4.4   | a    |           | da                     | n      |                       |
-|        |         | b    |           | da                     | n      |                       |
-|        |         | c    |           | da                     | n      |                       |
-|        | 2.4.5   | a    |           | ?                      |        |                       |
-|        |         | b    |           | ?                      |        |                       |
-|        |         | c    |           | ?                      |        |                       |
-|        |         | d    |           | ?                      |        |                       |
-|        |         | e    |           | ?                      |        |                       |
-|        |         | f    |           | ?                      |        |                       |
-|        |         | g    |           | ?                      |        |                       |
-|        |         | h    |           | ?                      |        |                       |
-|        |         | i    |           | ?                      |        |                       |
+| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung     | In PDF             | In Schlüssel          |
+|--------|---------|------|-----------|------------------------|--------------------|-----------------------|
+| HA 2.4 | 2.4.1   | a    |           | Jan / Korrigiert       | :white_check_mark: | n                     |
+|        |         | b    |           | Jan / Korrigiert       | :white_check_mark: | :white_check_mark:    |
+|        |         | c    |           | Jan / Korrigiert       | :white_check_mark: | :white_check_mark:    |
+|        |         | d    |           | Jan / Korrigiert       | :white_check_mark: | :white_check_mark:    |
+|        |         | e    |           | Jan / Korrigiert       | :white_check_mark: | :white_check_mark:    |
+|        |         | f    |           | Jan / Korrigiert       | :white_check_mark: | :white_check_mark:    |
+|        |         | g    |           | Niki / Korrigiert halb | n                  | :white_check_mark:    |
+|        | 2.4.2   | a    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
+|        |         | b    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
+|        |         | c    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
+|        |         | d    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
+|        |         | e    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
+|        |         | f    |           | Meine / Korrigiert     | :white_check_mark: | :white_medium_square: |
+|        | 2.4.3   | a    |           | Meine / Korrigiert     | n                  | :white_check_mark:    |
+|        |         | b    |           | Meine / Korrigiert     | n                  | :white_medium_square: |
+|        |         | c    |           | Meine / Korrigiert     | n                  | :white_medium_square: |
+|        |         | d    |           | Meine / Korrigiert     | n                  | :white_check_mark:    |
+|        |         | e    |           | Meine / Korrigiert     | n                  | :white_check_mark:    |
+| PÜ 2.4 | 2.4.4   | a    |           | da                     | n                  |                       |
+|        |         | b    |           | da                     | n                  |                       |
+|        |         | c    |           | da                     | n                  |                       |
+|        | 2.4.5   | a    |           | ?                      |                    |                       |
+|        |         | b    |           | ?                      |                    |                       |
+|        |         | c    |           | ?                      |                    |                       |
+|        |         | d    |           | ?                      |                    |                       |
+|        |         | e    |           | ?                      |                    |                       |
+|        |         | f    |           | ?                      |                    |                       |
+|        |         | g    |           | ?                      |                    |                       |
+|        |         | h    |           | ?                      |                    |                       |
+|        |         | i    |           | ?                      |                    |                       |
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung     | In PDF  | In Schlüssel            |
 |--------|---------|------|-----------|------------------------|---------|-------------------------|
