@@ -436,6 +436,14 @@
 \newcommand{\texiii}[1]{\textcolor{yellow}{#1}}
 
 
-\newcommand{\abhaken}[0]{\textcolor{ForestGreen}{\CheckmarkBold}}
-\newcommand{\nochnichts}[0]{\textcolor{WildStrawberry}{\XSolidBrush}}
-\newcommand{\teils}[0]{\textcolor{Goldenrod}{\HalfCircleLeft}}
+\newcommand{\abhaken}[0]{%
+    \texorpdfstring{\textcolor{ForestGreen}{\CheckmarkBold}}{}%
+}
+
+\newcommand{\nochnichts}[0]{%
+    \texorpdfstring{\textcolor{WildStrawberry}{\XSolidBrush}}{}%
+}
+
+\newcommand{\teils}[0]{%
+    \texorpdfstring{\textcolor{Goldenrod}{\HalfCircleLeft}}{}%
+}
