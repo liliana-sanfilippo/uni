@@ -38,23 +38,23 @@
 |        |         | b    |           | ?                  |                    |                    |
 |        | 1.1.6   |      |           | ?                  |                    |                    |
 
-| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung | In PDF             | In Schlüssel          |
-|--------|---------|------|-----------|--------------------|--------------------|-----------------------|
-| HA 1.2 | 1.2.1   | a    | i         | ?                  | :white_check_mark: | :white_medium_square: |
-|        |         |      | ii        | ?                  | :white_check_mark: | :white_medium_square: |
-|        |         | b    | i         | Jan / Korrigiert   | :white_check_mark: | :white_medium_square: |
-|        |         |      | ii        | Jan / Korrigiert   | :white_check_mark: | :white_medium_square: |
-|        | 1.2.2   | a    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
-|        |         | b    |           | Niki / Korrigiert  | n                  | :white_medium_square: |
-|        |         | c    |           | Niki / Korrigiert  | n                  | :white_medium_square: |
-|        |         | d    |           | Niki / Korrigiert  | n                  | :white_medium_square: |
-|        | 1.2.3   | a    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
-|        |         | b    | i         | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
-|        |         |      | ii        | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
-|        |         |      | iii       | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
-|        |         | c    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:    |
-| PÜ 1.2 | 1.2.4   | a    |           | Von Studi          | :white_check_mark: |                       |
-|        |         | b    |           | Tutor              | :white_check_mark: |                       |
+| Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung         | In PDF             | In Schlüssel          |
+|--------|---------|------|-----------|----------------------------|--------------------|-----------------------|
+| HA 1.2 | 1.2.1   | a    | i         | Niki / Korrigiert          | :white_check_mark: | :white_medium_square: |
+|        |         |      | ii        | Niki / Korrigiert          | :white_check_mark: | :white_medium_square: |
+|        |         | b    | i         | Jan / Korrigiert           | :white_check_mark: | :white_medium_square: |
+|        |         |      | ii        | Jan / Korrigiert           | :white_check_mark: | :white_medium_square: |
+|        | 1.2.2   | a    |           | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:    |
+|        |         | b    |           | Niki / Korrigiert zu klein | n                  | :white_medium_square: |
+|        |         | c    |           | Niki / Korrigiert zu klein | n                  | :white_medium_square: |
+|        |         | d    |           | Niki / Korrigiert zu klein | n                  | :white_medium_square: |
+|        | 1.2.3   | a    |           | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:    |
+|        |         | b    | i         | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:    |
+|        |         |      | ii        | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:    |
+|        |         |      | iii       | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:    |
+|        |         | c    |           | Meine / Korrigiert         | :white_check_mark: | :white_check_mark:    |
+| PÜ 1.2 | 1.2.4   | a    |           | Von Studi                  | :white_check_mark: |                       |
+|        |         | b    |           | Tutor                      | :white_check_mark: |                       |
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung | In PDF             | In Schlüssel            |
 |--------|---------|------|-----------|--------------------|--------------------|-------------------------|
@@ -65,15 +65,15 @@
 |        |         |      | v         | Niki / Korrigiert  | :white_check_mark: | :white_check_mark:      |
 |        |         | b    | i         | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
 |        |         |      | ii        | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
-|        |         |      | iii       | ?                  |                    | :white_check_mark:      |
-|        | 1.3.2   | a    | i         | ?                  |                    | :white_check_mark:      |
-|        |         |      | ii        | ?                  |                    | :white_check_mark:      |
-|        |         |      | iii       | ?                  |                    | :white_check_mark:      |
-|        |         |      | iv        | ?                  |                    | :white_check_mark:      |
-|        |         | b    | i         | ?                  |                    | :white_check_mark:      |
-|        |         |      | ii        | ?                  |                    | :white_check_mark:      |
-|        |         |      | iii       | ?                  |                    | :white_check_mark:      |
-|        |         |      | iv        | ?                  |                    | :white_check_mark:      |
+|        |         |      | iii       | -                  |                    | :white_check_mark:      |
+|        | 1.3.2   | a    | i         | -                  |                    | :white_check_mark:      |
+|        |         |      | ii        | -                  |                    | :white_check_mark:      |
+|        |         |      | iii       | -                  |                    | :white_check_mark:      |
+|        |         |      | iv        | -                  |                    | :white_check_mark:      |
+|        |         | b    | i         | -                  |                    | :white_check_mark:      |
+|        |         |      | ii        | -                  |                    | :white_check_mark:      |
+|        |         |      | iii       | -                  |                    | :white_check_mark:      |
+|        |         |      | iv        | -                  |                    | :white_check_mark:      |
 |        | 1.3.3   | a    |           | Meine / Korrigiert | :white_check_mark: | :white_check_mark:      |
 |        |         | b    |           | Meine / Korrigiert | :white_check_mark: | :ballot_box_with_check: |
 |        |         | c    |           | Meine / Korrigiert | :white_check_mark: | :ballot_box_with_check: |
@@ -91,9 +91,9 @@
 
 | Blatt  | Aufgabe | Teil | (Subteil) | Vorliegende Lösung | In PDF             | In Schlüssel            |
 |--------|---------|------|-----------|--------------------|--------------------|-------------------------|
-| HA 1.4 | 1.4.1   | a    |           | Meine / Korrigiert | n                  | :ballot_box_with_check: |
+| HA 1.4 | 1.4.1   | a    |           | Meine / Korrigiert | :white_check_mark: | :ballot_box_with_check: |
 |        |         | b    |           | Meine / Korrigiert | :white_check_mark: | :ballot_box_with_check: |
-|        |         | c    |           | Meine / Korrigiert | n                  | :ballot_box_with_check: |
+|        |         | c    |           | Meine / Korrigiert | :white_check_mark: | :ballot_box_with_check: |
 |        | 1.4.2   | a    |           | Jan / Korrigiert   | :white_check_mark: | :white_medium_square:   |
 |        |         | b    |           | Jan / Korrigiert   | :white_check_mark: | :white_medium_square:   |
 |        |         | c    |           | Jan / Korrigiert   | :white_check_mark: | :white_medium_square:   |
