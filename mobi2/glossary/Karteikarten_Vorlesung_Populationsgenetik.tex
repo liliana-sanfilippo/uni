@@ -1,0 +1,479 @@
+
+
+% ###########################################################################
+% VORLESUNG 1: VON ZELLEN ZU INDIVIDUEN
+% ###########################################################################
+
+% ---- Definitionen -------------------------------------------------------
+
+\newglossaryentry{v1d01}{type=defi,
+    name={Evolution\"are Populationsgenetik},
+    description={Die Wissenschaft der genetischen Variation innerhalb und zwischen Populationen sowie der Kr\"afte, die diese beeinflussen}}
+
+\newglossaryentry{v1d02}{type=defi,
+    name={Multizellul\"arer Organismus},
+    description={Ein Organismus, der aus mehr als einer Zelle besteht. Multizellularit\"at ist mind.\ 25-mal unabh\"angig entstanden; sie erfordert Zelladh\"asion, Kommunikation und (oft) spezialisierte Fortpflanzungszellen}}
+
+\newglossaryentry{v1d03}{type=defi,
+    name={Totipotente Zelle},
+    description={Zelle, die einen vollst\"andigen eigenen Organismus bilden kann (z.B.\ die Zygote)}}
+
+\newglossaryentry{v1d04}{type=defi,
+    name={Pluripotente Zelle},
+    description={Zelle, die sich zu Zellen aller drei Keimbl\"atter (Ektoderm, Mesoderm, Entoderm) und der Keimbahn entwickeln kann}}
+
+\newglossaryentry{v1d05}{type=defi,
+    name={Unipotente Zelle},
+    description={Vorl\"auferzelle (``Blast''), die sich nur zu Zellen eines bestimmten Gewebetyps entwickeln kann (z.B.\ H\"amozytoblast)}}
+
+\newglossaryentry{v1d06}{type=defi,
+    name={Keimzelle vs.\ somatische Zelle},
+    description={Keimzellen (Gameten/Keimbahn) geben Erbinformation an die n\"achste Generation weiter; somatische Zellen bilden den K\"orper (Soma). Mutationen werden nur vererbt, wenn sie in der Keimbahn auftreten (Ausnahme: ungeschlechtliche/klonale Vermehrung)}}
+
+\newglossaryentry{v1d07}{type=defi,
+    name={Zygote},
+    description={Die durch Verschmelzung zweier Gameten entstandene (totipotente) Zelle, aus der sich ein Organismus entwickelt}}
+
+\newglossaryentry{v1d08}{type=defi,
+    name={Keimbl\"atter},
+    description={Drei embryonale Zellschichten: Ektoderm (z.B.\ Haut, Nervensystem), Mesoderm (z.B.\ Muskel, Knochen, Blut), Entoderm (z.B.\ Darm-/Lungenepithel)}}
+
+\newglossaryentry{v1d09}{type=defi,
+    name={Hox-Gene},
+    description={Stark konservierte Familie von Transkriptionsfaktor-Genen, die die Anterior-Posterior-Achse (Kopf-Schwanz) im Tierembryo organisieren; in Clustern angeordnet}}
+
+\newglossaryentry{v1d10}{type=defi,
+    name={R\"aumliche Kolinearit\"at},
+    description={Die Reihenfolge der Hox-Gene auf dem Chromosom entspricht ihrer Expression entlang der K\"orperachse}}
+
+\newglossaryentry{v1d11}{type=defi,
+    name={Zeitliche Kolinearit\"at},
+    description={Die Reihenfolge der Hox-Gene auf dem Chromosom entspricht dem Zeitpunkt ihrer Aktivierung; $3'$-Gene werden fr\"uher und anteriorer aktiviert als $5'$-Gene}}
+
+\newglossaryentry{v1d12}{type=defi,
+    name={Hom\"ootische Mutation},
+    description={Mutation/Fehlexpression (z.B.\ von Hox-Genen), die ein K\"orpersegment in die Identit\"at eines anderen umwandelt (z.B.\ Antennapedia bei \art{Drosophila})}}
+
+\newglossaryentry{v1d13}{type=defi,
+    name={Heterochronie},
+    description={Evolution\"are \"Anderung des \emph{Timings} der Genexpression w\"ahrend der Entwicklung (Sonderfall Neotenie)}}
+
+\newglossaryentry{v1d14}{type=defi,
+    name={Heterotopie},
+    description={Evolution\"are \"Anderung des \emph{Ortes} der Genexpression im Organismus (oft Voraussetzung f\"ur Exaptation)}}
+
+\newglossaryentry{v1d15}{type=defi,
+    name={Heterometrie},
+    description={Evolution\"are \"Anderung der \emph{Intensit\"at} der Genexpression (z.B.\ HMGA2 $\to$ Schnabelgr\"o{\ss}e bei Darwinfinken)}}
+
+\newglossaryentry{v1d16}{type=defi,
+    name={Neotenie},
+    description={Sonderfall der Heterochronie: Beibehaltung juveniler Merkmale im Erwachsenenalter (z.B.\ Kiemen beim Axolotl)}}
+
+\newglossaryentry{v1d17}{type=defi,
+    name={Exaptation},
+    description={Umfunktionierung eines k\"orperlichen Merkmals f\"ur eine neue Aufgabe (z.B.\ Schildkr\"otenpanzer aus Rippen)}}
+
+\newglossaryentry{v1d18}{type=defi,
+    name={Ph\"anotypische Plastizit\"at},
+    description={F\"ahigkeit eines Organismus mit \emph{einem} Genotyp, seinen Ph\"anotyp (Physiologie, Morphologie, Verhalten) als Reaktion auf die Umwelt zu \"andern, ohne die DNA-Sequenz zu \"andern; besonders relevant bei sessilen Organismen}}
+
+\newglossaryentry{v1d19}{type=defi,
+    name={Sexueller Konflikt (sexueller Antagonismus)},
+    description={Situation, in der bestimmte Gene unterschiedliche Fitnesseffekte f\"ur die beiden Geschlechter haben}}
+
+\newglossaryentry{v1d20}{type=defi,
+    name={Intralokus sexueller Konflikt},
+    description={Konflikt um ein \emph{einzelnes} Merkmal: dasselbe Allel erf\"ahrt in M\"annchen und Weibchen gegens\"atzliche Selektion (Bsp.\ T\"ochter fitter Rothirsch-M\"annchen haben geringere Fitness)}}
+
+\newglossaryentry{v1d21}{type=defi,
+    name={Interlokus sexueller Konflikt},
+    description={Fitnessvorteil eines Merkmals in einem Geschlecht, dem das andere mit Gegenanpassung an einem \emph{anderen} Locus begegnet (evolution\"ares Wettr\"usten; Bsp.\ Samenfl\"ussigkeitsproteine bei \art{Drosophila})}}
+
+\newglossaryentry{v1d22}{type=defi,
+    name={Genomische Pr\"agung (Imprinting)},
+    description={Epigenetischer Mechanismus, bei dem ein Gen je nach Geschlecht des vererbenden Elternteils an- oder abgeschaltet wird -- unabh\"angig von der DNA-Sequenz und reversibel. Bsp.: Angelman-Syndrom (v\"aterliche Gene stillgelegt), Prader-Willi-Syndrom (m\"utterliche Gene stillgelegt)}}
+
+\newglossaryentry{v1d23}{type=defi,
+    name={Haplodiploidie (Bienen)},
+    description={Geschlechtsbestimmung, bei der unbefruchtete (haploide) Eier zu M\"annchen (Drohnen) und befruchtete (diploide) Eier zu Weibchen werden; bei \art{Apis} \"uber den heterozygoten csd-Locus gesteuert}}
+
+% ---- Fragen -------------------------------------------------------------
+
+\newglossaryentry{v1f01}{type=frage,
+    name={Welche Vorteile bietet Multizellularit\"at? (4)},
+    description={Gemeinsame Ressourcennutzung/Zusammenarbeit; Spezialisierung \& Arbeitsteilung (Effizienz); gr\"o{\ss}ere K\"orpergr\"o{\ss}e (Schutz vor R\"aubern, Mobilit\"at); Widerstandsf\"ahigkeit gegen\"uber Umweltbelastungen}}
+
+\newglossaryentry{v1f02}{type=frage,
+    name={Was ist \emph{kein} Vorteil der Vielzelligkeit? (MC)},
+    description={``Vielzeller vermehren sich schneller als Einzeller'' -- das ist \emph{falsch/kein} Vorteil (Einzeller vermehren sich i.d.R.\ schneller)}}
+
+\newglossaryentry{v1f03}{type=frage,
+    name={Warum beginnt ein mehrzelliges Individuum als \emph{eine} Zelle (Zygote)?},
+    description={Der einzellige ``Flaschenhals'' verhindert, dass ``\"Uberl\"aufer''-Zellen (die nicht zum Wohl der Gruppe beitragen) sich durchsetzen; sichert genetische Einheitlichkeit des K\"orpers}}
+
+\newglossaryentry{v1f04}{type=frage,
+    name={Auf welchen Stufen kann Genexpression reguliert werden? (Hox-Beispiele)},
+    description={Epigenetisch (Chromatin-Remodelling), transkriptional (Signalgradienten, z.B.\ Retins\"aure/RA $\to$ RARs), posttranskriptional (alternatives Splei{\ss}en, mRNA-Stabilit\"at), translational (microRNAs, z.B.\ miR-196), posttranslational (Kofaktoren wie Pbx/Meis)}}
+
+\newglossaryentry{v1f05}{type=frage,
+    name={Nenne die drei Keimbl\"atter und je ein Beispiel.},
+    description={Ektoderm $\to$ Haut/Nervensystem; Mesoderm $\to$ Muskel/Knochen/Blut; Entoderm $\to$ Darm-/Lungenepithel}}
+
+\newglossaryentry{v1f06}{type=frage,
+    name={Darwinfinken-Schnabelgr\"o{\ss}en sind ein Beispiel f\"ur welches Konzept?},
+    description={Heterometrie (\"Anderung der Expressionsst\"arke, z.B.\ des Gens HMGA2)}}
+
+\newglossaryentry{v1f07}{type=frage,
+    name={Wie wird die Kaste bei eusozialen Bienen bestimmt? (Fallstudie)},
+    description={Durch Ern\"ahrung/Epigenetik: DNA-Methylierung steuert die Genexpression. Kucharski et al.\ schalteten die DNA-Methyltransferase Dnmt3 in Larven aus $\to$ ``Gel\'ee-royale''-Effekt: die meisten wurden zu K\"oniginnen}}
+
+\newglossaryentry{v1f08}{type=frage,
+    name={Fallstudie Seepferdchen: genetische Grundlage des Flossenverlusts?},
+    description={Im Genom von \art{Hippocampus comes} fehlt tbx4 (Regulator der Hintergliedma{\ss}en). CRISPR-Cas9-Knockout von tbx4 in Zebrafischen erzeugte denselben Ph\"anotyp (Verlust der Bauchflossen)}}
+
+\newglossaryentry{v1f09}{type=frage,
+    name={Fallstudie Stichling: genetische Grundlage der Beckenreduktion?},
+    description={Regulatorische Mutationen l\"oschen einen gewebespezifischen Enhancer des Gens Pitx1. Wiederherstellung der Pitx1-Beckenexpression (transgen) stellte die Beckenstacheln wieder her (Chan et al.\ 2010)}}
+
+
+% ###########################################################################
+% VORLESUNG 2: POPULATIONEN / POPULATIONSGENETIK
+% ###########################################################################
+
+% ---- Definitionen -------------------------------------------------------
+
+\newglossaryentry{v2d01}{type=defi,
+    name={Locus},
+    description={Der spezifische Ort im Genom, an dem sich ein Gen oder eine DNA-Sequenz befindet}}
+
+\newglossaryentry{v2d02}{type=defi,
+    name={Genetischer Marker},
+    description={Eine DNA-Sequenz mit Information, die z.B.\ f\"ur Abstammungsanalysen, Populationsgenetik oder Genkartierung genutzt werden kann}}
+
+\newglossaryentry{v2d03}{type=defi,
+    name={Mikrosatellit (SSR)},
+    description={Kurze DNA-Sequenz mit 2--6 bp langen, hintereinander wiederholten Motiven; polymorph in der Anzahl der Wiederholungen; oft viele Allele}}
+
+\newglossaryentry{v2d04}{type=defi,
+    name={SNP (Einzelnukleotid-Polymorphismus)},
+    description={Variation an einem einzigen Basenpaar der DNA-Sequenz; meist bi-allelisch, aber sehr zahlreich im Genom}}
+
+\newglossaryentry{v2d05}{type=defi,
+    name={Allel},
+    description={Eine der verschiedenen Formen, die ein bestimmter Locus annehmen kann}}
+
+\newglossaryentry{v2d06}{type=defi,
+    name={Dominantes vs.\ rezessives Allel},
+    description={Ein dominantes Allel zeigt seine Wirkung in Homo- \emph{und} Heterozygotie; ein rezessives Allel nur in Homozygotie}}
+
+\newglossaryentry{v2d07}{type=defi,
+    name={Allelh\"aufigkeit},
+    description={Anteil eines bestimmten Allels in der Population: (Anzahl Kopien des Allels) / ($2N$) bei $N$ diploiden Individuen}}
+
+\newglossaryentry{v2d08}{type=defi,
+    name={Genotyph\"aufigkeit},
+    description={Anteil eines bestimmten Genotyps in der Population: (Anzahl Individuen mit dem Genotyp) / $N$}}
+
+\newglossaryentry{v2d09}{type=defi,
+    name={Genetische Vielfalt},
+    description={Das Ausma{\ss} der DNA-Sequenzunterschiede innerhalb und zwischen Individuen einer Population oder Art}}
+
+\newglossaryentry{v2d10}{type=defi,
+    name={Allelic richness (allelischer Reichtum, AR)},
+    description={Anzahl verschiedener Allele an einem Locus in einer Population (Ma{\ss} der genetischen Vielfalt)}}
+
+\newglossaryentry{v2d11}{type=defi,
+    name={Beobachtete Heterozygotie ($H_O$)},
+    description={Anteil der Individuen in der Population, die an einem Locus heterozygot sind}}
+
+\newglossaryentry{v2d12}{type=defi,
+    name={Nukleotiddiversit\"at ($\pi$)},
+    description={Durchschnittliche Anzahl paarweiser Sequenzunterschiede zwischen Individuen einer Population}}
+
+\newglossaryentry{v2d13}{type=defi,
+    name={Population},
+    description={Eine Gruppe von Individuen, die sich frei miteinander fortpflanzen kann und die von anderen Populationen reproduktiv isoliert ist}}
+
+\newglossaryentry{v2d14}{type=defi,
+    name={Genfluss},
+    description={\"Ubertragung von genetischem Material (Allelen) von einer Population auf eine andere innerhalb einer Art, wenn Individuen oder Gameten (z.B.\ Pollen, Samen) wandern und sich fortpflanzen}}
+
+\newglossaryentry{v2d15}{type=defi,
+    name={Populationsgenetische Struktur},
+    description={Das Vorhandensein genetisch unterschiedlicher Populationen (mit unterschiedlichen Allelh\"aufigkeiten) innerhalb eines geografischen Gebiets}}
+
+\newglossaryentry{v2d16}{type=defi,
+    name={Isolation-by-Distance (IBD)},
+    description={Modell, nach dem die genetischen Unterschiede zwischen Populationen mit der geografischen Entfernung zunehmen}}
+
+\newglossaryentry{v2d17}{type=defi,
+    name={Physische Barriere},
+    description={Ein Hindernis (z.B.\ ein Fluss), das die Einwanderung und Fortpflanzung zwischen Populationen verhindert und so reproduktive Isolation erzeugt}}
+
+\newglossaryentry{v2d18}{type=defi,
+    name={Philopatrie (Heimatverbundenheit)},
+    description={Neigung von Individuen, zur Fortpflanzung an ihren Geburtsort zur\"uckzukehren; kann unabh\"angig von der Entfernung genetische Struktur erzeugen}}
+
+\newglossaryentry{v2d19}{type=defi,
+    name={Genetische Drift},
+    description={Zuf\"allige Ver\"anderung der Allelh\"aufigkeiten im Genpool einer Population \"uber Generationen hinweg}}
+
+\newglossaryentry{v2d20}{type=defi,
+    name={Populationsengpass (Bottleneck)},
+    description={Starke, oft vor\"ubergehende Reduktion der Populationsgr\"o{\ss}e, die genetische Vielfalt durch Drift verringert}}
+
+\newglossaryentry{v2d21}{type=defi,
+    name={Inzucht},
+    description={Paarung naher Verwandter; erh\"oht den Anteil homozygoter Genotypen}}
+
+\newglossaryentry{v2d22}{type=defi,
+    name={Inzuchtdepression},
+    description={Verlust der Fitness der Nachkommen infolge von Inzucht; entsteht v.a., wenn rezessive sch\"adliche Allele homozygot werden}}
+
+\newglossaryentry{v2d23}{type=defi,
+    name={Aussterbewirbel (Extinction Vortex)},
+    description={Selbstverst\"arkende Abw\"artsspirale kleiner Populationen: reduzierte Gr\"o{\ss}e $\to$ mehr Drift/Inzucht + demografische Stochastik $\to$ geringeres \"Uberleben/Anpassungspotenzial $\to$ noch kleinere Population $\to$ Aussterben}}
+
+\newglossaryentry{v2d24}{type=defi,
+    name={Genetische Rettung (Genetic Rescue)},
+    description={Einbringen neuer Individuen/Allele in eine kleine, ingez\"uchtete Population, was Heterozygotie und Fitness erh\"oht (z.B.\ Grauwolf Skandinavien; Florida-Panther)}}
+
+\newglossaryentry{v2d25}{type=defi,
+    name={Auszuchtdepression (Outbreeding Depression)},
+    description={Fitnessverlust, wenn zu weit entfernte/unterschiedliche Populationen gekreuzt werden (Aufbrechen lokaler Anpassung / koadaptierter Genkomplexe) -- ein Risiko der genetischen Rettung}}
+
+\newglossaryentry{v2d26}{type=defi,
+    name={Nat\"urliche Selektion},
+    description={Von Darwin vorgeschlagener Mechanismus: wirkt auf vererbbare Variation; besser angepasste Individuen \"uberleben/reproduzieren h\"aufiger, wodurch vorteilhafte Merkmale \"uber Generationen h\"aufiger werden}}
+
+\newglossaryentry{v2d27}{type=defi,
+    name={Vererbbarkeit (Heritabilit\"at)},
+    description={Anteil der phänotypischen Varianz, der auf genetische Variation zur\"uckgeht (Gene vs.\ Umwelt); klassisch \"uber Zwillingsstudien (MZ vs.\ ZZ) gesch\"atzt}}
+
+\newglossaryentry{v2d28}{type=defi,
+    name={GWAS (Genomweite Assoziationsstudie)},
+    description={Statistische Suche nach Assoziationen zwischen genetischen Varianten (SNPs) und einem Ph\"anotyp/Merkmal \"uber viele Genome hinweg}}
+
+\newglossaryentry{v2d29}{type=defi,
+    name={Parallele Evolution},
+    description={Unabh\"angige Entwicklung desselben Merkmals in mehreren Populationen \"uber \emph{denselben} genetischen Mechanismus (z.B.\ Beckenreduktion bei Stichlingen \"uber Pitx1)}}
+
+\newglossaryentry{v2d30}{type=defi,
+    name={Divergente Evolution},
+    description={Auseinanderentwicklung: gleiche Ausgangslage/Umgebung, aber unterschiedliche Mechanismen/L\"osungen (z.B.\ verschiedene E.-coli-Kulturen, Cit+-Stamm im Lenski-Experiment)}}
+
+% ---- Fragen / Rechnen ---------------------------------------------------
+
+\newglossaryentry{v2f01}{type=frage,
+    name={Formel: Allelh\"aufigkeit berechnen},
+    description={freq(Allel) $= \dfrac{\text{Anzahl Kopien des Allels}}{2N}$ ($N$ = Anzahl diploider Individuen)}}
+
+\newglossaryentry{v2f02}{type=frage,
+    name={Formel: beobachtete Heterozygotie $H_O$},
+    description={$H_O = \dfrac{\text{Anzahl heterozygoter Individuen}}{N}$}}
+
+\newglossaryentry{v2f03}{type=frage,
+    name={RECHNEN: 10 Ind., AA=3, AB=5, BB=2. $H_O$, freq(A), freq(AB)?},
+    description={$H_O = 5/10 = 0{,}5$. freq(A) $= (2\cdot 3 + 1\cdot 5)/(2\cdot 10) = 11/20 = 0{,}55$. freq(Genotyp AB) $= 5/10 = 0{,}5$}}
+
+\newglossaryentry{v2f04}{type=frage,
+    name={Warum ist genetische Drift in kleinen Populationen st\"arker?},
+    description={Die Varianz der Allelh\"aufigkeit pro Generation ist $\dfrac{p(1-p)}{2N}$. Kleines $N$ $\to$ gr\"o{\ss}ere Varianz $\to$ st\"arkere zuf\"allige Schwankungen und schnellerer Verlust an Vielfalt}}
+
+\newglossaryentry{v2f05}{type=frage,
+    name={RECHNEN: Drift-Varianz f\"ur $p=0{,}5$, $N=8$ vs.\ $N=80$?},
+    description={Var $= p(1-p)/2N$. $N=8$: $0{,}25/16 = 0{,}0156$. $N=80$: $0{,}25/160 = 0{,}00156$ $\to$ 10-fach kleiner, also weniger Drift bei gr\"o{\ss}erem $N$}}
+
+\newglossaryentry{v2f06}{type=frage,
+    name={Was kann au{\ss}er geografischer Entfernung reproduktive Isolation verursachen?},
+    description={Physische Barrieren (z.B.\ Fl\"usse) und Verhalten (z.B.\ Philopatrie/Heimattreue)}}
+
+\newglossaryentry{v2f07}{type=frage,
+    name={Warum ist es wichtig, Populationen zu identifizieren?},
+    description={Sie entwickeln sich (teils) unabh\"angig: k\"onnen einzigartige Mutationen beherbergen, unterschiedliche Vielfalt/Gr\"o{\ss}e haben (unterschiedlich von Drift betroffen) und unter unterschiedlichem Selektionsdruck stehen (lokale Anpassung)}}
+
+\newglossaryentry{v2f08}{type=frage,
+    name={Mechanismus der Inzuchtdepression?},
+    description={Inzucht erh\"oht Homozygotie $\to$ rezessive sch\"adliche Allele werden homozygot ausgepr\"agt $\to$ Fitnessverlust (bei Auszucht durch dominantes Wildtyp-Allel maskiert)}}
+
+\newglossaryentry{v2f09}{type=frage,
+    name={Genetische Rettung des Florida-Panthers -- Ablauf \& Ergebnis?},
+    description={Population auf 10--20 Tiere reduziert, viele Inzuchtsymptome (Knickschw\"anze, Herzdefekte, Kryptorchismus, Spermienanomalien). Einbringen von Texas-Pumas $\to$ F1 mit reduzierten Symptomen, ca.\ 10\% mehr \"uberlebende Nachkommen; Population w\"achst -- bleibt aber genetisch unterscheidbar}}
+
+\newglossaryentry{v2f10}{type=frage,
+    name={Kritikpunkte an der genetischen Rettung?},
+    description={Risiko der Auszuchtdepression; Kreuzungen sind keine ``echten'' (genetisch einzigartigen) Florida-Panther; Zielkonflikt zwischen Erhalt der Einzigartigkeit und Gesundheit; Vorteile verschwinden nach 2--3 Generationen (Wiederholung n\"otig)}}
+
+\newglossaryentry{v2f11}{type=frage,
+    name={Drei Voraussetzungen f\"ur nat\"urliche Selektion?},
+    description={1) Variation zwischen Individuen; 2) Vererbung der Merkmale; 3) unterschiedliches \"Uberleben/Fortpflanzung (fitnessrelevant). Folge: Anpassung}}
+
+\newglossaryentry{v2f12}{type=frage,
+    name={Industriemelanismus (Pfeffermotte) erkl\"aren.},
+    description={Ru{\ss} verdunkelte die B\"aume; dunkle (melanisierte) Motten waren dort besser getarnt und wurden seltener von R\"aubern gefressen $\to$ h\"ohere \"Uberlebensrate $\to$ h\"aufiger (Selektion \"uber Raum und Zeit)}}
+
+\newglossaryentry{v2f13}{type=frage,
+    name={Laktosetoleranz als Beispiel f\"ur Selektion?},
+    description={Eine Mutation im LCT-Gen erlaubt Laktoseverdauung im Erwachsenenalter. In milchviehhaltenden Populationen (z.B.\ Nordeuropa) vorteilhaft $\to$ H\"aufigkeit stieg von ca.\ 1\% auf $>$90\%}}
+
+\newglossaryentry{v2f14}{type=frage,
+    name={Wie beeinflusste die Migration aus Afrika die genetische Vielfalt?},
+    description={Serielle Gr\"undereffekte (Founder-Effekte): mit zunehmender Entfernung von Afrika nimmt die genetische Vielfalt ab (afrikanische Populationen sind am vielf\"altigsten)}}
+
+\newglossaryentry{v2f15}{type=frage,
+    name={Warum ist Diversit\"at der Teilnehmer f\"ur die Pr\"azisionsmedizin wichtig?},
+    description={Populationen unterscheiden sich in Drift/Selektion: populationsspezifische Mutationen, unterschiedliche kausale Varianten und lokale Anpassung. Polygene Risikoscores aus einer Population \"ubertragen sich schlecht auf andere (Bsp.\ Gr\"onland/Inuit) $\to$ Ungleichheit ohne diverse Daten}}
+
+\newglossaryentry{v2f16}{type=frage,
+    name={Zwillingsstudien -- wie wird Heritabilit\"at gesch\"atzt?},
+    description={Vergleich der Merkmals\"ahnlichkeit: hohe \"Ahnlichkeit bei eineiigen (MZ, 100\% Gene) aber geringe bei zweieiigen (ZZ, 50\%) $\to$ hohe Erblichkeit; \"ahnliche \"Ahnlichkeit $\to$ hoher Umwelteinfluss}}
+
+
+% ###########################################################################
+% VORLESUNG 3: BIOLOGISCHE ARTEN & ARTBILDUNG
+% ###########################################################################
+
+% ---- Definitionen -------------------------------------------------------
+
+\newglossaryentry{v3d01}{type=defi,
+    name={Binomische Nomenklatur},
+    description={Zweiteiliges Benennungssystem (Gattung + Art), formalisiert von Linnaeus (Systema Naturae, 1758); Grundlage der modernen Taxonomie}}
+
+\newglossaryentry{v3d02}{type=defi,
+    name={Taxonomische Hierarchie},
+    description={Reich, Stamm, Klasse, Ordnung, Familie, Gattung, Art -- traditionell v.a.\ nach Morphologie eingeteilt}}
+
+\newglossaryentry{v3d03}{type=defi,
+    name={Biologisches Artkonzept},
+    description={Nach Dobzhansky \& Mayr: Eine Art ist eine Gruppe von Individuen, die sich tats\"achlich oder potenziell kreuzen und dabei lebensf\"ahige \emph{und} fruchtbare Nachkommen erzeugen k\"onnen; betont reproduktive Isolation}}
+
+\newglossaryentry{v3d04}{type=defi,
+    name={Reproduktive Isolation},
+    description={Fehlen von erfolgreichem Genfluss zwischen Gruppen; ihr allm\"ahlicher Anstieg zwischen Populationen ist das Schl\"usselkonzept der Artbildung}}
+
+\newglossaryentry{v3d05}{type=defi,
+    name={Nukle\"are DNA (nDNA)},
+    description={DNA im Zellkern (Chromosomen), ``das Genom''; meist diploid, linear und biparental vererbt, mit Rekombination}}
+
+\newglossaryentry{v3d06}{type=defi,
+    name={Mitochondriale DNA (mtDNA)},
+    description={DNA der Mitochondrien; zirkul\"ar, haploid, m\"utterlicherseits vererbt, ohne Rekombination, kleinere effektive Populationsgr\"o{\ss}e $\to$ andere evolution\"are Geschwindigkeit}}
+
+\newglossaryentry{v3d07}{type=defi,
+    name={DNA-Barcoding},
+    description={Standardisiertes Verfahren zur Artbestimmung: ein mtDNA-Abschnitt (COI, Cytochrom-c-Oxidase-Untereinheit I) wird sequenziert und mit einer Referenzdatenbank abgeglichen; nur erfasste Taxa bestimmbar}}
+
+\newglossaryentry{v3d08}{type=defi,
+    name={Phylogenetik},
+    description={Wissenschaft der evolution\"aren Beziehungen zwischen Arten/Genen; rekonstruiert den ``Baum des Lebens'' aus homologen DNA-Sequenzen}}
+
+\newglossaryentry{v3d09}{type=defi,
+    name={Kladistik / Synapomorphie},
+    description={Klassifikation anhand gemeinsamer \emph{abgeleiteter} Merkmale (Synapomorphien). In der molekularen Phylogenetik dient die homologe DNA-Sequenz als solches Merkmal}}
+
+\newglossaryentry{v3d10}{type=defi,
+    name={Rooted vs.\ unrooted Baum},
+    description={``Rooted'': Baum mit bekanntem basalem Vorfahren (Wurzel/Zeitrichtung). ``Unrooted'': ohne bekannten Vorfahren (nur Verwandtschaftsmuster)}}
+
+\newglossaryentry{v3d11}{type=defi,
+    name={Artbildung (Speziation)},
+    description={Bildung separater, unabh\"angiger evolution\"arer Einheiten aus einer Vorfahrenlinie; Kernkonzept ist der allm\"ahliche Anstieg reproduktiver Isolation}}
+
+\newglossaryentry{v3d12}{type=defi,
+    name={Genic view of speciation (Wu 2001)},
+    description={Artbildung wird zun\"achst durch Divergenz an spezifischen ``Barrieregenen'' vorangetrieben (nicht das ganze Genom); von diesen ausgehend divergiert der Rest des Genoms zunehmend}}
+
+\newglossaryentry{v3d13}{type=defi,
+    name={Allopatrische Artbildung},
+    description={Artbildung, bei der sich die Arten \emph{r\"aumlich getrennt} (durch eine physische Barriere) auseinanderentwickeln}}
+
+\newglossaryentry{v3d14}{type=defi,
+    name={Sympatrische Artbildung},
+    description={Artbildung \emph{ohne} trennende physische Barriere (im selben Gebiet)}}
+
+\newglossaryentry{v3d15}{type=defi,
+    name={Divergenz},
+    description={Anh\"aufung unterschiedlicher artspezifischer DNA-\"Anderungen in zwei sich auseinanderentwickelnden Arten: Sequenz\"anderung (SNPs, Mikrosatelliten), strukturelle \"Anderungen (Inversion, Translokation, Genomduplikation), epigenetische Marker}}
+
+\newglossaryentry{v3d16}{type=defi,
+    name={Adaptive Radiation},
+    description={Evolution\"are Divergenz einer einzigen Abstammungslinie in viele unterschiedliche adaptive Formen (Futuyma 1998); oft rasant (Darwinfinken, afrikanische Buntbarsche)}}
+
+\newglossaryentry{v3d17}{type=defi,
+    name={\"Okologische Chance},
+    description={Hauptursache adaptiver Radiation: Zugang zu ungenutztem \"okologischem Raum (neues Gebiet ohne Konkurrenz/R\"auber, neue Ressourcen, Schl\"usselinnovation)}}
+
+\newglossaryentry{v3d18}{type=defi,
+    name={Hybridisierung},
+    description={Kreuzung zwischen verschiedenen Arten; bei Pflanzen (ca.\ 25\%) und Tieren (ca.\ 10\%) weit verbreitet; kann neue Arten bilden, adaptive Merkmale \"ubertragen oder Artgrenzen verwischen}}
+
+\newglossaryentry{v3d19}{type=defi,
+    name={Hybride Artbildung},
+    description={Entstehung einer neuen, reproduktiv isolierten Linie durch Hybridisierung (Bsp.\ ``Big Bird''-Linie bei Galapagosfinken, Lamichhaney et al.\ 2018)}}
+
+\newglossaryentry{v3d20}{type=defi,
+    name={Introgression},
+    description={Aufnahme von genetischem Material einer Art in den Genpool einer anderen durch wiederholte R\"uckkreuzung von Hybriden mit einer Elternart; kann Anpassung f\"ordern oder reproduktive Isolation untergraben}}
+
+\newglossaryentry{v3d21}{type=defi,
+    name={Reticulated species tree},
+    description={``Netzartiger'' Arten-Stammbaum: durch Introgression/Hybridisierung haben verschiedene Gene unterschiedliche Phylogenien $\to$ die Evolutionsgeschichte gleicht einem Netz statt einem Baum}}
+
+\newglossaryentry{v3d22}{type=defi,
+    name={Konvergente vs.\ parallele Evolution},
+    description={Konvergent: \"ahnliche Merkmale entstehen unabh\"angig aus \emph{unterschiedlichen} Ausgangslagen/Mechanismen. Parallel: \"ahnliche Merkmale aus \emph{gleicher} Ausgangslage \"uber denselben Mechanismus (z.B.\ Stichlinge)}}
+
+% ---- Fragen (u.a.\ aus der Fragestunde) ---------------------------------
+
+\newglossaryentry{v3f01}{type=frage,
+    name={Was definiert eine Art nach dem biologischen Artkonzept? (MC)},
+    description={Organismen, die sich kreuzen und \emph{fruchtbare} Nachkommen erzeugen k\"onnen (reproduktive Gemeinschaft) -- nicht blo{\ss}es \"ahnliches Aussehen, Habitat oder Chromosomenzahl}}
+
+\newglossaryentry{v3f02}{type=frage,
+    name={Warum gibt es kein einheitliches Artkonzept?},
+    description={Bis heute wurden ca.\ 16 verschiedene Artenkonzepte definiert; ca.\ 79\% Wahrscheinlichkeit, dass zwei zuf\"allige Fachleute unterschiedliche Konzepte verwenden (Stankowski \& Ravinet 2021)}}
+
+\newglossaryentry{v3f03}{type=frage,
+    name={Wesentlicher Unterschied mtDNA vs.\ nDNA? (MC)},
+    description={mtDNA ist zirkul\"ar und wird m\"utterlicherseits vererbt; nDNA ist linear und wird von beiden Elternteilen vererbt}}
+
+\newglossaryentry{v3f04}{type=frage,
+    name={Was ist DNA-Barcoding und welches Gen wird genutzt?},
+    description={Artbestimmung durch Abgleich eines mtDNA-Abschnitts -- des COI-Gens (Cytochrom-c-Oxidase I) -- mit einer Referenzdatenbank; n\"utzlich f\"ur fragmentierte/verarbeitete Proben, Biodiversit\"at, Handels\"uberwachung}}
+
+\newglossaryentry{v3f05}{type=frage,
+    name={Schritte zur Erstellung eines phylogenetischen Baums?},
+    description={1) DNA extrahieren \& sequenzieren (nDNA/mtDNA); 2) Sequenzen alignen; 3) genetische Abst\"ande berechnen (Abstandsmatrix); 4) Baum rekonstruieren per Clustering (z.B.\ Neighbour-Joining)}}
+
+\newglossaryentry{v3f06}{type=frage,
+    name={Definition der Phylogenetik? (MC)},
+    description={Die Untersuchung der evolution\"aren Beziehungen zwischen Arten oder Genen}}
+
+\newglossaryentry{v3f07}{type=frage,
+    name={Unterschied allopatrische vs.\ sympatrische Artbildung?},
+    description={Allopatrisch: mit r\"aumlicher/physischer Trennung. Sympatrisch: ohne trennende physische Barriere (im selben Gebiet)}}
+
+\newglossaryentry{v3f08}{type=frage,
+    name={Definiere adaptive Radiation und nenne ein Beispiel.},
+    description={Divergenz einer Linie in viele adaptive Formen (getrieben durch \"okologische Chance). Beispiele: Darwinfinken; afrikanische Buntbarsche (fast 1500 Arten in wenigen Mio.\ Jahren)}}
+
+\newglossaryentry{v3f09}{type=frage,
+    name={Was ist hybride Speziation?},
+    description={Entstehung einer neuen, reproduktiv isolierten Art durch Kreuzung zweier bestehender Arten (Bsp.\ ``Big Bird''-Linie der Galapagosfinken, 1981)}}
+
+\newglossaryentry{v3f10}{type=frage,
+    name={Warum k\"onnen verschiedene Gene unterschiedliche Phylogenien haben?},
+    description={Durch Introgression/Hybridisierung wandern einzelne Gene ``quer'' zum Arten-Stammbaum $\to$ Gene tragen unterschiedliche Evolutionsgeschichten (reticulated tree); Bsp.\ Heliconius Chromosom 18}}
+
+\newglossaryentry{v3f11}{type=frage,
+    name={Anpassung von Stichlingen an S\"u{\ss}wasser -- welches Konzept? (MC)},
+    description={Parallele Evolution (mehrfache, unabh\"angige Reduktion der Panzerung \"uber denselben Mechanismus)}}
+
+\newglossaryentry{v3f12}{type=frage,
+    name={Beschreibe das Isolation-by-Distance-Modell.},
+    description={Genetische Unterschiede zwischen Populationen nehmen mit zunehmender geografischer Entfernung zu (weniger Genfluss \"uber gro{\ss}e Distanzen)}}
+
+\newglossaryentry{v3f13}{type=frage,
+    name={Welche Aussage beschreibt genetische Drift am besten? (MC)},
+    description={Ver\"anderung der Allelh\"aufigkeiten durch Zufallseffekte, besonders stark in kleinen Populationen}}
