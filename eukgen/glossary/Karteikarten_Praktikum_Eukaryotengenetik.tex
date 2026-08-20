@@ -1,0 +1,467 @@
+
+
+% ============================================================================
+% A) GENEXPRESSION / TRANSKRIPTNACHWEIS
+% ============================================================================
+
+\newglossaryentry{expr01}{type=dinge,
+    name={Nenne 4 Methoden zum Nachweis/zur Analyse von Transkripten (mit vollem Namen).},
+    description={Northern Blot; RT-PCR (Reverse-Transkriptase-PCR); qRT-PCR / Real-Time-PCR (quantitative RT-PCR); RNA-Seq (RNA-Sequenzierung); (weitere: Microarray, In-situ-Hybridisierung, Reportergen-Analyse)}}
+
+\newglossaryentry{expr02}{type=dinge,
+    name={Northern Blot -- Prinzip und Vor-/Nachteil?},
+    description={RNA gelelektrophoretisch auftrennen, auf Membran blotten, mit markierter sequenzspezifischer Sonde hybridisieren. Vorteil: direkte Messung. Nachteil: viel RNA noetig}}
+
+\newglossaryentry{expr03}{type=dinge,
+    name={RT-PCR -- Prinzip und Vor-/Nachteil?},
+    description={RNA wird per reverser Transkription in cDNA umgeschrieben, cDNA dann per PCR amplifiziert und im Gel nachgewiesen. Vorteil: wenig RNA noetig (enzymatische Amplifikation). Nachteil: indirekte Messung}}
+
+\newglossaryentry{expr04}{type=dinge,
+    name={qRT-PCR / Real-Time-PCR -- Prinzip?},
+    description={RT-PCR mit Fluoreszenz-Detektion in Echtzeit; die Zyklenzahl bis zum Schwellenwert (Ct) ist ein Mass fuer die Ausgangsmenge des Transkripts $\to$ Quantifizierung}}
+
+\newglossaryentry{expr05}{type=dinge,
+    name={Warum kann RNA nicht direkt als PCR-Template dienen? Was macht man?},
+    description={DNA-Polymerasen brauchen ein DNA-Template; daher wird RNA zuerst per reverser Transkription in komplementaere DNA (cDNA) umgeschrieben}}
+
+\newglossaryentry{expr06}{type=dinge,
+    name={Was ist reverse Transkription?},
+    description={Umschreiben von RNA in DNA durch eine RNA-abhaengige DNA-Polymerase (reverse Transkriptase, z.B. M-MuLV). "Umgekehrt" gegenueber der normalen Transkription (DNA $\to$ RNA)}}
+
+\newglossaryentry{expr07}{type=dinge,
+    name={Unterschied Gesamt-RNA vs. mRNA/poly(A)+ RNA?},
+    description={Gesamt-RNA = alle RNA-Molekuele der Zelle (v.a. rRNA); mRNA/poly(A)+ = Transkripte mit Poly(A)-Schwanz, nur ca. 1--10\% der Gesamt-RNA}}
+
+\newglossaryentry{expr08}{type=dinge,
+    name={Warum darf bei RT-PCR keine genomische DNA mehr vorhanden sein?},
+    description={Genomische DNA wuerde als Template mitamplifiziert und das Ergebnis verfaelschen (falsch-positives Signal, falsche Fragmentgroesse durch Introns). Daher DNase-Verdau}}
+
+
+% ============================================================================
+% B) RNA-EXTRAKTION / RT-PCR-VERSUCH BESCHREIBEN (Ernte bis Gel-Foto)
+% ============================================================================
+
+\newglossaryentry{rt01}{type=dinge,
+    name={RT-PCR-Versuch: gesamter Ablauf von der Ernte bis zum Gel-Foto (Stichpunkte).},
+    description={1) Gewebe getrennt ernten (Wurzel/Keimblaetter), auf Eis/N$_2$; 2) RNA-Extraktion (Zelllyse, SDS, Protein-Praezipitation, Isopropanol-Faellung, EtOH-Wasch, in RNase-freiem H$_2$O loesen); 3) Konzentration photometrisch (A$_{260}$); 4) DNase-Verdau; 5) reverse Transkription $\to$ cDNA; 6) PCR (genspez. Primer + Aktin-Kontrolle); 7) Agarosegelelektrophorese; 8) EtBr-Faerbung + Foto unter UV}}
+
+\newglossaryentry{rt02}{type=dinge,
+    name={Warum Material zur RNA-Extraktion schnell ernten und kuehl lagern?},
+    description={mRNA-Mengen aendern sich schnell und RNA wird leicht degradiert (RNasen). Schnelle Ernte + Kuehlung verhindert versuchsbedingte Verschiebung der relativen RNA-Mengen und Degradation}}
+
+\newglossaryentry{rt03}{type=dinge,
+    name={Wie werden bei der RNA-Isolierung RNasen inaktiviert?},
+    description={Durch Bedingungen, die Proteine sofort denaturieren (z.B. SDS, lysierende/chaotrope Puffer); dadurch werden auch RNasen inaktiviert und der Zellaufschluss gefoerdert}}
+
+\newglossaryentry{rt04}{type=dinge,
+    name={DNase-Verdau -- Zweck und wie wird er gestoppt?},
+    description={Entfernt kontaminierende genomische DNA aus der RNA-Praeparation. Gestoppt durch EDTA-Zugabe (komplexiert Mg$^{2+}$) und Erhitzen (75$^\circ$C, 10 min $\to$ Enzym denaturiert)}}
+
+\newglossaryentry{rt05}{type=dinge,
+    name={cDNA-Synthese (ProtoScript-Kit) -- Schritte?},
+    description={RNA + Oligo-d(T)-Primer 5 min 70$^\circ$C, sofort auf Eis; Zugabe M-MuLV-Reaktionsmix + Enzymmix; 1 h 42$^\circ$C (Synthese); 5 min 80$^\circ$C (Inaktivierung); cDNA auf Eis}}
+
+\newglossaryentry{rt06}{type=dinge,
+    name={Wozu dient der Oligo-d(T)-Primer bei der reversen Transkription?},
+    description={Bindet an den Poly(A)-Schwanz der mRNA und startet dort die cDNA-Synthese $\to$ schreibt bevorzugt mRNA in cDNA um}}
+
+\newglossaryentry{rt07}{type=dinge,
+    name={Warum Aktin2-Primer als Kontrolle bei der RT-PCR?},
+    description={Aktin2 ist konstitutiv exprimiert (Housekeeping-Gen); ein Produkt zeigt, dass cDNA-Synthese und PCR funktioniert haben und vergleichbare cDNA-Mengen vorliegen (Positivkontrolle)}}
+
+\newglossaryentry{rt08}{type=dinge,
+    name={RNA-Bleach-Gel -- wozu, und was erwartet man?},
+    description={Kontrolle von RNA-Qualitaet und -Quantitaet. Erwartet werden mindestens zwei Banden (28S und 18S rRNA); scharfe Banden = intakte RNA}}
+
+
+% ============================================================================
+% C) PHOTOMETRIE / REINHEIT (RECHNEN)
+% ============================================================================
+
+\newglossaryentry{photo01}{type=dinge,
+    name={Was misst die Absorption bei A$_{260}$?},
+    description={Absorption der Nukleinsaeuren (aromatische Basen) bei 260 nm $\to$ Mass fuer DNA-/RNA-Konzentration}}
+
+\newglossaryentry{photo02}{type=dinge,
+    name={Was misst die Absorption bei A$_{280}$?},
+    description={Absorption von Proteinen (aromatische Aminosaeuren Trp, Tyr, Phe) bei 280 nm}}
+
+\newglossaryentry{photo03}{type=dinge,
+    name={Was misst die Absorption bei A$_{230}$?},
+    description={Absorption von Kontaminationen wie Phenol, chaotropen Salzen, Kohlenhydraten/organischen Verbindungen bei 230 nm}}
+
+\newglossaryentry{photo04}{type=dinge,
+    name={A$_{260}$/A$_{280}$ -- Bedeutung und Zielwerte?},
+    description={Reinheit bzgl. Proteinkontamination. Reine DNA $\approx$ 1,8; reine RNA $\approx$ 2,0. Deutlich niedriger $\to$ Protein-/Phenolkontamination}}
+
+\newglossaryentry{photo05}{type=dinge,
+    name={A$_{260}$/A$_{230}$ -- Bedeutung und Zielwert?},
+    description={Reinheit bzgl. organischer Kontaminanten (Phenol, Salze, Kohlenhydrate). Zielwert $\approx$ 2,0--2,2. Niedriger $\to$ Verunreinigung}}
+
+\newglossaryentry{photo06}{type=dinge,
+    name={Umrechnungsfaktoren: 1 OD$_{260}$ entspricht wie viel Konzentration?},
+    description={dsDNA $\approx$ 50 $\mu$g/ml; RNA $\approx$ 40 $\mu$g/ml; ssDNA/Oligo $\approx$ 33 $\mu$g/ml}}
+
+\newglossaryentry{photo07}{type=dinge,
+    name={Formel: RNA-Konzentration aus OD$_{260}$?},
+    description={c\,[$\mu$g/ml] = OD$_{260}$ $\times$ 40 $\times$ Verduennungsfaktor. (NanoDrop: unverduennt, Faktor = 1)}}
+
+\newglossaryentry{photo08}{type=dinge,
+    name={RECHNEN: A$_{260}$ = 1 am NanoDrop (RNA, unverduennt). Konzentration?},
+    description={c = 1 $\times$ 40 $\mu$g/ml $\times$ 1 = 40 $\mu$g/ml = 0,04 $\mu$g/$\mu$L}}
+
+\newglossaryentry{photo09}{type=dinge,
+    name={RECHNEN: RNA 1:50 verduennt, OD$_{260}$ = 0,4. Konzentration der Ausgangsloesung?},
+    description={c = 0,4 $\times$ 40 $\times$ 50 = 800 $\mu$g/ml = 0,8 $\mu$g/$\mu$L}}
+
+\newglossaryentry{photo10}{type=dinge,
+    name={RECHNEN: RNA c = 0,8 $\mu$g/$\mu$L in 20 $\mu$L. Gesamtmenge? Volumen fuer 10 $\mu$g (DNase) und 2 $\mu$g (RT)?},
+    description={Gesamt = 0,8 $\times$ 20 = 16 $\mu$g. Volumen = Menge / c: fuer 10 $\mu$g $\to$ 10/0,8 = 12,5 $\mu$L; fuer 2 $\mu$g $\to$ 2/0,8 = 2,5 $\mu$L}}
+
+\newglossaryentry{photo11}{type=dinge,
+    name={Warum verduennt man Proben fuers Photometer (kuevettenbasiert)?},
+    description={Damit die Absorption im linearen Messbereich liegt (ca. OD 0,1--1,0); zu hohe OD $\to$ ungenaue Messung. Der NanoDrop misst kleinste Volumina direkt ueber variable Schichtdicke}}
+
+\newglossaryentry{photo12}{type=dinge,
+    name={RECHNEN: Reinheit berechnen. Bsp. A$_{260}$ = 0,42, A$_{280}$ = 0,22.},
+    description={Reinheit = Absorptionsquotient. A$_{260}$/A$_{280}$ = 0,42/0,22 = 1,9 $\to$ reine DNA/RNA}}
+
+
+% ============================================================================
+% D) RECHNEN: EINHEITEN, muM / pmol / VERDUENNUNG
+% ============================================================================
+
+\newglossaryentry{calc01}{type=dinge,
+    name={Verduennungsformel?},
+    description={C$_1$ $\times$ V$_1$ = C$_2$ $\times$ V$_2$. Umgestellt: V$_1$ = (C$_2$ $\times$ V$_2$) / C$_1$ (Volumen der Stammloesung)}}
+
+\newglossaryentry{calc02}{type=dinge,
+    name={Merksatz: 1 $\mu$M entspricht wie viel pmol/$\mu$L?},
+    description={1 $\mu$M = 1 pmol/$\mu$L. (1 $\mu$M = 1 $\mu$mol/L = 1 pmol/$\mu$L)}}
+
+\newglossaryentry{calc03}{type=dinge,
+    name={Stoffmengen-Formel?},
+    description={n = c $\times$ V. Mit c in $\mu$M und V in $\mu$L gilt: n\,[pmol] = c\,[$\mu$M] $\times$ V\,[$\mu$L]}}
+
+\newglossaryentry{calc04}{type=dinge,
+    name={RECHNEN: Wie viel Volumen einer 100 $\mu$M Primerloesung fuer 10 pmol?},
+    description={V = n / c = 10 pmol / 100 (pmol/$\mu$L) = 0,1 $\mu$L}}
+
+\newglossaryentry{calc05}{type=dinge,
+    name={RECHNEN: Primer aus Lyophilisat -- wie viel Wasser fuer 100 $\mu$M Stock?},
+    description={100 $\mu$M = 100 pmol/$\mu$L. V\,[$\mu$L] = Stoffmenge\,[pmol] / 100. Bei nmol-Angabe: V\,[$\mu$L] = nmol $\times$ 10. Bsp.: 30 nmol = 30000 pmol $\to$ 300 $\mu$L $\to$ 100 $\mu$M}}
+
+\newglossaryentry{calc06}{type=dinge,
+    name={RECHNEN: 100 $\mu$L einer 10 $\mu$M Arbeitsloesung aus 100 $\mu$M Stock?},
+    description={1:10 verduennen: V$_1$ = (10 $\times$ 100)/100 = 10 $\mu$L Stock + 90 $\mu$L H$_2$O = 100 $\mu$L (10 $\mu$M)}}
+
+\newglossaryentry{calc07}{type=dinge,
+    name={RECHNEN: Primer-Endkonzentration in der PCR (1 $\mu$L 10 $\mu$M in 25 $\mu$L)?},
+    description={n = 1 $\mu$L $\times$ 10 $\mu$M = 10 pmol; Endkonz. = 10 pmol / 25 $\mu$L = 0,4 $\mu$M}}
+
+\newglossaryentry{calc08}{type=dinge,
+    name={Allgemeines Vorgehen: "Wie viel von X mischen, um Zielkonzentration zu erhalten?"},
+    description={Fuer jede Komponente V$_1$ = (Zielkonz. $\times$ Zielvolumen)/Stammkonz. berechnen, alle addieren, mit H$_2$O auf Zielvolumen auffuellen}}
+
+\newglossaryentry{calc09}{type=dinge,
+    name={RECHNEN: dNTP-Endkonzentration (0,5 $\mu$L 10 mM in 25 $\mu$L)?},
+    description={C$_2$ = C$_1$V$_1$/V$_2$ = 10 mM $\times$ 0,5 / 25 = 0,2 mM = 200 $\mu$M}}
+
+\newglossaryentry{calc10}{type=dinge,
+    name={RECHNEN: 10x Puffer 2,5 $\mu$L in 25 $\mu$L -- welche Endkonzentration?},
+    description={2,5/25 = 1/10 $\to$ 1x Endkonzentration. Allgemein: 10x-Stock 1:10 verduennen ergibt 1x}}
+
+\newglossaryentry{calc11}{type=dinge,
+    name={Einheiten-Umrechnung Konzentration und Stoffmenge?},
+    description={1 M = 1 mol/L; 1 mM = 10$^{-3}$ M; 1 $\mu$M = 10$^{-6}$ M; 1 nM = 10$^{-9}$ M. Stoffmenge: 1 mol = 10$^3$ mmol = 10$^6$ $\mu$mol = 10$^9$ nmol = 10$^{12}$ pmol}}
+
+
+% ============================================================================
+% E) MASTERMIX (RECHNEN)
+% ============================================================================
+
+\newglossaryentry{mm01}{type=dinge,
+    name={Warum und wie setzt man einen Mastermix an?},
+    description={Gemeinsame Reagenzien fuer mehrere Ansaetze in einem Mix $\to$ weniger Pipettierfehler, gleichmaessige Bedingungen. Fuer N Ansaetze mind. N+1 rechnen (Ueberschuss wegen Pipettierverlust)}}
+
+\newglossaryentry{mm02}{type=dinge,
+    name={RECHNEN: Mastermix-Volumen pro Reagenz?},
+    description={V(Reagenz im Mix) = V(Reagenz pro Ansatz) $\times$ Faktor. Bsp. 7x: H$_2$O 16,0 $\times$ 7 = 112 $\mu$L; Puffer 2,5 $\times$ 7 = 17,5 $\mu$L; usw.}}
+
+\newglossaryentry{mm03}{type=dinge,
+    name={Warum 7-fach-Mix bei 6 Templates?},
+    description={6 echte Ansaetze (5 Pflanzen + H$_2$O-Kontrolle) + 1 Reserve-Ansatz fuer Pipettierverluste = 7x}}
+
+\newglossaryentry{mm04}{type=dinge,
+    name={Wie viele PCRs bei 3 Primerkombinationen und 6 Templates? (Versuch 1)},
+    description={6 Templates $\times$ 3 Primerkombinationen = 18 PCRs; entsprechend drei siebenfach-Mastermixe (je 1 pro Primerkombination)}}
+
+
+% ============================================================================
+% F) REPORTERGENE / GUS (+ FIXIERLOESUNG RECHNEN)
+% ============================================================================
+
+\newglossaryentry{rep01}{type=dinge,
+    name={Was ist ein Reportergen?},
+    description={Ein Gen, dessen Produkt leicht nachweisbar ist (farblich/fluoreszierend/luminescent) und das an eine regulatorische Sequenz (Promotor) gekoppelt wird, um deren Aktivitaet sichtbar zu machen. Bsp.: uidA (GUS), GFP, Luciferase, lacZ}}
+
+\newglossaryentry{rep02}{type=dinge,
+    name={Was muss ein Reportergen(konstrukt) unbedingt haben?},
+    description={Zu untersuchenden Promotor + kodierende Sequenz des Reporters (Transkriptions-/Translationsfusion) + Terminator/PolyA-Signal. Das Produkt muss leicht/spezifisch nachweisbar sein und moeglichst keinen endogenen Hintergrund haben}}
+
+\newglossaryentry{rep03}{type=dinge,
+    name={Skizziere ein Reportergen(konstrukt).},
+    description={[Promotor] $\to$ [Reporter-ORF (z.B. uidA/GUS)] $\to$ [Terminator/PolyA]. Transkriptionsfusion: der zu testende Promotor steuert die Reporter-Expression}}
+
+\newglossaryentry{rep04}{type=dinge,
+    name={uidA / GUS -- Herkunft und Funktion?},
+    description={uidA aus \art{E.~coli} kodiert die $\beta$-Glucuronidase (GUS). In Pflanzen keine endogene Aktivitaet $\to$ kein Hintergrund. Spaltet das Substrat X-Gluc}}
+
+\newglossaryentry{rep05}{type=dinge,
+    name={Warum ist GUS ein gutes Reportergen in Pflanzen?},
+    description={Keine endogene GUS-Aktivitaet (kein Hintergrund); Enzym stabil (auch geringe Aktivitaet detektierbar); uebersteht schonende Fixierung; Produkt praezipitiert $\to$ praezise Lokalisation ohne Diffusion}}
+
+\newglossaryentry{rep06}{type=dinge,
+    name={X-Gluc -- Substrat und Produkt?},
+    description={X-Gluc = 5-Bromo-4-chloro-3-indolyl-$\beta$-D-glucuronsaeure. GUS spaltet es; Endprodukt ist ein blauer Indigofarbstoff, der am Ort der Aktivitaet praezipitiert}}
+
+\newglossaryentry{rep07}{type=dinge,
+    name={Warum 35S-Promotor (CaMV) als Positivkontrolle?},
+    description={Der 35S-Promotor aus dem Blumenkohlmosaikvirus ist in Arabidopsis-Keimlingen nahezu konstitutiv aktiv $\to$ ueberall GUS-Faerbung erwartet; zeigt, dass die Faerbung funktioniert}}
+
+\newglossaryentry{rep08}{type=dinge,
+    name={Was bedeutet eine Blaufaerbung bei der GUS-Faerbung?},
+    description={Dort ist GUS aktiv $\to$ dort ist der vorgeschaltete Promotor aktiv $\to$ das Gen wird in diesem Gewebe/zu diesem Zeitpunkt exprimiert}}
+
+\newglossaryentry{rep09}{type=dinge,
+    name={GUS-Nachweis -- Ablauf (Stichpunkte)?},
+    description={Fixierung (Formaldehyd) $\to$ Waschen (NaPi-Puffer) $\to$ X-Gluc + Vakuuminfiltration $\to$ ue.N. 37$^\circ$C (Spaltung $\to$ Indigo) $\to$ Entfaerben/Klaeren mit EtOH (Chlorophyll raus) $\to$ Mikroskopie + Foto}}
+
+\newglossaryentry{rep10}{type=dinge,
+    name={Fixierloesung (GUS) -- Zusammensetzung?},
+    description={0,3\% (v/v) Formaldehyd; 10 mM MES-KOH pH 5,6; 300 mM Mannitol}}
+
+\newglossaryentry{rep11}{type=dinge,
+    name={RECHNEN: 10 mL Fixierloesung aus Stocks (37\% Formaldehyd, 1 M MES, 1 M Mannitol)?},
+    description={Formaldehyd: (0,3 $\times$ 10)/37 = 0,081 mL = 81 $\mu$L; MES: (10 $\times$ 10)/1000 = 0,1 mL = 100 $\mu$L; Mannitol: (300 $\times$ 10)/1000 = 3 mL; H$_2$O ad 10 mL ($\approx$ 6,82 mL). (Jeweils angegebene Stockkonz. einsetzen!)}}
+
+\newglossaryentry{rep12}{type=dinge,
+    name={RECHNEN: X-Gluc-Loesung ansetzen (0,5 mg/mL, 10 mL)?},
+    description={0,5 mg/mL $\times$ 10 mL = 5 mg X-Gluc. In 50 $\mu$L DMF loesen, mit NaPi-Puffer auf 10 mL auffuellen}}
+
+
+% ============================================================================
+% G) BIOINFORMATIK: ALIGNMENTS
+% ============================================================================
+
+\newglossaryentry{align01}{type=dinge,
+    name={Kostenfunktion (Scoring) bei DNA-Alignments?},
+    description={Einfaches Schema: Match = positiver Wert (z.B. +1); Mismatch = negativer Wert/0 (z.B. $-1$); Gap = Strafwert (Gap-Open + Gap-Extension). Alle Mismatches werden gleich bewertet}}
+
+\newglossaryentry{align02}{type=dinge,
+    name={Kostenfunktion bei Aminosaeure-Alignments -- Unterschied zu DNA?},
+    description={Statt einheitlichem Mismatch nutzt man Substitutionsmatrizen (BLOSUM, PAM): jeder Aminosaeure-Austausch hat einen eigenen Score, weil Austausche unterschiedlich wahrscheinlich/vertraeglich sind (konservativ vs. nicht-konservativ)}}
+
+\newglossaryentry{align03}{type=dinge,
+    name={Warum ist die DNA-Kostenfunktion so einfach (Begruendung)?},
+    description={Nur 4 Basen, chemisch etwa gleichwertig; es gibt keine "aehnlichen/unaehnlichen" Basen im Sinne funktioneller Konservierung wie bei Aminosaeuren $\to$ einheitlicher Match/Mismatch-Score genuegt}}
+
+\newglossaryentry{align04}{type=dinge,
+    name={Gap-Penalty: Gap-Open vs. Gap-Extension?},
+    description={Gap-Open (Kosten fuers Eroeffnen einer Luecke) meist hoeher als Gap-Extension (Verlaengern), weil eine zusammenhaengende Luecke biologisch wahrscheinlicher ist als viele einzelne (affine Gap-Kosten)}}
+
+
+% ============================================================================
+% H) N50 (RECHNEN)
+% ============================================================================
+
+\newglossaryentry{n50a}{type=dinge,
+    name={N50 -- Definition?},
+    description={Contigs/Scaffolds nach Laenge absteigend sortieren und aufsummieren; N50 = Laenge des Contigs, bei dem die kumulative Summe erstmals $\geq$ 50\% der Gesamt-Assemblierungslaenge erreicht. Also: 50\% des Assemblies liegen in Contigs $\geq$ N50}}
+
+\newglossaryentry{n50b}{type=dinge,
+    name={N50 -- ist ein hoher oder niedriger Wert gut?},
+    description={Ein hoher N50 ist gut $\to$ laengere Contigs/Scaffolds $\to$ zusammenhaengendere (weniger fragmentierte) Assemblierung}}
+
+\newglossaryentry{n50c}{type=dinge,
+    name={RECHNEN: N50 fuer Contigs 9, 8, 7, 6, 4, 2, 2 kb?},
+    description={Summe = 38 kb, 50\% = 19 kb. Kumulativ: 9, 17, 24 kb $\to$ bei 24 kb ($\geq$ 19) ueberschritten, hinzugefuegt wurde das 7-kb-Contig $\to$ N50 = 7 kb}}
+
+
+% ============================================================================
+% I) FUNKTIONSVORHERSAGE
+% ============================================================================
+
+\newglossaryentry{func01}{type=dinge,
+    name={Bioinformatische Funktionsvorhersage einer DNA-Sequenz -- Vorgehen?},
+    description={ORF finden und uebersetzen; Homologiesuche gegen bekannte, annotierte Sequenzen (Alignment); konservierte Domaenen/Motive identifizieren; Funktion aus homologen Sequenzen ableiten (+ GO-Annotation)}}
+
+\newglossaryentry{func02}{type=dinge,
+    name={Welche Software/Algorithmen zur Funktionsvorhersage?},
+    description={BLAST (BLASTN/BLASTX/BLASTP) fuer Homologiesuche; HMMER / InterProScan fuer Domaenen (Profil-HMMs); Needleman-Wunsch / Smith-Waterman als Alignment-Algorithmen}}
+
+\newglossaryentry{func03}{type=dinge,
+    name={Welche Datenbanken zur Funktionsvorhersage? (NCBI ist KEINE Datenbank!)},
+    description={z.B. GenBank, RefSeq (Sequenzen); UniProt/Swiss-Prot (Proteine); Pfam/InterPro (Domaenen). NCBI ist ein Institut/Anbieter, das Datenbanken hostet -- selbst keine Datenbank}}
+
+\newglossaryentry{func04}{type=dinge,
+    name={Warum ist NCBI keine Datenbank?},
+    description={NCBI (National Center for Biotechnology Information) ist eine Institution/Plattform, die mehrere Datenbanken (GenBank, RefSeq, PubMed) und Tools (BLAST) bereitstellt. Die Datenbank heisst z.B. GenBank, nicht "NCBI"}}
+
+
+% ============================================================================
+% J) MOLEKULARE MARKER
+% ============================================================================
+
+\newglossaryentry{mark01}{type=dinge,
+    name={Was ist ein molekularer Marker?},
+    description={Ein DNA-Fragment/Locus mit nachweisbarem Polymorphismus, der mit einer genomischen Region (ggf. einem Gen/Merkmal) gekoppelt ist und zur Genotypisierung/Kartierung dient}}
+
+\newglossaryentry{mark02}{type=dinge,
+    name={InDel-/DFLP-Marker: Name, Polymorphismus, Analyse?},
+    description={Name: InDel (DFLP = DNA-Fragment-Laengen-Polymorphismus). Polymorphismus: Laengenunterschied durch Insertion/Deletion. Analyse: PCR mit gemeinsamem Primerpaar $\to$ Fragmente unterschiedlicher Laenge direkt im Agarosegel unterscheidbar}}
+
+\newglossaryentry{mark03}{type=dinge,
+    name={CAPS-Marker (PCR-RFLP): Name, Polymorphismus, Analyse?},
+    description={Name: CAPS (Cleaved Amplified Polymorphic Sequence), auch PCR-RFLP. Polymorphismus: Unterschied in einer Restriktionsschnittstelle (Punktmutation zerstoert/bildet Erkennungssequenz). Analyse: PCR $\to$ Restriktionsverdau $\to$ Fragmentmuster im Gel unterscheidet die Allele}}
+
+\newglossaryentry{mark04}{type=dinge,
+    name={RFLP-Marker: Name, Polymorphismus, Analyse?},
+    description={Name: RFLP (Restriction Fragment Length Polymorphism). Polymorphismus: Restriktionsschnittstellen-Unterschied. Analyse (klassisch): genomische DNA schneiden $\to$ Gelelektrophorese $\to$ Southern Blot mit Sonde}}
+
+\newglossaryentry{mark05}{type=dinge,
+    name={SSR-/Mikrosatelliten-Marker (SSLP): Name, Polymorphismus, Analyse?},
+    description={Name: SSR (Simple Sequence Repeat)/Mikrosatellit. Polymorphismus: unterschiedliche Anzahl kurzer Wiederholungseinheiten $\to$ Laengenpolymorphismus. Analyse: PCR + hochaufloesende Gel-/Kapillarelektrophorese}}
+
+\newglossaryentry{mark06}{type=dinge,
+    name={SNP-Marker: Name, Polymorphismus, Analyse?},
+    description={Name: SNP (Single Nucleotide Polymorphism). Polymorphismus: einzelner Basenaustausch. Analyse: z.B. Sequenzierung, CAPS, allelspezifische PCR, Hybridisierung}}
+
+\newglossaryentry{mark07}{type=dinge,
+    name={Ablauf einer Markeranalyse (allgemein)?},
+    description={DNA extrahieren $\to$ Locus mit spezifischem Primerpaar per PCR amplifizieren $\to$ Polymorphismus sichtbar machen (Laenge direkt im Gel ODER erst Restriktionsverdau bei CAPS/RFLP) $\to$ Allele/Genotyp bestimmen}}
+
+\newglossaryentry{mark08}{type=dinge,
+    name={Interpretation: CAPS-Marker TT3 (AflII, Schnittstelle nur in Col). Bandenmuster der drei Genotypen?},
+    description={Ler: 1,1 kb (ungeschnitten); Col: 630 bp + 450 bp; heterozygot: alle drei Banden (1,1 kb + 630 bp + 450 bp)}}
+
+
+% ============================================================================
+% K) GENETISCHE KARTIERUNG / GENKARTEN
+% ============================================================================
+
+\newglossaryentry{map01}{type=dinge,
+    name={Welche zwei Prinzipien der Genkartierung gibt es?},
+    description={1) Genetische (Kopplungs-)Karte -- Abstaende aus Rekombinations-/Crossover-Haeufigkeit (in centiMorgan, cM). 2) Physische Karte -- Abstaende in Basenpaaren (bp), z.B. aus Sequenzierung/Restriktionskartierung/FISH}}
+
+\newglossaryentry{map02}{type=dinge,
+    name={Genetische Karte -- Prinzip?},
+    description={Abstand zweier Loci ist proportional zur Rekombinationshaeufigkeit in der Meiose: je haeufiger Crossover dazwischen, desto weiter auseinander. Einheit cM (1 cM $\approx$ 1\% Rekombination)}}
+
+\newglossaryentry{map03}{type=dinge,
+    name={Physische Karte -- Prinzip?},
+    description={Tatsaechlicher Abstand auf dem DNA-Molekuel in Basenpaaren, unabhaengig von Rekombination (z.B. aus der Genomsequenz)}}
+
+\newglossaryentry{map04}{type=dinge,
+    name={Voraussetzung fuer Markeranalyse/Kartierung?},
+    description={Eine segregierende Population, in der geno-/phaenotypische Unterschiede aufspalten (z.B. F2 aus Kreuzung genetisch verschiedener Eltern, hier Ler $\times$ Col-0)}}
+
+\newglossaryentry{map05}{type=dinge,
+    name={RECHNEN: Rekombinationsfrequenz?},
+    description={RF = (Anzahl Rekombinationen) / (Anzahl betrachteter Chromosomen); Chromosomen = Anzahl Pflanzen $\times$ 2}}
+
+\newglossaryentry{map06}{type=dinge,
+    name={Crossover-Regel bei der Auswertung (F2, Ler/Col)?},
+    description={Wechsel heterozygot $\leftrightarrow$ Ler oder heterozygot $\leftrightarrow$ Col = Folge von 1 Crossover; direkter Wechsel Ler $\leftrightarrow$ Col = Folge von 2 Crossovern}}
+
+
+% ============================================================================
+% L) DUENNSCHICHTCHROMATOGRAPHIE (DC/TLC) -- DEUTSCH & ENGLISCH
+% ============================================================================
+
+\newglossaryentry{tlc01}{type=dinge,
+    name={DC/TLC -- Abkuerzung Deutsch und Englisch ausschreiben.},
+    description={Deutsch: Duennschichtchromatographie (DC). Englisch: Thin Layer Chromatography (TLC)}}
+
+\newglossaryentry{tlc02}{type=dinge,
+    name={HPTLC -- ausschreiben.},
+    description={High Performance Thin Layer Chromatography (Hochleistungs-Duennschichtchromatographie)}}
+
+\newglossaryentry{tlc03}{type=dinge,
+    name={TLC/DC -- Prinzip?},
+    description={Auftrennung von Substanzen auf einer stationaeren Phase (Kieselgel) durch eine aufsteigende mobile Phase (Laufmittel); Substanzen wandern je nach Polaritaet/Affinitaet unterschiedlich weit}}
+
+\newglossaryentry{tlc04}{type=dinge,
+    name={Rf-Wert?},
+    description={Rf = Laufstrecke der Substanz / Laufstrecke der Laufmittelfront. Charakteristisch fuer eine Substanz im gegebenen System; Identifikation ueber Vergleich mit Standards}}
+
+\newglossaryentry{tlc05}{type=dinge,
+    name={Metabolit-Analyse (Flavonoide) -- Ablauf?},
+    description={Keimlinge einwiegen $\to$ methanolische Extraktion (80\% MeOH, moersern, 70$^\circ$C) $\to$ zentrifugieren $\to$ Ueberstand eindampfen (SpeedVac) $\to$ resuspendieren $\to$ auf HPTLC-Platte auftragen $\to$ Chromatographie $\to$ Faerbung (DPBA) + Verstaerker (PEG4000) $\to$ Foto unter UV; Identifikation via Standards (Kaempferol, Quercetin) und Fluoreszenzfarben}}
+
+\newglossaryentry{tlc06}{type=dinge,
+    name={Warum ist Versuch 5 ein vorwaertsgenetischer Ansatz?},
+    description={Man geht vom Phaenotyp aus (veraenderte Samenfarbe nach EMS-Mutagenese), isoliert Mutanten und schliesst auf betroffenes Gen/Stoffwechselweg -- nicht vom Gen zum Phaenotyp (das waere Rueckwaertsgenetik)}}
+
+
+% ============================================================================
+% M) GENTRANSFER / AGROBACTERIUM
+% ============================================================================
+
+\newglossaryentry{gt01}{type=dinge,
+    name={Methoden zum Gentransfer in Pflanzen?},
+    description={1) \art{Agrobacterium tumefaciens}-vermittelt (T-DNA/Ti-Plasmid, z.B. Floral Dip); 2) Biolistik/Partikelkanone (Gene Gun); 3) Protoplasten-Transformation (PEG-vermittelt, Elektroporation); (4) virale Vektoren)}}
+
+\newglossaryentry{gt02}{type=dinge,
+    name={\art{Agrobacterium}: Was ueberträgt es und wie nutzt man das?},
+    description={Ueberträgt die T-DNA seines Ti-Plasmids ins Pflanzengenom (stabile Integration). In der Gentechnik nutzt man dies, um Gene stabil in Pflanzen einzubringen}}
+
+\newglossaryentry{gt03}{type=dinge,
+    name={Wurzelhalsgalle: Welche Verbindung lassen die Bakterien produzieren und wozu?},
+    description={Die transformierten Pflanzenzellen produzieren Opine (z.B. Octopin/Nopalin), die \art{Agrobacterium} als eigene C-/N-Quelle nutzt. Zusaetzlich induziert die T-DNA Auxin-/Cytokinin-Synthese $\to$ Tumor/Galle}}
+
+
+% ============================================================================
+% N) GENOTYPING / CRISPR / PCR-GRUNDLAGEN (Versuch 1)
+% ============================================================================
+
+\newglossaryentry{geno01}{type=dinge,
+    name={Vorwaerts- vs. Rueckwaertsgenetik?},
+    description={Vorwaertsgenetik: vom Phaenotyp (Mutante) zum Gen. Rueckwaertsgenetik: von der Sequenz/gezielten Mutation zur Funktion (Phaenotyp pruefen)}}
+
+\newglossaryentry{geno02}{type=dinge,
+    name={Warum treten homozygote Mutanten unter Nachkommen heterozygoter \art{A.~thaliana} auf?},
+    description={\art{A.~thaliana} hat Zwitterblueten und ist Selbstbefruchter; unter Nachkommen heterozygoter Pflanzen spalten homozygote Individuen auf (mendelsche Segregation)}}
+
+\newglossaryentry{geno03}{type=dinge,
+    name={Warum PCR mit verschiedenen Primerpaaren zur Genotypisierung?},
+    description={Verschiedene Primerkombinationen weisen WT-Allel, T-DNA-Insertion bzw. Mutation nach; aus dem Bandenmuster ergibt sich der Genotyp (WT / heterozygot / homozygot mutant)}}
+
+\newglossaryentry{geno04}{type=dinge,
+    name={NcoI-CAPS-Prinzip zum Mutationsnachweis (Versuch 1)?},
+    description={WT-Allel enthaelt eine NcoI-Schnittstelle; Mutagenese zerstoert sie meist. Nach PCR + NcoI-Verdau: WT geschnitten (kleinere Fragmente), Mutante ungeschnitten $\to$ im 2\%igen Gel unterscheidbar}}
+
+\newglossaryentry{geno05}{type=dinge,
+    name={Warum Positiv- und Negativkontrollen in der PCR?},
+    description={Positivkontrolle (bekanntes Primerpaar/Eltern-DNA) zeigt, dass DNA + PCR funktionieren. Negativkontrolle (ohne DNA) deckt Kontaminationen auf}}
+
+\newglossaryentry{geno06}{type=dinge,
+    name={Warum brauchen PCR-Negativkontrollen nicht verdaut zu werden?},
+    description={Sie enthalten kein PCR-Produkt (keine DNA-Template) $\to$ es gibt nichts zu schneiden; ein Restriktionsverdau waere ueberfluessig}}
+
+
+% ============================================================================
+% O) AGAROSEGEL / DETEKTION
+% ============================================================================
+
+\newglossaryentry{gel01}{type=dinge,
+    name={Warum unterschiedliche Agarose-Konzentrationen (1\% vs. 2\%)?},
+    description={Hoehere Agarosekonzentration (2\%) trennt kleine Fragmente besser auf; niedrigere (1\%) grosse Fragmente. Feinere Poren $\to$ bessere Aufloesung kleiner DNA}}
+
+\newglossaryentry{gel02}{type=dinge,
+    name={Wie wird DNA im Agarosegel sichtbar gemacht?},
+    description={Faerbung mit Ethidiumbromid (interkaliert zwischen die Basen), Sichtbarmachung unter UV-Licht. EtBr ist mutagen $\to$ blaue Handschuhe}}
+
+\newglossaryentry{gel03}{type=dinge,
+    name={Wozu dient der Groessenstandard (Leiter) im Gel?},
+    description={Zur Groessenbestimmung der Fragmente durch Vergleich mit Banden bekannter Laenge (z.B. 100 bp- oder 1 kb-Leiter)}}
