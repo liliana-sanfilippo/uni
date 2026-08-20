@@ -383,7 +383,7 @@ Unter $H_0$ kennen wir $\param_0$ und damit auch die Varianz $\sigma^2 = \param_
 \]
 Teststatistik wie im Geburten-Beispiel:
 \[
-    T(x) = \sqrt n\, \frac{\bar x - \wfk_0}{\sigma} \cdot
+    T(x) = \sqrt n\, \frac{| \bar x - \wfk_0 |}{\sigma}
 \]
 $T(X)$ ist bei normalverteilten Stichprobenvariablen der Betrag einer standardnormalverteilten \gls{zv}.
 Bei
@@ -396,20 +396,59 @@ Für den Test $\varphi$ zum Signifikanzniveau $\alpha$ wählen wir
 \]
 Verwerfungsbereich: $|T| > z_{1-\alpha/2}$.
 
+\komm{
+Man könnte auch schreiben:
+Teststatistik wie im Geburten-Beispiel:
+    \[
+        T(x) = \sqrt n\, \frac{ \bar x - \wfk_0 }{\sigma}
+    \] und dann
+    \[
+        \varphi(x) = \begin{cases} 1 & \text{falls } |T(x)| \geq z_{1-\alpha/2} \\ 0 & \text{sonst} \end{cases}
+    \]
+}
 \subsection*{b) Einseitiger Test -- Anpassungen}
 
-Im Fall $\param \leq H_0\ (\param_0)$, $\param > H_A$:
+Im Fall $\param \leq H_0\ (\param_0)$, $\param > H_A$
+\txc{(Das ist rechtsseitig, siehe $\param > H_A \Leftrightarrow H_A < \param$)}:
 \[
     \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \geq z_{1-\alpha} \\ 0 & \text{sonst} \end{cases}
     \qquad \text{mit } T(x) = \sqrt n\, \frac{\bar x - \param_0}{\sigma} \cdot
 \]
 Verwerfungsbereich: $T > z_{1-\alpha}$.
 
+\komm{
+Merken: Wenn  $H_A: \param > \param_0$ ist, also $H_A: \param_0 < \param$, das Theta also auf der RECHTEN Seite steht, wenn man von klein zu groß geht, dann
+ist es rechtsseitig. \\
+In dem Fall sollte (wenn man von klein zu groß geht) auch $T(x)$ bzw. $T$ rechts stehen. \\ Analog für linksseitig...
+}
+
 Im Fall $\param \geq H_0$, $\param < H_A$:
 \[
     \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \leq -z_{1-\alpha} \\ 0 & \text{sonst} \end{cases}
 \]
 Verwerfungsbereich: $T < -z_{1-\alpha}$.
+\komm{
+$T(x) < -z_{1-\alpha} \Leftrightarrow T(x) < z_{\alpha}$
+}
+
+\komm{
+    Übersicht:
+    \[
+        \begin{array}{lll}
+            H_A:\mu>\mu_0
+            &\Rightarrow&
+            T>z_{1-\alpha}
+            \\
+            H_A:\mu<\mu_0
+            &\Rightarrow&
+            T<-z_{1-\alpha}
+            \\
+            H_A:\mu\neq\mu_0
+            &\Rightarrow&
+            |T|>z_{1-\alpha/2}
+        \end{array}
+    \]
+}
 
 \karkar{bem_gauss_test_voraussetzung}
 \karkar{bem_gauss_test_bei_bernoulli}
@@ -434,7 +473,7 @@ Quantilen der $t$-Verteilung arbeiten.
 \]
 Teststatistik:
 \[
-    T(x) = \sqrt n\, \frac{\bar x - \wfk_0}{\widehat\sigma} \cdot
+    T(x) = \sqrt n\, \frac{|\bar x - \wfk_0|}{\widehat\sigma} \cdot
 \]
 $T(X)$ ist der Betrag einer $t$-verteilten \gls{zv} mit $n-1$ Freiheitsgraden.
 
@@ -442,11 +481,44 @@ Für den Test zum Signifikanzniveau $\alpha$ wählen wir
 \[
     \varphi(x) = \begin{cases} 1 & \text{falls } T(x) \geq t_{n-1,1-\alpha/2} \\ 0 & \text{sonst} \end{cases}
 \]
+\komm{
+Auch hier könnte man schreiben
+    \[
+        T(x) = \sqrt n\, \frac{\bar x - \wfk_0}{\widehat\sigma} \cdot
+    \] und dann
+    \[
+        \varphi(x) = \begin{cases} 1 & \text{falls } |T(x)| \geq t_{n-1,1-\alpha/2} \\ 0 & \text{sonst} \end{cases}
+    \]
+}
+
 
 \subsection*{b) Einseitiger Test}
 
 Analog zum Gauß-Test, mit $\sigma$ ersetzt durch $\widehat\sigma$ und $z_{1-\alpha}$ ersetzt durch
 $t_{n-1,1-\alpha}$.
+
+\komm{
+    $T(x) < -t_{n-1,1-\alpha} \Leftrightarrow T(x) < t_{n-1,\alpha}$
+}
+
+\komm{
+Übersicht:
+    \[
+        \begin{array}{lll}
+            H_A:\mu>\mu_0
+            &\Rightarrow&
+            T>t_{n-1,1-\alpha}
+            \\
+            H_A:\mu<\mu_0
+            &\Rightarrow&
+            T<-t_{n-1,1-\alpha}
+            \\
+            H_A:\mu\neq\mu_0
+            &\Rightarrow&
+            |T|>t_{n-1,1-\alpha/2}
+        \end{array}
+    \]
+}
 
 \karkar{bem_t_test_voraussetzung}
 \karkar{bem_t_test_vorgehen_analogie}
