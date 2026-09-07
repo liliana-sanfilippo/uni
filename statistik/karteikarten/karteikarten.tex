@@ -44,11 +44,7 @@ description={Ja. Ist $\omega \in \Omega$ ein Elementarereignis, so ist die einel
 type=dinge
 }
 
-\newglossaryentry{einschraenkung_ueberabzaehlbar}{
-name={Welche Ereignisse betrachtet man, wenn $\Omega \subseteq \mathbb{R}^n$ weder endlich noch abzählbar unendlich ist?},
-description={Man beschränkt sich auf Ereignisse, die Intervalle oder bekannte geometrische Figuren sind (Dreieck, Rechteck, Kugel), sowie abzählbare Schnitte oder Vereinigungen solcher Objekte. Dies vermeidet Probleme der Maß- und Integrationstheorie.},
-type=dinge
-}
+
 
 \newglossaryentry{def_zaehldichte}{
 name={Was ist eine Zähldichte / Wahrscheinlichkeitsfunktion $\mu$?},
@@ -74,11 +70,6 @@ description={(1) $0 \leq P(A) \leq 1$ für alle $A \in \mathcal{P}(\Omega)$. (2)
 type=dinge
 }
 
-\newglossaryentry{beweis_untere_obere_schranke}{
-name={Wie zeigt man $0 \leq P(A) \leq 1$?},
-description={Untere Schranke: $P(A) = \sum_{\omega \in A} \mu(\omega) \geq 0$, da alle Summanden nichtnegativ sind. Obere Schranke: $P(A) = \sum_{\omega \in A}\mu(\omega) \leq \sum_{\omega \in \Omega}\mu(\omega) = 1$, ebenfalls weil alle Summanden nichtnegativ sind.},
-type=dinge
-}
 
 \newglossaryentry{def_wraum}{
 name={Was ist ein Wahrscheinlichkeitsraum?},
@@ -111,11 +102,7 @@ description={(a) $\mu(\omega) = \frac{1}{\#\Omega}$ für alle $\omega \in \Omega
 type=dinge
 }
 
-\newglossaryentry{beweis_gleichverteilung}{
-name={Wie beweist man $\mu(\omega) = \frac{1}{\#\Omega}$ bei Gleichverteilung?},
-description={Da $\mu$ konstant ist, existiert ein $c \in [0,1]$ mit $\mu(\omega) = c$ für alle $\omega$. Aus der Normierung folgt $1 = \sum_{\omega \in \Omega}\mu(\omega) = c \cdot \#\Omega$, also $c = \frac{1}{\#\Omega}$.},
-type=dinge
-}
+
 
 \newglossaryentry{bem_gleichverteilung_abzaehlprobleme}{
 name={Worauf reduziert sich das Berechnen von Wahrscheinlichkeiten bei Gleichverteilung?},
@@ -123,9 +110,29 @@ description={Auf reine Abzählprobleme (Kombinatorik), da $P(A) = \frac{\#A}{\#\
 type=dinge
 }
 
+% % Tiefergehend
+
 \newglossaryentry{keine_gleichverteilung_unendlich}{
 name={Warum kann es keine Gleichverteilung auf einer abzählbar unendlichen Menge geben?},
 description={Annahme: Gleichverteilung $\mu$ auf $\Omega = \mathbb{N}$ mit Wert $c$. Aus $1 = \sum_{k=1}^\infty \mu(k) = c \cdot \#\mathbb{N}$ folgt ein Widerspruch: Für $c=0$ ergibt sich $1=0$, für $c>0$ ergibt sich $1=\infty$. Beide Fälle sind unmöglich, also existiert keine Gleichverteilung auf unendlichen Mengen. Deshalb ist in der Definition $\#\Omega < \infty$ vorausgesetzt.},
 type=dinge
 }
+
+\newglossaryentry{einschraenkung_ueberabzaehlbar}{
+name={Welche Ereignisse betrachtet man, wenn $\Omega \subseteq \mathbb{R}^n$ weder endlich noch abzählbar unendlich ist?},
+description={Man beschränkt sich auf Ereignisse, die Intervalle oder bekannte geometrische Figuren sind (Dreieck, Rechteck, Kugel), sowie abzählbare Schnitte oder Vereinigungen solcher Objekte. Dies vermeidet Probleme der Maß- und Integrationstheorie.},
+type=dinge
+}
+
+%\newglossaryentry{beweis_gleichverteilung}{
+%name={Wie beweist man $\mu(\omega) = \frac{1}{\#\Omega}$ bei Gleichverteilung?},
+%description={Da $\mu$ konstant ist, existiert ein $c \in [0,1]$ mit $\mu(\omega) = c$ für alle $\omega$. Aus der Normierung folgt $1 = \sum_{\omega \in \Omega}\mu(\omega) = c \cdot \#\Omega$, also $c = \frac{1}{\#\Omega}$.},
+%type=dinge
+%}
+
+%\newglossaryentry{beweis_untere_obere_schranke}{
+%name={Wie zeigt man $0 \leq P(A) \leq 1$?},
+%description={Untere Schranke: $P(A) = \sum_{\omega \in A} \mu(\omega) \geq 0$, da alle Summanden nichtnegativ sind. Obere Schranke: $P(A) = \sum_{\omega \in A}\mu(\omega) \leq \sum_{\omega \in \Omega}\mu(\omega) = 1$, ebenfalls weil alle Summanden nichtnegativ sind.},
+%type=dinge
+%}
 

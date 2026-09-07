@@ -1,18 +1,14 @@
 %! Author = lili
 %! Date = 7/25/26
 
-
+% Achtung: Diese Notation setzt voraus, dass klar ist, auf welche Referenz-Obermenge $\Omega$ man sich bezieht.
 \newglossaryentry{def_komplement}{
     name={Wie ist das Komplement $A^c$ einer Menge $A\subseteq\Omega$ definiert?},
-description={$A^c := \Omega \setminus A$. Achtung: Diese Notation setzt voraus, dass klar ist, auf welche Referenz-Obermenge $\Omega$ man sich bezieht.},
+description={$A^c := \Omega \setminus A$},
 type=dinge
 }
 
-\newglossaryentry{def_vereinigung_schnitt_abzaehlbar}{
-name={Wie sind Vereinigung und Schnitt abzählbar vieler Mengen $A_i$, $i\in I$, definiert?},
-description={$\bigcup_{i\in I} A_i = \{\omega\in\Omega : \exists j\in I \text{ mit } \omega\in A_j\}$ (mind. ein $A_i$ enthält $\omega$). $\bigcap_{i\in I} A_i = \{\omega\in\Omega : \omega\in A_i \ \forall i\in I\}$ (alle $A_i$ enthalten $\omega$).},
-type=dinge
-}
+
 
 \newglossaryentry{lem_rechenregeln_mengen}{
 name={Welche drei Rechenregeln für Mengen/Ereignisse kennst du (Kommutativ-, Assoziativ-, de Morgan)?},
@@ -32,9 +28,10 @@ description={Wenn der Gesamtschnitt aller Mengen leer ist: $\bigcap_i A_i = \emp
 type=dinge
 }
 
+%Achtung: In der Quelldefinition steht fälschlich $\neq\emptyset$, korrekt ist aber $=\emptyset$ für paarweise Disjunktheit.
 \newglossaryentry{def_paarweise_disjunkt}{
 name={Wann heißt eine Familie $A_1,A_2,\dots$ paarweise disjunkt?},
-description={Wenn $A_i \cap A_j = \emptyset$ für alle $i\neq j$ gilt (jedes Paar einzeln betrachtet ist disjunkt). Achtung: In der Quelldefinition steht fälschlich $\neq\emptyset$, korrekt ist aber $=\emptyset$ für paarweise Disjunktheit.},
+description={Wenn $A_i \cap A_j = \emptyset$ für alle $i\neq j$ gilt (jedes Paar einzeln betrachtet ist disjunkt)},
 type=dinge
 }
 
@@ -57,32 +54,21 @@ type=dinge
 }
 
 \newglossaryentry{lem_disjunkt_nicht_paarweise_disjunkt}{
-name={Gilt auch die Umkehrung: disjunkt $\Rightarrow$ paarweise disjunkt?},
+name={Gilt disjunkt $\Rightarrow$ paarweise disjunkt?},
 description={Nein. Disjunkt impliziert NICHT paarweise disjunkt — es gibt Gegenbeispiele (siehe $A_k=\{k,k+1,\dots\}$: die Mengen sind disjunkt, aber keine zwei von ihnen sind paarweise disjunkt, da $A_i\cap A_j = A_j\neq\emptyset$ für $i<j$).},
 type=dinge
 }
 
-\newglossaryentry{bsp_disjunkt_nicht_paarweise_Ak}{
-name={Beispiel: Warum sind $A_k=\{k,k+1,k+2,\dots\}$ für $k\in\mathbb{N}$ disjunkt, aber nicht paarweise disjunkt?},
-description={Nicht paarweise disjunkt: Für $i<j$ gilt $A_i\cap A_j = A_j \neq \emptyset$. Aber disjunkt: $\bigcap_{i\in\mathbb{N}} A_i=\emptyset$, denn gäbe es ein $\ell$ im Gesamtschnitt, müsste $\ell\in A_{\ell+1}=\{\ell+1,\ell+2,\dots\}$ gelten — unmöglich, da $\ell<\ell+1$.},
-type=dinge
-}
-
-\newglossaryentry{satz_additivitaet}{
-name={Additivität von $P$: Wie berechnet man $P$ einer disjunkten Vereinigung $\dot\bigcup_i A_i$?},
-description={$P\left(\dot\bigcup_i A_i\right) = \sum_i P(A_i)$, für paarweise disjunkte $A_1,A_2,\dots$. Gilt auch bei durch Dichten gegebenem $P$. Beweis: Umsortieren der Doppelsumme $\sum_i \sum_{\omega\in A_i}\mu(\omega) = \sum_i P(A_i)$.},
-type=dinge
-}
 
 \newglossaryentry{satz_komplementaerwahrscheinlichkeit}{
 name={Wie lautet die Formel für die Komplementärwahrscheinlichkeit (Gegenwahrscheinlichkeit)?},
-description={$P(A^c) = P(\Omega\setminus A) = 1-P(A)$. Beweis: $\Omega = A\ \dot\cup\ A^c \Rightarrow 1=P(\Omega)=P(A)+P(A^c) \Rightarrow P(A^c)=1-P(A)$ (folgt aus Additivität).},
+description={$P(A^c) = P(\Omega\setminus A) = 1-P(A)$},
 type=dinge
 }
 
 \newglossaryentry{satz_monotonie}{
 name={Monotonie von $P$: Was folgt aus $A\subseteq B$ für $P(A)$ und $P(B)$?},
-description={$A\subseteq B \Rightarrow P(A)\leq P(B)$. Beweis: $B = A\ \dot\cup\ (B\setminus A) \Rightarrow P(B) = P(A) + \underbrace{P(B\setminus A)}_{\geq 0} \geq P(A)$.},
+description={$A\subseteq B \Rightarrow P(A)\leq P(B)$},
 type=dinge
 }
 
@@ -94,7 +80,7 @@ type=dinge
 
 \newglossaryentry{satz_vereinigung_zwei_mengen}{
 name={Wie lautet die Formel für $P(A\cup B)$ bei nicht notwendig disjunkten $A,B$?},
-description={$P(A\cup B) = P(A) + P(B) - P(A\cap B)$. Beweis: $A\cup B = A\ \dot\cup\ [B\setminus(A\cap B)]$, dann Additivität und $P(B\setminus(A\cap B)) = P(B)-P(A\cap B)$ einsetzen.},
+description={$P(A\cup B) = P(A) + P(B) - P(A\cap B)$},
 type=dinge
 }
 
@@ -111,9 +97,32 @@ type=dinge
 }
 
 
+% % TIEFERGEHEND
+
 
 \newglossaryentry{satz_einschluss_ausschluss_n}{
 name={Wie lautet das allgemeine Ein- und Ausschlussprinzip für $n$ Ereignisse?},
 description={$P\left(\bigcup_{i=1}^n A_i\right) = \sum_{k=1}^n (-1)^{k+1} \sum_{1\leq i_1<\dots<i_k\leq n} P(A_{i_1}\cap\dots\cap A_{i_k})$. Man summiert über alle möglichen Schnitte von $k$ Mengen (mit alternierendem Vorzeichen), für $k=1,\dots,n$. Beweis für allgemeines $n$: vollständige Induktion (Fälle $n=2,3$ als Basis).},
+type=dinge
+}
+
+
+\newglossaryentry{bsp_disjunkt_nicht_paarweise_Ak}{
+name={Beispiel: Warum sind $A_k=\{k,k+1,k+2,\dots\}$ für $k\in\mathbb{N}$ disjunkt, aber nicht paarweise disjunkt?},
+description={Nicht paarweise disjunkt: Für $i<j$ gilt $A_i\cap A_j = A_j \neq \emptyset$. Aber disjunkt: $\bigcap_{i\in\mathbb{N}} A_i=\emptyset$, denn gäbe es ein $\ell$ im Gesamtschnitt, müsste $\ell\in A_{\ell+1}=\{\ell+1,\ell+2,\dots\}$ gelten — unmöglich, da $\ell<\ell+1$.},
+type=dinge
+}
+
+\newglossaryentry{def_vereinigung_schnitt_abzaehlbar}{
+name={Wie sind Vereinigung und Schnitt abzählbar vieler Mengen $A_i$, $i\in I$, definiert?},
+description={$\bigcup_{i\in I} A_i = \{\omega\in\Omega : \exists j\in I \text{ mit } \omega\in A_j\}$ (mind. ein $A_i$ enthält $\omega$). $\bigcap_{i\in I} A_i = \{\omega\in\Omega : \omega\in A_i \ \forall i\in I\}$ (alle $A_i$ enthalten $\omega$).},
+type=dinge
+}
+
+
+\newglossaryentry{satz_additivitaet}{
+name={Additivität von $P$: Wie berechnet man $P$ einer disjunkten Vereinigung $\dot\bigcup_i A_i$?},
+description={$P\left(\dot\bigcup_i A_i\right) = \sum_i P(A_i)$, für paarweise disjunkte $A_1,A_2,\dots$. Gilt auch
+bei durch Dichten gegebenem $P$},
 type=dinge
 }

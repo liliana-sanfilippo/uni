@@ -41,7 +41,7 @@
 
 \newglossaryentry{bem_zusammenhang_unabhaengigkeit_bedingte_ws}{
     name={Wie lässt sich die Unabhängigkeit zweier Ereignisse $A,B$ mit Hilfe der bedingten Wahrscheinlichkeit charakterisieren?},
-    description={$A,B$ sind unabhängig genau dann, wenn $P(A\mid B)=P(A)$ gilt (für $P(B)>0$) -- das Wissen um $B$ ändert dann die Einschätzung von $A$ nicht. Äquivalent dazu ist $P(A\cap B)=P(A)\cdot P(B)$.},
+    description={$P(A\mid B)=P(A)$ (wenn $P(B)>0$) oder $P(A\cap B)=P(A)\cdot P(B)$.},
     type=dinge
 }
 
@@ -82,8 +82,8 @@
 % ===================================================================
 
 \newglossaryentry{reg_multiplikationssatz_zwei_ereignisse}{
-    name={Wie lautet der Multiplikationssatz für zwei Ereignisse (aus der Definition der bedingten Wahrscheinlichkeit)?},
-    description={$P(A\cap B) = P(A\mid B)\,P(B)$ für alle $A,B\subseteq\Omega$ (die Formel gilt auch für $P(B)=0$, da dann beide Seiten $0$ sind).},
+    name={$P(A\cap B) =$},
+    description={$P(A\mid B)\,P(B)$ für alle $A,B\subseteq\Omega$},
     type=dinge
 }
 
@@ -105,7 +105,7 @@
 
 \newglossaryentry{def_formel_totale_wahrscheinlichkeit}{
     name={Wie lautet die Formel von der totalen Wahrscheinlichkeit?},
-    description={Ist $B_1,B_2,\dots$ eine (abzählbare) Partition von $\Omega$ (paarweise disjunkt, Vereinigung $=\Omega$), so gilt für jedes Ereignis $A$: $P(A) = \sum_i P(A\mid B_i)\,P(B_i)$.},
+    description={$P(A) = \sum_i P(A\mid B_i)\,P(B_i)$},
     type=dinge
 }
 
@@ -121,7 +121,7 @@
 
 \newglossaryentry{satz_bayes_einfache_version}{
     name={Wie lautet die einfache Version des Satzes von Bayes?},
-    description={Für $A,B\subseteq\Omega$ mit $P(B)>0$: $P(A\mid B) = P(B\mid A)\cdot\dfrac{P(A)}{P(B)}$.},
+    description={$P(A\mid B) = P(B\mid A)\cdot\dfrac{P(A)}{P(B)}$},
     type=dinge
 }
 
@@ -133,7 +133,7 @@
 
 \newglossaryentry{satz_bayes_allgemeine_version}{
     name={Wie lautet die allgemeine Version des Satzes von Bayes?},
-    description={Ist $B_1,B_2,\dots$ eine Partition von $\Omega$ und $P(A)>0$, so gilt für jedes $i$: $P(B_i\mid A) = \dfrac{P(A\mid B_i)\,P(B_i)}{\sum_j P(A\mid B_j)\,P(B_j)}$.},
+    description={$P(B_i\mid A) = \dfrac{P(A\mid B_i)\,P(B_i)}{\sum_j P(A\mid B_j)\,P(B_j)}$.},
     type=dinge
 }
 
