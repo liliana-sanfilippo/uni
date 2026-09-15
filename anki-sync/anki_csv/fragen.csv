@@ -1,0 +1,245 @@
+Protein-Sorting: Importsignal Kern,"NLS = Nuclear Localization Signal. Lage intern (nicht N-terminal!), Länge 7-9 Aminosäuren, basisch oder bipartit. Wird nicht abgespalten"
+Protein-Sorting: Beispiel einer NLS,"SV40 T-Antigen: PKKKRKV (auf der Folie als PKKKRKVEDP). Weitere Beispiele: Adenovirus E1a (Lys-Arg-Pro-Arg-Pro), Hefe-TF SWI5 (bipartit)"
+Protein-Sorting: Signal für den ER-Import,N-terminales Signalpeptid mit polarer Region und hydrophobem Kern. Ko-translationaler Import; wird von der Signal-Peptidase im ER-Lumen abgespalten. Notwendig und hinreichend (gezeigt durch Fusion an heterologe Proteine)
+Protein-Sorting: Signal für ER-Retention (lösliche Proteine),KDEL am C-Terminus - in Pflanzen HDEL
+Protein-Sorting: Signal für ER-Retention (Membranproteine),"KKXX am C-Terminus. Achtung: steht nicht auf den Folien von Stunde 08, dort wird nur KDEL/HDEL genannt"
+Protein-Sorting: Importsignal Mitochondrium,"N-terminales Transitpeptid, amphipathische Helix, positiv geladen, 12-30 Aminosäuren. Post-translationaler Import über TOM/TIM; Signal wird abgespalten. Keine Konservierung der Primärsequenz"
+Protein-Sorting: Importsignal Plastid,"N-terminales Transitpeptid, geladen, mehr als 25 Aminosäuren. Post-translationaler Import über TOC/TIC; Signal wird abgespalten"
+Protein-Sorting: Importsignal Peroxisom,"PTS1 = C-terminal -SKL, nur 3 Aminosäuren. Import über einen Carrier, nicht über ein Translocon"
+Protein-Sorting: Signal für Lysosom,Mannose-6-Phosphat-Markierung; die Sortierung erfolgt am trans-Golgi über M6P-Rezeptoren
+Protein-Sorting: Signal für die Plasmamembran,''Residence signal'' - ohne dieses Signal wird das Protein sezerniert (Default)
+Protein-Sorting: Lage der vier cytosolischen Sortierungssignale,"Mitochondrium N-terminal, Chloroplast N-terminal, Zellkern intern, Peroxisom C-terminal. Die NLS ist die Ausnahme - das ist die typische Zuordnungsfalle"
+Was ist der ''default pathway'' beim Protein-Sorting?,"Ko-translationale Insertion ins ER, dann Passage ER \(\rightarrow\) Golgi \(\rightarrow\) Plasmamembran \(\rightarrow\) Sekretion. Jede andere Lokalisation braucht ein zusätzliches Signal"
+Welche Proteine werden an freien Ribosomen synthetisiert?,"Cytosolische Proteine sowie alle Proteine für Organellen und Zellkern, die post-translational importiert werden"
+Welche Proteine werden an membrangebundenen Ribosomen synthetisiert?,"Proteine des Endomembransystems (ER, Golgi, Endosomen, Plasmamembran) und sekretierte Proteine"
+"Drei Arten, wie Proteine Membranen überqueren","Translocons (ER, Mitochondrien, Plastiden), Carrier (Peroxisomen), komplexes System aus Poren und Rezeptoren (Zellkern)"
+Ko-translationale vs. post-translationale Translokation,"Ko-translational: nur ins ER. Post-translational: Mitochondrien, Plastiden, Zellkern"
+Kerntransport vs. Organellenimport: Signal,"Kerntransport: Signal bleibt permanent erhalten. Organellenimport: Signal wird abgespalten (Transitpeptid, Präprotein)"
+Kerntransport vs. Organellenimport: Faltungszustand,Kerntransport: Entfaltung nicht nötig. Organellenimport: nur entfaltete Proteine werden transloziert
+Kerntransport vs. Organellenimport: Grösse der Fracht,Kerntransport: auch sehr grosse Komplexe (z.B. Ribosomen-Untereinheiten). Organellenimport: einzelne Polypeptide
+Kerntransport vs. Organellenimport: Chaperone,"Kerntransport: möglich (ATP-abhängiges Remodeling), aber für die Translokation nicht notwendig. Organellenimport: essentiell"
+Wozu dienen die Kernporenkomplexe (NPCs)?,Jeglicher Austausch von Makromolekülen zwischen Cytosol und Zellkern läuft ausschliesslich über sie
+NPC: drei Eckdaten,"Achtfache Rotationssymmetrie, ca. 2000-4000 NPCs pro Kern, Molekulargewicht etwa 60-120 Millionen Dalton"
+NPC: Aufbau der beiden Seiten,"Kernseite mit korbähnlicher Struktur (''basket''), cytoplasmatische Seite mit Filamenten"
+NPC: Was bildet die Diffusionsbarriere?,"Etwa ein Drittel der Nukleoporine trägt FG-Repeats (FG, GLFG, FXFG); diese bilden ein hydrophobes Hydrogel"
+Kerntransport: welche Rezeptorfamilie?,"Importin-beta-Familie (Hefe 14, Arabidopsis 17, Säuger über 20 Mitglieder). Sie interagieren mit Ran-GTP und mit Nukleoporinen und erkennen ihre Cargos spezifisch"
+Kernimport: Signal und Rezeptoren,"Basische NLS wird von Importin \(\alpha\) gebunden, das über seine IBB-Domäne an Importin \(\beta\) koppelt. Im Kern löst Ran-GTP den Komplex auf und setzt das Cargo frei"
+Kernexport: Signal und Rezeptor,"Leucin-reiche NES (nuclear export signal), z.B. Rev-NES. Rezeptor: Exportin 1 (XPO1); es bindet Cargo plus Ran-GTP im Kern"
+Was ist Ran?,"Ras-related nuclear protein: ein kleines, lösliches G-Protein (GTPase), das GDP oder GTP bindet. Anders als die meisten G-Proteine hat es keinen Membrananker"
+Wie entsteht der Ran-GTP-Gradient?,"Asymmetrische Verteilung der Regulatoren: RanGEF (= RCC1) sitzt im Kern und lädt Ran mit GTP, RanGAP sitzt im Cytoplasma und hydrolysiert es. Folge: RanGTP hoch im Kern, sehr niedrig im Cytoplasma"
+Wofür ist der Ran-GTP-Gradient da?,"Er ist der molekulare Schalter, der die Direktionalität des Kerntransports festlegt: Ran-GTP bindet an die Rezeptoren im Kern und bewirkt, dass Import-Cargo dort abgegeben und Export-Cargo dort aufgenommen wird"
+G-Proteine: die beiden Zustände und ihre Regulatoren,"GDP-gebunden = inaktiv, GTP-gebunden = aktiv. GEF (guanine nucleotide exchange factor) aktiviert, GAP (GTPase-activating protein) inaktiviert. Die endogene GTPase-Aktivität ist meist sehr gering"
+Auf welchen Ebenen kann die nukleo-cytoplasmatische Partitionierung reguliert werden?,"Modifikation, Konformation, Interaktion mit Partnern, Retention im Cytoplasma oder im Kern (dazu Degradierung)"
+Ko-translationale Translokation ins ER: die fünf Komponenten,"(1) Signalpeptid am N-Terminus, (2) SRP, (3) SRP-Rezeptor in der ER-Membran, (4) Translocon (Sec61-Trimer), (5) Signal-Peptidase im ER-Lumen (Komplex aus 5 Proteinen)"
+Ko-translationale Translokation ins ER: Ablauf,"Synthese beginnt an einem freien Ribosom \(\rightarrow\) SRP erkennt das Signalpeptid und stoppt die Translation \(\rightarrow\) Bindung an den SRP-Rezeptor der ER-Membran \(\rightarrow\) Übergabe an das Translocon, SRP und Rezeptor werden frei \(\rightarrow\) Kette wird ins Lumen verlängert \(\rightarrow\) Signalpeptid abgespalten \(\rightarrow\) Faltung im ER"
+Woraus besteht das SRP?,Signal recognition particle (11S): eine 7S-RNA plus 6 Proteine
+SRP: Funktion der Untereinheiten,SRP54 erkennt das Signalpeptid. SRP68-SRP72 bindet die zentrale Region der 7S-RNA und interagiert mit dem SRP-Rezeptor. SRP9-SRP14 bewirkt den Elongationsstopp
+SRP-Rezeptor: Aufbau,"Zwei Untereinheiten: SR\(\alpha\) (72 kD) reicht weit ins Cytosol und kontaktiert das SRP, SR\(\beta\) (30 kD) ist ein integrales Membranprotein und hält SR\(\alpha\) an der Membran"
+Wozu dient der Translokationsmechanismus am ER?,"Er garantiert, dass die entfaltete Konformation erhalten bleibt, keine Fehlfaltung oder Aggregation auftritt und die korrekte Faltung und Modifikation erst im ER/Golgi erfolgt"
+Wie wird ein Protein in der Membran verankert?,"Durch ein hydrophobes Transfer-Stoppsignal, das die Translokation abbricht und das Segment in der Lipidschicht belässt"
+Wie entstehen Proteine mit mehreren Transmembrandomänen?,"Durch abwechselnde Kombination von Transfer-Start- und Transfer-Stoppsignalen. Welche Rolle eine Sequenz spielt, hängt von ihrer Position in der Polypeptidkette ab"
+Was bestimmt die Orientierung eines Transmembranproteins?,"Ob die ER-Signalsequenz N-terminal oder intern liegt: bei N-terminaler Sequenz liegt der N-Terminus luminal, bei interner Sequenz kann N- oder C-Terminus luminal sein (Gruppe I / Gruppe II)"
+Wie werden periphere Membranproteine verankert?,Durch N- oder C-terminale kovalente Modifikationen wie Isoprenylierung oder Palmitoylierung
+TOM und TIM ausschreiben,Translocator of the outer bzw. inner (mitochondrial) membrane
+Was entspricht TOM/TIM in Chloroplasten?,TOC und TIC (translocator of the outer bzw. inner chloroplast membrane)
+Was sind hierarchische Signale?,"Ein Transitpeptid kann aus mehreren aufeinanderfolgenden Signalen bestehen. Das erste bringt das Protein ins Organell, ein zweites bestimmt die genaue Topologie - nötig, weil oft zwei Membranen überquert werden müssen"
+Beispiel für ein zweites Signal im Chloroplasten,"Das erste Signal führt ins Stroma, ein zweites dirigiert das Protein weiter über die Thylakoidmembran ins Thylakoidlumen"
+"Wie zeigt man, dass ein Signal notwendig und hinreichend ist?","Durch Fusion an ein heterologes Protein (''domain swap experiment''): trägt das fremde Protein das Signal, wird auch es an den entsprechenden Ort transportiert"
+Drei Funktionen des Endomembransystems,"Transport, korrekte Faltung (Chaperone) und Modifikationen, die ihrerseits die Faltung beeinflussen können"
+Wie werden Proteine zwischen den Organellen transportiert?,"In Vesikeln, über eine Serie von vesicle-budding- und vesicle-fusion-Ereignissen. Lösliche Proteine liegen im Lumen, Membranproteine in der Vesikelmembran"
+Golgi-Apparat: Polarität,Von der ER-Seite zur Plasmamembran: cis \(\rightarrow\) medial \(\rightarrow\) trans \(\rightarrow\) TGN (trans-Golgi-Netzwerk). Die Polarität zeigt sich in Struktur und in der Lokalisation bestimmter Enzyme
+COP-I und COP-II Vesikel,COP-II: anterograd vom ER zum cis-Golgi. COP-I: retrograd zurück Richtung ER bzw. zwischen den Zisternen
+N-Glykosylierung: an welcher Aminosäure und welches Signal?,"An Asparagin (Asn); Erkennungssequenz Asn-X-Thr/Ser. (O-Glykosylierung dagegen an Ser, Thr u.a.)"
+N-Glykosylierung: wie wird der Zucker übertragen?,Die Grundstruktur wird an Dolichol (Lipidanker in der ER-Membran) aufgebaut und dann vom Glykosyl-Transferase-System auf das Asn übertragen
+Trimmen der Zuckerreste im ER,"Glucosereste werden entfernt (ER-Glucosidasen I und II), Mannosereste teilweise abgebaut \(\rightarrow\) ''high mannose type'' Glykoproteine"
+Trimmen der Zuckerreste im Golgi,"Mannose entfernen, Glc-NAc anfügen, weiter Mannose entfernen, dann Glc-NAc, Galaktose und N-Acetyl-Neuraminsäure an den ''inner core'' anhängen \(\rightarrow\) komplexe Oligosaccharide"
+Wozu dient Endo H als Kriterium?,"Der ''inner core'' der im Golgi prozessierten Glykane ist resistent gegen Verdau durch Endo H. Endo-H-Resistenz ist damit ein operationales Kriterium dafür, dass ein Glykoprotein den Golgi passiert hat"
+Eukaryot vs. Prokaryot: Introns,"Eukaryoten häufig Introns, Prokaryoten selten bis keine"
+Eukaryot vs. Prokaryot: mRNA-Aufbau,"Eukaryotische mRNA monocistronisch (ein Gen pro mRNA), prokaryotische oft polycistronisch (Operon)"
+Eukaryot vs. Prokaryot: RNA-Polymerasen,"Eukaryoten drei (Pol I = rRNA, Pol II = mRNA, Pol III = tRNA/5S), Prokaryoten nur eine"
+Eukaryot vs. Prokaryot: Operons,Nur bei Prokaryoten
+Eukaryot vs. Prokaryot: räumliche Trennung von Transkription und Translation,"Eukaryoten: Transkription im Kern, Translation im Cytoplasma \(\rightarrow\) räumlich und zeitlich getrennt. Prokaryoten: beides im Cytoplasma, gekoppelt"
+Eukaryot vs. Prokaryot: mRNA-Prozessierung,"Cap, Spleissen und Poly(A)-Schwanz nur bei Eukaryoten"
+Eukaryot vs. Prokaryot: Chromatin,Histone und Nukleosomen nur bei Eukaryoten
+Kleine regulatorische RNA: miRNA - Name und Funktion,microRNA. Bindet an komplementäre mRNA \(\rightarrow\) Translationshemmung oder mRNA-Abbau; reguliert endogene Gene
+Kleine regulatorische RNA: Quelle der miRNA,"Endogen: eigene MIR-Gene, deren Transkript eine Haarnadel-Struktur (pri-/pre-miRNA) bildet und von Dicer/DCL1 prozessiert wird"
+Kleine regulatorische RNA: siRNA - Name und Funktion,Small interfering RNA. RNA-Interferenz: sequenzspezifischer Abbau der Ziel-mRNA; Abwehr von Viren und Transposons
+Kleine regulatorische RNA: Quelle der siRNA,"Aus langer doppelsträngiger RNA (exogen oder endogen): Virus-RNA, Transposons, Transgene; von Dicer in ca. 21-24 nt Stücke geschnitten"
+Kleine regulatorische RNA: piRNA - Name und Funktion,"Piwi-interacting RNA. Stilllegung von Transposons, vor allem in Keimzellen"
+Kleine regulatorische RNA: Quelle der piRNA,"Einzelsträngige Transkripte aus piRNA-Clustern im Genom (Transposon-Fragmente), Dicer-unabhängig prozessiert"
+Abbildung einer reifen mRNA beschriften (Reihenfolge),"5' \(\rightarrow\) 3': Cap, 5'-UTR, Startcodon AUG, CDS/ORF, Stopcodon, 3'-UTR, Poly(A)-Schwanz. Keine Introns mehr"
+mRNA: Was sitzt am 5'-Ende?,"7-Methylguanosin-Cap, über eine 5'-5'-Triphosphatbindung angehängt"
+mRNA: Die drei Stopcodons,"UAA, UAG, UGA"
+Abbildung eines eukaryotischen Gens beschriften (Reihenfolge),"5' \(\rightarrow\) 3': Promotor (TATA-Box), Transkriptionsstart +1, 5'-UTR, Startcodon ATG, Exons/Introns im Wechsel, Stopcodon, 3'-UTR, Polyadenylierungssignal, Terminator. Zusätzlich Enhancer möglich"
+Gen: Konsensus der Spleiss-Stellen,Intron beginnt mit GT und endet mit AG (GT..AG-Regel; auf RNA-Ebene GU..AG)
+Gen: Polyadenylierungssignal,AATAAA im 3'-Bereich
+Nukleares Spleissen: Was passiert?,"Introns werden aus der pre-mRNA entfernt, die Exons miteinander ligiert"
+Nukleares Spleissen: Aufbau des Spleissosoms,"snRNPs U1, U2, U4, U5, U6 - jeweils aus snRNA plus Proteinen"
+Nukleares Spleissen: Erkennungsstellen im Intron,"5'-Spleissstelle (GU), Verzweigungspunkt mit Branch-Point-Adenosin, 3'-Spleissstelle (AG)"
+Nukleares Spleissen: Was wird freigesetzt und abgebaut?,Das Intron als Lariat (Lasso-Struktur) - in der Klausur 2026 explizit zu benennen
+Die vier Prozessierungsschritte von der Transkription bis zur Translation,"(1) 5'-Capping, (2) Spleissen, (3) 3'-Polyadenylierung, (4) Kernexport"
+Die fünf RNA-Zwischenstufen zwischen Transkription und Translation,pre-mRNA (hnRNA) \(\rightarrow\) gecappte RNA \(\rightarrow\) gespleisste RNA \(\rightarrow\) polyadenylierte RNA \(\rightarrow\) reife mRNA im Cytoplasma
+Prozessierung: Capping,"Anhängen des 7-Methylguanosins am 5'-Ende. Schutz vor Exonukleasen, Export- und Translationssignal"
+Prozessierung: Polyadenylierung,Schnitt hinter dem Signal AATAAA und Anhängen des Poly(A)-Schwanzes am 3'-Ende. Erhöht Stabilität und Exportfähigkeit
+Replikation: Funktion der Helikase,Öffnet den DNA-Doppelstrang an der Replikationsgabel
+Replikation: Funktion der Einzelstrang-Bindeproteine (SSB),Stabilisieren die geöffneten Einzelstränge und verhindern die Rückpaarung
+Replikation: Funktion der Topoisomerase,Löst die Torsionsspannung (Supercoils) vor der Replikationsgabel
+Replikation: Funktion der Primase,"Setzt kurze RNA-Primer, da die DNA-Polymerase ein freies 3'-OH-Ende braucht"
+Replikation: Funktion der DNA-Ligase,Verknüpft die Okazaki-Fragmente am Folgestrang zu einem durchgehenden Strang
+Replikation: Leitstrang,"Leading strand - wird kontinuierlich in 5'\(\rightarrow\)3'-Richtung synthetisiert, in Richtung der Gabelbewegung"
+Replikation: Folgestrang,"Lagging strand - wird diskontinuierlich in Okazaki-Fragmenten synthetisiert, entgegen der Gabelbewegung"
+Replikation: Syntheserichtung,Synthese immer 5'\(\rightarrow\)3'; die Matrize wird dabei 3'\(\rightarrow\)5' gelesen
+Epigenetik: Wo am Histon finden die Modifikationen statt?,"An den N-terminalen Histonschwänzen, die aus dem Nukleosom herausragen"
+"Epigenetik: Acetylierung - welche Aminosäure, welche Wirkung?","An Lysin, durch HATs. Neutralisiert die positive Ladung \(\rightarrow\) offenes, aktives Chromatin"
+"Epigenetik: Histon-Methylierung - welche Aminosäure, welche Wirkung?","An Lysin und Arginin. Wirkung kontextabhängig: H3K4me3 aktivierend, H3K9me3 und H3K27me3 reprimierend"
+Epigenetik: Phosphorylierung - welche Aminosäure?,An Serin und Threonin
+Epigenetik: Ubiquitinylierung - welche Aminosäure?,An Lysin
+Epigenetik: DNA-Methylierung - wo und welche Wirkung?,"Am Cytosin (bei Tieren v.a. CpG, bei Pflanzen auch CHG/CHH). Meist reprimierend"
+Transposons: Was kennzeichnet ein autonomes Element?,Kodiert eine eigene funktionsfähige Transposase \(\rightarrow\) kann sich selbstständig bewegen
+Transposons: Was kennzeichnet ein nicht-autonomes Element?,"Keine funktionsfähige Transposase (Gen fehlt oder mutiert) \(\rightarrow\) wird nur in trans mobilisiert, wenn ein autonomes Element im Genom vorhanden ist"
+Transposons: Was haben autonome und nicht-autonome Elemente gemeinsam?,Beide besitzen terminale invertierte Repeats (TIRs) und können springen
+"Transposons: Was ist zwingend nötig, damit ein Element reaktivierbar bleibt?",Intakte terminale Sequenzen (TIRs) als cis-Elemente - sie werden von der Transposase erkannt
+Transposons: klassisches Beispiel für autonom/nicht-autonom,"Ac/Ds-System bei Mais (McClintock): Ac autonom, Ds nicht-autonom"
+MAMP: ausschreiben und Funktion,"Microbe-Associated Molecular Pattern - konservierte, für Mikroben typische Moleküle, die von der Pflanze als ''fremd'' erkannt werden"
+MAMP: drei Beispiele,"Flagellin (Peptid flg22), Chitin, Lipopolysaccharide; auch EF-Tu"
+PRR: ausschreiben und Funktion,"Pattern Recognition Receptor - meist membranständige Rezeptorkinase an der Zelloberfläche, erkennt MAMPs und löst die PTI aus"
+Immunität: Beispiel für einen PRR,"FLS2 - Rezeptorkinase, die das Flagellin-Peptid flg22 bindet"
+Immunität: Was ist PTI?,PAMP/MAMP-triggered immunity - erste Ebene: Erkennung konservierter mikrobieller Muster durch PRRs
+Immunität: Was ist ETI?,"Effector-triggered immunity - zweite Ebene: Erkennung pathogener Effektoren durch intrazelluläre R-Proteine, oft mit hypersensitiver Reaktion"
+Lückentext Wurzelhalsgalle,"A. tumefaciens infiziert eine verwundete Pflanze. Vom (Ti-)Plasmid wird die T-DNA in das Pflanzengenom insertiert. Die transformierten Zellen produzieren Opine als Nährstoffe für das Bakterium. Lückenwörter 2015/2018: infiziert, Opine, T-DNA, Nährstoffe, (Ti-)Plasmid, insertiert"
+T-DNA: erste Gruppe von Genprodukten,"Enzyme der Auxin- und Cytokinin-Biosynthese \(\rightarrow\) unkontrollierte Zellteilung, Tumor/Wurzelhalsgalle"
+T-DNA: zweite Gruppe von Genprodukten,Enzyme der Opin-Synthese \(\rightarrow\) die Pflanzenzelle produziert Opine
+Was sind Opine chemisch?,"Aminosäure- bzw. Zuckerderivate, die die transformierte Pflanzenzelle nach Anweisung der T-DNA bildet"
+Wozu dienen Opine dem Agrobacterium?,Als spezifische Kohlenstoff- und Stickstoffquelle. Nur das Bakterium besitzt die (auf dem Ti-Plasmid kodierten) Abbauenzyme \(\rightarrow\) selektiver Wachstumsvorteil in seiner Nische
+T-DNA-Genotypisierung: Welche Primer braucht man?,"Drei-Primer-Schema: zwei genspezifische Primer LP und RP, die die Insertionsstelle flankieren, plus ein Border-Primer BP in der T-DNA"
+T-DNA-Genotypisierung: Welche Kombination zeigt das Wildtyp-Allel?,"LP + RP. Das Insertionsallel wird nicht amplifiziert, weil die T-DNA zu gross ist"
+T-DNA-Genotypisierung: Welche Kombination zeigt das Insertions-Allel?,"BP + RP. Ein Produkt entsteht nur, wenn die T-DNA vorhanden ist"
+T-DNA-Genotypisierung: Bandenmuster der drei Genotypen,Wildtyp = nur WT-Bande. Homozygot insertiert = nur Insertionsbande. Heterozygot = beide Banden. H2O-Kontrolle = keine Bande
+Insertion am Gel nachweisen: Strategie 1,"Beide Primer flankierend ausserhalb der Insertion \(\rightarrow\) Produkt mit Insertion ist länger, ohne Insertion kürzer \(\rightarrow\) Grössenunterschied"
+Insertion am Gel nachweisen: Strategie 2,"Ein Primer bindet innerhalb der Insertion, der andere flankierend \(\rightarrow\) Bande nur bei vorhandener Insertion (An-/Abwesenheitsnachweis)"
+Deletionen mit Primerkombinationen eingrenzen,"Primer beiderseits des vermuteten Bereichs: fehlt er, wird das Produkt kürzer oder fällt ganz aus (wenn ein Primer in der Deletion liegt). Verschiedene Kombinationen entlang der Region grenzen die Deletionsgrenzen ein"
+Was ist ein Reportergen?,"Ein Gen, dessen Produkt einfach und empfindlich nachweisbar ist und das man mit einer regulatorischen Sequenz (Promotor/Enhancer) fusioniert, um deren Aktivität sichtbar zu machen"
+Reportergen - Kriterium 1,Kein endogenes Gegenstück im Wirtsorganismus \(\rightarrow\) keine Hintergrundaktivität
+Reportergen - Kriterium 2,"Einfacher, empfindlicher und möglichst quantifizierbarer Nachweis"
+Reportergen - Kriterium 3,"Nicht toxisch, kein Einfluss auf den Phänotyp der Zelle"
+Skizziere ein Reportergenkonstrukt,Zu untersuchender Promotor - Reporter-CDS (z.B. uidA) - Terminator/Poly-A-Signal. Bei translationaler Fusion zusätzlich die Ziel-CDS im Leseraster davor
+GUS: Welches Reportergen und welches Genprodukt?,uidA aus E. coli; kodiert die beta-Glucuronidase (GUS)
+GUS: Substrat und Farbreaktion,X-Gluc (5-Bromo-4-chloro-3-indolyl-beta-D-glucuronsäure) wird gespalten; das Produkt fällt als blaues Indigo-Präzipitat genau am Ort der Enzymaktivität aus
+GUS: Warum ist uidA ein gutes Reportergen in Pflanzen?,"Pflanzen haben keine eigene GUS-Aktivität \(\rightarrow\) kein Hintergrund; das Präzipitat ist stabil, fixierbar und in situ lokalisierbar"
+GUS: alternative Reportergene,"GFP (Fluoreszenz), Luciferase (Lumineszenz), lacZ mit X-Gal (Blaufärbung in Bakterien)"
+GUS-Färbung: Ablauf in fünf Schritten,"(1) Fixierung in Formaldehyd-Lösung, (2) Waschen in NaPi-Puffer, (3) Färbung mit X-Gluc, Vakuuminfiltration, über Nacht bei 37 Grad C, (4) Entfärben mit Ethanol (Chlorophyll auswaschen), (5) Mikroskopie"
+GUS-Färbung: Warum wird fixiert?,"Erhält die Gewebestruktur, ohne das GUS-Enzym zu inaktivieren - deshalb nur kurz und mild fixieren"
+GUS: Fixierlösung berechnen,\(V_1 = \frac{\text{Ziel-Prozent} \cdot V_{end}}{\text{Stamm-Prozent}}\) jeweils für Aceton und Formaldehyd; Färbelösung über \(c_1 V_1 = c_2 V_2\)
+GUS-Färbung: Muster bei proCaMV35S,"Nahezu überall im Keimling gefärbt (quasi-konstitutiver Promotor, Positivkontrolle)"
+GUS-Färbung: Muster bei proMYB12,Vor allem in der Wurzel
+GUS-Färbung: Muster bei proMYB111,Vor allem in den Keimblättern (Kotyledonen)
+GUS-Färbung: Muster bei Wildtyp Col-0,Keine Färbung - kein uidA im Genom (Negativkontrolle)
+Was ist eine transkriptionelle Fusion und was misst sie?,Promotor direkt vor dem eigenständigen Reporter (mit eigenem Start/Stop). Misst nur die Promotoraktivität: wo und wann transkribiert wird
+Was ist eine translationale Fusion und was misst sie?,"Reporter im Leseraster mit der Ziel-CDS. Misst zusätzlich, ob und wo das Protein gebildet wird, inklusive subzellulärer Lokalisation (UTRs und Signalsequenzen enthalten)"
+Welche GUS-Konstrukte wurden im Praktikum verwendet?,"proMYB12-uidA und proMYB111-uidA (transkriptionelle Fusionen), proCaMV35S-uidA als Positivkontrolle"
+Was ist X-Gal und was weist es nach?,"5-Bromo-4-chloro-3-indolyl-beta-D-galactopyranosid, Substrat der beta-Galactosidase (lacZ). Bei Spaltung entsteht ein blaues Indigo-Präzipitat"
+X-Gal: Blau-Weiss-Screening,Blaue Kolonien = intaktes lacZ (kein Insert); weisse Kolonien = lacZ durch das Insert unterbrochen
+X-Gal vs. X-Gluc,"Analoge Reaktion: X-Gal wird von der beta-Galactosidase (lacZ) gespalten, X-Gluc von der beta-Glucuronidase (uidA). Beide ergeben blaues Indigo"
+Nukleinsäure-Reinheit: Verhältnis A260/A280,"DNA ca. 1,8; RNA ca. 2,0. Deutlich niedriger \(\rightarrow\) Protein- oder Phenolkontamination"
+Nukleinsäure-Reinheit: Verhältnis A260/A230,"Soll 2,0-2,2 betragen. Niedriger \(\rightarrow\) Salze, Kohlenhydrate oder organische Reste (z.B. Guanidin, EDTA)"
+Nukleinsäure-Konzentration aus A260 berechnen,"\(c [\mu g/ml] = A260 \cdot X [\mu g/ml] \cdot \text{Verdünnungsfaktor}\); X = 50 für dsDNA, 40 für RNA, 33 für ssDNA/Oligos"
+Nützliche Umrechnung bei Oligos,"\(1\,\mu M = 1\,\mu mol/l = 1\,pmol/\mu l\)"
+Welche RNA-Art liegt mengenmässig am meisten vor?,"rRNA mit ca. 80-90 Prozent, danach tRNA. mRNA nur ca. 1-4 (max. 10) Prozent - deshalb sieht man im Bleach-Gel vor allem die 28S- und 18S-rRNA-Banden"
+Genexpressionsanalyse: Northern Blot - Prinzip und Ablauf,"RNA gelelektrophoretisch trennen \(\rightarrow\) auf Membran blotten \(\rightarrow\) mit markierter Sonde hybridisieren \(\rightarrow\) Detektion. Direkte Messung, braucht aber viel RNA"
+Genexpressionsanalyse: RT-PCR - Prinzip und Ablauf,"Reverse Transkriptase-PCR: RNA \(\rightarrow\) DNase-Verdau \(\rightarrow\) cDNA \(\rightarrow\) PCR mit genspezifischen Primern \(\rightarrow\) Gel. Wenig RNA nötig, aber nur semiquantitativ"
+Genexpressionsanalyse: qRT-PCR - Prinzip und Ablauf,"Quantitative Real-Time-PCR: wie RT-PCR, aber Fluoreszenzmessung nach jedem Zyklus. Quantifizierung über den Ct-Wert"
+Genexpressionsanalyse: RNA-Seq - Prinzip und Ablauf,RNA \(\rightarrow\) cDNA-Bibliothek \(\rightarrow\) Hochdurchsatz-Sequenzierung \(\rightarrow\) Mapping auf das Genom und Zählen der Reads. Genomweit und quantitativ
+Genexpressionsanalyse: Reportergen - Prinzip und Ablauf,Promotor-uidA-Konstrukt \(\rightarrow\) X-Gluc-Färbung \(\rightarrow\) zeigt Ort und Zeitpunkt der Promotoraktivität im Gewebe
+Genexpressionsanalyse: in-situ-Hybridisierung - Prinzip,Markierte Sonde hybridisiert direkt im fixierten Gewebeschnitt an das Transkript \(\rightarrow\) zeigt die Lokalisation der mRNA im Gewebe
+RT-PCR: Schritte des Protokolls,"(1) RNA-Extraktion (kühl, RNasen sofort denaturieren), (2) Konzentrationsbestimmung OD260, (3) DNase-Verdau, (4) reverse Transkription zu cDNA, (5) PCR mit genspezifischen Primern, (6) Gelanalyse"
+RT-PCR: Warum ein DNase-Verdau?,"Entfernt kontaminierende genomische DNA, die sonst in der PCR mitamplifiziert würde und ein falsch-positives Signal ergäbe"
+RT-PCR: Wozu die Aktin2-Kontrolle?,"Housekeeping-Gen; belegt, dass cDNA-Synthese und PCR funktioniert haben und dient als Bezug für die Menge eingesetzter cDNA"
+RT-Primer: Oligo-dT - Wirkung auf die cDNA,"Bindet am Poly(A)-Schwanz \(\rightarrow\) nur mRNA wird umgeschrieben, cDNA entsteht vom 3'-Ende her. Im Praktikum: d(T)23VN"
+RT-Primer: Random-Hexamere - Wirkung auf die cDNA,Binden zufällig \(\rightarrow\) gesamte RNA inklusive rRNA/tRNA wird umgeschrieben; viele kurze cDNAs über alle Transkripte verteilt
+RT-Primer: genspezifisch - Wirkung auf die cDNA,"Bindet nur am Zieltranskript \(\rightarrow\) nur dessen cDNA entsteht. Höchste Spezifität, aber keine anderen Transkripte verfügbar"
+Versuch zur gewebespezifischen Expression: von der Ernte bis zum Gelfoto,"Gewebe ernten und sofort in flüssigem Stickstoff einfrieren \(\rightarrow\) mörsern \(\rightarrow\) RNA-Extraktion \(\rightarrow\) OD260-Messung und Qualitätskontrolle im Bleach-Gel \(\rightarrow\) DNase-Verdau \(\rightarrow\) reverse Transkription mit oligo-dT \(\rightarrow\) PCR mit genspezifischen Primern plus Aktin2-Kontrolle \(\rightarrow\) Agarosegel \(\rightarrow\) Foto unter UV, Bandenstärke pro Gewebe vergleichen"
+"Marker CAPS: Name, Polymorphismus, Nachweis","Cleaved Amplified Polymorphic Sequence. Polymorphismus: SNP, der eine Restriktionsschnittstelle schafft oder zerstört. Nachweis: PCR eines definierten Fragments \(\rightarrow\) Restriktionsverdau \(\rightarrow\) Agarosegel"
+"Marker RFLP: Name, Polymorphismus, Nachweis",Restriktions-Fragment-Längen-Polymorphismus. Polymorphismus: Punktmutation oder Indel in einer Schnittstelle. Nachweis: genomische DNA verdauen \(\rightarrow\) Agarosegel \(\rightarrow\) Southern Blot mit Sonde
+"Marker SSR: Name, Polymorphismus, Nachweis",Simple Sequence Repeats / Mikrosatelliten. Polymorphismus: unterschiedliche Anzahl an Repeat-Einheiten (Längenpolymorphismus). Nachweis: PCR mit Primern aus den flankierenden Einzelkopie-Regionen \(\rightarrow\) Gel
+"Marker SNP: Name, Polymorphismus, Nachweis",Single Nucleotide Polymorphism. Polymorphismus: einzelner Basenaustausch. Nachweis: Sequenzierung oder SNP-Array/Chip
+"Marker RAPD: Name, Polymorphismus, Nachweis",Random Amplified Polymorphic DNA. Polymorphismus: An-/Abwesenheit der Bindestellen für zufällige kurze Primer. Nachweis: PCR mit Zufallsprimern \(\rightarrow\) Agarosegel
+Welche Markertypen wurden im Praktikum verwendet?,InDel/DFLP-Marker (Längenpolymorphismus) und CAPS-Marker (Schnittstellenpolymorphismus) in der F2 aus Ler x Col
+Was ist eine genetische Karte?,Sie gibt die relative Anordnung und den Abstand von Genen bzw. Markern auf den Chromosomen an
+Kartentyp 1: Kopplungskarte,"Genetische Karte im engeren Sinn. Abstände in centiMorgan (cM), berechnet aus Rekombinationsfrequenzen; 1 cM = 1 Prozent Rekombination"
+Kartentyp 2: physikalische Karte,"Abstände in Basenpaaren, abgeleitet aus der tatsächlichen DNA-Sequenz"
+Wie leitet man eine Kopplungskarte her?,"In einer segregierenden Population (F2) für jedes Markerpaar die Rekombinationsfrequenz bestimmen. Je kleiner die RF, desto enger gekoppelt und näher beieinander liegen die Marker"
+Rekombinationsfrequenz: Formel,RF = rekombinante Chromosomen / alle betrachteten Chromosomen = Crossover / (Anzahl Pflanzen \(\cdot\) 2)
+Rekombinationsfrequenz: Crossover zählen in der F2,Wechsel heterozygot \(\leftrightarrow\) Ler oder heterozygot \(\leftrightarrow\) Col = 1 Crossover. Wechsel Ler \(\leftrightarrow\) Col direkt = 2 Crossover
+Rekombinationsfrequenz: Deutung der Werte,"RF nahe 0 \(\rightarrow\) enge Kopplung, Marker liegen nah beieinander. RF nahe 50 Prozent \(\rightarrow\) ungekoppelt, also verschiedene Chromosomen oder sehr weit entfernt"
+Rekombinationsfrequenz: Umrechnung in cM,1 Prozent Rekombination = 1 centiMorgan
+F2-Auswertung: welche Genotypen pro Locus?,"Homozygot Ler (L), homozygot Col (C) oder heterozygot (H)"
+F2-Auswertung mit drei Markern: Vorgehen,Genotyp jeder Pflanze an jedem Locus bestimmen \(\rightarrow\) Markerpaare vergleichen und Zustandswechsel als Crossover zählen \(\rightarrow\) RF je Paar berechnen \(\rightarrow\) daraus Reihenfolge und Abstände der Marker ableiten
+TLC: deutscher und englischer Name,Thin Layer Chromatography = Dünnschichtchromatographie
+TLC: Was ist die stationäre Phase?,"Dünne Schicht Kieselgel, Cellulose oder Aluminiumoxid auf einer Glas-, Alu- oder Kunststoffplatte; polar"
+TLC: Was ist die mobile Phase?,"Das Laufmittel, das durch Kapillarkräfte die Platte hinaufsteigt"
+TLC: Trennprinzip,"Die Substanzen verteilen sich je nach Polarität zwischen stationärer und mobiler Phase und wandern dadurch unterschiedlich weit: unpolare Stoffe laufen weiter, polare bleiben zurück"
+TLC: Was ist der Rf-Wert?,Laufstrecke der Substanz geteilt durch die Laufstrecke der Front. Substanzspezifisch bei gleichem System \(\rightarrow\) Identifikation im Vergleich zu Standards
+HPTLC: Name ausschreiben,High Performance Thin Layer Chromatography = hochauflösende Dünnschichtchromatographie
+Unterschied HPTLC und klassische TLC,"HPTLC nutzt feineres, gleichmässigeres Kieselgel und dünnere Schichten \(\rightarrow\) bessere Auflösung, schärfere Banden, höhere Empfindlichkeit, kürzere Laufzeiten, besser reproduzierbar und quantifizierbar"
+TLC: zwei Vorteile,Schnell und günstig ohne teure Geräte; viele Proben parallel auf einer Platte mit direkter visueller Auswertung
+TLC: zwei Nachteile,Geringere Auflösung und Empfindlichkeit als HPLC/GC; nur begrenzt quantitativ und stark von Laufmittel und manueller Ausführung abhängig
+TLC: Durchführung in sechs Schritten,"(1) Proben und Standards mit Kapillare knapp über der Unterkante auftragen, (2) Platte in die gesättigte Laufkammer stellen, (3) laufen lassen bis ca. 1 cm vor Plattenende, (4) Front markieren und trocknen, (5) mit DPBA färben, dann PEG4000 zur Verstärkung, (6) Auswertung und Foto unter UV"
+TLC: Wie werden Flavonoide sichtbar gemacht?,Färbung mit DPBA (Naturstoffreagenz A) plus PEG4000; Auswertung der Fluoreszenz unter UV-Licht
+HPTLC-Auswertung: Fluoreszenzfarben der Flavonole,"Kämpferol-Derivate grün bis gelb-grün, Quercetin-Derivate orange"
+HPTLC-Auswertung: Was bedeutet eine fehlende Bande?,Der Stoffwechselweg ist an der zugehörigen Enzymstufe blockiert; die Vorstufe akkumuliert. So lässt sich die Mutante im Weg verorten
+Flavonoid-Biosynthese: Reihenfolge der Enzyme,CHS \(\rightarrow\) CHI \(\rightarrow\) F3H \(\rightarrow\) (F3'H) \(\rightarrow\) FLS zu den Flavonolen; alternativ ab DFR zu Anthocyanen und Proanthocyanidinen
+Flavonoid-Biosynthese: Welches Enzym ist TT4?,"CHS - Chalkonsynthase, erster Schritt des Wegs"
+Flavonoid-Biosynthese: Welches Enzym ist TT5?,CHI - Chalkonisomerase
+Flavonoid-Biosynthese: Welches Enzym ist TT6?,F3H - Flavanon-3-Hydroxylase
+Flavonoid-Biosynthese: Welches Enzym ist TT7?,"F3'H - Flavonoid-3'-Hydroxylase; nötig für Quercetin (fehlt sie, nur Kämpferol)"
+Flavonoid-Biosynthese: Welches Enzym ist TT3?,"DFR - Dihydroflavonol-4-Reduktase, führt zu Anthocyanen/Proanthocyanidinen"
+Flavonoid-Biosynthese: die beiden Flavonole im Praktikum,"Kämpferol und Quercetin, gebildet über die FLS"
+Flavonoid-Biosynthese: Transkriptionsfaktoren der frühen Gene,"MYB11, MYB12 und MYB111 aktivieren CHS, CHI, F3H und FLS (Flavonol-Zweig)"
+Flavonoid-Biosynthese: Transkriptionsfaktoren der späten Gene,"Der MBW-Komplex aus TT2 (MYB), TT8 (bHLH) und TTG1 (WD40)"
+Funktionsvorhersage einer DNA-Sequenz: Vorgehen,"(1) ORF-Suche in allen sechs Leserastern, (2) Übersetzung in die Proteinsequenz, (3) Homologiesuche gegen annotierte Datenbanken, (4) Vorhersage weiterer Eigenschaften (Domänen, Signalpeptide)"
+Funktionsvorhersage: welche Software bzw. welcher Algorithmus?,BLASTX (übersetzt die Nukleotidsequenz in alle sechs Leseraster und sucht gegen Proteindatenbanken)
+Funktionsvorhersage: welche Datenbank?,GenBank (NCBI) oder UniProt/Swiss-Prot
+Kostenfunktion bei DNA-Alignments,"Score-Schema: Match positiv, Mismatch negativ, Gap stärker negativ als Mismatch. Kosten-Schema: Match 0, Mismatch 1, Gap 1 oder 2"
+Kostenfunktion bei Protein-Alignments - Unterschied zur DNA,"Bei DNA sind alle Mismatches gleich teuer. Bei Proteinen nicht: ähnliche Aminosäuren werden milder bestraft \(\rightarrow\) Substitutionsmatrix (z.B. BLOSUM, PAM)"
+Was ist ein globales Alignment?,"Needleman-Wunsch: richtet zwei Sequenzen über ihre gesamte Länge aus. Geeignet für ähnlich lange, nah verwandte Sequenzen"
+Was ist ein lokales Alignment?,"Smith-Waterman: findet die am besten passenden Teilbereiche. Geeignet, um konservierte Domänen in ansonsten unähnlichen oder unterschiedlich langen Sequenzen zu finden"
+Was ist ein multiples Alignment?,"Drei oder mehr Sequenzen zeilenweise so untereinander ausrichten, dass homologe Positionen in Spalten stehen; Lücken als Striche. Konservierte Spalten oft mit * markiert"
+Smith-Waterman: Prinzip und Nachteil,"Dynamische Programmierung \(\rightarrow\) garantiert optimales lokales Alignment, aber langsam (O(n\(\cdot\)m)) und damit für grosse Datenbanken unpraktikabel"
+BLAST: Worauf basiert der Algorithmus?,Heuristik: Suche zuerst kurze exakte bzw. ähnliche Wörter (Seeds/k-mere) und verlängere nur dort das Alignment. Die meisten Positionen werden übersprungen
+BLAST vs. Smith-Waterman: Vor- und Nachteil,"BLAST ist um Grössenordnungen schneller bei nur geringem Sensitivitätsverlust, findet aber nicht garantiert das optimale Alignment. Deshalb Standard für Datenbanksuchen"
+Was ist eine Assemblierung?,"Das Zusammensetzen vieler kurzer Sequenzier-Reads zu längeren zusammenhängenden Sequenzen, indem Überlappungen erkannt werden. Ziel: Rekonstruktion der ursprünglichen Genom- oder Transkriptsequenz"
+Assemblierung: Was ist ein Contig?,"Eine durchgehende Sequenz, die aus überlappenden Reads zusammengesetzt wurde"
+Assemblierung: Was ist ein Scaffold?,"Mehrere Contigs, die über Paarinformationen (Paired-End/Mate-Pair) in Reihenfolge und Orientierung gebracht wurden, mit Lücken (N) dazwischen"
+Assemblierung: de novo vs. referenzbasiert,"De novo: ohne Referenzsequenz, allein aus den Read-Überlappungen. Referenzbasiert: Reads werden auf ein bekanntes Referenzgenom gemappt"
+Was bedeutet der N50-Wert?,"Die Contig-/Scaffold-Länge, bei der 50 Prozent der Gesamtassemblierung in Contigs mit mindestens dieser Länge liegen - ein längengewichteter Median"
+N50: Ist ein hoher oder niedriger Wert besser?,Hoch ist besser: die Assemblierung ist zusammenhängender und weniger fragmentiert
+N50: Worauf muss man trotzdem achten?,N50 sagt nichts über Korrektheit oder Vollständigkeit. Immer zusammen mit Genomgrösse und BUSCO-Werten betrachten
+Bioinformatik: Warum sind Repeats bei der Assemblierung ein Problem?,"Reads, die kürzer sind als der Repeat, lassen sich nicht eindeutig einer Genomposition zuordnen"
+Bioinformatik: Folgen von Repeats in der Assemblierung,"Repeats kollabieren zu einer Kopie, Missassemblies, Lücken und Bruchstellen, mehrdeutiges Mapping"
+Bioinformatik: Lösungen für das Repeat-Problem,Long-Read-Sequenzierung (Reads länger als der Repeat) sowie Paired-End- und Mate-Pair-Informationen
+Gene finding: ab-initio- bzw. intrinsische Methoden,"Suche nach ORFs (Start-/Stopcodons), Codon-Usage-Bias, GC-Gehalt, Spleiss-Stellen GT..AG, Promotor- und Signalmotive; meist mit Hidden-Markov-Modellen"
+Gene finding: extrinsische bzw. evidenzbasierte Methoden,"Homologiesuche per BLAST gegen bekannte Proteine, Alignment von ESTs/cDNA/RNA-Seq, komparative Genomik zwischen Arten"
+Gene finding: Was liefert die besten Ergebnisse?,Die Kombination aus ab-initio-Vorhersage und experimenteller Evidenz
+Echte kodierende Region erkennen - Kriterium ORF-Länge,Lange offene Leseraster entstehen selten zufällig; kurze ORFs sind meist Artefakte
+Echte kodierende Region erkennen - Kriterium Codon-Usage,Kodierende Bereiche zeigen den artspezifischen Codon-Usage-Bias und einen typischen GC-Gehalt
+Echte kodierende Region erkennen - Kriterium Homologie,Ähnlichkeit zu bekannten Proteinen in der Datenbank (BLAST)
+Echte kodierende Region erkennen - Kriterium Transkriptnachweis,Der Bereich wird tatsächlich transkribiert: Alignment von RNA-Seq-Reads oder ESTs
+Echte kodierende Region erkennen - Kriterium Selektion,Evolutionäre Konservierung des Leserasters; Ka/Ks < 1 spricht für Selektion auf Proteinerhalt
+Formel: Verdünnung aus einer Stammlösung,"\(c_1 V_1 = c_2 V_2\), also \(V_1 = \frac{c_2 V_2}{c_1}\) - benötigtes Volumen der Stammlösung"
+Formel: Stoffmenge und Masse,"\(n = \frac{m}{M}\) bzw. \(m = n \cdot M\), mit m = Masse [g] und M = Molmasse [g/mol]"
+Formel: Molarität,\(c = \frac{n}{V}\) in mol/l
+Prozentlösung (w/v),g gelöster Stoff pro 100 ml Lösung. Beispiel: 5 Prozent SDS = 5 g SDS in 100 ml
+Prozentlösung (v/v),ml gelöster Stoff pro 100 ml Lösung
+Rechnen: häufigste Fehlerquelle,"Einheiten nicht umgerechnet - 1 M = 1000 mM, 1 mM = 1000 \(\mu\)M. Immer Einheiten mitführen und prüfen, welche Grösse überhaupt gefragt ist"
+Rechnen: Tipp aus den Altklausuren,"Es sind oft Fallen eingebaut: falsche Einheit, überflüssige Angaben, gefragte Grösse ist nicht die naheliegende. Aufgabe genau lesen"
+Beispielaufgabe: Extraktionspuffer ansetzen,"Aus den Stammlösungen 1 M Tris, 2 M NaCl, 0,5 M EDTA und 5 Prozent SDS die Volumina für die Zielkonzentrationen über \(c_1 V_1 = c_2 V_2\) berechnen, Rest mit H2O auf das Endvolumen auffüllen"
+"Zelluläre Prozesse zuordnen: tRNA, rRNA, Ribosom",Translation
+"Zelluläre Prozesse zuordnen: RNA-Polymerase, Transkriptionsfaktoren",Transkription
+"Zelluläre Prozesse zuordnen: DNA-Polymerase, Helikase, Primase, Ligase",Replikation
+"Zelluläre Prozesse zuordnen: Spleissosom, snRNA",Spleissen / RNA-Prozessierung
+Zelluläre Prozesse zuordnen: reverse Transkriptase,Reverse Transkription (RNA \(\rightarrow\) DNA)
+Zelluläre Prozesse zuordnen: Restriktionsenzyme,Sequenzspezifische DNA-Spaltung (bakterielle Abwehr; im Labor Klonierung)
+Reihenfolge: von der gesunden Zelle zum metastasierenden Tumor,Gesunde Zelle \(\rightarrow\) Initiation (Mutation) \(\rightarrow\) Hyperplasie \(\rightarrow\) Dysplasie \(\rightarrow\) gutartiger Tumor / Carcinoma in situ \(\rightarrow\) maligner Tumor \(\rightarrow\) Invasion \(\rightarrow\) Metastasierung
+Tumorentstehung: Was passiert bei der Initiation?,"Mutation, die eine Zelle entartet: Aktivierung eines Onkogens oder Verlust eines Tumorsuppressors"
+Tumorentstehung: Was macht einen Tumor maligne?,"Er durchbricht die Basalmembran, induziert Angiogenese und wächst invasiv in umliegendes Gewebe"
+Abbildung von RNA-Editing / CRISPR beschriften,todo

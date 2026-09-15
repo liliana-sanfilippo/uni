@@ -18,7 +18,7 @@
 % p5
 \newglossaryentry{was_tcl}{
     name={Was ist TCL (deutscn und englischer Name)},
-    description={todo},
+    description={Thin Layer Chromatography = Dünnschichtchromatographie; Trennung eines Stoffgemischs zwischen einer stationären Phase (dünne Schicht Kieselgel, Cellulose oder Aluminiumoxid auf einer Glas-/Alu-/Kunststoffplatte) und einer mobilen Phase (Laufmittel, das durch Kapillarkräfte aufsteigt). Die Substanzen wandern unterschiedlich weit, je nach ihrer relativen Affinität zu beiden Phasen.},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -27,7 +27,11 @@
 \newglossaryentry{marker_typen}{
     name={3 oder 4 Beispiele angeben mit Namen, Typ des DNA-Polymorphismus und wie eine
     Markeranalyse dafür geht.},
-    description={todo},
+    description={CAPS – Cleaved Amplified Polymorphic Sequence (SNP, nachgewiesen durch PCR eines definierten Fragments, Restriktionsverdau und Agarosegel);
+    RFLP – Restriktions-Fragment-Längen-Polymorphismus (Punktmutation oder Indel, anchgewiesen durch Genomische DNA mit Restriktionsenzym verdauen, Agarosegel, Southern Blot);
+    SSR / Mikrosatelliten – Simple Sequence Repeats (Längenpolymorphismus, nachgewiesen durch PCR mit spezifischen Primern aus den flankierenden Einzelkopie-Regionen);
+    SNP – Single Nucleotide Polymorphism (einzelner Basenaustausch, nachgewiesen durch Sequenzierung oder SNP-Arrays/Chips);
+    RAPD – Random Amplified Polymorphic DNA (Polymorphismus der Primer-Bindestellen, nachgewiesen durch PCR und Agarosegel)},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -35,7 +39,11 @@
 % p2
 \newglossaryentry{gus_fixierloesung}{
     name={Fixierlösung für GUS berechnen},
-    description={todo},
+    description={
+    $V_1 = \frac{Aceton \% \cdot Endmenge}{Aceton-Konzentration \%}$ und
+    $V_1 = \frac{Formaldehyd \% \cdot Endmenge}{Formaldehyd-Konzentration \%}$ und Fäbrlösung aus
+$c_1 V_1 = c_2 V_2$ berechnen
+    },
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -44,7 +52,9 @@
 \newglossaryentry{frageFunktionsvorhersage}{
     name={Wie geht man bioinformatisch vor, wenn man die Funktion einer DNA-Sequenz vorhersagen
     will? Welche Software bzw. welchen Algorithmus kann man bspw. benutzen? Welche Datenbank kann man bspw. Benutzen},
-    description={todo},
+    description={Genvorhersage / ORF-Suche: offene Leserahmen in allen 6 Leserastern suchen;
+Übersetzung: in Proteinsequenz; Homologiesuche: Vergleich mit annotierten Sequenzen in Datenbanken; (Vorhersage
+weiterer Eigenschaften) \\ Man kann BLASTX benutzen mit GenBank oder UniProt mit Swiss-Prot bspw.},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -52,7 +62,7 @@
 % p6
 \newglossaryentry{kostenfunktion_protein}{
     name={Wie unterscheidet sich die Kostenfunktion von DNA-Sequenzen zu der, die man bei Aminosäuren benutzen muss},
-    description={todo},
+    description={Bei DNA sind alle Mismatches gleich teuer, bei Proteinen nicht (Substitutionsmatrix)},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -61,7 +71,8 @@
 \newglossaryentry{kostenfunktion_dna}{
     name={Welche Kostenfunktion verwendet man normalerweise für Match, Mismatch und Gaps bei DNA
     Sequenzen?},
-    description={todo},
+    description={Score: Match positiv, Mismatch negativ, Gap negativer als mismatch \\
+Kosten: Match 0, Mismatch 1, Gap 1 oder 2.},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -69,7 +80,7 @@
 % p2
 \newglossaryentry{was_reportergen}{
     name={Was ist ein Reportergen?},
-    description={todo},
+    description={Ein Gen, dessen Produkt einfach, empfindlich und möglichst quantitativ nachweisbar ist und das man mit einer zu untersuchenden regulatorischen Sequenz (Promotor/Enhancer) fusioniert, um deren Aktivität sichtbar zu machen},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -77,7 +88,8 @@
 % p2
 \newglossaryentry{was_reportergen_haben}{
     name={Was muss ein Reportergen(konstrukt?) unbedingt haben?},
-    description={todo},
+    description={Kein endogenes Gegenstück / keine Hintergrundaktivität im Wirtsorganismus; Einfacher, empfindlicher
+Nachweis; Nicht toxisch, kein Einfluss auf den Phänotyp; Möglichst quantifizierbar},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -93,7 +105,10 @@
 % p3
 \newglossaryentry{reinheit}{
     name={Reinheit von Nukleinsäuren bestimmen anhand A230, A260 und A280},
-    description={todo},
+    description={A260/A280: $DNA \approx 1,8$, $RNA \approx 2,0$ \\ A260/A230: 2,0 – 2,2 \\ Wenn einer der Werte zu
+niedrig ist, ist die Reinheit schlecht \\
+$c[\mu g/ml]=A260× X \mu g/ml]  ×Verdünnungsfaktor$ \\
+$ 1 \mu M = 1 \mu mol/l = 1 pmol/\mu l$},
     symbol={2026 (Praktikum)},
     type=frage
 }
@@ -234,7 +249,7 @@ type=frage
 \newglossaryentry{transposonsreaktivierbar}{
 name={Was ist für autonome und nicht-autonome Transposons zwingend notwendig, weil es sonst
 nicht reaktivierbar wäre?},
-description={todo},
+description={Die intakten terminalen Sequenzen als cis-Elemente},
 symbol={2026 (Vorlesung)},
 type=frage
 }
