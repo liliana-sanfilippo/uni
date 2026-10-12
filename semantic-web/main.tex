@@ -1,0 +1,53 @@
+\input{../preamble/general}
+\usepackage[ngerman]{babel}
+\input{../preamble/packages}
+\input{../preamble/colors}
+\input{../preamble/germanAddons}
+\input{../preamble/theorems}
+\input{../preamble/glossarydefs}
+\loadglsentries{glossary/definitionen}
+\input{../preamble/commands}
+
+\title{Introduction to the Semantic Web \\ \small{by Dr. Ell} \\ \textit{\footnotesize{Winter semester 2026/2027} } }
+
+\newcommand\reporttitle{Lecture Introduction to the Semantic Web}
+\newcommand\reportsubtitle{Winter semester 2026/2027}
+\newcommand\profs{Vorlesung von Dr. Ell}
+\newcommand\reportsubsubtitle{Lecture and study notes}
+\newcommand\reportauthors{
+    \textbf{Liliana Sanfilippo}
+}
+
+\begin{document}
+    \frontmatter
+    \input{../preamble/frontpage}
+    % Generates a ToC without page number
+    {\hypersetup{linkcolor=black} % Keeps the ToC black even with non-black linkcolor
+    \tableofcontents\thispagestyle{empty}}
+    \newpage
+
+    \mainmatter
+
+    \input{sections/v1}
+
+
+
+    \backmatter
+    \pagenumbering{roman}
+
+
+    \chapter{Backmatter}\label{ch:backmatter}
+
+    \addcontentsline{toc}{section}{Figures}
+    \listoffigures
+
+    \addcontentsline{toc}{section}{Index}
+    \printindex
+
+    \addcontentsline{toc}{section}{Definitions}
+    \printglossary[type=defi, title=Definitions]
+
+    \addcontentsline{toc}{section}{References}
+    %\printbibliography
+
+\end{document}
