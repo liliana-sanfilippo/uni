@@ -1,0 +1,59 @@
+\input{../preamble/general}
+\usepackage[ngerman]{babel}
+\input{../preamble/packages}
+\input{../preamble/colors}
+\input{../preamble/germanAddons}
+\input{../preamble/theorems}
+\input{../preamble/glossarydefs}
+\loadglsentries{glossary/definitionen}
+\input{../preamble/commands}
+
+%% BIBTEX
+
+\usepackage{biblatex}
+\addbibresource{bib.bib}
+\title{Sequenzanalyse \\ \small{by Jens Stoye} \\ \textit{\footnotesize{Summer semester 2026} } }
+\author{Aufarbeitung des Skripts, Vorlesungsnotizen und \\ ergänzende Lehrmaterialien by Liliana Sanfilippo}
+\date{Last update \today}
+
+\newcommand\reporttitle{Lecture Sequenzanalyse}
+\newcommand\reportsubtitle{}
+\newcommand\profs{Vorlesung von Jens Stoye}
+\newcommand\reportsubsubtitle{Vorlesungsnotizen und Aufarbeitung}
+\newcommand\reportauthors{
+    \textbf{Liliana Sanfilippo}
+}
+
+\begin{document}
+    \frontmatter
+    \input{../preamble/frontpage}
+    % Generates a ToC without page number
+    {\hypersetup{linkcolor=black} % Keeps the ToC black even with non-black linkcolor
+    \tableofcontents\thispagestyle{empty}}
+    \newpage
+
+    \mainmatter
+
+
+
+
+
+    \backmatter
+    \pagenumbering{roman}
+
+
+    \chapter{Backmatter}\label{ch:backmatter}
+
+    \addcontentsline{toc}{section}{Figures}
+    \listoffigures
+
+    \addcontentsline{toc}{section}{Index}
+    \printindex
+
+    \addcontentsline{toc}{section}{Definitions}
+    \printglossary[type=defi, title=Definitions]
+
+    \addcontentsline{toc}{section}{References}
+    %\printbibliography
+
+\end{document}
