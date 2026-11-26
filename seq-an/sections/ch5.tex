@@ -25,6 +25,42 @@
 
 \section{Gap Cost}
 
+\begin{table}[H]
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{2.5cm}
+            >{\raggedright\arraybackslash}p{1.9cm}
+            >{\raggedright\arraybackslash}p{4.3cm}
+            >{\raggedright\arraybackslash}p{2.3cm}}
+        \toprule
+        \textbf{Alignment} & \textbf{Kosten oder Score} & \textbf{Typische Bewertung im Skript} & \textbf{Gapkosten} \\
+        \midrule
+        Global (Needleman-Wunsch) & beides & Einheitskosten (Edit-Distanz) oder Score mit Substitutionsmatrix & linear, allgemein, affin (Gotoh) \\
+        Semiglobal, freie Endlücken & beides; im Skript Score & Match positiv, Mismatch und Indel negativ & linear, allgemein, affin \\
+        Lokal (Smith-Waterman) & \textbf{nur Score} & Log-Odds-Matrizen (PAM, BLOSUM); bei Transmembranproteinen bipartit mit SLIM & linear oder affin \\
+        Waterman-Eggert & nur Score & wie Smith-Waterman & wie Smith-Waterman \\
+        BLAST & Score und Statistik & BLOSUM bzw.\ PAM für Seeds und Erweiterung; Signifikanz über p- und E-Wert & 1.4: keine Gaps (MSPs); 2.0: affin \\
+        Approximative Suche (Sellers, Ukkonen) & Kosten & Einheitskosten, Schwelle $k$ & linear \\
+        Hirschberg & beides & wie global & linear; affin nur mit Myers-Miller; allgemein nicht in linearem Platz \\
+        Sum-of-Pairs-MSA, Carrillo-Lipman & Kosten & beliebige paarweise Kosten, summiert über alle Paare & linear; affin als natürliche bzw.\ quasi-natürliche Gapkosten \\
+        Center-Star & Kosten & Kosten müssen die Dreiecksungleichung erfüllen, sonst gilt die 2-Approximation nicht & linear \\
+        Baumalignment: Fitch & Kosten & nur Einheitskosten: zählt Änderungen & -- \\
+        Baumalignment: Sankoff & Kosten & beliebige gewichtete Ersetzungskosten & -- \\
+        Progressiv (Clustal) & Score bzw.\ Kosten pro Spalte & Spalte gegen Spalte: Summe aller Zeichenpaare; Leitbaum aus paarweisen Scores & Clustal: affin \\
+        T-COFFEE & Gewichte statt Matrix & Gewicht eines Positionspaars = Anzahl Alignments der Bibliothek, die es stützen & -- \\
+        DCA & Kosten & Sum-of-Pairs-Kosten; Schnitte über Zusatzkostenmatrizen & wie Sum-of-Pairs \\
+        DIALIGN & statistisches Gewicht & $w_D = -\ln P_D$ je Diagonale; kein Score pro Zeichenpaar nötig & \textbf{keine Gapkosten} \\
+        Whole Genome Alignment & gemischt & Anker sind exakte Matches, Chaining gewichtet nach Ankerlänge, Lücken per normalem Alignment & in den Lücken wie global \\
+        \bottomrule
+    \end{tabular}
+    \caption{Kosten und Scores der einzelnen Alignment-Verfahren}
+    \label{tab:kosten-scores}
+\end{table}
+
+
+
 \subsection{}
 
 % TODO
